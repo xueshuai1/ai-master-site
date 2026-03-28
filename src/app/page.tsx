@@ -18,19 +18,18 @@ const CATEGORIES = [
 
 // 非 AI 岗位（学习 AI 提升竞争力）
 const NON_AI_ROLES = [
-  { id: "frontend", name: "前端开发", icon: "🎨", href: "/roles/frontend", subRoles: ["AI 应用集成", "智能 UI/UX", "Copilot 提效"] },
-  { id: "backend", name: "后端开发", icon: "⚙️", href: "/roles/backend", subRoles: ["模型服务化", "AI API 设计", "系统架构"] },
+  { id: "frontend", name: "前端开发", icon: "🎨", href: "/roles/frontend", subRoles: ["AI 应用集成", "智能 UI", "Copilot 提效"] },
+  { id: "backend", name: "后端开发", icon: "⚙️", href: "/roles/backend", subRoles: ["模型服务化", "API 设计", "系统架构"] },
   { id: "fullstack", name: "全栈开发", icon: "🚀", href: "/roles/fullstack", subRoles: ["AI 全栈项目", "快速原型", "独立开发"] },
-  { id: "product", name: "产品经理", icon: "📋", href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
-  { id: "devops", name: "运维/DevOps", icon: "🛠️", href: "/roles/devops", subRoles: ["MLOps", "模型部署", "监控运维"] },
+  { id: "mobile", name: "移动端开发", icon: "📱", href: "/roles/mobile", subRoles: ["iOS/Android/跨平台 + AI 集成"] },
+  { id: "test", name: "测试工程师", icon: "✅", href: "/roles/test", subRoles: ["AI 测试", "自动化测试", "质量保障"] },
+  { id: "data", name: "数据开发", icon: "📊", href: "/roles/data", subRoles: ["数据工程", "数据 pipeline", "特征工程"] },
 ];
 
 // AI 专业岗位（深入 AI 技术）
 const AI_PRO_ROLES = [
-  { id: "algorithm", name: "算法工程师", icon: "🔬", href: "/roles/algorithm", subRoles: ["机器学习", "深度学习"] },
-  { id: "llm-engineer", name: "大模型工程师", icon: "🤖", href: "/roles/llm-engineer", subRoles: ["LLM", "RAG", "Agent"] },
-  { id: "cv-engineer", name: "CV 工程师", icon: "👁️", href: "/roles/cv-engineer", subRoles: ["图像分类", "目标检测", "图像生成"] },
-  { id: "nlp-engineer", name: "NLP 工程师", icon: "📝", href: "/roles/nlp-engineer", subRoles: ["文本理解", "文本生成", "语言模型"] },
+  { id: "algorithm", name: "算法工程师", icon: "🔬", href: "/roles/algorithm", subRoles: ["机器学习", "深度学习", "CV", "NLP", "大模型"] },
+  { id: "product", name: "产品经理", icon: "📋", href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
 ];
 
 // 技术专区数据

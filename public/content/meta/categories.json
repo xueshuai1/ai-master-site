@@ -1,8 +1,26 @@
 {
-  "version": "2.0",
+  "version": "3.1",
   "updatedAt": "2026-03-29",
-  "description": "混合分类体系：技术分类 + 岗位角色 + 技术专区",
+  "description": "8 岗位分类体系：6 个非 AI 岗位 + 2 个 AI 专业岗位",
   
+  "trackSystem": {
+    "enabled": true,
+    "tracks": {
+      "non-ai": {
+        "id": "non-ai",
+        "name": "我想学 AI 提升",
+        "description": "传统开发/测试/数据，学习 AI 提升竞争力",
+        "icon": "📚"
+      },
+      "ai-pro": {
+        "id": "ai-pro",
+        "name": "AI 专业深入",
+        "description": "AI 算法和产品，深入学习 AI 技术",
+        "icon": "🤖"
+      }
+    }
+  },
+
   "categories": {
     "ML": {
       "name": "机器学习基础",
@@ -57,7 +75,7 @@
       "name": "系统设计",
       "nameEn": "System Design",
       "icon": "🏗️",
-      "description": "ML 系统设计、架构设计、 scalability",
+      "description": "ML 系统设计、架构设计、scalability",
       "order": 8
     },
     "Coding": {
@@ -70,53 +88,73 @@
   },
 
   "roles": {
-    "frontend": {
-      "name": "前端开发",
-      "nameEn": "Frontend Development",
-      "icon": "🎨",
-      "description": "AI 应用开发、前端工程化+AI、UI/UX+AI",
-      "subRoles": ["AI 应用开发", "前端工程化+AI", "UI/UX+AI"],
-      "order": 1
+    "non-ai": {
+      "frontend": {
+        "name": "前端开发",
+        "nameEn": "Frontend Development",
+        "icon": "🎨",
+        "description": "AI 应用集成、智能 UI/UX、Copilot 提效",
+        "subRoles": ["AI 应用集成", "智能 UI/UX", "Copilot 提效"],
+        "order": 1
+      },
+      "backend": {
+        "name": "后端开发",
+        "nameEn": "Backend Development",
+        "icon": "⚙️",
+        "description": "模型服务化、AI API 设计、系统架构",
+        "subRoles": ["模型服务化", "AI API 设计", "系统架构"],
+        "order": 2
+      },
+      "fullstack": {
+        "name": "全栈开发",
+        "nameEn": "Fullstack Development",
+        "icon": "🚀",
+        "description": "AI 全栈项目、快速原型、独立开发",
+        "subRoles": ["AI 全栈项目", "快速原型", "独立开发"],
+        "order": 3
+      },
+      "mobile": {
+        "name": "移动端开发",
+        "nameEn": "Mobile Development",
+        "icon": "📱",
+        "description": "iOS/Android/跨平台 + AI 集成",
+        "subRoles": ["iOS + AI", "Android + AI", "跨平台 + AI"],
+        "order": 4
+      },
+      "test": {
+        "name": "测试工程师",
+        "nameEn": "Test Engineer",
+        "icon": "✅",
+        "description": "AI 测试、自动化测试、质量保障",
+        "subRoles": ["AI 测试", "自动化测试", "质量保障"],
+        "order": 5
+      },
+      "data": {
+        "name": "数据开发",
+        "nameEn": "Data Engineer",
+        "icon": "📊",
+        "description": "数据工程、数据 pipeline、特征工程",
+        "subRoles": ["数据工程", "数据 pipeline", "特征工程"],
+        "order": 6
+      }
     },
-    "backend": {
-      "name": "后端开发",
-      "nameEn": "Backend Development",
-      "icon": "⚙️",
-      "description": "模型部署、API 设计、系统架构",
-      "subRoles": ["模型部署", "API 设计", "系统架构"],
-      "order": 2
-    },
-    "algorithm": {
-      "name": "算法工程师",
-      "nameEn": "Algorithm Engineer",
-      "icon": "🔬",
-      "description": "模型原理、训练优化、论文解读",
-      "subRoles": ["模型原理", "训练优化", "论文解读"],
-      "order": 3
-    },
-    "ai-engineering": {
-      "name": "AI 工程化",
-      "nameEn": "AI Engineering",
-      "icon": "🛠️",
-      "description": "Agent/多 Agent、开发方法论、工具链、部署运维",
-      "subRoles": ["Agent/多 Agent", "开发方法论", "工具链", "部署运维"],
-      "order": 4
-    },
-    "product": {
-      "name": "产品经理",
-      "nameEn": "Product Manager",
-      "icon": "📋",
-      "description": "AI 产品设计、场景分析",
-      "subRoles": ["AI 产品设计", "场景分析"],
-      "order": 5
-    },
-    "data-science": {
-      "name": "数据科学家",
-      "nameEn": "Data Scientist",
-      "icon": "📈",
-      "description": "数据分析、特征工程",
-      "subRoles": ["数据分析", "特征工程"],
-      "order": 6
+    "ai-pro": {
+      "algorithm": {
+        "name": "算法工程师",
+        "nameEn": "Algorithm Engineer",
+        "icon": "🔬",
+        "description": "机器学习、深度学习、CV、NLP",
+        "subRoles": ["机器学习", "深度学习", "CV", "NLP"],
+        "order": 1
+      },
+      "product": {
+        "name": "产品经理",
+        "nameEn": "Product Manager",
+        "icon": "📋",
+        "description": "AI 产品设计、场景分析、商业化",
+        "subRoles": ["AI 产品设计", "场景分析", "商业化"],
+        "order": 2
+      }
     }
   },
 
