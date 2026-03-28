@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import TagFilter from "@/components/TagFilter";
 import Tag from "@/components/Tag";
+import CodeBlock from "@/components/CodeBlock";
+import Callout from "@/components/Callout";
+import Collapsible from "@/components/Collapsible";
 
 // Lucide 风格 SVG 图标组件
 function BriefcaseIcon({ className }: { className?: string }) {
@@ -293,6 +296,153 @@ export default function InterviewPage() {
             )}
           </div>
         </div>
+
+        {/* 示例题目详解 */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold text-[#1E293B] mb-6">📝 示例题目详解</h2>
+          
+          <div className="bg-white rounded-2xl border border-[#E2E8F0] p-8">
+            {/* 题目 */}
+            <Callout type="info" title="🎯 题目" icon="❓">
+              <p className="text-lg font-medium">
+                解释 Transformer 的自注意力机制（Self-Attention），并说明它的计算过程。
+              </p>
+            </Callout>
+
+            {/* 考察点 */}
+            <Collapsible title="💡 考察要点" variant="card" defaultOpen={true}>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 bg-blue-50 rounded-lg">
+                  <h4 className="font-semibold text-blue-800 mb-2">理论基础</h4>
+                  <p className="text-sm text-blue-700">
+                    理解 Self-Attention 的核心概念和数学原理
+                  </p>
+                </div>
+                <div className="p-4 bg-green-50 rounded-lg">
+                  <h4 className="font-semibold text-green-800 mb-2">实践能力</h4>
+                  <p className="text-sm text-green-700">
+                    能够手写实现注意力机制的计算过程
+                  </p>
+                </div>
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <h4 className="font-semibold text-purple-800 mb-2">应用理解</h4>
+                  <p className="text-sm text-purple-700">
+                    了解 Self-Attention 在实际模型中的应用
+                  </p>
+                </div>
+              </div>
+            </Collapsible>
+
+            {/* 参考答案 */}
+            <Collapsible title="✅ 参考答案" variant="card">
+              <div className="space-y-4">
+                <p className="text-gray-700">
+                  自注意力机制（Self-Attention）是 Transformer 架构的核心组件，
+                  它允许模型在处理序列中的每个位置时，能够关注到序列中的所有其他位置。
+                </p>
+                
+                <h4 className="font-semibold text-gray-800 mt-4">核心公式：</h4>
+                <CodeBlock language="python" title="Scaled Dot-Product Attention">
+{`Attention(Q, K, V) = softmax(QK^T / √d_k) V
+
+其中：
+- Q (Query): 查询矩阵，表示当前要关注的词
+- K (Key): 键矩阵，表示所有词的特征
+- V (Value): 值矩阵，表示所有词的实际内容
+- d_k: Key 的维度，用于缩放防止梯度消失`}
+                </CodeBlock>
+
+                <h4 className="font-semibold text-gray-800 mt-4">计算步骤：</h4>
+                <ol className="list-decimal list-inside space-y-2 text-gray-700">
+                  <li>计算 Query 和 Key 的点积，得到注意力分数</li>
+                  <li>除以 √d_k 进行缩放，防止梯度消失</li>
+                  <li>通过 softmax 归一化，得到注意力权重</li>
+                  <li>用注意力权重对 Value 加权求和，得到输出</li>
+                </ol>
+              </div>
+            </Collapsible>
+
+            {/* 代码实现 */}
+            <Collapsible title="💻 代码实现" variant="card">
+              <CodeBlock 
+                language="python" 
+                title="Self-Attention 实现"
+                collapsible={true}
+              >
+{`import torch
+import torch.nn as nn
+import math
+
+class SelfAttention(nn.Module):
+    def __init__(self, embed_dim, num_heads):
+        super().__init__()
+        self.num_heads = num_heads
+        self.embed_dim = embed_dim
+        self.head_dim = embed_dim // num_heads
+        
+        # 定义 Q, K, V 的线性变换
+        self.q_proj = nn.Linear(embed_dim, embed_dim)
+        self.k_proj = nn.Linear(embed_dim, embed_dim)
+        self.v_proj = nn.Linear(embed_dim, embed_dim)
+        self.out_proj = nn.Linear(embed_dim, embed_dim)
+        
+    def forward(self, x, mask=None):
+        batch_size, seq_len, _ = x.shape
+        
+        # 投影到 Q, K, V
+        Q = self.q_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
+        K = self.k_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
+        V = self.v_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
+        
+        # 计算注意力分数
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(self.head_dim)
+        
+        # 应用掩码（如果有）
+        if mask is not None:
+            scores = scores.masked_fill(mask == 0, -1e9)
+        
+        # Softmax 归一化
+        attention_weights = torch.softmax(scores, dim=-1)
+        
+        # 加权求和
+        output = torch.matmul(attention_weights, V)
+        
+        # 合并多头输出
+        output = output.transpose(1, 2).contiguous().view(batch_size, seq_len, self.embed_dim)
+        
+        return self.out_proj(output)`}
+              </CodeBlock>
+            </Collapsible>
+
+            {/* 注意事项 */}
+            <Callout type="warning" title="⚠️ 面试注意事项">
+              <ul className="list-disc list-inside space-y-1">
+                <li>要解释清楚为什么需要除以 <code className="px-1.5 py-0.5 bg-gray-100 rounded text-sm">√d_k</code>（防止点积过大导致 softmax 梯度消失）</li>
+                <li>说明 Q、K、V 的物理含义和作用</li>
+                <li>能够手写核心公式和代码框架</li>
+                <li>理解多头注意力的优势（并行关注不同位置的不同信息）</li>
+              </ul>
+            </Callout>
+
+            {/* 扩展问题 */}
+            <Collapsible title="🔗 相关扩展问题" variant="simple">
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span className="text-gray-700">多头注意力（Multi-Head Attention）相比单头注意力有什么优势？</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span className="text-gray-700">Transformer 中为什么使用 Layer Normalization 而不是 Batch Normalization？</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span className="text-gray-700">Self-Attention 的计算复杂度是多少？如何优化？</span>
+                </li>
+              </ul>
+            </Collapsible>
+          </div>
+        </section>
 
         {/* 快速入口 */}
         <section className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
