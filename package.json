@@ -1,8 +1,8 @@
 {
-  "name": "ai-interview-questions",
+  "name": "ai-learning-interview",
   "version": "0.1.0",
   "private": true,
-  "description": "AI 面试题大全 - AI 知识库 · 系统化学习 · 面试准备",
+  "description": "AI 学习与面试大全 - AI 知识库 · 系统化学习 · 面试准备",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

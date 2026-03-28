@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ["AI 学习", "AI 面试", "机器学习", "深度学习", "NLP", "计算机视觉", "大模型", "LLM", "知识库", "学习路径"],
   authors: [{ name: "AI Learning & Interview" }],
   openGraph: {
-    title: "AI 面试题大全",
+    title: "AI 学习与面试大全",
     description: "AI 知识库 · 系统化学习 · 面试准备 · 持续更新",
     type: "website",
     locale: "zh_CN",

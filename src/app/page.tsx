@@ -52,7 +52,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 sm:py-16 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          AI 面试题大全
+          AI 学习与面试大全
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8">
           <span className="hidden sm:inline">AI 知识库 · 系统化学习 · 面试准备 · 持续更新</span>
