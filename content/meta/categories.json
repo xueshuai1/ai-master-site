@@ -88,21 +88,22 @@
   },
 
   "roles": {
-    "non-ai": {
+    "tech": {
+      "name": "技术类",
       "frontend": {
         "name": "前端开发",
         "nameEn": "Frontend Development",
         "icon": "🎨",
-        "description": "AI 应用集成、智能 UI/UX、Copilot 提效",
-        "subRoles": ["AI 应用集成", "智能 UI/UX", "Copilot 提效"],
+        "description": "AI 应用集成、智能 UI、Copilot 提效",
+        "subRoles": ["AI 应用集成", "智能 UI", "Copilot 提效"],
         "order": 1
       },
       "backend": {
         "name": "后端开发",
         "nameEn": "Backend Development",
         "icon": "⚙️",
-        "description": "模型服务化、AI API 设计、系统架构",
-        "subRoles": ["模型服务化", "AI API 设计", "系统架构"],
+        "description": "模型服务化、API 设计、系统架构",
+        "subRoles": ["模型服务化", "API 设计", "系统架构"],
         "order": 2
       },
       "fullstack": {
@@ -113,55 +114,48 @@
         "subRoles": ["AI 全栈项目", "快速原型", "独立开发"],
         "order": 3
       },
+      "mobile": {
+        "name": "移动端开发",
+        "nameEn": "Mobile Development",
+        "icon": "📱",
+        "description": "iOS/Android/跨平台 + AI 集成",
+        "subRoles": ["iOS 开发", "Android 开发", "跨平台+AI 集成"],
+        "order": 4
+      },
+      "test": {
+        "name": "测试工程师",
+        "nameEn": "Test Engineer",
+        "icon": "🛠️",
+        "description": "AI 测试、自动化测试、质量保障",
+        "subRoles": ["AI 测试", "自动化测试", "质量保障"],
+        "order": 5
+      },
+      "data": {
+        "name": "数据开发",
+        "nameEn": "Data Development",
+        "icon": "📊",
+        "description": "数据工程、数据 pipeline、特征工程",
+        "subRoles": ["数据工程", "数据 pipeline", "特征工程"],
+        "order": 6
+      }
+    },
+    "ai-pro": {
+      "name": "AI 专业类",
+      "algorithm": {
+        "name": "算法工程师",
+        "nameEn": "Algorithm Engineer",
+        "icon": "🔬",
+        "description": "机器学习、深度学习、CV、NLP、大模型",
+        "subRoles": ["机器学习", "深度学习", "CV/NLP/大模型"],
+        "order": 1
+      },
       "product": {
         "name": "产品经理",
         "nameEn": "Product Manager",
         "icon": "📋",
         "description": "AI 产品设计、场景分析、商业化",
         "subRoles": ["AI 产品设计", "场景分析", "商业化"],
-        "order": 4
-      },
-      "devops": {
-        "name": "运维/DevOps",
-        "nameEn": "DevOps Engineer",
-        "icon": "🛠️",
-        "description": "MLOps、模型部署、监控运维",
-        "subRoles": ["MLOps", "模型部署", "监控运维"],
-        "order": 5
-      }
-    },
-    "ai-pro": {
-      "algorithm": {
-        "name": "算法工程师",
-        "nameEn": "Algorithm Engineer",
-        "icon": "🔬",
-        "description": "机器学习、深度学习",
-        "subRoles": ["机器学习", "深度学习"],
-        "order": 1
-      },
-      "llm-engineer": {
-        "name": "大模型工程师",
-        "nameEn": "LLM Engineer",
-        "icon": "🤖",
-        "description": "LLM、RAG、Agent",
-        "subRoles": ["LLM", "RAG", "Agent"],
         "order": 2
-      },
-      "cv-engineer": {
-        "name": "CV 工程师",
-        "nameEn": "Computer Vision Engineer",
-        "icon": "👁️",
-        "description": "计算机视觉",
-        "subRoles": ["图像分类", "目标检测", "图像生成"],
-        "order": 3
-      },
-      "nlp-engineer": {
-        "name": "NLP 工程师",
-        "nameEn": "NLP Engineer",
-        "icon": "📝",
-        "description": "自然语言处理",
-        "subRoles": ["文本理解", "文本生成", "语言模型"],
-        "order": 4
       }
     }
   },
