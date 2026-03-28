@@ -1,4 +1,13 @@
-# AI 面试题网站规划文档
+# AI 面试题网站规划文档 v2.0
+
+> **版本更新**: 2026-03-29
+> - ✅ 混合分类体系（技术 + 岗位 + 专区）
+> - ✅ 全文搜索功能
+> - ✅ 图片本地化处理
+> - ✅ 定时自动收集
+> - ✅ 延伸追问生成
+
+---
 
 ## 1. 竞品分析
 
@@ -255,19 +264,22 @@ ai-interview-questions/
 └── package.json
 ```
 
-### 3.2 路由设计
+### 3.2 路由设计（v2.0）
 
 | 路由 | 页面 | 功能 |
 |------|------|------|
-| `/` | 首页 | 精选题目、分类导航、搜索框 |
+| `/` | 首页 | 搜索框、技术分类、岗位学习、技术专区 |
+| `/search` | 搜索页面 | 全文搜索 + 多维度筛选 |
 | `/questions` | 题目列表 | 所有题目，支持筛选和搜索 |
-| `/questions/[category]` | 分类题目 | 按分类筛选 |
-| `/questions/[category]/[subcategory]` | 子分类题目 | 更细粒度筛选 |
-| `/questions/[slug]` | 题目详情 | 单题完整内容 |
-| `/categories` | 分类总览 | 所有分类展示 |
+| `/questions/[category]` | 分类题目 | 按技术分类筛选 |
+| `/questions/[slug]` | 题目详情 | 单题完整内容（含延伸追问） |
+| `/categories` | 分类总览 | 9 个技术分类展示 |
+| `/roles/[role]` | 岗位页面 | 按岗位角色筛选题目（v2.0 新增） |
+| `/zones/[zone]` | 专区页面 | 按技术专区筛选题目（v2.0 新增） |
 | `/difficulty/[level]` | 难度筛选 | 按难度查看题目 |
 | `/roadmaps` | 学习路径 | 职业发展方向 |
 | `/mock-interviews` | 模拟面试 | 随机组题功能 |
+| `/api/search` | 搜索 API | 搜索接口（v2.0 新增） |
 
 ### 3.3 技术栈建议
 
@@ -348,26 +360,56 @@ ai-interview-questions/
 
 ## 5. 内容模板
 
-### 5.1 单题 Markdown 模板
+### 5.1 单题 Markdown 模板（v2.0）
 
 ```markdown
 ---
-title: "题目标题"
-category: "分类名称"  # 如：llm, deep-learning, ml-basics
-subcategory: "子分类"  # 如：transformer, optimization
-difficulty: 2  # 1-4
+title: "题目名称"
+category: LLM  # 技术分类（ML/DL/NLP/CV/LLM/RecSys/RL/System/Coding）
+roles: ["前端开发", "AI 工程化"]  # 适用岗位（v2.0 新增）
+zones: ["Agent 开发"]  # 技术专区（v2.0 新增，可选）
+difficulty: ⭐⭐  # 难度级别（⭐ 到 ⭐⭐⭐⭐）
 tags: ["标签 1", "标签 2", "标签 3"]
-companies: ["公司 A", "公司 2"]  # 可选，出现该题的公司
-type: "concept"  # concept, code, math, project, system-design, case
-createdAt: "2025-01-01"
-updatedAt: "2025-01-01"
+source: 来源
+sourceUrl: https://...
+createdAt: 2026-03-29
+updatedAt: 2026-03-29
+images: ["/images/questions/20260329/image1.png"]  # 本地图片路径（v2.0 新增）
 ---
 
-## 题目
+## 题目描述
 
 这里是问题的完整描述...
 
 ## 参考答案
+
+详细的答案内容...
+
+## 考察重点
+
+- **核心知识点**: ...
+- **能力维度**: ...
+- **常见误区**: ...
+
+## 延伸题目
+
+- [[相关题目 1]](./related-1.md)
+- [[相关题目 2]](./related-2.md)
+
+## 延伸追问（v2.0 新增）
+
+### 追问 1: 如果场景发生变化会怎样？
+**答案：** ...
+
+### 追问 2: 如何优化这个方案？
+**答案：** ...
+
+## 深入理解（v2.0 新增）
+
+> **实际应用场景**: ...
+> **与其他知识点的关联**: ...
+> **进阶变体**: ...
+> **面试技巧**: ...
 
 ### 核心要点
 
@@ -576,7 +618,50 @@ NEXT_PUBLIC_GA_ID=G-xxx
 
 ---
 
-## 9. 总结
+## 9. 自动收集系统（v2.0 新增）
+
+### 9.1 收集脚本
+
+位置：`skills/auto-interview-collector/scripts/collect.py`
+
+**功能：**
+- 50+ 关键词轮换搜索（中英文）
+- 多来源内容获取（GitHub、Medium、知乎、牛客网等）
+- 图片本地化处理
+- AI 延伸追问生成
+- 智能去重
+- 自动 Git 提交 + Vercel 部署触发
+
+**使用：**
+```bash
+# 手动收集
+python collect.py --count 10 --manual
+
+# 指定分类
+python collect.py --category LLM --count 5
+
+# 指定关键词
+python collect.py --keywords "LLM interview,RAG" --count 5
+```
+
+### 9.2 定时任务配置
+
+```bash
+# 配置 cron 定时任务（每天凌晨 2 点）
+bash scripts/setup-cron.sh
+```
+
+**配置详情：**
+- macOS: 使用 launchd
+- Linux: 使用 cron
+- 执行时间：每天 2:00 AM
+- 每次收集：10-15 道题
+- 自动 commit + push
+- 触发 Vercel 部署
+
+---
+
+## 10. 总结
 
 基于竞品分析，本项目应聚焦以下差异化优势：
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -31,7 +31,7 @@ interface FilterOptions {
   difficulties: Record<string, { label: string; name: string }>;
 }
 
-export default function SearchPage() {
+function SearchContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -81,7 +81,7 @@ export default function SearchPage() {
   };
 
   // 执行搜索
-  const performSearch = useCallback(async (searchQuery: string, additionalFilters = {}) => {
+  const performSearch = useCallback(async (searchQuery: string, additionalFilters: { category?: string; role?: string; zone?: string; difficulty?: string } = {}) => {
     if (!searchQuery && !Object.values(additionalFilters).some(Boolean)) {
       setResults([]);
       return;
@@ -381,5 +381,20 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+          <p className="text-gray-600">加载中...</p>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }

@@ -1,0 +1,192 @@
+{
+  "version": "2.0",
+  "updatedAt": "2026-03-29",
+  "description": "混合分类体系：技术分类 + 岗位角色 + 技术专区",
+  
+  "categories": {
+    "ML": {
+      "name": "机器学习基础",
+      "nameEn": "Machine Learning Basics",
+      "icon": "📊",
+      "description": "监督学习、无监督学习、模型评估等核心概念",
+      "order": 1
+    },
+    "DL": {
+      "name": "深度学习",
+      "nameEn": "Deep Learning",
+      "icon": "🧠",
+      "description": "神经网络、CNN、RNN、Transformer 架构",
+      "order": 2
+    },
+    "NLP": {
+      "name": "自然语言处理",
+      "nameEn": "Natural Language Processing",
+      "icon": "📝",
+      "description": "词向量、语言模型、文本分类、生成任务",
+      "order": 3
+    },
+    "CV": {
+      "name": "计算机视觉",
+      "nameEn": "Computer Vision",
+      "icon": "👁️",
+      "description": "图像分类、目标检测、分割、生成模型",
+      "order": 4
+    },
+    "LLM": {
+      "name": "大语言模型",
+      "nameEn": "Large Language Models",
+      "icon": "🤖",
+      "description": "Prompt Engineering、RAG、Fine-tuning、Agent",
+      "order": 5
+    },
+    "RecSys": {
+      "name": "推荐系统",
+      "nameEn": "Recommendation System",
+      "icon": "🎯",
+      "description": "召回排序、协同过滤、深度学习推荐",
+      "order": 6
+    },
+    "RL": {
+      "name": "强化学习",
+      "nameEn": "Reinforcement Learning",
+      "icon": "🎮",
+      "description": "MDP、Q-Learning、Policy Gradient、多智能体",
+      "order": 7
+    },
+    "System": {
+      "name": "系统设计",
+      "nameEn": "System Design",
+      "icon": "🏗️",
+      "description": "ML 系统设计、架构设计、 scalability",
+      "order": 8
+    },
+    "Coding": {
+      "name": "编程算法",
+      "nameEn": "Coding & Algorithms",
+      "icon": "💻",
+      "description": "LeetCode、数据结构、算法题、手撕代码",
+      "order": 9
+    }
+  },
+
+  "roles": {
+    "frontend": {
+      "name": "前端开发",
+      "nameEn": "Frontend Development",
+      "icon": "🎨",
+      "description": "AI 应用开发、前端工程化+AI、UI/UX+AI",
+      "subRoles": ["AI 应用开发", "前端工程化+AI", "UI/UX+AI"],
+      "order": 1
+    },
+    "backend": {
+      "name": "后端开发",
+      "nameEn": "Backend Development",
+      "icon": "⚙️",
+      "description": "模型部署、API 设计、系统架构",
+      "subRoles": ["模型部署", "API 设计", "系统架构"],
+      "order": 2
+    },
+    "algorithm": {
+      "name": "算法工程师",
+      "nameEn": "Algorithm Engineer",
+      "icon": "🔬",
+      "description": "模型原理、训练优化、论文解读",
+      "subRoles": ["模型原理", "训练优化", "论文解读"],
+      "order": 3
+    },
+    "ai-engineering": {
+      "name": "AI 工程化",
+      "nameEn": "AI Engineering",
+      "icon": "🛠️",
+      "description": "Agent/多 Agent、开发方法论、工具链、部署运维",
+      "subRoles": ["Agent/多 Agent", "开发方法论", "工具链", "部署运维"],
+      "order": 4
+    },
+    "product": {
+      "name": "产品经理",
+      "nameEn": "Product Manager",
+      "icon": "📋",
+      "description": "AI 产品设计、场景分析",
+      "subRoles": ["AI 产品设计", "场景分析"],
+      "order": 5
+    },
+    "data-science": {
+      "name": "数据科学家",
+      "nameEn": "Data Scientist",
+      "icon": "📈",
+      "description": "数据分析、特征工程",
+      "subRoles": ["数据分析", "特征工程"],
+      "order": 6
+    }
+  },
+
+  "zones": {
+    "openclaw": {
+      "name": "OpenClaw 专区",
+      "nameEn": "OpenClaw Zone",
+      "icon": "🦞",
+      "description": "OpenClaw 相关技术、技能开发、节点控制",
+      "topics": ["OpenClaw 技术", "技能开发", "节点控制"],
+      "order": 1
+    },
+    "agent-dev": {
+      "name": "Agent 开发",
+      "nameEn": "Agent Development",
+      "icon": "🤖",
+      "description": "子 Agent、多 Agent 协作",
+      "topics": ["子 Agent", "多 Agent 协作", "Agent 框架"],
+      "order": 2
+    },
+    "methodology": {
+      "name": "开发方法论",
+      "nameEn": "Development Methodology",
+      "icon": "📚",
+      "description": "SDD/TDD/ATDD/OMO",
+      "topics": ["SDD", "TDD", "ATDD", "OMO"],
+      "order": 3
+    },
+    "toolchain": {
+      "name": "工具链",
+      "nameEn": "Toolchain",
+      "icon": "🔧",
+      "description": "OpenCode、Cursor、Windsurf、Continue、Aider",
+      "topics": ["OpenCode", "Cursor", "Windsurf", "Continue", "Aider"],
+      "order": 4
+    },
+    "frontier": {
+      "name": "前沿技术",
+      "nameEn": "Frontier Technology",
+      "icon": "🚀",
+      "description": "最新论文、技术趋势",
+      "topics": ["最新论文", "技术趋势", "前沿研究"],
+      "order": 5
+    }
+  },
+
+  "difficulties": {
+    "1": {
+      "label": "⭐",
+      "name": "初级",
+      "nameEn": "Beginner",
+      "description": "基础概念，入门知识"
+    },
+    "2": {
+      "label": "⭐⭐",
+      "name": "中级",
+      "nameEn": "Intermediate",
+      "description": "深入理解，应用能力"
+    },
+    "3": {
+      "label": "⭐⭐⭐",
+      "name": "高级",
+      "nameEn": "Advanced",
+      "description": "复杂问题，系统设计"
+    },
+    "4": {
+      "label": "⭐⭐⭐⭐",
+      "name": "专家",
+      "nameEn": "Expert",
+      "description": "前沿技术，创新思考"
+    }
+  }
+}

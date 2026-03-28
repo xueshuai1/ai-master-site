@@ -3,7 +3,21 @@
  * 使用 FlexSearch 实现快速客户端搜索
  */
 
-import { categories as categoryConfig } from "@/content/meta/categories.json";
+// 分类配置类型定义
+interface CategoryConfig {
+  categories: Record<string, { name: string; icon: string }>;
+  roles: Record<string, { name: string; icon: string }>;
+  zones: Record<string, { name: string; icon: string }>;
+  difficulties: Record<string, { label: string; name: string }>;
+}
+
+// 默认配置（实际应从文件加载）
+const defaultCategoryConfig: CategoryConfig = {
+  categories: {},
+  roles: {},
+  zones: {},
+  difficulties: {},
+};
 
 export interface Question {
   slug: string;
@@ -182,29 +196,53 @@ export class SearchEngine {
   /**
    * 获取所有分类
    */
-  getCategories() {
-    return categoryConfig.categories;
+  async getCategories() {
+    try {
+      const response = await fetch('/content/meta/categories.json');
+      const config = await response.json();
+      return config.categories;
+    } catch {
+      return defaultCategoryConfig.categories;
+    }
   }
 
   /**
    * 获取所有岗位
    */
-  getRoles() {
-    return categoryConfig.roles;
+  async getRoles() {
+    try {
+      const response = await fetch('/content/meta/categories.json');
+      const config = await response.json();
+      return config.roles;
+    } catch {
+      return defaultCategoryConfig.roles;
+    }
   }
 
   /**
    * 获取所有技术专区
    */
-  getZones() {
-    return categoryConfig.zones;
+  async getZones() {
+    try {
+      const response = await fetch('/content/meta/categories.json');
+      const config = await response.json();
+      return config.zones;
+    } catch {
+      return defaultCategoryConfig.zones;
+    }
   }
 
   /**
    * 获取所有难度级别
    */
-  getDifficulties() {
-    return categoryConfig.difficulties;
+  async getDifficulties() {
+    try {
+      const response = await fetch('/content/meta/categories.json');
+      const config = await response.json();
+      return config.difficulties;
+    } catch {
+      return defaultCategoryConfig.difficulties;
+    }
   }
 
   /**
@@ -223,6 +261,16 @@ export class SearchEngine {
       .sort((a, b) => b[1] - a[1])
       .slice(0, limit)
       .map(([tag]) => tag);
+  }
+}
+
+// 导出辅助函数用于 API
+export async function loadCategoryConfig(): Promise<CategoryConfig> {
+  try {
+    const response = await fetch('/content/meta/categories.json');
+    return await response.json();
+  } catch {
+    return defaultCategoryConfig;
   }
 }
 
@@ -256,14 +304,14 @@ export function parseFrontmatter(content: string): {
   lines.forEach((line) => {
     const [key, ...valueParts] = line.split(":");
     if (key && valueParts.length > 0) {
-      let value = valueParts.join(":").trim();
+      let value: any = valueParts.join(":").trim();
       
       // 移除引号
       value = value.replace(/^["']|["']$/g, "");
       
       // 解析数组
       if (value.startsWith("[") && value.endsWith("]")) {
-        value = value.slice(1, -1).split(",").map((v) => v.trim().replace(/["']/g, ""));
+        value = value.slice(1, -1).split(",").map((v: string) => v.trim().replace(/["']/g, ""));
       }
       
       data[key.trim()] = value;
