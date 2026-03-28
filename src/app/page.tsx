@@ -1,6 +1,52 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+// 分类数据
+const CATEGORIES = [
+  { id: "ML", name: "机器学习基础", icon: "📊", href: "/categories/ML", description: "监督学习、无监督学习、模型评估" },
+  { id: "DL", name: "深度学习", icon: "🧠", href: "/categories/DL", description: "神经网络、CNN、RNN、Transformer" },
+  { id: "NLP", name: "自然语言处理", icon: "📝", href: "/categories/NLP", description: "词向量、语言模型、文本生成" },
+  { id: "CV", name: "计算机视觉", icon: "👁️", href: "/categories/CV", description: "图像分类、目标检测、分割" },
+  { id: "LLM", name: "大语言模型", icon: "🤖", href: "/categories/LLM", description: "Prompt、RAG、Fine-tuning、Agent" },
+  { id: "RecSys", name: "推荐系统", icon: "🎯", href: "/categories/RecSys", description: "召回排序、协同过滤、深度学习" },
+  { id: "RL", name: "强化学习", icon: "🎮", href: "/categories/RL", description: "MDP、Q-Learning、Policy Gradient" },
+  { id: "System", name: "系统设计", icon: "🏗️", href: "/categories/System", description: "ML 系统设计、架构设计" },
+  { id: "Coding", name: "编程算法", icon: "💻", href: "/categories/Coding", description: "LeetCode、数据结构、算法" },
+];
+
+// 岗位角色数据
+const ROLES = [
+  { id: "frontend", name: "前端开发", icon: "🎨", href: "/roles/frontend", subRoles: ["AI 应用开发", "前端工程化+AI", "UI/UX+AI"] },
+  { id: "backend", name: "后端开发", icon: "⚙️", href: "/roles/backend", subRoles: ["模型部署", "API 设计", "系统架构"] },
+  { id: "algorithm", name: "算法工程师", icon: "🔬", href: "/roles/algorithm", subRoles: ["模型原理", "训练优化", "论文解读"] },
+  { id: "ai-engineering", name: "AI 工程化", icon: "🛠️", href: "/roles/ai-engineering", subRoles: ["Agent/多 Agent", "开发方法论", "工具链"] },
+  { id: "product", name: "产品经理", icon: "📋", href: "/roles/product", subRoles: ["AI 产品设计", "场景分析"] },
+  { id: "data-science", name: "数据科学家", icon: "📈", href: "/roles/data-science", subRoles: ["数据分析", "特征工程"] },
+];
+
+// 技术专区数据
+const ZONES = [
+  { id: "openclaw", name: "OpenClaw 专区", icon: "🦞", href: "/zones/openclaw", topics: ["OpenClaw 技术", "技能开发", "节点控制"] },
+  { id: "agent-dev", name: "Agent 开发", icon: "🤖", href: "/zones/agent-dev", topics: ["子 Agent", "多 Agent 协作"] },
+  { id: "methodology", name: "开发方法论", icon: "📚", href: "/zones/methodology", topics: ["SDD", "TDD", "ATDD", "OMO"] },
+  { id: "toolchain", name: "工具链", icon: "🔧", href: "/zones/toolchain", topics: ["OpenCode", "Cursor", "Windsurf"] },
+  { id: "frontier", name: "前沿技术", icon: "🚀", href: "/zones/frontier", topics: ["最新论文", "技术趋势"] },
+];
 
 export default function Home() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -9,66 +55,86 @@ export default function Home() {
           AI 面试题大全
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          专注 AI 领域的面试题库，助你拿到理想 Offer
+          混合分类体系 · 岗位学习路径 · 技术专区 · 持续更新
         </p>
-        <div className="flex justify-center gap-4">
+
+        {/* 搜索框 */}
+        <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-8">
+          <div className="flex gap-4">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="搜索题目、关键词、标签..."
+              className="flex-1 px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+            />
+            <button
+              type="submit"
+              className="px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition font-semibold"
+            >
+              搜索
+            </button>
+          </div>
+        </form>
+
+        {/* 快捷入口 */}
+        <div className="flex justify-center gap-4 flex-wrap">
           <Link
-            href="/questions"
+            href="/search"
             className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
-            开始刷题
+            🔍 浏览所有题目
           </Link>
           <Link
-            href="/categories"
+            href="/roadmaps"
             className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition"
           >
-            浏览分类
+            📚 学习路径
           </Link>
         </div>
       </section>
 
-      {/* Categories Preview */}
+      {/* 技术分类 */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          热门分类
+          按技术分类学习
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <CategoryCard
-            title="🤖 机器学习基础"
-            count={120}
-            href="/categories/machine-learning"
-            description="监督学习、无监督学习、模型评估等核心概念"
-          />
-          <CategoryCard
-            title="🧠 深度学习"
-            count={98}
-            href="/categories/deep-learning"
-            description="神经网络、CNN、RNN、Transformer 架构"
-          />
-          <CategoryCard
-            title="📝 自然语言处理"
-            count={85}
-            href="/categories/nlp"
-            description="词向量、语言模型、文本分类、生成任务"
-          />
-          <CategoryCard
-            title="👁️ 计算机视觉"
-            count={76}
-            href="/categories/computer-vision"
-            description="图像分类、目标检测、分割、生成模型"
-          />
-          <CategoryCard
-            title="🚀 大模型 LLM"
-            count={64}
-            href="/categories/llm"
-            description="Prompt Engineering、RAG、Fine-tuning、Agent"
-          />
-          <CategoryCard
-            title="💻 编程与算法"
-            count={150}
-            href="/categories/coding"
-            description="LeetCode、数据结构、算法题、手撕代码"
-          />
+          {CATEGORIES.map((cat) => (
+            <CategoryCard key={cat.id} {...cat} />
+          ))}
+        </div>
+      </section>
+
+      {/* 岗位学习 */}
+      <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+            按岗位学习
+          </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+            根据你的目标岗位，选择对应的学习路径和题目集合
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ROLES.map((role) => (
+              <RoleCard key={role.id} {...role} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 技术专区 */}
+      <section className="container mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+          技术专区
+        </h2>
+        <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+          聚焦特定技术领域，深入学习和实践
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ZONES.map((zone) => (
+            <ZoneCard key={zone.id} {...zone} />
+          ))}
         </div>
       </section>
 
@@ -81,39 +147,50 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Feature
               icon="📚"
-              title="全面覆盖"
-              description="从基础到进阶，覆盖 AI 全领域面试知识点"
+              title="混合分类体系"
+              description="技术分类 + 岗位角色 + 技术专区，三维定位学习方向"
             />
             <Feature
-              icon="🎯"
-              title="精准分类"
-              description="按主题、难度、公司分类，快速定位目标"
+              icon="🔍"
+              title="强大搜索"
+              description="全文搜索 + 多维度筛选，快速找到目标题目"
             />
             <Feature
               icon="✨"
               title="持续更新"
-              description="紧跟 AI 前沿，定期更新大模型等热门话题"
+              description="自动收集最新面试题，紧跟 AI 前沿技术"
             />
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 text-center text-gray-500">
+      <footer className="container mx-auto px-4 py-8 text-center text-gray-500 border-t border-gray-200">
         <p>© 2026 AI 面试题大全 | Built with Next.js & Vercel</p>
+        <p className="text-sm mt-2">
+          <Link href="/about" className="hover:underline">关于</Link>
+          {" | "}
+          <Link href="/docs" className="hover:underline">文档</Link>
+          {" | "}
+          <a href="https://github.com/xueshuai/ai-interview-questions" className="hover:underline" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </p>
       </footer>
     </div>
   );
 }
 
 function CategoryCard({
-  title,
-  count,
+  id,
+  name,
+  icon,
   href,
   description,
 }: {
-  title: string;
-  count: number;
+  id: string;
+  name: string;
+  icon: string;
   href: string;
   description: string;
 }) {
@@ -122,11 +199,84 @@ function CategoryCard({
       href={href}
       className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100"
     >
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      <div className="text-3xl mb-3">{icon}</div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-2">{name}</h3>
       <p className="text-gray-600 mb-3">{description}</p>
       <span className="text-sm text-blue-600 font-medium">
-        {count} 道题目 →
+        浏览题目 →
       </span>
+    </Link>
+  );
+}
+
+function RoleCard({
+  id,
+  name,
+  icon,
+  href,
+  subRoles,
+}: {
+  id: string;
+  name: string;
+  icon: string;
+  href: string;
+  subRoles: string[];
+}) {
+  return (
+    <Link
+      href={href}
+      className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100"
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <div className="text-3xl">{icon}</div>
+        <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {subRoles.map((sub) => (
+          <span
+            key={sub}
+            className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded"
+          >
+            {sub}
+          </span>
+        ))}
+      </div>
+    </Link>
+  );
+}
+
+function ZoneCard({
+  id,
+  name,
+  icon,
+  href,
+  topics,
+}: {
+  id: string;
+  name: string;
+  icon: string;
+  href: string;
+  topics: string[];
+}) {
+  return (
+    <Link
+      href={href}
+      className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100"
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <div className="text-3xl">{icon}</div>
+        <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {topics.map((topic) => (
+          <span
+            key={topic}
+            className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded"
+          >
+            {topic}
+          </span>
+        ))}
+      </div>
     </Link>
   );
 }
