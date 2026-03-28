@@ -52,11 +52,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 sm:py-16 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          AI 面试题大全
+          AI 学习与面试大全
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8">
-          <span className="hidden sm:inline">混合分类体系 · 岗位学习路径 · 技术专区 · 持续更新</span>
-          <span className="sm:hidden">技术分类 · 岗位路径 · 技术专区</span>
+          <span className="hidden sm:inline">AI 知识库 · 系统化学习 · 面试准备 · 持续更新</span>
+          <span className="sm:hidden">AI 知识库 · 系统学习 · 面试准备</span>
         </p>
 
         {/* 搜索框 */}
@@ -100,7 +100,7 @@ export default function Home() {
       {/* 技术分类 */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-          按技术分类学习
+          按技术分类
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {CATEGORIES.map((cat) => (
@@ -156,12 +156,12 @@ export default function Home() {
             <Feature
               icon="🔍"
               title="强大搜索"
-              description="全文搜索 + 多维度筛选，快速找到目标题目"
+              description="全文搜索 + 多维度筛选，快速找到目标知识"
             />
             <Feature
               icon="✨"
               title="持续更新"
-              description="自动收集最新面试题，紧跟 AI 前沿技术"
+              description="自动收集最新 AI 知识和面试真题，紧跟前沿技术"
             />
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="container mx-auto px-4 py-6 sm:py-8 text-center text-gray-500 border-t border-gray-200">
-        <p className="text-sm sm:text-base">© 2026 AI 面试题大全 | Built with Next.js & Vercel</p>
+        <p className="text-sm sm:text-base">© 2026 AI 学习与面试大全 | Built with Next.js & Vercel</p>
         <p className="text-xs sm:text-sm mt-2 flex flex-wrap justify-center gap-2">
           <Link href="/about" className="hover:underline">关于</Link>
           <span>|</span>

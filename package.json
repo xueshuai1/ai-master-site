@@ -1,12 +1,14 @@
 {
-  "name": "ai-interview-questions",
+  "name": "ai-learning-interview",
   "version": "0.1.0",
   "private": true,
+  "description": "AI 学习与面试大全 - 专注 AI 领域的知识库和面试准备",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node scripts/auto-test.js"
   },
   "dependencies": {
     "next": "16.2.1",

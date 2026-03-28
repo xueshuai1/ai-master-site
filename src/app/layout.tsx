@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI 面试题大全 - 专注 AI 领域的面试题库",
-  description: "全面覆盖机器学习、深度学习、NLP、计算机视觉、大模型等 AI 领域面试题，助你拿到理想 Offer",
-  keywords: ["AI 面试", "机器学习", "深度学习", "NLP", "计算机视觉", "大模型", "LLM", "面试题", "刷题"],
-  authors: [{ name: "AI Interview Prep" }],
+  title: "AI 学习与面试大全 - 专注 AI 领域的知识库",
+  description: "全面覆盖机器学习、深度学习、NLP、计算机视觉、大模型等 AI 领域知识，提供系统化学习路径和面试准备",
+  keywords: ["AI 学习", "AI 面试", "机器学习", "深度学习", "NLP", "计算机视觉", "大模型", "LLM", "知识库", "学习路径"],
+  authors: [{ name: "AI Learning & Interview" }],
   openGraph: {
-    title: "AI 面试题大全",
-    description: "专注 AI 领域的面试题库，助你拿到理想 Offer",
+    title: "AI 学习与面试大全",
+    description: "专注 AI 领域的知识库和面试准备，提供系统化学习路径",
     type: "website",
     locale: "zh_CN",
   },
