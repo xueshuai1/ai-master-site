@@ -130,9 +130,12 @@ const NON_AI_ROLES = [
   { id: "product", name: "产品经理", icon: BriefcaseIcon, href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
 ];
 
-// AI 专业岗位（1 个）- 深入 AI 技术
+// AI 专业岗位（4 个）- 深入 AI 技术
 const AI_PRO_ROLES = [
-  { id: "algorithm", name: "算法工程师", icon: BrainIcon, href: "/roles/algorithm", subRoles: ["机器学习", "深度学习", "CV", "NLP", "大模型"] },
+  { id: "algorithm", name: "算法工程师", icon: BrainIcon, href: "/roles/algorithm", subRoles: ["机器学习", "深度学习"] },
+  { id: "llm", name: "大模型工程师", icon: ZapIcon, href: "/roles/llm", subRoles: ["LLM", "RAG", "Agent", "Fine-tuning"] },
+  { id: "cv", name: "CV 工程师", icon: LayersIcon, href: "/roles/cv", subRoles: ["图像分类", "目标检测", "图像生成"] },
+  { id: "nlp", name: "NLP 工程师", icon: BookIcon, href: "/roles/nlp", subRoles: ["文本理解", "文本生成", "语言模型"] },
 ];
 
 // 技术专区数据
@@ -253,7 +256,7 @@ export default function Home() {
                     : "text-[#64748B] hover:bg-[#E2E8F0]"
                 }`}
               >
-                AI 专业深入 <span className="hidden sm:inline font-normal opacity-90">（1 个岗位）</span>
+                AI 专业深入 <span className="hidden sm:inline font-normal opacity-90">（4 个岗位）</span>
               </button>
             </div>
           </div>
@@ -309,8 +312,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Feature
               icon={LayersIcon}
-              title="8 岗位分类体系"
-              description="7 个非 AI 岗位 + 1 个 AI 专业岗位，全面覆盖技术角色"
+              title="11 岗位分类体系"
+              description="7 个非 AI 岗位 + 4 个 AI 专业岗位，全面覆盖技术角色"
             />
             <Feature
               icon={ZapIcon}
