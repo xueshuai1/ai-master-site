@@ -125,17 +125,17 @@ const NON_AI_ROLES = [
   { id: "backend", name: "后端开发", icon: CpuIcon, href: "/roles/backend", subRoles: ["模型服务化", "AI API 设计", "系统架构"] },
   { id: "fullstack", name: "全栈开发", icon: ZapIcon, href: "/roles/fullstack", subRoles: ["AI 全栈项目", "快速原型", "独立开发"] },
   { id: "mobile", name: "移动端开发", icon: CodeIcon, href: "/roles/mobile", subRoles: ["iOS + AI", "Android + AI", "跨平台 + AI"] },
-  { id: "test", name: "测试工程师", icon: CheckIcon, href: "/roles/test", subRoles: ["AI 测试", "自动化测试", "质量保障"] },
-  { id: "data", name: "数据开发", icon: LayersIcon, href: "/roles/data", subRoles: ["数据工程", "数据 pipeline", "特征工程"] },
+  { id: "test-engineer", name: "测试工程师", icon: CheckIcon, href: "/roles/test-engineer", subRoles: ["AI 测试", "自动化测试", "质量保障"] },
+  { id: "data-engineer", name: "数据开发", icon: LayersIcon, href: "/roles/data-engineer", subRoles: ["数据工程", "数据 pipeline", "特征工程"] },
   { id: "product", name: "产品经理", icon: BriefcaseIcon, href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
 ];
 
 // AI 专业岗位（4 个）- 深入 AI 技术
 const AI_PRO_ROLES = [
   { id: "algorithm", name: "算法工程师", icon: BrainIcon, href: "/roles/algorithm", subRoles: ["机器学习", "深度学习"] },
-  { id: "llm", name: "大模型工程师", icon: ZapIcon, href: "/roles/llm", subRoles: ["LLM", "RAG", "Agent", "Fine-tuning"] },
-  { id: "cv", name: "CV 工程师", icon: LayersIcon, href: "/roles/cv", subRoles: ["图像分类", "目标检测", "图像生成"] },
-  { id: "nlp", name: "NLP 工程师", icon: BookIcon, href: "/roles/nlp", subRoles: ["文本理解", "文本生成", "语言模型"] },
+  { id: "llm-engineer", name: "大模型工程师", icon: ZapIcon, href: "/roles/llm-engineer", subRoles: ["LLM", "RAG", "Agent", "Fine-tuning"] },
+  { id: "cv-engineer", name: "CV 工程师", icon: LayersIcon, href: "/roles/cv-engineer", subRoles: ["图像分类", "目标检测", "图像生成"] },
+  { id: "nlp-engineer", name: "NLP 工程师", icon: BookIcon, href: "/roles/nlp-engineer", subRoles: ["文本理解", "文本生成", "语言模型"] },
 ];
 
 // 技术专区数据
@@ -328,12 +328,12 @@ export default function Home() {
       <footer className="container mx-auto px-4 py-8 text-center text-[#94A3B8] border-t border-[#E2E8F0]">
         <p className="text-sm">© 2026 AI 学习与面试大全 | Built with Next.js & Vercel</p>
         <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
-          <Link href="/about" className="text-[#64748B] hover:text-[#2563EB] transition-colors">
-            关于
+          <Link href="/knowledge" className="text-[#64748B] hover:text-[#2563EB] transition-colors">
+            知识库
           </Link>
           <span className="text-[#E2E8F0]">|</span>
-          <Link href="/docs" className="text-[#64748B] hover:text-[#2563EB] transition-colors">
-            文档
+          <Link href="/interview" className="text-[#64748B] hover:text-[#2563EB] transition-colors">
+            面试题库
           </Link>
           <span className="text-[#E2E8F0]">|</span>
           <a href="https://github.com/xueshuai1/ai-interview-questions" className="text-[#64748B] hover:text-[#2563EB] transition-colors" target="_blank" rel="noopener noreferrer">

@@ -55,6 +55,9 @@ const ROLES = [
   { id: "test-engineer", name: "测试工程师", href: "/roles/test-engineer" },
   { id: "data-engineer", name: "数据开发", href: "/roles/data-engineer" },
   { id: "algorithm", name: "算法工程师", href: "/roles/algorithm" },
+  { id: "llm-engineer", name: "大模型工程师", href: "/roles/llm-engineer" },
+  { id: "cv-engineer", name: "CV 工程师", href: "/roles/cv-engineer" },
+  { id: "nlp-engineer", name: "NLP 工程师", href: "/roles/nlp-engineer" },
   { id: "product", name: "产品经理", href: "/roles/product" },
 ];
 

@@ -94,6 +94,9 @@ const ROLES: Record<string, { name: string; description: string; icon: React.Com
   "test-engineer": { name: "测试工程师", description: "AI 测试、自动化测试、质量保障", icon: CheckIcon, subRoles: ["AI 测试", "自动化测试", "质量保障"] },
   "data-engineer": { name: "数据开发", description: "数据工程、数据 pipeline、特征工程", icon: LayersIcon, subRoles: ["数据工程", "数据 pipeline", "特征工程"] },
   algorithm: { name: "算法工程师", description: "机器学习、深度学习、CV、NLP", icon: BrainIcon, subRoles: ["机器学习", "深度学习", "CV", "NLP"] },
+  "llm-engineer": { name: "大模型工程师", description: "LLM 应用开发、RAG、Fine-tuning、Agent", icon: ZapIcon, subRoles: ["LLM 应用", "RAG 实战", "Fine-tuning", "Agent 开发"] },
+  "cv-engineer": { name: "CV 工程师", description: "图像分类、目标检测、图像生成", icon: LayersIcon, subRoles: ["图像分类", "目标检测", "图像生成"] },
+  "nlp-engineer": { name: "NLP 工程师", description: "文本理解、文本生成、语言模型", icon: BookIcon, subRoles: ["文本理解", "文本生成", "语言模型"] },
   product: { name: "产品经理", description: "AI 产品设计、场景分析、商业化", icon: BriefcaseIcon, subRoles: ["AI 产品设计", "场景分析", "商业化"] },
 };
 
