@@ -1,7 +1,7 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "updatedAt": "2026-03-29",
-  "description": "混合分类体系：技术分类 + 岗位角色 + 技术专区",
+  "description": "混合分类体系：技术分类 + 岗位角色 + 技术专区（符合中国市场实际岗位）",
   
   "categories": {
     "ML": {
@@ -74,48 +74,48 @@
       "name": "前端开发",
       "nameEn": "Frontend Development",
       "icon": "🎨",
-      "description": "AI 应用开发、前端工程化+AI、UI/UX+AI",
-      "subRoles": ["AI 应用开发", "前端工程化+AI", "UI/UX+AI"],
+      "description": "AI 应用开发、前端工程化+AI、智能 UI/UX",
+      "subRoles": ["AI 应用开发", "前端工程化+AI", "智能 UI/UX"],
       "order": 1
     },
     "backend": {
       "name": "后端开发",
       "nameEn": "Backend Development",
       "icon": "⚙️",
-      "description": "模型部署、API 设计、系统架构",
-      "subRoles": ["模型部署", "API 设计", "系统架构"],
+      "description": "模型服务化、API 设计、系统架构",
+      "subRoles": ["模型服务化", "API 设计", "系统架构"],
       "order": 2
+    },
+    "fullstack": {
+      "name": "全栈开发",
+      "nameEn": "Fullstack Development",
+      "icon": "🚀",
+      "description": "前端 + 后端+AI 集成、快速原型开发、独立项目开发",
+      "subRoles": ["前端 + 后端+AI 集成", "快速原型开发", "独立项目开发"],
+      "order": 3
     },
     "algorithm": {
       "name": "算法工程师",
       "nameEn": "Algorithm Engineer",
       "icon": "🔬",
-      "description": "模型原理、训练优化、论文解读",
-      "subRoles": ["模型原理", "训练优化", "论文解读"],
-      "order": 3
-    },
-    "ai-engineering": {
-      "name": "AI 工程化",
-      "nameEn": "AI Engineering",
-      "icon": "🛠️",
-      "description": "Agent/多 Agent、开发方法论、工具链、部署运维",
-      "subRoles": ["Agent/多 Agent", "开发方法论", "工具链", "部署运维"],
+      "description": "模型原理与优化、训练与调参、论文解读",
+      "subRoles": ["模型原理与优化", "训练与调参", "论文解读"],
       "order": 4
+    },
+    "test-ops": {
+      "name": "测试/运维工程师",
+      "nameEn": "Test/Ops Engineer",
+      "icon": "🛠️",
+      "description": "AI 系统测试、MLOps、部署与监控",
+      "subRoles": ["AI 系统测试", "MLOps", "部署与监控"],
+      "order": 5
     },
     "product": {
       "name": "产品经理",
       "nameEn": "Product Manager",
       "icon": "📋",
-      "description": "AI 产品设计、场景分析",
-      "subRoles": ["AI 产品设计", "场景分析"],
-      "order": 5
-    },
-    "data-science": {
-      "name": "数据科学家",
-      "nameEn": "Data Scientist",
-      "icon": "📈",
-      "description": "数据分析、特征工程",
-      "subRoles": ["数据分析", "特征工程"],
+      "description": "AI 产品设计、场景分析、商业化",
+      "subRoles": ["AI 产品设计", "场景分析", "商业化"],
       "order": 6
     }
   },

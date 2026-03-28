@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 // 分类数据
 const CATEGORIES = [
@@ -19,12 +17,12 @@ const CATEGORIES = [
 
 // 岗位角色数据
 const ROLES = [
-  { id: "frontend", name: "前端开发", icon: "🎨", href: "/roles/frontend", subRoles: ["AI 应用开发", "前端工程化+AI", "UI/UX+AI"] },
-  { id: "backend", name: "后端开发", icon: "⚙️", href: "/roles/backend", subRoles: ["模型部署", "API 设计", "系统架构"] },
-  { id: "algorithm", name: "算法工程师", icon: "🔬", href: "/roles/algorithm", subRoles: ["模型原理", "训练优化", "论文解读"] },
-  { id: "ai-engineering", name: "AI 工程化", icon: "🛠️", href: "/roles/ai-engineering", subRoles: ["Agent/多 Agent", "开发方法论", "工具链"] },
-  { id: "product", name: "产品经理", icon: "📋", href: "/roles/product", subRoles: ["AI 产品设计", "场景分析"] },
-  { id: "data-science", name: "数据科学家", icon: "📈", href: "/roles/data-science", subRoles: ["数据分析", "特征工程"] },
+  { id: "frontend", name: "前端开发", icon: "🎨", href: "/roles/frontend", subRoles: ["AI 应用开发", "前端工程化+AI", "智能 UI/UX"] },
+  { id: "backend", name: "后端开发", icon: "⚙️", href: "/roles/backend", subRoles: ["模型服务化", "API 设计", "系统架构"] },
+  { id: "fullstack", name: "全栈开发", icon: "🚀", href: "/roles/fullstack", subRoles: ["前端 + 后端+AI 集成", "快速原型开发", "独立项目开发"] },
+  { id: "algorithm", name: "算法工程师", icon: "🔬", href: "/roles/algorithm", subRoles: ["模型原理与优化", "训练与调参", "论文解读"] },
+  { id: "test-ops", name: "测试/运维工程师", icon: "🛠️", href: "/roles/test-ops", subRoles: ["AI 系统测试", "MLOps", "部署与监控"] },
+  { id: "product", name: "产品经理", icon: "📋", href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
 ];
 
 // 技术专区数据
@@ -37,16 +35,6 @@ const ZONES = [
 ];
 
 export default function Home() {
-  const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -59,35 +47,8 @@ export default function Home() {
           <span className="sm:hidden">专注 AI 领域 · 面试准备</span>
         </p>
 
-        {/* 搜索框 */}
-        <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-6 sm:mb-8">
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="搜索题目、关键词、标签..."
-              className="flex-1 px-4 sm:px-6 py-3 sm:py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg min-h-[48px] sm:min-h-[56px]"
-              aria-label="搜索题目"
-            />
-            <button
-              type="submit"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition font-semibold min-h-[48px] sm:min-h-[56px]"
-              aria-label="提交搜索"
-            >
-              搜索
-            </button>
-          </div>
-        </form>
-
         {/* 快捷入口 */}
         <div className="flex justify-center gap-3 sm:gap-4 flex-wrap">
-          <Link
-            href="/search"
-            className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm sm:text-base min-h-[44px]"
-          >
-            🔍 浏览所有题目
-          </Link>
           <Link
             href="/roadmaps"
             className="px-4 sm:px-6 py-2 sm:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition text-sm sm:text-base min-h-[44px]"
@@ -147,16 +108,11 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             为什么选择我们
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
             <Feature
               icon="📚"
               title="混合分类体系"
               description="技术分类 + 岗位角色 + 技术专区，三维定位学习方向"
-            />
-            <Feature
-              icon="🔍"
-              title="强大搜索"
-              description="全文搜索 + 多维度筛选，快速找到目标知识"
             />
             <Feature
               icon="✨"
