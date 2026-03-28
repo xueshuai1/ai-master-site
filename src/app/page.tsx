@@ -119,7 +119,7 @@ const CATEGORIES = [
   { id: "Coding", name: "编程算法", icon: CodeIcon, href: "/categories/Coding", description: "LeetCode、数据结构、算法" },
 ];
 
-// 非 AI 岗位（6 个）- 学习 AI 提升竞争力
+// 非 AI 岗位（7 个）- 学习 AI 提升竞争力
 const NON_AI_ROLES = [
   { id: "frontend", name: "前端开发", icon: CodeIcon, href: "/roles/frontend", subRoles: ["AI 应用集成", "智能 UI/UX", "Copilot 提效"] },
   { id: "backend", name: "后端开发", icon: CpuIcon, href: "/roles/backend", subRoles: ["模型服务化", "AI API 设计", "系统架构"] },
@@ -127,12 +127,12 @@ const NON_AI_ROLES = [
   { id: "mobile", name: "移动端开发", icon: CodeIcon, href: "/roles/mobile", subRoles: ["iOS + AI", "Android + AI", "跨平台 + AI"] },
   { id: "test", name: "测试工程师", icon: CheckIcon, href: "/roles/test", subRoles: ["AI 测试", "自动化测试", "质量保障"] },
   { id: "data", name: "数据开发", icon: LayersIcon, href: "/roles/data", subRoles: ["数据工程", "数据 pipeline", "特征工程"] },
+  { id: "product", name: "产品经理", icon: BriefcaseIcon, href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
 ];
 
-// AI 专业岗位（2 个）- 深入 AI 技术
+// AI 专业岗位（1 个）- 深入 AI 技术
 const AI_PRO_ROLES = [
-  { id: "algorithm", name: "算法工程师", icon: BrainIcon, href: "/roles/algorithm", subRoles: ["机器学习", "深度学习", "CV", "NLP"] },
-  { id: "product", name: "产品经理", icon: BriefcaseIcon, href: "/roles/product", subRoles: ["AI 产品设计", "场景分析", "商业化"] },
+  { id: "algorithm", name: "算法工程师", icon: BrainIcon, href: "/roles/algorithm", subRoles: ["机器学习", "深度学习", "CV", "NLP", "大模型"] },
 ];
 
 // 技术专区数据
@@ -243,7 +243,7 @@ export default function Home() {
                     : "text-[#64748B] hover:bg-[#E2E8F0]"
                 }`}
               >
-                我想学 AI 提升 <span className="hidden sm:inline font-normal opacity-90">（6 个岗位）</span>
+                我想学 AI 提升 <span className="hidden sm:inline font-normal opacity-90">（7 个岗位）</span>
               </button>
               <button
                 onClick={() => setActiveTrack("ai-pro")}
@@ -253,7 +253,7 @@ export default function Home() {
                     : "text-[#64748B] hover:bg-[#E2E8F0]"
                 }`}
               >
-                AI 专业深入 <span className="hidden sm:inline font-normal opacity-90">（2 个岗位）</span>
+                AI 专业深入 <span className="hidden sm:inline font-normal opacity-90">（1 个岗位）</span>
               </button>
             </div>
           </div>
@@ -275,8 +275,8 @@ export default function Home() {
           <div className="mt-8 text-center">
             <p className="text-sm text-[#94A3B8]">
               {activeTrack === "non-ai"
-                ? "适合传统开发/测试/数据人员，学习 AI 提升竞争力"
-                : "适合 AI 算法和产品经理，深入学习 AI 技术"}
+                ? "适合传统开发/测试/数据/产品人员，学习 AI 提升竞争力"
+                : "适合 AI 算法工程师，深入学习 AI 技术"}
             </p>
           </div>
         </div>
@@ -310,7 +310,7 @@ export default function Home() {
             <Feature
               icon={LayersIcon}
               title="8 岗位分类体系"
-              description="6 个非 AI 岗位 + 2 个 AI 专业岗位，全面覆盖技术角色"
+              description="7 个非 AI 岗位 + 1 个 AI 专业岗位，全面覆盖技术角色"
             />
             <Feature
               icon={ZapIcon}

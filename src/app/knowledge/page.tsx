@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import TagFilter from "@/components/TagFilter";
+import Tag from "@/components/Tag";
 
 // 难度级别配置
 const DIFFICULTIES = [
   { level: 1, label: "⭐", name: "基础入门", description: "概念理解、基础原理", color: "green" },
-  { level: 2, label: "⭐⭐", name: "中级进阶", description: "深入原理、应用场景", color: "blue" },
-  { level: 3, label: "⭐⭐⭐", name: "高级精通", description: "复杂场景、性能优化", color: "orange" },
-  { level: 4, label: "⭐⭐⭐⭐", name: "专家研究", description: "前沿技术、论文解读", color: "purple" },
+  { level: 2, label: "⭐⭐", name: "中级进阶", description: "深入理解、应用能力", color: "blue" },
+  { level: 3, label: "⭐⭐⭐", name: "高级精通", description: "复杂问题、系统设计", color: "orange" },
+  { level: 4, label: "⭐⭐⭐⭐", name: "专家研究", description: "前沿技术、创新思考", color: "purple" },
 ];
 
 // 知识分类
@@ -23,13 +25,14 @@ const CATEGORIES = [
   { id: "System", name: "AI 工程化", icon: "⚙️", href: "/knowledge/System", description: "模型部署、MLOps、系统设计" },
 ];
 
-// 示例文章数据（实际应从 content 目录加载）
+// 示例文章数据
 const SAMPLE_ARTICLES = [
   {
     id: "ml-001",
     title: "什么是机器学习？",
     category: "ML",
     difficulty: 1,
+    tags: ["ML", "1", "interview"],
     description: "机器学习的基础概念和核心思想",
     readTime: "5 分钟",
   },
@@ -38,6 +41,7 @@ const SAMPLE_ARTICLES = [
     title: "Prompt Engineering 入门",
     category: "LLM",
     difficulty: 1,
+    tags: ["LLM", "1", "frontend"],
     description: "学习如何编写有效的 Prompt",
     readTime: "8 分钟",
   },
@@ -46,6 +50,7 @@ const SAMPLE_ARTICLES = [
     title: "深入理解 Transformer",
     category: "DL",
     difficulty: 2,
+    tags: ["DL", "Transformer", "2", "backend"],
     description: "Transformer 架构详解和注意力机制",
     readTime: "15 分钟",
   },
@@ -54,6 +59,7 @@ const SAMPLE_ARTICLES = [
     title: "RAG 实战指南",
     category: "LLM",
     difficulty: 2,
+    tags: ["LLM", "RAG", "2", "backend", "bigtech"],
     description: "检索增强生成的实现方法",
     readTime: "12 分钟",
   },
@@ -62,6 +68,7 @@ const SAMPLE_ARTICLES = [
     title: "大模型性能优化",
     category: "System",
     difficulty: 3,
+    tags: ["LLM", "System", "3", "backend", "bigtech"],
     description: "模型推理加速和显存优化技术",
     readTime: "20 分钟",
   },
@@ -70,18 +77,54 @@ const SAMPLE_ARTICLES = [
     title: "分布式训练架构设计",
     category: "ML",
     difficulty: 3,
+    tags: ["ML", "DL", "3", "backend", "data"],
     description: "大规模模型训练的系统设计",
     readTime: "25 分钟",
   },
+  {
+    id: "agent-005",
+    title: "Agent 开发实战",
+    category: "LLM",
+    difficulty: 3,
+    tags: ["LLM", "Agent", "3", "backend", "opensource"],
+    description: "构建自主 AI Agent 的完整指南",
+    readTime: "30 分钟",
+  },
 ];
+
+interface TagFilters {
+  techDomains: string[];
+  difficulties: string[];
+  scenarios: string[];
+}
 
 export default function KnowledgePage() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [tagFilters, setTagFilters] = useState<TagFilters>({
+    techDomains: [],
+    difficulties: [],
+    scenarios: [],
+  });
 
   const filteredArticles = SAMPLE_ARTICLES.filter((article) => {
     if (selectedDifficulty && article.difficulty !== selectedDifficulty) return false;
     if (selectedCategory && article.category !== selectedCategory) return false;
+    
+    // 标签筛选
+    if (tagFilters.techDomains.length > 0) {
+      const hasTechTag = tagFilters.techDomains.some(tag => article.tags.includes(tag));
+      if (!hasTechTag) return false;
+    }
+    if (tagFilters.difficulties.length > 0) {
+      const hasDiffTag = tagFilters.difficulties.some(tag => article.tags.includes(tag));
+      if (!hasDiffTag) return false;
+    }
+    if (tagFilters.scenarios.length > 0) {
+      const hasScenarioTag = tagFilters.scenarios.some(tag => article.tags.includes(tag));
+      if (!hasScenarioTag) return false;
+    }
+    
     return true;
   });
 
@@ -94,6 +137,9 @@ export default function KnowledgePage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               ← 返回首页
             </Link>
+            <Link href="/tags" className="text-blue-600 hover:text-blue-800 font-medium">
+              🏷️ 标签系统
+            </Link>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
             📚 知识库
@@ -104,94 +150,119 @@ export default function KnowledgePage() {
         </div>
       </header>
 
-      {/* 难度筛选 */}
-      <section className="container mx-auto px-4 py-8">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">按难度筛选</h2>
-        <div className="flex flex-wrap gap-3">
-          <button
-            onClick={() => setSelectedDifficulty(null)}
-            className={`px-4 py-2 rounded-lg border transition ${
-              selectedDifficulty === null
-                ? "bg-blue-500 text-white border-blue-500"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
-            }`}
-          >
-            全部
-          </button>
-          {DIFFICULTIES.map((diff) => (
-            <button
-              key={diff.level}
-              onClick={() => setSelectedDifficulty(diff.level)}
-              className={`px-4 py-2 rounded-lg border transition ${
-                selectedDifficulty === diff.level
-                  ? "bg-blue-500 text-white border-blue-500"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
-              }`}
-            >
-              <span className="font-semibold">{diff.label}</span>
-              <span className="ml-2 text-sm opacity-80 hidden sm:inline">{diff.name}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* 分类导航 */}
-      <section className="container mx-auto px-4 py-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">按分类浏览</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {CATEGORIES.map((cat) => (
-            <Link
-              key={cat.id}
-              href={cat.href}
-              className={`p-4 rounded-xl border transition hover:shadow-md ${
-                selectedCategory === cat.id
-                  ? "bg-blue-50 border-blue-500"
-                  : "bg-white border-gray-200 hover:border-blue-300"
-              }`}
-            >
-              <div className="text-2xl mb-2">{cat.icon}</div>
-              <h3 className="font-semibold text-gray-900 text-sm sm:text-base">{cat.name}</h3>
-              <p className="text-xs text-gray-500 mt-1 line-clamp-2">{cat.description}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* 推荐文章 */}
-      <section className="container mx-auto px-4 py-8">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">
-          {selectedDifficulty || selectedCategory ? "筛选结果" : "推荐文章"}
-        </h2>
-        {filteredArticles.length === 0 ? (
-          <div className="text-center py-12 text-gray-500">
-            暂无符合条件的文章
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredArticles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* 学习路径提示 */}
-      <section className="bg-gradient-to-r from-green-50 to-blue-50 py-8">
-        <div className="container mx-auto px-4">
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">💡 学习建议</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {DIFFICULTIES.map((diff) => (
-              <div key={diff.level} className="bg-white p-4 rounded-lg shadow-sm">
-                <div className="text-lg font-semibold mb-1">
-                  {diff.label} {diff.name}
-                </div>
-                <p className="text-sm text-gray-600">{diff.description}</p>
-                <p className="text-xs text-gray-500 mt-2">适合：{diff.level === 1 ? "零基础入门" : diff.level === 2 ? "1-3 年经验" : diff.level === 3 ? "3-5 年经验" : "5 年+ 经验"}</p>
+      {/* 主要内容 */}
+      <main className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* 左侧：筛选器 */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* 难度筛选 */}
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">按难度筛选</h2>
+              <div className="space-y-2">
+                <button
+                  onClick={() => setSelectedDifficulty(null)}
+                  className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                    selectedDifficulty === null
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  全部
+                </button>
+                {DIFFICULTIES.map((diff) => (
+                  <button
+                    key={diff.level}
+                    onClick={() => setSelectedDifficulty(diff.level)}
+                    className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                      selectedDifficulty === diff.level
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                    }`}
+                  >
+                    <span className="font-semibold">{diff.label}</span>
+                    <span className="ml-2 text-sm opacity-80">{diff.name}</span>
+                  </button>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* 标签筛选 */}
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">🏷️ 标签筛选</h2>
+              <TagFilter onFilterChange={setTagFilters} compact />
+            </div>
+          </div>
+
+          {/* 右侧：内容 */}
+          <div className="lg:col-span-3">
+            {/* 分类导航 */}
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">按分类浏览</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {CATEGORIES.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    href={cat.href}
+                    className={`p-4 rounded-xl border transition hover:shadow-md ${
+                      selectedCategory === cat.id
+                        ? "bg-blue-50 border-blue-500"
+                        : "bg-white border-gray-200 hover:border-blue-300"
+                    }`}
+                  >
+                    <div className="text-2xl mb-2">{cat.icon}</div>
+                    <h3 className="font-semibold text-gray-900 text-sm">{cat.name}</h3>
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{cat.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* 文章列表 */}
+            <section>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-gray-900">
+                  {selectedDifficulty || selectedCategory || tagFilters.techDomains.length > 0 ? "筛选结果" : "推荐文章"}
+                </h2>
+                <span className="text-sm text-gray-500">
+                  共 {filteredArticles.length} 篇
+                </span>
+              </div>
+              
+              {filteredArticles.length === 0 ? (
+                <div className="text-center py-12 text-gray-500 bg-white rounded-xl border border-gray-200">
+                  暂无符合条件的文章
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredArticles.map((article) => (
+                    <ArticleCard key={article.id} article={article} />
+                  ))}
+                </div>
+              )}
+            </section>
           </div>
         </div>
-      </section>
+
+        {/* 学习路径提示 */}
+        <section className="mt-12 bg-gradient-to-r from-green-50 to-blue-50 py-8 rounded-2xl">
+          <div className="container mx-auto px-4">
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">💡 学习建议</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {DIFFICULTIES.map((diff) => (
+                <div key={diff.level} className="bg-white p-4 rounded-lg shadow-sm">
+                  <div className="text-lg font-semibold mb-1">
+                    {diff.label} {diff.name}
+                  </div>
+                  <p className="text-sm text-gray-600">{diff.description}</p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    适合：{diff.level === 1 ? "零基础入门" : diff.level === 2 ? "1-3 年经验" : diff.level === 3 ? "3-5 年经验" : "5 年 + 经验"}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 text-center text-gray-500 border-t border-gray-200 mt-8">
@@ -227,6 +298,17 @@ function ArticleCard({ article }: { article: typeof SAMPLE_ARTICLES[0] }) {
       </div>
       <h3 className="text-lg font-semibold text-gray-900 mb-2">{article.title}</h3>
       <p className="text-sm text-gray-600 mb-3 line-clamp-2">{article.description}</p>
+      
+      {/* 标签展示 */}
+      <div className="flex flex-wrap gap-1.5 mb-3">
+        {article.tags.slice(0, 3).map((tag) => (
+          <Tag key={tag} id={tag} name={`#${tag}`} size="sm" group="tech" />
+        ))}
+        {article.tags.length > 3 && (
+          <span className="text-xs text-gray-500 px-1">+{article.tags.length - 3}</span>
+        )}
+      </div>
+      
       <div className="flex items-center text-xs text-gray-500">
         <span>⏱️ {article.readTime}</span>
         <span className="mx-2">·</span>
