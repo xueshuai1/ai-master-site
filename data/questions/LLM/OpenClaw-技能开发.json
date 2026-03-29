@@ -1,0 +1,47 @@
+{
+  "id": "OpenClaw-技能开发",
+  "title": "如何为 OpenClaw 开发一个新技能？",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": ["OpenClaw", "技能开发", "扩展", "工程实践"],
+  "source": "AI 助理框架面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "描述为 OpenClaw 开发新技能的完整流程和最佳实践。",
+  "requirements": [],
+  "answer": {
+    "summary": "技能开发包括需求分析、工具调研、封装实现、文档编写、测试验证五个步骤。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "开发流程",
+        "content": "**1. 需求分析**\n- 明确技能目标\n- 确定使用场景\n- 识别外部依赖\n\n**2. 工具调研**\n- 评估现有 CLI 工具\n- 调研官方 API\n- 选择封装方案\n\n**3. 封装实现**\n- CLI 封装：包装现有命令\n- API 封装：调用 REST/GraphQL\n- 混合方案：CLI + API\n\n**4. 文档编写**\n- SKILL.md 说明文档\n- 使用示例\n- 配置指南\n\n**5. 测试验证**\n- 功能测试\n- 错误处理\n- 文档准确性"
+      },
+      {
+        "title": "技能结构",
+        "content": "```\nskills/skill-name/\n├── SKILL.md           # 必需：技能说明\n├── scripts/           # 可选：辅助脚本\n├── references/        # 可选：参考资料\n└── config/            # 可选：配置文件\n```"
+      },
+      {
+        "title": "最佳实践",
+        "content": "1. **单一职责** - 一个技能做好一件事\n2. **清晰边界** - 明确能力范围\n3. **错误处理** - 友好的错误信息\n4. **配置隔离** - 配置与代码分离\n5. **版本管理** - 语义化版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握技能开发流程",
+    "ability": "工程实现能力",
+    "thinking": "系统化思维"
+  },
+  "followUpQuestions": [
+    {
+      "question": "SKILL.md 应该包含哪些内容？",
+      "points": 5,
+      "answerHint": "描述、触发条件、用法、配置、故障排查"
+    },
+    {
+      "question": "如何选择合适的封装方案？",
+      "points": 5,
+      "answerHint": "有 CLI 优先 CLI，无 CLI 用 API，复杂场景混合"
+    }
+  ]
+}

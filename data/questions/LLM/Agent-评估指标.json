@@ -1,0 +1,51 @@
+{
+  "id": "Agent-评估指标",
+  "title": "如何评估一个 Agent 系统的性能？",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": ["Agent", "评估指标", "性能测试", "质量保障"],
+  "source": "AI Agent 面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "列举评估 Agent 系统性能的关键指标和方法。",
+  "requirements": [],
+  "answer": {
+    "summary": "Agent 评估包括任务完成率、响应质量、效率指标、用户满意度等多个维度。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "任务完成指标",
+        "content": "**任务完成率：**\n```\n完成率 = 成功完成的任务数 / 总任务数\n```\n\n**任务质量：**\n- 准确性：结果是否正确\n- 完整性：是否覆盖所有需求\n- 一致性：多次执行是否稳定"
+      },
+      {
+        "title": "响应质量指标",
+        "content": "**相关性：** 回答是否切题\n**准确性：** 信息是否正确\n**有用性：** 是否解决用户问题\n**安全性：** 是否产生有害内容\n\n**评估方法：**\n- 人工评分\n- LLM 评估\n- A/B 测试"
+      },
+      {
+        "title": "效率指标",
+        "content": "**响应时间：**\n- 平均响应时间\n- P95/P99 延迟\n- 首 token 时间\n\n**资源效率：**\n- Token 使用量\n- 工具调用次数\n- 计算成本"
+      },
+      {
+        "title": "用户体验指标",
+        "content": "**满意度：**\n- 用户评分\n- 重复使用率\n- 推荐意愿\n\n**交互质量：**\n- 对话流畅度\n- 理解准确率\n- 错误恢复能力"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握评估指标体系",
+    "ability": "质量评估能力",
+    "thinking": "多维度分析"
+  },
+  "followUpQuestions": [
+    {
+      "question": "如何平衡准确性和响应速度？",
+      "points": 5,
+      "answerHint": "根据场景选择模型、缓存常用结果、渐进式响应"
+    },
+    {
+      "question": "LLM 评估的局限性是什么？",
+      "points": 5,
+      "answerHint": "可能有偏见、无法评估事实准确性、成本较高"
+    }
+  ]
+}

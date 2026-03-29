@@ -1,0 +1,59 @@
+{
+  "id": "Prompt-工程",
+  "title": "Prompt Engineering 的核心技巧有哪些？",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": ["Prompt", "Prompt Engineering", "技巧", "最佳实践"],
+  "source": "AI 开发工具面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "总结 Prompt Engineering 的核心技巧和最佳实践。",
+  "requirements": [],
+  "answer": {
+    "summary": "Prompt Engineering 通过精心设计提示词来引导 LLM 产生更好的输出，包括清晰指令、示例引导、思维链等技巧。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "清晰指令",
+        "content": "**原则：**\n- 明确具体\n- 避免歧义\n- 结构化\n\n**示例：**\n```\n❌ 总结一下这篇文章\n✅ 用 3 句话总结这篇文章的核心观点，\n   每句不超过 20 字\n```"
+      },
+      {
+        "title": "示例引导（Few-Shot）",
+        "content": "**方法：** 提供输入 - 输出示例\n\n**示例：**\n```\n输入：今天天气真好\n输出：正面\n\n输入：这个产品太贵了\n输出：负面\n\n输入：服务还不错\n输出：？\n答案：正面\n```"
+      },
+      {
+        "title": "思维链（Chain of Thought）",
+        "content": "**方法：** 引导模型逐步推理\n\n**示例：**\n```\n请逐步思考：\n1. 先分析问题\n2. 列出已知条件\n3. 推导中间步骤\n4. 得出最终答案\n```"
+      },
+      {
+        "title": "角色设定",
+        "content": "**方法：** 给模型设定特定角色\n\n**示例：**\n```\n你是一个经验丰富的 Python 工程师，\n请审查以下代码并给出改进建议...\n```"
+      },
+      {
+        "title": "格式约束",
+        "content": "**方法：** 指定期望输出格式\n\n**示例：**\n```\n请用 JSON 格式输出：\n{\n  \"summary\": \"...\",\n  \"keywords\": [...],\n  \"sentiment\": \"positive/negative\"\n}\n```"
+      },
+      {
+        "title": "迭代优化",
+        "content": "**流程：**\n```\n初版 Prompt → 测试 → 分析问题 → 改进 → 再测试\n```\n\n**优化方向：**\n- 添加缺失信息\n- 消除歧义\n- 调整语气\n- 增加约束"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握 Prompt 技巧",
+    "ability": "提示设计能力",
+    "thinking": "实践应用"
+  },
+  "followUpQuestions": [
+    {
+      "question": "Few-Shot 和 Zero-Shot 各适用什么场景？",
+      "points": 5,
+      "answerHint": "Few-Shot 适合复杂任务，Zero-Shot 适合简单明确任务"
+    },
+    {
+      "question": "如何调试一个效果不好的 Prompt？",
+      "points": 5,
+      "answerHint": "分析错误类型、简化 Prompt、添加示例、调整措辞"
+    }
+  ]
+}

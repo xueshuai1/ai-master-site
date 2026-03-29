@@ -1,0 +1,47 @@
+{
+  "id": "OpenClaw-任务调度",
+  "title": "OpenClaw 如何决定何时 spawn 子代理？",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": ["OpenClaw", "任务调度", "并行化", "性能优化"],
+  "source": "AI 助理框架面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "解释 OpenClaw 的任务调度策略，什么情况下应该使用子代理。",
+  "requirements": [],
+  "answer": {
+    "summary": "根据任务复杂度、并行性、独立性决定是否 spawn 子代理。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "必须使用子代理的场景",
+        "content": "✅ **批量文件修改**\n- 修复多个控制器\n- 批量替换代码\n- 多文件重构\n\n✅ **并行下载/收集**\n- 下载多种素材资源\n- 收集多个数据源\n- 并发 API 调用\n\n✅ **多步骤测试**\n- 测试多个接口\n- 验证多个功能\n- 并行测试用例\n\n✅ **代码生成**\n- 生成多个模块\n- 完整项目骨架\n- 多文件代码"
+      },
+      {
+        "title": "避免使用子代理的场景",
+        "content": "❌ **简单查询** - 自己处理即可\n❌ **强依赖任务** - 步骤间有依赖\n❌ **快速操作** - spawn 开销大于收益"
+      },
+      {
+        "title": "调度策略",
+        "content": "```python\n# 伪代码\ndef should_spawn(task):\n    if task.type in ['batch', 'parallel', 'multi-step']:\n        return True\n    if task.complexity > threshold:\n        return True\n    if task.subtasks are independent:\n        return True\n    return False\n```"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "理解任务调度策略",
+    "ability": "性能优化能力",
+    "thinking": "权衡分析"
+  },
+  "followUpQuestions": [
+    {
+      "question": "子代理的开销主要来自哪里？",
+      "points": 5,
+      "answerHint": "上下文复制、初始化、结果整合"
+    },
+    {
+      "question": "如何平衡并行度和资源消耗？",
+      "points": 5,
+      "answerHint": "限制并发数、任务分组、优先级调度"
+    }
+  ]
+}

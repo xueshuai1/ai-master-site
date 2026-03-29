@@ -1,0 +1,55 @@
+{
+  "id": "Cursor-最佳实践",
+  "title": "使用 Cursor 等 AI 编程工具的最佳实践是什么？",
+  "category": "LLM",
+  "difficulty": "⭐⭐",
+  "tags": ["Cursor", "AI 编程", "工具使用", "最佳实践"],
+  "source": "AI 开发工具面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "分享使用 Cursor 等 AI 辅助编程工具的最佳实践和技巧。",
+  "requirements": [],
+  "answer": {
+    "summary": "有效使用 AI 编程工具需要清晰描述需求、提供上下文、审查生成结果、迭代优化。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "清晰描述需求",
+        "content": "**好：**\n```\n写一个函数，计算两个日期的天数差，\n考虑闰年，输入格式 YYYY-MM-DD\n```\n\n**差：**\n```\n写个日期计算的函数\n```\n\n**要点：**\n- 明确输入输出\n- 说明边界条件\n- 提供示例"
+      },
+      {
+        "title": "提供上下文",
+        "content": "**方法：**\n- 打开相关文件\n- 引用现有代码\n- 说明项目结构\n\n**示例：**\n```\n参考 @utils/date.py 的风格，\n在 @services/order.py 中添加一个新函数\n```\n\n**优势：**\n- 风格一致\n- 减少修改\n- 更好集成"
+      },
+      {
+        "title": "审查生成结果",
+        "content": "**必查项：**\n- 逻辑正确性\n- 边界处理\n- 错误处理\n- 代码风格\n- 安全漏洞\n\n**不要：**\n- 盲目信任\n- 直接提交\n- 忽略警告"
+      },
+      {
+        "title": "迭代优化",
+        "content": "**流程：**\n```\n生成 → 审查 → 反馈 → 修正 → 再审查\n```\n\n**反馈技巧：**\n- 指出具体问题\n- 提供修改方向\n- 分步请求\n\n**示例：**\n```\n这个函数有问题，当输入为空时会崩溃，\n请添加空值检查\n```"
+      },
+      {
+        "title": "适用场景",
+        "content": "**✅ 适合：**\n- 样板代码\n- 单元测试\n- 文档生成\n- 代码重构\n- Bug 修复\n\n**⚠️ 谨慎：**\n- 核心算法\n- 安全相关\n- 复杂业务逻辑"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握 AI 编程工具使用",
+    "ability": "工具应用能力",
+    "thinking": "批判性思维"
+  },
+  "followUpQuestions": [
+    {
+      "question": "AI 生成代码的常见错误有哪些？",
+      "points": 5,
+      "answerHint": "边界条件、过时 API、安全漏洞、逻辑错误"
+    },
+    {
+      "question": "如何提高 AI 生成代码的质量？",
+      "points": 5,
+      "answerHint": "清晰需求、提供示例、多轮迭代、人工审查"
+    }
+  ]
+}

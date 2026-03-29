@@ -1,0 +1,51 @@
+{
+  "id": "Agent-多轮对话",
+  "title": "Agent 如何维护多轮对话的上下文？",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": ["Agent", "多轮对话", "上下文管理", "记忆"],
+  "source": "AI Agent 面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "解释 Agent 在多轮对话中如何管理和维护上下文信息。",
+  "requirements": [],
+  "answer": {
+    "summary": "Agent 通过对话历史、状态跟踪、记忆检索等机制维护多轮对话上下文。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "对话历史",
+        "content": "**滑动窗口：**\n```\n[系统指令] + [最近 N 轮对话] + [当前输入]\n```\n\n**策略：**\n- 固定窗口：保留最近 N 条\n- 滑动窗口：动态调整大小\n- 摘要压缩：长对话生成摘要"
+      },
+      {
+        "title": "状态跟踪",
+        "content": "**对话状态：**\n```json\n{\n  \"current_topic\": \"天气查询\",\n  \"entities\": {\n    \"location\": \"北京\",\n    \"date\": \"明天\"\n  },\n  \"intent\": \"query_weather\",\n  \"slots_filled\": [\"location\", \"date\"]\n}\n```\n\n**用途：**\n- 跟踪用户意图\n- 记录已填槽位\n- 指导后续询问"
+      },
+      {
+        "title": "指代消解",
+        "content": "**问题：** 用户说\"它\"、\"那个\"等代词\n\n**解决：**\n- 实体链接：关联到上文实体\n- 上下文搜索：在历史中查找\n- 常识推理：基于世界知识\n\n**示例：**\n```\n用户：北京的天气怎么样？\nAgent：北京明天晴，最高 25 度。\n用户：那上海呢？  # \"那\"指代天气查询\n```"
+      },
+      {
+        "title": "长期记忆",
+        "content": "**持久化存储：**\n- 用户偏好\n- 历史信息\n- 重要事件\n\n**检索机制：**\n- 关键词匹配\n- 语义相似度\n- 时间相关性"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "理解对话上下文管理",
+    "ability": "状态跟踪能力",
+    "thinking": "连贯性思维"
+  },
+  "followUpQuestions": [
+    {
+      "question": "如何处理超长对话的上下文限制？",
+      "points": 5,
+      "answerHint": "摘要压缩、关键信息提取、外部记忆"
+    },
+    {
+      "question": "如何判断用户切换了话题？",
+      "points": 5,
+      "answerHint": "语义相似度下降、新实体出现、意图变化"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "OMO-原则",
+  "title": "OMO（One Model One）原则是什么？",
+  "category": "ML",
+  "difficulty": "⭐⭐",
+  "tags": ["OMO", "架构原则", "系统设计", "最佳实践"],
+  "source": "AI 工程方法论面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "解释 OMO 原则的含义、优势和应用场景。",
+  "requirements": [],
+  "answer": {
+    "summary": "OMO 原则主张一个任务一个模型，避免过度复杂化，提升可维护性和可预测性。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "核心思想",
+        "content": "**定义：** One Model One - 一个任务一个模型\n\n**含义：**\n- 单一职责：每个模型只做一件事\n- 接口稳定：输入输出格式不变\n- 可替换：实现可独立升级"
+      },
+      {
+        "title": "优势",
+        "content": "1. **职责清晰** - 容易理解和维护\n2. **性能可预测** - 单一模型行为稳定\n3. **成本可控** - 资源使用可估算\n4. **易于测试** - 独立验证\n5. **便于迭代** - 可单独优化"
+      },
+      {
+        "title": "反例",
+        "content": "**❌ 违反 OMO：**\n```python\nclass MultiTaskModel:\n    def process(self, input, task_type):\n        if task_type == 'classify':\n            return self.classify(input)\n        elif task_type == 'generate':\n            return self.generate(input)\n        elif task_type == 'translate':\n            return self.translate(input)\n```\n\n**问题：**\n- 职责混乱\n- 难以调试\n- 性能不稳定"
+      },
+      {
+        "title": "正例",
+        "content": "**✅ 遵循 OMO：**\n```python\nclass TextClassifier:\n    def predict(self, text):  # 只做分类\n        ...\n\nclass TextGenerator:\n    def generate(self, prompt):  # 只做生成\n        ...\n\nclass Translator:\n    def translate(self, text, target_lang):  # 只做翻译\n        ...\n```"
+      },
+      {
+        "title": "编排使用",
+        "content": "**多个 OMO 模型协作：**\n```python\nclass Pipeline:\n    def __init__(self):\n        self.classifier = TextClassifier()\n        self.generator = TextGenerator()\n    \n    def run(self, input):\n        category = self.classifier.predict(input)\n        result = self.generator.generate(f\"{category}: {input}\")\n        return result\n```"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "理解 OMO 原则",
+    "ability": "架构设计能力",
+    "thinking": "简化思维"
+  },
+  "followUpQuestions": [
+    {
+      "question": "OMO 原则的局限性是什么？",
+      "points": 5,
+      "answerHint": "可能增加模型数量、编排复杂度、资源开销"
+    },
+    {
+      "question": "什么情况下可以违反 OMO 原则？",
+      "points": 5,
+      "answerHint": "任务高度相关、共享表示、资源受限"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "Agent-架构模式",
+  "title": "常见的 Agent 架构模式有哪些？",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": ["Agent", "架构模式", "系统设计", "AI 工程"],
+  "source": "AI Agent 面试题",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "列举并解释常见的 Agent 架构模式及其适用场景。",
+  "requirements": [],
+  "answer": {
+    "summary": "常见 Agent 架构包括反应式、分层式、混合式和多 Agent 架构。",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "反应式架构（Reactive）",
+        "content": "**特点：**\n- 刺激 → 响应，无内部状态\n- 快速、简单\n- 适合确定性任务\n\n**示例：**\n```python\ndef handle_request(input):\n    if \"天气\" in input:\n        return get_weather()\n    elif \"新闻\" in input:\n        return get_news()\n```"
+      },
+      {
+        "title": "分层架构（Layered）",
+        "content": "**层级：**\n```\n┌─────────────┐\n│   规划层    │  ← 长期目标\n├─────────────┤\n│   协调层    │  ← 任务分解\n├─────────────┤\n│   执行层    │  ← 具体动作\n└─────────────┘\n```\n\n**特点：**\n- 多层抽象\n- 自底向上处理\n- 适合复杂任务"
+      },
+      {
+        "title": "混合架构（Hybrid）",
+        "content": "**特点：**\n- 结合反应式和规划式\n- 平衡响应速度和灵活性\n- 现代 Agent 主流选择\n\n**流程：**\n```\n用户请求 → 快速匹配（反应）\n         ↓ 无匹配\n    深度规划（思考）\n```"
+      },
+      {
+        "title": "多 Agent 架构（Multi-Agent）",
+        "content": "**特点：**\n- 多个 Agent 协作\n- 分工明确\n- 适合复杂任务\n\n**协作模式：**\n- 主从式：主 Agent 分配任务\n- 对等式：Agent 间平等协商\n- 流水线：依次处理传递"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握 Agent 架构模式",
+    "ability": "架构设计能力",
+    "thinking": "抽象分类"
+  },
+  "followUpQuestions": [
+    {
+      "question": "如何选择适合的架构模式？",
+      "points": 5,
+      "answerHint": "根据任务复杂度、响应时间要求、可靠性需求"
+    },
+    {
+      "question": "混合架构相比纯反应式有什么优势？",
+      "points": 5,
+      "answerHint": "既能快速响应简单请求，又能处理复杂规划任务"
+    },
+    {
+      "question": "多 Agent 系统的通信开销如何优化？",
+      "points": 5,
+      "answerHint": "批量消息、压缩传输、共享内存"
+    }
+  ]
+}
