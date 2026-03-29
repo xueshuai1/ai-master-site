@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import ContentLayout from "@/components/ContentLayout";
 import CodeBlock from "@/components/CodeBlock";
 import Callout from "@/components/Callout";
@@ -18,6 +20,41 @@ interface Article {
   keyPoints: string[];
   estimatedTime: string;
   content: string;
+  // 结构化数据字段
+  abstract?: string;
+  sections?: Array<{
+    id: string;
+    title: string;
+    level: number;
+    content: string;
+    subsections?: Array<{
+      id: string;
+      title: string;
+      level: number;
+      content: string;
+    }>;
+  }>;
+  keyTakeaways?: string[];
+  prerequisites?: string[];
+  codeExamples?: Array<{
+    id: string;
+    title: string;
+    language: string;
+    code: string;
+    explanation?: string;
+  }>;
+  diagrams?: Array<{
+    id: string;
+    title: string;
+    description: string;
+    type: string;
+    content: string;
+  }>;
+  references?: Array<{
+    title: string;
+    url: string;
+    type: string;
+  }>;
 }
 
 interface AdjacentArticles {
@@ -43,7 +80,7 @@ export default function KnowledgeArticlePage() {
         const response = await fetch(`/api/knowledge/${category}?articleId=${articleId}`);
         if (response.ok) {
           const data = await response.json();
-          setArticle(data.article);
+          setArticle(data.data);
           setAdjacentArticles({ prev: data.prev, next: data.next });
         } else {
           const errorData = await response.json();
@@ -161,6 +198,194 @@ export default function KnowledgeArticlePage() {
     );
   }
 
+  // 渲染结构化内容
+  const renderStructuredContent = () => {
+    // 如果有 sections，使用结构化渲染
+    if (article.sections && article.sections.length > 0) {
+      return (
+        <div className="space-y-8">
+          {/* 文章摘要 */}
+          {article.abstract && (
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <h3 className="text-lg font-semibold text-blue-900 mb-3">📖 摘要</h3>
+              <p className="text-blue-800">{article.abstract}</p>
+            </div>
+          )}
+
+          {/* 章节内容 */}
+          {article.sections.map((section) => (
+            <div key={section.id} className="scroll-mt-24" id={section.id}>
+              {/* 主章节 */}
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                  {section.title}
+                </h2>
+                <div className="prose prose-lg max-w-none">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {section.content}
+                  </ReactMarkdown>
+                </div>
+              </div>
+
+              {/* 子章节 */}
+              {section.subsections && section.subsections.length > 0 && (
+                <div className="ml-6 space-y-6">
+                  {section.subsections.map((subsec) => (
+                    <div key={subsec.id} className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                        {subsec.title}
+                      </h3>
+                      <div className="prose prose-base max-w-none">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                          {subsec.content}
+                        </ReactMarkdown>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* 关键要点 */}
+          {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+            <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-green-900 mb-4 flex items-center gap-2">
+                <span>✅</span>
+                关键要点
+              </h3>
+              <ul className="space-y-2">
+                {article.keyTakeaways.map((point, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-green-600 font-bold mt-1">•</span>
+                    <span className="text-green-800">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* 前置知识 */}
+          {article.prerequisites && article.prerequisites.length > 0 && (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-amber-900 mb-4 flex items-center gap-2">
+                <span>📚</span>
+                前置知识
+              </h3>
+              <ul className="space-y-2">
+                {article.prerequisites.map((prereq, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold mt-1">•</span>
+                    <span className="text-amber-800">{prereq}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* 代码示例 */}
+          {article.codeExamples && article.codeExamples.length > 0 && (
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                <span>💻</span>
+                代码示例
+              </h3>
+              {article.codeExamples.map((example) => (
+                <div key={example.id} className="bg-gray-900 rounded-xl overflow-hidden">
+                  <div className="bg-gray-800 px-4 py-3 flex items-center justify-between">
+                    <h4 className="text-white font-medium">{example.title}</h4>
+                    {example.language && (
+                      <span className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded font-mono">
+                        {example.language}
+                      </span>
+                    )}
+                  </div>
+                  <pre className="p-4 overflow-x-auto text-sm">
+                    <code className="text-gray-100">{example.code}</code>
+                  </pre>
+                  {example.explanation && (
+                    <div className="bg-gray-800 px-4 py-3">
+                      <p className="text-gray-300 text-sm">
+                        <ReactMarkdown>{example.explanation}</ReactMarkdown>
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 图表 */}
+          {article.diagrams && article.diagrams.length > 0 && (
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                <span>📊</span>
+                图表
+              </h3>
+              {article.diagrams.map((diagram) => (
+                <div key={diagram.id} className="bg-white border border-gray-200 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">{diagram.title}</h4>
+                  <p className="text-gray-600 text-sm mb-4">{diagram.description}</p>
+                  <div className="bg-gray-50 rounded-lg p-4 font-mono text-sm overflow-x-auto">
+                    <pre className="text-gray-800">{diagram.content}</pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 参考资料 */}
+          {article.references && article.references.length > 0 && (
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <span>🔗</span>
+                参考资料
+              </h3>
+              <ul className="space-y-2">
+                {article.references.map((ref, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-gray-400 font-bold mt-1">{index + 1}.</span>
+                    <div>
+                      <a
+                        href={ref.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline font-medium"
+                      >
+                        {ref.title}
+                      </a>
+                      {ref.type && (
+                        <span className="ml-2 px-2 py-0.5 bg-gray-200 text-gray-600 text-xs rounded">
+                          {ref.type}
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // 兼容旧格式：直接渲染 content
+    return (
+      <div 
+        className="prose prose-lg max-w-none"
+        dangerouslySetInnerHTML={{ 
+          __html: article.content
+            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+            .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+            .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+            .replace(/\*(.*)\*/gim, '<em>$1</em>')
+            .replace(/\n/g, '<br/>')
+        }}
+      />
+    );
+  };
+
   const sidebarContent = (
     <div className="sticky top-6 space-y-4">
       <ProgressPanel />
@@ -235,30 +460,12 @@ export default function KnowledgeArticlePage() {
     </div>
   );
 
-  // 简单渲染 Markdown 内容
-  const renderContent = (content: string) => {
-    return (
-      <div 
-        className="prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ 
-          __html: content
-            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-            .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-            .replace(/\*(.*)\*/gim, '<em>$1</em>')
-            .replace(/\n/g, '<br/>')
-        }}
-      />
-    );
-  };
-
   return (
     <ContentLayout
       title={article.title}
-      subtitle={article.summary}
+      subtitle={article.summary || article.abstract}
       category={category}
-      tags={article.keyPoints}
+      tags={article.keyPoints || article.tags || []}
       breadcrumbs={[
         { label: "首页", href: "/" },
         { label: "知识库", href: "/knowledge" },
@@ -267,7 +474,7 @@ export default function KnowledgeArticlePage() {
       ]}
       sidebarContent={sidebarContent}
     >
-      {renderContent(article.content)}
+      {renderStructuredContent()}
 
       {/* 上一篇/下一篇导航 */}
       <ArticleNav category={category} articleId={articleId} />

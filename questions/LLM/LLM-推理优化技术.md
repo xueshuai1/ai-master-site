@@ -3,15 +3,13 @@ title: "LLM 推理优化技术"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["推理优化", "KV Cache", "量化", "批处理"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 列举并解释 LLM 推理阶段的主要优化技术及其原理。
 
-**来源：** LLM 面试题整理
 **标签：** 推理优化，KV Cache，量化，批处理
 
 ## 参考答案

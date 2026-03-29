@@ -3,15 +3,13 @@ title: "LLM Agent 架构设计"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["Agent", "工具使用", "规划", "记忆"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 设计一个 LLM Agent 系统，说明其核心组件和工作流程。
 
-**来源：** LLM 面试题整理
 **标签：** Agent，工具使用，规划，记忆
 
 ## 参考答案

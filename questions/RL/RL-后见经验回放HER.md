@@ -3,15 +3,13 @@ title: "后见经验回放 HER"
 category: "RL"
 difficulty: "⭐⭐⭐⭐⭐"
 tags: ["HER", "稀疏奖励", "多目标", "离线学习"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 HER（Hindsight Experience Replay）是解决稀疏奖励问题的重要方法，请解释 HER 的核心思想和工作原理。
 
-**来源：** 强化学习面试题整理
 **标签：** HER, 稀疏奖励，多目标，离线学习
 
 ## 参考答案

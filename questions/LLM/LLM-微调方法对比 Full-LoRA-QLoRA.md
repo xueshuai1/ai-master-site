@@ -3,15 +3,13 @@ title: "微调方法对比：Full vs LoRA vs QLoRA"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["微调", "LoRA", "QLoRA", "参数高效"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请对比 Full Fine-tuning、LoRA 和 QLoRA 三种微调方法，包括原理、资源需求和适用场景。
 
-**来源：** LLM 面试题整理
 **标签：** 微调，LoRA，QLoRA，参数高效
 
 ## 参考答案

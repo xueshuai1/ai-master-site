@@ -3,15 +3,13 @@ title: "LayerNorm 在 Transformer 中的作用"
 category: "LLM"
 difficulty: "⭐⭐"
 tags: ["LayerNorm", "归一化", "训练稳定", "Pre-Norm"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 LayerNorm 的原理，它在 Transformer 中的位置（Pre-Norm vs Post-Norm），以及对训练稳定性的影响。
 
-**来源：** LLM 面试题整理
 **标签：** LayerNorm，归一化，训练稳定，Pre-Norm
 
 ## 参考答案

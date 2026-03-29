@@ -3,15 +3,13 @@ title: "KV Cache 推理优化技术"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["KV Cache", "推理优化", "显存管理", "自回归"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 KV Cache 在 LLM 推理中的作用，为什么它能加速生成，以及显存占用如何计算。
 
-**来源：** LLM 面试题整理
 **标签：** KV Cache，推理优化，显存管理，自回归
 
 ## 参考答案

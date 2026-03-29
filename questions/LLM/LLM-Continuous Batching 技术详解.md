@@ -3,15 +3,13 @@ title: "Continuous Batching 技术详解"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["Continuous Batching", "推理优化", "并发", "吞吐量"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 Continuous Batching（又称 Iteration-level Batching）的原理，它如何提升 LLM 推理的吞吐量。
 
-**来源：** LLM 面试题整理
 **标签：** Continuous Batching，推理优化，并发，吞吐量
 
 ## 参考答案

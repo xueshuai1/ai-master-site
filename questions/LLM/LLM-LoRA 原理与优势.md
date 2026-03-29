@@ -3,15 +3,13 @@ title: "LoRA 原理与优势"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["LoRA", "PEFT", "低秩适配", "参数高效"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 LoRA（Low-Rank Adaptation）的原理，为什么它能大幅减少训练参数量，以及在实际应用中的优势。
 
-**来源：** LLM 面试题整理
 **标签：** LoRA，PEFT，低秩适配，参数高效
 
 ## 参考答案

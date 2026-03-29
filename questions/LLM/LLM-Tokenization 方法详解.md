@@ -3,15 +3,13 @@ title: "Tokenization 方法详解"
 category: "LLM"
 difficulty: "⭐⭐"
 tags: ["Tokenization", "BPE", "WordPiece", "SentencePiece"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 什么是 Tokenization？请比较 Word-Level、Character-Level、Subword 三种方法，并解释 BPE 和 WordPiece 的原理。
 
-**来源：** LLM 面试题整理
 **标签：** Tokenization，BPE，WordPiece，SentencePiece
 
 ## 参考答案

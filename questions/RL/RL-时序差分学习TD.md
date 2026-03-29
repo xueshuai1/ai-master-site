@@ -3,15 +3,13 @@ title: "时序差分学习 TD"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["时序差分", "TD 学习", "自举", "强化学习基础"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 时序差分学习（Temporal Difference Learning）结合了蒙特卡洛和动态规划的优点，请解释 TD 学习的核心思想和主要特点。
 
-**来源：** 强化学习面试题整理
 **标签：** 时序差分，TD 学习，自举，强化学习基础
 
 ## 参考答案

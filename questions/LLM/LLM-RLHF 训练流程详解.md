@@ -3,15 +3,13 @@ title: "RLHF 训练流程详解"
 category: "LLM"
 difficulty: "⭐⭐⭐⭐"
 tags: ["RLHF", "人类反馈", "PPO", "对齐"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请详细解释 RLHF（Reinforcement Learning from Human Feedback）的训练流程，包括各阶段的目标和关键组件。
 
-**来源：** LLM 面试题整理
 **标签：** RLHF，人类反馈，PPO，对齐
 
 ## 参考答案

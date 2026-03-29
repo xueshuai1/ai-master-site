@@ -3,15 +3,13 @@ title: "指令微调与对齐技术"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["指令微调", "对齐", "SFT", "DPO"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释指令微调（Instruction Tuning）的目的和方法，以及主流的对齐技术（RLHF、DPO 等）。
 
-**来源：** LLM 面试题整理
 **标签：** 指令微调，对齐，SFT，DPO
 
 ## 参考答案

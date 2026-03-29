@@ -3,15 +3,13 @@ title: "On-Policy 与 Off-Policy 对比"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["On-Policy", "Off-Policy", "策略类型", "算法分类"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 强化学习算法可以分为 On-Policy 和 Off-Policy，请解释两者的区别、优缺点和典型算法。
 
-**来源：** 强化学习面试题整理
 **标签：** On-Policy, Off-Policy, 策略类型，算法分类
 
 ## 参考答案

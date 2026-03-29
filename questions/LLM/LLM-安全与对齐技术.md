@@ -3,15 +3,13 @@ title: "LLM 安全与对齐技术"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["安全", "对齐", "红队", "内容过滤"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 说明 LLM 面临的安全风险及对齐技术的实现方法。
 
-**来源：** LLM 面试题整理
 **标签：** 安全，对齐，红队，内容过滤
 
 ## 参考答案

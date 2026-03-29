@@ -3,15 +3,13 @@ title: "MoE 架构原理与应用"
 category: "LLM"
 difficulty: "⭐⭐⭐⭐"
 tags: ["MoE", "混合专家", "稀疏激活", "路由"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 解释 MoE（Mixture of Experts）架构的原理、优势和挑战。
 
-**来源：** LLM 面试题整理
 **标签：** MoE，混合专家，稀疏激活，路由
 
 ## 参考答案

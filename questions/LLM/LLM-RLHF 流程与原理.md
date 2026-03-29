@@ -3,15 +3,13 @@ title: "RLHF 流程与原理"
 category: "LLM"
 difficulty: "⭐⭐⭐⭐"
 tags: ["RLHF", "奖励模型", "PPO", "对齐"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 详细说明 RLHF（人类反馈强化学习）的完整流程及各阶段的作用。
 
-**来源：** LLM 面试题整理
 **标签：** RLHF，奖励模型，PPO，对齐
 
 ## 参考答案

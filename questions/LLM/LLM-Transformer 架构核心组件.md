@@ -3,15 +3,13 @@ title: "Transformer 架构核心组件"
 category: "LLM"
 difficulty: "⭐⭐"
 tags: ["Transformer", "架构", "组件", "编码器解码器"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请详细说明 Transformer 架构的核心组件，包括 Encoder 和 Decoder 的结构差异，以及各组件的作用。
 
-**来源：** LLM 面试题整理
 **标签：** Transformer，架构，组件，编码器解码器
 
 ## 参考答案

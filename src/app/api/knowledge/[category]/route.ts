@@ -18,6 +18,72 @@ interface KnowledgeArticle {
   abstract: string;
   keyTakeaways: string[];
   version: string;
+  sections?: any[];
+  content?: string;
+  summary?: string;
+  keyPoints?: string[];
+}
+
+function loadArticle(category: string, id: string) {
+  // 从 JSON 加载
+  const categoryDir = path.join(DATA_DIR, category);
+  if (fs.existsSync(categoryDir)) {
+    const filePath = path.join(categoryDir, `${id}.json`);
+    if (fs.existsSync(filePath)) {
+      const content = fs.readFileSync(filePath, 'utf-8');
+      return JSON.parse(content);
+    }
+    
+    const files = fs.readdirSync(categoryDir);
+    for (const file of files) {
+      if (!file.endsWith('.json')) continue;
+      const filePath = path.join(categoryDir, file);
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      if (data.id === id) {
+        return data;
+      }
+    }
+  }
+  
+  // 从 MD 加载
+  const mdCategoryDir = path.join(KNOWLEDGE_BASE_DIR, category);
+  if (fs.existsSync(mdCategoryDir)) {
+    const filePath = path.join(mdCategoryDir, `${id}.md`);
+    if (fs.existsSync(filePath)) {
+      const content = fs.readFileSync(filePath, 'utf-8');
+      const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+      const frontmatter: Record<string, any> = {};
+      
+      if (frontmatterMatch) {
+        const lines = frontmatterMatch[1].split('\n');
+        for (const line of lines) {
+          const [key, ...valueParts] = line.split(':');
+          if (key && valueParts.length > 0) {
+            let value = valueParts.join(':').trim();
+            if (value.startsWith('[') && value.endsWith(']')) {
+              value = value.slice(1, -1).split(',').map(v => v.trim().replace(/"/g, ''));
+            }
+            if (value.startsWith('"') && value.endsWith('"')) {
+              value = value.slice(1, -1);
+            }
+            frontmatter[key.trim()] = value;
+          }
+        }
+      }
+      
+      const body = content.replace(/^---\n[\s\S]*?\n---\n/, '');
+      return {
+        id,
+        title: frontmatter.title || id,
+        category,
+        content: body,
+        summary: frontmatter.summary || '',
+        keyPoints: frontmatter.keyPoints || []
+      };
+    }
+  }
+  
+  return null;
 }
 
 function loadArticlesByCategory(category: string): KnowledgeArticle[] {
@@ -97,18 +163,19 @@ function loadArticlesByCategory(category: string): KnowledgeArticle[] {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: string } }
+  { params }: { params: Promise<{ category: string }> }
 ) {
   try {
-    const category = decodeURIComponent(params.category);
+    const { category } = await params;
+    const decodedCategory = decodeURIComponent(category);
     
-    const articles = loadArticlesByCategory(category);
+    const articles = loadArticlesByCategory(decodedCategory);
     
     if (articles.length === 0) {
       return NextResponse.json({
         success: true,
         data: {
-          category,
+          category: decodedCategory,
           articles: [],
           total: 0
         }
@@ -120,12 +187,23 @@ export async function GET(
       return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
     });
     
+    // 添加字段映射，兼容前端期望的格式
+    const mappedArticles = articles.map(article => ({
+      id: article.id,
+      title: article.title,
+      summary: article.abstract || article.keyTakeaways?.join(' ') || '',
+      keyPoints: article.tags || [],
+      estimatedTime: `${article.readTime || 10}分钟`,
+      order: 0,
+      difficulty: article.difficulty === '⭐' ? 1 : article.difficulty === '⭐⭐' ? 2 : article.difficulty === '⭐⭐⭐' ? 3 : 4
+    }));
+    
     return NextResponse.json({
       success: true,
       data: {
         category,
-        articles,
-        total: articles.length
+        articles: mappedArticles,
+        total: mappedArticles.length
       }
     });
   } catch (error) {

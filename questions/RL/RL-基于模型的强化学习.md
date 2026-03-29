@@ -3,15 +3,13 @@ title: "基于模型的强化学习"
 category: "RL"
 difficulty: "⭐⭐⭐⭐⭐"
 tags: ["Model-Based RL", "世界模型", "样本效率", "规划"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 基于模型的强化学习（Model-Based RL）通过学习环境模型来提高样本效率，请解释其核心思想和主要方法。
 
-**来源：** 强化学习面试题整理
 **标签：** Model-Based RL, 世界模型，样本效率，规划
 
 ## 参考答案

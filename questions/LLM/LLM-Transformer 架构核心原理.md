@@ -3,15 +3,13 @@ title: "Transformer 架构核心原理"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["Transformer", "自注意力", "架构设计", "位置编码"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 Transformer 架构的核心组件及其作用，为什么 Transformer 能取代 RNN 成为 LLM 的基础架构？
 
-**来源：** LLM 面试题整理
 **标签：** Transformer，自注意力，架构设计，位置编码
 
 ## 参考答案

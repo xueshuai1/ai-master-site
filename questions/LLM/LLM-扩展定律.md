@@ -3,15 +3,13 @@ title: "LLM 扩展定律（Scaling Laws）"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["扩展定律", "模型规模", "训练数据", "计算最优"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 解释 LLM 的扩展定律，说明模型性能与规模、数据、计算量的关系。
 
-**来源：** LLM 面试题整理
 **标签：** 扩展定律，模型规模，训练数据，计算最优
 
 ## 参考答案

@@ -3,15 +3,13 @@ title: "高效注意力机制：Flash Attention 原理"
 category: "LLM"
 difficulty: "⭐⭐⭐⭐"
 tags: ["Flash Attention", "IO 优化", "CUDA", "推理加速"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 Flash Attention 的核心思想，它如何通过 IO 感知设计实现 2-3 倍加速。
 
-**来源：** LLM 面试题整理
 **标签：** Flash Attention，IO 优化，CUDA，推理加速
 
 ## 参考答案

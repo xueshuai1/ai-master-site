@@ -3,15 +3,13 @@ title: "解码策略对比：Greedy vs Sampling vs Beam Search"
 category: "LLM"
 difficulty: "⭐⭐"
 tags: ["解码", "采样", "束搜索", "生成策略"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请对比 Greedy Search、Sampling 和 Beam Search 三种解码策略，包括原理、优缺点和适用场景。
 
-**来源：** LLM 面试题整理
 **标签：** 解码，采样，束搜索，生成策略
 
 ## 参考答案

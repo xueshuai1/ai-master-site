@@ -126,13 +126,14 @@ function parseMarkdownSections(content: string) {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: string; id: string } }
+  { params }: { params: Promise<{ category: string; id: string }> }
 ) {
   try {
-    const category = decodeURIComponent(params.category);
-    const id = decodeURIComponent(params.id);
+    const { category, id } = await params;
+    const decodedCategory = decodeURIComponent(category);
+    const decodedId = decodeURIComponent(id);
     
-    const article = loadArticle(category, id);
+    const article = loadArticle(decodedCategory, decodedId);
     
     if (!article) {
       return NextResponse.json({

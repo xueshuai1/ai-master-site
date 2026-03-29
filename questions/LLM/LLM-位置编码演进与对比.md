@@ -3,15 +3,13 @@ title: "位置编码的演进与对比"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["位置编码", "RoPE", "ALiBi", "长序列"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 对比绝对位置编码、RoPE、ALiBi 等位置编码方案的原理和适用场景。
 
-**来源：** LLM 面试题整理
 **标签：** 位置编码，RoPE，ALiBi，长序列
 
 ## 参考答案

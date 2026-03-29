@@ -3,15 +3,13 @@ title: "RAG 工作原理与实现"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["RAG", "检索增强", "向量数据库", "知识更新"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 RAG（Retrieval-Augmented Generation）的工作原理，包括检索器、生成器的协作，以及如何构建 RAG 系统。
 
-**来源：** LLM 面试题整理
 **标签：** RAG，检索增强，向量数据库，知识更新
 
 ## 参考答案

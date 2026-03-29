@@ -107,17 +107,18 @@ function loadQuestionFromMarkdown(id: string) {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = decodeURIComponent(params.id);
+    const { id } = await params;
+    const decodedId = decodeURIComponent(id);
     
     // 优先从 JSON 加载
-    let question = loadQuestionFromJSON(id);
+    let question = loadQuestionFromJSON(decodedId);
     
     // 回退到 MD
     if (!question) {
-      question = loadQuestionFromMarkdown(id);
+      question = loadQuestionFromMarkdown(decodedId);
     }
     
     if (!question) {

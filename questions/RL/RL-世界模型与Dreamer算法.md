@@ -3,15 +3,13 @@ title: "世界模型与 Dreamer 算法"
 category: "RL"
 difficulty: "⭐⭐⭐⭐⭐"
 tags: ["世界模型", "Dreamer", "Model-Based RL", "潜在空间"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 世界模型（World Models）和 Dreamer 是基于模型的 RL 的重要工作，请解释其核心思想和架构。
 
-**来源：** 强化学习面试题整理
 **标签：** 世界模型，Dreamer, Model-Based RL, 潜在空间
 
 ## 参考答案

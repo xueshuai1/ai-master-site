@@ -3,15 +3,13 @@ title: "DQN 核心创新点"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["DQN", "深度强化学习", "经验回放", "目标网络"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 DQN（Deep Q-Network）是深度强化学习的里程碑算法，请说明 DQN 的两大核心创新点及其作用。
 
-**来源：** 强化学习面试题整理
 **标签：** DQN, 深度强化学习，经验回放，目标网络
 
 ## 参考答案

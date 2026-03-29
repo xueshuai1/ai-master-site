@@ -3,15 +3,13 @@ title: "课程学习在强化学习中的应用"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["课程学习", "Curriculum Learning", "稀疏奖励", "训练策略"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 课程学习（Curriculum Learning）通过由易到难的训练顺序加速 RL 学习，请解释其核心思想和实现方法。
 
-**来源：** 强化学习面试题整理
 **标签：** 课程学习，Curriculum Learning, 稀疏奖励，训练策略
 
 ## 参考答案

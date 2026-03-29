@@ -3,15 +3,13 @@ title: "策略梯度方法基础"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["策略梯度", "REINFORCE", "Policy-Based", "对数概率"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释策略梯度方法的核心思想，并写出 REINFORCE 算法的更新公式。
 
-**来源：** 强化学习面试题整理
 **标签：** 策略梯度，REINFORCE, Policy-Based, 对数概率
 
 ## 参考答案

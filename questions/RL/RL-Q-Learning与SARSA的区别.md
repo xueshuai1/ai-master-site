@@ -3,15 +3,13 @@ title: "Q-Learning 与 SARSA 的区别"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["Q-Learning", "SARSA", "时序差分", "Value-Based"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 Q-Learning 和 SARSA 都是基于时序差分的强化学习算法，请说明它们的核心区别是什么？各自适用于什么场景？
 
-**来源：** 强化学习面试题整理
 **标签：** Q-Learning, SARSA, 时序差分，Value-Based
 
 ## 参考答案

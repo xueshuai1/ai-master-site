@@ -3,15 +3,13 @@ title: "注意力机制在强化学习中的应用"
 category: "RL"
 difficulty: "⭐⭐⭐⭐"
 tags: ["注意力", "Transformer", "序列决策", "架构设计"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 注意力机制在强化学习中有什么应用？请说明注意力如何帮助 RL 算法。
 
-**来源：** 强化学习面试题整理
 **标签：** 注意力，Transformer, 序列决策，架构设计
 
 ## 参考答案

@@ -3,15 +3,13 @@ title: "LLM 分词技术详解"
 category: "LLM"
 difficulty: "⭐⭐"
 tags: ["分词", "BPE", "WordPiece", "词表"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 说明 BPE、WordPiece、SentencePiece 等分词算法的原理和区别。
 
-**来源：** LLM 面试题整理
 **标签：** 分词，BPE，WordPiece，词表
 
 ## 参考答案

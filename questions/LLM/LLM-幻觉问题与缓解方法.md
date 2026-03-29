@@ -3,15 +3,13 @@ title: "LLM 幻觉问题与缓解方法"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["幻觉", "事实性", "RAG", "校准"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 什么是 LLM 幻觉？分析其成因并列举缓解方法。
 
-**来源：** LLM 面试题整理
 **标签：** 幻觉，事实性，RAG，校准
 
 ## 参考答案

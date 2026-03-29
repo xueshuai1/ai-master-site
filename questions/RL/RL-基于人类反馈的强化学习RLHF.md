@@ -3,15 +3,13 @@ title: "基于人类反馈的强化学习 RLHF"
 category: "RL"
 difficulty: "⭐⭐⭐⭐⭐"
 tags: ["RLHF", "人类反馈", "大模型", "对齐"]
-source: "强化学习面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 RLHF（Reinforcement Learning from Human Feedback）是大语言模型对齐的关键技术，请解释 RLHF 的流程和核心思想。
 
-**来源：** 强化学习面试题整理
 **标签：** RLHF, 人类反馈，大模型，对齐
 
 ## 参考答案

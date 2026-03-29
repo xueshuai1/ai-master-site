@@ -3,15 +3,13 @@ title: "模型架构演进：从 BERT 到 GPT 到 LLaMA"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["架构演进", "BERT", "GPT", "LLaMA"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请梳理 LLM 架构的演进历程，从 BERT 到 GPT 系列再到 LLaMA，关键改进有哪些？
 
-**来源：** LLM 面试题整理
 **标签：** 架构演进，BERT，GPT，LLaMA
 
 ## 参考答案

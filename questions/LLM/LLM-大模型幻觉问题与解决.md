@@ -3,15 +3,13 @@ title: "大模型幻觉问题与解决"
 category: "LLM"
 difficulty: "⭐⭐⭐"
 tags: ["幻觉", "事实性", "RAG", "可信 AI"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 什么是大模型的幻觉（Hallucination）问题？请分析其成因，并列举主要的解决方案。
 
-**来源：** LLM 面试题整理
 **标签：** 幻觉，事实性，RAG，可信 AI
 
 ## 参考答案

@@ -3,15 +3,13 @@ title: "MoE 架构原理与挑战"
 category: "LLM"
 difficulty: "⭐⭐⭐⭐"
 tags: ["MoE", "稀疏激活", "专家混合", "路由"]
-source: "LLM 面试题整理"
-sourceUrl: ""
+
 collectedAt: "2026-03-29"
 ---
 
 ## 题目描述
 请解释 MoE（Mixture of Experts）架构的原理，为什么它能实现"大参数、低计算"，以及训练中的挑战。
 
-**来源：** LLM 面试题整理
 **标签：** MoE，稀疏激活，专家混合，路由
 
 ## 参考答案
