@@ -168,7 +168,35 @@ export async function GET(
   try {
     const { category } = await params;
     const decodedCategory = decodeURIComponent(category);
+    const searchParams = request.nextUrl.searchParams;
+    const articleId = searchParams.get('articleId');
     
+    // 如果指定了 articleId，返回单篇文章
+    if (articleId) {
+      const article = loadArticle(decodedCategory, articleId);
+      
+      if (!article) {
+        return NextResponse.json({
+          success: false,
+          error: 'Article not found'
+        }, { status: 404 });
+      }
+      
+      // 查找相邻文章
+      const articles = loadArticlesByCategory(decodedCategory);
+      const currentIndex = articles.findIndex(a => a.id === articleId);
+      const prev = currentIndex > 0 ? { id: articles[currentIndex - 1].id, title: articles[currentIndex - 1].title } : null;
+      const next = currentIndex < articles.length - 1 ? { id: articles[currentIndex + 1].id, title: articles[currentIndex + 1].title } : null;
+      
+      return NextResponse.json({
+        success: true,
+        data: article,
+        prev,
+        next
+      });
+    }
+    
+    // 否则返回文章列表
     const articles = loadArticlesByCategory(decodedCategory);
     
     if (articles.length === 0) {
@@ -197,11 +225,11 @@ export async function GET(
       order: 0,
       difficulty: article.difficulty === '⭐' ? 1 : article.difficulty === '⭐⭐' ? 2 : article.difficulty === '⭐⭐⭐' ? 3 : 4
     }));
-    
+
     return NextResponse.json({
       success: true,
       data: {
-        category,
+        category: decodedCategory,
         articles: mappedArticles,
         total: mappedArticles.length
       }
