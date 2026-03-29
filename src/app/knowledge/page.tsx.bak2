@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import TagFilter from "@/components/TagFilter";
+import Tag from "@/components/Tag";
+
 // 难度级别配置
 const DIFFICULTIES = [
   { level: 1, label: "⭐", name: "基础入门", description: "概念理解、基础原理", color: "green" },
@@ -89,10 +92,22 @@ const SAMPLE_ARTICLES = [
   },
 ];
 
+interface TagFilters {
+  techDomains: string[];
+  difficulties: string[];
+  scenarios: string[];
+}
+
 export default function KnowledgePage() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [tagFilters, setTagFilters] = useState<TagFilters>({
+    techDomains: [],
+    difficulties: [],
+    scenarios: [],
+  });
+
   const filteredArticles = SAMPLE_ARTICLES.filter((article) => {
     if (selectedDifficulty && article.difficulty !== selectedDifficulty) return false;
     if (selectedCategory && article.category !== selectedCategory) return false;
@@ -107,9 +122,18 @@ export default function KnowledgePage() {
     }
     
     // 标签筛选
-    
-    
-    
+    if (tagFilters.techDomains.length > 0) {
+      const hasTechTag = tagFilters.techDomains.some(tag => article.tags.includes(tag));
+      if (!hasTechTag) return false;
+    }
+    if (tagFilters.difficulties.length > 0) {
+      const hasDiffTag = tagFilters.difficulties.some(tag => article.tags.includes(tag));
+      if (!hasDiffTag) return false;
+    }
+    if (tagFilters.scenarios.length > 0) {
+      const hasScenarioTag = tagFilters.scenarios.some(tag => article.tags.includes(tag));
+      if (!hasScenarioTag) return false;
+    }
     
     return true;
   });
@@ -123,7 +147,10 @@ export default function KnowledgePage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               ← 返回首页
             </Link>
-            </div>
+            <Link href="/tags" className="text-blue-600 hover:text-blue-800 font-medium">
+              🏷️ 标签系统
+            </Link>
+          </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
             📚 知识库
           </h1>
@@ -187,7 +214,9 @@ export default function KnowledgePage() {
 
             {/* 标签筛选 */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">🏷️ 标签筛选</h2></div>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">🏷️ 标签筛选</h2>
+              <TagFilter onFilterChange={setTagFilters} compact />
+            </div>
           </div>
           
           {/* 移动端筛选按钮 */}
@@ -231,7 +260,9 @@ export default function KnowledgePage() {
                 
                 {/* 标签筛选 */}
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-3">🏷️ 标签筛选</h3></div>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-3">🏷️ 标签筛选</h3>
+                  <TagFilter onFilterChange={setTagFilters} compact />
+                </div>
               </div>
             </details>
           </div>
@@ -264,7 +295,7 @@ export default function KnowledgePage() {
             <section>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-semibold text-gray-900">
-                  {selectedDifficulty || selectedCategory  ? "筛选结果" : "推荐文章"}
+                  {selectedDifficulty || selectedCategory || tagFilters.techDomains.length > 0 ? "筛选结果" : "推荐文章"}
                 </h2>
                 <span className="text-sm text-gray-500">
                   共 {filteredArticles.length} 篇
@@ -340,7 +371,19 @@ function ArticleCard({ article }: { article: typeof SAMPLE_ARTICLES[0] }) {
         )}
       </div>
       <h3 className="text-lg font-semibold text-gray-900 mb-2">{article.title}</h3>
-      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{article.description}</p><div className="flex items-center text-xs text-gray-500">
+      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{article.description}</p>
+      
+      {/* 标签展示 */}
+      <div className="flex flex-wrap gap-1.5 mb-3">
+        {article.tags.slice(0, 3).map((tag) => (
+          <Tag key={tag} id={tag} name={`#${tag}`} size="sm" group="tech" />
+        ))}
+        {article.tags.length > 3 && (
+          <span className="text-xs text-gray-500 px-1">+{article.tags.length - 3}</span>
+        )}
+      </div>
+      
+      <div className="flex items-center text-xs text-gray-500">
         <span>⏱️ {article.readTime}</span>
         <span className="mx-2">·</span>
         <span className="text-blue-600 font-medium flex items-center gap-1">
