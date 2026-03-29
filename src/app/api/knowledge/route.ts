@@ -19,8 +19,8 @@ interface KnowledgeArticle {
   version: string;
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'knowledge');
-const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), '..', 'ai-knowledge-base');
+const DATA_DIR = path.join(process.cwd(), '..', 'ai-knowledge-base', 'data', 'knowledge');
+const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), '..', 'ai-knowledge-base', 'data', 'knowledge');
 
 /**
  * 从 JSON 文件加载知识库文章
