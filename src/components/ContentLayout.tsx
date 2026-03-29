@@ -84,7 +84,7 @@ export default function ContentLayout({
                   </span>
                 )}
                 
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-4 leading-tight">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6 leading-normal">
                   {title}
                 </h1>
                 
