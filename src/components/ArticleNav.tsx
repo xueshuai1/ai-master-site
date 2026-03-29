@@ -23,9 +23,11 @@ export default function ArticleNav({ category, articleId }: ArticleNavProps) {
 
   useEffect(() => {
     // 从 API 获取相邻文章
-    fetch(`/api/knowledge/index?category=${category}&articleId=${articleId}`)
+    const url = `/api/knowledge/index?category=${encodeURIComponent(category)}&articleId=${encodeURIComponent(articleId)}`;
+    fetch(url)
       .then(res => res.json())
       .then(data => {
+        console.log('Article nav data:', data);
         setPrev(data.prev);
         setNext(data.next);
         setLoading(false);
