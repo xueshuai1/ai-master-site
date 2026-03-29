@@ -32,7 +32,7 @@ export default function RootLayout({
         <script
           defer
           data-website-id="5b596de5-1f54-44da-b8b7-547ab465f339"
-          data-host-url="http://45.77.121.84:3000"
+          data-host-url="https://stats.ai-master.cc"
           src="/umami.js"
         />
       </head>
