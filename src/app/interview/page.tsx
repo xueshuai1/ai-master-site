@@ -49,18 +49,32 @@ const CATEGORIES = [
   { id: "Coding", name: "编程算法", href: "/categories/Coding", description: "LeetCode、数据结构、算法" },
 ];
 
-// 岗位数据（9 个）
-const ROLES = [
+// 岗位数据
+// AI 类岗位（6 个）
+const AI_ROLES = [
+  { id: "algorithm", name: "算法工程师", href: "/roles/algorithm" },
+  { id: "llm-engineer", name: "大模型工程师", href: "/roles/llm-engineer" },
+  { id: "cv-engineer", name: "CV 工程师", href: "/roles/cv-engineer" },
+  { id: "nlp-engineer", name: "NLP 工程师", href: "/roles/nlp-engineer" },
+  { id: "recsys-engineer", name: "推荐算法工程师", href: "/roles/recsys-engineer" },
+  { id: "ml-engineer", name: "ML 工程师", href: "/roles/ml-engineer" },
+];
+
+// 非 AI 类岗位（9 个）
+const NON_AI_ROLES = [
   { id: "frontend", name: "前端开发", href: "/roles/frontend" },
   { id: "backend", name: "后端开发", href: "/roles/backend" },
   { id: "fullstack", name: "全栈开发", href: "/roles/fullstack" },
   { id: "mobile", name: "移动端开发", href: "/roles/mobile" },
   { id: "test-engineer", name: "测试工程师", href: "/roles/test-engineer" },
   { id: "data-engineer", name: "数据开发", href: "/roles/data-engineer" },
-  { id: "algorithm", name: "算法工程师", href: "/roles/algorithm" },
-  { id: "llm-engineer", name: "大模型工程师", href: "/roles/llm-engineer" },
   { id: "designer", name: "设计师", href: "/roles/designer" },
+  { id: "product", name: "产品经理", href: "/roles/product" },
+  { id: "devops", name: "运维/DevOps", href: "/roles/devops" },
 ];
+
+// 合并所有岗位
+const ROLES = [...AI_ROLES, ...NON_AI_ROLES];
 
 // 示例题目
 const FEATURED_QUESTIONS = [
@@ -206,30 +220,57 @@ export default function InterviewPage() {
             {/* 岗位筛选 */}
             <div className="bg-white rounded-xl border border-[#E2E8F0] p-5">
               <h2 className="text-lg font-semibold text-[#1E293B] mb-3">按岗位筛选</h2>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <button
                   onClick={() => setSelectedRole(null)}
-                  className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                  className={`w-full px-3 py-2 rounded-lg transition ${
                     selectedRole === null
-                      ? "bg-[#475569] text-white"
+                      ? "bg-[#2563EB] text-white"
                       : "bg-[#F1F5F9] text-[#64748B] hover:bg-[#E2E8F0]"
                   }`}
                 >
-                  全部
+                  全部岗位
                 </button>
-                {ROLES.map((role) => (
-                  <button
-                    key={role.id}
-                    onClick={() => setSelectedRole(role.id)}
-                    className={`w-full text-left px-3 py-2 rounded-lg transition ${
-                      selectedRole === role.id
-                        ? "bg-[#475569] text-white"
-                        : "bg-[#F1F5F9] text-[#64748B] hover:bg-[#E2E8F0]"
-                    }`}
-                  >
-                    {role.name}
-                  </button>
-                ))}
+                
+                {/* AI 类岗位 */}
+                <div>
+                  <h3 className="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wider">AI 类岗位</h3>
+                  <div className="space-y-1">
+                    {AI_ROLES.map((role) => (
+                      <button
+                        key={role.id}
+                        onClick={() => setSelectedRole(role.id)}
+                        className={`w-full text-left px-3 py-1.5 rounded-md text-sm transition ${
+                          selectedRole === role.id
+                            ? "bg-[#9333EA] text-white"
+                            : "bg-[#F3E8FF] text-purple-700 hover:bg-[#E9D5FF]"
+                        }`}
+                      >
+                        {role.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* 非 AI 类岗位 */}
+                <div>
+                  <h3 className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">非 AI 类岗位</h3>
+                  <div className="space-y-1">
+                    {NON_AI_ROLES.map((role) => (
+                      <button
+                        key={role.id}
+                        onClick={() => setSelectedRole(role.id)}
+                        className={`w-full text-left px-3 py-1.5 rounded-md text-sm transition ${
+                          selectedRole === role.id
+                            ? "bg-[#475569] text-white"
+                            : "bg-[#F1F5F9] text-[#64748B] hover:bg-[#E2E8F0]"
+                        }`}
+                      >
+                        {role.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
