@@ -113,7 +113,8 @@ export default function InterviewPage() {
         const response = await fetch('/api/questions');
         if (response.ok) {
           const data = await response.json();
-          setQuestions(data.questions || []);
+          // API 返回结构：{ success: true, data: { questions: [...], pagination: {...}, facets: {...} } }
+          setQuestions(data.data?.questions || data.questions || []);
         }
       } catch (error) {
         console.error('Failed to load questions:', error);
