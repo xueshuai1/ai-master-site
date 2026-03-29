@@ -260,9 +260,10 @@ export default function InterviewPage() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredQuestions.map((q) => (
-                  <div
+                  <Link
                     key={q.id}
-                    className="bg-white rounded-xl border border-[#E2E8F0] p-5 hover:shadow-md transition-shadow cursor-pointer"
+                    href={`/questions/${q.id}`}
+                    className="bg-white rounded-xl border border-[#E2E8F0] p-5 hover:shadow-md transition-shadow cursor-pointer block"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <span className="px-2 py-1 bg-[#F1F5F9] text-[#475569] text-xs rounded font-medium">
@@ -290,7 +291,7 @@ export default function InterviewPage() {
                         {ROLES.find((r) => r.id === q.role)?.name || q.role}
                       </span>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}

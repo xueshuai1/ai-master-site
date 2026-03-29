@@ -73,23 +73,23 @@ export default function ContentLayout({
             </div>
           )}
 
-          {/* Main Content Area */}
-          <div className={`lg:col-span-${showTOC && showSidebar ? "8" : showTOC ? "10" : showSidebar ? "10" : "12"}`}>
+          {/* Main Content Area - 增加宽度到 col-span-10 */}
+          <div className={`lg:col-span-${showTOC && showSidebar ? "10" : showTOC ? "10" : showSidebar ? "10" : "12"}`}>
             <article className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
               {/* Header */}
               <header className="mb-8 pb-6 border-b border-gray-100">
                 {category && (
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium inline-block mb-3">
                     {category.toUpperCase()}
                   </span>
                 )}
                 
-                <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-3">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-4 leading-tight">
                   {title}
                 </h1>
                 
                 {subtitle && (
-                  <p className="text-lg text-gray-600 mb-4">
+                  <p className="text-xl text-gray-600 mb-6">
                     {subtitle}
                   </p>
                 )}
@@ -99,7 +99,7 @@ export default function ContentLayout({
                     {tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                        className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
                       >
                         #{tag}
                       </span>
@@ -108,8 +108,8 @@ export default function ContentLayout({
                 )}
               </header>
 
-              {/* Content */}
-              <div className="prose prose-lg max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+              {/* Content - 优化 prose 宽度 */}
+              <div className="prose prose-xl max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
                 {children}
               </div>
             </article>
@@ -117,7 +117,7 @@ export default function ContentLayout({
 
           {/* Right Sidebar - Progress/Recommendations */}
           {showSidebar && sidebarContent && (
-            <div className="lg:col-span-2 hidden lg:block">
+            <div className="lg:col-span-2 hidden lg:block space-y-4">
               {sidebarContent}
             </div>
           )}

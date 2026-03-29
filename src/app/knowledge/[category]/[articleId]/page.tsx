@@ -14,47 +14,58 @@ export default function KnowledgeArticlePage() {
 
   const sidebarContent = (
     <div className="sticky top-6 space-y-4">
-      <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
-        <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+      {/* 学习进度卡片 - 缩小尺寸 */}
+      <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <h3 className="font-semibold text-gray-800 mb-3 text-sm flex items-center gap-2">
           <span>📊</span>
           学习进度
         </h3>
         <div className="space-y-3">
           <div>
-            <div className="flex justify-between text-sm mb-1">
+            <div className="flex justify-between text-xs mb-1">
               <span className="text-gray-600">本节进度</span>
               <span className="text-blue-600 font-medium">0%</span>
             </div>
-            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
               <div className="h-full bg-blue-500 w-0 transition-all duration-300"></div>
             </div>
           </div>
-          <button className="w-full px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors">
+          <button className="w-full px-3 py-1.5 bg-blue-600 text-white text-xs rounded-md hover:bg-blue-700 transition-colors">
             标记为已读
           </button>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
-        <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+      {/* 相关推荐卡片 - 缩小尺寸 */}
+      <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <h3 className="font-semibold text-gray-800 mb-3 text-sm flex items-center gap-2">
           <span>🔗</span>
           相关推荐
         </h3>
-        <ul className="space-y-2 text-sm">
+        <ul className="space-y-2 text-xs">
           <li>
-            <a href="#" className="text-blue-600 hover:underline">
+            <Link
+              href={`/knowledge/${category}/ml-002`}
+              className="text-blue-600 hover:underline block"
+            >
               Transformer 架构详解
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-blue-600 hover:underline">
+            <Link
+              href={`/knowledge/${category}/ml-003`}
+              className="text-blue-600 hover:underline block"
+            >
               Attention 机制入门
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-blue-600 hover:underline">
+            <Link
+              href={`/knowledge/${category}/ml-004`}
+              className="text-blue-600 hover:underline block"
+            >
               BERT 模型实践
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
