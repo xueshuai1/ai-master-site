@@ -1,9 +1,15 @@
 {
   "id": "CV-001",
-  "title": "卷积神经网络基础",
+  "title": "什么是卷积神经网络基础？",
   "category": "CV",
   "difficulty": "⭐⭐",
-  "tags": ["CNN", "卷积", "池化", "感受野", "图像分类"],
+  "tags": [
+    "CNN",
+    "卷积",
+    "池化",
+    "感受野",
+    "图像分类"
+  ],
   "source": "CV 面试题整理",
   "sourceUrl": "",
   "collectedAt": "2026-03-29",

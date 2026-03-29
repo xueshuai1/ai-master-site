@@ -1,6 +1,6 @@
 {
   "id": "LLM-LayerNorm 作用与 Pre-Norm 架构",
-  "title": "LayerNorm 在 Transformer 中的作用",
+  "title": "LayerNorm 在 Transformer 中的作用的工作原理是什么？",
   "category": "LLM",
   "difficulty": "⭐⭐",
   "tags": [

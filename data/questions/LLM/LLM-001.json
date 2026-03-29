@@ -1,9 +1,15 @@
 {
   "id": "LLM-001",
-  "title": "Self-Attention 机制原理详解",
+  "title": "Self-Attention 机制原理是什么？",
   "category": "LLM",
   "difficulty": "⭐⭐⭐",
-  "tags": ["自注意力", "注意力机制", "QKV", "Transformer", "计算复杂度"],
+  "tags": [
+    "自注意力",
+    "注意力机制",
+    "QKV",
+    "Transformer",
+    "计算复杂度"
+  ],
   "source": "LLM 面试题整理",
   "sourceUrl": "",
   "collectedAt": "2026-03-29",

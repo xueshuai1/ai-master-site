@@ -1,9 +1,15 @@
 {
   "id": "NLP-001",
-  "title": "Transformer 架构详解",
+  "title": "Transformer 架构的原理是什么？",
   "category": "NLP",
   "difficulty": "⭐⭐⭐",
-  "tags": ["Transformer", "自注意力", "位置编码", "编码器 - 解码器", "并行计算"],
+  "tags": [
+    "Transformer",
+    "自注意力",
+    "位置编码",
+    "编码器 - 解码器",
+    "并行计算"
+  ],
   "source": "NLP 面试题整理",
   "sourceUrl": "",
   "collectedAt": "2026-03-29",

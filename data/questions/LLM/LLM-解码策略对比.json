@@ -1,6 +1,6 @@
 {
   "id": "LLM-解码策略对比",
-  "title": "解码策略对比：Greedy vs Sampling vs Beam Search",
+  "title": "解码策略对比：Greedy vs Sampling vs Beam Search的区别是什么？",
   "category": "LLM",
   "difficulty": "⭐⭐",
   "tags": [
