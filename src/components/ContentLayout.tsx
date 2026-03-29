@@ -22,7 +22,7 @@ export default function ContentLayout({
   category,
   tags = [],
   showTOC = true,
-  showSidebar = true,
+  showSidebar = false,
   sidebarContent,
   breadcrumbs = [],
 }: ContentLayoutProps) {
@@ -74,7 +74,7 @@ export default function ContentLayout({
           )}
 
           {/* Main Content Area - 增加宽度到 col-span-10 */}
-          <div className={`lg:col-span-${showTOC && showSidebar ? "10" : showTOC ? "10" : showSidebar ? "10" : "12"}`}>
+          <div className="lg:col-span-10">
             <article className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
               {/* Header */}
               <header className="mb-8 pb-6 border-b border-gray-100">
