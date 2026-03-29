@@ -1,0 +1,76 @@
+{
+  "id": "LLM-位置编码演进与对比",
+  "title": "位置编码的演进与对比",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "位置编码",
+    "RoPE",
+    "ALiBi",
+    "长序列"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "对比绝对位置编码、RoPE、ALiBi 等位置编码方案的原理和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 位置编码，RoPE，ALiBi，长序列",
+  "requirements": [],
+  "answer": {
+    "summary": "对比绝对位置编码、RoPE、ALiBi 等位置编码方案的原理和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 位置编码，RoPE，ALiBi，长序列",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "对比绝对位置编码、RoPE、ALiBi 等位置编码方案的原理和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 位置编码，RoPE，ALiBi，长序列"
+      },
+      {
+        "title": "参考答案",
+        "content": "**1. 绝对位置编码（原始 Transformer）：**\n- 正弦/余弦函数或可学习嵌入\n- 加到 token 嵌入上\n- 局限：外推能力差，超出训练长度性能下降\n\n**2. RoPE（旋转位置编码）：**\n- 通过旋转矩阵注入相对位置信息\n- 保持自注意力的内积形式\n- 优点：支持外推，计算高效\n- 应用：LLaMA、PaLM 等\n\n**3. ALiBi（Attention with Linear Biases）：**\n- 在注意力分数上加线性偏置\n- 偏置与相对距离成正比\n- 优点：无需训练，支持任意长度外推\n- 应用：MPT、Falcon\n\n**4. 其他变体：**\n- T5 相对位置编码：可学习的相对偏置\n- xPos：结合绝对和相对信息"
+      },
+      {
+        "title": "考察重点",
+        "content": "- **理解深度：** 各编码方案的数学原理\n- **知识广度：** 位置编码的演进脉络\n- **应用能力：** 长序列场景的编码选择"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. RoPE 如何实现外推能力？（5 分）\n2. ALiBi 的斜率如何设置？（5 分）\n3. 为什么相对位置编码更优？（5 分）\n4. 解释 NTK-Aware 插值方法。（5 分）\n5. 长上下文场景如何选择位置编码？（5 分）"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [
+    {
+      "question": "RoPE 如何实现外推能力？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "ALiBi 的斜率如何设置？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "为什么相对位置编码更优？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "解释 NTK-Aware 插值方法。（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "长上下文场景如何选择位置编码？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.372Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

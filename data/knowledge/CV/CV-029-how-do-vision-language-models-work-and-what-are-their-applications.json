@@ -1,0 +1,24 @@
+{
+  "id": "CV-029-how-do-vision-language-models-work-and-what-are-their-applications",
+  "title": "CV-029-how-do-vision-language-models-work-and-what-are-their-applications",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-029 How do vision-language models work and what are their applications?\n\n Q29: How do vision-language models work and what are their applications?\n\nScore: 95/100\n\nAnswer:\n\nVision-Language Models:\nJointly process visual and textual information.\n\nArchitectures:\n\n1. Dual-Encoder (CLIP):\n   - Separate image and text encoders\n   - Contrastive learning to align embeddings\n   - Zero-shot transfer capability\n\n2. Fusion Encoder:\n   - Early fusion of vision and language\n   ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q29: How do vision-language models work and what are their applications?",
+      "level": 2,
+      "content": "**Score:** 95/100\n\n**Answer:**\n\n**Vision-Language Models:**\nJointly process visual and textual information.\n\n**Architectures:**\n\n1. **Dual-Encoder (CLIP):**\n   - Separate image and text encoders\n   - Contrastive learning to align embeddings\n   - Zero-shot transfer capability\n\n2. **Fusion Encoder:**\n   - Early fusion of vision and language\n   - Cross-modal attention\n   - Better for complex reasoning\n\n3. **Decoder Models:**\n   - Generate text from images\n   - Image captioning, VQA\n\n**Key Models:**\n- **CLIP:** Image-text matching, zero-shot classification\n- **BLIP/BLIP-2:** Unified vision-language understanding\n- **Flamingo:** Few-shot vision-language learning\n- **LLaVA:** Large language and vision assistant\n\n**Applications:**\n\n1. **Zero-Shot Classification:**\n   - Classify without task-specific training\n   - Natural language prompts\n\n2. **Image Captioning:**\n   - Generate descriptive text for images\n\n3. **Visual Question Answering (VQA):**\n   - Answer questions about images\n\n4. **Image Retrieval:**\n   - Text-to-image search\n   - Image-to-text search\n\n5. **Multimodal Reasoning:**\n   - Complex visual reasoning tasks\n   - Document understanding\n\n6. **Content Moderation:**\n   - Detect inappropriate content\n\n**Challenges:**\n- Hallucination in generated text\n- Bias in training data\n- Computational cost\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

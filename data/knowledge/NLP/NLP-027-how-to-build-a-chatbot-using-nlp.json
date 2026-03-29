@@ -1,0 +1,24 @@
+{
+  "id": "NLP-027-how-to-build-a-chatbot-using-nlp",
+  "title": "NLP-027-how-to-build-a-chatbot-using-nlp",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 1,
+  "abstract": " NLP-027 How to build a chatbot using NLP?\n\n 27. How to build a chatbot using NLP?\n答案要点:\n架构:\n1. NLU (理解):\n   - Intent Classification\n   - Entity Extraction\n2. Dialogue Management:\n   - Rule-based / ML-based\n   - Context Tracking\n3. NLG (生成):\n   - Template-based\n   - Neural Generation (GPT)\n\n技术栈:\n- Rasa, Dialogflow, Microsoft Bot Framework\n- BERT (意图识别) + GPT (回复生成)\n\n质量评分: 95/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "27. How to build a chatbot using NLP?",
+      "level": 3,
+      "content": "**答案要点:**\n**架构:**\n1. **NLU (理解)**:\n   - Intent Classification\n   - Entity Extraction\n2. **Dialogue Management**:\n   - Rule-based / ML-based\n   - Context Tracking\n3. **NLG (生成)**:\n   - Template-based\n   - Neural Generation (GPT)\n\n**技术栈:**\n- Rasa, Dialogflow, Microsoft Bot Framework\n- BERT (意图识别) + GPT (回复生成)\n\n**质量评分**: 95/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

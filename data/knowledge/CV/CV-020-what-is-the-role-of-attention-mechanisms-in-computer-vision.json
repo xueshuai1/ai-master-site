@@ -1,0 +1,24 @@
+{
+  "id": "CV-020-what-is-the-role-of-attention-mechanisms-in-computer-vision",
+  "title": "CV-020-what-is-the-role-of-attention-mechanisms-in-computer-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-020 What is the role of attention mechanisms in computer vision?\n\n Q20: What is the role of attention mechanisms in computer vision?\n\nScore: 93/100\n\nAnswer:\n\nAttention Mechanisms:\nAllow models to focus on relevant parts of input while ignoring irrelevant information.\n\nTypes:\n\n1. Spatial Attention:\n   - Focus on specific image regions\n   - SE (Squeeze-and-Excitation) blocks\n   - CBAM (Convolutional Block Attention Module)\n\n2. Channel Attention:\n   - Weight importan...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q20: What is the role of attention mechanisms in computer vision?",
+      "level": 2,
+      "content": "**Score:** 93/100\n\n**Answer:**\n\n**Attention Mechanisms:**\nAllow models to focus on relevant parts of input while ignoring irrelevant information.\n\n**Types:**\n\n1. **Spatial Attention:**\n   - Focus on specific image regions\n   - SE (Squeeze-and-Excitation) blocks\n   - CBAM (Convolutional Block Attention Module)\n\n2. **Channel Attention:**\n   - Weight importance of feature channels\n   - SE-Net learns channel-wise weights\n\n3. **Self-Attention (Transformers):**\n   - Global context modeling\n   - Vision Transformers (ViT)\n   - Non-local networks\n\n4. **Cross-Attention:**\n   - Multi-modal fusion (vision-language)\n   - CLIP, DALL-E architectures\n\n**Benefits:**\n- Improved accuracy on fine-grained tasks\n- Better interpretability (attention maps)\n- Handles long-range dependencies\n- Robust to clutter and occlusion\n\n**Applications:**\n- Image classification (SE-ResNet)\n- Object detection (DETR)\n- Image captioning (attention over features)\n- Visual question answering\n- Medical imaging (focus on regions of interest)\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

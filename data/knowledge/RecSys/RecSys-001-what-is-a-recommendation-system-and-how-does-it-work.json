@@ -1,0 +1,24 @@
+{
+  "id": "RecSys-001-what-is-a-recommendation-system-and-how-does-it-work",
+  "title": "RecSys-001-what-is-a-recommendation-system-and-how-does-it-work",
+  "category": "RecSys",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 2,
+  "abstract": " RecSys-001 What is a recommendation system and how does it work?\n\n Q1. What is a recommendation system and how does it work?\n\nAnswer:\n\nA Recommendation System is an information filtering system that predicts user preferences for items and suggests the most relevant content, products, or services. These systems help users navigate overwhelming content choices by providing personalized recommendations.\n\nCore Components:\n\n1. Users: Individuals interacting with the system\n2. I...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q1. What is a recommendation system and how does it work?",
+      "level": 2,
+      "content": "**Answer:**\n\nA **Recommendation System** is an information filtering system that predicts user preferences for items and suggests the most relevant content, products, or services. These systems help users navigate overwhelming content choices by providing personalized recommendations.\n\n**Core Components:**\n\n1. **Users**: Individuals interacting with the system\n2. **Items**: Products, content, or services being recommended\n3. **Interactions**: User-item engagement data (ratings, clicks, purchases)\n4. **Algorithm**: Mathematical model generating predictions\n\n**Three Main Paradigms:**\n\n| Approach | Description | Example |\n|----------|-------------|---------|\n| **Collaborative Filtering** | Based on user behavior patterns | \"Users who liked X also liked Y\" |\n| **Content-Based Filtering** | Matches item attributes to user profile | Recommending action movies to action fans |\n| **Hybrid Models** | Combines multiple approaches | Netflix's recommendation engine |\n\n**How It Works:**\n\n```\nUser-Item Matrix → Algorithm → Prediction Model → Ranked Recommendations\n     ↓                    ↓              ↓                ↓\n[Historical Data]  [ML/Statistical]  [Learn Patterns]  [Top-N Items]\n```\n\n**Real-World Applications:**\n- E-commerce: Amazon product recommendations\n- Streaming: Netflix, Spotify content suggestions\n- Social Media: Facebook feed, Twitter timeline\n- Job Platforms: LinkedIn job recommendations\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** RecSys"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

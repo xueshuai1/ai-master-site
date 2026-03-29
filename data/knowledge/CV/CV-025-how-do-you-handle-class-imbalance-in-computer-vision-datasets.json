@@ -1,0 +1,24 @@
+{
+  "id": "CV-025-how-do-you-handle-class-imbalance-in-computer-vision-datasets",
+  "title": "CV-025-how-do-you-handle-class-imbalance-in-computer-vision-datasets",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-025 How do you handle class imbalance in computer vision datasets?\n\n Q25: How do you handle class imbalance in computer vision datasets?\n\nScore: 92/100\n\nAnswer:\n\nProblem:\nSome classes have significantly fewer samples, leading to biased models.\n\nSolutions:\n\nData-Level:\n1. Oversampling:\n   - Duplicate minority class samples\n   - Data augmentation for minority classes\n\n2. Undersampling:\n   - Reduce majority class samples\n   - Risk: losing important information\n\n3...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q25: How do you handle class imbalance in computer vision datasets?",
+      "level": 2,
+      "content": "**Score:** 92/100\n\n**Answer:**\n\n**Problem:**\nSome classes have significantly fewer samples, leading to biased models.\n\n**Solutions:**\n\n**Data-Level:**\n1. **Oversampling:**\n   - Duplicate minority class samples\n   - Data augmentation for minority classes\n\n2. **Undersampling:**\n   - Reduce majority class samples\n   - Risk: losing important information\n\n3. **Synthetic Data:**\n   - SMOTE (interpolate between samples)\n   - GAN-generated samples\n\n**Algorithm-Level:**\n1. **Class Weights:**\n   - Weight loss inversely proportional to class frequency\n   - PyTorch: `weight=torch.tensor([w1, w2, ...])`\n\n2. **Focal Loss:**\n   - Down-weights easy examples\n   - Focuses on hard negatives\n   - `FL(p_t) = -α_t * (1 - p_t)^γ * log(p_t)`\n\n3. **Two-Stage Training:**\n   - Train on balanced subset first\n   - Fine-tune on full dataset\n\n**Evaluation:**\n- Use precision, recall, F1 instead of accuracy\n- Per-class metrics\n- Confusion matrix analysis\n\n**Best Practice:**\nCombine multiple approaches (augmentation + class weights + focal loss)\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

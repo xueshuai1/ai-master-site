@@ -1,0 +1,24 @@
+{
+  "id": "RecSys-004-how-do-cold-start-problems-impact-recommendation-systems-and-how-can-they-be-mitigated",
+  "title": "RecSys-004-how-do-cold-start-problems-impact-recommendation-systems-and-how-can-they-be-mitigated",
+  "category": "RecSys",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 3,
+  "abstract": " RecSys-004 How do cold start problems impact recommendation systems and how can they be mitigated?\n\n Q4. How do cold start problems impact recommendation systems and how can they be mitigated?\n\nAnswer:\n\nImpact of Cold Start:\n\n| Type | Impact | Severity |\n|------|--------|----------|\n| User Cold Start | Generic recommendations, poor UX, high churn | High |\n| Item Cold Start | New items never get exposure, creator frustration | Medium-High |\n| System Cold Start | Platform ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q4. How do cold start problems impact recommendation systems and how can they be mitigated?",
+      "level": 2,
+      "content": "**Answer:**\n\n**Impact of Cold Start:**\n\n| Type | Impact | Severity |\n|------|--------|----------|\n| **User Cold Start** | Generic recommendations, poor UX, high churn | High |\n| **Item Cold Start** | New items never get exposure, creator frustration | Medium-High |\n| **System Cold Start** | Platform appears empty, network effects fail | Critical |\n\n**Mitigation Strategies:**\n\n**1. For New Users:**\n\n```python\n# Strategy 1: Demographic-Based\ndef recommend_new_user(demographics):\n    similar_users = find_users_with_similar_demographics(demographics)\n    return popular_among_users(similar_users)\n\n# Strategy 2: Onboarding Survey\ndef onboarding_recommendations(user_preferences):\n    items = content_based_filter(user_preferences)\n    return diverse_sample(items, n=10)\n\n# Strategy 3: Trending/Popular\ndef trending_recommendations():\n    return time_decayed_popularity(window='7_days')\n```\n\n**2. For New Items:**\n\n```python\n# Strategy 1: Content-Based Bootstrap\ndef bootstrap_new_item(item):\n    similar_items = find_similar_by_content(item)\n    target_users = users_who_liked(similar_items)\n    return target_users\n\n# Strategy 2: Explore-Exploit\ndef epsilon_greedy_recommendation(item, epsilon=0.1):\n    if random() < epsilon:\n        return random_user_sample()  # Exploration\n    else:\n        return targeted_users()  # Exploitation\n\n# Strategy 3: Multi-Armed Bandit\ndef bandit_allocation(new_items):\n    # Thompson Sampling or UCB\n    return allocate_impressions_based_on_uncertainty()\n```\n\n**3. Advanced Techniques:**\n\n**Transfer Learning:**\n```python\n# Use pre-trained embeddings from similar domain\nuser_embeddings = transfer_embeddings(source_domain='movies', target='books')\n```\n\n**Meta-Learning:**\n```python\n# Learn to initialize models for fast adaptation\nmodel = MAML_algorithm(train_on_many_users)\nnew_user_model = model.adapt(few_shots=new_user_interactions)\n```\n\n**Graph-Based Methods:**\n```python\n# Use knowledge graphs to connect new items\nitem_graph.add_node(new_item)\nitem_graph.add_edges(similarity_edges(new_item, existing_items))\nrecommendations = graph_random_walk(start_node=new_item)\n```\n\n**Production Best Practices:**\n\n1. **Fallback Hierarchy**: CF → CBF → Popular → Random\n2. **Monitoring**: Track cold start user retention separately\n3. **A/B Testing**: Test different cold start strategies\n4. **Feedback Loop**: Rapidly incorporate first interactions\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** RecSys"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

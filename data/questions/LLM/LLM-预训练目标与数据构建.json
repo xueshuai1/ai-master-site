@@ -1,0 +1,108 @@
+{
+  "id": "LLM-预训练目标与数据构建",
+  "title": "预训练目标与数据构建",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "预训练",
+    "语言建模",
+    "数据清洗",
+    "语料"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释 LLM 预训练的目标函数，以及如何构建高质量的预训练数据集。\n\n**来源：** LLM 面试题整理\n**标签：** 预训练，语言建模，数据清洗，语料",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释 LLM 预训练的目标函数，以及如何构建高质量的预训练数据集。\n\n**来源：** LLM 面试题整理\n**标签：** 预训练，语言建模，数据清洗，语料",
+    "coreFormula": "# 自回归预测下一个 token\nL = -Σ log P(x_t | x_<t)\n# GPT 系列使用",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释 LLM 预训练的目标函数，以及如何构建高质量的预训练数据集。\n\n**来源：** LLM 面试题整理\n**标签：** 预训练，语言建模，数据清洗，语料",
+        "code": {
+          "language": "python",
+          "code": "# 自回归预测下一个 token\nL = -Σ log P(x_t | x_<t)\n# GPT 系列使用"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**预训练目标：**\n\n**1. 因果语言建模（Causal LM）：**\n```python\n# 自回归预测下一个 token\nL = -Σ log P(x_t | x_<t)\n# GPT 系列使用\n```\n\n**2. 掩码语言建模（Masked LM）：**\n```python\n# 预测被掩码的 token\nL = -Σ log P(x_masked | x_unmasked)\n# BERT 使用，双向上下文\n```\n\n**3. 前后缀语言建模：**\n```python\n# 部分双向，用于 Encoder-Decoder\nL = -Σ log P(x_target | x_source)\n# T5、BART 使用\n```\n\n**数据构建流程：**\n\n**Step 1: 数据收集**\n```\n来源：\n- 网页爬取（Common Crawl）\n- 书籍（Project Gutenberg）\n- 维基百科\n- 代码（GitHub）\n- 对话数据\n- 学术论文\n```\n\n**Step 2: 数据清洗**\n```python\n# 去重\ndeduplicated = deduplicate(corpus)\n\n# 过滤低质量\nfiltered = [doc for doc in deduplicated \n            if quality_score(doc) > threshold]\n\n# 过滤敏感信息\ncleaned = remove_pii(filtered)\n\n# 语言识别\nmultilingual = identify_language(cleaned)\n```\n\n**Step 3: 数据混合**\n```python\n# 按来源加权采样\ndata_mix = {\n    'web': 0.60,\n    'books': 0.15,\n    'wiki': 0.10,\n    'code': 0.10,\n    'other': 0.05\n}\n```\n\n**Step 4: Tokenization**\n```python\n# 使用预训练的 tokenizer\ntokens = tokenizer.encode(text)\n# 保存为高效格式（如 Arrow、TFRecord）\n```\n\n**数据质量关键：**\n- **去重：** 减少过拟合，提升泛化\n- **过滤：** 移除低质、有毒内容\n- **平衡：** 多领域、多语言覆盖\n- **新鲜度：** 包含最新知识\n\n**数据规模：**\n- LLaMA：1.4T tokens\n- GPT-3：300B tokens\n- PaLM：780B tokens\n\n**挑战：**\n- 数据隐私和版权\n- 多语言不平衡\n- 知识截止问题\n- 偏见和毒性内容",
+        "code": {
+          "language": "python",
+          "code": "# 预测被掩码的 token\nL = -Σ log P(x_masked | x_unmasked)\n# BERT 使用，双向上下文"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 预训练目标和数据处理流程\n- **能力：** 设计和实施数据管道\n- **思维：** 理解数据质量对模型的影响",
+        "code": {
+          "language": "python",
+          "code": "# 部分双向，用于 Encoder-Decoder\nL = -Σ log P(x_target | x_source)\n# T5、BART 使用"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么 GPT 选择因果 LM 而不是掩码 LM？（5 分）\n2. 如何检测和处理训练数据污染？（5 分）\n3. 数据去重有哪些方法？（5 分）\n4. 如何评估预训练数据的质量？（5 分）\n5. 多语言数据如何平衡？（5 分）",
+        "code": {
+          "language": "text",
+          "code": "来源：\n- 网页爬取（Common Crawl）\n- 书籍（Project Gutenberg）\n- 维基百科\n- 代码（GitHub）\n- 对话数据\n- 学术论文"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "数据是 LLM 的燃料，高质量数据是成功的关键。",
+        "code": {
+          "language": "python",
+          "code": "# 去重\ndeduplicated = deduplicate(corpus)\n\n# 过滤低质量\nfiltered = [doc for doc in deduplicated \n            if quality_score(doc) > threshold]\n\n# 过滤敏感信息\ncleaned = remove_pii(filtered)\n\n# 语言识别\nmultilingual = identify_language(cleaned)"
+        }
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本",
+        "code": {
+          "language": "python",
+          "code": "# 按来源加权采样\ndata_mix = {\n    'web': 0.60,\n    'books': 0.15,\n    'wiki': 0.10,\n    'code': 0.10,\n    'other': 0.05\n}"
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "预训练目标和数据处理流程",
+    "ability": "设计和实施数据管道",
+    "thinking": "理解数据质量对模型的影响"
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么 GPT 选择因果 LM 而不是掩码 LM？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何检测和处理训练数据污染？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "数据去重有哪些方法？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何评估预训练数据的质量？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "多语言数据如何平衡？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.375Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "CV-012-how-do-you-handle-varying-lighting-conditions-in-computer-vision-projects",
+  "title": "CV-012-how-do-you-handle-varying-lighting-conditions-in-computer-vision-projects",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-012 How do you handle varying lighting conditions in computer vision projects?\n\n Q12: How do you handle varying lighting conditions in computer vision projects?\n\nScore: 92/100\n\nAnswer:\n\nChallenges:\n- Shadows and overexposure distort object appearance\n- Color shifts affect feature extraction\n- Inconsistent lighting across training and deployment\n\nSolutions:\n\n1. Preprocessing Techniques:\n   - Histogram equalization for contrast enhancement\n   - Adaptive histogram equali...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q12: How do you handle varying lighting conditions in computer vision projects?",
+      "level": 2,
+      "content": "**Score:** 92/100\n\n**Answer:**\n\n**Challenges:**\n- Shadows and overexposure distort object appearance\n- Color shifts affect feature extraction\n- Inconsistent lighting across training and deployment\n\n**Solutions:**\n\n1. **Preprocessing Techniques:**\n   - Histogram equalization for contrast enhancement\n   - Adaptive histogram equalization (CLAHE)\n   - Gamma correction\n   - White balance adjustment\n\n2. **Color Space Conversion:**\n   - Use HSV/HSL to separate chromatic information from intensity\n   - YCbCr for luminance-chrominance separation\n   - Lab color space for perceptual uniformity\n\n3. **Data Augmentation:**\n   - Simulate various lighting conditions during training\n   - Random brightness/contrast adjustments\n   - Shadow simulation\n\n4. **Model Architecture:**\n   - Use normalization layers (BatchNorm, InstanceNorm)\n   - Attention mechanisms to focus on illumination-invariant features\n   - Multi-scale feature extraction\n\n5. **Advanced Approaches:**\n   - Retinex theory-based enhancement\n   - Deep learning-based illumination normalization\n   - Domain adaptation for lighting conditions\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "LLM-001-RAG 基础概念与工作原理",
+  "title": "RAG 基础概念与工作原理",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "RAG",
+    "检索增强生成",
+    "LLM 应用",
+    "向量检索"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.389Z",
+  "updatedAt": "2026-03-29T14:57:53.389Z",
+  "readTime": 7,
+  "abstract": " 题目描述\n\n请详细解释 RAG（Retrieval-Augmented Generation，检索增强生成）技术：\n\n1. RAG 的基本概念是什么？\n2. 为什么需要 RAG？它解决了 LLM 的哪些核心问题？\n3. RAG 的工作流程是怎样的？\n4. 检索器和生成器如何协同工作？\n\n 参考答案\n\n 1. RAG 基本概念\n\nRAG（检索增强生成） 是一种将信息检索与文本生成相结合的技术架构。它通过在生成回答之前先从外部知识库中检索相关信息，将这些信息作为上下文输入给大语言模型，从而生成更准确、更有依据的回答。\n\n核心思想：让 LLM 在回答时\"先查资料，再作答\"，而不是仅依赖训练时学到的参数化知识。\n\n 2. RAG 解决的核心问题\n\n| LLM 固有问题 | RAG 解决方案 |\n|-------------|-------------|\n| 知识截止：训练数据有时间限制 | 检索最新信息，突破时间限制 |\n| 幻觉问题：可能生成错误但看似合理的内容 | 基于检索到的事实生成，减少幻觉 |\n| 私有知识缺失：无法访问企...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释 RAG（Retrieval-Augmented Generation，检索增强生成）技术：\n\n1. RAG 的基本概念是什么？\n2. 为什么需要 RAG？它解决了 LLM 的哪些核心问题？\n3. RAG 的工作流程是怎样的？\n4. 检索器和生成器如何协同工作？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "1. RAG 基本概念",
+      "level": 2,
+      "content": "**RAG（检索增强生成）** 是一种将信息检索与文本生成相结合的技术架构。它通过在生成回答之前先从外部知识库中检索相关信息，将这些信息作为上下文输入给大语言模型，从而生成更准确、更有依据的回答。\n\n**核心思想**：让 LLM 在回答时\"先查资料，再作答\"，而不是仅依赖训练时学到的参数化知识。"
+    },
+    {
+      "id": "sec-4",
+      "title": "2. RAG 解决的核心问题",
+      "level": 2,
+      "content": "| LLM 固有问题 | RAG 解决方案 |\n|-------------|-------------|\n| **知识截止**：训练数据有时间限制 | 检索最新信息，突破时间限制 |\n| **幻觉问题**：可能生成错误但看似合理的内容 | 基于检索到的事实生成，减少幻觉 |\n| **私有知识缺失**：无法访问企业内部数据 | 连接私有知识库，支持企业应用 |\n| **可解释性差**：难以追溯答案来源 | 提供引用来源，增强可信度 |\n| **领域知识不足**：通用模型缺乏专业知识 | 检索专业文档，补充领域知识 |"
+    },
+    {
+      "id": "sec-5",
+      "title": "3. RAG 工作流程",
+      "level": 2,
+      "content": "```\n┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐    ┌─────────────┐\n│  用户查询   │ →  │  查询处理    │ →  │  向量检索   │ →  │  上下文拼接  │ →  │  LLM 生成   │\n│  \"什么是    │    │  向量化      │    │  相关文档   │    │  Prompt 构建  │    │  最终回答   │\n│   RAG?\"     │    │              │    │              │    │              │    │              │\n└─────────────┘    └──────────────┘    └─────────────┘    └──────────────┘    └─────────────┘\n                          ↓                   ↓                   ↓\n                    Embedding 模型      向量数据库         Prompt 模板\n```\n\n**详细步骤**：\n\n1. **查询接收**：用户提出问题\n2. **查询向量化**：使用 Embedding 模型将查询转换为向量\n3. **相似性检索**：在向量数据库中查找最相关的文档片段\n4. **结果排序**：按相似度分数排序，选取 Top-K 个文档\n5. **上下文构建**：将检索到的文档与原始查询拼接成 Prompt\n6. **LLM 生成**：大模型基于上下文生成回答\n7. **结果返回**：将回答（可选带引用）返回给用户"
+    },
+    {
+      "id": "sec-6",
+      "title": "4. 检索器与生成器协同",
+      "level": 2,
+      "content": "**检索器（Retriever）**：\n- **职责**：从知识库中找到与查询最相关的文档\n- **实现**：通常使用向量数据库（FAISS、Pinecone、Weaviate、Chroma）\n- **关键技术**：Embedding 模型、相似度计算（余弦相似度、点积）\n\n**生成器（Generator）**：\n- **职责**：基于检索到的内容生成自然语言回答\n- **实现**：大语言模型（GPT、Claude、LLaMA 等）\n- **关键技术**：Prompt 工程、上下文学习\n\n**协同示例代码**：\n\n```python\nfrom sentence_transformers import SentenceTransformer\nimport faiss\nimport numpy as np\n\nclass RAGSystem:\n    def __init__(self, embedding_model, vector_db, llm):\n        self.embedder = embedding_model\n        self.vector_db = vector_db\n        self.llm = llm\n    \n    def retrieve(self, query, top_k=5):\n        \"\"\"检索相关文档\"\"\"\n        # 1. 查询向量化\n        query_embedding = self.embedder.encode(query)\n        query_embedding = np.array([query_embedding])\n        \n        # 2. 向量检索\n        distances, indices = self.vector_db.search(query_embedding, top_k)\n        \n        # 3. 获取文档内容\n        docs = []\n        for idx in indices[0]:\n            if idx != -1:  # FAISS 返回 -1 表示无结果\n                docs.append(self.vector_db.documents[idx])\n        return docs\n    \n    def generate(self, query, contexts):\n        \"\"\"基于检索结果生成回答\"\"\"\n        # 构建 Prompt\n        context_text = \"\\n\\n\".join([f\"资料{i+1}:\\n{doc}\" for i, doc in enumerate(contexts)])\n        \n        prompt = f\"\"\"基于以下参考资料回答问题。如果资料中没有相关信息，请说明。\n\n参考资料：\n{context_text}\n\n问题：{query}\n\n回答：\"\"\"\n        \n        # 调用 LLM\n        response = self.llm.generate(prompt)\n        return response\n    \n    def query(self, user_query):\n        \"\"\"完整的 RAG 查询流程\"\"\"\n        # 检索\n        contexts = self.retrieve(user_query)\n        \n        # 生成\n        answer = self.generate(user_query, contexts)\n        \n        return answer, contexts\n\n# 使用示例\nrag = RAGSystem(\n    embedding_model=SentenceTransformer('bge-large-zh'),\n    vector_db=faiss_index,\n    llm=llama_model\n)\n\nanswer, sources = rag.query(\"什么是 RAG 技术？\")\nprint(f\"回答：{answer}\")\nprint(f\"参考来源：{sources}\")\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- **核心知识点**：\n  - RAG 的基本概念和架构\n  - RAG 解决的 LLM 核心问题\n  - 检索器与生成器的职责划分\n  - 向量检索的基本原理\n\n- **能力维度**：理解 + 应用\n\n- **常见误区**：\n  - 混淆 RAG 与微调（Fine-tuning）\n  - 忽视检索质量对最终结果的影响\n  - 不了解 RAG 的适用场景和局限性"
+    },
+    {
+      "id": "sec-8",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-9",
+      "title": "追问 1: RAG 与 Fine-tuning 有什么区别？如何选择？",
+      "level": 2,
+      "content": "**答案**：\n\n| 维度 | RAG | Fine-tuning |\n|------|-----|-------------|\n| **知识更新** | 实时更新，无需重新训练 | 需要重新训练 |\n| **数据需求** | 需要结构化知识库 | 需要标注训练数据 |\n| **成本** | 较低（主要是检索成本） | 较高（训练成本） |\n| **幻觉控制** | 较好（有依据） | 一般 |\n| **私有数据** | 支持良好 | 需要特殊处理 |\n| **响应速度** | 稍慢（需检索） | 快 |\n\n**选择建议**：\n- 选 RAG：知识频繁更新、有私有知识库、需要可解释性\n- 选 Fine-tuning：学习特定风格/格式、任务固定、数据充足\n- 混合使用：RAG 提供知识，微调优化表达"
+    },
+    {
+      "id": "sec-10",
+      "title": "追问 2: Embedding 模型的选择对 RAG 有什么影响？",
+      "level": 2,
+      "content": "**答案**：\n\nEmbedding 模型直接决定检索质量，是关键组件：\n\n**选择考虑因素**：\n1. **语言支持**：中文任务选 BGE、M3E；英文选 text-embedding-ada-002\n2. **维度大小**：维度越高表达能力越强，但检索越慢\n3. **领域适配**：通用 vs 专业领域（如法律、医疗）\n4. **上下文长度**：支持的最大文本长度\n\n**常用模型对比**：\n\n| 模型 | 维度 | 语言 | 特点 |\n|------|------|------|------|\n| text-embedding-ada-002 | 1536 | 多语言 | OpenAI API，效果好 |\n| BGE-Large-ZH | 1024 | 中文 | 中文效果优秀 |\n| M3E | 768 | 中文 | 轻量高效 |\n| E5-Large | 1024 | 多语言 | 开源免费 |"
+    },
+    {
+      "id": "sec-11",
+      "title": "追问 3: 如何处理检索到的文档与查询不相关的情况？",
+      "level": 2,
+      "content": "**答案**：\n\n**问题表现**：检索质量差导致\"垃圾进，垃圾出\"\n\n**解决方案**：\n1. **设置相似度阈值**：低于阈值返回\"未找到相关信息\"\n2. **查询改写**：扩展或重写查询以提高检索准确率\n3. **混合检索**：结合关键词检索（BM25）和向量检索\n4. **重排序**：用 Cross-Encoder 对检索结果二次排序\n5. **多路召回**：从多个索引/来源检索后融合结果\n\n```python\ndef hybrid_retrieve(query, vector_results, bm25_results, top_k=5):\n    \"\"\"混合检索：融合向量和关键词检索结果\"\"\"\n    # 简单融合：交替选取\n    merged = []\n    for i in range(max(len(vector_results), len(bm25_results))):\n        if i < len(vector_results):\n            merged.append(vector_results[i])\n        if i < len(bm25_results):\n            merged.append(bm25_results[i])\n    return merged[:top_k]\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "深入理解",
+      "level": 1,
+      "content": "> **典型应用场景**：\n> - **企业知识库问答**：员工手册、技术文档、FAQ 查询\n> - **智能客服**：结合产品文档回答用户问题\n> - **法律/医疗咨询**：基于法规/文献提供专业建议\n> - **研究助手**：学术论文检索和总结\n> - **代码助手**：基于内部代码库回答编程问题\n\n> **技术栈参考**：\n> - **Embedding**：BGE、M3E、text-embedding-ada-002\n> - **向量数据库**：FAISS（本地）、Pinecone（云端）、Weaviate、Chroma\n> - **LLM**：GPT-4、Claude、LLaMA、ChatGLM\n> - **框架**：LangChain、LlamaIndex\n\n> **面试技巧**：\n> - 先讲整体架构，再深入细节\n> - 结合具体应用场景说明价值\n> - 主动提及局限性和优化方向\n> - 准备 1-2 个实际项目经验（如有）"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

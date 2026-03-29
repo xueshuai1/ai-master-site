@@ -1,0 +1,126 @@
+{
+  "id": "DL-002-neural-networks-components",
+  "title": "DL-002-neural-networks-components",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.384Z",
+  "updatedAt": "2026-03-29T14:57:53.384Z",
+  "readTime": 4,
+  "abstract": " DL-002 ⭐⭐⭐ Explain Neural Networks and Their Basic Components\n\n Question\nWhat is a Neural Network? Describe its fundamental components and how it mimics the human brain.\n\n Answer\n\n What is a Neural Network?\nA Neural Network (also called Artificial Neural Network or ANN) is a computational model inspired by the biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers that work together to recognize patterns and make decisions.\n\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is a Neural Network? Describe its fundamental components and how it mimics the human brain."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is a Neural Network?",
+      "level": 2,
+      "content": "A **Neural Network** (also called Artificial Neural Network or ANN) is a computational model inspired by the biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers that work together to recognize patterns and make decisions."
+    },
+    {
+      "id": "sec-4",
+      "title": "Biological Inspiration",
+      "level": 2,
+      "content": "| Biological Neuron | Artificial Neuron |\n|-------------------|-------------------|\n| Dendrites (receive signals) | Input values (x₁, x₂, ..., xₙ) |\n| Cell body (processes signals) | Summation function (Σwᵢxᵢ + b) |\n| Axon (transmits output) | Activation function output |\n| Synapse (connection strength) | Weights (w₁, w₂, ..., wₙ) |"
+    },
+    {
+      "id": "sec-5",
+      "title": "Basic Components",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "1. **Neurons (Nodes)**",
+      "level": 3,
+      "content": "- Fundamental processing units\n- Receive input, apply transformation, produce output\n- Each neuron has associated weights and biases"
+    },
+    {
+      "id": "sec-7",
+      "title": "2. **Layers**",
+      "level": 3,
+      "content": "```\nInput Layer → Hidden Layer(s) → Output Layer\n   (n₀)          (n₁, n₂...)      (nₖ)\n```\n\n- **Input Layer**: Receives raw data (no computation)\n- **Hidden Layers**: Perform computations and feature extraction\n- **Output Layer**: Produces final prediction/classification"
+    },
+    {
+      "id": "sec-8",
+      "title": "3. **Weights (w)**",
+      "level": 3,
+      "content": "- Represent connection strength between neurons\n- Learned during training\n- Determine the influence of each input"
+    },
+    {
+      "id": "sec-9",
+      "title": "4. **Biases (b)**",
+      "level": 3,
+      "content": "- Allow shifting the activation function\n- Enable fitting the data better\n- Treated as additional parameters"
+    },
+    {
+      "id": "sec-10",
+      "title": "5. **Activation Functions**",
+      "level": 3,
+      "content": "Introduce non-linearity, enabling the network to learn complex patterns:\n\n| Function | Formula | Use Case |\n|----------|---------|----------|\n| **Sigmoid** | σ(x) = 1/(1 + e⁻ˣ) | Binary classification output |\n| **Tanh** | tanh(x) | Hidden layers (zero-centered) |\n| **ReLU** | max(0, x) | Most common for hidden layers |\n| **Softmax** | eˣⁱ/Σeˣʲ | Multi-class classification output |\n| **Linear** | f(x) = x | Regression output |"
+    },
+    {
+      "id": "sec-11",
+      "title": "How a Neuron Works",
+      "level": 2,
+      "content": "```\nOutput = Activation(Σ(weights × inputs) + bias)\n\ny = f(Σᵢ wᵢxᵢ + b)\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Forward Propagation Process",
+      "level": 2,
+      "content": "1. Input data enters through input layer\n2. Each neuron computes weighted sum of inputs\n3. Activation function is applied\n4. Output passes to next layer\n5. Process continues until output layer"
+    },
+    {
+      "id": "sec-13",
+      "title": "Why Neural Networks Are Powerful",
+      "level": 2,
+      "content": "1. **Universal Approximation**: Can approximate any continuous function\n2. **Parallel Processing**: Multiple computations simultaneously\n3. **Adaptive Learning**: Adjusts weights based on errors\n4. **Fault Tolerance**: Can function with partial damage"
+    },
+    {
+      "id": "sec-14",
+      "title": "Types of Neural Networks",
+      "level": 2,
+      "content": "- **Feedforward Neural Networks (FNN)**: Information flows in one direction\n- **Recurrent Neural Networks (RNN)**: Have feedback loops for sequential data\n- **Convolutional Neural Networks (CNN)**: Specialized for grid-like data (images)\n- **Transformer Networks**: Use attention mechanisms for sequence processing"
+    },
+    {
+      "id": "sec-15",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Neural networks are inspired by biological neurons in the brain\n- Consist of input, hidden, and output layers\n- Weights and biases are learned during training\n- Activation functions introduce non-linearity\n- Can approximate any continuous function (universal approximators)"
+    },
+    {
+      "id": "sec-16",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-17",
+      "title": "Category: Neural Network Fundamentals",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "Tags: [neural-networks, architecture, components, activation-functions]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

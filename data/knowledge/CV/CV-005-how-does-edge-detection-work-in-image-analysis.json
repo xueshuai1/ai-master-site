@@ -1,0 +1,24 @@
+{
+  "id": "CV-005-how-does-edge-detection-work-in-image-analysis",
+  "title": "CV-005-how-does-edge-detection-work-in-image-analysis",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.380Z",
+  "updatedAt": "2026-03-29T14:57:53.380Z",
+  "readTime": 2,
+  "abstract": " CV-005 How does edge detection work in image analysis?\n\n Q5: How does edge detection work in image analysis?\n\nScore: 90/100\n\nAnswer:\nEdge detection identifies boundaries in images by detecting rapid intensity changes.\n\nTypes of Edges:\n1. Step Edges: Rapid intensity changes\n2. Ramp Edges: Gradual intensity transitions\n3. Roof Edges: Unidirectional edges in uniform regions\n\nSobel Operator:\nUses 3×3 convolution kernels to calculate gradients:\n\nGx = [[+1, 0, -1], ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q5: How does edge detection work in image analysis?",
+      "level": 2,
+      "content": "**Score:** 90/100\n\n**Answer:**\nEdge detection identifies boundaries in images by detecting rapid intensity changes.\n\n**Types of Edges:**\n1. **Step Edges:** Rapid intensity changes\n2. **Ramp Edges:** Gradual intensity transitions\n3. **Roof Edges:** Unidirectional edges in uniform regions\n\n**Sobel Operator:**\nUses 3×3 convolution kernels to calculate gradients:\n```\nGx = [[+1, 0, -1],    Gy = [[+1, +2, +1],\n      [+2, 0, -2],           [ 0,  0,  0],\n      [+1, 0, -1]]           [-1, -2, -1]]\n```\n\nGradient magnitude: `G = √(Gx² + Gy²)`\nGradient direction: `θ = arctan(Gy/Gx)`\n\n**Canny Edge Detection (Multi-step):**\n1. Noise Reduction (Gaussian filter)\n2. Gradient Calculation (Sobel operator)\n3. Non-Maximum Suppression (thins edges to 1-pixel)\n4. Double Thresholding (identifies weak/strong edges)\n5. Edge Tracking by Hysteresis (final edge selection)\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

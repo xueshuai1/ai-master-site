@@ -1,0 +1,30 @@
+{
+  "id": "CV-022-what-is-non-maximum-suppression-nms-and-why-is-it-important",
+  "title": "CV-022-what-is-non-maximum-suppression-nms-and-why-is-it-important",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-022 What is Non-Maximum Suppression (NMS) and why is it important?\n\n Q22: What is Non-Maximum Suppression (NMS) and why is it important?\n\nScore: 91/100\n\nAnswer:\n\nNMS Purpose:\nEliminates redundant overlapping bounding boxes, keeping only the best detection per object.\n\nAlgorithm:\n1. Sort all detections by confidence score (descending)\n2. Select box with highest score\n3. Remove all boxes with IoU > threshold (e.g., 0.5) with selected box\n4. Repeat with remaining boxes until...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q22: What is Non-Maximum Suppression (NMS) and why is it important?",
+      "level": 2,
+      "content": "**Score:** 91/100\n\n**Answer:**\n\n**NMS Purpose:**\nEliminates redundant overlapping bounding boxes, keeping only the best detection per object.\n\n**Algorithm:**\n1. Sort all detections by confidence score (descending)\n2. Select box with highest score\n3. Remove all boxes with IoU > threshold (e.g., 0.5) with selected box\n4. Repeat with remaining boxes until none left\n\n**Example:**\n```python\ndef nms(boxes, scores, iou_threshold):\n    x1, y1, x2, y2 = boxes[:, 0], boxes[:, 1], boxes[:, 2], boxes[:, 3]\n    areas = (x2 - x1) * (y2 - y1)\n    order = scores.argsort()[::-1]\n    keep = []\n    while order.size > 0:\n        i = order[0]\n        keep.append(i)\n        xx1, yy1 = np.maximum(x1[i], x1[order[1:]]), np.maximum(y1[i], y1[order[1:]])\n        xx2, yy2 = np.minimum(x2[i], x2[order[1:]]), np.minimum(y2[i], y2[order[1:]])\n        inter = np.maximum(0, xx2 - xx1) * np.maximum(0, yy2 - yy1)\n        iou = inter / (areas[i] + areas[order[1:]] - inter)\n        order = order[1:][iou <= iou_threshold]\n    return keep\n```\n\n**Variants:**\n- **Soft-NMS:** Decay scores instead of hard removal\n- **DIoU-NMS:** Consider distance between box centers\n- **Class-Agnostic NMS:** Across all classes\n\n**Importance:**\n- Prevents multiple detections of same object\n- Critical for clean, usable output\n- Standard post-processing in detection pipelines\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "Advanced Topics (Q23-Q30)",
+      "level": 1,
+      "content": "---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,294 @@
+{
+  "id": "DL-014-vanishing-exploding-gradients",
+  "title": "DL-014-vanishing-exploding-gradients",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.386Z",
+  "updatedAt": "2026-03-29T14:57:53.386Z",
+  "readTime": 9,
+  "abstract": " DL-014 ⭐⭐⭐ What are Vanishing and Exploding Gradients? How to Fix Them?\n\n Question\nExplain the vanishing and exploding gradient problems. What causes them and how can they be solved?\n\n Answer\n\n The Problems\n\n Vanishing Gradient\nDefinition: Gradients become extremely small during backpropagation, preventing weights from updating effectively.\n\n\nGradient at layer 1: 0.0000001  ← Too small!\nWeight update: negligible\nLayer never learns\n\n\n Exploding Gradient\nDefinition: Grad...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "Explain the vanishing and exploding gradient problems. What causes them and how can they be solved?"
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "The Problems",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-4",
+      "title": "Vanishing Gradient",
+      "level": 1,
+      "content": "**Definition:** Gradients become extremely small during backpropagation, preventing weights from updating effectively.\n\n```\nGradient at layer 1: 0.0000001  ← Too small!\nWeight update: negligible\nLayer never learns\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "Exploding Gradient",
+      "level": 1,
+      "content": "**Definition:** Gradients become extremely large, causing unstable updates and numerical overflow.\n\n```\nGradient at layer 1: 1000000  ← Too large!\nWeight update: huge\nTraining becomes unstable, NaN values\n```\n\n---"
+    },
+    {
+      "id": "sec-6",
+      "title": "Root Cause: Chain Rule Multiplication",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-7",
+      "title": "Backpropagation Mathematics",
+      "level": 2,
+      "content": "```\nFor a network with L layers:\n\n∂L/∂W₁ = ∂L/∂aₗ × ∂aₗ/∂zₗ × ∂zₗ/∂aₗ₋₁ × ... × ∂a₂/∂z₂ × ∂z₂/∂W₁\n\nThis is a product of L-1 terms!\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Vanishing Gradient Example",
+      "level": 2,
+      "content": "```\nUsing sigmoid activation:\n- Sigmoid derivative: max value = 0.25\n- For 10 layers: (0.25)¹⁰ = 0.00000095  ← Vanishes!\n- For 20 layers: (0.25)²⁰ = 0.0000000000009  ← Gone!\n\nEach layer multiplies by <1, gradient shrinks exponentially\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Exploding Gradient Example",
+      "level": 2,
+      "content": "```\nLarge weights (e.g., W > 1):\n- For 10 layers: (2.0)¹⁰ = 1024  ← Explodes!\n- For 20 layers: (2.0)²⁰ = 1,048,576  ← Overflow!\n\nEach layer multiplies by >1, gradient grows exponentially\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "Symptoms",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Vanishing Gradient",
+      "level": 2,
+      "content": "```\n✓ Early layers learn very slowly or not at all\n✓ Training loss decreases very slowly\n✓ Early layer weights barely change\n✓ Network behaves like shallow network\n✓ Common in: RNNs, deep networks with sigmoid/tanh\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Exploding Gradient",
+      "level": 2,
+      "content": "```\n✓ Loss becomes NaN or Inf\n✓ Weights become extremely large\n✓ Training is unstable, oscillates wildly\n✓ Gradients have huge norms\n✓ Common in: RNNs, poorly initialized networks\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "Solutions",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "1. Better Activation Functions",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "ReLU (Most Effective)",
+      "level": 2,
+      "content": "```\nf(x) = max(0, x)\nf'(x) = 1 for x > 0, 0 for x ≤ 0\n\nDerivative is 1 (not <1 like sigmoid)\nGradients flow freely for positive activations\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "Leaky ReLU",
+      "level": 2,
+      "content": "```\nf(x) = max(αx, x) where α is small (e.g., 0.01)\nPrevents \"dying ReLU\" problem\nSmall gradient even for negative values\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "Comparison",
+      "level": 2,
+      "content": "```\nSigmoid derivative: 0 to 0.25  ← Vanishes!\nTanh derivative:    0 to 1.0   ← Better but still vanishes\nReLU derivative:    0 or 1     ← No vanishing for positive!\n```\n\n---"
+    },
+    {
+      "id": "sec-18",
+      "title": "2. Proper Weight Initialization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-19",
+      "title": "He Initialization (for ReLU)",
+      "level": 2,
+      "content": "```\nstd = √(2 / fan_in)\n\nKeeps variance constant across layers\nPrevents gradients from shrinking/growing\n```"
+    },
+    {
+      "id": "sec-20",
+      "title": "Xavier Initialization (for Tanh/Sigmoid)",
+      "level": 2,
+      "content": "```\nstd = √(2 / (fan_in + fan_out))\n\nOptimal for symmetric activations\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "Orthogonal Initialization (for RNNs)",
+      "level": 2,
+      "content": "```\nInitialize weight matrix as orthogonal\nPreserves gradient norm\nExcellent for recurrent connections\n```\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "3. Batch Normalization",
+      "level": 1,
+      "content": "```\nNormalizes activations to zero mean, unit variance\nKeeps gradients in reasonable range\nAllows stable training of very deep networks\n\nPlacement: After convolution/linear, before activation\n```\n\n---"
+    },
+    {
+      "id": "sec-23",
+      "title": "4. Gradient Clipping (for Exploding Gradients)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-24",
+      "title": "Method",
+      "level": 2,
+      "content": "```python\n# Clip gradient norm\ntorch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)\n\n# Or clip gradient values\ntorch.nn.utils.clip_grad_value_(model.parameters(), clip_value=1.0)\n```"
+    },
+    {
+      "id": "sec-25",
+      "title": "How It Works",
+      "level": 2,
+      "content": "```\nIf ||gradient|| > max_norm:\n    gradient = gradient × (max_norm / ||gradient||)\n\nCaps gradient magnitude without changing direction\n```"
+    },
+    {
+      "id": "sec-26",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- RNNs (especially LSTMs/GRUs)\n- When exploding gradients observed\n- Standard practice in sequence modeling\n\n---"
+    },
+    {
+      "id": "sec-27",
+      "title": "5. Skip Connections / Residual Connections",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-28",
+      "title": "ResNet Architecture",
+      "level": 2,
+      "content": "```\nTraditional:     x → Conv → ReLU → Conv → ReLU → y\n\nResidual:        x → Conv → ReLU → Conv → (+) → ReLU → y\n                 └──────────────────────↑\n                 (identity skip connection)\n\nMathematically: y = F(x) + x\n```"
+    },
+    {
+      "id": "sec-29",
+      "title": "Why It Helps",
+      "level": 2,
+      "content": "```\nBackpropagation:\n∂L/∂x = ∂L/∂y × (∂F/∂x + 1)\n\nThe \"+1\" provides direct gradient path!\nGradient can flow through skip connection unchanged\nEnables training of 100+ layer networks\n```\n\n---"
+    },
+    {
+      "id": "sec-30",
+      "title": "6. LSTM/GRU instead of Vanilla RNN",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-31",
+      "title": "Vanilla RNN Problem",
+      "level": 2,
+      "content": "```\nhₜ = tanh(W×xₜ + U×hₜ₋₁)\n\nGradient must flow through tanh at each step\nVanishes quickly for long sequences\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "LSTM Solution",
+      "level": 2,
+      "content": "```\nCell state Cₜ acts as \"gradient highway\"\nGating mechanisms control information flow\nGradients can flow through cell state unchanged\nCan learn dependencies over 100+ time steps\n```\n\n---"
+    },
+    {
+      "id": "sec-33",
+      "title": "7. Careful Network Architecture Design",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-34",
+      "title": "Guidelines",
+      "level": 2,
+      "content": "```\n✓ Don't make networks unnecessarily deep\n✓ Use batch normalization in deep networks\n✓ Use residual connections for very deep networks\n✓ Monitor gradient norms during training\n✓ Start with proven architectures (ResNet, etc.)\n```"
+    },
+    {
+      "id": "sec-35",
+      "title": "Layer-wise Learning Rates",
+      "level": 2,
+      "content": "```\nEarly layers: Lower learning rate\nLater layers: Higher learning rate\n\nHelps when early layers learn slower\n```\n\n---"
+    },
+    {
+      "id": "sec-36",
+      "title": "Detection and Monitoring",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-37",
+      "title": "Monitor Gradient Norms",
+      "level": 2,
+      "content": "```python\nfor name, param in model.named_parameters():\n    if param.grad is not None:\n        grad_norm = param.grad.data.norm(2)\n        print(f\"{name}: gradient norm = {grad_norm}\")\n        \n# Healthy: 0.01 to 10\n# Vanishing: < 0.001\n# Exploding: > 100\n```"
+    },
+    {
+      "id": "sec-38",
+      "title": "Visualization",
+      "level": 2,
+      "content": "```\nPlot gradient norms by layer:\nLayer 1:  0.0001  ← Vanishing!\nLayer 5:  0.01\nLayer 10: 1.0\n\nShould be roughly equal across layers\n```\n\n---"
+    },
+    {
+      "id": "sec-39",
+      "title": "Solution Summary Table",
+      "level": 1,
+      "content": "| Problem | Solutions | Priority |\n|---------|-----------|----------|\n| **Vanishing** | ReLU activation | ⭐⭐⭐ |\n| **Vanishing** | He/Xavier initialization | ⭐⭐⭐ |\n| **Vanishing** | Batch normalization | ⭐⭐⭐ |\n| **Vanishing** | Skip/residual connections | ⭐⭐⭐ |\n| **Vanishing** | LSTM/GRU (for RNNs) | ⭐⭐⭐ |\n| **Exploding** | Gradient clipping | ⭐⭐⭐ |\n| **Exploding** | Proper initialization | ⭐⭐ |\n| **Exploding** | Batch normalization | ⭐⭐ |\n| **Exploding** | Reduce learning rate | ⭐⭐ |\n\n---"
+    },
+    {
+      "id": "sec-40",
+      "title": "Practical Example: Fixing Vanishing Gradients",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-41",
+      "title": "Before (Problematic)",
+      "level": 2,
+      "content": "```python\n# Using sigmoid in deep network\nclass BadNetwork(nn.Module):\n    def __init__(self):\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 256)\n        self.fc3 = nn.Linear(256, 256)\n        self.fc4 = nn.Linear(256, 10)\n        self.sigmoid = nn.Sigmoid()  # Problem!\n    \n    def forward(self, x):\n        x = self.sigmoid(self.fc1(x))  # Vanishing!\n        x = self.sigmoid(self.fc2(x))\n        x = self.sigmoid(self.fc3(x))\n        return self.fc4(x)\n```"
+    },
+    {
+      "id": "sec-42",
+      "title": "After (Fixed)",
+      "level": 2,
+      "content": "```python\nclass GoodNetwork(nn.Module):\n    def __init__(self):\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 256)\n        self.fc3 = nn.Linear(256, 256)\n        self.fc4 = nn.Linear(256, 10)\n        \n        # Initialize properly\n        nn.init.kaiming_normal_(self.fc1.weight)\n        nn.init.kaiming_normal_(self.fc2.weight)\n        nn.init.kaiming_normal_(self.fc3.weight)\n    \n    def forward(self, x):\n        x = F.relu(self.fc1(x))  # ReLU instead of sigmoid\n        x = F.relu(self.fc2(x))\n        x = F.relu(self.fc3(x))\n        return self.fc4(x)\n```"
+    },
+    {
+      "id": "sec-43",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Vanishing gradients: Gradients become too small, early layers don't learn\n- Exploding gradients: Gradients become too large, training unstable\n- Caused by repeated multiplication in chain rule during backprop\n- Solutions: ReLU, proper initialization, batch norm, skip connections\n- For RNNs: Use LSTM/GRU and gradient clipping\n- Monitor gradient norms during training"
+    },
+    {
+      "id": "sec-44",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-45",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-46",
+      "title": "Tags: [vanishing-gradient, exploding-gradient, backpropagation, training, RNN]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

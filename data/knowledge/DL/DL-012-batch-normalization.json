@@ -1,0 +1,312 @@
+{
+  "id": "DL-012-batch-normalization",
+  "title": "DL-012-batch-normalization",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.386Z",
+  "updatedAt": "2026-03-29T14:57:53.386Z",
+  "readTime": 9,
+  "abstract": " DL-012 ⭐⭐⭐ What is Batch Normalization? Explain Benefits and Mechanism\n\n Question\nWhat is Batch Normalization? Explain how it works, its benefits, and potential drawbacks.\n\n Answer\n\n What is Batch Normalization?\nBatch Normalization (BatchNorm) is a technique introduced by Ioffe & Szegedy (2015) that normalizes the inputs of each layer to have zero mean and unit variance. It stabilizes and accelerates deep network training by reducing internal covariate shift.\n\n Core Problem: Inte...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is Batch Normalization? Explain how it works, its benefits, and potential drawbacks."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Batch Normalization?",
+      "level": 2,
+      "content": "**Batch Normalization (BatchNorm)** is a technique introduced by Ioffe & Szegedy (2015) that normalizes the inputs of each layer to have zero mean and unit variance. It stabilizes and accelerates deep network training by reducing internal covariate shift."
+    },
+    {
+      "id": "sec-4",
+      "title": "Core Problem: Internal Covariate Shift",
+      "level": 2,
+      "content": "```\nAs network trains, distribution of layer inputs keeps changing\nEach layer must continuously adapt to new distributions\nSlows down training, requires careful initialization\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "BatchNorm Solution",
+      "level": 2,
+      "content": "```\nNormalize layer inputs at each training step\nMaintain stable distribution throughout training\nAllows higher learning rates, faster convergence\n```\n\n---"
+    },
+    {
+      "id": "sec-6",
+      "title": "How Batch Normalization Works",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-7",
+      "title": "Training Phase",
+      "level": 2,
+      "content": "**For each mini-batch:**\n\n**Step 1: Calculate Batch Statistics**\n```\nMean:     μ_B = (1/m) × Σᵢ xᵢ\nVariance: σ²_B = (1/m) × Σᵢ (xᵢ - μ_B)²\n```\n\n**Step 2: Normalize**\n```\nx̂ᵢ = (xᵢ - μ_B) / √(σ²_B + ε)\n\nWhere ε is small constant (1e-5) for numerical stability\n```\n\n**Step 3: Scale and Shift**\n```\nyᵢ = γ × x̂ᵢ + β\n\nWhere:\n- γ (gamma): Learnable scale parameter\n- β (beta): Learnable shift parameter\n- Allows network to undo normalization if needed\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Complete Formula",
+      "level": 2,
+      "content": "```\ny = BatchNorm(x) = γ × (x - μ_B) / √(σ²_B + ε) + β\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Testing Phase",
+      "level": 2,
+      "content": "```\nUse population statistics (not batch statistics)\nμ and σ² computed as moving averages during training\n\ny = γ × (x - μ_population) / √(σ²_population + ε) + β\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "Visual Example",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Before BatchNorm",
+      "level": 2,
+      "content": "```\nLayer 1 output distribution:\nEpoch 1:  μ=0.5, σ=0.3\nEpoch 10: μ=2.1, σ=1.5  ← Distribution shifted!\nEpoch 50: μ=0.8, σ=0.6  ← Keeps changing\n\nLayer 2 must continuously adapt to these changes\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "After BatchNorm",
+      "level": 2,
+      "content": "```\nNormalized distribution (every epoch):\nEpoch 1:  μ≈0, σ≈1\nEpoch 10: μ≈0, σ≈1  ← Stable!\nEpoch 50: μ≈0, σ≈1\n\nLayer 2 receives consistent input distribution\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "Benefits of Batch Normalization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "1. Faster Convergence",
+      "level": 2,
+      "content": "```\nAllows higher learning rates (10-100× higher)\nReduces training epochs by 5-10×\nFaster time to solution\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "2. Reduced Sensitivity to Initialization",
+      "level": 2,
+      "content": "```\nWithout BatchNorm: Careful weight initialization critical\nWith BatchNorm: More robust to initialization choices\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "3. Acts as Regularization",
+      "level": 2,
+      "content": "```\nNormalization adds slight noise (from batch statistics)\nReduces need for dropout in some cases\nHelps prevent overfitting\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "4. Mitigates Vanishing/Exploding Gradients",
+      "level": 2,
+      "content": "```\nKeeps activations in reasonable range\nGradients flow more stably through network\nEnables training of very deep networks\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "5. Smooths Loss Landscape",
+      "level": 2,
+      "content": "```\nMakes optimization problem easier\nMore stable gradients\nFewer local minima issues\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "BatchNorm in Different Layers",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-20",
+      "title": "Fully Connected Layers",
+      "level": 2,
+      "content": "```python\nnn.Sequential(\n    nn.Linear(256, 512),\n    nn.BatchNorm1d(512),    # 1D batch norm\n    nn.ReLU(),\n    nn.Linear(512, 256),\n    nn.BatchNorm1d(256),\n    nn.ReLU()\n)\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "Convolutional Layers",
+      "level": 2,
+      "content": "```python\nnn.Sequential(\n    nn.Conv2d(3, 64, 3),\n    nn.BatchNorm2d(64),     # 2D batch norm (per channel)\n    nn.ReLU(),\n    nn.Conv2d(64, 128, 3),\n    nn.BatchNorm2d(128),\n    nn.ReLU()\n)\n```"
+    },
+    {
+      "id": "sec-22",
+      "title": "Position: Before or After Activation?",
+      "level": 2,
+      "content": "```\nOption 1 (Original Paper): Conv → BatchNorm → ReLU\nOption 2 (Common Practice): Conv → ReLU → BatchNorm\n\nResearch suggests: Before activation (Option 1) often works better\n```\n\n---"
+    },
+    {
+      "id": "sec-23",
+      "title": "Moving Averages for Inference",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-24",
+      "title": "During Training",
+      "level": 2,
+      "content": "```python\n# Track running statistics\nrunning_mean = 0.95 × running_mean + 0.05 × batch_mean\nrunning_var = 0.95 × running_var + 0.05 × batch_var\n```"
+    },
+    {
+      "id": "sec-25",
+      "title": "During Inference",
+      "level": 2,
+      "content": "```python\n# Use accumulated statistics (not batch statistics)\nmodel.eval()  # Switches to using running_mean and running_var\n```"
+    },
+    {
+      "id": "sec-26",
+      "title": "Why Different Statistics?",
+      "level": 2,
+      "content": "```\nTraining: Batch statistics provide regularization noise\nInference: Population statistics give consistent predictions\n```\n\n---"
+    },
+    {
+      "id": "sec-27",
+      "title": "BatchNorm Hyperparameters",
+      "level": 1,
+      "content": "| Parameter | Description | Default |\n|-----------|-------------|---------|\n| **momentum** | Weight for running averages | 0.1 |\n| **eps** | Numerical stability constant | 1e-5 |\n| **affine** | Learnable γ and β | True |\n| **track_running_stats** | Track population stats | True |"
+    },
+    {
+      "id": "sec-28",
+      "title": "Code Example",
+      "level": 2,
+      "content": "```python\nnn.BatchNorm2d(\n    num_features=64,        # Number of channels\n    eps=1e-5,               # For numerical stability\n    momentum=0.1,           # For running average\n    affine=True,            # Learnable scale and shift\n    track_running_stats=True\n)\n```\n\n---"
+    },
+    {
+      "id": "sec-29",
+      "title": "BatchNorm vs Other Normalization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-30",
+      "title": "Layer Normalization",
+      "level": 2,
+      "content": "```\nBatchNorm: Normalize across batch dimension\nLayerNorm: Normalize across feature dimension\n\nBest for: RNNs, Transformers (variable sequence length)\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "Instance Normalization",
+      "level": 2,
+      "content": "```\nNormalize each sample independently\nBest for: Style transfer, generative models\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "Group Normalization",
+      "level": 2,
+      "content": "```\nDivide channels into groups, normalize within groups\nBest for: Small batch sizes (where BatchNorm fails)\n```"
+    },
+    {
+      "id": "sec-33",
+      "title": "Comparison Table",
+      "level": 2,
+      "content": "| Method | Normalizes Across | Best For | Batch Size Sensitivity |\n|--------|------------------|----------|----------------------|\n| **BatchNorm** | Batch dimension | CNNs, FC networks | High (needs large batches) |\n| **LayerNorm** | Feature dimension | RNNs, Transformers | None |\n| **InstanceNorm** | Spatial dimensions | Style transfer | None |\n| **GroupNorm** | Channel groups | Small batches | Low |\n\n---"
+    },
+    {
+      "id": "sec-34",
+      "title": "When BatchNorm Doesn't Work Well",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-35",
+      "title": "1. Small Batch Sizes",
+      "level": 2,
+      "content": "```\nBatch statistics become noisy with small batches\nPerformance degrades when batch_size < 8\n\nSolution: Use GroupNorm or accumulate gradients\n```"
+    },
+    {
+      "id": "sec-36",
+      "title": "2. Recurrent Networks",
+      "level": 2,
+      "content": "```\nBatchNorm difficult to apply to RNNs\nDifferent sequence lengths complicate statistics\n\nSolution: Use LayerNorm instead\n```"
+    },
+    {
+      "id": "sec-37",
+      "title": "3. Online/Sequential Learning",
+      "level": 2,
+      "content": "```\nBatch statistics not available for single samples\n\nSolution: Use running statistics only\n```"
+    },
+    {
+      "id": "sec-38",
+      "title": "4. Generative Models (GANs)",
+      "level": 2,
+      "content": "```\nBatchNorm can cause artifacts in generated images\n\nSolution: Use InstanceNorm or no normalization\n```\n\n---"
+    },
+    {
+      "id": "sec-39",
+      "title": "Practical Tips",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-40",
+      "title": "✅ Best Practices",
+      "level": 2,
+      "content": "1. **Place before activation function** (Conv → BN → ReLU)\n2. **Don't use bias in preceding layer** (BN has β parameter)\n3. **Use momentum=0.1** for running averages\n4. **Remember to use model.eval()** during inference\n5. **Freeze BatchNorm in fine-tuning** (sometimes beneficial)"
+    },
+    {
+      "id": "sec-41",
+      "title": "❌ Common Mistakes",
+      "level": 2,
+      "content": "1. **Forgetting to switch to eval mode**\n2. **Using BatchNorm with very small batches**\n3. **Applying BatchNorm to output layer**\n4. **Using bias=True with BatchNorm** (redundant)"
+    },
+    {
+      "id": "sec-42",
+      "title": "Code Example",
+      "level": 2,
+      "content": "```python\n# Correct usage\nclass MyNetwork(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.conv = nn.Conv2d(3, 64, 3, bias=False)  # No bias!\n        self.bn = nn.BatchNorm2d(64)\n        self.relu = nn.ReLU()\n    \n    def forward(self, x):\n        return self.relu(self.bn(self.conv(x)))\n    \n    def predict(self, x):\n        self.eval()  # Important!\n        with torch.no_grad():\n            return self(x)\n```\n\n---"
+    },
+    {
+      "id": "sec-43",
+      "title": "Impact on Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-44",
+      "title": "Without BatchNorm",
+      "level": 2,
+      "content": "```\nLearning rate: 0.01\nEpochs to converge: 100\nTraining time: 10 hours\nSensitivity to initialization: High\n```"
+    },
+    {
+      "id": "sec-45",
+      "title": "With BatchNorm",
+      "level": 2,
+      "content": "```\nLearning rate: 0.1 (10× higher!)\nEpochs to converge: 20 (5× fewer)\nTraining time: 2 hours (5× faster)\nSensitivity to initialization: Low\n```"
+    },
+    {
+      "id": "sec-46",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- BatchNorm normalizes layer inputs to zero mean, unit variance\n- Enables higher learning rates, faster convergence\n- Acts as slight regularization\n- Uses batch statistics during training, population stats at inference\n- Less effective with small batches (use GroupNorm instead)\n- Remember to use model.eval() during inference"
+    },
+    {
+      "id": "sec-47",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-48",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-49",
+      "title": "Tags: [batch-normalization, normalization, training, optimization, deep-learning]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -2,32 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'questions');
-const QUESTIONS_DIR = path.join(process.cwd(), 'questions');
+const DATA_DIR = path.join(process.cwd(), 'data', 'knowledge');
+const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), '..', 'ai-knowledge-base');
 
-/**
- * 从 JSON 文件加载单道题目
- */
-function loadQuestionFromJSON(id: string) {
-  if (!fs.existsSync(DATA_DIR)) {
-    return null;
-  }
-  
-  const categories = fs.readdirSync(DATA_DIR);
-  
-  for (const category of categories) {
-    const categoryDir = path.join(DATA_DIR, category);
-    
-    if (!fs.statSync(categoryDir).isDirectory()) continue;
-    
-    // 尝试直接匹配 ID
+function loadArticle(category: string, id: string) {
+  // 从 JSON 加载
+  const categoryDir = path.join(DATA_DIR, category);
+  if (fs.existsSync(categoryDir)) {
     const filePath = path.join(categoryDir, `${id}.json`);
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8');
       return JSON.parse(content);
     }
     
-    // 遍历所有文件查找
+    // 遍历查找（兼容不同 ID 格式）
     const files = fs.readdirSync(categoryDir);
     for (const file of files) {
       if (!file.endsWith('.json')) continue;
@@ -42,29 +30,13 @@ function loadQuestionFromJSON(id: string) {
     }
   }
   
-  return null;
-}
-
-/**
- * 从 MD 文件加载单道题目（向后兼容）
- */
-function loadQuestionFromMarkdown(id: string) {
-  if (!fs.existsSync(QUESTIONS_DIR)) {
-    return null;
-  }
-  
-  const categories = fs.readdirSync(QUESTIONS_DIR);
-  
-  for (const category of categories) {
-    const categoryDir = path.join(QUESTIONS_DIR, category);
-    
-    if (!fs.statSync(categoryDir).isDirectory()) continue;
-    
-    const filePath = path.join(categoryDir, `${id}.md`);
+  // 从 MD 加载（向后兼容）
+  const mdCategoryDir = path.join(KNOWLEDGE_BASE_DIR, category);
+  if (fs.existsSync(mdCategoryDir)) {
+    const filePath = path.join(mdCategoryDir, `${id}.md`);
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8');
       
-      // 解析 frontmatter
       const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
       const frontmatter: Record<string, any> = {};
       
@@ -85,19 +57,22 @@ function loadQuestionFromMarkdown(id: string) {
         }
       }
       
-      // 提取正文内容
       const body = content.replace(/^---\n[\s\S]*?\n---\n/, '');
+      const wordCount = content.length / 3;
+      const readTime = Math.ceil(wordCount / 300);
       
       return {
         id,
         title: frontmatter.title || id,
-        category: frontmatter.category || category,
+        category,
         difficulty: frontmatter.difficulty || '⭐⭐',
         tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
-        source: frontmatter.source || '',
-        sourceUrl: frontmatter.sourceUrl || '',
-        collectedAt: frontmatter.collectedAt || '',
-        content: body
+        author: frontmatter.author || '',
+        createdAt: frontmatter.createdAt || new Date().toISOString(),
+        updatedAt: frontmatter.updatedAt || new Date().toISOString(),
+        readTime,
+        content: body,
+        sections: parseMarkdownSections(body)
       };
     }
   }
@@ -105,33 +80,72 @@ function loadQuestionFromMarkdown(id: string) {
   return null;
 }
 
+function parseMarkdownSections(content: string) {
+  const sections: Array<{
+    id: string;
+    title: string;
+    level: number;
+    content: string;
+  }> = [];
+  
+  const lines = content.split('\n');
+  let currentSection: any = null;
+  let currentContent: string[] = [];
+  
+  for (const line of lines) {
+    const headingMatch = line.match(/^(#{1,6})\s+(.+)$/);
+    
+    if (headingMatch) {
+      // 保存之前的 section
+      if (currentSection) {
+        currentSection.content = currentContent.join('\n').trim();
+        sections.push(currentSection);
+      }
+      
+      // 创建新 section
+      currentSection = {
+        id: `sec-${sections.length + 1}`,
+        title: headingMatch[2],
+        level: headingMatch[1].length,
+        content: ''
+      };
+      currentContent = [];
+    } else if (currentSection) {
+      currentContent.push(line);
+    }
+  }
+  
+  // 保存最后一个 section
+  if (currentSection) {
+    currentSection.content = currentContent.join('\n').trim();
+    sections.push(currentSection);
+  }
+  
+  return sections;
+}
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { category: string; id: string } }
 ) {
   try {
+    const category = decodeURIComponent(params.category);
     const id = decodeURIComponent(params.id);
     
-    // 优先从 JSON 加载
-    let question = loadQuestionFromJSON(id);
+    const article = loadArticle(category, id);
     
-    // 回退到 MD
-    if (!question) {
-      question = loadQuestionFromMarkdown(id);
-    }
-    
-    if (!question) {
+    if (!article) {
       return NextResponse.json({
         success: false,
-        error: 'Question not found'
+        error: 'Article not found'
       }, { status: 404 });
     }
     
-    // 查找相关问题（同分类或同标签）
-    const relatedQuestions: string[] = [];
+    // 查找相关文章
+    const relatedArticles: string[] = [];
     
-    if (question.category) {
-      const categoryDir = path.join(DATA_DIR, question.category);
+    if (article.category) {
+      const categoryDir = path.join(DATA_DIR, article.category);
       if (fs.existsSync(categoryDir)) {
         const files = fs.readdirSync(categoryDir);
         for (const file of files) {
@@ -141,13 +155,12 @@ export async function GET(
           const content = fs.readFileSync(filePath, 'utf-8');
           const data = JSON.parse(content);
           
-          // 检查是否有共同标签
-          const commonTags = (question.tags || []).filter((t: string) => 
+          const commonTags = (article.tags || []).filter((t: string) => 
             data.tags?.includes(t)
           );
           
           if (commonTags.length > 0) {
-            relatedQuestions.push(data.id);
+            relatedArticles.push(data.id);
           }
         }
       }
@@ -156,15 +169,15 @@ export async function GET(
     return NextResponse.json({
       success: true,
       data: {
-        ...question,
-        relatedQuestions: relatedQuestions.slice(0, 5)
+        ...article,
+        relatedArticles: relatedArticles.slice(0, 5)
       }
     });
   } catch (error) {
-    console.error('Error loading question:', error);
+    console.error('Error loading article:', error);
     return NextResponse.json({
       success: false,
-      error: 'Failed to load question'
+      error: 'Failed to load article'
     }, { status: 500 });
   }
 }

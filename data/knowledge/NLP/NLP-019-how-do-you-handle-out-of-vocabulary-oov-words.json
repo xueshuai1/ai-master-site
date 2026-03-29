@@ -1,0 +1,24 @@
+{
+  "id": "NLP-019-how-do-you-handle-out-of-vocabulary-oov-words",
+  "title": "NLP-019-how-do-you-handle-out-of-vocabulary-oov-words",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-019 How do you handle out-of-vocabulary (OOV) words?\n\n 19. How do you handle out-of-vocabulary (OOV) words?\n答案要点:\n策略:\n1. Subword Tokenization:\n   - BPE (Byte-Pair Encoding)\n   - WordPiece (BERT 使用)\n   - SentencePiece\n2. Character-level Embeddings\n3. FastText: 子词信息\n4. UNK Token: 统一未知词标记\n\n质量评分: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "19. How do you handle out-of-vocabulary (OOV) words?",
+      "level": 3,
+      "content": "**答案要点:**\n**策略:**\n1. **Subword Tokenization**:\n   - BPE (Byte-Pair Encoding)\n   - WordPiece (BERT 使用)\n   - SentencePiece\n2. **Character-level Embeddings**\n3. **FastText**: 子词信息\n4. **UNK Token**: 统一未知词标记\n\n**质量评分**: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

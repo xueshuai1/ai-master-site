@@ -1,0 +1,66 @@
+{
+  "id": "RL-On-Policy与Off-Policy对比",
+  "title": "On-Policy 与 Off-Policy 对比",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "On-Policy",
+    "Off-Policy",
+    "策略类型",
+    "算法分类"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "强化学习算法可以分为 On-Policy 和 Off-Policy，请解释两者的区别、优缺点和典型算法。\n\n**来源：** 强化学习面试题整理\n**标签：** On-Policy, Off-Policy, 策略类型，算法分类",
+  "requirements": [],
+  "answer": {
+    "summary": "强化学习算法可以分为 On-Policy 和 Off-Policy，请解释两者的区别、优缺点和典型算法。\n\n**来源：** 强化学习面试题整理\n**标签：** On-Policy, Off-Policy, 策略类型，算法分类",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "强化学习算法可以分为 On-Policy 和 Off-Policy，请解释两者的区别、优缺点和典型算法。\n\n**来源：** 强化学习面试题整理\n**标签：** On-Policy, Off-Policy, 策略类型，算法分类"
+      },
+      {
+        "title": "参考答案",
+        "content": "**定义：**\n\n- **On-Policy（同策略）：** 学习的策略和行为策略相同\n  - 从当前策略采样，更新当前策略\n  - 不能用旧数据更新\n\n- **Off-Policy（异策略）：** 学习的策略和行为策略不同\n  - 可以从任意策略采样的数据学习\n  - 可以用旧数据更新\n\n**典型算法：**\n\n| On-Policy | Off-Policy |\n|-----------|------------|\n| REINFORCE | Q-Learning |\n| SARSA | DQN |\n| PPO | DDPG |\n| A3C/A2C | TD3 |\n| TRPO | SAC |\n\n**优缺点对比：**\n\n| 维度 | On-Policy | Off-Policy |\n|------|-----------|------------|\n| 样本效率 | 低 | 高 |\n| 训练稳定性 | 好 | 较差 |\n| 实现难度 | 简单 | 复杂 |\n| 数据复用 | 不能 | 可以 |\n| 收敛保证 | 强 | 较弱 |\n\n**选择建议：**\n- 样本昂贵：Off-Policy（可复用数据）\n- 追求稳定：On-Policy（如 PPO）\n- 连续控制：Off-Policy（SAC、TD3）\n- 离散控制：On-Policy（PPO）\n\n**重要性采样：**\nOff-policy 学习需要重要性采样校正：\nρ = π(a|s) / b(a|s)"
+      },
+      {
+        "title": "考察重点",
+        "content": "- On/Off-Policy 的理解\n- 算法分类\n- 选择能力"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: 为什么 Off-Policy 样本效率高？",
+        "content": "**问题：** Off-Policy 为什么样本效率更高？\n**答案：** 可以复用历史数据，不需要每次更新都重新采样。"
+      },
+      {
+        "title": "追问 2: PPO 是 On 还是 Off？",
+        "content": "**问题：** PPO 是 On-Policy 还是 Off-Policy？\n**答案：** 本质是 On-Policy，但用重要性采样可以在小范围内复用数据。"
+      },
+      {
+        "title": "深入理解",
+        "content": "On/Off-Policy 是 RL 算法的基本分类，理解它对算法选择至关重要。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.376Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

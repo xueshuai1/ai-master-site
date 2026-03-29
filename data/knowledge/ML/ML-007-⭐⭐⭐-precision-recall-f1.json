@@ -1,0 +1,138 @@
+{
+  "id": "ML-007-⭐⭐⭐-precision-recall-f1",
+  "title": "Precision, Recall, and F1 Score (精确率、召回率与 F1 分数)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Precision",
+    "Recall",
+    "F1 Score",
+    "Classification Metrics",
+    "Confusion Matrix"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.392Z",
+  "readTime": 9,
+  "abstract": " 题目描述\n请详细解释 Precision（精确率）、Recall（召回率）和 F1 Score 的定义、计算方法和应用场景。在什么情况下应该优先优化 Precision？什么情况下应该优先优化 Recall？如何权衡两者？\n\n 参考答案\n\n 混淆矩阵 (Confusion Matrix)\n\n\n                    预测\n                正例    负例\n实际    正例    TP      FN\n        负例    FP      TN\n\nTP (True Positive): 真正例 - 实际为正，预测为正\nFN (False Negative): 假负例 - 实际为正，预测为负\nFP (False Positive): 假正例 - 实际为负，预测为正\nTN (True Negative): 真负例 - 实际为负，预测为负\n\n\n 核心指标定义\n\npython\nimport numpy as np\nfrom sklearn.metrics import precision_score, recall_s...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释 Precision（精确率）、Recall（召回率）和 F1 Score 的定义、计算方法和应用场景。在什么情况下应该优先优化 Precision？什么情况下应该优先优化 Recall？如何权衡两者？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "混淆矩阵 (Confusion Matrix)",
+      "level": 2,
+      "content": "```\n                    预测\n                正例    负例\n实际    正例    TP      FN\n        负例    FP      TN\n\nTP (True Positive): 真正例 - 实际为正，预测为正\nFN (False Negative): 假负例 - 实际为正，预测为负\nFP (False Positive): 假正例 - 实际为负，预测为正\nTN (True Negative): 真负例 - 实际为负，预测为负\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "核心指标定义",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nfrom sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix, classification_report\nimport matplotlib.pyplot as plt\n\ndef calculate_metrics(y_true, y_pred):\n    \"\"\"计算分类指标\"\"\"\n    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()\n    \n    # 精确率 (Precision): 预测为正的样本中有多少是真的正\n    precision = tp / (tp + fp) if (tp + fp) > 0 else 0\n    \n    # 召回率 (Recall): 实际为正的样本中有多少被正确预测\n    recall = tp / (tp + fn) if (tp + fn) > 0 else 0\n    \n    # F1 Score: 精确率和召回率的调和平均\n    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0\n    \n    # 准确率 (Accuracy)\n    accuracy = (tp + tn) / (tp + tn + fp + fn)\n    \n    print(f\"Confusion Matrix:\")\n    print(f\"  TP={tp}, FP={fp}\")\n    print(f\"  FN={fn}, TN={tn}\\n\")\n    print(f\"Accuracy:  {accuracy:.4f}\")\n    print(f\"Precision: {precision:.4f}  ← 预测为正中有多少是真的\")\n    print(f\"Recall:    {recall:.4f}  ← 实际正中有多少被找到\")\n    print(f\"F1 Score:  {f1:.4f}  ← 精确率和召回率的平衡\")\n    \n    return precision, recall, f1, accuracy\n\n# 示例\ny_true = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0]\ny_pred = [1, 1, 0, 1, 0, 0, 0, 1, 0, 0]\n\ncalculate_metrics(y_true, y_pred)\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "指标对比表",
+      "level": 2,
+      "content": "| 指标 | 公式 | 关注点 | 适用场景 |\n|------|------|--------|----------|\n| **Accuracy** | (TP+TN)/(TP+TN+FP+FN) | 整体正确率 | 类别平衡 |\n| **Precision** | TP/(TP+FP) | 预测质量 | 假阳性成本高 |\n| **Recall** | TP/(TP+FN) | 查全率 | 假阴性成本高 |\n| **F1 Score** | 2×(P×R)/(P+R) | 平衡 P 和 R | 类别不平衡 |"
+    },
+    {
+      "id": "sec-6",
+      "title": "实际场景分析",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-7",
+      "title": "场景 1: 垃圾邮件检测 → 优先 Precision",
+      "level": 3,
+      "content": "```python\n# 假阳性成本高：重要邮件被误判为垃圾邮件\n# 宁可放过垃圾邮件，不能误杀正常邮件\n\nfrom sklearn.metrics import precision_recall_curve\n\n# 提高阈值，减少 FP\nthreshold = 0.7  # 默认 0.5\ny_pred = (y_proba >= threshold).astype(int)\n\n# 结果：Precision 提高，Recall 降低\n# 正常邮件很少被误判，但部分垃圾邮件可能漏掉\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "场景 2: 疾病诊断 → 优先 Recall",
+      "level": 3,
+      "content": "```python\n# 假阴性成本高：漏诊可能导致生命危险\n# 宁可误诊，不能漏诊\n\n# 降低阈值，增加敏感度\nthreshold = 0.3\ny_pred = (y_proba >= threshold).astype(int)\n\n# 结果：Recall 提高，Precision 降低\n# 几乎所有患者都被检出，但部分健康人被误判\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "场景 3: 欺诈检测 → 平衡 F1",
+      "level": 3,
+      "content": "```python\n# 既要减少漏检（Recall），也要减少误报（Precision）\n# 使用 F1 Score 或 F-beta Score\n\nfrom sklearn.metrics import fbeta_score\n\n# F2 Score: 更重视 Recall\nf2 = fbeta_score(y_true, y_pred, beta=2)\n\n# F0.5 Score: 更重视 Precision\nf05 = fbeta_score(y_true, y_pred, beta=0.5)\n\nprint(f\"F2 Score (Recall 重要): {f2:.4f}\")\nprint(f\"F0.5 Score (Precision 重要): {f05:.4f}\")\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "阈值选择策略",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.metrics import precision_recall_curve, roc_curve\n\n# 获取不同阈值下的 Precision 和 Recall\nprecision, recall, thresholds = precision_recall_curve(y_true, y_proba)\n\n# 可视化\nplt.figure(figsize=(12, 5))\n\nplt.subplot(1, 2, 1)\nplt.plot(thresholds, precision[:-1], label='Precision')\nplt.plot(thresholds, recall[:-1], label='Recall')\nplt.xlabel('Threshold')\nplt.ylabel('Score')\nplt.title('Precision and Recall vs Threshold')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\nplt.subplot(1, 2, 2)\nplt.plot(recall, precision)\nplt.xlabel('Recall')\nplt.ylabel('Precision')\nplt.title('Precision-Recall Curve')\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\n# 自动选择最佳阈值\n# 方法 1: F1 最大\nf1_scores = 2 * (precision[:-1] * recall[:-1]) / (precision[:-1] + recall[:-1])\nbest_idx = np.argmax(f1_scores)\nbest_threshold_f1 = thresholds[best_idx]\nprint(f\"Best threshold (max F1): {best_threshold_f1:.4f}\")\n\n# 方法 2: 业务驱动\ndef find_optimal_threshold(y_true, y_proba, cost_fn=10, cost_fp=1):\n    \"\"\"根据成本找到最佳阈值\"\"\"\n    thresholds = np.arange(0.1, 0.9, 0.05)\n    best_cost = float('inf')\n    best_thresh = 0.5\n    \n    for thresh in thresholds:\n        y_pred = (y_proba >= thresh).astype(int)\n        tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()\n        cost = fn * cost_fn + fp * cost_fp\n        if cost < best_cost:\n            best_cost = cost\n            best_thresh = thresh\n    \n    return best_thresh, best_cost\n\noptimal_thresh, min_cost = find_optimal_threshold(y_true, y_proba)\nprint(f\"Cost-based optimal threshold: {optimal_thresh:.4f}\")\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "类别不平衡时的指标选择",
+      "level": 2,
+      "content": "```python\nfrom sklearn.datasets import make_classification\nfrom imblearn.over_sampling import SMOTE\n\n# 创建不平衡数据\nX, y = make_classification(\n    n_samples=1000, n_features=20,\n    n_classes=2, weights=[0.95, 0.05],  # 95% vs 5%\n    random_state=42\n)\n\n# ❌ Accuracy 会误导\n# 全部预测为多数类，Accuracy = 95%，但模型无用\n\n# ✅ 使用 Precision, Recall, F1\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.ensemble import RandomForestClassifier\n\nmodel = RandomForestClassifier()\nscores = cross_val_score(model, X, y, cv=5, scoring='f1')\nprint(f\"F1 Score: {scores.mean():.4f} (+/- {scores.std()*2:.4f})\")\n\n# 或者使用 AUC-PR (Precision-Recall AUC)\nfrom sklearn.metrics import average_precision_score\nfrom sklearn.model_selection import cross_val_predict\n\ny_proba = cross_val_predict(model, X, y, cv=5, method='predict_proba')[:, 1]\nauc_pr = average_precision_score(y, y_proba)\nprint(f\"AUC-PR: {auc_pr:.4f}\")\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 Precision、Recall、F1 的定义和计算\n- ✅ 掌握不同场景下的指标选择\n- ✅ 能够根据业务需求调整阈值\n- ✅ 了解类别不平衡时的评估策略\n- ✅ 具备实际分析和优化能力"
+    },
+    {
+      "id": "sec-13",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[ROC 曲线与 AUC]](./ML-017-roc-auc.md)\n- [[类别不平衡处理]](./ML-018-class-imbalance.md)\n- [[多分类评估指标]](./ML-019-multiclass-metrics.md)"
+    },
+    {
+      "id": "sec-14",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "追问 1: 为什么 F1 使用调和平均而不是算术平均？",
+      "level": 2,
+      "content": "**问题：** F1 为什么是 2×P×R/(P+R) 而不是 (P+R)/2？\n\n**答案：**\n\n```python\n# 调和平均 vs 算术平均\n\ndef harmonic_mean(p, r):\n    return 2 * p * r / (p + r) if (p + r) > 0 else 0\n\ndef arithmetic_mean(p, r):\n    return (p + r) / 2\n\n# 示例：极端情况\np, r = 1.0, 0.0  # 完美精确率，零召回率\n\nprint(f\"Precision: {p}, Recall: {r}\")\nprint(f\"Harmonic Mean (F1): {harmonic_mean(p, r):.4f}\")  # 0\nprint(f\"Arithmetic Mean: {arithmetic_mean(p, r):.4f}\")   # 0.5\n\n# 调和平均的特性：\n# 1. 对极端值更敏感\n# 2. P 或 R 为 0 时，F1 为 0（合理）\n# 3. 鼓励 P 和 R 都高，而不是一个极高一个极低\n\n# 示例：两个模型\nmodel1 = (0.9, 0.1)  # P=0.9, R=0.1\nmodel2 = (0.5, 0.5)  # P=0.5, R=0.5\n\nprint(f\"\\nModel 1 (不平衡): F1 = {harmonic_mean(*model1):.4f}\")\nprint(f\"Model 2 (平衡):   F1 = {harmonic_mean(*model2):.4f}\")\n# Model 2 的 F1 更高，鼓励平衡\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "追问 2: 多分类问题如何计算 Precision 和 Recall？",
+      "level": 2,
+      "content": "**问题：** 多分类场景下指标如何计算？\n\n**答案：**\n\n```python\nfrom sklearn.metrics import precision_score, recall_score, f1_score\n\n# 多分类指标计算方式\ny_true = [0, 1, 2, 0, 1, 2]\ny_pred = [0, 2, 2, 0, 1, 1]\n\n# Micro: 全局计算 TP, FP, FN\nprecision_micro = precision_score(y_true, y_pred, average='micro')\nprint(f\"Micro Precision: {precision_micro:.4f}\")\n\n# Macro: 各类别独立计算后平均\nprecision_macro = precision_score(y_true, y_pred, average='macro')\nprint(f\"Macro Precision: {precision_macro:.4f}\")\n\n# Weighted: 各类别独立计算后加权平均（按支持度）\nprecision_weighted = precision_score(y_true, y_pred, average='weighted')\nprint(f\"Weighted Precision: {precision_weighted:.4f}\")\n\n# 选择建议：\n# - Micro: 关注整体性能\n# - Macro: 关注各类别平等\n# - Weighted: 考虑类别不平衡\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "追问 3: 如何向非技术人员解释 Precision 和 Recall？",
+      "level": 2,
+      "content": "**问题：** 如何用通俗语言解释这两个指标？\n\n**答案：**\n\n```\n钓鱼比喻：\n\nPrecision (精确率):\n\"你钓上来的鱼中，有多少是真的鱼？\"\n- 高 Precision = 很少钓到垃圾\n\nRecall (召回率):\n\"湖里所有的鱼中，你钓到了多少？\"\n- 高 Recall = 很少漏掉鱼\n\n场景：\n- 钓鱼比赛（数量重要）→ 优先 Recall\n- 钓鱼食用（质量重要）→ 优先 Precision\n- 正常钓鱼 → 平衡 F1\n\n医疗比喻：\n- Precision: \"诊断为患病的人中，有多少真患病？\"\n- Recall: \"所有患病的人中，有多少被诊断出来？\"\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**核心要点：**\n1. 没有\"最好\"的指标，只有\"最合适\"的指标\n2. 指标选择取决于业务目标和成本结构\n3. 阈值调整是优化指标的重要手段\n4. 类别不平衡时，Accuracy 会误导"
+    },
+    {
+      "id": "sec-19",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

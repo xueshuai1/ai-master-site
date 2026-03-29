@@ -1,0 +1,24 @@
+{
+  "id": "NLP-020-how-to-handle-noisy-text-from-social-media",
+  "title": "NLP-020-how-to-handle-noisy-text-from-social-media",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-020 How to handle noisy text from social media?\n\n 20. How to handle noisy text from social media?\n答案要点:\n预处理步骤:\n1. 移除 URL、@mentions、hashtags 符号\n2. 表情符号处理 (保留或转义)\n3. 拼写纠正 (SymSpell, Nori)\n4. 标准化 (重复字符 \"soooo\" → \"so\")\n5. 俚语/缩写词典映射\n\n质量评分: 91/100 ⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "20. How to handle noisy text from social media?",
+      "level": 3,
+      "content": "**答案要点:**\n**预处理步骤:**\n1. 移除 URL、@mentions、hashtags 符号\n2. 表情符号处理 (保留或转义)\n3. 拼写纠正 (SymSpell, Nori)\n4. 标准化 (重复字符 \"soooo\" → \"so\")\n5. 俚语/缩写词典映射\n\n**质量评分**: 91/100 ⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

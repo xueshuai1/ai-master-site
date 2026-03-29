@@ -1,0 +1,270 @@
+{
+  "id": "DL-006-cnn-architecture",
+  "title": "DL-006-cnn-architecture",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.384Z",
+  "updatedAt": "2026-03-29T14:57:53.384Z",
+  "readTime": 8,
+  "abstract": " DL-006 ⭐⭐⭐ What is a Convolutional Neural Network (CNN)? Explain Its Architecture\n\n Question\nExplain the architecture of Convolutional Neural Networks (CNN). What are the different layers and their purposes?\n\n Answer\n\n What is a CNN?\nA Convolutional Neural Network (CNN or ConvNet) is a specialized deep neural network designed for processing grid-like data, particularly images. CNNs automatically and adaptively learn spatial hierarchies of features from input images.\n\n Why CNNs fo...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "Explain the architecture of Convolutional Neural Networks (CNN). What are the different layers and their purposes?"
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is a CNN?",
+      "level": 2,
+      "content": "A **Convolutional Neural Network (CNN or ConvNet)** is a specialized deep neural network designed for processing grid-like data, particularly images. CNNs automatically and adaptively learn spatial hierarchies of features from input images."
+    },
+    {
+      "id": "sec-4",
+      "title": "Why CNNs for Images?",
+      "level": 2,
+      "content": "- **Traditional Neural Networks**: Treat each pixel independently, lose spatial information\n- **CNNs**: Preserve spatial relationships, detect local patterns (edges, textures, shapes)\n- **Parameter Sharing**: Same filter applied across image, fewer parameters than fully connected networks\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "CNN Architecture Overview",
+      "level": 1,
+      "content": "```\nInput Image → [Conv → ReLU → Pool] × N → Flatten → Fully Connected → Output\n              ↓ Feature Extraction ↓        ↓ Classification ↓\n```\n\n---"
+    },
+    {
+      "id": "sec-6",
+      "title": "CNN Layers in Detail",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-7",
+      "title": "1. Convolutional Layer (CONV)",
+      "level": 1,
+      "content": "**Purpose:** Feature extraction using learnable filters"
+    },
+    {
+      "id": "sec-8",
+      "title": "How It Works",
+      "level": 2,
+      "content": "- **Filters/Kernels**: Small matrices (e.g., 3×3, 5×5) that slide across the input\n- **Convolution Operation**: Element-wise multiplication and summation\n- **Feature Maps**: Output of applying filters"
+    },
+    {
+      "id": "sec-9",
+      "title": "Convolution Operation",
+      "level": 2,
+      "content": "```\nInput: 5×5 image\nFilter: 3×3 kernel\nOutput: 3×3 feature map\n\n[1 1 1]   [1 0 1]   [1 1 1]\n[0 1 0] * [0 1 0] = [0 1 0]  (element-wise multiply + sum)\n[1 0 1]   [1 0 1]   [1 0 1]\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "Key Parameters",
+      "level": 2,
+      "content": "| Parameter | Description | Typical Values |\n|-----------|-------------|----------------|\n| **Filter Size** | Spatial dimensions of kernel | 3×3, 5×5, 7×7 |\n| **Number of Filters** | Depth of output | 32, 64, 128, 256 |\n| **Stride** | Step size for filter movement | 1, 2 |\n| **Padding** | Border handling | 'valid' (none), 'same' (zero-pad) |"
+    },
+    {
+      "id": "sec-11",
+      "title": "Output Size Formula",
+      "level": 2,
+      "content": "```\nOutput = ⌊(Input - Filter + 2×Padding) / Stride⌋ + 1\n\nExample:\nInput = 32×32, Filter = 3×3, Padding = 1, Stride = 1\nOutput = (32 - 3 + 2×1) / 1 + 1 = 32×32\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "What Filters Learn",
+      "level": 2,
+      "content": "- **Early Layers**: Edges, corners, colors\n- **Middle Layers**: Textures, patterns, shapes\n- **Deep Layers**: Complex objects (eyes, wheels, etc.)\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "2. ReLU Layer (Activation)",
+      "level": 1,
+      "content": "**Purpose:** Introduce non-linearity"
+    },
+    {
+      "id": "sec-14",
+      "title": "Operation",
+      "level": 2,
+      "content": "```\nReLU(x) = max(0, x)\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "Why After Convolution?",
+      "level": 2,
+      "content": "- Convolution is linear operation\n- ReLU adds non-linearity for complex pattern learning\n- Converts negative values to zero (sparse activation)\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "3. Pooling Layer (POOL)",
+      "level": 1,
+      "content": "**Purpose:** Downsample spatial dimensions, reduce computation, control overfitting"
+    },
+    {
+      "id": "sec-17",
+      "title": "Types of Pooling",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "Max Pooling (Most Common)",
+      "level": 3,
+      "content": "```\nInput: 4×4        Filter: 2×2, Stride: 2\n[1 3 2 4]\n[5 6 1 2]   →   [6 4]    (takes maximum in each window)\n[1 0 3 4]       [3 4]\n[7 2 1 3]\n```"
+    },
+    {
+      "id": "sec-19",
+      "title": "Average Pooling",
+      "level": 3,
+      "content": "```\nSame input → [3.75 2.25]  (takes average in each window)\n             [2.00  2.25]\n```"
+    },
+    {
+      "id": "sec-20",
+      "title": "Benefits",
+      "level": 2,
+      "content": "✅ Reduces spatial dimensions (75% reduction with 2×2, stride 2)\n✅ Reduces parameters and computation\n✅ Provides translation invariance\n✅ Controls overfitting"
+    },
+    {
+      "id": "sec-21",
+      "title": "Output Size",
+      "level": 2,
+      "content": "```\nOutput = ⌊(Input - Pool_Size) / Stride⌋ + 1\n```\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "4. Fully Connected Layer (FC)",
+      "level": 1,
+      "content": "**Purpose:** Classification based on extracted features"
+    },
+    {
+      "id": "sec-23",
+      "title": "Structure",
+      "level": 2,
+      "content": "- All neurons connected to all activations from previous layer\n- Typically at the end of CNN\n- Same as traditional neural network layers"
+    },
+    {
+      "id": "sec-24",
+      "title": "Process",
+      "level": 2,
+      "content": "```\nFlattened Features → FC Layer 1 → ReLU → FC Layer 2 → Softmax → Class Probabilities\n```\n\n---"
+    },
+    {
+      "id": "sec-25",
+      "title": "5. Additional Layers (Modern CNNs)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-26",
+      "title": "Batch Normalization",
+      "level": 2,
+      "content": "```\nPosition: After Conv, before ReLU\nPurpose: Normalize activations, faster training, stable gradients\n```"
+    },
+    {
+      "id": "sec-27",
+      "title": "Dropout",
+      "level": 2,
+      "content": "```\nPosition: In FC layers\nPurpose: Randomly drop neurons, prevent overfitting\n```"
+    },
+    {
+      "id": "sec-28",
+      "title": "Global Average Pooling",
+      "level": 2,
+      "content": "```\nReplaces: FC layers\nPurpose: Average each feature map, fewer parameters, better interpretability\n```\n\n---"
+    },
+    {
+      "id": "sec-29",
+      "title": "Complete CNN Architecture Example",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-30",
+      "title": "LeNet-5 (Classic)",
+      "level": 2,
+      "content": "```\nInput (32×32) → Conv1 (6 filters) → Pool1 → Conv2 (16 filters) → Pool2 \n→ FC1 (120) → FC2 (84) → Output (10)\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "Modern Architecture (VGG-style)",
+      "level": 2,
+      "content": "```\nInput (224×224×3)\n↓\n[Conv(64) → Conv(64) → Pool] × 2\n↓\n[Conv(128) → Conv(128) → Pool] × 2\n↓\n[Conv(256) → Conv(256) → Conv(256) → Pool] × 3\n↓\n[Conv(512) → Conv(512) → Conv(512) → Pool] × 3\n↓\nFlatten → FC(4096) → Dropout → FC(4096) → Dropout → FC(1000) → Softmax\n```\n\n---"
+    },
+    {
+      "id": "sec-32",
+      "title": "Why CNNs Work So Well",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-33",
+      "title": "1. Local Connectivity",
+      "level": 2,
+      "content": "- Neurons connect only to local region of input\n- Captures spatial relationships\n- Fewer parameters than fully connected"
+    },
+    {
+      "id": "sec-34",
+      "title": "2. Parameter Sharing",
+      "level": 2,
+      "content": "- Same filter applied across entire image\n- Detects features regardless of position\n- Dramatically reduces parameters"
+    },
+    {
+      "id": "sec-35",
+      "title": "3. Hierarchical Feature Learning",
+      "level": 2,
+      "content": "```\nLayer 1: Edges → Layer 2: Textures → Layer 3: Shapes → Layer 4: Objects\n```"
+    },
+    {
+      "id": "sec-36",
+      "title": "4. Translation Invariance",
+      "level": 2,
+      "content": "- Pooling provides robustness to small translations\n- Object recognized regardless of exact position\n\n---"
+    },
+    {
+      "id": "sec-37",
+      "title": "CNN vs Traditional Neural Network",
+      "level": 1,
+      "content": "| Aspect | Traditional NN | CNN |\n|--------|---------------|-----|\n| **Input** | Flattened vector | 3D volume (H×W×D) |\n| **Connections** | Fully connected | Local (convolutional) |\n| **Parameters** | Many (N×M) | Fewer (shared filters) |\n| **Spatial Info** | Lost | Preserved |\n| **Best For** | Tabular data | Images, spatial data |\n\n---"
+    },
+    {
+      "id": "sec-38",
+      "title": "Common CNN Architectures",
+      "level": 1,
+      "content": "| Architecture | Year | Key Innovation |\n|--------------|------|----------------|\n| **LeNet-5** | 1998 | First successful CNN |\n| **AlexNet** | 2012 | ReLU, Dropout, GPU training |\n| **VGG** | 2014 | Small 3×3 filters, deep networks |\n| **GoogLeNet** | 2014 | Inception modules |\n| **ResNet** | 2015 | Skip connections, very deep (152+ layers) |\n| **EfficientNet** | 2019 | Compound scaling |"
+    },
+    {
+      "id": "sec-39",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- CNNs are specialized for grid-like data (images)\n- Convolutional layers extract features using learnable filters\n- Pooling layers reduce dimensions and provide invariance\n- Hierarchical learning: edges → textures → shapes → objects\n- Parameter sharing and local connectivity make CNNs efficient\n- Modern architectures use batch norm, dropout, skip connections"
+    },
+    {
+      "id": "sec-40",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-41",
+      "title": "Category: Neural Network Architectures",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-42",
+      "title": "Tags: [CNN, convolutional-neural-network, computer-vision, architecture, layers]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

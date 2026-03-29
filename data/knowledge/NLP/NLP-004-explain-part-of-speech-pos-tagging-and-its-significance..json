@@ -1,0 +1,24 @@
+{
+  "id": "NLP-004-explain-part-of-speech-pos-tagging-and-its-significance.",
+  "title": "NLP-004-explain-part-of-speech-pos-tagging-and-its-significance.",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-004 Explain Part-of-Speech (POS) tagging and its significance.\n\n 4. Explain Part-of-Speech (POS) tagging and its significance.\n答案要点:\n- 定义: 为每个词标注语法类别（名词、动词、形容词等）\n- 重要性:\n  - Syntactic Parsing 的基础\n  - Word Sense Disambiguation\n  - Information Extraction\n  - Lemmatization 需要 POS 信息\n- 挑战: 一词多性（\"well\" 可以是副词/形容词/名词）\n- 工具: NLTK, spaCy, Stanford POS Tagger\n\n质量评分: 91/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "4. Explain Part-of-Speech (POS) tagging and its significance.",
+      "level": 3,
+      "content": "**答案要点:**\n- **定义**: 为每个词标注语法类别（名词、动词、形容词等）\n- **重要性**:\n  - Syntactic Parsing 的基础\n  - Word Sense Disambiguation\n  - Information Extraction\n  - Lemmatization 需要 POS 信息\n- **挑战**: 一词多性（\"well\" 可以是副词/形容词/名词）\n- **工具**: NLTK, spaCy, Stanford POS Tagger\n\n**质量评分**: 91/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

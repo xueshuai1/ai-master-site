@@ -1,0 +1,100 @@
+{
+  "id": "LLM-微调方法对比 Full-LoRA-QLoRA",
+  "title": "微调方法对比：Full vs LoRA vs QLoRA",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "微调",
+    "LoRA",
+    "QLoRA",
+    "参数高效"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请对比 Full Fine-tuning、LoRA 和 QLoRA 三种微调方法，包括原理、资源需求和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 微调，LoRA，QLoRA，参数高效",
+  "requirements": [],
+  "answer": {
+    "summary": "请对比 Full Fine-tuning、LoRA 和 QLoRA 三种微调方法，包括原理、资源需求和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 微调，LoRA，QLoRA，参数高效",
+    "coreFormula": "# 更新所有参数\nfor param in model.parameters():\n    param.requires_grad = True\n\n# 显存需求 = 模型 + 梯度 + 优化器状态\n# 7B 模型约需 80GB+ 显存",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请对比 Full Fine-tuning、LoRA 和 QLoRA 三种微调方法，包括原理、资源需求和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 微调，LoRA，QLoRA，参数高效",
+        "code": {
+          "language": "python",
+          "code": "# 更新所有参数\nfor param in model.parameters():\n    param.requires_grad = True\n\n# 显存需求 = 模型 + 梯度 + 优化器状态\n# 7B 模型约需 80GB+ 显存"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**三种方法对比：**\n\n| 维度 | Full Fine-tuning | LoRA | QLoRA |\n|------|-----------------|------|-------|\n| 可训练参数 | 100% | 1-10% | 1-10% |\n| 基础精度 | FP16/BF16 | FP16/BF16 | INT4 |\n| 显存需求 | 高 | 中 | 低 |\n| 训练速度 | 慢 | 快 | 快 |\n| 效果 | 最佳 | 接近 | 接近 |\n| 实现难度 | 简单 | 中等 | 复杂 |\n\n**Full Fine-tuning：**\n```python\n# 更新所有参数\nfor param in model.parameters():\n    param.requires_grad = True\n\n# 显存需求 = 模型 + 梯度 + 优化器状态\n# 7B 模型约需 80GB+ 显存\n```\n\n**LoRA（Low-Rank Adaptation）：**\n```python\n# 冻结基础模型，只训练低秩适配器\nfor param in model.parameters():\n    param.requires_grad = False\n\n# 注入 LoRA 模块\nfor layer in attention_layers:\n    layer.q_proj = LoRALinear(layer.q_proj, r=16)\n    layer.v_proj = LoRALinear(layer.v_proj, r=16)\n\n# 显存需求减少 60-70%\n```\n\n**QLoRA（Quantized LoRA）：**\n```python\n# 4bit 量化基础模型\nmodel = NF4QuantizedModel(model, bits=4)\n\n# 结合 LoRA 微调\nmodel = inject_lora(model, r=64)\n\n# 使用双重量化\n- 量化权重：NF4 格式\n- 量化梯度：FP16\n\n# 7B 模型仅需 12GB 显存\n```\n\n**技术细节：**\n\n**QLoRA 关键创新：**\n1. **4bit NormalFloat (NF4)：** 针对正态分布优化的量化\n2. **双重量化：** 量化常数量化减少额外开销\n3. **分页优化器：** 防止显存峰值\n\n**资源对比（7B 模型）：**\n```\nFull FT:  80GB 显存，100% 参数\nLoRA:     24GB 显存，0.2% 参数\nQLoRA:    12GB 显存，0.2% 参数\n```\n\n**适用场景：**\n\n**Full Fine-tuning：**\n- 资源充足\n- 追求最佳效果\n- 领域差异大\n\n**LoRA：**\n- 常规微调任务\n- 需要快速迭代\n- 多任务适配\n\n**QLoRA：**\n- 消费级 GPU\n- 大模型微调\n- 资源受限场景",
+        "code": {
+          "language": "python",
+          "code": "# 冻结基础模型，只训练低秩适配器\nfor param in model.parameters():\n    param.requires_grad = False\n\n# 注入 LoRA 模块\nfor layer in attention_layers:\n    layer.q_proj = LoRALinear(layer.q_proj, r=16)\n    layer.v_proj = LoRALinear(layer.v_proj, r=16)\n\n# 显存需求减少 60-70%"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 三种方法的原理和差异\n- **能力：** 根据资源选择合适方案\n- **思维：** 理解量化与效率的权衡",
+        "code": {
+          "language": "python",
+          "code": "# 4bit 量化基础模型\nmodel = NF4QuantizedModel(model, bits=4)\n\n# 结合 LoRA 微调\nmodel = inject_lora(model, r=64)\n\n# 使用双重量化\n- 量化权重：NF4 格式\n- 量化梯度：FP16\n\n# 7B 模型仅需 12GB 显存"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么 LoRA 只应用于 Q/V 投影？（5 分）\n2. QLoRA 的 NF4 量化与标准 4bit 有什么区别？（5 分）\n3. 如何合并 LoRA 权重到基础模型？（5 分）\n4. 什么是梯度检查点？如何节省显存？（5 分）\n5. 多 LoRA 适配器如何管理？（5 分）",
+        "code": {
+          "language": "text",
+          "code": "Full FT:  80GB 显存，100% 参数\nLoRA:     24GB 显存，0.2% 参数\nQLoRA:    12GB 显存，0.2% 参数"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "参数高效微调让大模型训练平民化，是实际应用的关键技术。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "三种方法的原理和差异",
+    "ability": "根据资源选择合适方案",
+    "thinking": "理解量化与效率的权衡"
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么 LoRA 只应用于 Q/V 投影？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "QLoRA 的 NF4 量化与标准 4bit 有什么区别？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何合并 LoRA 权重到基础模型？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是梯度检查点？如何节省显存？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "多 LoRA 适配器如何管理？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.374Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

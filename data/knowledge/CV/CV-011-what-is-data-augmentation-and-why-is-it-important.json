@@ -1,0 +1,24 @@
+{
+  "id": "CV-011-what-is-data-augmentation-and-why-is-it-important",
+  "title": "CV-011-what-is-data-augmentation-and-why-is-it-important",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-011 What is data augmentation and why is it important?\n\n Q11: What is data augmentation and why is it important?\n\nScore: 91/100\n\nAnswer:\nData augmentation artificially expands training datasets by applying transformations to existing images.\n\nCommon Techniques:\n1. Geometric Transformations:\n   - Flipping (horizontal, vertical)\n   - Rotation (random angles)\n   - Scaling/Zooming\n   - Cropping (random, center)\n   - Translation (shifting)\n\n2. Color Transformations:\n   - B...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q11: What is data augmentation and why is it important?",
+      "level": 2,
+      "content": "**Score:** 91/100\n\n**Answer:**\nData augmentation artificially expands training datasets by applying transformations to existing images.\n\n**Common Techniques:**\n1. **Geometric Transformations:**\n   - Flipping (horizontal, vertical)\n   - Rotation (random angles)\n   - Scaling/Zooming\n   - Cropping (random, center)\n   - Translation (shifting)\n\n2. **Color Transformations:**\n   - Brightness adjustment\n   - Contrast adjustment\n   - Saturation modification\n   - Hue shifting\n\n3. **Advanced Techniques:**\n   - Cutout/Random Erasing\n   - Mixup (blending images)\n   - CutMix (patch replacement)\n   - Mosaic (combining 4 images)\n\n**Benefits:**\n- Prevents overfitting by exposing model to varied scenarios\n- Improves generalization to unseen data\n- Especially valuable with limited training data\n- Increases model robustness to variations\n\n**Implementation (PyTorch):**\n```python\nfrom torchvision import transforms\ntransform = transforms.Compose([\n    transforms.RandomHorizontalFlip(),\n    transforms.RandomRotation(15),\n    transforms.ColorJitter(brightness=0.2, contrast=0.2),\n    transforms.ToTensor()\n])\n```\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

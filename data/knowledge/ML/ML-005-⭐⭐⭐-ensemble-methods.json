@@ -1,0 +1,121 @@
+{
+  "id": "ML-005-⭐⭐⭐-ensemble-methods",
+  "title": "Ensemble Learning Methods (集成学习方法)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "Ensemble",
+    "Bagging",
+    "Boosting",
+    "Random Forest",
+    "XGBoost",
+    "Stacking"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.391Z",
+  "readTime": 10,
+  "abstract": " 题目描述\n请解释集成学习 (Ensemble Learning) 的核心思想。Bagging 和 Boosting 有什么区别？请详细说明 Random Forest、XGBoost、LightGBM 的工作原理和适用场景。\n\n 参考答案\n\n 集成学习的核心思想\n\n\"三个臭皮匠，顶个诸葛亮\" —— 通过组合多个弱学习器，获得比单个模型更好的泛化性能。\n\n为什么有效：\n1. 减少方差 (Bagging): 平均多个模型的预测\n2. 减少偏差 (Boosting): 逐步修正错误\n3. 提高稳定性: 降低对单个模型的依赖\n\n Bagging vs Boosting 对比\n\n| 特性 | Bagging | Boosting |\n|------|---------|----------|\n| 全称 | Bootstrap Aggregating | Adaptive Boosting |\n| 训练方式 | 并行训练 | 串行训练 |\n| 样本采样 | 有放回随机采样 | 关注之前预测错误的样本 |\n| ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请解释集成学习 (Ensemble Learning) 的核心思想。Bagging 和 Boosting 有什么区别？请详细说明 Random Forest、XGBoost、LightGBM 的工作原理和适用场景。"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "集成学习的核心思想",
+      "level": 2,
+      "content": "**\"三个臭皮匠，顶个诸葛亮\"** —— 通过组合多个弱学习器，获得比单个模型更好的泛化性能。\n\n**为什么有效：**\n1. **减少方差** (Bagging): 平均多个模型的预测\n2. **减少偏差** (Boosting): 逐步修正错误\n3. **提高稳定性**: 降低对单个模型的依赖"
+    },
+    {
+      "id": "sec-4",
+      "title": "Bagging vs Boosting 对比",
+      "level": 2,
+      "content": "| 特性 | Bagging | Boosting |\n|------|---------|----------|\n| **全称** | Bootstrap Aggregating | Adaptive Boosting |\n| **训练方式** | 并行训练 | 串行训练 |\n| **样本采样** | 有放回随机采样 | 关注之前预测错误的样本 |\n| **模型权重** | 所有模型平等投票 | 根据性能加权 |\n| **主要目标** | 减少方差 | 减少偏差 |\n| **过拟合风险** | 较低 | 较高（需要早停） |\n| **典型算法** | Random Forest | AdaBoost, XGBoost, LightGBM |"
+    },
+    {
+      "id": "sec-5",
+      "title": "1. Random Forest (Bagging 代表)",
+      "level": 2,
+      "content": "```python\nfrom sklearn.ensemble import RandomForestClassifier, RandomForestRegressor\nfrom sklearn.model_selection import cross_val_score\nimport numpy as np\n\n# 随机森林分类器\nrf_clf = RandomForestClassifier(\n    n_estimators=100,      # 树的数量\n    max_depth=20,          # 树的最大深度\n    min_samples_split=5,   # 内部节点再划分所需最小样本数\n    min_samples_leaf=2,    # 叶子节点最小样本数\n    max_features='sqrt',   # 特征采样：'sqrt', 'log2', 或 float\n    bootstrap=True,        # 是否使用 bootstrap 采样\n    oob_score=True,        # 是否使用 OOB 样本评估\n    n_jobs=-1,             # 并行计算\n    random_state=42,\n    class_weight='balanced' # 处理不平衡数据\n)\n\nrf_clf.fit(X_train, y_train)\n\n# OOB 分数 (无需额外验证集)\nprint(f\"OOB Score: {rf_clf.oob_score_:.4f}\")\n\n# 特征重要性\nimportances = rf_clf.feature_importances_\ntop_features = np.argsort(importances)[-10:][::-1]\nprint(f\"Top 10 features: {top_features}\")\n\n# 可视化特征重要性\nimport matplotlib.pyplot as plt\nplt.figure(figsize=(10, 6))\nplt.barh(range(len(top_features)), importances[top_features])\nplt.yticks(range(len(top_features)), top_features)\nplt.xlabel('Importance')\nplt.title('Random Forest Feature Importances')\nplt.gca().invert_yaxis()\nplt.tight_layout()\nplt.show()\n```\n\n**工作原理：**\n1. Bootstrap 采样：从原始数据中有放回地抽取 n 个样本\n2. 随机特征：每次分裂只考虑随机子集的特征\n3. 多棵树：重复以上步骤构建多棵决策树\n4. 投票/平均：分类用投票，回归用平均\n\n**优点：**\n- 不容易过拟合\n- 可以处理高维数据\n- 提供特征重要性\n- 对异常值不敏感\n\n**缺点：**\n- 模型较大，预测较慢\n- 可解释性不如单棵树\n- 对于线性关系建模能力弱"
+    },
+    {
+      "id": "sec-6",
+      "title": "2. XGBoost (Boosting 代表)",
+      "level": 2,
+      "content": "```python\nimport xgboost as xgb\nfrom sklearn.model_selection import GridSearchCV\n\n# XGBoost 分类器\nxgb_clf = xgb.XGBClassifier(\n    n_estimators=100,          # 树的数量\n    max_depth=6,               # 树的最大深度\n    learning_rate=0.1,         # 学习率 (eta)\n    subsample=0.8,             # 样本采样比例\n    colsample_bytree=0.8,      # 特征采样比例\n    min_child_weight=1,        # 子树最小权重和\n    gamma=0,                   # 分裂所需最小损失减少\n    reg_alpha=0,               # L1 正则化\n    reg_lambda=1,              # L2 正则化\n    scale_pos_weight=1,        # 处理不平衡数据\n    objective='binary:logistic',\n    eval_metric='logloss',\n    tree_method='hist',        # 树构建算法\n    n_jobs=-1,\n    random_state=42\n)\n\n# 使用早停防止过拟合\nxgb_clf.fit(\n    X_train, y_train,\n    eval_set=[(X_val, y_val)],\n    early_stopping_rounds=50,\n    verbose=True\n)\n\n# 最佳迭代次数\nprint(f\"Best iteration: {xgb_clf.best_iteration}\")\n\n# 特征重要性\nxgb.plot_importance(xgb_clf, max_num_features=20)\nplt.show()\n```\n\n**工作原理：**\n1. 加法模型：逐步添加新树修正残差\n2. 梯度提升：用负梯度方向拟合残差\n3. 正则化：目标函数包含正则项\n4. 二阶泰勒展开：利用一阶和二阶导数\n\n**目标函数：**\n```\nObj(θ) = Σ l(y_i, ŷ_i) + Σ Ω(f_k)\n       = Σ l(y_i, ŷ_i) + Σ (γT + ½λ||w||²)\n```\n\n**优点：**\n- 预测精度高\n- 支持多种目标函数\n- 内置正则化\n- 支持缺失值处理\n\n**缺点：**\n- 参数较多，调参复杂\n- 容易过拟合（需要早停）\n- 训练时间较长"
+    },
+    {
+      "id": "sec-7",
+      "title": "3. LightGBM (高效 Boosting)",
+      "level": 2,
+      "content": "```python\nimport lightgbm as lgb\n\n# LightGBM 分类器\nlgb_clf = lgb.LGBMClassifier(\n    n_estimators=100,\n    max_depth=-1,              # 无限制（用 num_leaves 控制）\n    num_leaves=31,             # 叶子节点数\n    learning_rate=0.1,\n    subsample=0.8,\n    colsample_bytree=0.8,\n    min_child_samples=20,      # 叶子最小样本数\n    reg_alpha=0.1,\n    reg_lambda=0.1,\n    class_weight='balanced',\n    objective='binary',\n    metric='binary_logloss',\n    n_jobs=-1,\n    random_state=42,\n    verbose=-1\n)\n\nlgb_clf.fit(\n    X_train, y_train,\n    eval_set=[(X_val, y_val)],\n    eval_metric='binary_logloss',\n    callbacks=[\n        lgb.early_stopping(stopping_rounds=50),\n        lgb.log_evaluation(period=50)\n    ]\n)\n\n# 特征重要性\nlgb.plot_importance(lgb_clf, max_num_features=20)\nplt.show()\n```\n\n**核心创新：**\n1. **GOSS** (Gradient-based One-Side Sampling): 保留大梯度样本\n2. **EFB** (Exclusive Feature Bundling): 捆绑互斥特征\n3. **Leaf-wise 生长**: 按叶子分裂，而非按层\n\n**优点：**\n- 训练速度极快\n- 内存占用低\n- 支持大规模数据\n- 精度高\n\n**缺点：**\n- 小数据可能过拟合\n- 参数敏感"
+    },
+    {
+      "id": "sec-8",
+      "title": "4. Stacking (堆叠集成)",
+      "level": 2,
+      "content": "```python\nfrom sklearn.ensemble import StackingClassifier, VotingClassifier\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.svm import SVC\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.naive_bayes import GaussianNB\n\n# 基学习器\nbase_estimators = [\n    ('rf', RandomForestClassifier(n_estimators=50, random_state=42)),\n    ('xgb', xgb.XGBClassifier(n_estimators=50, random_state=42)),\n    ('svm', SVC(probability=True, random_state=42)),\n    ('knn', KNeighborsClassifier(n_neighbors=5))\n]\n\n# 元学习器\nmeta_estimator = LogisticRegression()\n\n# Stacking\nstacking_clf = StackingClassifier(\n    estimators=base_estimators,\n    final_estimator=meta_estimator,\n    cv=5,                      # 交叉验证生成元特征\n    stack_method='predict_proba',  # 使用概率作为元特征\n    n_jobs=-1\n)\n\nstacking_clf.fit(X_train, y_train)\nscore = stacking_clf.score(X_test, y_test)\nprint(f\"Stacking Accuracy: {score:.4f}\")\n\n# 对比各模型性能\nprint(\"\\nIndividual Models:\")\nfor name, clf in base_estimators:\n    clf.fit(X_train, y_train)\n    score = clf.score(X_test, y_test)\n    print(f\"  {name}: {score:.4f}\")\n```\n\n**工作原理：**\n1. 第一层：多个基学习器训练\n2. 第二层：用基学习器的预测作为输入，训练元学习器\n3. 交叉验证：避免过拟合（用 OOF 预测训练元学习器）"
+    },
+    {
+      "id": "sec-9",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 Bagging 和 Boosting 的本质区别\n- ✅ 掌握 Random Forest、XGBoost、LightGBM 的原理\n- ✅ 了解各算法的优缺点和适用场景\n- ✅ 能够调参优化集成模型\n- ✅ 理解 Stacking 的工作机制"
+    },
+    {
+      "id": "sec-10",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[XGBoost 与 LightGBM 对比]](./ML-011-xgboost-vs-lightgbm.md)\n- [[特征重要性分析]](./ML-012-feature-importance.md)\n- [[模型融合技巧]](./ML-013-model-blending.md)"
+    },
+    {
+      "id": "sec-11",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-12",
+      "title": "追问 1: Random Forest 中为什么要随机选择特征？",
+      "level": 2,
+      "content": "**问题：** 随机特征子集的作用是什么？\n\n**答案：**\n\n```python\n# 演示随机特征的效果\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.ensemble import BaggingClassifier\n\n# 没有随机特征的 Bagging\nbagging_no_feat = BaggingClassifier(\n    DecisionTreeClassifier(),\n    n_estimators=100,\n    max_features=1.0,  # 使用所有特征\n    random_state=42\n)\n\n# 有随机特征的 Random Forest\nrf = RandomForestClassifier(\n    n_estimators=100,\n    max_features='sqrt',  # 随机选择 sqrt(n_features)\n    random_state=42\n)\n\n# 随机特征的作用：\n# 1. 增加树之间的差异性（去相关）\n# 2. 减少方差（集成效果更好的前提是模型独立）\n# 3. 对于高维数据特别有效\n\n# 方差减少公式：\n# Var(average) = ρ * σ²\n# 其中 ρ 是树之间的相关系数\n# 随机特征降低了 ρ，从而减少了整体方差\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "追问 2: XGBoost 的正则化项有什么作用？",
+      "level": 2,
+      "content": "**问题：** XGBoost 目标函数中的正则项如何防止过拟合？\n\n**答案：**\n\n```python\n# XGBoost 目标函数\n# Obj = Σ l(y_i, ŷ_i) + Σ Ω(f_k)\n# Ω(f) = γT + ½λ||w||²\n\n# γ (gamma): 控制树的复杂度\n# - 每次分裂需要损失减少 > γ\n# - γ 越大，树越简单\n\n# λ (lambda): L2 正则化叶子权重\n# - 惩罚大的叶子权重\n# - 防止某个叶子主导预测\n\n# α (alpha): L1 正则化叶子权重\n# - 产生稀疏的叶子权重\n# - 类似 Lasso 的特征选择效果\n\n# 调参建议\nparam_grid = {\n    'gamma': [0, 0.1, 0.2, 0.5],\n    'reg_lambda': [1, 5, 10, 20],\n    'reg_alpha': [0, 0.1, 0.5, 1]\n}\n\n# 过拟合时：增加 γ, λ, α\n# 欠拟合时：减小 γ, λ, α\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "追问 3: 如何选择基学习器进行 Stacking？",
+      "level": 2,
+      "content": "**问题：** Stacking 中基学习器的选择有什么原则？\n\n**答案：**\n\n```python\n# 选择原则：\n# 1. 多样性：不同类型的模型（树、线性、距离、概率）\n# 2. 互补性：各模型在不同样本上表现不同\n# 3. 性能：每个基学习器都应有一定性能\n\n# 好的组合示例\ngood_ensemble = [\n    ('tree', RandomForestClassifier()),      # 树模型\n    ('boost', xgb.XGBClassifier()),          # 提升树\n    ('linear', LogisticRegression()),        # 线性模型\n    ('distance', KNeighborsClassifier()),    # 距离模型\n    ('prob', GaussianNB())                   # 概率模型\n]\n\n# 不好的组合（太相似）\nbad_ensemble = [\n    ('rf1', RandomForestClassifier()),\n    ('rf2', RandomForestClassifier()),\n    ('rf3', RandomForestClassifier())\n]\n\n# 评估多样性\nfrom sklearn.metrics import pairwise_distances\n\n# 训练各模型并获取预测\npredictions = []\nfor name, clf in good_ensemble:\n    clf.fit(X_train, y_train)\n    pred = clf.predict_proba(X_val)[:, 1]\n    predictions.append(pred)\n\npredictions = np.array(predictions).T\n\n# 计算预测相关性\ncorr_matrix = np.corrcoef(predictions.T)\nprint(\"Prediction Correlation Matrix:\")\nprint(corr_matrix)\n# 理想情况：相关性低（模型预测不同）\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**集成学习成功的关键：**\n\n1. **准确性**：每个基学习器都要比随机猜测好\n2. **多样性**：基学习器之间的错误要独立\n3. **平衡**：偏差和方差的权衡\n\n**实际应用建议：**\n- 从 Random Forest 开始（简单有效）\n- 追求精度用 XGBoost/LightGBM\n- 比赛/关键任务用 Stacking\n- 注意计算成本和推理时间"
+    },
+    {
+      "id": "sec-16",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本，包含完整集成方法讲解、代码示例和延伸追问"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

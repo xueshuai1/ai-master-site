@@ -1,0 +1,72 @@
+{
+  "id": "ML-024-⭐⭐⭐⭐-time-series-forecasting",
+  "title": "Time Series Forecasting (时间序列预测)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "Time Series",
+    "ARIMA",
+    "LSTM",
+    "Forecasting",
+    "Stationarity"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.395Z",
+  "readTime": 5,
+  "abstract": " 题目描述\n时间序列预测有哪些方法？如何处理非平稳序列？ARIMA 的原理是什么？\n\n 参考答案\n\n 时间序列特点\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n 时间序列组件\ncomponents = \"\"\"\n时间序列 = 趋势 (Trend) + 季节性 (Seasonality) + 周期性 (Cycle) + 噪声 (Noise)\n\n1. 趋势：长期方向（上升/下降/平稳）\n2. 季节性：固定周期内的模式\n3. 周期性：非固定周期的波动\n4. 噪声：随机波动\n\"\"\"\nprint(components)\n\n 分解示例\nfrom statsmodels.tsa.seasonal import seasonal_decompose\n\n 生成示例数据\ndates = pd.date_range('2020-01-01', periods=365, freq='D')\ntrend = np.linspace(100, 150, 365)\nseason...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "时间序列预测有哪些方法？如何处理非平稳序列？ARIMA 的原理是什么？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "时间序列特点",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# 时间序列组件\ncomponents = \"\"\"\n时间序列 = 趋势 (Trend) + 季节性 (Seasonality) + 周期性 (Cycle) + 噪声 (Noise)\n\n1. 趋势：长期方向（上升/下降/平稳）\n2. 季节性：固定周期内的模式\n3. 周期性：非固定周期的波动\n4. 噪声：随机波动\n\"\"\"\nprint(components)\n\n# 分解示例\nfrom statsmodels.tsa.seasonal import seasonal_decompose\n\n# 生成示例数据\ndates = pd.date_range('2020-01-01', periods=365, freq='D')\ntrend = np.linspace(100, 150, 365)\nseasonal = 20 * np.sin(2 * np.pi * np.arange(365) / 365 * 12)\nnoise = np.random.randn(365) * 5\nseries = trend + seasonal + noise\n\nts = pd.Series(series, index=dates)\n\n# 分解\ndecomposition = seasonal_decompose(ts, model='additive', period=30)\nfig = decomposition.plot()\nfig.suptitle('Time Series Decomposition', fontsize=16)\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "平稳性检验",
+      "level": 2,
+      "content": "```python\nfrom statsmodels.tsa.stattools import adfuller, kpss\n\ndef test_stationarity(series):\n    \"\"\"检验时间序列平稳性\"\"\"\n    \n    # ADF 检验 (零假设：有单位根，非平稳)\n    adf_result = adfuller(series)\n    print(\"ADF Test:\")\n    print(f\"  ADF Statistic: {adf_result[0]:.4f}\")\n    print(f\"  p-value: {adf_result[1]:.4f}\")\n    print(f\"  Stationary: {adf_result[1] < 0.05}\")\n    \n    # KPSS 检验 (零假设：平稳)\n    kpss_result = kpss(series)\n    print(\"\\nKPSS Test:\")\n    print(f\"  KPSS Statistic: {kpss_result[0]:.4f}\")\n    print(f\"  p-value: {kpss_result[1]:.4f}\")\n    print(f\"  Stationary: {kpss_result[1] > 0.05}\")\n    \n    return adf_result[1] < 0.05\n\n# 使序列平稳的方法\n# 1. 差分\nseries_diff = ts.diff().dropna()\n\n# 2. 对数变换\nseries_log = np.log(ts)\n\n# 3. 去趋势\nfrom scipy.signal import detrend\nseries_detrended = detrend(ts)\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "ARIMA 模型",
+      "level": 2,
+      "content": "```python\nfrom statsmodels.tsa.arima.model import ARIMA\nfrom statsmodels.graphics.tsaplots import plot_acf, plot_pacf\n\n# ACF 和 PACF 图\nfig, axes = plt.subplots(1, 2, figsize=(14, 4))\nplot_acf(ts, lags=40, ax=axes[0])\naxes[0].set_title('ACF')\nplot_pacf(ts, lags=40, ax=axes[1])\naxes[1].set_title('PACF')\nplt.tight_layout()\nplt.show()\n\n# ARIMA(p, d, q)\n# p: AR 阶数 (自回归)\n# d: 差分阶数\n# q: MA 阶数 (移动平均)\n\n# 拟合模型\nmodel = ARIMA(ts, order=(1, 1, 1))\nresults = model.fit()\n\nprint(results.summary())\n\n# 预测\nforecast = results.forecast(steps=30)\n\n# 可视化\nplt.figure(figsize=(12, 5))\nplt.plot(ts.index, ts.values, label='Historical')\nplt.plot(pd.date_range(ts.index[-1], periods=31, freq='D')[1:], forecast, \n         label='Forecast', color='red')\nplt.xlabel('Date')\nplt.ylabel('Value')\nplt.title('ARIMA Forecast')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "深度学习时序模型",
+      "level": 2,
+      "content": "```python\nfrom tensorflow import keras\nfrom tensorflow.keras import layers\n\n# LSTM 模型\ndef create_lstm_model(input_shape, forecast_horizon):\n    model = keras.Sequential([\n        layers.LSTM(64, return_sequences=True, input_shape=input_shape),\n        layers.Dropout(0.2),\n        layers.LSTM(32),\n        layers.Dropout(0.2),\n        layers.Dense(forecast_horizon)\n    ])\n    model.compile(optimizer='adam', loss='mse')\n    return model\n\n# 准备数据\ndef create_sequences(data, seq_length, forecast_horizon):\n    X, y = [], []\n    for i in range(len(data) - seq_length - forecast_horizon + 1):\n        X.append(data[i:i+seq_length])\n        y.append(data[i+seq_length:i+seq_length+forecast_horizon])\n    return np.array(X), np.array(y)\n\n# 训练\nseq_length = 30\nforecast_horizon = 7\nX, y = create_sequences(ts.values, seq_length, forecast_horizon)\nX = X.reshape(-1, seq_length, 1)\n\nmodel = create_lstm_model((seq_length, 1), forecast_horizon)\nmodel.fit(X, y, epochs=50, batch_size=32, validation_split=0.2)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解时间序列特点\n- ✅ 掌握平稳性检验\n- ✅ 了解 ARIMA 原理\n- ✅ 能够应用深度学习\n- ✅ 具备预测评估能力"
+    },
+    {
+      "id": "sec-8",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

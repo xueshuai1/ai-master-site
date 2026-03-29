@@ -1,0 +1,108 @@
+{
+  "id": "LLM-长上下文处理技术",
+  "title": "长上下文处理技术",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "长上下文",
+    "位置编码",
+    "窗口注意力",
+    "上下文扩展"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "LLM 如何处理长上下文（100k+ tokens）？请介绍位置编码外推、窗口注意力等技术。\n\n**来源：** LLM 面试题整理\n**标签：** 长上下文，位置编码，窗口注意力，上下文扩展",
+  "requirements": [],
+  "answer": {
+    "summary": "LLM 如何处理长上下文（100k+ tokens）？请介绍位置编码外推、窗口注意力等技术。\n\n**来源：** LLM 面试题整理\n**标签：** 长上下文，位置编码，窗口注意力，上下文扩展",
+    "coreFormula": "# 原始 RoPE\nq_rotated = rotate(q, position)\n\n# 外推：缩放位置\nscale = train_length / inference_length\nq_rotated = rotate(q, position * scale)\n\n# NTK 感知缩放\nfreqs = base_freq ** (2 * arange(d/2) / d)\nfreqs_scaled = freqs * (scale ** (d / (d-2)))",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "LLM 如何处理长上下文（100k+ tokens）？请介绍位置编码外推、窗口注意力等技术。\n\n**来源：** LLM 面试题整理\n**标签：** 长上下文，位置编码，窗口注意力，上下文扩展",
+        "code": {
+          "language": "python",
+          "code": "# 原始 RoPE\nq_rotated = rotate(q, position)\n\n# 外推：缩放位置\nscale = train_length / inference_length\nq_rotated = rotate(q, position * scale)\n\n# NTK 感知缩放\nfreqs = base_freq ** (2 * arange(d/2) / d)\nfreqs_scaled = freqs * (scale ** (d / (d-2)))"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**长上下文挑战：**\n- 训练长度有限（通常 2k-8k）\n- 推理时需要处理更长序列\n- 注意力复杂度 O(n²) 成为瓶颈\n\n**解决方案：**\n\n**1. 位置编码外推：**\n\n**RoPE 外推：**\n```python\n# 原始 RoPE\nq_rotated = rotate(q, position)\n\n# 外推：缩放位置\nscale = train_length / inference_length\nq_rotated = rotate(q, position * scale)\n\n# NTK 感知缩放\nfreqs = base_freq ** (2 * arange(d/2) / d)\nfreqs_scaled = freqs * (scale ** (d / (d-2)))\n```\n\n**ALiBi（无位置编码）：**\n```python\n# 注意力分数加线性偏置\nattention_scores = Q @ K.T / sqrt(d)\nattention_scores += bias_matrix  # bias[i,j] = -m * |i-j|\n\n# 推理时自然支持任意长度\n```\n\n**2. 窗口注意力（Sliding Window）：**\n```python\n# 只关注局部窗口\nfor i in range(seq_len):\n    start = max(0, i - window_size)\n    attention[i] = softmax(Q[i] @ K[start:i].T) @ V[start:i]\n\n# 复杂度：O(n·window_size) 而非 O(n²)\n# Mistral 7B 使用 4k 窗口\n```\n\n**3. 稀疏注意力：**\n```python\n# 固定稀疏模式\n- 局部窗口：每个 token 关注邻近 token\n- 全局 token：特殊 token 关注所有位置\n- 膨胀注意力：间隔采样\n\n# 典型：Longformer、BigBird\n```\n\n**4. 分块处理：**\n```python\n# 将长序列分块处理\nchunks = split(document, chunk_size=4096)\n\n# 方案 1：独立处理\nresults = [process(chunk) for chunk in chunks]\n\n# 方案 2：重叠处理（保留上下文）\nchunks = split_with_overlap(document, chunk_size=4096, overlap=256)\n\n# 方案 3：层次处理\nsummary = summarize(chunks)\nfinal_result = process(summary)\n```\n\n**5. 记忆机制：**\n```python\n# 维护压缩的记忆\nmemory = compress(previous_context)\ncurrent_output = model(current_input, memory)\nmemory = update(memory, current_output)\n```\n\n**主流模型方案：**\n\n| 模型 | 上下文长度 | 技术方案 |\n|------|-----------|---------|\n| GPT-4 Turbo | 128k | 未知（推测外推 + 稀疏） |\n| Claude 3 | 200k | 未知 |\n| LLaMA 3 | 8k | RoPE 外推 |\n| Mistral | 32k | 滑动窗口 + RoPE |\n| Yi | 200k | 窗口 + 外推 |\n\n**实践建议：**\n```python\n# 选择策略\nif context_length < 8k:\n    # 直接使用\n    output = model.generate(prompt)\nelif context_length < 32k:\n    # 窗口注意力\n    output = model.generate(prompt, attention_window=4096)\nelse:\n    # 分块 + 摘要\n    chunks = split_with_overlap(prompt, 4096, 256)\n    summaries = [summarize(chunk) for chunk in chunks]\n    output = model.generate(\"\\n\".join(summaries))\n```",
+        "code": {
+          "language": "python",
+          "code": "# 注意力分数加线性偏置\nattention_scores = Q @ K.T / sqrt(d)\nattention_scores += bias_matrix  # bias[i,j] = -m * |i-j|\n\n# 推理时自然支持任意长度"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 长上下文处理的各种技术\n- **能力：** 根据场景选择合适方案\n- **思维：** 理解长度 - 效率 - 效果的权衡",
+        "code": {
+          "language": "python",
+          "code": "# 只关注局部窗口\nfor i in range(seq_len):\n    start = max(0, i - window_size)\n    attention[i] = softmax(Q[i] @ K[start:i].T) @ V[start:i]\n\n# 复杂度：O(n·window_size) 而非 O(n²)\n# Mistral 7B 使用 4k 窗口"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. RoPE 外推为什么有效？（5 分）\n2. 滑动窗口会丢失什么信息？（5 分）\n3. 什么是 YaRN？与 NTK 缩放的区别？（5 分）\n4. 如何评估长上下文模型的质量？（5 分）\n5. 长上下文训练的 challenges 是什么？（5 分）",
+        "code": {
+          "language": "python",
+          "code": "# 固定稀疏模式\n- 局部窗口：每个 token 关注邻近 token\n- 全局 token：特殊 token 关注所有位置\n- 膨胀注意力：间隔采样\n\n# 典型：Longformer、BigBird"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "长上下文是 LLM 处理长文档、长对话的关键能力。",
+        "code": {
+          "language": "python",
+          "code": "# 将长序列分块处理\nchunks = split(document, chunk_size=4096)\n\n# 方案 1：独立处理\nresults = [process(chunk) for chunk in chunks]\n\n# 方案 2：重叠处理（保留上下文）\nchunks = split_with_overlap(document, chunk_size=4096, overlap=256)\n\n# 方案 3：层次处理\nsummary = summarize(chunks)\nfinal_result = process(summary)"
+        }
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本",
+        "code": {
+          "language": "python",
+          "code": "# 维护压缩的记忆\nmemory = compress(previous_context)\ncurrent_output = model(current_input, memory)\nmemory = update(memory, current_output)"
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "长上下文处理的各种技术",
+    "ability": "根据场景选择合适方案",
+    "thinking": "理解长度 - 效率 - 效果的权衡"
+  },
+  "followUpQuestions": [
+    {
+      "question": "RoPE 外推为什么有效？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "滑动窗口会丢失什么信息？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 YaRN？与 NTK 缩放的区别？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何评估长上下文模型的质量？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "长上下文训练的 challenges 是什么？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.375Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

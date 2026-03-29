@@ -1,0 +1,120 @@
+{
+  "id": "ML-012-⭐⭐⭐-logistic-regression",
+  "title": "Logistic Regression (逻辑回归)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Logistic Regression",
+    "Classification",
+    "Sigmoid",
+    "Maximum Likelihood",
+    "Regularization"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.393Z",
+  "readTime": 10,
+  "abstract": " 题目描述\n请详细解释逻辑回归的原理。为什么叫\"回归\"却用于分类？Sigmoid 函数的作用是什么？损失函数如何推导？与线性回归有什么区别？\n\n 参考答案\n\n 逻辑回归原理\n\n核心思想： 通过 Sigmoid 函数将线性回归的输出映射到 (0, 1) 区间，表示属于正类的概率。\n\n假设函数：\n\nh_θ(x) = σ(θ^T x) = 1 / (1 + e^(-θ^T x))\n\n\n决策边界：\n\nif h_θ(x) ≥ 0.5 → 预测 1\nif h_θ(x) < 0.5 → 预测 0\n\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.datasets import make_classification\n\n Sigmoid 函数\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释逻辑回归的原理。为什么叫\"回归\"却用于分类？Sigmoid 函数的作用是什么？损失函数如何推导？与线性回归有什么区别？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "逻辑回归原理",
+      "level": 2,
+      "content": "**核心思想：** 通过 Sigmoid 函数将线性回归的输出映射到 (0, 1) 区间，表示属于正类的概率。\n\n**假设函数：**\n```\nh_θ(x) = σ(θ^T x) = 1 / (1 + e^(-θ^T x))\n```\n\n**决策边界：**\n```\nif h_θ(x) ≥ 0.5 → 预测 1\nif h_θ(x) < 0.5 → 预测 0\n```\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.datasets import make_classification\n\n# Sigmoid 函数\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))\n\n# 可视化 Sigmoid\nz = np.linspace(-10, 10, 100)\nplt.figure(figsize=(10, 4))\n\nplt.subplot(1, 2, 1)\nplt.plot(z, sigmoid(z), linewidth=2)\nplt.axhline(y=0.5, color='r', linestyle='--', label='Decision boundary')\nplt.axvline(x=0, color='g', linestyle='--', alpha=0.5)\nplt.xlabel('z = θ^T x')\nplt.ylabel('σ(z)')\nplt.title('Sigmoid Function')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\n# 生成数据并训练\nX, y = make_classification(n_samples=200, n_features=2, n_informative=2, \n                           n_redundant=0, random_state=42)\n\nclf = LogisticRegression()\nclf.fit(X, y)\n\n# 决策边界\nxx, yy = np.meshgrid(np.linspace(X[:, 0].min() - 1, X[:, 0].max() + 1, 200),\n                     np.linspace(X[:, 1].min() - 1, X[:, 1].max() + 1, 200))\nZ = clf.predict_proba(np.c_[xx.ravel(), yy.ravel()])[:, 1]\nZ = Z.reshape(xx.shape)\n\nplt.subplot(1, 2, 2)\nplt.contourf(xx, yy, Z, levels=50, cmap='RdBu', alpha=0.3)\nplt.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis', s=50, edgecolors='k', alpha=0.6)\nplt.xlabel('Feature 1')\nplt.ylabel('Feature 2')\nplt.title('Logistic Regression Decision Boundary')\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "损失函数推导",
+      "level": 2,
+      "content": "**为什么不用 MSE？**\n```python\n# 逻辑回归用 MSE 会导致非凸优化问题\n# 存在多个局部最优\n\n# 使用交叉熵损失（对数损失）\ndef log_loss_manual(y_true, y_proba):\n    \"\"\"手动计算对数损失\"\"\"\n    epsilon = 1e-15  # 防止 log(0)\n    y_proba = np.clip(y_proba, epsilon, 1 - epsilon)\n    return -np.mean(y_true * np.log(y_proba) + (1 - y_true) * np.log(1 - y_proba))\n\n# 交叉熵损失公式：\n# L = -[y × log(p) + (1-y) × log(1-p)]\n# 其中 y ∈ {0, 1}, p = h_θ(x)\n\n# 梯度：\n# ∂L/∂θ = (h_θ(x) - y) × x\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "正则化逻辑回归",
+      "level": 2,
+      "content": "```python\nfrom sklearn.linear_model import LogisticRegression\n\n# L2 正则化（默认）\nclf_l2 = LogisticRegression(\n    penalty='l2',\n    C=1.0,          # 正则化强度的倒数\n    solver='lbfgs',\n    max_iter=1000\n)\n\n# L1 正则化（特征选择）\nclf_l1 = LogisticRegression(\n    penalty='l1',\n    C=1.0,\n    solver='liblinear',  # L1 需要 liblinear 或 saga\n    max_iter=1000\n)\n\n# ElasticNet\nclf_en = LogisticRegression(\n    penalty='elasticnet',\n    C=1.0,\n    l1_ratio=0.5,     # L1 比例\n    solver='saga',\n    max_iter=1000\n)\n\n# 无正则化\nclf_none = LogisticRegression(\n    penalty=None,\n    solver='lbfgs',\n    max_iter=1000\n)\n\n# C 的影响\n# C 大 → 弱正则化 → 可能过拟合\n# C 小 → 强正则化 → 可能欠拟合\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "多分类逻辑回归",
+      "level": 2,
+      "content": "```python\nfrom sklearn.datasets import load_iris\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.model_selection import cross_val_score\n\n# 加载数据\niris = load_iris()\nX, y = iris.data, iris.target\n\n# 多分类策略\n# 1. One-vs-Rest (OvR) - 默认\nclf_ovr = LogisticRegression(multi_class='ovr', solver='lbfgs')\nscores_ovr = cross_val_score(clf_ovr, X, y, cv=5)\nprint(f\"OvR Accuracy: {scores_ovr.mean():.4f}\")\n\n# 2. Multinomial (Softmax)\nclf_multi = LogisticRegression(multi_class='multinomial', solver='lbfgs')\nscores_multi = cross_val_score(clf_multi, X, y, cv=5)\nprint(f\"Multinomial Accuracy: {scores_multi.mean():.4f}\")\n\n# Softmax 函数\ndef softmax(z):\n    \"\"\"Softmax 函数（多分类）\"\"\"\n    exp_z = np.exp(z - np.max(z, axis=1, keepdims=True))  # 数值稳定\n    return exp_z / np.sum(exp_z, axis=1, keepdims=True)\n\n# 多分类损失（交叉熵）\n# L = -Σ y_i × log(p_i)\n# 其中 y 是 one-hot 编码\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "逻辑回归 vs 线性回归",
+      "level": 2,
+      "content": "| 特性 | 线性回归 | 逻辑回归 |\n|------|---------|---------|\n| **任务类型** | 回归 | 分类 |\n| **输出** | 连续值 | 概率 (0-1) |\n| **假设函数** | h(x) = θ^T x | h(x) = σ(θ^T x) |\n| **损失函数** | MSE | 交叉熵 |\n| **假设** | 正态分布 | 伯努利分布 |\n| **评估指标** | R², MSE | Accuracy, AUC |"
+    },
+    {
+      "id": "sec-8",
+      "title": "实际应用",
+      "level": 2,
+      "content": "```python\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.feature_selection import SelectFromModel\n\n# 完整流程\npipeline = Pipeline([\n    ('scaler', StandardScaler()),\n    ('clf', LogisticRegression(\n        penalty='l1',\n        C=0.1,\n        solver='liblinear',\n        max_iter=1000,\n        class_weight='balanced'  # 处理不平衡\n    ))\n])\n\npipeline.fit(X_train, y_train)\n\n# 特征重要性（系数）\ncoefficients = pipeline.named_steps['clf'].coef_\nfeature_importance = np.abs(coefficients)\n\n# 特征选择\nselector = SelectFromModel(\n    LogisticRegression(penalty='l1', C=0.1, solver='liblinear')\n)\nX_selected = selector.fit_transform(X, y)\nprint(f\"Selected {X_selected.shape[1]} features\")\n\n# 概率校准\nfrom sklearn.calibration import CalibratedClassifierCV\n\ncalibrated_clf = CalibratedClassifierCV(\n    LogisticRegression(),\n    method='sigmoid',  # 或 'isotonic'\n    cv=5\n)\ncalibrated_clf.fit(X_train, y_train)\n\n# 校准后的概率更可靠\nproba_calibrated = calibrated_clf.predict_proba(X_test)\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解逻辑回归的数学原理\n- ✅ 掌握 Sigmoid 函数和决策边界\n- ✅ 了解损失函数推导\n- ✅ 能够处理正则化和多分类\n- ✅ 具备实际应用能力"
+    },
+    {
+      "id": "sec-10",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[极大似然估计]](./ML-032-maximum-likelihood.md)\n- [[广义线性模型]](./ML-033-glm.md)\n- [[概率校准技术]](./ML-034-probability-calibration.md)"
+    },
+    {
+      "id": "sec-11",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-12",
+      "title": "追问 1: 为什么逻辑回归用交叉熵而不是 MSE？",
+      "level": 2,
+      "content": "**问题：** 从优化角度解释损失函数选择。\n\n**答案：**\n\n```python\n# 交叉熵 vs MSE 的梯度对比\n\ndef mse_gradient(y_true, y_pred):\n    \"\"\"MSE 梯度\"\"\"\n    return 2 * (y_pred - y_true)\n\ndef cross_entropy_gradient(y_true, y_pred):\n    \"\"\"交叉熵梯度（经过 sigmoid）\"\"\"\n    return y_pred - y_true  # 简洁！\n\n# MSE 问题：\n# 1. 非凸（多个局部最优）\n# 2. 梯度消失（预测接近 0 或 1 时）\n# 3. 对异常值敏感\n\n# 交叉熵优势：\n# 1. 凸函数（全局最优）\n# 2. 梯度合理（误差大梯度大）\n# 3. 来自极大似然估计\n\n# 可视化\nz = np.linspace(-10, 10, 100)\ny = 1  # 真实标签\n\np_sigmoid = sigmoid(z)\nloss_mse = (p_sigmoid - y) ** 2\nloss_ce = -(y * np.log(p_sigmoid + 1e-15))\n\nplt.figure(figsize=(12, 4))\n\nplt.subplot(1, 2, 1)\nplt.plot(z, loss_mse, label='MSE')\nplt.xlabel('z = θ^T x')\nplt.ylabel('Loss')\nplt.title('MSE Loss (Non-convex for Logistic)')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\nplt.subplot(1, 2, 2)\nplt.plot(z, loss_ce, color='orange', label='Cross-Entropy')\nplt.xlabel('z = θ^T x')\nplt.ylabel('Loss')\nplt.title('Cross-Entropy Loss (Convex)')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "追问 2: 逻辑回归能处理非线性关系吗？",
+      "level": 2,
+      "content": "**问题：** 如何扩展逻辑回归处理非线性？\n\n**答案：**\n\n```python\nfrom sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.pipeline import Pipeline\n\n# 方法 1: 多项式特征\npoly_clf = Pipeline([\n    ('poly', PolynomialFeatures(degree=2, include_bias=False)),\n    ('clf', LogisticRegression())\n])\npoly_clf.fit(X, y)\n\n# 方法 2: 核逻辑回归\nfrom sklearn.kernel_approximation import RBFSampler\n\nrbf_kernel = Pipeline([\n    ('rbf', RBFSampler(gamma=1.0, n_components=100)),\n    ('clf', LogisticRegression())\n])\nrbf_kernel.fit(X, y)\n\n# 方法 3: 分箱离散化\nfrom sklearn.preprocessing import KBinsDiscretizer\n\nbinned_clf = Pipeline([\n    ('bin', KBinsDiscretizer(n_bins=5, encode='onehot')),\n    ('clf', LogisticRegression())\n])\nbinned_clf.fit(X, y)\n\n# 方法 4: 交互特征\nfrom itertools import combinations\n\ndef add_interactions(X):\n    \"\"\"添加交互特征\"\"\"\n    interactions = []\n    for i, j in combinations(range(X.shape[1]), 2):\n        interactions.append((X[:, i] * X[:, j]).reshape(-1, 1))\n    return np.hstack([X] + interactions)\n\nX_interact = add_interactions(X)\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "追问 3: 如何处理类别不平衡？",
+      "level": 2,
+      "content": "**问题：** 逻辑回归处理不平衡数据的方法。\n\n**答案：**\n\n```python\n# 方法 1: 类别权重\nclf_balanced = LogisticRegression(\n    class_weight='balanced',  # 自动调整\n    solver='lbfgs'\n)\n# 或手动指定\nclf_weighted = LogisticRegression(\n    class_weight={0: 1, 1: 10},  # 少数类权重高\n    solver='lbfgs'\n)\n\n# 方法 2: 调整阈值\nclf = LogisticRegression()\nclf.fit(X_train, y_train)\n\n# 默认阈值 0.5\ny_pred_default = clf.predict(X_test)\n\n# 降低阈值（提高 Recall）\ny_proba = clf.predict_proba(X_test)[:, 1]\ny_pred_low_thresh = (y_proba >= 0.3).astype(int)\n\n# 方法 3: 重采样\nfrom imblearn.over_sampling import SMOTE\nfrom imblearn.under_sampling import RandomUnderSampler\n\n# 过采样\nsmote = SMOTE(random_state=42)\nX_resampled, y_resampled = smote.fit_resample(X, y)\n\n# 欠采样\nunder = RandomUnderSampler(random_state=42)\nX_under, y_under = under.fit_resample(X, y)\n\n# 方法 4: 使用 AUC-PR 评估\nfrom sklearn.metrics import average_precision_score\n\ny_proba = clf.predict_proba(X_test)[:, 1]\nauc_pr = average_precision_score(y_test, y_proba)\nprint(f\"AUC-PR: {auc_pr:.4f}\")\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**逻辑回归的本质：** 广义线性模型，伯努利分布的极大似然估计\n\n**关键要点：**\n1. Sigmoid 将线性输出映射为概率\n2. 交叉熵来自极大似然\n3. 正则化防止过拟合\n4. 可扩展为多分类（Softmax）"
+    },
+    {
+      "id": "sec-16",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

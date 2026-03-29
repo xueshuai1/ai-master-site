@@ -1,0 +1,24 @@
+{
+  "id": "CV-013-what-are-the-challenges-in-deploying-computer-vision-models-on-edge-devices",
+  "title": "CV-013-what-are-the-challenges-in-deploying-computer-vision-models-on-edge-devices",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-013 What are the challenges in deploying computer vision models on edge devices?\n\n Q13: What are the challenges in deploying computer vision models on edge devices?\n\nScore: 93/100\n\nAnswer:\n\nKey Challenges:\n1. Limited Computational Power: Edge devices have weaker CPUs/GPUs\n2. Memory Constraints: Limited RAM for model and intermediate tensors\n3. Power Consumption: Battery-powered devices need efficiency\n4. Thermal Constraints: Sustained computation causes overhe...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q13: What are the challenges in deploying computer vision models on edge devices?",
+      "level": 2,
+      "content": "**Score:** 93/100\n\n**Answer:**\n\n**Key Challenges:**\n1. **Limited Computational Power:** Edge devices have weaker CPUs/GPUs\n2. **Memory Constraints:** Limited RAM for model and intermediate tensors\n3. **Power Consumption:** Battery-powered devices need efficiency\n4. **Thermal Constraints:** Sustained computation causes overheating\n5. **Latency Requirements:** Real-time applications need low inference time\n\n**Optimization Techniques:**\n\n1. **Model Quantization:**\n   - Reduce precision (FP32 → INT8)\n   - Reduces model size 4x, speeds up inference\n\n2. **Pruning:**\n   - Remove less critical weights/neurons\n   - Structured vs. unstructured pruning\n\n3. **Knowledge Distillation:**\n   - Train smaller student model from large teacher\n   - Maintains accuracy with fewer parameters\n\n4. **Architecture Search:**\n   - MobileNet, EfficientNet, ShuffleNet designed for mobile\n   - Neural Architecture Search (NAS) for custom hardware\n\n5. **Frameworks:**\n   - TensorFlow Lite for mobile/embedded\n   - NVIDIA TensorRT for GPU optimization\n   - OpenVINO for Intel hardware\n   - Core ML for Apple devices\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

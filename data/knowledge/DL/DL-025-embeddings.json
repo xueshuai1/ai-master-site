@@ -1,0 +1,156 @@
+{
+  "id": "DL-025-embeddings",
+  "title": "DL-025-embeddings",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 4,
+  "abstract": " DL-025 ⭐⭐⭐ What is Embedding? Word Embeddings and Applications\n\n Question\nWhat are embeddings in deep learning? Explain word embeddings and their applications.\n\n Answer\n\n What are Embeddings?\nEmbeddings are dense, continuous vector representations of discrete items (words, images, users, etc.). They capture semantic meaning and relationships in a lower-dimensional space.\n\n Why Embeddings?\n\nOne-hot encoding: [0, 0, 1, 0, 0, ...]  ← Sparse, no semantic meaning\nEmbedding:        ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are embeddings in deep learning? Explain word embeddings and their applications."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What are Embeddings?",
+      "level": 2,
+      "content": "**Embeddings** are dense, continuous vector representations of discrete items (words, images, users, etc.). They capture semantic meaning and relationships in a lower-dimensional space."
+    },
+    {
+      "id": "sec-4",
+      "title": "Why Embeddings?",
+      "level": 2,
+      "content": "```\nOne-hot encoding: [0, 0, 1, 0, 0, ...]  ← Sparse, no semantic meaning\nEmbedding:        [0.2, -0.5, 0.8, ...] ← Dense, captures meaning\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Word Embeddings",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "1. Word2Vec",
+      "level": 1,
+      "content": "```\nTwo architectures:\n- CBOW: Predict word from context\n- Skip-gram: Predict context from word\n\nProperties:\n- Captures semantic similarity\n- Vector arithmetic: king - man + woman = queen\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "2. GloVe (Global Vectors)",
+      "level": 1,
+      "content": "```\nBased on word co-occurrence matrix\nCombines global matrix factorization with local context\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "3. FastText",
+      "level": 1,
+      "content": "```\nExtends Word2Vec with subword information\nHandles out-of-vocabulary words\nGood for morphologically rich languages\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "4. Contextual Embeddings (Modern)",
+      "level": 1,
+      "content": "```\n- ELMo: Context-dependent embeddings\n- BERT: Bidirectional transformer embeddings\n- Different embedding for same word in different contexts\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "Properties of Good Embeddings",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Semantic Similarity",
+      "level": 2,
+      "content": "```\nSimilar words have similar vectors:\ncosine_similarity(\"cat\", \"dog\") > cosine_similarity(\"cat\", \"car\")\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Analogies",
+      "level": 2,
+      "content": "```\nVector arithmetic captures relationships:\nvec(\"Paris\") - vec(\"France\") + vec(\"Germany\") ≈ vec(\"Berlin\")\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "Dimensionality",
+      "level": 2,
+      "content": "```\nTypical: 50-300 dimensions\nMuch smaller than vocabulary size (10,000+)\n```\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "Applications",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "1. NLP Tasks",
+      "level": 2,
+      "content": "```\n- Text classification\n- Sentiment analysis\n- Machine translation\n- Named entity recognition\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "2. Recommendation Systems",
+      "level": 2,
+      "content": "```\n- User embeddings\n- Item embeddings\n- Collaborative filtering\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "3. Graph Analysis",
+      "level": 2,
+      "content": "```\n- Node embeddings (Node2Vec)\n- Link prediction\n- Community detection\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "4. Other Domains",
+      "level": 2,
+      "content": "```\n- Image embeddings (CNN features)\n- Audio embeddings\n- User behavior embeddings\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "Code Example",
+      "level": 1,
+      "content": "```python\nfrom gensim.models import Word2Vec\n\n# Train Word2Vec\nsentences = [[\"cat\", \"sat\", \"on\", \"mat\"],\n             [\"dog\", \"ran\", \"in\", \"park\"]]\nmodel = Word2Vec(sentences, vector_size=100, window=5, min_count=1)\n\n# Get embedding\nvector = model.wv[\"cat\"]\n\n# Find similar words\nsimilar = model.wv.most_similar(\"cat\", topn=5)\n```"
+    },
+    {
+      "id": "sec-20",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Embeddings: Dense vector representations\n- Word2Vec, GloVe, FastText: Classic word embeddings\n- BERT: Contextual embeddings (modern)\n- Capture semantic meaning and relationships\n- Applications: NLP, recommendations, graphs"
+    },
+    {
+      "id": "sec-21",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-22",
+      "title": "Category: Neural Network Components",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-23",
+      "title": "Tags: [embeddings, word2vec, GloVe, NLP, representations]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

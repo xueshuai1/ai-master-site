@@ -1,0 +1,72 @@
+{
+  "id": "ML-026-⭐⭐⭐⭐-mlops",
+  "title": "MLOps Best Practices (MLOps 最佳实践)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "MLOps",
+    "CI/CD",
+    "Model Registry",
+    "Pipeline",
+    "Monitoring"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.395Z",
+  "readTime": 4,
+  "abstract": " 题目描述\n什么是 MLOps？ML 项目的 CI/CD 流程是什么？如何管理模型版本？\n\n 参考答案\n\n MLOps 核心概念\n\npython\nmlops_definition = \"\"\"\nMLOps = Machine Learning + Operations\n\n目标：\n- 自动化 ML 生命周期\n- 加速模型部署\n- 确保模型质量\n- 持续监控和维护\n\n核心组件：\n1. 版本控制 (代码、数据、模型)\n2. 持续集成/持续部署 (CI/CD)\n3. 模型注册表\n4. 监控和日志\n5. 自动化管道\n\"\"\"\nprint(mlops_definition)\n\n\n ML 项目 CI/CD\n\nyaml\n .github/workflows/ml-pipeline.yml\n ML CI/CD 示例\n\nname: ML Pipeline\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\njobs:\n  test:\n    runs-on: ubuntu-la...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "什么是 MLOps？ML 项目的 CI/CD 流程是什么？如何管理模型版本？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "MLOps 核心概念",
+      "level": 2,
+      "content": "```python\nmlops_definition = \"\"\"\nMLOps = Machine Learning + Operations\n\n目标：\n- 自动化 ML 生命周期\n- 加速模型部署\n- 确保模型质量\n- 持续监控和维护\n\n核心组件：\n1. 版本控制 (代码、数据、模型)\n2. 持续集成/持续部署 (CI/CD)\n3. 模型注册表\n4. 监控和日志\n5. 自动化管道\n\"\"\"\nprint(mlops_definition)\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "ML 项目 CI/CD",
+      "level": 2,
+      "content": "```yaml\n# .github/workflows/ml-pipeline.yml\n# ML CI/CD 示例\n\nname: ML Pipeline\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      \n      - name: Set up Python\n        uses: actions/setup-python@v2\n        with:\n          python-version: '3.9'\n      \n      - name: Install dependencies\n        run: pip install -r requirements.txt\n      \n      - name: Run tests\n        run: pytest tests/\n      \n      - name: Train model\n        run: python train.py\n      \n      - name: Evaluate model\n        run: python evaluate.py\n      \n      - name: Check performance threshold\n        run: python check_threshold.py\n\n  deploy:\n    needs: test\n    runs-on: ubuntu-latest\n    if: github.ref == 'refs/heads/main'\n    steps:\n      - name: Deploy to staging\n        run: ./deploy.sh staging\n      \n      - name: Run integration tests\n        run: pytest tests/integration/\n      \n      - name: Deploy to production\n        run: ./deploy.sh production\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "模型版本管理",
+      "level": 2,
+      "content": "```python\n# 使用 MLflow\nimport mlflow\nimport mlflow.sklearn\n\n# 设置追踪服务器\nmlflow.set_tracking_uri(\"http://localhost:5000\")\nmlflow.set_experiment(\"my_ml_experiment\")\n\n# 记录实验\nwith mlflow.start_run():\n    # 记录参数\n    mlflow.log_param(\"n_estimators\", 100)\n    mlflow.log_param(\"max_depth\", 10)\n    \n    # 训练模型\n    model = RandomForestClassifier(n_estimators=100, max_depth=10)\n    model.fit(X_train, y_train)\n    \n    # 记录指标\n    accuracy = model.score(X_test, y_test)\n    mlflow.log_metric(\"accuracy\", accuracy)\n    \n    # 记录模型\n    mlflow.sklearn.log_model(model, \"model\")\n    \n    # 记录 artifacts\n    mlflow.log_artifact(\"feature_importance.png\")\n\n# 模型注册表\nmodel_uri = \"runs:/<run_id>/model\"\nmodel_version = mlflow.register_model(model_uri, \"my_model\")\n\n# 加载特定版本\nmodel = mlflow.sklearn.load_model(f\"models:/my_model/{model_version.version}\")\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "监控和告警",
+      "level": 2,
+      "content": "```python\n# 监控指标\nmonitoring_metrics = \"\"\"\n1. 系统指标\n   - 延迟 (P50, P95, P99)\n   - 吞吐量 (QPS)\n   - 错误率\n   - 资源使用 (CPU, GPU, 内存)\n\n2. 模型指标\n   - 预测分布变化\n   - 置信度分布\n   - 特征漂移\n\n3. 业务指标\n   - 转化率\n   - 用户满意度\n   - ROI\n\"\"\"\n\n# 告警配置\nalerting_config = \"\"\"\n告警规则：\n1. 延迟 > 100ms (P95) → 警告\n2. 错误率 > 1% → 严重\n3. 数据漂移检测 → 警告\n4. 模型性能下降 > 5% → 严重\n\n告警渠道：\n- Slack\n- Email\n- PagerDuty\n\"\"\"\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 MLOps 概念\n- ✅ 掌握 ML CI/CD 流程\n- ✅ 了解模型版本管理\n- ✅ 能够设置监控\n- ✅ 具备工程化思维"
+    },
+    {
+      "id": "sec-8",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

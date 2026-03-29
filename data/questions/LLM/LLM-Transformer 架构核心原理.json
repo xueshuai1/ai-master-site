@@ -1,0 +1,76 @@
+{
+  "id": "LLM-Transformer 架构核心原理",
+  "title": "Transformer 架构核心原理",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Transformer",
+    "自注意力",
+    "架构设计",
+    "位置编码"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释 Transformer 架构的核心组件及其作用，为什么 Transformer 能取代 RNN 成为 LLM 的基础架构？\n\n**来源：** LLM 面试题整理\n**标签：** Transformer，自注意力，架构设计，位置编码",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释 Transformer 架构的核心组件及其作用，为什么 Transformer 能取代 RNN 成为 LLM 的基础架构？\n\n**来源：** LLM 面试题整理\n**标签：** Transformer，自注意力，架构设计，位置编码",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释 Transformer 架构的核心组件及其作用，为什么 Transformer 能取代 RNN 成为 LLM 的基础架构？\n\n**来源：** LLM 面试题整理\n**标签：** Transformer，自注意力，架构设计，位置编码"
+      },
+      {
+        "title": "参考答案",
+        "content": "**核心组件：**\n\n1. **自注意力机制（Self-Attention）：**\n   - 计算序列中每个位置与其他位置的相关性\n   - 公式：Attention(Q,K,V) = softmax(QK^T/√d_k)V\n   - 实现全局依赖建模，不受距离限制\n\n2. **多头注意力（Multi-Head Attention）：**\n   - 并行学习多种注意力模式\n   - 增强模型表达能力\n\n3. **前馈神经网络（FFN）：**\n   - 每个位置独立的两层全连接网络\n   - 引入非线性变换\n\n4. **位置编码（Positional Encoding）：**\n   - 注入序列顺序信息\n   - 正弦/余弦函数或可学习参数\n\n5. **残差连接与层归一化：**\n   - 缓解梯度消失，加速收敛\n\n**取代 RNN 的原因：**\n- 并行计算，训练效率高\n- 长距离依赖建模能力强\n- 梯度传播路径短"
+      },
+      {
+        "title": "考察重点",
+        "content": "- **理解深度：** Transformer 各组件的功能与协作\n- **知识广度：** 与 RNN/LSTM 的对比分析\n- **应用能力：** 架构选择与优化思路"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 自注意力机制的时间复杂度是多少？如何优化长序列？（5 分）\n2. 为什么需要缩放因子√d_k？（5 分）\n3. 位置编码有哪些改进方案？（5 分）\n4. Transformer 在编码器和解码器设计上有何区别？（5 分）\n5. 解释因果掩码（Causal Mask）的作用。（5 分）"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [
+    {
+      "question": "自注意力机制的时间复杂度是多少？如何优化长序列？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "为什么需要缩放因子√d_k？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "位置编码有哪些改进方案？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "Transformer 在编码器和解码器设计上有何区别？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "解释因果掩码（Causal Mask）的作用。（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.372Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

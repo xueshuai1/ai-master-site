@@ -1,0 +1,132 @@
+{
+  "id": "ML-003-⭐⭐⭐-l1-l2-regularization",
+  "title": "L1 vs L2 Regularization (L1 与 L2 正则化对比)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "L1 Regularization",
+    "L2 Regularization",
+    "Lasso",
+    "Ridge",
+    "Feature Selection"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.391Z",
+  "readTime": 11,
+  "abstract": " 题目描述\n请详细解释 L1 正则化 (Lasso) 和 L2 正则化 (Ridge) 的区别。它们的数学原理是什么？各有什么优缺点？在什么场景下应该选择 L1 或 L2？\n\n 参考答案\n\n 数学原理\n\n原始损失函数：\n\nLoss = MSE = Σ(y_i - ŷ_i)²\n\n\nL2 正则化 (Ridge)：\n\nLoss = MSE + λ  Σ(w_j)²\n     = Σ(y_i - ŷ_i)² + λ  ||w||₂²\n\n\nL1 正则化 (Lasso)：\n\nLoss = MSE + λ  Σ|w_j|\n     = Σ(y_i - ŷ_i)² + λ  ||w||₁\n\n\nElastic Net (L1 + L2)：\n\nLoss = MSE + λ₁  Σ|w_j| + λ₂  Σ(w_j)²\n\n\n 代码对比\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释 L1 正则化 (Lasso) 和 L2 正则化 (Ridge) 的区别。它们的数学原理是什么？各有什么优缺点？在什么场景下应该选择 L1 或 L2？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "数学原理",
+      "level": 2,
+      "content": "**原始损失函数：**\n```\nLoss = MSE = Σ(y_i - ŷ_i)²\n```\n\n**L2 正则化 (Ridge)：**\n```\nLoss = MSE + λ * Σ(w_j)²\n     = Σ(y_i - ŷ_i)² + λ * ||w||₂²\n```\n\n**L1 正则化 (Lasso)：**\n```\nLoss = MSE + λ * Σ|w_j|\n     = Σ(y_i - ŷ_i)² + λ * ||w||₁\n```\n\n**Elastic Net (L1 + L2)：**\n```\nLoss = MSE + λ₁ * Σ|w_j| + λ₂ * Σ(w_j)²\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "代码对比",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import Ridge, Lasso, ElasticNet, LinearRegression\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.datasets import make_regression\n\n# 生成数据\nX, y = make_regression(n_samples=100, n_features=20, \n                       n_informative=5, noise=10, random_state=42)\n\n# 标准化\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\n# 训练不同正则化模型\nalpha = 0.1\n\nlinear = LinearRegression()\nridge = Ridge(alpha=alpha)\nlasso = Lasso(alpha=alpha)\nelastic = ElasticNet(alpha=alpha, l1_ratio=0.5)\n\nlinear.fit(X_scaled, y)\nridge.fit(X_scaled, y)\nlasso.fit(X_scaled, y)\nelastic.fit(X_scaled, y)\n\n# 比较系数\nplt.figure(figsize=(14, 5))\n\nplt.subplot(1, 2, 1)\nplt.plot(linear.coef_, 'o-', label='Linear', alpha=0.7)\nplt.plot(ridge.coef_, 's-', label='Ridge (L2)', alpha=0.7)\nplt.plot(lasso.coef_, '^-', label='Lasso (L1)', alpha=0.7)\nplt.plot(elastic.coef_, 'd-', label='ElasticNet', alpha=0.7)\nplt.xlabel('Feature Index')\nplt.ylabel('Coefficient Value')\nplt.title('Coefficient Comparison')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\nplt.subplot(1, 2, 2)\nplt.bar(['Linear', 'Ridge', 'Lasso', 'ElasticNet'], \n        [np.sum(linear.coef_ != 0), \n         np.sum(ridge.coef_ != 0), \n         np.sum(lasso.coef_ != 0), \n         np.sum(elastic.coef_ != 0)])\nplt.ylabel('Non-zero Coefficients')\nplt.title('Feature Selection (Sparsity)')\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\n# 打印非零系数数量\nprint(f\"Lasso non-zero coefficients: {np.sum(lasso.coef_ != 0)}/20\")\nprint(f\"True informative features: 5\")\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "L1 vs L2 对比表",
+      "level": 2,
+      "content": "| 特性 | L1 (Lasso) | L2 (Ridge) |\n|------|-----------|-----------|\n| **惩罚项** | |w|₁ = Σ\\|w_j\\| | |w|₂² = Σw_j² |\n| **稀疏性** | ✅ 产生稀疏解（特征选择） | ❌ 系数小但不为零 |\n| **特征选择** | ✅ 自动进行 | ❌ 需要额外步骤 |\n| **多重共线性** | 选择一个特征 | 平均分配权重 |\n| **计算效率** | 需要特殊优化 (坐标下降) | 有解析解，计算快 |\n| **几何解释** | 菱形约束，易在顶点相交 | 圆形约束，不易在轴上相交 |\n| **适用场景** | 高维稀疏数据，特征选择 | 一般回归，防止过拟合 |"
+    },
+    {
+      "id": "sec-6",
+      "title": "几何解释",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.optimize import minimize\n\n# 绘制等高线和约束区域\ndef plot_regularization_geometry():\n    fig, axes = plt.subplots(1, 2, figsize=(12, 5))\n    \n    # 生成损失函数等高线\n    w1 = np.linspace(-2, 2, 100)\n    w2 = np.linspace(-2, 2, 100)\n    W1, W2 = np.meshgrid(w1, w2)\n    \n    # 假设最优解在 (0.8, 0.6)\n    loss = (W1 - 0.8)**2 + (W2 - 0.6)**2\n    \n    # L1 约束 (菱形)\n    ax1 = axes[0]\n    ax1.contour(W1, W2, loss, levels=20, cmap='Blues', alpha=0.6)\n    \n    # L1 约束区域\n    l1_constraint = np.abs(W1) + np.abs(W2)\n    ax1.contour(W1, W2, l1_constraint, levels=[1], colors='red', linewidths=3)\n    ax1.plot([1, 0, -1, 0, 1], [0, 1, 0, -1, 0], 'r-', linewidth=2, label='L1 Constraint')\n    ax1.set_title('L1 Regularization (Lasso)')\n    ax1.set_xlabel('w1')\n    ax1.set_ylabel('w2')\n    ax1.legend()\n    ax1.grid(True, alpha=0.3)\n    ax1.set_aspect('equal')\n    \n    # L2 约束 (圆形)\n    ax2 = axes[1]\n    ax2.contour(W1, W2, loss, levels=20, cmap='Blues', alpha=0.6)\n    \n    # L2 约束区域\n    l2_constraint = W1**2 + W2**2\n    ax2.contour(W1, W2, l2_constraint, levels=[1], colors='red', linewidths=3)\n    circle = plt.Circle((0, 0), 1, color='red', fill=False, linewidth=2, label='L2 Constraint')\n    ax2.add_artist(circle)\n    ax2.set_title('L2 Regularization (Ridge)')\n    ax2.set_xlabel('w1')\n    ax2.set_ylabel('w2')\n    ax2.legend()\n    ax2.grid(True, alpha=0.3)\n    ax2.set_aspect('equal')\n    \n    plt.tight_layout()\n    plt.show()\n\nplot_regularization_geometry()\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "实际应用场景",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-8",
+      "title": "场景 1: 高维基因数据（特征 >> 样本）",
+      "level": 3,
+      "content": "```python\nfrom sklearn.linear_model import LassoCV\n\n# 基因数据：10000 个基因，100 个样本\n# 只有少数基因与疾病相关\n\nlasso_cv = LassoCV(\n    alphas=np.logspace(-4, 2, 100),\n    cv=5,\n    max_iter=10000,\n    random_state=42\n)\nlasso_cv.fit(X_gene, y_disease)\n\n# 选择重要基因\nselected_genes = np.where(lasso_cv.coef_ != 0)[0]\nprint(f\"Selected {len(selected_genes)} important genes\")\n```\n\n**选择 L1 原因：** 需要特征选择，识别关键基因"
+    },
+    {
+      "id": "sec-9",
+      "title": "场景 2: 房价预测（多重共线性）",
+      "level": 3,
+      "content": "```python\nfrom sklearn.linear_model import RidgeCV\n\n# 房屋特征：面积、房间数、卫生间数等高度相关\n\nridge_cv = RidgeCV(\n    alphas=np.logspace(-4, 4, 100),\n    cv=5,\n    store_cv_values=True\n)\nridge_cv.fit(X_house, y_price)\n\nprint(f\"Best alpha: {ridge_cv.alpha_}\")\nprint(f\"All coefficients are non-zero: {np.all(ridge_cv.coef_ != 0)}\")\n```\n\n**选择 L2 原因：** 特征都重要，需要处理共线性"
+    },
+    {
+      "id": "sec-10",
+      "title": "场景 3: Elastic Net（两者结合）",
+      "level": 3,
+      "content": "```python\nfrom sklearn.linear_model import ElasticNetCV\n\n# 相关特征组：选择整个组而非单个特征\n\nelastic_cv = ElasticNetCV(\n    l1_ratio=[0.1, 0.3, 0.5, 0.7, 0.9],\n    alphas=np.logspace(-4, 2, 100),\n    cv=5,\n    random_state=42\n)\nelastic_cv.fit(X, y)\n\nprint(f\"Best l1_ratio: {elastic_cv.l1_ratio_}\")\nprint(f\"Best alpha: {elastic_cv.alpha_}\")\n```\n\n**选择 Elastic Net 原因：** 有相关特征组，需要分组选择"
+    },
+    {
+      "id": "sec-11",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 L1 和 L2 的数学原理\n- ✅ 掌握稀疏性的几何解释\n- ✅ 能够根据场景选择合适的正则化\n- ✅ 了解 Elastic Net 的优势\n- ✅ 具备实际调参和实现能力"
+    },
+    {
+      "id": "sec-12",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[正则化路径分析]](./ML-006-regularization-path.md)\n- [[特征选择方法对比]](./ML-007-feature-selection.md)\n- [[超参数调优技巧]](./ML-008-hyperparameter-tuning.md)"
+    },
+    {
+      "id": "sec-13",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "追问 1: 为什么 L1 会产生稀疏解而 L2 不会？",
+      "level": 2,
+      "content": "**问题：** 从数学和几何角度解释 L1 的稀疏性。\n\n**答案：**\n\n**几何解释：**\n- L1 约束区域是菱形，有尖角在坐标轴上\n- 损失函数等高线与约束区域相切时，容易在尖角（坐标轴）处相交\n- 在坐标轴上意味着某个 w_j = 0\n\n**数学解释：**\n- L1 的次梯度在 w_j = 0 处不连续\n- 优化过程中，w_j 可能直接被推到 0\n- L2 的梯度是连续的，w_j 只会趋近 0 但不等于 0\n\n```python\n# 可视化 L1 的次梯度\ndef l1_subgradient(w, lambda_):\n    \"\"\"L1 正则化的次梯度\"\"\"\n    if w > 0:\n        return lambda_\n    elif w < 0:\n        return -lambda_\n    else:  # w = 0\n        return [-lambda_, lambda_]  # 次梯度是一个区间\n\ndef l2_gradient(w, lambda_):\n    \"\"\"L2 正则化的梯度\"\"\"\n    return 2 * lambda_ * w\n\n# 在 w=0 附近\nw_values = np.linspace(-1, 1, 100)\nl1_grad = [l1_subgradient(w, 1)[0] if w != 0 else 0 for w in w_values]\nl2_grad = [l2_gradient(w, 1) for w in w_values]\n\nplt.figure(figsize=(10, 4))\nplt.plot(w_values, l1_grad, label='L1 Subgradient', linewidth=2)\nplt.plot(w_values, l2_grad, label='L2 Gradient', linewidth=2)\nplt.axhline(y=0, color='k', linestyle='--', alpha=0.3)\nplt.axvline(x=0, color='k', linestyle='--', alpha=0.3)\nplt.xlabel('w')\nplt.ylabel('Gradient')\nplt.title('L1 vs L2 Gradient at w=0')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.show()\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "追问 2: 如何选择正则化参数 λ (alpha)？",
+      "level": 2,
+      "content": "**问题：** 正则化强度的最佳实践是什么？\n\n**答案：**\n\n```python\nfrom sklearn.linear_model import LassoCV, RidgeCV\nimport numpy as np\n\n# 方法 1: 交叉验证 (推荐)\nlasso_cv = LassoCV(\n    alphas=None,  # 自动生成\n    n_alphas=100,\n    cv=5,\n    random_state=42\n)\nlasso_cv.fit(X_train, y_train)\nprint(f\"Best alpha: {lasso_cv.alpha_:.6f}\")\n\n# 方法 2: 网格搜索\nfrom sklearn.model_selection import GridSearchCV\n\nparam_grid = {'alpha': np.logspace(-4, 4, 50)}\ngrid_search = GridSearchCV(Lasso(), param_grid, cv=5, scoring='neg_mean_squared_error')\ngrid_search.fit(X_train, y_train)\nprint(f\"Best alpha: {grid_search.best_params_['alpha']:.6f}\")\n\n# 方法 3: 正则化路径可视化\nalphas = np.logspace(-4, 2, 100)\ncoefs = []\nfor a in alphas:\n    lasso = Lasso(alpha=a, max_iter=10000)\n    lasso.fit(X_scaled, y)\n    coefs.append(lasso.coef_)\n\nplt.figure(figsize=(12, 6))\nplt.plot(alphas, coefs)\nplt.xscale('log')\nplt.xlabel('Alpha (log scale)')\nplt.ylabel('Coefficients')\nplt.title('Lasso Regularization Path')\nplt.axvline(x=lasso_cv.alpha_, color='red', linestyle='--', label='Best Alpha')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.show()\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "追问 3: L1 正则化在深度学习中如何使用？",
+      "level": 2,
+      "content": "**问题：** 神经网络中如何实现 L1 正则化？\n\n**答案：**\n\n```python\nimport tensorflow as tf\nfrom tensorflow import keras\nfrom tensorflow.keras import regularizers\n\n# 在 Keras 中使用 L1 正则化\nmodel = keras.Sequential([\n    keras.layers.Dense(\n        128, \n        activation='relu',\n        kernel_regularizer=regularizers.l1(0.001),  # L1 正则化\n        bias_regularizer=regularizers.l1(0.001)\n    ),\n    keras.layers.Dropout(0.3),\n    keras.layers.Dense(\n        64,\n        activation='relu',\n        kernel_regularizer=regularizers.l1_l2(l1=0.001, l2=0.001)  # L1+L2\n    ),\n    keras.layers.Dense(num_classes, activation='softmax')\n])\n\n# 自定义正则化\nclass SparseRegularizer(keras.regularizers.Regularizer):\n    def __init__(self, l1_factor=0.01, l2_factor=0.01):\n        self.l1_factor = l1_factor\n        self.l2_factor = l2_factor\n    \n    def __call__(self, x):\n        l1_norm = self.l1_factor * tf.reduce_sum(tf.abs(x))\n        l2_norm = self.l2_factor * tf.reduce_sum(tf.square(x))\n        return l1_norm + l2_norm\n\n# 使用自定义正则化\nmodel.add(keras.layers.Dense(64, activation='relu', \n                              kernel_regularizer=SparseRegularizer(0.001, 0.001)))\n\n# 查看稀疏性\nfor layer in model.layers:\n    if hasattr(layer, 'kernel'):\n        weights = layer.get_weights()[0]\n        sparsity = np.sum(weights == 0) / weights.size\n        print(f\"{layer.name}: {sparsity:.2%} sparse\")\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**L1 和 L2 的本质区别：**\n\n1. **L1 是特征选择器**：自动识别并剔除不重要的特征\n2. **L2 是权重压缩器**：让所有权重都变小但不为零\n\n**选择指南：**\n\n| 场景 | 推荐 | 理由 |\n|------|------|------|\n| 特征选择 | L1 | 自动稀疏 |\n| 预测精度优先 | L2 | 更稳定 |\n| 特征相关 | Elastic Net | 分组选择 |\n| 高维数据 | L1 | 降维 + 选择 |\n| 深度学习 | L2 或 Dropout | L1 在 DL 中效果有限 |"
+    },
+    {
+      "id": "sec-18",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本，包含数学原理、代码示例和延伸追问"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

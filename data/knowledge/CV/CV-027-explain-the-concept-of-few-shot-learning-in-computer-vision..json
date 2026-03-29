@@ -1,0 +1,24 @@
+{
+  "id": "CV-027-explain-the-concept-of-few-shot-learning-in-computer-vision.",
+  "title": "CV-027-explain-the-concept-of-few-shot-learning-in-computer-vision.",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-027 Explain the concept of few-shot learning in computer vision.\n\n Q27: Explain the concept of few-shot learning in computer vision.\n\nScore: 93/100\n\nAnswer:\n\nFew-Shot Learning:\nLearn to recognize new classes with very few examples (1-5 shots).\n\nApproaches:\n\n1. Metric-Based:\n   - Siamese Networks: Learn similarity metric\n   - Prototypical Networks: Class prototypes in embedding space\n   - Matching Networks: Attention-based matching\n\n2. Optimization-Based:...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q27: Explain the concept of few-shot learning in computer vision.",
+      "level": 2,
+      "content": "**Score:** 93/100\n\n**Answer:**\n\n**Few-Shot Learning:**\nLearn to recognize new classes with very few examples (1-5 shots).\n\n**Approaches:**\n\n1. **Metric-Based:**\n   - **Siamese Networks:** Learn similarity metric\n   - **Prototypical Networks:** Class prototypes in embedding space\n   - **Matching Networks:** Attention-based matching\n\n2. **Optimization-Based:**\n   - **MAML (Model-Agnostic Meta-Learning):** Learn good initialization\n   - Quick adaptation with few gradient steps\n\n3. **Hallucination-Based:**\n   - Generate synthetic samples for new classes\n   - Augment limited data\n\n**N-Way K-Shot Setting:**\n- N classes, K examples per class\n- Support set (training) vs. Query set (testing)\n\n**Applications:**\n- Rare object recognition\n- Personalized models (user-specific classes)\n- Rapid deployment in new domains\n- Medical imaging (rare conditions)\n\n**Challenges:**\n- Generalization to truly unseen classes\n- Domain shift between training and testing\n- Balancing base and novel classes\n\n**Recent Advances:**\n- Transformer-based few-shot learning\n- Self-supervised pre-training\n- Cross-domain few-shot learning\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

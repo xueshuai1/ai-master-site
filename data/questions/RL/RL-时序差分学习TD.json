@@ -1,0 +1,66 @@
+{
+  "id": "RL-时序差分学习TD",
+  "title": "时序差分学习 TD",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "时序差分",
+    "TD 学习",
+    "自举",
+    "强化学习基础"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "时序差分学习（Temporal Difference Learning）结合了蒙特卡洛和动态规划的优点，请解释 TD 学习的核心思想和主要特点。\n\n**来源：** 强化学习面试题整理\n**标签：** 时序差分，TD 学习，自举，强化学习基础",
+  "requirements": [],
+  "answer": {
+    "summary": "时序差分学习（Temporal Difference Learning）结合了蒙特卡洛和动态规划的优点，请解释 TD 学习的核心思想和主要特点。\n\n**来源：** 强化学习面试题整理\n**标签：** 时序差分，TD 学习，自举，强化学习基础",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "时序差分学习（Temporal Difference Learning）结合了蒙特卡洛和动态规划的优点，请解释 TD 学习的核心思想和主要特点。\n\n**来源：** 强化学习面试题整理\n**标签：** 时序差分，TD 学习，自举，强化学习基础"
+      },
+      {
+        "title": "参考答案",
+        "content": "**核心思想：**\n通过自举（bootstrapping）更新价值估计——用当前的估计来更新另一个估计。\n\n**TD 更新公式（TD(0)）：**\n\nV(s_t) ← V(s_t) + α · [r_{t+1} + γ·V(s_{t+1}) - V(s_t)]\n\n其中 δ = r_{t+1} + γ·V(s_{t+1}) - V(s_t) 称为 TD 误差\n\n**与蒙特卡洛对比：**\n\n| 维度 | 蒙特卡洛 | TD 学习 |\n|------|----------|---------|\n| 更新时机 | Episode 结束 | 每步更新 |\n| 目标 | 实际回报 G_t | 估计回报 r+γV(s') |\n| 偏差 | 无偏 | 有偏 |\n| 方差 | 高 | 低 |\n| 收敛速度 | 慢 | 快 |\n\n**与动态规划对比：**\n- DP: 需要环境模型 P 和 R\n- TD: 无需模型，从经验学习\n\n**主要特点：**\n1. **在线学习：** 无需等待 episode 结束\n2. **无需模型：** 从实际经验学习\n3. **自举：** 用估计更新估计\n4. **收敛保证：** 在适当条件下收敛\n\n**TD(λ)：**\n- 引入 eligibility trace\n- λ=0: TD(0)，单步\n- λ=1: 类似蒙特卡洛"
+      },
+      {
+        "title": "考察重点",
+        "content": "- TD 学习的理解\n- 与 MC、DP 的对比\n- 自举概念"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: 为什么 TD 收敛更快？",
+        "content": "**问题：** TD 为什么通常比蒙特卡洛收敛快？\n**答案：** TD 方差更低，每步都更新，利用了马尔可夫结构。"
+      },
+      {
+        "title": "追问 2: Eligibility Trace",
+        "content": "**问题：** Eligibility trace 的作用是什么？\n**答案：** 记录状态访问的历史，将 TD 误差反向传播到之前的状态。"
+      },
+      {
+        "title": "深入理解",
+        "content": "TD 学习是现代 RL 算法的基础，Q-Learning、SARSA 等都基于 TD。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.378Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

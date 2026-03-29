@@ -1,0 +1,24 @@
+{
+  "id": "CV-023-can-you-explain-the-role-of-generative-adversarial-networks-gans-in-computer-vision",
+  "title": "CV-023-can-you-explain-the-role-of-generative-adversarial-networks-gans-in-computer-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-023 Can you explain the role of Generative Adversarial Networks (GANs) in computer vision?\n\n Q23: Can you explain the role of Generative Adversarial Networks (GANs) in computer vision?\n\nScore: 94/100\n\nAnswer:\n\nGAN Architecture:\nTwo neural networks competing in a zero-sum game:\n- Generator: Creates synthetic images from noise\n- Discriminator: Distinguishes real from fake images\n\nTraining Process:\n1. Generator tries to fool discriminator\n2. Discriminator tries to co...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q23: Can you explain the role of Generative Adversarial Networks (GANs) in computer vision?",
+      "level": 2,
+      "content": "**Score:** 94/100\n\n**Answer:**\n\n**GAN Architecture:**\nTwo neural networks competing in a zero-sum game:\n- **Generator:** Creates synthetic images from noise\n- **Discriminator:** Distinguishes real from fake images\n\n**Training Process:**\n1. Generator tries to fool discriminator\n2. Discriminator tries to correctly classify\n3. Both improve through adversarial training\n\n**Applications:**\n\n1. **Image Generation:**\n   - Create realistic images from noise (StyleGAN)\n   - Text-to-image synthesis (DALL-E, Stable Diffusion)\n\n2. **Image-to-Image Translation:**\n   - Pix2Pix (paired training data)\n   - CycleGAN (unpaired data)\n   - Style transfer\n\n3. **Super-Resolution:**\n   - SRGAN: High-resolution from low-resolution\n\n4. **Data Augmentation:**\n   - Generate synthetic training data\n   - Address class imbalance\n\n5. **Inpainting:**\n   - Fill missing regions in images\n   - Object removal\n\n6. **Domain Adaptation:**\n   - Translate between domains (day→night, summer→winter)\n\n**Challenges:**\n- Training instability\n- Mode collapse\n- Evaluation difficulty\n\n**Recent Advances:**\n- Diffusion models (competing with GANs)\n- StyleGAN series (high-quality generation)\n- Conditional GANs (controlled generation)\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

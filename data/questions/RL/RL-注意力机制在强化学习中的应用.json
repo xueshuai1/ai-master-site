@@ -1,0 +1,66 @@
+{
+  "id": "RL-注意力机制在强化学习中的应用",
+  "title": "注意力机制在强化学习中的应用",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "注意力",
+    "Transformer",
+    "序列决策",
+    "架构设计"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "注意力机制在强化学习中有什么应用？请说明注意力如何帮助 RL 算法。\n\n**来源：** 强化学习面试题整理\n**标签：** 注意力，Transformer, 序列决策，架构设计",
+  "requirements": [],
+  "answer": {
+    "summary": "注意力机制在强化学习中有什么应用？请说明注意力如何帮助 RL 算法。\n\n**来源：** 强化学习面试题整理\n**标签：** 注意力，Transformer, 序列决策，架构设计",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "注意力机制在强化学习中有什么应用？请说明注意力如何帮助 RL 算法。\n\n**来源：** 强化学习面试题整理\n**标签：** 注意力，Transformer, 序列决策，架构设计"
+      },
+      {
+        "title": "参考答案",
+        "content": "**注意力机制的作用：**\n\n1. **状态表示：**\n   - 从高维观测中提取关键信息\n   - 例：从图像中关注重要区域\n\n2. **序列建模：**\n   - 处理部分可观测环境\n   - 记忆历史信息\n   - Transformer 替代 LSTM\n\n3. **多智能体通信：**\n   - 智能体间注意力交互\n   - 学习协作策略\n\n4. **层次化决策：**\n   - 高层注意力选择子目标\n   - 低层执行具体动作\n\n**典型应用：**\n\n1. **Decision Transformer：**\n   - 将 RL 建模为序列建模\n   - 输入：状态、动作、回报\n   - 用 Transformer 预测动作\n\n2. **Gato：**\n   - 通用智能体\n   - Transformer 架构\n   - 多任务多模态\n\n3. **注意力策略网络：**\n   - 策略网络中加入自注意力\n   - 更好处理长序列依赖\n\n4. **世界模型中的注意力：**\n   - 学习状态间的关系\n   - 更高效的状态表示\n\n**优势：**\n- 并行计算（相比 RNN）\n- 长距离依赖建模\n- 可解释性（注意力权重）\n- 架构统一（编码 - 解码）\n\n**挑战：**\n- 计算复杂度高（O(n²)）\n- 需要大量数据\n- 训练稳定性"
+      },
+      {
+        "title": "考察重点",
+        "content": "- 注意力机制的理解\n- 与 RL 的结合\n- 前沿方向认知"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: Transformer vs LSTM",
+        "content": "**问题：** 在 RL 中 Transformer 比 LSTM 好在哪里？\n**答案：** 并行计算、长距离依赖更好、架构更灵活，但需要更多数据。"
+      },
+      {
+        "title": "追问 2: 决策 Transformer",
+        "content": "**问题：** Decision Transformer 的核心思想是什么？\n**答案：** 将 RL 重新表述为条件序列建模，给定期望回报预测最优动作序列。"
+      },
+      {
+        "title": "深入理解",
+        "content": "注意力机制为 RL 提供了新的架构选择，是当前的研究热点。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.378Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

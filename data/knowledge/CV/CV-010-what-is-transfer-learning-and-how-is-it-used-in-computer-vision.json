@@ -1,0 +1,24 @@
+{
+  "id": "CV-010-what-is-transfer-learning-and-how-is-it-used-in-computer-vision",
+  "title": "CV-010-what-is-transfer-learning-and-how-is-it-used-in-computer-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-010 What is transfer learning and how is it used in computer vision?\n\n Q10: What is transfer learning and how is it used in computer vision?\n\nScore: 93/100\n\nAnswer:\nTransfer learning leverages pre-trained models (trained on large datasets like ImageNet) for specific tasks.\n\nCommon Pre-trained Models:\n- VGG (VGG16, VGG19)\n- ResNet (ResNet50, ResNet101)\n- Inception (InceptionV3, InceptionResNet)\n- EfficientNet\n- MobileNet (for mobile deployment)\n\nBenefits:\n1. Reduced Trai...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q10: What is transfer learning and how is it used in computer vision?",
+      "level": 2,
+      "content": "**Score:** 93/100\n\n**Answer:**\nTransfer learning leverages pre-trained models (trained on large datasets like ImageNet) for specific tasks.\n\n**Common Pre-trained Models:**\n- VGG (VGG16, VGG19)\n- ResNet (ResNet50, ResNet101)\n- Inception (InceptionV3, InceptionResNet)\n- EfficientNet\n- MobileNet (for mobile deployment)\n\n**Benefits:**\n1. **Reduced Training Time:** Pre-learned features accelerate convergence\n2. **Better Performance:** Leverages feature hierarchies from large datasets\n3. **Data Efficiency:** Works well with limited labeled data\n4. **Resource Efficiency:** Less computational resources needed\n\n**Approaches:**\n1. **Feature Extraction:** Use pre-trained model as fixed feature extractor, train only classifier\n2. **Fine-tuning:** Unfreeze some layers and train with lower learning rate\n3. **Full Fine-tuning:** Unfreeze all layers for domain-specific adaptation\n\n**Use Cases:**\n- Medical imaging with limited annotated data\n- Specialized object detection with few examples\n- Rapid prototyping and deployment\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

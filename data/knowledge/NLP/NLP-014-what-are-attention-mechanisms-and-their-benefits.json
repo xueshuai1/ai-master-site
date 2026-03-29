@@ -1,0 +1,24 @@
+{
+  "id": "NLP-014-what-are-attention-mechanisms-and-their-benefits",
+  "title": "NLP-014-what-are-attention-mechanisms-and-their-benefits",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-014 What are Attention Mechanisms and their benefits?\n\n 14. What are Attention Mechanisms and their benefits?\n答案要点:\n- 核心思想: 动态关注输入的不同部分\n- 类型:\n  - Self-Attention (序列内部)\n  - Multi-Head Attention (多个表示子空间)\n  - Cross-Attention (Encoder-Decoder)\n- 优势:\n  - 捕获长距离依赖\n  - 可解释性 (Attention Weights)\n  - 并行计算\n- 应用: Transformer, BERT, GPT, T5\n\n公式:\n\nAttention(Q, K, V) = softmax(QK^T / √d_k) × V\n\n\n质量评分: 95/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "14. What are Attention Mechanisms and their benefits?",
+      "level": 3,
+      "content": "**答案要点:**\n- **核心思想**: 动态关注输入的不同部分\n- **类型**:\n  - Self-Attention (序列内部)\n  - Multi-Head Attention (多个表示子空间)\n  - Cross-Attention (Encoder-Decoder)\n- **优势**:\n  - 捕获长距离依赖\n  - 可解释性 (Attention Weights)\n  - 并行计算\n- **应用**: Transformer, BERT, GPT, T5\n\n**公式:**\n```\nAttention(Q, K, V) = softmax(QK^T / √d_k) × V\n```\n\n**质量评分**: 95/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

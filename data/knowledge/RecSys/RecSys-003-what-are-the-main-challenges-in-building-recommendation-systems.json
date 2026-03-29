@@ -1,0 +1,24 @@
+{
+  "id": "RecSys-003-what-are-the-main-challenges-in-building-recommendation-systems",
+  "title": "RecSys-003-what-are-the-main-challenges-in-building-recommendation-systems",
+  "category": "RecSys",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 3,
+  "abstract": " RecSys-003 What are the main challenges in building recommendation systems?\n\n Q3. What are the main challenges in building recommendation systems?\n\nAnswer:\n\n1. Cold Start Problem\n- User Cold Start: New users lack interaction history\n- Item Cold Start: New items have no engagement data\n- Solutions: \n  - Demographic-based initial recommendations\n  - Content-based fallback\n  - Active learning (ask users preferences)\n  - Transfer learning from similar domains\n\n2. Data Spar...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q3. What are the main challenges in building recommendation systems?",
+      "level": 2,
+      "content": "**Answer:**\n\n**1. Cold Start Problem**\n- **User Cold Start**: New users lack interaction history\n- **Item Cold Start**: New items have no engagement data\n- **Solutions**: \n  - Demographic-based initial recommendations\n  - Content-based fallback\n  - Active learning (ask users preferences)\n  - Transfer learning from similar domains\n\n**2. Data Sparsity**\n- **Problem**: User-item matrices are typically 99% empty\n- **Impact**: Difficult to find reliable patterns\n- **Solutions**:\n  - Matrix factorization (SVD, ALS)\n  - Deep learning autoencoders\n  - Incorporate implicit feedback\n  - Cross-domain recommendations\n\n**3. Scalability**\n- **Challenge**: Millions of users × millions of items\n- **Computational Cost**: O(n²) for similarity calculations\n- **Solutions**:\n  - Approximate nearest neighbors (ANN)\n  - Distributed computing (Spark, Hadoop)\n  - Two-stage architecture (candidate generation + ranking)\n  - Caching and pre-computation\n\n**4. Real-Time Updates**\n- **Requirement**: Incorporate new interactions immediately\n- **Challenge**: Model retraining latency\n- **Solutions**:\n  - Online learning algorithms\n  - Incremental matrix factorization\n  - Streaming architectures (Kafka + Flink)\n  - Hybrid batch + real-time systems\n\n**5. Filter Bubbles & Echo Chambers**\n- **Problem**: Over-personalization limits discovery\n- **Impact**: Reduced diversity, user boredom\n- **Solutions**:\n  - Serendipity injection\n  - Diversity constraints in ranking\n  - Multi-objective optimization\n  - Exploration-exploitation balance\n\n**6. Fairness & Bias**\n- **Types**: Popularity bias, demographic bias, exposure bias\n- **Solutions**:\n  - Debiasing algorithms\n  - Fairness-aware ranking\n  - Regularization for diversity\n  - Audit and monitoring systems\n\n**7. Evaluation Complexity**\n- **Offline Metrics**: May not reflect user satisfaction\n- **Online Testing**: Expensive A/B tests\n- **Solutions**:\n  - Multiple metrics (precision, recall, NDCG, diversity)\n  - Interleaving experiments\n  - Long-term engagement tracking\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** RecSys"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

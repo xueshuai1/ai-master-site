@@ -1,0 +1,138 @@
+{
+  "id": "ML-009-⭐⭐⭐⭐-gradient-descent",
+  "title": "Gradient Descent and Variants (梯度下降及其变体)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "Gradient Descent",
+    "SGD",
+    "Adam",
+    "Optimization",
+    "Learning Rate"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.392Z",
+  "readTime": 13,
+  "abstract": " 题目描述\n请详细解释梯度下降 (Gradient Descent) 的原理。Batch GD、Stochastic GD、Mini-batch GD 有什么区别？Adam、RMSprop 等自适应优化算法的原理是什么？如何选择学习率？\n\n 参考答案\n\n 梯度下降原理\n\n核心思想： 沿损失函数梯度的反方向更新参数，逐步找到最小值。\n\n更新公式：\n\nθ = θ - α × ∇J(θ)\n\nθ: 模型参数\nα: 学习率 (learning rate)\n∇J(θ): 损失函数关于参数的梯度\n\n\n 三种梯度下降对比\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import SGDRegressor\nfrom sklearn.preprocessing import StandardScaler\n\ndef compare_gradient_descent_variants(X, y, n_iterations=100):...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释梯度下降 (Gradient Descent) 的原理。Batch GD、Stochastic GD、Mini-batch GD 有什么区别？Adam、RMSprop 等自适应优化算法的原理是什么？如何选择学习率？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "梯度下降原理",
+      "level": 2,
+      "content": "**核心思想：** 沿损失函数梯度的反方向更新参数，逐步找到最小值。\n\n**更新公式：**\n```\nθ = θ - α × ∇J(θ)\n\nθ: 模型参数\nα: 学习率 (learning rate)\n∇J(θ): 损失函数关于参数的梯度\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "三种梯度下降对比",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import SGDRegressor\nfrom sklearn.preprocessing import StandardScaler\n\ndef compare_gradient_descent_variants(X, y, n_iterations=100):\n    \"\"\"比较三种梯度下降变体\"\"\"\n    \n    # 1. Batch Gradient Descent (批量梯度下降)\n    # 使用全部数据计算梯度\n    def batch_gd(X, y, lr=0.01, n_iter=100):\n        m, n = X.shape\n        theta = np.zeros(n)\n        losses = []\n        \n        for i in range(n_iter):\n            gradients = (2/m) * X.T.dot(X.dot(theta) - y)\n            theta = theta - lr * gradients\n            loss = np.mean((X.dot(theta) - y)**2)\n            losses.append(loss)\n        \n        return theta, losses\n    \n    # 2. Stochastic Gradient Descent (随机梯度下降)\n    # 每次用一个样本更新\n    def sgd(X, y, lr=0.01, n_iter=100):\n        m, n = X.shape\n        theta = np.zeros(n)\n        losses = []\n        \n        for i in range(n_iter):\n            idx = np.random.randint(m)\n            gradient = 2 * X[idx].T.dot(X[idx].dot(theta) - y[idx])\n            theta = theta - lr * gradient\n            loss = np.mean((X.dot(theta) - y)**2)\n            losses.append(loss)\n        \n        return theta, losses\n    \n    # 3. Mini-batch Gradient Descent (小批量梯度下降)\n    # 每次用一小批样本更新\n    def mini_batch_gd(X, y, batch_size=32, lr=0.01, n_iter=100):\n        m, n = X.shape\n        theta = np.zeros(n)\n        losses = []\n        \n        for i in range(n_iter):\n            indices = np.random.choice(m, batch_size, replace=False)\n            X_batch, y_batch = X[indices], y[indices]\n            gradients = (2/len(indices)) * X_batch.T.dot(X_batch.dot(theta) - y_batch)\n            theta = theta - lr * gradients\n            loss = np.mean((X.dot(theta) - y)**2)\n            losses.append(loss)\n        \n        return theta, losses\n    \n    # 运行比较\n    theta_batch, losses_batch = batch_gd(X, y, n_iter=n_iterations)\n    theta_sgd, losses_sgd = sgd(X, y, n_iter=n_iterations)\n    theta_mini, losses_mini = mini_batch_gd(X, y, n_iter=n_iterations)\n    \n    # 可视化\n    plt.figure(figsize=(14, 5))\n    \n    plt.subplot(1, 2, 1)\n    plt.plot(losses_batch, label='Batch GD', linewidth=2)\n    plt.plot(losses_sgd, label='SGD', alpha=0.7)\n    plt.plot(losses_mini, label='Mini-batch GD', alpha=0.7)\n    plt.xlabel('Iteration')\n    plt.ylabel('Loss')\n    plt.title('Loss Convergence Comparison')\n    plt.legend()\n    plt.grid(True, alpha=0.3)\n    \n    plt.subplot(1, 2, 2)\n    plt.semilogy(losses_batch, label='Batch GD', linewidth=2)\n    plt.semilogy(losses_sgd, label='SGD', alpha=0.7)\n    plt.semilogy(losses_mini, label='Mini-batch GD', alpha=0.7)\n    plt.xlabel('Iteration')\n    plt.ylabel('Loss (log scale)')\n    plt.title('Loss Convergence (Log Scale)')\n    plt.legend()\n    plt.grid(True, alpha=0.3)\n    \n    plt.tight_layout()\n    plt.show()\n    \n    return theta_batch, theta_sgd, theta_mini\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "对比表",
+      "level": 2,
+      "content": "| 特性 | Batch GD | SGD | Mini-batch GD |\n|------|---------|-----|---------------|\n| **每次更新样本数** | 全部 (m) | 1 | 批量 (通常 32-512) |\n| **收敛速度** | 慢 | 快（初期） | 中等 |\n| **收敛稳定性** | 稳定 | 震荡 | 较稳定 |\n| **内存需求** | 高 | 低 | 中等 |\n| **向量化优化** | 是 | 否 | 是 |\n| **适用场景** | 小数据集 | 大数据集 | 一般情况（默认） |"
+    },
+    {
+      "id": "sec-6",
+      "title": "自适应优化算法",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-7",
+      "title": "1. Momentum (动量法)",
+      "level": 3,
+      "content": "```python\ndef gradient_descent_with_momentum(X, y, lr=0.01, momentum=0.9, n_iter=100):\n    \"\"\"带动量的梯度下降\"\"\"\n    m, n = X.shape\n    theta = np.zeros(n)\n    velocity = np.zeros(n)  # 速度（累积梯度）\n    losses = []\n    \n    for i in range(n_iter):\n        gradients = (2/m) * X.T.dot(X.dot(theta) - y)\n        \n        # 更新速度\n        velocity = momentum * velocity - lr * gradients\n        \n        # 更新参数\n        theta = theta + velocity\n        \n        loss = np.mean((X.dot(theta) - y)**2)\n        losses.append(loss)\n    \n    return theta, losses\n\n# 动量的作用：\n# 1. 加速收敛（累积同方向梯度）\n# 2. 减少震荡（平滑更新方向）\n# 3. 帮助跳出局部最优\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "2. RMSprop",
+      "level": 3,
+      "content": "```python\ndef rmsprop(X, y, lr=0.001, decay=0.9, epsilon=1e-8, n_iter=100):\n    \"\"\"RMSprop 优化器\"\"\"\n    m, n = X.shape\n    theta = np.zeros(n)\n    cache = np.zeros(n)  # 梯度平方的指数加权平均\n    losses = []\n    \n    for i in range(n_iter):\n        gradients = (2/m) * X.T.dot(X.dot(theta) - y)\n        \n        # 更新缓存\n        cache = decay * cache + (1 - decay) * gradients**2\n        \n        # 自适应学习率更新\n        theta = theta - lr * gradients / (np.sqrt(cache) + epsilon)\n        \n        loss = np.mean((X.dot(theta) - y)**2)\n        losses.append(loss)\n    \n    return theta, losses\n\n# RMSprop 的特点：\n# 1. 自适应学习率（梯度大的方向学习率小）\n# 2. 适合非平稳目标\n# 3. 对 RNN 特别有效\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "3. Adam (Adaptive Moment Estimation)",
+      "level": 3,
+      "content": "```python\ndef adam(X, y, lr=0.001, beta1=0.9, beta2=0.999, epsilon=1e-8, n_iter=100):\n    \"\"\"Adam 优化器\"\"\"\n    m, n = X.shape\n    theta = np.zeros(n)\n    first_moment = np.zeros(n)   # 梯度的一阶矩（均值）\n    second_moment = np.zeros(n)  # 梯度的二阶矩（未中心化的方差）\n    losses = []\n    \n    for t in range(1, n_iter + 1):\n        gradients = (2/m) * X.T.dot(X.dot(theta) - y)\n        \n        # 更新一阶矩\n        first_moment = beta1 * first_moment + (1 - beta1) * gradients\n        \n        # 更新二阶矩\n        second_moment = beta2 * second_moment + (1 - beta2) * gradients**2\n        \n        # 偏差修正\n        first_moment_corrected = first_moment / (1 - beta1**t)\n        second_moment_corrected = second_moment / (1 - beta2**t)\n        \n        # 更新参数\n        theta = theta - lr * first_moment_corrected / (np.sqrt(second_moment_corrected) + epsilon)\n        \n        loss = np.mean((X.dot(theta) - y)**2)\n        losses.append(loss)\n    \n    return theta, losses\n\n# Adam 的特点：\n# 1. 结合 Momentum 和 RMSprop\n# 2. 自适应学习率 + 动量\n# 3. 默认参数通常就很好\n# 4. 最常用的深度学习优化器\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "使用 sklearn 和 TensorFlow",
+      "level": 2,
+      "content": "```python\nfrom sklearn.linear_model import SGDRegressor\nfrom tensorflow import keras\nfrom tensorflow.keras import optimizers\n\n# sklearn SGD\nsgd_reg = SGDRegressor(\n    penalty='l2',           # 正则化\n    alpha=0.0001,           # 正则化强度\n    max_iter=1000,\n    tol=1e-3,\n    learning_rate='adaptive',  # 学习率策略\n    eta0=0.01,              # 初始学习率\n    random_state=42\n)\n\n# TensorFlow/Keras 优化器\nmodel = keras.Sequential([\n    keras.layers.Dense(128, activation='relu'),\n    keras.layers.Dense(1)\n])\n\n# SGD with Momentum\nmodel.compile(optimizer=optimizers.SGD(learning_rate=0.01, momentum=0.9),\n              loss='mse')\n\n# RMSprop\nmodel.compile(optimizer=optimizers.RMSprop(learning_rate=0.001),\n              loss='mse')\n\n# Adam (默认推荐)\nmodel.compile(optimizer=optimizers.Adam(learning_rate=0.001),\n              loss='mse')\n\n# AdamW (Adam with Weight Decay)\nmodel.compile(optimizer=optimizers.AdamW(learning_rate=0.001, weight_decay=0.01),\n              loss='mse')\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "学习率选择策略",
+      "level": 2,
+      "content": "```python\nfrom sklearn.model_selection import learning_curve\n\n# 方法 1: 学习率搜索\ndef find_optimal_learning_rate(model, X, y, lr_range=(1e-5, 1e0), n_points=20):\n    \"\"\"搜索最佳学习率\"\"\"\n    lrs = np.logspace(np.log10(lr_range[0]), np.log10(lr_range[1]), n_points)\n    losses = []\n    \n    for lr in lrs:\n        model.set_params(learning_rate='constant', eta0=lr)\n        model.fit(X, y)\n        loss = np.mean((model.predict(X) - y)**2)\n        losses.append(loss)\n    \n    plt.figure(figsize=(10, 4))\n    plt.semilogx(lrs, losses, 'o-')\n    plt.xlabel('Learning Rate')\n    plt.ylabel('Loss')\n    plt.title('Learning Rate vs Loss')\n    plt.grid(True, alpha=0.3)\n    \n    best_lr = lrs[np.argmin(losses)]\n    plt.axvline(x=best_lr, color='r', linestyle='--', label=f'Best: {best_lr:.6f}')\n    plt.legend()\n    plt.tight_layout()\n    plt.show()\n    \n    return best_lr\n\n# 方法 2: 学习率调度\nfrom tensorflow.keras.callbacks import LearningRateScheduler, ReduceLROnPlateau\n\n# 时间衰减\ndef time_decay(epoch, lr):\n    return lr * (1 / (1 + 0.01 * epoch))\n\n# 指数衰减\ndef exp_decay(epoch, lr):\n    return lr * np.exp(-0.01 * epoch)\n\n# 分段常数\ndef step_decay(epoch, lr):\n    if epoch < 10:\n        return 0.1\n    elif epoch < 20:\n        return 0.01\n    else:\n        return 0.001\n\n# 回调\nlr_scheduler = LearningRateScheduler(time_decay)\nreduce_lr = ReduceLROnPlateau(\n    monitor='val_loss',\n    factor=0.5,\n    patience=5,\n    min_lr=1e-7,\n    verbose=1\n)\n\n# 方法 3: 学习率热身 (Warmup)\ndef warmup_cosine_decay(epoch, lr, warmup_epochs=5, max_lr=0.1):\n    if epoch < warmup_epochs:\n        return max_lr * (epoch + 1) / warmup_epochs\n    else:\n        from math import cos, pi\n        return max_lr * 0.5 * (1 + cos(pi * (epoch - warmup_epochs) / 100))\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解梯度下降的数学原理\n- ✅ 掌握三种 GD 变体的区别\n- ✅ 了解自适应优化算法的原理\n- ✅ 能够选择合适的学习率\n- ✅ 具备调参和优化能力"
+    },
+    {
+      "id": "sec-13",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[学习率调度策略]](./ML-023-learning-rate-scheduling.md)\n- [[优化算法对比]](./ML-024-optimizer-comparison.md)\n- [[二阶优化方法]](./ML-025-second-order-optimization.md)"
+    },
+    {
+      "id": "sec-14",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "追问 1: Adam 为什么需要偏差修正？",
+      "level": 2,
+      "content": "**问题：** Adam 中的偏差修正项有什么作用？\n\n**答案：**\n\n```python\n# 偏差修正的原因：\n# 初始时刻，一阶矩和二阶矩都初始化为 0\n# 这会导致早期的估计偏向 0\n\n# 示例\nbeta1 = 0.9\ngradients = [1.0, 1.0, 1.0]  # 恒定梯度\n\nfirst_moment = 0\nfor t, g in enumerate(gradients, 1):\n    first_moment = beta1 * first_moment + (1 - beta1) * g\n    \n    # 未修正\n    print(f\"t={t}: first_moment = {first_moment:.4f}\")\n    \n    # 修正后\n    corrected = first_moment / (1 - beta1**t)\n    print(f\"t={t}: corrected = {corrected:.4f}\")\n\n# 输出：\n# t=1: first_moment = 0.1000, corrected = 1.0000\n# t=2: first_moment = 0.1900, corrected = 1.0000\n# t=3: first_moment = 0.2710, corrected = 1.0000\n\n# 修正后，早期估计更准确\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "追问 2: 为什么 Adam 是默认推荐？",
+      "level": 2,
+      "content": "**问题：** Adam 相比其他优化器有什么优势？\n\n**答案：**\n\n```python\n# Adam 的优势：\n# 1. 自适应学习率（不同参数不同学习率）\n# 2. 动量加速（累积历史梯度）\n# 3. 对超参数不敏感（默认参数通常有效）\n# 4. 收敛快\n\n# 对比实验\nfrom sklearn.datasets import make_classification\nfrom sklearn.neural_network import MLPClassifier\n\nX, y = make_classification(n_samples=1000, n_features=20, random_state=42)\nX = StandardScaler().fit_transform(X)\n\noptimizers_to_test = ['sgd', 'adam', 'rmsprop']\n\nfor opt in optimizers_to_test:\n    model = MLPClassifier(\n        hidden_layer_sizes=(100,),\n        solver=opt,\n        max_iter=100,\n        random_state=42\n    )\n    model.fit(X, y)\n    print(f\"{opt}: accuracy = {model.score(X, y):.4f}, iterations = {model.n_iter_}\")\n\n# 通常 Adam 收敛最快，性能稳定\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "追问 3: 梯度消失和梯度爆炸如何解决？",
+      "level": 2,
+      "content": "**问题：** 深度网络中的梯度问题如何处理？\n\n**答案：**\n\n```python\n# 梯度消失/爆炸的原因：\n# 深层网络中，梯度连乘导致指数级变化\n\n# 解决方案：\n\n# 1. 合适的激活函数\nfrom tensorflow.keras.layers import ReLU, LeakyReLU, ELU\n\n# 避免 Sigmoid/Tanh（容易饱和）\n# 使用 ReLU 及其变体\n\n# 2. 权重初始化\nfrom tensorflow.keras.initializers import HeNormal, GlorotUniform\n\n# He 初始化（ReLU）\nlayer = Dense(128, kernel_initializer=HeNormal())\n\n# Xavier 初始化（Tanh/Sigmoid）\nlayer = Dense(128, kernel_initializer=GlorotUniform())\n\n# 3. Batch Normalization\nfrom tensorflow.keras.layers import BatchNormalization\n\nmodel.add(Dense(128))\nmodel.add(BatchNormalization())  # 标准化激活值\nmodel.add(ReLU())\n\n# 4. 梯度裁剪（RNN）\nfrom tensorflow.keras.optimizers import Adam\n\noptimizer = Adam(clipnorm=1.0)  # 限制梯度范数\n# 或\noptimizer = Adam(clipvalue=0.5)  # 限制梯度值\n\n# 5. Residual Connection（残差连接）\n# 让梯度直接流过\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**优化器选择指南：**\n- 默认用 Adam\n- 需要更好泛化用 SGD+Momentum\n- RNN 用 RMSprop 或 Adam\n- 大规模用 AdamW\n\n**学习率是关键：**\n- 太大：不收敛\n- 太小：收敛慢\n- 用调度器动态调整"
+    },
+    {
+      "id": "sec-19",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

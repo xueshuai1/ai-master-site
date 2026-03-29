@@ -1,0 +1,78 @@
+{
+  "id": "ML-021-⭐⭐⭐-hyperparameter-tuning",
+  "title": "Hyperparameter Tuning (超参数调优)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Hyperparameter Tuning",
+    "Grid Search",
+    "Random Search",
+    "Bayesian Optimization",
+    "Optuna"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.394Z",
+  "readTime": 5,
+  "abstract": " 题目描述\n有哪些超参数调优方法？Grid Search、Random Search、Bayesian Optimization 有什么区别？\n\n 参考答案\n\n 调优方法对比\n\n| 方法 | 原理 | 优点 | 缺点 |\n|------|------|------|------|\n| 手动调参 | 经验驱动 | 快速，直观 | 主观，不系统 |\n| Grid Search | 穷举所有组合 | 系统，可并行 | 计算量大 |\n| Random Search | 随机采样 | 高效，易并行 | 可能错过最优 |\n| Bayesian | 概率模型指导 | 样本效率高 | 实现复杂 |\n| 自动化 | AutoML | 全自动 | 黑盒 |\n\n Grid Search\n\npython\nfrom sklearn.model_selection import GridSearchCV\nfrom sklearn.ensemble import RandomForestClassifier\n\n 定义参数网格\nparam_grid ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "有哪些超参数调优方法？Grid Search、Random Search、Bayesian Optimization 有什么区别？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "调优方法对比",
+      "level": 2,
+      "content": "| 方法 | 原理 | 优点 | 缺点 |\n|------|------|------|------|\n| **手动调参** | 经验驱动 | 快速，直观 | 主观，不系统 |\n| **Grid Search** | 穷举所有组合 | 系统，可并行 | 计算量大 |\n| **Random Search** | 随机采样 | 高效，易并行 | 可能错过最优 |\n| **Bayesian** | 概率模型指导 | 样本效率高 | 实现复杂 |\n| **自动化** | AutoML | 全自动 | 黑盒 |"
+    },
+    {
+      "id": "sec-4",
+      "title": "Grid Search",
+      "level": 2,
+      "content": "```python\nfrom sklearn.model_selection import GridSearchCV\nfrom sklearn.ensemble import RandomForestClassifier\n\n# 定义参数网格\nparam_grid = {\n    'n_estimators': [50, 100, 200],\n    'max_depth': [5, 10, 20, None],\n    'min_samples_split': [2, 5, 10],\n    'min_samples_leaf': [1, 2, 4]\n}\n\n# 网格搜索\ngrid_search = GridSearchCV(\n    estimator=RandomForestClassifier(random_state=42),\n    param_grid=param_grid,\n    cv=5,\n    scoring='accuracy',\n    n_jobs=-1,\n    verbose=1\n)\n\ngrid_search.fit(X_train, y_train)\n\nprint(f\"Best parameters: {grid_search.best_params_}\")\nprint(f\"Best CV score: {grid_search.best_score_:.4f}\")\n\n# 缺点：参数组合数 = 3 × 4 × 3 × 3 = 108 次训练\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "Random Search",
+      "level": 2,
+      "content": "```python\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint, uniform\n\n# 参数分布\nparam_dist = {\n    'n_estimators': randint(50, 500),\n    'max_depth': [5, 10, 20, None],\n    'min_samples_split': randint(2, 20),\n    'min_samples_leaf': randint(1, 10),\n    'max_features': uniform(0.5, 0.5)  # 0.5-1.0\n}\n\n# 随机搜索\nrandom_search = RandomizedSearchCV(\n    estimator=RandomForestClassifier(random_state=42),\n    param_distributions=param_dist,\n    n_iter=50,  # 只训练 50 次\n    cv=5,\n    scoring='accuracy',\n    n_jobs=-1,\n    verbose=1\n)\n\nrandom_search.fit(X_train, y_train)\n\nprint(f\"Best parameters: {random_search.best_params_}\")\nprint(f\"Best CV score: {random_search.best_score_:.4f}\")\n\n# 优点：相同计算量下通常比 Grid Search 好\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "Bayesian Optimization (Optuna)",
+      "level": 2,
+      "content": "```python\nimport optuna\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import cross_val_score\n\ndef objective(trial):\n    params = {\n        'n_estimators': trial.suggest_int('n_estimators', 50, 500),\n        'max_depth': trial.suggest_int('max_depth', 5, 50),\n        'min_samples_split': trial.suggest_int('min_samples_split', 2, 20),\n        'min_samples_leaf': trial.suggest_int('min_samples_leaf', 1, 10),\n        'max_features': trial.suggest_float('max_features', 0.5, 1.0)\n    }\n    \n    model = RandomForestClassifier(**params, random_state=42)\n    score = cross_val_score(model, X_train, y_train, cv=5, scoring='accuracy').mean()\n    \n    return score\n\n# 创建研究\nstudy = optuna.create_study(direction='maximize')\nstudy.optimize(objective, n_trials=50)\n\nprint(f\"Best parameters: {study.best_params}\")\nprint(f\"Best score: {study.best_value:.4f}\")\n\n# 可视化\noptuna.visualization.plot_optimization_history(study)\noptuna.visualization.plot_param_importances(study)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "最佳实践",
+      "level": 2,
+      "content": "```python\n# 1. 从粗到细\n# 先用 Random Search 找大致范围，再用 Grid Search 细化\n\n# 2. 学习曲线\nfrom sklearn.model_selection import learning_curve\n\ntrain_sizes, train_scores, val_scores = learning_curve(\n    model, X, y, cv=5, scoring='accuracy',\n    train_sizes=np.linspace(0.1, 1.0, 10)\n)\n\n# 判断是否需要更多数据或更复杂模型\n\n# 3. 早停\n# 对于迭代模型（XGBoost, NN），使用早停\n\n# 4. 嵌套交叉验证\nfrom sklearn.model_selection import cross_val_score, GridSearchCV\n\n# 外层评估性能，内层调参\ninner_cv = 5\nouter_cv = 5\n\ngrid_search = GridSearchCV(model, param_grid, cv=inner_cv)\nnested_scores = cross_val_score(grid_search, X, y, cv=outer_cv)\n\nprint(f\"Nested CV score: {nested_scores.mean():.4f}\")\n# 无偏性能估计\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 了解各种调参方法\n- ✅ 掌握 Grid/Random Search\n- ✅ 了解贝叶斯优化\n- ✅ 能够选择合适方法\n- ✅ 具备调参最佳实践"
+    },
+    {
+      "id": "sec-9",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

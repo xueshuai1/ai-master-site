@@ -1,0 +1,108 @@
+{
+  "id": "CV-001",
+  "title": "卷积神经网络基础",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": ["CNN", "卷积", "池化", "感受野", "图像分类"],
+  "source": "CV 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请详细解释卷积神经网络（CNN）：\n1. 卷积层的工作原理和参数计算\n2. 池化层的作用和类型\n3. 什么是感受野？如何计算？\n4. 经典 CNN 架构（LeNet, AlexNet, VGG, ResNet）的演进",
+  "requirements": [
+    "解释卷积操作的数学原理",
+    "说明池化层的功能",
+    "推导感受野计算公式",
+    "对比经典 CNN 架构"
+  ],
+  "answer": {
+    "summary": "CNN 通过局部连接、权值共享和空间下采样高效提取图像特征，是计算机视觉的基石架构。",
+    "sections": [
+      {
+        "title": "卷积层工作原理",
+        "content": "**卷积操作**：\n\n卷积核在输入图像上滑动，在每个位置计算点积：\n\n```\nOutput[i,j] = Σ_m Σ_n Input[i+m, j+n] × Kernel[m, n] + bias\n```\n\n**关键参数**：\n- **输入尺寸**：W_in × H_in × C_in\n- **卷积核**：K × K × C_in × C_out\n- **步长（Stride）**：s\n- **填充（Padding）**：p\n\n**输出尺寸计算**：\n```\nW_out = (W_in - K + 2p) / s + 1\nH_out = (H_in - K + 2p) / s + 1\nC_out = 卷积核数量\n```\n\n**参数量**：K × K × C_in × C_out + C_out（bias）\n\n**计算量（FLOPs）**：W_out × H_out × C_out × K × K × C_in",
+        "code": {
+          "language": "python",
+          "code": "import torch\nimport torch.nn as nn\n\n# 卷积层示例\nconv = nn.Conv2d(\n    in_channels=3,    # 输入通道数\n    out_channels=64,  # 输出通道数（卷积核数量）\n    kernel_size=3,    # 卷积核尺寸\n    stride=1,         # 步长\n    padding=1         # 填充\n)\n\n# 参数量计算\nparams = sum(p.numel() for p in conv.parameters())\nprint(f\"参数量：{params}\")  # 3*3*3*64 + 64 = 1792\n\n# 输入输出尺寸\ninput_tensor = torch.randn(1, 3, 224, 224)\noutput = conv(input_tensor)\nprint(f\"输出尺寸：{output.shape}\")  # [1, 64, 224, 224]",
+          "explanation": "PyTorch 卷积层示例和参数计算"
+        }
+      },
+      {
+        "title": "池化层",
+        "content": "**作用**：\n1. 降低特征图尺寸，减少计算量\n2. 扩大感受野\n3. 提供平移不变性\n4. 防止过拟合\n\n**类型**：\n\n**最大池化（Max Pooling）**：\n- 取窗口内最大值\n- 保留最显著特征\n- 最常用\n\n**平均池化（Average Pooling）**：\n- 取窗口内平均值\n- 保留背景信息\n- 常用于网络末端\n\n**全局池化（Global Pooling）**：\n- 对整个特征图池化\n- 替代全连接层\n- 减少参数\n\n**输出尺寸**：\n```\nW_out = (W_in - K) / s + 1\n```\n（通常无填充）",
+        "code": {
+          "language": "python",
+          "code": "# 最大池化\nmax_pool = nn.MaxPool2d(kernel_size=2, stride=2)\n# 输入 [1, 64, 224, 224] -> 输出 [1, 64, 112, 112]\n\n# 平均池化\navg_pool = nn.AvgPool2d(kernel_size=2, stride=2)\n\n# 全局平均池化\nglobal_pool = nn.AdaptiveAvgPool2d((1, 1))\n# 输入 [1, 512, 7, 7] -> 输出 [1, 512, 1, 1]",
+          "explanation": "不同类型的池化层"
+        }
+      },
+      {
+        "title": "感受野",
+        "content": "**定义**：输出特征图上一个点对应输入图像的区域大小。\n\n**计算方式**（从后往前递推）：\n\n```\nRF_l = RF_{l-1} + (K_l - 1) × Π_{i=1}^{l-1} s_i\n```\n\n其中：\n- RF_l：第 l 层的感受野\n- K_l：第 l 层的卷积核大小\n- s_i：第 i 层的步长\n\n**示例计算**（VGG-16）：\n- 输入：224×224\n- 13 个 3×3 卷积，4 个 2×2 池化\n- 最终感受野：212×212\n\n**意义**：\n- 感受野越大，能捕捉的全局信息越多\n- 但过大会丢失局部细节\n- 需要根据任务平衡",
+        "code": {
+          "language": "python",
+          "code": "def calculate_receptive_field(layers):\n    \"\"\"\n    计算感受野\n    layers: [(kernel_size, stride), ...]\n    \"\"\"\n    rf = 1\n    total_stride = 1\n    \n    for k, s in layers:\n        rf += (k - 1) * total_stride\n        total_stride *= s\n    \n    return rf\n\n# VGG-16 简化版\nvgg_layers = [\n    (3, 1), (3, 1), (2, 2),  # conv1-2, pool1\n    (3, 1), (3, 1), (2, 2),  # conv3-4, pool2\n    (3, 1), (3, 1), (3, 1), (2, 2),  # conv5-7, pool3\n    (3, 1), (3, 1), (3, 1), (2, 2),  # conv8-10, pool4\n    (3, 1), (3, 1), (3, 1), (2, 2),  # conv11-13, pool5\n]\n\nrf = calculate_receptive_field(vgg_layers)\nprint(f\"VGG-16 感受野：{rf}×{rf}\")  # 212×212",
+          "explanation": "感受野计算函数"
+        }
+      },
+      {
+        "title": "经典 CNN 架构演进",
+        "content": "| 架构 | 年份 | 深度 | 创新点 | Top-5 错误率 |\n|------|------|------|--------|-------------|\n| **LeNet-5** | 1998 | 7 层 | 首个成功 CNN | - |\n| **AlexNet** | 2012 | 8 层 | ReLU、Dropout、GPU 训练 | 15.3% |\n| **VGG** | 2014 | 16-19 层 | 小卷积核堆叠 | 7.3% |\n| **GoogLeNet** | 2014 | 22 层 | Inception 模块 | 6.7% |\n| **ResNet** | 2015 | 50-152 层 | 残差连接 | 3.6% |\n\n**演进趋势**：\n1. **更深**：从 7 层到 152 层\n2. **更小卷积核**：从 11×11 到 3×3\n3. **跳过连接**：ResNet 解决梯度消失\n4. **效率优化**：MobileNet、EfficientNet\n\n**ResNet 核心**：\n```\nOutput = F(x) + x\n```\n残差连接允许梯度直接传播，使训练超深网络成为可能。",
+        "code": {
+          "language": "python",
+          "code": "class ResidualBlock(nn.Module):\n    \"\"\"ResNet 残差块\"\"\"\n    def __init__(self, channels):\n        super().__init__()\n        self.conv1 = nn.Conv2d(channels, channels, 3, padding=1)\n        self.bn1 = nn.BatchNorm2d(channels)\n        self.conv2 = nn.Conv2d(channels, channels, 3, padding=1)\n        self.bn2 = nn.BatchNorm2d(channels)\n        \n    def forward(self, x):\n        identity = x  # 残差连接\n        \n        out = F.relu(self.bn1(self.conv1(x)))\n        out = self.bn2(self.conv2(out))\n        \n        out += identity  # 恒等映射\n        out = F.relu(out)\n        return out",
+          "explanation": "ResNet 残差块实现"
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握 CNN 基本原理和经典架构",
+    "ability": "能够计算卷积参数和感受野，设计网络结构",
+    "thinking": "理解 CNN 设计背后的直觉和演进逻辑"
+  },
+  "followUpQuestions": [
+    {
+      "question": "1×1 卷积的作用是什么？",
+      "points": 5,
+      "answerHint": "通道降维/升维、增加非线性、跨通道信息交互"
+    },
+    {
+      "question": "解释 Batch Normalization 的原理和作用。",
+      "points": 5,
+      "answerHint": "归一化每层输入，加速收敛，允许更大学习率，有轻微正则化效果"
+    },
+    {
+      "question": "什么是空洞卷积（Dilated Convolution）？",
+      "points": 5,
+      "answerHint": "扩大感受野不增加参数，用于语义分割等密集预测任务"
+    },
+    {
+      "question": "解释 Group Convolution 和 Depthwise Convolution。",
+      "points": 5,
+      "answerHint": "分组卷积减少计算量；深度卷积是极端的分组卷积，用于 MobileNet"
+    },
+    {
+      "question": "CNN 如何处理不同尺寸的输入图像？",
+      "points": 5,
+      "answerHint": "全局池化、全卷积网络、图像金字塔、数据增强中的随机裁剪"
+    }
+  ],
+  "deepUnderstanding": "CNN 是计算机视觉的基石，虽然 Transformer 正在挑战其地位，但理解 CNN 仍是 CV 领域的基础。",
+  "references": [
+    {
+      "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+      "url": "https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
+      "type": "paper"
+    },
+    {
+      "title": "Deep Residual Learning for Image Recognition",
+      "url": "https://arxiv.org/abs/1512.03385",
+      "type": "paper"
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T00:00:00Z",
+    "changeLog": "初始版本，基于原有 MD 文件结构化"
+  }
+}

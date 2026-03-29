@@ -1,0 +1,24 @@
+{
+  "id": "CV-003-what-is-the-difference-between-image-processing-and-computer-vision",
+  "title": "CV-003-what-is-the-difference-between-image-processing-and-computer-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.380Z",
+  "updatedAt": "2026-03-29T14:57:53.380Z",
+  "readTime": 2,
+  "abstract": " CV-003 What is the difference between image processing and computer vision?\n\n Q3: What is the difference between image processing and computer vision?\n\nScore: 93/100\n\nAnswer:\n\n| Aspect | Image Processing | Computer Vision |\n|--------|-----------------|-----------------|\n| Definition | Processing images to enhance or extract information | Automatic extraction, analysis, and understanding of visual information |\n| Objective | Improve image data for human interpretation | Enabl...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q3: What is the difference between image processing and computer vision?",
+      "level": 2,
+      "content": "**Score:** 93/100\n\n**Answer:**\n\n| Aspect | Image Processing | Computer Vision |\n|--------|-----------------|-----------------|\n| **Definition** | Processing images to enhance or extract information | Automatic extraction, analysis, and understanding of visual information |\n| **Objective** | Improve image data for human interpretation | Enable machines to comprehend and act on visual data |\n| **Focus** | Pixel-level manipulations | Higher-level image/video understanding |\n| **Tools** | Filtering, binarization, noise reduction | Object detection, feature extraction, deep learning |\n| **Applications** | Photo editing, document scanning, medical imaging | Self-driving cars, AR, industrial quality control |\n\n**Key Distinction:** Image processing is about transforming images; computer vision is about understanding what's in them.\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

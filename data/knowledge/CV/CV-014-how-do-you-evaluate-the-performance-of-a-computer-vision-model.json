@@ -1,0 +1,24 @@
+{
+  "id": "CV-014-how-do-you-evaluate-the-performance-of-a-computer-vision-model",
+  "title": "CV-014-how-do-you-evaluate-the-performance-of-a-computer-vision-model",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-014 How do you evaluate the performance of a computer vision model?\n\n Q14: How do you evaluate the performance of a computer vision model?\n\nScore: 92/100\n\nAnswer:\n\nClassification Metrics:\n- Accuracy: (TP + TN) / Total\n- Precision: TP / (TP + FP)\n- Recall/Sensitivity: TP / (TP + FN)\n- F1-Score: Harmonic mean of precision and recall\n- ROC-AUC: Area under ROC curve\n\nObject Detection Metrics:\n- IoU (Intersection over Union): Overlap between predicted a...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q14: How do you evaluate the performance of a computer vision model?",
+      "level": 2,
+      "content": "**Score:** 92/100\n\n**Answer:**\n\n**Classification Metrics:**\n- **Accuracy:** (TP + TN) / Total\n- **Precision:** TP / (TP + FP)\n- **Recall/Sensitivity:** TP / (TP + FN)\n- **F1-Score:** Harmonic mean of precision and recall\n- **ROC-AUC:** Area under ROC curve\n\n**Object Detection Metrics:**\n- **IoU (Intersection over Union):** Overlap between predicted and ground truth boxes\n- **mAP (Mean Average Precision):** Average precision across all classes\n- **AP (Average Precision):** Area under precision-recall curve per class\n\n**Segmentation Metrics:**\n- **IoU/Jaccard Index:** Intersection / Union\n- **Dice Coefficient:** 2 × |A ∩ B| / (|A| + |B|)\n- **Pixel Accuracy:** Correctly classified pixels / Total pixels\n\n**Best Practices:**\n- Use multiple metrics for comprehensive evaluation\n- Consider class imbalance (use F1, mAP over accuracy)\n- Evaluate on diverse test sets (different conditions)\n- Monitor inference time and resource usage\n- Cross-validation for robust estimates\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

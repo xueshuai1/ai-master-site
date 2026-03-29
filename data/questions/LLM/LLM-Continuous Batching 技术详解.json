@@ -1,0 +1,92 @@
+{
+  "id": "LLM-Continuous Batching 技术详解",
+  "title": "Continuous Batching 技术详解",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Continuous Batching",
+    "推理优化",
+    "并发",
+    "吞吐量"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释 Continuous Batching（又称 Iteration-level Batching）的原理，它如何提升 LLM 推理的吞吐量。\n\n**来源：** LLM 面试题整理\n**标签：** Continuous Batching，推理优化，并发，吞吐量",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释 Continuous Batching（又称 Iteration-level Batching）的原理，它如何提升 LLM 推理的吞吐量。\n\n**来源：** LLM 面试题整理\n**标签：** Continuous Batching，推理优化，并发，吞吐量",
+    "coreFormula": "传统 Batching:\n请求 1: [████████████]\n请求 2: [████████████] (即使生成了 3 个 token 也要等待)\n\nContinuous Batching:\n请求 1: [████████████]\n请求 2: [████] → 完成，立即插入新请求 3\n请求 3:     [████████]",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释 Continuous Batching（又称 Iteration-level Batching）的原理，它如何提升 LLM 推理的吞吐量。\n\n**来源：** LLM 面试题整理\n**标签：** Continuous Batching，推理优化，并发，吞吐量",
+        "code": {
+          "language": "text",
+          "code": "传统 Batching:\n请求 1: [████████████]\n请求 2: [████████████] (即使生成了 3 个 token 也要等待)\n\nContinuous Batching:\n请求 1: [████████████]\n请求 2: [████] → 完成，立即插入新请求 3\n请求 3:     [████████]"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**问题背景：**\n传统 batching 要求 batch 内所有请求同时开始、同时结束，但 LLM 生成是动态的：\n- 不同请求的输出长度不同\n- 短的请求要等长的请求完成\n- GPU 利用率低\n\n**Continuous Batching 原理：**\n```\n传统 Batching:\n请求 1: [████████████]\n请求 2: [████████████] (即使生成了 3 个 token 也要等待)\n\nContinuous Batching:\n请求 1: [████████████]\n请求 2: [████] → 完成，立即插入新请求 3\n请求 3:     [████████]\n```\n\n**核心机制：**\n1. **动态插入：** 请求完成立即腾出位置\n2. **异步调度：** 不同请求处于不同生成阶段\n3. **统一计算：** 每步对所有活跃请求做 batch 前向\n\n**实现伪代码：**\n```python\nactive_requests = []\npending_requests = queue()\n\nwhile True:\n    # 1. 移除完成的请求\n    active_requests = [r for r in active_requests if not r.done]\n    \n    # 2. 填充新请求\n    while len(active_requests) < max_batch and pending_requests:\n        active_requests.append(pending_requests.pop())\n    \n    # 3. 批量前向传播\n    if active_requests:\n        outputs = model.forward(active_requests)\n        \n        # 4. 更新状态\n        for req, out in zip(active_requests, outputs):\n            req.append_token(out)\n            if req.is_complete():\n                req.done = True\n                send_response(req)\n```\n\n**优势：**\n- **吞吐量提升：** 2-10 倍（取决于请求长度分布）\n- **延迟降低：** 短请求无需等待\n- **GPU 利用率高：** 减少空闲时间\n\n**挑战：**\n1. **调度复杂度：** 需要高效管理请求状态\n2. **显存管理：** 动态分配 KV Cache\n3. **公平性：** 防止长请求饥饿\n\n**相关技术：**\n- **Chunked Prefill：** 拆分长 prompt，避免阻塞\n- **Prefix Caching：** 共享公共前缀的 KV Cache\n- **Speculative Decoding：** 小模型猜测，大模型验证\n\n**应用：**\n- vLLM、TGI、TensorRT-LLM 等推理引擎\n- 高并发 API 服务必备技术",
+        "code": {
+          "language": "python",
+          "code": "active_requests = []\npending_requests = queue()\n\nwhile True:\n    # 1. 移除完成的请求\n    active_requests = [r for r in active_requests if not r.done]\n    \n    # 2. 填充新请求\n    while len(active_requests) < max_batch and pending_requests:\n        active_requests.append(pending_requests.pop())\n    \n    # 3. 批量前向传播\n    if active_requests:\n        outputs = model.forward(active_requests)\n        \n        # 4. 更新状态\n        for req, out in zip(active_requests, outputs):\n            req.append_token(out)\n            if req.is_complete():\n                req.done = True\n                send_response(req)"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** Continuous Batching 的调度机制\n- **能力：** 理解吞吐量优化的核心思路\n- **思维：** 系统级优化的工程视角"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 传统 batching 的吞吐量瓶颈在哪里？（5 分）\n2. 如何处理不同长度的 prompt？（5 分）\n3. 什么是 Chunked Prefill？（5 分）\n4. Continuous Batching 对延迟有什么影响？（5 分）\n5. 如何设计请求调度策略？（5 分）"
+      },
+      {
+        "title": "深入理解",
+        "content": "Continuous Batching 是 LLM 服务高并发的关键技术，让推理引擎能高效处理动态请求。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "Continuous Batching 的调度机制",
+    "ability": "理解吞吐量优化的核心思路",
+    "thinking": "系统级优化的工程视角"
+  },
+  "followUpQuestions": [
+    {
+      "question": "传统 batching 的吞吐量瓶颈在哪里？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何处理不同长度的 prompt？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 Chunked Prefill？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "Continuous Batching 对延迟有什么影响？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何设计请求调度策略？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.368Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

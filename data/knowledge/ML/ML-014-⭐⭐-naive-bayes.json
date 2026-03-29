@@ -1,0 +1,78 @@
+{
+  "id": "ML-014-⭐⭐-naive-bayes",
+  "title": "Naive Bayes (朴素贝叶斯)",
+  "category": "ML",
+  "difficulty": "⭐⭐",
+  "tags": [
+    "Naive Bayes",
+    "Bayes Theorem",
+    "Classification",
+    "Probability",
+    "Text Classification"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.393Z",
+  "readTime": 3,
+  "abstract": " 题目描述\n请解释朴素贝叶斯分类器的原理。为什么叫\"朴素\"？有哪些变体？适用场景是什么？有什么优缺点？\n\n 参考答案\n\n 贝叶斯定理\n\n公式：\n\nP(Y|X) = P(X|Y) × P(Y) / P(X)\n\nP(Y|X): 后验概率\nP(X|Y): 似然\nP(Y): 先验概率\nP(X): 证据\n\n\npython\nimport numpy as np\nfrom sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB\nfrom sklearn.datasets import make_classification\n\n 生成数据\nX, y = make_classification(n_samples=200, n_features=5, random_state=42)\n\n 高斯朴素贝叶斯（连续特征）\ngnb = GaussianNB()\ngnb.fit(X, y)\ny_pred = gnb.predict(X)\n\nprint(f\"Accuracy: {gnb.score...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请解释朴素贝叶斯分类器的原理。为什么叫\"朴素\"？有哪些变体？适用场景是什么？有什么优缺点？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "贝叶斯定理",
+      "level": 2,
+      "content": "**公式：**\n```\nP(Y|X) = P(X|Y) × P(Y) / P(X)\n\nP(Y|X): 后验概率\nP(X|Y): 似然\nP(Y): 先验概率\nP(X): 证据\n```\n\n```python\nimport numpy as np\nfrom sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB\nfrom sklearn.datasets import make_classification\n\n# 生成数据\nX, y = make_classification(n_samples=200, n_features=5, random_state=42)\n\n# 高斯朴素贝叶斯（连续特征）\ngnb = GaussianNB()\ngnb.fit(X, y)\ny_pred = gnb.predict(X)\n\nprint(f\"Accuracy: {gnb.score(X, y):.4f}\")\nprint(f\"Class prior: {gnb.class_prior_}\")\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "\"朴素\"的含义",
+      "level": 2,
+      "content": "**朴素假设：** 所有特征相互独立\n\n```python\n# 联合概率分解\n# P(X1, X2, ..., Xn | Y) = P(X1|Y) × P(X2|Y) × ... × P(Xn|Y)\n\n# 这个假设在现实中很少成立\n# 但朴素贝叶斯在实践中效果很好\n\n# 为什么有效？\n# 1. 分类只依赖概率大小关系，不依赖精确值\n# 2. 特征依赖关系可能相互抵消\n# 3. 简单模型泛化好\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "变体对比",
+      "level": 2,
+      "content": "```python\nfrom sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB, ComplementNB\n\n# 1. Gaussian NB: 连续特征，假设正态分布\ngnb = GaussianNB()\n\n# 2. Multinomial NB: 离散计数（文本分类）\n# 适合词频特征\nmnb = MultinomialNB(alpha=1.0)  # Laplace 平滑\n\n# 3. Bernoulli NB: 二元特征\n# 适合词是否出现\nbnb = BernoulliNB(alpha=1.0)\n\n# 4. Complement NB: 处理不平衡数据\ncnb = ComplementNB()\n\n# 文本分类示例\nfrom sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.pipeline import Pipeline\n\ntexts = [\n    \"I love this movie\",\n    \"This is terrible\",\n    \"Great film\",\n    \"Worst movie ever\"\n]\nlabels = [1, 0, 1, 0]  # 1: 正面，0: 负面\n\n# Multinomial NB pipeline\npipeline = Pipeline([\n    ('vectorizer', CountVectorizer()),\n    ('clf', MultinomialNB())\n])\npipeline.fit(texts, labels)\n\n# 预测\ntest_texts = [\"I love it\", \"Terrible movie\"]\npredictions = pipeline.predict(test_texts)\nprobas = pipeline.predict_proba(test_texts)\n\nfor text, pred, proba in zip(test_texts, predictions, probas):\n    print(f\"'{text}' -> {pred} (prob: {proba[pred]:.4f})\")\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "优缺点",
+      "level": 2,
+      "content": "| 优点 | 缺点 |\n|------|------|\n| 简单快速 | 特征独立假设不现实 |\n| 小数据表现好 | 需要特征独立或低相关 |\n| 适合高维稀疏数据 | 概率估计不准确 |\n| 多分类支持 | 对输入数据分布敏感 |\n| 可解释性强 | 无法学习特征交互 |"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解贝叶斯定理\n- ✅ 掌握\"朴素\"假设的含义\n- ✅ 了解不同变体的适用场景\n- ✅ 能够应用朴素贝叶斯\n- ✅ 理解优缺点"
+    },
+    {
+      "id": "sec-8",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[贝叶斯网络]](./ML-037-bayesian-networks.md)\n- [[文本分类技术]](./ML-038-text-classification.md)\n- [[概率图模型]](./ML-039-pgm.md)"
+    },
+    {
+      "id": "sec-9",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

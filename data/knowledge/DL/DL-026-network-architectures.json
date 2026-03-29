@@ -1,0 +1,102 @@
+{
+  "id": "DL-026-network-architectures",
+  "title": "DL-026-network-architectures",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 3,
+  "abstract": " DL-026 ⭐⭐⭐ Explain Different Types of Neural Network Architectures\n\n Question\nWhat are the main types of neural network architectures? Explain their characteristics and use cases.\n\n Answer\n\n Overview\nDifferent architectures are designed for different types of data and tasks.\n\n---\n\n 1. Feedforward Neural Networks (FNN)\n\nStructure: Input → Hidden → Output (no loops)\nUse cases: Tabular data, simple classification\nLimitations: No memory, fixed input size\n\n\n 2. Convolutional Neural...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are the main types of neural network architectures? Explain their characteristics and use cases."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "Overview",
+      "level": 2,
+      "content": "Different architectures are designed for different types of data and tasks.\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "1. Feedforward Neural Networks (FNN)",
+      "level": 1,
+      "content": "```\nStructure: Input → Hidden → Output (no loops)\nUse cases: Tabular data, simple classification\nLimitations: No memory, fixed input size\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "2. Convolutional Neural Networks (CNN)",
+      "level": 1,
+      "content": "```\nStructure: Conv → Pool → FC layers\nUse cases: Images, spatial data, video\nKey features: Local connectivity, parameter sharing\nExamples: LeNet, AlexNet, VGG, ResNet\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "3. Recurrent Neural Networks (RNN)",
+      "level": 1,
+      "content": "```\nStructure: Loops for sequential processing\nUse cases: Time series, text, speech\nVariants: LSTM, GRU\nLimitations: Sequential, vanishing gradients\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "4. Transformers",
+      "level": 1,
+      "content": "```\nStructure: Self-attention, no recurrence\nUse cases: NLP, vision, multimodal\nAdvantages: Parallel, long-range dependencies\nExamples: BERT, GPT, ViT\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "5. Autoencoders",
+      "level": 1,
+      "content": "```\nStructure: Encoder → Bottleneck → Decoder\nUse cases: Dimensionality reduction, denoising, generation\nVariants: VAE, Denoising AE\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "6. Generative Adversarial Networks (GAN)",
+      "level": 1,
+      "content": "```\nStructure: Generator vs Discriminator\nUse cases: Image generation, translation\nExamples: DCGAN, StyleGAN, CycleGAN\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "7. Graph Neural Networks (GNN)",
+      "level": 1,
+      "content": "```\nStructure: Message passing on graphs\nUse cases: Social networks, molecules, knowledge graphs\n```\n\n---"
+    },
+    {
+      "id": "sec-11",
+      "title": "Architecture Selection Guide",
+      "level": 1,
+      "content": "| Data Type | Recommended Architecture |\n|-----------|-------------------------|\n| Tabular | FNN, XGBoost |\n| Images | CNN, ViT |\n| Text | Transformer, RNN |\n| Time Series | RNN, Transformer, TCN |\n| Graph | GNN |\n| Generation | GAN, VAE, Diffusion |"
+    },
+    {
+      "id": "sec-12",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-13",
+      "title": "Category: Neural Network Architectures",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "Tags: [architectures, CNN, RNN, transformer, GAN, FNN]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

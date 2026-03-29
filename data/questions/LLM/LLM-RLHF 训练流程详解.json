@@ -1,0 +1,104 @@
+{
+  "id": "LLM-RLHF 训练流程详解",
+  "title": "RLHF 训练流程详解",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "RLHF",
+    "人类反馈",
+    "PPO",
+    "对齐"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请详细解释 RLHF（Reinforcement Learning from Human Feedback）的训练流程，包括各阶段的目标和关键组件。\n\n**来源：** LLM 面试题整理\n**标签：** RLHF，人类反馈，PPO，对齐",
+  "requirements": [],
+  "answer": {
+    "summary": "请详细解释 RLHF（Reinforcement Learning from Human Feedback）的训练流程，包括各阶段的目标和关键组件。\n\n**来源：** LLM 面试题整理\n**标签：** RLHF，人类反馈，PPO，对齐",
+    "coreFormula": "预训练模型 + 高质量指令数据 → SFT 模型",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请详细解释 RLHF（Reinforcement Learning from Human Feedback）的训练流程，包括各阶段的目标和关键组件。\n\n**来源：** LLM 面试题整理\n**标签：** RLHF，人类反馈，PPO，对齐",
+        "code": {
+          "language": "text",
+          "code": "预训练模型 + 高质量指令数据 → SFT 模型"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**RLHF 目标：**\n将大模型与人类价值观对齐，使其输出更有帮助、诚实、无害。\n\n**三阶段流程：**\n\n**阶段 1：监督微调（SFT）**\n```\n预训练模型 + 高质量指令数据 → SFT 模型\n```\n- 收集人类编写的指令 - 回答对\n- 监督微调，学习遵循指令\n\n**阶段 2：奖励模型训练（Reward Modeling）**\n```\nSFT 模型生成多个回答 → 人类排序 → 训练奖励模型\n```\n- 对同一提示生成 4-9 个回答\n- 人类标注偏好排序\n- 训练 RM 预测人类偏好\n- 损失函数：Ranking Loss\n\n```python\n# 奖励模型损失\nloss = -log(σ(r(x, y_w) - r(x, y_l)))\n# y_w: 偏好的回答，y_l: 不偏好的回答\n```\n\n**阶段 3：强化学习优化（PPO）**\n```\nSFT 模型 + 奖励模型 → PPO 训练 → 对齐模型\n```\n- Actor：SFT 模型（生成回答）\n- Critic：价值函数（估计状态价值）\n- Reward：奖励模型（给出分数）\n- 使用 PPO 算法优化策略\n\n**PPO 关键公式：**\n```python\n# 重要性采样比\nr_t(θ) = π_θ(a_t|s_t) / π_θ_old(a_t|s_t)\n\n# 裁剪目标\nL^CLIP = E[min(r_t·A_t, clip(r_t, 1-ε, 1+ε)·A_t)]\n\n# 最终损失\nL = L^CLIP - c₁·价值损失 + c₂·熵奖励\n```\n\n**关键技巧：**\n- KL 惩罚防止偏离 SFT 太远\n- 优势函数归一化\n- 梯度裁剪\n\n**应用：**\n- ChatGPT、Claude 等对齐训练\n- 当前主流的大模型对齐方法",
+        "code": {
+          "language": "text",
+          "code": "SFT 模型生成多个回答 → 人类排序 → 训练奖励模型"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** RLHF 三阶段的细节和协作\n- **能力：** 理解强化学习在 LLM 中的应用\n- **思维：** 人类偏好如何转化为优化目标",
+        "code": {
+          "language": "python",
+          "code": "# 奖励模型损失\nloss = -log(σ(r(x, y_w) - r(x, y_l)))\n# y_w: 偏好的回答，y_l: 不偏好的回答"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么需要 KL 惩罚？（5 分）\n2. 奖励模型可能出现什么问题？（5 分）\n3. PPO 相比其他 RL 算法的优势？（5 分）\n4. 什么是 DPO？与 RLHF 有什么区别？（5 分）\n5. 如何收集高质量的人类偏好数据？（5 分）",
+        "code": {
+          "language": "text",
+          "code": "SFT 模型 + 奖励模型 → PPO 训练 → 对齐模型"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "RLHF 是 ChatGPT 成功的关键，开启了大模型对齐的新纪元。",
+        "code": {
+          "language": "python",
+          "code": "# 重要性采样比\nr_t(θ) = π_θ(a_t|s_t) / π_θ_old(a_t|s_t)\n\n# 裁剪目标\nL^CLIP = E[min(r_t·A_t, clip(r_t, 1-ε, 1+ε)·A_t)]\n\n# 最终损失\nL = L^CLIP - c₁·价值损失 + c₂·熵奖励"
+        }
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "RLHF 三阶段的细节和协作",
+    "ability": "理解强化学习在 LLM 中的应用",
+    "thinking": "人类偏好如何转化为优化目标"
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么需要 KL 惩罚？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "奖励模型可能出现什么问题？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "PPO 相比其他 RL 算法的优势？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 DPO？与 RLHF 有什么区别？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何收集高质量的人类偏好数据？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.371Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

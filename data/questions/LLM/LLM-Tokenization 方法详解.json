@@ -1,0 +1,92 @@
+{
+  "id": "LLM-Tokenization 方法详解",
+  "title": "Tokenization 方法详解",
+  "category": "LLM",
+  "difficulty": "⭐⭐",
+  "tags": [
+    "Tokenization",
+    "BPE",
+    "WordPiece",
+    "SentencePiece"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "什么是 Tokenization？请比较 Word-Level、Character-Level、Subword 三种方法，并解释 BPE 和 WordPiece 的原理。\n\n**来源：** LLM 面试题整理\n**标签：** Tokenization，BPE，WordPiece，SentencePiece",
+  "requirements": [],
+  "answer": {
+    "summary": "什么是 Tokenization？请比较 Word-Level、Character-Level、Subword 三种方法，并解释 BPE 和 WordPiece 的原理。\n\n**来源：** LLM 面试题整理\n**标签：** Tokenization，BPE，WordPiece，SentencePiece",
+    "coreFormula": "# 训练过程\n1. 将词拆分为字符序列\n2. 统计相邻符号对频率\n3. 合并最频繁的符号对\n4. 重复直到达到目标词表大小",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "什么是 Tokenization？请比较 Word-Level、Character-Level、Subword 三种方法，并解释 BPE 和 WordPiece 的原理。\n\n**来源：** LLM 面试题整理\n**标签：** Tokenization，BPE，WordPiece，SentencePiece",
+        "code": {
+          "language": "python",
+          "code": "# 训练过程\n1. 将词拆分为字符序列\n2. 统计相邻符号对频率\n3. 合并最频繁的符号对\n4. 重复直到达到目标词表大小"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**Tokenization 定义：**\n将原始文本切分为模型可处理的离散单元（token）的过程。\n\n**三种方法对比：**\n\n| 方法 | 优点 | 缺点 | 代表 |\n|------|------|------|------|\n| Word-Level | 语义完整 | 词表过大、OOV 问题 | 早期 NLP |\n| Character-Level | 无 OOV、词表小 | 序列过长、语义弱 | Char-RNN |\n| Subword | 平衡效率和语义 | 实现复杂 | BERT/GPT |\n\n**BPE（Byte-Pair Encoding）：**\n```python\n# 训练过程\n1. 将词拆分为字符序列\n2. 统计相邻符号对频率\n3. 合并最频繁的符号对\n4. 重复直到达到目标词表大小\n```\n- GPT 系列使用\n- 从字符开始自底向上合并\n\n**WordPiece：**\n```python\n# 与 BPE 类似，但合并标准不同\n选择能最大化语言模型似然的符号对\n```\n- BERT 使用\n- 用##前缀标识词中位置\n\n**SentencePiece：**\n- 直接对原始句子进行 BPE\n- 无需预分词，支持多语言\n- 被 T5、LLaMA 采用\n\n**Unigram LM：**\n- 从大词表开始，迭代删除低贡献 token\n- SentencePiece 支持的另一算法\n\n**应用实践：**\n- 英文：BPE/WordPiece（30k-50k 词表）\n- 中文：字符级或专门分词\n- 多语言：SentencePiece（50k+ 词表）",
+        "code": {
+          "language": "python",
+          "code": "# 与 BPE 类似，但合并标准不同\n选择能最大化语言模型似然的符号对"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 各种 Tokenization 方法的原理和区别\n- **能力：** 根据场景选择合适的分词方案\n- **思维：** 理解词表大小与序列长度的权衡"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. BPE 如何处理未登录词（OOV）？（5 分）\n2. 为什么 GPT-4 词表大小增加到 100k+？（5 分）\n3. 中文 Tokenization 有什么特殊考虑？（5 分）\n4. 什么是 Byte-Level BPE？优势是什么？（5 分）\n5. Tokenization 如何影响模型的多语言能力？（5 分）"
+      },
+      {
+        "title": "深入理解",
+        "content": "Tokenization 是 LLM 的第一道工序，直接影响模型效率和效果。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "各种 Tokenization 方法的原理和区别",
+    "ability": "根据场景选择合适的分词方案",
+    "thinking": "理解词表大小与序列长度的权衡"
+  },
+  "followUpQuestions": [
+    {
+      "question": "BPE 如何处理未登录词（OOV）？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "为什么 GPT-4 词表大小增加到 100k+？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "中文 Tokenization 有什么特殊考虑？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 Byte-Level BPE？优势是什么？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "Tokenization 如何影响模型的多语言能力？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.371Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "LLM-Prompt Engineering 技巧与实践",
+  "title": "Prompt Engineering 技巧与实践",
+  "category": "LLM",
+  "difficulty": "⭐⭐",
+  "tags": [
+    "Prompt",
+    "Few-Shot",
+    "CoT",
+    "提示工程"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "什么是 Prompt Engineering？请列举常用的提示技巧，并解释 Few-Shot 和 Chain-of-Thought 的原理。\n\n**来源：** LLM 面试题整理\n**标签：** Prompt，Few-Shot，CoT，提示工程",
+  "requirements": [],
+  "answer": {
+    "summary": "什么是 Prompt Engineering？请列举常用的提示技巧，并解释 Few-Shot 和 Chain-of-Thought 的原理。\n\n**来源：** LLM 面试题整理\n**标签：** Prompt，Few-Shot，CoT，提示工程",
+    "coreFormula": "直接提问：\"法国首都是哪里？\"",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "什么是 Prompt Engineering？请列举常用的提示技巧，并解释 Few-Shot 和 Chain-of-Thought 的原理。\n\n**来源：** LLM 面试题整理\n**标签：** Prompt，Few-Shot，CoT，提示工程",
+        "code": {
+          "language": "text",
+          "code": "直接提问：\"法国首都是哪里？\""
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**Prompt Engineering 定义：**\n通过设计和优化输入提示，引导大模型产生更好输出的技术和方法。\n\n**常用技巧：**\n\n1. **Zero-Shot：**\n   ```\n   直接提问：\"法国首都是哪里？\"\n   ```\n\n2. **Few-Shot Learning：**\n   ```\n   问题：2+3=?  答案：5\n   问题：4+7=?  答案：11\n   问题：9+6=?  答案：\n   ```\n   - 提供少量示例，无需训练\n   - 让模型理解任务格式\n\n3. **Chain-of-Thought (CoT)：**\n   ```\n   问题：小明有 5 个苹果，给了小红 2 个，又买了 3 个，现在有几个？\n   解答：小明原有 5 个，给出 2 个后剩 3 个，再买 3 个，总共 6 个。\n   答案：6 个\n   ```\n   - 引导模型展示推理过程\n   - 显著提升复杂任务表现\n\n4. **Role Prompting：**\n   ```\n   你是一位资深 Python 工程师，请 review 以下代码...\n   ```\n\n5. **Self-Consistency：**\n   - 多次采样取多数答案\n   - 提高稳定性\n\n6. **ReAct（Reasoning + Acting）：**\n   - 交替进行推理和工具调用\n\n**最佳实践：**\n- 清晰具体的指令\n- 提供相关上下文\n- 指定输出格式\n- 使用分隔符结构化\n\n**应用：**\n- 所有 LLM 应用的基础技能\n- 客服、编程、写作等场景",
+        "code": {
+          "language": "text",
+          "code": "问题：2+3=?  答案：5\n   问题：4+7=?  答案：11\n   问题：9+6=?  答案："
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 各种 Prompt 技巧的定义和用法\n- **能力：** 根据任务设计有效提示\n- **思维：** 理解模型如何响应不同提示",
+        "code": {
+          "language": "text",
+          "code": "问题：小明有 5 个苹果，给了小红 2 个，又买了 3 个，现在有几个？\n   解答：小明原有 5 个，给出 2 个后剩 3 个，再买 3 个，总共 6 个。\n   答案：6 个"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. Few-Shot 为什么有效？从模型训练角度解释。（5 分）\n2. CoT 对什么类型的任务提升最明显？（5 分）\n3. 什么是 Automatic Prompt Engineering？（5 分）\n4. Prompt 长度对模型性能有什么影响？（5 分）\n5. 如何评估 Prompt 的质量？（5 分）",
+        "code": {
+          "language": "text",
+          "code": "你是一位资深 Python 工程师，请 review 以下代码..."
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "Prompt Engineering 是释放 LLM 潜力的关键技能，无需训练即可优化效果。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "各种 Prompt 技巧的定义和用法",
+    "ability": "根据任务设计有效提示",
+    "thinking": "理解模型如何响应不同提示"
+  },
+  "followUpQuestions": [
+    {
+      "question": "Few-Shot 为什么有效？从模型训练角度解释。（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "CoT 对什么类型的任务提升最明显？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 Automatic Prompt Engineering？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "Prompt 长度对模型性能有什么影响？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何评估 Prompt 的质量？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.371Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "id": "DL-019-transformer-architecture",
+  "title": "DL-019-transformer-architecture",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.387Z",
+  "updatedAt": "2026-03-29T14:57:53.387Z",
+  "readTime": 10,
+  "abstract": " DL-019 ⭐⭐⭐ What are Transformers? Explain Architecture and Applications\n\n Question\nWhat is the Transformer architecture? Explain its components, how it differs from RNNs, and its applications.\n\n Answer\n\n What is a Transformer?\nTransformer is a neural network architecture introduced in \"Attention Is All You Need\" (Vaswani et al., 2017) that relies entirely on attention mechanisms, dispensing with recurrence and convolutions. It has become the foundation for modern NLP and is expandin...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is the Transformer architecture? Explain its components, how it differs from RNNs, and its applications."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is a Transformer?",
+      "level": 2,
+      "content": "**Transformer** is a neural network architecture introduced in \"Attention Is All You Need\" (Vaswani et al., 2017) that relies entirely on attention mechanisms, dispensing with recurrence and convolutions. It has become the foundation for modern NLP and is expanding to vision, speech, and multimodal tasks."
+    },
+    {
+      "id": "sec-4",
+      "title": "Key Innovation",
+      "level": 2,
+      "content": "```\nRNN/CNN/LSTM: Sequential processing or local connections\nTransformer: Global attention between all positions\n\nResult:\n- Better long-range dependency modeling\n- Highly parallelizable\n- State-of-the-art performance\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Transformer Architecture Overview",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Encoder-Decoder Structure",
+      "level": 2,
+      "content": "```\n┌─────────────────────────────────────────────────┐\n│  DECODER                                        │\n│  ┌──────────────┐                               │\n│  │ Masked       │                               │\n│  │ Self-Attn    │                               │\n│  ├──────────────┤                               │\n│  │ Cross-Attn   │ ← attends to encoder output   │\n│  ├──────────────┤                               │\n│  │ Feed Forward │                               │\n│  └──────────────┘                               │\n├─────────────────────────────────────────────────┤\n│  ENCODER                                        │\n│  ┌──────────────┐                               │\n│  │ Self-Attn    │ ← attends to all positions    │\n│  ├──────────────┤                               │\n│  │ Feed Forward │                               │\n│  └──────────────┘                               │\n└─────────────────────────────────────────────────┘\n```\n\n---"
+    },
+    {
+      "id": "sec-7",
+      "title": "Transformer Components",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-8",
+      "title": "1. Input Embedding",
+      "level": 1,
+      "content": "```\nTokens → Embedding Matrix → Vector representations\n\nExample:\n\"Hello world\" → [101, 2054] → [512-dim vectors]\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "2. Positional Encoding",
+      "level": 1,
+      "content": "```\nProblem: Self-attention has no notion of order\nSolution: Add position information to embeddings\n\nEncoding:\nPE(pos, 2i) = sin(pos / 10000^(2i/d_model))\nPE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))\n\nAdded to input embeddings:\nInput = Token_Embedding + Positional_Encoding\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "Why Sinusoidal?",
+      "level": 2,
+      "content": "```\n- Allows model to learn relative positions\n- Can generalize to sequence lengths not seen in training\n- Alternative: Learnable positional embeddings\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "3. Multi-Head Self-Attention",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-12",
+      "title": "Scaled Dot-Product Attention",
+      "level": 2,
+      "content": "```\nAttention(Q, K, V) = softmax(QKᵀ / √d_k) × V\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "Multi-Head Extension",
+      "level": 2,
+      "content": "```\nMultiHead(Q, K, V) = Concat(head₁, ..., headₕ) × W_O\n\nEach head: headᵢ = Attention(QW_Qᵢ, KW_Kᵢ, VW_Vᵢ)\n\nTypical: 8 or 16 heads, 64 dimensions per head\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "4. Add & Norm (Residual + LayerNorm)",
+      "level": 1,
+      "content": "```\nOutput = LayerNorm(x + Sublayer(x))\n\nWhere:\n- x: Input to sublayer\n- Sublayer: Attention or Feed Forward\n- Residual connection helps gradient flow\n- LayerNorm stabilizes training\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "5. Feed Forward Network",
+      "level": 1,
+      "content": "```\nFFN(x) = max(0, xW₁ + b₁)W₂ + b₂\n\nTwo linear transformations with ReLU activation\nApplied position-wise (same FFN for each position)\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "6. Output Layer",
+      "level": 1,
+      "content": "```\nFinal representation → Linear → Softmax → Probabilities\n\nFor language modeling:\nPredicts next token probability distribution\n```\n\n---"
+    },
+    {
+      "id": "sec-17",
+      "title": "Encoder vs Decoder",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "Transformer Encoder",
+      "level": 2,
+      "content": "```\nPurpose: Understand input sequence\n\nStructure:\nInput → Embedding + PosEnc → [Self-Attn → Add&Norm → FFN → Add&Norm] × N\n\nAttention: Full (can see all positions)\nUse cases: BERT, encoding tasks\n```"
+    },
+    {
+      "id": "sec-19",
+      "title": "Transformer Decoder",
+      "level": 2,
+      "content": "```\nPurpose: Generate output sequence\n\nStructure:\nInput → Embedding + PosEnc → [Masked Self-Attn → Cross-Attn → FFN] × N → Output\n\nAttention: \n- Masked self-attention (can only see past)\n- Cross-attention (attends to encoder)\nUse cases: GPT, language generation\n```\n\n---"
+    },
+    {
+      "id": "sec-20",
+      "title": "Transformer vs RNN",
+      "level": 1,
+      "content": "| Aspect | RNN/LSTM | Transformer |\n|--------|----------|-------------|\n| **Processing** | Sequential | Parallel |\n| **Long Dependencies** | Limited (vanishing gradient) | Excellent (direct attention) |\n| **Training Speed** | Slow (can't parallelize) | Fast (fully parallel) |\n| **Memory** | O(1) per step | O(n²) for attention |\n| **Position** | Implicit (order preserved) | Explicit (positional encoding) |\n| **Context** | Fixed (hidden state) | Dynamic (attention weights) |"
+    },
+    {
+      "id": "sec-21",
+      "title": "Speed Comparison",
+      "level": 2,
+      "content": "```\nTraining on same task:\nRNN: 10 days\nTransformer: 1 day (10× faster!)\n```\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "Transformer Variants",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-23",
+      "title": "Encoder-Only (BERT-style)",
+      "level": 2,
+      "content": "```\nArchitecture: Encoder stack only\nTraining: Masked language modeling\nUse cases: Text classification, NER, QA\nExamples: BERT, RoBERTa, DistilBERT\n```"
+    },
+    {
+      "id": "sec-24",
+      "title": "Decoder-Only (GPT-style)",
+      "level": 2,
+      "content": "```\nArchitecture: Decoder stack only\nTraining: Causal language modeling (predict next token)\nUse cases: Text generation, chatbots\nExamples: GPT-2, GPT-3, GPT-4, LLaMA\n```"
+    },
+    {
+      "id": "sec-25",
+      "title": "Encoder-Decoder (Original)",
+      "level": 2,
+      "content": "```\nArchitecture: Both encoder and decoder\nTraining: Sequence-to-sequence\nUse cases: Translation, summarization\nExamples: Original Transformer, T5, BART\n```\n\n---"
+    },
+    {
+      "id": "sec-26",
+      "title": "Applications",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-27",
+      "title": "1. Natural Language Processing",
+      "level": 2,
+      "content": "| Task | Model | Description |\n|------|-------|-------------|\n| **Text Classification** | BERT | Sentiment, topic, spam detection |\n| **Named Entity Recognition** | BERT | Extract names, places, dates |\n| **Question Answering** | BERT, T5 | Answer questions from context |\n| **Machine Translation** | Transformer | Translate between languages |\n| **Text Generation** | GPT | Generate articles, stories, code |\n| **Summarization** | BART, T5 | Create summaries of long text |"
+    },
+    {
+      "id": "sec-28",
+      "title": "2. Computer Vision",
+      "level": 2,
+      "content": "| Model | Description |\n|-------|-------------|\n| **ViT (Vision Transformer)** | Image classification with transformers |\n| **DETR** | Object detection with transformers |\n| **Segment Anything** | Image segmentation |"
+    },
+    {
+      "id": "sec-29",
+      "title": "3. Multimodal",
+      "level": 2,
+      "content": "| Model | Description |\n|-------|-------------|\n| **CLIP** | Image-text understanding |\n| **DALL-E** | Text-to-image generation |\n| **Flamingo** | Visual language model |"
+    },
+    {
+      "id": "sec-30",
+      "title": "4. Speech",
+      "level": 2,
+      "content": "| Model | Description |\n|-------|-------------|\n| **Whisper** | Speech recognition |\n| **AudioLM** | Audio generation |\n\n---"
+    },
+    {
+      "id": "sec-31",
+      "title": "Why Transformers Dominated",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-32",
+      "title": "1. Scalability",
+      "level": 2,
+      "content": "```\nMore data + more parameters = better performance\nLaw holds even at massive scale (GPT-3: 175B params)\n```"
+    },
+    {
+      "id": "sec-33",
+      "title": "2. Transfer Learning",
+      "level": 2,
+      "content": "```\nPretrain on massive data → Fine-tune on specific tasks\nOne model, many applications\n```"
+    },
+    {
+      "id": "sec-34",
+      "title": "3. Parallelization",
+      "level": 2,
+      "content": "```\nTrain on hundreds of GPUs efficiently\nMuch faster than RNNs\n```"
+    },
+    {
+      "id": "sec-35",
+      "title": "4. Performance",
+      "level": 2,
+      "content": "```\nState-of-the-art on most NLP benchmarks\nExpanding to vision, speech, science\n```\n\n---"
+    },
+    {
+      "id": "sec-36",
+      "title": "Limitations",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-37",
+      "title": "1. Computational Complexity",
+      "level": 2,
+      "content": "```\nSelf-attention: O(n²) memory and time\nLong sequences become expensive\n\nSolutions: Sparse attention, linear attention\n```"
+    },
+    {
+      "id": "sec-38",
+      "title": "2. Data Hungry",
+      "level": 2,
+      "content": "```\nNeeds massive pretraining data\nNot suitable for low-resource settings without fine-tuning\n```"
+    },
+    {
+      "id": "sec-39",
+      "title": "3. Fixed Context Window",
+      "level": 2,
+      "content": "```\nCan only attend to tokens within window\nGPT-4: ~128K tokens max\n\nSolutions: Sliding window, memory mechanisms\n```"
+    },
+    {
+      "id": "sec-40",
+      "title": "4. Lack of True Understanding",
+      "level": 2,
+      "content": "```\nStatistical patterns, not reasoning\nCan make logical errors\n```\n\n---"
+    },
+    {
+      "id": "sec-41",
+      "title": "Code Example (Hugging Face)",
+      "level": 1,
+      "content": "```python\nfrom transformers import AutoModel, AutoTokenizer\n\n# Load pretrained transformer\nmodel_name = \"bert-base-uncased\"\ntokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModel.from_pretrained(model_name)\n\n# Tokenize input\ntext = \"Hello, I'm a transformer!\"\ninputs = tokenizer(text, return_tensors=\"pt\")\n\n# Forward pass\noutputs = model(**inputs)\n\n# Get contextualized representations\nlast_hidden_states = outputs.last_hidden_state\n# Shape: (batch, seq_len, hidden_dim)\n```"
+    },
+    {
+      "id": "sec-42",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Transformers use self-attention instead of recurrence\n- Fully parallelizable, much faster than RNNs\n- Encoder-decoder, encoder-only, or decoder-only variants\n- Foundation of modern LLMs (BERT, GPT, etc.)\n- Applications: NLP, vision, speech, multimodal\n- Limitations: O(n²) complexity, data hungry\n- Dominant architecture in modern deep learning"
+    },
+    {
+      "id": "sec-43",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-44",
+      "title": "Category: Neural Network Architectures",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-45",
+      "title": "Tags: [transformer, attention, NLP, BERT, GPT, architecture]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

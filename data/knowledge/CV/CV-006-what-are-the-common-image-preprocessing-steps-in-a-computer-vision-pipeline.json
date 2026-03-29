@@ -1,0 +1,24 @@
+{
+  "id": "CV-006-what-are-the-common-image-preprocessing-steps-in-a-computer-vision-pipeline",
+  "title": "CV-006-what-are-the-common-image-preprocessing-steps-in-a-computer-vision-pipeline",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-006 What are the common image preprocessing steps in a computer vision pipeline?\n\n Q6: What are the common image preprocessing steps in a computer vision pipeline?\n\nScore: 90/100\n\nAnswer:\n\nPreprocessing Pipeline:\n1. Image Acquisition: Retrieve high-quality images from cameras/databases\n2. Normalization: Standardize scale, orientation, and color\n3. Noise Reduction: Minimize distorted information (Gaussian blur, median filter)\n4. Enhancement: Improve visual qual...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q6: What are the common image preprocessing steps in a computer vision pipeline?",
+      "level": 2,
+      "content": "**Score:** 90/100\n\n**Answer:**\n\n**Preprocessing Pipeline:**\n1. **Image Acquisition:** Retrieve high-quality images from cameras/databases\n2. **Normalization:** Standardize scale, orientation, and color\n3. **Noise Reduction:** Minimize distorted information (Gaussian blur, median filter)\n4. **Enhancement:** Improve visual quality (histogram equalization, contrast adjustment)\n5. **Segmentation:** Divide into meaningful regions\n6. **Feature Extraction:** Identify critical features\n7. **Feature Selection:** Select most relevant features\n8. **Data Splitting:** Partition into train/validation/test sets\n9. **Dimensionality Reduction:** Reduce feature space (PCA)\n10. **Compression:** Reduce storage/processing overhead\n\n**Task-Specific Preprocessing:**\n- **Classification:** Center-cropping, mean subtraction, PCA color augmentation\n- **Object Detection:** Resizing to anchor boxes, data augmentation\n- **Semantic Segmentation:** Resize to model input size, reprojection\n- **Instance Segmentation:** Scaling, padding to match network input\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

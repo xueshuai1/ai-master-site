@@ -1,0 +1,24 @@
+{
+  "id": "CV-019-how-do-you-handle-occlusion-in-object-detection-tasks",
+  "title": "CV-019-how-do-you-handle-occlusion-in-object-detection-tasks",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-019 How do you handle occlusion in object detection tasks?\n\n Q19: How do you handle occlusion in object detection tasks?\n\nScore: 91/100\n\nAnswer:\n\nOcclusion Challenge:\nObjects partially or completely hidden, making detection difficult.\n\nSolutions:\n\n1. Robust Feature Descriptors:\n   - SIFT, SURF, ORB for partial visibility\n   - Deep features more robust than handcrafted\n\n2. Multi-Scale Detection:\n   - Detect objects at various sizes\n   - Feature Pyramid Networks (FP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q19: How do you handle occlusion in object detection tasks?",
+      "level": 2,
+      "content": "**Score:** 91/100\n\n**Answer:**\n\n**Occlusion Challenge:**\nObjects partially or completely hidden, making detection difficult.\n\n**Solutions:**\n\n1. **Robust Feature Descriptors:**\n   - SIFT, SURF, ORB for partial visibility\n   - Deep features more robust than handcrafted\n\n2. **Multi-Scale Detection:**\n   - Detect objects at various sizes\n   - Feature Pyramid Networks (FPN)\n\n3. **Contextual Information:**\n   - Use surrounding scene context\n   - Relationship modeling between objects\n\n4. **Ensemble Methods:**\n   - Combine predictions from multiple models\n   - Different models handle occlusion differently\n\n5. **Data Augmentation:**\n   - Simulate occlusion during training\n   - Cutout, random erasing, occlusion augmentation\n\n6. **Advanced Architectures:**\n   - **Attention Mechanisms:** Focus on visible parts\n   - **Part-Based Models:** Detect object parts independently\n   - **Pose Estimation:** Infer occluded parts from visible ones\n\n7. **3D Information:**\n   - Depth data helps separate occluding objects\n   - Multi-view fusion\n\n8. **Temporal Information (Video):**\n   - Track objects across frames\n   - Use information from unoccluded frames\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

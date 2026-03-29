@@ -1,0 +1,66 @@
+{
+  "id": "RL-策略梯度方法基础",
+  "title": "策略梯度方法基础",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "策略梯度",
+    "REINFORCE",
+    "Policy-Based",
+    "对数概率"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释策略梯度方法的核心思想，并写出 REINFORCE 算法的更新公式。\n\n**来源：** 强化学习面试题整理\n**标签：** 策略梯度，REINFORCE, Policy-Based, 对数概率",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释策略梯度方法的核心思想，并写出 REINFORCE 算法的更新公式。\n\n**来源：** 强化学习面试题整理\n**标签：** 策略梯度，REINFORCE, Policy-Based, 对数概率",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释策略梯度方法的核心思想，并写出 REINFORCE 算法的更新公式。\n\n**来源：** 强化学习面试题整理\n**标签：** 策略梯度，REINFORCE, Policy-Based, 对数概率"
+      },
+      {
+        "title": "参考答案",
+        "content": "**核心思想：**\n直接对策略函数π(a|s;θ)进行参数化，通过梯度上升最大化期望回报 J(θ)。\n\n**策略梯度定理：**\n\n∇_θ J(θ) = E_π[∇_θ log π(a|s;θ) · Q^π(s,a)]\n\n**直观解释：**\n- ∇_θ log π(a|s;θ): 策略的对数梯度\n- Q^π(s,a): 动作价值，作为权重\n- 高价值动作的概率增加，低价值动作的概率减少\n\n**REINFORCE 算法：**\n使用蒙特卡洛方法估计 Q 值（实际回报 G_t）\n\n更新公式：\nθ ← θ + α · G_t · ∇_θ log π(a_t|s_t;θ)\n\n**算法流程：**\n1. 用当前策略采样完整 episode\n2. 计算每个时刻的回报 G_t\n3. 用上述公式更新策略参数\n\n**特点：**\n- 简单，易于实现\n- 无偏估计\n- 方差大，收敛慢\n\n**改进方向：**\n- 引入基线函数减少方差\n- 用 Actor-Critic 估计 Q 值\n- 用 GAE 估计优势函数"
+      },
+      {
+        "title": "考察重点",
+        "content": "- 策略梯度的理解\n- REINFORCE 算法\n- 方差问题"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: 为什么用对数概率？",
+        "content": "**问题：** 策略梯度中为什么出现对数概率？\n**答案：** 来自似然比技巧，∇_θ π = π · ∇_θ log π，便于蒙特卡洛估计。"
+      },
+      {
+        "title": "追问 2: 基线函数",
+        "content": "**问题：** 基线函数的作用是什么？\n**答案：** 减少方差而不引入偏差，常用状态价值 V(s) 作为基线。"
+      },
+      {
+        "title": "深入理解",
+        "content": "策略梯度是 Policy-Based 方法的基础，理解它对于学习 PPO、A3C 等算法至关重要。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.379Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

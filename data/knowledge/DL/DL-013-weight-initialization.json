@@ -1,0 +1,258 @@
+{
+  "id": "DL-013-weight-initialization",
+  "title": "DL-013-weight-initialization",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.386Z",
+  "updatedAt": "2026-03-29T14:57:53.386Z",
+  "readTime": 9,
+  "abstract": " DL-013 ⭐⭐⭐ Explain Weight Initialization Techniques in Neural Networks\n\n Question\nWhy is weight initialization important? Compare different weight initialization techniques and their use cases.\n\n Answer\n\n Why Weight Initialization Matters\n\nPoor Initialization Problems:\n\nAll weights = 0:\n- All neurons compute same output\n- All gradients identical\n- Symmetry never broken\n- Network learns nothing!\n\nWeights too large:\n- Activations saturate (sigmoid/tanh → 0 or 1)\n- Gradients vanish\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "Why is weight initialization important? Compare different weight initialization techniques and their use cases."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "Why Weight Initialization Matters",
+      "level": 2,
+      "content": "**Poor Initialization Problems:**\n```\nAll weights = 0:\n- All neurons compute same output\n- All gradients identical\n- Symmetry never broken\n- Network learns nothing!\n\nWeights too large:\n- Activations saturate (sigmoid/tanh → 0 or 1)\n- Gradients vanish\n- Training stalls\n\nWeights too small:\n- Activations near zero\n- Gradients tiny\n- Very slow convergence\n```\n\n**Good Initialization Benefits:**\n```\n✅ Breaks symmetry (different neurons learn different features)\n✅ Keeps activations in reasonable range\n✅ Prevents vanishing/exploding gradients\n✅ Faster convergence\n✅ Better final performance\n```\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "Common Initialization Techniques",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "1. Zero Initialization ❌",
+      "level": 1,
+      "content": "```python\nW = np.zeros(shape)\n```\n\n**Why It Fails:**\n- All neurons identical\n- Same gradients during backprop\n- No symmetry breaking\n- Equivalent to linear model\n\n**Never use for weights!** (OK for biases)\n\n---"
+    },
+    {
+      "id": "sec-6",
+      "title": "2. Random Initialization (Uniform/Normal)",
+      "level": 1,
+      "content": "```python\n# Uniform\nW = np.random.uniform(-0.05, 0.05, shape)\n\n# Normal (Gaussian)\nW = np.random.normal(0, 0.01, shape)\n```\n\n**Pros:**\n- Breaks symmetry\n- Simple to implement\n\n**Cons:**\n- Manual tuning of scale required\n- May cause vanishing/exploding gradients in deep networks\n\n**Use Case:** Shallow networks, quick prototyping\n\n---"
+    },
+    {
+      "id": "sec-7",
+      "title": "3. Xavier/Glorot Initialization (2010) ⭐",
+      "level": 1,
+      "content": "**Designed for:** Sigmoid and Tanh activations\n\n**Idea:** Keep variance of activations and gradients constant across layers"
+    },
+    {
+      "id": "sec-8",
+      "title": "Xavier Uniform",
+      "level": 2,
+      "content": "```python\nlimit = √(6 / (fan_in + fan_out))\nW = np.random.uniform(-limit, limit, shape)\n\nWhere:\n- fan_in: Number of input neurons\n- fan_out: Number of output neurons\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Xavier Normal",
+      "level": 2,
+      "content": "```python\nstd = √(2 / (fan_in + fan_out))\nW = np.random.normal(0, std, shape)\n```\n\n**Why It Works:**\n```\nVariance of outputs = Variance of inputs\nPrevents signals from shrinking or exploding\nOptimal for symmetric activations (tanh, sigmoid)\n```\n\n**PyTorch:**\n```python\nnn.init.xavier_uniform_(weight)\nnn.init.xavier_normal_(weight)\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "4. He/Kaiming Initialization (2015) ⭐⭐",
+      "level": 1,
+      "content": "**Designed for:** ReLU and its variants\n\n**Idea:** Account for ReLU's non-linearity (kills half the neurons)"
+    },
+    {
+      "id": "sec-11",
+      "title": "He Uniform",
+      "level": 2,
+      "content": "```python\nlimit = √(6 / fan_in)\nW = np.random.uniform(-limit, limit, shape)\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "He Normal (Most Common)",
+      "level": 2,
+      "content": "```python\nstd = √(2 / fan_in)\nW = np.random.normal(0, std, shape)\n```\n\n**Why Different from Xavier?**\n```\nReLU sets negative values to zero\nEffectively halves the variance\nCompensate by multiplying variance by 2\n\nXavier: std = √(2 / (fan_in + fan_out))\nHe:     std = √(2 / fan_in)  ← Only fan_in, larger variance\n```\n\n**PyTorch:**\n```python\nnn.init.kaiming_uniform_(weight, mode='fan_in', nonlinearity='relu')\nnn.init.kaiming_normal_(weight, mode='fan_in', nonlinearity='relu')\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "5. LeCun Initialization (1990)",
+      "level": 1,
+      "content": "**Designed for:** SELU activation (self-normalizing networks)\n\n```python\nstd = √(1 / fan_in)\nW = np.random.normal(0, std, shape)\n```\n\n**Use Case:** SELU activation with AlphaDropout\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "6. Orthogonal Initialization",
+      "level": 1,
+      "content": "**Idea:** Initialize weight matrix as orthogonal (random orthogonal matrix)\n\n```python\nW = orthogonal_matrix(shape)\nWhere: WᵀW = WWᵀ = I\n```\n\n**Benefits:**\n- Preserves norm of gradients\n- Excellent for RNNs (prevents vanishing/exploding)\n- Good for very deep networks\n\n**PyTorch:**\n```python\nnn.init.orthogonal_(weight)\n```\n\n**Use Case:** RNNs, very deep networks, GANs\n\n---"
+    },
+    {
+      "id": "sec-15",
+      "title": "7. Sparse Initialization",
+      "level": 1,
+      "content": "**Idea:** Initialize most weights to zero, few to non-zero values\n\n```python\nW = np.zeros(shape)\nfor i in range(num_nonzero):\n    W[random_idx] = np.random.normal(0, 0.01)\n```\n\n**Use Case:** Very large, sparse networks (rarely used now)\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "Initialization Comparison Table",
+      "level": 1,
+      "content": "| Method | Formula (std) | Best For | Activation |\n|--------|--------------|----------|------------|\n| **Random** | 0.01 (manual) | Shallow networks | Any |\n| **Xavier** | √(2/(fan_in + fan_out)) | FC, shallow | Tanh, Sigmoid |\n| **He** | √(2/fan_in) | **Most common** | **ReLU, variants** |\n| **LeCun** | √(1/fan_in) | SELU networks | SELU |\n| **Orthogonal** | Orthogonal matrix | RNNs, very deep | Any |\n\n---"
+    },
+    {
+      "id": "sec-17",
+      "title": "Activation Function Guidelines",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "For ReLU and Variants (Most Common)",
+      "level": 2,
+      "content": "```python\n# Use He initialization\nnn.init.kaiming_normal_(weight, nonlinearity='relu')\n```"
+    },
+    {
+      "id": "sec-19",
+      "title": "For Tanh/Sigmoid",
+      "level": 2,
+      "content": "```python\n# Use Xavier initialization\nnn.init.xavier_normal_(weight)\n```"
+    },
+    {
+      "id": "sec-20",
+      "title": "For Linear/No Activation",
+      "level": 2,
+      "content": "```python\n# Xavier works well\nnn.init.xavier_normal_(weight)\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "For SELU",
+      "level": 2,
+      "content": "```python\n# Use LeCun initialization with normal\nnn.init.normal_(weight, mean=0, std=np.sqrt(1/fan_in))\n```\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "Bias Initialization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-23",
+      "title": "Standard Practice",
+      "level": 2,
+      "content": "```python\nbiases = torch.zeros(size)  # Initialize to zero\n```\n\n**Why Zero is OK for Biases:**\n- Doesn't break symmetry (weights already randomized)\n- No gradient issues\n- Simple and effective"
+    },
+    {
+      "id": "sec-24",
+      "title": "Exceptions",
+      "level": 2,
+      "content": "```python\n# For ReLU: Sometimes initialize to small positive (0.01)\n# Prevents \"dying ReLU\" initially\n\n# For specific architectures: Follow paper recommendations\n```\n\n---"
+    },
+    {
+      "id": "sec-25",
+      "title": "Practical Examples",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-26",
+      "title": "CNN with ReLU (Most Common)",
+      "level": 2,
+      "content": "```python\nclass CNN(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.conv1 = nn.Conv2d(3, 64, 3)\n        self.conv2 = nn.Conv2d(64, 128, 3)\n        self.fc1 = nn.Linear(128*6*6, 256)\n        self.fc2 = nn.Linear(256, 10)\n        \n        # Initialize weights\n        for m in self.modules():\n            if isinstance(m, nn.Conv2d) or isinstance(m, nn.Linear):\n                nn.init.kaiming_normal_(m.weight, nonlinearity='relu')\n                nn.init.zeros_(m.bias)  # Zero bias\n```"
+    },
+    {
+      "id": "sec-27",
+      "title": "RNN with Tanh",
+      "level": 2,
+      "content": "```python\nclass RNN(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.rnn = nn.LSTM(input_size=100, hidden_size=256)\n        \n        # Orthogonal initialization for recurrent weights\n        for name, param in self.rnn.named_parameters():\n            if 'weight_ih' in name:\n                nn.init.xavier_uniform_(param)\n            elif 'weight_hh' in name:\n                nn.init.orthogonal_(param)\n            elif 'bias' in name:\n                nn.init.zeros_(param)\n```"
+    },
+    {
+      "id": "sec-28",
+      "title": "Transformer",
+      "level": 2,
+      "content": "```python\n# Transformer uses Xavier for most layers\nfor p in model.parameters():\n    if p.dim() > 1:\n        nn.init.xavier_uniform_(p)\n```\n\n---"
+    },
+    {
+      "id": "sec-29",
+      "title": "Common Mistakes",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-30",
+      "title": "❌ Using Wrong Initialization for Activation",
+      "level": 2,
+      "content": "```python\n# WRONG: Xavier with ReLU\nnn.init.xavier_normal_(weight)  # For ReLU!\nactivation = nn.ReLU()\n\n# CORRECT: He with ReLU\nnn.init.kaiming_normal_(weight, nonlinearity='relu')\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "❌ Not Initializing Biases",
+      "level": 2,
+      "content": "```python\n# Biases left uninitialized (random garbage values)\n# Always initialize biases explicitly\nnn.init.zeros_(bias)\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "❌ Same Initialization for All Layers",
+      "level": 2,
+      "content": "```python\n# Different layers may need different initialization\n# Deep networks: Consider layer-wise scaling\n```\n\n---"
+    },
+    {
+      "id": "sec-33",
+      "title": "Advanced Topics",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-34",
+      "title": "Layer-Wise Scaling",
+      "level": 2,
+      "content": "```\nVery deep networks: Scale initialization by layer depth\nExample: Multiply std by √(1/layer_depth)\n```"
+    },
+    {
+      "id": "sec-35",
+      "title": "Data-Dependent Initialization",
+      "level": 2,
+      "content": "```\nUse small batch of data to set initial scale\nMatch activation variance to data variance\n```"
+    },
+    {
+      "id": "sec-36",
+      "title": "Learned Initialization",
+      "level": 2,
+      "content": "```\nMeta-learning approaches to learn optimal initialization\nStill research area\n```"
+    },
+    {
+      "id": "sec-37",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Weight initialization critical for successful training\n- **He initialization** is default choice for ReLU networks\n- **Xavier initialization** for Tanh/Sigmoid\n- **Orthogonal initialization** for RNNs\n- Initialize biases to zero\n- Match initialization to activation function\n- Poor initialization causes vanishing/exploding gradients"
+    },
+    {
+      "id": "sec-38",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-39",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-40",
+      "title": "Tags: [weight-initialization, he, xavier, training, neural-networks]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

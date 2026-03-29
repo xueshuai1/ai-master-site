@@ -1,0 +1,282 @@
+{
+  "id": "DL-017-transfer-learning",
+  "title": "DL-017-transfer-learning",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.387Z",
+  "updatedAt": "2026-03-29T14:57:53.387Z",
+  "readTime": 10,
+  "abstract": " DL-017 ⭐⭐⭐ What is Transfer Learning? Explain Approaches and Use Cases\n\n Question\nWhat is transfer learning in deep learning? Explain different approaches, when to use it, and provide examples.\n\n Answer\n\n What is Transfer Learning?\nTransfer Learning is a technique where a model trained on one task is reused as the starting point for a model on a second, related task. Instead of training from scratch, you leverage knowledge (weights) from a pre-trained model.\n\n Analogy\n\nLearnin...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is transfer learning in deep learning? Explain different approaches, when to use it, and provide examples."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Transfer Learning?",
+      "level": 2,
+      "content": "**Transfer Learning** is a technique where a model trained on one task is reused as the starting point for a model on a second, related task. Instead of training from scratch, you leverage knowledge (weights) from a pre-trained model."
+    },
+    {
+      "id": "sec-4",
+      "title": "Analogy",
+      "level": 2,
+      "content": "```\nLearning from scratch:\n- Learn to recognize edges → shapes → objects → specific objects\n- Takes years (or millions of images)\n\nTransfer learning:\n- Already knows edges → shapes → objects\n- Only learn specific objects for your task\n- Takes days (or thousands of images)\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Why Transfer Learning Works",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Feature Hierarchy in CNNs",
+      "level": 2,
+      "content": "```\nLayer 1: Edges, corners (通用 features)\nLayer 2: Textures, patterns (通用 features)\nLayer 3: Shapes, parts (somewhat task-specific)\nLayer 4: Objects (task-specific)\nLayer 5: Specific categories (very task-specific)\n\nEarly layers learn general features useful for many tasks!\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "Benefits",
+      "level": 2,
+      "content": "```\n✅ Less training data required (100s vs 100,000s of images)\n✅ Faster training (fewer epochs)\n✅ Better performance (especially with small datasets)\n✅ Less computational resources\n✅ Leverages state-of-the-art architectures\n```\n\n---"
+    },
+    {
+      "id": "sec-8",
+      "title": "Transfer Learning Approaches",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-9",
+      "title": "1. Feature Extraction (Frozen Base)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "Method",
+      "level": 2,
+      "content": "```\n1. Remove final classification layer from pretrained model\n2. Freeze all pretrained layers (don't update weights)\n3. Add new classifier layers for your task\n4. Train only the new layers\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "Architecture",
+      "level": 2,
+      "content": "```\nInput → [Pretrained CNN (frozen)] → Features → [New Classifier] → Output\n        ↓\n        Weights frozen, no gradient updates\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Code Example",
+      "level": 2,
+      "content": "```python\n# Load pretrained model\nmodel = torchvision.models.resnet50(pretrained=True)\n\n# Freeze all layers\nfor param in model.parameters():\n    param.requires_grad = False\n\n# Replace final layer\nnum_features = model.fc.in_features\nmodel.fc = nn.Linear(num_features, num_classes)  # New layer\n\n# Only train the new layer\noptimizer = torch.optim.Adam(model.fc.parameters(), lr=0.001)\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "When to Use",
+      "level": 2,
+      "content": "```\n✓ Small dataset (< 1,000 images)\n✓ Similar domain to pretrained data\n✓ Quick baseline needed\n✓ Limited computational resources\n```\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "2. Fine-Tuning (Unfrozen Base)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "Method",
+      "level": 2,
+      "content": "```\n1. Start with feature extraction approach\n2. After training new layers, unfreeze some/all base layers\n3. Train entire network with very low learning rate\n4. Pretrained weights are slightly adjusted\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "Architecture",
+      "level": 2,
+      "content": "```\nInput → [Pretrained CNN (fine-tuned)] → Features → [Classifier] → Output\n        ↓\n        Weights updated with very low LR\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "Code Example",
+      "level": 2,
+      "content": "```python\n# First: Train classifier with frozen base\n# ... (feature extraction training) ...\n\n# Then: Unfreeze some layers for fine-tuning\nfor param in model.parameters():\n    param.requires_grad = False\n\n# Unfreeze last few layers\nfor param in model.layer4.parameters():\n    param.requires_grad = True\n\n# Train with very low learning rate\noptimizer = torch.optim.Adam([\n    {'params': model.layer4.parameters(), 'lr': 1e-5},\n    {'params': model.fc.parameters(), 'lr': 1e-3}\n])\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "When to Use",
+      "level": 2,
+      "content": "```\n✓ Medium dataset (1,000 - 10,000 images)\n✓ Your data differs from pretrained data\n✓ Need better performance\n✓ Have computational resources\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "3. Full Fine-Tuning",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-20",
+      "title": "Method",
+      "level": 2,
+      "content": "```\n1. Load pretrained weights\n2. Unfreeze ALL layers\n3. Train entire network with low learning rate\n4. All weights are updated\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "When to Use",
+      "level": 2,
+      "content": "```\n✓ Large dataset (> 10,000 images)\n✓ Your domain differs significantly from pretrained\n✓ Maximum performance needed\n✓ Sufficient computational resources\n```\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "Common Pretrained Models",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-23",
+      "title": "ImageNet Models (Computer Vision)",
+      "level": 2,
+      "content": "| Model | Top-1 Acc | Parameters | Use Case |\n|-------|-----------|------------|----------|\n| **ResNet50** | 76.0% | 25M | General purpose, good balance |\n| **ResNet101** | 77.4% | 44M | Better accuracy, more compute |\n| **EfficientNet-B0** | 77.1% | 5M | Efficient, mobile-friendly |\n| **EfficientNet-B7** | 84.4% | 66M | State-of-the-art accuracy |\n| **VGG16** | 71.5% | 138M | Simple architecture, many params |\n| **ViT-Base** | 81.8% | 86M | Transformer-based, modern |"
+    },
+    {
+      "id": "sec-24",
+      "title": "NLP Models",
+      "level": 2,
+      "content": "| Model | Use Case |\n|-------|----------|\n| **BERT** | Text classification, QA, NER |\n| **GPT** | Text generation, language modeling |\n| **RoBERTa** | Improved BERT, various NLP tasks |\n| **T5** | Text-to-text tasks |\n\n---"
+    },
+    {
+      "id": "sec-25",
+      "title": "Transfer Learning Strategies by Dataset Size",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-26",
+      "title": "Tiny Dataset (< 100 images)",
+      "level": 2,
+      "content": "```\nApproach: Feature extraction only\n- Freeze entire pretrained model\n- Train only final classifier\n- Use heavy data augmentation\n- Consider few-shot learning techniques\n```"
+    },
+    {
+      "id": "sec-27",
+      "title": "Small Dataset (100 - 1,000 images)",
+      "level": 2,
+      "content": "```\nApproach: Feature extraction + light fine-tuning\n- Freeze most of pretrained model\n- Train classifier\n- Optionally fine-tune last 1-2 layers\n- Use data augmentation\n```"
+    },
+    {
+      "id": "sec-28",
+      "title": "Medium Dataset (1,000 - 10,000 images)",
+      "level": 2,
+      "content": "```\nApproach: Fine-tuning\n- Start with feature extraction\n- Fine-tune last 2-3 layers\n- Use moderate learning rate\n- Data augmentation recommended\n```"
+    },
+    {
+      "id": "sec-29",
+      "title": "Large Dataset (> 10,000 images)",
+      "level": 2,
+      "content": "```\nApproach: Full fine-tuning or train from scratch\n- Fine-tune all layers\n- Or train from scratch if domain very different\n- Standard data augmentation\n```\n\n---"
+    },
+    {
+      "id": "sec-30",
+      "title": "Practical Example: Dog Breed Classification",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-31",
+      "title": "Scenario",
+      "level": 2,
+      "content": "```\nTask: Classify 120 dog breeds\nDataset: 10,000 images\nPretrained: ImageNet (1,000 classes, includes some dogs)\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "Implementation",
+      "level": 2,
+      "content": "```python\nimport torchvision.models as models\n\n# Load pretrained ResNet50\nmodel = models.resnet50(pretrained=True)\n\n# Replace final layer\nnum_features = model.fc.in_features\nmodel.fc = nn.Sequential(\n    nn.Dropout(0.5),\n    nn.Linear(num_features, 512),\n    nn.ReLU(),\n    nn.Dropout(0.3),\n    nn.Linear(512, 120)  # 120 dog breeds\n)\n\n# Training strategy\n# Phase 1: Train classifier (frozen base)\nfor param in model.parameters():\n    param.requires_grad = False\nfor param in model.fc.parameters():\n    param.requires_grad = True\n\noptimizer = torch.optim.Adam(model.fc.parameters(), lr=0.001)\n# Train for 10 epochs\n\n# Phase 2: Fine-tune (unfreeze some layers)\nfor param in model.layer4.parameters():\n    param.requires_grad = True\n\noptimizer = torch.optim.Adam([\n    {'params': model.layer4.parameters(), 'lr': 1e-5},\n    {'params': model.fc.parameters(), 'lr': 1e-4}\n])\n# Train for 10 more epochs\n```\n\n---"
+    },
+    {
+      "id": "sec-33",
+      "title": "Domain Adaptation",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-34",
+      "title": "When Source and Target Domains Differ",
+      "level": 2,
+      "content": "```\nExample:\n- Pretrained on: Natural images (ImageNet)\n- Target domain: Medical X-rays\n\nChallenge: Different data distribution\n```"
+    },
+    {
+      "id": "sec-35",
+      "title": "Strategies",
+      "level": 2,
+      "content": "```\n1. Use earlier layers only (more general features)\n2. More aggressive fine-tuning\n3. Domain adaptation techniques\n4. Train on intermediate domain if available\n```\n\n---"
+    },
+    {
+      "id": "sec-36",
+      "title": "Common Mistakes",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-37",
+      "title": "❌ Using Too High Learning Rate",
+      "level": 2,
+      "content": "```python\n# Wrong: Same LR as training from scratch\noptimizer = Adam(model.parameters(), lr=0.001)  # Too high!\n\n# Correct: Lower LR for fine-tuning\noptimizer = Adam(model.parameters(), lr=0.00003)\n```"
+    },
+    {
+      "id": "sec-38",
+      "title": "❌ Not Freezing Layers Properly",
+      "level": 2,
+      "content": "```python\n# Wrong: Forget to set requires_grad\nmodel = models.resnet50(pretrained=True)\nmodel.fc = nn.Linear(2048, 10)\n# All layers will be updated!\n\n# Correct: Explicitly freeze\nfor param in model.parameters():\n    param.requires_grad = False\n```"
+    },
+    {
+      "id": "sec-39",
+      "title": "❌ Using Wrong Pretrained Model",
+      "level": 2,
+      "content": "```python\n# Wrong: Using ImageNet for medical images without consideration\n# ImageNet has natural images, not X-rays\n\n# Better: Use models pretrained on medical images if available\n# Or be prepared to fine-tune more aggressively\n```\n\n---"
+    },
+    {
+      "id": "sec-40",
+      "title": "Transfer Learning Checklist",
+      "level": 1,
+      "content": "```\n□ Choose appropriate pretrained model\n□ Match input preprocessing to pretrained model\n□ Replace final classification layer\n□ Freeze base layers (initially)\n□ Use lower learning rate than training from scratch\n□ Train classifier first\n□ Optionally fine-tune base layers\n□ Monitor for overfitting (use validation set)\n□ Use data augmentation\n□ Save best model (not last)\n```"
+    },
+    {
+      "id": "sec-41",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Transfer learning reuses pretrained models for new tasks\n- Saves time, data, and computational resources\n- Two main approaches: feature extraction and fine-tuning\n- Choose approach based on dataset size and similarity\n- Use lower learning rates than training from scratch\n- Popular pretrained models: ResNet, EfficientNet, BERT\n- Always use appropriate data preprocessing"
+    },
+    {
+      "id": "sec-42",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-43",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-44",
+      "title": "Tags: [transfer-learning, fine-tuning, pretrained-models, feature-extraction]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

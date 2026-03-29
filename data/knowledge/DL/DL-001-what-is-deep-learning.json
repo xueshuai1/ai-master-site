@@ -1,0 +1,84 @@
+{
+  "id": "DL-001-what-is-deep-learning",
+  "title": "DL-001-what-is-deep-learning",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.384Z",
+  "updatedAt": "2026-03-29T14:57:53.384Z",
+  "readTime": 4,
+  "abstract": " DL-001 ⭐⭐⭐ What is Deep Learning and How Does It Differ from Machine Learning?\n\n Question\nExplain what Deep Learning is, and describe the key differences between Deep Learning, Machine Learning, and Artificial Intelligence.\n\n Answer\n\n What is Deep Learning?\nDeep Learning (DL) is a subset of machine learning that uses multi-layered artificial neural networks to model and understand complex patterns in data. The term \"deep\" refers to the number of hidden layers in the neural network—t...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "Explain what Deep Learning is, and describe the key differences between Deep Learning, Machine Learning, and Artificial Intelligence."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Deep Learning?",
+      "level": 2,
+      "content": "**Deep Learning (DL)** is a subset of machine learning that uses multi-layered artificial neural networks to model and understand complex patterns in data. The term \"deep\" refers to the number of hidden layers in the neural network—typically more than three layers.\n\nDeep learning automatically discovers the representations needed for feature detection or classification from raw data, eliminating the need for manual feature engineering. It excels at processing unstructured data like images, audio, text, and video."
+    },
+    {
+      "id": "sec-4",
+      "title": "Key Differences: AI vs ML vs DL",
+      "level": 2,
+      "content": "| Aspect | Artificial Intelligence | Machine Learning | Deep Learning |\n|--------|------------------------|------------------|---------------|\n| **Definition** | Broad field of creating intelligent machines | Subset of AI using statistical methods to learn from data | Subset of ML using multi-layer neural networks |\n| **Data Requirements** | Can work with structured rules | Requires structured, labeled data | Requires large amounts of data (structured/unstructured) |\n| **Feature Engineering** | Manual rule creation | Manual feature extraction required | Automatic feature extraction |\n| **Hardware** | Standard CPUs | CPUs, some GPU acceleration | Requires GPUs/TPUs for training |\n| **Execution Time** | Varies | Minutes to hours | Hours to weeks |\n| **Applications** | Chatbots, expert systems | Spam detection, recommendation | Image recognition, NLP, autonomous vehicles |"
+    },
+    {
+      "id": "sec-5",
+      "title": "Hierarchical Relationship",
+      "level": 2,
+      "content": "```\nArtificial Intelligence (broadest)\n    └── Machine Learning\n            └── Deep Learning (most specialized)\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "Why Deep Learning Excels",
+      "level": 2,
+      "content": "1. **Automatic Feature Learning**: No need for manual feature engineering\n2. **Scalability**: Performance improves with more data\n3. **Complex Pattern Recognition**: Excels at identifying intricate patterns\n4. **End-to-End Learning**: Can learn directly from raw input to output"
+    },
+    {
+      "id": "sec-7",
+      "title": "Example",
+      "level": 2,
+      "content": "For image classification:\n- **Traditional ML**: Requires manual extraction of features (edges, textures, shapes)\n- **Deep Learning**: Automatically learns hierarchical features from pixels → edges → shapes → objects"
+    },
+    {
+      "id": "sec-8",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Deep Learning is a specialized subset of Machine Learning, which is itself a subset of AI\n- DL uses neural networks with multiple hidden layers\n- DL automatically extracts features, unlike traditional ML\n- DL requires large datasets and significant computational power\n- DL excels at unstructured data (images, text, audio, video)"
+    },
+    {
+      "id": "sec-9",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "Category: Deep Learning Basics",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Tags: [fundamentals, AI-ML-DL, comparison, neural-networks]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

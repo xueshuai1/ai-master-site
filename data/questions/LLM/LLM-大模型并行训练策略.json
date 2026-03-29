@@ -1,0 +1,108 @@
+{
+  "id": "LLM-大模型并行训练策略",
+  "title": "大模型并行训练策略",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "并行训练",
+    "数据并行",
+    "模型并行",
+    "流水线"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释大模型训练中的并行策略，包括数据并行、张量并行、流水线并行的原理和组合方式。\n\n**来源：** LLM 面试题整理\n**标签：** 并行训练，数据并行，模型并行，流水线",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释大模型训练中的并行策略，包括数据并行、张量并行、流水线并行的原理和组合方式。\n\n**来源：** LLM 面试题整理\n**标签：** 并行训练，数据并行，模型并行，流水线",
+    "coreFormula": "GPU0: 模型副本 + 数据批次 0 → 梯度 0\nGPU1: 模型副本 + 数据批次 1 → 梯度 1\nGPU2: 模型副本 + 数据批次 2 → 梯度 2\n       ↓ All-Reduce 聚合梯度\n所有 GPU: 更新相同模型",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释大模型训练中的并行策略，包括数据并行、张量并行、流水线并行的原理和组合方式。\n\n**来源：** LLM 面试题整理\n**标签：** 并行训练，数据并行，模型并行，流水线",
+        "code": {
+          "language": "text",
+          "code": "GPU0: 模型副本 + 数据批次 0 → 梯度 0\nGPU1: 模型副本 + 数据批次 1 → 梯度 1\nGPU2: 模型副本 + 数据批次 2 → 梯度 2\n       ↓ All-Reduce 聚合梯度\n所有 GPU: 更新相同模型"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**并行训练需求：**\n- 模型太大，单卡放不下\n- 数据太多，单机训练太慢\n- 需要多机多卡协同训练\n\n**三种并行策略：**\n\n**1. 数据并行（Data Parallelism）：**\n```\nGPU0: 模型副本 + 数据批次 0 → 梯度 0\nGPU1: 模型副本 + 数据批次 1 → 梯度 1\nGPU2: 模型副本 + 数据批次 2 → 梯度 2\n       ↓ All-Reduce 聚合梯度\n所有 GPU: 更新相同模型\n```\n- **原理：** 每卡保存完整模型，处理不同数据\n- **通信：** 每步 All-Reduce 梯度\n- **适用：** 模型能放入单卡\n- **扩展性：** 受限于单卡显存\n\n**2. 张量并行（Tensor Parallelism）：**\n```python\n# 将矩阵乘法拆分到多卡\n# Y = XA + B\n\n# 卡 0: Y0 = XA0 + B0\n# 卡 1: Y1 = XA1 + B1\n# 输出：Y = concat(Y0, Y1)\n\n# 典型切分位置：\n# - Attention 的 QKV 投影\n# - FFN 的第一层和第二层\n```\n- **原理：** 将单层内的矩阵拆分到多卡\n- **通信：** 层内频繁通信（每算子）\n- **适用：** 超大模型单层\n- **典型：** Megatron-LM\n\n**3. 流水线并行（Pipeline Parallelism）：**\n```\nGPU0: Layer 1-8   → 微批次 0,1,2,3\nGPU1: Layer 9-16  → 微批次 0,1,2,3\nGPU2: Layer 17-24 → 微批次 0,1,2,3\nGPU3: Layer 25-32 → 微批次 0,1,2,3\n```\n- **原理：** 将模型层切分到不同卡\n- **通信：** 层间传递激活和梯度\n- **挑战：** 流水线气泡（GPU 空闲）\n- **优化：** GPipe、1F1B、Interleaved\n\n**3D 并行（组合策略）：**\n```\n总 GPU 数 = 数据并行度 × 张量并行度 × 流水线并行度\n\n示例（训练 175B 模型）：\n- 数据并行：8\n- 张量并行：8\n- 流水线并行：16\n- 总 GPU：8 × 8 × 16 = 1024\n```\n\n**ZeRO 优化（DeepSpeed）：**\n```\nZeRO-1: 优化器状态分片\nZeRO-2: 优化器 + 梯度分片\nZeRO-3: 优化器 + 梯度 + 参数分片\n```\n- 进一步减少显存占用\n- 支持更大模型\n\n**通信优化：**\n- 梯度累积：减少通信频率\n- 混合精度：减少通信量\n- 重叠计算和通信：隐藏延迟\n\n**实践建议：**\n```python\n# 模型 < 单卡显存：纯数据并行\n# 模型 > 单卡显存：张量并行 + 数据并行\n# 模型 >> 单卡显存：3D 并行 + ZeRO\n\n# 配置示例（Megatron-DeepSpeed）\n{\n    \"tensor_model_parallel_size\": 8,\n    \"pipeline_model_parallel_size\": 16,\n    \"data_parallel_size\": 8,\n    \"zero_optimization\": {\"stage\": 3}\n}\n```",
+        "code": {
+          "language": "python",
+          "code": "# 将矩阵乘法拆分到多卡\n# Y = XA + B\n\n# 卡 0: Y0 = XA0 + B0\n# 卡 1: Y1 = XA1 + B1\n# 输出：Y = concat(Y0, Y1)\n\n# 典型切分位置：\n# - Attention 的 QKV 投影\n# - FFN 的第一层和第二层"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 三种并行的原理和差异\n- **能力：** 设计多机训练配置\n- **思维：** 理解计算 - 通信权衡",
+        "code": {
+          "language": "text",
+          "code": "GPU0: Layer 1-8   → 微批次 0,1,2,3\nGPU1: Layer 9-16  → 微批次 0,1,2,3\nGPU2: Layer 17-24 → 微批次 0,1,2,3\nGPU3: Layer 25-32 → 微批次 0,1,2,3"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 流水线并行的气泡如何计算？（5 分）\n2. 1F1B 调度如何减少气泡？（5 分）\n3. ZeRO-3 的通信开销有多大？（5 分）\n4. 什么是序列并行？（5 分）\n5. 如何选择合适的并行策略组合？（5 分）",
+        "code": {
+          "language": "text",
+          "code": "总 GPU 数 = 数据并行度 × 张量并行度 × 流水线并行度\n\n示例（训练 175B 模型）：\n- 数据并行：8\n- 张量并行：8\n- 流水线并行：16\n- 总 GPU：8 × 8 × 16 = 1024"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "并行训练是训练大模型的基础设施，理解它才能驾驭千卡集群。",
+        "code": {
+          "language": "text",
+          "code": "ZeRO-1: 优化器状态分片\nZeRO-2: 优化器 + 梯度分片\nZeRO-3: 优化器 + 梯度 + 参数分片"
+        }
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本",
+        "code": {
+          "language": "python",
+          "code": "# 模型 < 单卡显存：纯数据并行\n# 模型 > 单卡显存：张量并行 + 数据并行\n# 模型 >> 单卡显存：3D 并行 + ZeRO\n\n# 配置示例（Megatron-DeepSpeed）\n{\n    \"tensor_model_parallel_size\": 8,\n    \"pipeline_model_parallel_size\": 16,\n    \"data_parallel_size\": 8,\n    \"zero_optimization\": {\"stage\": 3}\n}"
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "三种并行的原理和差异",
+    "ability": "设计多机训练配置",
+    "thinking": "理解计算 - 通信权衡"
+  },
+  "followUpQuestions": [
+    {
+      "question": "流水线并行的气泡如何计算？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "1F1B 调度如何减少气泡？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "ZeRO-3 的通信开销有多大？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是序列并行？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何选择合适的并行策略组合？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.373Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

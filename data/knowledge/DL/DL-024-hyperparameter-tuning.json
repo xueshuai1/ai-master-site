@@ -1,0 +1,138 @@
+{
+  "id": "DL-024-hyperparameter-tuning",
+  "title": "DL-024-hyperparameter-tuning",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 3,
+  "abstract": " DL-024 ⭐⭐⭐ Hyperparameter Tuning Strategies\n\n Question\nWhat are hyperparameters? Explain strategies for hyperparameter tuning in deep learning.\n\n Answer\n\n What are Hyperparameters?\nHyperparameters are configuration settings that control the training process. Unlike weights, they are set before training and not learned from data.\n\n Common Hyperparameters\n\n- Learning rate\n- Batch size\n- Number of layers\n- Number of neurons per layer\n- Dropout rate\n- Optimizer parameters\n- Activa...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are hyperparameters? Explain strategies for hyperparameter tuning in deep learning."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What are Hyperparameters?",
+      "level": 2,
+      "content": "**Hyperparameters** are configuration settings that control the training process. Unlike weights, they are set before training and not learned from data."
+    },
+    {
+      "id": "sec-4",
+      "title": "Common Hyperparameters",
+      "level": 2,
+      "content": "```\n- Learning rate\n- Batch size\n- Number of layers\n- Number of neurons per layer\n- Dropout rate\n- Optimizer parameters\n- Activation functions\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Tuning Strategies",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "1. Manual Search",
+      "level": 1,
+      "content": "```\nProcess: Try values based on intuition and experience\n✅ Simple, no overhead\n❌ Time-consuming, suboptimal\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "2. Grid Search",
+      "level": 1,
+      "content": "```\nProcess: Try all combinations from predefined grid\n✅ Exhaustive, finds best in grid\n❌ Computationally expensive\n❌ Doesn't scale well\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "3. Random Search",
+      "level": 1,
+      "content": "```\nProcess: Randomly sample from hyperparameter space\n✅ More efficient than grid search\n✅ Can find good values with fewer trials\n❌ Still random, may miss optimal\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "4. Bayesian Optimization",
+      "level": 1,
+      "content": "```\nProcess: Build probabilistic model, select promising values\n✅ Sample-efficient\n✅ Finds good values quickly\n❌ More complex implementation\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "Tools",
+      "level": 2,
+      "content": "```\n- Optuna\n- Hyperopt\n- Ray Tune\n- Keras Tuner\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "5. Automated Hyperparameter Tuning",
+      "level": 1,
+      "content": "```\n- AutoML platforms\n- Neural Architecture Search (NAS)\n- Population-based training\n```\n\n---"
+    },
+    {
+      "id": "sec-12",
+      "title": "Practical Guidelines",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-13",
+      "title": "Learning Rate",
+      "level": 2,
+      "content": "```\nRange: 0.00001 to 0.1\nStrategy: Log-uniform sampling\nTip: Use learning rate finder\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "Batch Size",
+      "level": 2,
+      "content": "```\nCommon values: 32, 64, 128, 256\nConsiderations: GPU memory, gradient stability\nTip: Powers of 2 for GPU efficiency\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "Number of Layers",
+      "level": 2,
+      "content": "```\nStart small, increase if underfitting\nTypical: 2-10 layers for most tasks\nVery deep: 50+ layers (ResNet)\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "Dropout Rate",
+      "level": 2,
+      "content": "```\nRange: 0.1 to 0.5\nFC layers: 0.5\nConv layers: 0.2-0.3\n```\n\n---"
+    },
+    {
+      "id": "sec-17",
+      "title": "Best Practices",
+      "level": 1,
+      "content": "```\n✅ Start with default/recommended values\n✅ Tune learning rate first (most important)\n✅ Use validation set (not test set)\n✅ Early stopping to save time\n✅ Document all experiments\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-19",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-20",
+      "title": "Tags: [hyperparameters, tuning, grid-search, bayesian-optimization, AutoML]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

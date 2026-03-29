@@ -1,0 +1,288 @@
+{
+  "id": "DL-016-optimizers-comparison",
+  "title": "DL-016-optimizers-comparison",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.387Z",
+  "updatedAt": "2026-03-29T14:57:53.387Z",
+  "readTime": 9,
+  "abstract": " DL-016 ⭐⭐⭐ Compare Optimizers: SGD, Momentum, RMSprop, and Adam\n\n Question\nCompare different optimization algorithms used in deep learning: SGD, Momentum, RMSprop, and Adam. What are their advantages and when to use each?\n\n Answer\n\n What is an Optimizer?\nAn optimizer is an algorithm that updates neural network weights to minimize the loss function. It determines how to use the gradient to update weights efficiently.\n\n---\n\n 1. SGD (Stochastic Gradient Descent)\n\n Update Rule\n\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "Compare different optimization algorithms used in deep learning: SGD, Momentum, RMSprop, and Adam. What are their advantages and when to use each?"
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is an Optimizer?",
+      "level": 2,
+      "content": "An **optimizer** is an algorithm that updates neural network weights to minimize the loss function. It determines how to use the gradient to update weights efficiently.\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "1. SGD (Stochastic Gradient Descent)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "Update Rule",
+      "level": 2,
+      "content": "```\nw = w - α × ∇L\n\nWhere:\n- α: Learning rate\n- ∇L: Gradient of loss\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Simple, easy to understand\n✅ Theoretically well-understood\n✅ Can find good minima with proper tuning\n❌ Slow convergence\n❌ May get stuck in local minima\n❌ Noisy updates (high variance)\n❌ Requires careful learning rate tuning\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- When you need reproducibility\n- Small datasets\n- Educational purposes\n- Sometimes better generalization than Adam\n\n---"
+    },
+    {
+      "id": "sec-8",
+      "title": "2. SGD with Momentum",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-9",
+      "title": "Update Rule",
+      "level": 2,
+      "content": "```\nv = β × v + α × ∇L    # Update velocity\nw = w - v             # Update weights\n\nWhere:\n- v: Velocity (accumulated gradient)\n- β: Momentum coefficient (typically 0.9)\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "Intuition",
+      "level": 2,
+      "content": "```\nImagine a ball rolling down a hill:\n- Gains momentum in consistent directions\n- Slows down when gradient changes direction\n- Smooths out noisy gradients\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Faster convergence than SGD\n✅ Reduces oscillations\n✅ Helps escape shallow local minima\n✅ Still relatively simple\n❌ Adds one more hyperparameter (β)\n❌ May overshoot minima\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Typical Parameters",
+      "level": 2,
+      "content": "```python\noptimizer = torch.optim.SGD(\n    model.parameters(),\n    lr=0.01,\n    momentum=0.9,          # Standard value\n    weight_decay=1e-4      # L2 regularization\n)\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "3. RMSprop (Root Mean Square Propagation)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "Update Rule",
+      "level": 2,
+      "content": "```\nE[g²] = β × E[g²] + (1-β) × (∇L)²   # Moving average of squared gradients\nw = w - α × ∇L / (√E[g²] + ε)       # Normalize by RMS\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "Key Idea",
+      "level": 2,
+      "content": "```\n- Adapts learning rate per parameter\n- Large gradients → Small effective LR\n- Small gradients → Large effective LR\n- Prevents exploding/vanishing updates\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Adaptive learning rates\n✅ Works well for RNNs\n✅ Handles sparse gradients well\n✅ No manual LR tuning per parameter\n❌ More complex than SGD\n❌ Another hyperparameter (β, typically 0.99)\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- RNNs and LSTMs\n- Non-stationary objectives\n- When gradients vary significantly across parameters\n\n---"
+    },
+    {
+      "id": "sec-18",
+      "title": "4. Adam (Adaptive Moment Estimation) ⭐ Most Popular",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-19",
+      "title": "Update Rule",
+      "level": 2,
+      "content": "```\n# First moment (mean of gradients)\nm = β₁ × m + (1-β₁) × ∇L\n\n# Second moment (uncentered variance)\nv = β₂ × v + (1-β₂) × (∇L)²\n\n# Bias correction\nm̂ = m / (1 - β₁ᵗ)\nv̂ = v / (1 - β₂ᵗ)\n\n# Update\nw = w - α × m̂ / (√v̂ + ε)\n```"
+    },
+    {
+      "id": "sec-20",
+      "title": "Combines Best of Both",
+      "level": 2,
+      "content": "```\nMomentum (from SGD with Momentum):\n- Uses first moment (m) for acceleration\n\nRMSprop:\n- Uses second moment (v) for adaptive LR\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Fast convergence\n✅ Adaptive learning rates per parameter\n✅ Works well out-of-box\n✅ Default choice for most problems\n✅ Handles sparse gradients\n✅ Robust to hyperparameter choices\n❌ May generalize worse than SGD\n❌ More memory (stores m and v for each parameter)\n❌ Can converge to sharp minima\n```"
+    },
+    {
+      "id": "sec-22",
+      "title": "Default Parameters",
+      "level": 2,
+      "content": "```python\noptimizer = torch.optim.Adam(\n    model.parameters(),\n    lr=0.001,            # Default LR\n    betas=(0.9, 0.999),  # β₁, β₂\n    eps=1e-8,            # Numerical stability\n    weight_decay=0       # L2 regularization (use AdamW for decoupled)\n)\n```\n\n---"
+    },
+    {
+      "id": "sec-23",
+      "title": "5. AdamW (Adam with Decoupled Weight Decay)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-24",
+      "title": "Problem with Adam",
+      "level": 2,
+      "content": "```\nIn Adam, weight decay is coupled with adaptive LR\nL2 regularization doesn't work as expected\n```"
+    },
+    {
+      "id": "sec-25",
+      "title": "AdamW Solution",
+      "level": 2,
+      "content": "```\nDecouples weight decay from gradient-based update\nProper L2 regularization\n```"
+    },
+    {
+      "id": "sec-26",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- **Transformers** (BERT, GPT, etc.)\n- When using weight decay with Adam\n- Modern best practice\n\n```python\noptimizer = torch.optim.AdamW(\n    model.parameters(),\n    lr=0.001,\n    betas=(0.9, 0.999),\n    weight_decay=0.01      # Proper weight decay\n)\n```\n\n---"
+    },
+    {
+      "id": "sec-27",
+      "title": "Optimizer Comparison Table",
+      "level": 1,
+      "content": "| Optimizer | Convergence | Memory | Hyperparams | Best For |\n|-----------|-------------|--------|-------------|----------|\n| **SGD** | Slow | Low | 1 (LR) | Small datasets, reproducibility |\n| **SGD+Momentum** | Medium | Low | 2 (LR, β) | CNNs, when Adam overfits |\n| **RMSprop** | Fast | Medium | 2 (LR, β) | RNNs, online learning |\n| **Adam** | **Fastest** | High | 3 (LR, β₁, β₂) | **Default choice** |\n| **AdamW** | **Fastest** | High | 4 (LR, β₁, β₂, WD) | **Transformers, modern DL** |\n\n---"
+    },
+    {
+      "id": "sec-28",
+      "title": "When to Use Each Optimizer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-29",
+      "title": "Adam/AdamW (Default Choice) ✅",
+      "level": 2,
+      "content": "```\n✓ Most deep learning tasks\n✓ When you want fast convergence\n✓ Limited hyperparameter tuning time\n✓ Transformers and attention models\n✓ Computer vision (most cases)\n✓ NLP tasks\n```"
+    },
+    {
+      "id": "sec-30",
+      "title": "SGD with Momentum",
+      "level": 2,
+      "content": "```\n✓ When Adam overfits\n✓ CNNs (sometimes better generalization)\n✓ When you need reproducibility\n✓ Well-studied architectures (ResNet, etc.)\n✓ When memory is limited\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "RMSprop",
+      "level": 2,
+      "content": "```\n✓ RNNs and LSTMs\n✓ Reinforcement learning\n✓ Non-stationary problems\n✓ When gradients vary a lot\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "Plain SGD",
+      "level": 2,
+      "content": "```\n✓ Educational purposes\n✓ When you need theoretical guarantees\n✓ Very small datasets\n✓ Convex optimization problems\n```\n\n---"
+    },
+    {
+      "id": "sec-33",
+      "title": "Practical Recommendations",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-34",
+      "title": "For CNNs",
+      "level": 2,
+      "content": "```python\n# Option 1: Adam (faster convergence)\noptimizer = torch.optim.Adam(model.parameters(), lr=0.001)\n\n# Option 2: SGD+Momentum (sometimes better generalization)\noptimizer = torch.optim.SGD(\n    model.parameters(), \n    lr=0.1, \n    momentum=0.9,\n    weight_decay=1e-4\n)\n```"
+    },
+    {
+      "id": "sec-35",
+      "title": "For RNNs/Transformers",
+      "level": 2,
+      "content": "```python\n# Always use AdamW\noptimizer = torch.optim.AdamW(\n    model.parameters(),\n    lr=0.0001,\n    betas=(0.9, 0.999),\n    weight_decay=0.01\n)\n```"
+    },
+    {
+      "id": "sec-36",
+      "title": "For Fine-tuning",
+      "level": 2,
+      "content": "```python\n# Lower learning rate, AdamW\noptimizer = torch.optim.AdamW(\n    model.parameters(),\n    lr=0.00003,  # Much lower\n    weight_decay=0.01\n)\n```\n\n---"
+    },
+    {
+      "id": "sec-37",
+      "title": "Convergence Comparison",
+      "level": 1,
+      "content": "```\nLoss\n │\n │  SGD ────────────────────────→ (slow but steady)\n │\n │  Momentum ─────∼∼∼∼∼→ (faster, some oscillation)\n │\n │  Adam ∼∼→ (fastest convergence!)\n │\n └─────────────────────────────────→ Epochs\n```\n\n---"
+    },
+    {
+      "id": "sec-38",
+      "title": "Common Mistakes",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-39",
+      "title": "❌ Using Adam with Wrong Learning Rate",
+      "level": 2,
+      "content": "```python\n# Wrong: Using SGD learning rate with Adam\noptimizer = Adam(model.parameters(), lr=0.1)  # Too high!\n\n# Correct: Lower LR for Adam\noptimizer = Adam(model.parameters(), lr=0.001)\n```"
+    },
+    {
+      "id": "sec-40",
+      "title": "❌ Not Using AdamW for Transformers",
+      "level": 2,
+      "content": "```python\n# Suboptimal: Adam with weight decay\noptimizer = Adam(model.parameters(), lr=0.001, weight_decay=0.01)\n\n# Better: AdamW (decoupled weight decay)\noptimizer = AdamW(model.parameters(), lr=0.001, weight_decay=0.01)\n```"
+    },
+    {
+      "id": "sec-41",
+      "title": "❌ Switching Optimizers Mid-Training",
+      "level": 2,
+      "content": "```python\n# Don't do this!\noptimizer = Adam(model.parameters())\n# ... train for 10 epochs ...\noptimizer = SGD(model.parameters())  # Loses momentum state!\n```"
+    },
+    {
+      "id": "sec-42",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- **Adam/AdamW** is default choice for most tasks (fast, works out-of-box)\n- **SGD+Momentum** sometimes generalizes better for CNNs\n- **RMSprop** works well for RNNs\n- Adam combines momentum + adaptive learning rates\n- Use AdamW (not Adam) when using weight decay\n- Learning rate ranges differ between optimizers"
+    },
+    {
+      "id": "sec-43",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-44",
+      "title": "Category: Optimization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-45",
+      "title": "Tags: [optimizers, SGD, Adam, RMSprop, momentum, training]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "LLM-自注意力机制计算过程",
+  "title": "自注意力机制的计算过程",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "自注意力",
+    "QKV",
+    "计算复杂度",
+    "优化"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "详细说明自注意力机制的计算步骤，并分析其时间和空间复杂度。\n\n**来源：** LLM 面试题整理\n**标签：** 自注意力，QKV，计算复杂度，优化",
+  "requirements": [],
+  "answer": {
+    "summary": "详细说明自注意力机制的计算步骤，并分析其时间和空间复杂度。\n\n**来源：** LLM 面试题整理\n**标签：** 自注意力，QKV，计算复杂度，优化",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "详细说明自注意力机制的计算步骤，并分析其时间和空间复杂度。\n\n**来源：** LLM 面试题整理\n**标签：** 自注意力，QKV，计算复杂度，优化"
+      },
+      {
+        "title": "参考答案",
+        "content": "**计算步骤：**\n\n1. **线性投影：**\n   - 输入 X ∈ R^(n×d) 投影为 Q, K, V\n   - Q = XW_Q, K = XW_K, V = XW_V\n\n2. **注意力分数计算：**\n   - 计算 Q 和 K 的点积：QK^T ∈ R^(n×n)\n   - 缩放：除以√d_k\n\n3. **Softmax 归一化：**\n   - 每行做 softmax，得到注意力权重矩阵 A\n\n4. **加权求和：**\n   - 输出 = AV ∈ R^(n×d)\n\n**复杂度分析：**\n- 时间复杂度：O(n²d)，n 为序列长度，d 为维度\n- 空间复杂度：O(n²) 存储注意力矩阵\n\n**优化方案：**\n- FlashAttention：减少 HBM 访问\n- 稀疏注意力：降低 n²依赖\n- 线性注意力：用核函数近似"
+      },
+      {
+        "title": "考察重点",
+        "content": "- **理解深度：** QKV 的物理意义与计算流程\n- **知识广度：** 复杂度分析与优化方向\n- **应用能力：** 实际工程中的注意力优化"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么 QK^T 能衡量相关性？（5 分）\n2. 多头注意力的计算方式是什么？（5 分）\n3. FlashAttention 的核心思想是什么？（5 分）\n4. 如何降低自注意力的内存占用？（5 分）\n5. 解释 KV Cache 在推理中的作用。（5 分）"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么 QK^T 能衡量相关性？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "多头注意力的计算方式是什么？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "FlashAttention 的核心思想是什么？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何降低自注意力的内存占用？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "解释 KV Cache 在推理中的作用。（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.375Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

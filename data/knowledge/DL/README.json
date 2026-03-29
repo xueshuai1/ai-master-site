@@ -1,0 +1,114 @@
+{
+  "id": "README",
+  "title": "README",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.389Z",
+  "updatedAt": "2026-03-29T14:57:53.389Z",
+  "readTime": 5,
+  "abstract": " Deep Learning Interview Questions - Index\n\n Collection Summary\n- Total Questions: 30\n- Quality Target: 90+ (comprehensive answers with examples, code, diagrams)\n- Difficulty: ⭐⭐⭐ (Advanced level)\n- Category: Deep Learning (DL)\n- Last Updated: 2026-03-29\n\n---\n\n Question List\n\n Fundamentals (1-5)\n| ID | Topic | File |\n|----|-------|------|\n| DL-001 | What is Deep Learning | DL-001-what-is-deep-learning.md |\n| DL-002 | Neural Networks Components | DL-002-neural-networks...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Collection Summary",
+      "level": 1,
+      "content": "- **Total Questions:** 30\n- **Quality Target:** 90+ (comprehensive answers with examples, code, diagrams)\n- **Difficulty:** ⭐⭐⭐ (Advanced level)\n- **Category:** Deep Learning (DL)\n- **Last Updated:** 2026-03-29\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "Question List",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "Fundamentals (1-5)",
+      "level": 2,
+      "content": "| ID | Topic | File |\n|----|-------|------|\n| DL-001 | What is Deep Learning | DL-001-what-is-deep-learning.md |\n| DL-002 | Neural Networks Components | DL-002-neural-networks-components.md |\n| DL-003 | Backpropagation | DL-003-backpropagation.md |\n| DL-004 | Activation Functions | DL-004-activation-functions.md |\n| DL-005 | Gradient Descent | DL-005-gradient-descent.md |"
+    },
+    {
+      "id": "sec-4",
+      "title": "CNN & Computer Vision (6-7, 28)",
+      "level": 2,
+      "content": "| ID | Topic | File |\n|----|-------|------|\n| DL-006 | CNN Architecture | DL-006-cnn-architecture.md |\n| DL-007 | Pooling in CNN | DL-007-pooling-cnn.md |\n| DL-028 | Convolution Operation | DL-028-convolution-operation.md |"
+    },
+    {
+      "id": "sec-5",
+      "title": "RNN & Sequence Modeling (8-9, 29)",
+      "level": 2,
+      "content": "| ID | Topic | File |\n|----|-------|------|\n| DL-008 | RNN Architecture | DL-008-rnn-architecture.md |\n| DL-009 | LSTM Networks | DL-009-lstm-networks.md |\n| DL-029 | Sequence Modeling Comparison | DL-029-sequence-modeling.md |"
+    },
+    {
+      "id": "sec-6",
+      "title": "Training & Optimization (10-16)",
+      "level": 2,
+      "content": "| ID | Topic | File |\n|----|-------|------|\n| DL-010 | Overfitting Prevention | DL-010-overfitting-prevention.md |\n| DL-011 | Dropout Regularization | DL-011-dropout-regularization.md |\n| DL-012 | Batch Normalization | DL-012-batch-normalization.md |\n| DL-013 | Weight Initialization | DL-013-weight-initialization.md |\n| DL-014 | Vanishing/Exploding Gradients | DL-014-vanishing-exploding-gradients.md |\n| DL-015 | Learning Rate | DL-015-learning-rate.md |\n| DL-016 | Optimizers Comparison | DL-016-optimizers-comparison.md |"
+    },
+    {
+      "id": "sec-7",
+      "title": "Advanced Architectures (17-20, 26)",
+      "level": 2,
+      "content": "| ID | Topic | File |\n|----|-------|------|\n| DL-017 | Transfer Learning | DL-017-transfer-learning.md |\n| DL-018 | Attention Mechanism | DL-018-attention-mechanism.md |\n| DL-019 | Transformer Architecture | DL-019-transformer-architecture.md |\n| DL-020 | GAN Architecture | DL-020-gan-architecture.md |\n| DL-026 | Network Architectures | DL-026-network-architectures.md |"
+    },
+    {
+      "id": "sec-8",
+      "title": "Practical Skills (21-25, 27, 30)",
+      "level": 2,
+      "content": "| ID | Topic | File |\n|----|-------|------|\n| DL-021 | Loss Functions | DL-021-loss-functions.md |\n| DL-022 | Evaluation Metrics | DL-022-evaluation-metrics.md |\n| DL-023 | Data Augmentation | DL-023-data-augmentation.md |\n| DL-024 | Hyperparameter Tuning | DL-024-hyperparameter-tuning.md |\n| DL-025 | Embeddings | DL-025-embeddings.md |\n| DL-027 | Regularization Techniques | DL-027-regularization-techniques.md |\n| DL-030 | Best Practices | DL-030-best-practices.md |\n\n---"
+    },
+    {
+      "id": "sec-9",
+      "title": "Topic Coverage",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "Core Concepts",
+      "level": 2,
+      "content": "- ✅ Deep Learning fundamentals\n- ✅ Neural network architecture\n- ✅ Backpropagation and training\n- ✅ Activation functions\n- ✅ Optimization algorithms"
+    },
+    {
+      "id": "sec-11",
+      "title": "Architectures",
+      "level": 2,
+      "content": "- ✅ CNN (Convolutional Neural Networks)\n- ✅ RNN/LSTM (Recurrent Networks)\n- ✅ Transformers and Attention\n- ✅ GANs (Generative Models)"
+    },
+    {
+      "id": "sec-12",
+      "title": "Training Techniques",
+      "level": 2,
+      "content": "- ✅ Regularization (Dropout, L1/L2, BatchNorm)\n- ✅ Weight initialization\n- ✅ Learning rate scheduling\n- ✅ Overfitting prevention\n- ✅ Transfer learning"
+    },
+    {
+      "id": "sec-13",
+      "title": "Practical Skills",
+      "level": 2,
+      "content": "- ✅ Loss functions\n- ✅ Evaluation metrics\n- ✅ Data augmentation\n- ✅ Hyperparameter tuning\n- ✅ Best practices and debugging\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "Quality Features",
+      "level": 1,
+      "content": "Each question includes:\n- ✅ Clear question statement\n- ✅ Comprehensive answer with explanations\n- ✅ Mathematical formulas where applicable\n- ✅ Code examples (PyTorch)\n- ✅ Comparison tables\n- ✅ Visual diagrams (ASCII)\n- ✅ Use cases and applications\n- ✅ Common mistakes to avoid\n- ✅ Key takeaways\n- ✅ Difficulty rating and tags\n\n---"
+    },
+    {
+      "id": "sec-15",
+      "title": "Usage",
+      "level": 1,
+      "content": "These questions are suitable for:\n- Deep Learning engineer interviews\n- Machine Learning engineer positions\n- AI researcher roles\n- Technical screening\n- Interview preparation\n- Knowledge assessment\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "Statistics",
+      "level": 1,
+      "content": "- **Total Files:** 30\n- **Total Words:** ~150,000+\n- **Average per Question:** ~5,000 words\n- **Code Examples:** 50+\n- **Diagrams/Tables:** 100+\n\n---\n\n*Generated: 2026-03-29*\n*Quality Target: 90+ ✅*"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

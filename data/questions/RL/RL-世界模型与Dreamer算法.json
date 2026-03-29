@@ -1,0 +1,66 @@
+{
+  "id": "RL-世界模型与Dreamer算法",
+  "title": "世界模型与 Dreamer 算法",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐⭐",
+  "tags": [
+    "世界模型",
+    "Dreamer",
+    "Model-Based RL",
+    "潜在空间"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "世界模型（World Models）和 Dreamer 是基于模型的 RL 的重要工作，请解释其核心思想和架构。\n\n**来源：** 强化学习面试题整理\n**标签：** 世界模型，Dreamer, Model-Based RL, 潜在空间",
+  "requirements": [],
+  "answer": {
+    "summary": "世界模型（World Models）和 Dreamer 是基于模型的 RL 的重要工作，请解释其核心思想和架构。\n\n**来源：** 强化学习面试题整理\n**标签：** 世界模型，Dreamer, Model-Based RL, 潜在空间",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "世界模型（World Models）和 Dreamer 是基于模型的 RL 的重要工作，请解释其核心思想和架构。\n\n**来源：** 强化学习面试题整理\n**标签：** 世界模型，Dreamer, Model-Based RL, 潜在空间"
+      },
+      {
+        "title": "参考答案",
+        "content": "**世界模型核心思想：**\n学习环境的压缩表示（潜在空间），在潜在空间中进行\"想象\"和规划。\n\n**Dreamer 架构：**\n\n1. **RSSM（Recurrent State Space Model）：**\n   - 学习潜在状态表示\n   - 预测下一状态和奖励\n   - 结合确定性 + 随机性状态\n\n2. **编码器：**\n   - 将观测编码为潜在状态\n   - CNN + RNN\n\n3. **解码器：**\n   - 从潜在状态重建观测\n   - 验证表示质量\n\n4. **Critic 和 Actor：**\n   - 在潜在空间中学习\n   - 用想象轨迹训练\n\n**训练流程：**\n1. 收集真实经验\n2. 训练世界模型（预测）\n3. 在模型中\"想象\"轨迹\n4. 用想象轨迹训练 Actor-Critic\n\n**优势：**\n- 样本效率极高\n- 可以\"做梦\"学习\n- 规划能力强\n\n**Dreamer 版本：**\n- DreamerV1: 基础版本\n- DreamerV2: 改进 RSSM\n- DreamerV3: 通用智能体\n\n**与 Model-Free 对比：**\n- 样本效率：Dreamer 高 10-100 倍\n- 计算成本：Dreamer 更高\n- 渐近性能：相当"
+      },
+      {
+        "title": "考察重点",
+        "content": "- 世界模型的理解\n- Model-Based RL 前沿\n- 潜在空间学习"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: 潜在空间",
+        "content": "**问题：** 为什么用潜在空间而不是原始状态？\n**答案：** 压缩冗余信息、去除噪声、便于预测和规划。"
+      },
+      {
+        "title": "追问 2: 想象轨迹",
+        "content": "**问题：** \"想象\"轨迹是什么？\n**答案：** 用学到的世界模型 rollout，无需与环境交互，生成合成经验。"
+      },
+      {
+        "title": "深入理解",
+        "content": "世界模型代表了 Model-Based RL 的最先进水平，是样本效率最高的方法之一。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.376Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

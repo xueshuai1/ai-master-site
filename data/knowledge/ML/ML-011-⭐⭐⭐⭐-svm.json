@@ -1,0 +1,114 @@
+{
+  "id": "ML-011-⭐⭐⭐⭐-svm",
+  "title": "Support Vector Machine (支持向量机)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "SVM",
+    "Kernel Trick",
+    "Margin",
+    "Support Vectors",
+    "Classification"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.392Z",
+  "readTime": 8,
+  "abstract": " 题目描述\n请详细解释 SVM (支持向量机) 的原理。什么是支持向量？核技巧 (Kernel Trick) 是什么？常用的核函数有哪些？SVM 的优缺点是什么？\n\n 参考答案\n\n SVM 核心思想\n\n目标： 找到一个超平面，最大化不同类别之间的间隔 (Margin)。\n\n关键概念：\n- 支持向量： 距离超平面最近的样本点\n- 间隔 (Margin)： 支持向量到超平面的距离\n- 硬间隔： 所有样本都正确分类（线性可分）\n- 软间隔： 允许部分样本分类错误（线性不可分）\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn import svm\nfrom sklearn.datasets import make_blobs\n\n 生成数据\nX, y = make_blobs(n_samples=50, centers=2, cluster_std=0.8, random_state=42)\n\n 训练 SVM\nclf = svm....",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释 SVM (支持向量机) 的原理。什么是支持向量？核技巧 (Kernel Trick) 是什么？常用的核函数有哪些？SVM 的优缺点是什么？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "SVM 核心思想",
+      "level": 2,
+      "content": "**目标：** 找到一个超平面，最大化不同类别之间的间隔 (Margin)。\n\n**关键概念：**\n- **支持向量：** 距离超平面最近的样本点\n- **间隔 (Margin)：** 支持向量到超平面的距离\n- **硬间隔：** 所有样本都正确分类（线性可分）\n- **软间隔：** 允许部分样本分类错误（线性不可分）\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn import svm\nfrom sklearn.datasets import make_blobs\n\n# 生成数据\nX, y = make_blobs(n_samples=50, centers=2, cluster_std=0.8, random_state=42)\n\n# 训练 SVM\nclf = svm.SVC(kernel='linear', C=1.0)\nclf.fit(X, y)\n\n# 获取支持向量\nsupport_vectors = clf.support_vectors_\n\n# 可视化\nplt.figure(figsize=(10, 8))\n\n# 决策边界\nxx, yy = np.meshgrid(np.linspace(X[:, 0].min() - 1, X[:, 0].max() + 1, 500),\n                     np.linspace(X[:, 1].min() - 1, X[:, 1].max() + 1, 500))\nZ = clf.decision_function(np.c_[xx.ravel(), yy.ravel()])\nZ = Z.reshape(xx.shape)\n\nplt.contour(xx, yy, Z, levels=[-1, 0, 1], colors=['blue', 'black', 'red'], \n            linestyles=['--', '-', '--'], linewidths=[2, 3, 2])\nplt.contourf(xx, yy, Z, levels=[-1, 0, 1], colors=['blue', 'red'], alpha=0.1)\n\n# 数据点\nplt.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis', s=50, edgecolors='k', alpha=0.6)\n\n# 支持向量\nplt.scatter(support_vectors[:, 0], support_vectors[:, 1], s=200, \n            facecolors='none', edgecolors='yellow', linewidths=3, \n            marker='o', label='Support Vectors')\n\nplt.xlabel('Feature 1')\nplt.ylabel('Feature 2')\nplt.title('SVM with Support Vectors')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\nprint(f\"Number of support vectors: {len(support_vectors)}\")\nprint(f\"Support vector indices: {clf.support_}\")\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "核函数 (Kernel Functions)",
+      "level": 2,
+      "content": "```python\nfrom sklearn.svm import SVC\nfrom sklearn.preprocessing import StandardScaler\n\n# 常用核函数对比\nkernels = ['linear', 'poly', 'rbf', 'sigmoid']\n\nfig, axes = plt.subplots(2, 2, figsize=(14, 12))\naxes = axes.flatten()\n\n# 生成非线性数据\nfrom sklearn.datasets import make_circles\nX_circles, y_circles = make_circles(n_samples=300, noise=0.1, factor=0.3, random_state=42)\nX_circles = StandardScaler().fit_transform(X_circles)\n\nfor ax, kernel in zip(axes, kernels):\n    if kernel == 'poly':\n        clf = svm.SVC(kernel=kernel, degree=3, gamma='scale', C=1.0)\n    else:\n        clf = svm.SVC(kernel=kernel, gamma='scale', C=1.0)\n    \n    clf.fit(X_circles, y_circles)\n    \n    # 决策边界\n    xx, yy = np.meshgrid(np.linspace(X_circles[:, 0].min() - 0.5, X_circles[:, 0].max() + 0.5, 200),\n                         np.linspace(X_circles[:, 1].min() - 0.5, X_circles[:, 1].max() + 0.5, 200))\n    Z = clf.decision_function(np.c_[xx.ravel(), yy.ravel()])\n    Z = Z.reshape(xx.shape)\n    \n    ax.contourf(xx, yy, Z, levels=50, cmap='RdBu', alpha=0.3)\n    ax.scatter(X_circles[:, 0], X_circles[:, 1], c=y_circles, cmap='viridis', \n               s=30, edgecolors='k', alpha=0.6)\n    ax.set_title(f'Kernel: {kernel}')\n    ax.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\n# 核函数公式\nkernel_formulas = \"\"\"\n核函数对比：\n\n1. Linear (线性核):\n   K(x, x') = x · x'\n   适用：线性可分数据\n\n2. Polynomial (多项式核):\n   K(x, x') = (γ × x · x' + r)^d\n   参数：degree=d, gamma=γ, coef0=r\n   适用：特征交互重要\n\n3. RBF (径向基核，高斯核):\n   K(x, x') = exp(-γ × ||x - x'||²)\n   参数：gamma=γ\n   适用：大多数非线性问题（默认推荐）\n\n4. Sigmoid (S 型核):\n   K(x, x') = tanh(γ × x · x' + r)\n   适用：神经网络替代\n\"\"\"\nprint(kernel_formulas)\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "参数调优",
+      "level": 2,
+      "content": "```python\nfrom sklearn.model_selection import GridSearchCV\n\n# 网格搜索\nparam_grid = {\n    'C': [0.1, 1, 10, 100],\n    'gamma': ['scale', 0.001, 0.01, 0.1, 1],\n    'kernel': ['rbf']\n}\n\ngrid_search = GridSearchCV(\n    SVC(),\n    param_grid,\n    cv=5,\n    scoring='accuracy',\n    n_jobs=-1\n)\n\ngrid_search.fit(X_circles, y_circles)\n\nprint(f\"Best parameters: {grid_search.best_params_}\")\nprint(f\"Best CV score: {grid_search.best_score_:.4f}\")\n\n# C 和 gamma 的影响\n# C: 正则化参数\n# - C 大：低偏差，高方差（硬间隔）\n# - C 小：高偏差，低方差（软间隔）\n\n# gamma: 核系数\n# - gamma 大：低偏差，高方差（复杂边界）\n# - gamma 小：高偏差，低方差（简单边界）\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "SVM 优缺点",
+      "level": 2,
+      "content": "| 优点 | 缺点 |\n|------|------|\n| 在高维空间有效 | 大数据集训练慢 |\n| 内存高效（只用支持向量） | 多分类需要特殊处理 |\n| 核技巧处理非线性 | 对参数和核选择敏感 |\n| 泛化能力强 | 概率输出需要额外计算 |\n| 理论基础强 | 缺失值处理困难 |"
+    },
+    {
+      "id": "sec-7",
+      "title": "实际应用场景",
+      "level": 2,
+      "content": "```python\n# 场景 1: 文本分类（高维稀疏）\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.pipeline import Pipeline\n\ntext_clf = Pipeline([\n    ('tfidf', TfidfVectorizer()),\n    ('clf', SVC(kernel='linear', C=1.0))\n])\n\n# 场景 2: 图像分类\nfrom sklearn.decomposition import PCA\n\nimage_clf = Pipeline([\n    ('pca', PCA(n_components=100)),\n    ('clf', SVC(kernel='rbf', gamma='scale'))\n])\n\n# 场景 3: 异常检测（One-Class SVM）\nfrom sklearn.svm import OneClassSVM\n\noc_svm = OneClassSVM(kernel='rbf', gamma='scale', nu=0.05)\noc_svm.fit(X_train)\n\n# 预测异常值\noutliers = oc_svm.predict(X_test) == -1\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 SVM 的间隔最大化原理\n- ✅ 掌握核技巧和高维映射\n- ✅ 了解常用核函数及选择\n- ✅ 能够调参优化 SVM\n- ✅ 具备实际应用能力"
+    },
+    {
+      "id": "sec-9",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[核方法深入理解]](./ML-029-kernel-methods-deep.md)\n- [[SVM 与逻辑回归对比]](./ML-030-svm-vs-logistic.md)\n- [[One-Class SVM 异常检测]](./ML-031-one-class-svm.md)"
+    },
+    {
+      "id": "sec-10",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "追问 1: 为什么 SVM 只用支持向量？",
+      "level": 2,
+      "content": "**问题：** 支持向量的特殊意义是什么？\n\n**答案：**\n\n```python\n# 支持向量是决定超平面的关键样本\n# 其他样本不影响最终模型\n\n# 数学解释：\n# SVM 的对偶问题：\n# max Σα_i - ½ΣΣα_iα_j y_i y_j K(x_i, x_j)\n# s.t. Σα_i y_i = 0, α_i ≥ 0\n\n# 只有支持向量的 α_i > 0\n# 非支持向量的 α_i = 0\n\n# 决策函数：\n# f(x) = Σ(α_i y_i K(x_i, x)) + b\n#      = Σ_sv(α_i y_i K(x_i, x)) + b  (只含支持向量)\n\n# 实际意义：\n# 1. 模型稀疏（存储高效）\n# 2. 预测快速（只计算支持向量）\n# 3. 鲁棒性强（移除非 SV 不影响模型）\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "追问 2: 如何处理多分类问题？",
+      "level": 2,
+      "content": "**问题：** SVM 原生是二分类，如何扩展到多分类？\n\n**答案：**\n\n```python\nfrom sklearn.svm import SVC\n\n# 方法 1: One-vs-Rest (OvR)\n# 为每个类别训练一个 SVM（该类 vs 其他）\nclf_ovr = SVC(kernel='rbf', decision_function_shape='ovr')\nclf_ovr.fit(X, y_multi)\n\n# 方法 2: One-vs-One (OvO)\n# 为每对类别训练一个 SVM\nclf_ovo = SVC(kernel='rbf', decision_function_shape='ovo')\nclf_ovo.fit(X, y_multi)\n\n# sklearn 默认使用 OvO\n# OvR 适合类别少的情况\n# OvO 适合样本少的情况\n\n# 方法 3: 直接使用多分类 SVM\n# Crammer-Singer 方法\nfrom sklearn.multiclass import OutputCodeClassifier\n\nclf_code = OutputCodeClassifier(SVC(kernel='rbf'))\nclf_code.fit(X, y_multi)\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "追问 3: SVM 与神经网络的对比？",
+      "level": 2,
+      "content": "**问题：** SVM 和神经网络各有什么优势？\n\n**答案：**\n\n```python\n# SVM vs 神经网络\n\ncomparison = \"\"\"\n| 特性 | SVM | 神经网络 |\n|------|-----|---------|\n| 数据量 | 小 - 中等 | 大 - 超大 |\n| 特征维度 | 高维好 | 需要降维 |\n| 调参 | 较简单 | 复杂 |\n| 可解释性 | 较好 | 差 |\n| 训练速度 | 慢（大数据） | 快（GPU） |\n| 泛化能力 | 强（小数据） | 强（大数据） |\n| 非线性 | 核技巧 | 激活函数 |\n| 特征工程 | 重要 | 可自动学习 |\n\n选择建议：\n- 小数据 (<10K): SVM\n- 大数据 (>100K): 神经网络\n- 高维稀疏：SVM（线性核）\n- 图像/文本：神经网络\n- 需要可解释：SVM\n\"\"\"\nprint(comparison)\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**SVM 的核心：** 间隔最大化 + 核技巧\n\n**核技巧的本质：** 隐式映射到高维，避免显式计算\n\n**适用场景：** 中小数据集、高维特征、需要强泛化"
+    },
+    {
+      "id": "sec-15",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

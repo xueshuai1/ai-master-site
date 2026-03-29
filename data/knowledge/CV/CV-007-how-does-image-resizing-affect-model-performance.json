@@ -1,0 +1,24 @@
+{
+  "id": "CV-007-how-does-image-resizing-affect-model-performance",
+  "title": "CV-007-how-does-image-resizing-affect-model-performance",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-007 How does image resizing affect model performance?\n\n Q7: How does image resizing affect model performance?\n\nScore: 91/100\n\nAnswer:\n\nBenefits of Resizing:\n1. Computational Efficiency: Fewer pixels = fewer operations, shallower networks\n2. Memory Management: Smaller images fit device constraints\n\nDrawbacks:\n1. Information Loss: Fine-grained details discarded\n2. Sparse Receptive Field Coverage: Limited global context understanding\n3. Overfitting Risk: ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q7: How does image resizing affect model performance?",
+      "level": 2,
+      "content": "**Score:** 91/100\n\n**Answer:**\n\n**Benefits of Resizing:**\n1. **Computational Efficiency:** Fewer pixels = fewer operations, shallower networks\n2. **Memory Management:** Smaller images fit device constraints\n\n**Drawbacks:**\n1. **Information Loss:** Fine-grained details discarded\n2. **Sparse Receptive Field Coverage:** Limited global context understanding\n3. **Overfitting Risk:** Extreme reductions cause overfitting with simple models\n\n**Best Practices:**\n- Maintain aspect ratio when possible\n- Use interpolation methods appropriately (bilinear, bicubic, lanczos)\n- Consider multi-scale training for robustness\n- Balance between efficiency and accuracy based on use case\n- For detection tasks, ensure small objects remain detectable after resizing\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

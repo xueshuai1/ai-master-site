@@ -1,0 +1,132 @@
+{
+  "id": "ML-010-⭐⭐⭐-kmeans-clustering",
+  "title": "K-Means Clustering (K 均值聚类)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "K-Means",
+    "Clustering",
+    "Unsupervised Learning",
+    "Elbow Method",
+    "Silhouette Score"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.392Z",
+  "readTime": 13,
+  "abstract": " 题目描述\n请详细解释 K-Means 聚类算法的原理、步骤和优缺点。如何选择最佳的 K 值？K-Means 有什么局限性？与层次聚类、DBSCAN 有什么区别？\n\n 参考答案\n\n K-Means 原理\n\n目标： 将数据划分为 K 个簇，使簇内样本距离最小化，簇间距离最大化。\n\n算法步骤：\n1. 随机初始化 K 个聚类中心\n2. 将每个样本分配到最近的聚类中心\n3. 重新计算每个簇的中心（均值）\n4. 重复步骤 2-3 直到收敛\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.cluster import KMeans\nfrom sklearn.datasets import make_blobs\nfrom sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score\n\n 生成示例数据\nX, y_true = make_blobs(n_samp...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释 K-Means 聚类算法的原理、步骤和优缺点。如何选择最佳的 K 值？K-Means 有什么局限性？与层次聚类、DBSCAN 有什么区别？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "K-Means 原理",
+      "level": 2,
+      "content": "**目标：** 将数据划分为 K 个簇，使簇内样本距离最小化，簇间距离最大化。\n\n**算法步骤：**\n1. 随机初始化 K 个聚类中心\n2. 将每个样本分配到最近的聚类中心\n3. 重新计算每个簇的中心（均值）\n4. 重复步骤 2-3 直到收敛\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.cluster import KMeans\nfrom sklearn.datasets import make_blobs\nfrom sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score\n\n# 生成示例数据\nX, y_true = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=42)\n\n# K-Means 聚类\nkmeans = KMeans(\n    n_clusters=4,\n    init='k-means++',    # 智能初始化\n    n_init=10,           # 运行 10 次选最佳\n    max_iter=300,\n    random_state=42\n)\ny_kmeans = kmeans.fit_predict(X)\n\n# 可视化\nplt.figure(figsize=(12, 5))\n\nplt.subplot(1, 2, 1)\nplt.scatter(X[:, 0], X[:, 1], c=y_kmeans, cmap='viridis', s=50, alpha=0.6)\nplt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], \n            c='red', s=200, marker='X', label='Centroids')\nplt.title('K-Means Clustering')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\nplt.subplot(1, 2, 2)\nplt.scatter(X[:, 0], X[:, 1], c=y_true, cmap='viridis', s=50, alpha=0.6)\nplt.title('True Labels')\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\n# 评估指标\nprint(f\"Silhouette Score: {silhouette_score(X, y_kmeans):.4f}\")\nprint(f\"Davies-Bouldin Score: {davies_bouldin_score(X, y_kmeans):.4f}\")\nprint(f\"Calinski-Harabasz Score: {calinski_harabasz_score(X, y_kmeans):.4f}\")\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "选择最佳 K 值",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "方法 1: 肘部法则 (Elbow Method)",
+      "level": 3,
+      "content": "```python\n# 计算不同 K 值的惯性（簇内平方和）\ninertias = []\nK_range = range(1, 11)\n\nfor k in K_range:\n    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)\n    kmeans.fit(X)\n    inertias.append(kmeans.inertia_)\n\n# 可视化\nplt.figure(figsize=(10, 4))\nplt.plot(K_range, inertias, 'bo-', linewidth=2)\nplt.xlabel('Number of Clusters (K)')\nplt.ylabel('Inertia (Within-cluster SS)')\nplt.title('Elbow Method')\nplt.grid(True, alpha=0.3)\nplt.xticks(K_range)\nplt.tight_layout()\nplt.show()\n\n# 自动检测肘部\ndef find_elbow(k_values, inertias):\n    \"\"\"使用 Kneedle 算法检测肘部\"\"\"\n    # 归一化\n    k_norm = np.array(k_values) / max(k_values)\n    i_norm = np.array(inertias) / max(inertias)\n    \n    # 连接首尾的直线\n    line_vec = np.array([k_norm[-1] - k_norm[0], i_norm[-1] - i_norm[0]])\n    line_len = np.sqrt(np.sum(line_vec**2))\n    line_unit = line_vec / line_len\n    \n    # 计算每个点到直线的距离\n    distances = []\n    for i, (k, inertia) in enumerate(zip(k_norm, i_norm)):\n        point_vec = np.array([k - k_norm[0], inertia - i_norm[0]])\n        proj = np.dot(point_vec, line_unit)\n        proj_point = k_norm[0] + proj * line_unit[0]\n        distance = np.sqrt((k - proj_point)**2 + (inertia - (i_norm[0] + proj * line_unit[1]))**2)\n        distances.append(distance)\n    \n    # 最大距离的点为肘部\n    elbow_idx = np.argmax(distances)\n    return k_values[elbow_idx]\n\noptimal_k = find_elbow(K_range, inertias)\nprint(f\"Optimal K (Elbow): {optimal_k}\")\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "方法 2: 轮廓系数 (Silhouette Score)",
+      "level": 3,
+      "content": "```python\nsilhouette_scores = []\nK_range = range(2, 11)  # 至少 2 个簇\n\nfor k in K_range:\n    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)\n    labels = kmeans.fit_predict(X)\n    score = silhouette_score(X, labels)\n    silhouette_scores.append(score)\n\n# 可视化\nplt.figure(figsize=(10, 4))\nplt.plot(K_range, silhouette_scores, 'ro-', linewidth=2)\nplt.xlabel('Number of Clusters (K)')\nplt.ylabel('Silhouette Score')\nplt.title('Silhouette Method')\nplt.grid(True, alpha=0.3)\nplt.xticks(K_range)\nplt.axhline(y=max(silhouette_scores), color='g', linestyle='--', \n            label=f'Best: {max(silhouette_scores):.4f}')\nplt.legend()\nplt.tight_layout()\nplt.show()\n\noptimal_k_silhouette = K_range[np.argmax(silhouette_scores)]\nprint(f\"Optimal K (Silhouette): {optimal_k_silhouette}\")\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "方法 3: 轮廓图 (Silhouette Plot)",
+      "level": 3,
+      "content": "```python\nfrom sklearn.metrics import silhouette_samples\n\ndef plot_silhouette(X, k):\n    \"\"\"绘制轮廓图\"\"\"\n    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)\n    labels = kmeans.fit_predict(X)\n    \n    silhouette_vals = silhouette_samples(X, labels)\n    \n    # 按簇排序\n    y_lower = 10\n    plt.figure(figsize=(10, 6))\n    \n    for i in range(k):\n        cluster_vals = silhouette_vals[labels == i]\n        cluster_vals.sort()\n        size = len(cluster_vals)\n        y_upper = y_lower + size\n        \n        plt.fill_betweenx(np.arange(y_lower, y_upper), 0, cluster_vals,\n                         alpha=0.7, label=f'Cluster {i}')\n        y_lower = y_upper + 10\n    \n    # 平均轮廓线\n    avg_score = silhouette_score(X, labels)\n    plt.axvline(x=avg_score, color='red', linestyle='--', label=f'Average: {avg_score:.4f}')\n    \n    plt.xlabel('Silhouette Coefficient')\n    plt.ylabel('Cluster')\n    plt.title(f'Silhouette Plot for K={k}')\n    plt.legend()\n    plt.grid(True, alpha=0.3)\n    plt.tight_layout()\n    plt.show()\n\nplot_silhouette(X, optimal_k_silhouette)\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "K-Means 优缺点",
+      "level": 2,
+      "content": "| 优点 | 缺点 |\n|------|------|\n| 简单易懂，实现方便 | 需要预先指定 K |\n| 计算效率高，适合大数据 | 对异常值敏感 |\n| 收敛保证（局部最优） | 假设簇是凸的（球形） |\n| 可解释性强 | 对初始中心敏感 |\n| 适用于数值型数据 | 不适合不同密度的簇 |"
+    },
+    {
+      "id": "sec-9",
+      "title": "K-Means 局限性",
+      "level": 2,
+      "content": "```python\n# 1. 非球形簇\nfrom sklearn.datasets import make_moons, make_circles\n\nX_moons, _ = make_moons(n_samples=300, noise=0.05, random_state=42)\nX_circles, _ = make_circles(n_samples=300, noise=0.05, factor=0.5, random_state=42)\n\n# K-Means 在非球形簇上表现差\nkmeans_moons = KMeans(n_clusters=2, random_state=42).fit_predict(X_moons)\nkmeans_circles = KMeans(n_clusters=2, random_state=42).fit_predict(X_circles)\n\nfig, axes = plt.subplots(2, 2, figsize=(12, 10))\n\naxes[0, 0].scatter(X_moons[:, 0], X_moons[:, 1], c=kmeans_moons, cmap='viridis', alpha=0.6)\naxes[0, 0].set_title('K-Means on Moons')\naxes[0, 1].scatter(X_circles[:, 0], X_circles[:, 1], c=kmeans_circles, cmap='viridis', alpha=0.6)\naxes[0, 1].set_title('K-Means on Circles')\n\n# DBSCAN 更适合\nfrom sklearn.cluster import DBSCAN\n\ndbscan_moons = DBSCAN(eps=0.2, min_samples=5).fit_predict(X_moons)\ndbscan_circles = DBSCAN(eps=0.2, min_samples=5).fit_predict(X_circles)\n\naxes[1, 0].scatter(X_moons[:, 0], X_moons[:, 1], c=dbscan_moons, cmap='viridis', alpha=0.6)\naxes[1, 0].set_title('DBSCAN on Moons')\naxes[1, 1].scatter(X_circles[:, 0], X_circles[:, 1], c=dbscan_circles, cmap='viridis', alpha=0.6)\naxes[1, 1].set_title('DBSCAN on Circles')\n\nplt.tight_layout()\nplt.show()\n\n# 2. 异常值敏感\nX_outliers = X.copy()\nX_outliers = np.vstack([X_outliers, [[10, 10], [-10, -10], [10, -10]]])  # 添加异常值\n\nkmeans_outliers = KMeans(n_clusters=4, random_state=42).fit(X_outliers)\nprint(f\"Cluster centers with outliers: {kmeans_outliers.cluster_centers_}\")\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "聚类算法对比",
+      "level": 2,
+      "content": "```python\nfrom sklearn.cluster import AgglomerativeClustering, DBSCAN, SpectralClustering\n\n# 准备数据\nalgorithms = {\n    'K-Means': KMeans(n_clusters=4, random_state=42),\n    'Hierarchical': AgglomerativeClustering(n_clusters=4),\n    'DBSCAN': DBSCAN(eps=0.5, min_samples=5),\n    'Spectral': SpectralClustering(n_clusters=4, affinity='nearest_neighbors')\n}\n\nfig, axes = plt.subplots(2, 2, figsize=(12, 10))\naxes = axes.flatten()\n\nfor ax, (name, algo) in zip(axes, algorithms.items()):\n    try:\n        if name == 'K-Means':\n            labels = algo.fit_predict(X)\n        else:\n            labels = algo.fit_predict(X)\n        \n        ax.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50, alpha=0.6)\n        ax.set_title(name)\n        ax.grid(True, alpha=0.3)\n    except Exception as e:\n        ax.text(0.5, 0.5, f'Error: {str(e)}', transform=ax.transAxes, ha='center')\n        ax.set_title(f'{name} (Failed)')\n\nplt.tight_layout()\nplt.show()\n\n# 算法对比表\ncomparison = \"\"\"\n| 算法 | 适用场景 | 优点 | 缺点 |\n|------|---------|------|------|\n| K-Means | 球形簇，大数据 | 快速，简单 | 需指定 K，对异常值敏感 |\n| 层次聚类 | 小数据，树状结构 | 无需指定 K，可视化好 | 计算慢 O(n³) |\n| DBSCAN | 任意形状，有噪声 | 自动找 K，抗噪声 | 参数敏感，密度变化差 |\n| 谱聚类 | 非凸，流形 | 灵活，效果好 | 计算贵，需指定 K |\n\"\"\"\nprint(comparison)\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 K-Means 的原理和步骤\n- ✅ 掌握 K 值选择方法\n- ✅ 了解 K-Means 的局限性\n- ✅ 能够对比不同聚类算法\n- ✅ 具备实际应用和调优能力"
+    },
+    {
+      "id": "sec-12",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[DBSCAN 原理与应用]](./ML-026-dbscan.md)\n- [[层次聚类详解]](./ML-027-hierarchical-clustering.md)\n- [[聚类评估指标]](./ML-028-clustering-metrics.md)"
+    },
+    {
+      "id": "sec-13",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "追问 1: K-Means++ 初始化有什么优势？",
+      "level": 2,
+      "content": "**问题：** K-Means++ 如何改进随机初始化？\n\n**答案：**\n\n```python\n# K-Means++ 初始化步骤：\n# 1. 随机选择第一个中心\n# 2. 计算每个点到最近中心的距离 D(x)\n# 3. 按 D(x)² 概率选择下一个中心（远的点概率大）\n# 4. 重复直到选完 K 个中心\n\ndef kmeans_plusplus_init(X, k, random_state=42):\n    \"\"\"K-Means++ 初始化\"\"\"\n    np.random.seed(random_state)\n    n_samples = X.shape[0]\n    centers = []\n    \n    # 1. 随机选第一个中心\n    first_idx = np.random.randint(n_samples)\n    centers.append(X[first_idx])\n    \n    # 2-4. 选择剩余中心\n    for _ in range(1, k):\n        # 计算每个点到最近中心的距离\n        distances = np.array([\n            min(np.linalg.norm(x - c) ** 2 for c in centers)\n            for x in X\n        ])\n        \n        # 按距离平方概率选择\n        probs = distances / distances.sum()\n        cumprobs = probs.cumsum()\n        r = np.random.rand()\n        \n        for idx, prob in enumerate(cumprobs):\n            if r < prob:\n                centers.append(X[idx])\n                break\n    \n    return np.array(centers)\n\n# 优势：\n# 1. 更好的初始中心（分散）\n# 2. 更快收敛\n# 3. 更好的最终结果\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "追问 2: 如何处理高维数据的聚类？",
+      "level": 2,
+      "content": "**问题：** 高维数据聚类有什么挑战？\n\n**答案：**\n\n```python\n# 高维挑战：距离集中现象\n# 所有点之间的距离趋于相似\n\nfrom sklearn.decomposition import PCA\n\n# 解决方案：\n\n# 1. 降维后聚类\npca = PCA(n_components=0.95)\nX_reduced = pca.fit_transform(X_high_dim)\nkmeans = KMeans(n_clusters=5).fit(X_reduced)\n\n# 2. 特征选择\nfrom sklearn.feature_selection import VarianceThreshold\nselector = VarianceThreshold(threshold=0.1)\nX_selected = selector.fit_transform(X_high_dim)\n\n# 3. 使用适合高维的算法\nfrom sklearn.cluster import SpectralClustering\nspectral = SpectralClustering(n_clusters=5, affinity='nearest_neighbors')\n\n# 4. 子空间聚类\n# 在不同特征子空间上分别聚类\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "追问 3: K-Means 能用于异常检测吗？",
+      "level": 2,
+      "content": "**问题：** 如何用 K-Means 检测异常值？\n\n**答案：**\n\n```python\n# 方法：距离聚类中心远的点是异常值\n\nkmeans = KMeans(n_clusters=5, random_state=42)\nkmeans.fit(X)\n\n# 计算每个点到最近中心的距离\ndistances = np.min(\n    np.linalg.norm(X[:, np.newaxis] - kmeans.cluster_centers_, axis=2),\n    axis=1\n)\n\n# 设定阈值（如 95 百分位）\nthreshold = np.percentile(distances, 95)\noutliers = distances > threshold\n\nprint(f\"Detected {np.sum(outliers)} outliers\")\n\n# 可视化\nplt.figure(figsize=(8, 6))\nplt.scatter(X[~outliers, 0], X[~outliers, 1], c='blue', alpha=0.6, label='Normal')\nplt.scatter(X[outliers, 0], X[outliers, 1], c='red', alpha=0.6, label='Outlier')\nplt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], \n            c='black', marker='X', s=200, label='Centroids')\nplt.title('K-Means for Outlier Detection')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\n# 或者使用专门的异常检测算法\nfrom sklearn.ensemble import IsolationForest\niso_forest = IsolationForest(contamination=0.05, random_state=42)\noutliers_iso = iso_forest.fit_predict(X) == -1\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**K-Means 适用场景：**\n- 数据量大\n- 簇是凸的（球形）\n- 簇大小相近\n- 需要快速聚类\n\n**不适用场景：**\n- 非球形簇\n- 簇大小差异大\n- 有异常值\n- 不知道 K"
+    },
+    {
+      "id": "sec-18",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

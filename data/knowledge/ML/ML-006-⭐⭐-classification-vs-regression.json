@@ -1,0 +1,137 @@
+{
+  "id": "ML-006-⭐⭐-classification-vs-regression",
+  "title": "Classification vs Regression (分类与回归的区别)",
+  "category": "ML",
+  "difficulty": "⭐⭐",
+  "tags": [
+    "Classification",
+    "Regression",
+    "Supervised Learning",
+    "Algorithm Selection"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.391Z",
+  "readTime": 11,
+  "abstract": " 题目描述\n请详细解释分类 (Classification) 和回归 (Regression) 的区别。它们各自适用于什么场景？有哪些常用的算法？如何根据问题特点选择合适的任务类型？\n\n 参考答案\n\n 核心区别\n\n| 特性 | 分类 (Classification) | 回归 (Regression) |\n|------|---------------------|------------------|\n| 输出类型 | 离散类别/标签 | 连续数值 |\n| 目标 | 预测类别归属 | 预测具体数值 |\n| 评估指标 | Accuracy, Precision, Recall, F1, AUC | MSE, RMSE, MAE, R² |\n| 损失函数 | Cross-Entropy, Hinge Loss | MSE, MAE, Huber Loss |\n| 典型问题 | 垃圾邮件检测、疾病诊断 | 房价预测、销量预测 |\n\n 代码对比\n\npython\nfrom sklearn.datasets import make...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释分类 (Classification) 和回归 (Regression) 的区别。它们各自适用于什么场景？有哪些常用的算法？如何根据问题特点选择合适的任务类型？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "核心区别",
+      "level": 2,
+      "content": "| 特性 | 分类 (Classification) | 回归 (Regression) |\n|------|---------------------|------------------|\n| **输出类型** | 离散类别/标签 | 连续数值 |\n| **目标** | 预测类别归属 | 预测具体数值 |\n| **评估指标** | Accuracy, Precision, Recall, F1, AUC | MSE, RMSE, MAE, R² |\n| **损失函数** | Cross-Entropy, Hinge Loss | MSE, MAE, Huber Loss |\n| **典型问题** | 垃圾邮件检测、疾病诊断 | 房价预测、销量预测 |"
+    },
+    {
+      "id": "sec-4",
+      "title": "代码对比",
+      "level": 2,
+      "content": "```python\nfrom sklearn.datasets import make_classification, make_regression\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import (\n    accuracy_score, classification_report, confusion_matrix,\n    mean_squared_error, mean_absolute_error, r2_score\n)\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# ============ 分类问题 ============\nX_clf, y_clf = make_classification(\n    n_samples=1000, n_features=20, n_informative=15,\n    n_redundant=5, n_classes=3, random_state=42\n)\n\nX_train_clf, X_test_clf, y_train_clf, y_test_clf = train_test_split(\n    X_clf, y_clf, test_size=0.2, random_state=42, stratify=y_clf\n)\n\nfrom sklearn.ensemble import RandomForestClassifier\nclf_model = RandomForestClassifier(n_estimators=100, random_state=42)\nclf_model.fit(X_train_clf, y_train_clf)\ny_pred_clf = clf_model.predict(X_test_clf)\ny_pred_proba = clf_model.predict_proba(X_test_clf)\n\nprint(\"=== 分类问题 ===\")\nprint(f\"Accuracy: {accuracy_score(y_test_clf, y_pred_clf):.4f}\")\nprint(\"\\nClassification Report:\")\nprint(classification_report(y_test_clf, y_pred_clf))\nprint(\"\\nConfusion Matrix:\")\nprint(confusion_matrix(y_test_clf, y_pred_clf))\n\n# ============ 回归问题 ============\nX_reg, y_reg = make_regression(\n    n_samples=1000, n_features=20, n_informative=15,\n    noise=10, random_state=42\n)\n\nX_train_reg, X_test_reg, y_train_reg, y_test_reg = train_test_split(\n    X_reg, y_reg, test_size=0.2, random_state=42\n)\n\nfrom sklearn.ensemble import RandomForestRegressor\nreg_model = RandomForestRegressor(n_estimators=100, random_state=42)\nreg_model.fit(X_train_reg, y_train_reg)\ny_pred_reg = reg_model.predict(X_test_reg)\n\nprint(\"\\n=== 回归问题 ===\")\nprint(f\"MSE: {mean_squared_error(y_test_reg, y_pred_reg):.4f}\")\nprint(f\"RMSE: {np.sqrt(mean_squared_error(y_test_reg, y_pred_reg)):.4f}\")\nprint(f\"MAE: {mean_absolute_error(y_test_reg, y_pred_reg):.4f}\")\nprint(f\"R² Score: {r2_score(y_test_reg, y_pred_reg):.4f}\")\n\n# 可视化\nfig, axes = plt.subplots(1, 2, figsize=(14, 5))\n\n# 分类可视化\naxes[0].scatter(y_test_clf, y_pred_clf, alpha=0.5)\naxes[0].set_xlabel('True Label')\naxes[0].set_ylabel('Predicted Label')\naxes[0].set_title('Classification: True vs Predicted')\naxes[0].grid(True, alpha=0.3)\n\n# 回归可视化\naxes[1].scatter(y_test_reg, y_pred_reg, alpha=0.5)\naxes[1].plot([y_test_reg.min(), y_test_reg.max()], \n             [y_test_reg.min(), y_test_reg.max()], 'r--')\naxes[1].set_xlabel('True Value')\naxes[1].set_ylabel('Predicted Value')\naxes[1].set_title('Regression: True vs Predicted')\naxes[1].grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "常用算法对比",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "分类算法",
+      "level": 3,
+      "content": "```python\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.svm import SVC\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.naive_bayes import GaussianNB\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier\nimport xgboost as xgb\n\n# 分类算法列表\nclassifiers = {\n    'Logistic Regression': LogisticRegression(),\n    'SVM': SVC(probability=True),\n    'KNN': KNeighborsClassifier(),\n    'Naive Bayes': GaussianNB(),\n    'Decision Tree': DecisionTreeClassifier(),\n    'Random Forest': RandomForestClassifier(),\n    'Gradient Boosting': GradientBoostingClassifier(),\n    'XGBoost': xgb.XGBClassifier()\n}\n\n# 适用场景：\n# - Logistic Regression: 基线模型，可解释性强\n# - SVM: 小样本、高维数据\n# - KNN: 简单问题，需要距离度量\n# - Naive Bayes: 文本分类，特征独立\n# - Tree/Forest: 表格数据，特征交互\n# - Boosting: 追求高精度\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "回归算法",
+      "level": 3,
+      "content": "```python\nfrom sklearn.linear_model import LinearRegression, Ridge, Lasso\nfrom sklearn.svm import SVR\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor\n\n# 回归算法列表\nregressors = {\n    'Linear Regression': LinearRegression(),\n    'Ridge': Ridge(),\n    'Lasso': Lasso(),\n    'SVR': SVR(),\n    'KNN': KNeighborsRegressor(),\n    'Decision Tree': DecisionTreeRegressor(),\n    'Random Forest': RandomForestRegressor(),\n    'Gradient Boosting': GradientBoostingRegressor()\n}\n\n# 适用场景：\n# - Linear: 基线模型，线性关系\n# - Ridge/Lasso: 防止过拟合，特征选择\n# - SVR: 小样本、非线性\n# - Tree/Forest: 复杂非线性关系\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "任务类型选择指南",
+      "level": 2,
+      "content": "```python\ndef choose_task_type(target_variable, business_context):\n    \"\"\"\n    根据目标变量和业务场景选择任务类型\n    \"\"\"\n    # 检查目标变量类型\n    if isinstance(target_variable[0], (str, bool)):\n        return \"Classification\"\n    \n    unique_values = len(set(target_variable))\n    total_samples = len(target_variable)\n    \n    # 判断标准\n    if unique_values < 10 or unique_values / total_samples < 0.01:\n        # 类别数少 → 分类\n        return \"Classification\"\n    else:\n        # 连续值多 → 回归\n        return \"Regression\"\n\n# 边界情况处理\ndef handle_boundary_cases(y, threshold=10):\n    \"\"\"\n    处理分类和回归的边界情况\n    \"\"\"\n    unique_values = len(set(y))\n    \n    if unique_values <= threshold:\n        # 可以当作分类\n        print(f\"Unique values: {unique_values}\")\n        print(\"Recommendation: Try both Classification and Regression\")\n        \n        # 方案 1: 作为分类\n        # 方案 2: 作为回归后离散化\n        # 方案 3: 使用序数回归\n    else:\n        print(f\"Unique values: {unique_values}\")\n        print(\"Recommendation: Regression\")\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "实际场景示例",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "场景 1: 房价预测 → 回归",
+      "level": 3,
+      "content": "```python\n# 房价是连续值\n# 特征：面积、位置、房龄、房间数...\n# 输出：价格（连续）\n\nfrom sklearn.ensemble import GradientBoostingRegressor\n\nmodel = GradientBoostingRegressor(\n    n_estimators=200,\n    learning_rate=0.1,\n    max_depth=4\n)\nmodel.fit(X_train, y_train)\n\n# 评估\npredictions = model.predict(X_test)\nmse = mean_squared_error(y_test, predictions)\nprint(f\"RMSE: ${np.sqrt(mse):,.2f}\")\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "场景 2: 房价区间预测 → 分类",
+      "level": 3,
+      "content": "```python\n# 将连续房价转换为类别\n# 低 (<50 万), 中 (50-100 万), 高 (>100 万)\n\ny_bins = [0, 500000, 1000000, float('inf')]\ny_labels = ['Low', 'Medium', 'High']\ny_class = pd.cut(y, bins=y_bins, labels=y_labels)\n\nfrom sklearn.ensemble import RandomForestClassifier\n\nmodel = RandomForestClassifier(n_estimators=100)\nmodel.fit(X_train, y_class_train)\n\n# 评估\naccuracy = accuracy_score(y_class_test, model.predict(X_test))\nprint(f\"Accuracy: {accuracy:.4f}\")\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解分类和回归的本质区别\n- ✅ 掌握常用算法及其适用场景\n- ✅ 能够根据问题特点选择任务类型\n- ✅ 了解评估指标的选择\n- ✅ 具备处理边界情况的能力"
+    },
+    {
+      "id": "sec-13",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[分类评估指标详解]](./ML-014-classification-metrics.md)\n- [[回归评估指标详解]](./ML-015-regression-metrics.md)\n- [[算法选择指南]](./ML-016-algorithm-selection.md)"
+    },
+    {
+      "id": "sec-14",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "追问 1: 什么时候应该把回归问题转化为分类问题？",
+      "level": 2,
+      "content": "**问题：** 连续值预测什么时候适合转换为分类？\n\n**答案：**\n\n```python\n# 适合转换的场景：\n# 1. 业务需要决策而非精确值\n# 2. 连续值预测误差大但分类准确\n# 3. 输出需要解释性\n\n# 示例：股票涨跌预测\n# 回归：预测具体涨跌幅（难，误差大）\n# 分类：预测涨/跌（更容易，更实用）\n\nfrom sklearn.preprocessing import KBinsDiscretizer\n\n# 方法 1: 等宽分箱\ndiscretizer = KBinsDiscretizer(n_bins=5, encode='ordinal', strategy='uniform')\ny_binned = discretizer.fit_transform(y.reshape(-1, 1))\n\n# 方法 2: 等频分箱\ndiscretizer = KBinsDiscretizer(n_bins=5, strategy='quantile')\ny_binned = discretizer.fit_transform(y.reshape(-1, 1))\n\n# 方法 3: 业务驱动分箱\ndef business_binning(price):\n    if price < 100:\n        return 'Budget'\n    elif price < 500:\n        return 'Mid-range'\n    else:\n        return 'Premium'\n\ny_category = [business_binning(p) for p in y]\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "追问 2: 分类问题可以输出概率吗？如何使用？",
+      "level": 2,
+      "content": "**问题：** 分类模型如何输出和使用概率？\n\n**答案：**\n\n```python\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import roc_curve, precision_recall_curve\nimport matplotlib.pyplot as plt\n\n# 获取预测概率\nclf = LogisticRegression()\nclf.fit(X_train, y_train)\ny_proba = clf.predict_proba(X_test)[:, 1]  # 正类概率\n\n# 默认阈值 0.5\ny_pred_default = (y_proba >= 0.5).astype(int)\n\n# 调整阈值\nthresholds = [0.3, 0.4, 0.5, 0.6, 0.7]\nfor thresh in thresholds:\n    y_pred = (y_proba >= thresh).astype(int)\n    accuracy = accuracy_score(y_test, y_pred)\n    print(f\"Threshold {thresh}: Accuracy = {accuracy:.4f}\")\n\n# ROC 曲线选择阈值\nfpr, tpr, thresholds = roc_curve(y_test, y_proba)\noptimal_idx = np.argmax(tpr - fpr)\noptimal_threshold = thresholds[optimal_idx]\nprint(f\"Optimal threshold (Youden): {optimal_threshold:.4f}\")\n\n# 业务驱动阈值选择\n# 例如：疾病诊断中，假阴性成本高，降低阈值\ncost_fn = 10  # 假阴性成本\ncost_fp = 1   # 假阳性成本\noptimal_thresh = cost_fn / (cost_fn + cost_fp)\nprint(f\"Cost-based threshold: {optimal_thresh:.4f}\")\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "追问 3: 多输出问题如何处理？",
+      "level": 2,
+      "content": "**问题：** 同时预测多个目标怎么办？\n\n**答案：**\n\n```python\nfrom sklearn.multioutput import MultiOutputRegressor, MultiOutputClassifier\nfrom sklearn.ensemble import RandomForestRegressor, RandomForestClassifier\n\n# 多输出回归\n# 例如：同时预测房价和租金\ny_multi_reg = np.column_stack([prices, rents])\n\nmodel = MultiOutputRegressor(RandomForestRegressor())\nmodel.fit(X_train, y_multi_reg)\npredictions = model.predict(X_test)\n\n# 多输出分类\n# 例如：同时预测多个标签（多标签分类）\ny_multi_clf = np.column_stack([label1, label2, label3])\n\nmodel = MultiOutputClassifier(RandomForestClassifier())\nmodel.fit(X_train, y_multi_clf)\npredictions = model.predict(X_test)\n\n# 或者使用专门的多标签算法\nfrom sklearn.multiclass import OneVsRestClassifier\nmodel = OneVsRestClassifier(RandomForestClassifier())\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**分类和回归的本质：**\n- 分类：学习决策边界\n- 回归：学习映射函数\n\n**选择原则：**\n1. 看输出：离散→分类，连续→回归\n2. 看业务：需要类别→分类，需要数值→回归\n3. 看数据：类别少可分类，类别多考虑回归"
+    },
+    {
+      "id": "sec-19",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

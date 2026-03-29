@@ -1,0 +1,24 @@
+{
+  "id": "CV-028-what-is-self-supervised-learning-and-how-is-it-used-in-computer-vision",
+  "title": "CV-028-what-is-self-supervised-learning-and-how-is-it-used-in-computer-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-028 What is self-supervised learning and how is it used in computer vision?\n\n Q28: What is self-supervised learning and how is it used in computer vision?\n\nScore: 94/100\n\nAnswer:\n\nSelf-Supervised Learning:\nLearn representations from unlabeled data by creating pretext tasks.\n\nPretext Tasks:\n\n1. Contrastive Learning:\n   - SimCLR: Maximize agreement between augmented views\n   - MoCo: Momentum encoder for large negative samples\n   - BYOL: No negative samples n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q28: What is self-supervised learning and how is it used in computer vision?",
+      "level": 2,
+      "content": "**Score:** 94/100\n\n**Answer:**\n\n**Self-Supervised Learning:**\nLearn representations from unlabeled data by creating pretext tasks.\n\n**Pretext Tasks:**\n\n1. **Contrastive Learning:**\n   - **SimCLR:** Maximize agreement between augmented views\n   - **MoCo:** Momentum encoder for large negative samples\n   - **BYOL:** No negative samples needed\n\n2. **Generative Methods:**\n   - **MAE (Masked Autoencoder):** Reconstruct masked patches\n   - **Inpainting:** Fill missing regions\n\n3. **Predictive Methods:**\n   - **Rotation Prediction:** Predict image rotation angle\n   - **Jigsaw Puzzle:** Solve shuffled patches\n   - **Colorization:** Predict color from grayscale\n\n**Benefits:**\n- Leverages vast unlabeled data\n- Reduces annotation costs\n- Better generalization\n- Strong pre-training for downstream tasks\n\n**Applications:**\n- Image classification pre-training\n- Object detection (improves with limited labels)\n- Medical imaging (scarce annotations)\n- Video understanding\n\n**Recent Advances:**\n- **DINO/DINOv2:** Self-distillation, excellent features\n- **iBOT:** Online tokenizer learning\n- **CLIP:** Vision-language contrastive learning\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

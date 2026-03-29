@@ -1,0 +1,144 @@
+{
+  "id": "ML-008-⭐⭐⭐⭐-pca",
+  "title": "PCA (Principal Component Analysis, 主成分分析)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "PCA",
+    "Dimensionality Reduction",
+    "Feature Extraction",
+    "Eigenvalue",
+    "SVD"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.392Z",
+  "readTime": 12,
+  "abstract": " 题目描述\n请详细解释 PCA (主成分分析) 的原理、计算步骤和应用场景。如何选择主成分的数量？PCA 有什么局限性？与 LDA 有什么区别？\n\n 参考答案\n\n PCA 核心思想\n\n目标： 将高维数据投影到低维空间，同时保留尽可能多的信息（方差）。\n\n核心思路：\n1. 找到数据方差最大的方向（第一主成分）\n2. 找到与之前方向正交且方差次大的方向（第二主成分）\n3. 重复以上步骤\n\n 数学原理\n\npython\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.decomposition import PCA\nfrom sklearn.preprocessing import StandardScaler\n\n 1. 标准化数据（PCA 对尺度敏感）\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\n 2. 计算协方差矩阵\ncov_matrix = np.cov(X_scaled.T)\npri...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "请详细解释 PCA (主成分分析) 的原理、计算步骤和应用场景。如何选择主成分的数量？PCA 有什么局限性？与 LDA 有什么区别？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "PCA 核心思想",
+      "level": 2,
+      "content": "**目标：** 将高维数据投影到低维空间，同时保留尽可能多的信息（方差）。\n\n**核心思路：**\n1. 找到数据方差最大的方向（第一主成分）\n2. 找到与之前方向正交且方差次大的方向（第二主成分）\n3. 重复以上步骤"
+    },
+    {
+      "id": "sec-4",
+      "title": "数学原理",
+      "level": 2,
+      "content": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.decomposition import PCA\nfrom sklearn.preprocessing import StandardScaler\n\n# 1. 标准化数据（PCA 对尺度敏感）\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\n# 2. 计算协方差矩阵\ncov_matrix = np.cov(X_scaled.T)\nprint(f\"Covariance matrix shape: {cov_matrix.shape}\")\n\n# 3. 计算特征值和特征向量\neigenvalues, eigenvectors = np.linalg.eig(cov_matrix)\nprint(f\"Eigenvalues: {eigenvalues}\")\n\n# 4. 计算方差解释率\nvariance_explained = eigenvalues / np.sum(eigenvalues)\ncumulative_variance = np.cumsum(variance_explained)\n\nprint(f\"\\nVariance explained by each PC:\")\nfor i, (ev, ve) in enumerate(zip(eigenvalues, variance_explained), 1):\n    print(f\"  PC{i}: {ve:.4f} ({ve*100:.2f}%)\")\n\nprint(f\"\\nCumulative variance:\")\nfor i, cv in enumerate(cumulative_variance, 1):\n    print(f\"  PC{i}: {cv:.4f} ({cv*100:.2f}%)\")\n\n# 5. 使用 sklearn 实现 PCA\npca = PCA(n_components=0.95)  # 保留 95% 方差\nX_pca = pca.fit_transform(X_scaled)\n\nprint(f\"\\nOriginal dimensions: {X.shape[1]}\")\nprint(f\"After PCA: {X_pca.shape[1]}\")\nprint(f\"Variance explained: {sum(pca.explained_variance_ratio_):.4f}\")\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "可视化 PCA",
+      "level": 2,
+      "content": "```python\n# 可视化主成分\ndef plot_pca_components(pca, feature_names):\n    \"\"\"绘制主成分载荷图\"\"\"\n    plt.figure(figsize=(10, 6))\n    \n    for i, pc in enumerate(pca.components_[:2]):  # 前两个主成分\n        plt.barh(feature_names, pc, alpha=0.6, label=f'PC{i+1}')\n        plt.axvline(x=0, color='black', linestyle='--', alpha=0.3)\n    \n    plt.xlabel('Loading')\n    plt.title('PCA Component Loadings')\n    plt.legend()\n    plt.tight_layout()\n    plt.show()\n\n# 可视化降维效果\ndef plot_pca_scatter(X_pca, y):\n    \"\"\"绘制 PCA 降维后的散点图\"\"\"\n    plt.figure(figsize=(8, 6))\n    scatter = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y, cmap='viridis', alpha=0.6)\n    plt.xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.2%})')\n    plt.ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.2%})')\n    plt.title('PCA Projection')\n    plt.colorbar(scatter, label='Class')\n    plt.grid(True, alpha=0.3)\n    plt.tight_layout()\n    plt.show()\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "选择主成分数量",
+      "level": 2,
+      "content": "```python\n# 方法 1: 累积方差解释率\npca = PCA()\npca.fit(X_scaled)\n\ncumulative_variance = np.cumsum(pca.explained_variance_ratio_)\nn_components_95 = np.argmax(cumulative_variance >= 0.95) + 1\nn_components_99 = np.argmax(cumulative_variance >= 0.99) + 1\n\nprint(f\"Components for 95% variance: {n_components_95}\")\nprint(f\"Components for 99% variance: {n_components_99}\")\n\n# 可视化\nplt.figure(figsize=(10, 4))\n\nplt.subplot(1, 2, 1)\nplt.plot(range(1, len(cumulative_variance)+1), cumulative_variance, 'o-')\nplt.axhline(y=0.95, color='r', linestyle='--', label='95% threshold')\nplt.axhline(y=0.99, color='g', linestyle='--', label='99% threshold')\nplt.xlabel('Number of Components')\nplt.ylabel('Cumulative Variance Explained')\nplt.title('Cumulative Variance vs Components')\nplt.legend()\nplt.grid(True, alpha=0.3)\n\nplt.subplot(1, 2, 2)\nplt.bar(range(1, len(pca.explained_variance_ratio_)+1), pca.explained_variance_ratio_)\nplt.xlabel('Principal Component')\nplt.ylabel('Variance Explained')\nplt.title('Scree Plot')\nplt.grid(True, alpha=0.3, axis='y')\n\nplt.tight_layout()\nplt.show()\n\n# 方法 2: 肘部法则\n# 在 Scree Plot 中找到\"肘部\"点\n\n# 方法 3: 交叉验证\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.ensemble import RandomForestClassifier\n\nscores = []\nfor n_comp in range(1, X_scaled.shape[1] + 1):\n    pca = PCA(n_components=n_comp)\n    X_transformed = pca.fit_transform(X_scaled)\n    \n    model = RandomForestClassifier(n_estimators=50, random_state=42)\n    score = cross_val_score(model, X_transformed, y, cv=5, scoring='accuracy').mean()\n    scores.append(score)\n\nbest_n = np.argmax(scores) + 1\nprint(f\"Best number of components (CV): {best_n}\")\nprint(f\"Best CV accuracy: {max(scores):.4f}\")\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "PCA 应用场景",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-8",
+      "title": "场景 1: 数据可视化",
+      "level": 3,
+      "content": "```python\n# 高维数据降维到 2D/3D 可视化\npca_2d = PCA(n_components=2)\nX_2d = pca_2d.fit_transform(X_scaled)\n\nplt.figure(figsize=(8, 6))\nscatter = plt.scatter(X_2d[:, 0], X_2d[:, 1], c=y, cmap='viridis', alpha=0.6)\nplt.xlabel(f'PC1 ({pca_2d.explained_variance_ratio_[0]:.2%})')\nplt.ylabel(f'PC2 ({pca_2d.explained_variance_ratio_[1]:.2%})')\nplt.title('2D PCA Visualization')\nplt.colorbar(scatter)\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "场景 2: 特征降维加速训练",
+      "level": 3,
+      "content": "```python\n# 原始特征：1000 维\n# PCA 降维：50 维（保留 95% 方差）\n\nfrom time import time\n\n# 原始数据\nstart = time()\nmodel_full = RandomForestClassifier(n_estimators=100)\nmodel_full.fit(X_train, y_train)\ntime_full = time() - start\n\n# PCA 降维后\npca = PCA(n_components=0.95)\nX_train_pca = pca.fit_transform(X_train)\nX_test_pca = pca.transform(X_test)\n\nstart = time()\nmodel_pca = RandomForestClassifier(n_estimators=100)\nmodel_pca.fit(X_train_pca, y_train)\ntime_pca = time() - start\n\nprint(f\"Training time (full): {time_full:.2f}s\")\nprint(f\"Training time (PCA): {time_pca:.2f}s\")\nprint(f\"Speedup: {time_full/time_pca:.2f}x\")\nprint(f\"Accuracy (full): {model_full.score(X_test, y_test):.4f}\")\nprint(f\"Accuracy (PCA): {model_pca.score(X_test_pca, y_test):.4f}\")\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "场景 3: 去除多重共线性",
+      "level": 3,
+      "content": "```python\n# 高度相关的特征会导致模型不稳定\n# PCA 生成正交的主成分，消除共线性\n\nfrom sklearn.linear_model import LinearRegression\nfrom statsmodels.stats.outliers_influence import variance_inflation_factor\n\n# 原始特征的 VIF\nvif_original = [variance_inflation_factor(X_scaled, i) for i in range(X_scaled.shape[1])]\nprint(f\"Max VIF (original): {max(vif_original):.2f}\")\n\n# PCA 后特征的 VIF (应该接近 1)\nX_pca = pca.fit_transform(X_scaled)\nvif_pca = [variance_inflation_factor(X_pca, i) for i in range(X_pca.shape[1])]\nprint(f\"Max VIF (PCA): {max(vif_pca):.2f}\")\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "PCA 局限性",
+      "level": 2,
+      "content": "```python\n# 1. 线性假设\n# PCA 只能捕捉线性关系，非线性结构会丢失\n\nfrom sklearn.manifold import TSNE\nfrom sklearn.decomposition import KernelPCA\n\n# 非线性降维替代方案\ntsne = TSNE(n_components=2, random_state=42)\nX_tsne = tsne.fit_transform(X_scaled)\n\nkpca = KernelPCA(n_components=2, kernel='rbf')\nX_kpca = kpca.fit_transform(X_scaled)\n\n# 2. 对异常值敏感\n# 异常值会主导方差方向\n\n# 解决方案：Robust PCA 或先去除异常值\n\n# 3. 可解释性差\n# 主成分是原始特征的线性组合，难以解释\n\n# 打印主成分载荷\nfor i, pc in enumerate(pca.components_[:3], 1):\n    print(f\"\\nPC{i} loadings (top 5 features):\")\n    top_idx = np.argsort(np.abs(pc))[-5:][::-1]\n    for idx in top_idx:\n        print(f\"  {feature_names[idx]}: {pc[idx]:.4f}\")\n\n# 4. 需要标准化\n# 不同尺度的特征会影响结果\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "PCA vs LDA",
+      "level": 2,
+      "content": "| 特性 | PCA | LDA |\n|------|-----|-----|\n| **类型** | 无监督 | 有监督 |\n| **目标** | 最大化方差 | 最大化类间分离 |\n| **使用标签** | 否 | 是 |\n| **最大维度** | min(n_samples, n_features) | n_classes - 1 |\n| **适用场景** | 降维、可视化、去噪 | 分类前的特征提取 |\n\n```python\nfrom sklearn.discriminant_analysis import LinearDiscriminantAnalysis\n\n# LDA\nlda = LDA(n_components=1)  # 最多 n_classes - 1\nX_lda = lda.fit_transform(X_scaled, y)\n\n# PCA\npca = PCA(n_components=2)\nX_pca = pca.fit_transform(X_scaled)\n\n# 对比可视化\nfig, axes = plt.subplots(1, 2, figsize=(12, 5))\n\naxes[0].scatter(X_pca[:, 0], X_pca[:, 1], c=y, alpha=0.6)\naxes[0].set_title('PCA (unsupervised)')\naxes[0].set_xlabel('PC1')\naxes[0].set_ylabel('PC2')\n\naxes[1].scatter(X_lda[:, 0], np.zeros_like(X_lda[:, 0]), c=y, alpha=0.6)\naxes[1].set_title('LDA (supervised)')\naxes[1].set_xlabel('LD1')\naxes[1].set_yticks([])\n\nplt.tight_layout()\nplt.show()\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 PCA 的数学原理和计算步骤\n- ✅ 掌握主成分数量的选择方法\n- ✅ 了解 PCA 的应用场景和局限性\n- ✅ 能够区分 PCA 和 LDA\n- ✅ 具备实际实现和调优能力"
+    },
+    {
+      "id": "sec-14",
+      "title": "延伸题目",
+      "level": 1,
+      "content": "- [[t-SNE 与 UMAP]](./ML-020-tsne-umap.md)\n- [[特征选择 vs 特征提取]](./ML-021-feature-selection-extraction.md)\n- [[核方法介绍]](./ML-022-kernel-methods.md)"
+    },
+    {
+      "id": "sec-15",
+      "title": "延伸追问",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-16",
+      "title": "追问 1: 为什么 PCA 前要标准化？",
+      "level": 2,
+      "content": "**问题：** 不标准化会有什么问题？\n\n**答案：**\n\n```python\n# 示例：特征尺度不同\nnp.random.seed(42)\nX_unscaled = np.random.randn(100, 2)\nX_unscaled[:, 0] *= 100  # 特征 1：尺度大\nX_unscaled[:, 1] *= 1    # 特征 2：尺度小\n\n# 不标准化\npca_unscaled = PCA(n_components=1)\nX_pca_unscaled = pca_unscaled.fit_transform(X_unscaled)\n\nprint(f\"Without scaling:\")\nprint(f\"  PC1 variance explained: {pca_unscaled.explained_variance_ratio_[0]:.4f}\")\nprint(f\"  PC1 loading: {pca_unscaled.components_[0]}\")\n# 结果：PC1 几乎完全由特征 1 主导\n\n# 标准化后\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X_unscaled)\n\npca_scaled = PCA(n_components=1)\nX_pca_scaled = pca_scaled.fit_transform(X_scaled)\n\nprint(f\"\\nWith scaling:\")\nprint(f\"  PC1 variance explained: {pca_scaled.explained_variance_ratio_[0]:.4f}\")\nprint(f\"  PC1 loading: {pca_scaled.components_[0]}\")\n# 结果：两个特征都有贡献\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "追问 2: PCA 的 SVD 实现是什么？",
+      "level": 2,
+      "content": "**问题：** PCA 和 SVD 有什么关系？\n\n**答案：**\n\n```python\n# PCA 可以通过 SVD 实现\n# X = U Σ V^T\n\n# 方法 1: 特征分解（传统）\ncov_matrix = np.cov(X_scaled.T)\neigenvalues, eigenvectors = np.linalg.eig(cov_matrix)\n\n# 方法 2: SVD（数值更稳定）\nU, S, Vt = np.linalg.svd(X_scaled, full_matrices=False)\n\n# SVD 与 PCA 的关系\n# 主成分 = Vt (右奇异向量)\n# 特征值 = S² / (n-1)\n# 投影 = U × S\n\neigenvalues_svd = S**2 / (X_scaled.shape[0] - 1)\nvariance_explained_svd = eigenvalues_svd / np.sum(eigenvalues_svd)\n\nprint(f\"Eigenvalues from SVD: {eigenvalues_svd[:5]}\")\nprint(f\"Variance explained: {variance_explained_svd[:5]}\")\n\n# sklearn 的 PCA 默认使用 SVD\npca = PCA(n_components=2, svd_solver='full')  # 或 'arpack', 'randomized'\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "追问 3: 如何处理类别不平衡时的 PCA？",
+      "level": 2,
+      "content": "**问题：** 类别不平衡会影响 PCA 吗？\n\n**答案：**\n\n```python\n# PCA 是无监督的，不受类别标签影响\n# 但样本分布会影响方差计算\n\n# 如果少数类样本太少，其方差可能被忽略\n\n# 解决方案：\n# 1. 分层采样确保代表性\n# 2. 对各类别分别计算 PCA\n# 3. 使用 LDA（有监督）\n\nfrom sklearn.utils import resample\n\n# 分层采样\nX_minority = X[y == 1]\nX_majority = X[y == 0]\n\n# 过采样少数类\nX_minority_upsampled = resample(X_minority, \n                                 replace=True, \n                                 n_samples=len(X_majority),\n                                 random_state=42)\n\nX_balanced = np.vstack([X_majority, X_minority_upsampled])\n\n# 在平衡数据上应用 PCA\npca = PCA(n_components=0.95)\nX_pca = pca.fit_transform(StandardScaler().fit_transform(X_balanced))\n```"
+    },
+    {
+      "id": "sec-19",
+      "title": "深入理解",
+      "level": 1,
+      "content": "**PCA 的本质：** 正交变换，将相关变量转换为不相关的主成分。\n\n**关键要点：**\n1. 标准化是必须的\n2. 主成分数量通过累积方差选择\n3. PCA 是无监督的，不考虑标签\n4. 适合线性降维，非线性用 Kernel PCA 或 t-SNE"
+    },
+    {
+      "id": "sec-20",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

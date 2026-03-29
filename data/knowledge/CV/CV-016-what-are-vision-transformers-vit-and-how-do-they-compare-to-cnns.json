@@ -1,0 +1,30 @@
+{
+  "id": "CV-016-what-are-vision-transformers-vit-and-how-do-they-compare-to-cnns",
+  "title": "CV-016-what-are-vision-transformers-vit-and-how-do-they-compare-to-cnns",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-016 What are Vision Transformers (ViT) and how do they compare to CNNs?\n\n Q16: What are Vision Transformers (ViT) and how do they compare to CNNs?\n\nScore: 94/100\n\nAnswer:\n\nVision Transformers (ViT):\nViT applies transformer architecture (from NLP) to images by treating image patches as sequences.\n\nArchitecture:\n1. Split image into fixed-size patches (e.g., 16×16)\n2. Flatten patches and project to embeddings\n3. Add positional embeddings\n4. Process through transformer encode...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q16: What are Vision Transformers (ViT) and how do they compare to CNNs?",
+      "level": 2,
+      "content": "**Score:** 94/100\n\n**Answer:**\n\n**Vision Transformers (ViT):**\nViT applies transformer architecture (from NLP) to images by treating image patches as sequences.\n\n**Architecture:**\n1. Split image into fixed-size patches (e.g., 16×16)\n2. Flatten patches and project to embeddings\n3. Add positional embeddings\n4. Process through transformer encoder layers (self-attention + MLP)\n5. Classify using [CLS] token or global average pooling\n\n**Comparison with CNNs:**\n\n| Aspect | CNN | ViT |\n|--------|-----|-----|\n| **Inductive Bias** | Strong (locality, translation equivariance) | Weak (learns from data) |\n| **Receptive Field** | Local → Global (layer by layer) | Global from first layer |\n| **Data Requirements** | Works with less data | Needs large datasets |\n| **Computation** | Efficient for small images | Scales quadratically with patches |\n| **Performance** | Excellent on standard tasks | State-of-the-art with sufficient data |\n| **Interpretability** | Feature maps interpretable | Attention maps provide insights |\n\n**Hybrid Approaches:**\n- Convolutional ViT (combine CNN features with transformer)\n- Swin Transformer (hierarchical, shifted windows)\n- ConvNeXt (modernized CNN with transformer-inspired design)\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "Object Detection & Segmentation (Q17-Q22)",
+      "level": 1,
+      "content": "---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,240 @@
+{
+  "id": "DL-015-learning-rate",
+  "title": "DL-015-learning-rate",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.386Z",
+  "updatedAt": "2026-03-29T14:57:53.386Z",
+  "readTime": 9,
+  "abstract": " DL-015 ⭐⭐⭐ What is Learning Rate? How to Choose and Schedule It?\n\n Question\nWhat is the learning rate in deep learning? Explain how to choose it and describe different learning rate scheduling strategies.\n\n Answer\n\n What is Learning Rate?\n\nDefinition: The learning rate (α or η) is a hyperparameter that controls the step size during gradient descent optimization. It determines how much to update weights in response to the estimated error.\n\nUpdate Rule:\n\nw_new = w_old - α × ∇L\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is the learning rate in deep learning? Explain how to choose it and describe different learning rate scheduling strategies."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Learning Rate?",
+      "level": 2,
+      "content": "**Definition:** The learning rate (α or η) is a hyperparameter that controls the step size during gradient descent optimization. It determines how much to update weights in response to the estimated error.\n\n**Update Rule:**\n```\nw_new = w_old - α × ∇L\n\nWhere:\n- α: Learning rate\n- ∇L: Gradient of loss function\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "Visual Analogy",
+      "level": 2,
+      "content": "```\nImagine walking down a mountain in fog:\n- Learning rate = step size\n- Too large: Overshoot the bottom, may climb up other side\n- Too small: Takes forever to reach bottom\n- Just right: Efficient descent to minimum\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Learning Rate Impact",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Too Large (α = 0.1)",
+      "level": 2,
+      "content": "```\nEpoch 1: Loss = 2.5\nEpoch 2: Loss = 5.0  ← Increased!\nEpoch 3: Loss = 3.2  ← Oscillating\nEpoch 4: Loss = 6.1  ← Diverging!\n\nResult: Training diverges, never converges\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "Too Small (α = 0.00001)",
+      "level": 2,
+      "content": "```\nEpoch 1: Loss = 2.5\nEpoch 10: Loss = 2.4  ← Barely decreased\nEpoch 100: Loss = 2.0  ← Very slow\nEpoch 1000: Loss = 1.5  ← Finally improving\n\nResult: Training takes forever, may get stuck\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Just Right (α = 0.001)",
+      "level": 2,
+      "content": "```\nEpoch 1: Loss = 2.5\nEpoch 10: Loss = 1.8  ← Steady decrease\nEpoch 50: Loss = 0.9\nEpoch 100: Loss = 0.5  ← Converged!\n\nResult: Efficient convergence\n```\n\n---"
+    },
+    {
+      "id": "sec-9",
+      "title": "How to Choose Initial Learning Rate",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "Common Starting Points",
+      "level": 2,
+      "content": "| Architecture | Typical Range | Default Start |\n|-------------|---------------|---------------|\n| **FC Networks** | 0.001 - 0.1 | 0.01 |\n| **CNNs** | 0.001 - 0.01 | 0.001 |\n| **RNNs/LSTMs** | 0.0001 - 0.001 | 0.001 |\n| **Transformers** | 0.00001 - 0.0001 | 0.00005 |\n| **Fine-tuning** | 0.00001 - 0.0001 | 0.00003 |"
+    },
+    {
+      "id": "sec-11",
+      "title": "Rule of Thumb",
+      "level": 2,
+      "content": "```\n1. Start with common value (e.g., 0.001)\n2. Train for few epochs\n3. If loss doesn't decrease: Try 10× larger\n4. If loss oscillates/diverges: Try 10× smaller\n5. Once working, fine-tune within that range\n```\n\n---"
+    },
+    {
+      "id": "sec-12",
+      "title": "Learning Rate Scheduling",
+      "level": 1,
+      "content": "**Why Schedule?**\n```\nEarly training: Large LR for fast progress\nLate training: Small LR for fine-tuning\n\nFixed LR compromise: Not optimal for either phase\nScheduled LR: Best of both worlds!\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "1. Step Decay",
+      "level": 1,
+      "content": "**Method:** Reduce LR by factor at specific epochs\n\n```python\n# Reduce by 10× every 30 epochs\nscheduler = StepLR(optimizer, step_size=30, gamma=0.1)\n\nSchedule:\nEpoch 0-29:   LR = 0.1\nEpoch 30-59:  LR = 0.01\nEpoch 60-89:  LR = 0.001\n```\n\n**Use Case:** Standard practice for CNNs\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "2. Exponential Decay",
+      "level": 1,
+      "content": "**Method:** Continuous exponential decrease\n\n```python\nscheduler = ExponentialLR(optimizer, gamma=0.95)\n\nSchedule:\nEpoch 0:   LR = 0.1\nEpoch 1:   LR = 0.1 × 0.95 = 0.095\nEpoch 2:   LR = 0.1 × 0.95² = 0.090\nEpoch 10:  LR = 0.1 × 0.95¹⁰ = 0.060\n```\n\n**Use Case:** When smooth decay preferred\n\n---"
+    },
+    {
+      "id": "sec-15",
+      "title": "3. Cosine Annealing",
+      "level": 1,
+      "content": "**Method:** Cosine curve from max to min LR\n\n```python\nscheduler = CosineAnnealingLR(optimizer, T_max=100, eta_min=0.0001)\n\nSchedule:\nStarts at max LR, follows cosine curve to min LR\nSmooth, non-monotonic (can help escape local minima)\n```\n\n**Use Case:** Modern practice, works well in practice\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "4. ReduceLROnPlateau",
+      "level": 1,
+      "content": "**Method:** Reduce LR when validation metric stops improving\n\n```python\nscheduler = ReduceLROnPlateau(\n    optimizer, \n    mode='min',      # Minimize loss\n    factor=0.1,      # Reduce by 10×\n    patience=10,     # Wait 10 epochs\n    verbose=True\n)\n\n# In training loop:\nscheduler.step(validation_loss)\n```\n\n**Use Case:** When optimal stopping point unknown\n\n---"
+    },
+    {
+      "id": "sec-17",
+      "title": "5. Warm Restarts (SGDR)",
+      "level": 1,
+      "content": "**Method:** Periodically restart LR to higher value\n\n```python\nscheduler = CosineAnnealingWarmRestarts(\n    optimizer, \n    T_0=10,   # Restart every 10 epochs\n    T_mult=2  # Double period each restart\n)\n\nSchedule:\nEpoch 0-9:   LR: 0.1 → 0.001 (cosine)\nEpoch 10:    LR: 0.1 (restart!)\nEpoch 10-19: LR: 0.1 → 0.001 (cosine)\nEpoch 20:    LR: 0.1 (restart!)\n```\n\n**Use Case:** Helps escape local minima, better generalization\n\n---"
+    },
+    {
+      "id": "sec-18",
+      "title": "6. Warmup",
+      "level": 1,
+      "content": "**Method:** Start with small LR, gradually increase\n\n```python\n# Linear warmup for 5 epochs\nEpoch 0: LR = 0.0001\nEpoch 1: LR = 0.0005\nEpoch 2: LR = 0.001\nEpoch 3: LR = 0.0015\nEpoch 4: LR = 0.002  ← Target LR reached\nEpoch 5+: LR = 0.002 (or start decay)\n```\n\n**Use Case:** Transformers, very deep networks, prevents early instability\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "7. One Cycle Policy",
+      "level": 1,
+      "content": "**Method:** Increase LR, then decrease (one cycle)\n\n```python\nscheduler = OneCycleLR(\n    optimizer,\n    max_lr=0.01,\n    epochs=100,\n    steps_per_epoch=len(dataloader)\n)\n\nSchedule:\nFirst half:  0.001 → 0.01 (increase)\nSecond half: 0.01 → 0.001 (decrease)\n```\n\n**Use Case:** Fast training, good generalization\n\n---"
+    },
+    {
+      "id": "sec-20",
+      "title": "Learning Rate Finder",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-21",
+      "title": "Method (Leslie Smith)",
+      "level": 2,
+      "content": "```python\n1. Start with very small LR (e.g., 1e-7)\n2. Train one batch\n3. Increase LR exponentially\n4. Repeat for many batches\n5. Plot loss vs LR\n6. Choose LR where loss decreases fastest\n```"
+    },
+    {
+      "id": "sec-22",
+      "title": "Interpretation",
+      "level": 2,
+      "content": "```\nLoss\n │\n │    ──────↘\n │           ↘  ← Steepest descent (choose here!)\n │            ∼∼∼↗  ← Too high (diverging)\n │\n └─────────────────→ LR (log scale)\n     ↑\n  Choose LR just before minimum\n```\n\n---"
+    },
+    {
+      "id": "sec-23",
+      "title": "Adaptive Learning Rate Optimizers",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-24",
+      "title": "Adam (Most Popular)",
+      "level": 2,
+      "content": "```python\noptimizer = torch.optim.Adam(\n    model.parameters(),\n    lr=0.001,           # Initial LR\n    betas=(0.9, 0.999), # Momentum parameters\n    eps=1e-8            # Numerical stability\n)\n```\n\n**Benefits:**\n- Adapts LR per parameter\n- Works well out-of-box\n- Default choice for most tasks"
+    },
+    {
+      "id": "sec-25",
+      "title": "Other Adaptive Optimizers",
+      "level": 2,
+      "content": "| Optimizer | Key Feature | Use Case |\n|-----------|-------------|----------|\n| **Adam** | Momentum + RMSProp | Default choice |\n| **AdamW** | Adam + decoupled weight decay | Transformers |\n| **RMSprop** | Adaptive LR | RNNs |\n| **AdaGrad** | Per-parameter LR | Sparse data |\n| **SGD + Momentum** | Classic, stable | CNNs (sometimes better) |\n\n---"
+    },
+    {
+      "id": "sec-26",
+      "title": "Practical Guidelines",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-27",
+      "title": "For CNNs",
+      "level": 2,
+      "content": "```python\noptimizer = torch.optim.SGD(\n    model.parameters(),\n    lr=0.1,              # Relatively high\n    momentum=0.9,\n    weight_decay=1e-4\n)\nscheduler = MultiStepLR(optimizer, milestones=[30, 60, 90], gamma=0.1)\n```"
+    },
+    {
+      "id": "sec-28",
+      "title": "For Transformers",
+      "level": 2,
+      "content": "```python\noptimizer = torch.optim.AdamW(\n    model.parameters(),\n    lr=5e-5,             # Lower LR\n    betas=(0.9, 0.999),\n    weight_decay=0.01\n)\nscheduler = get_linear_schedule_with_warmup(\n    optimizer,\n    num_warmup_steps=1000,\n    num_training_steps=10000\n)\n```"
+    },
+    {
+      "id": "sec-29",
+      "title": "For Fine-tuning",
+      "level": 2,
+      "content": "```python\n# Lower LR for pretrained layers\noptimizer = torch.optim.AdamW([\n    {'params': model.backbone.parameters(), 'lr': 1e-5},\n    {'params': model.classifier.parameters(), 'lr': 1e-4}\n])\n```\n\n---"
+    },
+    {
+      "id": "sec-30",
+      "title": "Common Mistakes",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-31",
+      "title": "❌ Using Same LR for Pretrained and New Layers",
+      "level": 2,
+      "content": "```python\n# Wrong: Same LR for all\noptimizer = Adam(model.parameters(), lr=0.001)\n\n# Better: Lower LR for pretrained\noptimizer = AdamW([\n    {'params': model.pretrained.parameters(), 'lr': 1e-5},\n    {'params': model.new_layers.parameters(), 'lr': 1e-3}\n])\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "❌ No Learning Rate Scheduling",
+      "level": 2,
+      "content": "```python\n# Suboptimal: Fixed LR throughout\noptimizer = Adam(model.parameters(), lr=0.001)\n# No scheduler\n\n# Better: Add scheduling\nscheduler = ReduceLROnPlateau(optimizer, patience=10)\n```"
+    },
+    {
+      "id": "sec-33",
+      "title": "❌ Too High LR for Fine-tuning",
+      "level": 2,
+      "content": "```python\n# Wrong: Using same LR as training from scratch\noptimizer = Adam(model.parameters(), lr=0.001)  # Too high!\n\n# Correct: Much lower for fine-tuning\noptimizer = AdamW(model.parameters(), lr=0.00003)\n```"
+    },
+    {
+      "id": "sec-34",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Learning rate controls step size in gradient descent\n- Too high: Diverges; Too low: Slow convergence\n- Typical range: 0.00001 to 0.1 (depends on architecture)\n- Use scheduling for better results (step decay, cosine, etc.)\n- Adam optimizer works well with lr=0.001 as default\n- Use learning rate finder to choose optimal LR\n- Lower LR for fine-tuning pretrained models"
+    },
+    {
+      "id": "sec-35",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-36",
+      "title": "Category: Optimization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-37",
+      "title": "Tags: [learning-rate, optimization, scheduling, training, hyperparameters]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

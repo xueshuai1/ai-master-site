@@ -1,0 +1,71 @@
+{
+  "id": "ML-017-⭐⭐⭐-data-leakage",
+  "title": "Data Leakage Prevention (数据泄露预防)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Data Leakage",
+    "Preprocessing",
+    "Cross-Validation",
+    "Feature Engineering"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.394Z",
+  "readTime": 4,
+  "abstract": " 题目描述\n什么是数据泄露 (Data Leakage)？有哪些常见类型？如何检测和预防数据泄露？\n\n 参考答案\n\n 数据泄露定义\n\n数据泄露： 训练时使用了测试时不可用的信息，导致评估过于乐观，生产性能下降。\n\n 常见类型\n\npython\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.ensemble import RandomForestClassifier\n\n ❌ 类型 1: 预处理泄露\n 在划分前进行标准化\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)   用了全部数据！\nX_train, X_test = train_test_split(X_scaled, test_size=0.2)   泄露！\n\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "什么是数据泄露 (Data Leakage)？有哪些常见类型？如何检测和预防数据泄露？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "数据泄露定义",
+      "level": 2,
+      "content": "**数据泄露：** 训练时使用了测试时不可用的信息，导致评估过于乐观，生产性能下降。"
+    },
+    {
+      "id": "sec-4",
+      "title": "常见类型",
+      "level": 2,
+      "content": "```python\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.ensemble import RandomForestClassifier\n\n# ❌ 类型 1: 预处理泄露\n# 在划分前进行标准化\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)  # 用了全部数据！\nX_train, X_test = train_test_split(X_scaled, test_size=0.2)  # 泄露！\n\n# ✅ 正确做法\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)  # 只用训练数据拟合\nX_test_scaled = scaler.transform(X_test)        # 用训练数据的参数转换\n\n# ✅ 最佳做法：Pipeline\npipeline = Pipeline([\n    ('scaler', StandardScaler()),\n    ('clf', RandomForestClassifier())\n])\npipeline.fit(X_train, y_train)  # 自动正确处理\n```\n\n```python\n# ❌ 类型 2: 特征工程泄露\n# 用全部数据计算特征统计量\nglobal_mean = X['feature'].mean()  # 包含测试集！\nX['feature_imputed'] = X['feature'].fillna(global_mean)\n\n# ✅ 正确做法\ntrain_mean = X_train['feature'].mean()\nX_train['feature_imputed'] = X_train['feature'].fillna(train_mean)\nX_test['feature_imputed'] = X_test['feature'].fillna(train_mean)\n```\n\n```python\n# ❌ 类型 3: 时间序列泄露\n# 用未来数据预测过去\n# 例如：用明天的股价预测今天\n\n# ✅ 正确做法：时间序列交叉验证\nfrom sklearn.model_selection import TimeSeriesSplit\n\ntscv = TimeSeriesSplit(n_splits=5)\nfor train_idx, test_idx in tscv.split(X):\n    X_train, X_test = X[train_idx], X[test_idx]\n    # 确保训练集时间早于测试集\n```\n\n```python\n# ❌ 类型 4: 目标泄露\n# 特征包含目标信息\n# 例如：预测用户流失，特征包含\"是否已取消订阅\"\n\n# 检测相关性\nfrom sklearn.feature_selection import mutual_info_classif\n\nmi = mutual_info_classif(X, y)\nfor feat, score in sorted(zip(feature_names, mi), key=lambda x: -x[1])[:10]:\n    print(f\"{feat}: {score:.4f}\")\n# 异常高的 MI 可能表示泄露\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "检测方法",
+      "level": 2,
+      "content": "```python\n# 1. 检查训练 - 测试性能差距\ntrain_score = model.score(X_train, y_train)\ntest_score = model.score(X_test, y_test)\ngap = train_score - test_score\n\nif gap > 0.1:\n    print(f\"⚠️  警告：性能差距 {gap:.4f}，可能存在泄露\")\n\n# 2. 特征重要性分析\n# 异常重要的特征可能泄露\n\n# 3. 打乱目标验证\nfrom sklearn.model_selection import cross_val_score\nimport numpy as np\n\ny_shuffled = np.random.permutation(y)\nscore_shuffled = cross_val_score(model, X, y_shuffled, cv=5).mean()\n\nif score_shuffled > 0.6:  # 应该接近随机\n    print(f\"⚠️  警告：打乱目标后仍有 {score_shuffled:.4f} 准确率，存在泄露\")\n\n# 4. 时间验证\n# 用未来数据训练，过去数据测试（应该很差）\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "预防清单",
+      "level": 2,
+      "content": "```python\nprevention_checklist = \"\"\"\n数据泄露预防清单：\n\n□ 训练/测试划分后再预处理\n□ 使用 Pipeline 封装预处理\n□ 交叉验证中每折独立预处理\n□ 时间序列不用未来数据\n□ 特征不包含目标信息\n□ 分组数据保持组完整\n□ 缺失值填充只用训练统计量\n□ 特征选择只用训练数据\n□ 超参数调优用验证集或嵌套 CV\n□ 最终评估用独立测试集\n\"\"\"\nprint(prevention_checklist)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解数据泄露的概念\n- ✅ 识别常见泄露类型\n- ✅ 掌握检测方法\n- ✅ 能够预防泄露\n- ✅ 具备最佳实践意识"
+    },
+    {
+      "id": "sec-8",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "DL-028-convolution-operation",
+  "title": "DL-028-convolution-operation",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 3,
+  "abstract": " DL-028 ⭐⭐⭐ Explain Convolution Operations in CNN\n\n Question\nWhat is convolution in CNN? Explain the convolution operation, padding, stride, and output size calculation.\n\n Answer\n\n What is Convolution?\nConvolution is a mathematical operation that applies a filter (kernel) to an input, producing a feature map that highlights specific patterns.\n\n---\n\n Convolution Operation\n\n 2D Convolution\n\nInput: Image (H × W × channels)\nFilter: Small matrix (e.g., 3×3)\nOutput: Feature map\n\nOp...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is convolution in CNN? Explain the convolution operation, padding, stride, and output size calculation."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Convolution?",
+      "level": 2,
+      "content": "**Convolution** is a mathematical operation that applies a filter (kernel) to an input, producing a feature map that highlights specific patterns.\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "Convolution Operation",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "2D Convolution",
+      "level": 2,
+      "content": "```\nInput: Image (H × W × channels)\nFilter: Small matrix (e.g., 3×3)\nOutput: Feature map\n\nOperation:\n1. Slide filter over input\n2. Element-wise multiply\n3. Sum all values\n4. Move to next position\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "Example (3×3 filter)",
+      "level": 2,
+      "content": "```\nInput region:    Filter:        Output:\n[1 1 1]         [1 0 1]\n[0 1 0]   *     [0 1 0]   =   1×1 + 1×0 + 1×1 +\n[1 0 1]         [1 0 1]       0×0 + 1×1 + 0×0 +\n                              1×1 + 0×0 + 1×1   = 5\n```\n\n---"
+    },
+    {
+      "id": "sec-7",
+      "title": "Key Parameters",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-8",
+      "title": "1. Filter Size",
+      "level": 2,
+      "content": "```\nCommon: 3×3, 5×5, 7×7\nSmaller filters: More layers, fewer params\nLarger filters: Capture larger patterns\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "2. Stride",
+      "level": 2,
+      "content": "```\nStep size for sliding filter\nStride 1: Move 1 pixel at a time\nStride 2: Move 2 pixels (downsample)\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "3. Padding",
+      "level": 2,
+      "content": "```\nValid: No padding, output smaller than input\nSame: Zero-pad to maintain size\n```\n\n---"
+    },
+    {
+      "id": "sec-11",
+      "title": "Output Size Formula",
+      "level": 1,
+      "content": "```\nOutput = ⌊(Input - Filter + 2×Padding) / Stride⌋ + 1\n\nExample:\nInput: 32×32, Filter: 3×3, Padding: 1, Stride: 1\nOutput = (32 - 3 + 2×1) / 1 + 1 = 32×32\n```\n\n---"
+    },
+    {
+      "id": "sec-12",
+      "title": "What Filters Learn",
+      "level": 1,
+      "content": "```\nLayer 1: Edges, corners, colors\nLayer 2: Textures, patterns\nLayer 3: Shapes, object parts\nLayer 4+: Complete objects\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "Multi-Channel Convolution",
+      "level": 1,
+      "content": "```\nRGB Input: 3 channels\nFilter: 3×3×3 (depth matches input)\nOutput: Single feature map\n\nMultiple filters → Multiple feature maps\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "Category: CNN",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-16",
+      "title": "Tags: [convolution, CNN, filters, padding, stride, computer-vision]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "ML-022-⭐⭐⭐-ab-testing",
+  "title": "A/B Testing for ML (机器学习 A/B 测试)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "A/B Testing",
+    "Experiment Design",
+    "Statistical Significance",
+    "Business Metrics"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.395Z",
+  "readTime": 5,
+  "abstract": " 题目描述\n如何设计 A/B 测试来评估机器学习模型？如何确定样本量？如何分析结果？\n\n 参考答案\n\n A/B 测试设计\n\npython\n 实验设计要素\nexperiment_design = \"\"\"\n1. 假设\n   - H0 (零假设): 新旧模型无差异\n   - H1 (备择假设): 新模型更好\n\n2. 指标\n   - 主要指标：业务核心指标\n   - 次要指标：辅助指标\n   - 护栏指标：确保无负面影响\n\n3. 分组\n   - 随机分配\n   - 样本量计算\n   - 分层随机化\n\n4. 时长\n   - 考虑季节性\n   - 学习期排除\n   - 统计功效\n\"\"\"\n\n\n 样本量计算\n\npython\nfrom statsmodels.stats.power import TTestIndPower\nfrom statsmodels.stats.proportion import proportions_ztest\nimport numpy as np\n\ndef calculate_sample_size(baseline_rate, md...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "如何设计 A/B 测试来评估机器学习模型？如何确定样本量？如何分析结果？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "A/B 测试设计",
+      "level": 2,
+      "content": "```python\n# 实验设计要素\nexperiment_design = \"\"\"\n1. 假设\n   - H0 (零假设): 新旧模型无差异\n   - H1 (备择假设): 新模型更好\n\n2. 指标\n   - 主要指标：业务核心指标\n   - 次要指标：辅助指标\n   - 护栏指标：确保无负面影响\n\n3. 分组\n   - 随机分配\n   - 样本量计算\n   - 分层随机化\n\n4. 时长\n   - 考虑季节性\n   - 学习期排除\n   - 统计功效\n\"\"\"\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "样本量计算",
+      "level": 2,
+      "content": "```python\nfrom statsmodels.stats.power import TTestIndPower\nfrom statsmodels.stats.proportion import proportions_ztest\nimport numpy as np\n\ndef calculate_sample_size(baseline_rate, mde, alpha=0.05, power=0.8):\n    \"\"\"\n    计算 A/B 测试所需样本量\n    \n    baseline_rate: 基线转化率\n    mde: 最小可检测效应 (相对提升)\n    alpha: 显著性水平\n    power: 统计功效\n    \"\"\"\n    # 效应大小 (Cohen's h)\n    new_rate = baseline_rate * (1 + mde)\n    h = 2 * np.arcsin(np.sqrt(new_rate)) - 2 * np.arcsin(np.sqrt(baseline_rate))\n    \n    # 计算样本量\n    analysis = TTestIndPower()\n    n_per_group = analysis.solve_power(effect_size=h, alpha=alpha, power=power)\n    \n    return int(np.ceil(n_per_group))\n\n# 示例\nbaseline = 0.10  # 10% 转化率\nmde = 0.10       # 检测 10% 相对提升\nn = calculate_sample_size(baseline, mde)\nprint(f\"Required sample size per group: {n:,}\")\nprint(f\"Total sample size: {2*n:,}\")\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "结果分析",
+      "level": 2,
+      "content": "```python\nfrom scipy import stats\nfrom statsmodels.stats.proportion import proportions_ztest\n\ndef analyze_ab_test(conversions_control, n_control, conversions_treatment, n_treatment):\n    \"\"\"分析 A/B 测试结果\"\"\"\n    \n    # 转化率\n    rate_control = conversions_control / n_control\n    rate_treatment = conversions_treatment / n_treatment\n    relative_lift = (rate_treatment - rate_control) / rate_control\n    \n    # 统计检验\n    stat, p_value = proportions_ztest(\n        [conversions_treatment, conversions_control],\n        [n_treatment, n_control],\n        alternative='larger'  # 单侧检验\n    )\n    \n    # 置信区间\n    from statsmodels.stats.proportion import proportion_confint\n    ci_low, ci_high = proportion_confint(\n        conversions_treatment, n_treatment, alpha=0.05, method='wilson'\n    )\n    \n    # 结果\n    significant = p_value < 0.05\n    winner = 'treatment' if (significant and relative_lift > 0) else 'control'\n    \n    return {\n        'rate_control': rate_control,\n        'rate_treatment': rate_treatment,\n        'relative_lift': relative_lift,\n        'p_value': p_value,\n        'significant': significant,\n        'confidence_interval': (ci_low, ci_high),\n        'winner': winner\n    }\n\n# 示例\nresult = analyze_ab_test(\n    conversions_control=950,\n    n_control=10000,\n    conversions_treatment=1050,\n    n_treatment=10000\n)\n\nprint(f\"Control rate: {result['rate_control']:.4f}\")\nprint(f\"Treatment rate: {result['rate_treatment']:.4f}\")\nprint(f\"Relative lift: {result['relative_lift']:.2%}\")\nprint(f\"P-value: {result['p_value']:.4f}\")\nprint(f\"Significant: {result['significant']}\")\nprint(f\"Winner: {result['winner']}\")\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "常见陷阱",
+      "level": 2,
+      "content": "```python\npitfalls = \"\"\"\n1. P-hacking\n   - 多次查看结果\n   - 解决方案：固定样本量，预先注册\n\n2. 多重检验\n   - 同时测试多个指标\n   - 解决方案：Bonferroni 校正\n\n3. 选择偏差\n   - 非随机分组\n   - 解决方案：严格随机化\n\n4. 新奇效应\n   - 用户因新鲜感而改变行为\n   - 解决方案：延长测试时间\n\n5. 网络效应\n   - 用户之间相互影响\n   - 解决方案：集群随机化\n\n6. 辛普森悖论\n   - 分组趋势与总体相反\n   - 解决方案：分层分析\n\"\"\"\nprint(pitfalls)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解 A/B 测试设计\n- ✅ 掌握样本量计算\n- ✅ 能够分析实验结果\n- ✅ 了解常见陷阱\n- ✅ 具备统计思维"
+    },
+    {
+      "id": "sec-8",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

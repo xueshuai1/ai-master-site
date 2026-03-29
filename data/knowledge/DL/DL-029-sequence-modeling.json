@@ -1,0 +1,174 @@
+{
+  "id": "DL-029-sequence-modeling",
+  "title": "DL-029-sequence-modeling",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 4,
+  "abstract": " DL-029 ⭐⭐⭐ What is Sequence Modeling? RNN, LSTM, and Transformer Comparison\n\n Question\nWhat is sequence modeling? Compare RNN, LSTM, and Transformer architectures for sequential data.\n\n Answer\n\n What is Sequence Modeling?\nSequence modeling deals with data where order matters (text, speech, time series). The model must capture dependencies between elements in the sequence.\n\n---\n\n RNN (Recurrent Neural Network)\n\n Architecture\n\nProcesses sequence one element at a time\nHidden st...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is sequence modeling? Compare RNN, LSTM, and Transformer architectures for sequential data."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Sequence Modeling?",
+      "level": 2,
+      "content": "**Sequence modeling** deals with data where order matters (text, speech, time series). The model must capture dependencies between elements in the sequence.\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "RNN (Recurrent Neural Network)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "Architecture",
+      "level": 2,
+      "content": "```\nProcesses sequence one element at a time\nHidden state carries information forward\nhₜ = f(W×xₜ + U×hₜ₋₁)\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "Pros",
+      "level": 2,
+      "content": "```\n✅ Natural for sequences\n✅ Variable length input\n✅ Theoretically can capture long dependencies\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "Cons",
+      "level": 2,
+      "content": "```\n❌ Vanishing gradients\n❌ Sequential (slow training)\n❌ Short-term memory (~10 steps)\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Simple sequence tasks\n- Short sequences\n- Educational purposes\n```\n\n---"
+    },
+    {
+      "id": "sec-9",
+      "title": "LSTM (Long Short-Term Memory)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "Architecture",
+      "level": 2,
+      "content": "```\nGating mechanism (forget, input, output gates)\nCell state for long-term memory\nControls information flow\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "Pros",
+      "level": 2,
+      "content": "```\n✅ Solves vanishing gradient\n✅ Long-term dependencies (100+ steps)\n✅ Well-understood\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Cons",
+      "level": 2,
+      "content": "```\n❌ Still sequential\n❌ More parameters than RNN\n❌ Complex architecture\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Time series prediction\n- Speech recognition\n- When Transformers too large\n```\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "Transformer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "Architecture",
+      "level": 2,
+      "content": "```\nSelf-attention mechanism\nNo recurrence, fully parallel\nPositional encoding for order\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "Pros",
+      "level": 2,
+      "content": "```\n✅ Parallelizable (fast training)\n✅ Excellent long-range dependencies\n✅ State-of-the-art performance\n✅ Scalable\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "Cons",
+      "level": 2,
+      "content": "```\n❌ O(n²) memory complexity\n❌ Needs more data\n❌ No inherent notion of order\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- NLP (translation, generation)\n- Vision (ViT)\n- Multimodal tasks\n- When data is abundant\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "Comparison Table",
+      "level": 1,
+      "content": "| Aspect | RNN | LSTM | Transformer |\n|--------|-----|------|-------------|\n| **Parallelization** | No | No | Yes |\n| **Long Dependencies** | Poor | Good | Excellent |\n| **Training Speed** | Slow | Slow | Fast |\n| **Memory** | O(1) | O(1) | O(n²) |\n| **Data Efficiency** | Good | Good | Needs more |\n| **Current Usage** | Rare | Moderate | Dominant |\n\n---"
+    },
+    {
+      "id": "sec-20",
+      "title": "When to Use Each",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-21",
+      "title": "RNN",
+      "level": 2,
+      "content": "```\n- Simple tasks, short sequences\n- Resource-constrained environments\n- Educational/demo purposes\n```"
+    },
+    {
+      "id": "sec-22",
+      "title": "LSTM",
+      "level": 2,
+      "content": "```\n- Time series with moderate length\n- When Transformers too expensive\n- Proven architecture for task\n```"
+    },
+    {
+      "id": "sec-23",
+      "title": "Transformer",
+      "level": 2,
+      "content": "```\n- Most NLP tasks (default choice)\n- When you have enough data\n- Need state-of-the-art\n- Long sequences (with efficient attention)\n```"
+    },
+    {
+      "id": "sec-24",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-25",
+      "title": "Category: Neural Network Architectures",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-26",
+      "title": "Tags: [sequence-modeling, RNN, LSTM, transformer, NLP, time-series]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

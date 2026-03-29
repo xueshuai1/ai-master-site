@@ -1,0 +1,24 @@
+{
+  "id": "NLP-013-how-do-lstm-networks-work-when-to-use-them",
+  "title": "NLP-013-how-do-lstm-networks-work-when-to-use-them",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-013 How do LSTM networks work? When to use them?\n\n 13. How do LSTM networks work? When to use them?\n答案要点:\n- 核心: 门控机制控制信息流\n  - Forget Gate: 决定丢弃什么\n  - Input Gate: 决定存储什么\n  - Output Gate: 决定输出什么\n- 优势: 解决长距离依赖、梯度消失\n- 使用场景:\n  - 序列标注 (NER, POS)\n  - 文本生成\n  - 机器翻译\n  - 语音识别\n- 替代: Transformer (并行、更高效)\n\n质量评分: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "13. How do LSTM networks work? When to use them?",
+      "level": 3,
+      "content": "**答案要点:**\n- **核心**: 门控机制控制信息流\n  - Forget Gate: 决定丢弃什么\n  - Input Gate: 决定存储什么\n  - Output Gate: 决定输出什么\n- **优势**: 解决长距离依赖、梯度消失\n- **使用场景**:\n  - 序列标注 (NER, POS)\n  - 文本生成\n  - 机器翻译\n  - 语音识别\n- **替代**: Transformer (并行、更高效)\n\n**质量评分**: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

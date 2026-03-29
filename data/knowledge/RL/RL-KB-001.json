@@ -1,0 +1,116 @@
+{
+  "id": "RL-KB-001",
+  "title": "强化学习基础与核心概念",
+  "category": "RL",
+  "difficulty": "⭐⭐",
+  "tags": ["强化学习", "MDP", "策略梯度", "Q-learning", "深度强化学习"],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T00:00:00Z",
+  "updatedAt": "2026-03-29T00:00:00Z",
+  "readTime": 18,
+  "abstract": "本文系统介绍强化学习的基础概念，包括 MDP 框架、价值函数、策略优化、探索 - 利用权衡等核心内容，并概述从经典方法到深度强化学习的演进。",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "什么是强化学习？",
+      "level": 1,
+      "content": "## 强化学习定义\n\n**强化学习（Reinforcement Learning, RL）** 是机器学习的一个分支，研究智能体（Agent）如何通过与环境（Environment）交互，根据奖励信号（Reward）学习最优行为策略，以最大化累积奖励。\n\n## 与监督学习、无监督学习的区别\n\n| 学习范式 | 输入 | 目标 | 反馈 |\n|----------|------|------|------|\n| **监督学习** | 输入 - 输出对 | 学习映射函数 | 即时、明确 |\n| **无监督学习** | 无标签数据 | 发现数据结构 | 无反馈 |\n| **强化学习** | 奖励信号 | 最大化累积奖励 | 延迟、稀疏 |\n\n## 核心特点\n\n1. **试错学习**：通过尝试不同动作，从错误中学习\n2. **延迟奖励**：当前动作的影响可能在未来才显现\n3. **序列决策**：需要考虑长期后果，而非单步最优\n4. **探索 - 利用权衡**：平衡尝试新动作和利用已知好动作\n\n## 应用场景\n\n- **游戏**：AlphaGo、AlphaStar、Dota 2\n- **机器人控制**：行走、抓取、操作\n- **推荐系统**：个性化推荐优化\n- **自动驾驶**：决策规划\n- **金融交易**：投资组合优化\n- **资源调度**：数据中心、网络"
+    },
+    {
+      "id": "sec-2",
+      "title": "MDP 框架",
+      "level": 1,
+      "subsections": [
+        {
+          "id": "sec-2-1",
+          "title": "马尔可夫决策过程",
+          "level": 2,
+          "content": "## MDP 五元组定义\n\n强化学习问题通常形式化为**马尔可夫决策过程（MDP）**，由五元组 (S, A, P, R, γ) 定义：\n\n### 1. 状态空间 S（State Space）\n\n所有可能状态的集合。\n\n**示例**：\n- 棋类游戏：棋盘布局\n- 机器人：位置、速度、关节角度\n- 自动驾驶：车辆位置、速度、周围障碍物\n\n### 2. 动作空间 A（Action Space）\n\n所有可能动作的集合。\n\n**类型**：\n- **离散动作空间**：有限个动作（上下左右）\n- **连续动作空间**：无限个动作（力矩、速度）\n\n### 3. 状态转移概率 P（Transition Probability）\n\n```\nP(s'|s,a) = P(下一个状态=s' | 当前状态=s, 动作=a)\n```\n\n描述环境的动态特性。\n\n### 4. 奖励函数 R（Reward Function）\n\n```\nR(s,a,s') 或 R(s,a) 或 R(s)\n```\n\n定义即时奖励信号，指导学习方向。\n\n### 5. 折扣因子 γ（Discount Factor）\n\n```\nγ ∈ [0, 1]\n```\n\n衡量未来奖励的重要性：\n- γ = 0：只关心即时奖励\n- γ → 1：重视长期奖励"
+        },
+        {
+          "id": "sec-2-2",
+          "title": "马尔可夫性质",
+          "level": 2,
+          "content": "## 马尔可夫性质\n\n**定义**：当前状态包含了做出最优决策所需的全部信息，历史状态不影响未来。\n\n```\nP(s_{t+1} | s_t, a_t) = P(s_{t+1} | s_t, a_t, s_{t-1}, a_{t-1}, ..., s_0, a_0)\n```\n\n## 为什么需要马尔可夫性质？\n\n1. **简化问题**：只需考虑当前状态，无需完整历史\n2. **动态规划可行**：可以使用 Bellman 方程\n3. **计算高效**：状态空间有限时可求解\n\n## 非马尔可夫环境的处理\n\n如果环境不满足马尔可夫性质：\n\n1. **状态扩展**：将历史纳入状态（如堆叠帧）\n2. **使用 RNN**：用循环网络编码历史\n3. **部分可观测 MDP（POMDP）**：引入信念状态"
+        }
+      ]
+    },
+    {
+      "id": "sec-3",
+      "title": "价值函数与 Bellman 方程",
+      "level": 1,
+      "content": "## 策略（Policy）\n\n**定义**：策略π是智能体的行为准则，定义在给定状态下选择动作的概率分布。\n\n```\nπ(a|s) = P(A=a | S=s)\n```\n\n**类型**：\n- **确定性策略**：π(s) = a（直接输出动作）\n- **随机策略**：π(a|s) = P(A=a|S=s)（输出概率分布）\n\n## 价值函数（Value Function）\n\n### 状态价值函数 V^π(s)\n\n从状态 s 开始，遵循策略π的期望累积奖励：\n\n```\nV^π(s) = E_π[Σ_{t=0}^∞ γ^t r_t | s_0 = s]\n```\n\n### 动作价值函数 Q^π(s,a)\n\n在状态 s 执行动作 a，之后遵循策略π的期望累积奖励：\n\n```\nQ^π(s,a) = E_π[Σ_{t=0}^∞ γ^t r_t | s_0 = s, a_0 = a]\n```\n\n### V 和 Q 的关系\n\n```\nV^π(s) = Σ_a π(a|s) Q^π(s,a)\n```\n\n## Bellman 方程\n\n### Bellman 期望方程\n\n```\nV^π(s) = Σ_a π(a|s) Σ_{s'} P(s'|s,a) [R(s,a) + γV^π(s')]\n```\n\n**含义**：当前状态的价值 = 即时奖励 + 折扣后的下一状态价值\n\n### Bellman 最优方程\n\n```\nV*(s) = max_a Σ_{s'} P(s'|s,a) [R(s,a) + γV*(s')]\n```\n\n```\nQ*(s,a) = Σ_{s'} P(s'|s,a) [R(s,a) + γ max_{a'} Q*(s',a')]\n```\n\n**含义**：最优价值函数遵循最优策略\n\n## 求解方法\n\n1. **值迭代（Value Iteration）**：迭代更新 V，直到收敛\n2. **策略迭代（Policy Iteration）**：交替进行策略评估和策略改进\n3. **Q-learning**：无需模型，直接从经验学习 Q*"
+    },
+    {
+      "id": "sec-4",
+      "title": "探索与利用的权衡",
+      "level": 1,
+      "content": "## 问题定义\n\n**利用（Exploitation）**：选择当前已知最优的动作\n\n**探索（Exploration）**：尝试新动作以发现更好的策略\n\n**困境**：\n- 过度利用：可能陷入局部最优\n- 过度探索：浪费机会，性能下降\n\n## 经典策略\n\n### 1. ε-greedy\n\n**策略**：\n- 以概率ε随机选择动作（探索）\n- 以概率 1-ε 选择最优动作（利用）\n\n```python\nif random() < epsilon:\n    action = random_choice(actions)  # 探索\nelse:\n    action = argmax(Q[s])  # 利用\n```\n\n**ε衰减**：训练初期ε大（多探索），后期ε小（多利用）\n\n### 2. Softmax（Boltzmann 探索）\n\n**策略**：按 Q 值的概率分布选择动作\n\n```\nπ(a|s) = exp(Q(s,a)/τ) / Σ_{a'} exp(Q(s,a')/τ)\n```\n\n**温度参数τ**：\n- τ高：更随机（探索）\n- τ低：更确定（利用）\n\n### 3. UCB（Upper Confidence Bound）\n\n**策略**：选择 Q 值 + 不确定性最高的动作\n\n```\na_t = argmax_a [Q(a) + c * √(ln t / N(a))]\n```\n\n**思想**：鼓励尝试访问次数少的动作\n\n### 4. Thompson Sampling\n\n**策略**：基于后验概率采样选择动作\n\n**思想**：维护 Q 值的概率分布，采样后选择最优\n\n## 深度强化学习中的探索\n\n1. **噪声注入**：在动作上加噪声（如 DDPG 的 OU 噪声）\n2. **熵正则化**：在损失中加入策略熵（如 SAC）\n3. **内在动机**：奖励新奇状态（如好奇心驱动）"
+    },
+    {
+      "id": "sec-5",
+      "title": "经典算法概览",
+      "level": 1,
+      "content": "## 基于价值的方法（Value-Based）\n\n### Q-learning\n\n**核心思想**：直接学习最优 Q 函数\n\n**更新规则**：\n```\nQ(s,a) ← Q(s,a) + α [r + γ max_{a'} Q(s',a') - Q(s,a)]\n```\n\n**特点**：\n- Off-policy（学习最优策略，行为策略可不同）\n- 简单有效\n- 只适用于离散动作\n\n### Sarsa\n\n**更新规则**：\n```\nQ(s,a) ← Q(s,a) + α [r + γ Q(s',a') - Q(s,a)]\n```\n\n**与 Q-learning 区别**：\n- On-policy（学习和行为使用同一策略）\n- 更保守，考虑了探索的影响\n\n### DQN（Deep Q-Network）\n\n**创新**：用神经网络近似 Q 函数\n\n**关键技术**：\n1. **经验回放（Experience Replay）**：存储经验，随机采样\n2. **目标网络（Target Network）**：稳定训练\n3. **卷积网络**：处理图像输入\n\n## 基于策略的方法（Policy-Based）\n\n### REINFORCE\n\n**核心思想**：直接优化策略参数\n\n**梯度**：\n```\n∇J(θ) = E[Σ_t ∇_θ log π_θ(a_t|s_t) G_t]\n```\n\n**特点**：\n- 可处理连续动作\n- 方差大，样本效率低\n\n### Actor-Critic\n\n**核心思想**：结合价值方法和策略方法\n\n**架构**：\n- **Actor**：策略网络，选择动作\n- **Critic**：价值网络，评估动作\n\n**优势**：\n- 降低方差（用 Critic 替代 Monte Carlo）\n- 保持策略梯度的灵活性\n\n## 现代深度强化学习算法\n\n| 算法 | 类型 | 特点 |\n|------|------|------|\n| **DDPG** | Actor-Critic | 连续动作，确定性策略 |\n| **TD3** | Actor-Critic | DDPG 改进，更稳定 |\n| **SAC** | Actor-Critic | 最大熵，自动探索 |\n| **PPO** | Policy Gradient | 截断更新，稳定高效 |\n| **A3C** | Actor-Critic | 异步并行 |\n\n## 算法选择建议\n\n- **离散动作**：DQN、PPO\n- **连续动作**：DDPG、TD3、SAC\n- **样本效率优先**：SAC、TD3\n- **实现简单**：PPO\n- **并行训练**：A3C"
+    },
+    {
+      "id": "sec-6",
+      "title": "深度强化学习实践要点",
+      "level": 1,
+      "content": "## 训练技巧\n\n### 1. 经验回放（Experience Replay）\n\n**作用**：\n- 打破样本相关性\n- 重用经验，提高样本效率\n- 平衡分布（重要经验可重复采样）\n\n**实现**：\n```python\nclass ReplayBuffer:\n    def __init__(self, capacity):\n        self.buffer = deque(maxlen=capacity)\n    \n    def push(self, state, action, reward, next_state, done):\n        self.buffer.append((state, action, reward, next_state, done))\n    \n    def sample(self, batch_size):\n        return random.sample(self.buffer, batch_size)\n```\n\n### 2. 目标网络（Target Network）\n\n**作用**：稳定训练，避免移动目标问题\n\n**实现**：\n- 维护两个网络：当前网络和目标网络\n- 定期将当前网络参数复制到目标网络\n- 或使用软更新：θ_target ← τθ_current + (1-τ)θ_target\n\n### 3. 奖励缩放（Reward Scaling）\n\n**问题**：奖励尺度不稳定影响训练\n\n**方案**：\n- 奖励归一化\n- 奖励裁剪\n- 优势归一化（PPO）\n\n### 4. 梯度裁剪（Gradient Clipping）\n\n**作用**：防止梯度爆炸\n\n**实现**：\n```python\ntorch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)\n```\n\n## 常见陷阱\n\n1. **过拟合**：在训练环境表现好，测试环境差\n   - 解决：环境随机化、正则化\n\n2. **奖励设计不当**：智能体找到\"作弊\"方法\n   - 解决：仔细设计奖励，多测试\n\n3. **超参数敏感**：学习率、折扣因子等影响大\n   - 解决：网格搜索、自适应方法\n\n4. **训练不稳定**：性能波动大\n   - 解决：目标网络、梯度裁剪、多次随机种子\n\n## 实践建议\n\n1. **从简单开始**：先在简单环境验证\n2. **可视化监控**：记录奖励、损失、策略分布\n3. **多次实验**：RL 方差大，需多次随机种子\n4. **使用成熟框架**：Stable-Baselines3、RLlib、CleanRL"
+    }
+  ],
+  "keyTakeaways": [
+    "强化学习通过试错和延迟奖励学习最优策略，核心是 MDP 框架",
+    "价值函数 V 和 Q 描述状态/动作的长期价值，Bellman 方程是理论基础",
+    "探索 - 利用权衡是 RL 的核心挑战，ε-greedy、UCB 等是经典策略",
+    "深度强化学习结合深度学习和 RL，DQN、PPO、SAC 等是主流算法",
+    "实践经验（经验回放、目标网络、奖励设计）对训练成功至关重要"
+  ],
+  "prerequisites": [
+    "了解概率论基础",
+    "了解机器学习基础",
+    "了解神经网络基础"
+  ],
+  "relatedArticles": [
+    "RL-KB-002",
+    "ML-KB-001",
+    "LLM-KB-003"
+  ],
+  "diagrams": [
+    {
+      "id": "diag-1",
+      "title": "MDP 示意图",
+      "description": "展示智能体与环境的交互",
+      "type": "flowchart",
+      "content": "Agent → Action → Environment → Reward + Next State → Agent"
+    }
+  ],
+  "codeExamples": [
+    {
+      "id": "code-1",
+      "title": "Q-learning 实现",
+      "language": "python",
+      "code": "import numpy as np\n\nclass QLearning:\n    def __init__(self, states, actions, alpha=0.1, gamma=0.99, epsilon=0.1):\n        self.Q = np.zeros((states, actions))\n        self.alpha = alpha  # 学习率\n        self.gamma = gamma  # 折扣因子\n        self.epsilon = epsilon  # 探索率\n        self.actions = actions\n    \n    def choose_action(self, state):\n        if np.random.random() < self.epsilon:\n            return np.random.randint(self.actions)  # 探索\n        else:\n            return np.argmax(self.Q[state])  # 利用\n    \n    def update(self, state, action, reward, next_state, done):\n        if done:\n            target = reward\n        else:\n            target = reward + self.gamma * np.max(self.Q[next_state])\n        \n        # Q-learning 更新\n        self.Q[state, action] += self.alpha * (target - self.Q[state, action])",
+      "explanation": "Q-learning 的简化实现，展示了核心更新规则"
+    }
+  ],
+  "references": [
+    {
+      "title": "Reinforcement Learning: An Introduction (2nd Edition)",
+      "url": "http://incompleteideas.net/book/the-book-2nd.html",
+      "type": "book"
+    },
+    {
+      "title": "Spinning Up in Deep RL",
+      "url": "https://spinningup.openai.com",
+      "type": "doc"
+    },
+    {
+      "title": "Deep Reinforcement Learning Hands-On",
+      "url": "https://www.packtpub.com/product/deep-reinforcement-learning-hands-on-second-edition/9781838827113",
+      "type": "book"
+    }
+  ],
+  "version": "v1.0"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "DL-022-evaluation-metrics",
+  "title": "DL-022-evaluation-metrics",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 3,
+  "abstract": " DL-022 ⭐⭐⭐ Model Evaluation Metrics for Classification and Regression\n\n Question\nWhat are common evaluation metrics in deep learning? Explain metrics for classification and regression tasks.\n\n Answer\n\n Why Multiple Metrics?\n\nAccuracy alone can be misleading:\n- Imbalanced datasets: 99% accuracy with 99% negative samples\n- Different costs: False positive vs false negative\n- Need comprehensive evaluation\n\n\n---\n\n Classification Metrics\n\n 1. Accuracy\n\nAccuracy = (TP + TN) / (TP ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are common evaluation metrics in deep learning? Explain metrics for classification and regression tasks."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "Why Multiple Metrics?",
+      "level": 2,
+      "content": "```\nAccuracy alone can be misleading:\n- Imbalanced datasets: 99% accuracy with 99% negative samples\n- Different costs: False positive vs false negative\n- Need comprehensive evaluation\n```\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "Classification Metrics",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "1. Accuracy",
+      "level": 1,
+      "content": "```\nAccuracy = (TP + TN) / (TP + TN + FP + FN)\n\n✅ Simple, intuitive\n❌ Misleading for imbalanced datasets\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "2. Precision",
+      "level": 1,
+      "content": "```\nPrecision = TP / (TP + FP)\n\n\"How many predicted positives are actually positive?\"\n\nUse when: False positives are costly (spam detection)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "3. Recall (Sensitivity)",
+      "level": 1,
+      "content": "```\nRecall = TP / (TP + FN)\n\n\"How many actual positives did we find?\"\n\nUse when: False negatives are costly (disease detection)\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "4. F1-Score",
+      "level": 1,
+      "content": "```\nF1 = 2 × (Precision × Recall) / (Precision + Recall)\n\nHarmonic mean of precision and recall\nGood balance when both matter\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "5. ROC-AUC",
+      "level": 1,
+      "content": "```\nROC Curve: TPR vs FPR at different thresholds\nAUC: Area under ROC curve (0.5 = random, 1.0 = perfect)\n\n✅ Threshold-independent\n✅ Good for imbalanced datasets\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "6. Precision-Recall AUC",
+      "level": 1,
+      "content": "```\nBetter than ROC-AUC for highly imbalanced datasets\nFocuses on positive class performance\n```\n\n---"
+    },
+    {
+      "id": "sec-11",
+      "title": "Regression Metrics",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-12",
+      "title": "1. Mean Absolute Error (MAE)",
+      "level": 1,
+      "content": "```\nMAE = (1/n) × Σ|y_pred - y_true|\n\n✅ Interpretable (average error)\n✅ Robust to outliers\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "2. Mean Squared Error (MSE)",
+      "level": 1,
+      "content": "```\nMSE = (1/n) × Σ(y_pred - y_true)²\n\n✅ Penalizes large errors\n❌ Not in same units as target\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "3. Root Mean Squared Error (RMSE)",
+      "level": 1,
+      "content": "```\nRMSE = √MSE\n\n✅ Same units as target\n✅ Penalizes large errors\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "4. R² Score (Coefficient of Determination)",
+      "level": 1,
+      "content": "```\nR² = 1 - (SS_res / SS_tot)\n\n✅ Interpretable (variance explained)\n✅ Range: -∞ to 1 (1 = perfect)\n```\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Classification: Accuracy, Precision, Recall, F1, ROC-AUC\n- Regression: MAE, MSE, RMSE, R²\n- Choose metrics based on business objectives\n- Use multiple metrics for comprehensive evaluation"
+    },
+    {
+      "id": "sec-17",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "Category: Model Evaluation",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-19",
+      "title": "Tags: [metrics, evaluation, classification, regression, accuracy]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

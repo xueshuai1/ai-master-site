@@ -1,0 +1,92 @@
+{
+  "id": "LLM-RAG 工作原理与实现",
+  "title": "RAG 工作原理与实现",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "RAG",
+    "检索增强",
+    "向量数据库",
+    "知识更新"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释 RAG（Retrieval-Augmented Generation）的工作原理，包括检索器、生成器的协作，以及如何构建 RAG 系统。\n\n**来源：** LLM 面试题整理\n**标签：** RAG，检索增强，向量数据库，知识更新",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释 RAG（Retrieval-Augmented Generation）的工作原理，包括检索器、生成器的协作，以及如何构建 RAG 系统。\n\n**来源：** LLM 面试题整理\n**标签：** RAG，检索增强，向量数据库，知识更新",
+    "coreFormula": "用户问题 → 检索器 → 相关文档 → [问题 + 文档] → 生成器 → 回答",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释 RAG（Retrieval-Augmented Generation）的工作原理，包括检索器、生成器的协作，以及如何构建 RAG 系统。\n\n**来源：** LLM 面试题整理\n**标签：** RAG，检索增强，向量数据库，知识更新",
+        "code": {
+          "language": "text",
+          "code": "用户问题 → 检索器 → 相关文档 → [问题 + 文档] → 生成器 → 回答"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**RAG 核心思想：**\n将检索外部知识与生成模型结合，解决知识截止和幻觉问题。\n\n**系统架构：**\n```\n用户问题 → 检索器 → 相关文档 → [问题 + 文档] → 生成器 → 回答\n```\n\n**组件详解：**\n\n1. **检索器（Retriever）：**\n   - 将文档切分为 chunks\n   - 使用 Embedding 模型向量化\n   - 存入向量数据库（FAISS、Milvus、Pinecone）\n   - 查询时计算相似度，返回 Top-K 文档\n\n2. **生成器（Generator）：**\n   - 接收问题 + 检索到的文档\n   - 基于上下文生成回答\n   - 通常是 LLM（GPT、LLaMA 等）\n\n**关键步骤：**\n```python\n# 1. 文档预处理\nchunks = split_documents(docs, chunk_size=500)\n\n# 2. 向量化\nembeddings = embedding_model.encode(chunks)\n\n# 3. 存储\nvector_db.add(chunks, embeddings)\n\n# 4. 检索\nsimilar_docs = vector_db.search(query_embedding, top_k=5)\n\n# 5. 生成\nprompt = f\"基于以下信息回答：{similar_docs}\\n问题：{query}\"\nanswer = llm.generate(prompt)\n```\n\n**优势：**\n- 知识可更新，无需重新训练\n- 减少幻觉，提供引用来源\n- 处理长尾知识效果好\n\n**挑战：**\n- 检索质量影响最终效果\n- 多跳推理能力有限\n- 延迟增加（检索 + 生成）\n\n**应用：**\n- 企业知识库问答\n- 客服系统\n- 文档摘要和问答",
+        "code": {
+          "language": "python",
+          "code": "# 1. 文档预处理\nchunks = split_documents(docs, chunk_size=500)\n\n# 2. 向量化\nembeddings = embedding_model.encode(chunks)\n\n# 3. 存储\nvector_db.add(chunks, embeddings)\n\n# 4. 检索\nsimilar_docs = vector_db.search(query_embedding, top_k=5)\n\n# 5. 生成\nprompt = f\"基于以下信息回答：{similar_docs}\\n问题：{query}\"\nanswer = llm.generate(prompt)"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** RAG 的架构和各组件功能\n- **能力：** 设计和实现 RAG 系统\n- **思维：** 理解检索与生成的协同价值"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 如何选择合适的 chunk size？（5 分）\n2. 稠密检索和稀疏检索有什么区别？（5 分）\n3. 什么是 Hybrid Search？（5 分）\n4. 如何评估 RAG 系统的质量？（5 分）\n5. RAG 与 Fine-tuning 如何选择？（5 分）"
+      },
+      {
+        "title": "深入理解",
+        "content": "RAG 是连接静态知识与动态生成的桥梁，是企业应用 LLM 的主流方案。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "RAG 的架构和各组件功能",
+    "ability": "设计和实现 RAG 系统",
+    "thinking": "理解检索与生成的协同价值"
+  },
+  "followUpQuestions": [
+    {
+      "question": "如何选择合适的 chunk size？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "稠密检索和稀疏检索有什么区别？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 Hybrid Search？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何评估 RAG 系统的质量？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "RAG 与 Fine-tuning 如何选择？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.371Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

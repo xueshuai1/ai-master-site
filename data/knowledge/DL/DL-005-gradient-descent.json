@@ -1,0 +1,192 @@
+{
+  "id": "DL-005-gradient-descent",
+  "title": "DL-005-gradient-descent",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.384Z",
+  "updatedAt": "2026-03-29T14:57:53.384Z",
+  "readTime": 8,
+  "abstract": " DL-005 ⭐⭐⭐ Explain Gradient Descent and Its Variants\n\n Question\nWhat is Gradient Descent? Explain Batch, Stochastic, and Mini-batch Gradient Descent, including their trade-offs.\n\n Answer\n\n What is Gradient Descent?\nGradient Descent is an iterative optimization algorithm used to minimize the loss function by updating model parameters (weights and biases) in the direction of steepest descent (negative gradient).\n\nIntuition: Imagine being on a mountain in fog, wanting to reach the ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is Gradient Descent? Explain Batch, Stochastic, and Mini-batch Gradient Descent, including their trade-offs."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Gradient Descent?",
+      "level": 2,
+      "content": "**Gradient Descent** is an iterative optimization algorithm used to minimize the loss function by updating model parameters (weights and biases) in the direction of steepest descent (negative gradient).\n\n**Intuition:** Imagine being on a mountain in fog, wanting to reach the valley. You feel the slope at your feet and take a step downhill. Repeat until you reach the bottom."
+    },
+    {
+      "id": "sec-4",
+      "title": "Mathematical Foundation",
+      "level": 2,
+      "content": "**Update Rule:**\n```\nθ = θ - α × ∇J(θ)\n\nWhere:\n- θ: Parameters (weights, biases)\n- α: Learning rate (step size)\n- ∇J(θ): Gradient of loss function\n```\n\n**For a single weight:**\n```\nw_new = w_old - α × ∂L/∂w\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Three Variants of Gradient Descent",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "1. Batch Gradient Descent",
+      "level": 1,
+      "content": "**Approach:** Uses the **entire training dataset** to compute the gradient in each iteration.\n\n**Update Rule:**\n```\nθ = θ - α × (1/m) × Σᵢ₌₁ᵐ ∇J(θ; x⁽ⁱ⁾, y⁽ⁱ⁾)\n```\nWhere m = total training examples"
+    },
+    {
+      "id": "sec-7",
+      "title": "Algorithm",
+      "level": 2,
+      "content": "```\nFor each epoch:\n    1. Forward pass through ALL training examples\n    2. Calculate average gradient over all examples\n    3. Update weights once\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ **Stable Convergence**: Smooth, consistent gradient\n✅ **Deterministic**: Same results each run\n✅ **Efficient for Small Datasets**: No overhead from multiple updates\n✅ **Theoretically Optimal**: Follows true gradient direction"
+    },
+    {
+      "id": "sec-9",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ **Slow for Large Datasets**: Must process all data before updating\n❌ **High Memory Usage**: Needs entire dataset in memory\n❌ **Can Get Stuck**: May converge to local minima\n❌ **No Online Learning**: Can't update with new data incrementally"
+    },
+    {
+      "id": "sec-10",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- Small datasets (< 10,000 samples)\n- Convex optimization problems\n- When computational resources are abundant\n\n---"
+    },
+    {
+      "id": "sec-11",
+      "title": "2. Stochastic Gradient Descent (SGD)",
+      "level": 1,
+      "content": "**Approach:** Updates parameters using **one training example at a time**.\n\n**Update Rule:**\n```\nFor each example (x⁽ⁱ⁾, y⁽ⁱ⁾):\n    θ = θ - α × ∇J(θ; x⁽ⁱ⁾, y⁽ⁱ⁾)\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Algorithm",
+      "level": 2,
+      "content": "```\nFor each epoch:\n    Shuffle training data\n    For each training example:\n        1. Forward pass (single example)\n        2. Calculate gradient\n        3. Update weights immediately\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ **Fast Updates**: Immediate feedback from each example\n✅ **Low Memory**: Only one example at a time\n✅ **Escapes Local Minima**: Noisy updates can jump out\n✅ **Online Learning**: Can learn from streaming data"
+    },
+    {
+      "id": "sec-14",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ **High Variance**: Noisy updates, unstable convergence\n❌ **Lossses Computational Efficiency**: No vectorization benefits\n❌ **May Never Converge**: Continuously oscillates around minimum\n❌ **No Parallelization**: Sequential processing"
+    },
+    {
+      "id": "sec-15",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- Online/streaming learning\n- Very large datasets\n- When quick initial progress is needed\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "3. Mini-batch Gradient Descent",
+      "level": 1,
+      "content": "**Approach:** Compromise between batch and SGD. Uses **small batches** (typically 32-512 examples) for each update.\n\n**Update Rule:**\n```\nFor each batch B of size b:\n    θ = θ - α × (1/b) × Σᵢ∈B ∇J(θ; x⁽ⁱ⁾, y⁽ⁱ⁾)\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "Algorithm",
+      "level": 2,
+      "content": "```\nFor each epoch:\n    Shuffle training data\n    Split into mini-batches of size b\n    For each mini-batch:\n        1. Forward pass (batch of examples)\n        2. Calculate average gradient\n        3. Update weights\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ **Best of Both Worlds**: Stable yet efficient\n✅ **Vectorization**: Efficient matrix operations\n✅ **Better Convergence**: Less noisy than SGD, faster than batch\n✅ **Memory Efficient**: Doesn't need entire dataset\n✅ **Standard Choice**: Default in most frameworks"
+    },
+    {
+      "id": "sec-19",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ **Hyperparameter**: Need to choose batch size\n❌ **May Still Oscillate**: More stable than SGD but not perfect"
+    },
+    {
+      "id": "sec-20",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- **Default choice for most deep learning tasks**\n- Large datasets with GPU acceleration\n- Production training pipelines\n\n---"
+    },
+    {
+      "id": "sec-21",
+      "title": "Comparison Table",
+      "level": 1,
+      "content": "| Aspect | Batch GD | Stochastic GD | Mini-batch GD |\n|--------|----------|---------------|---------------|\n| **Examples per Update** | All (m) | 1 | b (32-512) |\n| **Updates per Epoch** | 1 | m | m/b |\n| **Convergence Speed** | Slow | Fast (initial) | Fast |\n| **Convergence Stability** | Very Stable | Noisy | Stable |\n| **Memory Usage** | High | Low | Medium |\n| **Vectorization** | ✅ Excellent | ❌ None | ✅ Good |\n| **Local Minima** | Can get stuck | Escapes easily | Can escape |\n| **Best For** | Small datasets | Online learning | **Most cases** |\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "Visual Comparison",
+      "level": 1,
+      "content": "```\nLoss\n │\n │    Batch GD: ──────────────── (smooth, slow)\n │\n │    Mini-batch: ~~~∼∼∼∼∼∼∼∼∼∼ (slightly noisy, fast)\n │\n │    SGD: ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿ (very noisy, fastest initial)\n │\n └─────────────────────────────────→ Iterations\n```\n\n---"
+    },
+    {
+      "id": "sec-23",
+      "title": "Choosing Batch Size",
+      "level": 1,
+      "content": "**Common Batch Sizes:**\n- 32, 64, 128, 256, 512 (powers of 2 for GPU efficiency)\n\n**Guidelines:**\n- **Small batch (32-64)**: Better generalization, more noise\n- **Large batch (256-512)**: Faster training, more stable\n- **Too small (<16)**: Too noisy, poor GPU utilization\n- **Too large (>1024)**: May hurt generalization\n\n**Rule of Thumb:** Start with 32 or 64, adjust based on:\n- GPU memory capacity\n- Training stability\n- Convergence speed\n\n---"
+    },
+    {
+      "id": "sec-24",
+      "title": "Advanced Optimizers (Built on Mini-batch GD)",
+      "level": 1,
+      "content": "| Optimizer | Key Idea | Advantage |\n|-----------|----------|-----------|\n| **Momentum** | Add velocity to updates | Faster convergence |\n| **Adam** | Adaptive learning rates | Works well out-of-box |\n| **RMSprop** | Normalize gradients | Handles sparse gradients |\n| **AdaGrad** | Per-parameter learning rates | Good for sparse data |"
+    },
+    {
+      "id": "sec-25",
+      "title": "Adam (Most Popular)",
+      "level": 2,
+      "content": "```\nCombines Momentum + RMSprop\n- Maintains moving average of gradients (first moment)\n- Maintains moving average of squared gradients (second moment)\n- Adapts learning rate per parameter\n```"
+    },
+    {
+      "id": "sec-26",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Gradient Descent minimizes loss by following negative gradient\n- **Batch GD**: Uses all data, stable but slow\n- **SGD**: One example at a time, fast but noisy\n- **Mini-batch GD**: Best compromise, default choice\n- Batch size affects convergence speed and stability\n- Modern optimizers (Adam) build on mini-batch gradient descent"
+    },
+    {
+      "id": "sec-27",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-28",
+      "title": "Category: Optimization",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-29",
+      "title": "Tags: [gradient-descent, optimization, batch, SGD, mini-batch, training]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

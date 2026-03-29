@@ -1,0 +1,24 @@
+{
+  "id": "CV-015-explain-the-vanishing-gradient-problem-in-deep-networks-and-how-to-address-it.",
+  "title": "CV-015-explain-the-vanishing-gradient-problem-in-deep-networks-and-how-to-address-it.",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-015 Explain the vanishing gradient problem in deep networks and how to address it.\n\n Q15: Explain the vanishing gradient problem in deep networks and how to address it.\n\nScore: 90/100\n\nAnswer:\n\nProblem:\nIn deep networks, gradients become exponentially small during backpropagation through many layers, preventing early layers from learning effectively.\n\nCauses:\n- Sigmoid/tanh activation functions saturate at extremes\n- Chain rule multiplication compounds small gradients\n- P...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q15: Explain the vanishing gradient problem in deep networks and how to address it.",
+      "level": 2,
+      "content": "**Score:** 90/100\n\n**Answer:**\n\n**Problem:**\nIn deep networks, gradients become exponentially small during backpropagation through many layers, preventing early layers from learning effectively.\n\n**Causes:**\n- Sigmoid/tanh activation functions saturate at extremes\n- Chain rule multiplication compounds small gradients\n- Poor weight initialization\n\n**Solutions:**\n\n1. **Activation Functions:**\n   - ReLU (Rectified Linear Unit): f(x) = max(0, x)\n   - Leaky ReLU: Allows small negative gradient\n   - ELU, Swish, Mish variants\n\n2. **Weight Initialization:**\n   - Xavier/Glorot initialization (for tanh/sigmoid)\n   - He initialization (for ReLU)\n   - Avoids vanishing/exploding gradients at start\n\n3. **Batch Normalization:**\n   - Normalizes layer inputs\n   - Stabilizes training, allows higher learning rates\n   - Reduces sensitivity to initialization\n\n4. **Residual Connections (ResNet):**\n   - Skip connections allow gradient flow\n   - Identity mapping preserves information\n   - Enables training of very deep networks (100+ layers)\n\n5. **Gradient Clipping:**\n   - Limits gradient magnitude\n   - Prevents exploding gradients\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

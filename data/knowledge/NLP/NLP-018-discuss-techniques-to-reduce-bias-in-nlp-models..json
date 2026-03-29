@@ -1,0 +1,30 @@
+{
+  "id": "NLP-018-discuss-techniques-to-reduce-bias-in-nlp-models.",
+  "title": "NLP-018-discuss-techniques-to-reduce-bias-in-nlp-models.",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-018 Discuss techniques to reduce bias in NLP models.\n\n 18. Discuss techniques to reduce bias in NLP models.\n答案要点:\n偏见来源:\n- 训练数据不平衡\n- 标注偏见\n- 历史社会偏见\n\n缓解方法:\n1. 数据层面:\n   - 数据平衡 (Data Augmentation)\n   - Counterfactual Data\n2. 训练层面:\n   - Adversarial Debiasing\n   - Fairness Constraints\n3. 后处理:\n   - Output Calibration\n   - Bias Detection Metrics\n4. 评估:\n   - StereoSet\n   - CrowS-Pairs\n\n质量评分: 94/100 ⭐⭐⭐⭐⭐\n\n---\n\n 三、实践与工程 (19-26)\n\n---\n\nDifficulty: ⭐⭐⭐\nCatego...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "18. Discuss techniques to reduce bias in NLP models.",
+      "level": 3,
+      "content": "**答案要点:**\n**偏见来源:**\n- 训练数据不平衡\n- 标注偏见\n- 历史社会偏见\n\n**缓解方法:**\n1. **数据层面**:\n   - 数据平衡 (Data Augmentation)\n   - Counterfactual Data\n2. **训练层面**:\n   - Adversarial Debiasing\n   - Fairness Constraints\n3. **后处理**:\n   - Output Calibration\n   - Bias Detection Metrics\n4. **评估**:\n   - StereoSet\n   - CrowS-Pairs\n\n**质量评分**: 94/100 ⭐⭐⭐⭐⭐\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "三、实践与工程 (19-26)",
+      "level": 2,
+      "content": "---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

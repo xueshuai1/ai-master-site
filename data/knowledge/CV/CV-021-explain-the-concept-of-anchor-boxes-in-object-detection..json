@@ -1,0 +1,24 @@
+{
+  "id": "CV-021-explain-the-concept-of-anchor-boxes-in-object-detection.",
+  "title": "CV-021-explain-the-concept-of-anchor-boxes-in-object-detection.",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-021 Explain the concept of anchor boxes in object detection.\n\n Q21: Explain the concept of anchor boxes in object detection.\n\nScore: 90/100\n\nAnswer:\n\nAnchor Boxes:\nPre-defined bounding boxes of various sizes and aspect ratios used as reference for object detection.\n\nPurpose:\n- Provide starting points for bounding box regression\n- Handle objects of different scales and shapes\n- Enable multi-scale detection\n\nImplementation (Faster R-CNN, YOLO, SSD):\n\nDesign:\n- Multi...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q21: Explain the concept of anchor boxes in object detection.",
+      "level": 2,
+      "content": "**Score:** 90/100\n\n**Answer:**\n\n**Anchor Boxes:**\nPre-defined bounding boxes of various sizes and aspect ratios used as reference for object detection.\n\n**Purpose:**\n- Provide starting points for bounding box regression\n- Handle objects of different scales and shapes\n- Enable multi-scale detection\n\n**Implementation (Faster R-CNN, YOLO, SSD):**\n\n**Design:**\n- Multiple scales (e.g., 32×32, 64×64, 128×128)\n- Multiple aspect ratios (e.g., 1:1, 1:2, 2:1)\n- Typically 3-9 anchors per spatial location\n\n**Training:**\n1. Assign ground truth boxes to best-matching anchors (IoU threshold)\n2. Predict offsets from anchor to ground truth\n3. Classify each anchor (object class or background)\n\n**Advantages:**\n- Efficient multi-scale detection\n- Stable training with predefined references\n- Well-established in production systems\n\n**Modern Alternatives:**\n- **Anchor-Free:** FCOS, CenterNet (predict from points)\n- **Dynamic Anchles:** Learnable anchor parameters\n- **Query-Based:** DETR (no anchors, uses object queries)\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

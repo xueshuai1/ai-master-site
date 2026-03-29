@@ -1,0 +1,126 @@
+{
+  "id": "DL-023-data-augmentation",
+  "title": "DL-023-data-augmentation",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 3,
+  "abstract": " DL-023 ⭐⭐⭐ Data Augmentation Techniques in Deep Learning\n\n Question\nWhat is data augmentation? Explain common techniques for images, text, and audio.\n\n Answer\n\n What is Data Augmentation?\nData augmentation artificially increases training data by creating modified versions of existing data. It improves model generalization and reduces overfitting.\n\n Benefits\n\n✅ More training data without collection\n✅ Reduces overfitting\n✅ Improves model robustness\n✅ Better generalization to uns...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is data augmentation? Explain common techniques for images, text, and audio."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Data Augmentation?",
+      "level": 2,
+      "content": "**Data augmentation** artificially increases training data by creating modified versions of existing data. It improves model generalization and reduces overfitting."
+    },
+    {
+      "id": "sec-4",
+      "title": "Benefits",
+      "level": 2,
+      "content": "```\n✅ More training data without collection\n✅ Reduces overfitting\n✅ Improves model robustness\n✅ Better generalization to unseen data\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Image Augmentation",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Geometric Transformations",
+      "level": 2,
+      "content": "```\n- Random horizontal/vertical flip\n- Random rotation (±10-30 degrees)\n- Random crop and resize\n- Random translation/shift\n- Random scaling/zoom\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "Color Transformations",
+      "level": 2,
+      "content": "```\n- Random brightness adjustment\n- Random contrast adjustment\n- Random saturation adjustment\n- Random hue adjustment\n- Color jittering\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Advanced Techniques",
+      "level": 2,
+      "content": "```\n- Mixup: Blend two images\n- CutMix: Cut and paste patches\n- Cutout: Randomly mask out regions\n- Mosaic: Combine 4 images\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Code Example",
+      "level": 2,
+      "content": "```python\nfrom torchvision import transforms\n\ntransform = transforms.Compose([\n    transforms.RandomHorizontalFlip(),\n    transforms.RandomRotation(10),\n    transforms.RandomCrop(32, padding=4),\n    transforms.ColorJitter(brightness=0.2, contrast=0.2),\n    transforms.ToTensor()\n])\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "Text Augmentation",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Techniques",
+      "level": 2,
+      "content": "```\n- Synonym replacement\n- Random insertion\n- Random swap\n- Random deletion\n- Back translation (translate to another language and back)\n- TF-IDF based word replacement\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Example",
+      "level": 2,
+      "content": "```\nOriginal: \"The movie was excellent\"\nAugmented: \"The film was outstanding\"\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "Audio Augmentation",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "Techniques",
+      "level": 2,
+      "content": "```\n- Add background noise\n- Time stretching\n- Pitch shifting\n- Volume adjustment\n- Speed perturbation\n- SpecAugment (for spectrograms)\n```\n\n---"
+    },
+    {
+      "id": "sec-15",
+      "title": "Best Practices",
+      "level": 1,
+      "content": "```\n✅ Apply augmentation only to training data\n✅ Keep augmentations realistic\n✅ Monitor validation performance\n✅ Combine multiple augmentations\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-17",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "Tags: [data-augmentation, images, text, audio, regularization]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

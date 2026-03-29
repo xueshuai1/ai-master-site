@@ -1,0 +1,30 @@
+{
+  "id": "NLP-008-what-are-n-grams-and-how-do-they-contribute-to-language-modeling",
+  "title": "NLP-008-what-are-n-grams-and-how-do-they-contribute-to-language-modeling",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-008 What are n-grams and how do they contribute to language modeling?\n\n 8. What are n-grams and how do they contribute to language modeling?\n答案要点:\n- 定义: 连续的 n 个词/字符序列\n- 类型: Unigrams, Bigrams, Trigrams\n- 语言模型应用:\n  - Text Prediction (下一个词预测)\n  - Speech Recognition\n  - Machine Translation\n  - Spelling Correction\n- 局限: 数据稀疏、长距离依赖\n- 平滑技术: Laplace, Good-Turing, Kneser-Ney\n\n代码示例:\npython\nfrom nltk import ngrams\n\ntext = \"I love NLP\"\nbigrams = list(ngrams(text.spli...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "8. What are n-grams and how do they contribute to language modeling?",
+      "level": 3,
+      "content": "**答案要点:**\n- **定义**: 连续的 n 个词/字符序列\n- **类型**: Unigrams, Bigrams, Trigrams\n- **语言模型应用**:\n  - Text Prediction (下一个词预测)\n  - Speech Recognition\n  - Machine Translation\n  - Spelling Correction\n- **局限**: 数据稀疏、长距离依赖\n- **平滑技术**: Laplace, Good-Turing, Kneser-Ney\n\n**代码示例:**\n```python\nfrom nltk import ngrams\n\ntext = \"I love NLP\"\nbigrams = list(ngrams(text.split(), 2))\nprint(bigrams)  # [('I', 'love'), ('love', 'NLP')]\n```\n\n**质量评分**: 91/100 ⭐⭐⭐⭐\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "二、机器学习与深度学习 (9-18)",
+      "level": 2,
+      "content": "---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

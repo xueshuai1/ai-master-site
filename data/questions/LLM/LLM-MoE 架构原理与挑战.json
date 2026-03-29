@@ -1,0 +1,96 @@
+{
+  "id": "LLM-MoE 架构原理与挑战",
+  "title": "MoE 架构原理与挑战",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "MoE",
+    "稀疏激活",
+    "专家混合",
+    "路由"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请解释 MoE（Mixture of Experts）架构的原理，为什么它能实现\"大参数、低计算\"，以及训练中的挑战。\n\n**来源：** LLM 面试题整理\n**标签：** MoE，稀疏激活，专家混合，路由",
+  "requirements": [],
+  "answer": {
+    "summary": "请解释 MoE（Mixture of Experts）架构的原理，为什么它能实现\"大参数、低计算\"，以及训练中的挑战。\n\n**来源：** LLM 面试题整理\n**标签：** MoE，稀疏激活，专家混合，路由",
+    "coreFormula": "输入 → 路由器 (Router) → 选择 Top-K 专家 → 专家网络 → 加权输出",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请解释 MoE（Mixture of Experts）架构的原理，为什么它能实现\"大参数、低计算\"，以及训练中的挑战。\n\n**来源：** LLM 面试题整理\n**标签：** MoE，稀疏激活，专家混合，路由",
+        "code": {
+          "language": "text",
+          "code": "输入 → 路由器 (Router) → 选择 Top-K 专家 → 专家网络 → 加权输出"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**MoE 核心思想：**\n将模型拆分为多个专家网络，每次只激活部分专家，实现参数规模与计算量的解耦。\n\n**架构设计：**\n```\n输入 → 路由器 (Router) → 选择 Top-K 专家 → 专家网络 → 加权输出\n```\n\n**关键组件：**\n\n1. **路由器（Router/Gate）：**\n```python\n# 计算专家权重\nlogits = x · W_gate  # W_gate: d×num_experts\nweights = softmax(logits)\n\n# 选择 Top-K 专家\ntop_k_weights, top_k_indices = topk(weights, k=2)\n\n# 归一化\nweights = softmax(top_k_weights)\n```\n\n2. **专家网络（Experts）：**\n- 通常是 FFN 层\n- 每个专家独立处理\n- 参数不共享\n\n3. **组合输出：**\n```python\noutput = Σ(weights_i × Expert_i(x))\n```\n\n**效率分析：**\n- **参数规模：** num_experts × expert_params（大）\n- **激活参数：** K × expert_params（小）\n- 示例：Switch Transformer 有 1.6T 参数，但激活仅 2B\n\n**优势：**\n- 训练效率高（计算量小）\n- 推理可优化（专家并行）\n- 模型容量大\n\n**挑战：**\n1. **负载不均衡：** 某些专家被过度使用\n   - 解决：辅助损失鼓励均匀路由\n\n2. **训练不稳定：** 路由决策影响梯度流\n   - 解决：噪声增加探索、梯度裁剪\n\n3. **通信开销：** 专家分布在多设备\n   - 解决：高效 All-to-All 通信\n\n4. **推理优化：** 需要加载多个专家\n   - 解决：专家缓存、动态加载\n\n**应用：**\n- Switch Transformer（Google）\n- Mixtral 8x7B（Mistral AI）\n- GPT-4（传闻使用 MoE）",
+        "code": {
+          "language": "python",
+          "code": "# 计算专家权重\nlogits = x · W_gate  # W_gate: d×num_experts\nweights = softmax(logits)\n\n# 选择 Top-K 专家\ntop_k_weights, top_k_indices = topk(weights, k=2)\n\n# 归一化\nweights = softmax(top_k_weights)"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** MoE 的架构和路由机制\n- **能力：** 理解稀疏激活的效率优势\n- **思维：** 规模 - 效率权衡的设计思想",
+        "code": {
+          "language": "python",
+          "code": "output = Σ(weights_i × Expert_i(x))"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么通常选择 Top-2 而不是 Top-1？（5 分）\n2. 辅助损失的具体形式是什么？（5 分）\n3. MoE 如何影响推理延迟？（5 分）\n4. 什么是共享专家（Shared Expert）？（5 分）\n5. MoE 与模型并行的关系？（5 分）"
+      },
+      {
+        "title": "深入理解",
+        "content": "MoE 是突破计算瓶颈的关键技术，让万亿参数模型训练成为可能。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "MoE 的架构和路由机制",
+    "ability": "理解稀疏激活的效率优势",
+    "thinking": "规模 - 效率权衡的设计思想"
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么通常选择 Top-2 而不是 Top-1？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "辅助损失的具体形式是什么？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "MoE 如何影响推理延迟？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是共享专家（Shared Expert）？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "MoE 与模型并行的关系？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.370Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

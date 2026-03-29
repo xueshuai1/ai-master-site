@@ -1,0 +1,180 @@
+{
+  "id": "DL-030-best-practices",
+  "title": "DL-030-best-practices",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.389Z",
+  "updatedAt": "2026-03-29T14:57:53.389Z",
+  "readTime": 5,
+  "abstract": " DL-030 ⭐⭐⭐ Deep Learning Best Practices and Common Pitfalls\n\n Question\nWhat are best practices in deep learning? What common mistakes should be avoided?\n\n Answer\n\n Best Practices\n\n 1. Data Preparation\n\n✅ Split data properly (train/val/test)\n✅ Normalize/standardize inputs\n✅ Handle class imbalance\n✅ Use data augmentation\n✅ Check data quality and labels\n\n\n 2. Model Architecture\n\n✅ Start with proven architectures\n✅ Use batch normalization\n✅ Choose appropriate activation functio...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are best practices in deep learning? What common mistakes should be avoided?"
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "Best Practices",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-4",
+      "title": "1. Data Preparation",
+      "level": 1,
+      "content": "```\n✅ Split data properly (train/val/test)\n✅ Normalize/standardize inputs\n✅ Handle class imbalance\n✅ Use data augmentation\n✅ Check data quality and labels\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "2. Model Architecture",
+      "level": 1,
+      "content": "```\n✅ Start with proven architectures\n✅ Use batch normalization\n✅ Choose appropriate activation functions (ReLU for hidden layers)\n✅ Initialize weights properly (He/Xavier)\n✅ Don't make model unnecessarily complex\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "3. Training",
+      "level": 1,
+      "content": "```\n✅ Use appropriate optimizer (Adam default)\n✅ Set proper learning rate (use scheduler)\n✅ Monitor both train and validation metrics\n✅ Use early stopping\n✅ Save best model (not last)\n✅ Use mixed precision for speed (when available)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "4. Regularization",
+      "level": 1,
+      "content": "```\n✅ Combine multiple techniques (dropout, L2, etc.)\n✅ Tune regularization strength\n✅ Use validation set for tuning\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "5. Evaluation",
+      "level": 1,
+      "content": "```\n✅ Use multiple metrics (not just accuracy)\n✅ Test on truly unseen data\n✅ Check for data leakage\n✅ Analyze failure cases\n```\n\n---"
+    },
+    {
+      "id": "sec-9",
+      "title": "Common Pitfalls",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-10",
+      "title": "1. Data Leakage",
+      "level": 1,
+      "content": "```\n❌ Test data in training set\n❌ Future information in features\n❌ Preprocessing before split\n\nSolution: Strict train/test separation\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "2. Overfitting",
+      "level": 1,
+      "content": "```\n❌ High train accuracy, low val accuracy\n❌ Model memorizes training data\n\nSolution: Regularization, more data, simpler model\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "3. Underfitting",
+      "level": 1,
+      "content": "```\n❌ Low accuracy on both train and val\n❌ Model too simple\n\nSolution: More complex model, train longer, better features\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "4. Wrong Learning Rate",
+      "level": 1,
+      "content": "```\n❌ Too high: Divergence\n❌ Too low: Slow convergence\n\nSolution: Learning rate finder, scheduling\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "5. Class Imbalance",
+      "level": 1,
+      "content": "```\n❌ Model predicts majority class only\n❌ High accuracy but poor recall\n\nSolution: Resampling, class weights, focal loss\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "6. No Baseline",
+      "level": 1,
+      "content": "```\n❌ Jump to complex models immediately\n❌ No comparison point\n\nSolution: Start with simple baseline (logistic regression, etc.)\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "7. Ignoring Validation Set",
+      "level": 1,
+      "content": "```\n❌ Tune on test set\n❌ No validation during training\n\nSolution: Proper 3-way split, use validation for tuning\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "8. Not Reproducible",
+      "level": 1,
+      "content": "```\n❌ No random seed\n❌ No experiment tracking\n\nSolution: Set seeds, log experiments, version control\n```\n\n---"
+    },
+    {
+      "id": "sec-18",
+      "title": "Debugging Checklist",
+      "level": 1,
+      "content": "```\n□ Model not learning?\n  - Check learning rate\n  - Verify data preprocessing\n  - Check loss function\n  - Ensure gradients flowing\n\n□ Overfitting?\n  - Add regularization\n  - More data augmentation\n  - Reduce model complexity\n  - Early stopping\n\n□ Underfitting?\n  - Increase model capacity\n  - Train longer\n  - Better features\n  - Check data quality\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "Practical Tips",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-20",
+      "title": "Before Training",
+      "level": 2,
+      "content": "```\n1. Understand the problem and data\n2. Set up proper evaluation metrics\n3. Create train/val/test splits\n4. Establish baseline\n5. Set random seeds for reproducibility\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "During Training",
+      "level": 2,
+      "content": "```\n1. Monitor loss curves\n2. Watch for overfitting signs\n3. Use TensorBoard or similar\n4. Save checkpoints regularly\n5. Be patient (deep learning takes time)\n```"
+    },
+    {
+      "id": "sec-22",
+      "title": "After Training",
+      "level": 2,
+      "content": "```\n1. Evaluate on test set (once!)\n2. Analyze failure cases\n3. Document results\n4. Consider deployment requirements\n5. Plan for monitoring in production\n```\n\n---"
+    },
+    {
+      "id": "sec-23",
+      "title": "Golden Rules",
+      "level": 1,
+      "content": "```\n1. Start simple, then add complexity\n2. Always use validation set\n3. One change at a time\n4. Document everything\n5. Reproducibility matters\n6. Data quality > Model complexity\n7. Understand your errors\n8. Iterate based on evidence\n```"
+    },
+    {
+      "id": "sec-24",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Proper data preparation is crucial\n- Start with proven architectures and baselines\n- Monitor training carefully (loss curves, metrics)\n- Use regularization to prevent overfitting\n- Avoid common pitfalls (data leakage, wrong LR, etc.)\n- Document and ensure reproducibility\n- Iterate based on validation performance"
+    },
+    {
+      "id": "sec-25",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-26",
+      "title": "Category: Best Practices",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-27",
+      "title": "Tags: [best-practices, pitfalls, debugging, training, deep-learning]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

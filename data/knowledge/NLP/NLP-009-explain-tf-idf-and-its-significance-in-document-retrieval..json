@@ -1,0 +1,24 @@
+{
+  "id": "NLP-009-explain-tf-idf-and-its-significance-in-document-retrieval.",
+  "title": "NLP-009-explain-tf-idf-and-its-significance-in-document-retrieval.",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-009 Explain TF-IDF and its significance in document retrieval.\n\n 9. Explain TF-IDF and its significance in document retrieval.\n答案要点:\n- 公式: TF-IDF = TF × IDF\n  - TF (Term Frequency): 词在文档中的频率\n  - IDF (Inverse Document Frequency): log(N/df) 降低常见词权重\n- 作用: 突出文档特有词，抑制常见词\n- 应用: Search Engines, Document Similarity, Keyword Extraction\n- 局限: 忽略词序和语义\n\n代码示例:\npython\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\ncorpus = [\"NLP is great\", \"NLP is fun\"]\nvecto...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "9. Explain TF-IDF and its significance in document retrieval.",
+      "level": 3,
+      "content": "**答案要点:**\n- **公式**: TF-IDF = TF × IDF\n  - TF (Term Frequency): 词在文档中的频率\n  - IDF (Inverse Document Frequency): log(N/df) 降低常见词权重\n- **作用**: 突出文档特有词，抑制常见词\n- **应用**: Search Engines, Document Similarity, Keyword Extraction\n- **局限**: 忽略词序和语义\n\n**代码示例:**\n```python\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\ncorpus = [\"NLP is great\", \"NLP is fun\"]\nvectorizer = TfidfVectorizer()\nX = vectorizer.fit_transform(corpus)\n```\n\n**质量评分**: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

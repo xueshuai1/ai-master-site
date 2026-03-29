@@ -1,0 +1,78 @@
+{
+  "id": "ML-018-⭐⭐⭐-class-imbalance",
+  "title": "Class Imbalance Handling (类别不平衡处理)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "Class Imbalance",
+    "SMOTE",
+    "Sampling",
+    "Evaluation Metrics",
+    "Fraud Detection"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.394Z",
+  "readTime": 5,
+  "abstract": " 题目描述\n如何处理类别不平衡问题？有哪些采样技术？应该用什么评估指标？\n\n 参考答案\n\n 类别不平衡问题\n\n定义： 不同类别的样本数量差异很大（如 99:1）\n\n问题： Accuracy 会误导（全部预测多数类即可得高分）\n\npython\nimport numpy as np\nfrom sklearn.datasets import make_classification\nfrom sklearn.model_selection import cross_val_score\n\n 创建不平衡数据\nX, y = make_classification(\n    n_samples=1000,\n    n_features=20,\n    n_informative=10,\n    n_classes=2,\n    weights=[0.99, 0.01],   99% vs 1%\n    random_state=42\n)\n\nprint(f\"Class distribution: {np.bincount(y)}\")\nprint(f\"Ratio: ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "如何处理类别不平衡问题？有哪些采样技术？应该用什么评估指标？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "类别不平衡问题",
+      "level": 2,
+      "content": "**定义：** 不同类别的样本数量差异很大（如 99:1）\n\n**问题：** Accuracy 会误导（全部预测多数类即可得高分）\n\n```python\nimport numpy as np\nfrom sklearn.datasets import make_classification\nfrom sklearn.model_selection import cross_val_score\n\n# 创建不平衡数据\nX, y = make_classification(\n    n_samples=1000,\n    n_features=20,\n    n_informative=10,\n    n_classes=2,\n    weights=[0.99, 0.01],  # 99% vs 1%\n    random_state=42\n)\n\nprint(f\"Class distribution: {np.bincount(y)}\")\nprint(f\"Ratio: {np.bincount(y)[0] / np.bincount(y)[1]:.1f}:1\")\n\n# ❌ Accuracy 误导\nfrom sklearn.dummy import DummyClassifier\ndummy = DummyClassifier(strategy='most_frequent')\nscore = cross_val_score(dummy, X, y, cv=5, scoring='accuracy').mean()\nprint(f\"Dummy accuracy (always predict majority): {score:.4f}\")  # 0.99!\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "采样技术",
+      "level": 2,
+      "content": "```python\nfrom imblearn.over_sampling import SMOTE, RandomOverSampler, ADASYN\nfrom imblearn.under_sampling import RandomUnderSampler, NearMiss\nfrom imblearn.combine import SMOTETomek\n\n# 1. 过采样（增加少数类）\nros = RandomOverSampler(random_state=42)\nX_ros, y_ros = ros.fit_resample(X, y)\n\n# 2. SMOTE（合成少数类）\nsmote = SMOTE(random_state=42)\nX_smote, y_smote = smote.fit_resample(X, y)\n\n# 3. 欠采样（减少多数类）\nrus = RandomUnderSampler(random_state=42)\nX_rus, y_rus = rus.fit_resample(X, y)\n\n# 4. 组合方法\nsmote_tomek = SMOTETomek(random_state=42)\nX_st, y_st = smote_tomek.fit_resample(X, y)\n\nprint(f\"Original: {np.bincount(y)}\")\nprint(f\"Over-sampled: {np.bincount(y_ros)}\")\nprint(f\"SMOTE: {np.bincount(y_smote)}\")\nprint(f\"Under-sampled: {np.bincount(y_rus)}\")\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "类别权重",
+      "level": 2,
+      "content": "```python\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.linear_model import LogisticRegression\n\n# 自动平衡权重\nclf_balanced = RandomForestClassifier(\n    class_weight='balanced',  # 根据频率自动调整\n    random_state=42\n)\n\n# 手动设置权重\nclf_weighted = RandomForestClassifier(\n    class_weight={0: 1, 1: 100},  # 少数类权重高\n    random_state=42\n)\n\n# 权重计算公式\n# weight_i = n_samples / (n_classes * n_samples_i)\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "评估指标",
+      "level": 2,
+      "content": "```python\nfrom sklearn.metrics import (\n    classification_report, confusion_matrix,\n    precision_score, recall_score, f1_score,\n    roc_auc_score, average_precision_score,\n    precision_recall_curve\n)\n\n# 不用 Accuracy，使用：\n\n# 1. Precision, Recall, F1\nprint(classification_report(y_test, y_pred))\n\n# 2. ROC-AUC\nroc_auc = roc_auc_score(y_test, y_proba)\nprint(f\"ROC-AUC: {roc_auc:.4f}\")\n\n# 3. PR-AUC (更适合不平衡)\npr_auc = average_precision_score(y_test, y_proba)\nprint(f\"PR-AUC: {pr_auc:.4f}\")\n\n# 4. 特定阈值下的指标\nthreshold = 0.3  # 降低阈值提高 Recall\ny_pred_custom = (y_proba >= threshold).astype(int)\nprint(f\"Recall at threshold {threshold}: {recall_score(y_test, y_pred_custom):.4f}\")\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "实际场景",
+      "level": 2,
+      "content": "```python\n# 场景：欺诈检测（0.1% 欺诈率）\n\nfrom sklearn.pipeline import Pipeline\nfrom imblearn.pipeline import Pipeline as ImbPipeline\n\n# 方案 1: SMOTE + 分类器\npipeline = ImbPipeline([\n    ('smote', SMOTE(random_state=42)),\n    ('clf', RandomForestClassifier(class_weight='balanced'))\n])\n\n# 方案 2: 只用类别权重\npipeline = Pipeline([\n    ('clf', RandomForestClassifier(\n        class_weight='balanced',\n        min_samples_leaf=10  # 防止过拟合少数类\n    ))\n])\n\n# 方案 3: 阈值调整\nclf = RandomForestClassifier(class_weight='balanced')\nclf.fit(X_train, y_train)\ny_proba = clf.predict_proba(X_test)[:, 1]\n\n# 根据业务成本选择阈值\ncost_fp = 1   # 误报成本\ncost_fn = 100  # 漏报成本\noptimal_threshold = cost_fp / (cost_fp + cost_fn)\ny_pred = (y_proba >= optimal_threshold).astype(int)\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 理解类别不平衡问题\n- ✅ 掌握采样技术\n- ✅ 了解合适的评估指标\n- ✅ 能够应用类别权重\n- ✅ 具备业务思维（成本敏感）"
+    },
+    {
+      "id": "sec-9",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

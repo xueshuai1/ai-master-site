@@ -1,0 +1,24 @@
+{
+  "id": "CV-002-describe-the-key-components-of-a-computer-vision-system.",
+  "title": "CV-002-describe-the-key-components-of-a-computer-vision-system.",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.380Z",
+  "updatedAt": "2026-03-29T14:57:53.380Z",
+  "readTime": 2,
+  "abstract": " CV-002 Describe the key components of a computer vision system.\n\n Q2: Describe the key components of a computer vision system.\n\nScore: 92/100\n\nAnswer:\nA complete Computer Vision system consists of the following components:\n\n1. Image Acquisition: Captures visual data through cameras, smartphones, webcams, or pre-recorded media\n\n2. Pre-processing: Standardizes input data through:\n   - Noise reduction\n   - Contrast enhancement\n   - Geometric normalization\n\n3. Feature Extracti...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q2: Describe the key components of a computer vision system.",
+      "level": 2,
+      "content": "**Score:** 92/100\n\n**Answer:**\nA complete Computer Vision system consists of the following components:\n\n1. **Image Acquisition:** Captures visual data through cameras, smartphones, webcams, or pre-recorded media\n\n2. **Pre-processing:** Standardizes input data through:\n   - Noise reduction\n   - Contrast enhancement\n   - Geometric normalization\n\n3. **Feature Extraction:** Identifies key visual attributes using:\n   - Edge detection\n   - Corner detection\n   - Deep neural network features\n\n4. **Segmentation:** Divides images into meaningful regions for analysis\n\n5. **Object Recognition:** Detects and classifies objects using:\n   - Template matching\n   - Cascade classifiers\n   - Deep learning (R-CNN, YOLO, SSD)\n\n6. **3D Modeling (Optional):** Constructs 3D representations of scenes\n\n7. **Decision & Action:** Makes decisions based on visual interpretation\n\n8. **Post-processing:** Enhances and clarifies identified information for improved performance\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

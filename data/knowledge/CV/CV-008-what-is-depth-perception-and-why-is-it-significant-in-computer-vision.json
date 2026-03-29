@@ -1,0 +1,30 @@
+{
+  "id": "CV-008-what-is-depth-perception-and-why-is-it-significant-in-computer-vision",
+  "title": "CV-008-what-is-depth-perception-and-why-is-it-significant-in-computer-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-008 What is depth perception and why is it significant in computer vision?\n\n Q8: What is depth perception and why is it significant in computer vision?\n\nScore: 92/100\n\nAnswer:\nDepth perception enables understanding of 3D spatial relationships from visual data.\n\nCore Functions Enabled:\n1. Segmentation: Separate foreground from background\n2. Object Recognition: Enhanced precision in cluttered scenes\n3. 3D Scene Understanding: Accurate object arrangement and orientat...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q8: What is depth perception and why is it significant in computer vision?",
+      "level": 2,
+      "content": "**Score:** 92/100\n\n**Answer:**\nDepth perception enables understanding of 3D spatial relationships from visual data.\n\n**Core Functions Enabled:**\n1. **Segmentation:** Separate foreground from background\n2. **Object Recognition:** Enhanced precision in cluttered scenes\n3. **3D Scene Understanding:** Accurate object arrangement and orientation\n4. **Image Enhancement:** Depth-based filtering, super-resolution\n5. **Human-Machine Interaction:** AR interfaces, gesture recognition\n6. **Visual Effects:** Realistic rendering of virtual objects\n\n**Depth Estimation Techniques:**\n- **Monocular:** From cues (occlusion, texture), defocus, focus, behavioral cues, CNN-based\n- **Binocular:** Disparity (stereo vision), shape from shading\n- **Multiview:** Fusing observations from multiple viewpoints\n- **RGBD:** Combining depth sensors (Kinect) with RGB images\n- **Time-of-Flight/Structured Light:** Light travel time or pattern deformation\n- **LiDAR/Stereo Cameras:** Laser scanning or paired camera disparity\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "Deep Learning & CNNs (Q9-Q16)",
+      "level": 1,
+      "content": "---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "NLP-001-what-is-natural-language-processing-nlp-and-why-is-it-important",
+  "title": "NLP-001-what-is-natural-language-processing-nlp-and-why-is-it-important",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.396Z",
+  "updatedAt": "2026-03-29T14:57:53.396Z",
+  "readTime": 1,
+  "abstract": " NLP-001 What is Natural Language Processing (NLP) and why is it important?\n\n 1. What is Natural Language Processing (NLP) and why is it important?\n答案要点:\n- 定义: NLP 是 AI 的分支，使计算机能理解、解释和生成人类语言\n- 核心组件: \n  - Phonetics/Phonology (语音学)\n  - Morphology (形态学) - 词的结构\n  - Syntax (句法学) - 句子结构\n  - Semantics (语义学) - 意义\n  - Discourse Analysis (语篇分析)\n- 关键工具: Tokenization, POS Tagging, NER, Lemmatization/Stemming, Parsing\n- 应用场景: Chatbots, Machine Translation, Sentiment Analysis, Voice A...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "1. What is Natural Language Processing (NLP) and why is it important?",
+      "level": 3,
+      "content": "**答案要点:**\n- **定义**: NLP 是 AI 的分支，使计算机能理解、解释和生成人类语言\n- **核心组件**: \n  - Phonetics/Phonology (语音学)\n  - Morphology (形态学) - 词的结构\n  - Syntax (句法学) - 句子结构\n  - Semantics (语义学) - 意义\n  - Discourse Analysis (语篇分析)\n- **关键工具**: Tokenization, POS Tagging, NER, Lemmatization/Stemming, Parsing\n- **应用场景**: Chatbots, Machine Translation, Sentiment Analysis, Voice Assistants, Search Engines\n- **SOTA 模型**: BERT, GPT-3/4, T5, RoBERTa, XLNet\n- **挑战**: Ambiguity, Context Sensitivity, Sarcasm Detection, Low-resource Languages\n\n**质量评分**: 95/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "NLP-017-what-is-the-difference-between-word2vec-and-glove",
+  "title": "NLP-017-what-is-the-difference-between-word2vec-and-glove",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-017 What is the difference between word2vec and GloVe?\n\n 17. What is the difference between word2vec and GloVe?\n答案要点:\n| 维度 | word2vec | GloVe |\n|------|----------|-------|\n| 方法 | Predictive (预测上下文) | Count-based (共现矩阵) |\n| 训练 | 局部窗口 | 全局统计 |\n| 速度 | 较慢 | 较快 |\n| 效果 | 相似 | 相似 (GloVe 略优) |\n| OOV 处理 | 无 | 无 (FastText 有) |\n\n质量评分: 90/100 ⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "17. What is the difference between word2vec and GloVe?",
+      "level": 3,
+      "content": "**答案要点:**\n| 维度 | word2vec | GloVe |\n|------|----------|-------|\n| **方法** | Predictive (预测上下文) | Count-based (共现矩阵) |\n| **训练** | 局部窗口 | 全局统计 |\n| **速度** | 较慢 | 较快 |\n| **效果** | 相似 | 相似 (GloVe 略优) |\n| **OOV 处理** | 无 | 无 (FastText 有) |\n\n**质量评分**: 90/100 ⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

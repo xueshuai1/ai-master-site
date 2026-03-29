@@ -1,0 +1,282 @@
+{
+  "id": "DL-020-gan-architecture",
+  "title": "DL-020-gan-architecture",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.387Z",
+  "updatedAt": "2026-03-29T14:57:53.387Z",
+  "readTime": 9,
+  "abstract": " DL-020 ⭐⭐⭐ What are GANs? Explain Architecture, Training, and Applications\n\n Question\nWhat are Generative Adversarial Networks (GANs)? Explain their architecture, training process, challenges, and applications.\n\n Answer\n\n What are GANs?\nGenerative Adversarial Networks (GANs) are a class of generative models introduced by Ian Goodfellow in 2014. GANs consist of two neural networks (generator and discriminator) that compete against each other, hence \"adversarial.\"\n\n Core Idea\n\nG...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are Generative Adversarial Networks (GANs)? Explain their architecture, training process, challenges, and applications."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What are GANs?",
+      "level": 2,
+      "content": "**Generative Adversarial Networks (GANs)** are a class of generative models introduced by Ian Goodfellow in 2014. GANs consist of two neural networks (generator and discriminator) that compete against each other, hence \"adversarial.\""
+    },
+    {
+      "id": "sec-4",
+      "title": "Core Idea",
+      "level": 2,
+      "content": "```\nGenerator: Creates fake data (counterfeiter)\nDiscriminator: Distinguishes real from fake (police)\n\nThey compete:\n- Generator tries to fool discriminator\n- Discriminator tries to catch fakes\n- Both get better through competition\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "GAN Architecture",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Two Networks",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-7",
+      "title": "Generator (G)",
+      "level": 1,
+      "content": "```\nInput: Random noise vector z (e.g., 100 dimensions)\nOutput: Generated data (e.g., image)\n\nGoal: Generate realistic data that fools discriminator\nArchitecture: Typically deconvolutional layers (for images)\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Discriminator (D)",
+      "level": 1,
+      "content": "```\nInput: Real or generated data\nOutput: Probability that input is real (0 to 1)\n\nGoal: Correctly classify real vs fake\nArchitecture: Typically convolutional layers (for images)\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Adversarial Framework",
+      "level": 2,
+      "content": "```\n┌─────────────┐         ┌─────────────┐\n│  Generator  │ ──────→ │Discriminator│\n│             │  fake   │             │\n│  z → G(z)   │  data   │  D(x) → 0/1 │\n└─────────────┘         └──────↑──────┘\n                            │\n                            │ real data\n                            │\n                      ┌─────┴─────┐\n                      │Real Data  │\n                      │  (x)      │\n                      └───────────┘\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "Training Process",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Minimax Game",
+      "level": 2,
+      "content": "```\nGenerator wants to minimize: log(1 - D(G(z)))\nDiscriminator wants to maximize: log(D(x)) + log(1 - D(G(z)))\n\nValue function:\nmin_G max_D V(D,G) = E[log(D(x))] + E[log(1 - D(G(z)))]\n                     x~data       z~noise\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Training Algorithm",
+      "level": 2,
+      "content": "**For each training step:**\n\n**Step 1: Train Discriminator**\n```\n1. Sample real data: x ~ data distribution\n2. Sample noise: z ~ noise distribution\n3. Generate fake: x_fake = G(z)\n4. Update D to maximize:\n   - D(x) → 1 (classify real as real)\n   - D(x_fake) → 0 (classify fake as fake)\n```\n\n**Step 2: Train Generator**\n```\n1. Sample noise: z ~ noise distribution\n2. Generate fake: x_fake = G(z)\n3. Update G to maximize:\n   - D(x_fake) → 1 (fool discriminator)\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "Training Loop (Code)",
+      "level": 2,
+      "content": "```python\nfor epoch in range(epochs):\n    # Train Discriminator\n    for real_data in dataloader:\n        # Real samples\n        d_real = discriminator(real_data)\n        loss_real = BCELoss(d_real, ones)\n        \n        # Fake samples\n        noise = torch.randn(batch_size, noise_dim)\n        fake_data = generator(noise)\n        d_fake = discriminator(fake_data.detach())\n        loss_fake = BCELoss(d_fake, zeros)\n        \n        # Update D\n        loss_d = (loss_real + loss_fake) / 2\n        loss_d.backward()\n        optimizer_D.step()\n    \n    # Train Generator\n    noise = torch.randn(batch_size, noise_dim)\n    fake_data = generator(noise)\n    d_fake = discriminator(fake_data)\n    loss_g = BCELoss(d_fake, ones)  # Want D to say \"real\"\n    \n    loss_g.backward()\n    optimizer_G.step()\n```\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "Training Challenges",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-15",
+      "title": "1. Mode Collapse",
+      "level": 1,
+      "content": "```\nProblem: Generator produces limited variety\nExample: Always generates same face, just different colors\n\nCause: Generator finds one output that fools D\nSolution: Mini-batch discrimination, unrolled GANs\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "2. Vanishing Gradients",
+      "level": 1,
+      "content": "```\nProblem: D becomes too good, G stops learning\nWhen D is perfect: Gradient to G is zero\n\nSolution: \n- Train D less than G\n- Use different loss functions (Wasserstein)\n- Label smoothing\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "3. Non-Convergence",
+      "level": 1,
+      "content": "```\nProblem: G and D never stabilize\nParameters oscillate indefinitely\n\nSolution:\n- Careful hyperparameter tuning\n- Use WGAN with gradient penalty\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "4. Training Instability",
+      "level": 1,
+      "content": "```\nProblem: GAN training is notoriously unstable\nSmall changes cause collapse\n\nSolution:\n- Batch normalization\n- Spectral normalization\n- Progressive growing\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "GAN Variants",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-20",
+      "title": "DCGAN (Deep Convolutional GAN)",
+      "level": 2,
+      "content": "```\nUses convolutional layers\nArchitecture guidelines for stable training\nFirst successful GAN for images\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "Conditional GAN (cGAN)",
+      "level": 2,
+      "content": "```\nCondition both G and D on additional information\nExample: Generate specific class of images\nInput: noise + class label\n```"
+    },
+    {
+      "id": "sec-22",
+      "title": "CycleGAN",
+      "level": 2,
+      "content": "```\nUnpaired image-to-image translation\nNo need for paired training data\n\nApplications:\n- Horse → Zebra\n- Photo → Painting\n- Summer → Winter\n```"
+    },
+    {
+      "id": "sec-23",
+      "title": "StyleGAN",
+      "level": 2,
+      "content": "```\nState-of-the-art for face generation\nControls style at different resolutions\nCoarse (pose) → Medium (features) → Fine (colors)\n```"
+    },
+    {
+      "id": "sec-24",
+      "title": "WGAN (Wasserstein GAN)",
+      "level": 2,
+      "content": "```\nUses Wasserstein distance instead of JS divergence\nMore stable training\nBetter theoretical properties\n```\n\n---"
+    },
+    {
+      "id": "sec-25",
+      "title": "Applications",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-26",
+      "title": "1. Image Generation",
+      "level": 2,
+      "content": "```\nGenerate realistic images of:\n- Faces (StyleGAN)\n- Art, paintings\n- Products, designs\n```"
+    },
+    {
+      "id": "sec-27",
+      "title": "2. Image-to-Image Translation",
+      "level": 2,
+      "content": "```\nInput: Semantic map → Output: Realistic image\nInput: Sketch → Output: Photo\nInput: Day photo → Output: Night photo\n```"
+    },
+    {
+      "id": "sec-28",
+      "title": "3. Super-Resolution",
+      "level": 2,
+      "content": "```\nInput: Low-resolution image\nOutput: High-resolution image\n\nSRGAN: Perceptually realistic upscaling\n```"
+    },
+    {
+      "id": "sec-29",
+      "title": "4. Data Augmentation",
+      "level": 2,
+      "content": "```\nGenerate synthetic training data\nEspecially useful for rare classes\nMedical imaging, fraud detection\n```"
+    },
+    {
+      "id": "sec-30",
+      "title": "5. Inpainting",
+      "level": 2,
+      "content": "```\nFill in missing parts of images\nRemove unwanted objects\nRestore damaged photos\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "6. Style Transfer",
+      "level": 2,
+      "content": "```\nTransfer artistic style to photos\nCombine content of one image with style of another\n```"
+    },
+    {
+      "id": "sec-32",
+      "title": "7. Text-to-Image",
+      "level": 2,
+      "content": "```\nInput: Text description\nOutput: Generated image\n\nExample: \"A red bird with blue wings\" → Image\n```\n\n---"
+    },
+    {
+      "id": "sec-33",
+      "title": "GAN Evaluation Metrics",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-34",
+      "title": "Inception Score (IS)",
+      "level": 2,
+      "content": "```\nMeasures:\n- Quality: Clear, recognizable objects\n- Diversity: Variety of generated samples\n\nHigher is better\n```"
+    },
+    {
+      "id": "sec-35",
+      "title": "Fréchet Inception Distance (FID)",
+      "level": 2,
+      "content": "```\nCompares statistics of real and generated images\nLower is better (0 = identical distributions)\n\nMost widely used metric\n```"
+    },
+    {
+      "id": "sec-36",
+      "title": "Visual Inspection",
+      "level": 2,
+      "content": "```\nHuman evaluators rate realism\nCan't always be captured by metrics\n```\n\n---"
+    },
+    {
+      "id": "sec-37",
+      "title": "GAN vs Other Generative Models",
+      "level": 1,
+      "content": "| Model | Quality | Diversity | Training | Use Case |\n|-------|---------|-----------|----------|----------|\n| **GAN** | Excellent | Good | Difficult | High-quality images |\n| **VAE** | Good | Excellent | Easy | Latent space manipulation |\n| **Diffusion** | Excellent | Excellent | Slow | State-of-the-art generation |\n| **Flow** | Good | Excellent | Medium | Exact likelihood |\n\n---"
+    },
+    {
+      "id": "sec-38",
+      "title": "Practical Tips for Training GANs",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-39",
+      "title": "Do's ✅",
+      "level": 2,
+      "content": "```\n- Start with proven architectures (DCGAN, WGAN)\n- Use batch normalization\n- Train D more than G (e.g., 5:1 ratio)\n- Use Adam optimizer with appropriate LR\n- Monitor both G and D losses\n- Use FID for evaluation\n```"
+    },
+    {
+      "id": "sec-40",
+      "title": "Don'ts ❌",
+      "level": 2,
+      "content": "```\n- Don't expect stable training immediately\n- Don't use same learning rate for G and D\n- Don't train without proper regularization\n- Don't evaluate only by loss values\n```"
+    },
+    {
+      "id": "sec-41",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- GANs: Generator creates fakes, Discriminator detects them\n- Trained through adversarial minimax game\n- Challenges: Mode collapse, vanishing gradients, instability\n- Applications: Image generation, translation, super-resolution\n- Variants: DCGAN, CycleGAN, StyleGAN, WGAN\n- Evaluation: FID, Inception Score, visual inspection"
+    },
+    {
+      "id": "sec-42",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-43",
+      "title": "Category: Generative Models",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-44",
+      "title": "Tags: [GAN, generative-models, image-generation, adversarial]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

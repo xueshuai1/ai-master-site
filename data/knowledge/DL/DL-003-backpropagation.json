@@ -1,0 +1,126 @@
+{
+  "id": "DL-003-backpropagation",
+  "title": "DL-003-backpropagation",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.384Z",
+  "updatedAt": "2026-03-29T14:57:53.384Z",
+  "readTime": 6,
+  "abstract": " DL-003 ⭐⭐⭐ What is Backpropagation and How Does It Work?\n\n Question\nExplain the backpropagation algorithm in detail. Why is it essential for training neural networks?\n\n Answer\n\n What is Backpropagation?\nBackpropagation (Backward Propagation of Errors) is a supervised learning algorithm used to train neural networks by calculating the gradient of the loss function with respect to each weight. It efficiently computes how much each weight contributes to the error, enabling the network ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "Explain the backpropagation algorithm in detail. Why is it essential for training neural networks?"
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Backpropagation?",
+      "level": 2,
+      "content": "**Backpropagation** (Backward Propagation of Errors) is a supervised learning algorithm used to train neural networks by calculating the gradient of the loss function with respect to each weight. It efficiently computes how much each weight contributes to the error, enabling the network to learn by adjusting weights to minimize the loss."
+    },
+    {
+      "id": "sec-4",
+      "title": "Why is Backpropagation Essential?",
+      "level": 2,
+      "content": "1. **Efficient Gradient Computation**: Uses chain rule to compute gradients in one backward pass\n2. **Enables Learning**: Without it, neural networks couldn't adjust weights systematically\n3. **Scalability**: Works efficiently even for deep networks with millions of parameters\n4. **Foundation of Deep Learning**: All modern neural network training relies on backpropagation"
+    },
+    {
+      "id": "sec-5",
+      "title": "How Backpropagation Works",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Two Main Phases:",
+      "level": 3,
+      "content": "**Phase 1: Forward Pass**\n```\nInput → Layer 1 → Layer 2 → ... → Output → Calculate Loss\n```\n- Input data flows through the network\n- Each layer applies transformations\n- Final output is compared to target\n- Loss/error is calculated\n\n**Phase 2: Backward Pass**\n```\nLoss → Output Layer → ... → Layer 1 → Input\n```\n- Error is propagated backward\n- Gradient is calculated for each weight using chain rule\n- Weights are updated to reduce error"
+    },
+    {
+      "id": "sec-7",
+      "title": "Mathematical Foundation",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-8",
+      "title": "Chain Rule Application",
+      "level": 3,
+      "content": "For a simple network:\n```\nLoss L depends on output ŷ\nŷ depends on weighted sum z\nz depends on weights w and inputs x\n\n∂L/∂w = ∂L/∂ŷ × ∂ŷ/∂z × ∂z/∂w\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Step-by-Step Process",
+      "level": 3,
+      "content": "**Step 1: Calculate Output**\n```\nz⁽ˡ⁾ = W⁽ˡ⁾a⁽ˡ⁻¹⁾ + b⁽ˡ⁾\na⁽ˡ⁾ = f(z⁽ˡ⁾)  [activation]\n```\n\n**Step 2: Calculate Loss**\n```\nL = Loss(ŷ, y)  [e.g., MSE, Cross-Entropy]\n```\n\n**Step 3: Backward Pass (Output Layer)**\n```\nδ⁽ᴸ⁾ = ∂L/∂z⁽ᴸ⁾ = ∂L/∂a⁽ᴸ⁾ × f'(z⁽ᴸ⁾)\n```\n\n**Step 4: Backward Pass (Hidden Layers)**\n```\nδ⁽ˡ⁾ = (W⁽ˡ⁺¹⁾)ᵀδ⁽ˡ⁺¹⁾ × f'(z⁽ˡ⁾)\n```\n\n**Step 5: Calculate Gradients**\n```\n∂L/∂W⁽ˡ⁾ = δ⁽ˡ⁾(a⁽ˡ⁻¹⁾)ᵀ\n∂L/∂b⁽ˡ⁾ = δ⁽ˡ⁾\n```\n\n**Step 6: Update Weights**\n```\nW⁽ˡ⁾ = W⁽ˡ⁾ - α × ∂L/∂W⁽ˡ⁾\nb⁽ˡ⁾ = b⁽ˡ⁾ - α × ∂L/∂b⁽ˡ⁾\n```\nWhere α is the learning rate."
+    },
+    {
+      "id": "sec-10",
+      "title": "Visual Example: Simple Network",
+      "level": 2,
+      "content": "```\nInput (x) → [Neuron 1] → [Neuron 2] → Output (ŷ)\n             w₁, b₁       w₂, b₂\n\nForward: ŷ = f₂(w₂ × f₁(w₁x + b₁) + b₂)\nLoss:    L = (ŷ - y)²\n\nBackward:\n∂L/∂w₂ = 2(ŷ-y) × f₂'(z₂) × a₁\n∂L/∂w₁ = 2(ŷ-y) × f₂'(z₂) × w₂ × f₁'(z₁) × x\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "Common Loss Functions",
+      "level": 2,
+      "content": "| Task | Loss Function | Formula |\n|------|--------------|---------|\n| **Regression** | Mean Squared Error (MSE) | L = (1/n)Σ(ŷᵢ - yᵢ)² |\n| **Binary Classification** | Binary Cross-Entropy | L = -[y log(ŷ) + (1-y)log(1-ŷ)] |\n| **Multi-class Classification** | Categorical Cross-Entropy | L = -Σyᵢ log(ŷᵢ) |"
+    },
+    {
+      "id": "sec-12",
+      "title": "Challenges and Solutions",
+      "level": 2,
+      "content": "| Challenge | Problem | Solution |\n|-----------|---------|----------|\n| **Vanishing Gradient** | Gradients become too small in deep networks | Use ReLU, BatchNorm, skip connections |\n| **Exploding Gradient** | Gradients become too large | Gradient clipping, proper initialization |\n| **Slow Convergence** | Training takes too long | Adam optimizer, learning rate scheduling |\n| **Local Minima** | Gets stuck in suboptimal solutions | Momentum, better initialization |"
+    },
+    {
+      "id": "sec-13",
+      "title": "Backpropagation vs. Other Methods",
+      "level": 2,
+      "content": "| Method | Approach | Efficiency |\n|--------|----------|------------|\n| **Backpropagation** | Uses chain rule, one backward pass | O(n) - Very efficient |\n| **Numerical Differentiation** | Perturb each weight individually | O(n²) - Very slow |\n| **Symbolic Differentiation** | Compute exact derivatives | Complex, memory intensive |"
+    },
+    {
+      "id": "sec-14",
+      "title": "Code Example (Simplified)",
+      "level": 2,
+      "content": "```python\ndef backward_pass(layer_outputs, weights, target):\n    # Calculate output error\n    output_error = layer_outputs[-1] - target\n    \n    # Backpropagate through layers\n    for l in reversed(range(len(weights))):\n        delta = output_error * derivative(activation[l])\n        grad_weights[l] = delta @ layer_outputs[l].T\n        output_error = weights[l].T @ delta\n    \n    return grad_weights\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Backpropagation efficiently calculates gradients using the chain rule\n- Consists of forward pass (compute output) and backward pass (compute gradients)\n- Essential for training all modern neural networks\n- Enables weight updates that minimize the loss function\n- Challenges include vanishing/exploding gradients (solved with modern techniques)"
+    },
+    {
+      "id": "sec-16",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-17",
+      "title": "Category: Training Algorithms",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-18",
+      "title": "Tags: [backpropagation, gradient-descent, training, optimization]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

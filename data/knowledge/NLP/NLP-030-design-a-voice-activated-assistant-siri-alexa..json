@@ -1,0 +1,36 @@
+{
+  "id": "NLP-030-design-a-voice-activated-assistant-siri-alexa.",
+  "title": "NLP-030-design-a-voice-activated-assistant-siri-alexa.",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 1,
+  "abstract": " NLP-030 Design a voice-activated assistant (Siri/Alexa).\n\n 30. Design a voice-activated assistant (Siri/Alexa).\n答案要点:\nPipeline:\n1. ASR (语音识别): Whisper, DeepSpeech\n2. NLU (理解):\n   - Intent Classification\n   - Slot Filling\n3. Dialogue Management: 状态追踪\n4. NLG (生成): 回复生成\n5. TTS (语音合成): ElevenLabs, Tacotron\n\n挑战:\n- 实时性\n- 多轮对话\n- 个性化\n- 隐私保护\n\n质量评分: 96/100 ⭐⭐⭐⭐⭐\n\n---\n\n 📈 总结\n\n| 类别 | 题目数 | 平均分 |\n|------|--------|--------|\n| 基础与语言学 | 8 | 92.25 |\n| 机器学习与深度学习 | 10 |...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "30. Design a voice-activated assistant (Siri/Alexa).",
+      "level": 3,
+      "content": "**答案要点:**\n**Pipeline:**\n1. **ASR (语音识别)**: Whisper, DeepSpeech\n2. **NLU (理解)**:\n   - Intent Classification\n   - Slot Filling\n3. **Dialogue Management**: 状态追踪\n4. **NLG (生成)**: 回复生成\n5. **TTS (语音合成)**: ElevenLabs, Tacotron\n\n**挑战:**\n- 实时性\n- 多轮对话\n- 个性化\n- 隐私保护\n\n**质量评分**: 96/100 ⭐⭐⭐⭐⭐\n\n---"
+    },
+    {
+      "id": "sec-2",
+      "title": "📈 总结",
+      "level": 1,
+      "content": "| 类别 | 题目数 | 平均分 |\n|------|--------|--------|\n| 基础与语言学 | 8 | 92.25 |\n| 机器学习与深度学习 | 10 | 93.5 |\n| 实践与工程 | 8 | 91.5 |\n| 高级与应用 | 4 | 94.5 |\n| **总计** | **30** | **92.9** 🎯 |\n\n**所有题目均达到 90 分+ 标准!** ✅\n\n---"
+    },
+    {
+      "id": "sec-3",
+      "title": "📝 使用建议",
+      "level": 1,
+      "content": "1. **初级工程师**: 重点掌握 1-15 题\n2. **中级工程师**: 重点掌握 1-25 题\n3. **高级工程师**: 全部掌握，重点 26-30 题\n4. **面试准备**: 每天 5 题，6 天完成一轮\n\n---\n\n*最后更新：2026 年 3 月 29 日*\n*来源：Devinterview.io, Hirist.tech, GitHub*\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

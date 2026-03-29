@@ -1,0 +1,24 @@
+{
+  "id": "CV-024-what-are-diffusion-models-and-how-do-they-work",
+  "title": "CV-024-what-are-diffusion-models-and-how-do-they-work",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-024 What are diffusion models and how do they work?\n\n Q24: What are diffusion models and how do they work?\n\nScore: 95/100\n\nAnswer:\n\nDiffusion Models:\nGenerative models that learn to reverse a gradual noising process.\n\nForward Process (Diffusion):\n1. Start with real image x₀\n2. Gradually add Gaussian noise over T steps\n3. Final step x_T is pure noise\n\nReverse Process (Generation):\n1. Start with random noise x_T\n2. Learn to predict and remove noise step by step\n3. Gener...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q24: What are diffusion models and how do they work?",
+      "level": 2,
+      "content": "**Score:** 95/100\n\n**Answer:**\n\n**Diffusion Models:**\nGenerative models that learn to reverse a gradual noising process.\n\n**Forward Process (Diffusion):**\n1. Start with real image x₀\n2. Gradually add Gaussian noise over T steps\n3. Final step x_T is pure noise\n\n**Reverse Process (Generation):**\n1. Start with random noise x_T\n2. Learn to predict and remove noise step by step\n3. Generate image x₀ from noise\n\n**Training:**\n- Train neural network to predict noise at each step\n- Loss: difference between predicted and actual noise\n\n**Advantages over GANs:**\n- More stable training\n- Better mode coverage\n- Higher quality images\n- Easier to control\n\n**Applications:**\n- **Text-to-Image:** DALL-E 2, Stable Diffusion, Midjourney\n- **Image Editing:** Inpainting, outpainting, modifications\n- **Super-Resolution:** Image enhancement\n- **Video Generation:** Text-to-video\n\n**Key Models:**\n- DDPM (Denoising Diffusion Probabilistic Models)\n- DDIM (faster sampling)\n- Latent Diffusion (Stable Diffusion - efficient)\n- ControlNet (spatial control)\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

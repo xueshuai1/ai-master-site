@@ -1,0 +1,71 @@
+{
+  "id": "ML-029-⭐⭐⭐⭐-case-study-fraud-detection",
+  "title": "ML Case Study - Fraud Detection (欺诈检测案例分析)",
+  "category": "ML",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "Case Study",
+    "Fraud Detection",
+    "Imbalanced Learning",
+    "Real-time Scoring"
+  ],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29",
+  "updatedAt": "2026-03-29T14:57:53.396Z",
+  "readTime": 5,
+  "abstract": " 题目描述\n设计一个信用卡欺诈检测系统。欺诈率 0.1%，要求实时检测，如何设计？\n\n 参考答案\n\n 问题分析\n\npython\nproblem_analysis = \"\"\"\n欺诈检测特点：\n\n1. 极度不平衡 (0.1% 欺诈率)\n2. 实时性要求 (<100ms)\n3. 代价不对称\n   - 漏检：直接损失\n   - 误报：用户体验\n\n4. 概念漂移\n   - 欺诈模式演变\n   - 需要持续更新\n\n5. 可解释性\n   - 需要解释拒绝原因\n   - 合规要求\n\"\"\"\nprint(problem_analysis)\n\n\n 解决方案\n\npython\n 1. 数据处理\ndata_pipeline = \"\"\"\n数据管道：\n\n1. 特征工程\n   - 交易特征：金额、时间、地点\n   - 用户特征：历史行为、习惯\n   - 设备特征：IP、设备指纹\n   - 聚合特征：过去 N 笔统计\n\n2. 实时特征\n   - 滑动窗口统计\n   - 流式计算 (Flink/Spark)\n   - 特征存储 (Redis)\n\"\"\"\n\n 2. 模型选择\nmodel...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "题目描述",
+      "level": 1,
+      "content": "设计一个信用卡欺诈检测系统。欺诈率 0.1%，要求实时检测，如何设计？"
+    },
+    {
+      "id": "sec-2",
+      "title": "参考答案",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "问题分析",
+      "level": 2,
+      "content": "```python\nproblem_analysis = \"\"\"\n欺诈检测特点：\n\n1. 极度不平衡 (0.1% 欺诈率)\n2. 实时性要求 (<100ms)\n3. 代价不对称\n   - 漏检：直接损失\n   - 误报：用户体验\n\n4. 概念漂移\n   - 欺诈模式演变\n   - 需要持续更新\n\n5. 可解释性\n   - 需要解释拒绝原因\n   - 合规要求\n\"\"\"\nprint(problem_analysis)\n```"
+    },
+    {
+      "id": "sec-4",
+      "title": "解决方案",
+      "level": 2,
+      "content": "```python\n# 1. 数据处理\ndata_pipeline = \"\"\"\n数据管道：\n\n1. 特征工程\n   - 交易特征：金额、时间、地点\n   - 用户特征：历史行为、习惯\n   - 设备特征：IP、设备指纹\n   - 聚合特征：过去 N 笔统计\n\n2. 实时特征\n   - 滑动窗口统计\n   - 流式计算 (Flink/Spark)\n   - 特征存储 (Redis)\n\"\"\"\n\n# 2. 模型选择\nmodel_selection = \"\"\"\n模型选择：\n\n1. 第一阶段：规则引擎\n   - 快速过滤明显欺诈\n   - 可解释性强\n\n2. 第二阶段：ML 模型\n   - XGBoost/LightGBM\n   - 处理不平衡\n   - 特征重要性\n\n3. 第三阶段：深度学习\n   - 异常检测\n   - 序列模式 (LSTM)\n   - 图神经网络 (关联)\n\"\"\"\n\n# 3. 处理不平衡\nhandling_imbalance = \"\"\"\n不平衡处理：\n\n1. 采样\n   - SMOTE 过采样\n   - 欠采样多数类\n\n2. 代价敏感\n   - class_weight='balanced'\n   - 自定义损失函数\n\n3. 阈值调整\n   - 根据代价优化\n   - Precision-Recall 权衡\n\n4. 评估指标\n   - AUC-PR (不是 ROC)\n   - Recall@K\n   - 业务指标 (损失减少)\n\"\"\"\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "系统架构",
+      "level": 2,
+      "content": "```python\nsystem_architecture = \"\"\"\n系统架构：\n\n┌────────────────────────────────────────────────────┐\n│                  Transaction                        │\n│                     Stream                          │\n└────────────────────────────────────────────────────┘\n                        │\n                        ▼\n┌────────────────────────────────────────────────────┐\n│              Real-time Feature Engine               │\n│         (Flink/Spark Streaming + Redis)             │\n└────────────────────────────────────────────────────┘\n                        │\n                        ▼\n┌────────────────────────────────────────────────────┐\n│              ML Scoring Service                     │\n│         (XGBoost + Rules + Anomaly Detection)       │\n└────────────────────────────────────────────────────┘\n                        │\n            ┌───────────┼───────────┐\n            ▼           ▼           ▼\n       ┌────────┐  ┌────────┐  ┌────────┐\n       │ < 0.1  │  │0.1-0.8 │  │ > 0.8  │\n       │ Pass   │  │ Review │  │ Block  │\n       └────────┘  └────────┘  └────────┘\n\"\"\"\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "代码示例",
+      "level": 2,
+      "content": "```python\nfrom sklearn.ensemble import IsolationForest\nfrom xgboost import XGBClassifier\nimport numpy as np\n\nclass FraudDetectionSystem:\n    def __init__(self):\n        # 规则引擎\n        self.rules = self._load_rules()\n        \n        # ML 模型\n        self.model = XGBClassifier(\n            scale_pos_weight=999,  # 处理不平衡\n            max_depth=6,\n            learning_rate=0.1,\n            n_estimators=100\n        )\n        \n        # 异常检测\n        self.anomaly_detector = IsolationForest(\n            contamination=0.001,\n            random_state=42\n        )\n    \n    def predict(self, transaction):\n        # 1. 规则过滤\n        rule_score = self._apply_rules(transaction)\n        if rule_score > 0.9:\n            return 'BLOCK', 0.99\n        \n        # 2. ML 评分\n        features = self._extract_features(transaction)\n        ml_score = self.model.predict_proba([features])[0][1]\n        \n        # 3. 异常检测\n        anomaly_score = self.anomaly_detector.score_samples([features])[0]\n        \n        # 4. 融合\n        final_score = 0.6 * ml_score + 0.3 * rule_score + 0.1 * (1 - anomaly_score)\n        \n        # 5. 决策\n        if final_score > 0.8:\n            return 'BLOCK', final_score\n        elif final_score > 0.3:\n            return 'REVIEW', final_score\n        else:\n            return 'PASS', final_score\n    \n    def _extract_features(self, transaction):\n        # 特征工程\n        features = [\n            transaction['amount'],\n            transaction['time_of_day'],\n            transaction['distance_from_home'],\n            # ... 更多特征\n        ]\n        return np.array(features)\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "考察重点",
+      "level": 1,
+      "content": "- ✅ 能够分析业务问题\n- ✅ 设计完整解决方案\n- ✅ 考虑实际约束\n- ✅ 具备工程实现能力\n- ✅ 理解业务指标"
+    },
+    {
+      "id": "sec-8",
+      "title": "更新历史",
+      "level": 1,
+      "content": "- v1 (2026-03-29): 初始版本"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

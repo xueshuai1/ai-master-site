@@ -1,0 +1,108 @@
+{
+  "id": "LLM-模型架构演进 BERT-GPT-LLaMA",
+  "title": "模型架构演进：从 BERT 到 GPT 到 LLaMA",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "架构演进",
+    "BERT",
+    "GPT",
+    "LLaMA"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请梳理 LLM 架构的演进历程，从 BERT 到 GPT 系列再到 LLaMA，关键改进有哪些？\n\n**来源：** LLM 面试题整理\n**标签：** 架构演进，BERT，GPT，LLaMA",
+  "requirements": [],
+  "answer": {
+    "summary": "请梳理 LLM 架构的演进历程，从 BERT 到 GPT 系列再到 LLaMA，关键改进有哪些？\n\n**来源：** LLM 面试题整理\n**标签：** 架构演进，BERT，GPT，LLaMA",
+    "coreFormula": "架构：Encoder × 12/24\n注意力：双向\n预训练：MLM + NSP\n用途：理解任务（分类、NER）\n局限：不能直接生成",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请梳理 LLM 架构的演进历程，从 BERT 到 GPT 系列再到 LLaMA，关键改进有哪些？\n\n**来源：** LLM 面试题整理\n**标签：** 架构演进，BERT，GPT，LLaMA",
+        "code": {
+          "language": "text",
+          "code": "架构：Encoder × 12/24\n注意力：双向\n预训练：MLM + NSP\n用途：理解任务（分类、NER）\n局限：不能直接生成"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**架构演进时间线：**\n\n**2018: BERT（Encoder-only）**\n```\n架构：Encoder × 12/24\n注意力：双向\n预训练：MLM + NSP\n用途：理解任务（分类、NER）\n局限：不能直接生成\n```\n\n**2018-2020: GPT 系列（Decoder-only）**\n```\nGPT-1: 117M, Decoder × 12\nGPT-2: 1.5B, Decoder × 48, 零样本学习\nGPT-3: 175B, Decoder × 96, 少样本学习\n\n架构改进：\n- Pre-Norm（GPT-3）\n- 更大的词表和上下文\n- 更密集的注意力\n```\n\n**2022-2023: LLaMA 系列**\n```\nLLaMA (2023):\n- SwiGLU 激活函数\n- RoPE 位置编码\n- RMSNorm 归一化\n- 无偏置项\n\nLLaMA 2 (2023):\n- 更大上下文（4k）\n- 更好的对齐\n- 开源可用\n\nLLaMA 3 (2024):\n- 更大词表（128k）\n- 更大上下文（8k）\n- 改进的注意力\n```\n\n**关键改进对比：**\n\n| 组件 | BERT | GPT | LLaMA |\n|------|------|-----|-------|\n| 架构 | Encoder | Decoder | Decoder |\n| 注意力 | 双向 | 因果 | 因果 + GQA |\n| 激活 | GeLU | GeLU | SwiGLU |\n| 归一化 | LayerNorm | LayerNorm | RMSNorm |\n| 位置编码 | 可学习 | 可学习 | RoPE |\n| 偏置 | 有 | 有 | 无 |\n\n**技术细节：**\n\n**SwiGLU 激活：**\n```python\n# 替代 GeLU\nSwiGLU(x) = Swish(xW) ⊗ (xV)\n# 效果更好，计算略贵\n```\n\n**RMSNorm：**\n```python\n# 简化 LayerNorm\nRMSNorm(x) = x / RMS(x) * γ\n# 移除均值计算，加速训练\n```\n\n**Grouped-Query Attention (GQA)：**\n```python\n# Q 多头，K/V 分组\nnum_query_groups = 8  # LLaMA 2 70B\n# 平衡 MQA 的效率和 MHA 的效果\n```\n\n**设计趋势：**\n1. **简化：** 移除偏置、简化归一化\n2. **高效：** GQA、RoPE、SwiGLU\n3. **规模化：** 更大模型、更长上下文\n4. **开源：** LLaMA 推动开源生态\n\n**为什么 Decoder-only 成为主流？**\n- 统一架构（理解 + 生成）\n- 推理简单（自回归）\n- 规模化效果好\n- 指令微调自然",
+        "code": {
+          "language": "text",
+          "code": "GPT-1: 117M, Decoder × 12\nGPT-2: 1.5B, Decoder × 48, 零样本学习\nGPT-3: 175B, Decoder × 96, 少样本学习\n\n架构改进：\n- Pre-Norm（GPT-3）\n- 更大的词表和上下文\n- 更密集的注意力"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 主流模型架构的演进\n- **能力：** 理解设计改进的动机\n- **思维：** 从演进看技术趋势",
+        "code": {
+          "language": "text",
+          "code": "LLaMA (2023):\n- SwiGLU 激活函数\n- RoPE 位置编码\n- RMSNorm 归一化\n- 无偏置项\n\nLLaMA 2 (2023):\n- 更大上下文（4k）\n- 更好的对齐\n- 开源可用\n\nLLaMA 3 (2024):\n- 更大词表（128k）\n- 更大上下文（8k）\n- 改进的注意力"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么 BERT 不适合生成任务？（5 分）\n2. SwiGLU 相比 GeLU 的优势？（5 分）\n3. RMSNorm 为什么能加速训练？（5 分）\n4. GQA 如何平衡效率和质量？（5 分）\n5. 未来架构可能的演进方向？（5 分）",
+        "code": {
+          "language": "python",
+          "code": "# 替代 GeLU\nSwiGLU(x) = Swish(xW) ⊗ (xV)\n# 效果更好，计算略贵"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "架构演进反映了社区对效率、效果和可扩展性的持续追求。",
+        "code": {
+          "language": "python",
+          "code": "# 简化 LayerNorm\nRMSNorm(x) = x / RMS(x) * γ\n# 移除均值计算，加速训练"
+        }
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本",
+        "code": {
+          "language": "python",
+          "code": "# Q 多头，K/V 分组\nnum_query_groups = 8  # LLaMA 2 70B\n# 平衡 MQA 的效率和 MHA 的效果"
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "主流模型架构的演进",
+    "ability": "理解设计改进的动机",
+    "thinking": "从演进看技术趋势"
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么 BERT 不适合生成任务？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "SwiGLU 相比 GeLU 的优势？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "RMSNorm 为什么能加速训练？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "GQA 如何平衡效率和质量？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "未来架构可能的演进方向？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.375Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "LLM-分词技术详解",
+  "title": "LLM 分词技术详解",
+  "category": "LLM",
+  "difficulty": "⭐⭐",
+  "tags": [
+    "分词",
+    "BPE",
+    "WordPiece",
+    "词表"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "说明 BPE、WordPiece、SentencePiece 等分词算法的原理和区别。\n\n**来源：** LLM 面试题整理\n**标签：** 分词，BPE，WordPiece，词表",
+  "requirements": [],
+  "answer": {
+    "summary": "说明 BPE、WordPiece、SentencePiece 等分词算法的原理和区别。\n\n**来源：** LLM 面试题整理\n**标签：** 分词，BPE，WordPiece，词表",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "说明 BPE、WordPiece、SentencePiece 等分词算法的原理和区别。\n\n**来源：** LLM 面试题整理\n**标签：** 分词，BPE，WordPiece，词表"
+      },
+      {
+        "title": "参考答案",
+        "content": "**1. BPE（Byte Pair Encoding）：**\n- 从字符级词表开始，反复合并最频繁的词对\n- 合并次数决定词表大小\n- GPT 系列使用\n- 优点：平衡词表大小与覆盖率\n\n**2. WordPiece：**\n- BPE 的变体，选择最大化似然的合并\n- 使用##前缀表示子词\n- BERT 使用\n- 与 BPE 效果相近，实现略有不同\n\n**3. SentencePiece：**\n- 直接处理原始文本，无需预分词\n- 支持 BPE 和 Unigram 模式\n- 将空格视为特殊字符\n- 多语言场景友好\n\n**关键考量：**\n- 词表大小：32k-100k 常见\n- 罕见词处理：UNK token 或分解为子词\n- 多语言：需要覆盖多种字符集"
+      },
+      {
+        "title": "考察重点",
+        "content": "- **理解深度：** 分词算法的核心逻辑\n- **知识广度：** 主流分词方案对比\n- **应用能力：** 分词对模型性能的影响"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. BPE 的时间复杂度是多少？（5 分）\n2. 词表大小如何选择？（5 分）\n3. 分词粒度对模型有什么影响？（5 分）\n4. 解释 Unigram 分词的原理。（5 分）\n5. 如何处理 OOV（未登录词）？（5 分）"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [
+    {
+      "question": "BPE 的时间复杂度是多少？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "词表大小如何选择？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "分词粒度对模型有什么影响？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "解释 Unigram 分词的原理。（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何处理 OOV（未登录词）？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.372Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

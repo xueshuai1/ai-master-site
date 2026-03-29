@@ -1,0 +1,24 @@
+{
+  "id": "NLP-006-what-is-named-entity-recognition-ner-and-its-applications",
+  "title": "NLP-006-what-is-named-entity-recognition-ner-and-its-applications",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-006 What is Named Entity Recognition (NER) and its applications?\n\n 6. What is Named Entity Recognition (NER) and its applications?\n答案要点:\n- 定义: 识别并分类文本中的实体（人名、地点、组织、日期、金额等）\n- 实体类型: PERSON, LOCATION, ORGANIZATION, DATE, MONEY, PRODUCT\n- 技术方法: \n  - 传统：HMM, CRF\n  - 深度学习：BiLSTM-CRF, BERT-NER\n- 应用:\n  - Information Retrieval\n  - Question Answering\n  - Sentiment Analysis (针对实体)\n  - Knowledge Graph Construction\n  - Resume Parsing\n\n代码示例 (spaCy):\npython\nimport spacy\nnlp...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "6. What is Named Entity Recognition (NER) and its applications?",
+      "level": 3,
+      "content": "**答案要点:**\n- **定义**: 识别并分类文本中的实体（人名、地点、组织、日期、金额等）\n- **实体类型**: PERSON, LOCATION, ORGANIZATION, DATE, MONEY, PRODUCT\n- **技术方法**: \n  - 传统：HMM, CRF\n  - 深度学习：BiLSTM-CRF, BERT-NER\n- **应用**:\n  - Information Retrieval\n  - Question Answering\n  - Sentiment Analysis (针对实体)\n  - Knowledge Graph Construction\n  - Resume Parsing\n\n**代码示例 (spaCy):**\n```python\nimport spacy\nnlp = spacy.load(\"en_core_web_sm\")\ndoc = nlp(\"Apple is buying U.K. startup for $1B\")\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n# Apple ORG, U.K. GPE, $1B MONEY\n```\n\n**质量评分**: 95/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

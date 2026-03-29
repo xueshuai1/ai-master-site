@@ -1,0 +1,24 @@
+{
+  "id": "CV-017-what-are-some-common-techniques-for-object-detection-in-images",
+  "title": "CV-017-what-are-some-common-techniques-for-object-detection-in-images",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-017 What are some common techniques for object detection in images?\n\n Q17: What are some common techniques for object detection in images?\n\nScore: 93/100\n\nAnswer:\n\nTraditional Methods:\n1. Sliding Window: Scan image at multiple scales, classify each window\n2. Viola-Jones: Haar-like features with cascade classifiers (faces)\n3. HOG + SVM: Histogram of Oriented Gradients with SVM classifier\n\nDeep Learning Methods:\n\nTwo-Stage Detectors:\n1. R-CNN: Region pro...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q17: What are some common techniques for object detection in images?",
+      "level": 2,
+      "content": "**Score:** 93/100\n\n**Answer:**\n\n**Traditional Methods:**\n1. **Sliding Window:** Scan image at multiple scales, classify each window\n2. **Viola-Jones:** Haar-like features with cascade classifiers (faces)\n3. **HOG + SVM:** Histogram of Oriented Gradients with SVM classifier\n\n**Deep Learning Methods:**\n\n**Two-Stage Detectors:**\n1. **R-CNN:** Region proposals + CNN classification\n2. **Fast R-CNN:** Shared convolution, ROI pooling\n3. **Faster R-CNN:** Region Proposal Network (RPN)\n4. **Mask R-CNN:** Adds segmentation branch\n\n**One-Stage Detectors:**\n1. **YOLO (You Only Look Once):** Single pass, grid-based prediction\n   - YOLOv3, YOLOv4, YOLOv5, YOLOv8\n   - Real-time performance\n2. **SSD (Single Shot Detector):** Multi-scale feature maps\n3. **RetinaNet:** Focal loss for class imbalance\n\n**Transformer-Based:**\n- **DETR:** End-to-end detection with transformers\n- **Deformable DETR:** Improved convergence\n\n**Selection Criteria:**\n- **Accuracy:** Faster R-CNN, Mask R-CNN\n- **Speed:** YOLO series, SSD\n- **Small Objects:** FPN (Feature Pyramid Networks)\n- **Instance Segmentation:** Mask R-CNN\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

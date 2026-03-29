@@ -1,0 +1,120 @@
+{
+  "id": "DL-027-regularization-techniques",
+  "title": "DL-027-regularization-techniques",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.388Z",
+  "updatedAt": "2026-03-29T14:57:53.388Z",
+  "readTime": 3,
+  "abstract": " DL-027 ⭐⭐⭐ What is Regularization? Techniques to Prevent Overfitting\n\n Question\nWhat is regularization in deep learning? Explain different regularization techniques.\n\n Answer\n\n What is Regularization?\nRegularization is a set of techniques to prevent overfitting by adding constraints or penalties to the learning process, improving generalization to unseen data.\n\n---\n\n Regularization Techniques\n\n 1. L1 Regularization (Lasso)\n\nLoss += λ × Σ|w|\n\nEffect: Some weights become exactl...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What is regularization in deep learning? Explain different regularization techniques."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is Regularization?",
+      "level": 2,
+      "content": "**Regularization** is a set of techniques to prevent overfitting by adding constraints or penalties to the learning process, improving generalization to unseen data.\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "Regularization Techniques",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "1. L1 Regularization (Lasso)",
+      "level": 1,
+      "content": "```\nLoss += λ × Σ|w|\n\nEffect: Some weights become exactly zero\nUse: Feature selection, sparse models\n```"
+    },
+    {
+      "id": "sec-6",
+      "title": "2. L2 Regularization (Ridge)",
+      "level": 1,
+      "content": "```\nLoss += λ × Σw²\n\nEffect: Weights decay toward zero\nUse: Most common regularization\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "3. Dropout",
+      "level": 1,
+      "content": "```\nRandomly drop neurons during training\nPrevents co-adaptation\nTypical rate: 0.3-0.5\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "4. Batch Normalization",
+      "level": 1,
+      "content": "```\nNormalize layer inputs\nStabilizes training, slight regularization\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "5. Early Stopping",
+      "level": 1,
+      "content": "```\nStop training when validation loss increases\nPrevents overfitting to training data\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "6. Data Augmentation",
+      "level": 1,
+      "content": "```\nCreate variations of training data\nIncreases effective dataset size\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "7. Weight Constraints",
+      "level": 1,
+      "content": "```\nMax norm constraints on weights\nPrevents weights from growing too large\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "8. Label Smoothing",
+      "level": 1,
+      "content": "```\nDon't use hard 0/1 labels\nUse 0.1/0.9 instead\nPrevents overconfidence\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "Comparison",
+      "level": 1,
+      "content": "| Technique | Strength | Overhead | Best For |\n|-----------|----------|----------|----------|\n| Dropout | Strong | Low | FC layers |\n| L2 | Moderate | None | All layers |\n| BatchNorm | Mild | Medium | Deep networks |\n| Early Stopping | Mild | None | Always use |\n| Data Aug | Strong | Domain-specific | Limited data |\n\n---"
+    },
+    {
+      "id": "sec-14",
+      "title": "Best Practices",
+      "level": 1,
+      "content": "```\n✅ Combine multiple techniques\n✅ Start with L2 + dropout + early stopping\n✅ Tune regularization strength\n✅ Monitor validation performance\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-16",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-17",
+      "title": "Tags: [regularization, dropout, L2, overfitting, generalization]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

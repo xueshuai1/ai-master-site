@@ -1,0 +1,103 @@
+{
+  "id": "NLP-001",
+  "title": "Transformer 架构详解",
+  "category": "NLP",
+  "difficulty": "⭐⭐⭐",
+  "tags": ["Transformer", "自注意力", "位置编码", "编码器 - 解码器", "并行计算"],
+  "source": "NLP 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请详细解释 Transformer 模型架构：\n1. Transformer 的整体架构是什么？\n2. 为什么 Transformer 能够替代 RNN？\n3. 位置编码的作用和实现方式？\n4. 多头注意力的计算过程？",
+  "requirements": [
+    "画出 Transformer 架构图并解释各组件",
+    "分析 Transformer 相比 RNN 的优势",
+    "解释位置编码的必要性",
+    "详细说明多头注意力机制"
+  ],
+  "answer": {
+    "summary": "Transformer 是完全基于注意力机制的编码器 - 解码器架构，通过自注意力实现全局依赖建模，支持并行计算，彻底改变了 NLP 领域。",
+    "sections": [
+      {
+        "title": "Transformer 整体架构",
+        "content": "**架构组成**：\n\n**编码器（Encoder）**：\n- 6 个相同的层堆叠\n- 每层包含：多头自注意力 + 前馈神经网络\n- 残差连接 + 层归一化\n\n**解码器（Decoder）**：\n- 6 个相同的层堆叠\n- 每层包含：掩码多头自注意力 + 多头交叉注意力 + 前馈神经网络\n- 残差连接 + 层归一化\n\n**关键设计**：\n- 完全基于注意力，无 RNN/CNN\n- 支持并行计算\n- 残差连接缓解梯度消失\n- 层归一化加速收敛",
+        "code": {
+          "language": "python",
+          "code": "import torch\nimport torch.nn as nn\n\nclass TransformerBlock(nn.Module):\n    def __init__(self, embed_dim, num_heads, ff_dim, dropout=0.1):\n        super().__init__()\n        self.attention = nn.MultiheadAttention(embed_dim, num_heads, dropout=dropout)\n        self.feed_forward = nn.Sequential(\n            nn.Linear(embed_dim, ff_dim),\n            nn.ReLU(),\n            nn.Linear(ff_dim, embed_dim)\n        )\n        self.norm1 = nn.LayerNorm(embed_dim)\n        self.norm2 = nn.LayerNorm(embed_dim)\n        self.dropout = nn.Dropout(dropout)\n        \n    def forward(self, x, mask=None):\n        # 自注意力 + 残差 + 归一化\n        attn_output, _ = self.attention(x, x, x, attn_mask=mask)\n        x = self.norm1(x + self.dropout(attn_output))\n        \n        # 前馈网络 + 残差 + 归一化\n        ff_output = self.feed_forward(x)\n        x = self.norm2(x + self.dropout(ff_output))\n        return x",
+          "explanation": "Transformer 编码器层的简化实现"
+        }
+      },
+      {
+        "title": "Transformer 相比 RNN 的优势",
+        "content": "| 特性 | RNN/LSTM | Transformer |\n|------|----------|-------------|\n| **并行化** | 序列依赖，无法并行 | 完全并行，训练速度快 |\n| **长程依赖** | 梯度消失，难以捕捉 | 自注意力直接建模全局依赖 |\n| **计算复杂度** | O(n·d²) | O(n²·d)，但可并行 |\n| **路径长度** | O(n) | O(1)，任意位置直接交互 |\n| **硬件效率** | 低，内存访问不连续 | 高，矩阵运算友好 |\n\n**核心优势**：\n1. **并行计算**：训练速度提升 10-100 倍\n2. **全局依赖**：任意两个位置直接交互\n3. **可扩展性**：更容易利用大规模数据和算力"
+      },
+      {
+        "title": "位置编码",
+        "content": "**为什么需要位置编码？**\n\n自注意力机制是排列不变的（permutation invariant），无法区分词序。位置编码注入位置信息。\n\n**实现方式**：\n\n**正弦位置编码（原始 Transformer）**：\n```python\nPE(pos, 2i) = sin(pos / 10000^(2i/d))\nPE(pos, 2i+1) = cos(pos / 10000^(2i/d))\n```\n\n**优势**：\n- 可以外推到比训练时更长的序列\n- 相对位置可以表示为线性函数\n\n**可学习位置编码（BERT 等）**：\n- 将位置作为可学习的嵌入\n- 简单有效，但无法外推\n\n**RoPE（旋转位置编码，LLaMA 等）**：\n- 通过旋转矩阵注入相对位置\n- 兼具外推性和效果",
+        "code": {
+          "language": "python",
+          "code": "import torch\nimport math\n\ndef get_sinusoidal_position_encoding(seq_len, d_model):\n    \"\"\"生成正弦位置编码\"\"\"\n    pe = torch.zeros(seq_len, d_model)\n    position = torch.arange(0, seq_len).unsqueeze(1)\n    div_term = torch.exp(torch.arange(0, d_model, 2) * -(math.log(10000.0) / d_model))\n    \n    pe[:, 0::2] = torch.sin(position * div_term)\n    pe[:, 1::2] = torch.cos(position * div_term)\n    \n    return pe.unsqueeze(0)  # (1, seq_len, d_model)\n\n# 使用\npe = get_sinusoidal_position_encoding(512, 512)\nx = x + pe  # 加到输入嵌入上",
+          "explanation": "正弦位置编码的实现"
+        }
+      },
+      {
+        "title": "多头注意力",
+        "content": "**计算过程**：\n\n1. **线性投影**：将输入投影到多个子空间\n   - Q_i = XW_i^Q, K_i = XW_i^K, V_i = XW_i^V\n   - i = 1, 2, ..., h（h 个头）\n\n2. **并行计算注意力**：\n   - head_i = Attention(Q_i, K_i, V_i)\n\n3. **拼接 + 线性变换**：\n   - MultiHead(Q,K,V) = Concat(head_1,...,head_h)W^O\n\n**优势**：\n- 同时关注不同子空间的信息\n- 增强模型表达能力\n- 类似 CNN 中的多通道\n\n**典型配置**：\n- Base: d_model=512, h=8, d_k=64\n- Large: d_model=1024, h=16, d_k=64",
+        "code": {
+          "language": "python",
+          "code": "class MultiHeadAttention(nn.Module):\n    def __init__(self, embed_dim, num_heads):\n        super().__init__()\n        self.num_heads = num_heads\n        self.head_dim = embed_dim // num_heads\n        \n        self.q_proj = nn.Linear(embed_dim, embed_dim)\n        self.k_proj = nn.Linear(embed_dim, embed_dim)\n        self.v_proj = nn.Linear(embed_dim, embed_dim)\n        self.out_proj = nn.Linear(embed_dim, embed_dim)\n        \n    def forward(self, x, mask=None):\n        batch_size, seq_len, embed_dim = x.shape\n        \n        # 投影并分割多头\n        Q = self.q_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)\n        K = self.k_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)\n        V = self.v_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)\n        \n        # 计算注意力\n        scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(self.head_dim)\n        if mask is not None:\n            scores = scores.masked_fill(mask == 0, -1e9)\n        weights = torch.softmax(scores, dim=-1)\n        \n        # 加权求和\n        output = torch.matmul(weights, V)\n        \n        # 拼接 + 输出投影\n        output = output.transpose(1, 2).contiguous().view(batch_size, seq_len, embed_dim)\n        return self.out_proj(output)",
+          "explanation": "多头注意力的完整实现"
+        }
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握 Transformer 架构和各组件功能",
+    "ability": "能够实现 Transformer 核心组件，分析模型设计",
+    "thinking": "理解 Transformer 设计背后的直觉和权衡"
+  },
+  "followUpQuestions": [
+    {
+      "question": "Transformer 中的残差连接和层归一化有什么作用？",
+      "points": 5,
+      "answerHint": "残差连接缓解梯度消失，层归一化加速收敛、稳定训练"
+    },
+    {
+      "question": "解释 Transformer 中前馈神经网络的作用。",
+      "points": 5,
+      "answerHint": "增加非线性变换能力，相当于每个位置的独立处理，扩展表示空间"
+    },
+    {
+      "question": "什么是掩码自注意力？在什么场景下使用？",
+      "points": 5,
+      "answerHint": "遮蔽未来位置，防止信息泄露；用于解码器训练和自回归生成"
+    },
+    {
+      "question": "Transformer 如何处理变长序列？",
+      "points": 5,
+      "answerHint": "使用 Padding 和 Attention Mask，屏蔽填充位置"
+    },
+    {
+      "question": "解释 Encoder-Only、Decoder-Only、Encoder-Decoder 三种架构的区别和应用。",
+      "points": 5,
+      "answerHint": "Encoder-Only（BERT）：理解任务；Decoder-Only（GPT）：生成任务；Encoder-Decoder（T5）：翻译、摘要"
+    }
+  ],
+  "deepUnderstanding": "Transformer 是 NLP 领域的里程碑，理解其架构是掌握现代 LLM 的基础。几乎所有主流模型都基于 Transformer 变体。",
+  "references": [
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "type": "paper"
+    },
+    {
+      "title": "The Illustrated Transformer",
+      "url": "https://jalammar.github.io/illustrated-transformer/",
+      "type": "blog"
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T00:00:00Z",
+    "changeLog": "初始版本，基于原有 MD 文件结构化"
+  }
+}

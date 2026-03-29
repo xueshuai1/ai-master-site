@@ -1,0 +1,366 @@
+{
+  "id": "DL-021-loss-functions",
+  "title": "DL-021-loss-functions",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.387Z",
+  "updatedAt": "2026-03-29T14:57:53.387Z",
+  "readTime": 9,
+  "abstract": " DL-021 ⭐⭐⭐ Common Loss Functions in Deep Learning\n\n Question\nWhat are loss functions? Explain common loss functions used in deep learning and when to use each.\n\n Answer\n\n What is a Loss Function?\nA loss function (or cost function) measures how well the model's predictions match the actual targets. The goal of training is to minimize this loss.\n\n\nLoss = f(predicted, actual)\n\nLower loss = Better predictions\nTraining: Find weights that minimize loss\n\n\n---\n\n Loss Functions for R...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are loss functions? Explain common loss functions used in deep learning and when to use each."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is a Loss Function?",
+      "level": 2,
+      "content": "A **loss function** (or cost function) measures how well the model's predictions match the actual targets. The goal of training is to minimize this loss.\n\n```\nLoss = f(predicted, actual)\n\nLower loss = Better predictions\nTraining: Find weights that minimize loss\n```\n\n---"
+    },
+    {
+      "id": "sec-4",
+      "title": "Loss Functions for Regression",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-5",
+      "title": "1. Mean Squared Error (MSE / L2 Loss)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nMSE = (1/n) × Σ(y_pred - y_true)²\n```"
+    },
+    {
+      "id": "sec-7",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Smooth, differentiable everywhere\n✅ Penalizes large errors more (squared)\n✅ Convex for linear models\n❌ Sensitive to outliers (squared penalty)\n```"
+    },
+    {
+      "id": "sec-8",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Regression problems\n- When large errors are particularly bad\n- Standard choice for continuous outputs\n```"
+    },
+    {
+      "id": "sec-9",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\n# PyTorch\nloss_fn = nn.MSELoss()\nloss = loss_fn(predictions, targets)\n\n# Or functional\nloss = F.mse_loss(predictions, targets)\n```\n\n---"
+    },
+    {
+      "id": "sec-10",
+      "title": "2. Mean Absolute Error (MAE / L1 Loss)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-11",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nMAE = (1/n) × Σ|y_pred - y_true|\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Robust to outliers (linear penalty)\n✅ Interpretable (average error magnitude)\n❌ Not differentiable at zero\n❌ Can have multiple minima\n```"
+    },
+    {
+      "id": "sec-13",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Regression with outliers\n- When you want robust estimates\n- Less sensitive to extreme values\n```"
+    },
+    {
+      "id": "sec-14",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\nloss_fn = nn.L1Loss()\nloss = loss_fn(predictions, targets)\n```\n\n---"
+    },
+    {
+      "id": "sec-15",
+      "title": "3. Huber Loss",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-16",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nLδ(a) = { 0.5×a²           if |a| ≤ δ\n        { δ×(|a| - 0.5×δ)  otherwise\n\nWhere a = y_pred - y_true\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Combines MSE and MAE benefits\n✅ Quadratic for small errors (smooth)\n✅ Linear for large errors (robust)\n❌ Need to choose δ hyperparameter\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Regression with some outliers\n- When you want both smoothness and robustness\n- Default: δ = 1.0\n```"
+    },
+    {
+      "id": "sec-19",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\nloss_fn = nn.HuberLoss(delta=1.0)\nloss = loss_fn(predictions, targets)\n```\n\n---"
+    },
+    {
+      "id": "sec-20",
+      "title": "Loss Functions for Classification",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-21",
+      "title": "4. Binary Cross-Entropy (BCE)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-22",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nBCE = -[y×log(p) + (1-y)×log(1-p)]\n\nWhere:\n- y: True label (0 or 1)\n- p: Predicted probability\n```"
+    },
+    {
+      "id": "sec-23",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Standard for binary classification\n✅ Works with sigmoid output\n✅ Penalizes confident wrong predictions heavily\n❌ Can have numerical instability (use stable implementation)\n```"
+    },
+    {
+      "id": "sec-24",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Binary classification (spam/not spam)\n- Two-class problems\n- Output: Single neuron with sigmoid\n```"
+    },
+    {
+      "id": "sec-25",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\n# With sigmoid separately\nloss_fn = nn.BCELoss()\npredictions = torch.sigmoid(model(x))\nloss = loss_fn(predictions, targets)\n\n# Combined (more stable)\nloss_fn = nn.BCEWithLogitsLoss()\nloss = loss_fn(model(x), targets)  # No sigmoid needed\n```\n\n---"
+    },
+    {
+      "id": "sec-26",
+      "title": "5. Categorical Cross-Entropy",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-27",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nCE = -Σ y_i × log(p_i)\n\nWhere:\n- y_i: True label (one-hot encoded)\n- p_i: Predicted probability for class i\n```"
+    },
+    {
+      "id": "sec-28",
+      "title": "Characteristics",
+      "level": 2,
+      "content": "```\n✅ Standard for multi-class classification\n✅ Works with softmax output\n✅ Strong gradients for wrong predictions\n❌ Requires one-hot encoded targets\n```"
+    },
+    {
+      "id": "sec-29",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Multi-class classification (10 classes)\n- Mutually exclusive classes\n- Output: N neurons with softmax\n```"
+    },
+    {
+      "id": "sec-30",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\n# PyTorch (includes softmax)\nloss_fn = nn.CrossEntropyLoss()\nloss = loss_fn(predictions, targets)  # targets are class indices\n\n# Note: PyTorch's CrossEntropyLoss expects raw logits, not softmax\n```\n\n---"
+    },
+    {
+      "id": "sec-31",
+      "title": "6. Sparse Categorical Cross-Entropy",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-32",
+      "title": "Difference from Categorical CE",
+      "level": 2,
+      "content": "```\nCategorical CE: Targets one-hot encoded [0, 1, 0]\nSparse CE: Targets as integers [1]\n\nSame mathematical formula, different target format\n```"
+    },
+    {
+      "id": "sec-33",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Multi-class with many classes (saves memory)\n- When targets are class indices\n```"
+    },
+    {
+      "id": "sec-34",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\n# PyTorch: CrossEntropyLoss is already sparse\nloss_fn = nn.CrossEntropyLoss()\nloss = loss_fn(predictions, target_indices)  # [0, 2, 1, 3, ...]\n```\n\n---"
+    },
+    {
+      "id": "sec-35",
+      "title": "Specialized Loss Functions",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-36",
+      "title": "7. Focal Loss",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-37",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nFL(p_t) = -α_t × (1 - p_t)^γ × log(p_t)\n\nWhere:\n- p_t: Predicted probability for true class\n- α: Balancing factor\n- γ: Focusing parameter (typically 2)\n```"
+    },
+    {
+      "id": "sec-38",
+      "title": "Purpose",
+      "level": 2,
+      "content": "```\nDown-weights easy examples\nFocuses training on hard examples\n```"
+    },
+    {
+      "id": "sec-39",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Class imbalance problems\n- Object detection (many background examples)\n- When most examples are easy to classify\n```\n\n---"
+    },
+    {
+      "id": "sec-40",
+      "title": "8. Contrastive Loss",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-41",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nL = (1-y) × 0.5 × D² + y × 0.5 × max(0, margin - D)²\n\nWhere:\n- D: Distance between embeddings\n- y: 1 if similar, 0 if different\n```"
+    },
+    {
+      "id": "sec-42",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Learning embeddings\n- Siamese networks\n- Face verification\n- Similarity learning\n```\n\n---"
+    },
+    {
+      "id": "sec-43",
+      "title": "9. Triplet Loss",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-44",
+      "title": "Formula",
+      "level": 2,
+      "content": "```\nL = max(0, D(anchor, positive) - D(anchor, negative) + margin)\n\nWhere:\n- Anchor: Reference sample\n- Positive: Same class as anchor\n- Negative: Different class from anchor\n```"
+    },
+    {
+      "id": "sec-45",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "```\n- Face recognition\n- Learning embeddings\n- Retrieval systems\n```\n\n---"
+    },
+    {
+      "id": "sec-46",
+      "title": "Loss Function Selection Guide",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-47",
+      "title": "For Regression",
+      "level": 2,
+      "content": "| Situation | Recommended Loss |\n|-----------|-----------------|\n| Standard regression | MSE |\n| With outliers | MAE or Huber |\n| Need robustness | Huber |\n| Predicting distributions | Negative Log Likelihood |"
+    },
+    {
+      "id": "sec-48",
+      "title": "For Classification",
+      "level": 2,
+      "content": "| Situation | Recommended Loss |\n|-----------|-----------------|\n| Binary classification | BCE |\n| Multi-class (exclusive) | Cross-Entropy |\n| Multi-class (imbalanced) | Focal Loss |\n| Multi-label | BCE (per label) |\n| Learning embeddings | Contrastive/Triplet |\n\n---"
+    },
+    {
+      "id": "sec-49",
+      "title": "Common Mistakes",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-50",
+      "title": "❌ Wrong Loss for Task",
+      "level": 2,
+      "content": "```python\n# Wrong: Using MSE for classification\nloss = nn.MSELoss()(predictions, targets)  # Classification!\n\n# Correct: Use CrossEntropyLoss\nloss = nn.CrossEntropyLoss()(predictions, targets)\n```"
+    },
+    {
+      "id": "sec-51",
+      "title": "❌ Double Applying Activation",
+      "level": 2,
+      "content": "```python\n# Wrong: Applying softmax then CrossEntropyLoss\npredictions = softmax(model(x))\nloss = nn.CrossEntropyLoss()(predictions, targets)  # Already has softmax!\n\n# Correct: CrossEntropyLoss includes softmax\nloss = nn.CrossEntropyLoss()(model(x), targets)  # Raw logits\n```"
+    },
+    {
+      "id": "sec-52",
+      "title": "❌ Wrong Target Format",
+      "level": 2,
+      "content": "```python\n# Wrong: One-hot targets with CrossEntropyLoss\ntargets = torch.tensor([[0, 1, 0], [1, 0, 0]])  # One-hot\nloss = nn.CrossEntropyLoss()(predictions, targets)  # Expects indices!\n\n# Correct: Class indices\ntargets = torch.tensor([1, 0])  # Class indices\nloss = nn.CrossEntropyLoss()(predictions, targets)\n```\n\n---"
+    },
+    {
+      "id": "sec-53",
+      "title": "Custom Loss Functions",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-54",
+      "title": "Example: Weighted MSE",
+      "level": 2,
+      "content": "```python\nclass WeightedMSELoss(nn.Module):\n    def __init__(self, weights):\n        super().__init__()\n        self.weights = weights\n    \n    def forward(self, pred, target):\n        diff = pred - target\n        weighted_diff = self.weights * diff**2\n        return weighted_diff.mean()\n```"
+    },
+    {
+      "id": "sec-55",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Loss functions measure prediction error\n- Regression: MSE (standard), MAE (robust), Huber (balanced)\n- Binary classification: Binary Cross-Entropy\n- Multi-class: Categorical Cross-Entropy\n- Choose loss based on task and data characteristics\n- PyTorch's CrossEntropyLoss includes softmax (use raw logits)"
+    },
+    {
+      "id": "sec-56",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-57",
+      "title": "Category: Model Training",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-58",
+      "title": "Tags: [loss-functions, MSE, cross-entropy, training, optimization]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

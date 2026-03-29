@@ -1,0 +1,240 @@
+{
+  "id": "DL-008-rnn-architecture",
+  "title": "DL-008-rnn-architecture",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.385Z",
+  "updatedAt": "2026-03-29T14:57:53.385Z",
+  "readTime": 9,
+  "abstract": " DL-008 ⭐⭐⭐ What are Recurrent Neural Networks (RNN)? Explain Architecture and Applications\n\n Question\nWhat are Recurrent Neural Networks? Explain their architecture, how they differ from feedforward networks, and their applications.\n\n Answer\n\n What is an RNN?\nA Recurrent Neural Network (RNN) is a type of neural network designed for processing sequential data where the order matters. Unlike feedforward networks, RNNs have memory—they use information from previous steps to influen...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are Recurrent Neural Networks? Explain their architecture, how they differ from feedforward networks, and their applications."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What is an RNN?",
+      "level": 2,
+      "content": "A **Recurrent Neural Network (RNN)** is a type of neural network designed for processing sequential data where the order matters. Unlike feedforward networks, RNNs have **memory**—they use information from previous steps to influence current processing."
+    },
+    {
+      "id": "sec-4",
+      "title": "Key Characteristic: Loops",
+      "level": 2,
+      "content": "```\nFeedforward Network:  Input → Hidden → Output (no loops)\nRNN: Input → Hidden → Output\n              ↑     ↓\n              └─────┘  (loop: hidden state feeds back)\n```\n\n---"
+    },
+    {
+      "id": "sec-5",
+      "title": "Why RNNs? The Sequential Data Problem",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "Limitations of Feedforward Networks",
+      "level": 2,
+      "content": "1. **Fixed Input Size**: Can't handle variable-length sequences\n2. **No Memory**: Each input processed independently\n3. **No Temporal Context**: Can't use previous information"
+    },
+    {
+      "id": "sec-7",
+      "title": "Examples Requiring RNNs",
+      "level": 2,
+      "content": "| Task | Input | Output | Why Sequential? |\n|------|-------|--------|-----------------|\n| **Language Translation** | Sentence (words) | Sentence (words) | Word order matters |\n| **Speech Recognition** | Audio samples | Text | Temporal dependencies |\n| **Time Series Prediction** | Past values | Future values | Time-dependent patterns |\n| **Sentiment Analysis** | Review text | Sentiment | Context from previous words |\n| **Video Classification** | Frame sequence | Label | Temporal dynamics |\n\n---"
+    },
+    {
+      "id": "sec-8",
+      "title": "RNN Architecture",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-9",
+      "title": "Unrolled RNN (Through Time)",
+      "level": 2,
+      "content": "```\nTime:     t-1      t      t+1\n          ↓        ↓        ↓\nInput:   xₜ₋₁ →   xₜ   →  xₜ₊₁\n          ↓        ↓        ↓\nHidden:  hₜ₋₁ →   hₜ   →  hₜ₊₁\n          ↓        ↓        ↓\nOutput:  yₜ₋₁ →   yₜ   →  yₜ₊₁\n```"
+    },
+    {
+      "id": "sec-10",
+      "title": "RNN Cell Structure",
+      "level": 2,
+      "content": "```\n                    hₜ₋₁ (previous hidden state)\n                      ↓\n        ┌─────────────────────┐\n        │    RNN Cell         │\nxₜ →    │  (weights: W, U, V) │  → yₜ\n        │                     │\n        └─────────────────────┘\n                      ↓\n                    hₜ (current hidden state)\n```"
+    },
+    {
+      "id": "sec-11",
+      "title": "Mathematical Formulation",
+      "level": 2,
+      "content": "**Hidden State:**\n```\nhₜ = f(W × xₜ + U × hₜ₋₁ + b)\n\nWhere:\n- hₜ: Current hidden state\n- xₜ: Current input\n- hₜ₋₁: Previous hidden state\n- W: Input-to-hidden weights\n- U: Hidden-to-hidden weights (recurrent)\n- b: Bias\n- f: Activation function (tanh or ReLU)\n```\n\n**Output:**\n```\nyₜ = g(V × hₜ + c)\n\nWhere:\n- yₜ: Output at time t\n- V: Hidden-to-output weights\n- c: Output bias\n- g: Output activation (softmax, sigmoid, etc.)\n```"
+    },
+    {
+      "id": "sec-12",
+      "title": "Key Insight: Parameter Sharing",
+      "level": 2,
+      "content": "```\nSame weights (W, U, V) used at EVERY time step\n→ Can handle sequences of ANY length\n→ Learns patterns that generalize across positions\n```\n\n---"
+    },
+    {
+      "id": "sec-13",
+      "title": "RNN Variants: Many-to-Many Architectures",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-14",
+      "title": "1. One-to-One (Traditional NN)",
+      "level": 2,
+      "content": "```\nInput → RNN → Output\nExample: Image classification\n```"
+    },
+    {
+      "id": "sec-15",
+      "title": "2. One-to-Many (Sequence Generation)",
+      "level": 2,
+      "content": "```\nInput → RNN → Output → Output → Output\nExample: Image captioning (image → sentence)\n```"
+    },
+    {
+      "id": "sec-16",
+      "title": "3. Many-to-One (Sequence Classification)",
+      "level": 2,
+      "content": "```\nInput → Input → Input → RNN → Output\nExample: Sentiment analysis (sentence → sentiment)\n```"
+    },
+    {
+      "id": "sec-17",
+      "title": "4. Many-to-Many (Same Length)",
+      "level": 2,
+      "content": "```\nInput → Input → RNN → Output → Output\nExample: Part-of-speech tagging\n```"
+    },
+    {
+      "id": "sec-18",
+      "title": "5. Many-to-Many (Different Length)",
+      "level": 2,
+      "content": "```\nEncoder:        Input → Input → RNN → Context\nDecoder:                          Context → Output → Output\nExample: Machine translation (seq2seq)\n```\n\n---"
+    },
+    {
+      "id": "sec-19",
+      "title": "Training RNNs: Backpropagation Through Time (BPTT)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-20",
+      "title": "Process",
+      "level": 2,
+      "content": "1. **Unroll** the RNN through time steps\n2. **Forward pass**: Compute outputs at each time step\n3. **Calculate loss**: Sum of losses at each time step\n4. **Backward pass**: Backpropagate errors through time\n5. **Update weights**: Same weights updated from all time steps"
+    },
+    {
+      "id": "sec-21",
+      "title": "Challenge: Vanishing/Exploding Gradients",
+      "level": 2,
+      "content": "```\nLong sequences → Many time steps → Gradient multiplied many times\n\nIf gradient < 1: Vanishes (can't learn long dependencies)\nIf gradient > 1: Explodes (unstable training)\n```\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "RNN Applications",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-23",
+      "title": "1. Natural Language Processing (NLP)",
+      "level": 2,
+      "content": "| Application | Architecture | Example |\n|-------------|--------------|---------|\n| **Language Modeling** | Many-to-Many | Predict next word |\n| **Machine Translation** | Seq2Seq (Encoder-Decoder) | English → French |\n| **Sentiment Analysis** | Many-to-One | Review → Positive/Negative |\n| **Text Generation** | One-to-Many | Generate stories, code |\n| **Named Entity Recognition** | Many-to-Many | Tag names, places |"
+    },
+    {
+      "id": "sec-24",
+      "title": "2. Speech and Audio",
+      "level": 2,
+      "content": "| Application | Description |\n|-------------|-------------|\n| **Speech Recognition** | Audio → Text transcription |\n| **Music Generation** | Generate melodies, harmonies |\n| **Voice Synthesis** | Text → Speech (TTS) |"
+    },
+    {
+      "id": "sec-25",
+      "title": "3. Time Series",
+      "level": 2,
+      "content": "| Application | Description |\n|-------------|-------------|\n| **Stock Prediction** | Predict future prices |\n| **Weather Forecasting** | Predict weather patterns |\n| **Anomaly Detection** | Detect unusual patterns |"
+    },
+    {
+      "id": "sec-26",
+      "title": "4. Video Processing",
+      "level": 2,
+      "content": "| Application | Description |\n|-------------|-------------|\n| **Video Classification** | Classify video content |\n| **Action Recognition** | Recognize human actions |\n| **Video Captioning** | Generate video descriptions |\n\n---"
+    },
+    {
+      "id": "sec-27",
+      "title": "RNN Limitations",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-28",
+      "title": "1. Vanishing Gradient Problem",
+      "level": 2,
+      "content": "```\nLong sequences → Gradients vanish → Can't learn long-term dependencies\n\nExample:\n\"I grew up in France... [many sentences] ... I speak fluent ___\"\nRNN may not connect \"France\" to \"French\" if too far apart\n```"
+    },
+    {
+      "id": "sec-29",
+      "title": "2. Sequential Computation",
+      "level": 2,
+      "content": "```\nCan't parallelize across time steps (hₜ depends on hₜ₋₁)\n→ Slow training for long sequences\n```"
+    },
+    {
+      "id": "sec-30",
+      "title": "3. Short-Term Memory",
+      "level": 2,
+      "content": "```\nStandard RNNs struggle with dependencies > 10 time steps\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "Solutions: LSTM and GRU",
+      "level": 2,
+      "content": "- **LSTM (Long Short-Term Memory)**: Gating mechanisms, better memory\n- **GRU (Gated Recurrent Unit)**: Simplified LSTM, faster\n- **Transformers**: Attention mechanism, fully parallelizable\n\n---"
+    },
+    {
+      "id": "sec-32",
+      "title": "RNN vs Feedforward Networks",
+      "level": 1,
+      "content": "| Aspect | Feedforward NN | RNN |\n|--------|---------------|-----|\n| **Input** | Fixed size | Variable length sequences |\n| **Memory** | No memory | Has hidden state (memory) |\n| **Parameter Sharing** | No | Yes (across time) |\n| **Sequential Processing** | No | Yes |\n| **Parallelization** | Full | Limited (across time) |\n| **Best For** | Images, tabular data | Sequences, time series |\n\n---"
+    },
+    {
+      "id": "sec-33",
+      "title": "Code Example (PyTorch)",
+      "level": 1,
+      "content": "```python\nimport torch.nn as nn\n\n# Simple RNN\nrnn = nn.RNN(\n    input_size=100,    # Input feature dimension\n    hidden_size=256,   # Hidden state dimension\n    num_layers=2,      # Number of RNN layers\n    batch_first=True   # Input shape: (batch, seq, feature)\n)\n\n# Input: (batch=32, sequence=50, features=100)\ninput_seq = torch.randn(32, 50, 100)\n\n# Output: (batch=32, sequence=50, hidden=256)\noutput, hidden = rnn(input_seq)\n```"
+    },
+    {
+      "id": "sec-34",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- RNNs process sequential data using hidden state (memory)\n- Same weights applied at each time step (parameter sharing)\n- Can handle variable-length sequences\n- Applications: NLP, speech, time series, video\n- Limitations: Vanishing gradients, sequential computation\n- Modern alternatives: LSTM, GRU, Transformers"
+    },
+    {
+      "id": "sec-35",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-36",
+      "title": "Category: Neural Network Architectures",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-37",
+      "title": "Tags: [RNN, recurrent-neural-network, sequence-modeling, NLP, time-series]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

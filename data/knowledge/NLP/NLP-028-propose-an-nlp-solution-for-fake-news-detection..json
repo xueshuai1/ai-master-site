@@ -1,0 +1,24 @@
+{
+  "id": "NLP-028-propose-an-nlp-solution-for-fake-news-detection.",
+  "title": "NLP-028-propose-an-nlp-solution-for-fake-news-detection.",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 1,
+  "abstract": " NLP-028 Propose an NLP solution for fake news detection.\n\n 28. Propose an NLP solution for fake news detection.\n答案要点:\n方法:\n1. 特征工程:\n   - 文本特征 (TF-IDF, BERT embeddings)\n   - 风格特征 (情感、主观性)\n   - 元数据 (来源、作者)\n2. 模型:\n   - BERT/RoBERTa  fine-tuning\n   - Multi-modal (文本 + 图像)\n3. 验证:\n   - Fact-checking APIs\n   - Cross-reference with trusted sources\n\n质量评分: 94/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "28. Propose an NLP solution for fake news detection.",
+      "level": 3,
+      "content": "**答案要点:**\n**方法:**\n1. **特征工程**:\n   - 文本特征 (TF-IDF, BERT embeddings)\n   - 风格特征 (情感、主观性)\n   - 元数据 (来源、作者)\n2. **模型**:\n   - BERT/RoBERTa  fine-tuning\n   - Multi-modal (文本 + 图像)\n3. **验证**:\n   - Fact-checking APIs\n   - Cross-reference with trusted sources\n\n**质量评分**: 94/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

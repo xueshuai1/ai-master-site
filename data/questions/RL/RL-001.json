@@ -1,0 +1,93 @@
+{
+  "id": "RL-001",
+  "title": "强化学习基础概念详解",
+  "category": "RL",
+  "difficulty": "⭐⭐",
+  "tags": ["强化学习", "MDP", "奖励函数", "策略", "价值函数"],
+  "source": "RL 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请详细解释强化学习的基本概念：\n1. 什么是强化学习？它与监督学习、无监督学习有何区别？\n2. 解释 MDP（马尔可夫决策过程）的五元组定义\n3. 什么是策略、价值函数、Q 函数？\n4. 解释探索与利用的权衡",
+  "requirements": [
+    "清晰定义强化学习",
+    "解释 MDP 各组成部分",
+    "区分策略、价值函数、Q 函数",
+    "说明探索与利用的平衡策略"
+  ],
+  "answer": {
+    "summary": "强化学习是通过与环境交互、最大化累积奖励来学习最优策略的机器学习范式，核心是 MDP 框架和探索 - 利用权衡。",
+    "sections": [
+      {
+        "title": "强化学习定义与区别",
+        "content": "**强化学习（Reinforcement Learning）**：智能体通过与环境交互，根据奖励信号学习最优行为策略的机器学习方法。\n\n**与监督学习的区别**：\n- 监督学习：从标注数据学习输入 - 输出映射\n- 强化学习：从交互和奖励信号学习，无明确标注，有延迟奖励\n\n**与无监督学习的区别**：\n- 无监督学习：发现数据内在结构（聚类、降维）\n- 强化学习：有明确目标（最大化奖励），是目标驱动的学习"
+      },
+      {
+        "title": "MDP 五元组定义",
+        "content": "**马尔可夫决策过程（MDP）** 由五元组 (S, A, P, R, γ) 定义：\n\n- **S（State）**：状态空间，所有可能状态的集合\n- **A（Action）**：动作空间，所有可能动作的集合\n- **P（Transition Probability）**：状态转移概率 P(s'|s,a)\n- **R（Reward Function）**：奖励函数 R(s,a,s') 或 R(s,a)\n- **γ（Discount Factor）**：折扣因子 γ∈[0,1]，衡量未来奖励的重要性\n\n**马尔可夫性质**：当前状态包含了做出最优决策所需的全部信息，历史状态不影响未来。",
+        "code": {
+          "language": "python",
+          "code": "import numpy as np\n\nclass MDP:\n    def __init__(self, states, actions, transition_prob, reward_func, gamma=0.99):\n        self.S = states  # 状态空间\n        self.A = actions  # 动作空间\n        self.P = transition_prob  # P[s'][s][a]\n        self.R = reward_func  # R[s][a]\n        self.gamma = gamma  # 折扣因子\n    \n    def step(self, state, action):\n        \"\"\"执行动作，返回下一个状态和奖励\"\"\"\n        next_state = np.random.choice(\n            self.S, \n            p=self.P[state][action]\n        )\n        reward = self.R[state][action]\n        return next_state, reward",
+          "explanation": "MDP 的简化实现，展示了状态转移和奖励获取过程"
+        }
+      },
+      {
+        "title": "策略、价值函数、Q 函数",
+        "content": "**策略（Policy）π(a|s)**：\n- 在状态 s 下选择动作 a 的概率分布\n- 确定性策略：π(s) = a\n- 随机策略：π(a|s) = P(A=a|S=s)\n\n**状态价值函数 V^π(s)**：\n- 从状态 s 开始，遵循策略π的期望累积奖励\n- V^π(s) = E[Σγ^t r_t | s_0=s, π]\n\n**动作价值函数 Q^π(s,a)**：\n- 在状态 s 执行动作 a，之后遵循策略π的期望累积奖励\n- Q^π(s,a) = E[Σγ^t r_t | s_0=s, a_0=a, π]\n\n**Bellman 方程**：\n- V^π(s) = Σ_a π(a|s) Σ_s' P(s'|s,a)[R(s,a) + γV^π(s')]\n- Q^π(s,a) = Σ_s' P(s'|s,a)[R(s,a) + γΣ_a' π(a'|s')Q^π(s',a')]"
+      },
+      {
+        "title": "探索与利用的权衡",
+        "content": "**利用（Exploitation）**：选择当前已知最优的动作\n\n**探索（Exploration）**：尝试新动作以发现更好的策略\n\n**经典平衡策略**：\n\n1. **ε-greedy**：以概率ε随机探索，以概率 1-ε 选择最优动作\n   ```python\n   if random() < epsilon:\n       action = random_choice(actions)  # 探索\n   else:\n       action = argmax(Q[s])  # 利用\n   ```\n\n2. **Softmax（Boltzmann 探索）**：按 Q 值的概率分布选择动作\n\n3. **UCB（Upper Confidence Bound）**：选择 Q 值 + 不确定性最高的动作\n\n4. **Thompson Sampling**：基于后验概率采样选择动作"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "掌握强化学习基本概念和 MDP 框架",
+    "ability": "能够形式化描述强化学习问题，选择合适的探索策略",
+    "thinking": "理解强化学习的本质是序列决策优化问题"
+  },
+  "followUpQuestions": [
+    {
+      "question": "什么是 Bellman 最优方程？如何求解最优策略？",
+      "points": 5,
+      "answerHint": "Bellman 最优方程定义最优价值函数；求解方法包括值迭代、策略迭代、Q-learning 等"
+    },
+    {
+      "question": "解释 Q-learning 和 Sarsa 的区别。",
+      "points": 5,
+      "answerHint": "Q-learning 是 off-policy，Sarsa 是 on-policy；更新规则不同"
+    },
+    {
+      "question": "什么是策略梯度方法？与价值方法相比有何优劣？",
+      "points": 5,
+      "answerHint": "直接优化策略参数；优势是可处理连续动作、收敛性更好；劣势是方差大、样本效率低"
+    },
+    {
+      "question": "深度强化学习中常见的稳定性问题有哪些？如何解决？",
+      "points": 5,
+      "answerHint": "经验回放、目标网络、梯度裁剪、奖励缩放等"
+    },
+    {
+      "question": "解释 Actor-Critic 架构的工作原理。",
+      "points": 5,
+      "answerHint": "Actor 负责选择动作，Critic 负责评估价值；结合策略梯度和价值方法的优势"
+    }
+  ],
+  "deepUnderstanding": "强化学习是通往通用人工智能的重要路径，理解其基础概念是掌握深度强化学习的前提。",
+  "references": [
+    {
+      "title": "Reinforcement Learning: An Introduction",
+      "url": "http://incompleteideas.net/book/the-book-2nd.html",
+      "type": "book"
+    },
+    {
+      "title": "Spinning Up in Deep RL",
+      "url": "https://spinningup.openai.com",
+      "type": "doc"
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T00:00:00Z",
+    "changeLog": "初始版本，基于原有 MD 文件结构化"
+  }
+}

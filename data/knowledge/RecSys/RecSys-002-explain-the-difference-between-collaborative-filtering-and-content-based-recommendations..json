@@ -1,0 +1,24 @@
+{
+  "id": "RecSys-002-explain-the-difference-between-collaborative-filtering-and-content-based-recommendations.",
+  "title": "RecSys-002-explain-the-difference-between-collaborative-filtering-and-content-based-recommendations.",
+  "category": "RecSys",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.399Z",
+  "updatedAt": "2026-03-29T14:57:53.399Z",
+  "readTime": 2,
+  "abstract": " RecSys-002 Explain the difference between collaborative filtering and content-based recommendations.\n\n Q2. Explain the difference between collaborative filtering and content-based recommendations.\n\nAnswer:\n\nCollaborative Filtering (CF):\n\n| Aspect | Details |\n|--------|---------|\n| Basis | User-item interaction patterns |\n| Data Required | Historical interactions (ratings, clicks) |\n| Key Insight | Similar users have similar preferences |\n| Types | User-based, Item-ba...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q2. Explain the difference between collaborative filtering and content-based recommendations.",
+      "level": 2,
+      "content": "**Answer:**\n\n**Collaborative Filtering (CF):**\n\n| Aspect | Details |\n|--------|---------|\n| **Basis** | User-item interaction patterns |\n| **Data Required** | Historical interactions (ratings, clicks) |\n| **Key Insight** | Similar users have similar preferences |\n| **Types** | User-based, Item-based, Model-based |\n| **Strengths** | Discovers hidden patterns, no item features needed |\n| **Weaknesses** | Cold start problem, sparsity issues |\n\n**Content-Based Filtering (CBF):**\n\n| Aspect | Details |\n|--------|---------|\n| **Basis** | Item attributes and user preferences |\n| **Data Required** | Item features, user profile |\n| **Key Insight** | Users like items similar to what they liked before |\n| **Techniques** | TF-IDF, Word2Vec, Feature vectors |\n| **Strengths** | No cold start for items, interpretable |\n| **Weaknesses** | Limited diversity, requires feature engineering |\n\n**Mathematical Formulation:**\n\n```python\n# Collaborative Filtering (User-Based)\nsimilarity(u, v) = cosine_similarity(ratings[u], ratings[v])\nprediction(u, i) = Σ(similarity(u, v) * rating(v, i)) / Σsimilarity\n\n# Content-Based Filtering\nuser_profile = Σ(item_features * user_weights)\nprediction(u, i) = cosine_similarity(user_profile, item_features[i])\n```\n\n**Hybrid Approach:**\nModern systems combine both:\n- **Weighted**: Combine scores from both methods\n- **Switching**: Use different methods based on context\n- **Feature Combination**: Merge features from both approaches\n- **Cascade**: Refine recommendations through multiple stages\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** RecSys"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

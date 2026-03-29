@@ -1,0 +1,24 @@
+{
+  "id": "CV-001-what-is-computer-vision-and-how-does-it-relate-to-human-vision",
+  "title": "CV-001-what-is-computer-vision-and-how-does-it-relate-to-human-vision",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.380Z",
+  "updatedAt": "2026-03-29T14:57:53.380Z",
+  "readTime": 2,
+  "abstract": " CV-001 What is Computer Vision and how does it relate to human vision?\n\n Q1: What is Computer Vision and how does it relate to human vision?\n\nScore: 95/100\n\nAnswer:\nComputer Vision (CV) is a branch of Artificial Intelligence that enables computers and machines to interpret and understand visual information from images and videos. The field draws inspiration from the human visual system to replicate similar functions in machines.\n\nKey Components:\n1. Visual Perception: Taking ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q1: What is Computer Vision and how does it relate to human vision?",
+      "level": 2,
+      "content": "**Score:** 95/100\n\n**Answer:**\nComputer Vision (CV) is a branch of Artificial Intelligence that enables computers and machines to interpret and understand visual information from images and videos. The field draws inspiration from the human visual system to replicate similar functions in machines.\n\n**Key Components:**\n1. **Visual Perception:** Taking in visual information through cameras (vs. eyes in humans)\n2. **Feature Extraction:** Identifying distinctive patterns (edges, textures, colors)\n3. **Feature Representation & Recognition:** Grouping features and recognizing objects using algorithms like neural networks\n4. **Data Analysis & Interpretation:** Understanding objects, actions, and situations in context\n\n**Comparison with Human Vision:**\n| Aspect | Human Vision | Computer Vision |\n|--------|--------------|-----------------|\n| Data Input | Eyes → Brain | Cameras → Processors |\n| Hardware | Eyes, optic nerves, visual cortex | Cameras, GPUs, storage |\n| Perception | Real-time with context | Data-driven analysis |\n| Robustness | Adapts to conditions | Affected by lighting, quality |\n| Learning | Gradual from infancy | Training on labeled datasets |\n\n**Challenges:** CV systems still lack the speed, flexibility, and generalization of human vision, especially in handling visual clutter, 3D understanding, and complex contexts.\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

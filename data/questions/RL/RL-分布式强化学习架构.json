@@ -1,0 +1,66 @@
+{
+  "id": "RL-分布式强化学习架构",
+  "title": "分布式强化学习架构",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐",
+  "tags": [
+    "分布式 RL",
+    "并行训练",
+    "IMPALA",
+    "架构设计"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "分布式强化学习通过并行化加速训练，请说明分布式 RL 的主要架构和设计考虑。\n\n**来源：** 强化学习面试题整理\n**标签：** 分布式 RL, 并行训练，IMPALA, 架构设计",
+  "requirements": [],
+  "answer": {
+    "summary": "分布式强化学习通过并行化加速训练，请说明分布式 RL 的主要架构和设计考虑。\n\n**来源：** 强化学习面试题整理\n**标签：** 分布式 RL, 并行训练，IMPALA, 架构设计",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "分布式强化学习通过并行化加速训练，请说明分布式 RL 的主要架构和设计考虑。\n\n**来源：** 强化学习面试题整理\n**标签：** 分布式 RL, 并行训练，IMPALA, 架构设计"
+      },
+      {
+        "title": "参考答案",
+        "content": "**并行化维度：**\n\n1. **数据并行：**\n   - 多个 worker 收集数据\n   - 梯度聚合更新\n   - 例：A3C, A2C\n\n2. **模型并行：**\n   - 大模型分割到多个设备\n   - 适用于超大网络\n\n3. **环境并行：**\n   - 多个环境实例并行运行\n   - 最常用，易于实现\n\n**主要架构：**\n\n1. **同步架构（A2C）：**\n   - 所有 worker 同步更新\n   - 简单但等待慢 worker\n\n2. **异步架构（A3C）：**\n   - Worker 独立更新\n   - 无需等待，但梯度可能过时\n\n3. **Actor-Learner 分离（IMPALA）：**\n   - Actor 只收集数据\n   - Learner 只训练\n   - 用 V-trace 校正策略差异\n\n4. **分布式 replay buffer：**\n   - 共享经验回放池\n   - 例：Distributed DQN, R2D2\n\n**设计考虑：**\n\n1. **通信开销：**\n   - 梯度/参数传输成本\n   - 压缩、异步通信\n\n2. **数据新鲜度：**\n   - 过时梯度问题\n   - 重要性采样校正\n\n3. **负载均衡：**\n   - 不同环境速度不同\n   - 动态调度\n\n4. **容错：**\n   - Worker 失败处理\n   - 检查点恢复\n\n**代表系统：**\n- IMPALA: 高效异步\n- Seed RL: 集中式 inference\n- CleanRL: 简洁实现"
+      },
+      {
+        "title": "考察重点",
+        "content": "- 分布式系统设计\n- 并行化策略\n- 工程实践能力"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: V-trace 校正",
+        "content": "**问题：** IMPALA 中 V-trace 的作用是什么？\n**答案：** 校正行为策略与目标策略的差异，允许 off-policy 学习。"
+      },
+      {
+        "title": "追问 2: 扩展性",
+        "content": "**问题：** 分布式 RL 的扩展性如何？\n**答案：** 可以扩展到数千 CPU 核，但通信可能成为瓶颈。"
+      },
+      {
+        "title": "深入理解",
+        "content": "分布式 RL 是实现大规模训练的基础设施，对于复杂任务必不可少。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.377Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

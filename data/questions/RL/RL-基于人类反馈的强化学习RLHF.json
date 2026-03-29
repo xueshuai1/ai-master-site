@@ -1,0 +1,66 @@
+{
+  "id": "RL-基于人类反馈的强化学习RLHF",
+  "title": "基于人类反馈的强化学习 RLHF",
+  "category": "RL",
+  "difficulty": "⭐⭐⭐⭐⭐",
+  "tags": [
+    "RLHF",
+    "人类反馈",
+    "大模型",
+    "对齐"
+  ],
+  "source": "强化学习面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "RLHF（Reinforcement Learning from Human Feedback）是大语言模型对齐的关键技术，请解释 RLHF 的流程和核心思想。\n\n**来源：** 强化学习面试题整理\n**标签：** RLHF, 人类反馈，大模型，对齐",
+  "requirements": [],
+  "answer": {
+    "summary": "RLHF（Reinforcement Learning from Human Feedback）是大语言模型对齐的关键技术，请解释 RLHF 的流程和核心思想。\n\n**来源：** 强化学习面试题整理\n**标签：** RLHF, 人类反馈，大模型，对齐",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "RLHF（Reinforcement Learning from Human Feedback）是大语言模型对齐的关键技术，请解释 RLHF 的流程和核心思想。\n\n**来源：** 强化学习面试题整理\n**标签：** RLHF, 人类反馈，大模型，对齐"
+      },
+      {
+        "title": "参考答案",
+        "content": "**核心思想：**\n用人类偏好数据训练奖励模型，然后用 RL 优化策略以最大化奖励。\n\n**RLHF 流程：**\n\n1. **收集人类偏好数据：**\n   - 对同一提示生成多个回答\n   - 人类标注哪个更好\n   - 形成偏好对 (y_w, y_l)\n\n2. **训练奖励模型：**\n   - 输入：文本\n   - 输出：标量奖励\n   - 损失：偏好对的似然\n   - P(y_w > y_l) = sigmoid(r(y_w) - r(y_l))\n\n3. **RL 优化策略：**\n   - 用 PPO 优化语言模型\n   - 目标：最大化奖励模型输出\n   - 约束：KL 散度防止偏离太多\n\n4. **迭代优化：**\n   - 可以多次迭代\n   - 收集新数据再训练\n\n**关键技术：**\n- PPO 用于策略优化\n- KL 惩罚防止模式崩溃\n- 奖励模型泛化\n\n**应用：**\n- ChatGPT 对齐\n- 有害内容过滤\n- 有帮助性提升\n\n**挑战：**\n- 人类标注成本高\n- 奖励模型可能被利用\n- 价值观对齐复杂"
+      },
+      {
+        "title": "考察重点",
+        "content": "- RLHF 流程的理解\n- 与大模型的结合\n- 对齐问题"
+      },
+      {
+        "title": "延伸追问",
+        "content": ""
+      },
+      {
+        "title": "追问 1: 为什么用 PPO？",
+        "content": "**问题：** RLHF 中为什么选择 PPO 算法？\n**答案：** PPO 稳定、易于调参、适合高维动作空间（词表）。"
+      },
+      {
+        "title": "追问 2: KL 惩罚",
+        "content": "**问题：** KL 惩罚的作用是什么？\n**答案：** 防止策略偏离初始模型太多，保持语言流畅性和多样性。"
+      },
+      {
+        "title": "深入理解",
+        "content": "RLHF 是 RL 在 NLP 领域的成功应用，展示了 RL 的实际价值。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.377Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

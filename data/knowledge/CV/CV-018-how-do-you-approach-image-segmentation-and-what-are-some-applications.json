@@ -1,0 +1,24 @@
+{
+  "id": "CV-018-how-do-you-approach-image-segmentation-and-what-are-some-applications",
+  "title": "CV-018-how-do-you-approach-image-segmentation-and-what-are-some-applications",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.382Z",
+  "updatedAt": "2026-03-29T14:57:53.382Z",
+  "readTime": 2,
+  "abstract": " CV-018 How do you approach image segmentation and what are some applications?\n\n Q18: How do you approach image segmentation and what are some applications?\n\nScore: 92/100\n\nAnswer:\n\nSegmentation Types:\n1. Semantic Segmentation: Classify each pixel (no instance distinction)\n2. Instance Segmentation: Identify individual object instances\n3. Panoptic Segmentation: Combine semantic + instance\n\nArchitectures:\n\nSemantic Segmentation:\n- FCN (Fully Convolutional Netw...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q18: How do you approach image segmentation and what are some applications?",
+      "level": 2,
+      "content": "**Score:** 92/100\n\n**Answer:**\n\n**Segmentation Types:**\n1. **Semantic Segmentation:** Classify each pixel (no instance distinction)\n2. **Instance Segmentation:** Identify individual object instances\n3. **Panoptic Segmentation:** Combine semantic + instance\n\n**Architectures:**\n\n**Semantic Segmentation:**\n- **FCN (Fully Convolutional Network):** Replace FC layers with convolutions\n- **U-Net:** Encoder-decoder with skip connections (medical imaging)\n- **DeepLab Series:** Atrous convolution, ASPP\n- **PSPNet:** Pyramid scene parsing\n\n**Instance Segmentation:**\n- **Mask R-CNN:** Extension of Faster R-CNN\n- **SOLO:** Segmenting objects by locations\n- **YOLACT:** Real-time instance segmentation\n\n**Applications:**\n1. **Medical Imaging:** Tumor detection, organ segmentation\n2. **Autonomous Vehicles:** Road, pedestrian, vehicle segmentation\n3. **Satellite Imagery:** Land use classification\n4. **Photo Editing:** Background removal, selective editing\n5. **Video Surveillance:** Activity analysis\n6. **Augmented Reality:** Object interaction\n\n**Example (Medical):**\nU-Net precisely delineates tumors in MRI/CT scans, enabling accurate diagnosis and treatment planning.\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

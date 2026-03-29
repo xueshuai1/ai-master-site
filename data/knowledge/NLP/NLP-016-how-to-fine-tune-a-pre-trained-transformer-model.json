@@ -1,0 +1,24 @@
+{
+  "id": "NLP-016-how-to-fine-tune-a-pre-trained-transformer-model",
+  "title": "NLP-016-how-to-fine-tune-a-pre-trained-transformer-model",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-016 How to fine-tune a pre-trained transformer model?\n\n 16. How to fine-tune a pre-trained transformer model?\n答案要点:\n步骤:\n1. 选择预训练模型 (BERT, RoBERTa, DeBERTa)\n2. 添加任务特定层 (Classification Head)\n3. 冻结/解冻策略:\n   - 小数据集：冻结大部分层\n   - 大数据集：全部微调\n4. 设置超参数:\n   - Learning Rate: 2e-5 to 5e-5\n   - Batch Size: 16-32\n   - Epochs: 3-5\n5. 训练 + 验证 + 早停\n\n代码示例 (HuggingFace):\npython\nfrom transformers import AutoModelForSequenceClassification, Trainer\n\nmodel = AutoModelForSequenceClassification.fr...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "16. How to fine-tune a pre-trained transformer model?",
+      "level": 3,
+      "content": "**答案要点:**\n**步骤:**\n1. 选择预训练模型 (BERT, RoBERTa, DeBERTa)\n2. 添加任务特定层 (Classification Head)\n3. 冻结/解冻策略:\n   - 小数据集：冻结大部分层\n   - 大数据集：全部微调\n4. 设置超参数:\n   - Learning Rate: 2e-5 to 5e-5\n   - Batch Size: 16-32\n   - Epochs: 3-5\n5. 训练 + 验证 + 早停\n\n**代码示例 (HuggingFace):**\n```python\nfrom transformers import AutoModelForSequenceClassification, Trainer\n\nmodel = AutoModelForSequenceClassification.from_pretrained(\n    \"bert-base-uncased\", \n    num_labels=2\n)\n```\n\n**质量评分**: 96/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

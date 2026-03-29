@@ -1,0 +1,24 @@
+{
+  "id": "CV-026-what-is-model-quantization-and-when-should-you-use-it",
+  "title": "CV-026-what-is-model-quantization-and-when-should-you-use-it",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.383Z",
+  "updatedAt": "2026-03-29T14:57:53.383Z",
+  "readTime": 2,
+  "abstract": " CV-026 What is model quantization and when should you use it?\n\n Q26: What is model quantization and when should you use it?\n\nScore: 91/100\n\nAnswer:\n\nModel Quantization:\nReduce numerical precision of model weights and activations.\n\nTypes:\n\n1. Post-Training Quantization:\n   - Quantize already-trained model\n   - Fast, no retraining needed\n   - Slight accuracy drop\n\n2. Quantization-Aware Training:\n   - Simulate quantization during training\n   - Better accuracy retention\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q26: What is model quantization and when should you use it?",
+      "level": 2,
+      "content": "**Score:** 91/100\n\n**Answer:**\n\n**Model Quantization:**\nReduce numerical precision of model weights and activations.\n\n**Types:**\n\n1. **Post-Training Quantization:**\n   - Quantize already-trained model\n   - Fast, no retraining needed\n   - Slight accuracy drop\n\n2. **Quantization-Aware Training:**\n   - Simulate quantization during training\n   - Better accuracy retention\n   - Requires retraining\n\n**Precision Levels:**\n- FP32 (32-bit float) → INT8 (8-bit integer): 4x reduction\n- FP32 → INT4: 8x reduction (experimental)\n\n**Benefits:**\n- **Model Size:** 4x smaller (FP32→INT8)\n- **Inference Speed:** 2-4x faster on supported hardware\n- **Memory Usage:** Reduced RAM requirements\n- **Power Efficiency:** Lower energy consumption\n\n**When to Use:**\n- Mobile/embedded deployment\n- Real-time applications with latency constraints\n- Large models needing compression\n- Edge devices with limited resources\n\n**Trade-offs:**\n- Potential accuracy loss (typically 1-5%)\n- Not all operations support quantization\n- Calibration needed for post-training quantization\n\n**Tools:**\n- TensorFlow Lite\n- PyTorch Quantization\n- NVIDIA TensorRT\n- OpenVINO\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "NLP-012-describe-rnn-architecture-and-applications-in-nlp.",
+  "title": "NLP-012-describe-rnn-architecture-and-applications-in-nlp.",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-012 Describe RNN architecture and applications in NLP.\n\n 12. Describe RNN architecture and applications in NLP.\n答案要点:\n- 结构: 循环连接，隐藏状态传递序列信息\n- 变体:\n  - Simple RNN (梯度消失)\n  - LSTM (门控机制：forget, input, output)\n  - GRU (简化版 LSTM)\n- 应用: \n  - Language Modeling\n  - Machine Translation (Encoder-Decoder)\n  - Text Generation\n  - Time Series on Text\n- 局限: 长距离依赖、无法并行\n\n质量评分: 93/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "12. Describe RNN architecture and applications in NLP.",
+      "level": 3,
+      "content": "**答案要点:**\n- **结构**: 循环连接，隐藏状态传递序列信息\n- **变体**:\n  - Simple RNN (梯度消失)\n  - LSTM (门控机制：forget, input, output)\n  - GRU (简化版 LSTM)\n- **应用**: \n  - Language Modeling\n  - Machine Translation (Encoder-Decoder)\n  - Text Generation\n  - Time Series on Text\n- **局限**: 长距离依赖、无法并行\n\n**质量评分**: 93/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

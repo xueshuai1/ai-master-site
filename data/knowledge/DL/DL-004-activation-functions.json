@@ -1,0 +1,228 @@
+{
+  "id": "DL-004-activation-functions",
+  "title": "DL-004-activation-functions",
+  "category": "DL",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.384Z",
+  "updatedAt": "2026-03-29T14:57:53.384Z",
+  "readTime": 7,
+  "abstract": " DL-004 ⭐⭐⭐ Compare Activation Functions: Sigmoid, Tanh, ReLU, and Softmax\n\n Question\nWhat are activation functions? Compare Sigmoid, Tanh, ReLU, and Softmax activation functions, including their advantages, disadvantages, and use cases.\n\n Answer\n\n What are Activation Functions?\nActivation functions introduce non-linearity into neural networks, enabling them to learn complex patterns and approximate any function. Without activation functions, neural networks would be equivalent to a ...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Question",
+      "level": 1,
+      "content": "What are activation functions? Compare Sigmoid, Tanh, ReLU, and Softmax activation functions, including their advantages, disadvantages, and use cases."
+    },
+    {
+      "id": "sec-2",
+      "title": "Answer",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-3",
+      "title": "What are Activation Functions?",
+      "level": 2,
+      "content": "**Activation functions** introduce non-linearity into neural networks, enabling them to learn complex patterns and approximate any function. Without activation functions, neural networks would be equivalent to a single linear layer, regardless of depth."
+    },
+    {
+      "id": "sec-4",
+      "title": "Mathematical Properties",
+      "level": 2,
+      "content": "An activation function f(x) transforms the weighted sum:\n```\noutput = f(Σwᵢxᵢ + b)\n```"
+    },
+    {
+      "id": "sec-5",
+      "title": "Comparison of Activation Functions",
+      "level": 2,
+      "content": ""
+    },
+    {
+      "id": "sec-6",
+      "title": "1. Sigmoid (Logistic Function)",
+      "level": 1,
+      "content": "**Formula:** `σ(x) = 1 / (1 + e⁻ˣ)`\n\n**Output Range:** (0, 1)\n\n**Graph Shape:** S-shaped curve"
+    },
+    {
+      "id": "sec-7",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ Smooth gradient, differentiable everywhere\n✅ Output bounded between 0 and 1 (interpretable as probability)\n✅ Historically significant, well-understood"
+    },
+    {
+      "id": "sec-8",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ **Vanishing Gradient**: Gradients approach 0 for extreme values\n❌ **Not Zero-Centered**: Output always positive, causes zigzag updates\n❌ **Computationally Expensive**: Exponential operations\n❌ **Saturates**: Loses sensitivity for large |x|"
+    },
+    {
+      "id": "sec-9",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- Binary classification output layer\n- Probability estimation\n- Gating mechanisms in LSTM/GRU"
+    },
+    {
+      "id": "sec-10",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\ndef sigmoid(x):\n    return 1 / (1 + np.exp(-x))\n```\n\n---"
+    },
+    {
+      "id": "sec-11",
+      "title": "2. Tanh (Hyperbolic Tangent)",
+      "level": 1,
+      "content": "**Formula:** `tanh(x) = (eˣ - e⁻ˣ) / (eˣ + e⁻ˣ)`\n\n**Output Range:** (-1, 1)\n\n**Graph Shape:** S-shaped curve through origin"
+    },
+    {
+      "id": "sec-12",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ **Zero-Centered**: Output centered at 0, better convergence\n✅ Stronger gradients than sigmoid (steeper)\n✅ Smooth and differentiable"
+    },
+    {
+      "id": "sec-13",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ Still suffers from vanishing gradient\n❌ Computationally expensive (exponential)\n❌ Saturates for large |x|"
+    },
+    {
+      "id": "sec-14",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- Hidden layers in RNNs\n- When zero-centered output is beneficial\n- Binary classification (alternative to sigmoid)"
+    },
+    {
+      "id": "sec-15",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\ndef tanh(x):\n    return np.tanh(x)  # or (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x))\n```\n\n---"
+    },
+    {
+      "id": "sec-16",
+      "title": "3. ReLU (Rectified Linear Unit)",
+      "level": 1,
+      "content": "**Formula:** `ReLU(x) = max(0, x)`\n\n**Output Range:** [0, ∞)\n\n**Graph Shape:** Linear for x>0, zero for x≤0"
+    },
+    {
+      "id": "sec-17",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ **No Vanishing Gradient** (for positive values)\n✅ **Computationally Efficient**: Simple threshold operation\n✅ **Faster Convergence**: Linear, non-saturating for x>0\n✅ **Sparse Activation**: Many neurons output zero (efficient)"
+    },
+    {
+      "id": "sec-18",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ **Dying ReLU**: Neurons can \"die\" (always output 0)\n❌ **Not Zero-Centered**: Output always non-negative\n❌ **Unbounded**: Output can grow infinitely\n❌ Gradient is 0 for x<0 (no learning for negative inputs)"
+    },
+    {
+      "id": "sec-19",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- **Default choice for hidden layers** in most networks\n- CNNs (convolutional layers)\n- Deep feedforward networks"
+    },
+    {
+      "id": "sec-20",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\ndef relu(x):\n    return np.maximum(0, x)\n```"
+    },
+    {
+      "id": "sec-21",
+      "title": "ReLU Variants",
+      "level": 2,
+      "content": "| Variant | Formula | Improvement |\n|---------|---------|-------------|\n| **Leaky ReLU** | max(αx, x) | Small gradient for x<0 |\n| **Parametric ReLU** | max(αx, x), α learned | Learns negative slope |\n| **ELU** | x if x>0, α(eˣ-1) otherwise | Smooth negative region |\n| **GELU** | x × Φ(x) | Used in Transformers |\n\n---"
+    },
+    {
+      "id": "sec-22",
+      "title": "4. Softmax",
+      "level": 1,
+      "content": "**Formula:** `softmax(xᵢ) = eˣⁱ / Σⱼeˣʲ`\n\n**Output Range:** (0, 1), sum = 1\n\n**Graph Shape:** Normalized exponential distribution"
+    },
+    {
+      "id": "sec-23",
+      "title": "Advantages",
+      "level": 2,
+      "content": "✅ **Probability Distribution**: Outputs sum to 1\n✅ **Multi-class Classification**: Natural fit for multiple classes\n✅ **Differentiable**: Works with backpropagation"
+    },
+    {
+      "id": "sec-24",
+      "title": "Disadvantages",
+      "level": 2,
+      "content": "❌ **Computationally Expensive**: Exponential operations\n❌ **Numerical Instability**: Can overflow with large values\n❌ Only for output layer (not hidden layers)"
+    },
+    {
+      "id": "sec-25",
+      "title": "Use Cases",
+      "level": 2,
+      "content": "- **Multi-class classification output layer**\n- When you need probability distribution over classes\n- Attention mechanisms in Transformers"
+    },
+    {
+      "id": "sec-26",
+      "title": "Code",
+      "level": 2,
+      "content": "```python\ndef softmax(x):\n    exp_x = np.exp(x - np.max(x))  # Subtract max for numerical stability\n    return exp_x / np.sum(exp_x)\n```\n\n---"
+    },
+    {
+      "id": "sec-27",
+      "title": "Comparison Table",
+      "level": 1,
+      "content": "| Property | Sigmoid | Tanh | ReLU | Softmax |\n|----------|---------|------|------|---------|\n| **Output Range** | (0, 1) | (-1, 1) | [0, ∞) | (0, 1), Σ=1 |\n| **Zero-Centered** | ❌ No | ✅ Yes | ❌ No | ❌ No |\n| **Vanishing Gradient** | ❌ Severe | ❌ Moderate | ✅ Minimal | ❌ Moderate |\n| **Computation** | Expensive | Expensive | Cheap | Expensive |\n| **Sparse Output** | ❌ No | ❌ No | ✅ Yes | ❌ No |\n| **Best For** | Binary output | RNN hidden | Hidden layers | Multi-class output |\n| **Default Choice** | ❌ | ❌ | ✅ | For multi-class |\n\n---"
+    },
+    {
+      "id": "sec-28",
+      "title": "Practical Recommendations",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-29",
+      "title": "For Hidden Layers",
+      "level": 2,
+      "content": "```\nPriority: ReLU > Leaky ReLU > Tanh > Sigmoid\n```\n- **Start with ReLU** for most architectures\n- Use **Leaky ReLU** if dying ReLU is observed\n- Use **Tanh** for RNNs (historical choice)\n- Avoid **Sigmoid** in hidden layers"
+    },
+    {
+      "id": "sec-30",
+      "title": "For Output Layers",
+      "level": 2,
+      "content": "```\nBinary Classification: Sigmoid\nMulti-class Classification: Softmax\nRegression: Linear (no activation)\n```"
+    },
+    {
+      "id": "sec-31",
+      "title": "Modern Trends",
+      "level": 2,
+      "content": "- **Transformers**: GELU activation\n- **Very Deep Networks**: ReLU variants with skip connections\n- **RNNs**: Tanh/ReLU with gating (LSTM/GRU)"
+    },
+    {
+      "id": "sec-32",
+      "title": "Key Takeaways",
+      "level": 1,
+      "content": "- Activation functions introduce non-linearity essential for learning\n- ReLU is the default choice for hidden layers (efficient, no vanishing gradient)\n- Sigmoid for binary output, Softmax for multi-class output\n- Tanh is zero-centered but suffers from vanishing gradients\n- Choose activation based on layer type and task requirements"
+    },
+    {
+      "id": "sec-33",
+      "title": "Difficulty: ⭐⭐⭐ (Advanced)",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-34",
+      "title": "Category: Neural Network Components",
+      "level": 1,
+      "content": ""
+    },
+    {
+      "id": "sec-35",
+      "title": "Tags: [activation-functions, sigmoid, tanh, relu, softmax, comparison]",
+      "level": 1,
+      "content": ""
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

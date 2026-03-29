@@ -1,0 +1,76 @@
+{
+  "id": "LLM-多模态扩展技术",
+  "title": "LLM 多模态扩展技术",
+  "category": "LLM",
+  "difficulty": "⭐⭐⭐",
+  "tags": [
+    "多模态",
+    "视觉语言",
+    "图像编码",
+    "对齐"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "说明 LLM 如何扩展为多模态模型，处理图像、视频等输入。\n\n**来源：** LLM 面试题整理\n**标签：** 多模态，视觉语言，图像编码，对齐",
+  "requirements": [],
+  "answer": {
+    "summary": "说明 LLM 如何扩展为多模态模型，处理图像、视频等输入。\n\n**来源：** LLM 面试题整理\n**标签：** 多模态，视觉语言，图像编码，对齐",
+    "coreFormula": "",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "说明 LLM 如何扩展为多模态模型，处理图像、视频等输入。\n\n**来源：** LLM 面试题整理\n**标签：** 多模态，视觉语言，图像编码，对齐"
+      },
+      {
+        "title": "参考答案",
+        "content": "**多模态架构设计：**\n\n1. **视觉编码器：**\n   - ViT/CLIP 编码图像为向量\n   - 冻结或微调预训练权重\n   - 输出视觉 token 序列\n\n2. **投影层：**\n   - 将视觉特征映射到语言空间\n   - 线性投影或 Q-Former（BLIP-2）\n   - 对齐视觉和语言表示\n\n3. **融合方式：**\n   - 早期融合：视觉 token 拼接到文本前\n   - 交叉注意力：视觉作为 KV，文本作为 Q\n   - 深层融合：多层交互\n\n**代表模型：**\n- LLaVA：线性投影 + Vicuna\n- GPT-4V：闭源，推测类似架构\n- Flamingo：Perceiver Resampler\n\n**训练策略：**\n- 两阶段：先对齐，再指令微调\n- 数据：图像 - 文本对 + 多模态指令"
+      },
+      {
+        "title": "考察重点",
+        "content": "- **理解深度：** 多模态融合的技术细节\n- **知识广度：** 主流多模态模型对比\n- **应用能力：** 多模态应用的设计思路"
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. 为什么需要投影层？（5 分）\n2. 视觉 token 数量如何确定？（5 分）\n3. 解释 Q-Former 的作用。（5 分）\n4. 多模态训练数据如何构建？（5 分）\n5. 视频理解相比图像的挑战？（5 分）"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "",
+    "ability": "",
+    "thinking": ""
+  },
+  "followUpQuestions": [
+    {
+      "question": "为什么需要投影层？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "视觉 token 数量如何确定？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "解释 Q-Former 的作用。（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "多模态训练数据如何构建？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "视频理解相比图像的挑战？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.373Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}

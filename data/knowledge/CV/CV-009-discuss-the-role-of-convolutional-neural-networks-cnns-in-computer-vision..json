@@ -1,0 +1,24 @@
+{
+  "id": "CV-009-discuss-the-role-of-convolutional-neural-networks-cnns-in-computer-vision.",
+  "title": "CV-009-discuss-the-role-of-convolutional-neural-networks-cnns-in-computer-vision.",
+  "category": "CV",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.381Z",
+  "updatedAt": "2026-03-29T14:57:53.381Z",
+  "readTime": 2,
+  "abstract": " CV-009 Discuss the role of Convolutional Neural Networks (CNNs) in computer vision.\n\n Q9: Discuss the role of Convolutional Neural Networks (CNNs) in computer vision.\n\nScore: 95/100\n\nAnswer:\nCNNs have revolutionized computer vision by automatically learning spatial hierarchies of features.\n\nCNN Architecture:\n1. Input Layer: Matrix representation of pixel values\n2. Convolutional Layer: Learnable filters for feature extraction\n3. Activation Layer: ReLU for non-linearit...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "Q9: Discuss the role of Convolutional Neural Networks (CNNs) in computer vision.",
+      "level": 2,
+      "content": "**Score:** 95/100\n\n**Answer:**\nCNNs have revolutionized computer vision by automatically learning spatial hierarchies of features.\n\n**CNN Architecture:**\n1. **Input Layer:** Matrix representation of pixel values\n2. **Convolutional Layer:** Learnable filters for feature extraction\n3. **Activation Layer:** ReLU for non-linearity\n4. **Pooling Layer:** Downsampling (max/average pooling)\n5. **Fully Connected Layers:** High-level reasoning and classification\n\n**Key Operations:**\n\n**Convolution:**\n- Local receptive field captures local features\n- Parameter sharing reduces training parameters significantly\n\n**Pooling:**\n- Downsampling compresses spatial data\n- Provides invariance to small translations\n\n**Feature Hierarchy:**\n- Early layers: Edge detection\n- Middle layers: Shape recognition\n- Deep layers: Complex object interpretation\n\n**Advantages:**\n- Automated feature hierarchy (no manual engineering)\n- Global receptive field expansion through layers\n- Built-in regularization (pooling, dropout)\n- Real-time processing capability\n\n**Applications:** Image recognition, object detection, semantic segmentation, autonomous vehicles, medical imaging\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** CV"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

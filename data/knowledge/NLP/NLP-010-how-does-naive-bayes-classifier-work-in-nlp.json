@@ -1,0 +1,24 @@
+{
+  "id": "NLP-010-how-does-naive-bayes-classifier-work-in-nlp",
+  "title": "NLP-010-how-does-naive-bayes-classifier-work-in-nlp",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.397Z",
+  "updatedAt": "2026-03-29T14:57:53.397Z",
+  "readTime": 1,
+  "abstract": " NLP-010 How does Naive Bayes classifier work in NLP?\n\n 10. How does Naive Bayes classifier work in NLP?\n答案要点:\n- 原理: 基于贝叶斯定理，假设特征独立\n- 公式: P(C|X) = P(X|C) × P(C) / P(X)\n- 变体:\n  - Multinomial NB (文本分类)\n  - Bernoulli NB (二元特征)\n  - Gaussian NB (连续特征)\n- 优势: 快速、适合高维数据、小样本表现好\n- 应用: Spam Detection, Sentiment Analysis, Document Classification\n\n质量评分: 90/100 ⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\nCategory: NLP...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "10. How does Naive Bayes classifier work in NLP?",
+      "level": 3,
+      "content": "**答案要点:**\n- **原理**: 基于贝叶斯定理，假设特征独立\n- **公式**: P(C|X) = P(X|C) × P(C) / P(X)\n- **变体**:\n  - Multinomial NB (文本分类)\n  - Bernoulli NB (二元特征)\n  - Gaussian NB (连续特征)\n- **优势**: 快速、适合高维数据、小样本表现好\n- **应用**: Spam Detection, Sentiment Analysis, Document Classification\n\n**质量评分**: 90/100 ⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

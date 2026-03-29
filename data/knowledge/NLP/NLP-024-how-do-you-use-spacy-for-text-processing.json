@@ -1,0 +1,24 @@
+{
+  "id": "NLP-024-how-do-you-use-spacy-for-text-processing",
+  "title": "NLP-024-how-do-you-use-spacy-for-text-processing",
+  "category": "NLP",
+  "difficulty": "⭐⭐",
+  "tags": [],
+  "author": "AI 面试题库",
+  "createdAt": "2026-03-29T14:57:53.398Z",
+  "updatedAt": "2026-03-29T14:57:53.398Z",
+  "readTime": 1,
+  "abstract": " NLP-024 How do you use spaCy for text processing?\n\n 24. How do you use spaCy for text processing?\n答案要点:\nPipeline:\npython\nimport spacy\nnlp = spacy.load(\"en_core_web_sm\")\ndoc = nlp(\"Apple is looking at U.K. startup\")\n\n Tokenization\nfor token in doc:\n    print(token.text, token.pos_, token.dep_)\n\n NER\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n\n Noun chunks\nfor chunk in doc.noun_chunks:\n    print(chunk.text)\n\n\n质量评分: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\nDifficulty: ⭐⭐⭐\n...",
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "24. How do you use spaCy for text processing?",
+      "level": 3,
+      "content": "**答案要点:**\n**Pipeline:**\n```python\nimport spacy\nnlp = spacy.load(\"en_core_web_sm\")\ndoc = nlp(\"Apple is looking at U.K. startup\")\n\n# Tokenization\nfor token in doc:\n    print(token.text, token.pos_, token.dep_)\n\n# NER\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n\n# Noun chunks\nfor chunk in doc.noun_chunks:\n    print(chunk.text)\n```\n\n**质量评分**: 92/100 ⭐⭐⭐⭐⭐\n\n---\n\n---\n\n**Difficulty:** ⭐⭐⭐\n**Category:** NLP"
+    }
+  ],
+  "keyTakeaways": [],
+  "prerequisites": [],
+  "relatedArticles": [],
+  "version": "v1.0"
+}

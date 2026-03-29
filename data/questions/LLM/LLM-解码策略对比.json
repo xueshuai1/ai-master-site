@@ -1,0 +1,100 @@
+{
+  "id": "LLM-解码策略对比",
+  "title": "解码策略对比：Greedy vs Sampling vs Beam Search",
+  "category": "LLM",
+  "difficulty": "⭐⭐",
+  "tags": [
+    "解码",
+    "采样",
+    "束搜索",
+    "生成策略"
+  ],
+  "source": "LLM 面试题整理",
+  "sourceUrl": "",
+  "collectedAt": "2026-03-29",
+  "description": "请对比 Greedy Search、Sampling 和 Beam Search 三种解码策略，包括原理、优缺点和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 解码，采样，束搜索，生成策略",
+  "requirements": [],
+  "answer": {
+    "summary": "请对比 Greedy Search、Sampling 和 Beam Search 三种解码策略，包括原理、优缺点和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 解码，采样，束搜索，生成策略",
+    "coreFormula": "# 每步选择概率最高的 token\nfor step in range(max_length):\n    probs = model(input_ids)\n    next_token = argmax(probs[-1])\n    input_ids = concat(input_ids, next_token)",
+    "sections": [
+      {
+        "title": "题目描述",
+        "content": "请对比 Greedy Search、Sampling 和 Beam Search 三种解码策略，包括原理、优缺点和适用场景。\n\n**来源：** LLM 面试题整理\n**标签：** 解码，采样，束搜索，生成策略",
+        "code": {
+          "language": "python",
+          "code": "# 每步选择概率最高的 token\nfor step in range(max_length):\n    probs = model(input_ids)\n    next_token = argmax(probs[-1])\n    input_ids = concat(input_ids, next_token)"
+        }
+      },
+      {
+        "title": "参考答案",
+        "content": "**解码目标：**\n从模型输出的概率分布 P(y|x) 中生成高质量文本序列。\n\n**三种策略对比：**\n\n| 策略 | 确定性 | 多样性 | 计算成本 | 质量 |\n|------|--------|--------|---------|------|\n| Greedy | 是 | 低 | 最低 | 一般 |\n| Sampling | 否 | 高 | 低 | 好 |\n| Beam Search | 是 | 中 | 中 | 好 |\n\n**1. Greedy Search（贪婪搜索）：**\n```python\n# 每步选择概率最高的 token\nfor step in range(max_length):\n    probs = model(input_ids)\n    next_token = argmax(probs[-1])\n    input_ids = concat(input_ids, next_token)\n```\n- **优点：** 简单、快速、可复现\n- **缺点：** 容易陷入局部最优，重复度高\n- **适用：** 代码生成、翻译等确定性任务\n\n**2. Sampling（随机采样）：**\n```python\n# 从概率分布中采样\nfor step in range(max_length):\n    probs = model(input_ids)\n    \n    # Temperature 调节\n    probs = softmax(log(probs) / temperature)\n    \n    # Top-k 过滤\n    top_k_probs, top_k_indices = topk(probs, k=50)\n    \n    # Top-p (nucleus) 过滤\n    sorted_probs, sorted_indices = sort(probs, descending=True)\n    cumsum = cumulative_sum(sorted_probs)\n    mask = cumsum < p  # p=0.9\n    filtered_probs = sorted_probs[mask]\n    \n    # 采样\n    next_token = multinomial(filtered_probs)\n```\n- **Temperature：** 高→随机，低→确定\n- **Top-k：** 限制采样范围\n- **Top-p：** 动态选择最小 token 集\n- **优点：** 多样性好，适合创意任务\n- **缺点：** 不可复现，可能生成低质内容\n\n**3. Beam Search（束搜索）：**\n```python\n# 维护 k 个候选序列\nbeams = [(empty_sequence, 0.0)]\n\nfor step in range(max_length):\n    candidates = []\n    for seq, score in beams:\n        probs = model(seq)\n        for token_idx in topk(probs, k=beam_width):\n            new_score = score + log(probs[token_idx])\n            candidates.append((seq + [token_idx], new_score))\n    \n    # 选择 top-k 序列\n    beams = sorted(candidates, key=lambda x: x[1], reverse=True)[:beam_width]\n```\n- **优点：** 平衡质量和多样性\n- **缺点：** 计算成本高，可能生成通用内容\n- **适用：** 摘要、翻译等任务\n\n**推荐配置：**\n```python\n# 创意写作\ntemperature=0.8, top_p=0.9, top_k=50\n\n# 代码生成\ntemperature=0.2, do_sample=False  # 接近 greedy\n\n# 问答\ntemperature=0.7, top_p=0.9\n\n# 翻译\nbeam_size=5, length_penalty=0.6\n```",
+        "code": {
+          "language": "python",
+          "code": "# 从概率分布中采样\nfor step in range(max_length):\n    probs = model(input_ids)\n    \n    # Temperature 调节\n    probs = softmax(log(probs) / temperature)\n    \n    # Top-k 过滤\n    top_k_probs, top_k_indices = topk(probs, k=50)\n    \n    # Top-p (nucleus) 过滤\n    sorted_probs, sorted_indices = sort(probs, descending=True)\n    cumsum = cumulative_sum(sorted_probs)\n    mask = cumsum < p  # p=0.9\n    filtered_probs = sorted_probs[mask]\n    \n    # 采样\n    next_token = multinomial(filtered_probs)"
+        }
+      },
+      {
+        "title": "考察重点",
+        "content": "- **知识：** 各种解码策略的原理\n- **能力：** 根据任务选择合适的解码配置\n- **思维：** 理解确定性与多样性的权衡",
+        "code": {
+          "language": "python",
+          "code": "# 维护 k 个候选序列\nbeams = [(empty_sequence, 0.0)]\n\nfor step in range(max_length):\n    candidates = []\n    for seq, score in beams:\n        probs = model(seq)\n        for token_idx in topk(probs, k=beam_width):\n            new_score = score + log(probs[token_idx])\n            candidates.append((seq + [token_idx], new_score))\n    \n    # 选择 top-k 序列\n    beams = sorted(candidates, key=lambda x: x[1], reverse=True)[:beam_width]"
+        }
+      },
+      {
+        "title": "延伸追问（25 分）",
+        "content": "1. Temperature 如何影响输出分布？（5 分）\n2. Top-p 和 Top-k 的区别是什么？（5 分）\n3. 为什么 Beam Search 可能生成通用内容？（5 分）\n4. 什么是 Contrastive Search？（5 分）\n5. 如何评估生成文本的多样性？（5 分）",
+        "code": {
+          "language": "python",
+          "code": "# 创意写作\ntemperature=0.8, top_p=0.9, top_k=50\n\n# 代码生成\ntemperature=0.2, do_sample=False  # 接近 greedy\n\n# 问答\ntemperature=0.7, top_p=0.9\n\n# 翻译\nbeam_size=5, length_penalty=0.6"
+        }
+      },
+      {
+        "title": "深入理解",
+        "content": "解码策略直接影响生成质量，是 LLM 应用的关键调优参数。"
+      },
+      {
+        "title": "更新历史",
+        "content": "- v1 (2026-03-29): 初始版本"
+      }
+    ]
+  },
+  "evaluation": {
+    "knowledge": "各种解码策略的原理",
+    "ability": "根据任务选择合适的解码配置",
+    "thinking": "理解确定性与多样性的权衡"
+  },
+  "followUpQuestions": [
+    {
+      "question": "Temperature 如何影响输出分布？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "Top-p 和 Top-k 的区别是什么？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "为什么 Beam Search 可能生成通用内容？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "什么是 Contrastive Search？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    },
+    {
+      "question": "如何评估生成文本的多样性？（5 分）",
+      "points": 5,
+      "answerHint": ""
+    }
+  ],
+  "version": {
+    "number": "v1.0",
+    "updatedAt": "2026-03-29T14:57:53.375Z",
+    "changeLog": "从 MD 文件迁移"
+  }
+}
