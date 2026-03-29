@@ -48,7 +48,8 @@ export default function KnowledgePage() {
         const response = await fetch('/api/knowledge');
         if (response.ok) {
           const data = await response.json();
-          setArticles(data.articles || []);
+          // API 返回格式：{success: true, data: {articles: [...]}}
+          setArticles(data.data?.articles || data.articles || []);
         }
       } catch (error) {
         console.error('Failed to load articles:', error);
