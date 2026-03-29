@@ -14,7 +14,7 @@ function MapIcon({ className }: { className?: string }) {
   );
 }
 
-// 7 大技术领域
+// 8 大技术领域
 const CATEGORIES = [
   { id: "ML", name: "机器学习基础", icon: ChartIcon, href: "/categories/ML", description: "监督学习、无监督学习、模型评估" },
   { id: "DL", name: "深度学习", icon: BrainIcon, href: "/categories/DL", description: "神经网络、CNN、RNN、Transformer" },
@@ -23,6 +23,7 @@ const CATEGORIES = [
   { id: "LLM", name: "大语言模型", icon: SparklesIcon, href: "/categories/LLM", description: "Prompt、RAG、Fine-tuning、Agent" },
   { id: "RecSys", name: "推荐系统", icon: UsersIcon, href: "/categories/RecSys", description: "召回排序、协同过滤、深度学习" },
   { id: "RL", name: "强化学习", icon: NetworkIcon, href: "/categories/RL", description: "MDP、Q-Learning、Policy Gradient" },
+  { id: "AI-Engineering", name: "AI 工程与实践", icon: CodeIcon, href: "/categories/AI-Engineering", description: "Agent 开发、方法论、工具链、前沿技术" },
 ];
 
 export default function Home() {
