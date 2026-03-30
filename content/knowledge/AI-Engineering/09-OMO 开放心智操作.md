@@ -1,5 +1,12 @@
 # OMO（Open-Mynd Operation）
 
+> **分类**: AI 工程 | **编号**: 009 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`AI-Engineering` `LLM` `AI`
+
+**摘要**: OMO（Open-Mynd Operation，开放心智操作）是一种面向 AI Agent 的操作范式，强调开放的心智模型、灵活的任务处理和持续的学习进化。
+
+---
 ## 核心概念
 
 OMO（Open-Mynd Operation，开放心智操作）是一种面向 AI Agent 的操作范式，强调开放的心智模型、灵活的任务处理和持续的学习进化。OMO 使 Agent 能够像人类一样思考、学习和适应，而不是简单地执行预定义指令。

@@ -1,5 +1,12 @@
 # GAN（生成对抗网络）
 
+> **分类**: 计算机视觉 | **编号**: 037 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `卷积` `损失函数` `优化器`
+
+**摘要**: 生成对抗网络（Generative Adversarial Network，GAN）是由 Ian Goodfellow 于 2014 年提出的生成模型。
+
+---
 ## 概述
 
 生成对抗网络（Generative Adversarial Network，GAN）是由 Ian Goodfellow 于 2014 年提出的生成模型。GAN 通过生成器和判别器的对抗训练，能够生成高质量的逼真样本，在图像生成、风格迁移等任务中取得了突破性成果。

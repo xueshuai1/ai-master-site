@@ -1,5 +1,12 @@
 # OpenClaw 架构详解
 
+> **分类**: AI 工程 | **编号**: 019 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`AI-Engineering` `AI` `面试`
+
+**摘要**: OpenClaw 是一个开源的 AI Agent 框架，采用技能驱动（Skill-Driven）的设计理念，提供灵活、可扩展的 Agent 开发能力。
+
+---
 ## 核心概念
 
 OpenClaw 是一个开源的 AI Agent 框架，采用技能驱动（Skill-Driven）的设计理念，提供灵活、可扩展的 Agent 开发能力。理解 OpenClaw 架构是高效开发的基础。

@@ -1,5 +1,12 @@
 # AlexNet
 
+> **分类**: 计算机视觉 | **编号**: 011 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`CV` `CNN` `深度学习` `神经网络` `卷积`
+
+**摘要**: AlexNet 是由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 于 2012 年提出的深度卷积神经网络，在 ImageNet Large ...
+
+---
 ## 概述
 
 AlexNet 是由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 于 2012 年提出的深度卷积神经网络，在 ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2012 中以 15.3% 的 Top-5 错误率获得冠军，显著领先第二名（26.2%）。AlexNet 的成功标志着深度学习在计算机视觉领域的崛起，开启了 CNN 研究的新时代。

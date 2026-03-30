@@ -1,5 +1,12 @@
 # DIN（Deep Interest Network）
 
+> **分类**: 推荐系统 | **编号**: 023 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`RecSys` `Attention` `池化` `激活函数`
+
+**摘要**: DIN（Deep Interest Network）是阿里巴巴在 2018 年提出的序列推荐模型，核心创新是**Attention 机制捕捉用户兴趣的多样性**。
+
+---
 ## 1. 概述
 
 DIN（Deep Interest Network）是阿里巴巴在 2018 年提出的序列推荐模型，核心创新是**Attention 机制捕捉用户兴趣的多样性**。

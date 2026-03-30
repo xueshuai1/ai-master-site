@@ -1,5 +1,12 @@
 # TDD（Test-Driven Development）
 
+> **分类**: AI 工程 | **编号**: 007 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`AI-Engineering` `LLM` `AI`
+
+**摘要**: TDD（Test-Driven Development，测试驱动开发）是一种软件开发方法论，核心理念是"先写测试，再写代码"。
+
+---
 ## 核心概念
 
 TDD（Test-Driven Development，测试驱动开发）是一种软件开发方法论，核心理念是"先写测试，再写代码"。在 AI 应用开发中，TDD 同样适用且尤为重要，因为 AI 系统的不确定性使得测试成为保证质量的关键手段。

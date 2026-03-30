@@ -1,5 +1,12 @@
 # GloVe（Global Vectors for Word Representation）
 
+> **分类**: 自然语言处理 | **编号**: 004 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`NLP` `BERT` `预训练`
+
+**摘要**: GloVe（Global Vectors for Word Representation）是由斯坦福大学 Jeffrey Pennington 等人于 2014 年提出的词嵌入方法。
+
+---
 ## 1. 概述
 
 GloVe（Global Vectors for Word Representation）是由斯坦福大学 Jeffrey Pennington 等人于 2014 年提出的词嵌入方法。与 Word2Vec 的局部滑动窗口方法不同，GloVe 基于全局词 - 词共现矩阵，结合了矩阵分解和局部上下文窗口方法的优点。

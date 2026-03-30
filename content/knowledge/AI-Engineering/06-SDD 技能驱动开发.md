@@ -1,5 +1,12 @@
 # SDD（Skill-Driven Development）
 
+> **分类**: AI 工程 | **编号**: 006 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`AI-Engineering` `AI` `面试`
+
+**摘要**: SDD（Skill-Driven Development，技能驱动开发）是一种以技能为核心单元的 AI 应用开发方法论。
+
+---
 ## 核心概念
 
 SDD（Skill-Driven Development，技能驱动开发）是一种以技能为核心单元的 AI 应用开发方法论。它将复杂功能分解为独立、可复用的技能模块，通过组合技能来构建完整的 AI 应用系统。SDD 是 OpenClaw 等现代 Agent 框架的核心开发范式。

@@ -1,5 +1,12 @@
 # Inception 系列网络
 
+> **分类**: 计算机视觉 | **编号**: 014 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`CV` `CNN` `神经网络` `卷积` `正则化`
+
+**摘要**: Inception 系列网络是 Google 团队在 GoogLeNet（Inception V1）基础上持续改进的深度卷积神经网络架构，包括 Inception V2、V3、V4 和 Ince...
+
+---
 ## 概述
 
 Inception 系列网络是 Google 团队在 GoogLeNet（Inception V1）基础上持续改进的深度卷积神经网络架构，包括 Inception V2、V3、V4 和 Inception-ResNet。该系列通过创新的 Inception 模块设计，在计算效率和模型性能之间取得了优秀平衡，成为计算机视觉领域的经典架构。

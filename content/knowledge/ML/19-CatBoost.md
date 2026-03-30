@@ -1,5 +1,12 @@
 # CatBoost 类别特征提升
 
+> **分类**: 机器学习 | **编号**: 019 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `正则化` `AI`
+
+**摘要**: CatBoost（Categorical Boosting）是 Yandex 于 2017 年开源的梯度提升算法，专为**高效处理类别特征**而设计。
+
+---
 ## 1. 概述
 
 CatBoost（Categorical Boosting）是 Yandex 于 2017 年开源的梯度提升算法，专为**高效处理类别特征**而设计。CatBoost 通过 Ordered Boosting 和创新的类别特征处理，实现了高精度且无需大量调参。

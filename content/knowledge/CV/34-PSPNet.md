@@ -1,5 +1,12 @@
 # PSPNet（Pyramid Scene Parsing Network）
 
+> **分类**: 计算机视觉 | **编号**: 034 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `卷积` `池化` `损失函数` `预训练`
+
+**摘要**: PSPNet 是由 Hengshuang Zhao 等人于 2017 年提出的语义分割算法，通过金字塔池化模块（Pyramid Pooling Module）聚合不同区域的上下文信息，有效利用了...
+
+---
 ## 概述
 
 PSPNet 是由 Hengshuang Zhao 等人于 2017 年提出的语义分割算法，通过金字塔池化模块（Pyramid Pooling Module）聚合不同区域的上下文信息，有效利用了全局上下文，在场景解析任务中取得了 SOTA 性能。

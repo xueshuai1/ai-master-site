@@ -1,5 +1,12 @@
 # Grounding DINO
 
+> **分类**: 计算机视觉 | **编号**: 049 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `Transformer` `Attention` `CNN` `BERT`
+
+**摘要**: Grounding DINO 是由 Liu 等人于 2023 年提出的开放集目标检测模型，结合了 DINO 的检测能力和 Grounding 的语言理解能力，实现了基于文本提示的开放集检测。
+
+---
 ## 概述
 
 Grounding DINO 是由 Liu 等人于 2023 年提出的开放集目标检测模型，结合了 DINO 的检测能力和 Grounding 的语言理解能力，实现了基于文本提示的开放集检测。

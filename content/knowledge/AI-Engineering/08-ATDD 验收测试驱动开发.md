@@ -1,5 +1,12 @@
 # ATDD（Acceptance Test-Driven Development）
 
+> **分类**: AI 工程 | **编号**: 008 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`AI-Engineering` `AI` `面试`
+
+**摘要**: ATDD（Acceptance Test-Driven Development，验收测试驱动开发）是一种以用户验收标准为核心的开发方法论。
+
+---
 ## 核心概念
 
 ATDD（Acceptance Test-Driven Development，验收测试驱动开发）是一种以用户验收标准为核心的开发方法论。它强调在开发之前，由开发人员、测试人员和业务人员共同定义验收标准，并将其转化为可执行的验收测试。

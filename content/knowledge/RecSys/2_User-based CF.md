@@ -1,5 +1,12 @@
 # User-Based Collaborative Filtering（基于用户的协同过滤）
 
+> **分类**: 推荐系统 | **编号**: 002 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`RecSys` `深度学习` `AI`
+
+**摘要**: User-Based Collaborative Filtering（基于用户的协同过滤，简称 User-Based CF）是协同过滤算法的两大经典范式之一。
+
+---
 ## 1. 概述
 
 User-Based Collaborative Filtering（基于用户的协同过滤，简称 User-Based CF）是协同过滤算法的两大经典范式之一。它的核心思想非常直观：**找到与目标用户兴趣相似的其他用户，然后将这些相似用户喜欢而目标用户尚未接触的物品推荐给目标用户**。

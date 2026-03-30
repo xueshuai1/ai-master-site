@@ -1,5 +1,12 @@
 # VGG（Visual Geometry Group Network）
 
+> **分类**: 计算机视觉 | **编号**: 012 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `CNN` `神经网络` `卷积` `池化`
+
+**摘要**: VGG 是由牛津大学 Visual Geometry Group 的 Karen Simonyan 和 Andrew Zisserman 于 2014 年提出的卷积神经网络架构。
+
+---
 ## 概述
 
 VGG 是由牛津大学 Visual Geometry Group 的 Karen Simonyan 和 Andrew Zisserman 于 2014 年提出的卷积神经网络架构。VGG 通过系统性地探索网络深度对性能的影响，证明了使用小尺寸卷积核（3×3）的深层网络能够显著提升性能。VGG-16 和 VGG-19 成为计算机视觉领域最经典和广泛使用的基准模型之一。

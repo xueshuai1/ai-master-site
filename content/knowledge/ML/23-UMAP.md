@@ -1,5 +1,12 @@
 # UMAP 统一流形逼近与投影
 
+> **分类**: 机器学习 | **编号**: 023 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `AI` `面试`
+
+**摘要**: UMAP（Uniform Manifold Approximation and Projection）是一种现代**非线性降维算法**，基于流形学习和拓扑理论。
+
+---
 ## 1. 概述
 
 UMAP（Uniform Manifold Approximation and Projection）是一种现代**非线性降维算法**，基于流形学习和拓扑理论。相比 t-SNE，UMAP 更快且能更好地保持全局结构。

@@ -1,5 +1,12 @@
 # XGBoost 极端梯度提升
 
+> **分类**: 机器学习 | **编号**: 017 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `机器学习` `损失函数` `正则化`
+
+**摘要**: XGBoost（eXtreme Gradient Boosting）是 Gradient Boosting 的**高效改进版本**，由陈天奇于 2016 年提出。
+
+---
 ## 1. 概述
 
 XGBoost（eXtreme Gradient Boosting）是 Gradient Boosting 的**高效改进版本**，由陈天奇于 2016 年提出。XGBoost 通过系统优化和算法改进，实现了更快的训练速度和更高的预测精度。

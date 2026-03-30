@@ -1,5 +1,12 @@
 # DBSCAN 聚类
 
+> **分类**: 机器学习 | **编号**: 009 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `AI` `面试`
+
+**摘要**: DBSCAN（Density-Based Spatial Clustering of Applications with Noise）是一种基于密度的聚类算法。
+
+---
 ## 1. 概述
 
 DBSCAN（Density-Based Spatial Clustering of Applications with Noise）是一种基于密度的聚类算法。与 K-Means 不同，DBSCAN 可以发现任意形状的簇，并能自动识别噪声点（异常值）。

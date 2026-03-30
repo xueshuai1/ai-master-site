@@ -1,5 +1,12 @@
 # Item-Based Collaborative Filtering（基于物品的协同过滤）
 
+> **分类**: 推荐系统 | **编号**: 003 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`RecSys` `AI` `面试`
+
+**摘要**: Item-Based Collaborative Filtering（基于物品的协同过滤，简称 Item-Based CF）是协同过滤算法的另一经典范式。
+
+---
 ## 1. 概述
 
 Item-Based Collaborative Filtering（基于物品的协同过滤，简称 Item-Based CF）是协同过滤算法的另一经典范式。与 User-Based CF 关注"相似用户"不同，Item-Based CF 的核心思想是：**找到与用户历史喜欢的物品相似的其他物品，然后推荐给该用户**。

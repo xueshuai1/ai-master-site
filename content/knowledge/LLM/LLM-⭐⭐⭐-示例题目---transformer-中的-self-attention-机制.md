@@ -1,3 +1,12 @@
+# 未命名
+
+> **分类**: 大语言模型 | **编号**: 000 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`LLM` `Transformer` `Attention` `Self-Attention` `RNN`
+
+**摘要**: summary: "Transformer Self-Attention 详解"
+
+---
 ---
 order: 4
 summary: "Transformer Self-Attention 详解"

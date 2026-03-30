@@ -1,5 +1,12 @@
 # Swin Transformer
 
+> **分类**: 计算机视觉 | **编号**: 030 | **更新时间**: 2026-03-30 | **难度**: ⭐
+
+`CV` `Transformer` `Attention` `CNN`
+
+**摘要**: Swin Transformer 是由 Microsoft Research 的 Ze Liu 等人于 2021 年提出的层次化 Vision Transformer。
+
+---
 ## 概述
 
 Swin Transformer 是由 Microsoft Research 的 Ze Liu 等人于 2021 年提出的层次化 Vision Transformer。Swin Transformer 通过滑动窗口机制和层次化设计，将 Transformer 成功应用于密集预测任务（检测、分割），成为通用视觉 backbone。

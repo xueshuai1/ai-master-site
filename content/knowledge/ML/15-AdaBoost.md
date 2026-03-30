@@ -1,5 +1,12 @@
 # AdaBoost 自适应提升
 
+> **分类**: 机器学习 | **编号**: 015 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `AI` `面试`
+
+**摘要**: AdaBoost（Adaptive Boosting，自适应提升）是 Boosting 家族中最经典的算法，由 Freund 和 Schapire 于 1995 年提出。
+
+---
 ## 1. 概述
 
 AdaBoost（Adaptive Boosting，自适应提升）是 Boosting 家族中最经典的算法，由 Freund 和 Schapire 于 1995 年提出。AdaBoost 通过自适应地调整样本权重，使后续学习器关注之前学习器分类错误的样本。

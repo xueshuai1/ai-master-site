@@ -1,5 +1,12 @@
 # LayerNorm（层归一化）
 
+> **分类**: 计算机视觉 | **编号**: 006 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `Transformer` `Attention` `CNN` `RNN`
+
+**摘要**: 层归一化（Layer Normalization，LayerNorm）是一种归一化技术，由 Jimmy Lei Ba 等人于 2016 年提出。
+
+---
 ## 概述
 
 层归一化（Layer Normalization，LayerNorm）是一种归一化技术，由 Jimmy Lei Ba 等人于 2016 年提出。与 BatchNorm 不同，LayerNorm 对单个样本的所有特征进行归一化，不依赖于 batch 统计量，因此特别适用于 RNN、Transformer 等序列模型和小 batch 场景。

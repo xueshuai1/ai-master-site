@@ -1,5 +1,12 @@
 # GPT（Generative Pre-trained Transformer）
 
+> **分类**: 自然语言处理 | **编号**: 008 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`NLP` `Transformer` `Attention` `Self-Attention` `BERT`
+
+**摘要**: GPT（Generative Pre-trained Transformer）是由 OpenAI 提出的一系列自回归语言模型。
+
+---
 ## 1. 概述
 
 GPT（Generative Pre-trained Transformer）是由 OpenAI 提出的一系列自回归语言模型。与 BERT 的双向编码器架构不同，GPT 使用单向解码器架构，通过从左到右的自回归方式预测下一个 token，使其天然适合文本生成任务。

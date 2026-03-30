@@ -1,5 +1,12 @@
 # Temporal Difference 学习
 
+> **分类**: 强化学习 | **编号**: 007 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`RL` `强化学习` `AI`
+
+**摘要**: Temporal Difference（TD）学习是强化学习的核心突破，它结合了 Monte Carlo 方法和动态规划的优点。
+
+---
 ## 1. 概述
 
 Temporal Difference（TD）学习是强化学习的核心突破，它结合了 Monte Carlo 方法和动态规划的优点。TD 学习通过**自举（Bootstrap）**机制，无需等待 episode 结束即可更新，也无需环境模型。

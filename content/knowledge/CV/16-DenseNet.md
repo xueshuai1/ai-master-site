@@ -1,5 +1,12 @@
 # DenseNet（密集连接网络）
 
+> **分类**: 计算机视觉 | **编号**: 016 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`CV` `CNN` `神经网络` `卷积` `池化`
+
+**摘要**: DenseNet（Densely Connected Convolutional Networks）是由 Gao Huang 等人于 2017 年提出的卷积神经网络架构。
+
+---
 ## 概述
 
 DenseNet（Densely Connected Convolutional Networks）是由 Gao Huang 等人于 2017 年提出的卷积神经网络架构。DenseNet 通过将每一层与所有后续层直接连接，实现了特征的最大化复用，在减少参数量的同时提升了性能，成为 CNN 架构设计的又一重要创新。

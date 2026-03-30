@@ -1,5 +1,12 @@
 # R-CNN 系列目标检测
 
+> **分类**: 计算机视觉 | **编号**: 021 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `CNN` `深度学习` `卷积` `微调`
+
+**摘要**: R-CNN（Region-based Convolutional Neural Networks）系列是目标检测领域的里程碑工作，包括 R-CNN、Fast R-CNN、Faster R-CNN...
+
+---
 ## 概述
 
 R-CNN（Region-based Convolutional Neural Networks）系列是目标检测领域的里程碑工作，包括 R-CNN、Fast R-CNN、Faster R-CNN 和 Mask R-CNN。该系列通过结合区域提议和深度学习，实现了高精度的目标检测，奠定了现代目标检测的基础。

@@ -1,5 +1,12 @@
 # BERT（Bidirectional Encoder Representations from Transformers）
 
+> **分类**: 自然语言处理 | **编号**: 007 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`NLP` `Transformer` `Attention` `Self-Attention` `BERT`
+
+**摘要**: BERT（Bidirectional Encoder Representations from Transformers）是由 Google 的 Jacob Devlin 等人于 2018 年提...
+
+---
 ## 1. 概述
 
 BERT（Bidirectional Encoder Representations from Transformers）是由 Google 的 Jacob Devlin 等人于 2018 年提出的预训练语言模型。BERT 通过引入深度双向 Transformer 编码器和创新的预训练任务，在 11 项 NLP 任务上取得了 state-of-the-art 的结果，引发了 NLP 领域的"BERT 革命"。

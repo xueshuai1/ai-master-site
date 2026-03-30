@@ -1,5 +1,12 @@
 # LightGBM 轻量级梯度提升
 
+> **分类**: 机器学习 | **编号**: 018 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `机器学习` `正则化`
+
+**摘要**: LightGBM（Light Gradient Boosting Machine）是微软于 2017 年开源的**高效梯度提升框架**。
+
+---
 ## 1. 概述
 
 LightGBM（Light Gradient Boosting Machine）是微软于 2017 年开源的**高效梯度提升框架**。相比 XGBoost，LightGBM 在保持高精度的同时，显著提升了训练速度和降低了内存消耗。

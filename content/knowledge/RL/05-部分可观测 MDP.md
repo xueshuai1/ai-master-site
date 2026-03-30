@@ -1,5 +1,12 @@
 # 部分可观测 MDP
 
+> **分类**: 强化学习 | **编号**: 005 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`RL` `RNN` `LSTM` `强化学习` `反向传播`
+
+**摘要**: 部分可观测马尔可夫决策过程（Partially Observable Markov Decision Process, POMDP）是 MDP 的扩展，用于建模智能体无法直接观测到完整状态的场景。
+
+---
 ## 1. 概述
 
 部分可观测马尔可夫决策过程（Partially Observable Markov Decision Process, POMDP）是 MDP 的扩展，用于建模智能体无法直接观测到完整状态的场景。在 POMDP 中，智能体只能通过观测来推断状态，这使问题变得更加复杂和贴近现实。

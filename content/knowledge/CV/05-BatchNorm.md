@@ -1,5 +1,12 @@
 # BatchNorm（批归一化）
 
+> **分类**: 计算机视觉 | **编号**: 005 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `Transformer` `CNN` `RNN` `深度学习`
+
+**摘要**: 批归一化（Batch Normalization，BN）是深度学习中的一项关键技术，由 Sergey Ioffe 和 Christian Szegedy 于 2015 年提出。
+
+---
 ## 概述
 
 批归一化（Batch Normalization，BN）是深度学习中的一项关键技术，由 Sergey Ioffe 和 Christian Szegedy 于 2015 年提出。BN 通过对每一层的输入进行归一化处理，使数据分布保持稳定，从而加速训练、提高模型稳定性并具有一定的正则化效果。

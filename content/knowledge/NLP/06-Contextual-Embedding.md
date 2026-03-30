@@ -1,5 +1,12 @@
 # Contextual Embedding（上下文相关词嵌入）
 
+> **分类**: 自然语言处理 | **编号**: 006 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`NLP` `Transformer` `Attention` `CNN` `LSTM`
+
+**摘要**: Contextual Embedding（上下文相关词嵌入）是词嵌入技术的重要演进。
+
+---
 ## 1. 概述
 
 Contextual Embedding（上下文相关词嵌入）是词嵌入技术的重要演进。与传统的静态词嵌入（如 Word2Vec、GloVe、FastText）为每个词分配固定向量不同，上下文相关词嵌入根据词在句子中的具体上下文动态生成向量表示。

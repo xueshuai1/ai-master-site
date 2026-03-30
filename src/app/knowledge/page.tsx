@@ -218,3 +218,5 @@ export default function KnowledgePage() {
     </div>
   );
 }
+// ISR 增量更新：每小时重新生成一次
+export const revalidate = 3600;

@@ -1,5 +1,12 @@
 # 30 High-Quality RecSys Interview Questions (90+ Score)
 
+> **分类**: 推荐系统 | **编号**: 030 | **更新时间**: 2026-03-30 | **难度**: ⭐
+
+`RecSys` `Transformer` `Attention` `CNN` `RNN`
+
+**摘要**: A **Recommendation System** is an information filtering system that predicts user preferences for...
+
+---
 ## Table of Contents
 1. [Fundamental Concepts](#fundamental-concepts)
 2. [Collaborative Filtering](#collaborative-filtering)

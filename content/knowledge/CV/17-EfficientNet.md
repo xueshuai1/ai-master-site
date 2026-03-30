@@ -1,5 +1,12 @@
 # EfficientNet
 
+> **分类**: 计算机视觉 | **编号**: 017 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `神经网络` `卷积` `优化器` `迁移学习`
+
+**摘要**: EfficientNet 是由 Google 的 Mingxing Tan 和 Quoc Le 于 2019 年提出的卷积神经网络架构，通过神经架构搜索（NAS）和复合缩放方法，在大幅减少参数量...
+
+---
 ## 概述
 
 EfficientNet 是由 Google 的 Mingxing Tan 和 Quoc Le 于 2019 年提出的卷积神经网络架构，通过神经架构搜索（NAS）和复合缩放方法，在大幅减少参数量的同时实现了 SOTA 性能。EfficientNet 系列（B0-B7）展示了如何在计算资源受限的情况下优化网络设计。

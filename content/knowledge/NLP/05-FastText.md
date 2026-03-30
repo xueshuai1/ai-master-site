@@ -1,5 +1,12 @@
 # FastText
 
+> **分类**: 自然语言处理 | **编号**: 005 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`NLP` `BERT` `GPT` `池化` `预训练`
+
+**摘要**: FastText 是由 Facebook AI Research（FAIR）于 2016 年提出的词嵌入和文本分类方法。
+
+---
 ## 1. 概述
 
 FastText 是由 Facebook AI Research（FAIR）于 2016 年提出的词嵌入和文本分类方法。与 Word2Vec 和 GloVe 将每个词视为原子单元不同，FastText 考虑了词的内部结构，将词表示为字符 n-gram 的向量之和。这种设计使 FastText 能够：

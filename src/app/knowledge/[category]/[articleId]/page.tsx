@@ -1,16 +1,20 @@
-"use client";
+import fs from 'fs';
+import path from 'path';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import ContentLayout from '@/components/ContentLayout';
+import ArticleNav from '@/components/ArticleNav';
+import ProgressPanel from '@/components/ProgressPanel';
 
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import ContentLayout from "@/components/ContentLayout";
-import CodeBlock from "@/components/CodeBlock";
-import Callout from "@/components/Callout";
-import Collapsible from "@/components/Collapsible";
-import ArticleNav from "@/components/ArticleNav";
-import ProgressPanel from "@/components/ProgressPanel";
+// 客户端组件：处理学习进度
+import LearningProgress from './LearningProgress';
+
+const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), 'content', 'knowledge');
+
+// ISR 增量更新：每小时重新生成一次
+export const revalidate = 3600;
 
 interface Article {
   id: string;
@@ -20,7 +24,6 @@ interface Article {
   keyPoints: string[];
   estimatedTime: string;
   content: string;
-  // 结构化数据字段
   abstract?: string;
   sections?: Array<{
     id: string;
@@ -58,145 +61,199 @@ interface Article {
 }
 
 interface AdjacentArticles {
-  prev: { id: string; title: string } | null;
-  next: { id: string; title: string } | null;
+  prev: { id: string; title: string; summary: string; keyPoints: string[]; estimatedTime: string } | null;
+  next: { id: string; title: string; summary: string; keyPoints: string[]; estimatedTime: string } | null;
 }
 
-export default function KnowledgeArticlePage() {
-  const params = useParams();
-  const category = params.category as string;
-  const articleId = params.articleId as string;
+interface ArticlePageProps {
+  params: Promise<{ category: string; articleId: string }>;
+}
+
+// 解析 Markdown 文件的 frontmatter 和内容
+function parseMarkdown(content: string) {
+  const frontmatter: Record<string, any> = {};
   
-  const [article, setArticle] = useState<Article | null>(null);
-  const [adjacentArticles, setAdjacentArticles] = useState<AdjacentArticles>({ prev: null, next: null });
-  const [articleProgress, setArticleProgress] = useState<number>(0);
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function loadArticle() {
-      try {
-        const response = await fetch(`/api/knowledge/${category}?articleId=${articleId}`);
-        if (response.ok) {
-          const data = await response.json();
-          setArticle(data.data);
-          setAdjacentArticles({ prev: data.prev, next: data.next });
-        } else {
-          const errorData = await response.json();
-          setError(errorData.error || '文章不存在');
+  // 尝试 YAML frontmatter
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (frontmatterMatch) {
+    const lines = frontmatterMatch[1].split('\n');
+    for (const line of lines) {
+      const [key, ...valueParts] = line.split(':');
+      if (key && valueParts.length > 0) {
+        let value = valueParts.join(':').trim();
+        if (typeof value === 'string') {
+          if (value.startsWith('[') && value.endsWith(']')) {
+            value = value.slice(1, -1).split(',').map((v: string) => v.trim().replace(/"/g, ''));
+            frontmatter[key.trim()] = value;
+          } else if (value.startsWith('"') && value.endsWith('"')) {
+            value = value.slice(1, -1);
+            frontmatter[key.trim()] = value;
+          } else {
+            frontmatter[key.trim()] = value;
+          }
         }
-      } catch (err) {
-        console.error('Failed to load article:', err);
-        setError('加载失败');
-      } finally {
-        setLoading(false);
       }
     }
-    
-    loadArticle();
-    
-    // 加载学习进度
-    const stored = localStorage.getItem('ai-interview-learning-progress');
-    if (stored) {
-      try {
-        const data = JSON.parse(stored);
-        const progress = data[category]?.[articleId];
-        if (progress) {
-          setArticleProgress(progress.progress);
-          setIsCompleted(progress.completed);
+  } else {
+    // 尝试行内格式
+    const lines = content.split('\n');
+    const secondLine = lines[1] || '';
+    if (secondLine.startsWith('>')) {
+      const inlineMatch = secondLine.match(/\*\*([^*]+)\*\*:\s*([^|]+)/g);
+      if (inlineMatch) {
+        for (const item of inlineMatch) {
+          const parts = item.split(':');
+          const key = parts[0]?.trim().replace(/\*\*/g, '').toLowerCase();
+          const value = parts.slice(1).join(':').trim().replace(/\*\*/g, '');
+          if (key && value) {
+            frontmatter[key] = value;
+          }
         }
-      } catch (error) {
-        console.error('Failed to load progress:', error);
       }
     }
-  }, [category, articleId]);
+  }
+  
+  // 移除 frontmatter 获取正文
+  const body = frontmatterMatch 
+    ? content.replace(/^---\n[\s\S]*?\n---\n?/, '')
+    : content.replace(/^#\s*[^\n]+\n[^\n]+\n/, '');
+  
+  return { frontmatter, body };
+}
 
-  const handleMarkAsRead = () => {
-    const stored = localStorage.getItem('ai-interview-learning-progress');
-    let data: any = { stats: { totalArticles: 0, completedArticles: 0, learningStreak: 0 } };
-    
-    if (stored) {
-      try {
-        data = JSON.parse(stored);
-      } catch (error) {
-        console.error('Failed to parse progress:', error);
-      }
-    }
-    
-    if (!data[category]) {
-      data[category] = {};
-    }
-    
-    const today = new Date().toISOString().split('T')[0];
-    data[category][articleId] = {
-      completed: true,
-      completedAt: today,
-      progress: 1,
-      lastReadAt: today,
-    };
-    
-    let totalArticles = 0;
-    let completedArticles = 0;
-    
-    Object.keys(data).forEach((key: string) => {
-      if (key === 'stats') return;
-      const categoryData = data[key];
-      totalArticles += Object.keys(categoryData).length;
-      completedArticles += Object.values(categoryData).filter((p: any) => p.completed).length;
-    });
-    
-    const lastDate = data.stats.lastStudyDate;
-    if (lastDate !== today) {
-      const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayStr = yesterday.toISOString().split('T')[0];
-      
-      if (lastDate === yesterdayStr) {
-        data.stats.learningStreak += 1;
-      } else if (lastDate !== today) {
-        data.stats.learningStreak = 1;
-      }
-      
-      data.stats.lastStudyDate = today;
-    }
-    
-    data.stats.totalArticles = totalArticles;
-    data.stats.completedArticles = completedArticles;
-    
-    localStorage.setItem('ai-interview-learning-progress', JSON.stringify(data));
-    
-    setArticleProgress(1);
-    setIsCompleted(true);
+// 加载单篇文章
+function loadArticle(category: string, articleId: string): Article | null {
+  const filePath = path.join(KNOWLEDGE_BASE_DIR, category, `${articleId}.md`);
+  
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const { frontmatter, body } = parseMarkdown(content);
+  
+  // 解析标题
+  const titleMatch = content.match(/^#\s+(.+)/);
+  const title = frontmatter.title || (titleMatch ? titleMatch[1].trim() : articleId.replace(/[-_]/g, ' '));
+  
+  // 解析摘要
+  let summary = frontmatter.summary || '';
+  if (!summary) {
+    const summaryMatch = content.match(/^>\s*\*\*分类\*\*.*\n\n(.+?)(?:\n|$)/);
+    summary = summaryMatch ? summaryMatch[1].trim() : content.slice(0, 200).replace(/[#*`\n]/g, '').trim() + '...';
+  }
+  
+  // 解析关键要点
+  let keyPoints: string[] = [];
+  if (frontmatter.keyPoints) {
+    keyPoints = Array.isArray(frontmatter.keyPoints) ? frontmatter.keyPoints : [frontmatter.keyPoints];
+  }
+  if (frontmatter.tags) {
+    keyPoints = Array.isArray(frontmatter.tags) ? frontmatter.tags : [frontmatter.tags];
+  }
+  
+  // 估算阅读时间
+  const wordCount = content.length / 3;
+  const estimatedTime = `${Math.ceil(wordCount / 300)}分钟`;
+  
+  return {
+    id: articleId,
+    title,
+    category,
+    summary,
+    keyPoints,
+    estimatedTime,
+    content: body,
+    abstract: frontmatter.abstract,
+    keyTakeaways: frontmatter.keyTakeaways,
+    prerequisites: frontmatter.prerequisites,
   };
+}
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2563EB] mx-auto mb-4"></div>
-          <p className="text-[#64748B]">加载中...</p>
-        </div>
-      </div>
-    );
+// 获取分类下的所有文章
+function getArticlesByCategory(category: string): Array<{ id: string; title: string; summary: string; keyPoints: string[]; estimatedTime: string }> {
+  const categoryDir = path.join(KNOWLEDGE_BASE_DIR, category);
+  
+  if (!fs.existsSync(categoryDir)) {
+    return [];
   }
+  
+  const files = fs.readdirSync(categoryDir)
+    .filter(file => file.endsWith('.md'))
+    .sort();
+  
+  return files.map(file => {
+    const id = file.replace('.md', '');
+    const filePath = path.join(categoryDir, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const { frontmatter } = parseMarkdown(content);
+    
+    const titleMatch = content.match(/^#\s+(.+)/);
+    const title = frontmatter.title || (titleMatch ? titleMatch[1].trim() : id);
+    
+    let summary = frontmatter.summary || '';
+    if (!summary) {
+      const summaryMatch = content.match(/^>\s*\*\*分类\*\*.*\n\n(.+?)(?:\n|$)/);
+      summary = summaryMatch ? summaryMatch[1].trim() : content.slice(0, 100).replace(/[#*`\n]/g, '').trim() + '...';
+    }
+    
+    let keyPoints: string[] = [];
+    if (frontmatter.keyPoints) {
+      keyPoints = Array.isArray(frontmatter.keyPoints) ? frontmatter.keyPoints : [frontmatter.keyPoints];
+    }
+    if (frontmatter.tags) {
+      keyPoints = Array.isArray(frontmatter.tags) ? frontmatter.tags : [frontmatter.tags];
+    }
+    
+    const wordCount = content.length / 3;
+    const estimatedTime = `${Math.ceil(wordCount / 300)}分钟`;
+    
+    return { id, title, summary, keyPoints, estimatedTime };
+  });
+}
 
-  if (error || !article) {
-    return (
-      <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#1E293B] mb-4">文章不存在</h1>
-          <p className="text-[#64748B] mb-6">{error || '文章不存在'}</p>
-          <Link
-            href={`/knowledge/${category}`}
-            className="px-6 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#1D4ED8] transition-all"
-          >
-            ← 返回分类
-          </Link>
-        </div>
-      </div>
-    );
+// 生成所有静态路径
+export async function generateStaticParams() {
+  const params: Array<{ category: string; articleId: string }> = [];
+  
+  if (!fs.existsSync(KNOWLEDGE_BASE_DIR)) {
+    return [];
   }
+  
+  const categories = fs.readdirSync(KNOWLEDGE_BASE_DIR)
+    .filter(item => fs.statSync(path.join(KNOWLEDGE_BASE_DIR, item)).isDirectory());
+  
+  for (const category of categories) {
+    const articles = getArticlesByCategory(category);
+    for (const article of articles) {
+      params.push({
+        category,
+        articleId: article.id,
+      });
+    }
+  }
+  
+  return params;
+}
+
+// 服务器组件：文章详情
+async function ArticleContent({ params }: ArticlePageProps) {
+  const { category, articleId } = await params;
+  const decodedCategory = decodeURIComponent(category);
+  
+  const article = loadArticle(decodedCategory, articleId);
+  
+  if (!article) {
+    notFound();
+  }
+  
+  // 获取相邻文章
+  const articles = getArticlesByCategory(decodedCategory);
+  const currentIndex = articles.findIndex(a => a.id === articleId);
+  const adjacentArticles: AdjacentArticles = {
+    prev: currentIndex > 0 ? articles[currentIndex - 1] : null,
+    next: currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null,
+  };
 
   // 渲染结构化内容
   const renderStructuredContent = () => {
@@ -204,7 +261,6 @@ export default function KnowledgeArticlePage() {
     if (article.sections && article.sections.length > 0) {
       return (
         <div className="space-y-8">
-          {/* 文章摘要 */}
           {article.abstract && (
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
               <h3 className="text-lg font-semibold text-blue-900 mb-3">📖 摘要</h3>
@@ -212,10 +268,8 @@ export default function KnowledgeArticlePage() {
             </div>
           )}
 
-          {/* 章节内容 */}
           {article.sections.map((section) => (
             <div key={section.id} className="scroll-mt-24" id={section.id}>
-              {/* 主章节 */}
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
                   {section.title}
@@ -227,7 +281,6 @@ export default function KnowledgeArticlePage() {
                 </div>
               </div>
 
-              {/* 子章节 */}
               {section.subsections && section.subsections.length > 0 && (
                 <div className="ml-6 space-y-6">
                   {section.subsections.map((subsec) => (
@@ -247,7 +300,6 @@ export default function KnowledgeArticlePage() {
             </div>
           ))}
 
-          {/* 关键要点 */}
           {article.keyTakeaways && article.keyTakeaways.length > 0 && (
             <div className="bg-green-50 border border-green-200 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-green-900 mb-4 flex items-center gap-2">
@@ -265,7 +317,6 @@ export default function KnowledgeArticlePage() {
             </div>
           )}
 
-          {/* 前置知识 */}
           {article.prerequisites && article.prerequisites.length > 0 && (
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-amber-900 mb-4 flex items-center gap-2">
@@ -283,7 +334,6 @@ export default function KnowledgeArticlePage() {
             </div>
           )}
 
-          {/* 代码示例 */}
           {article.codeExamples && article.codeExamples.length > 0 && (
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
@@ -315,7 +365,6 @@ export default function KnowledgeArticlePage() {
             </div>
           )}
 
-          {/* 图表 */}
           {article.diagrams && article.diagrams.length > 0 && (
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
@@ -334,7 +383,6 @@ export default function KnowledgeArticlePage() {
             </div>
           )}
 
-          {/* 参考资料 */}
           {article.references && article.references.length > 0 && (
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
@@ -380,102 +428,35 @@ export default function KnowledgeArticlePage() {
   };
 
   const sidebarContent = (
-    <div className="sticky top-6 space-y-4">
-      <ProgressPanel />
-      
-      <button 
-        onClick={handleMarkAsRead}
-        disabled={isCompleted}
-        className={`w-full px-4 py-2 text-sm rounded-lg transition-colors font-medium ${
-          isCompleted 
-            ? 'bg-green-100 text-green-700 cursor-default' 
-            : 'bg-blue-600 text-white hover:bg-blue-700'
-        }`}
-      >
-        {isCompleted ? '✅ 已完成' : '📚 标记为已读'}
-      </button>
-      
-      <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-        <h3 className="font-semibold text-gray-800 mb-3 text-sm flex items-center gap-2">
-          <span>📈</span>
-          本节进度
-        </h3>
-        <div className="space-y-2">
-          <div className="flex justify-between text-xs">
-            <span className="text-gray-600">阅读进度</span>
-            <span className="text-blue-600 font-medium">{Math.round(articleProgress * 100)}%</span>
-          </div>
-          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-            <div 
-              className={`h-full transition-all duration-300 ${isCompleted ? 'bg-green-500' : 'bg-blue-500'}`}
-              style={{ width: `${articleProgress * 100}%` }}
-            ></div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-        <h3 className="font-semibold text-gray-800 mb-3 text-sm flex items-center gap-2">
-          <span>🔗</span>
-          相关推荐
-        </h3>
-        <ul className="space-y-2 text-xs">
-          {adjacentArticles.prev && (
-            <li>
-              <Link
-                href={`/knowledge/${category}/${adjacentArticles.prev.id}`}
-                className="text-blue-600 hover:underline block"
-              >
-                ← {adjacentArticles.prev.title}
-              </Link>
-            </li>
-          )}
-          {adjacentArticles.next && (
-            <li>
-              <Link
-                href={`/knowledge/${category}/${adjacentArticles.next.id}`}
-                className="text-blue-600 hover:underline block"
-              >
-                {adjacentArticles.next.title} →
-              </Link>
-            </li>
-          )}
-          <li>
-            <Link
-              href={`/knowledge/${category}`}
-              className="text-blue-600 hover:underline block"
-            >
-              浏览该分类所有文章
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <LearningProgress category={decodedCategory} articleId={articleId} />
   );
 
   return (
     <ContentLayout
       title={article.title}
-      subtitle={article.summary || article.abstract}
-      category={category}
-      tags={article.keyPoints || article.tags || []}
+      subtitle={article.summary}
+      category={decodedCategory}
+      tags={article.keyPoints || []}
       breadcrumbs={[
         { label: "首页", href: "/" },
         { label: "知识库", href: "/knowledge" },
-        { label: category.toUpperCase(), href: `/knowledge/${category}` },
+        { label: decodedCategory.toUpperCase(), href: `/knowledge/${decodedCategory}` },
         { label: "文章详情" },
       ]}
       sidebarContent={sidebarContent}
     >
       {renderStructuredContent()}
 
-      {/* 上一篇/下一篇导航 */}
-      <ArticleNav category={category} articleId={articleId} />
+      <ArticleNav 
+        category={decodedCategory} 
+        articleId={articleId}
+        prev={adjacentArticles.prev}
+        next={adjacentArticles.next}
+      />
 
-      {/* 下一步 */}
       <div className="flex gap-4 mt-8 pt-6 border-t border-gray-200">
         <Link
-          href={`/knowledge/${category}`}
+          href={`/knowledge/${decodedCategory}`}
           className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all font-medium"
         >
           浏览该分类其他文章
@@ -496,3 +477,5 @@ export default function KnowledgeArticlePage() {
     </ContentLayout>
   );
 }
+
+export default ArticleContent;

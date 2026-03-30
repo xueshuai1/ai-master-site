@@ -1,5 +1,12 @@
 # Bellman 方程详解
 
+> **分类**: 强化学习 | **编号**: 001 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`RL` `LLM` `强化学习`
+
+**摘要**: Bellman 方程是强化学习（Reinforcement Learning, RL）的核心理论基础，由 Richard Bellman 在 1950 年代提出。
+
+---
 ## 1. 概述
 
 Bellman 方程是强化学习（Reinforcement Learning, RL）的核心理论基础，由 Richard Bellman 在 1950 年代提出。它描述了动态规划问题中**最优子结构**的数学关系，是几乎所有 RL 算法的理论基石。

@@ -1,5 +1,12 @@
 # DETR（DEtection TRansformer）
 
+> **分类**: 计算机视觉 | **编号**: 029 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `Transformer` `Attention` `CNN` `损失函数`
+
+**摘要**: DETR 是由 Facebook AI Research 的 Nicolas Carion 等人于 2020 年提出的基于 Transformer 的目标检测算法。
+
+---
 ## 概述
 
 DETR 是由 Facebook AI Research 的 Nicolas Carion 等人于 2020 年提出的基于 Transformer 的目标检测算法。DETR 首次将 Transformer 成功应用于目标检测，通过集合预测和二分图匹配，实现了端到端的检测流程，无需锚框和非极大值抑制（NMS）。

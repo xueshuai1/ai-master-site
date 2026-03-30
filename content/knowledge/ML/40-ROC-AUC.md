@@ -1,5 +1,12 @@
 # ROC-AUC 曲线
 
+> **分类**: 机器学习 | **编号**: 040 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `AI` `面试`
+
+**摘要**: ROC（Receiver Operating Characteristic）曲线和 AUC（Area Under Curve）是**二分类模型评估**的重要指标，衡量模型区分正负样本的能力。
+
+---
 ## 1. 概述
 
 ROC（Receiver Operating Characteristic）曲线和 AUC（Area Under Curve）是**二分类模型评估**的重要指标，衡量模型区分正负样本的能力。

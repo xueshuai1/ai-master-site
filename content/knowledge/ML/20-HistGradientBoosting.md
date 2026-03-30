@@ -1,5 +1,12 @@
 # HistGradientBoosting 直方图梯度提升
 
+> **分类**: 机器学习 | **编号**: 020 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `正则化` `AI`
+
+**摘要**: HistGradientBoosting 是 scikit-learn 0.21+ 引入的**基于直方图的梯度提升算法**，灵感来自 LightGBM。
+
+---
 ## 1. 概述
 
 HistGradientBoosting 是 scikit-learn 0.21+ 引入的**基于直方图的梯度提升算法**，灵感来自 LightGBM。它将连续特征离散化为直方图 bins，大幅提升训练速度，特别适合大规模数据。

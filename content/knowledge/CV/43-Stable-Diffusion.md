@@ -1,5 +1,12 @@
 # Stable Diffusion
 
+> **分类**: 计算机视觉 | **编号**: 043 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `Transformer` `Attention`
+
+**摘要**: Stable Diffusion 是由 Stability AI 于 2022 年提出的潜在扩散模型（Latent Diffusion Model）。
+
+---
 ## 概述
 
 Stable Diffusion 是由 Stability AI 于 2022 年提出的潜在扩散模型（Latent Diffusion Model）。Stable Diffusion 通过在潜在空间进行扩散，大幅降低了计算成本，实现了在消费级 GPU 上的高效运行，成为最流行的开源文生图模型。

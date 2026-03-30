@@ -1,5 +1,12 @@
 # t-SNE t-分布随机邻域嵌入
 
+> **分类**: 机器学习 | **编号**: 022 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`ML` `AI` `面试`
+
+**摘要**: t-SNE（t-Distributed Stochastic Neighbor Embedding）是一种**非线性降维算法**，特别适合高维数据的可视化。
+
+---
 ## 1. 概述
 
 t-SNE（t-Distributed Stochastic Neighbor Embedding）是一种**非线性降维算法**，特别适合高维数据的可视化。t-SNE 通过保持局部结构，将高维数据映射到低维空间。

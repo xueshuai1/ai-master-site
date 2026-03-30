@@ -1,5 +1,12 @@
 # Vision Transformer (ViT)
 
+> **分类**: 计算机视觉 | **编号**: 020 | **更新时间**: 2026-03-30 | **难度**: ⭐
+
+`CV` `Transformer` `Attention` `CNN` `优化器`
+
+**摘要**: Vision Transformer (ViT) 是由 Google 的 Alexey Dosovitskiy 等人于 2020 年提出的纯 Transformer 架构图像分类模型。
+
+---
 ## 概述
 
 Vision Transformer (ViT) 是由 Google 的 Alexey Dosovitskiy 等人于 2020 年提出的纯 Transformer 架构图像分类模型。ViT 将图像分割为固定大小的 patch，直接输入 Transformer Encoder，在大规模预训练下取得了 SOTA 性能，标志着 Transformer 从 NLP 向 CV 的成功迁移。

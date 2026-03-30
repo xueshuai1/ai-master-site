@@ -1,5 +1,12 @@
 # GoogLeNet (Inception V1)
 
+> **分类**: 计算机视觉 | **编号**: 013 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐⭐
+
+`CV` `CNN` `神经网络` `卷积` `池化`
+
+**摘要**: GoogLeNet 是由 Google 的 Christian Szegedy 等人于 2014 年提出的深度卷积神经网络，在 ILSVRC 2014 图像分类竞赛中以 6.67% 的 Top-...
+
+---
 ## 概述
 
 GoogLeNet 是由 Google 的 Christian Szegedy 等人于 2014 年提出的深度卷积神经网络，在 ILSVRC 2014 图像分类竞赛中以 6.67% 的 Top-5 错误率获得冠军。GoogLeNet 引入了 Inception 模块和辅助分类器等创新设计，在显著减少参数量的同时提升了性能，成为 CNN 架构设计的重要里程碑。

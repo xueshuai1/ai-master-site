@@ -1,3 +1,12 @@
+# 未命名
+
+> **分类**: 大语言模型 | **编号**: 000 | **更新时间**: 2026-03-30 | **难度**: ⭐
+
+`LLM` `AI` `面试`
+
+**摘要**: title: "AI 面试题 - RAG retrieval augmented generation interview"
+
+---
 ---
 order: 1
 summary: "RAG 检索增强生成面试题目"

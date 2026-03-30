@@ -1,5 +1,12 @@
 # SAM（Segment Anything Model）
 
+> **分类**: 计算机视觉 | **编号**: 035 | **更新时间**: 2026-03-30 | **难度**: ⭐⭐
+
+`CV` `Transformer` `损失函数`
+
+**摘要**: SAM（Segment Anything Model）是由 Meta AI 于 2023 年提出的基础分割模型。
+
+---
 ## 概述
 
 SAM（Segment Anything Model）是由 Meta AI 于 2023 年提出的基础分割模型。SAM 通过大规模训练和提示式分割，实现了零样本迁移能力，能够分割任意图像中的任意物体，开创了分割基础模型的新范式。

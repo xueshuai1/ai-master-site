@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 interface Article {
   id: string;
@@ -14,41 +11,17 @@ interface Article {
 interface ArticleNavProps {
   category: string;
   articleId: string;
+  prev: Article | null;
+  next: Article | null;
 }
 
-export default function ArticleNav({ category, articleId }: ArticleNavProps) {
-  const [prev, setPrev] = useState<Article | null>(null);
-  const [next, setNext] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // 从 API 获取相邻文章
-    const url = `/api/knowledge/index?category=${encodeURIComponent(category)}&articleId=${encodeURIComponent(articleId)}`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        console.log('Article nav data:', data);
-        setPrev(data.prev);
-        setNext(data.next);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Failed to load article nav:', err);
-        setLoading(false);
-      });
-  }, [category, articleId]);
-
-  if (loading) {
-    return null;
-  }
-
+export default function ArticleNav({ category, prev, next }: ArticleNavProps) {
   if (!prev && !next) {
     return null;
   }
 
   return (
     <div className="grid md:grid-cols-2 gap-4 mt-8 pt-8 border-t border-gray-200">
-      {/* 上一篇 */}
       {prev && (
         <Link
           href={`/knowledge/${category}/${prev.id}`}
@@ -72,7 +45,6 @@ export default function ArticleNav({ category, articleId }: ArticleNavProps) {
         </Link>
       )}
 
-      {/* 下一篇 */}
       {next && (
         <Link
           href={`/knowledge/${category}/${next.id}`}
