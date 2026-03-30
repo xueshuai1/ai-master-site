@@ -369,20 +369,13 @@ export default function KnowledgeArticlePage() {
       );
     }
 
-    // 兼容旧格式：直接渲染 content
+    // 兼容旧格式：使用 ReactMarkdown 渲染
     return (
-      <div 
-        className="prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ 
-          __html: article.content
-            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-            .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-            .replace(/\*(.*)\*/gim, '<em>$1</em>')
-            .replace(/\n/g, '<br/>')
-        }}
-      />
+      <div className="prose prose-lg max-w-none">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {article.content}
+        </ReactMarkdown>
+      </div>
     );
   };
 
