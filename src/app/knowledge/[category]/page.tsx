@@ -1,8 +1,7 @@
-"use client";
-
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import fs from 'fs';
+import path from 'path';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 // Lucide 风格 SVG 图标组件
 function BookIcon({ className }: { className?: string }) {
@@ -98,59 +97,106 @@ interface Article {
   summary: string;
   keyPoints: string[];
   estimatedTime: string;
-  order: number;
-  difficulty?: number;
 }
 
-export default function KnowledgeCategoryPage() {
-  const params = useParams();
-  const categorySlug = params.category as string;
-  const category = CATEGORIES[categorySlug];
+const KNOWLEDGE_BASE_DIR = path.join(process.cwd(), 'content', 'knowledge');
 
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+// ISR 增量更新：每小时重新生成一次
+export const revalidate = 3600;
 
-  useEffect(() => {
-    async function loadArticles() {
-      try {
-        const response = await fetch(`/api/knowledge?category=${categorySlug}`);
-        if (response.ok) {
-          const data = await response.json();
-          setArticles(data.data?.articles || data.articles || []);
-        } else {
-          setError('加载失败');
-        }
-      } catch (err) {
-        console.error('Failed to load articles:', err);
-        setError('加载失败');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    if (categorySlug) {
-      loadArticles();
-    }
-  }, [categorySlug]);
-
-  if (!category) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">分类不存在</h1>
-          <Link href="/knowledge" className="text-blue-600 hover:underline">
-            ← 返回知识库
-          </Link>
-        </div>
-      </div>
-    );
+// 解析 Markdown 文件
+function parseMarkdown(content: string) {
+  const frontmatter: Record<string, any> = {};
+  
+  // 尝试行内格式
+  const lines = content.split('\n');
+  const secondLine = lines[1] || '';
+  
+  if (secondLine.startsWith('>')) {
+    const categoryMatch = secondLine.match(/\*\*分类\*\*:\s*([^|]+)/);
+    const numberMatch = secondLine.match(/\*\*编号\*\*:\s*([^|]+)/);
+    const updateMatch = secondLine.match(/\*\*更新时间\*\*:\s*([^|]+)/);
+    const difficultyMatch = secondLine.match(/\*\*难度\*\*:\s*(⭐+)/);
+    
+    if (categoryMatch) frontmatter.category = categoryMatch[1].trim();
+    if (numberMatch) frontmatter.number = numberMatch[1].trim();
+    if (updateMatch) frontmatter.updateTime = updateMatch[1].trim();
+    if (difficultyMatch) frontmatter.difficulty = difficultyMatch[1].trim();
   }
+  
+  // 解析标签
+  const tagsLine = lines[4] || '';
+  if (tagsLine.startsWith('`')) {
+    const tagMatches = tagsLine.match(/`([^`]+)`/g);
+    if (tagMatches) {
+      frontmatter.tags = tagMatches.map(tag => tag.replace(/`/g, '').trim());
+    }
+  }
+  
+  return { frontmatter };
+}
 
-  const Icon = category.icon;
+// 获取分类下的所有文章
+function getArticlesByCategory(category: string): Article[] {
+  const categoryDir = path.join(KNOWLEDGE_BASE_DIR, category);
+  
+  if (!fs.existsSync(categoryDir)) {
+    return [];
+  }
+  
+  const files = fs.readdirSync(categoryDir)
+    .filter(file => file.endsWith('.md'))
+    .sort();
+  
+  return files.map(file => {
+    const id = file.replace('.md', '');
+    const filePath = path.join(categoryDir, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const { frontmatter } = parseMarkdown(content);
+    
+    const titleMatch = content.match(/^#\s+(.+)/);
+    const title = frontmatter.title || (titleMatch ? titleMatch[1].trim() : id);
+    
+    let summary = '';
+    const summaryMatch = content.match(/^>\s*\*\*分类\*\*.*\n\n(.+?)(?:\n|$)/);
+    if (summaryMatch) {
+      summary = summaryMatch[1].trim();
+    } else {
+      summary = content.slice(0, 100).replace(/[#*`\n]/g, '').trim() + '...';
+    }
+    
+    const keyPoints = frontmatter.tags || [];
+    const wordCount = content.length / 3;
+    const estimatedTime = `${Math.ceil(wordCount / 300)}分钟`;
+    
+    return {
+      id,
+      title,
+      summary,
+      keyPoints,
+      estimatedTime,
+    };
+  });
+}
+
+interface CategoryPageProps {
+  params: Promise<{ category: string }>;
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { category } = await params;
+  const decodedCategory = decodeURIComponent(category);
+  const categoryData = CATEGORIES[decodedCategory];
+  
+  if (!categoryData) {
+    notFound();
+  }
+  
+  const articles = getArticlesByCategory(decodedCategory);
+  const Icon = categoryData.icon;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-[#F8FAFC]">
       {/* Google Fonts */}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
@@ -167,108 +213,94 @@ export default function KnowledgeCategoryPage() {
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Link href="/knowledge" className="text-gray-600 hover:text-gray-900">
-              ← 返回知识库
-            </Link>
-            <Link href="/" className="text-gray-600 hover:text-gray-900">
-              ← 返回首页
-            </Link>
-          </div>
+          <Link href="/knowledge" className="text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-2 mb-4">
+            <ArrowLeftIcon className="w-5 h-5" />
+            返回知识库
+          </Link>
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center text-3xl">
-              {category.iconChar}
+              {categoryData.iconChar}
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">{category.name}</h1>
-              <p className="text-gray-600">{category.description}</p>
+              <h1 className="text-3xl font-bold text-gray-900">{categoryData.name}</h1>
+              <p className="text-gray-600 mt-1">{categoryData.description}（共 {articles.length} 篇文章）</p>
             </div>
           </div>
         </div>
       </header>
 
-      {/* 文章列表 */}
-      <main className="container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          {articles.length > 0 ? "学习文章" : "敬请期待"}
-        </h2>
-        
-        {loading ? (
-          <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">加载文章中...</p>
-          </div>
-        ) : error ? (
-          <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
-            <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
-              ❌
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              加载失败
-            </h3>
-            <p className="text-gray-600 mb-6">{error}</p>
-            <Link
-              href="/knowledge"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all"
-            >
-              返回知识库
-            </Link>
-          </div>
-        ) : articles.length === 0 ? (
-          <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
-            <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-12">
+        {articles.length === 0 ? (
+          <div className="text-center py-16">
+            <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center text-5xl">
               📚
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              内容正在准备中
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-md mx-auto">
-              我们正在为该分类精心准备学习内容，敬请期待！
-            </p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">暂无文章</h2>
+            <p className="text-gray-600 mb-6">该分类下还没有文章，敬请期待！</p>
             <Link
               href="/knowledge"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all"
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all inline-flex items-center gap-2"
             >
+              <BookIcon className="w-5 h-5" />
               返回知识库
             </Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article) => {
-              // 从文件名中提取难度（⭐数量）
-              const difficultyMatch = article.id.match(/(⭐+)/);
-              const difficulty = difficultyMatch ? difficultyMatch[1].length : 0;
-              
-              return (
-                <Link
-                  key={article.id}
-                  href={`/knowledge/${categorySlug}/${encodeURIComponent(article.id)}`}
-                  className="block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded font-medium">
-                      {categorySlug}
-                    </span>
-                    <span className="text-sm">
-                      {"⭐".repeat(difficulty)}
-                    </span>
+            {articles.map((article) => (
+              <Link
+                key={article.id}
+                href={`/knowledge/${decodedCategory}/${article.id}`}
+                className="group block p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-blue-300"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <Icon className="w-5 h-5 text-blue-600" />
+                    <span className="text-sm font-medium text-blue-600">{decodedCategory}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{article.title}</h3>
-                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">{article.summary}</p>
-                  <div className="flex items-center text-xs text-gray-500">
-                    <span>⏱️ {article.estimatedTime || '5 分钟'}</span>
-                    <span className="mx-2">·</span>
-                    <span className="text-blue-600 font-medium">阅读全文 →</span>
-                  </div>
-                </Link>
-              );
-            })}
+                  {article.keyPoints.length > 0 && (
+                    <span className="text-sm text-gray-500">
+                      {article.keyPoints[0]}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                  {article.summary}
+                </p>
+                <div className="flex items-center justify-between text-sm text-gray-500">
+                  <span className="flex items-center gap-1">
+                    📝 {article.keyPoints.slice(0, 2).join(' · ')}
+                  </span>
+                  <span>⏱️ {article.estimatedTime}</span>
+                </div>
+              </Link>
+            ))}
           </div>
         )}
+
+        {/* Bottom Navigation */}
+        <div className="flex gap-4 mt-12 pt-6 border-t border-gray-200">
+          <Link
+            href={`/knowledge/${decodedCategory}`}
+            className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all"
+          >
+            刷新当前分类
+          </Link>
+          <Link
+            href="/knowledge"
+            className="px-6 py-3 bg-white text-blue-600 border border-blue-600 rounded-xl hover:bg-blue-50 transition-all"
+          >
+            返回知识库
+          </Link>
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 text-center text-gray-500 border-t border-gray-200 mt-8">
+      <footer className="container mx-auto px-4 py-8 text-center text-gray-500 border-t border-gray-200 mt-12">
         <p className="text-sm">© 2026 AI 学习与面试大全 | Built with Next.js & Vercel</p>
       </footer>
     </div>
