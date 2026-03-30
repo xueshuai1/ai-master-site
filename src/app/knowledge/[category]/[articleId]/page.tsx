@@ -281,30 +281,6 @@ async function ArticleContent({ params }: ArticlePageProps) {
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeHighlight]}
-                    components={{
-                      code({ node, inline, className, children, ...props }: any) {
-                        const match = /language-(\w+)/.exec(className || '');
-                        const content = String(children).replace(/\n$/, '');
-                        
-                        // 检测 Mermaid 图表
-                        if (!inline && match && match[1] === 'mermaid') {
-                          return <MermaidDiagram value={content} />;
-                        }
-                        
-                        // 普通代码块
-                        return !inline && match ? (
-                          <pre className="bg-gray-50 rounded-lg p-4 overflow-x-auto my-4">
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          </pre>
-                        ) : (
-                          <code className="bg-gray-100 rounded px-1.5 py-0.5 text-sm" {...props}>
-                            {children}
-                          </code>
-                        );
-                      }
-                    }}
                   >
                     {section.content}
                   </ReactMarkdown>
