@@ -1,46 +1,34 @@
-# AI 面试题大全 v3.0 🤖
+# AI 学习与面试大全 🤖
 
-> 专注 AI 领域的面试题库 + 系统知识库，采用混合分类体系，助你拿到理想 Offer
+> 专注 AI 领域的知识库和面试准备，助你系统性掌握 AI 技术，轻松应对技术面试
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org)
-[![Knowledge Base](https://img.shields.io/badge/Knowledge-Base-blue)](./content/knowledge)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://vercel.com)
 
 ---
 
-## ✨ 特性亮点
+## 📋 项目说明
 
-### 🎯 混合分类体系 v2.0
+本项目正在从基础重建，当前包含：
 
-从三个维度组织题目，更贴近实际学习路径：
+- **示例文章**: 1 篇（Transformer 架构详解）
+- **示例面试题**: 1 道（Transformer）
+- **技术栈**: Next.js 16 + TypeScript + Tailwind CSS
+- **部署**: Vercel（SSG + ISR）
+- **更新策略**: 每小时自动更新
 
-1. **技术分类** - 9 个技术领域（ML/DL/NLP/CV/LLM/RecSys/RL/System/Coding）
-2. **岗位角色** - 6 个岗位方向（前端/后端/算法/AI 工程化/产品/数据科学）
-3. **技术专区** - 5 个专题区域（OpenClaw/Agent 开发/方法论/工具链/前沿技术）
+### 🎯 示例规范
 
-### 🔍 强大搜索功能
+保留的文章和试题作为**内容标准规范**，展示：
+- ✅ 标准化的元数据格式（分类、编号、难度、标签、摘要）
+- ✅ 多样化的内容展示（代码高亮、表格、列表、图表）
+- ✅ 结构化的知识组织
+- ✅ ISR 增量更新配置
 
-- 全文搜索（标题、内容、标签）
-- 多维度筛选（分类、岗位、专区、难度）
-- 搜索结果高亮
-- 快速响应
+---
 
-### 📚 题目结构完善
-
-每道题目包含：
-- 题目描述
-- 参考答案
-- 考察重点
-- 延伸题目
-- **延伸追问**（v2.0 新增）
-- **深入理解**（v2.0 新增）
-
-### 📖 系统知识库（v3.0 新增）
-
-- **298 篇** 核心知识点文章
-- **8 大** 技术领域覆盖（LLM/DL/CV/ML/RL/NLP/RecSys/AI-Engineering）
-- **结构化** 知识体系：核心概念 → 核心原理 → 实际应用 → 面试题
-- **与题目关联**: 每个知识点配套 5-10 道面试题
+## 🚀 快速开始
 
 ---
 
