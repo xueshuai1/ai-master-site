@@ -1,24 +1,6 @@
 {
-  "articles": [
-    {
-      "id": "001_Transformer",
-      "category": "LLM",
-      "title": "Transformer 架构详解",
-      "description": "Transformer 是一种基于自注意力机制的深度学习模型架构，完全基于注意力机制，实现了并行化训练和长距离依赖捕捉。",
-      "tags": ["Transformer", "Attention", "深度学习", "NLP", "LLM"],
-      "difficulty": 2,
-      "readTime": "10 min"
-    },
-    {
-      "id": "001_Transformer_Enhanced",
-      "category": "LLM",
-      "title": "Transformer 架构详解（增强版）",
-      "description": "Transformer 架构详解，包含代码示例、图表和完整的技术细节。",
-      "tags": ["Transformer", "Attention", "深度学习", "NLP", "LLM"],
-      "difficulty": 3,
-      "readTime": "15 min"
-    }
-  ],
-  "total": 2,
-  "lastUpdated": "2026-03-30"
+  "articles": [],
+  "total": 0,
+  "lastUpdated": "2026-03-30",
+  "message": "知识库正在建设中，敬请期待！"
 }

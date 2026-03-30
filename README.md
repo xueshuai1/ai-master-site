@@ -8,27 +8,32 @@
 
 ---
 
-## 📋 项目说明
+## 🎯 项目定位
 
-本项目正在从基础重建，当前包含：
+**从零开始，打造最优质的 AI 技术学习与面试准备平台**
 
-- **示例文章**: 1 篇（Transformer 架构详解）
-- **示例面试题**: 1 道（Transformer）
-- **技术栈**: Next.js 16 + TypeScript + Tailwind CSS
-- **部署**: Vercel（SSG + ISR）
-- **更新策略**: 每小时自动更新
-
-### 🎯 示例规范
-
-保留的文章和试题作为**内容标准规范**，展示：
-- ✅ 标准化的元数据格式（分类、编号、难度、标签、摘要）
-- ✅ 多样化的内容展示（代码高亮、表格、列表、图表）
-- ✅ 结构化的知识组织
-- ✅ ISR 增量更新配置
+- 📚 **系统化知识库** - 结构化组织 AI 核心技术知识点
+- 💼 **面试题库** - 精选高频面试题，助你轻松应对技术面试
+- 🗺️ **学习路径** - 从入门到精通，循序渐进的学习路线
+- ⚡ **持续更新** - ISR 增量更新，内容持续优化
 
 ---
 
-## 🚀 快速开始
+## 📖 技术领域
+
+### 9 大技术分类
+
+| 分类 | 图标 | 描述 |
+|------|------|------|
+| **ML** | 📊 | 机器学习基础 - 监督学习、无监督学习、模型评估 |
+| **DL** | 🧠 | 深度学习 - 神经网络、CNN、RNN、Transformer |
+| **NLP** | 📝 | 自然语言处理 - 词向量、语言模型、文本生成 |
+| **CV** | 👁️ | 计算机视觉 - 图像分类、目标检测、分割 |
+| **LLM** | 🤖 | 大语言模型 - Prompt、RAG、Fine-tuning、Agent |
+| **RecSys** | 🎯 | 推荐系统 - 召回排序、协同过滤、深度学习 |
+| **RL** | 🎮 | 强化学习 - MDP、Q-Learning、Policy Gradient |
+| **System** | ⚙️ | AI 工程化 - 模型部署、MLOps、系统设计 |
+| **AI-Engineering** | 🛠️ | AI 工程与实践 - Agent 开发、方法论、工具链 |
 
 ---
 
@@ -37,6 +42,10 @@
 ### 开发环境
 
 ```bash
+# 克隆项目
+git clone https://github.com/xueshuai1/ai-interview-questions.git
+cd ai-interview-questions
+
 # 安装依赖
 npm install
 
@@ -46,61 +55,14 @@ npm run dev
 # 访问 http://localhost:3000
 ```
 
-### 部署
+### 构建
 
-项目已配置 Vercel 自动部署：
+```bash
+# 生产构建
+npm run build
 
-1. Fork 本仓库
-2. 在 Vercel 导入项目
-3. 每次 push 自动部署
-
-或访问在线版本：[TODO: 添加部署链接]
-
----
-
-## 📖 使用指南
-
-### 浏览题目
-
-- **按技术分类**：访问 `/categories/[category]`
-- **按岗位学习**：访问 `/roles/[role]`
-- **技术专区**：访问 `/zones/[zone]`
-- **搜索题目**：访问 `/search`
-
-### 题目格式
-
-```markdown
----
-title: "题目名称"
-category: LLM
-roles: ["后端开发", "AI 工程化"]
-zones: ["Agent 开发"]
-difficulty: ⭐⭐⭐
-tags: ["RAG", "LLM 应用"]
-source: 来源
-sourceUrl: https://...
-createdAt: 2026-03-29
-updatedAt: 2026-03-29
-images: []
----
-
-## 题目描述
-...
-
-## 参考答案
-...
-
-## 考察重点
-...
-
-## 延伸题目
-...
-
-## 延伸追问
-...
-
-## 深入理解
-...
+# 本地预览
+npm start
 ```
 
 ---
@@ -109,152 +71,155 @@ images: []
 
 ```
 ai-interview-questions/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx              # 首页
-│   │   ├── search/               # 搜索页面
-│   │   ├── knowledge/            # 知识库页面
-│   │   ├── questions/            # 题目详情页
-│   │   └── api/                  # API 路由
 ├── content/
-│   ├── knowledge/                # 298 篇知识库文章
-│   │   ├── LLM/
-│   │   ├── DL/
-│   │   ├── CV/
-│   │   └── ...
-│   └── questions/                # 271 道面试题
-│       ├── LLM/
-│       ├── DL/
-│       ├── CV/
-│       └── ...
-├── data/
-│   └── keywords-*.json           # 关键词库（AIGC 生成用）
-├── scripts/
-│   ├── auto-test.js              # 自动测试
-│   └── evaluate-quality.py       # 质量评估
-└── docs/
-    ├── site-structure.md         # 网站结构
-    └── classification-system.md  # 分类体系
+│   ├── knowledge/          # 知识库文章
+│   │   ├── ML/            # 机器学习
+│   │   ├── DL/            # 深度学习
+│   │   ├── NLP/           # 自然语言处理
+│   │   ├── CV/            # 计算机视觉
+│   │   ├── LLM/           # 大语言模型
+│   │   ├── RecSys/        # 推荐系统
+│   │   ├── RL/            # 强化学习
+│   │   ├── System/        # AI 工程化
+│   │   └── AI-Engineering/# AI 工程与实践
+│   └── questions/          # 面试题库
+│       └── [category]/     # 按分类组织
+├── src/
+│   ├── app/               # Next.js App Router
+│   │   ├── page.tsx       # 首页
+│   │   ├── knowledge/     # 知识库页面
+│   │   ├── interview/     # 面试题库
+│   │   └── layout.tsx     # 根布局
+│   └── components/        # React 组件
+├── public/                # 静态资源
+└── package.json
 ```
 
 ---
 
-## 📊 分类体系
+## 📝 内容规范
 
-### 技术分类（9 个）
+### 知识库文章格式
 
-| 分类 | 描述 |
-|------|------|
-| 📊 ML | 机器学习基础 |
-| 🧠 DL | 深度学习 |
-| 📝 NLP | 自然语言处理 |
-| 👁️ CV | 计算机视觉 |
-| 🤖 LLM | 大语言模型 |
-| 🎯 RecSys | 推荐系统 |
-| 🎮 RL | 强化学习 |
-| 🏗️ System | 系统设计 |
-| 💻 Coding | 编程算法 |
+```markdown
+# 文章标题
 
-### 岗位角色（6 个）
+> **分类**: 领域分类 | **编号**: XXX | **更新时间**: YYYY-MM-DD | **难度**: ⭐/⭐⭐/⭐⭐⭐
 
-| 岗位 | 子方向 |
-|------|--------|
-| 🎨 前端开发 | AI 应用开发、前端工程化+AI、UI/UX+AI |
-| ⚙️ 后端开发 | 模型部署、API 设计、系统架构 |
-| 🔬 算法工程师 | 模型原理、训练优化、论文解读 |
-| 🛠️ AI 工程化 | Agent/多 Agent、开发方法论、工具链 |
-| 📋 产品经理 | AI 产品设计、场景分析 |
-| 📈 数据科学家 | 数据分析、特征工程 |
+`标签 1` `标签 2` `标签 3`
 
-### 技术专区（5 个）
-
-| 专区 | 主题 |
-|------|------|
-| 🦞 OpenClaw | OpenClaw 技术、技能开发、节点控制 |
-| 🤖 Agent 开发 | 子 Agent、多 Agent 协作 |
-| 📚 开发方法论 | SDD/TDD/ATDD/OMO |
-| 🔧 工具链 | OpenCode、Cursor、Windsurf |
-| 🚀 前沿技术 | 最新论文、技术趋势 |
+**摘要**: 50-100 字核心内容概括
 
 ---
 
-## 🛠️ 技术栈
+## 一、核心概念
+## 二、核心原理
+## 三、应用场景
+## 四、实践建议
+## 五、总结
+```
 
-- **框架**: Next.js 14 (App Router)
+### 面试试题格式
+
+```markdown
+# 主题 - 面试题
+
+> **分类**: 领域分类 | **编号**: XXX | **难度**: ⭐/⭐⭐/⭐⭐⭐
+
+## 问题
+
+清晰的问题描述
+
+## 参考答案
+
+结构化的参考答案
+
+## 核心要点
+
+1. 要点一
+2. 要点二
+3. 要点三
+
+## 延伸追问
+
+1. 追问一
+2. 追问二
+3. 追问三
+```
+
+---
+
+## 🎨 技术栈
+
+- **框架**: Next.js 16 (App Router)
 - **语言**: TypeScript
 - **样式**: Tailwind CSS
 - **内容**: Markdown
 - **部署**: Vercel
-- **搜索**: 自定义全文搜索（支持 FlexSearch 扩展）
+- **渲染**: SSG + ISR（静态生成 + 增量更新）
 
 ---
 
-## 📝 贡献指南
+## 📊 部署
 
-### 添加新题目
+### Vercel 自动部署
 
-1. 在对应分类目录下创建 Markdown 文件
-2. 使用标准 frontmatter 格式
-3. 确保 tags 准确描述内容
-4. 提交 PR
+项目已配置 Vercel，每次 push 到 main 分支自动部署：
 
-### 改进现有题目
+1. Push 代码到 GitHub
+2. Vercel 自动检测并构建
+3. 自动部署到生产环境
 
-- 修正错误答案
-- 补充延伸追问
-- 添加实际案例
-- 更新参考资料
+### ISR 更新策略
 
-### 功能建议
-
-欢迎通过 [GitHub Issues](https://github.com/xueshuai/ai-interview-questions/issues) 提出建议！
+- **更新频率**: 每小时自动更新
+- **触发方式**: 用户访问时后台静默更新
+- **优势**: 无需手动部署，内容持续优化
 
 ---
 
-## 📄 文档
+## 📋 开发计划
 
-- [网站结构](./docs/site-structure.md)
-- [分类体系](./docs/classification-system.md)
+### Phase 1: 基础建设 ✅
+- [x] 项目初始化
+- [x] SSG + ISR 配置
+- [x] 内容规范制定
+- [ ] 首页设计
+- [ ] 分类页面
 
----
+### Phase 2: 内容填充 🚧
+- [ ] ML 领域文章
+- [ ] DL 领域文章
+- [ ] LLM 领域文章
+- [ ] 面试题库
 
-## 📅 开发路线图
-
-### Phase 1: ✅ 已完成 (2026-03-29)
-- [x] 混合分类体系
-- [x] 搜索功能
-- [x] 图片本地化
-- [x] 延伸追问生成
-
-### Phase 2: ✅ 已完成 (2026-03-30)
-- [x] 题目详情页
-- [x] 分类筛选页
-- [x] 岗位学习页
-- [x] 技术专区页
-- [x] **知识库系统** (v3.0)
-- [x] **298 篇知识点文章**
-- [x] **271 道面试题**
-
-### Phase 3: 🚧 进行中
+### Phase 3: 功能完善 📋
+- [ ] 搜索功能
 - [ ] 学习路径
-- [ ] 模拟面试
-- [ ] 收藏功能
-- [ ] 进度追踪
+- [ ] 学习进度追踪
+- [ ] 书签功能
 
-### Phase 4: 📋 计划中
-- [ ] 知识图谱可视化
-- [ ] 个性化推荐
-- [ ] 学习社区
-
----
-
-## 🙏 致谢
-
-感谢所有贡献者和 AI 面试准备社区！
+### Phase 4: 优化提升 📋
+- [ ] SEO 优化
+- [ ] 性能优化
+- [ ] 移动端优化
+- [ ] 国际化
 
 ---
 
-## 📜 许可证
+## 🤝 贡献指南
+
+欢迎贡献！请遵循以下步骤：
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+---
+
+## 📄 许可证
 
 MIT License - 详见 [LICENSE](LICENSE)
 
@@ -262,9 +227,9 @@ MIT License - 详见 [LICENSE](LICENSE)
 
 ## 📬 联系方式
 
-- GitHub: [@xueshuai](https://github.com/xueshuai)
-- 问题反馈：[Issues](https://github.com/xueshuai/ai-interview-questions/issues)
+- **GitHub**: [@xueshuai1](https://github.com/xueshuai1)
+- **问题反馈**: [Issues](https://github.com/xueshuai1/ai-interview-questions/issues)
 
 ---
 
-**Good Luck with Your AI Interviews! 🎉**
+**开始构建你的 AI 知识体系吧！** 🚀
