@@ -73,9 +73,9 @@ export default function ContentLayout({
             </div>
           )}
 
-          {/* Main Content Area - 增加宽度到 col-span-10 */}
-          <div className="lg:col-span-10">
-            <article className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+          {/* Main Content Area - 使用全宽布局 */}
+          <div className="lg:col-span-8">
+            <article className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 shadow-sm">
               {/* Header */}
               <header className="mb-8 pb-6 border-b border-gray-100">
                 {category && (
@@ -108,8 +108,8 @@ export default function ContentLayout({
                 )}
               </header>
 
-              {/* Content - 优化 prose 宽度 */}
-              <div className="prose prose-xl max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
+              {/* Content - 使用更宽的布局 */}
+              <div className="prose prose-lg lg:prose-xl max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-code:text-sm prose-pre:bg-gray-50 prose-pre:border prose-pre:border-gray-200">
                 {children}
               </div>
             </article>
@@ -122,6 +122,13 @@ export default function ContentLayout({
             </div>
           )}
         </div>
+
+        {/* 移动端 TOC */}
+        {showTOC && (
+          <div className="lg:hidden mt-8">
+            <TableOfContents />
+          </div>
+        )}
       </main>
 
       {/* Footer */}
