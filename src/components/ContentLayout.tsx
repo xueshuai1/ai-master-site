@@ -44,7 +44,7 @@ export default function ContentLayout({
       {/* Breadcrumbs */}
       {breadcrumbs.length > 0 && (
         <nav className="bg-white border-b border-gray-200">
-          <div className="container mx-auto px-4 py-3">
+          <div className="px-4 lg:px-8 py-3">
             <div className="flex items-center gap-2 text-sm text-gray-600">
               {breadcrumbs.map((crumb, index) => (
                 <div key={index} className="flex items-center gap-2">
@@ -126,7 +126,7 @@ export default function ContentLayout({
       </main>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 text-center text-gray-500 border-t border-gray-200 mt-8">
+      <footer className="px-4 py-8 text-center text-gray-500 border-t border-gray-200 mt-8">
         <p className="text-sm">© 2026 AI 学习与面试大全 | Built with Next.js & Vercel</p>
       </footer>
     </div>
