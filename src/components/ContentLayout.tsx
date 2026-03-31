@@ -77,39 +77,31 @@ export default function ContentLayout({
 
           {/* Main Content Area - 撑满剩余空间 */}
           <article className="flex-1 bg-white rounded-2xl border border-gray-200 p-6 lg:p-10 shadow-sm min-w-0">
-            {/* Header */}
-            <header className="mb-8 pb-6 border-b border-gray-100">
-              {category && (
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium inline-block mb-3">
-                  {category.toUpperCase()}
-                </span>
-              )}
-              
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6 leading-normal">
-                {title}
-              </h1>
-              
-              {subtitle && (
-                <p className="text-xl text-gray-600 mb-6">
-                  {subtitle}
-                </p>
-              )}
-              
-              {tags.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              )}
+            {/* Header - 只显示分类和标签，不显示标题（MDX 内容中已有） */}
+            <header className="mb-6 pb-4 border-b border-gray-100 flex items-center justify-between flex-wrap gap-3">
+              <div className="flex items-center gap-2 flex-wrap">
+                {category && (
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">
+                    {category.toUpperCase()}
+                  </span>
+                )}
+                
+                {tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </header>
 
-            {/* Content - 撑满宽度 */}
+            {/* Content - 撑满宽度（MDX 内容包含标题） */}
             <div className="prose prose-lg lg:prose-xl max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-code:text-sm prose-pre:bg-gray-50 prose-pre:border prose-pre:border-gray-200">
               {children}
             </div>
