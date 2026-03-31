@@ -120,9 +120,14 @@ function parseMarkdown(content: string) {
   }
   
   // 移除 frontmatter 获取正文
-  const body = frontmatterMatch 
-    ? content.replace(/^---\n[\s\S]*?\n---\n?/, '')
-    : content.replace(/^#\s*[^\n]+\n[^\n]+\n/, '');
+  let body = content;
+  if (frontmatterMatch) {
+    // 移除 YAML frontmatter（--- 包裹的部分）
+    body = content.replace(/^---\n[\s\S]*?\n---\n/, '');
+  } else {
+    // 兼容旧格式：移除标题和摘要行
+    body = content.replace(/^#\s*[^\n]+\n[^\n]+\n/, '');
+  }
   
   return { frontmatter, body };
 }

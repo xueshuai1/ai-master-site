@@ -65,17 +65,19 @@ export default function ContentLayout({
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Left Sidebar - TOC */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Left Sidebar - TOC - 固定在左侧 */}
           {showTOC && (
-            <div className="lg:col-span-2 hidden lg:block">
-              <TableOfContents />
-            </div>
+            <aside className="lg:col-span-1 hidden lg:block">
+              <div className="sticky top-8">
+                <TableOfContents />
+              </div>
+            </aside>
           )}
 
-          {/* Main Content Area - 使用全宽布局 */}
-          <div className="lg:col-span-8">
-            <article className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 shadow-sm">
+          {/* Main Content Area - 撑满剩余空间 */}
+          <div className={`${showTOC ? 'lg:col-span-3' : 'lg:col-span-4'}`}>
+            <article className="bg-white rounded-2xl border border-gray-200 p-6 lg:p-10 shadow-sm">
               {/* Header */}
               <header className="mb-8 pb-6 border-b border-gray-100">
                 {category && (
@@ -117,15 +119,17 @@ export default function ContentLayout({
 
           {/* Right Sidebar - Progress/Recommendations */}
           {showSidebar && sidebarContent && (
-            <div className="lg:col-span-2 hidden lg:block space-y-4">
-              {sidebarContent}
-            </div>
+            <aside className="hidden lg:block">
+              <div className="sticky top-8 space-y-4">
+                {sidebarContent}
+              </div>
+            </aside>
           )}
         </div>
 
-        {/* 移动端 TOC */}
+        {/* 移动端 TOC - 放在文章底部 */}
         {showTOC && (
-          <div className="lg:hidden mt-8">
+          <div className="lg:hidden mt-8 pt-6 border-t border-gray-200">
             <TableOfContents />
           </div>
         )}
