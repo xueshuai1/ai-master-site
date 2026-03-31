@@ -7,6 +7,15 @@ import Step from "@/components/mdx/Step";
 import Comparison from "@/components/mdx/Comparison";
 import Mermaid from "@/components/mdx/Mermaid";
 
+// 导出组件供 next-mdx-remote 使用
+export { default as CodeBlock } from "@/components/mdx/CodeBlock";
+export { default as Callout } from "@/components/mdx/Callout";
+export { default as Collapsible } from "@/components/mdx/Collapsible";
+export { default as Quiz, Answer } from "@/components/mdx/Quiz";
+export { default as Step } from "@/components/mdx/Step";
+export { default as Comparison } from "@/components/mdx/Comparison";
+export { default as Mermaid } from "@/components/mdx/Mermaid";
+
 // 自定义 MDX 组件映射
 export const components: MDXComponents = {
   // 覆盖默认组件
