@@ -3,10 +3,6 @@ import path from 'path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github.css';
 import ContentLayout from '@/components/ContentLayout';
 import ArticleNav from '@/components/ArticleNav';
 import ProgressPanel from '@/components/ProgressPanel';
@@ -441,32 +437,15 @@ async function ArticleContent({ params }: ArticlePageProps) {
       );
     }
 
-    // 检测是否包含 MDX 组件语法
-    const hasMDXComponents = /<(Callout|Collapsible|Quiz|Step|Comparison|CodeBlock|Mermaid)/.test(article.content);
-    
-    if (hasMDXComponents) {
-      // 使用 MDX 渲染
-      return (
-        <div className="prose prose-lg max-w-none">
-          <MDXRemote
-            source={article.content}
-            components={components}
-          />
-        </div>
-      );
-    } else {
-      // 使用 React Markdown 渲染（兼容旧格式）
-      return (
-        <div className="prose prose-lg max-w-none">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeHighlight]}
-          >
-            {article.content}
-          </ReactMarkdown>
-        </div>
-      );
-    }
+    // 统一使用 MDX 渲染
+    return (
+      <div className="prose prose-lg max-w-none">
+        <MDXRemote
+          source={article.content}
+          components={components}
+        />
+      </div>
+    );
   };
 
   const sidebarContent = (
