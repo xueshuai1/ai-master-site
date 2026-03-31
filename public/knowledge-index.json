@@ -1,16 +1,52 @@
 {
   "articles": [
     {
-      "id": "001_Transformer_示例",
+      "id": "002_LLM 位置编码详解",
       "category": "LLM",
-      "title": "Transformer 架构详解",
-      "description": "Transformer 是一种基于自注意力机制的深度学习模型架构，由 Google 团队在 2017 年提出。它完全摒弃了传统的 RNN 和 CNN 结构，实现了并行化训练和长距离依赖捕捉，是现代大语言模型的基础架构。",
-      "tags": ["Transformer", "Attention", "深度学习", "NLP", "LLM"],
-      "difficulty": 2,
+      "title": "LLM（大语言模型）位置编码详解",
+      "description": "位置编码是 Transformer（变换器）架构中用于注入序列位置信息的关键技术。本文详细对比绝对位置编码、相对位置编码和 RoPE（旋转位置编码）的原理，并解释为什么现代 LLM（大语言模型）普遍采用 RoPE。",
+      "tags": ["位置编码", "RoPE", "Transformer", "LLM"],
+      "difficulty": 4,
+      "readTime": "15 分钟"
+    },
+    {
+      "id": "003_RAG 检索增强生成",
+      "category": "LLM",
+      "title": "RAG（检索增强生成）实战指南",
+      "description": "RAG（检索增强生成）是一种结合信息检索和文本生成的技术架构。通过从外部知识库检索相关文档，再让 LLM（大语言模型）基于检索结果生成回答，有效解决了 LLM 幻觉和知识过时问题。",
+      "tags": ["RAG", "检索增强", "向量数据库", "LLM 应用"],
+      "difficulty": 3,
+      "readTime": "12 分钟"
+    },
+    {
+      "id": "004_LoRA 微调技术",
+      "category": "LLM",
+      "title": "LoRA（低秩适配）微调技术",
+      "description": "LoRA（低秩适配）是一种参数高效的微调技术，通过在预训练模型旁添加低秩适配器来微调模型，只需训练极少量参数（通常<1%）即可达到与全量微调相当的效果。",
+      "tags": ["LoRA", "参数高效微调", "PEFT", "模型适配"],
+      "difficulty": 4,
+      "readTime": "18 分钟"
+    },
+    {
+      "id": "005_LLM 应用开发实战",
+      "category": "LLM",
+      "title": "LLM（大语言模型）应用开发实战",
+      "description": "本文通过实际案例讲解如何开发一个基于 LLM（大语言模型）的应用，包括 Prompt（提示）设计、RAG（检索增强生成）架构、Agent（智能体）开发等核心技术。",
+      "tags": ["LLM 应用", "Prompt Engineering", "RAG", "Agent"],
+      "difficulty": 3,
       "readTime": "10 分钟"
+    },
+    {
+      "id": "006_Prompt Engineering 实战指南",
+      "category": "LLM",
+      "title": "Prompt（提示）Engineering（工程）实战指南",
+      "description": "Prompt Engineering（提示工程）是与大语言模型交互的核心技能。本文系统讲解 Prompt 设计的原则、技巧和实战案例，助你写出高质量的 Prompt，获得更好的模型输出。",
+      "tags": ["Prompt", "LLM 应用", "最佳实践"],
+      "difficulty": 2,
+      "readTime": "20 分钟"
     }
   ],
-  "total": 1,
-  "lastUpdated": "2026-03-30",
-  "message": ""
+  "total": 5,
+  "lastUpdated": "2026-03-31",
+  "message": "知识库已更新，包含 5 篇 LLM 领域文章"
 }
