@@ -64,7 +64,7 @@ export default function ContentLayout({
       )}
 
       {/* Main Content */}
-      <main className="max-w-[1600px] mx-auto px-4 lg:px-8 py-8">
+      <main className="px-4 lg:px-8 py-8">
         <div className="flex gap-6 lg:gap-8">
           {/* Left Sidebar - TOC */}
           {showTOC && (
