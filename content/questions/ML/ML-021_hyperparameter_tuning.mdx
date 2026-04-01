@@ -1,0 +1,168 @@
+---
+title: "超参数调优"
+category: "机器学习"
+difficulty: "⭐⭐⭐"
+tags: ['机器学习', 'ML', '面试']
+createdAt: "2026-04-01"
+updatedAt: "2026-04-01"
+---
+
+
+
+
+## 题目描述
+有哪些超参数调优方法？Grid Search、Random Search、Bayesian Optimization 有什么区别？
+
+## 参考答案
+
+### 调优方法对比
+
+| 方法 | 原理 | 优点 | 缺点 |
+|------|------|------|------|
+| **手动调参** | 经验驱动 | 快速，直观 | 主观，不系统 |
+| **Grid Search** | 穷举所有组合 | 系统，可并行 | 计算量大 |
+| **Random Search** | 随机采样 | 高效，易并行 | 可能错过最优 |
+| **Bayesian** | 概率模型指导 | 样本效率高 | 实现复杂 |
+| **自动化** | AutoML | 全自动 | 黑盒 |
+
+### Grid Search
+
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+
+# 定义参数网格
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [5, 10, 20, None],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 4]
+}
+
+# 网格搜索
+grid_search = GridSearchCV(
+    estimator=RandomForestClassifier(random_state=42),
+    param_grid=param_grid,
+    cv=5,
+    scoring='accuracy',
+    n_jobs=-1,
+    verbose=1
+)
+
+grid_search.fit(X_train, y_train)
+
+print(f"Best parameters: {grid_search.best_params_}")
+print(f"Best CV score: {grid_search.best_score_:.4f}")
+
+# 缺点：参数组合数 = 3 × 4 × 3 × 3 = 108 次训练
+```
+
+### Random Search
+
+```python
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint, uniform
+
+# 参数分布
+param_dist = {
+    'n_estimators': randint(50, 500),
+    'max_depth': [5, 10, 20, None],
+    'min_samples_split': randint(2, 20),
+    'min_samples_leaf': randint(1, 10),
+    'max_features': uniform(0.5, 0.5)  # 0.5-1.0
+}
+
+# 随机搜索
+random_search = RandomizedSearchCV(
+    estimator=RandomForestClassifier(random_state=42),
+    param_distributions=param_dist,
+    n_iter=50,  # 只训练 50 次
+    cv=5,
+    scoring='accuracy',
+    n_jobs=-1,
+    verbose=1
+)
+
+random_search.fit(X_train, y_train)
+
+print(f"Best parameters: {random_search.best_params_}")
+print(f"Best CV score: {random_search.best_score_:.4f}")
+
+# 优点：相同计算量下通常比 Grid Search 好
+```
+
+### Bayesian Optimization (Optuna)
+
+```python
+import optuna
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+
+def objective(trial):
+    params = {
+        'n_estimators': trial.suggest_int('n_estimators', 50, 500),
+        'max_depth': trial.suggest_int('max_depth', 5, 50),
+        'min_samples_split': trial.suggest_int('min_samples_split', 2, 20),
+        'min_samples_leaf': trial.suggest_int('min_samples_leaf', 1, 10),
+        'max_features': trial.suggest_float('max_features', 0.5, 1.0)
+    }
+    
+    model = RandomForestClassifier(**params, random_state=42)
+    score = cross_val_score(model, X_train, y_train, cv=5, scoring='accuracy').mean()
+    
+    return score
+
+# 创建研究
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=50)
+
+print(f"Best parameters: {study.best_params}")
+print(f"Best score: {study.best_value:.4f}")
+
+# 可视化
+optuna.visualization.plot_optimization_history(study)
+optuna.visualization.plot_param_importances(study)
+```
+
+### 最佳实践
+
+```python
+# 1. 从粗到细
+# 先用 Random Search 找大致范围，再用 Grid Search 细化
+
+# 2. 学习曲线
+from sklearn.model_selection import learning_curve
+
+train_sizes, train_scores, val_scores = learning_curve(
+    model, X, y, cv=5, scoring='accuracy',
+    train_sizes=np.linspace(0.1, 1.0, 10)
+)
+
+# 判断是否需要更多数据或更复杂模型
+
+# 3. 早停
+# 对于迭代模型（XGBoost, NN），使用早停
+
+# 4. 嵌套交叉验证
+from sklearn.model_selection import cross_val_score, GridSearchCV
+
+# 外层评估性能，内层调参
+inner_cv = 5
+outer_cv = 5
+
+grid_search = GridSearchCV(model, param_grid, cv=inner_cv)
+nested_scores = cross_val_score(grid_search, X, y, cv=outer_cv)
+
+print(f"Nested CV score: {nested_scores.mean():.4f}")
+# 无偏性能估计
+```
+
+## 考察重点
+- ✅ 了解各种调参方法
+- ✅ 掌握 Grid/Random Search
+- ✅ 了解贝叶斯优化
+- ✅ 能够选择合适方法
+- ✅ 具备调参最佳实践
+
+## 更新历史
+- v1 (2026-03-29): 初始版本

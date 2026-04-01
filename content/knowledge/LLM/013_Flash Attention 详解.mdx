@@ -1,0 +1,411 @@
+---
+title: "Flash Attention 详解"
+category: "LLM"
+difficulty: "⭐⭐⭐⭐⭐"
+tags: ["Flash Attention", "GPU 优化", "IO 感知", "推理加速"]
+createdAt: "2026-04-01"
+updatedAt: "2026-04-01"
+---
+
+# Flash Attention 详解
+
+> **分类**: LLM（大语言模型） | **编号**: LLM-013 | **更新时间**: 2026-04-01 | **难度**: ⭐⭐⭐⭐⭐
+
+`Flash Attention` `GPU 优化` `IO 感知` `推理加速`
+
+**摘要**: Flash Attention 是一种 IO 感知的注意力算法，通过将计算分块并利用 GPU 的 SRAM 缓存，将注意力机制的内存访问复杂度从 $O(n^2)$ 降低到 $O(n^2/B)$，实现 2-4 倍的加速。
+
+---
+
+## 一、核心概念
+
+### 1.1 什么是 Flash Attention
+
+**Flash Attention** 是由斯坦福大学在 2022 年提出的一种高效注意力算法。它的核心思想是：**注意力计算的瓶颈不是 FLOPs，而是内存访问（HBM 读写）**。
+
+> 💡 **核心思想**: 通过分块计算（tiling）和重计算（recomputation），减少对高带宽内存（HBM）的访问，充分利用 GPU 的快速片上内存（SRAM）。
+
+### 1.2 为什么需要 Flash Attention
+
+| 问题 | 标准注意力 | Flash Attention |
+|------|-----------|----------------|
+| HBM 访问 | $O(n^2)$ | $O(n^2/B)$ |
+| 内存占用 | 需要存储 $n \times n$ 注意力矩阵 | 不需要存储注意力矩阵 |
+| 速度 | 基准 | 2-4 倍加速 |
+| 长序列 | 显存爆炸 | 可处理更长序列 |
+
+### 1.3 GPU 内存层次结构
+
+```
+┌─────────────────────────────────┐
+│         GPU (A100)              │
+│  ┌───────────────────────────┐  │
+│  │     HBM (高带宽内存)       │  │
+│  │     40-80 GB, 1.5 TB/s   │  │
+│  │  ┌─────────────────────┐  │  │
+│  │  │    L2 Cache         │  │  │
+│  │  │    40 MB            │  │  │
+│  │  │  ┌───────────────┐  │  │  │
+│  │  │  │  SRAM (片上)   │  │  │  │
+│  │  │  │  108 KB/SM    │  │  │  │
+│  │  │  │  19 TB/s      │  │  │  │
+│  │  │  └───────────────┘  │  │  │
+│  │  └─────────────────────┘  │  │
+│  └───────────────────────────┘  │
+└─────────────────────────────────┘
+```
+
+> 💡 **关键洞察**: SRAM 比 HBM 快 10 倍以上！Flash Attention 的核心就是尽可能在 SRAM 中完成计算。
+
+---
+
+## 二、算法原理
+
+### 2.1 标准注意力的问题
+
+标准注意力实现：
+```python
+# 标准实现（伪代码）
+def attention(Q, K, V):
+    S = Q @ K.T  # [n, n] - 写入 HBM
+    P = softmax(S)  # [n, n] - 读取 + 写入 HBM
+    O = P @ V  # [n, d] - 读取 + 写入 HBM
+    return O
+```
+
+**问题**: 中间矩阵 $S$ 和 $P$ 的大小是 $n \times n$，对于长序列会：
+1. 占用大量显存
+2. 需要多次 HBM 读写
+
+### 2.2 Flash Attention 的核心技巧
+
+#### 技巧 1: 分块（Tiling）
+
+将 Q、K、V 分成小块，每块可以放入 SRAM：
+
+```
+Q = [Q_0, Q_1, ..., Q_{Bc-1}]  # Bc 个块，每块 Bc × d
+K = [K_0, K_1, ..., Q_{Br-1}]  # Br 个块，每块 Br × d
+V = [V_0, V_1, ..., V_{Br-1}]  # Br 个块，每块 Br × d
+```
+
+#### 技巧 2: 在线 Softmax（Online Softmax）
+
+在线计算 softmax，无需存储完整的注意力矩阵：
+
+$$
+m(x) = \max_i x_i, \quad \ell(x) = \sum_i e^{x_i - m(x)}, \quad f(x) = \frac{e^{x_i - m(x)}}{\ell(x)}
+$$
+
+**增量更新**:
+$$
+m_{new} = \max(m_{old}, m_{block})
+$$
+$$
+\ell_{new} = \ell_{old} \cdot e^{m_{old} - m_{new}} + \ell_{block} \cdot e^{m_{block} - m_{new}}
+$$
+
+#### 技巧 3: 重计算（Recomputation）
+
+反向传播时重新计算注意力分数，而不是存储：
+- 空间换时间 → 时间换空间
+- 由于 SRAM 计算快于 HBM 访问，总体更快
+
+### 2.3 Flash Attention 算法
+
+```python
+def flash_attention(Q, K, V):
+    """
+    Flash Attention 简化版伪代码
+    
+    Args:
+        Q: [n, d], K: [n, d], V: [n, d]
+        Bc, Br: 块大小（根据 SRAM 大小选择）
+    
+    Returns:
+        O: [n, d] 输出
+    """
+    n, d = Q.shape
+    O = zeros(n, d)  # 输出
+    m = -inf * ones(n)  # softmax 归一化常数
+    l = zeros(n)  # softmax 分母
+    
+    # 将 Q 分成 Bc 个块
+    for i in range(Bc):
+        Qi = Q[i*Bc:(i+1)*Bc]  # 加载到 SRAM
+        Oi = zeros(Bc, d)
+        mi = -inf
+        li = 0
+        
+        # 将 K、V 分成 Br 个块
+        for j in range(Br):
+            Kj = K[j*Br:(j+1)*Br]  # 加载到 SRAM
+            Vj = V[j*Br:(j+1)*Br]  # 加载到 SRAM
+            
+            # 计算块内注意力分数
+            Sij = Qi @ Kj.T  # [Bc, Br]
+            
+            # 在线 softmax
+            mij_new = max(mi, max(Sij, dim=1))
+            Pij = exp(Sij - mij_new)
+            lij_new = li * exp(mi - mij_new) + sum(Pij, dim=1)
+            
+            # 更新输出
+            Oi = (li / lij_new) * Oi + (Pij / lij_new) @ Vj
+            
+            # 更新统计量
+            mi = mij_new
+            li = lij_new
+        
+        # 写回 O
+        O[i*Bc:(i+1)*Bc] = Oi
+    
+    return O
+```
+
+---
+
+## 三、复杂度分析
+
+### 3.1 时间复杂度
+
+| 算法 | FLOPs | HBM 访问 |
+|------|-------|----------|
+| 标准注意力 | $O(n^2 d)$ | $O(n^2 + nd)$ |
+| Flash Attention | $O(n^2 d)$ | $O(n^2 d / B)$ |
+
+其中 $B$ 是 SRAM 大小（以元素计）。
+
+### 3.2 空间复杂度
+
+| 算法 | 显存占用 |
+|------|---------|
+| 标准注意力 | $O(n^2 + nd)$ |
+| Flash Attention | $O(nd)$ |
+
+> 💡 **关键**: Flash Attention **不需要存储 $n \times n$ 的注意力矩阵**！
+
+### 3.3 实际加速比
+
+对于 A100 GPU：
+
+| 序列长度 | 标准注意力 | Flash Attention | 加速比 |
+|---------|-----------|----------------|--------|
+| 1K | 0.5 ms | 0.2 ms | 2.5x |
+| 4K | 8 ms | 2 ms | 4x |
+| 16K | 128 ms | 32 ms | 4x |
+| 64K | OOM | 512 ms | ∞ |
+
+---
+
+## 四、代码实现
+
+### 4.1 使用 flash-attn 库
+
+```python
+from flash_attn import flash_attn_qkvpacked_func, flash_attn_func
+import torch
+
+# 方法 1: 直接传入 Q, K, V
+def attention_standard(q, k, v):
+    """标准注意力"""
+    scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(q.size(-1))
+    attn = torch.softmax(scores, dim=-1)
+    return torch.matmul(attn, v)
+
+def attention_flash(q, k, v):
+    """Flash Attention"""
+    # q, k, v: [batch, seq_len, heads, head_dim]
+    return flash_attn_func(q, k, v, dropout_p=0.0, softmax_scale=None)
+
+# 方法 2: QKV 打包（更高效）
+def attention_flash_packed(qkv):
+    """
+    Flash Attention with packed QKV
+    
+    Args:
+        qkv: [batch, seq_len, 3, heads, head_dim]
+    """
+    return flash_attn_qkvpacked_func(qkv, dropout_p=0.0, softmax_scale=None)
+
+# 示例
+batch_size = 4
+seq_len = 4096
+heads = 32
+head_dim = 128
+
+q = torch.randn(batch_size, seq_len, heads, head_dim, device='cuda')
+k = torch.randn(batch_size, seq_len, heads, head_dim, device='cuda')
+v = torch.randn(batch_size, seq_len, heads, head_dim, device='cuda')
+
+# 标准注意力
+o_standard = attention_standard(q, k, v)
+
+# Flash Attention
+o_flash = attention_flash(q, k, v)
+
+# 验证结果一致
+assert torch.allclose(o_standard, o_flash, atol=1e-2)
+```
+
+### 4.2 集成到 Transformer
+
+```python
+import torch.nn as nn
+from flash_attn import flash_attn_func
+
+class FlashMultiHeadAttention(nn.Module):
+    def __init__(self, d_model, num_heads, dropout=0.0):
+        super().__init__()
+        self.num_heads = num_heads
+        self.d_k = d_model // num_heads
+        
+        self.W_q = nn.Linear(d_model, d_model)
+        self.W_k = nn.Linear(d_model, d_model)
+        self.W_v = nn.Linear(d_model, d_model)
+        self.W_o = nn.Linear(d_model, d_model)
+        
+        self.dropout = dropout
+    
+    def forward(self, q, k, v, mask=None):
+        batch_size, seq_len, _ = q.shape
+        
+        # 线性变换
+        Q = self.W_q(q).view(batch_size, seq_len, self.num_heads, self.d_k)
+        K = self.W_k(k).view(batch_size, -1, self.num_heads, self.d_k)
+        V = self.W_v(v).view(batch_size, -1, self.num_heads, self.d_k)
+        
+        # Flash Attention
+        # 注意：flash_attn 期望 [batch, seq, heads, dim] 格式
+        attn_out = flash_attn_func(Q, K, V, dropout_p=self.dropout)
+        
+        # 合并头
+        attn_out = attn_out.reshape(batch_size, seq_len, -1)
+        return self.W_o(attn_out)
+```
+
+---
+
+## 五、Flash Attention 2
+
+### 5.1 改进点
+
+Flash Attention 2（2023）进一步优化：
+
+| 改进 | 说明 | 效果 |
+|------|------|------|
+| **并行化** | 跨 head 和序列并行 | 更好的 GPU 利用率 |
+| **循环重排** | 优化循环顺序 | 减少同步开销 |
+| **非均匀分块** | 根据序列长度调整 | 更好的负载均衡 |
+
+### 5.2 性能对比
+
+| 版本 | A100 (seq=4K) | A100 (seq=16K) |
+|------|---------------|----------------|
+| PyTorch 原生 | 8 ms | 128 ms |
+| Flash Attn 1 | 2 ms | 32 ms |
+| Flash Attn 2 | 1 ms | 16 ms |
+
+---
+
+## 六、应用场景
+
+### 6.1 长序列建模
+
+```python
+# 处理 64K 长度的序列
+from transformers import AutoModel
+
+model = AutoModel.from_pretrained("longformer-base")
+# 使用 Flash Attention 可以处理更长序列
+```
+
+### 6.2 大 Batch 训练
+
+- 减少显存占用 → 可以使用更大的 batch size
+- 加速训练 → 更快迭代
+
+### 6.3 推理优化
+
+- 降低延迟
+- 支持更长的上下文窗口
+
+---
+
+## 七、局限性
+
+### 7.1 当前限制
+
+| 限制 | 说明 | 解决方案 |
+|------|------|---------|
+| **仅支持 GPU** | 需要 CUDA | CPU 回退 |
+| **仅支持 A100/H100** | 旧 GPU 不支持 | 使用标准注意力 |
+| **head_dim 限制** | 必须是 32 的倍数 | padding |
+| **不支持 mask** | 部分版本 | 使用 attention mask |
+
+### 7.2 数值精度
+
+- Flash Attention 使用 FP16/BF16
+- 可能与 FP32 标准注意力有微小差异
+- 通常差异 < 1e-2，不影响效果
+
+---
+
+## 八、面试高频问题
+
+### Q1: Flash Attention 为什么更快？
+
+**答**: 
+1. **减少 HBM 访问**: 通过分块将 HBM 访问从 $O(n^2)$ 降到 $O(n^2/B)$
+2. **利用 SRAM**: SRAM 比 HBM 快 10 倍以上
+3. **融合操作**: 将多个 kernel 融合为一个，减少 kernel 启动开销
+
+### Q2: Flash Attention 的空间复杂度是多少？
+
+**答**: $O(nd)$，不需要存储 $n \times n$ 的注意力矩阵。这是相比标准注意力的最大优势。
+
+### Q3: Flash Attention 适用于所有场景吗？
+
+**答**: 不是。限制包括：
+- 需要支持 CUDA 的 GPU（A100/H100 最佳）
+- head_dim 有限制
+- 某些变体（如 sparse attention）不支持
+
+### Q4: Flash Attention 的反向传播如何实现？
+
+**答**: 使用**重计算**技术：
+- 前向时不存储注意力矩阵
+- 反向时重新计算需要的中间结果
+- 由于 SRAM 计算快于 HBM 访问，总体更快
+
+### Q5: 如何在现有项目中集成 Flash Attention？
+
+**答**: 
+1. 安装：`pip install flash-attn`
+2. 替换注意力层：使用 `flash_attn_func`
+3. 或使用集成的模型：如 `transformers>=4.36` 支持 `attn_implementation="flash_attention_2"`
+
+```python
+model = AutoModel.from_pretrained(
+    "mistral-7b",
+    attn_implementation="flash_attention_2"
+)
+```
+
+---
+
+## 九、总结
+
+| 特性 | 标准注意力 | Flash Attention |
+|------|-----------|----------------|
+| **时间复杂度** | $O(n^2 d)$ | $O(n^2 d)$ |
+| **HBM 访问** | $O(n^2 + nd)$ | $O(n^2 d / B)$ |
+| **显存占用** | $O(n^2 + nd)$ | $O(nd)$ |
+| **速度** | 基准 | 2-4x |
+| **长序列** | 显存爆炸 | 支持 |
+
+> 💡 **关键要点**: Flash Attention 通过 IO 感知的设计，将注意力计算的瓶颈从内存访问转移到计算，实现了 2-4 倍加速，是现代 LLM 推理的标配优化。
+
+---
+
+*本文档为 LLM 知识库系列文章之一，共 70 篇。*

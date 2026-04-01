@@ -1,0 +1,154 @@
+---
+title: "特征工程"
+category: "特征工程"
+difficulty: "⭐⭐⭐"
+tags: ['机器学习', 'ML', '面试']
+createdAt: "2026-04-01"
+updatedAt: "2026-04-01"
+---
+
+
+
+
+## 题目描述
+什么是特征工程？有哪些常用的特征处理方法？如何进行特征选择？
+
+## 参考答案
+
+### 特征工程重要性
+
+**"数据和特征决定了机器学习的上限，模型只是逼近这个上限"**
+
+### 常用方法
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import (
+    StandardScaler, MinMaxScaler, RobustScaler,
+    OneHotEncoder, LabelEncoder, OrdinalEncoder
+)
+from sklearn.feature_selection import (
+    SelectKBest, f_classif, mutual_info_classif,
+    RFE, SelectFromModel
+)
+
+# 1. 数值特征处理
+
+# 标准化 (Z-score)
+scaler_z = StandardScaler()
+X_standardized = scaler_z.fit_transform(X)
+
+# 归一化 (Min-Max)
+scaler_mm = MinMaxScaler()
+X_normalized = scaler_mm.fit_transform(X)
+
+# 鲁棒标准化 (抗异常值)
+scaler_robust = RobustScaler()
+X_robust = scaler_robust.fit_transform(X)
+
+# 2. 类别特征编码
+
+# One-Hot 编码
+encoder_ohe = OneHotEncoder(sparse=False, handle_unknown='ignore')
+X_ohe = encoder_ohe.fit_transform(X_categorical)
+
+# 标签编码
+encoder_le = LabelEncoder()
+y_encoded = encoder_le.fit_transform(y_categorical)
+
+# 有序编码
+encoder_ord = OrdinalEncoder(categories=[['Low', 'Medium', 'High']])
+X_ordinal = encoder_ord.fit_transform(X_ordinal)
+
+# 3. 特征转换
+
+# 对数转换（处理偏态）
+X_log = np.log1p(X_skewed)
+
+# 多项式特征
+from sklearn.preprocessing import PolynomialFeatures
+poly = PolynomialFeatures(degree=2, include_bias=False)
+X_poly = poly.fit_transform(X)
+
+# 分箱离散化
+from sklearn.preprocessing import KBinsDiscretizer
+binning = KBinsDiscretizer(n_bins=5, encode='onehot', strategy='quantile')
+X_binned = binning.fit_transform(X)
+```
+
+### 特征选择
+
+```python
+# 1. 过滤法 (Filter)
+# 基于统计指标选择
+
+# 方差选择
+from sklearn.feature_selection import VarianceThreshold
+selector_var = VarianceThreshold(threshold=0.1)
+X_selected = selector_var.fit_transform(X)
+
+# 相关性选择
+corr_matrix = pd.DataFrame(X).corr().abs()
+upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
+to_drop = [column for column in upper.columns if any(upper[column] > 0.95)]
+X_reduced = X.drop(to_drop, axis=1)
+
+# 2. 包装法 (Wrapper)
+# 基于模型性能选择
+
+# 递归特征消除
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import RandomForestClassifier
+
+rfe = RFE(estimator=RandomForestClassifier(), n_features_to_select=10)
+X_rfe = rfe.fit_transform(X, y)
+
+# 3. 嵌入法 (Embedded)
+# 模型自带特征选择
+
+# L1 正则化
+from sklearn.linear_model import Lasso
+lasso = Lasso(alpha=0.01)
+lasso.fit(X, y)
+selected = np.where(lasso.coef_ != 0)[0]
+
+# 树模型特征重要性
+from sklearn.feature_selection import SelectFromModel
+selector = SelectFromModel(RandomForestClassifier())
+X_selected = selector.fit_transform(X, y)
+```
+
+### 特征创建
+
+```python
+# 1. 交互特征
+X['feature_interaction'] = X['feature1'] * X['feature2']
+
+# 2. 聚合特征
+X['mean_feature'] = X.groupby('group')['value'].transform('mean')
+
+# 3. 时间特征
+X['hour'] = pd.to_datetime(X['timestamp']).dt.hour
+X['day_of_week'] = pd.to_datetime(X['timestamp']).dt.dayofweek
+X['is_weekend'] = X['day_of_week'].isin([5, 6]).astype(int)
+
+# 4. 文本特征
+from sklearn.feature_extraction.text import TfidfVectorizer
+vectorizer = TfidfVectorizer(max_features=1000)
+X_text = vectorizer.fit_transform(texts)
+
+# 5. 领域特征
+# 根据业务知识创建
+# 例如：房价预测中创建"每平米价格"
+```
+
+## 考察重点
+- ✅ 理解特征工程的重要性
+- ✅ 掌握常用特征处理方法
+- ✅ 了解特征选择技术
+- ✅ 能够创建有效特征
+- ✅ 具备领域知识应用能力
+
+## 更新历史
+- v1 (2026-03-29): 初始版本
