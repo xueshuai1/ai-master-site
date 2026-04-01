@@ -1,52 +1,3495 @@
 {
   "articles": [
     {
+      "id": "01_CNN",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "CNN（卷积神经网络）",
+      "description": "CNN（卷积神经网络）> 分类: CNN 基础（计算机视觉） | 编号: CV-01 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 卷积神经网络（Convolutional Neural Network，CNN）是一种专门用于处理具有网格结构数据的深度学习模型，尤其在图像识别、视频分析等领域取得了巨大成功。--- 概述卷积神经网络（Conv...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "5分钟"
+    },
+    {
+      "id": "02_卷积",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "卷积（Convolution）",
+      "description": "卷积（Convolution）> 分类: CNN 基础（计算机视觉） | 编号: CV-02 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 卷积是卷积神经网络（CNN）中最核心的数学运算，是一种特殊的线性积分变换，用于提取输入数据的局部特征。--- 概述卷积是卷积神经网络（CNN）中最核心的数学运算，是一种特殊的线性积分变换，用于提取输入数...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "03_池化",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "池化（Pooling）",
+      "description": "池化（Pooling）> 分类: CNN 基础（计算机视觉） | 编号: CV-03 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 池化（Pooling）是卷积神经网络中的一种下采样操作，用于降低特征图的空间维度，减少计算量和参数数量，同时提供一定程度的平移不变性。--- 概述池化（Pooling）是卷积神经网络中的一种下采样操作，用于降低...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "04_激活函数",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "激活函数（Activation Function）",
+      "description": "激活函数（Activation Function）> 分类: CNN 基础（计算机视觉） | 编号: CV-04 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 激活函数是神经网络中的关键组件，它为网络引入非线性变换，使神经网络能够学习和表示复杂的非线性关系。--- 概述激活函数是神经网络中的关键组件，它为网络引入非线性变换，使神经网络能够学...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "05_BatchNorm",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "BatchNorm（批归一化）",
+      "description": "BatchNorm（批归一化）> 分类: CNN 基础（计算机视觉） | 编号: CV-05 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 批归一化（Batch Normalization，BN）是深度学习中的一项关键技术，由 Sergey Ioffe 和 Christian Szegedy 于 2015 年提出。--- 概述批归一化（Ba...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "06_LayerNorm",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "LayerNorm（层归一化）",
+      "description": "LayerNorm（层归一化）> 分类: CNN 基础（计算机视觉） | 编号: CV-06 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 层归一化（Layer Normalization，LayerNorm）是一种归一化技术，由 Jimmy Lei Ba 等人于 2016 年提出。--- 概述层归一化（Layer Normalizatio...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "07_残差连接",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "残差连接（Residual Connection）",
+      "description": "残差连接（Residual Connection）> 分类: CNN 基础（计算机视觉） | 编号: CV-07 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 残差连接（Residual Connection），也称为跳跃连接（Skip Connection），是深度学习中的一项关键技术，由何恺明等人于 2015 年在 ResNet 中提出...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "08_跳跃连接",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "跳跃连接（Skip Connection）",
+      "description": "跳跃连接（Skip Connection）> 分类: CNN 基础（计算机视觉） | 编号: CV-08 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 跳跃连接（Skip Connection）是深度神经网络中的一种架构设计模式，通过将网络中某层的输出直接传递到更深层，绕过中间的一个或多个层。--- 概述跳跃连接（Skip Connecti...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "09_空洞卷积",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "空洞卷积（Dilated Convolution）",
+      "description": "空洞卷积（Dilated Convolution）> 分类: CNN 基础（计算机视觉） | 编号: CV-09 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 空洞卷积（Dilated Convolution），也称为膨胀卷积或 atrous 卷积，是一种通过在卷积核中插入空洞来扩大感受野的卷积变体。--- 概述空洞卷积（Dilated C...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "10_深度可分离卷积",
+      "category": "CV",
+      "subCategory": "CNN 基础",
+      "title": "深度可分离卷积（Depthwise Separable Convolution）",
+      "description": "深度可分离卷积（Depthwise Separable Convolution）> 分类: CNN 基础（计算机视觉） | 编号: CV-10 | 更新时间: 2026-04-01 | 难度: ⭐⭐CNN 卷积神经网络 深度学习 计算机视觉摘要: 深度可分离卷积（Depthwise Separable Convolution）是一种高效的卷积变体，将标准卷积分解为两个独立的步骤：深度卷积（Dept...",
+      "tags": [
+        "CNN",
+        "卷积神经网络",
+        "深度学习",
+        "计算机视觉"
+      ],
+      "difficulty": 2,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "11_AlexNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "AlexNet",
+      "description": "AlexNet> 分类: 经典架构（计算机视觉） | 编号: CV-11 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉摘要: AlexNet 是由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 于 2012 年提出的深度卷积神经网络，在 ImageNet Large ...--- 概述...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉"
+      ],
+      "difficulty": 3,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "12_VGG",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "VGG（Visual Geometry Group Network）",
+      "description": "VGG（Visual Geometry Group Network）> 分类: 经典架构（计算机视觉） | 编号: CV-12 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉摘要: VGG 是由牛津大学 Visual Geometry Group 的 Karen Simonyan 和 Andrew Zisserman 于 2014 年提出...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉"
+      ],
+      "difficulty": 3,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "13_GoogLeNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "GoogLeNet (Inception V1)",
+      "description": "GoogLeNet (Inception V1)> 分类: 经典架构（计算机视觉） | 编号: CV-13 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉摘要: GoogLeNet 是由 Google 的 Christian Szegedy 等人于 2014 年提出的深度卷积神经网络，在 ILSVRC 2014 图像分类竞赛中以 6.67...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉"
+      ],
+      "difficulty": 3,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "14_Inception",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "Inception 系列网络",
+      "description": "Inception 系列网络> 分类: 经典架构（计算机视觉） | 编号: CV-14 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉摘要: Inception 系列网络是 Google 团队在 GoogLeNet（Inception V1）基础上持续改进的深度卷积神经网络架构，包括 Inception V2、V3、V4 和 Ince.....",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉"
+      ],
+      "difficulty": 3,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "15_ResNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "ResNet（残差网络）",
+      "description": "ResNet（残差网络）> 分类: 经典架构（计算机视觉） | 编号: CV-15 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉 残差网络摘要: ResNet（Residual Network）是由何恺明等人于 2015 年提出的深度残差学习网络，在 ILSVRC 2015 中以 3.57% 的 Top-5 错误率获得冠军。--- 概述...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉",
+        "残差网络"
+      ],
+      "difficulty": 3,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "16_DenseNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "DenseNet（密集连接网络）",
+      "description": "DenseNet（密集连接网络）> 分类: 经典架构（计算机视觉） | 编号: CV-16 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉摘要: DenseNet（Densely Connected Convolutional Networks）是由 Gao Huang 等人于 2017 年提出的卷积神经网络架构。--- 概述DenseN...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉"
+      ],
+      "difficulty": 3,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "17_EfficientNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "EfficientNet",
+      "description": "EfficientNet> 分类: 经典架构（计算机视觉） | 编号: CV-17 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉 神经架构搜索摘要: EfficientNet 是由 Google 的 Mingxing Tan 和 Quoc Le 于 2019 年提出的卷积神经网络架构，通过神经架构搜索（NAS）和复合缩放方法，在大幅减少...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉",
+        "神经架构搜索"
+      ],
+      "difficulty": 3,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "18_MobileNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "MobileNet 系列",
+      "description": "MobileNet 系列> 分类: 经典架构（计算机视觉） | 编号: CV-18 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉 轻量级网络摘要: MobileNet 是 Google 提出的一系列轻量级卷积神经网络，专为移动和嵌入式设备设计。--- 概述MobileNet 是 Google 提出的一系列轻量级卷积神经网络，专为移动和嵌...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉",
+        "轻量级网络"
+      ],
+      "difficulty": 3,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "19_ShuffleNet",
+      "category": "CV",
+      "subCategory": "经典架构",
+      "title": "ShuffleNet 系列",
+      "description": "ShuffleNet 系列> 分类: 经典架构（计算机视觉） | 编号: CV-19 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐CNN 经典网络 ResNet VGG 计算机视觉 轻量级网络摘要: ShuffleNet 是 Face++（旷视科技）提出的一系列超轻量级卷积神经网络，专为移动端设备设计。--- 概述ShuffleNet 是 Face++（旷视科技）提出的一系列超轻量级卷...",
+      "tags": [
+        "CNN",
+        "经典网络",
+        "ResNet",
+        "VGG",
+        "计算机视觉",
+        "轻量级网络"
+      ],
+      "difficulty": 3,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "20_Vision-Transformer",
+      "category": "CV",
+      "subCategory": "Vision Transformer",
+      "title": "Vision Transformer (ViT)",
+      "description": "Vision Transformer (ViT)> 分类: Vision Transformer（计算机视觉） | 编号: CV-20 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐ViT Transformer Attention 计算机视觉 Self-Attention摘要: Vision Transformer (ViT) 是由 Google 的 Alexey Dosovitsk...",
+      "tags": [
+        "ViT",
+        "Transformer",
+        "Attention",
+        "计算机视觉",
+        "Self-Attention"
+      ],
+      "difficulty": 4,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "21_R-CNN",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "R-CNN 系列目标检测",
+      "description": "R-CNN 系列目标检测> 分类: 目标检测（计算机视觉） | 编号: CV-21 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉 两阶段检测摘要: R-CNN（Region-based Convolutional Neural Networks）系列是目标检测领域的里程碑工作，包括 R-CNN、Fast R-CNN、Faster R...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉",
+        "两阶段检测"
+      ],
+      "difficulty": 4,
+      "readTime": "5分钟"
+    },
+    {
+      "id": "22_Fast-R-CNN",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "Fast R-CNN",
+      "description": "Fast R-CNN> 分类: 目标检测（计算机视觉） | 编号: CV-22 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉 两阶段检测摘要: Fast R-CNN 是由 Ross Girshick 于 2015 年提出的目标检测算法，是对 R-CNN 的重大改进。--- 概述Fast R-CNN 是由 Ross Girshick ...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉",
+        "两阶段检测"
+      ],
+      "difficulty": 4,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "23_Faster-R-CNN",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "Faster R-CNN",
+      "description": "Faster R-CNN> 分类: 目标检测（计算机视觉） | 编号: CV-23 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉 两阶段检测摘要: Faster R-CNN 是由 Ren Shaoqing 等人于 2015 年提出的目标检测算法，通过引入区域提议网络（RPN），实现了端到端的快速目标检测。--- 概述Faster R...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉",
+        "两阶段检测"
+      ],
+      "difficulty": 4,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "24_Mask-R-CNN",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "Mask R-CNN",
+      "description": "Mask R-CNN> 分类: 目标检测（计算机视觉） | 编号: CV-24 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉 两阶段检测摘要: Mask R-CNN 是由 He Kaiming 等人于 2017 年提出的实例分割算法，是 Faster R-CNN 的自然扩展。--- 概述Mask R-CNN 是由 He Kaimin...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉",
+        "两阶段检测"
+      ],
+      "difficulty": 4,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "25_YOLO",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "YOLO 系列目标检测",
+      "description": "YOLO 系列目标检测> 分类: 目标检测（计算机视觉） | 编号: CV-25 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉 实时检测摘要: YOLO（You Only Look Once）系列是实时目标检测的代表算法，由 Joseph Redmon 等人提出。--- 概述YOLO（You Only Look Once）系列是实时...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉",
+        "实时检测"
+      ],
+      "difficulty": 4,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "26_SSD",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "SSD（Single Shot MultiBox Detector）",
+      "description": "SSD（Single Shot MultiBox Detector）> 分类: 目标检测（计算机视觉） | 编号: CV-26 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉摘要: SSD 是由 Wei Liu 等人于 2016 年提出的单阶段目标检测算法。--- 概述SSD 是由 Wei Liu 等人于 2016 年提出的单阶段目标...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "27_RetinaNet",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "RetinaNet",
+      "description": "RetinaNet> 分类: 目标检测（计算机视觉） | 编号: CV-27 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉摘要: RetinaNet 是由 Tsung-Yi Lin 等人于 2017 年提出的单阶段目标检测算法，通过引入 Focal Loss 解决了正负样本极度不平衡的问题，在单阶段检测中首次超越了两阶段检...--...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "28_FCOS",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "FCOS（Fully Convolutional One-Stage）",
+      "description": "FCOS（Fully Convolutional One-Stage）> 分类: 目标检测（计算机视觉） | 编号: CV-28 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉摘要: FCOS 是由 Tian Zhi 等人于 2019 年提出的无锚框（Anchor-Free）单阶段目标检测算法。--- 概述FCOS 是由 Tian Z...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "29_DETR",
+      "category": "CV",
+      "subCategory": "目标检测",
+      "title": "DETR（DEtection TRansformer）",
+      "description": "DETR（DEtection TRansformer）> 分类: 目标检测（计算机视觉） | 编号: CV-29 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐目标检测 YOLO R-CNN DETR 计算机视觉摘要: DETR 是由 Facebook AI Research 的 Nicolas Carion 等人于 2020 年提出的基于 Transformer 的目标检测算法。--...",
+      "tags": [
+        "目标检测",
+        "YOLO",
+        "R-CNN",
+        "DETR",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "30_Swin-Transformer",
+      "category": "CV",
+      "subCategory": "Vision Transformer",
+      "title": "Swin Transformer",
+      "description": "Swin Transformer> 分类: Vision Transformer（计算机视觉） | 编号: CV-30 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐ViT Transformer Attention 计算机视觉 Self-Attention摘要: Swin Transformer 是由 Microsoft Research 的 Ze Liu 等人于 2021 年提出的...",
+      "tags": [
+        "ViT",
+        "Transformer",
+        "Attention",
+        "计算机视觉",
+        "Self-Attention"
+      ],
+      "difficulty": 4,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "31_FCN",
+      "category": "CV",
+      "subCategory": "图像分割",
+      "title": "FCN（Fully Convolutional Networks）",
+      "description": "FCN（Fully Convolutional Networks）> 分类: 图像分割（计算机视觉） | 编号: CV-31 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐图像分割 语义分割 实例分割 计算机视觉摘要: FCN 是由 Jonathan Long 等人于 2015 年提出的全卷积网络，是语义分割领域的里程碑工作。--- 概述FCN 是由 Jonathan Long 等人于...",
+      "tags": [
+        "图像分割",
+        "语义分割",
+        "实例分割",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "32_U-Net",
+      "category": "CV",
+      "subCategory": "图像分割",
+      "title": "U-Net",
+      "description": "U-Net> 分类: 图像分割（计算机视觉） | 编号: CV-32 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐图像分割 语义分割 实例分割 计算机视觉摘要: U-Net 是由 Olaf Ronneberger 等人于 2015 年提出的卷积神经网络架构，专为生物医学图像分割设计。--- 概述U-Net 是由 Olaf Ronneberger 等人于 2015 年提出的卷积神经网络...",
+      "tags": [
+        "图像分割",
+        "语义分割",
+        "实例分割",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "33_DeepLab",
+      "category": "CV",
+      "subCategory": "图像分割",
+      "title": "DeepLab 系列",
+      "description": "DeepLab 系列> 分类: 图像分割（计算机视觉） | 编号: CV-33 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐图像分割 语义分割 实例分割 计算机视觉摘要: DeepLab 是由 Google 提出的语义分割系列算法，包括 DeepLab v1/v2/v3/v3+。--- 概述DeepLab 是由 Google 提出的语义分割系列算法，包括 DeepLab v1/v2/...",
+      "tags": [
+        "图像分割",
+        "语义分割",
+        "实例分割",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "34_PSPNet",
+      "category": "CV",
+      "subCategory": "图像分割",
+      "title": "PSPNet（Pyramid Scene Parsing Network）",
+      "description": "PSPNet（Pyramid Scene Parsing Network）> 分类: 图像分割（计算机视觉） | 编号: CV-34 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐图像分割 语义分割 实例分割 计算机视觉摘要: PSPNet 是由 Hengshuang Zhao 等人于 2017 年提出的语义分割算法，通过金字塔池化模块（Pyramid Pooling Module）聚...",
+      "tags": [
+        "图像分割",
+        "语义分割",
+        "实例分割",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "35_SAM",
+      "category": "CV",
+      "subCategory": "图像分割",
+      "title": "SAM（Segment Anything Model）",
+      "description": "SAM（Segment Anything Model）> 分类: 图像分割（计算机视觉） | 编号: CV-35 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐图像分割 语义分割 实例分割 计算机视觉摘要: SAM（Segment Anything Model）是由 Meta AI 于 2023 年提出的基础分割模型。--- 概述SAM（Segment Anything Model）是...",
+      "tags": [
+        "图像分割",
+        "语义分割",
+        "实例分割",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "36_VAE",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "VAE（变分自编码器）",
+      "description": "VAE（变分自编码器）> 分类: 生成模型（计算机视觉） | 编号: CV-36 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉摘要: 变分自编码器（Variational Autoencoder，VAE）是由 Kingma 和 Welling 于 2013 年提出的生成模型。--- 概述变分自编码器（Variational A...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉"
+      ],
+      "difficulty": 5,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "37_GAN",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "GAN（生成对抗网络）",
+      "description": "GAN（生成对抗网络）> 分类: 生成模型（计算机视觉） | 编号: CV-37 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉 图像生成摘要: 生成对抗网络（Generative Adversarial Network，GAN）是由 Ian Goodfellow 于 2014 年提出的生成模型。--- 概述生成对抗网络（Gen...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉",
+        "图像生成"
+      ],
+      "difficulty": 5,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "38_CycleGAN",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "CycleGAN",
+      "description": "CycleGAN> 分类: 生成模型（计算机视觉） | 编号: CV-38 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉 图像生成摘要: CycleGAN 是由 Jun-Yan Zhu 等人于 2017 年提出的无配对图像到图像翻译模型。--- 概述CycleGAN 是由 Jun-Yan Zhu 等人于 2017 年提出的无配...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉",
+        "图像生成"
+      ],
+      "difficulty": 5,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "39_StyleGAN",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "StyleGAN 系列",
+      "description": "StyleGAN 系列> 分类: 生成模型（计算机视觉） | 编号: CV-39 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉 图像生成摘要: StyleGAN 是由 NVIDIA 的 Tero Karras 等人于 2018 年提出的高质量人脸生成模型。--- 概述StyleGAN 是由 NVIDIA 的 Tero Karr...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉",
+        "图像生成"
+      ],
+      "difficulty": 5,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "40_Diffusion-Models",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "Diffusion Models（扩散模型）",
+      "description": "Diffusion Models（扩散模型）> 分类: 生成模型（计算机视觉） | 编号: CV-40 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉 图像生成摘要: 扩散模型（Diffusion Models）是一类受非平衡热力学启发的生成模型，通过逐步加噪和去噪过程学习数据分布。--- 概述扩散模型（Diffusion Mo...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉",
+        "图像生成"
+      ],
+      "difficulty": 5,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "41_DDPM",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "DDPM（Denoising Diffusion Probabilistic Models）",
+      "description": "DDPM（Denoising Diffusion Probabilistic Models）> 分类: 生成模型（计算机视觉） | 编号: CV-41 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉摘要: DDPM（去噪扩散概率模型）是由 Ho 等人于 2020 年提出的扩散模型，通过简化的训练目标和高效的采样算法，实现了与 G...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉"
+      ],
+      "difficulty": 5,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "42_DDIM",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "DDIM（Denoising Diffusion Implicit Models）",
+      "description": "DDIM（Denoising Diffusion Implicit Models）> 分类: 生成模型（计算机视觉） | 编号: CV-42 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉摘要: DDIM 是由 Song 等人于 2020 年提出的扩散模型加速方法。--- 概述DDIM 是由 Song 等人于 2020 年提出的...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉"
+      ],
+      "difficulty": 5,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "43_Stable-Diffusion",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "Stable Diffusion",
+      "description": "Stable Diffusion> 分类: 生成模型（计算机视觉） | 编号: CV-43 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉 图像生成摘要: Stable Diffusion 是由 Stability AI 于 2022 年提出的潜在扩散模型（Latent Diffusion Model）。--- 概述Stable...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉",
+        "图像生成"
+      ],
+      "difficulty": 5,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "44_ControlNet",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "ControlNet",
+      "description": "ControlNet> 分类: 生成模型（计算机视觉） | 编号: CV-44 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉摘要: ControlNet 是由 Lvmin Zhang 等人于 2023 年提出的条件控制网络，通过在 Stable Diffusion 中添加空间条件输入，实现了对生成过程的精确控制，如边缘、深度....",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉"
+      ],
+      "difficulty": 5,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "45_LoRA-for-Diffusion",
+      "category": "CV",
+      "subCategory": "生成模型",
+      "title": "LoRA for Diffusion",
+      "description": "LoRA for Diffusion> 分类: 生成模型（计算机视觉） | 编号: CV-45 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐生成模型 GAN Diffusion VAE 计算机视觉 图像生成摘要: LoRA（Low-Rank Adaptation）最初由 Hu 等人于 2021 年提出用于 LLM 微调，后被应用于扩散模型。--- 概述LoRA（Low-Rank A...",
+      "tags": [
+        "生成模型",
+        "GAN",
+        "Diffusion",
+        "VAE",
+        "计算机视觉",
+        "图像生成"
+      ],
+      "difficulty": 5,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "46_NeRF",
+      "category": "CV",
+      "subCategory": "3D 视觉",
+      "title": "NeRF（Neural Radiance Fields）",
+      "description": "NeRF（Neural Radiance Fields）> 分类: 3D 视觉（计算机视觉） | 编号: CV-46 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐3D 视觉 NeRF 点云 计算机视觉 三维重建摘要: NeRF（神经辐射场）是由 Mildenhall 等人于 2020 年提出的隐式神经表示方法，通过神经网络学习场景的连续 3D 表示，实现了高质量的新视角合成，开创了...",
+      "tags": [
+        "3D 视觉",
+        "NeRF",
+        "点云",
+        "计算机视觉",
+        "三维重建"
+      ],
+      "difficulty": 5,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "47_3D-Gaussian-Splatting",
+      "category": "CV",
+      "subCategory": "3D 视觉",
+      "title": "3D Gaussian Splatting",
+      "description": "3D Gaussian Splatting> 分类: 3D 视觉（计算机视觉） | 编号: CV-47 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐3D 视觉 NeRF 点云 计算机视觉 三维重建摘要: 3D Gaussian Splatting 是由 Kerbl 等人于 2023 年提出的实时辐射场渲染方法。--- 概述3D Gaussian Splatting 是由 Kerbl...",
+      "tags": [
+        "3D 视觉",
+        "NeRF",
+        "点云",
+        "计算机视觉",
+        "三维重建"
+      ],
+      "difficulty": 5,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "48_SAM-Frontier",
+      "category": "CV",
+      "subCategory": "图像分割",
+      "title": "SAM（前沿技术）",
+      "description": "SAM（前沿技术）> 分类: 图像分割（计算机视觉） | 编号: CV-48 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐图像分割 语义分割 实例分割 计算机视觉摘要: SAM（Segment Anything Model）作为基础分割模型，代表了计算机视觉向通用模型发展的趋势。--- 概述SAM（Segment Anything Model）作为基础分割模型，代表了计算机视觉向通用...",
+      "tags": [
+        "图像分割",
+        "语义分割",
+        "实例分割",
+        "计算机视觉"
+      ],
+      "difficulty": 4,
+      "readTime": "4分钟"
+    },
+    {
+      "id": "49_Grounding-DINO",
+      "category": "CV",
+      "subCategory": "前沿技术",
+      "title": "Grounding DINO",
+      "description": "Grounding DINO> 分类: 前沿技术（计算机视觉） | 编号: CV-49 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐前沿技术 SAM Grounding DINO 计算机视觉摘要: Grounding DINO 是由 Liu 等人于 2023 年提出的开放集目标检测模型，结合了 DINO 的检测能力和 Grounding 的语言理解能力，实现了基于文本提示的开放集检...",
+      "tags": [
+        "前沿技术",
+        "SAM",
+        "Grounding DINO",
+        "计算机视觉"
+      ],
+      "difficulty": 5,
+      "readTime": "6分钟"
+    },
+    {
+      "id": "50_Segment-Anything-2",
+      "category": "CV",
+      "subCategory": "前沿技术",
+      "title": "Segment Anything 2 (SAM 2)",
+      "description": "Segment Anything 2 (SAM 2)> 分类: 前沿技术（计算机视觉） | 编号: CV-50 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐前沿技术 SAM Grounding DINO 计算机视觉摘要: SAM 2 是 Meta 于 2024 年发布的视频分割基础模型，在 SAM 的基础上增加了时序建模能力，实现了视频中的实时分割和跟踪，代表了视频理解领域的重要进...",
+      "tags": [
+        "前沿技术",
+        "SAM",
+        "Grounding DINO",
+        "计算机视觉"
+      ],
+      "difficulty": 5,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "001-CNN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "CNN",
+      "description": "CNN> 分类: 深度学习 | 编号: 001 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL CNN 深度学习 神经网络摘要: > 分类: 基础网络 | 编号: DL-001 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-001 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是CNNCNN ...",
+      "tags": [
+        "神经网络基础",
+        "CNN",
+        "深度学习",
+        "卷积神经网络"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "002-卷积层",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "卷积层",
+      "description": "卷积层> 分类: 深度学习 | 编号: 002 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 卷积摘要: > 分类: 基础网络 | 编号: DL-002 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-002 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是卷积层卷积层 是...",
+      "tags": [
+        "卷积层",
+        "CNN",
+        "深度学习",
+        "特征提取"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "003-池化层",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "池化层",
+      "description": "池化层> 分类: 深度学习 | 编号: 003 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 池化摘要: > 分类: 基础网络 | 编号: DL-003 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-003 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是池化层池化层 是...",
+      "tags": [
+        "池化层",
+        "CNN",
+        "深度学习",
+        "下采样"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "004-激活函数",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "激活函数",
+      "description": "激活函数> 分类: 深度学习 | 编号: 004 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 激活函数摘要: > 分类: 基础网络 | 编号: DL-004 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-004 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是激活函数激...",
+      "tags": [
+        "激活函数",
+        "ReLU",
+        "深度学习",
+        "非线性"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "005-BatchNorm",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "BatchNorm",
+      "description": "BatchNorm> 分类: 深度学习 | 编号: 005 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 基础网络 | 编号: DL-005 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-005 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Batch...",
+      "tags": [
+        "BatchNorm",
+        "归一化",
+        "深度学习",
+        "训练技巧"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "006-LayerNorm",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "LayerNorm",
+      "description": "LayerNorm> 分类: 深度学习 | 编号: 006 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 基础网络 | 编号: DL-006 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-006 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Layer...",
+      "tags": [
+        "LayerNorm",
+        "归一化",
+        "深度学习",
+        "Transformer"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "007-残差连接",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "残差连接",
+      "description": "残差连接> 分类: 深度学习 | 编号: 007 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 基础网络 | 编号: DL-007 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-007 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是残差连接残差连接 是...",
+      "tags": [
+        "残差连接",
+        "ResNet",
+        "深度学习",
+        "梯度流动"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "008-跳跃连接",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "跳跃连接",
+      "description": "跳跃连接> 分类: 深度学习 | 编号: 008 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 基础网络 | 编号: DL-008 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-008 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是跳跃连接跳跃连接 是...",
+      "tags": [
+        "跳跃连接",
+        "Skip Connection",
+        "深度学习",
+        "梯度流动"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "009-空洞卷积",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "空洞卷积",
+      "description": "空洞卷积> 分类: 深度学习 | 编号: 009 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 卷积摘要: > 分类: 基础网络 | 编号: DL-009 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-009 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是空洞卷积空洞卷...",
+      "tags": [
+        "空洞卷积",
+        "Dilated Convolution",
+        "深度学习",
+        "感受野"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "010-深度可分离卷积",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "深度可分离卷积",
+      "description": "深度可分离卷积> 分类: 深度学习 | 编号: 010 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 卷积摘要: > 分类: 基础网络 | 编号: DL-010 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 基础网络 | 编号: DL-010 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是深度可分...",
+      "tags": [
+        "深度可分离卷积",
+        "MobileNet",
+        "深度学习",
+        "轻量化"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "011-AlexNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "AlexNet",
+      "description": "AlexNet> 分类: 深度学习 | 编号: 011 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-011 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-011 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是AlexNet...",
+      "tags": [
+        "AlexNet",
+        "CNN",
+        "深度学习",
+        "图像分类"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "012-VGG",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "VGG",
+      "description": "VGG> 分类: 深度学习 | 编号: 012 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-012 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-012 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是VGGVGG 是深度学...",
+      "tags": [
+        "VGG",
+        "CNN",
+        "深度学习",
+        "图像分类"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "013-GoogLeNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "GoogLeNet",
+      "description": "GoogLeNet> 分类: 深度学习 | 编号: 013 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-013 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-013 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是GoogL...",
+      "tags": [
+        "GoogLeNet",
+        "CNN",
+        "深度学习",
+        "Inception"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "014-Inception",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Inception",
+      "description": "Inception> 分类: 深度学习 | 编号: 014 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-014 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-014 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Incep...",
+      "tags": [
+        "Inception",
+        "CNN",
+        "深度学习",
+        "多尺度"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "015-ResNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "ResNet",
+      "description": "ResNet> 分类: 深度学习 | 编号: 015 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-015 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-015 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是ResNetRe...",
+      "tags": [
+        "ResNet",
+        "CNN",
+        "深度学习",
+        "残差学习"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "016-DenseNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "DenseNet",
+      "description": "DenseNet> 分类: 深度学习 | 编号: 016 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-016 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-016 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是DenseN...",
+      "tags": [
+        "DenseNet",
+        "CNN",
+        "深度学习",
+        "密集连接"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "017-EfficientNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "EfficientNet",
+      "description": "EfficientNet> 分类: 深度学习 | 编号: 017 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-017 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-017 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Ef...",
+      "tags": [
+        "EfficientNet",
+        "CNN",
+        "深度学习",
+        "神经架构搜索"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "018-MobileNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "MobileNet",
+      "description": "MobileNet> 分类: 深度学习 | 编号: 018 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-018 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-018 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Mobil...",
+      "tags": [
+        "MobileNet",
+        "CNN",
+        "深度学习",
+        "移动端"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "019-ShuffleNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "ShuffleNet",
+      "description": "ShuffleNet> 分类: 深度学习 | 编号: 019 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-019 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-019 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Shuf...",
+      "tags": [
+        "ShuffleNet",
+        "CNN",
+        "深度学习",
+        "通道混洗"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "020-Vision Transformer",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Vision Transformer",
+      "description": "Vision Transformer> 分类: 深度学习 | 编号: 020 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Transformer 深度学习摘要: > 分类: 经典架构 | 编号: DL-020 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-020 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核...",
+      "tags": [
+        "Vision Transformer",
+        "ViT",
+        "Transformer",
+        "图像分类"
+      ],
+      "difficulty": 4,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "020-Vision_Transformer",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Vision Transformer",
+      "description": "Vision Transformer> 分类: 深度学习 | 编号: 020 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Transformer 深度学习 神经网络摘要: > 分类: 经典架构 | 编号: DL-020 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 经典架构 | 编号: DL-020 | 更新时间: 2026-03-30 | 难度: ⭐⭐...",
+      "tags": [
+        "Vision Transformer",
+        "ViT",
+        "Transformer",
+        "图像分类"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "021-RNN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "RNN",
+      "description": "RNN> 分类: 深度学习 | 编号: 021 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL RNN 深度学习 神经网络摘要: > 分类: 循环神经网络 | 编号: DL-021 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 循环神经网络 | 编号: DL-021 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是RNN...",
+      "tags": [
+        "RNN",
+        "序列模型",
+        "深度学习",
+        "时间序列"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "022-LSTM",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "LSTM",
+      "description": "LSTM> 分类: 深度学习 | 编号: 022 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL LSTM 深度学习 神经网络摘要: > 分类: 循环神经网络 | 编号: DL-022 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 循环神经网络 | 编号: DL-022 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是L...",
+      "tags": [
+        "LSTM",
+        "长短期记忆",
+        "深度学习",
+        "梯度消失"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "023-GRU",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "GRU",
+      "description": "GRU> 分类: 深度学习 | 编号: 023 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL GRU 深度学习 神经网络摘要: > 分类: 循环神经网络 | 编号: DL-023 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 循环神经网络 | 编号: DL-023 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是GRU...",
+      "tags": [
+        "GRU",
+        "门控循环单元",
+        "深度学习",
+        "LSTM 变种"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "024-Bidirectional RNN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Bidirectional RNN",
+      "description": "Bidirectional RNN> 分类: 深度学习 | 编号: 024 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL RNN 深度学习 神经网络摘要: > 分类: 循环神经网络 | 编号: DL-024 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 循环神经网络 | 编号: DL-024 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核...",
+      "tags": [
+        "Bidirectional RNN",
+        "双向 RNN",
+        "深度学习",
+        "序列建模"
+      ],
+      "difficulty": 4,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "024-Bidirectional_RNN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Bidirectional RNN",
+      "description": "Bidirectional RNN> 分类: 深度学习 | 编号: 024 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL RNN 深度学习 神经网络摘要: > 分类: 循环神经网络 | 编号: DL-024 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 循环神经网络 | 编号: DL-024 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核...",
+      "tags": [
+        "Bidirectional RNN",
+        "双向 RNN",
+        "深度学习",
+        "序列建模"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "025-Seq2Seq",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Seq2Seq",
+      "description": "Seq2Seq> 分类: 深度学习 | 编号: 025 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 循环神经网络 | 编号: DL-025 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 循环神经网络 | 编号: DL-025 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Seq...",
+      "tags": [
+        "Seq2Seq",
+        "序列到序列",
+        "深度学习",
+        "机器翻译"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "026-Self-Attention",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Self-Attention",
+      "description": "Self-Attention> 分类: 深度学习 | 编号: 026 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Attention Self-Attention 深度学习 神经网络摘要: > 分类: 注意力机制 | 编号: DL-026 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-026 | 更新时间: 2026-03-...",
+      "tags": [
+        "Self-Attention",
+        "自注意力",
+        "Transformer",
+        "深度学习"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "027-Multi-Head Attention",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Multi-Head Attention",
+      "description": "Multi-Head Attention> 分类: 深度学习 | 编号: 027 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Attention 深度学习摘要: > 分类: 注意力机制 | 编号: DL-027 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-027 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一...",
+      "tags": [
+        "Multi-Head Attention",
+        "多头注意力",
+        "Transformer",
+        "并行计算"
+      ],
+      "difficulty": 5,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "027-Multi-Head_Attention",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Multi-Head Attention",
+      "description": "Multi-Head Attention> 分类: 深度学习 | 编号: 027 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Attention 深度学习 神经网络摘要: > 分类: 注意力机制 | 编号: DL-027 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-027 | 更新时间: 2026-03-30 | 难度: ...",
+      "tags": [
+        "Multi-Head Attention",
+        "多头注意力",
+        "Transformer",
+        "并行计算"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "028-Cross-Attention",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Cross-Attention",
+      "description": "Cross-Attention> 分类: 深度学习 | 编号: 028 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Attention 深度学习 神经网络摘要: > 分类: 注意力机制 | 编号: DL-028 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-028 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一...",
+      "tags": [
+        "Cross-Attention",
+        "交叉注意力",
+        "Transformer",
+        "多模态"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "029-Masked Attention",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Masked Attention",
+      "description": "Masked Attention> 分类: 深度学习 | 编号: 029 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Attention 深度学习摘要: > 分类: 注意力机制 | 编号: DL-029 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-029 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概...",
+      "tags": [
+        "Masked Attention",
+        "掩码注意力",
+        "Transformer",
+        "因果掩码"
+      ],
+      "difficulty": 4,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "029-Masked_Attention",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Masked Attention",
+      "description": "Masked Attention> 分类: 深度学习 | 编号: 029 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Attention 深度学习 神经网络摘要: > 分类: 注意力机制 | 编号: DL-029 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-029 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ ...",
+      "tags": [
+        "Masked Attention",
+        "掩码注意力",
+        "Transformer",
+        "因果掩码"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "030-Transformer",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Transformer",
+      "description": "Transformer> 分类: 深度学习 | 编号: 030 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL Transformer 深度学习 神经网络摘要: > 分类: 注意力机制 | 编号: DL-030 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 注意力机制 | 编号: DL-030 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核...",
+      "tags": [
+        "Transformer",
+        "编码器 - 解码器",
+        "深度学习",
+        "注意力机制"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "031-VAE",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "VAE",
+      "description": "VAE> 分类: 深度学习 | 编号: 031 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-031 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-031 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是VAEVAE 是深度学...",
+      "tags": [
+        "VAE",
+        "变分自编码器",
+        "深度学习",
+        "概率生成"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "032-GAN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "GAN",
+      "description": "GAN> 分类: 深度学习 | 编号: 032 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-032 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-032 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是GANGAN 是深度学...",
+      "tags": [
+        "GAN",
+        "生成对抗网络",
+        "深度学习",
+        "对抗训练"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "033-CycleGAN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "CycleGAN",
+      "description": "CycleGAN> 分类: 深度学习 | 编号: 033 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-033 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-033 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是CycleG...",
+      "tags": [
+        "CycleGAN",
+        "图像翻译",
+        "深度学习",
+        "无监督"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "034-StyleGAN",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "StyleGAN",
+      "description": "StyleGAN> 分类: 深度学习 | 编号: 034 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-034 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-034 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是StyleG...",
+      "tags": [
+        "StyleGAN",
+        "风格生成",
+        "深度学习",
+        "高分辨率"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "035-Diffusion Models",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Diffusion Models",
+      "description": "Diffusion Models> 分类: 深度学习 | 编号: 035 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 AI摘要: > 分类: 生成模型 | 编号: DL-035 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-035 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是...",
+      "tags": [
+        "Diffusion Models",
+        "扩散模型",
+        "深度学习",
+        "生成式 AI"
+      ],
+      "difficulty": 5,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "035-Diffusion_Models",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Diffusion Models",
+      "description": "Diffusion Models> 分类: 深度学习 | 编号: 035 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-035 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-035 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什...",
+      "tags": [
+        "Diffusion Models",
+        "扩散模型",
+        "深度学习",
+        "生成式 AI"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "036-DDPM",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "DDPM",
+      "description": "DDPM> 分类: 深度学习 | 编号: 036 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-036 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-036 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是DDPMDDPM 是...",
+      "tags": [
+        "DDPM",
+        "去噪扩散",
+        "深度学习",
+        "概率模型"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "037-DDIM",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "DDIM",
+      "description": "DDIM> 分类: 深度学习 | 编号: 037 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-037 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-037 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是DDIMDDIM 是...",
+      "tags": [
+        "DDIM",
+        "加速扩散",
+        "深度学习",
+        "采样加速"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "038-Stable Diffusion",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Stable Diffusion",
+      "description": "Stable Diffusion> 分类: 深度学习 | 编号: 038 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 AI摘要: > 分类: 生成模型 | 编号: DL-038 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-038 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是...",
+      "tags": [
+        "Stable Diffusion",
+        "文生图",
+        "深度学习",
+        "潜在扩散"
+      ],
+      "difficulty": 5,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "038-Stable_Diffusion",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Stable Diffusion",
+      "description": "Stable Diffusion> 分类: 深度学习 | 编号: 038 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-038 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-038 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什...",
+      "tags": [
+        "Stable Diffusion",
+        "文生图",
+        "深度学习",
+        "潜在扩散"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "039-ControlNet",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "ControlNet",
+      "description": "ControlNet> 分类: 深度学习 | 编号: 039 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-039 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-039 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是Cont...",
+      "tags": [
+        "ControlNet",
+        "条件控制",
+        "深度学习",
+        "精确控制"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "040-LoRA for Diffusion",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "LoRA for Diffusion",
+      "description": "LoRA for Diffusion> 分类: 深度学习 | 编号: 040 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 AI摘要: > 分类: 生成模型 | 编号: DL-040 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-040 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什...",
+      "tags": [
+        "LoRA",
+        "参数高效微调",
+        "深度学习",
+        "Adapter"
+      ],
+      "difficulty": 5,
+      "readTime": "1分钟"
+    },
+    {
+      "id": "040-LoRA_for_Diffusion",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "LoRA for Diffusion",
+      "description": "LoRA for Diffusion> 分类: 深度学习 | 编号: 040 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络摘要: > 分类: 生成模型 | 编号: DL-040 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 生成模型 | 编号: DL-040 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1...",
+      "tags": [
+        "LoRA",
+        "参数高效微调",
+        "深度学习",
+        "Adapter"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "041-Dropout",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "Dropout",
+      "description": "Dropout> 分类: 深度学习 | 编号: 041 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-041 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-041 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么...",
+      "tags": [
+        "Dropout",
+        "正则化",
+        "深度学习",
+        "过拟合"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "042-L1L2_正则化",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "L1L2 正则化",
+      "description": "L1L2 正则化> 分类: 深度学习 | 编号: 042 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-042 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-042 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什...",
+      "tags": [
+        "L1L2 正则化",
+        "权重衰减",
+        "深度学习",
+        "过拟合"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "043-早停",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "早停",
+      "description": "早停> 分类: 深度学习 | 编号: 043 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-043 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-043 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是早停早停...",
+      "tags": [
+        "早停",
+        "Early Stopping",
+        "深度学习",
+        "训练技巧"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "044-数据增强",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "数据增强",
+      "description": "数据增强> 分类: 深度学习 | 编号: 044 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-044 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-044 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是数据...",
+      "tags": [
+        "数据增强",
+        "Data Augmentation",
+        "深度学习",
+        "泛化"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "045-迁移学习",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "迁移学习",
+      "description": "迁移学习> 分类: 深度学习 | 编号: 045 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化 迁移学习摘要: > 分类: 优化与正则化 | 编号: DL-045 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-045 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 ...",
+      "tags": [
+        "迁移学习",
+        "Transfer Learning",
+        "深度学习",
+        "预训练"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "046-微调",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "微调",
+      "description": "微调> 分类: 深度学习 | 编号: 046 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化 微调摘要: > 分类: 优化与正则化 | 编号: DL-046 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-046 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是微...",
+      "tags": [
+        "微调",
+        "Fine-tuning",
+        "深度学习",
+        "预训练"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "047-冻结层",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "冻结层",
+      "description": "冻结层> 分类: 深度学习 | 编号: 047 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-047 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-047 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是冻结层...",
+      "tags": [
+        "冻结层",
+        "参数冻结",
+        "深度学习",
+        "迁移学习"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "048-学习率预热",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "学习率预热",
+      "description": "学习率预热> 分类: 深度学习 | 编号: 048 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-048 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-048 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是学...",
+      "tags": [
+        "学习率预热",
+        "Warmup",
+        "深度学习",
+        "优化器"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "049-梯度裁剪",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "梯度裁剪",
+      "description": "梯度裁剪> 分类: 深度学习 | 编号: 049 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-049 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-049 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是梯度...",
+      "tags": [
+        "梯度裁剪",
+        "Gradient Clipping",
+        "深度学习",
+        "训练稳定"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "050-混合精度训练",
+      "category": "DL",
+      "subCategory": "DL",
+      "title": "混合精度训练",
+      "description": "混合精度训练> 分类: 深度学习 | 编号: 050 | 更新时间: 2026-03-30 | 难度: ⭐⭐DL 深度学习 神经网络 正则化摘要: > 分类: 优化与正则化 | 编号: DL-050 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐---> 分类: 优化与正则化 | 编号: DL-050 | 更新时间: 2026-03-30 | 难度: ⭐⭐⭐ 一、核心概念 1.1 什么是...",
+      "tags": [
+        "混合精度训练",
+        "AMP",
+        "深度学习",
+        "性能优化"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "001_Transformer 架构详解",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Transformer 架构详解",
+      "description": "Transformer 架构详解> 分类: LLM（大语言模型） | 编号: LLM-001 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer Self-Attention 深度学习架构 LLM 基础摘要: Transformer 是一种完全基于注意力机制的深度学习模型架构，由 Google 团队在 2017 年提出。它摒弃了传统的 RNN 和 CNN 结构，实现了并...",
+      "tags": [
+        "Transformer",
+        "Self-Attention",
+        "深度学习",
+        "架构"
+      ],
+      "difficulty": 3,
+      "readTime": "8分钟"
+    },
+    {
       "id": "002_LLM 位置编码详解",
       "category": "LLM",
-      "title": "LLM（大语言模型）位置编码详解",
-      "description": "位置编码是 Transformer（变换器）架构中用于注入序列位置信息的关键技术。本文详细对比绝对位置编码、相对位置编码和 RoPE（旋转位置编码）的原理，并解释为什么现代 LLM（大语言模型）普遍采用 RoPE。",
-      "tags": ["位置编码", "RoPE", "Transformer", "LLM"],
+      "subCategory": "LLM",
+      "title": "LLM 位置编码详解",
+      "description": "LLM（大语言模型）位置编码详解> 分类: LLM（大语言模型） | 编号: LLM-002 | 更新时间: 2026-03-31 | 难度: ⭐⭐⭐⭐位置编码 RoPE（旋转位置编码） Transformer（变换器） LLM（大语言模型）摘要: 位置编码是 Transformer（变换器）架构中用于注入序列位置信息的关键技术。本文详细对比绝对位置编码、相对位置编码和 RoPE（旋转位置编码）的...",
+      "tags": [
+        "位置编码",
+        "RoPE",
+        "Transformer"
+      ],
       "difficulty": 4,
-      "readTime": "15 分钟"
+      "readTime": "5分钟"
     },
     {
       "id": "003_RAG 检索增强生成",
       "category": "LLM",
+      "subCategory": "LLM",
       "title": "RAG（检索增强生成）实战指南",
-      "description": "RAG（检索增强生成）是一种结合信息检索和文本生成的技术架构。通过从外部知识库检索相关文档，再让 LLM（大语言模型）基于检索结果生成回答，有效解决了 LLM 幻觉和知识过时问题。",
-      "tags": ["RAG", "检索增强", "向量数据库", "LLM 应用"],
+      "description": "RAG（检索增强生成）实战指南> 分类: LLM（大语言模型） | 编号: LLM-003 | 更新时间: 2026-03-31 | 难度: ⭐⭐⭐RAG（检索增强生成） 检索增强 向量数据库 LLM（大语言模型）应用摘要: RAG（检索增强生成）是一种结合信息检索和文本生成的技术架构。通过从外部知识库检索相关文档，再让 LLM（大语言模型）基于检索结果生成回答，有效解决了 LLM 幻觉和知识过时...",
+      "tags": [
+        "RAG",
+        "检索增强",
+        "向量数据库"
+      ],
       "difficulty": 3,
-      "readTime": "12 分钟"
-    },
-    {
-      "id": "004_LoRA 微调技术",
-      "category": "LLM",
-      "title": "LoRA（低秩适配）微调技术",
-      "description": "LoRA（低秩适配）是一种参数高效的微调技术，通过在预训练模型旁添加低秩适配器来微调模型，只需训练极少量参数（通常<1%）即可达到与全量微调相当的效果。",
-      "tags": ["LoRA", "参数高效微调", "PEFT", "模型适配"],
-      "difficulty": 4,
-      "readTime": "18 分钟"
-    },
-    {
-      "id": "005_LLM 应用开发实战",
-      "category": "LLM",
-      "title": "LLM（大语言模型）应用开发实战",
-      "description": "本文通过实际案例讲解如何开发一个基于 LLM（大语言模型）的应用，包括 Prompt（提示）设计、RAG（检索增强生成）架构、Agent（智能体）开发等核心技术。",
-      "tags": ["LLM 应用", "Prompt Engineering", "RAG", "Agent"],
-      "difficulty": 3,
-      "readTime": "10 分钟"
+      "readTime": "5分钟"
     },
     {
       "id": "006_Prompt Engineering 实战指南",
       "category": "LLM",
-      "title": "Prompt（提示）Engineering（工程）实战指南",
-      "description": "Prompt Engineering（提示工程）是与大语言模型交互的核心技能。本文系统讲解 Prompt 设计的原则、技巧和实战案例，助你写出高质量的 Prompt，获得更好的模型输出。",
-      "tags": ["Prompt", "LLM 应用", "最佳实践"],
+      "subCategory": "LLM",
+      "title": "Prompt Engineering 实战指南",
+      "description": "> 分类: 大语言模型 | 编号: LLM-006 | 难度: ⭐⭐>> Prompt LLM 应用 最佳实践>> 摘要: Prompt Engineering 是与大语言模型交互的核心技能。本文系统讲解 Prompt 设计的原则、技巧和实战案例，助你写出高质量的 Prompt，获得更好的模型输出。--- 一、概述Prompt Engineering（提示工程）是设计和优化输入给大语言模型的指令的...",
+      "tags": [
+        "Prompt",
+        "LLM 应用",
+        "最佳实践"
+      ],
       "difficulty": 2,
-      "readTime": "20 分钟"
+      "readTime": "7分钟"
+    },
+    {
+      "id": "007_前馈神经网络 FFN",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "前馈神经网络 FFN",
+      "description": "前馈神经网络 FFN> 分类: LLM（大语言模型） | 编号: LLM-007 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Feed-Forward Network的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是前馈神经网络 FFN[待补充...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "008_Encoder-Decoder 架构",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Encoder-Decoder 架构",
+      "description": "Encoder-Decoder 架构> 分类: LLM（大语言模型） | 编号: LLM-008 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Encoder-Decoder的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Encoder-Dec...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "009_因果注意力机制",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "因果注意力机制",
+      "description": "因果注意力机制> 分类: LLM（大语言模型） | 编号: LLM-009 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Causal Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是因果注意力机制[待补充：基本定义和背景] ...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "010_双向注意力机制",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "双向注意力机制",
+      "description": "双向注意力机制> 分类: LLM（大语言模型） | 编号: LLM-010 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Bidirectional Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是双向注意力机制[待补充：基本...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "011_稀疏注意力机制",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "稀疏注意力机制",
+      "description": "稀疏注意力机制> 分类: LLM（大语言模型） | 编号: LLM-011 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Sparse Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是稀疏注意力机制[待补充：基本定义和背景] ...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "012_线性注意力机制",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "线性注意力机制",
+      "description": "线性注意力机制> 分类: LLM（大语言模型） | 编号: LLM-012 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Linear Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是线性注意力机制[待补充：基本定义和背景] ...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "013_Flash Attention 详解",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Flash Attention 详解",
+      "description": "Flash Attention 详解> 分类: LLM（大语言模型） | 编号: LLM-013 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐Flash Attention GPU 优化 IO 感知 推理加速摘要: Flash Attention 是一种 IO 感知的注意力算法，通过将计算分块并利用 GPU 的 SRAM 缓存，将注意力机制的内存访问复杂度从 $O(n^2)$ 降低...",
+      "tags": [
+        "Flash Attention",
+        "GPU 优化",
+        "IO 感知",
+        "推理加速"
+      ],
+      "difficulty": 5,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "014_Paged Attention 详解",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Paged Attention 详解",
+      "description": "Paged Attention 详解> 分类: LLM（大语言模型） | 编号: LLM-014 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Paged Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Paged Atten...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 3,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "015_分组查询注意力 GQA",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "分组查询注意力 GQA",
+      "description": "分组查询注意力 GQA> 分类: LLM（大语言模型） | 编号: LLM-015 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐Transformer 注意力机制 架构 LLM AI摘要: 本文系统讲解Grouped Query Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是分组查询注意力 G...",
+      "tags": [
+        "'Transformer'",
+        "'注意力机制'",
+        "'架构'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "016_Tokenization 分词技术",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Tokenization 分词技术",
+      "description": "Tokenization 分词技术> 分类: LLM（大语言模型） | 编号: LLM-016 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐Tokenization 分词 NLP LLM AI摘要: 本文系统讲解Tokenization的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Tokenization 分词...",
+      "tags": [
+        "'Tokenization'",
+        "'分词'",
+        "'NLP'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "017_BPE 字节对编码",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "BPE 字节对编码",
+      "description": "BPE 字节对编码> 分类: LLM（大语言模型） | 编号: LLM-017 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐Tokenization 分词 NLP LLM AI摘要: 本文系统讲解BPE的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是BPE 字节对编码[待补充：基本定义和背景] 1.2 为什么需要...",
+      "tags": [
+        "'Tokenization'",
+        "'分词'",
+        "'NLP'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "018_WordPiece 分词",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "WordPiece 分词",
+      "description": "WordPiece 分词> 分类: LLM（大语言模型） | 编号: LLM-018 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐Tokenization 分词 NLP LLM AI摘要: 本文系统讲解WordPiece的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是WordPiece 分词[待补充：基本定义和背...",
+      "tags": [
+        "'Tokenization'",
+        "'分词'",
+        "'NLP'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "019_SentencePiece 分词",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "SentencePiece 分词",
+      "description": "SentencePiece 分词> 分类: LLM（大语言模型） | 编号: LLM-019 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐Tokenization 分词 NLP LLM AI摘要: 本文系统讲解SentencePiece的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是SentencePiece 分...",
+      "tags": [
+        "'Tokenization'",
+        "'分词'",
+        "'NLP'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "020_预训练目标详解",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "预训练目标详解",
+      "description": "预训练目标详解> 分类: LLM（大语言模型） | 编号: LLM-020 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐Tokenization 分词 NLP LLM AI摘要: 本文系统讲解预训练目标的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是预训练目标[待补充：基本定义和背景] 1.2 为什么需要预训练目...",
+      "tags": [
+        "'Tokenization'",
+        "'分词'",
+        "'NLP'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "021_Masked LM 掩码语言模型",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Masked LM 掩码语言模型",
+      "description": "Masked LM 掩码语言模型> 分类: LLM（大语言模型） | 编号: LLM-021 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐预训练 语言模型 训练 LLM AI摘要: 本文系统讲解Masked LM的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Masked LM 掩码语言模型[待补充：基本定义和背...",
+      "tags": [
+        "'预训练'",
+        "'语言模型'",
+        "'训练'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "022_Causal LM 因果语言模型",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Causal LM 因果语言模型",
+      "description": "Causal LM 因果语言模型> 分类: LLM（大语言模型） | 编号: LLM-022 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐预训练 语言模型 训练 LLM AI摘要: 本文系统讲解Causal LM的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Causal LM 因果语言模型[待补充：基本定义和背...",
+      "tags": [
+        "'预训练'",
+        "'语言模型'",
+        "'训练'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "023_下一句预测 NSP",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "下一句预测 NSP",
+      "description": "下一句预测 NSP> 分类: LLM（大语言模型） | 编号: LLM-023 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐预训练 语言模型 训练 LLM AI摘要: 本文系统讲解Next Sentence Prediction的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是下一句预测 NSP[待补充：基本定义和...",
+      "tags": [
+        "'预训练'",
+        "'语言模型'",
+        "'训练'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "024_训练数据清洗",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "训练数据清洗",
+      "description": "训练数据清洗> 分类: LLM（大语言模型） | 编号: LLM-024 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐预训练 语言模型 训练 LLM AI摘要: 本文系统讲解数据清洗的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是训练数据清洗[待补充：基本定义和背景] 1.2 为什么需要训练数据清洗| 问题 | ...",
+      "tags": [
+        "'预训练'",
+        "'语言模型'",
+        "'训练'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "025_分布式训练技术",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "分布式训练技术",
+      "description": "分布式训练技术> 分类: LLM（大语言模型） | 编号: LLM-025 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐预训练 语言模型 训练 LLM AI摘要: 本文系统讲解分布式训练的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是分布式训练技术[待补充：基本定义和背景] 1.2 为什么需要分布式训练| 问题 ...",
+      "tags": [
+        "'预训练'",
+        "'语言模型'",
+        "'训练'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "026_全量微调技术",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "全量微调技术",
+      "description": "全量微调技术> 分类: LLM（大语言模型） | 编号: LLM-026 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解全量微调的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是全量微调技术[待补充：基本定义和背景] 1.2 为什么需要全量微调| 问题 | 传...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "027_LoRA 低秩适应",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "LoRA 低秩适应微调",
+      "description": "LoRA 低秩适应微调> 分类: LLM（大语言模型） | 编号: LLM-027 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐LoRA 参数高效微调 低秩分解 PEFT摘要: LoRA（Low-Rank Adaptation）是一种参数高效的微调方法，通过在预训练权重旁添加低秩矩阵来适应新任务，仅需更新少量参数即可获得与全量微调相当的效果。--- 一、核心概念 1.1 什么是 Lo...",
+      "tags": [
+        "LoRA",
+        "参数高效微调",
+        "低秩分解",
+        "PEFT"
+      ],
+      "difficulty": 4,
+      "readTime": "9分钟"
+    },
+    {
+      "id": "028_QLoRA 量化 LoRA",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "QLoRA 量化 LoRA",
+      "description": "QLoRA 量化 LoRA> 分类: LLM（大语言模型） | 编号: LLM-028 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解QLoRA的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是QLoRA 量化 LoRA[待补充：基本定义和背景] 1.2 为什...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "029_Prefix Tuning 前缀微调",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Prefix Tuning 前缀微调",
+      "description": "Prefix Tuning 前缀微调> 分类: LLM（大语言模型） | 编号: LLM-029 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解Prefix Tuning的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Prefix Tuning 前缀微调[待...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 4,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "030_P-Tuning 提示微调",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "P-Tuning 提示微调",
+      "description": "P-Tuning 提示微调> 分类: LLM（大语言模型） | 编号: LLM-030 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解P-Tuning的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是P-Tuning 提示微调[待补充：基本定义和背景] 1....",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "031_Adapter 适配器",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Adapter 适配器",
+      "description": "Adapter 适配器> 分类: LLM（大语言模型） | 编号: LLM-031 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解Adapter的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Adapter 适配器[待补充：基本定义和背景] 1.2 为什么...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "032_IA3 适配器",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "IA3 适配器",
+      "description": "IA3 适配器> 分类: LLM（大语言模型） | 编号: LLM-032 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解IA3的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是IA3 适配器[待补充：基本定义和背景] 1.2 为什么需要IA3 适配器| 问...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "033_DoRA 权重分解适应",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "DoRA 权重分解适应",
+      "description": "DoRA 权重分解适应> 分类: LLM（大语言模型） | 编号: LLM-033 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解DoRA的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是DoRA 权重分解适应[待补充：基本定义和背景] 1.2 为什么需要D...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "034_ReLoRA 重参数化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "ReLoRA 重参数化",
+      "description": "ReLoRA 重参数化> 分类: LLM（大语言模型） | 编号: LLM-034 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐微调 PEFT 参数高效 LLM AI摘要: 本文系统讲解ReLoRA的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是ReLoRA 重参数化[待补充：基本定义和背景] 1.2 为什么需...",
+      "tags": [
+        "'微调'",
+        "'PEFT'",
+        "'参数高效'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "035_DPO 直接偏好优化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "DPO 直接偏好优化",
+      "description": "DPO 直接偏好优化> 分类: LLM（大语言模型） | 编号: LLM-035 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐DPO 直接偏好优化 人类对齐 RLHF 替代摘要: DPO（Direct Preference Optimization，直接偏好优化）是一种简化的人类对齐方法，通过直接优化偏好数据来替代复杂的 RLHF 流程，在保持效果的同时大幅降低了实现复杂度。--- ...",
+      "tags": [
+        "DPO",
+        "偏好优化",
+        "对齐",
+        "RLHF 替代"
+      ],
+      "difficulty": 4,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "036_RLHF 人类反馈强化学习",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "RLHF 人类反馈强化学习",
+      "description": "RLHF 人类反馈强化学习> 分类: LLM（大语言模型） | 编号: LLM-036 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐对齐 偏好优化 RLHF LLM AI摘要: 本文系统讲解RLHF的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是RLHF 人类反馈强化学习[待补充：基本定义和背景] 1.2 为什...",
+      "tags": [
+        "'对齐'",
+        "'偏好优化'",
+        "'RLHF'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "037_PPO 近端策略优化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "PPO 近端策略优化",
+      "description": "PPO 近端策略优化> 分类: LLM（大语言模型） | 编号: LLM-037 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐对齐 偏好优化 RLHF LLM AI摘要: 本文系统讲解PPO的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是PPO 近端策略优化[待补充：基本定义和背景] 1.2 为什么需要PPO ...",
+      "tags": [
+        "'对齐'",
+        "'偏好优化'",
+        "'RLHF'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "038_IPO 身份偏好优化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "IPO 身份偏好优化",
+      "description": "IPO 身份偏好优化> 分类: LLM（大语言模型） | 编号: LLM-038 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐对齐 偏好优化 RLHF LLM AI摘要: 本文系统讲解IPO的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是IPO 身份偏好优化[待补充：基本定义和背景] 1.2 为什么需要IPO ...",
+      "tags": [
+        "'对齐'",
+        "'偏好优化'",
+        "'RLHF'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "039_SimPO 简单偏好优化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "SimPO 简单偏好优化",
+      "description": "SimPO 简单偏好优化> 分类: LLM（大语言模型） | 编号: LLM-039 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐对齐 偏好优化 RLHF LLM AI摘要: 本文系统讲解SimPO的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是SimPO 简单偏好优化[待补充：基本定义和背景] 1.2 为什么...",
+      "tags": [
+        "'对齐'",
+        "'偏好优化'",
+        "'RLHF'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "040_KTO 人类反馈优化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "KTO 人类反馈优化",
+      "description": "KTO 人类反馈优化> 分类: LLM（大语言模型） | 编号: LLM-040 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐对齐 偏好优化 RLHF LLM AI摘要: 本文系统讲解KTO的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是KTO 人类反馈优化[待补充：基本定义和背景] 1.2 为什么需要KTO ...",
+      "tags": [
+        "'对齐'",
+        "'偏好优化'",
+        "'RLHF'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "041_KV Cache 键值缓存",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "KV Cache 键值缓存优化",
+      "description": "KV Cache 键值缓存优化> 分类: LLM（大语言模型） | 编号: LLM-041 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐KV Cache 推理优化 显存管理 自回归生成摘要: KV Cache 是自回归语言模型推理优化的核心技术，通过缓存历史 token 的 Key 和 Value 状态，避免重复计算，将推理复杂度从 $O(n^2)$ 降低到 $O(n)$。--- 一...",
+      "tags": [
+        "KV Cache",
+        "推理优化",
+        "显存管理",
+        "自回归"
+      ],
+      "difficulty": 4,
+      "readTime": "11分钟"
+    },
+    {
+      "id": "042_Continuous Batching 连续批处理",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Continuous Batching 连续批处理",
+      "description": "Continuous Batching 连续批处理> 分类: LLM（大语言模型） | 编号: LLM-042 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解Continuous Batching的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Contin...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "043_推测解码技术",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "推测解码技术",
+      "description": "推测解码技术> 分类: LLM（大语言模型） | 编号: LLM-043 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解Speculative Decoding的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是推测解码技术[待补充：基本定义和背景] 1.2 ...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "044_Prompt Cache 提示缓存",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Prompt Cache 提示缓存",
+      "description": "Prompt Cache 提示缓存> 分类: LLM（大语言模型） | 编号: LLM-044 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解Prompt Cache的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Prompt Cache 提示缓存[待补充...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "045_Activation Cache 激活缓存",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Activation Cache 激活缓存",
+      "description": "Activation Cache 激活缓存> 分类: LLM（大语言模型） | 编号: LLM-045 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解Activation Cache的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Activation Ca...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "046_量化技术 INT8-INT4",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "量化技术 INT8-INT4",
+      "description": "量化技术 INT8-INT4> 分类: LLM（大语言模型） | 编号: LLM-046 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解量化（INT8/INT4）的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是量化技术 INT8-INT4[待补充：基本定义...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "047_AWQ 激活感知量化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "AWQ 激活感知量化",
+      "description": "AWQ 激活感知量化> 分类: LLM（大语言模型） | 编号: LLM-047 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解AWQ的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是AWQ 激活感知量化[待补充：基本定义和背景] 1.2 为什么需要AWQ ...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "048_GPTQ 量化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "GPTQ 量化",
+      "description": "GPTQ 量化> 分类: LLM（大语言模型） | 编号: LLM-048 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解GPTQ的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是GPTQ 量化[待补充：基本定义和背景] 1.2 为什么需要GPTQ 量化| ...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "049_SmoothQuant 平滑量化",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "SmoothQuant 平滑量化",
+      "description": "SmoothQuant 平滑量化> 分类: LLM（大语言模型） | 编号: LLM-049 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解SmoothQuant的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是SmoothQuant 平滑量化[待补充：基本...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "050_张量并行技术",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "张量并行技术",
+      "description": "张量并行技术> 分类: LLM（大语言模型） | 编号: LLM-050 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐推理优化 量化 显存管理 LLM AI摘要: 本文系统讲解张量并行的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是张量并行技术[待补充：基本定义和背景] 1.2 为什么需要张量并行| 问题 | ...",
+      "tags": [
+        "'推理优化'",
+        "'量化'",
+        "'显存管理'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "051_RAG 检索增强生成",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "RAG 检索增强生成",
+      "description": "RAG 检索增强生成> 分类: LLM（大语言模型） | 编号: LLM-051 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解RAG的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是RAG 检索增强生成[待补充：基本定义和背景] 1.2 为什么需要RAG...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "052_Prompt Engineering 提示工程",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Prompt Engineering 提示工程",
+      "description": "Prompt Engineering 提示工程> 分类: LLM（大语言模型） | 编号: LLM-052 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解Prompt Engineering的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Prompt E...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "053_思维链 CoT",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "思维链 CoT",
+      "description": "思维链 CoT> 分类: LLM（大语言模型） | 编号: LLM-053 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解思维链的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是思维链 CoT[待补充：基本定义和背景] 1.2 为什么需要思维链 CoT| ...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "054_ReAct 推理与行动",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "ReAct 推理与行动",
+      "description": "ReAct 推理与行动> 分类: LLM（大语言模型） | 编号: LLM-054 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解ReAct的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是ReAct 推理与行动[待补充：基本定义和背景] 1.2 为什么需...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "055_AI Agent 智能体",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "AI Agent 智能体",
+      "description": "AI Agent 智能体> 分类: LLM（大语言模型） | 编号: LLM-055 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解Agent的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是AI Agent 智能体[待补充：基本定义和背景] 1.2 为什...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "056_Function Calling 函数调用",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Function Calling 函数调用",
+      "description": "Function Calling 函数调用> 分类: LLM（大语言模型） | 编号: LLM-056 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解Function Calling的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Function Cal...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "057_Tool Use 工具使用",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Tool Use 工具使用",
+      "description": "Tool Use 工具使用> 分类: LLM（大语言模型） | 编号: LLM-057 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解Tool Use的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Tool Use 工具使用[待补充：基本定义和背景] 1...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "058_Multi-Agent 多智能体",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Multi-Agent 多智能体",
+      "description": "Multi-Agent 多智能体> 分类: LLM（大语言模型） | 编号: LLM-058 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解Multi-Agent的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Multi-Agent 多智能体[待补充：基...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "059_记忆系统详解",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "记忆系统详解",
+      "description": "记忆系统详解> 分类: LLM（大语言模型） | 编号: LLM-059 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解记忆系统的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是记忆系统[待补充：基本定义和背景] 1.2 为什么需要记忆系统| 问题 | 传...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "060_LLM 评估方法",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "LLM 评估方法",
+      "description": "LLM 评估方法> 分类: LLM（大语言模型） | 编号: LLM-060 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐应用 Agent 工具使用 LLM AI摘要: 本文系统讲解评估的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是LLM 评估方法[待补充：基本定义和背景] 1.2 为什么需要LLM 评估方法...",
+      "tags": [
+        "'应用'",
+        "'Agent'",
+        "'工具使用'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "061_MoE 混合专家",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "MoE 混合专家",
+      "description": "MoE 混合专家> 分类: LLM（大语言模型） | 编号: LLM-061 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解MoE的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是MoE 混合专家[待补充：基本定义和背景] 1.2 为什么需要MoE 混合专...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "062_Switch Transformer",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Switch Transformer",
+      "description": "Switch Transformer> 分类: LLM（大语言模型） | 编号: LLM-062 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解Switch Transformer的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Switch Transf...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "063_Mixtral 混合专家模型",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Mixtral 混合专家模型",
+      "description": "Mixtral 混合专家模型> 分类: LLM（大语言模型） | 编号: LLM-063 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解Mixtral的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Mixtral 混合专家模型[待补充：基本定义和背景] ...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "064_Mamba 状态空间模型",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Mamba 状态空间模型",
+      "description": "Mamba 状态空间模型> 分类: LLM（大语言模型） | 编号: LLM-064 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解Mamba的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Mamba 状态空间模型[待补充：基本定义和背景] 1.2 为什...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "065_SSM 状态空间模型",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "SSM 状态空间模型",
+      "description": "SSM 状态空间模型> 分类: LLM（大语言模型） | 编号: LLM-065 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解SSM的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是SSM 状态空间模型[待补充：基本定义和背景] 1.2 为什么需要SSM...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "066_RWKV 循环 Transformer",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "RWKV 循环 Transformer",
+      "description": "RWKV 循环 Transformer> 分类: LLM（大语言模型） | 编号: LLM-066 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解RWKV的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是RWKV 循环 Transformer[待补充：基本...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "067_RetNet 保留网络",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "RetNet 保留网络",
+      "description": "RetNet 保留网络> 分类: LLM（大语言模型） | 编号: LLM-067 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解RetNet的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是RetNet 保留网络[待补充：基本定义和背景] 1.2 为什么...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "068_Hyena 层次卷积",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Hyena 层次卷积",
+      "description": "Hyena 层次卷积> 分类: LLM（大语言模型） | 编号: LLM-068 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解Hyena的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Hyena 层次卷积[待补充：基本定义和背景] 1.2 为什么需要H...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "069_Jamba 混合架构",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Jamba 混合架构",
+      "description": "Jamba 混合架构> 分类: LLM（大语言模型） | 编号: LLM-069 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解Jamba的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Jamba 混合架构[待补充：基本定义和背景] 1.2 为什么需要J...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "070_Ring Attention 环形注意力",
+      "category": "LLM",
+      "subCategory": "LLM",
+      "title": "Ring Attention 环形注意力",
+      "description": "Ring Attention 环形注意力> 分类: LLM（大语言模型） | 编号: LLM-070 | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐⭐⭐架构创新 新模型 研究前沿 LLM AI摘要: 本文系统讲解Ring Attention的核心知识点，包括基本概念、工作原理和实际应用场景。--- 一、核心概念> 💡 核心思想: [待补充] 1.1 什么是Ring Attention ...",
+      "tags": [
+        "'架构创新'",
+        "'新模型'",
+        "'研究前沿'",
+        "'LLM'",
+        "'AI'"
+      ],
+      "difficulty": 5,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "001_线性回归",
+      "category": "ML",
+      "subCategory": "回归算法",
+      "title": "线性回归",
+      "description": "> 分类: 回归算法 | 编号: 001 | 更新时间: 2026-04-01 | 难度: ⭐⭐线性回归 回归 监督学习 MSE 梯度下降--- 1. 概述线性回归是机器学习中最基础、最经典的监督学习算法之一，用于预测连续型目标变量。它通过建立自变量（特征）与因变量（目标）之间的线性关系模型，实现对未知数据的预测。线性回归的核心思想是：找到一条最佳拟合直线（或超平面），使得预测值与真实值之间的误差...",
+      "tags": [
+        "'线性回归'",
+        "'回归'",
+        "'监督学习'",
+        "'MSE'",
+        "'梯度下降'"
+      ],
+      "difficulty": 2,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "002_逻辑回归",
+      "category": "ML",
+      "subCategory": "回归算法",
+      "title": "逻辑回归",
+      "description": "> 分类: 回归算法 | 编号: 002 | 更新时间: 2026-04-01 | 难度: ⭐⭐逻辑回归 分类 监督学习 Sigmoid 交叉熵--- 1. 概述逻辑回归是一种经典的分类算法，尽管名字中有\"回归\"，但它实际上用于解决二分类和多分类问题。逻辑回归通过 Sigmoid 函数将线性回归的输出映射到 (0, 1) 区间，表示样本属于某一类别的概率。核心思想： 使用逻辑函数（Sigmoid）...",
+      "tags": [
+        "'逻辑回归'",
+        "'分类'",
+        "'监督学习'",
+        "'Sigmoid'",
+        "'交叉熵'"
+      ],
+      "difficulty": 2,
+      "readTime": "12分钟"
+    },
+    {
+      "id": "003_决策树",
+      "category": "ML",
+      "subCategory": "机器学习",
+      "title": "决策树",
+      "description": "> 分类: 机器学习 | 编号: 003 | 更新时间: 2026-04-01 | 难度: ⭐⭐决策树 分类 回归 信息增益 CART--- 1. 概述决策树是一种监督学习算法，可用于分类和回归任务。它通过一系列 if-then 规则对数据进行划分，形成树状结构。决策树直观易懂，是集成学习（如随机森林、XGBoost）的基础。核心思想： 通过特征测试条件递归地将数据集划分为更纯净的子集，直到满足停...",
+      "tags": [
+        "'决策树'",
+        "'分类'",
+        "'回归'",
+        "'信息增益'",
+        "'CART'"
+      ],
+      "difficulty": 2,
+      "readTime": "15分钟"
+    },
+    {
+      "id": "004_随机森林",
+      "category": "ML",
+      "subCategory": "机器学习",
+      "title": "随机森林",
+      "description": "> 分类: 机器学习 | 编号: 004 | 更新时间: 2026-04-01 | 难度: ⭐⭐随机森林 集成学习 Bagging 分类 回归--- 1. 概述随机森林是一种集成学习算法，通过构建多个决策树并综合它们的预测结果来提高模型性能。它结合了 Bagging 思想和随机特征选择，是机器学习中最强大且广泛使用的算法之一。核心思想： \"三个臭皮匠，顶个诸葛亮\"——多个弱学习器组合成强学习器。 ...",
+      "tags": [
+        "'随机森林'",
+        "'集成学习'",
+        "'Bagging'",
+        "'分类'",
+        "'回归'"
+      ],
+      "difficulty": 2,
+      "readTime": "18分钟"
+    },
+    {
+      "id": "005_SVM",
+      "category": "ML",
+      "subCategory": "分类算法",
+      "title": "SVM 支持向量机",
+      "description": "> 分类: 分类算法 | 编号: 005 | 更新时间: 2026-04-01 | 难度: ⭐⭐SVM 支持向量机 分类 核函数 间隔最大化--- 1. 概述支持向量机是一种强大的监督学习算法，用于分类和回归任务。SVM 的核心思想是找到一个最优超平面，使得不同类别的样本之间的间隔（margin）最大化。核心思想： 最大化分类间隔，提高泛化能力。 1.1 历史背景- 1963 年：Vapnik 和...",
+      "tags": [
+        "'SVM'",
+        "'支持向量机'",
+        "'分类'",
+        "'核函数'",
+        "'间隔最大化'"
+      ],
+      "difficulty": 2,
+      "readTime": "15分钟"
+    },
+    {
+      "id": "006_KNN",
+      "category": "ML",
+      "subCategory": "分类算法",
+      "title": "KNN K 近邻",
+      "description": "> 分类: 分类算法 | 编号: 006 | 更新时间: 2026-04-01 | 难度: ⭐⭐KNN K 近邻 分类 回归 距离度量--- 1. 概述K 近邻算法是一种基于实例的懒惰学习算法，用于分类和回归任务。KNN 的核心思想是：相似的样本在特征空间中距离相近，通过找到最近的 K 个邻居来预测新样本的类别或值。核心思想： \"近朱者赤，近墨者黑\"——物以类聚。 1.1 算法特点| 特点 | 说...",
+      "tags": [
+        "'KNN'",
+        "'K 近邻'",
+        "'分类'",
+        "'回归'",
+        "'距离度量'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "007_朴素贝叶斯",
+      "category": "ML",
+      "subCategory": "分类算法",
+      "title": "朴素贝叶斯",
+      "description": "> 分类: 分类算法 | 编号: 007 | 更新时间: 2026-04-01 | 难度: ⭐⭐朴素贝叶斯 分类 贝叶斯定理 概率--- 1. 概述朴素贝叶斯是一种基于贝叶斯定理和特征条件独立假设的概率分类算法。尽管\"朴素\"的假设在现实中很少成立，但朴素贝叶斯在许多实际应用中表现出色，尤其是文本分类任务。核心思想： 基于贝叶斯定理，计算给定特征下各类别的后验概率，选择概率最大的类别。 1.1 贝叶...",
+      "tags": [
+        "'朴素贝叶斯'",
+        "'分类'",
+        "'贝叶斯定理'",
+        "'概率'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "008_K_Means",
+      "category": "ML",
+      "subCategory": "机器学习",
+      "title": "K Means",
+      "description": "> 分类: 机器学习 | 编号: 008 | 更新时间: 2026-04-01 | 难度: ⭐⭐机器学习 ML 面试--- 1. 概述K-Means 是一种经典的无监督学习算法，用于将数据划分为 K 个簇（clusters）。它通过迭代优化簇中心，使得簇内样本距离最近，簇间样本距离最远。核心思想： 物以类聚——相似的数据点归为一类。 1.1 算法特点| 特点 | 说明 ||------|-----...",
+      "tags": [
+        "'机器学习'",
+        "'ML'",
+        "'面试'"
+      ],
+      "difficulty": 2,
+      "readTime": "15分钟"
+    },
+    {
+      "id": "009_DBSCAN",
+      "category": "ML",
+      "subCategory": "聚类算法",
+      "title": "DBSCAN 密度聚类",
+      "description": "> 分类: 聚类算法 | 编号: 009 | 更新时间: 2026-04-01 | 难度: ⭐⭐DBSCAN 聚类 无监督学习 密度聚类--- 1. 概述DBSCAN（Density-Based Spatial Clustering of Applications with Noise）是一种基于密度的聚类算法。与 K-Means 不同，DBSCAN 可以发现任意形状的簇，并能自动识别噪声点（异常...",
+      "tags": [
+        "'DBSCAN'",
+        "'聚类'",
+        "'无监督学习'",
+        "'密度聚类'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "010_层次聚类",
+      "category": "ML",
+      "subCategory": "聚类算法",
+      "title": "层次聚类",
+      "description": "> 分类: 聚类算法 | 编号: 010 | 更新时间: 2026-04-01 | 难度: ⭐⭐层次聚类 聚类 无监督学习 树状图--- 1. 概述层次聚类是一种构建簇层次结构的聚类方法，可以生成树状结构（树形图/dendrogram）。与 K-Means 不同，层次聚类不需要预先指定簇数量，可以通过切割树形图获得任意数量的簇。核心思想： 自底向上或自顶向下构建簇的层次结构。 1.1 算法类型| ...",
+      "tags": [
+        "'层次聚类'",
+        "'聚类'",
+        "'无监督学习'",
+        "'树状图'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "011_Bagging",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "Bagging",
+      "description": "> 分类: 集成学习 | 编号: 011 | 更新时间: 2026-04-01 | 难度: ⭐⭐Bagging 集成学习 自助采样 随机森林--- 1. 概述Bagging（Bootstrap Aggregating，自助聚合）是一种集成学习技术，通过对训练数据进行有放回抽样，训练多个基学习器，然后聚合它们的预测结果。Bagging 主要用于降低模型的方差，提高泛化能力。核心思想： \"三个臭皮匠，...",
+      "tags": [
+        "'Bagging'",
+        "'集成学习'",
+        "'自助采样'",
+        "'随机森林'"
+      ],
+      "difficulty": 2,
+      "readTime": "14分钟"
+    },
+    {
+      "id": "012_Boosting",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "Boosting",
+      "description": "> 分类: 集成学习 | 编号: 012 | 更新时间: 2026-04-01 | 难度: ⭐⭐Boosting 集成学习 迭代 加权--- 1. 概述Boosting 是一种集成学习技术，通过顺序训练多个弱学习器，每个新学习器关注前一个学习器的错误，最终将弱学习器组合成强学习器。与 Bagging 的并行独立不同，Boosting 是串行依赖的。核心思想： \"循序渐进\"——从错误中学习，逐步提升...",
+      "tags": [
+        "'Boosting'",
+        "'集成学习'",
+        "'迭代'",
+        "'加权'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "013_Stacking",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "Stacking",
+      "description": "> 分类: 集成学习 | 编号: 013 | 更新时间: 2026-04-01 | 难度: ⭐⭐Stacking 集成学习 元学习器 模型融合--- 1. 概述Stacking（Stacked Generalization，堆叠泛化）是一种多层集成学习技术，通过将多个基学习器的预测结果作为输入，训练一个元学习器（meta-learner）来进行最终预测。核心思想： \"集思广益\"——用多个模型的预测...",
+      "tags": [
+        "'Stacking'",
+        "'集成学习'",
+        "'元学习器'",
+        "'模型融合'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "014_Voting",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "Voting",
+      "description": "> 分类: 集成学习 | 编号: 014 | 更新时间: 2026-04-01 | 难度: ⭐⭐Voting 集成学习 投票 模型融合--- 1. 概述Voting（投票法）是一种简单而有效的集成学习技术，通过组合多个分类器的预测结果，使用多数投票（分类）或平均（回归）来做出最终预测。核心思想： \"民主决策\"——少数服从多数。 1.1 算法类型| 类型 | 说明 | 适用场景 ||------|-...",
+      "tags": [
+        "'Voting'",
+        "'集成学习'",
+        "'投票'",
+        "'模型融合'"
+      ],
+      "difficulty": 2,
+      "readTime": "13分钟"
+    },
+    {
+      "id": "015_AdaBoost",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "AdaBoost 自适应提升",
+      "description": "> 分类: 集成学习 | 编号: 015 | 更新时间: 2026-04-01 | 难度: ⭐⭐AdaBoost Boosting 集成学习 自适应--- 1. 概述AdaBoost（Adaptive Boosting，自适应提升）是 Boosting 家族中最经典的算法，由 Freund 和 Schapire 于 1995 年提出。AdaBoost 通过自适应地调整样本权重，使后续学习器关注之前...",
+      "tags": [
+        "'AdaBoost'",
+        "'Boosting'",
+        "'集成学习'",
+        "'自适应'"
+      ],
+      "difficulty": 2,
+      "readTime": "14分钟"
+    },
+    {
+      "id": "016_Gradient_Boosting",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "Gradient Boosting",
+      "description": "> 分类: 集成学习 | 编号: 016 | 更新时间: 2026-04-01 | 难度: ⭐⭐Boosting 集成学习 迭代 加权--- 1. 概述Gradient Boosting（梯度提升，GBDT）是一种强大的集成学习算法，通过迭代训练弱学习器来拟合前一轮的残差（负梯度），逐步提升模型性能。与 AdaBoost 调整样本权重不同，GBDT 直接拟合残差。核心思想： \"循序渐进\"——每一步...",
+      "tags": [
+        "'Boosting'",
+        "'集成学习'",
+        "'迭代'",
+        "'加权'"
+      ],
+      "difficulty": 2,
+      "readTime": "10分钟"
+    },
+    {
+      "id": "017_XGBoost",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "XGBoost 梯度提升",
+      "description": "> 分类: 集成学习 | 编号: 017 | 更新时间: 2026-04-01 | 难度: ⭐⭐XGBoost 梯度提升 集成学习 正则化--- 1. 概述XGBoost（eXtreme Gradient Boosting）是 Gradient Boosting 的高效改进版本，由陈天奇于 2016 年提出。XGBoost 通过系统优化和算法改进，实现了更快的训练速度和更高的预测精度。核心思想： ...",
+      "tags": [
+        "'XGBoost'",
+        "'梯度提升'",
+        "'集成学习'",
+        "'正则化'"
+      ],
+      "difficulty": 2,
+      "readTime": "8分钟"
+    },
+    {
+      "id": "018_LightGBM",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "LightGBM 轻量级梯度提升",
+      "description": "> 分类: 集成学习 | 编号: 018 | 更新时间: 2026-04-01 | 难度: ⭐⭐LightGBM 梯度提升 集成学习 直方图--- 1. 概述LightGBM（Light Gradient Boosting Machine）是微软于 2017 年开源的高效梯度提升框架。相比 XGBoost，LightGBM 在保持高精度的同时，显著提升了训练速度和降低了内存消耗。核心思想： \"更快...",
+      "tags": [
+        "'LightGBM'",
+        "'梯度提升'",
+        "'集成学习'",
+        "'直方图'"
+      ],
+      "difficulty": 2,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "019_CatBoost",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "CatBoost 类别特征提升",
+      "description": "> 分类: 集成学习 | 编号: 019 | 更新时间: 2026-04-01 | 难度: ⭐⭐CatBoost 梯度提升 集成学习 类别特征--- 1. 概述CatBoost（Categorical Boosting）是 Yandex 于 2017 年开源的梯度提升算法，专为高效处理类别特征而设计。CatBoost 通过 Ordered Boosting 和创新的类别特征处理，实现了高精度且无需...",
+      "tags": [
+        "'CatBoost'",
+        "'梯度提升'",
+        "'集成学习'",
+        "'类别特征'"
+      ],
+      "difficulty": 2,
+      "readTime": "7分钟"
+    },
+    {
+      "id": "020_HistGradientBoosting",
+      "category": "ML",
+      "subCategory": "集成学习",
+      "title": "HistGradientBoosting 直方图梯度提升",
+      "description": "> 分类: 集成学习 | 编号: 020 | 更新时间: 2026-04-01 | 难度: ⭐⭐Boosting 集成学习 迭代 加权--- 1. 概述HistGradientBoosting 是 scikit-learn 0.21+ 引入的基于直方图的梯度提升算法，灵感来自 LightGBM。它将连续特征离散化为直方图 bins，大幅提升训练速度，特别适合大规模数据。核心思想： \"离散化加速\"—...",
+      "tags": [
+        "'Boosting'",
+        "'集成学习'",
+        "'迭代'",
+        "'加权'"
+      ],
+      "difficulty": 2,
+      "readTime": "4分钟"
+    },
+    {
+      "id": "021_PCA",
+      "category": "ML",
+      "subCategory": "降维算法",
+      "title": "PCA 主成分分析",
+      "description": "> 分类: 降维算法 | 编号: 021 | 更新时间: 2026-04-01 | 难度: ⭐⭐PCA 降维 无监督学习 特征值分解 协方差--- 1. 概述PCA（Principal Component Analysis，主成分分析）是一种经典的无监督降维算法，通过线性变换将数据投影到方差最大的方向（主成分），实现降维和特征提取。核心思想： \"保留最大信息\"——找到数据变化最大的方向。 1.1 ...",
+      "tags": [
+        "'PCA'",
+        "'降维'",
+        "'无监督学习'",
+        "'特征值分解'",
+        "'协方差'"
+      ],
+      "difficulty": 2,
+      "readTime": "4分钟"
+    },
+    {
+      "id": "022_t_SNE",
+      "category": "ML",
+      "subCategory": "机器学习",
+      "title": "t SNE",
+      "description": "> 分类: 机器学习 | 编号: 022 | 更新时间: 2026-04-01 | 难度: ⭐⭐机器学习 ML 面试--- 1. 概述t-SNE（t-Distributed Stochastic Neighbor Embedding）是一种非线性降维算法，特别适合高维数据的可视化。t-SNE 通过保持局部结构，将高维数据映射到低维空间。核心思想： \"保持局部相似性\"——相似点在低维空间也相近。 1...",
+      "tags": [
+        "'机器学习'",
+        "'ML'",
+        "'面试'"
+      ],
+      "difficulty": 2,
+      "readTime": "3分钟"
+    },
+    {
+      "id": "023_UMAP",
+      "category": "ML",
+      "subCategory": "降维算法",
+      "title": "UMAP 降维",
+      "description": "> 分类: 降维算法 | 编号: 023 | 更新时间: 2026-04-01 | 难度: ⭐⭐UMAP 降维 可视化 流形学习--- 1. 概述UMAP（Uniform Manifold Approximation and Projection）是一种现代非线性降维算法，基于流形学习和拓扑理论。相比 t-SNE，UMAP 更快且能更好地保持全局结构。核心思想： \"流形学习\"——假设数据是高维流形...",
+      "tags": [
+        "'UMAP'",
+        "'降维'",
+        "'可视化'",
+        "'流形学习'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "024_LDA",
+      "category": "ML",
+      "subCategory": "降维算法",
+      "title": "LDA 线性判别分析",
+      "description": "> 分类: 降维算法 | 编号: 024 | 更新时间: 2026-04-01 | 难度: ⭐⭐LDA 降维 判别分析 监督学习--- 1. 概述LDA（Linear Discriminant Analysis，线性判别分析）是一种监督降维算法，通过最大化类间方差与类内方差的比值，找到最佳投影方向。核心思想： \"最大化可分性\"——让不同类别尽可能分开。 1.1 与 PCA 对比| 特性 | PCA...",
+      "tags": [
+        "'LDA'",
+        "'降维'",
+        "'判别分析'",
+        "'监督学习'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "025_Autoencoder",
+      "category": "ML",
+      "subCategory": "降维算法",
+      "title": "Autoencoder 自编码器",
+      "description": "> 分类: 降维算法 | 编号: 025 | 更新时间: 2026-04-01 | 难度: ⭐⭐Autoencoder 自编码器 降维 神经网络 无监督学习--- 1. 概述Autoencoder（自编码器）是一种神经网络降维算法，通过编码器 - 解码器结构学习数据的压缩表示。核心思想： \"学习压缩\"——通过重构任务学习有效表示。 1.1 结构输入 → 编码器 → 潜在表示 → 解码器 → 重构输...",
+      "tags": [
+        "'Autoencoder'",
+        "'自编码器'",
+        "'降维'",
+        "'神经网络'",
+        "'无监督学习'"
+      ],
+      "difficulty": 2,
+      "readTime": "3分钟"
+    },
+    {
+      "id": "026_特征选择",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "特征选择",
+      "description": "> 分类: 特征工程 | 编号: 026 | 更新时间: 2026-04-01 | 难度: ⭐⭐特征选择 特征工程 过滤法 包裹法--- 1. 概述特征选择是从原始特征中选择最相关特征子集的过程，用于减少维度、提高模型性能、降低过拟合风险。核心思想： \"少即是多\"——选择最有信息量的特征。 1.1 方法分类| 类型 | 说明 | 示例 ||------|------|------|| 过滤法 | ...",
+      "tags": [
+        "'特征选择'",
+        "'特征工程'",
+        "'过滤法'",
+        "'包裹法'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "027_特征提取",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "特征提取",
+      "description": "> 分类: 特征工程 | 编号: 027 | 更新时间: 2026-04-01 | 难度: ⭐⭐特征提取 特征工程 降维 PCA--- 1. 概述特征提取是通过变换或组合原始特征，生成新的更有意义的特征表示。核心思想： \"创造更好特征\"——从原始数据中提取有用信息。 1.1 常见方法| 方法 | 说明 | 示例 ||------|------|------|| 多项式特征 | 特征组合 | x²,...",
+      "tags": [
+        "'特征提取'",
+        "'特征工程'",
+        "'降维'",
+        "'PCA'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "028_特征缩放",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "特征缩放",
+      "description": "> 分类: 特征工程 | 编号: 028 | 更新时间: 2026-04-01 | 难度: ⭐⭐特征缩放 特征工程 标准化 归一化--- 1. 概述特征缩放是将特征缩放到统一尺度的预处理步骤，对距离-based 和梯度-based 算法至关重要。核心思想： \"统一尺度\"——消除特征量纲影响。 1.1 常用方法| 方法 | 公式 | 范围 | 适用 ||------|------|------|--...",
+      "tags": [
+        "'特征缩放'",
+        "'特征工程'",
+        "'标准化'",
+        "'归一化'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "029_One_Hot_编码",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "One Hot 编码",
+      "description": "> 分类: 特征工程 | 编号: 029 | 更新时间: 2026-04-01 | 难度: ⭐⭐机器学习 ML 面试--- 1. 概述One-Hot 编码是将类别特征转换为二进制向量的编码方法，每个类别对应一个独立的二进制特征。核心思想： \"一个类别一个特征\"——将类别转换为数值。 1.1 编码示例原始：[红，绿，蓝，红]One-Hot:红：[1, 0, 0]绿：[0, 1, 0]蓝：[0, 0,...",
+      "tags": [
+        "'机器学习'",
+        "'ML'",
+        "'面试'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "030_标签编码",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "标签编码",
+      "description": "> 分类: 特征工程 | 编号: 030 | 更新时间: 2026-04-01 | 难度: ⭐⭐标签编码 LabelEncoder 特征工程 类别特征--- 1. 概述标签编码是将类别标签转换为整数的编码方法，每个类别对应一个唯一的整数值。核心思想： \"一个类别一个数字\"——简单映射。 1.1 编码示例原始：[红，绿，蓝，红]标签编码：[0, 1, 2, 0] 1.2 与 One-Hot 对比| ...",
+      "tags": [
+        "'标签编码'",
+        "'LabelEncoder'",
+        "'特征工程'",
+        "'类别特征'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "031_目标编码",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "目标编码",
+      "description": "> 分类: 特征工程 | 编号: 031 | 更新时间: 2026-04-01 | 难度: ⭐⭐目标编码 Target Encoding 特征工程 类别特征--- 1. 概述目标编码是用目标变量的统计量（如均值）替换类别特征的编码方法，也称为均值编码。核心思想： \"用目标信息编码\"——类别值用目标均值表示。 1.1 编码示例原始数据：类别    目标A       1A       0B     ...",
+      "tags": [
+        "'目标编码'",
+        "'Target Encoding'",
+        "'特征工程'",
+        "'类别特征'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "032_分箱",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "分箱",
+      "description": "> 分类: 特征工程 | 编号: 032 | 更新时间: 2026-04-01 | 难度: ⭐⭐分箱 Binning 特征工程 离散化--- 1. 概述分箱是将连续特征离散化为区间的预处理方法，将连续值映射到有限的桶中。核心思想： \"化连续为离散\"——将连续值分组。 1.1 分箱方法| 方法 | 说明 | 示例 ||------|------|------|| 等宽分箱 | 等间隔 | [0-10...",
+      "tags": [
+        "'分箱'",
+        "'Binning'",
+        "'特征工程'",
+        "'离散化'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "033_交互特征",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "交互特征",
+      "description": "> 分类: 特征工程 | 编号: 033 | 更新时间: 2026-04-01 | 难度: ⭐⭐交互特征 特征工程 特征组合--- 1. 概述交互特征是通过组合多个原始特征创建的新特征，用于捕捉特征间的交互作用。核心思想： \"1+1>2\"——特征组合产生新信息。 1.1 常见交互| 类型 | 示例 ||------|------|| 乘法 | 面积 = 长 × 宽 || 除法 | 单价 = 总价 ...",
+      "tags": [
+        "'交互特征'",
+        "'特征工程'",
+        "'特征组合'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "034_多项式特征",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "多项式特征",
+      "description": "> 分类: 特征工程 | 编号: 034 | 更新时间: 2026-04-01 | 难度: ⭐⭐多项式特征 特征工程 非线性--- 1. 概述多项式特征是通过生成原始特征的多项式组合来扩展特征空间的方法，使线性模型能够拟合非线性关系。核心思想： \"升维拟合非线性\"——用高维线性拟合低维非线性。 1.1 特征生成原始：[x₁, x₂]degree=2: [1, x₁, x₂, x₁², x₁x₂, ...",
+      "tags": [
+        "'多项式特征'",
+        "'特征工程'",
+        "'非线性'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "035_缺失值填补",
+      "category": "ML",
+      "subCategory": "机器学习",
+      "title": "缺失值填补",
+      "description": "> 分类: 机器学习 | 编号: 035 | 更新时间: 2026-04-01 | 难度: ⭐⭐缺失值处理 数据清洗 插补 特征工程--- 1. 概述缺失值填补是用合理值替换缺失数据的预处理方法，是数据清洗的关键步骤。核心思想： \"补全数据\"——用估计值填充缺失。 1.1 缺失类型| 类型 | 说明 | 处理 ||------|------|------|| MCAR | 完全随机缺失 | 直接删...",
+      "tags": [
+        "'缺失值处理'",
+        "'数据清洗'",
+        "'插补'",
+        "'特征工程'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "036_交叉验证",
+      "category": "ML",
+      "subCategory": "模型评估",
+      "title": "交叉验证",
+      "description": "> 分类: 模型评估 | 编号: 036 | 更新时间: 2026-04-01 | 难度: ⭐⭐交叉验证 模型评估 K 折 验证--- 1. 概述交叉验证是通过多次划分训练/测试集来评估模型泛化能力的方法，是模型评估的金标准。核心思想： \"多次验证\"——充分利用数据评估模型。 1.1 常用方法| 方法 | 说明 | 适用 ||------|------|------|| K 折交叉验证 | 数据分...",
+      "tags": [
+        "'交叉验证'",
+        "'模型评估'",
+        "'K 折'",
+        "'验证'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "037_Bootstrap",
+      "category": "ML",
+      "subCategory": "模型评估",
+      "title": "Bootstrap",
+      "description": "> 分类: 模型评估 | 编号: 037 | 更新时间: 2026-04-01 | 难度: ⭐⭐Bootstrap 自助采样 模型评估 置信区间--- 1. 概述Bootstrap 是一种有放回抽样的统计方法，通过重复采样估计统计量的分布和置信区间。核心思想： \"重复采样\"——从样本中估计总体。 1.1 原理原始样本：n 个Bootstrap 样本：有放回抽取 n 个重复 B 次（通常 1000+...",
+      "tags": [
+        "'Bootstrap'",
+        "'自助采样'",
+        "'模型评估'",
+        "'置信区间'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "038_混淆矩阵",
+      "category": "ML",
+      "subCategory": "评估指标",
+      "title": "混淆矩阵",
+      "description": "> 分类: 评估指标 | 编号: 038 | 更新时间: 2026-04-01 | 难度: ⭐⭐混淆矩阵 模型评估 分类指标--- 1. 概述混淆矩阵是分类模型评估的基础工具，展示预测结果与真实标签的对应关系。核心思想： \"分类详情\"——看清每类预测情况。 1.1 矩阵结构| | 预测正 | 预测负 ||---|---|---|| 真实正 | TP (真正例) | FN (假负例) || 真实负 ...",
+      "tags": [
+        "'混淆矩阵'",
+        "'模型评估'",
+        "'分类指标'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "039_Precision_Recall_F1",
+      "category": "ML",
+      "subCategory": "评估指标",
+      "title": "Precision Recall F1",
+      "description": "> 分类: 评估指标 | 编号: 039 | 更新时间: 2026-04-01 | 难度: ⭐⭐机器学习 ML 面试--- 1. 概述Precision（精确率）、Recall（召回率）和 F1 是分类模型评估的核心指标，特别适用于不平衡数据。核心思想： \"查准与查全\"——平衡精确和召回。 1.1 定义精确率 (Precision) = TP / (TP + FP)  - 预测为正的样本中有多少真...",
+      "tags": [
+        "'机器学习'",
+        "'ML'",
+        "'面试'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "040_ROC_AUC",
+      "category": "ML",
+      "subCategory": "评估指标",
+      "title": "ROC AUC",
+      "description": "> 分类: 评估指标 | 编号: 040 | 更新时间: 2026-04-01 | 难度: ⭐⭐机器学习 ML 面试--- 1. 概述ROC（Receiver Operating Characteristic）曲线和 AUC（Area Under Curve）是二分类模型评估的重要指标，衡量模型区分正负样本的能力。核心思想： \"区分能力\"——真正例率 vs 假正例率。 1.1 核心概念真正例率 (...",
+      "tags": [
+        "'机器学习'",
+        "'ML'",
+        "'面试'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "041_PR_曲线",
+      "category": "ML",
+      "subCategory": "评估指标",
+      "title": "PR 曲线",
+      "description": "> 分类: 评估指标 | 编号: 041 | 更新时间: 2026-04-01 | 难度: ⭐⭐PR 曲线 Precision-Recall 模型评估--- 1. 概述PR 曲线展示精确率与召回率在不同阈值下的权衡关系，特别适用于不平衡数据评估。核心思想： \"查准查全权衡\"——精确率 vs 召回率。 1.1 与 ROC 对比| 特性 | ROC | PR 曲线 ||------|-----|---...",
+      "tags": [
+        "'PR 曲线'",
+        "'Precision-Recall'",
+        "'模型评估'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "042_校准曲线",
+      "category": "ML",
+      "subCategory": "评估指标",
+      "title": "校准曲线",
+      "description": "> 分类: 评估指标 | 编号: 042 | 更新时间: 2026-04-01 | 难度: ⭐⭐校准曲线 Calibration 模型评估 概率校准--- 1. 概述校准曲线评估预测概率的可靠性，衡量预测概率与实际频率的一致性。核心思想： \"概率可信度\"——预测 80% 时是否真的 80% 发生。 1.1 校准模型- 完美校准：预测概率 = 实际频率- 过自信：预测概率 > 实际频率- 欠自信：预...",
+      "tags": [
+        "'校准曲线'",
+        "'Calibration'",
+        "'模型评估'",
+        "'概率校准'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "043_学习曲线",
+      "category": "ML",
+      "subCategory": "评估指标",
+      "title": "学习曲线",
+      "description": "> 分类: 评估指标 | 编号: 043 | 更新时间: 2026-04-01 | 难度: ⭐⭐学习曲线 模型评估 过拟合 欠拟合--- 1. 概述学习曲线展示模型性能随训练样本数量变化的关系，用于诊断欠拟合和过拟合。核心思想： \"数据量影响\"——看训练集大小如何影响性能。 1.1 曲线解读| 模式 | 训练集 | 验证集 | 诊断 ||------|--------|--------|-----...",
+      "tags": [
+        "'学习曲线'",
+        "'模型评估'",
+        "'过拟合'",
+        "'欠拟合'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "044_验证曲线",
+      "category": "ML",
+      "subCategory": "模型评估",
+      "title": "验证曲线",
+      "description": "> 分类: 模型评估 | 编号: 044 | 更新时间: 2026-04-01 | 难度: ⭐⭐验证曲线 模型评估 超参数--- 1. 概述验证曲线展示模型性能随超参数变化的关系，用于选择最优超参数。核心思想： \"参数影响\"——看超参数如何影响性能。 1.1 与学习曲线对比| 特性 | 学习曲线 | 验证曲线 ||------|----------|----------|| X 轴 | 样本数 |...",
+      "tags": [
+        "'验证曲线'",
+        "'模型评估'",
+        "'超参数'"
+      ],
+      "difficulty": 2,
+      "readTime": "3分钟"
+    },
+    {
+      "id": "045_特征重要性",
+      "category": "ML",
+      "subCategory": "特征工程",
+      "title": "特征重要性",
+      "description": "> 分类: 特征工程 | 编号: 045 | 更新时间: 2026-04-01 | 难度: ⭐⭐特征重要性 特征选择 模型解释--- 1. 概述特征重要性衡量每个特征对模型预测的贡献，用于特征选择和模型解释。核心思想： \"特征贡献\"——哪些特征最重要。 1.1 计算方法| 方法 | 模型 | 说明 ||------|------|------|| 不纯度减少 | 树模型 | 分裂时不纯度减少 ||...",
+      "tags": [
+        "'特征重要性'",
+        "'特征选择'",
+        "'模型解释'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "046_梯度下降",
+      "category": "ML",
+      "subCategory": "优化算法",
+      "title": "梯度下降",
+      "description": "> 分类: 优化算法 | 编号: 046 | 更新时间: 2026-04-01 | 难度: ⭐⭐梯度下降 优化算法 一阶优化--- 1. 概述梯度下降是最优化算法的基础，通过沿负梯度方向迭代更新参数，最小化损失函数。核心思想： \"下山法\"——沿最陡方向下山。 1.1 算法公式θ = θ - α × ∇L(θ)其中：- θ：参数- α：学习率- ∇L(θ)：损失函数梯度 1.2 变体| 变体 | 说...",
+      "tags": [
+        "'梯度下降'",
+        "'优化算法'",
+        "'一阶优化'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "047_SGD",
+      "category": "ML",
+      "subCategory": "优化算法",
+      "title": "SGD 随机梯度下降",
+      "description": "> 分类: 优化算法 | 编号: 047 | 更新时间: 2026-04-01 | 难度: ⭐⭐SGD 随机梯度下降 优化算法 mini-batch--- 1. 概述SGD（Stochastic Gradient Descent，随机梯度下降）是梯度下降的变体，每次用一个样本更新参数，适合大规模数据。核心思想： \"单样本更新\"——快速但不稳定。 1.1 与批量 GD 对比| 特性 | 批量 GD ...",
+      "tags": [
+        "'SGD'",
+        "'随机梯度下降'",
+        "'优化算法'",
+        "'mini-batch'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "048_Adam",
+      "category": "ML",
+      "subCategory": "优化算法",
+      "title": "Adam",
+      "description": "> 分类: 优化算法 | 编号: 048 | 更新时间: 2026-04-01 | 难度: ⭐⭐Adam 优化算法 自适应学习率 动量--- 1. 概述Adam（Adaptive Moment Estimation）是自适应学习率优化算法，结合动量和 RMSProp，是深度学习最常用的优化器。核心思想： \"自适应学习率\"——每个参数有自己的学习率。 1.1 算法特点| 特点 | 说明 ||----...",
+      "tags": [
+        "'Adam'",
+        "'优化算法'",
+        "'自适应学习率'",
+        "'动量'"
+      ],
+      "difficulty": 2,
+      "readTime": "2分钟"
+    },
+    {
+      "id": "049_AdamW",
+      "category": "ML",
+      "subCategory": "优化算法",
+      "title": "AdamW 优化器",
+      "description": "> 分类: 优化算法 | 编号: 049 | 更新时间: 2026-04-01 | 难度: ⭐⭐Adam 优化算法 自适应学习率 动量--- 1. 概述AdamW 是 Adam 的改进版本，正确实现权重衰减，在深度学习中表现优于 Adam。核心思想： \"解耦权重衰减\"——权重衰减不与自适应学习率耦合。 1.1 与 Adam 区别| 特性 | Adam | AdamW ||------|------...",
+      "tags": [
+        "'Adam'",
+        "'优化算法'",
+        "'自适应学习率'",
+        "'动量'"
+      ],
+      "difficulty": 2,
+      "readTime": "3分钟"
+    },
+    {
+      "id": "050_学习率调度",
+      "category": "ML",
+      "subCategory": "优化算法",
+      "title": "学习率调度",
+      "description": "> 分类: 优化算法 | 编号: 050 | 更新时间: 2026-04-01 | 难度: ⭐⭐学习率调度 学习率衰减 优化算法 Warmup--- 1. 概述学习率调度是动态调整学习率的策略，在训练过程中根据进度或性能调整学习率，提高收敛速度和最终性能。核心思想： \"适时调整\"——不同阶段用不同学习率。 1.1 常用调度策略| 策略 | 公式 | 适用 ||------|------|-----...",
+      "tags": [
+        "'学习率调度'",
+        "'学习率衰减'",
+        "'优化算法'",
+        "'Warmup'"
+      ],
+      "difficulty": 2,
+      "readTime": "3分钟"
+    },
+    {
+      "id": "XXX_README_ML_Questions",
+      "category": "ML",
+      "subCategory": "机器学习",
+      "title": "README ML Questions",
+      "description": "> 分类: 机器学习 | 编号: XXX | 更新时间: 2026-04-01 | 难度: ⭐⭐⭐机器学习 ML 面试--- 任务完成情况✅ 目标：收集 30 道高质量 ML 面试题，确保每道题 90 分+实际完成：30 道题目，全部归档至 /content/knowledge/ML/--- 题目列表与难度分布 难度统计- ⭐⭐ (基础): 5 道 (16.7%)- ⭐⭐⭐ (中级): 18 道 ...",
+      "tags": [
+        "'机器学习'",
+        "'ML'",
+        "'面试'"
+      ],
+      "difficulty": 3,
+      "readTime": "4分钟"
     }
   ],
-  "total": 5,
-  "lastUpdated": "2026-03-31",
-  "message": "知识库已更新，包含 5 篇 LLM 领域文章"
+  "total": 226,
+  "lastUpdated": "2026-04-01"
 }

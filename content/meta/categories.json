@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "id": "LLM",
+      "name": "LLM",
+      "count": 68
+    },
+    {
+      "id": "DL",
+      "name": "DL",
+      "count": 57
+    },
+    {
+      "id": "ML",
+      "name": "ML",
+      "count": 51
+    },
+    {
+      "id": "CV",
+      "name": "CV",
+      "count": 50
+    }
+  ]
+}

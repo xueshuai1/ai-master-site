@@ -1,0 +1,1272 @@
+{
+  "tags": [
+    {
+      "name": "深度学习",
+      "count": 61
+    },
+    {
+      "name": "'LLM'",
+      "count": 60
+    },
+    {
+      "name": "'AI'",
+      "count": 60
+    },
+    {
+      "name": "计算机视觉",
+      "count": 50
+    },
+    {
+      "name": "CNN",
+      "count": 31
+    },
+    {
+      "name": "Transformer",
+      "count": 14
+    },
+    {
+      "name": "卷积神经网络",
+      "count": 11
+    },
+    {
+      "name": "ResNet",
+      "count": 11
+    },
+    {
+      "name": "GAN",
+      "count": 11
+    },
+    {
+      "name": "VAE",
+      "count": 11
+    },
+    {
+      "name": "'集成学习'",
+      "count": 11
+    },
+    {
+      "name": "VGG",
+      "count": 10
+    },
+    {
+      "name": "生成模型",
+      "count": 10
+    },
+    {
+      "name": "Diffusion",
+      "count": 10
+    },
+    {
+      "name": "'应用'",
+      "count": 10
+    },
+    {
+      "name": "'Agent'",
+      "count": 10
+    },
+    {
+      "name": "'工具使用'",
+      "count": 10
+    },
+    {
+      "name": "'架构创新'",
+      "count": 10
+    },
+    {
+      "name": "'新模型'",
+      "count": 10
+    },
+    {
+      "name": "'研究前沿'",
+      "count": 10
+    },
+    {
+      "name": "经典网络",
+      "count": 9
+    },
+    {
+      "name": "目标检测",
+      "count": 9
+    },
+    {
+      "name": "YOLO",
+      "count": 9
+    },
+    {
+      "name": "R-CNN",
+      "count": 9
+    },
+    {
+      "name": "DETR",
+      "count": 9
+    },
+    {
+      "name": "'推理优化'",
+      "count": 9
+    },
+    {
+      "name": "'量化'",
+      "count": 9
+    },
+    {
+      "name": "'显存管理'",
+      "count": 9
+    },
+    {
+      "name": "'特征工程'",
+      "count": 9
+    },
+    {
+      "name": "'Transformer'",
+      "count": 8
+    },
+    {
+      "name": "'注意力机制'",
+      "count": 8
+    },
+    {
+      "name": "'架构'",
+      "count": 8
+    },
+    {
+      "name": "'微调'",
+      "count": 8
+    },
+    {
+      "name": "'PEFT'",
+      "count": 8
+    },
+    {
+      "name": "'参数高效'",
+      "count": 8
+    },
+    {
+      "name": "'模型评估'",
+      "count": 7
+    },
+    {
+      "name": "图像分割",
+      "count": 6
+    },
+    {
+      "name": "语义分割",
+      "count": 6
+    },
+    {
+      "name": "实例分割",
+      "count": 6
+    },
+    {
+      "name": "图像生成",
+      "count": 6
+    },
+    {
+      "name": "'分类'",
+      "count": 6
+    },
+    {
+      "name": "'机器学习'",
+      "count": 6
+    },
+    {
+      "name": "'ML'",
+      "count": 6
+    },
+    {
+      "name": "'面试'",
+      "count": 6
+    },
+    {
+      "name": "'Tokenization'",
+      "count": 5
+    },
+    {
+      "name": "'分词'",
+      "count": 5
+    },
+    {
+      "name": "'NLP'",
+      "count": 5
+    },
+    {
+      "name": "'预训练'",
+      "count": 5
+    },
+    {
+      "name": "'语言模型'",
+      "count": 5
+    },
+    {
+      "name": "'训练'",
+      "count": 5
+    },
+    {
+      "name": "'对齐'",
+      "count": 5
+    },
+    {
+      "name": "'偏好优化'",
+      "count": 5
+    },
+    {
+      "name": "'RLHF'",
+      "count": 5
+    },
+    {
+      "name": "'降维'",
+      "count": 5
+    },
+    {
+      "name": "'优化算法'",
+      "count": 5
+    },
+    {
+      "name": "ViT",
+      "count": 4
+    },
+    {
+      "name": "Self-Attention",
+      "count": 4
+    },
+    {
+      "name": "两阶段检测",
+      "count": 4
+    },
+    {
+      "name": "图像分类",
+      "count": 4
+    },
+    {
+      "name": "'回归'",
+      "count": 4
+    },
+    {
+      "name": "'无监督学习'",
+      "count": 4
+    },
+    {
+      "name": "'Boosting'",
+      "count": 4
+    },
+    {
+      "name": "LoRA",
+      "count": 3
+    },
+    {
+      "name": "参数高效微调",
+      "count": 3
+    },
+    {
+      "name": "'监督学习'",
+      "count": 3
+    },
+    {
+      "name": "'迭代'",
+      "count": 3
+    },
+    {
+      "name": "'加权'",
+      "count": 3
+    },
+    {
+      "name": "'梯度提升'",
+      "count": 3
+    },
+    {
+      "name": "'类别特征'",
+      "count": 3
+    },
+    {
+      "name": "神经架构搜索",
+      "count": 2
+    },
+    {
+      "name": "轻量级网络",
+      "count": 2
+    },
+    {
+      "name": "Attention",
+      "count": 2
+    },
+    {
+      "name": "3D 视觉",
+      "count": 2
+    },
+    {
+      "name": "NeRF",
+      "count": 2
+    },
+    {
+      "name": "点云",
+      "count": 2
+    },
+    {
+      "name": "三维重建",
+      "count": 2
+    },
+    {
+      "name": "前沿技术",
+      "count": 2
+    },
+    {
+      "name": "SAM",
+      "count": 2
+    },
+    {
+      "name": "Grounding DINO",
+      "count": 2
+    },
+    {
+      "name": "归一化",
+      "count": 2
+    },
+    {
+      "name": "训练技巧",
+      "count": 2
+    },
+    {
+      "name": "梯度流动",
+      "count": 2
+    },
+    {
+      "name": "MobileNet",
+      "count": 2
+    },
+    {
+      "name": "Inception",
+      "count": 2
+    },
+    {
+      "name": "Vision Transformer",
+      "count": 2
+    },
+    {
+      "name": "Bidirectional RNN",
+      "count": 2
+    },
+    {
+      "name": "双向 RNN",
+      "count": 2
+    },
+    {
+      "name": "序列建模",
+      "count": 2
+    },
+    {
+      "name": "Multi-Head Attention",
+      "count": 2
+    },
+    {
+      "name": "多头注意力",
+      "count": 2
+    },
+    {
+      "name": "并行计算",
+      "count": 2
+    },
+    {
+      "name": "Masked Attention",
+      "count": 2
+    },
+    {
+      "name": "掩码注意力",
+      "count": 2
+    },
+    {
+      "name": "因果掩码",
+      "count": 2
+    },
+    {
+      "name": "Diffusion Models",
+      "count": 2
+    },
+    {
+      "name": "扩散模型",
+      "count": 2
+    },
+    {
+      "name": "生成式 AI",
+      "count": 2
+    },
+    {
+      "name": "Stable Diffusion",
+      "count": 2
+    },
+    {
+      "name": "文生图",
+      "count": 2
+    },
+    {
+      "name": "潜在扩散",
+      "count": 2
+    },
+    {
+      "name": "Adapter",
+      "count": 2
+    },
+    {
+      "name": "过拟合",
+      "count": 2
+    },
+    {
+      "name": "迁移学习",
+      "count": 2
+    },
+    {
+      "name": "预训练",
+      "count": 2
+    },
+    {
+      "name": "'梯度下降'",
+      "count": 2
+    },
+    {
+      "name": "'随机森林'",
+      "count": 2
+    },
+    {
+      "name": "'Bagging'",
+      "count": 2
+    },
+    {
+      "name": "'聚类'",
+      "count": 2
+    },
+    {
+      "name": "'自助采样'",
+      "count": 2
+    },
+    {
+      "name": "'模型融合'",
+      "count": 2
+    },
+    {
+      "name": "'PCA'",
+      "count": 2
+    },
+    {
+      "name": "'特征选择'",
+      "count": 2
+    },
+    {
+      "name": "'Adam'",
+      "count": 2
+    },
+    {
+      "name": "'自适应学习率'",
+      "count": 2
+    },
+    {
+      "name": "'动量'",
+      "count": 2
+    },
+    {
+      "name": "残差网络",
+      "count": 1
+    },
+    {
+      "name": "实时检测",
+      "count": 1
+    },
+    {
+      "name": "神经网络基础",
+      "count": 1
+    },
+    {
+      "name": "卷积层",
+      "count": 1
+    },
+    {
+      "name": "特征提取",
+      "count": 1
+    },
+    {
+      "name": "池化层",
+      "count": 1
+    },
+    {
+      "name": "下采样",
+      "count": 1
+    },
+    {
+      "name": "激活函数",
+      "count": 1
+    },
+    {
+      "name": "ReLU",
+      "count": 1
+    },
+    {
+      "name": "非线性",
+      "count": 1
+    },
+    {
+      "name": "BatchNorm",
+      "count": 1
+    },
+    {
+      "name": "LayerNorm",
+      "count": 1
+    },
+    {
+      "name": "残差连接",
+      "count": 1
+    },
+    {
+      "name": "跳跃连接",
+      "count": 1
+    },
+    {
+      "name": "Skip Connection",
+      "count": 1
+    },
+    {
+      "name": "空洞卷积",
+      "count": 1
+    },
+    {
+      "name": "Dilated Convolution",
+      "count": 1
+    },
+    {
+      "name": "感受野",
+      "count": 1
+    },
+    {
+      "name": "深度可分离卷积",
+      "count": 1
+    },
+    {
+      "name": "轻量化",
+      "count": 1
+    },
+    {
+      "name": "AlexNet",
+      "count": 1
+    },
+    {
+      "name": "GoogLeNet",
+      "count": 1
+    },
+    {
+      "name": "多尺度",
+      "count": 1
+    },
+    {
+      "name": "残差学习",
+      "count": 1
+    },
+    {
+      "name": "DenseNet",
+      "count": 1
+    },
+    {
+      "name": "密集连接",
+      "count": 1
+    },
+    {
+      "name": "EfficientNet",
+      "count": 1
+    },
+    {
+      "name": "移动端",
+      "count": 1
+    },
+    {
+      "name": "ShuffleNet",
+      "count": 1
+    },
+    {
+      "name": "通道混洗",
+      "count": 1
+    },
+    {
+      "name": "RNN",
+      "count": 1
+    },
+    {
+      "name": "序列模型",
+      "count": 1
+    },
+    {
+      "name": "时间序列",
+      "count": 1
+    },
+    {
+      "name": "LSTM",
+      "count": 1
+    },
+    {
+      "name": "长短期记忆",
+      "count": 1
+    },
+    {
+      "name": "梯度消失",
+      "count": 1
+    },
+    {
+      "name": "GRU",
+      "count": 1
+    },
+    {
+      "name": "门控循环单元",
+      "count": 1
+    },
+    {
+      "name": "LSTM 变种",
+      "count": 1
+    },
+    {
+      "name": "Seq2Seq",
+      "count": 1
+    },
+    {
+      "name": "序列到序列",
+      "count": 1
+    },
+    {
+      "name": "机器翻译",
+      "count": 1
+    },
+    {
+      "name": "自注意力",
+      "count": 1
+    },
+    {
+      "name": "Cross-Attention",
+      "count": 1
+    },
+    {
+      "name": "交叉注意力",
+      "count": 1
+    },
+    {
+      "name": "多模态",
+      "count": 1
+    },
+    {
+      "name": "编码器 - 解码器",
+      "count": 1
+    },
+    {
+      "name": "注意力机制",
+      "count": 1
+    },
+    {
+      "name": "变分自编码器",
+      "count": 1
+    },
+    {
+      "name": "概率生成",
+      "count": 1
+    },
+    {
+      "name": "生成对抗网络",
+      "count": 1
+    },
+    {
+      "name": "对抗训练",
+      "count": 1
+    },
+    {
+      "name": "CycleGAN",
+      "count": 1
+    },
+    {
+      "name": "图像翻译",
+      "count": 1
+    },
+    {
+      "name": "无监督",
+      "count": 1
+    },
+    {
+      "name": "StyleGAN",
+      "count": 1
+    },
+    {
+      "name": "风格生成",
+      "count": 1
+    },
+    {
+      "name": "高分辨率",
+      "count": 1
+    },
+    {
+      "name": "DDPM",
+      "count": 1
+    },
+    {
+      "name": "去噪扩散",
+      "count": 1
+    },
+    {
+      "name": "概率模型",
+      "count": 1
+    },
+    {
+      "name": "DDIM",
+      "count": 1
+    },
+    {
+      "name": "加速扩散",
+      "count": 1
+    },
+    {
+      "name": "采样加速",
+      "count": 1
+    },
+    {
+      "name": "ControlNet",
+      "count": 1
+    },
+    {
+      "name": "条件控制",
+      "count": 1
+    },
+    {
+      "name": "精确控制",
+      "count": 1
+    },
+    {
+      "name": "Dropout",
+      "count": 1
+    },
+    {
+      "name": "正则化",
+      "count": 1
+    },
+    {
+      "name": "L1L2 正则化",
+      "count": 1
+    },
+    {
+      "name": "权重衰减",
+      "count": 1
+    },
+    {
+      "name": "早停",
+      "count": 1
+    },
+    {
+      "name": "Early Stopping",
+      "count": 1
+    },
+    {
+      "name": "数据增强",
+      "count": 1
+    },
+    {
+      "name": "Data Augmentation",
+      "count": 1
+    },
+    {
+      "name": "泛化",
+      "count": 1
+    },
+    {
+      "name": "Transfer Learning",
+      "count": 1
+    },
+    {
+      "name": "微调",
+      "count": 1
+    },
+    {
+      "name": "Fine-tuning",
+      "count": 1
+    },
+    {
+      "name": "冻结层",
+      "count": 1
+    },
+    {
+      "name": "参数冻结",
+      "count": 1
+    },
+    {
+      "name": "学习率预热",
+      "count": 1
+    },
+    {
+      "name": "Warmup",
+      "count": 1
+    },
+    {
+      "name": "优化器",
+      "count": 1
+    },
+    {
+      "name": "梯度裁剪",
+      "count": 1
+    },
+    {
+      "name": "Gradient Clipping",
+      "count": 1
+    },
+    {
+      "name": "训练稳定",
+      "count": 1
+    },
+    {
+      "name": "混合精度训练",
+      "count": 1
+    },
+    {
+      "name": "AMP",
+      "count": 1
+    },
+    {
+      "name": "性能优化",
+      "count": 1
+    },
+    {
+      "name": "架构",
+      "count": 1
+    },
+    {
+      "name": "位置编码",
+      "count": 1
+    },
+    {
+      "name": "RoPE",
+      "count": 1
+    },
+    {
+      "name": "RAG",
+      "count": 1
+    },
+    {
+      "name": "检索增强",
+      "count": 1
+    },
+    {
+      "name": "向量数据库",
+      "count": 1
+    },
+    {
+      "name": "Prompt",
+      "count": 1
+    },
+    {
+      "name": "LLM 应用",
+      "count": 1
+    },
+    {
+      "name": "最佳实践",
+      "count": 1
+    },
+    {
+      "name": "Flash Attention",
+      "count": 1
+    },
+    {
+      "name": "GPU 优化",
+      "count": 1
+    },
+    {
+      "name": "IO 感知",
+      "count": 1
+    },
+    {
+      "name": "推理加速",
+      "count": 1
+    },
+    {
+      "name": "低秩分解",
+      "count": 1
+    },
+    {
+      "name": "PEFT",
+      "count": 1
+    },
+    {
+      "name": "DPO",
+      "count": 1
+    },
+    {
+      "name": "偏好优化",
+      "count": 1
+    },
+    {
+      "name": "对齐",
+      "count": 1
+    },
+    {
+      "name": "RLHF 替代",
+      "count": 1
+    },
+    {
+      "name": "KV Cache",
+      "count": 1
+    },
+    {
+      "name": "推理优化",
+      "count": 1
+    },
+    {
+      "name": "显存管理",
+      "count": 1
+    },
+    {
+      "name": "自回归",
+      "count": 1
+    },
+    {
+      "name": "'线性回归'",
+      "count": 1
+    },
+    {
+      "name": "'MSE'",
+      "count": 1
+    },
+    {
+      "name": "'逻辑回归'",
+      "count": 1
+    },
+    {
+      "name": "'Sigmoid'",
+      "count": 1
+    },
+    {
+      "name": "'交叉熵'",
+      "count": 1
+    },
+    {
+      "name": "'决策树'",
+      "count": 1
+    },
+    {
+      "name": "'信息增益'",
+      "count": 1
+    },
+    {
+      "name": "'CART'",
+      "count": 1
+    },
+    {
+      "name": "'SVM'",
+      "count": 1
+    },
+    {
+      "name": "'支持向量机'",
+      "count": 1
+    },
+    {
+      "name": "'核函数'",
+      "count": 1
+    },
+    {
+      "name": "'间隔最大化'",
+      "count": 1
+    },
+    {
+      "name": "'KNN'",
+      "count": 1
+    },
+    {
+      "name": "'K 近邻'",
+      "count": 1
+    },
+    {
+      "name": "'距离度量'",
+      "count": 1
+    },
+    {
+      "name": "'朴素贝叶斯'",
+      "count": 1
+    },
+    {
+      "name": "'贝叶斯定理'",
+      "count": 1
+    },
+    {
+      "name": "'概率'",
+      "count": 1
+    },
+    {
+      "name": "'DBSCAN'",
+      "count": 1
+    },
+    {
+      "name": "'密度聚类'",
+      "count": 1
+    },
+    {
+      "name": "'层次聚类'",
+      "count": 1
+    },
+    {
+      "name": "'树状图'",
+      "count": 1
+    },
+    {
+      "name": "'Stacking'",
+      "count": 1
+    },
+    {
+      "name": "'元学习器'",
+      "count": 1
+    },
+    {
+      "name": "'Voting'",
+      "count": 1
+    },
+    {
+      "name": "'投票'",
+      "count": 1
+    },
+    {
+      "name": "'AdaBoost'",
+      "count": 1
+    },
+    {
+      "name": "'自适应'",
+      "count": 1
+    },
+    {
+      "name": "'XGBoost'",
+      "count": 1
+    },
+    {
+      "name": "'正则化'",
+      "count": 1
+    },
+    {
+      "name": "'LightGBM'",
+      "count": 1
+    },
+    {
+      "name": "'直方图'",
+      "count": 1
+    },
+    {
+      "name": "'CatBoost'",
+      "count": 1
+    },
+    {
+      "name": "'特征值分解'",
+      "count": 1
+    },
+    {
+      "name": "'协方差'",
+      "count": 1
+    },
+    {
+      "name": "'UMAP'",
+      "count": 1
+    },
+    {
+      "name": "'可视化'",
+      "count": 1
+    },
+    {
+      "name": "'流形学习'",
+      "count": 1
+    },
+    {
+      "name": "'LDA'",
+      "count": 1
+    },
+    {
+      "name": "'判别分析'",
+      "count": 1
+    },
+    {
+      "name": "'Autoencoder'",
+      "count": 1
+    },
+    {
+      "name": "'自编码器'",
+      "count": 1
+    },
+    {
+      "name": "'神经网络'",
+      "count": 1
+    },
+    {
+      "name": "'过滤法'",
+      "count": 1
+    },
+    {
+      "name": "'包裹法'",
+      "count": 1
+    },
+    {
+      "name": "'特征提取'",
+      "count": 1
+    },
+    {
+      "name": "'特征缩放'",
+      "count": 1
+    },
+    {
+      "name": "'标准化'",
+      "count": 1
+    },
+    {
+      "name": "'归一化'",
+      "count": 1
+    },
+    {
+      "name": "'标签编码'",
+      "count": 1
+    },
+    {
+      "name": "'LabelEncoder'",
+      "count": 1
+    },
+    {
+      "name": "'目标编码'",
+      "count": 1
+    },
+    {
+      "name": "'Target Encoding'",
+      "count": 1
+    },
+    {
+      "name": "'分箱'",
+      "count": 1
+    },
+    {
+      "name": "'Binning'",
+      "count": 1
+    },
+    {
+      "name": "'离散化'",
+      "count": 1
+    },
+    {
+      "name": "'交互特征'",
+      "count": 1
+    },
+    {
+      "name": "'特征组合'",
+      "count": 1
+    },
+    {
+      "name": "'多项式特征'",
+      "count": 1
+    },
+    {
+      "name": "'非线性'",
+      "count": 1
+    },
+    {
+      "name": "'缺失值处理'",
+      "count": 1
+    },
+    {
+      "name": "'数据清洗'",
+      "count": 1
+    },
+    {
+      "name": "'插补'",
+      "count": 1
+    },
+    {
+      "name": "'交叉验证'",
+      "count": 1
+    },
+    {
+      "name": "'K 折'",
+      "count": 1
+    },
+    {
+      "name": "'验证'",
+      "count": 1
+    },
+    {
+      "name": "'Bootstrap'",
+      "count": 1
+    },
+    {
+      "name": "'置信区间'",
+      "count": 1
+    },
+    {
+      "name": "'混淆矩阵'",
+      "count": 1
+    },
+    {
+      "name": "'分类指标'",
+      "count": 1
+    },
+    {
+      "name": "'PR 曲线'",
+      "count": 1
+    },
+    {
+      "name": "'Precision-Recall'",
+      "count": 1
+    },
+    {
+      "name": "'校准曲线'",
+      "count": 1
+    },
+    {
+      "name": "'Calibration'",
+      "count": 1
+    },
+    {
+      "name": "'概率校准'",
+      "count": 1
+    },
+    {
+      "name": "'学习曲线'",
+      "count": 1
+    },
+    {
+      "name": "'过拟合'",
+      "count": 1
+    },
+    {
+      "name": "'欠拟合'",
+      "count": 1
+    },
+    {
+      "name": "'验证曲线'",
+      "count": 1
+    },
+    {
+      "name": "'超参数'",
+      "count": 1
+    },
+    {
+      "name": "'特征重要性'",
+      "count": 1
+    },
+    {
+      "name": "'模型解释'",
+      "count": 1
+    },
+    {
+      "name": "'一阶优化'",
+      "count": 1
+    },
+    {
+      "name": "'SGD'",
+      "count": 1
+    },
+    {
+      "name": "'随机梯度下降'",
+      "count": 1
+    },
+    {
+      "name": "'mini-batch'",
+      "count": 1
+    },
+    {
+      "name": "'学习率调度'",
+      "count": 1
+    },
+    {
+      "name": "'学习率衰减'",
+      "count": 1
+    },
+    {
+      "name": "'Warmup'",
+      "count": 1
+    }
+  ]
+}
