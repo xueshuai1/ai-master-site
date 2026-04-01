@@ -7,6 +7,8 @@ import Step from "@/components/mdx/Step";
 import Comparison from "@/components/mdx/Comparison";
 import Mermaid from "@/components/mdx/Mermaid";
 import Summary from "@/components/mdx/Summary";
+import Tags from "@/components/mdx/Tags";
+import ListItem from "@/components/mdx/ListItem";
 
 // 导出组件供 next-mdx-remote 使用
 export { default as CodeBlock } from "@/components/mdx/CodeBlock";
@@ -17,6 +19,8 @@ export { default as Step } from "@/components/mdx/Step";
 export { default as Comparison } from "@/components/mdx/Comparison";
 export { default as Mermaid } from "@/components/mdx/Mermaid";
 export { default as Summary } from "@/components/mdx/Summary";
+export { default as Tags } from "@/components/mdx/Tags";
+export { default as ListItem } from "@/components/mdx/ListItem";
 
 // 自定义 MDX 组件映射
 export const components: MDXComponents = {
@@ -43,14 +47,14 @@ export const components: MDXComponents = {
     return <p className="text-gray-700 leading-relaxed my-4" {...props} />;
   },
   ul: (props) => (
-    <ul className="list-disc list-inside space-y-2 my-4 text-gray-700" {...props} />
+    <ul className="list-none space-y-2 my-4" {...props} />
   ),
   ol: (props) => (
     <ol className="list-decimal list-inside space-y-2 my-4 text-gray-700" {...props} />
   ),
-  li: (props) => (
-    <li className="pl-2" {...props} />
-  ),
+  li: (props: any) => {
+    return <ListItem>{props.children}</ListItem>;
+  },
   blockquote: (props) => (
     <blockquote
       className="border-l-4 border-indigo-500 pl-4 py-2 my-6 bg-indigo-50 italic text-gray-700"
@@ -91,6 +95,16 @@ export const components: MDXComponents = {
   code: (props: any) => {
     // 内联代码
     if (!props.className) {
+      const content = String(props.children || "");
+      // 检测是否是标签（短文本，没有代码特征）
+      const isTag = content.length < 50 && !/[={}\[\]();]/.test(content);
+      if (isTag) {
+        return (
+          <code className="px-3 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-sm rounded-full font-medium border border-blue-200">
+            {props.children}
+          </code>
+        );
+      }
       return (
         <code className="px-2 py-0.5 bg-gray-100 rounded text-sm font-mono text-pink-600">
           {props.children}
@@ -114,6 +128,8 @@ export const components: MDXComponents = {
   Comparison,
   Mermaid,
   Summary,
+  Tags,
+  ListItem,
 };
 
 export default components;
