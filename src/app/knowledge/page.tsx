@@ -197,7 +197,7 @@ export default function KnowledgePage() {
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-gray-500">
           <p className="text-sm">© 2026 AI 学习与面试大全 | Built with Next.js</p>
-        </footer>
+        </div>
       </footer>
     </div>
   );
