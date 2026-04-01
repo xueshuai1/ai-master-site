@@ -3,7 +3,7 @@
 
 .prose {
   color: #374151;
-  max-width: 65ch;
+  max-width: unset !important;
   font-size: 1rem;
   line-height: 1.75;
 }

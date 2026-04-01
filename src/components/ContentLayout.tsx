@@ -102,7 +102,7 @@ export default function ContentLayout({
             </header>
 
             {/* Content - 撑满宽度（MDX 内容包含标题） */}
-            <div className="prose prose-lg lg:prose-xl max-w-[unset] prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-code:text-sm prose-pre:bg-gray-50 prose-pre:border prose-pre:border-gray-200">
+            <div className="prose prose-lg lg:prose-xl prose-headings:font-semibold prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-code:text-sm prose-pre:bg-gray-50 prose-pre:border prose-pre:border-gray-200">
               {children}
             </div>
           </article>
