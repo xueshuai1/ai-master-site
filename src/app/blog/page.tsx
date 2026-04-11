@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+
+const blogCategories = ["全部", "行业洞察", "论文解读", "实战经验", "技术对比", "实战教程"];
 
 const blogPosts = [
   {
@@ -74,52 +77,17 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("全部");
+
+  const filteredPosts = useMemo(() => {
+    if (activeCategory === "全部") return blogPosts;
+    return blogPosts.filter((p) => p.category === activeCategory);
+  }, [activeCategory]);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">🍪</span>
-              <span className="text-xl font-bold text-gradient">AI Master</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-slate-300 hover:text-white transition-colors">首页</Link>
-              <Link href="/knowledge" className="text-slate-300 hover:text-white transition-colors">知识库</Link>
-              <Link href="/tools" className="text-slate-300 hover:text-white transition-colors">工具集</Link>
-              <Link href="/blog" className="text-brand-400 font-medium">博客</Link>
-              <Link href="/about" className="text-slate-300 hover:text-white transition-colors">关于</Link>
-            </div>
-            <button
-              className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "关闭菜单" : "打开菜单"}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-white/5 bg-slate-950/95 backdrop-blur-md">
-            <div className="px-4 py-4 space-y-1">
-              <Link href="/" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>首页</Link>
-              <Link href="/knowledge" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>知识库</Link>
-              <Link href="/tools" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>工具集</Link>
-              <Link href="/blog" className="block px-4 py-3 rounded-lg text-brand-400 bg-brand-500/10 font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>博客</Link>
-              <Link href="/about" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>关于</Link>
-            </div>
-          </div>
-        )}
-      </nav>
+      <Navbar activePath="/blog" />
 
       {/* Hero */}
       <section className="pt-28 pb-12 px-4 sm:px-6 lg:px-8">
@@ -133,14 +101,39 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* Category Filter */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
+            {blogCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                  activeCategory === cat
+                    ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                    : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Blog Posts */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
+          <p className="text-sm text-slate-500 mb-6">
+            找到 <span className="text-brand-400 font-medium">{filteredPosts.length}</span> 篇文章
+          </p>
           <div className="space-y-6">
-            {blogPosts.map((post, index) => (
-              <article
+            {filteredPosts.map((post, index) => (
+              <Link
                 key={post.id}
-                className={`group flex flex-col sm:flex-row gap-6 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer ${
+                href={`/blog/${post.id}`}
+                className={`group flex flex-col sm:flex-row gap-6 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 ${
                   index === 0 ? "sm:col-span-2" : ""
                 }`}
               >
@@ -182,7 +175,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 

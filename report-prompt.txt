@@ -1,0 +1,13 @@
+读取以下两个文件，总结今天 ai-master.cc 网站的工作成果：
+
+1. 进度日志：/Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
+2. 最新 QA 报告：/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-qa-report.md
+3. 最新内容报告：/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-content-report.md
+
+格式：
+- 今天做了什么（按时间线）
+- 当前网站状态
+- 存在的问题
+- 明天展望
+
+如果没有记录，就说"今天还没有工作记录"。

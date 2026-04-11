@@ -12,6 +12,8 @@ const navLinks: NavLink[] = [
   { label: "首页", href: "/" },
   { label: "知识库", href: "/knowledge" },
   { label: "工具集", href: "/tools" },
+  { label: "博客", href: "/blog" },
+  { label: "学习路线", href: "/roadmap" },
   { label: "关于", href: "/about" },
 ];
 

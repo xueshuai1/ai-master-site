@@ -1,138 +1,87 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const features = [
   {
     icon: "🧠",
     title: "AI 知识库",
     desc: "系统化学习机器学习、深度学习、NLP、计算机视觉等核心领域",
+    href: "/knowledge",
   },
   {
     icon: "🛠️",
     title: "AI 工具集",
     desc: "精选最实用的 AI 工具与框架，从 ChatGPT 到 LangChain 一应俱全",
+    href: "/tools",
   },
   {
     icon: "📚",
     title: "实战教程",
     desc: "从零开始的项目教程，跟着做就能上手，告别纸上谈兵",
+    href: "/blog",
   },
   {
     icon: "💡",
     title: "行业洞察",
     desc: "追踪 AI 最新趋势、论文解读、产品分析，保持前沿视野",
+    href: "/blog",
   },
   {
     icon: "🎯",
     title: "学习路径",
     desc: "为你量身定制的学习路线，从入门到进阶不走弯路",
+    href: "/roadmap",
   },
   {
     icon: "🤝",
     title: "社区交流",
     desc: "与志同道合的 AI 爱好者交流经验、分享项目、共同成长",
+    href: "/about",
   },
 ];
 
 const news = [
   {
     tag: "前沿",
-    title: "GPT-5 技术报告：多模态推理能力再突破",
+    title: "Anthropic 发布 Claude Cowork 企业版 + Project Glasswing 安全框架",
     date: "2026-04-10",
+    href: "/blog",
+  },
+  {
+    tag: "重磅",
+    title: "Nvidia GTC 2026：Agent Toolkit 开源平台，17 家巨头企业加入",
+    date: "2026-04-09",
+    href: "/blog",
+  },
+  {
+    tag: "商业",
+    title: "Anthropic 年化营收突破 300 亿美元，签 Google TPU 大单",
+    date: "2026-04-08",
+    href: "/blog",
+  },
+  {
+    tag: "工具",
+    title: "Google 发布 AI Edge Eloquent：免费离线 AI 语音转录",
+    date: "2026-04-07",
+    href: "/blog",
   },
   {
     tag: "开源",
-    title: "Llama 4 开源发布，128K 上下文窗口",
-    date: "2026-04-09",
-  },
-  {
-    tag: "应用",
-    title: "AI Agent 在自动化开发中的最佳实践",
-    date: "2026-04-08",
+    title: "Meta 新一代开源 AI 模型即将发布，Alexandr Wang 主导",
+    date: "2026-04-06",
+    href: "/blog",
   },
 ];
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { label: "知识库", href: "/knowledge" },
-    { label: "工具集", href: "/tools" },
-    { label: "博客", href: "/blog" },
-    { label: "关于", href: "/about" },
-  ];
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">🍪</span>
-              <span className="text-xl font-bold text-gradient">AI Master</span>
-            </Link>
-            {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-slate-300 hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link href="/knowledge" className="px-5 py-2 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-brand-500/25">
-                开始学习
-              </Link>
-            </div>
-            {/* Mobile hamburger button */}
-            <button
-              className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "关闭菜单" : "打开菜单"}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
-        {/* Mobile menu dropdown */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-white/5 bg-slate-950/95 backdrop-blur-md">
-            <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link href="/knowledge" className="block w-full mt-2 text-center px-5 py-3 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all text-lg">
-                开始学习
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
+      <Navbar activePath="/" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -199,17 +148,18 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f, i) => (
-              <div
+            {features.map((f) => (
+              <Link
                 key={f.title}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer"
+                href={f.href || "#"}
+                className="group block p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5"
               >
                 <div className="text-4xl mb-4">{f.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-brand-300 transition-colors">
                   {f.title}
                 </h3>
                 <p className="text-slate-400 leading-relaxed">{f.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -291,9 +241,10 @@ export default function Home() {
 
           <div className="space-y-4">
             {news.map((item) => (
-              <div
+              <Link
                 key={item.title}
-                className="group flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all cursor-pointer"
+                href={item.href || "/blog"}
+                className="group flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5"
               >
                 <div className="flex items-center gap-4 mb-3 sm:mb-0">
                   <span className="px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-sm font-medium">
@@ -304,7 +255,7 @@ export default function Home() {
                   </h3>
                 </div>
                 <span className="text-slate-500 text-sm">{item.date}</span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
