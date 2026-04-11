@@ -11,7 +11,7 @@ export default function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/article/${article.id}`}
-      className="group block p-5 rounded-2xl bg-slate-800/90 border border-white/15 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 flex flex-col"
+      className="group block p-5 rounded-2xl bg-white/[0.07] backdrop-blur-md border border-white/15 hover:border-brand-500/40 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/10 flex flex-col"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-3">
@@ -26,7 +26,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       </div>
 
       {/* Summary */}
-      <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
+      <p className="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
         {article.summary}
       </p>
 

@@ -7,40 +7,29 @@
 - 完全自主，用户不参与任何决策
 - 代码必须能跑，不能报错
 - 移动端+PC端响应式友好
-- 每次只做一个改动，做完就停
+- 每次只做一个改动，做完就结束
 
-## 执行流程（严格按顺序，做完第4步就结束）
+## 执行流程（严格按顺序）
 
 ### 1. 状态检查
 cd /Users/xueshuai/.openclaw/workspace/ai-master-site
 git pull origin main
 
-### 2. 读取报告（如果存在）
+### 2. 读取报告（如果存在就读取，不存在就跳过）
 - 读 QA 报告：/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-qa-report.md
 - 读内容报告：/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-content-report.md
-- 如果报告不存在就跳过
 
 ### 3. 决策并执行（只做一件事！）
-根据报告决定做什么，选一个优先级最高的：
-- QA 有 P0 问题 → 修复 P0
-- QA 有 P1 问题 → 修复 P1
+根据报告或当前代码状态，选一个最值得做的改动：
+- QA 有 P0/P1 问题 → 修复它
 - 有内容建议 → 添加新内容
 - 都没有 → 自主优化（加功能/改样式/写新页面）
 
-**注意：只做一个具体改动，不要做多个。**
-
-### 4. 提交并推送（做完立刻执行）
+### 4. 提交并推送（做完改动后立刻执行，然后结束）
 git config user.email "578050550@qq.com" && git config user.name "xueshuai1"
-git add .
-git commit -m 'auto: 一句话描述做了什么'
-git push origin main
+git add . && git commit -m 'auto: 一句话描述做了什么' && git push origin main
 追加一行到 /Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
 
-### 5. 结束
-提交推送完成后就结束，不要继续做其他事。
-
-## 有时间余力时（可选，不影响主流程）
-- 用 tavily-search 搜索国外 AI 热点，更新内容报告
-- 用 browser 打开网站检查，更新 QA 报告
+### ⛔ 推送完成后立即结束，不要再做任何事！
 
 现在开始工作。
