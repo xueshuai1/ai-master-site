@@ -86,7 +86,7 @@ export default function KnowledgePage() {
           </div>
 
           {/* Category tabs - scrollable on mobile */}
-          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-start sm:justify-center pb-2 scrollbar-hide">
             {categories.map((c) => {
               const count = c.key === "all"
                 ? articles.length
