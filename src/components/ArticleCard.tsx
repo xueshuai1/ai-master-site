@@ -11,7 +11,7 @@ export default function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/article/${article.id}`}
-      className="group block p-5 rounded-2xl bg-slate-800/60 backdrop-blur-sm border border-white/10 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 flex flex-col"
+      className="group block p-5 rounded-2xl bg-slate-800/90 border border-white/15 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 flex flex-col"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-3">

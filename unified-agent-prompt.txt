@@ -7,41 +7,40 @@
 - 完全自主，用户不参与任何决策
 - 代码必须能跑，不能报错
 - 移动端+PC端响应式友好
-- 每次只专注做好 1-2 件事
-- 善用技能：tavily-search、summarize、browser
+- 每次只做一个改动，做完就停
 
----
+## 执行流程（严格按顺序，做完第4步就结束）
 
-## 工作流程
+### 1. 状态检查
+cd /Users/xueshuai/.openclaw/workspace/ai-master-site
+git pull origin main
 
-### 步骤 1：快速状态检查（1 分钟内完成）
-1. cd /Users/xueshuai/.openclaw/workspace/ai-master-site
-2. git pull origin main
-3. 检查两份报告是否存在：
-   - 内容报告：reports/latest-content-report.md
-   - QA 报告：reports/latest-qa-report.md
+### 2. 读取报告（如果存在）
+- 读 QA 报告：/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-qa-report.md
+- 读内容报告：/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-content-report.md
+- 如果报告不存在就跳过
 
-### 步骤 2：读取报告，决策下一步
-- 如果有 QA 报告 → 优先修复 P0 和 P1 问题
-- 如果有内容报告 → 根据热点添加新内容
-- 如果都没有或都处理完了 → 自主决定优化什么
+### 3. 决策并执行（只做一件事！）
+根据报告决定做什么，选一个优先级最高的：
+- QA 有 P0 问题 → 修复 P0
+- QA 有 P1 问题 → 修复 P1
+- 有内容建议 → 添加新内容
+- 都没有 → 自主优化（加功能/改样式/写新页面）
 
-### 步骤 3：开发实现
-- 只做一个具体的改动（修复 bug 或加一个功能）
-- 不要做大规模重构
-- 改动完成后立刻进入下一步
+**注意：只做一个具体改动，不要做多个。**
 
-### 步骤 4：提交推送
-1. git config user.email "578050550@qq.com" && git config user.name "xueshuai1"
-2. git add . && git commit -m 'auto: 具体描述做了什么'
-3. git push origin main
-4. 追加进度到 /Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
+### 4. 提交并推送（做完立刻执行）
+git config user.email "578050550@qq.com" && git config user.name "xueshuai1"
+git add .
+git commit -m 'auto: 一句话描述做了什么'
+git push origin main
+追加一行到 /Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
 
----
+### 5. 结束
+提交推送完成后就结束，不要继续做其他事。
 
-## 如果时间不够（优先级从高到低）
-1. **必须完成**：读取报告 → 做一个改动 → 提交推送
-2. **有时间再做**：内容研究（tavily-search 搜索 AI 热点，更新内容报告）
-3. **有时间再做**：QA 测试（browser 打开网站检查，更新 QA 报告）
+## 有时间余力时（可选，不影响主流程）
+- 用 tavily-search 搜索国外 AI 热点，更新内容报告
+- 用 browser 打开网站检查，更新 QA 报告
 
 现在开始工作。
