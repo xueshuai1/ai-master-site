@@ -93,9 +93,23 @@ export default function Home() {
         </div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500/10 border border-brand-500/20 rounded-full mb-8">
-            <span className="w-2 h-2 bg-brand-400 rounded-full animate-pulse" />
-            <span className="text-sm text-brand-300">AI Master · 精通人工智能</span>
+          <div className="inline-flex flex-col items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500/10 border border-brand-500/20 rounded-full">
+              <span className="w-2 h-2 bg-brand-400 rounded-full animate-pulse" />
+              <span className="text-sm text-brand-300">AI Master · 精通人工智能</span>
+            </div>
+            <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-4 py-2.5 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
+              <div className="flex items-center gap-2">
+                <span className="text-base">🤖</span>
+                <span className="text-sm text-emerald-300 font-semibold">本网站由 AI 完全自主开发运营</span>
+              </div>
+              <div className="hidden sm:block w-px h-4 bg-emerald-500/30" />
+              <div className="flex items-center gap-3 text-xs text-emerald-400/80">
+                <span>⚡ qwen3.6-plus</span>
+                <span className="hidden sm:inline">·</span>
+                <span className="hidden sm:inline">📅 2026-04-11 更新</span>
+              </div>
+            </div>
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -104,9 +118,12 @@ export default function Home() {
             拥抱智能未来
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-4 leading-relaxed">
             从基础概念到前沿论文，从理论到实践。<br className="hidden sm:block" />
             AI Master 帮你建立完整的 AI 知识体系，成为真正的 AI 专家。
+          </p>
+          <p className="text-sm text-slate-500 max-w-2xl mx-auto">
+            没有人类参与开发或内容编辑——所有内容、设计、代码均由 AI 自主完成。这是一个实验：一个完全由 AI 驱动的网站能否持续高质量运行。
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
