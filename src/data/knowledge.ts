@@ -1,0 +1,221 @@
+// Knowledge base data - AI learning articles
+
+export interface Article {
+  id: string;
+  title: string;
+  category: string;
+  tags: string[];
+  summary: string;
+  date: string;
+  readTime: string;
+  level: "入门" | "进阶" | "高级";
+}
+
+export const categories = [
+  { key: "all", label: "全部", icon: "📋" },
+  { key: "ml", label: "机器学习", icon: "📊" },
+  { key: "dl", label: "深度学习", icon: "🧠" },
+  { key: "nlp", label: "自然语言处理", icon: "💬" },
+  { key: "cv", label: "计算机视觉", icon: "👁️" },
+  { key: "llm", label: "大语言模型", icon: "🤖" },
+  { key: "agent", label: "AI Agent", icon: "🦾" },
+];
+
+export const articles: Article[] = [
+  // 机器学习
+  {
+    id: "ml-001",
+    title: "线性回归：机器学习的第一课",
+    category: "ml",
+    tags: ["监督学习", "回归", "基础"],
+    summary: "从最小二乘法到梯度下降，理解线性回归的数学原理与实现",
+    date: "2026-04-10",
+    readTime: "8 min",
+    level: "入门",
+  },
+  {
+    id: "ml-002",
+    title: "决策树与随机森林实战",
+    category: "ml",
+    tags: ["监督学习", "集成学习", "分类"],
+    summary: "从信息增益到基尼系数，掌握决策树的分裂策略与随机森林的集成思想",
+    date: "2026-04-08",
+    readTime: "12 min",
+    level: "入门",
+  },
+  {
+    id: "ml-003",
+    title: "SVM 支持向量机详解",
+    category: "ml",
+    tags: ["监督学习", "分类", "核方法"],
+    summary: "理解最大间隔分类器、核技巧与软间隔 SVM 的完整推导",
+    date: "2026-04-05",
+    readTime: "15 min",
+    level: "进阶",
+  },
+  {
+    id: "ml-004",
+    title: "K-Means 聚类算法深入剖析",
+    category: "ml",
+    tags: ["无监督学习", "聚类"],
+    summary: "从距离度量到 K 值选择，全面掌握 K-Means 及其变种算法",
+    date: "2026-04-03",
+    readTime: "10 min",
+    level: "入门",
+  },
+  {
+    id: "ml-005",
+    title: "XGBoost 原理与调参指南",
+    category: "ml",
+    tags: ["集成学习", "梯度提升", "调参"],
+    summary: "深入 XGBoost 的目标函数推导、正则化策略和实用调参技巧",
+    date: "2026-03-28",
+    readTime: "18 min",
+    level: "进阶",
+  },
+  // 深度学习
+  {
+    id: "dl-001",
+    title: "神经网络基础：从感知机到多层网络",
+    category: "dl",
+    tags: ["反向传播", "激活函数", "基础"],
+    summary: "理解神经元、激活函数、反向传播和梯度消失问题",
+    date: "2026-04-09",
+    readTime: "12 min",
+    level: "入门",
+  },
+  {
+    id: "dl-002",
+    title: "CNN 卷积神经网络完全指南",
+    category: "dl",
+    tags: ["CNN", "图像识别", "架构"],
+    summary: "从 LeNet 到 ResNet，梳理 CNN 架构演进与核心组件",
+    date: "2026-04-07",
+    readTime: "20 min",
+    level: "进阶",
+  },
+  {
+    id: "dl-003",
+    title: "RNN 与 LSTM：处理序列数据",
+    category: "dl",
+    tags: ["RNN", "LSTM", "序列建模"],
+    summary: "理解循环神经网络的记忆机制与 LSTM 的门控设计",
+    date: "2026-04-04",
+    readTime: "15 min",
+    level: "进阶",
+  },
+  {
+    id: "dl-004",
+    title: "注意力机制与 Transformer 架构",
+    category: "dl",
+    tags: ["Attention", "Transformer", "自注意力"],
+    summary: "详解 Self-Attention、Multi-Head Attention 和 Transformer 的编码器-解码器结构",
+    date: "2026-04-01",
+    readTime: "25 min",
+    level: "高级",
+  },
+  {
+    id: "dl-005",
+    title: "GAN 生成对抗网络原理与应用",
+    category: "dl",
+    tags: ["GAN", "生成模型", "图像生成"],
+    summary: "从原始 GAN 到 StyleGAN，探索生成对抗网络的发展脉络",
+    date: "2026-03-25",
+    readTime: "16 min",
+    level: "进阶",
+  },
+  // NLP
+  {
+    id: "nlp-001",
+    title: "词嵌入：从 Word2Vec 到 GloVe",
+    category: "nlp",
+    tags: ["词向量", "表示学习", "基础"],
+    summary: "理解分布式表示的核心思想，对比 CBOW 与 Skip-gram 模型",
+    date: "2026-04-06",
+    readTime: "12 min",
+    level: "入门",
+  },
+  {
+    id: "nlp-002",
+    title: "BERT 预训练模型深度解析",
+    category: "nlp",
+    tags: ["BERT", "预训练", "微调"],
+    summary: "解析 BERT 的 MLM 和 NSP 预训练任务，以及下游任务的微调方法",
+    date: "2026-04-02",
+    readTime: "18 min",
+    level: "进阶",
+  },
+  // 计算机视觉
+  {
+    id: "cv-001",
+    title: "目标检测：从 R-CNN 到 YOLO",
+    category: "cv",
+    tags: ["目标检测", "YOLO", "实时检测"],
+    summary: "梳理两阶段与单阶段检测器的设计差异，对比 YOLO 系列各版本性能",
+    date: "2026-04-05",
+    readTime: "20 min",
+    level: "进阶",
+  },
+  {
+    id: "cv-002",
+    title: "图像分割：语义分割与实例分割",
+    category: "cv",
+    tags: ["分割", "FCN", "Mask R-CNN"],
+    summary: "从 FCN 到 Mask R-CNN，理解像素级预测的核心技术",
+    date: "2026-03-30",
+    readTime: "16 min",
+    level: "进阶",
+  },
+  // 大语言模型
+  {
+    id: "llm-001",
+    title: "大语言模型训练全流程",
+    category: "llm",
+    tags: ["预训练", "SFT", "RLHF"],
+    summary: "从数据采集到预训练、指令微调到人类反馈强化学习的完整管线",
+    date: "2026-04-10",
+    readTime: "25 min",
+    level: "高级",
+  },
+  {
+    id: "llm-002",
+    title: "Prompt Engineering 最佳实践",
+    category: "llm",
+    tags: ["Prompt", "技巧", "实战"],
+    summary: "系统学习 CoT、Few-shot、ReAct 等 Prompt 设计模式与技巧",
+    date: "2026-04-08",
+    readTime: "15 min",
+    level: "入门",
+  },
+  {
+    id: "llm-003",
+    title: "RAG 检索增强生成架构指南",
+    category: "llm",
+    tags: ["RAG", "向量数据库", "知识库"],
+    summary: "如何结合外部知识库增强 LLM 的准确性和时效性",
+    date: "2026-04-06",
+    readTime: "18 min",
+    level: "进阶",
+  },
+  // AI Agent
+  {
+    id: "agent-001",
+    title: "AI Agent 入门：从概念到实现",
+    category: "agent",
+    tags: ["Agent", "规划", "工具使用"],
+    summary: "理解 AI Agent 的核心组件：感知、规划、记忆和工具调用",
+    date: "2026-04-09",
+    readTime: "15 min",
+    level: "入门",
+  },
+  {
+    id: "agent-002",
+    title: "Multi-Agent 系统设计与协作",
+    category: "agent",
+    tags: ["Multi-Agent", "协作", "架构"],
+    summary: "探索多智能体系统的通信协议、角色分配和任务协调机制",
+    date: "2026-04-07",
+    readTime: "20 min",
+    level: "高级",
+  },
+];
