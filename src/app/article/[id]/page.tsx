@@ -93,13 +93,20 @@ function generateContent(article: (typeof articles)[0]) {
 
 /** Render a single rich content section */
 function ArticleSectionContent({ section }: { section: ArticleSection }) {
+  // If title starts with "N. " or "N、", extract the number for the badge
+  const numMatch = section.title.match(/^(\d+)[.、]\s*/);
+  const badgeNum = numMatch ? numMatch[1] : '';
+  const cleanTitle = numMatch ? section.title.replace(/^\d+[.、]\s*/, '') : section.title;
+
   return (
     <div className="mb-10">
       <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-        <span className="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-sm font-bold">
-          {section.title.charAt(0)}
-        </span>
-        {section.title}
+        {badgeNum && (
+          <span className="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-sm font-bold">
+            {badgeNum}
+          </span>
+        )}
+        {cleanTitle}
       </h2>
 
       {section.body && (
