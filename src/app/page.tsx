@@ -58,9 +58,9 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "功能", href: "#features" },
-    { label: "动态", href: "#news" },
-    { label: "关于", href: "#about" },
+    { label: "知识库", href: "/knowledge" },
+    { label: "工具集", href: "/tools" },
+    { label: "关于", href: "/about" },
   ];
 
   return (
@@ -84,9 +84,9 @@ export default function Home() {
                   {link.label}
                 </Link>
               ))}
-              <button className="px-5 py-2 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-brand-500/25">
+              <Link href="/knowledge" className="px-5 py-2 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-brand-500/25">
                 开始学习
-              </button>
+              </Link>
             </div>
             {/* Mobile hamburger button */}
             <button
@@ -124,9 +124,9 @@ export default function Home() {
                   {link.label}
                 </Link>
               ))}
-              <button className="w-full mt-2 px-5 py-3 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all text-lg">
+              <Link href="/knowledge" className="block w-full mt-2 text-center px-5 py-3 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all text-lg">
                 开始学习
-              </button>
+              </Link>
             </div>
           </div>
         )}
@@ -159,12 +159,12 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-4 bg-brand-600 hover:bg-brand-500 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5 w-full sm:w-auto">
+            <Link href="/knowledge" className="px-8 py-4 bg-brand-600 hover:bg-brand-500 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5 w-full sm:w-auto text-center">
               🚀 立即开始
-            </button>
-            <button className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold text-lg transition-all hover:-translate-y-0.5 w-full sm:w-auto">
-              📖 浏览知识库
-            </button>
+            </Link>
+            <Link href="/tools" className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold text-lg transition-all hover:-translate-y-0.5 w-full sm:w-auto text-center">
+              🛠️ 探索工具集
+            </Link>
           </div>
 
           {/* Stats */}
@@ -259,9 +259,9 @@ export default function Home() {
             <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
               无论你是零基础小白还是有经验的开发者，AI Master 都能帮助你提升到下一个层次
             </p>
-            <button className="px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
+            <Link href="/knowledge" className="inline-block px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
               🎯 免费开始学习
-            </button>
+            </Link>
           </div>
         </div>
       </section>

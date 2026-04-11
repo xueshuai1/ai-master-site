@@ -88,7 +88,7 @@ export default function ToolsPage() {
               <Link href="/" className="text-slate-300 hover:text-white transition-colors">首页</Link>
               <Link href="/knowledge" className="text-slate-300 hover:text-white transition-colors">知识库</Link>
               <Link href="/tools" className="text-brand-400 font-medium">工具集</Link>
-              <Link href="/" className="text-slate-300 hover:text-white transition-colors">关于</Link>
+              <Link href="/about" className="text-slate-300 hover:text-white transition-colors">关于</Link>
             </div>
             <button
               className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
@@ -111,6 +111,7 @@ export default function ToolsPage() {
               <Link href="/" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>首页</Link>
               <Link href="/knowledge" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>知识库</Link>
               <Link href="/tools" className="block px-4 py-3 rounded-lg text-brand-400 bg-brand-500/10 font-medium text-lg" onClick={() => setMobileMenuOpen(false)}>工具集</Link>
+              <Link href="/about" className="block px-4 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-lg" onClick={() => setMobileMenuOpen(false)}>关于</Link>
             </div>
           </div>
         )}
