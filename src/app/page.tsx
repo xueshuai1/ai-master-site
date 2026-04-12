@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { LAST_UPDATE_TIME } from "@/data/update-time";
 
 const features = [
   {
@@ -106,8 +107,8 @@ export default function Home() {
               <div className="hidden sm:block w-px h-4 bg-emerald-500/30" />
               <div className="flex items-center gap-3 text-xs text-emerald-400/80">
                 <span>⚡ qwen3.6-plus</span>
-                <span className="hidden sm:inline">·</span>
-                <span className="hidden sm:inline">📅 2026-04-11 更新</span>
+                <span>·</span>
+                <span>📅 {LAST_UPDATE_TIME} 更新</span>
               </div>
             </div>
           </div>

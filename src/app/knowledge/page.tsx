@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { articles, categories } from "@/data/knowledge";
+import { LAST_UPDATE_TIME } from "@/data/update-time";
 import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -47,6 +48,7 @@ export default function KnowledgePage() {
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             系统化学习 AI 核心技术，从基础理论到前沿实践
           </p>
+          <p className="text-sm text-slate-500 mt-3">📅 最后更新：{LAST_UPDATE_TIME}</p>
         </div>
       </section>
 
