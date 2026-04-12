@@ -63,6 +63,26 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🦙",
   },
+  {
+    id: "gemma",
+    name: "Google Gemma 4",
+    category: "llm",
+    description: "Google DeepMind 最新开源模型，31B 参数单 GPU 可运行，数学、编程、Agent 任务全面超越 Llama 4，Arena AI 排名第 3",
+    url: "https://ai.google.dev/gemma",
+    tags: ["开源", "单 GPU", "高性能", "多模态"],
+    price: "开源",
+    icon: "💠",
+  },
+  {
+    id: "deepseek",
+    name: "DeepSeek V4",
+    category: "llm",
+    description: "1 万亿参数 MoE 架构，Apache 2.0 完全开源，HumanEval 代码评分 94.7%，编程、数学、推理能力突出",
+    url: "https://www.deepseek.com",
+    tags: ["开源", "MoE", "代码生成", "推理"],
+    price: "开源",
+    icon: "🔍",
+  },
   // 开发框架
   {
     id: "langchain",
@@ -156,6 +176,16 @@ export const tools: Tool[] = [
     price: "付费",
     icon: "🖼️",
   },
+  {
+    id: "higgsfield",
+    name: "Higgsfield AI",
+    category: "vision",
+    description: "AI 视频生成平台，支持文本到视频、图像到视频等多模式生成，2026 年热门新兴工具",
+    url: "https://higgsfield.ai",
+    tags: ["视频生成", "AI 创作", "多模态"],
+    price: "免费+付费",
+    icon: "🎬",
+  },
   // 语音音频
   {
     id: "whisper",
@@ -176,6 +206,16 @@ export const tools: Tool[] = [
     tags: ["语音合成", "克隆", "多语言"],
     price: "免费+付费",
     icon: "🗣️",
+  },
+  {
+    id: "notebooklm",
+    name: "Google NotebookLM",
+    category: "data",
+    description: "Google AI 驱动的研究笔记工具，支持上传文档、网页、PDF 等来源，自动生成摘要、播客和研究报告，集成 Gemini 引擎",
+    url: "https://notebooklm.google.com",
+    tags: ["研究", "笔记", "文档分析", "Gemini"],
+    price: "免费",
+    icon: "📓",
   },
   // 智能体平台
   {
