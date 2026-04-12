@@ -24,6 +24,26 @@ export const toolCategories = [
 export const tools: Tool[] = [
   // 大语言模型
   {
+    id: "grok",
+    name: "Grok (xAI)",
+    category: "llm",
+    description: "xAI 推出的 AI 助手，深度集成 X (Twitter) 实时数据，Grok 3 版本具备强大推理和编程能力，支持深度搜索和图像生成，2026 年用户量大幅增长，开源 Grok-3-Mini 模型",
+    url: "https://grok.com",
+    tags: ["实时数据", "推理", "开源", "图像生成"],
+    price: "免费+付费",
+    icon: "🔥",
+  },
+  {
+    id: "glm-5",
+    name: "GLM-5 (智谱 AI)",
+    category: "llm",
+    description: "智谱 AI 2026 年最新开源模型，代码生成、推理和智能体任务表现优异，中文能力突出，支持 128K 上下文，在多项中文基准测试中领先",
+    url: "https://github.com/zai-org/GLM-5",
+    tags: ["开源", "中文优化", "代码生成", "推理"],
+    price: "开源",
+    icon: "🧬",
+  },
+  {
     id: "kimi-k25",
     name: "Kimi K2.5 (Moonshot AI)",
     category: "llm",
@@ -196,6 +216,16 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🎬",
   },
+  {
+    id: "google-veo",
+    name: "Google Veo 3.1",
+    category: "vision",
+    description: "Google 最新 AI 视频生成模型，支持从文本或图像提示生成高质量视频，内置电影叙事和物理模拟能力，2026 年集成到 Google AI Studio 平台，免费层级每月 100 积分",
+    url: "https://deepmind.google/technologies/veo/",
+    tags: ["视频生成", "Google", "电影叙事", "多模态"],
+    price: "免费+付费",
+    icon: "🎥",
+  },
   // 语音音频
   {
     id: "whisper",
@@ -309,6 +339,26 @@ export const tools: Tool[] = [
     icon: "💝",
   },
   // 智能体平台 - 编程 Agent
+  {
+    id: "github-copilot",
+    name: "GitHub Copilot",
+    category: "agent",
+    description: "GitHub 官方 AI 编程助手，2021 年最早推出，支持代码补全、代码审查、Agent 模式自主完成任务，集成 VS Code / JetBrains / Neovim 等主流 IDE，2026 年仍然是企业级最广泛部署的 AI 编程工具",
+    url: "https://github.com/features/copilot",
+    tags: ["代码补全", "IDE 集成", "企业级", "代码审查"],
+    price: "付费",
+    icon: "🐙",
+  },
+  {
+    id: "replit",
+    name: "Replit Ghostwriter",
+    category: "agent",
+    description: "基于浏览器的 AI 原生开发平台，Ghostwriter 提供智能代码生成、调试辅助和一键部署，支持 50+ 编程语言，2026 年推出 Agent 模式可自主构建和部署完整应用",
+    url: "https://replit.com",
+    tags: ["在线 IDE", "一键部署", "多语言", "Agent"],
+    price: "免费+付费",
+    icon: "🔁",
+  },
   {
     id: "claude-code",
     name: "Claude Code (Anthropic)",
