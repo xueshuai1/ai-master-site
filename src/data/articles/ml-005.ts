@@ -71,15 +71,15 @@ print(f"Accuracy: {accuracy_score(y_test, preds):.4f}")`,
         title: "2. 目标函数推导",
         body: `XGBoost 的核心创新在于它的目标函数设计。理解这个推导，你就理解了 XGBoost 的灵魂。
 
-在第 t 轮迭代时，模型的预测为 ŷᵢ⁽ᵗ⁾ = ŷᵢ⁽ᵗ⁻¹⁾ + fₜ(xᵢ)，其中 fₜ 是本轮要学习的决策树。目标函数为：Obj⁽ᵗ⁾ = Σᵢ l(yᵢ, ŷᵢ⁽ᵗ⁻¹⁾ + fₜ(xᵢ)) + Ω(fₜ) + constant。这里 l 是损失函数，Ω 是正则化项。
+在第 t 轮迭代时，模型的预测为 ŷᵢ⁽ᵗ⁾ = ŷᵢ⁽ᵗ⁻¹⁾ + fₜ(xᵢ)，其中 fₜ 是本轮要学习的决策树。目标函数为：Obj⁽ᵗ⁾ = sumᵢ l(yᵢ, ŷᵢ⁽ᵗ⁻¹⁾ + fₜ(xᵢ)) + Ω(fₜ) + constant。这里 l 是损失函数，Ω 是正则化项。
 
-关键步骤是对损失函数做二阶泰勒展开：l(y, ŷ⁽ᵗ⁻¹⁾ + fₜ) ≈ l(y, ŷ⁽ᵗ⁻¹⁾) + gᵢ·fₜ(xᵢ) + ½hᵢ·fₜ(xᵢ)²，其中 gᵢ = ∂l/∂ŷ⁽ᵗ⁻¹⁾ 是一阶导数，hᵢ = ∂²l/∂ŷ²⁽ᵗ⁻¹⁾ 是二阶导数。去掉常数项后得到：Obj⁽ᵗ⁾ ≈ Σᵢ [gᵢ·fₜ(xᵢ) + ½hᵢ·fₜ(xᵢ)²] + Ω(fₜ)。
+关键步骤是对损失函数做二阶泰勒展开：l(y, ŷ⁽ᵗ⁻¹⁾ + fₜ) ≈ l(y, ŷ⁽ᵗ⁻¹⁾) + gᵢ·fₜ(xᵢ) + (1/2)hᵢ·fₜ(xᵢ)^2，其中 gᵢ = ∂l/∂ŷ⁽ᵗ⁻¹⁾ 是一阶导数，hᵢ = ∂^2l/∂ŷ^2⁽ᵗ⁻¹⁾ 是二阶导数。去掉常数项后得到：Obj⁽ᵗ⁾ ≈ sumᵢ [gᵢ·fₜ(xᵢ) + (1/2)hᵢ·fₜ(xᵢ)^2] + Ω(fₜ)。
 
-定义树 fₜ 的结构为 q: ℝᵈ → {1,...,T}，叶子权重为 w ∈ ℝᵀ，则 fₜ(x) = w_{q(x)}。正则化项定义为 Ω(fₜ) = γT + ½λΣⱼ wⱼ²，其中 T 是叶子数，γ 控制树的复杂度，λ 是 L2 正则化系数。
+定义树 fₜ 的结构为 q: ℝᵈ → {1,...,T}，叶子权重为 w ∈ ℝᵀ，则 fₜ(x) = w_{q(x)}。正则化项定义为 Ω(fₜ) = gamma*T + (1/2)lambda*sum(w_j^2)ⱼ wⱼ^2，其中 T 是叶子数，gamma 控制树的复杂度，lambda 是 L2 正则化系数。
 
-将叶子样本集合 Iⱼ = {i | q(xᵢ) = j}，定义 Gⱼ = Σᵢ∈Iⱼ gᵢ 和 Hⱼ = Σᵢ∈Iⱼ hᵢ，目标函数可以改写为关于 w 的二次函数：Obj⁽ᵗ⁾ = Σⱼ [(Gⱼ)wⱼ + ½(Hⱼ + λ)wⱼ²] + γT。
+将叶子样本集合 Iⱼ = {i | q(xᵢ) = j}，定义 Gⱼ = sumᵢ∈Iⱼ gᵢ 和 Hⱼ = sumᵢ∈Iⱼ hᵢ，目标函数可以改写为关于 w 的二次函数：Obj⁽ᵗ⁾ = sumⱼ [(Gⱼ)wⱼ + (1/2)(Hⱼ + lambda)wⱼ^2] + gamma*T。
 
-对 wⱼ 求导并令导数为零，得到最优叶子权重：wⱼ* = -Gⱼ/(Hⱼ + λ)。代入目标函数得到最优值：Obj* = -½ Σⱼ Gⱼ²/(Hⱼ + λ) + γT。这个公式就是 XGBoost 的分裂评估标准——增益（Gain）。`,
+对 wⱼ 求导并令导数为零，得到最优叶子权重：wⱼ* = -Gⱼ/(Hⱼ + lambda)。代入目标函数得到最优值：Obj* = -(1/2) sumⱼ Gⱼ^2/(Hⱼ + lambda) + gamma*T。这个公式就是 XGBoost 的分裂评估标准——增益（Gain）。`,
         code: [
           {
             lang: "python",
@@ -87,17 +87,17 @@ print(f"Accuracy: {accuracy_score(y_test, preds):.4f}")`,
 
 def xgb_optimal_leaf_weights(g, h, lambd=1.0):
     """
-    计算 XGBoost 最优叶子权重: w* = -G / (H + λ)
+    计算 XGBoost 最优叶子权重: w* = -G / (H + lambda)
     
-    g: 一阶梯度数组 (G_j = Σg_i)
-    h: 二阶梯度数组 (H_j = Σh_i)
+    g: 一阶梯度数组 (G_j = sumg_i)
+    h: 二阶梯度数组 (H_j = sumh_i)
     lambd: L2 正则化系数
     """
     G = np.sum(g)
     H = np.sum(h)
     w_star = -G / (H + lambd)
     
-    # 最优目标函数值: -1/2 * G²/(H+λ)
+    # 最优目标函数值: -1/2 * G^2/(H+lambda)
     obj_star = -0.5 * G**2 / (H + lambd)
     
     return w_star, obj_star
@@ -117,14 +117,14 @@ print(f"该节点的最优目标值 Obj* = {obj:.4f}")`,
           },
         ],
         mermaid: `graph TD
-    A["目标函数: Obj = Σl + Ω"] --> B["二阶泰勒展开"]
-    B --> C["Obj ≈ Σ(g·f + ½h·f²) + Ω"]
+    A["目标函数: Obj = suml + Ω"] --> B["二阶泰勒展开"]
+    B --> C["Obj ≈ sum(g·f + (1/2)h·f^2) + Ω"]
     C --> D["定义叶子权重 w 和结构 q"]
-    D --> E["Ω = γT + ½λΣw²"]
+    D --> E["Ω = gamma*T + (1/2)lambda*sum(w_j^2)^2"]
     E --> F["按叶子分组: G_j, H_j"]
     F --> G["对 w 求导 = 0"]
-    G --> H["w* = -G/(H+λ)"]
-    H --> I["Obj* = -½ΣG²/(H+λ) + γT"]
+    G --> H["w* = -G/(H+lambda)"]
+    H --> I["Obj* = -(1/2)sumG^2/(H+lambda) + gamma*T"]
     I -.-> J["这就是分裂评估的 Gain 公式"]`,
         warning: "二阶泰勒展开是 XGBoost 比 GBDT 快的根本原因。GBDT 只用一阶导数（梯度下降），而 XGBoost 同时使用一阶和二阶导数（牛顿法），相当于知道了曲率信息，每一步都更接近最优解。",
       },
@@ -147,7 +147,7 @@ print(f"该节点的最优目标值 Obj* = {obj:.4f}")`,
 def calculate_split_gain(G_left, H_left, G_right, H_right, G_total, H_total, lambd=1.0, gamma=0.0):
     """
     计算分裂增益:
-    Gain = 1/2 * [G_L²/(H_L+λ) + G_R²/(H_R+λ) - (G_L+G_R)²/(H_L+H_R+λ)] - γ
+    Gain = 1/2 * [G_L^2/(H_L+lambda) + G_R^2/(H_R+lambda) - (G_L+G_R)^2/(H_L+H_R+lambda)] - gamma
     """
     gain_left = G_left**2 / (H_left + lambd)
     gain_right = G_right**2 / (H_right + lambd)
@@ -187,7 +187,7 @@ def find_best_split_exact(X, g, h, feature_idx, lambd=1.0, gamma=0.0):
     return best_threshold, best_gain
 
 print("精确贪心算法会扫描所有唯一值作为候选分裂点")
-print("当数据量很大时，改用近似算法（分位数草图）")
+print("当数据量很大时，改用近似算法（分位数草图）")`,
           },
         ],
         table: {
@@ -202,9 +202,9 @@ print("当数据量很大时，改用近似算法（分位数草图）")
       },
       {
         title: "4. 正则化策略",
-        body: `XGBoost 的正则化是其区别于传统 GBDT 的标志性特性。传统 GBDT 的目标函数只包含损失项，没有任何对模型复杂度的约束，这使得它容易过拟合。XGBoost 在目标函数中显式加入了正则化项：Ω(f) = γT + ½λΣⱼ wⱼ²。
+        body: `XGBoost 的正则化是其区别于传统 GBDT 的标志性特性。传统 GBDT 的目标函数只包含损失项，没有任何对模型复杂度的约束，这使得它容易过拟合。XGBoost 在目标函数中显式加入了正则化项：Omega(f) = gamma*T + (1/2)*lambda*sum(w_j^2)。
 
-这个正则化项包含两个部分：γT 惩罚叶子的数量——每多一个叶子，就增加 γ 的惩罚。这直接控制了树的"宽度"，防止树生长得过于复杂。½λΣwⱼ² 是 L2 正则化，它惩罚叶子权重的大小——倾向于让权重更小、更平滑。
+这个正则化项包含两个部分：gamma*T 惩罚叶子的数量——每多一个叶子，就增加 gamma 的惩罚。这直接控制了树的"宽度"，防止树生长得过于复杂。(1/2)lambda*sum(w_j^2)ⱼ^2 是 L2 正则化，它惩罚叶子权重的大小——倾向于让权重更小、更平滑。
 
 除了目标函数中的显式正则化，XGBoost 还提供了一系列隐式正则化手段：max_depth 限制树的最大深度（控制"高度"）；min_child_weight 规定子节点所需的最小 Hessian 和（防止分裂出只含少数样本的叶子）；subsample 对样本进行随机采样（类似随机森林的 Bagging）；colsample_bytree 对特征进行随机采样（减少每棵树对特定特征的依赖）。
 
@@ -251,8 +251,8 @@ for name, params in params_grid.items():
         mermaid: `graph TD
     A["正则化策略"] --> B["显式正则化"]
     A --> C["隐式正则化"]
-    B --> D["γ·T: 惩罚叶子数"]
-    B --> E["½λΣw²: L2 权重惩罚"]
+    B --> D["gamma·T: 惩罚叶子数"]
+    B --> E["(1/2)lambda*sum(w_j^2)^2: L2 权重惩罚"]
     C --> F["max_depth: 限制树高"]
     C --> G["min_child_weight: 防小叶子"]
     C --> H["subsample: 样本采样"]
@@ -473,7 +473,7 @@ model.fit(
 # ========== 4. 模型评估 ==========
 y_pred = model.predict(X_test)
 print(f"RMSE: {np.sqrt(mean_squared_error(y_test, y_pred)):.4f}")
-print(f"R²: {r2_score(y_test, y_pred):.4f}")
+print(f"R^2: {r2_score(y_test, y_pred):.4f}")
 print(f"最优迭代轮数: {model.best_iteration}")
 
 # 交叉验证
