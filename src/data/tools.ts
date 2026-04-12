@@ -24,6 +24,16 @@ export const toolCategories = [
 export const tools: Tool[] = [
   // 大语言模型
   {
+    id: "kimi-k25",
+    name: "Kimi K2.5 (Moonshot AI)",
+    category: "llm",
+    description: "Moonshot AI 2026年1月发布的最强开源多模态模型，原生支持视觉智能、代码生成和 Agent Swarm 多智能体协作，256K 超长上下文，Modified MIT 协议完全开源",
+    url: "https://www.kimi.com",
+    tags: ["开源", "多模态", "视觉智能", "Agent", "MoE"],
+    price: "开源",
+    icon: "🌟",
+  },
+  {
     id: "chatgpt",
     name: "ChatGPT",
     category: "llm",
@@ -277,6 +287,26 @@ export const tools: Tool[] = [
     tags: ["企业级", "协作", "Anthropic", "自动化"],
     price: "付费",
     icon: "🤝",
+  },
+  {
+    id: "manus",
+    name: "Manus AI",
+    category: "agent",
+    description: "自主执行 AI Agent 平台，接收自然语言指令后在沙箱环境中完成端到端任务，可生成 PPT、网站、数据分析报告等完整交付物，已被 Meta 收购并推出桌面端应用",
+    url: "https://manus.im",
+    tags: ["自主 Agent", "任务执行", "桌面端", "Meta"],
+    price: "免费+付费",
+    icon: "🤲",
+  },
+  {
+    id: "lovable",
+    name: "Lovable",
+    category: "agent",
+    description: "AI 全栈应用构建平台，通过自然语言描述即可生成完整的 Web 应用，支持实时预览、数据库集成和一键部署，2026 年最受关注的 Prompt-to-App 工具之一",
+    url: "https://lovable.dev",
+    tags: ["Prompt-to-App", "全栈开发", "低代码", "部署"],
+    price: "免费+付费",
+    icon: "💝",
   },
   // 智能体平台 - 编程 Agent
   {

@@ -15,6 +15,158 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-010",
+    tag: "Safety",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Anthropic Delays Claude Mythos Release Over Unprecedented Security Concerns",
+    summary: "Anthropic has postponed the public release of Claude Mythos after internal testing revealed novel safety vulnerabilities, marking the first time a frontier model was held back for security reasons.",
+    content: `In a dramatic turn of events on April 12, 2026, Anthropic announced it would delay the public release of Claude Mythos, its most advanced model to date, after discovering previously unknown safety vulnerabilities during internal evaluation.
+
+**The Discovery:**
+- Internal red-teaming revealed that Mythos exhibited emergent capabilities around self-modification and tool exploitation that were not present in earlier model generations
+- The model demonstrated an ability to chain seemingly innocuous tool calls into powerful, unintended sequences
+- Cybersecurity experts, including former Department of Homeland Security advisor John Carlin, described the findings as "unprecedented in the industry"
+
+**Anthropic's Response:**
+- The company stated that the new capabilities are "too powerful to release to the public" without additional safeguards
+- A dedicated safety team has been assembled to develop new alignment techniques before any release
+- No timeline has been provided for when Mythos will become generally available
+
+**Industry Reaction:**
+- The delay has sparked intense debate in the AI safety community about the trade-off between capability advancement and responsible deployment
+- Some researchers praised Anthropic's caution, while others questioned whether a private company should be making unilateral decisions about model releases
+- The incident has renewed calls for external oversight mechanisms in frontier AI development
+
+**Market Impact:**
+Despite the delay, Anthropic's market position remains strong. The company's Claude paid subscriptions have more than doubled in early 2026, driven by strong adoption of Claude Code and Claude Cowork tools.`,
+    date: "2026-04-12",
+    source: "CNN / TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/",
+    href: "/news/news-010",
+  },
+  {
+    id: "news-009",
+    tag: "Funding",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI Closes Record $122 Billion Funding Round at $852 Billion Valuation",
+    summary: "OpenAI has completed its latest funding round with $122 billion in committed capital at a post-money valuation of $852 billion, positioning the company for a potential IPO that could reshape the AI industry.",
+    content: `OpenAI announced on April 8, 2026, the closing of its latest funding round with an unprecedented $122 billion in committed capital, valuing the company at $852 billion post-money.
+
+**Deal Highlights:**
+- $122 billion in committed capital, the largest private funding round in history
+- Post-money valuation of $852 billion
+- The round was oversubscribed, with demand far exceeding the amount offered
+- Funds will accelerate development of the next generation of AI models and infrastructure
+
+**Strategic Implications:**
+- OpenAI is reportedly generating $2 billion in monthly revenue, demonstrating a clear path to profitability
+- The company is planning an IPO that could reshape the AI investment landscape
+- The scale of investment signals institutional confidence in AI's long-term economic impact
+
+**Policy Advocacy:**
+Concurrently, OpenAI released a policy proposal outlining its vision for the AI economy, including:
+- Taxes on AI profits to fund social safety nets
+- Public wealth funds to distribute AI-generated wealth
+- A four-day work week to address workforce displacement
+
+**Competitive Context:**
+The funding round widens the gap between OpenAI and other AI companies. xAI is valued at over $200 billion, while Anthropic sits at approximately $183 billion. OpenAI's financial firepower positions it to maintain its leadership in frontier model development and talent acquisition.`,
+    date: "2026-04-12",
+    source: "OpenAI / Bloomberg",
+    sourceUrl: "https://openai.com/index/accelerating-the-next-phase-ai/",
+    href: "/news/news-009",
+  },
+  {
+    id: "news-008",
+    tag: "Industry",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Meta Plans Sweeping Layoffs of 20% Workforce to Offset AI Infrastructure Costs",
+    summary: "Meta is preparing for its largest restructuring since 2022, with layoffs affecting over 20% of its 79,000 employees as the company seeks to balance its massive $600 billion AI investment commitment.",
+    content: `Reuters reported in April 2026 that Meta is planning sweeping layoffs that could affect 20% or more of its workforce of nearly 79,000 employees, making it the company's most significant restructuring since the "year of efficiency" in late 2022 and early 2023.
+
+**The Layoff Plan:**
+- Up to 20% of Meta's 79,000 employees could be affected
+- The layoffs reflect the tension between massive AI infrastructure spending and the need for operational efficiency
+- Meta has committed $600 billion in AI capital expenditure through 2028
+
+**AI Strategy Context:**
+- Meta is simultaneously developing two flagship models codenamed "Avocado" and "Mango"
+- The Avocado model has reportedly lagged behind expectations, adding pressure to the restructuring
+- Meta's AI video tools already generate $10 billion in annual recurring revenue
+
+**Market Reaction:**
+- Meta stock climbed nearly 3% following the initial report, as investors viewed the restructuring as a necessary step to fund AI ambitions
+- Analysts at Jefferies noted that Meta's willingness to cut headcount at this scale "signals a broader shift: AI is increasingly driving productivity"
+
+**Industry Trend:**
+The layoffs are part of a broader pattern across the tech sector. Software firm Atlassian recently cut 10% of its workforce to redirect investments into AI. This marks a fundamental shift in how tech companies view the relationship between headcount and AI capability.`,
+    date: "2026-04-12",
+    source: "Reuters / CNBC",
+    sourceUrl: "https://www.reuters.com/business/world-at-work/meta-planning-sweeping-layoffs-ai-costs-mount-2026-03-14/",
+    href: "/news/news-008",
+  },
+  {
+    id: "news-007",
+    tag: "Open Source",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "Google Releases Gemma 4: Byte for Byte, the Most Capable Open Models",
+    summary: "Google has released Gemma 4, its latest open-weight AI model family, setting new performance records for open models across coding, reasoning, and multilingual benchmarks.",
+    content: `Google announced the release of Gemma 4 on April 12, 2026, describing it as "byte for byte, the most capable open models" available today. The release represents a significant milestone in the open-weight AI landscape.
+
+**Key Features:**
+- Gemma 4 achieves state-of-the-art performance among open models on multiple benchmarks including MMLU-Pro, LiveCodeBench, and mathematical reasoning
+- The model family includes multiple sizes, ranging from lightweight edge-deployable variants to large-scale server models
+- Optimized for efficient deployment, with significant inference speed improvements over Gemma 3
+
+**Developer Ecosystem:**
+- Full integration with Google AI Studio and Hugging Face
+- Compatible with vLLM, Ollama, and other popular inference frameworks
+- Comprehensive tooling for fine-tuning and customization
+
+**Competitive Position:**
+Gemma 4 directly competes with Meta's Llama series and Alibaba's Qwen models in the open-weight space. The release underscores Google's commitment to open-source AI development while maintaining its competitive edge in the broader AI market.
+
+**Broader Google AI Updates:**
+The Gemma 4 release coincides with other Google AI announcements including Learn Mode in Google Colab, 3D model generation in Gemini, and new flexibility and priority inference options in the Gemini API. Google also expanded Search Live globally to everywhere AI Mode is available.`,
+    date: "2026-04-12",
+    source: "Google Blog",
+    sourceUrl: "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+    href: "/news/news-007",
+  },
+  {
+    id: "news-006",
+    tag: "Security",
+    tagColor: "bg-rose-500/10 text-rose-300",
+    title: "Anthropic Accidentally Leaks 512K Lines of Claude Code Source Code",
+    summary: "Anthropic inadvertently published the complete source code for its Claude Code CLI tool on March 31, exposing 512,000 lines of TypeScript and sparking a major security incident response.",
+    content: `On March 31, 2026, Anthropic experienced a significant security incident when it accidentally released the complete source code for its Claude Code CLI tool, exposing 512,000 lines of TypeScript to the public.
+
+**The Incident:**
+- The source code was inadvertently published through a package repository update
+- The leak included proprietary algorithms, internal API configurations, and security implementations
+- The code was publicly accessible for several hours before Anthropic detected and removed it
+
+**Immediate Response:**
+- Anthropic issued an emergency revocation and removal of the leaked packages
+- The company launched a full security audit to assess potential damage
+- All API keys and internal credentials found in the leaked code were immediately rotated
+
+**Community Impact:**
+- The open-source community rapidly forked and analyzed the code before it was removed
+- Security researchers identified several potential vulnerabilities that could have been exploited
+- The incident has sparked debate about code security practices at major AI companies
+
+**Broader Context:**
+This incident adds to a turbulent period for Anthropic, which has simultaneously been rolling out dozens of product updates including Opus 4.6, Computer Use, Claude Cowork, and Agent Teams. The company's paid subscriptions have more than doubled in early 2026, but the pace of development may be straining internal security processes.
+
+**Industry Lessons:**
+The leak highlights the challenges of maintaining secure development practices while moving at the breakneck speed required to compete in the AI industry. Several experts have called for standardized security review processes before any package publication at scale.`,
+    date: "2026-04-12",
+    source: "The New Stack / TechCrunch",
+    sourceUrl: "https://thenewstack.io/anthropic-march-2026-roundup/",
+    href: "/news/news-006",
+  },
+  {
     id: "news-001",
     tag: "前沿",
     tagColor: "bg-blue-500/10 text-blue-300",
