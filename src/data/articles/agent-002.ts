@@ -11,235 +11,369 @@ export const article: Article = {
     level: "高级",
     content: [
       {
-        title: "1. 什么是 Multi-Agent 系统",
-        body: `Multi-Agent 系统（MAS）是由多个自主智能体组成的分布式计算系统，这些智能体通过感知环境、相互通信和协作来完成单一智能体无法独立完成的复杂任务。与单 Agent 系统不同，MAS 的核心设计理念是"分工与协作"——每个 Agent 拥有特定的能力范围和职责边界，通过结构化的交互协议共同解决问题。
+        title: "1. 为什么需要 Multi-Agent？从单兵到团队的范式跃迁",
+        body: `单 Agent 系统已经能够处理很多复杂任务，但在面对真正的大规模复杂问题时，单个 Agent 的局限性就会暴露出来。
 
-MAS 的设计灵感来源于人类社会中的组织结构。就像一个企业中不同部门各司其职又相互配合，MAS 中的每个 Agent 都有明确的角色定位：Researcher 负责信息收集和推理，Coder 负责代码生成和执行，Reviewer 负责结果审核和质量控制，Manager 负责任务统筹和进度管理。这种架构天然支持并行处理，显著提升了复杂任务的完成效率。
+认知边界问题：单个 LLM 的上下文窗口虽然越来越大（128K、256K、甚至 1M tokens），但它仍然是一个大脑。当任务涉及多个独立领域（例如：同时需要代码审查、安全审计、性能优化），单个 Agent 需要在不同思维模式之间频繁切换，容易遗漏细节。这就像一个程序员同时兼顾前端、后端、运维、测试——不是不能做，而是效率和质量的折中。
 
-从技术角度看，MAS 解决了一个根本性矛盾：单一 LLM 的上下文窗口和推理深度是有限的，但通过多 Agent 协作，我们可以将大问题分解为多个子问题，每个子问题由专门的 Agent 处理，最后整合结果。这使得系统能够突破单个模型的能力上限，处理更复杂、更多维度的任务。MAS 的理论基础可追溯到分布式人工智能（DAI），2023-2024 年随着 LLM 能力爆发，MAS 从理论快速走向工程实践。`,
-        mermaid: `graph TD
-    A["复杂任务"] --> B["任务分解器"]
-    B --> C["子任务 1"]
-    B --> D["子任务 2"]
-    B --> E["子任务 3"]
-    C --> F["Agent A: Researcher"]
-    D --> G["Agent B: Coder"]
-    E --> H["Agent C: Reviewer"]
-    F --> I["结果 A"]
-    G --> J["结果 B"]
-    H --> K["结果 C"]
-    I --> L["结果整合器"]
-    J --> L
-    K --> L
-    L --> M["最终输出"]`,
+专业化分工：Multi-Agent 的核心思想是让每个 Agent 做它最擅长的事。一个 Agent 专门负责搜索和信息收集，一个专门负责代码生成，一个专门负责代码审查。每个 Agent 可以通过系统 prompt 被赋予特定的角色、专业知识和行为约束，就像人类团队中的专家角色。
+
+容错与鲁棒性：单 Agent 系统中，如果核心 LLM 的输出出现偏差，整个任务链就会失败。Multi-Agent 系统可以通过多人投票、交叉验证、冗余执行等机制来提高系统的可靠性。即使某个 Agent 出错，其他 Agent 也能发现并纠正。
+
+可扩展性：当业务增长、任务复杂度增加时，单 Agent 系统往往需要全面重构。Multi-Agent 系统则可以水平扩展——只需添加新的 Agent 角色，而无需修改现有 Agent 的逻辑。`,
+        mermaid: `graph LR
+    A["复杂任务"] --> B{"单 Agent or Multi-Agent?"}
+    B -->|"领域单一\\n步骤有限"| C["单 Agent"]
+    B -->|"多领域\\n高复杂度\\n需要容错"| D["Multi-Agent"]
+    D --> E["专业化分工"]
+    D --> F["交叉验证"]
+    D --> G["水平扩展"]
+    C --> H["简单高效"]
+    E --> I["质量更高"]
+    F --> I
+    G --> I`,
         table: {
-          headers: ["架构模式", "适用场景", "优势", "劣势"],
+          headers: ["维度", "单 Agent", "Multi-Agent", "适用场景"],
           rows: [
-            ["单 Agent", "简单问答、文本生成", "实现简单、调试容易", "能力上限受模型限制"],
-            ["多 Agent 串行", "多步骤流水线任务", "职责清晰、便于调试", "串行执行速度较慢"],
-            ["多 Agent 并行", "独立子任务同时处理", "速度快、效率高", "需要结果整合机制"],
-            ["多 Agent 混合", "复杂协作+并行处理", "能力最强、灵活性高", "设计复杂度高"],
-            ["Hierarchical MAS", "大规模分布式任务", "可扩展、层次化管理", "通信开销大"],
+            ["任务复杂度", "中低", "高", "单 Agent 适合线性任务，Multi-Agent 适合网状任务"],
+            ["上下文利用", "集中式，可能拥挤", "分布式，各自专注", "Multi-Agent 减少上下文竞争"],
+            ["容错能力", "低（单点故障）", "高（交叉验证）", "关键任务推荐 Multi-Agent"],
+            ["开发成本", "低", "中高", "快速验证用单 Agent"],
+            ["可扩展性", "垂直（更强的模型）", "水平（更多 Agent）", "长期项目推荐 Multi-Agent"],
           ],
         },
-        tip: "学习建议：先从单 Agent + 工具调用的模式开始，理解 Agent 的核心能力边界后，再逐步引入多 Agent 架构。不要为了用多 Agent 而用多 Agent——只有当单 Agent 确实无法胜任时，才考虑 MAS。",
-      },
-      {
-        title: "2. 通信协议与消息传递",
-        body: `通信协议是 Multi-Agent 系统的神经系统——它决定了 Agent 之间如何交换信息、共享状态和协调行动。没有高效的通信机制，再强大的 Agent 也只是一群各自为战的孤岛。MAS 中的通信可以分为两大类：直接通信（点对点消息传递）和间接通信（通过共享黑板或消息队列）。
-
-直接通信是最常用的方式，Agent 之间通过结构化的消息格式（通常是 JSON）发送请求和响应。消息通常包含发送者、接收者、消息类型、内容负载和时间戳等字段。CrewAI 使用简单的消息传递模型，而 AutoGen 则支持更复杂的群聊（group chat）和单聊（one-to-one）模式。
-
-间接通信通过共享媒介实现，类似于黑板系统（Blackboard Pattern）。所有 Agent 都可以读写共享的状态空间，通过观察状态变化来决定下一步行动。这种方式解耦了 Agent 之间的直接依赖，适合异步、大规模的场景，但可能带来数据一致性和冲突问题。
-
-消息传递的效率直接影响系统性能。关键设计考量包括：消息格式标准化（确保所有 Agent 能互相理解）、消息路由（确定消息该发给谁）、消息队列（处理突发流量和背压）、以及超时与重试机制（应对网络抖动和 Agent 故障）。`,
         code: [
           {
             lang: "python",
-            code: `# 简单的 Agent 消息传递框架
-from dataclasses import dataclass, field
-from enum import Enum
-from typing import Any, Dict, List
-import uuid, time
+            code: `# 单 Agent vs Multi-Agent 的代码结构对比
 
-class MessageType(Enum):
-    REQUEST = "request"
-    RESPONSE = "response"
-    BROADCAST = "broadcast"
-    STATUS_UPDATE = "status_update"
+# ====== 单 Agent 模式 ======
+class SingleAgent:
+    """一个 Agent 干所有事"""
+    def __init__(self, llm):
+        self.llm = llm
+    
+    def handle_task(self, task: str) -> str:
+        # 同一个 LLM 处理搜索、编码、审查...
+        # prompt 里要包含所有领域的指令
+        return self.llm(f"你是全能助手，请完成：{task}")
+
+# ====== Multi-Agent 模式 ======
+from dataclasses import dataclass
+from typing import List, Optional
 
 @dataclass
-class Message:
+class AgentMessage:
+    """Agent 之间传递的消息"""
     sender: str
-    receiver: str
-    msg_type: MessageType
-    content: Dict[str, Any]
-    msg_id: str = field(default_factory=lambda: str(uuid.uuid4()))
-    timestamp: float = field(default_factory=time.time)
-    reply_to: str = None
+    content: str
+    message_type: str  # "request", "response", "feedback"
+    metadata: dict = None
 
-    def to_dict(self) -> Dict:
-        return {
-            "msg_id": self.msg_id, "sender": self.sender,
-            "receiver": self.receiver, "type": self.msg_type.value,
-            "content": self.content, "timestamp": self.timestamp,
-        }
+class AgentRole:
+    """定义 Agent 的角色"""
+    def __init__(self, name: str, system_prompt: str, llm):
+        self.name = name
+        self.system_prompt = system_prompt
+        self.llm = llm
+        self.message_history: List[AgentMessage] = []
+    
+    def process(self, message: AgentMessage) -> AgentMessage:
+        prompt = f"{self.system_prompt}\\n\\n收到消息：{message.content}"
+        response = self.llm(prompt)
+        self.message_history.append(message)
+        return AgentMessage(
+            sender=self.name, content=response,
+            message_type="response", metadata={"source_role": self.name}
+        )
+
+# 创建专业 Agent 团队
+researcher = AgentRole("Researcher", 
+    "你是一个专业研究员，负责收集和分析信息。", llm)
+coder = AgentRole("Coder",
+    "你是一个资深工程师，负责编写高质量代码。", llm)
+reviewer = AgentRole("Reviewer",
+    "你是一个严格的代码审查员，负责发现潜在问题。", llm)`,
+          },
+          {
+            lang: "python",
+            code: `# Multi-Agent 协作管道（Pipeline）
+from typing import Callable, List
+
+class AgentPipeline:
+    """将多个 Agent 串联成处理管道"""
+    def __init__(self):
+        self.stages: List[AgentRole] = []
+    
+    def add_stage(self, agent: AgentRole):
+        self.stages.append(agent)
+        return self
+    
+    def execute(self, initial_input: str) -> str:
+        current_input = initial_input
+        for stage in self.stages:
+            msg = AgentMessage(
+                sender="Pipeline", content=current_input,
+                message_type="request"
+            )
+            response = stage.process(msg)
+            current_input = response.content
+            print(f"[{stage.name}] -> {current_input[:80]}...")
+        return current_input
+
+# 构建处理管道
+pipeline = (AgentPipeline()
+    .add_stage(researcher)    # 先研究
+    .add_stage(coder)         # 再编码
+    .add_stage(reviewer)      # 最后审查
+)
+
+result = pipeline.execute("实现一个支持并发请求的 HTTP 客户端")`,
+          },
+        ],
+        tip: "何时选择 Multi-Agent：当你的任务需要多个不同领域的专业知识、或者需要交叉验证来提高可靠性时，Multi-Agent 是更好的选择。但如果任务简单明确，单 Agent 更直接高效。",
+      },
+      {
+        title: "2. 通信协议：Agent 之间的对话机制",
+        body: `Multi-Agent 系统的核心挑战之一是：Agent 之间如何高效、准确地通信？这不仅仅是发消息这么简单，而是需要设计一套完整的协议。
+
+直接通信 vs 间接通信：直接通信是两个 Agent 之间点对点地交换消息（A 发消息给 B），这种方式延迟低、语义明确，但耦合度高——每个 Agent 需要知道其他 Agent 的存在和能力。间接通信则是通过共享媒介（黑板模式、消息队列、共享数据库）进行交互，Agent 不需要知道消息的接收者是谁，只需将信息发布到共享空间。这种方式解耦了 Agent，但增加了协调的复杂性。
+
+消息格式设计：良好的消息格式应该包含：消息类型（请求/响应/通知/错误）、发送者标识、内容载荷、时间戳、优先级、以及可选的元数据。JSON 是最常用的格式，但在高性能场景下，Protocol Buffers 或 MessagePack 可能更合适。
+
+同步 vs 异步通信：同步通信要求发送者等待接收者的响应（类似函数调用），实现简单但容易阻塞。异步通信允许发送者继续执行其他任务，通过回调或事件总线接收响应（类似事件驱动），更适合大规模分布式系统。`,
+        mermaid: `sequenceDiagram
+    participant M as Manager Agent
+    participant R as Researcher Agent
+    participant C as Coder Agent
+    participant V as Reviewer Agent
+    participant B as 消息总线
+    
+    M->>B: 发布任务（异步）
+    B->>R: 任务路由
+    R->>R: 执行研究
+    R->>B: 发布研究结果
+    B->>C: 结果转发
+    C->>C: 编写代码
+    C->>B: 发布代码
+    B->>V: 代码转发
+    V->>V: 审查代码
+    V->>B: 发布审查报告
+    B->>M: 最终结果聚合
+    M->>M: 生成最终输出`,
+        table: {
+          headers: ["通信模式", "实现方式", "优势", "劣势", "适用场景"],
+          rows: [
+            ["点对点直连", "Agent 直接调用", "延迟最低、语义清晰", "耦合度高、扩展困难", "固定 2-3 个 Agent 的小型系统"],
+            ["消息总线", "Redis Pub/Sub、Kafka", "解耦、支持广播", "需要额外基础设施", "中等规模、动态 Agent 数量"],
+            ["黑板模式", "共享数据结构/数据库", "完全解耦、灵活", "协调复杂、可能冲突", "高度动态、Agent 角色不确定"],
+            ["RPC/HTTP", "REST/gRPC 调用", "标准化、跨语言", "网络延迟、依赖管理", "分布式部署、跨服务通信"],
+          ],
+        },
+        code: [
+          {
+            lang: "python",
+            code: `# 基于发布-订阅模式的 Agent 消息总线
+import asyncio
+from typing import Callable, Dict, List, Any
+import json
+import time
 
 class MessageBus:
-    """消息总线：Agent 间通信的中枢"""
+    """异步消息总线，支持发布-订阅模式"""
     def __init__(self):
-        self._queues: Dict[str, List[Message]] = {}
-        self._history: List[Message] = []
-
-    def register(self, agent_id: str):
-        if agent_id not in self._queues:
-            self._queues[agent_id] = []
-
-    def send(self, msg: Message):
-        self._queues.setdefault(msg.receiver, []).append(msg)
-        self._history.append(msg)
-
-    def receive(self, agent_id: str) -> List[Message]:
-        messages = self._queues.get(agent_id, [])
-        self._queues[agent_id] = []
-        return messages
-
-    def broadcast(self, sender: str, content: Dict[str, Any]):
-        for agent_id in self._queues:
-            if agent_id != sender:
-                self.send(Message(
-                    sender=sender, receiver=agent_id,
-                    msg_type=MessageType.BROADCAST, content=content,
-                ))
+        self._subscribers: Dict[str, List[Callable]] = {}
+        self._message_log: List[dict] = []
+    
+    def subscribe(self, topic: str, callback: Callable):
+        """订阅某个话题"""
+        if topic not in self._subscribers:
+            self._subscribers[topic] = []
+        self._subscribers[topic].append(callback)
+    
+    async def publish(self, topic: str, data: Any, sender: str = "system"):
+        """发布消息到话题"""
+        message = {
+            "topic": topic, "data": data,
+            "sender": sender, "timestamp": time.time(),
+            "msg_id": f"{topic}_{len(self._message_log)}",
+        }
+        self._message_log.append(message)
+        print(f"[BUS] 发布 [{topic}] 来自 {sender}")
+        tasks = []
+        for callback in self._subscribers.get(topic, []):
+            tasks.append(asyncio.create_task(callback(message)))
+        if tasks:
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            for r in results:
+                if isinstance(r, Exception):
+                    print(f"  [BUS] 回调异常: {r}")
+        return message
+    
+    def get_history(self, topic: str = None) -> List[dict]:
+        if topic:
+            return [m for m in self._message_log if m["topic"] == topic]
+        return self._message_log
 
 # 使用示例
 bus = MessageBus()
-for agent in ["researcher", "coder", "reviewer"]:
-    bus.register(agent)
 
-bus.send(Message(
-    sender="manager", receiver="researcher",
-    msg_type=MessageType.REQUEST,
-    content={"task": "查找 Python 异步编程最佳实践"},
-))
-msgs = bus.receive("researcher")
-print(f"收到 {len(msgs)} 条消息: {msgs[0].content}")`,
+async def on_research_result(msg):
+    print(f"  [Coder] 收到研究结果: {msg['data'][:50]}...")
+
+async def on_code_complete(msg):
+    print(f"  [Reviewer] 收到代码: {msg['data'][:50]}...")
+
+bus.subscribe("research.done", on_research_result)
+bus.subscribe("code.done", on_code_complete)`,
           },
           {
             lang: "python",
-            code: `# 基于 Agent-to-Agent 对话的通信（AutoGen 风格）
-class A2AProtocol:
-    """Agent-to-Agent 通信协议"""
-    def __init__(self):
-        self._agents: Dict[str, callable] = {}
-        self._conversation_log: List[Dict] = []
+            code: `# Agent 之间的结构化消息协议
+from enum import Enum
+from typing import Optional, Dict, Any
+from dataclasses import dataclass, asdict
+import json
 
-    def register(self, name: str, handler: callable):
-        self._agents[name] = handler
+class MessageType(Enum):
+    TASK_ASSIGN = "task_assign"       # 分配任务
+    TASK_COMPLETE = "task_complete"   # 任务完成
+    REQUEST_INFO = "request_info"     # 请求信息
+    PROVIDE_INFO = "provide_info"     # 提供信息
+    ERROR = "error"                   # 错误报告
+    FEEDBACK = "feedback"             # 反馈/评价
+    VOTE = "vote"                     # 投票
 
-    def chat(self, sender: str, receiver: str, message: str,
-             max_turns: int = 5) -> str:
-        current_msg = message
-        for turn in range(max_turns):
-            if receiver not in self._agents:
-                return f"Error: Agent '{receiver}' not registered"
-            response = self._agents[receiver](current_msg)
-            if "<DONE>" in response:
-                return response.replace("<DONE>", "").strip()
-            current_msg = response
-            sender, receiver = receiver, sender
-        return current_msg
+@dataclass
+class ProtocolMessage:
+    """标准化的 Agent 间通信协议"""
+    msg_type: MessageType
+    sender: str
+    receiver: str  # "*" 表示广播
+    content: str
+    payload: Dict[str, Any] = None
+    priority: int = 5  # 1-10，10 最高
+    thread_id: Optional[str] = None  # 关联同一对话线程
+    reply_to: Optional[str] = None   # 回复哪条消息
+    
+    def to_json(self) -> str:
+        d = asdict(self)
+        d["msg_type"] = self.msg_type.value
+        return json.dumps(d, ensure_ascii=False)
+    
+    @classmethod
+    def from_json(cls, json_str: str) -> "ProtocolMessage":
+        d = json.loads(json_str)
+        d["msg_type"] = MessageType(d["msg_type"])
+        return cls(**d)
 
-    def group_chat(self, participants: List[str], initial_msg: str,
-                   max_rounds: int = 10) -> List[Dict]:
-        history = [{"from": "system", "msg": initial_msg}]
-        current_msg = initial_msg
-        for _ in range(max_rounds):
-            for p in participants:
-                if p in self._agents:
-                    response = self._agents[p](current_msg)
-                    history.append({"from": p, "msg": response})
-                    current_msg = response
-                    if "<DONE>" in response:
-                        return history
-        return history
-
-# 注册模拟 Agent
-protocol = A2AProtocol()
-protocol.register("researcher", lambda msg: f"Research: {msg}. <DONE>找到3篇论文。")
-protocol.register("coder", lambda msg: f"Implement: {msg}. <DONE>代码已生成。")
-
-result = protocol.chat("manager", "researcher", "调查 FastAPI 性能优化")
-print(f"结果: {result}")`,
+# 示例：Task Manager 分配任务
+assign_msg = ProtocolMessage(
+    msg_type=MessageType.TASK_ASSIGN,
+    sender="Manager",
+    receiver="Researcher",
+    content="请调研 Python 异步 HTTP 库的优缺点",
+    payload={
+        "task_id": "T-001",
+        "deadline": "5min",
+        "expected_format": "对比表格",
+    },
+    priority=7,
+)
+print(assign_msg.to_json())`,
           },
           {
             lang: "python",
-            code: `# 共享黑板（Blackboard）通信模式
+            code: `# 黑板（Blackboard）模式的实现
 class Blackboard:
-    """共享黑板：Agent 通过读写共享空间进行间接通信"""
+    """共享黑板：Agent 们通过读写黑板进行间接通信"""
     def __init__(self):
-        self._data: Dict[str, Any] = {}
-        self._subscribers: Dict[str, List[callable]] = {}
-        self._version = 0
+        self._board: Dict[str, Any] = {}
+        self._lock = asyncio.Lock()
+        self._observers: Dict[str, List[Callable]] = {}
+    
+    async def write(self, key: str, value: Any, author: str):
+        async with self._lock:
+            old_value = self._board.get(key)
+            self._board[key] = {
+                "value": value, "author": author,
+                "updated_at": time.time(), "version": 1
+            }
+            if old_value:
+                self._board[key]["version"] = old_value.get("version", 0) + 1
+            for callback in self._observers.get(key, []):
+                await callback(key, value, author)
+    
+    def read(self, key: str) -> Optional[dict]:
+        return self._board.get(key)
+    
+    def observe(self, key: str, callback: Callable):
+        if key not in self._observers:
+            self._observers[key] = []
+        self._observers[key].append(callback)
+    
+    def snapshot(self) -> Dict[str, dict]:
+        return {k: v for k, v in self._board.items()}
 
-    def write(self, key: str, value: Any, author: str):
-        self._data[key] = {
-            "value": value, "author": author,
-            "version": self._version, "timestamp": time.time(),
-        }
-        self._version += 1
-        for cb in self._subscribers.get(key, []):
-            cb(key, value, author)
+# Agent 通过黑板协作的示例
+blackboard = Blackboard()
 
-    def read(self, key: str) -> Any:
-        entry = self._data.get(key)
-        return entry["value"] if entry else None
+async def researcher_work():
+    await blackboard.write("research_result", 
+        {"frameworks": ["aiohttp", "httpx", "FastAPI"], "recommendation": "httpx"},
+        "Researcher")
 
-    def read_all(self) -> Dict[str, Any]:
-        return {k: v["value"] for k, v in self._data.items()}
-
-    def subscribe(self, key: str, callback: callable):
-        self._subscribers.setdefault(key, []).append(callback)
-
-# 使用示例
-board = Blackboard()
-
-def on_update(key, value, author):
-    print(f"[通知] {key} 已被 {author} 更新")
-
-board.subscribe("research_results", on_update)
-board.write("research_results", ["论文1", "论文2"], "researcher")
-results = board.read("research_results")
-board.write("code_draft", "async def fetch_data(): ...", "coder")
-print(f"所有数据: {board.read_all()}")`,
+async def coder_work():
+    result = blackboard.read("research_result")
+    if result:
+        print(f"基于 {result['value']['recommendation']} 进行编码...")
+        await blackboard.write("code_draft", 
+            "import httpx; async def fetch(url): ...", "Coder")`,
           },
         ],
-        table: {
-          headers: ["通信模式", "实时性", "解耦程度", "适用场景", "代表框架"],
-          rows: [
-            ["直接点对点", "高", "低", "明确的双向交互", "AutoGen 一对一"],
-            ["群聊广播", "高", "中", "多 Agent 共同讨论", "AutoGen Group Chat"],
-            ["共享黑板", "中", "高", "异步、松散耦合", "CrewAI Tasks"],
-            ["消息队列", "中", "高", "大规模、高吞吐", "Celery + Redis"],
-            ["事件总线", "中", "高", "事件驱动架构", "LangGraph State"],
-          ],
-        },
-        warning: "通信设计常见陷阱：① 消息风暴——Agent 之间无节制地互相发送消息导致系统过载；② 死锁——Agent A 等待 Agent B 的回复，而 Agent B 也在等待 Agent A；③ 信息丢失——异步通信中消息可能因网络问题或 Agent 崩溃而丢失。缓解策略：设置消息上限、超时机制和重试策略。",
+        warning: "通信协议设计的关键陷阱：① 消息爆炸——Agent 之间产生大量不必要的消息，消耗资源并引入噪声。缓解方案：消息优先级过滤、话题隔离。② 循环依赖——Agent A 等待 Agent B 的输出，而 Agent B 又需要 Agent A 的结果。缓解方案：DAG 依赖管理、超时机制。③ 消息丢失——异步通信中消息可能因为异常而丢失。缓解方案：消息持久化、确认机制 ACK、重试策略。",
       },
       {
-        title: "3. 角色分配与任务分解",
-        body: `角色分配是 Multi-Agent 系统设计的核心环节。一个好的角色设计能让系统像精密的机械表一样运转——每个齿轮各司其职又相互配合。角色设计需要回答三个关键问题：需要哪些角色？每个角色的能力边界是什么？角色之间的依赖关系如何？
+        title: "3. 角色分配：如何让每个 Agent 各司其职",
+        body: `在 Multi-Agent 系统中，角色（Role）定义了每个 Agent 的职责、能力和行为边界。好的角色设计是系统成功的基石。
 
-角色设计通常遵循"能力-职责-权限"三位一体的原则。能力（Capability）定义了角色能做什么，职责（Responsibility）定义了角色应该做什么，权限（Authority）定义了角色可以调用哪些工具或资源。这三个维度的精确定义，是确保 Agent 行为可预测的基础。
+角色设计的原则：首先，角色应该是正交的——每个角色有明确的职责范围，尽量避免重叠。重叠的角色不仅浪费计算资源，还可能导致重复工作或冲突。其次，角色的粒度要适中：太粗（一个角色承担太多职责）会退化为单 Agent；太细（每个微小功能一个角色）会导致通信开销爆炸。经验法则是：角色数量等于任务领域中需要专业知识的独立子领域数量。
 
-任务分解（Task Decomposition）则是将复杂目标拆解为可执行的子任务序列。常见分解策略包括：按功能模块分解（前端、后端、数据库）、按时间顺序分解（调研→设计→实现→测试）、按难度层次分解（简单任务先行、复杂任务后置）、以及按依赖关系分解（DAG 拓扑排序）。在实践中，角色和任务的设计不是一次性的——它需要通过系统的实际运行结果来迭代优化。观察哪些角色经常超负荷（说明需要拆分）、哪些角色长期空闲（说明可以合并或消除）、哪些任务总是超时（说明分解不够细），然后调整角色和任务的设计。`,
+系统 Prompt 工程：角色的行为和输出格式主要通过系统 Prompt 定义。一个完整的角色 Prompt 应该包括：角色名称和描述、专业领域和知识范围、行为约束和规则、输出格式要求、以及与其他角色交互的方式。例如，Reviewer 角色的 Prompt 不仅要告诉它是代码审查员，还要指定审查的维度（安全性、性能、可读性、测试覆盖率）和输出格式（问题列表加严重等级加修复建议）。
+
+动态角色分配：在一些更高级的系统中，角色不是静态分配的，而是根据任务需求动态创建和调整。例如，当任务中出现新的子领域时，系统可以实例化一个新的专家 Agent；当某个角色完成工作后，可以将其资源释放或重新分配。`,
+        mermaid: `graph TD
+    A["Multi-Agent 团队"] --> B["Manager\\n任务分解与协调"]
+    A --> C["Researcher\\n信息收集与分析"]
+    A --> D["Coder\\n代码生成与实现"]
+    A --> E["Reviewer\\n质量审查与反馈"]
+    A --> F["Tester\\n测试验证"]
+    A --> G["Writer\\n文档生成"]
+    
+    B -->|"分配任务"| C
+    B -->|"分配任务"| D
+    C -->|"提供研究"| D
+    D -->|"提交代码"| E
+    E -->|"反馈修改"| D
+    D -->|"完成代码"| F
+    F -->|"测试结果"| B
+    B -->|"触发文档"| G`,
+        table: {
+          headers: ["角色", "职责", "关键能力", "输出", "常见 Prompt 关键词"],
+          rows: [
+            ["Manager", "任务分解、协调、决策", "规划能力、全局视角", "任务分配方案、最终整合", "你是项目经理，负责分解任务并协调团队"],
+            ["Researcher", "信息收集、分析、总结", "搜索、归纳、对比", "研究报告、对比分析", "你是领域专家，负责调研和分析"],
+            ["Coder", "代码编写、实现", "编程、架构设计", "可运行代码、注释", "你是资深工程师，负责编写高质量代码"],
+            ["Reviewer", "代码审查、质量评估", "批判性思维、安全性意识", "审查报告、修改建议", "你是严格的代码审查员，关注安全、性能和可维护性"],
+            ["Tester", "测试设计、执行验证", "测试方法论、边界思维", "测试用例、测试报告", "你是 QA 工程师，负责设计全面的测试"],
+          ],
+        },
         code: [
           {
             lang: "python",
-            code: `# 角色定义与分配系统
+            code: `# 角色工厂：动态创建不同类型的 Agent
 from enum import Enum
-from typing import List, Dict
-from dataclasses import dataclass
+from typing import Dict, Callable, Optional
 
 class RoleType(Enum):
     MANAGER = "manager"
@@ -247,719 +381,993 @@ class RoleType(Enum):
     CODER = "coder"
     REVIEWER = "reviewer"
     TESTER = "tester"
-    DEPLOYER = "deployer"
 
-@dataclass
-class Role:
-    role_type: RoleType
-    name: str
-    capabilities: List[str]
-    tools: List[str]
-    max_concurrent_tasks: int
-    priority: int
+# 角色 Prompt 模板库
+ROLE_PROMPTS: Dict[RoleType, str] = {
+    RoleType.MANAGER: """你是项目 Manager，负责分解复杂任务、分配给合适的专家、协调进度并整合结果。
+你的核心职责：
+1. 分析用户需求的复杂度和涉及的领域
+2. 将任务拆分为可独立执行的子任务
+3. 根据子任务类型选择合适的专家角色
+4. 监控各子任务的进度，处理阻塞和冲突
+5. 整合所有子任务的结果，生成最终输出
 
-@dataclass
-class Agent:
-    role: Role
-    agent_id: str
-    current_tasks: List[str]
-    status: str = "idle"
+决策原则：宁可多分配专家，也不让一个角色承担过多职责。""",
 
-    def can_accept_task(self) -> bool:
-        return len(self.current_tasks) < self.role.max_concurrent_tasks
+    RoleType.RESEARCHER: """你是 Researcher，负责信息收集、技术调研和分析对比。
+你的工作方式：
+1. 明确调研的目标和范围
+2. 从多个来源收集信息（文档、最佳实践、案例）
+3. 对比分析不同方案的优缺点
+4. 给出基于证据的推荐意见
 
-    def assign(self, task_id: str):
-        self.current_tasks.append(task_id)
-        self.status = "busy"
+输出格式：使用结构化的对比表格，列出方案、优势、劣势、适用场景。""",
 
-    def complete(self, task_id: str):
-        self.current_tasks.remove(task_id)
-        if not self.current_tasks:
-            self.status = "idle"
+    RoleType.CODER: """你是 Coder，一位拥有 10 年经验的资深软件工程师。
+你的编码原则：
+1. 代码必须清晰、可读、可维护
+2. 遵循 SOLID 原则和设计模式
+3. 包含必要的类型注解和文档字符串
+4. 考虑边界条件和错误处理
+5. 优先使用标准库和成熟框架
 
-# 定义典型软件开发团队的角色
-roles = [
-    Role(RoleType.MANAGER, "项目经理",
-         ["任务分解", "进度管理", "资源分配"],
-         ["task_tracker", "calendar"], 10, 1),
-    Role(RoleType.RESEARCHER, "研究员",
-         ["信息检索", "文献综述", "技术选型"],
-         ["web_search", "arxiv"], 3, 2),
-    Role(RoleType.CODER, "开发者",
-         ["代码生成", "代码重构", "API 开发"],
-         ["code_editor", "git", "terminal"], 2, 3),
-    Role(RoleType.REVIEWER, "代码审查员",
-         ["代码审查", "质量评估", "安全检查"],
-         ["code_reviewer", "linter"], 5, 3),
-]
+输出要求：完整的可运行代码，包含注释和示例用法。""",
 
-agents = [Agent(r, f"{r.role_type.value}-01", []) for r in roles]
-for a in agents:
-    print(f"{a.role.name}: {a.role.capabilities}")`,
+    RoleType.REVIEWER: """你是 Reviewer，一位经验丰富的技术负责人，负责代码审查。
+审查维度：
+1. 安全性：是否存在注入、溢出、权限绕过等漏洞
+2. 性能：是否有不必要的计算、内存泄漏、N+1 查询
+3. 可读性：命名是否清晰、结构是否合理、注释是否充分
+4. 可维护性：是否遵循 DRY 原则、是否易于扩展和修改
+5. 测试覆盖：关键逻辑是否有对应的测试
+
+输出格式：按严重程度列出问题（Critical/Major/Minor），每个问题附带修复建议。""",
+}
+
+class RoleFactory:
+    """角色工厂：根据角色类型创建配置好的 Agent"""
+    @staticmethod
+    def create(role_type: RoleType, llm: Callable, **kwargs) -> AgentRole:
+        prompt = ROLE_PROMPTS.get(role_type)
+        if not prompt:
+            raise ValueError(f"未知角色类型: {role_type}")
+        custom_prompt = kwargs.get("custom_prompt", "")
+        if custom_prompt:
+            prompt = f"{prompt}\\n\\n额外要求：{custom_prompt}"
+        return AgentRole(role_type.value, prompt, llm)`,
           },
           {
             lang: "python",
-            code: `# 任务分解与 DAG 调度
+            code: `# 动态角色分配算法
+from collections import defaultdict
+
+class DynamicRoleAssigner:
+    """根据任务特征动态分配 Agent 角色"""
+    
+    def __init__(self):
+        # 角色能力矩阵：角色 -> 擅长的任务类型
+        self.role_capabilities = {
+            RoleType.RESEARCHER: ["调研", "分析", "对比", "搜索", "总结"],
+            RoleType.CODER: ["编码", "实现", "重构", "调试", "API"],
+            RoleType.REVIEWER: ["审查", "评估", "安全", "性能", "优化"],
+            RoleType.TESTER: ["测试", "验证", "覆盖率", "边界", "集成测试"],
+            RoleType.MANAGER: ["协调", "规划", "整合", "分解"],
+        }
+    
+    def assign_roles(self, task_description: str) -> Dict[str, list]:
+        """分析任务描述，分配需要的角色"""
+        words = set(task_description)
+        
+        # 计算每个角色与任务的匹配度
+        role_scores = {}
+        for role, keywords in self.role_capabilities.items():
+            score = sum(1 for kw in keywords if any(kw in w for w in words))
+            if score > 0:
+                role_scores[role.value] = score
+        
+        # 总是需要 Manager
+        role_scores.setdefault("manager", 1)
+        
+        # 按匹配度排序，选择匹配度 > 0 的角色
+        assigned = {role: [] for role, score in role_scores.items() if score > 0}
+        return assigned
+
+# 使用示例
+assigner = DynamicRoleAssigner()
+task = "调研 Python 异步编程框架，对比 aiohttp 和 httpx，编写封装库并编写单元测试"
+roles = assigner.assign_roles(task)
+print(f"需要 {len(roles)} 个角色: {list(roles.keys())}")`,
+          },
+        ],
+        tip: "角色设计的实用技巧：先定义最小可行团队（通常 3-4 个角色足以覆盖大多数场景）；给每个角色写一个自我介绍，如果两个角色的介绍有超过 30% 的重合度，考虑合并或重新划分；为每个角色定义清晰的交接点（什么条件下把控制权交给下一个角色）。",
+      },
+      {
+        title: "4. 任务协调：从分解到交付的完整生命周期",
+        body: `任务协调是 Multi-Agent 系统的中枢神经系统。它负责将用户的宏观目标拆解为具体的子任务，分配给合适的 Agent，监控执行进度，处理异常情况，最终整合结果。
+
+任务分解（Task Decomposition）：这是协调的第一步，也是最关键的一步。好的分解应该满足三个标准：独立性（子任务可以并行执行，减少等待时间）、完整性（所有子任务的组合能够完成原始目标）、可验证性（每个子任务都有明确的完成标准）。常用的分解策略包括：按功能领域分解（搜索、编码、审查）、按数据流分解（输入处理、核心计算、输出生成）、按依赖关系分解（DAG 拓扑排序）。
+
+执行调度：分解完成后，需要决定子任务的执行顺序。如果子任务之间没有依赖关系，可以并行执行以节省时间。如果存在依赖（例如：编码需要研究结果），则需要按拓扑顺序执行。调度器需要动态跟踪每个子任务的状态（待执行、执行中、已完成、失败），并在所有前置任务完成后启动依赖任务。
+
+结果整合：当所有子任务完成后，Manager Agent 需要将结果整合为最终输出。整合不仅仅是简单的拼接——可能需要消除冗余、解决不一致、格式化输出、以及在必要时要求某些子任务重新执行。`,
+        mermaid: `graph TD
+    A["用户目标"] --> B["Manager: 任务分解"]
+    B --> C{子任务依赖?}
+    C -->|"无依赖"| D["并行执行"]
+    C -->|"有依赖"| E["拓扑排序"]
+    D --> F["Agent A: 执行"]
+    D --> G["Agent B: 执行"]
+    D --> H["Agent C: 执行"]
+    E --> I["顺序执行"]
+    F --> J["结果收集"]
+    G --> J
+    H --> J
+    I --> J
+    J --> K{"全部成功?"}
+    K -->|"是"| L["整合结果"]
+    K -->|"否"| M["错误处理/重试"]
+    M --> F
+    L --> N["最终输出"]`,
+        table: {
+          headers: ["调度策略", "并行度", "复杂度", "适用场景", "示例"],
+          rows: [
+            ["完全并行", "最高", "低", "子任务完全独立", "同时搜索多个关键词"],
+            ["流水线（Pipeline）", "中", "低", "线性依赖链", "研究 -> 编码 -> 审查"],
+            ["DAG 调度", "高", "中", "复杂依赖关系", "多输入多输出的数据处理"],
+            ["动态优先级", "可变", "高", "不确定执行时间", "根据 Agent 负载动态调整"],
+            ["工作窃取（Work Stealing）", "最高", "高", "任务量不均衡", "空闲 Agent 帮忙碌 Agent"],
+          ],
+        },
+        code: [
+          {
+            lang: "python",
+            code: `# 基于 DAG 的任务调度器
 from collections import defaultdict, deque
+from typing import Dict, List, Set, Callable, Any
+import asyncio
+
+class TaskNode:
+    """DAG 中的任务节点"""
+    def __init__(self, task_id: str, description: str, 
+                 executor: Callable, depends_on: List[str] = None):
+        self.task_id = task_id
+        self.description = description
+        self.executor = executor
+        self.depends_on = depends_on or []
+        self.result: Any = None
+        self.status = "pending"  # pending, running, done, failed
+
+class DAGScheduler:
+    """基于有向无环图的任务调度器"""
+    def __init__(self):
+        self.tasks: Dict[str, TaskNode] = {}
+        self._adjacency: Dict[str, List[str]] = defaultdict(list)
+        self._in_degree: Dict[str, int] = defaultdict(int)
+    
+    def add_task(self, task: TaskNode):
+        self.tasks[task.task_id] = task
+        for dep in task.depends_on:
+            self._adjacency[dep].append(task.task_id)
+            self._in_degree[task.task_id] += 1
+        self._in_degree.setdefault(task.task_id, 0)
+    
+    def get_ready_tasks(self) -> List[str]:
+        """获取所有可以执行的任务（依赖已满足）"""
+        return [tid for tid, node in self.tasks.items()
+                if node.status == "pending" and self._in_degree.get(tid, 0) == 0]
+    
+    async def execute(self) -> Dict[str, Any]:
+        """执行所有任务（BFS 拓扑排序）"""
+        ready = self.get_ready_tasks()
+        while ready:
+            batch_tasks = []
+            for tid in ready:
+                task = self.tasks[tid]
+                dep_results = {dep: self.tasks[dep].result 
+                              for dep in task.depends_on}
+                batch_tasks.append(self._run_task(task, dep_results))
+            
+            results = await asyncio.gather(*batch_tasks, return_exceptions=True)
+            
+            for tid, result in zip(ready, results):
+                if isinstance(result, Exception):
+                    self.tasks[tid].status = "failed"
+                    self.tasks[tid].result = f"Error: {result}"
+                    print(f"  任务 {tid} 失败: {result}")
+                else:
+                    self.tasks[tid].status = "done"
+                    self.tasks[tid].result = result
+                    for successor in self._adjacency.get(tid, []):
+                        self._in_degree[successor] -= 1
+            
+            ready = self.get_ready_tasks()
+        
+        pending = [t for t in self.tasks.values() if t.status == "pending"]
+        if pending:
+            print(f"  检测到循环依赖: {[t.task_id for t in pending]}")
+        
+        return {tid: t.result for tid, t in self.tasks.items()}
+    
+    async def _run_task(self, task: TaskNode, dep_results: dict) -> Any:
+        task.status = "running"
+        print(f"  执行任务: {task.description}")
+        return await task.executor(dep_results) if asyncio.iscoroutinefunction(task.executor) else task.executor(dep_results)`,
+          },
+          {
+            lang: "python",
+            code: `# 使用 DAG 调度器构建 Multi-Agent 任务流
+async def build_article_pipeline(llm):
+    """构建一个文章生成的 DAG 任务流"""
+    scheduler = DAGScheduler()
+    
+    # T1: 研究（无依赖）
+    async def research_task(deps):
+        researcher = AgentRole("Researcher", ROLE_PROMPTS[RoleType.RESEARCHER], llm)
+        msg = AgentMessage("Scheduler", "调研 2026 年 AI Agent 最新进展", "request")
+        return researcher.process(msg).content
+    scheduler.add_task(TaskNode("research", "调研", research_task))
+    
+    # T2: 大纲（依赖研究）
+    async def outline_task(deps):
+        result = deps.get("research", "")
+        msg = AgentMessage("Scheduler", f"基于以下研究写文章大纲:\\n{result[:200]}", "request")
+        manager = AgentRole("Manager", ROLE_PROMPTS[RoleType.MANAGER], llm)
+        return manager.process(msg).content
+    scheduler.add_task(TaskNode("outline", "大纲", outline_task, ["research"]))
+    
+    # T3: 正文（依赖大纲）
+    async def body_task(deps):
+        outline = deps.get("outline", "")
+        msg = AgentMessage("Scheduler", f"根据以下大纲撰写正文:\\n{outline[:200]}", "request")
+        coder = AgentRole("Coder", ROLE_PROMPTS[RoleType.CODER], llm)
+        return coder.process(msg).content
+    scheduler.add_task(TaskNode("body", "正文", body_task, ["outline"]))
+    
+    # T4: 审查（依赖正文）
+    async def review_task(deps):
+        body = deps.get("body", "")
+        msg = AgentMessage("Scheduler", f"审查以下文章:\\n{body[:300]}", "request")
+        reviewer = AgentRole("Reviewer", ROLE_PROMPTS[RoleType.REVIEWER], llm)
+        return reviewer.process(msg).content
+    scheduler.add_task(TaskNode("review", "审查", review_task, ["body"]))
+    
+    results = await scheduler.execute()
+    return results
+
+# 执行
+# results = asyncio.run(build_article_pipeline(some_llm))
+# print(results)  # {'research': ..., 'outline': ..., 'body': ..., 'review': ...}`,
+          },
+        ],
+        warning: "任务协调的常见陷阱：① 过度分解——把任务拆得太细，导致 Agent 之间通信开销超过计算收益。经验法则是每个子任务应该至少需要 30 秒以上的计算量。② 隐藏依赖——某些子任务看似独立，实际共享隐式依赖（如同一个外部 API）。调度器需要识别这类依赖，避免并发请求导致限流或数据不一致。③ 结果爆炸——多个 Agent 的输出加起来远超过原始任务的合理规模。需要在整合阶段进行摘要和裁剪。",
+      },
+      {
+        title: "5. 冲突解决：当 Agent 们意见不合时",
+        body: `在 Multi-Agent 系统中，冲突是不可避免的。不同的 Agent 可能对同一问题给出不同答案，可能对任务的执行方式有分歧，甚至可能在资源使用上产生竞争。有效的冲突解决机制是系统可靠性的关键保障。
+
+冲突的类型：首先是内容冲突——例如 Researcher 推荐方案 A，Coder 认为方案 B 更好。这类冲突本质上是哪个方案更优的判断问题。其次是资源冲突——多个 Agent 同时请求同一个受限资源（如 API 密钥的速率限制、同一数据库的写入锁）。第三是流程冲突——Manager 要求先做 X 再做 Y，但某个 Agent 认为先做 Y 更高效。
+
+解决策略：对于内容冲突，最常用的方法是投票机制（多个 Agent 各自给出判断，取多数意见）和仲裁机制（由一个更高权限的 Agent 做出最终决定）。对于资源冲突，需要实现资源管理器和锁机制。对于流程冲突，Manager 应该保留最终决策权，但允许 Agent 提出异议（类似人类团队中的强烈反对但服从模式）。
+
+冲突记录与学习：一个好的 Multi-Agent 系统不仅解决冲突，还会记录冲突的历史。通过分析过去的冲突模式，系统可以优化角色定义、改进任务分解、甚至自动调整 Agent 的行为策略。`,
+        mermaid: `graph TD
+    A["检测到冲突"] --> B{"冲突类型?"}
+    B -->|"内容冲突"| C["投票/仲裁"]
+    B -->|"资源冲突"| D["资源锁 + 队列"]
+    B -->|"流程冲突"| E["Manager 仲裁"]
+    
+    C --> F["多数投票"]
+    C --> G["权重投票"]
+    C --> H["仲裁者决定"]
+    
+    F --> I["执行胜出方案"]
+    G --> I
+    H --> I
+    D --> I
+    E --> I
+    
+    I --> J["记录冲突到日志"]
+    J --> K["分析冲突模式"]
+    K --> L["优化角色定义"]`,
+        table: {
+          headers: ["策略", "原理", "优势", "劣势", "适用场景"],
+          rows: [
+            ["多数投票", "多个 Agent 各自判断，取多数", "简单公平、容错", "可能出现平票、成本高", "客观判断、分类问题"],
+            ["权重投票", "按 Agent 专业度加权投票", "尊重专业意见", "权重设定主观", "不同专业度的 Agent"],
+            ["仲裁者模式", "指定一个 Manager 做最终决定", "决策快速、责任明确", "仲裁者可能判断失误", "时间敏感、需要快速决策"],
+            ["辩论模式", "Agent 互相辩论，达成共识", "充分讨论、结果高质量", "耗时长、可能无法达成共识", "重要决策、需要深度分析"],
+            ["置信度比较", "每个 Agent 给出答案加置信度，选最高", "量化不确定性", "LLM 的置信度不可靠", "概率判断、风险评估"],
+          ],
+        },
+        code: [
+          {
+            lang: "python",
+            code: `# 加权投票冲突解决机制
+from typing import List, Dict, Any
+from collections import Counter
+
+class WeightedVoter:
+    """基于权重的多 Agent 投票系统"""
+    def __init__(self):
+        self._weights: Dict[str, float] = {}
+        self._votes: Dict[str, Any] = {}
+    
+    def set_weight(self, agent_name: str, weight: float):
+        """设置 Agent 的投票权重"""
+        self._weights[agent_name] = max(0.0, weight)
+    
+    def cast_vote(self, agent_name: str, vote: Any, confidence: float = 1.0):
+        """Agent 投票"""
+        weight = self._weights.get(agent_name, 1.0)
+        effective_weight = weight * confidence
+        self._votes[agent_name] = {"vote": vote, "weight": effective_weight}
+    
+    def tally(self) -> Dict[str, Any]:
+        """统计投票结果"""
+        score_map: Dict[str, float] = {}
+        vote_map: Dict[str, str] = {}
+        for agent, data in self._votes.items():
+            vote_key = str(data["vote"])
+            vote_map[vote_key] = data["vote"]
+            score_map[vote_key] = score_map.get(vote_key, 0) + data["weight"]
+        
+        if not score_map:
+            return {"winner": None, "scores": {}, "total_votes": 0}
+        
+        winner_key = max(score_map, key=score_map.get)
+        total_weight = sum(score_map.values())
+        
+        return {
+            "winner": vote_map[winner_key],
+            "scores": {k: round(v / total_weight, 3) for k, v in score_map.items()},
+            "total_votes": len(self._votes),
+            "consensus": max(score_map.values()) / total_weight > 0.7,
+        }
+
+# 使用示例：三个 Agent 对技术方案投票
+voter = WeightedVoter()
+voter.set_weight("Researcher", 0.3)
+voter.set_weight("Coder", 0.5)
+voter.set_weight("Reviewer", 0.4)
+
+voter.cast_vote("Researcher", "方案A", 0.8)
+voter.cast_vote("Coder", "方案B", 0.9)
+voter.cast_vote("Reviewer", "方案A", 0.7)
+
+result = voter.tally()
+print(f"胜出: {result['winner']}, 共识: {result['consensus']}")`,
+          },
+          {
+            lang: "python",
+            code: `# 辩论式冲突解决（Debate-based Resolution）
+class DebateModerator:
+    """辩论主持人：引导 Agent 进行结构化辩论"""
+    def __init__(self, llm, max_rounds: int = 3):
+        self.llm = llm
+        self.max_rounds = max_rounds
+        self.transcript: List[Dict] = []
+    
+    def moderate(self, topic: str, positions: Dict[str, str]) -> str:
+        """主持辩论
+        topic: 争议话题
+        positions: {agent_name: 立场}
+        """
+        agent_names = list(positions.keys())
+        print(f"辩论开始：{topic}")
+        print(f"   参与方: {', '.join(agent_names)}")
+        
+        for round_num in range(self.max_rounds):
+            print(f"\\n--- 第 {round_num + 1} 轮 ---")
+            for agent_name in agent_names:
+                history = "\\n".join(
+                    f"[{t['agent']}]: {t['argument'][:100]}" 
+                    for t in self.transcript[-4:]
+                )
+                prompt = f"""辩论话题：{topic}
+你的立场：{positions[agent_name]}
+之前的辩论记录：
+{history}
+
+请用 3-5 句话陈述你的观点。如果是后续轮次，请回应其他参与方的论点。"""
+                argument = self.llm(prompt)
+                self.transcript.append({
+                    "agent": agent_name, "round": round_num + 1,
+                    "argument": argument
+                })
+                print(f"  [{agent_name}]: {argument[:80]}...")
+        
+        full_transcript = "\\n".join(
+            f"[{t['agent']} R{t['round']}]: {t['argument']}" 
+            for t in self.transcript
+        )
+        verdict_prompt = f"""作为公正的裁判，请根据以下辩论内容做出裁决。
+辩论话题：{topic}
+{full_transcript}
+
+请给出裁决结果，说明哪一方的论点更有说服力，为什么。"""
+        return self.llm(verdict_prompt)`,
+          },
+          {
+            lang: "python",
+            code: `# 冲突日志与学习系统
+import json
+from datetime import datetime
+
+class ConflictLogger:
+    """记录和分析 Agent 之间的冲突"""
+    def __init__(self, log_file: str = "conflicts.json"):
+        self.log_file = log_file
+        self.conflicts = self._load()
+    
+    def _load(self) -> List[dict]:
+        try:
+            with open(self.log_file) as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return []
+    
+    def log_conflict(self, conflict_type: str, agents: List[str],
+                     descriptions: Dict[str, str], resolution: str,
+                     winner: str = None):
+        entry = {
+            "timestamp": datetime.now().isoformat(),
+            "type": conflict_type,
+            "agents": agents,
+            "positions": descriptions,
+            "resolution": resolution,
+            "winner": winner,
+        }
+        self.conflicts.append(entry)
+        self._save()
+    
+    def _save(self):
+        with open(self.log_file, 'w') as f:
+            json.dump(self.conflicts, f, ensure_ascii=False, indent=2)
+    
+    def get_patterns(self) -> Dict[str, Any]:
+        """分析冲突模式"""
+        type_counts = Counter(c["type"] for c in self.conflicts)
+        agent_conflict_count = Counter()
+        for c in self.conflicts:
+            for agent in c["agents"]:
+                agent_conflict_count[agent] += 1
+        
+        return {
+            "total_conflicts": len(self.conflicts),
+            "by_type": dict(type_counts),
+            "most_conflicted_agents": dict(agent_conflict_count.most_common(3)),
+            "recent_trend": "increasing" if len(self.conflicts) > 5 
+                           and self.conflicts[-3:] else "stable",
+        }
+
+# 使用
+logger = ConflictLogger()
+logger.log_conflict(
+    conflict_type="content_disagreement",
+    agents=["Researcher", "Coder"],
+    descriptions={
+        "Researcher": "推荐使用 httpx，性能更好",
+        "Coder": "推荐使用 aiohttp，生态更成熟"
+    },
+    resolution="加权投票，Coder 权重更高（实际开发经验）",
+    winner="Coder"
+)
+print(json.dumps(logger.get_patterns(), indent=2, ensure_ascii=False))`,
+          },
+        ],
+        tip: "冲突解决的实用建议：预防胜于治疗——在角色定义阶段就明确边界条件，减少模糊地带；建立升级路径——低级别冲突由 Agent 自行解决，中级别引入投票，高级别交给 Manager 仲裁；允许建设性冲突——不是所有分歧都是坏事，适度的观点碰撞往往能产生更好的结果。",
+      },
+      {
+        title: "6. 典型 Multi-Agent 架构深入解析",
+        body: `当前主流的 Multi-Agent 框架各有不同的设计哲学和架构风格。理解它们的底层架构，能帮助你在选择框架时做出更明智的决策。
+
+CrewAI 的角色-任务-流程架构：CrewAI 采用最直观的设计——你定义 Role（角色）、Task（任务）、Process（流程），然后框架自动管理 Agent 之间的协作。它的 Process 支持 Sequential（顺序执行）和 Hierarchical（层级管理）两种模式。CrewAI 的优势在于极简的 API 设计，但灵活性和自定义能力相对有限。
+
+AutoGen 的对话驱动架构：AutoGen 的核心思想是：Agent 之间的协作本质上是对话。每个 Agent 可以与其他 Agent 进行多轮对话，通过对话来交换信息、协商方案、解决问题。AutoGen 支持非常灵活的多 Agent 拓扑结构：可以是星形（中心 Agent 协调）、环形（Agent 链式传递）、全连接（任何 Agent 之间直接通信）。
+
+ReAct 架构的多 Agent 扩展：虽然 ReAct 最初是为单 Agent 设计的（Thought 到 Action 到 Observation），但在 Multi-Agent 场景下，每个 Agent 都可以独立执行 ReAct 循环，同时通过共享的观察空间进行协作。这种架构的优势是每个 Agent 都保持自主性，同时又能感知到全局状态。`,
+        mermaid: `graph LR
+    subgraph CrewAI 架构
+        A1["Role 1"] --> A2["Task 1"]
+        A3["Role 2"] --> A4["Task 2"]
+        A5["Role 3"] --> A6["Task 3"]
+        A2 --> A7["Process: Sequential/Hierarchical"]
+        A4 --> A7
+        A6 --> A7
+    end
+    
+    subgraph AutoGen 架构
+        B1["User Proxy"] <-->|"对话"| B2["Assistant Agent"]
+        B2 <-->|"对话"| B3["Expert Agent"]
+        B1 <-->|"对话"| B3
+    end
+    
+    subgraph Multi-ReAct 架构
+        C1["Agent A: Thought->Action->Obs"] -.共享观测.-> C2["Agent B: Thought->Action->Obs"]
+        C2 -.共享观测.-> C3["Agent C: Thought->Action->Obs"]
+    end`,
+        table: {
+          headers: ["框架", "核心理念", "通信方式", "编排模式", "学习曲线", "生态"],
+          rows: [
+            ["CrewAI", "角色-任务-流程", "共享上下文", "Sequential / Hierarchical", "低", "快速增长中"],
+            ["AutoGen", "对话即协作", "Agent 对话", "灵活拓扑（星形/环形/全连接）", "中等", "Microsoft 支持"],
+            ["LangGraph", "图结构工作流", "状态传递", "有向图（循环、分支）", "中等", "LangChain 生态"],
+            ["OpenAI Swarm", "极简协作", "Handoff 协议", "Agent 之间切换", "低", "官方实验性"],
+            ["MetaGPT", "软件公司模拟", "结构化消息", "SOP 标准流程", "较陡", "学术导向"],
+          ],
+        },
+        code: [
+          {
+            lang: "python",
+            code: `# CrewAI 风格的架构实现（简化版）
+from typing import List, Optional
+from dataclasses import dataclass, field
 
 @dataclass
 class Task:
-    task_id: str
     description: str
-    assigned_role: RoleType
-    dependencies: List[str]
-    estimated_time: int  # 分钟
-    status: str = "pending"
+    agent: Optional[str] = None
+    expected_output: str = ""
+    is_complete: bool = False
+    result: str = ""
 
-class TaskScheduler:
-    """基于 DAG 的任务调度器"""
-    def __init__(self):
-        self.tasks: Dict[str, Task] = {}
-        self.adj: Dict[str, List[str]] = defaultdict(list)
-        self.in_degree: Dict[str, int] = defaultdict(int)
-
+@dataclass
+class Crew:
+    """CrewAI 风格的团队编排"""
+    agents: Dict[str, AgentRole] = field(default_factory=dict)
+    tasks: List[Task] = field(default_factory=list)
+    process: str = "sequential"  # sequential | hierarchical
+    
+    def add_agent(self, agent: AgentRole):
+        self.agents[agent.name] = agent
+    
     def add_task(self, task: Task):
-        self.tasks[task.task_id] = task
-        for dep in task.dependencies:
-            self.adj[dep].append(task.task_id)
-            self.in_degree[task.task_id] += 1
-
-    def get_ready_tasks(self) -> List[Task]:
-        return [
-            t for t in self.tasks.values()
-            if t.status == "pending" and self.in_degree[t.task_id] == 0
-        ]
-
-    def complete_task(self, task_id: str):
-        self.tasks[task_id].status = "completed"
-        for nxt in self.adj[task_id]:
-            self.in_degree[nxt] -= 1
-
-    def topological_order(self) -> List[str]:
-        in_deg = dict(self.in_degree)
-        queue = deque([t for t in self.tasks if in_deg.get(t, 0) == 0])
-        order = []
-        while queue:
-            node = queue.popleft()
-            order.append(node)
-            for n in self.adj[node]:
-                in_deg[n] -= 1
-                if in_deg[n] == 0:
-                    queue.append(n)
-        return order
-
-# 构建任务 DAG
-scheduler = TaskScheduler()
-tasks = [
-    Task("T1", "需求分析", RoleType.MANAGER, [], 60),
-    Task("T2", "技术调研", RoleType.RESEARCHER, ["T1"], 120),
-    Task("T3", "架构设计", RoleType.CODER, ["T1"], 90),
-    Task("T4", "API 开发", RoleType.CODER, ["T2", "T3"], 180),
-    Task("T5", "代码审查", RoleType.REVIEWER, ["T4"], 60),
-]
-for t in tasks:
-    scheduler.add_task(t)
-
-print("拓扑排序:", scheduler.topological_order())
-print("可并行:", [t.task_id for t in scheduler.get_ready_tasks()])`,
-          },
-        ],
-        table: {
-          headers: ["角色", "核心职责", "典型工具", "输出产物", "依赖前置"],
-          rows: [
-            ["Manager", "任务分解与协调", "任务追踪、日历", "任务分配方案", "无"],
-            ["Researcher", "信息收集与分析", "搜索引擎、数据库", "调研报告", "Manager"],
-            ["Coder", "代码实现与开发", "代码编辑器、Git", "功能代码", "Researcher"],
-            ["Reviewer", "代码审查与质量", "Linter、安全扫描", "审查报告", "Coder"],
-            ["Tester", "自动化测试", "测试框架、CI/CD", "测试报告", "Coder"],
-            ["Deployer", "部署与运维", "Docker、K8s", "部署清单", "Reviewer"],
-          ],
-        },
-        tip: "角色设计的实用建议：给每个角色写一份'职位说明书'——包含职责描述、输入输出、使用的工具、与其他角色的接口。这样能确保 Agent 的行为边界清晰，不会越界或推诿。",
-      },
-      {
-        title: "4. 协作模式：竞争、合作与混合",
-        body: `Multi-Agent 系统中的协作模式决定了 Agent 之间如何互动。最常见的三种模式是：合作（Cooperative）、竞争（Competitive）和混合（Hybrid）。选择正确的协作模式是系统设计成败的关键。
-
-合作模式是最常见的设计，所有 Agent 共享同一个目标，通过分工协作来提高效率。在这种模式下，Agent 之间是伙伴关系，信息共享是默认行为。合作模式的典型应用是软件开发流水线：Researcher 收集信息后交给 Coder 实现，Coder 完成后交给 Reviewer 审查。
-
-竞争模式则让多个 Agent 为同一目标各自提出方案，然后通过评估选择最优解。这种模式在创意生成、方案设计和辩论场景中非常有效。竞争模式的核心价值在于"多样性"——不同的 Agent 会从不同角度思考问题，产生更多样化的解决方案。
-
-混合模式结合了合作与竞争的优点。例如在"辩论式架构"中，两个 Agent 分别扮演"正方"和"反方"，通过多轮辩论找出方案中的漏洞和盲点；或者在"投票式架构"中，多个 Agent 独立完成任务后，通过投票或加权平均的方式达成共识。`,
-        mermaid: `graph TD
-    A["任务输入"] --> B["协作模式选择"]
-    B -->|"合作模式"| C["分工流水线"]
-    B -->|"竞争模式"| D["并行方案生成"]
-    B -->|"混合模式"| E["辩论+投票"]
-    
-    C --> C1["Agent A 执行阶段1"]
-    C1 --> C2["Agent B 执行阶段2"]
-    C2 --> C3["Agent C 执行阶段3"]
-    C3 --> F["最终结果"]
-    
-    D --> D1["Agent A 方案A"]
-    D --> D2["Agent B 方案B"]
-    D --> D3["Agent C 方案C"]
-    D1 --> D4["评估器"]
-    D2 --> D4
-    D3 --> D4
-    D4 --> F
-    
-    E --> E1["正方 Agent 支持"]
-    E --> E2["反方 Agent 质疑"]
-    E1 --> E3["多轮辩论"]
-    E2 --> E3
-    E3 --> E4["共识提取"]
-    E4 --> F`,
-        code: [
-          {
-            lang: "python",
-            code: `# 合作模式：流水线协作
-class CooperativePipeline:
-    """合作模式的流水线实现"""
-    def __init__(self):
-        self.agents = {}
-        self.pipeline_order = []
-
-    def add_agent(self, name: str, handler):
-        self.agents[name] = handler
-
-    def set_order(self, order: List[str]):
-        self.pipeline_order = order
-
-    def execute(self, initial_input: str) -> Dict[str, str]:
-        results = {}
-        current = initial_input
-        for name in self.pipeline_order:
-            if name in self.agents:
-                result = self.agents[name](current)
-                results[name] = result
-                current = result
-        return results
-
-# 示例：软件开发流水线
-pipeline = CooperativePipeline()
-pipeline.add_agent("researcher", lambda x: f"基于'{x}'，找到技术方案: FastAPI, Celery")
-pipeline.add_agent("architect", lambda x: f"根据方案，设计架构: REST API + 异步队列")
-pipeline.add_agent("coder", lambda x: f"根据架构，生成完整代码实现")
-pipeline.add_agent("reviewer", lambda x: f"审查代码，发现2个问题并修复")
-pipeline.set_order(["researcher", "architect", "coder", "reviewer"])
-
-results = pipeline.execute("构建高并发数据处理平台")
-for name, result in results.items():
-    print(f"[{name}] {result}")`,
-          },
-          {
-            lang: "python",
-            code: `# 竞争模式：多方案生成与评估
-class CompetitiveSolver:
-    """竞争模式：多个 Agent 独立求解，然后评估选择"""
-    def __init__(self):
-        self.agents = {}
-        self.evaluator = None
-
-    def add_agent(self, name: str, solver):
-        self.agents[name] = solver
-
-    def set_evaluator(self, evaluator):
-        self.evaluator = evaluator
-
-    def solve(self, problem: str) -> Dict:
-        proposals = {}
-        for name, solver in self.agents.items():
-            proposals[name] = {"solution": solver(problem), "score": 0}
-        if self.evaluator:
-            for name, p in proposals.items():
-                p["score"] = self.evaluator(problem, p["solution"])
-        best = max(proposals.items(), key=lambda x: x[1]["score"])
-        return {
-            "all_proposals": proposals,
-            "best_agent": best[0],
-            "best_solution": best[1]["solution"],
-        }
-
-def evaluate(problem, solution):
-    score = 0
-    if "成熟" in solution: score += 3
-    if "最新" in solution: score += 2
-    if "混合" in solution: score += 4
-    return score
-
-solver = CompetitiveSolver()
-solver.add_agent("conservative", lambda p: f"[保守] 用成熟框架: {p}")
-solver.add_agent("innovative", lambda p: f"[创新] 用最新技术: {p}")
-solver.add_agent("balanced", lambda p: f"[混合] 核心成熟+边缘创新: {p}")
-solver.set_evaluator(evaluate)
-result = solver.solve("构建实时聊天系统")
-print(f"最佳方案: {result['best_agent']} -> {result['best_solution']}")`,
-          },
-          {
-            lang: "python",
-            code: `# 混合模式：辩论式架构
-class DebateFramework:
-    """辩论式架构：正反方多轮辩论提取共识"""
-    def __init__(self, max_rounds: int = 3):
-        self.max_rounds = max_rounds
-        self.debate_log = []
-
-    def setup(self, proposition, affirmative, negative, judge):
-        self.proposition = proposition
-        self.affirmative = affirmative
-        self.negative = negative
-        self.judge = judge
-
-    def debate(self) -> Dict:
-        context = f"议题: {self.proposition}"
-        aff_points, neg_points = [], []
-        for r in range(1, self.max_rounds + 1):
-            aff = self.affirmative(context)
-            aff_points.append(aff)
-            neg = self.negative(f"正方: {aff}")
-            neg_points.append(neg)
-            self.debate_log.append(f"第{r}轮 正方: {aff} | 反方: {neg}")
-            context = f"第{r}轮后 - 正方: {aff} | 反方: {neg}"
-        verdict = self.judge(self.debate_log)
-        return {"verdict": verdict, "log": self.debate_log}
-
-# 示例辩论
-framework = DebateFramework(max_rounds=2)
-framework.setup(
-    "新项目应使用微服务架构",
-    lambda c: "微服务提供独立部署、技术栈自由",
-    lambda c: "但微服务带来分布式复杂度和运维成本",
-    lambda log: "综合：微服务适合大型团队，小型项目单体先行",
-)
-result = framework.debate()
-print(f"判决: {result['verdict']}")`,
-          },
-        ],
-        table: {
-          headers: ["协作模式", "Agent 关系", "信息共享", "适合场景", "典型风险"],
-          rows: [
-            ["合作", "伙伴关系", "完全共享", "流水线任务、分工明确", "过度依赖单一 Agent"],
-            ["竞争", "对手关系", "各自独立", "创意生成、方案选择", "重复计算浪费资源"],
-            ["辩论", "对立关系", "逐步揭露", "方案审查、风险评估", "辩论陷入僵局"],
-            ["投票", "平等关系", "独立+汇总", "决策共识、结果聚合", "群体思维偏差"],
-            ["主从", "层级关系", "自上而下", "复杂任务统筹", "单点瓶颈"],
-          ],
-        },
-        warning: "协作模式选择常见错误：① 过度竞争——在明确目标的任务中使用竞争模式只会浪费计算资源；② 盲目合作——当问题有多个可能的解决方案时，单一合作流水线可能错过更优解；③ 辩论失控——辩论轮数太多会导致无意义的反复争论，应该设置明确的终止条件。",
-      },
-      {
-        title: "5. 冲突解决与共识机制",
-        body: `在 Multi-Agent 系统中，冲突是不可避免的。当多个 Agent 对同一问题给出不同的答案、对同一资源有竞争需求、或对任务优先级有不同判断时，系统必须有明确的冲突解决机制。缺乏冲突解决机制的 MAS 就像没有交通规则的城市——迟早会陷入混乱。
-
-冲突的类型多种多样：信息冲突（不同 Agent 获取到矛盾的信息）、目标冲突（Agent 之间的子目标相互矛盾）、资源冲突（多个 Agent 竞争同一计算资源或工具）、以及时序冲突（Agent 的执行顺序影响了最终结果）。每种冲突需要不同的解决策略。
-
-共识机制是冲突解决的制度化方案。常见的共识机制包括：多数投票（简单但可能忽视少数派的高质量意见）、加权投票（根据 Agent 的历史表现分配权重）、共识阈值（要求达到一定比例的同意）、以及权威裁决（由指定的决策 Agent 做最终判断）。
-
-在实际系统中，冲突预防比冲突解决更重要。良好的设计应该在源头减少冲突的可能性：明确的角色边界、清晰的接口定义、无共享状态的 Agent 设计（避免资源竞争）、以及确定性的任务分配算法。`,
-        code: [
-          {
-            lang: "python",
-            code: `# 共识机制实现
-from typing import Dict, Any
-import statistics
-
-class ConsensusEngine:
-    """多 Agent 共识引擎"""
-    def __init__(self):
-        self.agent_weights: Dict[str, float] = {}
-        self.history: Dict[str, List[float]] = {}
-
-    def register(self, agent_id: str, weight: float = 1.0):
-        self.agent_weights[agent_id] = weight
-        self.history[agent_id] = []
-
-    def update_weight(self, agent_id: str, accuracy: float):
-        self.history[agent_id].append(accuracy)
-        recent = self.history[agent_id][-5:]
-        new_w = sum(w * (0.8 ** i) for i, w in enumerate(reversed(recent))) / len(recent)
-        self.agent_weights[agent_id] = max(0.1, new_w)
-
-    def weighted_vote(self, votes: Dict[str, float]) -> float:
-        total = sum(self.agent_weights[a] for a in votes)
-        if total == 0:
-            return statistics.mean(votes.values())
-        return sum(self.agent_weights[a] * v for a, v in votes.items()) / total
-
-    def majority_vote(self, votes: Dict[str, Any]) -> Any:
-        counts: Dict[Any, float] = {}
-        for a, v in votes.items():
-            counts[v] = counts.get(v, 0) + self.agent_weights.get(a, 1.0)
-        return max(counts, key=counts.get)
-
-    def consensus_threshold(self, votes: Dict[str, Any], threshold: float = 0.6) -> Dict:
-        counts: Dict[Any, float] = {}
-        total = sum(self.agent_weights.get(a, 1.0) for a in votes)
-        for a, v in votes.items():
-            counts[v] = counts.get(v, 0) + self.agent_weights.get(a, 1.0)
-        for opt, w in counts.items():
-            if w / total >= threshold:
-                return {"consensus": True, "option": opt, "confidence": round(w / total, 3)}
-        return {"consensus": False, "closest": max(counts, key=counts.get)}
-
-# 使用示例
-engine = ConsensusEngine()
-engine.register("agent_a", 0.9)
-engine.register("agent_b", 0.7)
-engine.register("agent_c", 0.8)
-
-votes = {"agent_a": 0.85, "agent_b": 0.72, "agent_c": 0.80}
-print(f"加权投票: {engine.weighted_vote(votes):.3f}")
-
-choice = {"agent_a": "方案A", "agent_b": "方案A", "agent_c": "方案B"}
-print(f"多数投票: {engine.majority_vote(choice)}")
-print(f"共识检查: {engine.consensus_threshold(choice)}")`,
-          },
-          {
-            lang: "python",
-            code: `# 冲突检测与自动解决
-class ConflictResolver:
-    """冲突检测与解决系统"""
-    def __init__(self):
-        self.conflict_log = []
-
-    def detect(self, results: Dict[str, Any]) -> List[Dict]:
-        conflicts = []
-        ids = list(results.keys())
-        for i in range(len(ids)):
-            for j in range(i + 1, len(ids)):
-                a, b = ids[i], ids[j]
-                c = self._check(a, results[a], b, results[b])
-                if c:
-                    conflicts.append(c)
-        return conflicts
-
-    def _check(self, a: str, ra: Any, b: str, rb: Any) -> Dict:
-        if isinstance(ra, dict) and isinstance(rb, dict):
-            diff_keys = [k for k in set(ra) & set(rb) if ra[k] != rb[k]]
-            if diff_keys:
-                return {"type": "data", "agents": [a, b],
-                        "keys": diff_keys}
-        elif ra != rb:
-            return {"type": "result", "agents": [a, b],
-                    "values": {a: str(ra), b: str(rb)}}
-        return None
-
-    def resolve(self, conflict: Dict, strategy: str = "merge") -> Dict:
-        if strategy == "highest_weight":
-            return {"resolved": True, "winner": conflict["agents"][0]}
-        elif strategy == "merge":
-            return {"resolved": True, "strategy": "merge",
-                    "action": "合并两个结果，保留不冲突部分"}
-        return {"resolved": False}
-
-# 使用示例
-resolver = ConflictResolver()
-results = {
-    "researcher": {"framework": "FastAPI", "db": "PostgreSQL"},
-    "architect": {"framework": "FastAPI", "db": "MongoDB"},
-}
-conflicts = resolver.detect(results)
-for c in conflicts:
-    print(f"发现冲突: {c['type']} in {c['keys']}")
-    r = resolver.resolve(c, "merge")
-    print(f"解决: {r}")`,
-          },
-        ],
-        table: {
-          headers: ["冲突类型", "检测方法", "解决策略", "预防手段"],
-          rows: [
-            ["信息冲突", "结果对比、交叉验证", "多数投票、加权平均", "统一数据源"],
-            ["目标冲突", "依赖图分析、约束检查", "协商妥协、上级裁决", "明确目标层级"],
-            ["资源冲突", "锁检测、超时监控", "排队、优先级调度", "资源池化、隔离"],
-            ["时序冲突", "版本向量、逻辑时钟", "最终一致性、冲突合并", "无状态设计"],
-            ["权限冲突", "ACL 检查、能力验证", "权限提升、降级执行", "最小权限原则"],
-          ],
-        },
-        tip: "冲突管理的学习建议：阅读分布式系统中的共识算法（如 Paxos、Raft），虽然这些是为服务器集群设计的，但其中的思想（如 Leader 选举、日志复制、多数派共识）对 Multi-Agent 系统的冲突解决有重要启发。",
-      },
-      {
-        title: "6. 主流框架：AutoGen、CrewAI、LangGraph",
-        body: `2024-2026 年间，Multi-Agent 框架百花齐放，每个框架都有独特的设计哲学和适用场景。理解它们的差异，是选择合适工具的关键。
-
-AutoGen（Microsoft Research）是 Multi-Agent 领域的标杆框架。它的核心设计理念是"可对话的 Agent"——Agent 之间通过自然语言对话进行协作。AutoGen 支持多种对话模式：一对一、群聊、嵌套对话，并且天然支持 Human-in-the-loop（人类参与对话）。AutoGen 的最大优势是其灵活性和可扩展性，几乎可以构建任何复杂度的多 Agent 系统。但灵活性也带来了复杂度，初学者需要较长时间才能掌握。
-
-CrewAI 则走向了另一个极端：极简主义。它的设计目标是让多 Agent 编程像写职位描述一样简单。CrewAI 的核心概念是 Crew（团队）、Agent（成员）、Task（任务）和 Process（流程）。你只需要定义每个 Agent 的角色、目标和工具，以及每个任务的描述和依赖关系，CrewAI 就会自动编排执行。CrewAI 的学习曲线最低，适合快速原型和中小型项目。
-
-LangGraph（LangChain 团队）基于图结构来定义 Agent 的工作流。每个节点代表一个 Agent 或一个操作，边定义了执行流。LangGraph 的最大优势是它支持循环、分支和条件执行——这意味着你可以构建非常复杂的有状态工作流。它特别适合需要精确控制执行流程的生产级应用。`,
-        code: [
-          {
-            lang: "python",
-            code: `# AutoGen 风格：多 Agent 对话协作
-class AutoGenStyleSystem:
-    """模拟 AutoGen 的多 Agent 对话系统"""
-    def __init__(self):
-        self.agents: Dict[str, Dict] = {}
-        self.history: List[Dict] = []
-
-    def create_agent(self, name: str, system_msg: str, tools=None):
-        self.agents[name] = {"name": name, "system": system_msg,
-                             "tools": tools or []}
-
-    def chat(self, initiator: str, recipient: str, msg: str,
-             max_turns: int = 5) -> List[Dict]:
-        self.history = [{"role": "user", "content": msg, "name": initiator}]
-        current = msg
-        spk, lst = initiator, recipient
-        for _ in range(max_turns):
-            agent = self.agents.get(lst, {})
-            response = self._resp(lst, current, agent.get("system", ""))
-            self.history.append({"role": "assistant", "content": response, "name": lst})
-            if "TERMINATE" in response:
-                break
-            current = response
-            spk, lst = lst, spk
-        return self.history
-
-    def _resp(self, name: str, msg: str, sys: str) -> str:
-        if name == "researcher":
-            return f"查询'{msg}'，找到：FastAPI 是最佳选择。TERMINATE"
-        elif name == "coder":
-            return f"根据调研，实现代码：from fastapi import FastAPI。TERMINATE"
-        elif name == "reviewer":
-            return f"审查完成：✅ 架构合理。TERMINATE"
-        return "收到"
-
-sys = AutoGenStyleSystem()
-sys.create_agent("user", "用户代理")
-sys.create_agent("researcher", "技术研究专家", ["web_search"])
-sys.create_agent("coder", "代码实现专家", ["code_editor"])
-chat = sys.chat("user", "researcher", "如何构建高性能异步 API？")
-for m in chat:
-    print(f"[{m['name']}] {m['content']}")`,
-          },
-          {
-            lang: "python",
-            code: `# CrewAI 风格：定义团队和任务
-@dataclass
-class CrewAgent:
-    role: str
-    goal: str
-    backstory: str
-    tools: List[str]
-
-@dataclass
-class CrewTask:
-    description: str
-    expected_output: str
-    agent: str
-    context: List[str] = None
-
-class CrewAIStyleSystem:
-    """模拟 CrewAI 的团队编排系统"""
-    def __init__(self):
-        self.agents: Dict[str, CrewAgent] = {}
-        self.tasks: List[CrewTask] = []
-
-    def add_agent(self, id: str, agent: CrewAgent):
-        self.agents[id] = agent
-
-    def add_task(self, task: CrewTask):
         self.tasks.append(task)
-
-    def kickoff(self) -> Dict[str, str]:
-        results = {}
-        completed = set()
-        while len(completed) < len(self.tasks):
-            progress = False
-            for i, task in enumerate(self.tasks):
-                if i in completed:
-                    continue
-                if task.context and not all(c in completed for c in task.context):
-                    continue
+    
+    def kickoff(self) -> str:
+        """启动团队执行任务"""
+        if self.process == "sequential":
+            return self._sequential_process()
+        elif self.process == "hierarchical":
+            return self._hierarchical_process()
+        else:
+            raise ValueError(f"未知流程: {self.process}")
+    
+    def _sequential_process(self) -> str:
+        """顺序执行：按任务列表依次执行"""
+        context = ""
+        for task in self.tasks:
+            if task.agent and task.agent in self.agents:
                 agent = self.agents[task.agent]
-                ctx = " | ".join(results.get(c, "") for c in (task.context or []))
-                results[f"task_{i}"] = f"[{agent.role}] {task.description} → {task.expected_output}"
-                completed.add(i)
-                progress = True
-            if not progress:
-                raise RuntimeError("循环依赖")
-        return results
-
-crew = CrewAIStyleSystem()
-crew.add_agent("researcher", CrewAgent(
-    "高级研究员", "找到最佳技术方案", "10年经验架构师", ["web_search"]))
-crew.add_agent("coder", CrewAgent(
-    "全栈工程师", "编写高质量代码", "擅长 Python 开发", ["code_editor"]))
-crew.add_task(CrewTask("调研异步 Web 框架", "技术调研报告", "researcher"))
-crew.add_task(CrewTask("基于调研实现 API", "可运行代码", "coder", ["task_0"]))
-results = crew.kickoff()
-for tid, r in results.items():
-    print(f"{tid}: {r}")`,
+                input_text = f"{task.description}\\n\\n上下文信息:\\n{context}" if context else task.description
+                msg = AgentMessage("Crew", input_text, "request")
+                result = agent.process(msg).content
+                task.result = result
+                task.is_complete = True
+                context += f"\\n[{task.agent} 的结果]: {result[:200]}"
+                print(f"  完成: {task.description[:40]}...")
+        return context
+    
+    def _hierarchical_process(self) -> str:
+        """层级执行：Manager Agent 协调所有任务"""
+        manager = self.agents.get("manager")
+        if not manager:
+            return self._sequential_process()
+        
+        task_summary = "\\n".join(
+            f"- [{t.agent}] {t.description}" for t in self.tasks
+        )
+        msg = AgentMessage("Crew", f"请协调完成以下任务:\\n{task_summary}", "request")
+        return manager.process(msg).content`,
           },
           {
             lang: "python",
-            code: `# LangGraph 风格：基于图的 Agent 工作流
-class LangGraphStyleSystem:
-    """模拟 LangGraph 的图结构工作流"""
-    def __init__(self):
-        self.nodes: Dict[str, callable] = {}
-        self.edges: Dict[str, str] = {}
-        self.conditional: Dict[str, callable] = {}
-        self.state: Dict[str, Any] = {}
+            code: `# AutoGen 风格的对话驱动架构
+class ConversationalAgent:
+    """AutoGen 风格的对话式 Agent"""
+    def __init__(self, name: str, system_prompt: str, llm, 
+                 can_terminate: bool = False, can_ask_human: bool = False):
+        self.name = name
+        self.system_prompt = system_prompt
+        self.llm = llm
+        self.can_terminate = can_terminate
+        self.can_ask_human = can_ask_human
+        self.chat_history: List[Dict] = []
+    
+    def receive(self, message: str, sender: str) -> str:
+        """接收消息并回复"""
+        self.chat_history.append({"role": "user", "content": message, "sender": sender})
+        
+        context = "\\n".join(
+            f"[{m['sender']}]: {m['content']}" for m in self.chat_history[-10:]
+        )
+        prompt = f"{self.system_prompt}\\n\\n对话历史:\\n{context}\\n\\n请回复："
+        
+        reply = self.llm(prompt)
+        self.chat_history.append({"role": "assistant", "content": reply, "sender": self.name})
+        return reply
+    
+    def is_termination(self, message: str) -> bool:
+        """判断对话是否应该终止"""
+        if not self.can_terminate:
+            return False
+        termination_signals = ["TERMINATE", "任务完成", "没有问题了", "done"]
+        return any(signal in message.upper() for signal in termination_signals)
 
-    def add_node(self, name: str, handler: callable):
-        self.nodes[name] = handler
-
-    def add_edge(self, frm: str, to: str):
-        self.edges[frm] = to
-
-    def add_conditional(self, frm: str, router: callable):
-        self.conditional[frm] = router
-
-    def run(self, start: str, max_steps: int = 20) -> Dict:
-        current = start
-        log = []
-        for step in range(max_steps):
-            if current not in self.nodes:
-                break
-            result = self.nodes[current](self.state)
-            self.state.update(result or {})
-            log.append({"step": step, "node": current})
-            if current in self.conditional:
-                nxt = self.conditional[current](self.state)
-                if nxt == "__end__":
-                    break
-                current = nxt
-            elif current in self.edges:
-                current = self.edges[current]
+class GroupChat:
+    """AutoGen 风格的群聊"""
+    def __init__(self, agents: List[ConversationalAgent], max_rounds: int = 10):
+        self.agents = {a.name: a for a in agents}
+        self.max_rounds = max_rounds
+        self.messages: List[Dict] = []
+    
+    def run(self, initial_message: str, speaker_order: List[str] = None) -> str:
+        """运行群聊"""
+        self.messages.append({"sender": "User", "content": initial_message})
+        current_speaker_idx = 0
+        
+        for round_num in range(self.max_rounds):
+            if speaker_order:
+                speaker_name = speaker_order[current_speaker_idx % len(speaker_order)]
+                current_speaker_idx += 1
             else:
+                speaker_name = list(self.agents.keys())[round_num % len(self.agents)]
+            
+            agent = self.agents[speaker_name]
+            last_message = self.messages[-1]["content"]
+            
+            reply = agent.receive(last_message, self.messages[-1]["sender"])
+            self.messages.append({"sender": speaker_name, "content": reply})
+            print(f"  [{speaker_name}]: {reply[:60]}...")
+            
+            if agent.is_termination(reply):
+                print(f"  {speaker_name} 发起终止")
                 break
-        return {"state": self.state, "log": log}
+        
+        return self.messages[-1]["content"]`,
+          },
+          {
+            lang: "python",
+            code: `# Multi-ReAct 架构：多个 Agent 共享观察空间
+class SharedObservationSpace:
+    """多个 ReAct Agent 共享的观察空间"""
+    def __init__(self):
+        self.observations: List[Dict] = []
+        self.global_state: Dict[str, Any] = {}
+    
+    def publish(self, agent_name: str, thought: str, action: str, observation: str):
+        """Agent 发布自己的 ReAct 步骤"""
+        entry = {
+            "agent": agent_name, "thought": thought,
+            "action": action, "observation": observation,
+            "timestamp": time.time(),
+        }
+        self.observations.append(entry)
+        self.global_state[f"{agent_name}_last_observation"] = observation
+    
+    def get_shared_context(self, agent_name: str, last_n: int = 5) -> str:
+        """获取共享上下文（不包括自己的最新步骤）"""
+        others = [o for o in self.observations[-last_n*2:] if o["agent"] != agent_name]
+        if not others:
+            return "暂无其他 Agent 的观察结果。"
+        return "\\n".join(
+            f"[{o['agent']}] 行动: {o['action']}\\n  结果: {o['observation'][:100]}"
+            for o in others
+        )
+    
+    def get_global_state(self) -> Dict[str, Any]:
+        return dict(self.global_state)
 
-# 构建工作流
-wf = LangGraphStyleSystem()
-wf.add_node("research", lambda s: {"research": "FastAPI 最佳"})
-wf.add_node("implement", lambda s: {"code": "async def api(): ..."})
-wf.add_node("review", lambda s: {"status": "approved" if "code" in s else "rejected"})
-wf.add_node("deploy", lambda s: {"url": "https://api.example.com"})
-wf.add_edge("research", "implement")
-wf.add_edge("implement", "review")
-wf.add_conditional("review", lambda s: "deploy" if s.get("status") == "approved" else "__end__")
-result = wf.run("research")
-print(f"执行 {len(result['log'])} 步，状态: {result['state']}")`,
+class MultiReactAgent(AgentRole):
+    """执行 ReAct 循环的 Agent，可以感知其他 Agent 的观察"""
+    def __init__(self, name: str, system_prompt: str, llm, shared_space: SharedObservationSpace):
+        super().__init__(name, system_prompt, llm)
+        self.shared_space = shared_space
+    
+    def react_step(self, goal: str, max_steps: int = 5) -> str:
+        for step in range(max_steps):
+            shared_context = self.shared_space.get_shared_context(self.name)
+            
+            prompt = f"""{self.system_prompt}
+
+目标: {goal}
+其他 Agent 的观察:
+{shared_context}
+
+请用 ReAct 格式回复:
+Thought: <思考>
+Action: <行动>
+Observation: <你观察到的结果>"""
+            
+            response = self.llm(prompt)
+            
+            thought = self._extract(response, "Thought:")
+            action = self._extract(response, "Action:")
+            observation = self._extract(response, "Observation:")
+            
+            self.shared_space.publish(self.name, thought, action, observation)
+            
+            if "done" in observation.lower() or not action:
+                return observation
+        
+        return "达到最大步数"
+    
+    def _extract(self, text: str, prefix: str) -> str:
+        for line in text.split("\\n"):
+            if line.startswith(prefix):
+                return line[len(prefix):].strip()
+        return ""`,
           },
         ],
-        table: {
-          headers: ["特性", "AutoGen", "CrewAI", "LangGraph"],
-          rows: [
-            ["开发方", "Microsoft Research", "João Moura", "LangChain"],
-            ["核心理念", "可对话的 Agent", "极简团队编排", "图结构工作流"],
-            ["通信方式", "自然语言对话", "任务结果传递", "状态图传递"],
-            ["人类参与", "原生支持", "支持", "需手动集成"],
-            ["学习曲线", "较陡", "平缓", "中等"],
-            ["适合规模", "中到大型", "小型到中型", "中型到大型"],
-            ["循环支持", "天然支持", "有限支持", "完整支持"],
-            ["生产就绪", "实验性", "生产可用", "生产可用"],
-          ],
-        },
-        warning: "框架选择常见错误：① 过度工程——简单任务用 AutoGen 就像用大炮打蚊子；② 框架锁定——不要把业务逻辑深度耦合到某个框架的 API 中；③ 版本陷阱——这些框架迭代极快，注意 API breaking changes。",
+        warning: "框架选择的常见误区：追求最新最火——新框架可能功能丰富但不够稳定，生产环境应优先选择经过验证的方案。过度工程化——简单任务不需要复杂框架，如果 3 个 Agent 顺序执行就能解决问题，不要引入完整的消息总线和 DAG 调度器。忽略团队熟悉度——框架的学习曲线直接影响开发效率。如果团队已经熟悉 LangChain，切换到 AutoGen 的隐性成本可能高于框架本身的优势。",
       },
       {
-        title: "7. 实际应用与未来展望",
-        body: `Multi-Agent 系统已经从学术研究快速渗透到工业界的多个领域。理解当前的应用格局和未来趋势，能帮助你在正确的时机采用正确的技术。
+        title: "7. 实战案例：构建一个完整的 Multi-Agent 代码评审系统",
+        body: `理论说得再多，不如一个完整案例来得直观。我们将设计一个 Multi-Agent 代码评审系统，模拟真实软件开发流程中的代码评审环节。
 
-在软件开发领域，MAS 已经展现出变革性的潜力。DevOps 流水线中的 Agent 可以自动完成代码审查、测试生成、性能分析和部署决策；在需求分析阶段，多个 Agent 可以分别从用户体验、技术可行性、安全合规等角度评估需求文档。像 Devin 这样的"AI 软件工程师"本质上就是一个精心设计的 Multi-Agent 系统。
+系统设计：这个系统包含四个 Agent——Coder（提交代码的开发者）、StaticAnalyzer（静态分析 Agent，检查代码风格、复杂度、潜在 Bug）、SecurityReviewer（安全审查 Agent，检查安全漏洞）、TechLead（技术负责人，汇总所有意见并给出最终评审结论）。
 
-在科学研究领域，MAS 正在改变研究范式。Science 期刊 2024 年的一篇论文展示了由多个 AI Agent 组成的"虚拟实验室"——它们可以独立提出假设、设计实验、分析数据、撰写论文，甚至相互评审。这种"AI for Science"的模式将极大地加速科学发现的进程。
+工作流程：Coder 提交代码后，StaticAnalyzer 和 SecurityReviewer 并行执行分析（因为它们之间没有依赖关系），两者的结果汇总后交给 TechLead，TechLead 综合所有信息生成最终的评审报告。这个过程完美展示了 Multi-Agent 系统的并行处理和专业分工优势。
 
-展望未来，MAS 的发展将聚焦于几个关键方向：Agent 间的标准化通信协议（类似人类社会的通用语言）、自适应角色分配（Agent 根据任务动态调整角色）、跨模型协作（不同基座模型的 Agent 互补优势）、以及人机混合智能（人类和 Agent 团队的无缝融合）。`,
+技术实现：我们将使用前面章节介绍的通信协议（消息总线）、角色定义（角色工厂）、任务调度（DAG 调度器）来构建完整的系统。这个案例将把所有概念串联起来，展示如何从零构建一个实用的 Multi-Agent 应用。`,
         mermaid: `graph TD
-    A["MAS 应用领域"] --> B["软件开发"]
-    A --> C["科学研究"]
-    A --> D["商业智能"]
-    A --> E["客户服务"]
-    A --> F["教育"]
-
-    B --> B1["代码生成 + 审查"]
-    B --> B2["自动化测试"]
-    B --> B3["DevOps 编排"]
-
-    C --> C1["假设生成"]
-    C --> C2["实验设计"]
-    C --> C3["论文撰写"]
-
-    D --> D1["市场监控"]
-    D --> D2["竞品分析"]
-    D --> D3["投资决策"]
-
-    E --> E1["智能客服"]
-    E --> E2["工单处理"]
-    E --> E3["情感分析"]
-
-    F --> F1["个性化教学"]
-    F --> F2["自动批改"]
-    F --> F3["学习规划"]`,
+    A["Coder 提交代码"] --> B["消息总线分发"]
+    B --> C["StaticAnalyzer"]
+    B --> D["SecurityReviewer"]
+    
+    C --> C1["代码风格检查"]
+    C --> C2["复杂度分析"]
+    C --> C3["潜在 Bug 检测"]
+    
+    D --> D1["注入漏洞扫描"]
+    D --> D2["权限检查"]
+    D --> D3["依赖安全分析"]
+    
+    C1 --> E["结果聚合"]
+    C2 --> E
+    C3 --> E
+    D1 --> E
+    D2 --> E
+    D3 --> E
+    
+    E --> F["TechLead 综合评审"]
+    F --> G["生成评审报告"]
+    G --> H{"通过?"}
+    H -->|"是"| I["合并代码"]
+    H -->|"否"| J["返回修改意见给 Coder"]
+    J --> A`,
+        table: {
+          headers: ["Agent", "职责", "检查项", "输出格式", "优先级"],
+          rows: [
+            ["StaticAnalyzer", "代码质量分析", "PEP8 规范、圈复杂度、重复代码、未使用变量", "JSON: issues 列表", "高"],
+            ["SecurityReviewer", "安全漏洞扫描", "SQL 注入、XSS、硬编码密钥、不安全的反序列化", "JSON: vulnerabilities 列表", "最高"],
+            ["TechLead", "综合评审决策", "整合所有分析结果、权衡问题严重程度、给出最终建议", "文本: 评审报告加通过或拒绝决定", "高"],
+            ["Coder", "代码提交与修改", "根据评审意见修改代码、回复评审意见", "文本: 修改说明加更新后的代码", "中"],
+          ],
+        },
         code: [
           {
             lang: "python",
-            code: `# 实际案例：自动化代码审查流水线
-class AutomatedReviewSystem:
-    """自动化代码审查 Multi-Agent 系统"""
-    def __init__(self):
-        self.agents = {
-            "linter": self._run_linter,
-            "security": self._security_scan,
-            "complexity": self._check_complexity,
-            "summary": self._generate_summary,
-        }
+            code: `# 静态分析 Agent（模拟 AST 级别的代码分析）
+import ast
+import re
+from typing import List, Dict
 
-    def review(self, code: str, pr_desc: str) -> Dict:
-        results = {}
-        for check in ["linter", "security", "complexity"]:
-            results[check] = self.agents[check](code)
-        results["summary"] = self.agents["summary"](results, pr_desc)
-        results["approved"] = all(
-            results[c].get("passed", False) for c in ["linter", "security", "complexity"]
-        )
-        return results
-
-    def _run_linter(self, code: str) -> Dict:
-        return {"passed": "SyntaxError" not in code, "issues": []}
-
-    def _security_scan(self, code: str) -> Dict:
+class StaticAnalyzerAgent:
+    """模拟静态分析的 Agent"""
+    def __init__(self, llm):
+        self.llm = llm
+        self.name = "StaticAnalyzer"
+    
+    def analyze(self, code: str) -> Dict:
+        """执行多维度代码分析"""
         issues = []
-        if "eval(" in code:
-            issues.append("使用 eval() 存在代码注入风险")
-        if "os.system(" in code:
-            issues.append("使用 os.system() 存在命令注入风险")
-        return {"passed": len(issues) == 0, "issues": issues}
+        
+        # 规则 1: 检查函数长度（超过 50 行的大函数）
+        try:
+            tree = ast.parse(code)
+            for node in ast.walk(tree):
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    lines = node.end_lineno - node.lineno + 1 if hasattr(node, 'end_lineno') else 0
+                    if lines > 50:
+                        issues.append({
+                            "line": node.lineno, "type": "complexity",
+                            "severity": "warning",
+                            "message": f"函数 '{node.name}' 有 {lines} 行，建议拆分为更小的函数"
+                        })
+        except SyntaxError as e:
+            issues.append({"line": e.lineno, "type": "syntax", "severity": "error",
+                          "message": f"语法错误: {e.msg}"})
+        
+        # 规则 2: 检查 TODO/FIXME/HACK 注释
+        for i, line in enumerate(code.split("\\n"), 1):
+            if re.search(r'#.*\\b(TODO|FIXME|HACK|XXX)\\b', line):
+                issues.append({
+                    "line": i, "type": "code_smell",
+                    "severity": "info",
+                    "message": f"发现标记注释: {line.strip()}"
+                })
+        
+        # 规则 3: LLM 辅助语义分析
+        if issues:
+            llm_prompt = f"""分析以下 Python 代码的质量问题：
 
-    def _check_complexity(self, code: str) -> Dict:
-        lines = code.strip().split("\\n")
+代码片段:
+{code[:2000]}
+
+已发现的机械检查问题：
+{issues}
+
+请补充：命名是否清晰、是否有更好的设计模式、整体代码结构建议"""
+            llm_feedback = self.llm(llm_prompt)
+        else:
+            llm_feedback = "代码结构良好，未发现明显质量问题。"
+        
         return {
-            "passed": len(lines) < 100,
-            "metrics": {"lines": len(lines)},
+            "agent": self.name,
+            "total_issues": len(issues),
+            "issues": issues,
+            "llm_feedback": llm_feedback,
+            "status": "passed" if not any(i["severity"] == "error" for i in issues) else "failed"
+        }`,
+          },
+          {
+            lang: "python",
+            code: `# 安全审查 Agent
+class SecurityReviewerAgent:
+    """安全漏洞扫描 Agent"""
+    def __init__(self, llm):
+        self.llm = llm
+        self.name = "SecurityReviewer"
+        # 常见的安全模式
+        self.dangerous_patterns = [
+            (r'eval\\s*\\(', "使用 eval() 可能导致代码注入"),
+            (r'exec\\s*\\(', "使用 exec() 可能导致代码注入"),
+            (r'os\\.system\\s*\\(', "os.system() 可能导致命令注入"),
+            (r'subprocess\\.call\\s*\\(.*shell\\s*=\\s*True', "shell=True 可能导致命令注入"),
+            (r'(?i)password\\s*=\\s*["\\x27][^"\\x27]+["\\x27]', "硬编码密码"),
+            (r'(?i)api[_-]?key\\s*=\\s*["\\x27][^"\\x27]+["\\x27]', "硬编码 API 密钥"),
+            (r'(?i)secret\\s*=\\s*["\\x27][^"\\x27]+["\\x27]', "硬编码密钥"),
+            (r'pickle\\.loads?', "pickle 反序列化可能导致远程代码执行"),
+            (r'marshal\\.loads?', "marshal 反序列化可能不安全"),
+        ]
+    
+    def review(self, code: str) -> Dict:
+        vulnerabilities = []
+        
+        # 规则扫描
+        for pattern, message in self.dangerous_patterns:
+            for i, line in enumerate(code.split("\\n"), 1):
+                if re.search(pattern, line):
+                    vulnerabilities.append({
+                        "line": i, "severity": "critical" if "注入" in message else "high",
+                        "type": "security", "description": message,
+                        "code": line.strip()
+                    })
+        
+        # LLM 深度安全分析
+        llm_prompt = f"""作为安全专家，审查以下代码的安全漏洞：
+
+代码片段:
+{code[:2000]}
+
+请检查：
+1. 输入验证是否充分
+2. 是否存在 SQL 注入、XSS、CSRF 风险
+3. 认证和授权逻辑是否安全
+4. 敏感数据处理是否合规
+5. 依赖包是否有已知漏洞
+
+列出发现的所有安全问题，按严重程度排序。"""
+        llm_security_report = self.llm(llm_prompt)
+        
+        critical_count = sum(1 for v in vulnerabilities if v["severity"] == "critical")
+        return {
+            "agent": self.name,
+            "vulnerabilities": vulnerabilities,
+            "llm_security_report": llm_security_report,
+            "critical_count": critical_count,
+            "status": "blocked" if critical_count > 0 else "passed"
+        }`,
+          },
+          {
+            lang: "python",
+            code: `# 技术负责人 Agent + 完整的代码评审流程
+class TechLeadAgent:
+    """技术负责人：综合分析并做出评审决策"""
+    def __init__(self, llm):
+        self.llm = llm
+        self.name = "TechLead"
+    
+    def review(self, code: str, static_result: Dict, security_result: Dict) -> Dict:
+        """综合评审"""
+        all_issues = []
+        all_issues.extend(static_result.get("issues", []))
+        all_issues.extend(security_result.get("vulnerabilities", []))
+        
+        critical = [i for i in all_issues if i.get("severity") in ("critical", "error")]
+        warnings = [i for i in all_issues if i.get("severity") == "warning"]
+        infos = [i for i in all_issues if i.get("severity") in ("info", "minor")]
+        
+        # 自动生成决策
+        if critical:
+            decision = "REJECT"
+            reason = f"发现 {len(critical)} 个严重问题，必须修复后才能合并"
+        elif len(warnings) > 5:
+            decision = "REQUEST_CHANGES"
+            reason = f"发现 {len(warnings)} 个警告，建议修改后重新提交"
+        elif len(all_issues) <= 3:
+            decision = "APPROVE"
+            reason = "代码质量良好，可以合并"
+        else:
+            decision = "APPROVE_WITH_COMMENTS"
+            reason = f"可以合并，但有 {len(all_issues)} 个建议改进项"
+        
+        # LLM 生成详细评审报告
+        report_prompt = f"""作为技术负责人，请生成代码评审报告。
+
+代码片段:
+{code[:1500]}
+
+静态分析结果（{static_result['total_issues']} 个问题）：
+{str(static_result.get('issues', []))[:500]}
+
+安全审查结果（{security_result['critical_count']} 个严重漏洞）：
+{str(security_result.get('vulnerabilities', []))[:500]}
+
+安全分析报告：
+{security_result.get('llm_security_report', 'N/A')[:500]}
+
+请生成格式化的评审报告，包括：
+1. 总体评价（1-2 句话）
+2. 必须修复的问题（按优先级排序）
+3. 建议改进的方面
+4. 最终结论：APPROVE / REQUEST_CHANGES / REJECT"""
+        report = self.llm(report_prompt)
+        
+        return {
+            "agent": self.name,
+            "decision": decision,
+            "reason": reason,
+            "summary": {
+                "critical": len(critical),
+                "warnings": len(warnings),
+                "info": len(infos),
+                "total": len(all_issues),
+            },
+            "report": report,
         }
 
-    def _generate_summary(self, results: Dict, pr_desc: str) -> Dict:
-        total = sum(len(r.get("issues", [])) for r in results.values())
-        return {
-            "total_issues": total,
-            "verdict": "通过" if total == 0 else f"需修复 {total} 个问题",
-        }
-
-reviewer = AutomatedReviewSystem()
-code = "def process(data):\\n    result = eval(data['expr'])\\n    return result"
-result = reviewer.review(code, "数据处理优化")
-print(f"审查: {result['summary']['verdict']} (通过: {result['approved']})")`,
+# ====== 完整的代码评审 Pipeline ======
+def code_review_pipeline(code: str, llm) -> Dict:
+    """完整的 Multi-Agent 代码评审流程"""
+    print("开始 Multi-Agent 代码评审...")
+    
+    # Step 1: 并行执行静态分析和安全审查
+    static_analyzer = StaticAnalyzerAgent(llm)
+    security_reviewer = SecurityReviewerAgent(llm)
+    
+    print("  静态分析中...")
+    static_result = static_analyzer.analyze(code)
+    print(f"    发现 {static_result['total_issues']} 个问题")
+    
+    print("  安全审查中...")
+    security_result = security_reviewer.review(code)
+    print(f"    发现 {security_result['critical_count']} 个严重漏洞")
+    
+    # Step 2: TechLead 综合评审
+    print("  TechLead 评审中...")
+    tech_lead = TechLeadAgent(llm)
+    final_result = tech_lead.review(code, static_result, security_result)
+    
+    print(f"\\n评审结果: {final_result['decision']}")
+    print(f"   原因: {final_result['reason']}")
+    print(f"   问题统计: {final_result['summary']}")
+    
+    return final_result`,
           },
         ],
-        table: {
-          headers: ["应用领域", "成熟度", "典型 Agent 数", "主要价值", "代表案例"],
-          rows: [
-            ["软件开发", "🟢 成熟", "2-5", "提升开发效率 40%+", "Devin, Copilot Workspace"],
-            ["科学研究", "🟡 发展中", "3-10", "加速假设生成与验证", "AI Scientist, Sakana AI"],
-            ["商业智能", "🟢 成熟", "3-8", "全天候多维度分析", "BloombergGPT 分析管线"],
-            ["客户服务", "🟢 成熟", "2-4", "降低人工客服成本 60%", "Intercom Fin, Zendesk AI"],
-            ["教育", "🟡 发展中", "2-5", "个性化学习路径", "Khanmigo, Duolingo Max"],
-            ["法律合规", "🟠 早期", "3-6", "自动化合规审查", "Harvey AI"],
-          ],
-        },
-        tip: "未来趋势关注点：① Agent 标准化——类似 RESTful API 的 Agent 通信标准正在形成；② 低成本 Agent——通过模型蒸馏和量化，让小模型也能胜任专业角色；③ 可信 Agent——可解释性、审计追踪和安全保障将成为企业采用的关键门槛。",
-        warning: "MAS 应用的长期风险：① 系统复杂性失控——Agent 越多，调试和预测行为越困难；② 安全攻击面扩大——每个 Agent 都是潜在的攻击入口；③ 伦理与责任——当多个 Agent 协作做出错误决策时，责任归属难以界定。在设计系统时必须考虑这些因素。",
+        tip: "Multi-Agent 实战开发的最佳实践：先用单 Agent 验证核心逻辑——确保每个 Agent 的独立功能正确，再组合成 Multi-Agent 系统；为每个 Agent 编写单元测试——Agent 本身也是代码，需要测试覆盖；设置超时和重试——Agent 调用 LLM 可能失败或超时，需要有合理的容错机制；监控 Agent 的 token 消耗——Multi-Agent 系统的 token 消耗是单 Agent 的 N 倍，需要监控和优化。",
       },
     ],
   };
