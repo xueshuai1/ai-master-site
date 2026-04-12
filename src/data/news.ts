@@ -15,6 +15,55 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-000",
+    tag: "重磅",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "阿里发布 Wan 2.7 和 \"Happy Horse\" 视频 AI 模型：登顶全球排行榜",
+    summary: "阿里通义实验室发布 Wan 2.7 图像/视频生成模型，\"Happy Horse\" 病毒式传播后登顶 ViralRank 全球第一，同时领投 Shengshu Vidu 2.9 亿美元融资。",
+    content: `## 阿里 AI 视频双管齐下
+
+2026 年 4 月 10 日，阿里巴巴在 AI 视频生成领域连续出手，展现出中国 AI 公司在多模态领域的强劲实力。
+
+### Wan 2.7：带思考模式的视频生成
+
+阿里通义实验室正式发布 **Wan 2.7** —— Wan（万相）系列最先进的版本：
+
+| 特性 | 内容 |
+|------|------|
+| **思考模式** | 生成前深度推理，提升画面质量和逻辑一致性 |
+| **图像生成** | 高精度、生产级图像创作和编辑 |
+| **视频生成** | 高质量、生产级视频内容生成 |
+| **定位** | 阿里旗舰多模态生成式 AI 系列 |
+
+### \"Happy Horse\" 病毒式传播
+
+阿里透露其内部开发的 \"Happy Horse\" 视频 AI 模型在本周引发了中国 AI 行业的震动：
+
+- **ViralRank 登顶**：在全球 AI 模型视频生成能力排行榜上位列第一
+- **Bloomberg 报道**：\"在首次亮相即登顶全球排行榜\"
+- 该模型最初在社交媒体上以病毒式传播，后来才被证实是阿里出品
+
+### 领投 Shengshu Vidu 2.9 亿美元
+
+同日，阿里云计算领投了 **Shengshu Vidu** 的 2.9 亿美元世界模型融资：
+
+> 世界模型（World Model）竞赛升温，阿里已在 AI 视频领域布局多个赛道。
+
+此前阿里还在 2026 年 1 月领投了 PixVerse 的 6000 万美元融资，并在 2 月推出了用于机器人的 AI 模型 RynnBrain。
+
+## 行业意义
+
+阿里在 AI 视频领域的密集布局表明：
+1. **中国 AI 公司**正在从语言模型扩展到多模态生成
+2. **视频生成**成为 AI 公司新的竞争焦点
+3. **世界模型**（World Model）概念正在从研究走向商业化`,
+    date: "2026-04-13",
+    source: "Bloomberg / CNBC / Chronicle Journal",
+    sourceUrl: "https://www.bloomberg.com/news/articles/2026-04-10/stealth-alibaba-video-ai-model-tops-global-ranking-on-debut",
+    href: "/news/news-000",
+  },
+
+  {
     id: "news-001",
     tag: "重磅",
     tagColor: "bg-red-500/10 text-red-300",
@@ -425,5 +474,52 @@ Anthropic 将提供高达 **1 亿美元** 的 Mythos 使用额度，专门用于
     source: "MIT News / SEODataPulse",
     sourceUrl: "https://news.mit.edu/2026/new-technique-makes-ai-models-leaner-faster-while-still-learning-0409",
     href: "/news/news-008",
+  },
+  {
+    id: "news-009",
+    tag: "开源",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "DeepSeek V4 正式发布：完全开源 Apache 2.0，1 万亿参数 MoE，代码评分 94.7%",
+    summary: "DeepSeek V4 于 2026 年 4 月正式发布，Apache 2.0 完全开源，1 万亿参数混合专家架构，HumanEval 得分 94.7%，Gemme 4 31B 成最受开发者欢迎开源模型。",
+    content: `## DeepSeek V4：开源 AI 的又一颗重磅炸弹
+
+DeepSeek V4 在经历了从 2 月到 4 月的多次延期后，于 **2026 年 4 月正式发布**，采用 **Apache 2.0 许可**，完全开源。
+
+### 技术规格
+
+| 指标 | 数据 |
+|------|------|
+| **架构** | 1 万亿参数混合专家模型（MoE） |
+| **许可** | Apache 2.0（完全开源） |
+| **HumanEval** | 94.7%（代码能力） |
+| **主要优势** | 编程、数学、推理 |
+
+### 开源模型排行榜（2026 年 4 月）
+
+| 排名 | 模型 | 参数 | 特点 |
+|------|------|------|------|
+| 1 | **Gemma 4 31B** | 31B 密集 | 单 GPU 可运行，Arena AI 排名第 3 |
+| 2 | **Llama 4** | 400B+ | 真正的多模态能力（图像+视频+文本） |
+| 3 | **DeepSeek V4** | 1T MoE | 代码和数学最强，Apache 2.0 |
+
+### 为什么 DeepSeek V4 很重要
+
+1. **完全开源** — Apache 2.0 许可，任何人都可以商用
+2. **成本极低** — 相比闭源模型，推理成本大幅降低
+3. **MoE 架构** — 虽然总参数 1 万亿，但每次只激活部分专家，实际推理成本可控
+4. **代码能力突出** — HumanEval 94.7%，接近 GPT-5.4 水平
+
+### Gemma 4 的崛起
+
+Google 的 **Gemma 4 31B** 成为最受开发者欢迎的开源模型：
+- **单 GPU 可运行** — 唯一能跑在消费级显卡上的顶级模型
+- **数学、编程、Agent 任务**全面超越 Llama 4
+- **Apache 2.0 许可** — 商用无限制
+
+对于大多数开发者来说，Gemma 4 是当前最佳的开源选择。`,
+    date: "2026-04-13",
+    source: "DeepSeek / Mule AI / Spectrum AI Lab",
+    sourceUrl: "https://spectrumailab.com/blog/best-open-source-ai-models-ranked-2026",
+    href: "/news/news-009",
   },
 ];
