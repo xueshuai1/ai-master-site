@@ -1,19 +1,13 @@
 {
   "lastChecks": {
-    "news": "2026-04-12T21:06",
+    "news": "2026-04-13T03:13",
     "knowledge": "2026-04-12T22:18",
-    "blog": "2026-04-12T22:05",
-    "tools": "2026-04-12T22:05",
+    "blog": "2026-04-13T03:13",
+    "tools": "2026-04-13T03:13",
     "roadmap": null
   },
-  "lastContentUpdate": "2026-04-12",
-  "totalArticles": 141,
-  "rotationOrder": [
-    "news",
-    "blog",
-    "knowledge",
-    "tools"
-  ],
-  "lastTask": "lightweight-check",
-  "lastLightweightCheck": "2026-04-13T02:01"
+  "lastContentUpdate": "2026-04-13",
+  "totalArticles": 143,
+  "rotationOrder": ["news", "blog", "knowledge", "tools"],
+  "lastTask": "tools"
 }
