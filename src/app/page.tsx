@@ -176,6 +176,7 @@ export default function Home() {
                 title: "2026 年 AI 领域十大趋势预测",
                 summary: "从多模态大模型到 AI Agent 普及，盘点今年最值得关注的技术方向",
                 date: "2026-04-10",
+                href: "/blog/blog-001",
               },
               {
                 icon: "📄",
@@ -183,6 +184,7 @@ export default function Home() {
                 title: "GPT-5 技术报告深度解读",
                 summary: "OpenAI 最新发布的 GPT-5 在多模态推理方面实现了显著突破",
                 date: "2026-04-08",
+                href: "/blog/blog-002",
               },
               {
                 icon: "🤖",
@@ -190,11 +192,12 @@ export default function Home() {
                 title: "AI Agent 在软件开发中的最佳实践",
                 summary: "从代码审查到自动修复，AI Agent 正在重塑软件开发流程",
                 date: "2026-04-05",
+                href: "/blog/blog-003",
               },
             ].map((post) => (
               <Link
                 key={post.title}
-                href="/blog"
+                href={post.href || "/blog"}
                 className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer"
               >
                 <div className="text-3xl mb-4">{post.icon}</div>

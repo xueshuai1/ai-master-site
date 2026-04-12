@@ -2,9 +2,42 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { marked } from "marked";
 import { news } from "@/data/news";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+
+// Configure marked for better output
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
+
+function MarkdownContent({ content }: { content: string }) {
+  const html = marked.parse(content) as string;
+  return (
+    <div
+      className="prose prose-invert prose-lg max-w-none
+        prose-h2:text-xl prose-h2:font-bold prose-h2:text-brand-300 prose-h2:mt-8 prose-h2:mb-4
+        prose-h3:text-lg prose-h3:font-semibold prose-h3:text-white prose-h3:mt-6 prose-h3:mb-3
+        prose-p:text-slate-300 prose-p:leading-relaxed prose-p:my-4
+        prose-strong:text-white prose-strong:font-semibold
+        prose-a:text-brand-400 prose-a:no-underline hover:prose-a:underline
+        prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+        prose-pre:bg-slate-800/50 prose-pre:border prose-pre:border-white/10 prose-pre:p-4
+        prose-ul:text-slate-300 prose-ol:text-slate-300
+        prose-li:my-1
+        [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2
+        [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2
+        [&_blockquote]:border-l-4 [&_blockquote]:border-brand-500 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-slate-400
+        [&_table]:w-full [&_table]:border-collapse [&_table]:my-6
+        [&_th]:bg-white/5 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold [&_th]:border-b [&_th]:border-white/10
+        [&_td]:px-4 [&_td]:py-2 [&_td]:border-b [&_td]:border-white/5
+        [&_hr]:border-white/10 [&_hr]:my-8"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
+}
 
 export default function NewsDetailPage({ params }: { params: { id: string } }) {
   const item = news.find((n) => n.id === params.id);
@@ -19,17 +52,23 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <Link href="/" className="text-sm text-slate-400 hover:text-brand-300 transition-colors">
-            ← 返回首页
-          </Link>
+          <div className="flex items-center gap-4 text-sm text-slate-400">
+            <Link href="/" className="hover:text-brand-300 transition-colors">
+              ← 首页
+            </Link>
+            <span>/</span>
+            <Link href="/#news" className="hover:text-brand-300 transition-colors">
+              AI 动态
+            </Link>
+          </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <span className={`px-3 py-1 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-sm font-medium`}>
               {item.tag}
             </span>
             <span className="text-slate-500 text-sm">{item.date}</span>
-            <span className="text-slate-500 text-sm">·</span>
-            <span className="text-slate-500 text-sm">来源：{item.source}</span>
+            <span className="text-slate-500">·</span>
+            <span className="text-slate-500 text-sm">{item.source}</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-6 leading-tight">
@@ -45,46 +84,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
       {/* Content */}
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <article className="prose prose-invert prose-lg max-w-none">
-            {item.content.split("\n\n").map((paragraph, i) => {
-              if (paragraph.startsWith("**") && paragraph.endsWith("**")) {
-                return (
-                  <h2 key={i} className="text-xl font-bold text-brand-300 mt-8 mb-4">
-                    {paragraph.replace(/\*\*/g, "")}
-                  </h2>
-                );
-              }
-              if (paragraph.startsWith("- ")) {
-                const items = paragraph.split("\n").filter((l) => l.startsWith("- "));
-                return (
-                  <ul key={i} className="space-y-2 my-4">
-                    {items.map((item, j) => (
-                      <li key={j} className="text-slate-300 leading-relaxed">
-                        {item.replace(/^- \*\*(.*?)\*\*/g, "").replace(/\*\*/g, "$1")}
-                      </li>
-                    ))}
-                  </ul>
-                );
-              }
-              if (/^\d+\./.test(paragraph)) {
-                const items = paragraph.split("\n").filter((l) => /^\d+\./.test(l));
-                return (
-                  <ol key={i} className="space-y-2 my-4 list-decimal list-inside">
-                    {items.map((item, j) => (
-                      <li key={j} className="text-slate-300 leading-relaxed">
-                        {item.replace(/^\d+\.\s*/, "")}
-                      </li>
-                    ))}
-                  </ol>
-                );
-              }
-              return (
-                <p key={i} className="text-slate-300 leading-relaxed my-4">
-                  {paragraph}
-                </p>
-              );
-            })}
-          </article>
+          <MarkdownContent content={item.content} />
 
           {/* Source Link */}
           <div className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/5">
