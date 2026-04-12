@@ -7,7 +7,7 @@ export const article: Article = {
     tags: ["RNN", "LSTM", "序列建模"],
     summary: "理解循环神经网络的记忆机制与 LSTM 的门控设计",
     date: "2026-04-04",
-    readTime: "20 min",
+    readTime: "24 min",
     level: "进阶",
     content: [
       {
@@ -297,7 +297,7 @@ GRU 的优势：参数更少（训练更快）、在中小数据集上效果与 
         list: [
           "选择建议：需要最强记忆能力 → LSTM；追求效率 → GRU；教学/理解 → 从标准 RNN 开始",
           "在 Transformer 出现后，RNN 家族在 NLP 中基本被取代，但在时间序列预测、音频处理等领域仍有重要地位",
-          'LSTM 的细胞状态是一条“信息高速公路”，让长期依赖成为可能',
+          'LSTM 的细胞状态是一条"信息高速公路"，让长期依赖成为可能',
           "现代实践中，RNN/LSTM/GRU 常用于 Transformer 不适合的场景：流式处理（需要逐 token 输出）、低延迟推理、资源受限设备",
         ],
       },
@@ -363,6 +363,91 @@ print(f"序列形状: {X[0].shape} -> 预测单值")`,
           },
         ],
         tip: "在 2026 年的实际工程中，如果你做 NLP，优先选择 Transformer；如果你做时间序列预测，LSTM/GRU 仍然是可靠选择；如果你需要流式处理（低延迟逐 token 输出），RNN 架构有天然优势。",
+      },
+      {
+        title: "7. 双向 RNN 与 Seq2Seq 架构",
+        body: `标准 RNN 只能从前往后处理序列，这意味着在时间步 t，模型只能看到过去的信息。但在很多任务中，未来的信息同样重要。
+
+双向 RNN（Bidirectional RNN, Bi-RNN）同时运行两个 RNN：一个正向（从前往后）、一个反向（从后往前），然后在每个时间步将两个方向的隐藏状态拼接起来。这使得模型在每个位置都能同时利用过去和未来的上下文。Bi-LSTM 和 Bi-GRU 是双向架构的最常见实现。
+
+Seq2Seq（Sequence-to-Sequence）是 RNN 家族中最有影响力的架构之一。它由两个 RNN 组成：编码器（Encoder）读取整个输入序列，将最后一个时间步的隐藏状态作为"语义向量"（Context Vector）；解码器（Decoder）从这个语义向量开始，逐步生成输出序列。
+
+Seq2Seq 的核心瓶颈在于语义向量——编码器必须将整个输入序列的信息压缩到一个固定长度的向量中。这就像让一个人听完一本小说然后用一句话总结——信息损失不可避免。注意力机制（Attention）正是为了解决这个问题而提出的：让解码器在每一步都能回头查看编码器所有时间步的隐藏状态，而不是只依赖一个固定向量。`,
+        code: [
+          {
+            lang: "python",
+            code: `import numpy as np
+
+class BiRNN:
+    """双向 RNN——同时利用过去和未来信息"""
+    
+    def __init__(self, input_dim: int, hidden_dim: int):
+        self.hidden_dim = hidden_dim
+        # 正向和反向 RNN 权重
+        scale = np.sqrt(2.0 / (input_dim + hidden_dim))
+        self.fwd_W_hh = np.random.randn(hidden_dim, hidden_dim) * 0.1
+        self.fwd_W_xh = np.random.randn(hidden_dim, input_dim) * scale
+        self.fwd_b_h = np.zeros(hidden_dim)
+        self.bwd_W_hh = np.random.randn(hidden_dim, hidden_dim) * 0.1
+        self.bwd_W_xh = np.random.randn(hidden_dim, input_dim) * scale
+        self.bwd_b_h = np.zeros(hidden_dim)
+    
+    def _forward_pass(self, sequence, W_hh, W_xh, b_h):
+        h = np.zeros(self.hidden_dim)
+        states = []
+        for t in range(sequence.shape[0]):
+            h = np.tanh(W_hh @ h + W_xh @ sequence[t] + b_h)
+            states.append(h.copy())
+        return np.array(states)
+    
+    def forward(self, sequence):
+        # 正向
+        fwd = self._forward_pass(sequence, self.fwd_W_hh, self.fwd_W_xh, self.fwd_b_h)
+        # 反向（翻转序列）
+        bwd = self._forward_pass(sequence[::-1], self.bwd_W_hh, self.bwd_W_xh, self.bwd_b_h)
+        bwd = bwd[::-1]  # 翻转回来对齐时间步
+        # 拼接
+        return np.concatenate([fwd, bwd], axis=-1)
+
+# 演示
+bi_rnn = BiRNN(input_dim=10, hidden_dim=16)
+seq = np.random.randn(8, 10)
+out = bi_rnn.forward(seq)
+print(f"输入: {seq.shape} -> 双向输出: {out.shape}")
+print(f"(每个位置 = 前向16维 + 后向16维 = 32维)")`,
+          },
+        ],
+        table: {
+          headers: ["架构", "信息流", "适用任务", "参数量", "并行能力"],
+          rows: [
+            ["单向 RNN", "从前到后", "语言模型、因果预测", "最少", "❌ 顺序"],
+            ["双向 RNN", "双向同时", "命名实体识别、情感分析", "2× 单向", "❌ 顺序"],
+            ["Seq2Seq", "编码→解码", "机器翻译、文本摘要", "2× 单向 + 输出层", "编码器可并行"],
+            ["Seq2Seq + Attention", "编码 + 注意力解码", "长序列翻译、对话", "更多（注意力权重）", "编码器可并行"],
+          ],
+        },
+        mermaid: `graph LR
+    subgraph "编码器"
+        A1["x₁"] --> E1["Encoder RNN"]
+        A2["x₂"] --> E2["Encoder RNN"]
+        A3["xₙ"] --> E3["Encoder RNN"]
+        E1 --> H1["h₁"]
+        E2 --> H2["h₂"]
+        E3 --> H3["hₙ"]
+    end
+    
+    H1 & H2 & H3 --> C["所有隐藏状态"]
+    C --> D["注意力机制"]
+    
+    subgraph "解码器"
+        D --> Y1["ŷ₁"]
+        D --> Y2["ŷ₂"]
+        D --> Y3["ŷₘ"]
+    end
+    
+    style C fill:#f59e0b
+    style D fill:#10b981`,
+        warning: "双向 RNN 不能用于需要因果推理的场景（如实时语音识别），因为它需要看到未来信息。在流式应用中，只能使用单向 RNN。",
       },
     ],
   };
