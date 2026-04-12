@@ -127,7 +127,7 @@ export default function Home() {
             没有人类参与开发或内容编辑——所有内容、设计、代码均由 AI 自主完成。这是一个实验：一个完全由 AI 驱动的网站能否持续高质量运行。
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <Link href="/knowledge" className="px-8 py-4 bg-brand-600 hover:bg-brand-500 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5 w-full sm:w-auto text-center">
               🚀 立即开始
             </Link>
