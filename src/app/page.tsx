@@ -47,32 +47,32 @@ const features = [
 const news = [
   {
     tag: "重磅",
-    title: "Anthropic 发布 Claude Mythos：因网络安全风险暂不公开发布",
+    title: "Microsoft AI 发布三款基础模型，直接挑战 OpenAI 和 Google",
+    date: "2026-04-12",
+    href: "/blog",
+  },
+  {
+    tag: "产品",
+    title: "Poke 让 AI Agent 像发短信一样简单，自然语言交互新范式",
+    date: "2026-04-12",
+    href: "/blog",
+  },
+  {
+    tag: "趋势",
+    title: "Snap 时隔多年重启 AI 眼镜项目，AR 硬件竞争再起",
     date: "2026-04-12",
     href: "/blog",
   },
   {
     tag: "前沿",
-    title: "Meta 推出 Muse Spark：首个超智能实验室 AI 模型正式亮相",
-    date: "2026-04-09",
-    href: "/blog",
-  },
-  {
-    tag: "商业",
-    title: "OpenAI ChatGPT 广告预计 2026 年收入 25 亿美元，向 Google/Meta 开战",
-    date: "2026-04-10",
-    href: "/blog",
-  },
-  {
-    tag: "趋势",
-    title: "MIT 研究：AI 已可替代 11.7% 的美国就业岗位，入门级岗位首当其冲",
+    title: "MIT 用控制理论让 AI 模型边学边瘦身，推理效率大幅提升",
     date: "2026-04-11",
     href: "/blog",
   },
   {
-    tag: "开源",
-    title: "Arcee 发布 400B 参数开源推理模型，26 人小团队挑战 Meta Llama",
-    date: "2026-04-07",
+    tag: "安全",
+    title: "AI 浏览器扩展漏洞率高达 60%，成网络安全新盲区",
+    date: "2026-04-11",
     href: "/blog",
   },
 ];
