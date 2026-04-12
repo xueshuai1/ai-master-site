@@ -107,6 +107,17 @@ const blogPosts = [
     tags: ["DPO", "RLHF", "模型对齐"],
     cover: "🎯",
   },
+  {
+    id: "blog-010",
+    title: "AI Agent 能搞定日常任务吗？ClawBench 基准测试深度解读",
+    summary: "从网购下单到预约医生，从投简历到订机票——153 个真实任务、144 个在线平台，全面评估当前 AI Agent 的实际能力边界",
+    date: "2026-04-12",
+    author: "AI Master 团队",
+    readTime: "18 min",
+    category: "论文解读",
+    tags: ["AI Agent", "基准测试", "ClawBench", "任务自动化"],
+    cover: "🐾",
+  },
 ];
 
 const POSTS_PER_PAGE = 3;
