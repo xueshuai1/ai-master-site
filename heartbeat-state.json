@@ -8,7 +8,12 @@
   },
   "lastContentUpdate": "2026-04-12",
   "totalArticles": 141,
-  "rotationOrder": ["news", "blog", "knowledge", "tools"],
+  "rotationOrder": [
+    "news",
+    "blog",
+    "knowledge",
+    "tools"
+  ],
   "lastTask": "lightweight-check",
-  "lastLightweightCheck": "2026-04-12T23:01"
+  "lastLightweightCheck": "2026-04-13T01:01"
 }
