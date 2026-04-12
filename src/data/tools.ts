@@ -249,6 +249,16 @@ export const tools: Tool[] = [
     icon: "🔮",
   },
   {
+    id: "hermes-agent",
+    name: "Hermes Agent (NousResearch)",
+    category: "agent",
+    description: "NousResearch 开源 AI Agent 框架，本周 GitHub Trending +10,487 星，总星数 35,820，Python MIT 协议，支持多 Agent 协作和工具调用",
+    url: "https://hermes-agent.nousresearch.com",
+    tags: ["开源", "多 Agent", "工具调用", "Trending"],
+    price: "开源",
+    icon: "🦙",
+  },
+  {
     id: "nvidia-agent-toolkit",
     name: "Nvidia Agent Toolkit",
     category: "agent",
