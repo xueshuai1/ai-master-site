@@ -157,6 +157,8 @@ import { article as nlp010 } from './articles/nlp-010';
 import { article as practice001 } from './articles/practice-001';
 import { article as practice002 } from './articles/practice-002';
 import { article as practice003 } from './articles/practice-003';
+import { article as practice004 } from './articles/practice-004';
+import { article as practice005 } from './articles/practice-005';
 import { article as rl001 } from './articles/rl-001';
 import { article as rl002 } from './articles/rl-002';
 import { article as rl003 } from './articles/rl-003';
@@ -166,4 +168,4 @@ import { article as rl006 } from './articles/rl-006';
 import { article as rl007 } from './articles/rl-007';
 import { article as rl008 } from './articles/rl-008';
 
-export const articles: Article[] = [agent001,agent002,agent003,agent004,agent005,agent006,agent007,agent008,aieng001,aieng002,aieng003,aieng004,aieng005,aieng006,aieng007,aieng008,cv001,cv002,cv003,cv004,cv005,cv006,cv007,cv008,cv009,cv010,cv011,cv012,dl001,dl002,dl003,dl004,dl005,dl006,dl007,dl008,dl009,dl010,dl011,dl012,dl013,dl014,dl015,dl016,ethics001,ethics002,ethics003,ethics004,genai001,genai002,genai003,genai004,genai005,genai006,genai007,llm001,llm002,llm003,llm004,llm005,llm006,llm007,llm008,llm009,llm010,llm011,llm012,math001,math002,math003,math004,math005,math006,math007,math008,ml001,ml002,ml003,ml004,ml005,ml006,ml007,ml008,ml009,ml010,ml011,ml012,ml013,ml014,ml015,ml016,ml017,ml018,ml019,ml020,ml021,ml022,mlops001,mm001,mm002,mm003,mm004,mm005,nlp001,nlp002,nlp003,nlp004,nlp005,nlp006,nlp007,nlp008,nlp009,nlp010,practice001,practice002,practice003,rl001,rl002,rl003,rl004,rl005,rl006,rl007,rl008];
+export const articles: Article[] = [agent001,agent002,agent003,agent004,agent005,agent006,agent007,agent008,aieng001,aieng002,aieng003,aieng004,aieng005,aieng006,aieng007,aieng008,cv001,cv002,cv003,cv004,cv005,cv006,cv007,cv008,cv009,cv010,cv011,cv012,dl001,dl002,dl003,dl004,dl005,dl006,dl007,dl008,dl009,dl010,dl011,dl012,dl013,dl014,dl015,dl016,ethics001,ethics002,ethics003,ethics004,genai001,genai002,genai003,genai004,genai005,genai006,genai007,llm001,llm002,llm003,llm004,llm005,llm006,llm007,llm008,llm009,llm010,llm011,llm012,math001,math002,math003,math004,math005,math006,math007,math008,ml001,ml002,ml003,ml004,ml005,ml006,ml007,ml008,ml009,ml010,ml011,ml012,ml013,ml014,ml015,ml016,ml017,ml018,ml019,ml020,ml021,ml022,mlops001,mm001,mm002,mm003,mm004,mm005,nlp001,nlp002,nlp003,nlp004,nlp005,nlp006,nlp007,nlp008,nlp009,nlp010,practice001,practice002,practice003,practice004,practice005,rl001,rl002,rl003,rl004,rl005,rl006,rl007,rl008];
