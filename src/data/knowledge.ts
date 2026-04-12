@@ -79,6 +79,7 @@ import { article as dl016 } from './articles/dl-016';
 import { article as genai001 } from './articles/genai-001';
 import { article as genai002 } from './articles/genai-002';
 import { article as genai003 } from './articles/genai-003';
+import { article as genai004 } from './articles/genai-004';
 import { article as llm001 } from './articles/llm-001';
 import { article as llm002 } from './articles/llm-002';
 import { article as llm003 } from './articles/llm-003';
@@ -123,5 +124,7 @@ import { article as nlp008 } from './articles/nlp-008';
 import { article as nlp009 } from './articles/nlp-009';
 import { article as nlp010 } from './articles/nlp-010';
 import { article as rl001 } from './articles/rl-001';
+import { article as rl002 } from './articles/rl-002';
+import { article as rl003 } from './articles/rl-003';
 
-export const articles: Article[] = [agent001,agent002,agent003,agent004,agent005,agent006,agent007,cv001,cv002,cv003,cv004,cv005,cv006,cv007,cv008,cv009,cv010,cv011,cv012,dl001,dl002,dl003,dl004,dl005,dl006,dl007,dl008,dl009,dl010,dl011,dl012,dl013,dl014,dl015,dl016,genai001,genai002,genai003,llm001,llm002,llm003,llm004,llm005,llm006,llm007,llm008,llm009,llm010,llm011,llm012,ml001,ml002,ml003,ml004,ml005,ml006,ml007,ml008,ml009,ml010,ml012,ml013,ml014,ml015,ml016,ml017,ml018,ml019,ml020,ml021,ml022,nlp001,nlp002,nlp003,nlp004,nlp005,nlp006,nlp007,nlp008,nlp009,nlp010,rl001];
+export const articles: Article[] = [agent001,agent002,agent003,agent004,agent005,agent006,agent007,cv001,cv002,cv003,cv004,cv005,cv006,cv007,cv008,cv009,cv010,cv011,cv012,dl001,dl002,dl003,dl004,dl005,dl006,dl007,dl008,dl009,dl010,dl011,dl012,dl013,dl014,dl015,dl016,genai001,genai002,genai003,genai004,llm001,llm002,llm003,llm004,llm005,llm006,llm007,llm008,llm009,llm010,llm011,llm012,ml001,ml002,ml003,ml004,ml005,ml006,ml007,ml008,ml009,ml010,ml012,ml013,ml014,ml015,ml016,ml017,ml018,ml019,ml020,ml021,ml022,nlp001,nlp002,nlp003,nlp004,nlp005,nlp006,nlp007,nlp008,nlp009,nlp010,rl001,rl002,rl003];
