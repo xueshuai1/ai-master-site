@@ -68,5 +68,7 @@ import { article as llm005 } from './articles/llm-005';
 import { article as llm006 } from './articles/llm-006';
 import { article as agent001 } from './articles/agent-001';
 import { article as agent002 } from './articles/agent-002';
+import { article as agent003 } from './articles/agent-003';
+import { article as dl007 } from './articles/dl-007';
 
-export const articles: Article[] = [ml001, ml002, ml003, ml004, ml005, ml006, ml009, dl001, dl002, dl003, dl004, dl005, dl006, nlp001, nlp002, nlp003, cv001, cv002, cv003, llm001, llm002, llm003, llm004, llm005, llm006, agent001, agent002];
+export const articles: Article[] = [ml001, ml002, ml003, ml004, ml005, ml006, ml009, dl001, dl002, dl003, dl004, dl005, dl006, dl007, nlp001, nlp002, nlp003, cv001, cv002, cv003, llm001, llm002, llm003, llm004, llm005, llm006, agent001, agent002, agent003];
