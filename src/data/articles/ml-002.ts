@@ -7,7 +7,7 @@ export const article: Article = {
     tags: ["监督学习", "集成学习", "分类"],
     summary: "从信息增益到基尼系数，掌握决策树的分裂策略与随机森林的集成思想",
     date: "2026-04-08",
-    readTime: "16 min",
+    readTime: "22 min",
     level: "入门",
     content: [
       {
@@ -244,7 +244,55 @@ for i, feat_idx in enumerate(top_features):
         tip: "随机森林的 n_estimators（树的数量）越大越好——不会过拟合，只会让结果更稳定。通常 100-500 棵树已经足够。",
       },
       {
-        title: "6. 实际应用场景",
+        title: "6. 特征重要性与模型解释",
+        body: `随机森林不仅能做出准确预测，还能告诉你哪些特征最重要。特征重要性有两种主流计算方法：
+
+基于不纯度（Impurity-based）：对每棵树，计算每个特征在所有分裂中带来的不纯度减少总量（加权平均），然后对所有树取平均。这是 sklearn 默认的方法，计算高效。但它有一个已知偏差：偏向于具有高基数（唯一值多）的特征，因为这样的特征有更多候选分裂点。
+
+基于排列（Permutation-based）：训练好模型后，随机打乱某个特征的值，观察模型性能下降多少。下降越多说明该特征越重要。这种方法没有基数偏差，而且可以在验证集上计算，反映的是泛化重要性而非训练集上的拟合程度。
+
+SHAP（SHapley Additive exPlanations）值是最前沿的特征归因方法，基于博弈论中的 Shapley 值。它为每个样本的每个特征分配一个贡献值，保证加和等于模型预测值与基准值的差。SHAP 值同时支持全局重要性和局部解释（为什么这个样本被预测为某类）。`,
+        code: [
+          {
+            lang: "python",
+            code: `from sklearn.ensemble import RandomForestClassifier
+from sklearn.inspection import permutation_importance
+from sklearn.datasets import make_classification
+
+X, y = make_classification(n_samples=1000, n_features=20,
+                           n_informative=10, n_redundant=5,
+                           random_state=42)
+
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X, y)
+
+# 方法一：基于不纯度的特征重要性
+impurity_imp = rf.feature_importances_
+print("=== 不纯度重要性 (Top 5) ===")
+for i in np.argsort(impurity_imp)[::-1][:5]:
+    print(f"  特征 {i:2d}: {impurity_imp[i]:.4f}")
+
+# 方法二：排列重要性（更可靠）
+result = permutation_importance(rf, X, y, n_repeats=10,
+                                random_state=42, n_jobs=-1)
+perm_imp = result.importances_mean
+print("\\n=== 排列重要性 (Top 5) ===")
+for i in np.argsort(perm_imp)[::-1][:5]:
+    print(f"  特征 {i:2d}: {perm_imp[i]:.4f} "
+          f"(±{result.importances_std[i]:.4f})")`,
+          },
+        ],
+        table: {
+          headers: ["方法", "原理", "偏差", "计算开销", "推荐场景"],
+          rows: [
+            ["不纯度重要性", "分裂时不纯度减少量", "偏向高基数特征", "低（训练时免费）", "快速探索"],
+            ["排列重要性", "打乱特征后性能下降", "无明显偏差", "中（需多次预测）", "最终报告"],
+            ["SHAP 值", "博弈论 Shapley 值", "理论最优", "高（需大量采样）", "精细解释"],
+          ],
+        },
+      },
+      {
+        title: "7. 实际应用场景与最佳实践",
         body: `决策树和随机森林在工业界有着广泛的应用，尤其是当可解释性很重要时。
 
 信用风险评估：银行使用决策树来评估贷款申请。监管机构要求银行能解释为什么拒绝某个申请——决策树的决策路径完美满足这个要求。
@@ -253,7 +301,7 @@ for i, feat_idx in enumerate(top_features):
 
 客户流失预测：电信、金融行业用随机森林预测哪些客户可能流失。随机森林能处理混合类型特征（数值、类别），而且不需要复杂的特征工程。
 
-特征选择：随机森林的特征重要性是数据科学中最常用的特征选择方法之一。先用随机森林跑一遍数据，筛选出重要特征，再用更复杂的模型训练。`,
+在实际项目中，建议先用随机森林建立一个强基线。如果随机森林已经能达到业务要求的准确率，就不必急着上更复杂的模型。如果不够好，再考虑梯度提升树（XGBoost、LightGBM）或深度学习。`,
         list: [
           "信用评估：可解释的决策路径满足监管要求",
           "医疗诊断：生成清晰的诊断流程",
@@ -261,6 +309,17 @@ for i, feat_idx in enumerate(top_features):
           "特征选择：用随机森林特征重要性做预筛选",
           "异常检测：孤立森林（Isolation Forest）的变体",
         ],
+        mermaid: `graph LR
+    A["原始数据集"] --> B["随机森林基线"]
+    B --> C["排列重要性筛选"]
+    C --> D["Top-K 特征子集"]
+    D --> E["SHAP 可解释性分析"]
+    E --> F["业务决策报告"]
+
+    style A fill:#bbdefb
+    style C fill:#c8e6c9
+    style F fill:#fff3e0`,
+        tip: "实战建议：拿到新数据集，先跑随机森林基线 → 排列重要性筛特征 → SHAP 生成可解释性报告。这套流程适用于 80% 的表格数据场景。",
       },
     ],
   };
