@@ -216,6 +216,9 @@ export default function Home() {
               </h2>
               <p className="text-slate-400">紧跟行业脉搏，不错过任何重要进展</p>
             </div>
+            <Link href="/news" className="text-brand-400 hover:text-brand-300 font-medium hidden sm:block">
+              更多 →
+            </Link>
           </div>
 
           {/* Headline */}
