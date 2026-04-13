@@ -10,6 +10,7 @@
 import os
 import sys
 import json
+from typing import Optional
 import qiniu
 
 # 七牛云配置
@@ -23,7 +24,7 @@ IMG_DIR = os.path.join(PROJECT, "public", "images")
 
 VALID_EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg'}
 
-def upload_file(local_path: str, key: str) -> str | None:
+def upload_file(local_path: str, key: str) -> Optional[str]:
     """上传单个文件，返回 CDN URL"""
     auth = qiniu.Auth(AK, SK)
     token = auth.upload_token(BUCKET, key, 3600)
