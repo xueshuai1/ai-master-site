@@ -15,6 +15,71 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-025",
+    tag: "Finance",
+    tagColor: "bg-amber-500/10 text-amber-300",
+    title: "IMF Warns of Systemic Cybersecurity Risk from Anthropic's Claude Mythos: 'Time Is Not Our Friend'",
+    summary: "IMF Managing Director Kristalina Georgieva warned that the global financial system lacks defenses against rapidly improving AI-enabled cyber exploits, as Fed Chair Powell and Treasury Secretary Bessent held urgent meetings with Wall Street CEOs.",
+    content: `The cybersecurity implications of Anthropic's Claude Mythos Preview have escalated to the highest levels of global financial governance.
+
+**IMF Warning:**
+- Kristalina Georgieva, Managing Director of the IMF, said in an interview on CBS's "Face the Nation" that the world does not have the ability "to protect the international monetary system against massive cyber risks"
+- She warned: "Time is not our friend on this one"
+- Key financial institutions, including central banks, need to "work together" and be "very attentive" in managing AI-enabled cyberattack risks
+
+**U.S. Government Response:**
+- Federal Reserve Chair Jerome Powell and Treasury Secretary Scott Bessent held an urgent meeting with Wall Street leaders to discuss the cybersecurity risks posed by Claude Mythos Preview
+- The meeting was convened after Anthropic reported the model had found thousands of high-severity vulnerabilities across major operating systems and web browsers
+- This marks the first time a frontier AI model's capabilities have triggered coordination between the Fed, Treasury, and major financial institutions
+
+**The Threat Landscape:**
+- Mythos Preview demonstrated the ability to autonomously identify and exploit decades-old vulnerabilities in critical systems
+- The model autonomously identified and exploited a 17-year-old remote code execution vulnerability in FreeBSD
+- It can chain together seemingly innocuous tool calls into powerful, unintended attack sequences
+
+**Industry Reaction:**
+- Anthropic launched Project Glasswing, a cybersecurity initiative using Mythos to find and patch vulnerabilities rather than releasing the model publicly
+- Amazon, Apple, Google, Microsoft, and Nvidia joined the Glasswing partnership
+- A federal judge blocked the Pentagon from labeling Anthropic AI as a "supply chain risk"
+
+**Significance:**
+This is a systemically relevant security event: a frontier AI model demonstrating exploit automation has prompted unprecedented coordination between the IMF, U.S. financial authorities, and major tech companies. It signals that AI cybersecurity has moved from a technical concern to a macroeconomic risk factor.`,
+    date: "2026-04-13",
+    source: "CBS News / IMF",
+    sourceUrl: "https://www.cbsnews.com/news/kristalina-georgieva-imf-ai-anthropic-face-the-nation/",
+    href: "/news/news-025",
+  },
+  {
+    id: "news-024",
+    tag: "Models",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    title: "Microsoft Launches Three In-House AI Models: MAI-Transcribe, MAI-Voice, MAI-Image to Compete with OpenAI and Google",
+    summary: "Microsoft released three foundational AI models built entirely in-house — a speech transcription system, voice generation engine, and image creator — marking its most concrete move to compete directly with frontier labs on model development.",
+    content: `Microsoft has unveiled three new foundational AI models developed entirely by its Microsoft AI (MAI) division, signaling a strategic shift from relying solely on OpenAI to building its own model stack.
+
+**The Three Models:**
+- **MAI-Transcribe-1**: State-of-the-art speech transcription with lower word error rate than GPT-Transcribe and Gemini 3.1 Flash. Already being tested in Copilot Voice mode and Microsoft Teams.
+- **MAI-Voice-1**: Top-tier voice generation model producing 60 seconds of expressive audio in under one second on a single GPU. Priced at $22 per million characters.
+- **MAI-Image-2**: Second-generation image model, ranked in the top 3 on Arena.ai leaderboard. Already integrated into Copilot, Bing, and PowerPoint. Priced at $5 per million input tokens.
+
+**Strategic Implications:**
+- This marks the first time Microsoft has offered its own commercially available models across multiple modalities
+- Microsoft preserves deep contractual access to OpenAI through 2032 while building independent capabilities
+- The pricing strategy reflects a deliberate decision to compete on cost
+
+**Industry Context:**
+- Microsoft has invested over $13 billion into OpenAI but is now diversifying its model portfolio
+- The models are available through Microsoft Foundry and the new MAI Playground
+- WPP, one of the world's largest advertising agencies, has already adopted MAI-Image-2 for creative workflows
+
+**Broader Trend:**
+Microsoft's move is part of a larger pattern of tech giants building in-house AI capabilities rather than relying exclusively on partnerships. Google, Meta, and Amazon are all pursuing similar strategies of developing proprietary models alongside their third-party relationships.`,
+    date: "2026-04-13",
+    source: "Microsoft / TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+    href: "/news/news-024",
+  },
+  {
     id: "news-023",
     tag: "Environment",
     tagColor: "bg-emerald-500/10 text-emerald-300",
