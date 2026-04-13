@@ -48,104 +48,100 @@ export const news: NewsItem[] = [
     href: "/news/news-052",
   },
   {
-    id: "news-051",
+    id: "news-066",
     tag: "安全",
     tagColor: "bg-red-500/10 text-red-300",
     coverImage: "/images/news/security.jpg",
-    title: "特朗普政府将 Anthropic 列为供应链风险，联邦机构被令停止使用 Claude",
-    summary: "特朗普政府将 Anthropic 标记为供应链风险（通常仅用于中国间谍嫌疑企业的 designation），并下令联邦机构停止使用 Claude 技术。Anthropic 正在与此进行法律抗争。",
-    content: `![news-051](/images/news/security.jpg)
+    title: "AI 编程质量危机 —— 编码快 40% 但代码质量显著下降",
+    summary: "SD Times 警告：AI 驱动的编码速度提升 40% 但质量大幅下滑。92% 开发者使用 AI 编程，但 45% AI 生成代码含安全漏洞，信任度从 77% 暴跌至 60%。",
+    content: `![news-066](/images/news/security.jpg)
 
-## Anthropic 与五角大楼的全面对抗
+## 2026 AI 编程质量危机
 
-特朗普政府将 Anthropic 标记为供应链风险——这一 designation 通常仅保留给涉嫌间谍活动的中国企业——并下令联邦机构停止使用 Anthropic 的技术。
+2026 年 4 月，SD Times 发出警告：AI 辅助编程虽然提升了开发速度，但代码质量正在急剧下降。
 
-**事件要点：**
-- Anthropic 因安全立场拒绝接受国防部合同，引发政治反弹
-- 联邦机构被要求立即停止使用 Claude 相关技术
-- Anthropic 已获得禁令初步胜利，正在与政府进行法律抗争
+**关键数据：**
+- **92% 的美国开发者每天使用 AI 编程工具**
+- 编码速度提升 **40%**，但代码质量显著下降
+- **45% 的 AI 生成代码含 OWASP Top-10 漏洞**（Databricks 研究）
+- CodeRabbit 分析 470 个 GitHub PR，AI 协作代码比纯人工代码多 **1.7 倍**重大问题
+- **63% 的开发者表示调试 AI 生成代码比手写代码更耗时**
+- 开发者信任度从 77% 暴跌至 **60%**
 
-**企业影响：**
-- 美国付费使用 Anthropic 工具的企业比例已从约 4% 飙升至 20%
-- Anthropic 软件工程相关岗位自 2025 年 1 月以来增长 170%
-- 与 OpenAI 形成鲜明对比——后者与 DOD 签约后遭遇用户卸载量激增 295%
+**真实灾难案例：**
+1. **Enrichlead 崩溃** — 独立开发者用 Cursor 零手写代码构建 SaaS，上线后因安全问题永久关闭
+2. **Lovable 数据暴露** — 1,645 个 Lovable 构建的 Web 应用中，超 10% 存在个人信息泄露漏洞
+3. **AI 生成的蜜罐被黑客攻击** — 安全公司用 AI 构建的蜜罐工具本身存在漏洞
 
-**行业意义：**
-这一事件标志着 AI 安全立场已从企业价值观升级为政治议题。Anthropic 因坚持安全原则而被政府针对，反而赢得了更多企业和消费者用户的信任。`,
-    date: "2026-04-13",
-    source: "Quartz / TechCrunch",
-    sourceUrl: "https://qz.com/anthropic-claude-ai-business-revenue-pentagon-openai-chatgpt",
-    href: "/news/news-051",
+**行业解读：**
+Vibe Coding 赢得了采用战，但正在输掉质量战。行业正在经历"AI 生成的技术债"集中爆发期。当开发团队以更快的速度生产更多但质量更差的代码时，整个软件行业的技术债将呈指数级增长。`,
+    date: "2026-04-14",
+    source: "SD Times / CodeRabbit / Databricks",
+    sourceUrl: "https://sdtimes.com/qa/were-coding-40-faster-but-building-on-sand-the-2026-quality-collapse/",
+    href: "/news/news-066",
   },
   {
-    id: "news-050",
-    tag: "公司动态",
+    id: "news-065",
+    tag: "政策",
     tagColor: "bg-orange-500/10 text-orange-300",
-    coverImage: "/images/news/meta-layoffs.jpg",
-    title: "Meta 计划裁员 20% 以上，AI 基础设施巨额投入成主因",
-    summary: "据 Reuters 独家报道，Meta 正计划裁员 20% 或更多员工，以应对高达 1150-1350 亿美元的 AI 资本支出。同时，其 Avocado 模型表现不及预期，发布计划被迫推迟。",
-    content: `![news-050](/images/news/meta-layoffs.jpg)
+    coverImage: "/images/news/policy.jpg",
+    title: "白宫发布国家 AI 政策框架 —— 联邦优先权 vs 州级法规",
+    summary: "特朗普政府发布《国家 AI 政策框架》，建议国会建立全国统一 AI 监管标准，优先于各州法律。保护个人免受 AI 生成数字复制品的未授权使用。",
+    content: `![news-065](/images/news/policy.jpg)
 
-## Meta 大规模裁员应对 AI 成本
+## 白宫国家 AI 政策框架
 
-2026 年 3 月，据 Reuters 独家报道，Meta 正在计划大规模裁员，可能影响 20% 或更多的员工。
+2026 年 3 月 20 日，特朗普政府正式发布《国家人工智能政策框架》。
 
-**裁员背景：**
-- Meta 2026 年 AI 资本支出预计高达 **1150-1350 亿美元**
-- 公司试图通过裁员来抵消昂贵的 AI 基础设施投入
-- AI 辅助工作将提升效率，减少部分岗位需求
+**核心建议：**
+- 建立**"最小负担"的全国统一标准**，避免"50 个不一致的州法规"
+- 保护个人免受 AI 生成的**数字复制品**（声音、肖像等）的未授权使用
+- 建立**AI 诉讼工作组**，挑战与联邦政策不一致的州级 AI 法律
+- 保留州级一般适用法（儿童保护、消费者保护等）
 
-**模型挑战：**
-- 超智能团队正在开发新一代模型 **Avocado**，但性能不及预期
-- 图像和视频生成模型 **Mango** 也在同步开发中
-- 发布计划被迫推迟，面临 OpenAI 和 Anthropic 的激烈竞争
-
-**硬件与生态布局：**
-- 计划 2026 年推出智能手表 **Malibu 2**，内置 Meta AI 助手
-- 建设 **Prometheus** 超算集群，部署数十万块英伟达 GPU
-- 与 CoreWeave 签署 **210 亿美元**的 AI 计算合作协议
-
-**用户规模：**
-- Meta AI 月活跃用户达 **10 亿**，是历史上增长最快的 AI 平台
-- AI 视频工具已产生 **100 亿美元**的年度经常性收入`,
-    date: "2026-04-13",
-    source: "Reuters / NYT / eMarketer",
-    sourceUrl: "https://www.reuters.com/business/world-at-work/meta-planning-sweeping-layoffs-ai-costs-mount-2026-03-14/",
-    href: "/news/news-050",
-  },
-  {
-    id: "news-049",
-    tag: "公司动态",
-    tagColor: "bg-blue-500/10 text-blue-300",
-    coverImage: "/images/news/microsoft-ai.jpg",
-    title: "微软发布三款自研 AI 基础模型，直接挑战 OpenAI 和 Google",
-    summary: "微软 MAI Superintelligence 团队发布 MAI-Transcribe-1、MAI-Voice-1 和 MAI-Image-2 三款自研基础模型，聚焦语音转录、语音生成和图像生成，标志着微软 AI 战略的重大转向。",
-    content: `![news-049](/images/news/microsoft-ai.jpg)
-
-## 微软 MAI 基础模型正式发布
-
-2026 年 4 月 2 日，微软 AI 研究实验室正式发布了三款自研基础 AI 模型。
-
-**模型详情：**
-- **MAI-Transcribe-1**：专注于高精度语音转录，支持多语言实时识别
-- **MAI-Voice-1**：自然语音生成模型，可生成接近真人水平的语音内容
-- **MAI-Image-2**：图像生成模型，在质量和速度上对标 DALL-E 和 Imagen
-
-**战略转向：**
-- 由 Mustafa Suleyman 领导的 MAI Superintelligence 团队研发
-- 这是微软首次大规模推出自研基础模型，而非依赖 OpenAI 的技术
-- 微软 CEO Satya Nadella 确认将继续采购 NVIDIA 和 AMD 芯片
+**全球监管格局：**
+- **欧盟 AI Act** 也在简化中，延迟高风险 AI 系统适用日期
+- **中国** 持续完善 AI 算法备案和生成式 AI 管理办法
+- 中美欧 AI 监管路径呈现差异化发展趋势
 
 **行业影响：**
-- 微软同时也在其研究工具中使用 OpenAI 和 Anthropic 的模型，展现多模型并行的务实策略
-- Microsoft AI 负责人 Suleyman 预测 18 个月内所有白领工作将被 AI 自动化
-- 这预示着科技巨头正从「绑定单一供应商」转向「多模型混合架构」`,
-    date: "2026-04-13",
-    source: "TechCrunch / VentureBeat",
-    sourceUrl: "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
-    href: "/news/news-049",
+AI 监管从"野蛮生长"进入"规则制定"阶段。统一的联邦框架可能降低企业合规成本，但也可能削弱州级创新监管实验。`,
+    date: "2026-04-14",
+    source: "White House / MoFo / Ropes & Gray",
+    sourceUrl: "https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf",
+    href: "/news/news-065",
   },
   {
+    id: "news-064",
+    tag: "安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "伊朗黑客攻击美国关键基础设施 —— 地缘政治与数字战争交汇",
+    summary: "Ars Technica 报道伊朗-linked 黑客组织正在破坏美国关键基础设施运营，同时 LinkedIn 因浏览器扩展扫描行为面临两起诉讼。",
+    content: `![news-064](/images/news/security.jpg)
+
+## 伊朗黑客攻击美国关键基础设施
+
+2026 年 4 月，Ars Technica 报道了伊朗-linked 黑客组织对美国关键基础设施的攻击。
+
+**事件要点：**
+- 伊朗黑客组织成功破坏美国关键基础设施运营
+- 这是地缘政治紧张局势在数字空间的直接体现
+- 攻击手法结合了 AI 辅助工具和传统黑客技术
+
+**其他安全动态：**
+- **LinkedIn 浏览器扩展扫描**引发两起诉讼——公司被指扫描用户浏览器扩展
+- **Chrome CVE-2026-5281** 零日漏洞正在被积极利用，补丁已发布
+- **Apple 扩大 iOS 18.7.7 更新**以阻止 DarkSword 漏洞利用
+- **Fortinet 修复 CVE-2026-35616** FortiClient EMS 中被积极利用的漏洞
+
+**行业解读：**
+网络安全正在从单纯的技术问题升级为地缘政治问题。AI 既被用于防御（Claude Mythos），也被用于攻击（伊朗黑客利用 AI 辅助工具），攻防两端的军备竞赛正在加速。`,
+    date: "2026-04-14",
+    source: "Ars Technica / The Hacker News",
+    sourceUrl: "https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/",
+    href: "/news/news-064",
+  },
     id: "news-063",
     tag: "安全",
     tagColor: "bg-red-500/10 text-red-300",

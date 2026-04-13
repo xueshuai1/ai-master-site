@@ -838,6 +838,27 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "📚",
   },
+  // 智能体平台 - 2026.04 新增
+  {
+    id: "owl-camel",
+    name: "OWL (CAMEL-AI)",
+    category: "agent",
+    description: "CAMEL-AI 团队开源多智能体协作框架，GAIA 基准测试开源排名第 1（58.18 分），支持浏览器自动化、代码执行、视频/音频分析、MCP 工具集成等 10+ 工具包，19.4k GitHub 星，Apache 2.0 协议",
+    url: "https://github.com/camel-ai/owl",
+    tags: ["开源", "多智能体", "GAIA #1", "MCP 集成", "浏览器自动化"],
+    price: "开源",
+    icon: "🦉",
+  },
+  {
+    id: "letta",
+    name: "Letta (原 MemGPT)",
+    category: "agent",
+    description: "深度个性化有状态 AI Agent 平台，Agent 拥有持久记忆并随时间学习，首创 Agent File (.af) 开放格式实现 Agent 可移植共享，Letta Code 在 Terminal-Bench 编程基准中排名第一，支持 Agent 动态管理自身记忆块",
+    url: "https://www.letta.com",
+    tags: ["有状态 Agent", "持久记忆", "Agent File", "可移植", "动态记忆管理"],
+    price: "开源",
+    icon: "📦",
+  },
   // 去重：n8n/perplexity 已有条目（上方）
   // 本地 LLM 平台
   {
