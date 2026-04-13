@@ -236,7 +236,7 @@ export default function Home() {
             >
               {headlineNews.coverImage && (
                 <div className="h-40 sm:h-48 overflow-hidden">
-                  <Image src={headlineNews.coverImage} alt={headlineNews.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, 640px" />
+                  <Image src={headlineNews.coverImage} alt={headlineNews.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, 640px" unoptimized />
                 </div>
               )}
               <div className="p-6 sm:p-8">
@@ -270,7 +270,7 @@ export default function Home() {
                   {formatDate(item.date)}
                 </span>
                 {item.coverImage && (
-                  <Image src={item.coverImage} alt="" width={40} height={40} className="shrink-0 w-10 h-10 rounded-lg object-cover border border-white/5" />
+                  <Image src={item.coverImage} alt="" width={40} height={40} className="shrink-0 w-10 h-10 rounded-lg object-cover border border-white/5" unoptimized />
                 )}
                 <span className="text-sm text-slate-300 group-hover:text-brand-300 transition-colors leading-snug line-clamp-1">
                   {item.title}
