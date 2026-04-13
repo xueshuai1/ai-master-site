@@ -46,9 +46,8 @@ const features = [
   },
 ];
 
-// 首页新闻：头条 1 条 + 快讯 5 条
-const headlineNews = news[0];
-const quickNews = news.slice(1, 6);
+// 首页新闻：6 条卡片
+const homeNews = news.slice(0, 6);
 const latestBlogs = blogs.slice(0, 3);
 
 function formatDate(dateStr: string): string {
@@ -213,32 +212,22 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Headline */}
-          {headlineNews && (
-            <Link href={headlineNews.href}
-              className="group block mb-4 p-6 rounded-xl bg-gradient-to-br from-brand-600/10 via-slate-800/40 to-slate-900/40 border border-brand-500/20 hover:border-brand-500/40 transition-all">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 bg-brand-500/90 text-white rounded-full text-xs font-bold">🔥 头条</span>
-                <span className="text-xs text-slate-500">{formatDate(headlineNews.date)}</span>
-                <span className="text-xs text-slate-600">·</span>
-                <span className="text-xs text-slate-500">{headlineNews.source}</span>
-              </div>
-              <h3 className="text-lg font-bold mb-1.5 group-hover:text-brand-300 transition-colors leading-snug">
-                {headlineNews.title}
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">{headlineNews.summary}</p>
-            </Link>
-          )}
-
-          {/* Quick news list */}
-          <div className="space-y-2">
-            {quickNews.map((item) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {homeNews.map((item) => (
               <Link key={item.href} href={item.href}
-                className="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.03] transition-all">
-                <span className="shrink-0 mt-0.5 text-xs font-mono text-slate-600 w-10">{formatDate(item.date)}</span>
-                <span className="text-sm text-slate-300 group-hover:text-brand-300 transition-colors leading-snug line-clamp-1">
+                className="group block p-5 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5">
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className={`px-2.5 py-0.5 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-xs font-medium`}>
+                    {item.tag}
+                  </span>
+                  <span className="text-xs text-slate-500">{formatDate(item.date)}</span>
+                  <span className="text-xs text-slate-600">·</span>
+                  <span className="text-xs text-slate-500">{item.source}</span>
+                </div>
+                <h3 className="text-base font-semibold mb-1.5 group-hover:text-brand-300 transition-colors leading-snug line-clamp-2">
                   {item.title}
-                </span>
+                </h3>
+                <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">{item.summary}</p>
               </Link>
             ))}
           </div>
