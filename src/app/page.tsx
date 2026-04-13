@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { LAST_UPDATE_TIME } from "@/data/update-time";
 import { news } from "@/data/news";
+import { blogs } from "@/data/blogs";
 
 const features = [
   {
@@ -45,7 +46,8 @@ const features = [
   },
 ];
 
-const newsPreview = news.slice(0, 5);
+const newsPreview = news.slice(0, 8);
+const latestBlogs = blogs.slice(0, 3);
 
 export default function Home() {
 
@@ -169,48 +171,27 @@ export default function Home() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "🔮",
-                category: "行业洞察",
-                title: "2026 年 AI 领域十大趋势预测",
-                summary: "从多模态大模型到 AI Agent 普及，盘点今年最值得关注的技术方向",
-                date: "2026-04-10",
-                href: "/blog/blog-001",
-              },
-              {
-                icon: "📄",
-                category: "论文解读",
-                title: "GPT-5 技术报告深度解读",
-                summary: "OpenAI 最新发布的 GPT-5 在多模态推理方面实现了显著突破",
-                date: "2026-04-08",
-                href: "/blog/blog-002",
-              },
-              {
-                icon: "🤖",
-                category: "实战经验",
-                title: "AI Agent 在软件开发中的最佳实践",
-                summary: "从代码审查到自动修复，AI Agent 正在重塑软件开发流程",
-                date: "2026-04-05",
-                href: "/blog/blog-003",
-              },
-            ].map((post) => (
-              <Link
-                key={post.title}
-                href={post.href || "/blog"}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer"
-              >
-                <div className="text-3xl mb-4">{post.icon}</div>
-                <span className="inline-block px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-xs font-medium mb-3">
-                  {post.category}
-                </span>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-brand-300 transition-colors leading-snug">
-                  {post.title}
-                </h3>
-                <p className="text-slate-400 text-sm line-clamp-2 mb-3">{post.summary}</p>
-                <span className="text-xs text-slate-500">{post.date}</span>
-              </Link>
-            ))}
+            {latestBlogs.length > 0 ? (
+              latestBlogs.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/blog/${post.id}`}
+                  className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer"
+                >
+                  <div className="text-3xl mb-4">{post.coverImage || "📝"}</div>
+                  <span className="inline-block px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-xs font-medium mb-3">
+                    {post.tags[0] || "行业洞察"}
+                  </span>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-brand-300 transition-colors leading-snug">
+                    {post.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm line-clamp-2 mb-3">{post.summary}</p>
+                  <span className="text-xs text-slate-500">{post.date}</span>
+                </Link>
+              ))
+            ) : (
+              <p className="text-slate-500 col-span-3 text-center py-8">暂无博客文章</p>
+            )}
           </div>
         </div>
       </section>
@@ -231,7 +212,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-4">
-            {news.map((item) => (
+            {newsPreview.map((item) => (
               <Link
                 key={item.title}
                 href={item.href || "/blog"}
