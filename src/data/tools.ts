@@ -557,26 +557,7 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "⚡",
   },
-  {
-    id: "dify",
-    name: "Dify",
-    category: "framework",
-    description: "开源 LLM 应用开发平台，提供可视化工作流编排、RAG 管道、多模型支持（OpenAI/Anthropic/开源模型）、内置监控和日志，2026 年 GitHub 星标数突破 50K，成为最流行的开源 AI 应用平台",
-    url: "https://dify.ai",
-    tags: ["开源", "工作流编排", "RAG", "多模型", "可视化"],
-    price: "开源",
-    icon: "🔧",
-  },
-  {
-    id: "langchain",
-    name: "LangChain",
-    category: "framework",
-    description: "最流行的 AI 应用开发框架，支持构建多智能体系统、工具调用 AI、RAG 管道、对话式 AI 和结构化数据提取，2026 年 LangGraph 成为多智能体编排的标准方案",
-    url: "https://www.langchain.com",
-    tags: ["开源", "多智能体", "工具调用", "RAG", "LangGraph"],
-    price: "开源",
-    icon: "🔗",
-  },
+  // 去重：dify/langchain 已有条目（上方）
   {
     id: "openclaw",
     name: "OpenClaw",
@@ -629,16 +610,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🛟",
   },
-  {
-    id: "perplexity",
-    name: "Perplexity AI",
-    category: "llm",
-    description: "AI 驱动的答案引擎，结合实时网络搜索与高级 AI 推理，提供带引用的精准答案，支持 Deep Research 深度研究、Model Council 多模型交叉验证、Sonar API 开发者接口，2026 年替代传统搜索的首选工具",
-    url: "https://www.perplexity.ai",
-    tags: ["AI 搜索", "实时数据", "深度研究", "引用溯源"],
-    price: "免费+付费",
-    icon: "🔎",
-  },
+  // 去重：perplexity 已有条目（上方 perplexity-search）
   // 图像视觉 - 2026.04 新增
   {
     id: "synthesia",
@@ -813,27 +785,7 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🎵",
   },
-  // 2026.04 新增工具
-  {
-    id: "n8n",
-    name: "n8n",
-    category: "agent",
-    description: "开源 AI Agent 开发平台，支持可视化工作流编排、500+ 集成节点、内置 AI Agent 构建器、支持 LangChain 和自定义工具调用，2026 年成为企业级 AI 工作流自动化的首选开源方案",
-    url: "https://n8n.io",
-    tags: ["开源", "AI Agent", "工作流编排", "500+ 集成", "企业级"],
-    price: "免费+付费",
-    icon: "🔗",
-  },
-  {
-    id: "glm-5",
-    name: "GLM-5",
-    category: "llm",
-    description: "智谱 AI 最新开源大语言模型，在编码、推理和 Agent 任务上表现卓越，支持多轮对话和复杂指令遵循，中文理解能力领先，2026 年中国开源模型旗舰",
-    url: "https://github.com/zai-org/GLM-5",
-    tags: ["开源模型", "中文理解", "编码推理", "Agent 任务", "智谱 AI"],
-    price: "开源",
-    icon: "🧠",
-  },
+  // 2026.04 新增工具（去重：n8n/glm-5 已有条目，已合并到上方）
   {
     id: "copaw",
     name: "CoPaw",
@@ -844,16 +796,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🐾",
   },
-  {
-    id: "cursor",
-    name: "Cursor",
-    category: "agent",
-    description: "AI 原生代码编辑器，深度集成 LLM 实现代码补全、自动重构、跨文件编辑、自然语言到代码的转换，2026 年最受欢迎的 AI 编程工具之一",
-    url: "https://www.cursor.com",
-    tags: ["AI 编辑器", "代码补全", "自然语言编程", "跨文件编辑"],
-    price: "免费+付费",
-    icon: "💻",
-  },
+  // 去重：cursor 已有条目（上方）
   // 2026.04 新增
   {
     id: "deerflow",
@@ -885,26 +828,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "📚",
   },
-  {
-    id: "n8n",
-    name: "n8n",
-    category: "agent",
-    description: "可自托管的工作流自动化平台，内置 AI Agent 节点、300+ 集成连接器、可视化流程编排，支持 LangChain 深度集成，2026 年企业 AI 自动化工作流的核心基础设施",
-    url: "https://n8n.io",
-    tags: ["工作流自动化", "AI Agent", "自托管", "可视化编排", "LangChain"],
-    price: "免费+付费",
-    icon: "⚡",
-  },
-  {
-    id: "perplexity",
-    name: "Perplexity AI",
-    category: "search",
-    description: "AI 驱动的搜索引擎，提供带引用的实时搜索回答、深度研究模式和专业模型选择（Sonar 系列），2026 年替代传统搜索的 AI 搜索标杆产品",
-    url: "https://www.perplexity.ai",
-    tags: ["AI 搜索", "实时搜索", "引用溯源", "深度研究", "Sonar 模型"],
-    price: "免费+付费",
-    icon: "🔍",
-  },
+  // 去重：n8n/perplexity 已有条目（上方）
   // 本地 LLM 平台
   {
     id: "open-webui",

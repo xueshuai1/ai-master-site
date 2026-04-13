@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import { LAST_UPDATE_TIME } from "@/data/update-time";
 import { news } from "@/data/news";
 import { blogs } from "@/data/blogs";
+import { articles } from "@/data/knowledge";
+import { tools } from "@/data/tools";
 
 const features = [
   {
@@ -120,8 +122,8 @@ export default function Home() {
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
             {[
-              { num: "140+", label: "篇教程" },
-              { num: "20+", label: "个工具" },
+              { num: `${articles.length}+`, label: "篇教程" },
+              { num: `${tools.length}+`, label: "个工具" },
               { num: "10K+", label: "学习者" },
               { num: "100%", label: "免费" },
             ].map((stat) => (
