@@ -6,7 +6,7 @@ import { news } from "@/data/news";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-const NEWS_PER_PAGE = 10;
+const NEWS_PER_PAGE = 9;
 
 function getLast3DaysNews() {
   const now = new Date();

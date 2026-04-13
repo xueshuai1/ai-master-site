@@ -19,7 +19,7 @@ const blogPosts = blogs.map((b) => ({
 
 const blogCategories = ["全部", ...Array.from(new Set(blogs.flatMap((b) => b.tags.slice(0, 1))))];
 
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 9;
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("全部");

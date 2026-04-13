@@ -8,7 +8,7 @@ import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 9;
 
 export default function KnowledgePage() {
   const [activeCategory, setActiveCategory] = useState("all");
