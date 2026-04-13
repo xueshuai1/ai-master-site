@@ -3,9 +3,9 @@
 # 用法：./scripts/deploy.sh "commit message"
 
 MESSAGE=${1:-"update: 内容更新"}
-NOW=$(date +"%Y-%m-%d %H:%M" -u)
-# 转换为北京时间 (UTC+8)
-BJ_TIME=$(date -u -v+8H +"%Y-%m-%d %H:%M" 2>/dev/null || date -d "+8 hours" +"%Y-%m-%d %H:%M" 2>/dev/null)
+
+# macOS 兼容的北京时间获取方式
+BJ_TIME=$(date -v+8H +"%Y-%m-%d %H:%M")
 
 # 更新首页时间戳
 cat > src/data/update-time.ts << EOF
