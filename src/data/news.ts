@@ -393,6 +393,158 @@ CoreWeave 已成为仅次于 AWS 和 Azure 的第三大 AI 云服务商。与 Me
     source: "Bloomberg / Reuters / Fortune",
     sourceUrl: "https://fortune.com/2026/04/10/anthropic-mythos-ai-driven-cybersecurity-risks-already-here/",
     href: "/news/news-011",
+  },
+  {
+    id: "news-037",
+    tag: "Funding",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "2026 年 Q1 风投达 2970 亿美元，81% 流向 AI 初创公司",
+    summary: "Crunchbase 数据显示，2026 年第一季度全球风险投资总额达 2970 亿美元，其中 81% 的资金流向 AI 相关初创公司，AI 投资占比创历史新高。",
+    content: `## AI 吞噬风投市场
+
+2026 年第一季度的风险投资数据令人震惊。根据 Crunchbase 的最新数据：
+
+**关键数据：**
+- Q1 总融资额：**2970 亿美元**
+- AI 占比：**81%**（即每 100 美元风投中有 81 美元投向 AI）
+- 种子轮估值显著溢价
+- A 轮估值普遍突破 5000 万美元
+
+**投资趋势变化：**
+- 不再是 2021 年的"撒网式"投资模式
+- 资本更加集中，流向有实际收入的 AI 公司
+- 后期投资占比增加，证明 AI 行业走向成熟
+
+**非 AI 初创公司的困境：**
+据 Fast Company 报道，不在旧金山、不做 AI 的初创公司融资难度极大。一位创始人表示："这类公司很少能在一轮融资中拿到足够的钱。"
+
+**科技巨头资本支出：**
+Tech Megacaps 计划投入超过 **3000 亿美元**用于 AI 基础设施建设，这还不包括风险投资市场的资金。`,
+    date: "2026-04-13",
+    source: "Crunchbase / Fast Company / Forbes",
+    sourceUrl: "https://qubit.capital/blog/ai-startup-fundraising-trends",
+    href: "/news/news-037",
+  },
+  {
+    id: "news-038",
+    tag: "Security",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "CrowdStrike CEO 警告：AI 发现漏洞将导致网络攻击数量激增",
+    summary: "CrowdStrike CEO 在 CNBC 采访中表示，AI 发现软件漏洞的能力将导致网络安全攻击数量大幅增加。这与 Anthropic Mythos 模型的安全警告形成呼应。",
+    content: `## AI 时代网络安全面临新挑战
+
+网络安全巨头 CrowdStrike 的 CEO 在 CNBC 采访中发出警告：**AI 发现软件漏洞的能力将导致网络攻击数量大幅增加**。
+
+**核心观点：**
+- AI 模型能够比人类更快地发现和利用软件漏洞
+- 攻击门槛降低，更多非专业黑客可以利用 AI 发动攻击
+- 防御方需要同步提升 AI 驱动的安全能力
+
+**与 Anthropic Mythos 事件的关联：**
+这一警告与 Anthropic 对 Mythos 模型的安全评估不谋而合。Anthropic 发现 Mythos 能够识别出多个关键基础设施中的严重漏洞，因此决定**限制公开发布**，仅向 12 家网络安全公司分阶段开放。
+
+**行业应对：**
+- 安全公司 Irregular 的 CEO Dan Lahav 指出，实际威胁取决于漏洞的组合利用方式
+- 研究表明，部分被标注为 Mythos 独有的发现，实际上可以通过开源模型复现
+- 防御专家认为，AI 驱动的安全防御同样在进步，防御方可能获益更多`,
+    date: "2026-04-13",
+    source: "CNBC / Fortune",
+    sourceUrl: "https://www.cnbc.com/video/2026/04/08/crowdstrike-ceo-ai-finding-vulnerabilities-will-cause-high-number-of-cybersecurity-attacks.html",
+    href: "/news/news-038",
+  },
+  {
+    id: "news-039",
+    tag: "Finance",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "CoreWeave 与 Meta 达成 210 亿美元 AI 计算合作协议",
+    summary: "据 Bloomberg 报道，AI 云计算公司 CoreWeave 与 Meta 签署了价值 210 亿美元的计算服务协议，为 Meta 的 AI 模型训练和推理提供算力支持。",
+    content: `## AI 算力军备竞赛持续升级
+
+Bloomberg Technology 报道，AI 云计算公司 **CoreWeave** 与 **Meta** 签署了一项价值 **210 亿美元**的计算服务协议。
+
+**交易细节：**
+- 金额：210 亿美元
+- 用途：为 Meta 的 AI 模型训练和推理提供算力
+- CoreWeave 是 Nvidia 支持的 AI 云计算公司
+
+**行业背景：**
+这一交易是 AI 基础设施投资热潮的缩影。科技巨头正在竞相构建大规模计算能力：
+
+- **Meta**：2026 年资本支出 1150-1350 亿美元
+- **OpenAI**：融资 1220 亿美元用于基础设施
+- **Google**：持续扩展数据中心和 TPU 集群
+- **Microsoft**：Azure AI 服务持续扩张
+
+**CoreWeave 的崛起：**
+CoreWeave 从一家加密货币挖矿公司转型为 AI 算力提供商，现已成为 AI 基础设施领域的重要参与者。其与 Nvidia 的紧密关系使其能够获得最新 GPU 供应。`,
+    date: "2026-04-13",
+    source: "Bloomberg / eWeek",
+    sourceUrl: "https://www.eweek.com/news/meta-coreweave-21b-ai-cloud-deal/",
+    href: "/news/news-039",
+  },
+  {
+    id: "news-040",
+    tag: "Research",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "MIT 研发 Lean AI 技术：训练过程中实时裁剪模型，成本降低 40%",
+    summary: "MIT 研究人员利用控制论原理，在 AI 模型训练过程中实时识别并移除冗余参数，CompreSSM 技术使训练成本降低 40%，为状态空间模型的效率提升开辟新路径。",
+    content: `## MIT 突破性模型压缩技术
+
+MIT 研究人员提出了一种创新的 AI 模型优化方法，利用**控制论**原理在训练过程中实时裁剪冗余参数。
+
+**核心技术：CompreSSM**
+- 针对**状态空间模型（State Space Models, SSMs）**的压缩技术
+- 在训练过程中**实时识别并移除**不必要的参数
+- 训练成本降低 **40%**
+- 模型性能基本保持不变
+
+**技术原理：**
+传统模型压缩通常在训练完成后进行（剪枝、量化等）。MIT 的方法不同：
+- 在训练**过程中**动态评估每个参数的重要性
+- 利用控制论的反馈机制实时调整模型结构
+- 模型"边学边瘦"，而非先学胖再减肥
+
+**行业意义：**
+- 降低 AI 模型的训练门槛
+- 减少对大规模算力的依赖
+- 为开源模型社区提供新的优化工具
+- 可能影响 AI 基础设施的投资回报率计算`,
+    date: "2026-04-13",
+    source: "MIT / Radical Data Science",
+    sourceUrl: "https://radicaldatascience.wordpress.com/2026/04/09/ai-news-briefs-bulletin-board-for-april-2026/",
+    href: "/news/news-040",
+  },
+  {
+    id: "news-041",
+    tag: "Policy",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "全美 AI 数据中心建设遭抵制，近半数规划项目被推迟或取消",
+    summary: "CBS 报道，全美 AI 数据中心的建设热潮引发各地居民强烈抵制，近半数规划中的项目被推迟或取消。参议员 Sanders 和众议员 AOC 提出暂停法案，要求重新审视数据中心的环境和社会影响。",
+    content: `## AI 基础设施遭遇地方阻力
+
+尽管科技巨头投入数千亿美元建设 AI 数据中心，但全美范围内的地方抵制正在成为不可忽视的力量。
+
+**现状：**
+- 全美目前有超过 **4000 个** AI 数据中心在运营或规划中
+- 近**半数规划项目**被推迟或取消
+- 主要阻力来自：噪音、水资源消耗、电力占用、环境影响
+
+**政治响应：**
+- **参议员 Bernie Sanders** 和 **众议员 AOC** 提出暂停数据中心建设的法案
+- 要求对新数据中心进行更严格的环境和社会影响评估
+- 部分地方政府开始限制数据中心的用水和用电
+
+**行业影响：**
+- Meta 甚至资助燃气发电厂为路易斯安那州大型数据中心供电
+- 科技公司被迫寻找更隐蔽的选址
+- 可能影响 AI 模型的训练时间表和成本
+
+**深层矛盾：**
+AI 发展需要 massive 算力，但算力的物理基础设施（数据中心）正在与当地社区利益产生直接冲突。这场博弈将深刻影响 AI 行业的未来布局。`,
+    date: "2026-04-13",
+    source: "CBS News",
+    sourceUrl: "https://www.cbsnews.com/video/nationwide-boom-in-ai-data-centers-stirs-resistance/",
+    href: "/news/news-041",
   }
 
 ];
