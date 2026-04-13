@@ -146,178 +146,187 @@ export const news: NewsItem[] = [
     href: "/news/news-049",
   },
   {
-    id: "news-048",
-    tag: "行业趋势",
-    tagColor: "bg-purple-500/10 text-purple-300",
-    coverImage: "/images/news/venture-capital.jpg",
-    title: "2026 年 Q1 全球风投达 2970 亿美元，81% 资金流向 AI 初创公司",
-    summary: "Crunchbase 数据显示，2026 年第一季度全球风险投资总额达 2970 亿美元，其中 81% 流向 AI 相关初创公司。种子轮 AI 公司估值中位数达 1790 万美元，比非 AI 公司溢价 42%。",
-    content: `![news-048](/images/news/venture-capital.jpg)
+    id: "news-063",
+    tag: "安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "Anthropic 发布 Mythos Preview —— 史上最强大 AI 模型，已发现数千个高危漏洞",
+    summary: "Anthropic 发布 Claude Mythos Preview，称其强大到不能公开发布。该模型已自主发现数千个高危漏洞，涵盖所有主流操作系统和浏览器，并启动 Glasswing 网络安全计划，联合 40+ 科技巨头进行防御性安全扫描。",
+    content: `![news-063](/images/news/security.jpg)
 
-## AI 吞噬风投市场
+## Anthropic Mythos：强大到令安全专家担忧的 AI 模型
 
-2026 年第一季度的风险投资数据令人震惊。根据 Crunchbase 的最新数据：
+2026 年 4 月 7 日，Anthropic 正式发布了 Claude Mythos Preview，这是该公司有史以来最强大的 AI 模型，在编码、推理和安全相关工作中全面超越此前所有系统。
 
-**关键数据：**
-- Q1 总融资额：**2970 亿美元**
-- AI 占比：**81%**（即每 100 美元风投中有 81 美元投向 AI）
-- 种子轮 AI 公司估值中位数 **1790 万美元**，比非 AI 公司溢价 42%
-- A 轮估值普遍突破 5000 万美元
+**核心事件：**
+- Mythos Preview 已被证明**过于强大而不能公开发布**，仅限 40+ 家科技巨头组成的联盟使用
+- 该模型已**自主发现数千个高危漏洞**，覆盖每一个主流操作系统和 Web 浏览器
+- 包括一个 17 年历史的 FreeBSD 远程代码执行漏洞，Mythos 自主发现并编写了完整利用代码
+- Anthropic 启动 **Glasswing 网络安全计划**，将这些能力用于防御性安全
 
-**投资趋势变化：**
-- 不再是 2021 年的「撒网式」投资模式
-- 资本更加集中，流向有实际收入的 AI 公司
-- 后期投资占比增加，证明 AI 行业走向成熟
+**参与企业：**
+Nvidia、Amazon AWS、Apple、Alphabet (Google)、Broadcom、Microsoft、Cisco 等 40+ 家公司加入联盟
 
-**科技巨头资本支出：**
-- Alphabet、Microsoft、Amazon 和 Meta 2026 年资本支出预计 **6350-6650 亿美元**
-- 加上风险投资市场，AI 领域总资金投入超过 **1 万亿美元**
+**安全影响：**
+- 如果 AI 公司认为需要限制模型访问以防止发现危险漏洞，这意味着 AI 已进入全新领域
+- 安全行业多年来一直在担忧更强大的 AI 模型可能对关键科技基础设施造成的影响
+- Mythos 能够自主将 N-Day 漏洞转化为复杂利用代码
 
-**非 AI 初创公司的困境：**
-据 Fast Company 报道，不在旧金山、不做 AI 的初创公司融资难度极大。`,
-    date: "2026-04-13",
-    source: "Crunchbase / Fast Company / Yahoo Finance",
-    sourceUrl: "https://qubit.capital/blog/ai-startup-fundraising-trends",
-    href: "/news/news-048",
+**行业意义：**
+这标志着 AI 能力的一个关键转折点——当最顶尖的 AI 公司开始认为自己的模型"太危险而不能公开发布"时，AI 安全已从理论问题升级为紧迫的现实挑战。`,
+    date: "2026-04-14",
+    source: "TechCrunch / NYT / CNN / Forbes",
+    sourceUrl: "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/",
+    href: "/news/news-063",
   },
   {
-    id: "news-047",
-    tag: "前沿",
-    tagColor: "bg-cyan-500/10 text-cyan-300",
-    coverImage: "/images/news/benchmark.jpg",
-    title: "2026 年 LLM 基准评测全景：GPT-5.4 领跑编码，GLM-5 开源模型跻身前三",
-    summary: "BenchLM 发布 2026 年 4 月最新 LLM 基准评测，GPT-5.4 Pro 在 SWE-bench Verified 达 76.9%，GLM-5 开源模型在编码领域以 49.64 质量指数位列第二，标志开源模型正式进入顶级阵营。",
-    content: `![news-047](/images/news/benchmark.jpg)
-
-## LLM 基准评测 2026 年 4 月更新
-
-独立评测机构 BenchLM 和 LM Council 发布了 2026 年最新 LLM 基准评测报告。
-
-**SWE-bench Verified（软件工程）：**
-- GPT-5.4 Pro (xhigh)：**76.9%** — 最强工程能力
-- Claude 4.6 Opus Thinking：紧随其后
-- GPT-5.4 (high)：表现同样出色
-
-**编码质量指数（WhatLLM.org）：**
-- GPT-5.2 (xhigh)：**50.5** — LiveCodeBench 89%
-- **GLM-5 (Reasoning)：49.64** — 最佳开源综合模型
-- Claude Opus 4.5 (high)：49.1 — LiveCodeBench 87%
-
-**LiveBench 综合评测：**
-- GPT-5.4 Thinking xHigh：**80.28** — 综合领先
-- Claude 4.6 Opus Thinking：**76.33**
-- Claude 4.5 Opus Thinking：75.96
-
-**关键趋势：**
-- 头部模型差距缩小至 1-2 分，竞争白热化
-- 开源模型 GLM-5 正式跻身顶级编码能力前三
-- 前沿模型 API 价格同比下降 40-80%，性价比大幅提升`,
-    date: "2026-04-13",
-    source: "BenchLM / LM Council / WhatLLM",
-    sourceUrl: "https://benchlm.ai/blog/posts/state-of-llm-benchmarks-2026",
-    href: "/news/news-047",
-  },
-  {
-    id: "news-046",
+    id: "news-062",
     tag: "公司动态",
     tagColor: "bg-blue-500/10 text-blue-300",
-    coverImage: "/images/news/chips.jpg",
-    title: "亚马逊 CEO 提出 AI 芯片新战略，有望挑战英伟达市场主导地位",
-    summary: "亚马逊 CEO 提出全新的 AI 芯片发展路线图，通过自研芯片降低对英伟达 GPU 的依赖，这一战略可能重塑 AI 基础设施供应链格局。",
-    content: `![news-046](/images/news/chips.jpg)
+    coverImage: "/images/news/meta-layoffs.jpg",
+    title: "Meta 发布 Muse Spark —— 超智能实验室首款 AI 模型，内部代号 Avocado",
+    summary: "Meta 发布 Muse Spark，这是其超智能实验室（MSL）的首个 AI 模型，内部代号 Avocado。该模型已在 Meta AI 应用上线，并将扩展到 WhatsApp、Instagram、Facebook 和 AI 眼镜。",
+    content: `![news-062](/images/news/meta-layoffs.jpg)
 
-## 亚马逊 AI 芯片战略浮出水面
+## Meta Muse Spark：超智能实验室的首次亮相
 
-亚马逊 CEO 近日公开了公司在 AI 芯片领域的全新战略愿景，标志着这家科技巨头将更积极地挑战英伟达在 AI 加速芯片市场的主导地位。
+2026 年 4 月 8 日，Meta 正式发布了 Muse Spark，这是 Meta Superintelligence Labs (MSL) 的首个 AI 模型，也是该公司花费数十亿美元打造的超智能团队的首次成果。
 
-**战略要点：**
-- 亚马逊正在加速自研 AI 芯片（Trainium 和 Inferentia 系列）的迭代
-- 目标是降低 AWS 客户对英伟达 GPU 的依赖
-- 通过垂直整合降低 AI 训练和推理的成本
+**关键细节：**
+- Muse Spark 内部代号为 **Avocado**，经历了 9 个月的紧张开发周期
+- 由 Scale AI CEO Alex Wang 领导的超智能团队研发
+- 已上线 **Meta AI 应用和网站**，即将扩展到 WhatsApp、Instagram、Facebook 和 AI 眼镜
+- Meta 今年 AI 资本支出预计高达 **1350 亿美元**，几乎是去年的两倍
 
-**行业影响：**
-- 英伟达目前占据 AI 训练芯片市场超过 80% 的份额
-- 亚马逊、Google（TPU）和微软（Maia）都在推进自研芯片战略
-- 如果亚马逊成功，可能打破英伟达的垄断地位
+**战略背景：**
+- Meta 去年以 **143 亿美元**投资 Scale AI，并开出数亿美元薪酬包吸引顶级工程师
+- 此前 Llama 4 表现令人失望，Muse Spark 被视为 Meta 重回 AI 顶级阵营的关键
+- 开放源码版本计划随后发布
 
-**供应链重构：**
-AI 芯片供应链正在经历重大变革。大型科技公司不再满足于单纯采购英伟达芯片，而是通过自研+定制的方式降低成本、提升性能。这一趋势将对整个半导体产业产生深远影响。`,
-    date: "2026-04-13",
-    source: "Yahoo Finance",
-    sourceUrl: "https://finance.yahoo.com/video/amazon-ceos-ai-chip-vision-could-end-up-challenging-nvidia-200500488.html",
-    href: "/news/news-046",
+**行业竞争格局：**
+- 与 Anthropic Mythos（4 月 7 日发布）和 OpenAI Spud（开发中）形成三足鼎立
+- Meta 的隐私政策对 AI 系统数据使用限制较少，引发消费者关注
+
+**行业意义：**
+这是 Meta 从 Llama 开源战略向闭源超智能模型转型的标志性事件，代表了科技巨头在 AI 军备竞赛中的新赌注。`,
+    date: "2026-04-14",
+    source: "CNBC / Axios / Reuters / Fortune / NYT",
+    sourceUrl: "https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html",
+    href: "/news/news-062",
   },
   {
-    id: "news-045",
-    tag: "公司动态",
+    id: "news-061",
+    tag: "商业",
     tagColor: "bg-green-500/10 text-green-300",
     coverImage: "/images/news/funding.jpg",
-    title: "Anthropic Claude 付费用户今年翻倍，超级碗广告效应持续发酵",
-    summary: "据 TechCrunch 报道，Anthropic 确认 Claude 付费订阅用户今年已翻倍增长，Claude Code 和 Claude Cowork 等开发者工具成为主要增长驱动力。",
-    content: `![news-045](/images/news/funding.jpg)
+    title: "OpenAI 月营收突破 20 亿美元，计划 2030 年实现 1000 亿美元广告收入",
+    summary: "OpenAI 宣布月营收已达 20 亿美元，企业收入占比超 40%。据 Axios 报道，OpenAI 向投资者预测 2026 年广告收入 25 亿美元，2030 年将达 1000 亿美元，并推出 100 美元/月的 Pro 计划。",
+    content: `![news-061](/images/news/funding.jpg)
 
-## Claude 用户增长势不可挡
+## OpenAI 广告帝国蓝图：从 25 亿到 1000 亿美元
 
-Anthropic 的 Claude AI 在 2026 年迎来了爆发式的付费用户增长。
+2026 年 4 月，OpenAI 公布了令人瞩目的财务数据和激进的商业化计划。
 
-**关键数据：**
-- Claude 付费订阅用户今年已**翻倍增长**
-- 总用户估计在 **1800 万到 3000 万**之间
-- Super Bowl 广告 campaign 效果显著
+**财务数据：**
+- 月营收 **20 亿美元**，服务超 3 亿用户
+- 企业收入占比 **超 40%**，预计 2026 年底与消费者收入持平
+- 广告试点项目已在不到两个月内实现 **1 亿美元年度经常性收入**
 
-**增长驱动力：**
-- **Claude Code**：开发者 AI 编程工具，深受工程师欢迎
-- **Claude Cowork**：1 月发布的 productivity 工具，无需代码即可使用 AI 能力
-- **Computer Use**：本周发布的新功能，让 Claude 可以直接操作电脑，引发用户激增
+**广告收入预测：**
+- 2026 年：**25 亿美元**
+- 2027 年：110 亿美元
+- 2028 年：250 亿美元
+- 2029 年：530 亿美元
+- **2030 年：1000 亿美元**
 
-**与 OpenAI 的竞争：**
-- 尽管 OpenAI 仍是最的消费者 AI 平台
-- 但 Anthropic 在安全方面的立场赢得了大量企业客户
-- OpenAI 因与美国国防部（DOD）的合作引发争议后，部分用户转向 Claude
+**产品更新：**
+- 推出 **100 美元/月** 的新 Pro 计划（原为 200 美元统一价格）
+- 新 Pro 计划提供比 Plus 计划多 5 倍的 Codex 编码工具使用量
+- 定价结构重组：Plus（20 美元）、Pro（100 美元）、Premium（200 美元）
 
-**市场格局变化：**
-美国使用 Claude 企业工具的公司比例从一年前的约 4% 飙升至 20%，Anthropic 正在从一家安全至上的 AI 研究公司转变为主要商业平台。`,
-    date: "2026-04-13",
-    source: "TechCrunch / Indagari",
-    sourceUrl: "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/",
-    href: "/news/news-045",
+**战略转型：**
+- OpenAI 从"销售智能"转向"销售用户意图"，利用近 3 亿用户的深度对话数据提供超精准广告
+- 长期可能转向硬件（如 "AI 手机"）以锁定广告收入并绕过苹果应用商店费用
+- 标志着 AI "补贴时代"结束，商业化进入新阶段
+
+**行业影响：**
+OpenAI 的广告计划将直接挑战 Meta 的广告帝国，同时引发内容审核和"幻觉"责任问题，这与社交媒体巨头多年来面临的困境如出一辙。`,
+    date: "2026-04-14",
+    source: "Reuters / Axios / Yahoo Finance / Inc",
+    sourceUrl: "https://www.reuters.com/business/media-telecom/openai-projects-25-billion-ad-revenue-this-year-100-billion-by-2030-axios-2026-04-09/",
+    href: "/news/news-061",
   },
   {
-    id: "news-044",
-    tag: "行业趋势",
-    tagColor: "bg-purple-500/10 text-purple-300",
-    coverImage: "/images/news/autonomous.jpg",
-    title: "摩根士丹利警告：2026 年上半年 AI 将迎重大突破，多数人还没准备好",
-    summary: "摩根士丹利发布报告称，人工智能将在 2026 年上半年迎来重大技术突破，但全球大部分地区和企业尚未为此做好准备。",
-    content: `![news-044](/images/news/autonomous.jpg)
+    id: "news-060",
+    tag: "公司动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/venture-capital.jpg",
+    title: "OpenAI CFO 警告 IPO 计划过于激进，与 Sam Altman 产生分歧",
+    summary: "据 The Information 报道，OpenAI CFO Sarah Friar 内部警告 2026 年 Q4 的 IPO 时间线过于激进，与 CEO Sam Altman 产生分歧。她质疑公司是否有必要在未来五年投入 6000 亿美元。",
+    content: `![news-060](/images/news/venture-capital.jpg)
 
-## AI 突破即将到来
+## OpenAI 内部 IPO 分歧浮出水面
 
-金融巨头摩根士丹利发出警告：一场重大的 AI 突破正在 2026 年上半年酝酿，但大多数人和企业还没有做好准备。
+2026 年 4 月 5 日，据 The Information 独家报道，OpenAI 首席财务官 Sarah Friar 与公司 CEO Sam Altman 在 IPO 计划上产生重大分歧。
 
-**核心判断：**
-- AI 技术正在经历从"辅助工具"到"自主行动"的关键转变
-- Agentic AI（智能体 AI）将在 2026 年进入大规模应用阶段
-- 企业需要重新思考工作流程和组织结构
+**核心分歧：**
+- Sam Altman 希望 IPO 最早在 **2026 年第四季度**进行
+- Sarah Friar 认为公司尚未准备好，citing 所需的组织和程序工作
+- Friar 质疑 OpenAI 是否真的需要**五年内投入 6000 亿美元**获取 AI 服务器
+- 她对公司**收入增长放缓**是否能支撑如此巨额的支出承诺表示担忧
 
-**潜在影响：**
-- **就业市场**：AI 自动化将影响更多白领岗位
-- **行业重构**：软件、金融、医疗等行业面临根本性变革
-- **投资方向**：AI 基础设施和应用层将持续获得巨额投资
+**财务背景：**
+- OpenAI 刚完成 **1220 亿美元**融资，估值 8520 亿美元
+- 预计 2028 年在 AI 研究算力上花费 **1210 亿美元**
+- 月营收 20 亿美元，但距离盈利仍有巨大差距
 
-**准备建议：**
-摩根士丹利建议企业和投资者：
-- 加速 AI 技能培训
-- 重新设计业务流程以适应 AI 驱动的工作模式
-- 关注 AI 安全与治理
-- 投资 AI 基础设施和相关股票
+**管理结构变化：**
+- Friar 去年开始向 Fidji Simo（前 Instacart CEO）汇报，Simo 负责 OpenAI 应用业务
+- 这一汇报关系变化被视为 Altman 对 CFO 影响力的削弱
 
-**行业背景：**
-这一判断与当前的 AI 发展趋势高度吻合——Claude 的 Computer Use 功能、Google 的 Agentic AI 能力、以及 92% 的美国开发者日常使用 AI 编码工具，都预示着 AI 正在从"辅助"走向"自主"。`,
-    date: "2026-04-13",
-    source: "Yahoo Finance / Morgan Stanley",
-    sourceUrl: "https://finance.yahoo.com/news/morgan-stanley-warns-ai-breakthrough-072000084.html",
-    href: "/news/news-044",
+**华尔街日报补充报道：**
+OpenAI 和 Anthropic 在准备 IPO 时面临共同的"阿喀琉斯之踵"——训练新 AI 模型的高昂成本。两家公司的烧钱速度在科技史上前所未有。`,
+    date: "2026-04-14",
+    source: "The Information / WSJ / PYMNTS",
+    sourceUrl: "https://www.pymnts.com/news/ipo/2026/openai-leaders-at-odds-over-ipo-plans/",
+    href: "/news/news-060",
+  },
+  {
+    id: "news-059",
+    tag: "前沿技术",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    coverImage: "/images/news/benchmark.jpg",
+    title: "MIT 研发 CompreSSM 新技术 —— 训练过程中让 AI 模型更小更快更高效",
+    summary: "MIT 研究人员利用控制论原理开发了 CompreSSM 技术，在训练过程中动态去除 AI 模型的冗余复杂度，无需额外训练即可实现模型压缩，大幅降低算力成本。",
+    content: `![news-059](/images/news/benchmark.jpg)
+
+## MIT CompreSSM：训练中的模型压缩革命
+
+2026 年 4 月 9 日，MIT EECS 研究人员发表了一项突破性技术 CompreSSM，能够在 AI 模型训练过程中直接实现压缩。
+
+**技术原理：**
+- 利用**控制论**原理，在训练过程中动态识别并去除模型中的冗余参数
+- 随着训练推进自动精简模型结构，无需额外的后训练压缩步骤
+- 已接受 ICLR 2026 收录
+
+**核心优势：**
+- **更小**：在保持性能的同时显著减少模型参数
+- **更快**：推理速度大幅提升
+- **更便宜**：降低训练和推理的算力成本
+
+**应用前景：**
+- 随着 AI 模型规模不断扩大，平衡性能与成本成为最大挑战之一
+- 该技术对复杂推理、规划和实时决策任务尤为重要
+- 可大幅降低 AI 模型部署的门槛
+
+**学术意义：**
+- 这是首个在**训练过程中**实现压缩的技术，而非传统的训练后压缩
+- 代表了从"越大越好"到"精简高效"的 AI 发展范式转变
+- 与当前的模型效率竞赛（如 Google Gemma、Meta Llama 的轻量化路线）高度契合`,
+    date: "2026-04-14",
+    source: "MIT News / EECS",
+    sourceUrl: "https://news.mit.edu/2026/new-technique-makes-ai-models-leaner-faster-while-still-learning-0409",
+    href: "/news/news-059",
   },
   {
     id: "news-053",
