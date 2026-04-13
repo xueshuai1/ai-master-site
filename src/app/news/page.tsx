@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useMemo } from "react";
 import { news } from "@/data/news";
 import Footer from "@/components/Footer";
@@ -9,11 +8,10 @@ import Navbar from "@/components/Navbar";
 
 const NEWS_PER_PAGE = 10;
 
-// 只保留最近 3 天的新闻
 function getLast3DaysNews() {
   const now = new Date();
   const threeDaysAgo = new Date(now);
-  threeDaysAgo.setDate(now.getDate() - 2); // 包含今天、昨天、前天
+  threeDaysAgo.setDate(now.getDate() - 2);
 
   return news.filter((n) => {
     const d = new Date(n.date + "T00:00:00");
@@ -35,7 +33,6 @@ export default function NewsPage() {
   const recentNews = useMemo(() => getLast3DaysNews(), []);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 按日期倒序
   const sortedNews = useMemo(
     () => [...recentNews].sort((a, b) => b.date.localeCompare(a.date)),
     [recentNews]
@@ -64,12 +61,6 @@ export default function NewsPage() {
               最近 3 天共 <span className="text-brand-400 font-medium">{recentNews.length}</span> 条动态
             </p>
           )}
-          {/* Hero Cover */}
-          {recentNews[0] && recentNews[0].coverImage && (
-            <div className="relative mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-500/10">
-              <Image src={recentNews[0].coverImage} alt={recentNews[0].title} fill className="object-cover opacity-80" sizes="(max-width: 640px) 100vw, 640px" />
-            </div>
-          )}
         </div>
       </section>
 
@@ -90,13 +81,6 @@ export default function NewsPage() {
                   href={item.href}
                   className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/20 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5"
                 >
-                  {/* Cover Image */}
-                  {item.coverImage && (
-                    <div className="relative sm:w-40 sm:h-28 rounded-xl overflow-hidden shrink-0 bg-gradient-to-br from-brand-500/10 to-slate-800/50">
-                      <Image src={item.coverImage} alt="" fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 640px) 160px, 160px" />
-                    </div>
-                  )}
-
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-2 flex-wrap">

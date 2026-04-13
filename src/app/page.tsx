@@ -167,7 +167,7 @@ export default function Home() {
 
       {/* Blog Preview Section */}
       <section id="blog" className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-12">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-2">
@@ -200,7 +200,7 @@ export default function Home() {
 
       {/* Latest News Section */}
       <section id="news" className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-2">

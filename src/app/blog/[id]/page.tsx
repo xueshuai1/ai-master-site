@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogs } from "@/data/blogs";
 import ReactMarkdown from "react-markdown";
@@ -47,10 +46,6 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
             <Link href="/blog" className="hover:text-slate-300 transition-colors">博客</Link>
             <span>/</span>
             <span className="text-slate-400 truncate">{post.title}</span>
-          </div>
-
-          <div className="text-center mb-6">
-            <span className="text-6xl">📝</span>
           </div>
 
           {/* Category badge */}

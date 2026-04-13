@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useMemo } from "react";
 import { blogs } from "@/data/blogs";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-// 自动从 blogs.ts 生成列表数据
 const blogPosts = blogs.map((b) => ({
   id: b.id,
   title: b.title,
@@ -17,7 +15,6 @@ const blogPosts = blogs.map((b) => ({
   readTime: `${b.readTime} min`,
   category: b.tags.length > 0 ? b.tags[0] : "行业洞察",
   tags: b.tags,
-  cover: b.coverImage || "📝",
 }));
 
 const blogCategories = ["全部", ...Array.from(new Set(blogs.flatMap((b) => b.tags.slice(0, 1))))];
@@ -33,13 +30,11 @@ export default function BlogPage() {
     return blogPosts.filter((p) => p.category === activeCategory);
   }, [activeCategory]);
 
-  // Reset to page 1 when category changes
   const handleCategoryChange = (cat: string) => {
     setActiveCategory(cat);
     setCurrentPage(1);
   };
 
-  // Pagination
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
   const startIndex = (safePage - 1) * POSTS_PER_PAGE;
@@ -47,7 +42,6 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
-      {/* Navigation */}
       <Navbar activePath="/blog" />
 
       {/* Hero */}
@@ -94,54 +88,36 @@ export default function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className={`group flex flex-col sm:flex-row gap-6 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 ${
+                className={`group block p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 ${
                   index === 0 ? "sm:col-span-2" : ""
                 }`}
               >
-                {/* Cover */}
-                {post.cover && (post.cover.startsWith('/images/') || post.cover.includes('clouddn.com')) ? (
-                  <div className={`relative rounded-xl overflow-hidden bg-gradient-to-br from-brand-500/10 to-accent-500/10 shrink-0 ${
-                    index === 0 ? "sm:w-48 sm:h-48" : "sm:w-32 sm:h-32"
-                  } w-full h-32 sm:h-auto`}>
-                    <Image src={post.cover} alt={post.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 128px, 192px" />
-                  </div>
-                ) : (
-                  <div className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/10 to-accent-500/10 shrink-0 ${
-                    index === 0 ? "sm:w-48 sm:h-48" : "sm:w-32 sm:h-32"
-                  } w-full h-32 sm:h-auto`}>
-                    <span className={index === 0 ? "text-6xl" : "text-4xl"}>{post.cover || "📝"}</span>
-                  </div>
-                )}
+                <div className="flex items-center gap-2 mb-3 flex-wrap">
+                  <span className="px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-slate-500">{post.date}</span>
+                  <span className="text-xs text-slate-500">📖 {post.readTime}</span>
+                </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-3 flex-wrap">
-                    <span className="px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-xs font-medium">
-                      {post.category}
-                    </span>
-                    <span className="text-xs text-slate-500">{post.date}</span>
-                    <span className="text-xs text-slate-500">📖 {post.readTime}</span>
-                  </div>
+                <h2 className={`font-bold mb-2 group-hover:text-brand-300 transition-colors leading-snug ${
+                  index === 0 ? "text-xl sm:text-2xl" : "text-lg"
+                }`}>
+                  {post.title}
+                </h2>
 
-                  <h2 className={`font-bold mb-2 group-hover:text-brand-300 transition-colors leading-snug ${
-                    index === 0 ? "text-xl sm:text-2xl" : "text-lg"
-                  }`}>
-                    {post.title}
-                  </h2>
+                <p className="text-slate-400 text-sm leading-relaxed mb-3 line-clamp-2">
+                  {post.summary}
+                </p>
 
-                  <p className="text-slate-400 text-sm leading-relaxed mb-3 line-clamp-2">
-                    {post.summary}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">✍️ {post.author}</span>
-                    <div className="flex gap-2 flex-wrap">
-                      {post.tags.map((tag) => (
-                        <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-400">
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">✍️ {post.author}</span>
+                  <div className="flex gap-2 flex-wrap">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-400">
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </Link>
@@ -187,4 +163,3 @@ export default function BlogPage() {
     </main>
   );
 }
-// force redeploy 1776020228
