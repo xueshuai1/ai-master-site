@@ -680,6 +680,109 @@ GitHub 在 r/github 社区发布了一项引发广泛讨论的政策更新。
     source: "devFlokers / 综合报道",
     sourceUrl: "https://www.devflokers.com/blog/new-ai-models-papers-open-source-daily-9-april-2026",
     href: "/news/news-044",
-  }
+  },
+  {
+    id: "news-045",
+    tag: "行业趋势",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI、Anthropic、Google 罕见联手：共同打击中国 AI 模型复制",
+    summary: "三大竞争对手通过 Frontier Model Forum 共享信息，联合检测对抗性蒸馏行为，OpenAI 指控 DeepSeek 搭便车。",
+    content: `2026 年 4 月 6 日，据 Bloomberg 独家报道，OpenAI、Anthropic 和 Google 开始通过 Frontier Model Forum（前沿模型论坛）共享信息，联合打击中国竞争对手的"对抗性蒸馏"行为。
+
+**什么是对抗性蒸馏？**
+- 通过大量 API 查询，提取前沿模型的输出结果
+- 用这些数据训练 smaller/cheaper 模型，复制前沿模型的能力
+- 绕过了直接训练大模型所需的巨额计算投入
+
+**三大巨头的联合行动：**
+- 通过 2023 年共同创立的 Frontier Model Forum 共享蒸馏攻击信息
+- Microsoft 也是该论坛的创始成员
+- 各公司正在共享有关可疑查询模式的数据
+
+**OpenAI 的指控：**
+- OpenAI 向美国国会提交备忘录，明确指控 DeepSeek 试图"搭便车"利用 OpenAI 和其他美国前沿实验室开发的能力
+- 认为这种行为违反了服务条款
+
+**反垄断困境：**
+- 由于现有反垄断法规的限制，AI 公司之间能共享的信息仍然有限
+- 各大公司对于哪些信息可以合法共享存在不确定性
+
+**行业影响：**
+- 这标志着 AI 巨头从纯粹竞争转向"竞合"关系
+- 中国 AI 模型（如 DeepSeek）在过去两年取得了巨大进步
+- 这场"蒸馏战争"可能影响全球 AI 竞争格局
+
+*来源：Bloomberg、The Straits Times*`,
+    date: "2026-04-13",
+    source: "Bloomberg / Straits Times",
+    sourceUrl: "https://www.bloomberg.com/news/articles/2026-04-06/openai-anthropic-google-unite-to-combat-model-copying-in-china",
+    href: "/news/news-045",
+  },
+  {
+    id: "news-046",
+    tag: "算力基础设施",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Anthropic 扩大与 Google 和博通合作：TPU 算力扩容至 3.5GW，年化收入突破 300 亿美元",
+    summary: "Anthropic 宣布与 Google Cloud 和博通达成扩展协议，TPU 算力从 1GW 增至 3.5GW，年化收入从 90 亿飙升至 300 亿美元以上。",
+    content: `2026 年 4 月 6 日，Anthropic 宣布与 Google Cloud 和博通（Broadcom）达成重大扩展协议。
+
+**算力扩展：**
+- TPU 算力从 1 吉瓦（GW）扩展至 3.5 吉瓦
+- 基于 Google 自研的 Tensor Processing Unit（TPU）芯片
+- 博通将为 Google 和 Anthropic 生产下一代 AI 芯片
+
+**财务亮点：**
+- Anthropic 年化收入已突破 300 亿美元
+- 2025 年底年化收入约 90 亿美元，增长超过 3 倍
+- 此前刚刚完成 300 亿美元 G 轮融资，估值 3800 亿美元
+
+**战略意义：**
+- Anthropic 正从单一的 Claude 产品公司向平台级企业转型
+- 大规模算力投入为其开发 Foundation Models 和 Enterprise Applications 提供基础
+- 与 Google 的 TPU 生态深度绑定，减少对 NVIDIA GPU 的依赖
+
+**行业背景：**
+- OpenAI 也已承诺使用 6 吉瓦 AMD GPU
+- AI 算力军备竞赛持续升级，各公司对算力的需求远超当前供应
+- 博通 CEO 表示"2026 年 Anthropic 起步非常好"
+
+*来源：TechCrunch、CNBC、Anthropic 官方博客*`,
+    date: "2026-04-13",
+    source: "TechCrunch / CNBC / Anthropic",
+    sourceUrl: "https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/",
+    href: "/news/news-046",
+  },
+  {
+    id: "news-047",
+    tag: "行业报告",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Stanford HAI 2026 AI Index 报告今日发布——全球 AI 发展的权威晴雨表",
+    summary: "斯坦福大学以人为本人工智能研究所（HAI）今日发布 2026 年度 AI Index 报告，涵盖 AI 研发、投资、人才、政策等全方位数据。",
+    content: `2026 年 4 月 13 日，Stanford HAI（以人为本人工智能研究所）正式发布 2026 年度 AI Index 报告。
+
+**AI Index 是什么？**
+- 全球最受关注的 AI 年度综合报告
+- 由斯坦福大学 HAI 研究所编制
+- 涵盖 AI 研发趋势、投资流向、人才分布、政策动态、公众认知等多个维度
+
+**2026 年值得关注的数据：**
+- GitHub 上 AI 相关仓库已突破 430 万个，同比增长 178%
+- AI 初创公司融资持续升温，2026 年已有 17 家美国 AI 公司融资超 1 亿美元
+- 全球科技巨头 2026 年 AI 资本支出预计超过 3000 亿美元
+- 中国 AI 论文发表量持续领先，但美国在顶尖论文质量上仍占优势
+
+**政策与伦理：**
+- 全球 AI 监管框架加速完善
+- 欧盟 AI Act 进入全面实施阶段
+- 美国国会围绕 AI 安全立法展开激烈辩论
+
+**AI Index 报告每年为政策制定者、研究人员和企业提供权威参考数据，是了解 AI 行业发展最全面的信息来源之一。**
+
+*来源：Stanford HAI*`,
+    date: "2026-04-13",
+    source: "Stanford HAI",
+    sourceUrl: "https://hai.stanford.edu/ai-index",
+    href: "/news/news-047",
+  },
 
 ];

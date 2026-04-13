@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useMemo } from "react";
 import { blogs } from "@/data/blogs";
 import Footer from "@/components/Footer";
@@ -102,7 +103,7 @@ export default function BlogPage() {
                   <div className={`rounded-xl overflow-hidden bg-gradient-to-br from-brand-500/10 to-accent-500/10 shrink-0 ${
                     index === 0 ? "sm:w-48 sm:h-48" : "sm:w-32 sm:h-32"
                   } w-full h-32 sm:h-auto`}>
-                    <img src={post.cover} alt={post.title} className="w-full h-full object-cover" />
+                    <Image src={post.cover} alt={post.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 128px, 192px" />
                   </div>
                 ) : (
                   <div className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/10 to-accent-500/10 shrink-0 ${

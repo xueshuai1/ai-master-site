@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { news } from "@/data/news";
@@ -78,11 +79,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
           {/* Cover Image */}
           {item.coverImage && (
             <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-500/10">
-              <img
-                src={item.coverImage}
-                alt={item.title}
-                className="w-full h-48 sm:h-64 lg:h-80 object-cover"
-              />
+              <Image src={item.coverImage} alt={item.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 512px, 896px" />
             </div>
           )}
 
@@ -132,7 +129,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
                       {n.title}
                     </h3>
                     {n.coverImage && (
-                      <img src={n.coverImage} alt={n.title} className="w-8 h-8 rounded object-cover ml-3 shrink-0" />
+                      <Image src={n.coverImage} alt={n.title} width={32} height={32} className="rounded object-cover ml-3 shrink-0" />
                     )}
                   </div>
                   <span className="text-slate-500 text-sm">{n.date}</span>

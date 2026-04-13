@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useMemo } from "react";
 import { news } from "@/data/news";
 import Footer from "@/components/Footer";
@@ -66,11 +67,7 @@ export default function NewsPage() {
           {/* Hero Cover */}
           {recentNews[0] && recentNews[0].coverImage && (
             <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-500/10">
-              <img
-                src={recentNews[0].coverImage}
-                alt={recentNews[0].title}
-                className="w-full h-48 sm:h-56 object-cover opacity-80"
-              />
+              <Image src={recentNews[0].coverImage} alt={recentNews[0].title} fill className="object-cover opacity-80" sizes="(max-width: 640px) 100vw, 640px" />
             </div>
           )}
         </div>
@@ -96,11 +93,7 @@ export default function NewsPage() {
                   {/* Cover Image */}
                   {item.coverImage && (
                     <div className="sm:w-40 sm:h-28 rounded-xl overflow-hidden shrink-0 bg-gradient-to-br from-brand-500/10 to-slate-800/50">
-                      <img
-                        src={item.coverImage}
-                        alt=""
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                      <Image src={item.coverImage} alt="" fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 640px) 160px, 160px" />
                     </div>
                   )}
 
