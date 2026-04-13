@@ -4,8 +4,8 @@
 
 MESSAGE=${1:-"update: 内容更新"}
 
-# macOS 兼容的北京时间获取方式
-BJ_TIME=$(date -v+8H +"%Y-%m-%d %H:%M")
+# 获取当前时间（北京时间）
+BJ_TIME=$(date +"%Y-%m-%d %H:%M")
 
 # 更新首页时间戳
 cat > src/data/update-time.ts << EOF
