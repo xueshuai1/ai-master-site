@@ -189,7 +189,13 @@ export default function Home() {
                   href={`/blog/${post.id}`}
                   className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer"
                 >
-                  <div className="text-3xl mb-4">{post.coverImage || "📝"}</div>
+                  {post.coverImage && (post.coverImage.startsWith('/images/') || post.coverImage.includes('clouddn.com')) ? (
+                    <div className="mb-4 rounded-xl overflow-hidden h-32">
+                      <Image src={post.coverImage} alt={post.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, 384px" unoptimized />
+                    </div>
+                  ) : (
+                    <div className="text-3xl mb-4">{post.coverImage || "📝"}</div>
+                  )}
                   <span className="inline-block px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-xs font-medium mb-3">
                     {post.tags[0] || "行业洞察"}
                   </span>
