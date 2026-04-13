@@ -11,6 +11,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { label: "首页", href: "/" },
   { label: "知识库", href: "/knowledge" },
+  { label: "新闻", href: "/news" },
   { label: "工具集", href: "/tools" },
   { label: "博客", href: "/blog" },
   { label: "学习路线", href: "/roadmap" },

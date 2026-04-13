@@ -64,10 +64,13 @@ function ToolCard({ tool }: { tool: Tool }) {
   );
 }
 
+const TOOLS_PER_PAGE = 20;
+
 export default function ToolsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<"default" | "recent">("default");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredTools = useMemo(() => {
     let result = tools.filter((t) => {
@@ -88,6 +91,18 @@ export default function ToolsPage() {
     }
     return result;
   }, [activeCategory, searchQuery, sortBy]);
+
+  // Reset page when filters change
+  const totalPages = Math.max(1, Math.ceil(filteredTools.length / TOOLS_PER_PAGE));
+  const safePage = Math.min(currentPage, totalPages);
+  const paginatedTools = filteredTools.slice(
+    (safePage - 1) * TOOLS_PER_PAGE,
+    safePage * TOOLS_PER_PAGE
+  );
+
+  const handleFilterChange = () => {
+    setCurrentPage(1);
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
@@ -137,7 +152,7 @@ export default function ToolsPage() {
               type="text"
               placeholder="搜索工具、标签..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => { setSearchQuery(e.target.value); handleFilterChange(); }}
               className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
             />
           </div>
@@ -149,7 +164,7 @@ export default function ToolsPage() {
               return (
                 <button
                   key={c.key}
-                  onClick={() => setActiveCategory(c.key)}
+                  onClick={() => { setActiveCategory(c.key); handleFilterChange(); }}
                   className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                     isActive
                       ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
@@ -175,7 +190,7 @@ export default function ToolsPage() {
             </p>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => setSortBy("default")}
+                onClick={() => { setSortBy("default"); handleFilterChange(); }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                   sortBy === "default" ? "bg-brand-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
                 }`}
@@ -183,7 +198,7 @@ export default function ToolsPage() {
                 默认排序
               </button>
               <button
-                onClick={() => setSortBy("recent")}
+                onClick={() => { setSortBy("recent"); handleFilterChange(); }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                   sortBy === "recent" ? "bg-brand-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
                 }`}
@@ -194,11 +209,46 @@ export default function ToolsPage() {
           </div>
 
           {filteredTools.length > 0 ? (
+            <>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filteredTools.map((tool) => (
+              {paginatedTools.map((tool) => (
                 <ToolCard key={tool.id} tool={tool} />
               ))}
             </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-10">
+                <button
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={safePage === 1}
+                  className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                >
+                  ← 上一页
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${
+                      page === safePage
+                        ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                        : "bg-white/5 border border-white/10 text-slate-400 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={safePage === totalPages}
+                  className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                >
+                  下一页 →
+                </button>
+              </div>
+            )}
+            </>
           ) : (
             <div className="text-center py-20">
               <div className="text-5xl mb-4">🔍</div>
@@ -208,6 +258,7 @@ export default function ToolsPage() {
                 onClick={() => {
                   setSearchQuery("");
                   setActiveCategory("all");
+                  setCurrentPage(1);
                 }}
                 className="mt-4 px-6 py-2 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all"
               >

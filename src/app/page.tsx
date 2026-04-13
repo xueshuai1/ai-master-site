@@ -124,7 +124,7 @@ export default function Home() {
             {[
               { num: `${articles.length}+`, label: "篇教程" },
               { num: `${tools.length}+`, label: "个工具" },
-              { num: "10K+", label: "学习者" },
+              { num: `${news.length}+`, label: "条新闻" },
               { num: "100%", label: "免费" },
             ].map((stat) => (
               <div key={stat.label}>
