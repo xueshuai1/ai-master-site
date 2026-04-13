@@ -67,9 +67,10 @@ function ToolCard({ tool }: { tool: Tool }) {
 export default function ToolsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState<"default" | "recent">("default");
 
   const filteredTools = useMemo(() => {
-    return tools.filter((t) => {
+    let result = tools.filter((t) => {
       const matchCategory = activeCategory === "all" || t.category === activeCategory;
       const matchSearch =
         !searchQuery ||
@@ -78,7 +79,15 @@ export default function ToolsPage() {
         t.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchSearch;
     });
-  }, [activeCategory, searchQuery]);
+    if (sortBy === "recent") {
+      result = [...result].sort((a, b) => {
+        const da = a.updatedAt || "2024-01-01";
+        const db = b.updatedAt || "2024-01-01";
+        return db.localeCompare(da);
+      });
+    }
+    return result;
+  }, [activeCategory, searchQuery, sortBy]);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
@@ -164,6 +173,24 @@ export default function ToolsPage() {
             <p className="text-sm text-slate-500">
               找到 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个工具
             </p>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setSortBy("default")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  sortBy === "default" ? "bg-brand-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
+                }`}
+              >
+                默认排序
+              </button>
+              <button
+                onClick={() => setSortBy("recent")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  sortBy === "recent" ? "bg-brand-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
+                }`}
+              >
+                🕒 最近更新
+              </button>
+            </div>
           </div>
 
           {filteredTools.length > 0 ? (

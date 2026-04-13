@@ -9,6 +9,7 @@ export interface Tool {
   tags: string[];
   price: "免费" | "开源" | "付费" | "免费+付费";
   icon: string;
+  updatedAt?: string;
 }
 
 export const toolCategories = [
@@ -983,5 +984,61 @@ export const tools: Tool[] = [
     tags: ["CLI", "Rust", "RAG", "Shell 助手", "多提供商"],
     price: "开源",
     icon: "💬",
+  },
+  // 2026.04 新增
+  {
+    id: "muse-spark",
+    name: "Muse Spark (Meta)",
+    category: "llm",
+    description: "Meta 超智能实验室(MSL)首款 AI 模型，内部代号 Avocado，多 Agent 并行架构，已在 Meta AI 上线，即将扩展到 WhatsApp、Instagram、Facebook 和 AI 眼镜",
+    url: "https://meta.ai",
+    tags: ["多 Agent", "Meta", "超智能", "跨平台", "2026 新作"],
+    price: "免费+付费",
+    icon: "✨",
+    updatedAt: "2026-04-09",
+  },
+  {
+    id: "google-notebooklm",
+    name: "Google NotebookLM",
+    category: "agent",
+    description: "Google AI 驱动的研究笔记工具，支持上传文档、网页、PDF 等来源，自动生成摘要、播客和研究报告，集成 Gemini 引擎",
+    url: "https://notebooklm.google.com",
+    tags: ["研究", "笔记", "文档分析", "Gemini", "播客生成"],
+    price: "免费",
+    icon: "📓",
+    updatedAt: "2026-04-08",
+  },
+  {
+    id: "colab-learn",
+    name: "Google Colab Learn Mode",
+    category: "framework",
+    description: "Google Colab 2026 年 4 月新增的个人编程导师模式，基于 AI 提供交互式代码教学和实时指导，降低编程学习门槛",
+    url: "https://blog.google/technology/developers-tools/colab-updates/",
+    tags: ["编程学习", "AI 导师", "Colab", "交互式教学", "2026 新作"],
+    price: "免费",
+    icon: "🎓",
+    updatedAt: "2026-04-08",
+  },
+  {
+    id: "gemini-notebooks",
+    name: "Gemini Notebooks",
+    category: "agent",
+    description: "Gemini 内置笔记功能，与 NotebookLM 深度联动，支持项目跟踪、代码片段保存、研究笔记整理，AI 辅助知识管理",
+    url: "https://gemini.google.com",
+    tags: ["笔记", "项目管理", "Gemini", "知识管理", "2026 新作"],
+    price: "免费+付费",
+    icon: "📒",
+    updatedAt: "2026-04-08",
+  },
+  {
+    id: "claude-cowork",
+    name: "Claude Cowork (Anthropic)",
+    category: "agent",
+    description: "Anthropic 企业级共享 AI 工作空间，支持 Zoom 会议纪要自动生成、自主工作流部署，Notion、Rakuten、Asana、Sentry 等公司已采用",
+    url: "https://claude.com",
+    tags: ["企业级", "协作", "Anthropic", "自动化", "2026 新作"],
+    price: "付费",
+    icon: "🤝",
+    updatedAt: "2026-04-08",
   },
 ];
