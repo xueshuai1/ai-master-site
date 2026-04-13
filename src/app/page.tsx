@@ -190,7 +190,7 @@ export default function Home() {
                   className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 cursor-pointer"
                 >
                   {post.coverImage && (post.coverImage.startsWith('/images/') || post.coverImage.includes('clouddn.com')) ? (
-                    <div className="mb-4 rounded-xl overflow-hidden h-32">
+                    <div className="relative mb-4 rounded-xl overflow-hidden h-32">
                       <Image src={post.coverImage} alt={post.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, 384px" unoptimized />
                     </div>
                   ) : (
@@ -235,7 +235,7 @@ export default function Home() {
               className="group block mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-brand-600/15 via-slate-800/60 to-slate-900/60 border border-brand-500/20 hover:border-brand-500/40 transition-all hover:shadow-lg hover:shadow-brand-500/10"
             >
               {headlineNews.coverImage && (
-                <div className="h-40 sm:h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-48 overflow-hidden">
                   <Image src={headlineNews.coverImage} alt={headlineNews.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, 640px" unoptimized />
                 </div>
               )}

@@ -78,7 +78,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
 
           {/* Cover Image */}
           {item.coverImage && (
-            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-500/10">
+            <div className="relative mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-500/10">
               <Image src={item.coverImage} alt={item.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 512px, 896px" />
             </div>
           )}
