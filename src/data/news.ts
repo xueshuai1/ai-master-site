@@ -15,6 +15,45 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-026",
+    tag: "Security",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Anthropic Launches Project Glasswing: 12 Tech Giants Unite to Use Claude Mythos for Cybersecurity Defense",
+    summary: "Anthropic announced Project Glasswing, a coalition of AWS, Apple, Google, Microsoft, Nvidia, CrowdStrike, and others using Claude Mythos Preview to identify and patch thousands of high-severity vulnerabilities in critical open-source software.",
+    content: `Anthropic has launched Project Glasswing, an unprecedented cybersecurity initiative that brings together the world's largest tech companies to use its most powerful AI model — Claude Mythos Preview — for defensive security work.
+
+**The Coalition:**
+Project Glasswing includes 12 launch partners: Amazon Web Services, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, Nvidia, and Palo Alto Networks.
+
+"No one organization can solve these cybersecurity problems alone: frontier AI developers, other software companies, security researchers, open-source maintainers, and governments across the world all have essential roles to play," Anthropic said in the announcement.
+
+**What Mythos Preview Has Already Found:**
+- Thousands of high-severity vulnerabilities across every major operating system and web browser
+- Vulnerabilities discovered and exploits developed entirely autonomously, without human steering
+- A 17-year-old remote code execution vulnerability in FreeBSD, allowing anyone to gain root access
+- Critical bugs in Firefox and other widely-used open-source projects
+
+**How It Works:**
+- Launch partners get access to Claude Mythos Preview for defensive cybersecurity work
+- The model proactively identifies and fixes vulnerabilities in critical open-source codebases at scale
+- Anthropic will share what it learns so the whole industry can benefit
+- The Frontier Red Team has published extensive technical writeups of patched vulnerabilities
+
+**U.S. Government Engagement:**
+- Anthropic confirmed it has been in "ongoing discussions with US government officials about Claude Mythos Preview and its offensive and defensive cyber capabilities"
+- The company has "briefed senior officials in the US government about Mythos and what it can do"
+- A federal judge recently blocked the Pentagon from labeling Anthropic AI as a "supply chain risk"
+
+**Industry Impact:**
+This represents a fundamental shift in how the tech industry approaches cybersecurity. Rather than releasing the most powerful AI model to the public, Anthropic is creating a controlled coalition to use it defensively — essentially an AI-powered immune system for the world's critical software infrastructure.
+
+As Anthropic noted: "The work of defending the world's cyber infrastructure might take years; frontier AI capabilities are likely to advance substantially over just the next few months."`,
+    date: "2026-04-13",
+    source: "Anthropic / The Verge / ZDNet",
+    sourceUrl: "https://www.anthropic.com/glasswing",
+    href: "/news/news-026",
+  },
+  {
     id: "news-025",
     tag: "Finance",
     tagColor: "bg-amber-500/10 text-amber-300",
