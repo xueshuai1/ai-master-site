@@ -48,12 +48,17 @@ function ToolCard({ tool }: { tool: Tool }) {
       </p>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-1.5">
-        {tool.tags.map((tag) => (
-          <span key={tag} className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-400">
+      <div className="flex flex-wrap gap-1.5 overflow-hidden">
+        {tool.tags.slice(0, 4).map((tag) => (
+          <span key={tag} className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-400 whitespace-nowrap">
             #{tag}
           </span>
         ))}
+        {tool.tags.length > 4 && (
+          <span className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-500">
+            +{tool.tags.length - 4}
+          </span>
+        )}
       </div>
     </a>
   );
