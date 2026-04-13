@@ -564,4 +564,36 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🦙",
   },
+  // 智能体平台 - 2026.04 新增
+  {
+    id: "aider",
+    name: "Aider AI",
+    category: "agent",
+    description: "终端 AI 结对编程工具，直接在本地 git 仓库中与 LLM 协作编辑代码，支持 100+ 编程语言、语音编程、自动测试和 lint 检查、多模型切换，GitHub 43k+ 星，Apache 2.0 开源",
+    url: "https://aider.chat",
+    tags: ["终端编程", "结对编程", "Git 集成", "开源", "多模型"],
+    price: "开源",
+    icon: "🛟",
+  },
+  {
+    id: "perplexity",
+    name: "Perplexity AI",
+    category: "llm",
+    description: "AI 驱动的答案引擎，结合实时网络搜索与高级 AI 推理，提供带引用的精准答案，支持 Deep Research 深度研究、Model Council 多模型交叉验证、Sonar API 开发者接口，2026 年替代传统搜索的首选工具",
+    url: "https://www.perplexity.ai",
+    tags: ["AI 搜索", "实时数据", "深度研究", "引用溯源"],
+    price: "免费+付费",
+    icon: "🔎",
+  },
+  // 图像视觉 - 2026.04 新增
+  {
+    id: "synthesia",
+    name: "Synthesia",
+    category: "vision",
+    description: "AI 视频生成平台，支持逼真数字人出镜、130+ 语言 AI 配音和配音、Express-2 超写实 Avatar、多机位拍摄效果，企业培训、营销视频首选，2026 年新增 Excel 插件和 SCORM 交互视频",
+    url: "https://www.synthesia.io",
+    tags: ["数字人", "视频生成", "多语言配音", "企业培训"],
+    price: "付费",
+    icon: "🎭",
+  },
 ];

@@ -15,6 +15,92 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-030",
+    tag: "Research",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "MIT Introduces CompreSSM: Control Theory Method Compresses AI Models During Training",
+    summary: "MIT CSAIL researchers developed CompreSSM, a technique using control theory to dynamically remove unnecessary complexity from state-space models during training, making AI models leaner and faster without sacrificing accuracy.",
+    content: `MIT researchers have developed CompreSSM, a novel compression technique that makes AI models smaller, faster, and more efficient during the training process itself — not after.
+
+**How It Works:**
+- Uses principles from control theory to identify and remove redundant parameters while models are still learning
+- Targets state-space models (SSMs), emerging alternatives to transformers for long-sequence tasks
+- Dynamically streamlines model architecture as training progresses, rather than applying post-hoc pruning
+
+**Key Advantages:**
+- More efficient training: models learn using fewer computational resources
+- State-space models are already leaner alternatives to transformers for audio processing, robotics, and extended language contexts
+- CompreSSM tips the balance further for specific use cases
+
+**Applications:**
+- Language processing with long temporal dependencies
+- Audio analysis and speech recognition
+- Robotics control systems
+- Any domain requiring efficient sequence modeling
+
+**Strategic Significance:**
+As AI models continue to scale in size, techniques like CompreSSM address one of the biggest challenges in modern AI development: balancing performance with cost and efficiency. By reducing computational overhead during learning itself, this approach could democratize access to advanced AI capabilities.`,
+    date: "2026-04-13",
+    source: "MIT News / ICLR 2026",
+    sourceUrl: "https://news.mit.edu/2026/new-technique-makes-ai-models-leaner-faster-while-still-learning-0409",
+    href: "/news/news-030",
+  },
+  {
+    id: "news-031",
+    tag: "Policy",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Trump Administration Publishes AI Framework: Risk-Based Approach to Federal AI Regulation",
+    summary: "The White House has released its comprehensive AI Framework establishing federal policy priorities, calling for sector-specific oversight, mandatory disclosure for AI handling personal data, and provisions for AI in national security applications.",
+    content: `The Trump Administration has published its AI Framework, setting out key federal policy priorities and legislative recommendations for the United States' approach to artificial intelligence governance.
+
+**Framework Highlights:**
+- Establishes a risk-based approach to AI regulation, differentiating between high-risk and low-risk applications
+- Calls for sector-specific oversight rather than a monolithic regulatory body
+- Proposes mandatory disclosure requirements for AI systems handling personal data
+- Includes provisions for AI in national security and defense applications
+
+**Legislative Context:**
+The framework follows closely behind Senator Marsha Blackburn's (R-TN) March 18, 2026, legislative discussion draft, which proposed a different approach to AI governance. The two documents represent competing visions for how the US should regulate AI.
+
+**Industry Response:**
+AI companies are navigating a complex landscape. Major AI firms have recognized they face an "image problem" and are increasingly publishing policy papers and funding thinktanks to shape the regulatory narrative.
+
+**Global Comparison:**
+- The EU continues to enforce the world's most comprehensive AI regulation through the EU AI Act
+- The UK has adopted a "pro-innovation" approach, with existing regulators interpreting AI principles within their sectors
+- China has introduced measures for labelling AI-generated content
+- The US framework represents a lighter-touch approach focused on market-driven innovation`,
+    date: "2026-04-13",
+    source: "Alston & Bird / White House",
+    sourceUrl: "https://www.alston.com/en/insights/publications/2026/04/ai-quarterly-april-2026",
+    href: "/news/news-031",
+  },
+  {
+    id: "news-030",
+    tag: "Models",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    title: "Microsoft Launches Three In-House AI Models: MAI-Transcribe, MAI-Voice, MAI-Image",
+    summary: "Microsoft released three foundational AI models built entirely in-house — speech transcription, voice generation, and image creation — marking its most concrete move to compete directly with OpenAI and Google on model development.",
+    content: `Microsoft has unveiled three new foundational AI models developed entirely by its Microsoft AI (MAI) division, signaling a strategic shift from relying solely on OpenAI to building its own model stack.
+
+**The Three Models:**
+- **MAI-Transcribe-1**: State-of-the-art speech transcription with lower word error rate than GPT-Transcribe and Gemini 3.1 Flash. Already being tested in Copilot Voice mode and Microsoft Teams.
+- **MAI-Voice-1**: Top-tier voice generation model producing 60 seconds of expressive audio in under one second on a single GPU. Priced at $22 per million characters.
+- **MAI-Image-2**: Second-generation image model, ranked in the top 3 on Arena.ai leaderboard. Already integrated into Copilot, Bing, and PowerPoint. Priced at $5 per million input tokens.
+
+**Strategic Implications:**
+- This marks the first time Microsoft has offered its own commercially available models across multiple modalities
+- Microsoft preserves deep contractual access to OpenAI through 2032 while building independent capabilities
+- WPP, one of the world's largest advertising agencies, has already adopted MAI-Image-2 for creative workflows
+
+**Broader Trend:**
+Microsoft's move is part of a larger pattern of tech giants building in-house AI capabilities rather than relying exclusively on partnerships. Google, Meta, and Amazon are all pursuing similar strategies.`,
+    date: "2026-04-13",
+    source: "Microsoft / TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+    href: "/news/news-030",
+  },
+  {
     id: "news-029",
     tag: "Product",
     tagColor: "bg-blue-500/10 text-blue-300",
