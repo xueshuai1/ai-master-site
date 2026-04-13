@@ -206,9 +206,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest News Section — 头条 + 快讯 */}
-      <section id="news" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-        <div className="max-w-6xl mx-auto">
+      {/* Latest News Section */}
+      <section id="news" className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-2">
@@ -216,72 +216,58 @@ export default function Home() {
               </h2>
               <p className="text-slate-400">紧跟行业脉搏，不错过任何重要进展</p>
             </div>
-            <Link href="/blog" className="text-brand-400 hover:text-brand-300 font-medium hidden sm:block">
-              更多 →
-            </Link>
           </div>
 
+          {/* Headline */}
           {headlineNews && (
-            <div className="grid lg:grid-cols-5 gap-6 mb-8">
-              {/* 头条 */}
-              <Link
-                href={headlineNews.href}
-                className="lg:col-span-3 group relative block rounded-2xl overflow-hidden bg-gradient-to-br from-brand-600/20 via-slate-800/80 to-slate-900/80 border border-brand-500/20 hover:border-brand-500/40 transition-all hover:shadow-xl hover:shadow-brand-500/10"
-              >
-                {/* Decorative gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                <div className="relative p-6 sm:p-8 flex flex-col justify-end min-h-[260px]">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 bg-brand-500 text-white rounded-full text-xs font-bold uppercase tracking-wider shadow-lg shadow-brand-500/30">
-                      🔥 头条
-                    </span>
-                    <span className="text-xs text-slate-400">{formatDate(headlineNews.date)}</span>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-brand-300 transition-colors leading-snug">
-                    {headlineNews.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed line-clamp-2 mb-3">
-                    {headlineNews.summary}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">{headlineNews.source}</span>
-                    <span className="text-xs text-brand-400 group-hover:text-brand-300 transition-colors">阅读全文 →</span>
-                  </div>
+            <Link
+              href={headlineNews.href}
+              className="group block mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-brand-600/15 via-slate-800/60 to-slate-900/60 border border-brand-500/20 hover:border-brand-500/40 transition-all hover:shadow-lg hover:shadow-brand-500/10"
+            >
+              {headlineNews.coverImage && (
+                <div className="h-40 sm:h-48 overflow-hidden">
+                  <img src={headlineNews.coverImage} alt={headlineNews.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-              </Link>
-
-              {/* 快讯列表 */}
-              <div className="lg:col-span-2 flex flex-col">
-                <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-1">
-                  最近更新
-                </h3>
-                <div className="flex-1 space-y-2">
-                  {quickNews.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="group block p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-brand-500/20 hover:bg-white/[0.06] transition-all"
-                    >
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-xs font-mono text-slate-500">{formatDate(item.date)}</span>
-                        <span className="text-xs text-slate-600">·</span>
-                        <span className="text-xs text-slate-500 truncate">{item.source}</span>
-                      </div>
-                      <h4 className="text-sm font-medium text-slate-300 group-hover:text-brand-300 transition-colors leading-snug line-clamp-2">
-                        {item.title}
-                      </h4>
-                    </Link>
-                  ))}
-                </div>
-                <Link
-                  href="/blog"
-                  className="mt-3 block text-center text-sm text-brand-400/70 hover:text-brand-300 transition-colors py-2"
-                >
-                  浏览更多动态 →
-                </Link>
+              )}
+              <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="px-3 py-1 bg-brand-500/90 text-white rounded-full text-xs font-bold uppercase tracking-wider">
+                  🔥 头条
+                </span>
+                <span className="text-xs text-slate-500">{formatDate(headlineNews.date)}</span>
+                <span className="text-xs text-slate-600">·</span>
+                <span className="text-xs text-slate-500">{headlineNews.source}</span>
               </div>
-            </div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-brand-300 transition-colors leading-snug">
+                {headlineNews.title}
+              </h3>
+              <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
+                {headlineNews.summary}
+              </p>
+              </div>
+            </Link>
           )}
+
+          {/* Quick news list */}
+          <div className="space-y-2">
+            {quickNews.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/[0.03] border border-transparent hover:border-white/5 transition-all"
+              >
+                <span className="shrink-0 mt-0.5 text-xs font-mono text-slate-600 w-12">
+                  {formatDate(item.date)}
+                </span>
+                {item.coverImage && (
+                  <img src={item.coverImage} alt="" className="shrink-0 w-10 h-10 rounded-lg object-cover border border-white/5" />
+                )}
+                <span className="text-sm text-slate-300 group-hover:text-brand-300 transition-colors leading-snug line-clamp-1">
+                  {item.title}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -75,6 +75,17 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
             {item.title}
           </h1>
 
+          {/* Cover Image */}
+          {item.coverImage && (
+            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-500/10">
+              <img
+                src={item.coverImage}
+                alt={item.title}
+                className="w-full h-48 sm:h-64 lg:h-80 object-cover"
+              />
+            </div>
+          )}
+
           <p className="text-lg text-slate-400 mt-4 leading-relaxed">
             {item.summary}
           </p>
@@ -120,6 +131,9 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
                     <h3 className="text-lg font-medium group-hover:text-brand-300 transition-colors">
                       {n.title}
                     </h3>
+                    {n.coverImage && (
+                      <img src={n.coverImage} alt={n.title} className="w-8 h-8 rounded object-cover ml-3 shrink-0" />
+                    )}
                   </div>
                   <span className="text-slate-500 text-sm">{n.date}</span>
                 </Link>
