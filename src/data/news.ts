@@ -15,6 +15,80 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-029",
+    tag: "Product",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Google Gemini Introduces Interactive 3D Models, Simulations, and Notebooks",
+    summary: "Google has rolled out major Gemini app updates including interactive 3D simulations for complex topics, Notebooks that sync with NotebookLM for project organization, and Learn Mode in Colab as a personal coding tutor.",
+    content: `Google has announced a wave of significant updates to its Gemini ecosystem, expanding the app's capabilities beyond text responses into interactive visualizations and project management.
+
+**Interactive 3D Models & Simulations:**
+- Gemini can now generate custom interactive visualizations directly within chat
+- Users can explore complex scientific concepts through functional simulations — rotating molecules, adjusting physics parameters, or visualizing orbital mechanics
+- Instead of static diagrams, users can manipulate sliders and input exact values to see real-time effects
+- Available globally to all Gemini app users using the Pro model
+- Simply ask Gemini to "show me" or "help me visualize" any complex concept
+
+**Notebooks in Gemini:**
+- New notebooks feature helps organize chats and files for complex projects
+- Acts as a personal knowledge base that syncs across Gemini and NotebookLM
+- Users can move past chats into notebooks, add custom instructions, and attach relevant documents
+- Source limits scale with subscription plan
+- Available this week for Google AI Ultra, Pro, and Plus subscribers on web
+
+**Learn Mode in Google Colab (April 8):**
+- A personal AI coding tutor built into Google Colab
+- Helps users learn programming concepts through guided, interactive sessions
+
+**Cross-Platform Imports & Switch Tools:**
+- Google introduced tools to help users import conversations and switch from ChatGPT and Claude to Gemini
+- Signals aggressive push to capture users from competing AI platforms
+
+**Strategic Significance:**
+These updates represent Google's push to make Gemini not just a chatbot but a comprehensive productivity and learning platform. The NotebookLM integration creates a unique moat — no other AI assistant has seamless sync with a dedicated research tool. The interactive 3D simulations feature is a genuinely new capability that differentiates Gemini from text-only competitors.`,
+    date: "2026-04-13",
+    source: "Google Blog",
+    sourceUrl: "https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/",
+    href: "/news/news-029",
+  },
+  {
+    id: "news-028",
+    tag: "Security",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "OpenAI Responds to Axios Supply Chain Attack — Revokes macOS App Signing Certificates",
+    summary: "OpenAI disclosed that its macOS app-signing workflow was compromised through the Axios npm package supply chain attack attributed to a North Korean threat actor, forcing certificate rotation and requiring all macOS users to update.",
+    content: `OpenAI has disclosed a security incident stemming from the broader Axios npm package supply chain attack, affecting its macOS application code-signing process.
+
+**The Incident:**
+- On March 31, 2026, a widely used third-party developer library (Axios) was compromised as part of a North Korean threat actor campaign
+- A GitHub Actions workflow used in OpenAI's macOS app-signing process downloaded and executed a malicious version of Axios (v1.14.1)
+- The workflow had access to certificates and notarization material used for signing macOS applications including ChatGPT Desktop, Codex, Codex CLI, and Atlas
+
+**Impact Assessment:**
+- OpenAI found **no evidence** that user data was accessed, systems or intellectual property were compromised, or software was altered
+- Analysis concluded the signing certificate was likely not successfully exfiltrated due to timing of payload execution, certificate injection sequencing, and mitigating factors
+- Nevertheless, OpenAI is treating the certificate as compromised out of an abundance of caution
+
+**Response Actions:**
+- Engaged a third-party digital forensics and incident response firm
+- Rotated all macOS code signing certificates
+- Published new builds of all affected macOS products with updated certificates
+- Working with Apple to ensure software signed with the previous certificate cannot be newly notarized
+- Validated that all published software had no unauthorized modifications
+
+**User Impact:**
+- Effective **May 8, 2026**, older macOS versions will no longer receive updates or support
+- Required minimum versions: ChatGPT Desktop 1.2026.051, Codex App 26.406.40811, Codex CLI 0.119.0, Atlas 1.2026.84.2
+- Users should update through in-app updates or official download links
+
+**Broader Context:**
+The Axios compromise was part of a wider industry supply chain attack targeting developer tools. Google's Threat Intelligence team first identified the North Korean threat actor's campaign. This incident highlights how even the most security-conscious companies can be affected through third-party dependencies in their CI/CD pipelines.`,
+    date: "2026-04-13",
+    source: "OpenAI Blog / Google Threat Intelligence",
+    sourceUrl: "https://openai.com/index/axios-developer-tool-compromise/",
+    href: "/news/news-028",
+  },
+  {
     id: "news-026",
     tag: "Security",
     tagColor: "bg-red-500/10 text-red-300",
