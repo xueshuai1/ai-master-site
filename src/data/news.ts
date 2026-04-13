@@ -15,6 +15,160 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-036",
+    tag: "行业趋势",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI 完成 1220 亿美元融资，估值达 8520 亿美元创历史记录",
+    summary: "OpenAI 宣布完成 1220 亿美元的巨额融资，投后估值高达 8520 亿美元，其中 30 亿美元来自散户投资者。这是有史以来规模最大的私人融资之一，标志着 AI 行业资本投入达到前所未有的水平。",
+    content: `2026 年 3 月 31 日，OpenAI 官方宣布完成了总额 1220 亿美元的融资，投后估值达到 8520 亿美元。
+
+**融资细节：**
+- 总金额 1220 亿美元，是科技史上规模最大的融资轮次之一
+- 其中 30 亿美元来自散户投资者，这在尚未上市的 AI 公司中极为罕见
+- 投后估值 8520 亿美元，超越了许多传统科技巨头的市值
+
+**战略意义：**
+- 这笔资金将用于大规模算力基础设施建设、模型研发和全球扩张
+- OpenAI 正从一家 AI 研究公司转变为全球基础设施级平台
+- 融资规模远超 Anthropic（3800 亿美元估值）和 xAI（2000 亿美元估值）
+
+**行业影响：**
+- 科技巨头 2026 年 AI 资本支出预计超过 3000 亿美元
+- AI 初创公司融资持续升温，2026 年已有 17 家美国 AI 公司融资超 1 亿美元
+- 这预示着 AI 行业的"军备竞赛"将进一步升级`,
+    date: "2026-04-13",
+    source: "OpenAI / TechCrunch / Bloomberg",
+    sourceUrl: "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/",
+    href: "/news/news-036",
+  },
+  {
+    id: "news-035",
+    tag: "安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Anthropic 称 Claude Mythos 过于强大暂不公开发布，仅向 12 家安全公司开放",
+    summary: "Anthropic 宣布其最新模型 Claude Mythos 在发现和利用软件漏洞方面超越大多数人类安全研究员，因安全考虑决定暂缓公开发布，仅向 12 家网络安全公司分阶段开放访问。",
+    content: `2026 年 4 月初，Anthropic 发布了一项震撼业界的公告：其最新 AI 模型 Claude Mythos 在网络安全领域的表现过于强大，因此决定暂不向公众开放。
+
+**关键发现：**
+- Claude Mythos 在发现和利用软件漏洞方面的能力超越了大多数人类安全研究人员
+- 该模型发现了多个存在 27 年之久、此前从未被人类专家发现的零日漏洞
+- Anthropic 决定将 Mythos 的访问权限限制在 12 家网络安全公司范围内
+
+**安全考量：**
+- Anthropic 认为该模型的漏洞发现能力可能被恶意利用
+- 分阶段发布策略为防御方提供了加固系统的宝贵时间
+- 欧盟委员会人工智能办公室对此决定表示支持
+
+**行业反应：**
+- 部分研究者认为 Anthropic 的公告存在"夸大成分"
+- 安全研究表明，部分被标注为 Mythos 独有发现的漏洞实际上可通过开源模型复现
+- 华尔街对此做出紧急响应，财政部长和美联储主席召集银行 CEO 讨论潜在风险`,
+    date: "2026-04-13",
+    source: "NBC News / Anthropic",
+    sourceUrl: "https://www.nbcnews.com/video/anthropic-says-newest-ai-model-is-too-powerful-to-release-to-public-260967493766",
+    href: "/news/news-035",
+  },
+  {
+    id: "news-034",
+    tag: "公司动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Meta 计划大规模裁员 20% 以上，AI 基础设施投入成本持续攀升",
+    summary: "据 Reuters 独家报道，Meta 正计划裁员 20% 或更多员工，以应对高昂的 AI 基础设施投入。同时，Meta 的 Avocado 模型表现不及预期，发布计划被迫推迟。",
+    content: `2026 年 3 月，据 Reuters 独家报道，Meta 正在计划大规模裁员，可能影响 20% 或更多的员工。
+
+**裁员背景：**
+- Meta 2026 年 AI 资本支出预计高达 1150-1350 亿美元
+- 公司试图通过裁员来抵消昂贵的 AI 基础设施投入
+- AI 辅助工作将提升效率，减少部分岗位需求
+
+**模型挑战：**
+- Meta 的超智能团队正在开发新一代模型 Avocado
+- 但 Avocado 的性能表现不及预期，发布计划被迫推迟
+- 同时开发的还有图像和视频生成模型 Mango
+
+**硬件布局：**
+- Meta 计划 2026 年推出智能手表 Malibu 2，内置 Meta AI 助手
+- 正在建设 Prometheus 超算集群，部署数十万块英伟达 GPU
+- 与 CoreWeave 签署了 210 亿美元的 AI 计算合作协议
+
+**AI 用户规模：**
+- Meta AI 月活跃用户已达 10 亿，是历史上增长最快的 AI 平台
+- AI 视频工具已产生 100 亿美元的年度经常性收入
+- 广告业务因 AI 优化实现了显著增长`,
+    date: "2026-04-13",
+    source: "Reuters / NYT / eMarketer",
+    sourceUrl: "https://www.reuters.com/business/world-at-work/meta-planning-sweeping-layoffs-ai-costs-mount-2026-03-14/",
+    href: "/news/news-034",
+  },
+  {
+    id: "news-033",
+    tag: "公司动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "微软计划 2027 年推出自研大型 AI 模型，减少对 OpenAI 的依赖",
+    summary: "据 Bloomberg 报道，微软正计划在 2027 年前开发自有的大型前沿 AI 模型，旨在建立 OpenAI 之外替代方案，增强自身在 AI 领域的战略自主权。",
+    content: `2026 年 4 月 2 日，据 Bloomberg 报道，微软正计划开发自有的大型前沿 AI 模型，预计 2027 年推出。
+
+**战略动机：**
+- 减少对 OpenAI 的依赖，建立自主 AI 能力
+- 作为 OpenAI 最强大的替代方案，微软需要掌握核心技术
+- 这是微软从 AI 投资方向 AI 原生公司转型的关键一步
+
+**现有布局：**
+- 微软是 OpenAI 的最大投资者，持有大量股份
+- 已将 OpenAI 的 GPT 系列深度整合到 Copilot 产品线中
+- 在 MWC 2026 上展示了从 AI 实验到可量化成果的转型策略
+
+**行业背景：**
+- 微软研究院预测 2026 年 AI 将生成假设、控制科学实验并与人类和 AI 研究人员协作
+- 发布了针对零售行业的 Agentic AI 解决方案
+- 提出了 2026 年值得关注的七大 AI 趋势
+
+**竞争格局：**
+- Google 拥有 Gemini 系列自主模型
+- Meta 正在开发 Avocado 和 Mango 模型
+- 亚马逊也在推进自研 AI 芯片和模型
+- 微软此举意味着所有科技巨头都在追求 AI 自主可控`,
+    date: "2026-04-13",
+    source: "Bloomberg / Microsoft Research",
+    sourceUrl: "https://www.bloomberg.com/news/articles/2026-04-02/microsoft-aims-to-create-large-cutting-edge-ai-models-by-2027",
+    href: "/news/news-033",
+  },
+  {
+    id: "news-032",
+    tag: "政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "加州无视联邦压力推出新 AI 监管标准，美国 AI 监管博弈升级",
+    summary: "加州州长纽森于 3 月底宣布新的 AI 监管标准，公然无视特朗普总统要求停止州级 AI 立法的指令。这标志着美国联邦与州之间在 AI 监管权限上的对抗进一步升级。",
+    content: `2026 年 3 月 30 日，据 The Guardian 报道，加州将对其境内运营的 AI 公司实施新的监管标准，直接挑战特朗普总统关于停止州级 AI 立法的指令。
+
+**加州新规要点：**
+- 对与州政府有业务往来的 AI 公司施加新的合规要求
+- 涉及高风险 AI 系统的风险管理、文档记录和监管义务
+- 面向消费者的 AI 交互（聊天机器人、AI 伴侣等）需要明确披露
+- 要求 AI 生成内容标注和训练数据透明度
+
+**联邦与州的对抗：**
+- 特朗普政府于 2026 年 3 月 20 日发布了《国家 AI 政策框架》，建议联邦优先于州级 AI 法律
+- 该框架提出了七个支柱的立法路线图，试图统一全国 AI 监管
+- 加州此举是对联邦框架的直接挑战
+
+**全国 AI 监管版图：**
+- 得克萨斯州 RAIGA 法案已于 2026 年 1 月 1 日生效
+- 纽约州 RAISE 法案对前沿 AI 模型设定了严格监管
+- 多个州正在推进 AI 治理立法，涵盖自动化决策工具、消费者保护等领域
+- EU AI Act 的高风险系统要求也已全面生效
+
+**政治角力：**
+- AI 行业正为 2026 年中期选举投入大量政治资金
+- 创新委员会行动组织宣布将花费至少 1 亿美元影响选举
+- OpenAI 联合创始人 Greg Brockman 夫妇各捐赠 1250 万美元，支持反对 AI 限制的候选人
+- 参议员 Bernie Sanders 和众议员 AOC 提出了 AI 数据中心暂停法案`,
+    date: "2026-04-13",
+    source: "The Guardian / CNN / Ropes & Gray",
+    sourceUrl: "https://www.theguardian.com/us-news/2026/mar/30/california-ai-regulations-trump",
+    href: "/news/news-032",
+  },
+  {
     id: "news-030",
     tag: "Research",
     tagColor: "bg-cyan-500/10 text-cyan-300",
@@ -74,88 +228,6 @@ AI 公司正在应对复杂局面。主要 AI 企业已经意识到它们面临"
     source: "Alston & Bird / White House",
     sourceUrl: "https://www.alston.com/en/insights/publications/2026/04/ai-quarterly-april-2026",
     href: "/news/news-031",
-  },
-  {
-    id: "news-001",
-    tag: "前沿",
-    tagColor: "bg-blue-500/10 text-blue-300",
-    title: "Anthropic 发布 Claude Managed Agents：企业级 AI 代理生产栈正式开放公测",
-    summary: "Anthropic 推出 Claude Managed Agents 公测版，提供沙箱执行、多代理协调、权限管理和端到端追踪的全栈代理基础设施。",
-    content: `2026 年 4 月 9 日，Anthropic 在 Claude 平台上正式发布了 Claude Managed Agents 的公开测试版本，标志着 AI 代理从概念验证走向生产部署的重要里程碑。
-
-**核心功能：**
-- 生产级代理：提供安全沙箱执行、身份认证和工具执行的全套基础设施
-- 长期运行会话：代理可在断线后保持状态，自主执行任务并持久化输出
-- 多代理协调：代理可以启动并指挥其他代理，并行处理复杂工作流
-- 可信治理：代理可访问真实系统，具备作用域权限、身份管理和执行追踪
-
-**合作伙伴：**
-Notion、Rakuten 和 Sentry 等公司已经在 Claude Managed Agents 上构建应用。在内部结构化文件生成测试中，该方案比标准提示循环的任务成功率提升了 10 个百分点，在最困难的问题上效果尤为显著。
-
-**行业意义：**
-这是 Anthropic 从单纯的模型提供商向完整 AI 基础设施平台转型的关键一步。Claude Managed Agents 让企业可以直接在 Anthropic 基础设施上定义、部署和管理生产级 AI 代理，大幅降低了构建自治 AI 系统的门槛。`,
-    date: "2026-04-09",
-    source: "InfoWorld / Anthropic",
-    sourceUrl: "https://www.infoworld.com/article/4156852/anthropic-rolls-out-claude-managed-agents.html",
-    href: "/news/news-001",
-  },
-  {
-    id: "news-002",
-    tag: "商业",
-    tagColor: "bg-yellow-500/10 text-yellow-300",
-    title: "OpenAI ChatGPT 广告预计 2026 年收入 25 亿美元，向 Google/Meta 开战",
-    summary: "OpenAI 正在将 ChatGPT 广告从试点扩展到更广泛的用户群，预计 2026 年广告收入达 25 亿美元，到 2030 年可能达到 1000 亿美元。",
-    content: `OpenAI 的广告战略正在加速推进，ChatGPT 广告已经从 2026 年 2 月的试点阶段扩展到更广泛的用户群体。
-
-**广告策略：**
-- 广告仅面向免费用户和 Go 订阅用户（8 美元/月）
-- Plus、Pro、Business、Enterprise 和 Education 用户免广告
-- AI 会根据用户对话内容动态生成个性化广告
-- 广告以引用或卡片形式嵌入 AI 回复中
-
-**收入预期：**
-- 2026 年：25 亿美元
-- 2029 年：530 亿美元
-- 2030 年：1000 亿美元
-
-**竞争格局：**
-OpenAI 此举使其直接与 Google 和 Meta 竞争全球数字广告市场。Anthropic 甚至在电视广告中嘲讽了 ChatGPT 的广告模式。
-
-**用户规模：**
-OpenAI 目标到 2030 年底实现 27.5 亿周活跃用户，这将使其成为全球最大的数字广告平台之一。`,
-    date: "2026-04-10",
-    source: "TechCrunch / Axios",
-    sourceUrl: "https://techcrunch.com/2026/02/09/chatgpt-rolls-out-ads/",
-    href: "/news/news-002",
-  },
-  {
-    id: "news-003",
-    tag: "趋势",
-    tagColor: "bg-purple-500/10 text-purple-300",
-    title: "MIT 研究：AI 已可替代 11.7% 的美国就业岗位，入门级岗位首当其冲",
-    summary: "MIT 最新研究发现，当前 AI 技术已经能够自动化约 11.7% 的美国就业，入门级岗位受到的影响最为显著。",
-    content: `MIT 的一项新研究揭示了 AI 对就业市场的即时影响。
-
-**核心发现：**
-- 11.7% 的美国就业岗位已经可以被 AI 自动化
-- 入门级岗位受到的冲击最大
-- 雇主已经在减少入门级技术岗位的招聘
-
-**行业趋势：**
-多家企业 VC 预测，2026 年企业将增加 AI 预算，但会集中在少数经过验证的工具上。企业正在淘汰实验性 AI 工具，将节省的费用投入到已证明价值的 AI 技术中。
-
-**投资方向：**
-企业 AI 支出将集中在三个领域：
-1. 数据基础建设
-2. 模型后训练优化
-3. 工具整合
-
-**社会影响：**
-这一发现引发了关于 AI 对劳动力市场影响的广泛讨论。网络安全公司 DeepWatch 等已经将 AI 作为裁员的原因之一。`,
-    date: "2026-04-11",
-    source: "MIT / TechCrunch",
-    sourceUrl: "https://techcrunch.com/2025/12/31/investors-predict-ai-is-coming-for-labor-in-2026/",
-    href: "/news/news-003",
   },
   {
     id: "news-004",
@@ -220,7 +292,7 @@ CoreWeave 已成为仅次于 AWS 和 Azure 的第三大 AI 云服务商。与 Me
 **欧盟立场：**
 - 欧盟委员会人工智能办公室正在与 Anthropic 进行对话，讨论如何实施 AI 法案中的网络安全保护条款
 - 欧盟监管人员认为，Anthropic 的分阶段发布策略为防御方提供了加固系统的宝贵时间
-- 根据欧盟 AI 法案，通用 AI 模型开发者必须确保其模型具有“足够水平的网络安全保护”
+- 根据欧盟 AI 法案，通用 AI 模型开发者必须确保其模型具有"足够水平的网络安全保护"
 
 **全球影响：**
 - Anthropic 此前已宣布将 Mythos 的发布限制在 12 家网络安全公司范围内
@@ -234,7 +306,7 @@ CoreWeave 已成为仅次于 AWS 和 Azure 的第三大 AI 云服务商。与 Me
 
 **行业反应：**
 - AI 行业正为 2026 年中期选举投入大量政治资金，创新委员会行动组织宣布将花费至少 1 亿美元
-- OpenAI 联合创始人 Greg Brockman 夫妇各向“引领未来”组织捐赠了 1250 万美元，支持反对 AI 限制政策的候选人
+- OpenAI 联合创始人 Greg Brockman 夫妇各向"引领未来"组织捐赠了 1250 万美元，支持反对 AI 限制政策的候选人
 - 部分专家警告，过度的政治游说可能导致监管真空，使公众面临更大的 AI 安全风险`,
     date: "2026-04-12",
     source: "Politico / The Guardian",
@@ -309,8 +381,8 @@ CoreWeave 已成为仅次于 AWS 和 Azure 的第三大 AI 云服务商。与 Me
 
 **政治与监管反应：**
 - 特朗普白宫在 Mythos 发布前与科技巨头举行了会议，协调应对策略
-- 前白宫 AI 负责人 David Sacks 表示 Anthropic 的说法重要但应“有所保留地看待”
-- AI 研究者 Gary Marcus 认为 Anthropic 的公告存在“夸大成分”
+- 前白宫 AI 负责人 David Sacks 表示 Anthropic 的说法重要但应"有所保留地看待"
+- AI 研究者 Gary Marcus 认为 Anthropic 的公告存在"夸大成分"
 - 欧盟委员会则对 Anthropic 的分阶段发布策略表示支持
 
 **深远意义：**
