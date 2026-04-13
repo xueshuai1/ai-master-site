@@ -1,13 +1,13 @@
 {
   "lastChecks": {
-    "news": "2026-04-13T15:18",
-    "knowledge": "2026-04-13T14:12",
-    "blog": "2026-04-13T15:14",
-    "tools": "2026-04-13T16:07",
+    "news": "2026-04-13T17:00",
+    "knowledge": "2026-04-13T17:00",
+    "blog": "2026-04-13T17:00",
+    "tools": "2026-04-13T17:00",
     "roadmap": null
   },
   "lastContentUpdate": "2026-04-13",
-  "totalArticles": 160,
+  "totalArticles": 161,
   "rotationOrder": ["news", "blog", "knowledge", "tools"],
-  "lastTask": "tools"
+  "lastTask": "full-maintenance"
 }
