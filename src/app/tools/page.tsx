@@ -3,8 +3,21 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { tools, toolCategories, Tool } from "@/data/tools";
+import githubStars from "@/data/github-stars.json";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+
+// Merge GitHub stars into tools
+const toolsWithStars: Tool[] = tools.map(t => {
+  const starData = (githubStars as any).stars?.[t.id];
+  return starData ? { ...t, githubStars: starData.stars } : t;
+});
+
+function formatStars(n: number): string {
+  if (n >= 10000) return `${Math.round(n / 1000)}k`;
+  if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
+  return n.toString();
+}
 
 const priceColors: Record<string, string> = {
   免费: "bg-emerald-500/10 text-emerald-300",
@@ -34,6 +47,12 @@ function ToolCard({ tool }: { tool: Tool }) {
             >
               {tool.price}
             </span>
+            {tool.githubStars != null && tool.githubStars > 0 && (
+              <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-500/10 text-yellow-300 flex items-center gap-0.5">
+                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                {formatStars(tool.githubStars)}
+              </span>
+            )}
           </div>
           <p className="text-xs text-slate-500 mt-0.5 truncate max-w-full">{tool.url.replace("https://", "")}</p>
         </div>
@@ -72,7 +91,7 @@ export default function ToolsPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredTools = useMemo(() => {
-    return tools.filter((t) => {
+    return toolsWithStars.filter((t) => {
       const matchCategory = activeCategory === "all" || t.category === activeCategory;
       const matchSearch =
         !searchQuery ||
@@ -130,7 +149,7 @@ export default function ToolsPage() {
 
           <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
             {toolCategories.map((c) => {
-              const count = c.key === "all" ? tools.length : tools.filter((t) => t.category === c.key).length;
+              const count = c.key === "all" ? toolsWithStars.length : toolsWithStars.filter((t) => t.category === c.key).length;
               const isActive = activeCategory === c.key;
               return (
                 <button

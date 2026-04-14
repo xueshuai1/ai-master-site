@@ -10,6 +10,8 @@ export interface Tool {
   price: "免费" | "开源" | "付费" | "免费+付费";
   icon: string;
   updatedAt?: string;
+  /** GitHub stars (auto-populated from github-stars.json) */
+  githubStars?: number;
 }
 
 export const toolCategories = [
