@@ -69,11 +69,10 @@ const TOOLS_PER_PAGE = 20;
 export default function ToolsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState<"default" | "recent">("default");
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredTools = useMemo(() => {
-    let result = tools.filter((t) => {
+    return tools.filter((t) => {
       const matchCategory = activeCategory === "all" || t.category === activeCategory;
       const matchSearch =
         !searchQuery ||
@@ -82,15 +81,7 @@ export default function ToolsPage() {
         t.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchSearch;
     });
-    if (sortBy === "recent") {
-      result = [...result].sort((a, b) => {
-        const da = a.updatedAt || "2024-01-01";
-        const db = b.updatedAt || "2024-01-01";
-        return db.localeCompare(da);
-      });
-    }
-    return result;
-  }, [activeCategory, searchQuery, sortBy]);
+  }, [activeCategory, searchQuery]);
 
   // Reset page when filters change
   const totalPages = Math.max(1, Math.ceil(filteredTools.length / TOOLS_PER_PAGE));
@@ -164,29 +155,9 @@ export default function ToolsPage() {
       {/* Tools Grid */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-slate-500">
-              找到 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个工具
-            </p>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => { setSortBy("default"); handleFilterChange(); }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  sortBy === "default" ? "bg-brand-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
-                }`}
-              >
-                默认排序
-              </button>
-              <button
-                onClick={() => { setSortBy("recent"); handleFilterChange(); }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  sortBy === "recent" ? "bg-brand-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
-                }`}
-              >
-                🕒 最近更新
-              </button>
-            </div>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">
+            找到 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个工具
+          </p>
 
           {filteredTools.length > 0 ? (
             <>
