@@ -16,6 +16,117 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-097",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Anthropic 发布 Claude Mythos Preview — AI 网络安全新分水岭，自主发现漏洞并生成利用代码",
+    summary: "Anthropic 发布 Claude Mythos Preview 模型，能自主发现任何操作系统/浏览器/软件漏洞并生成利用代码。仅通过 Project Glasswing 联盟向 Microsoft、Apple、Google 等数十家组织开放。安全专家认为这是真正的威胁转折。",
+    content: `## Anthropic Claude Mythos Preview：AI 安全的双刃剑
+
+2026 年 4 月 10 日，Anthropic 发布 Claude Mythos Preview，这是一个能够自主发现漏洞并生成利用代码的 AI 模型。
+
+**核心能力：**
+- 能发现**任何操作系统、浏览器或软件产品**的漏洞
+- 自主开发**可用的利用代码（exploits）**
+- 特别擅长识别和开发「**利用链（exploit chains）**」—— 多个漏洞串联攻击
+
+**Project Glasswing 联盟：**
+- 仅向数十家组织开放，包括 **Microsoft、Apple、Google、Linux Foundation**
+- 目的是让这些组织提前防御，而非公开发布
+-  Anthropic 将此举描述为「网络安全的关键转折点」
+
+**安全专家反应：**
+- **支持方**：认为这是真正的威胁转折，AI 安全从「辅助防御」走向「攻防双刃剑」
+- **怀疑方**：现有 AI Agent 已经能帮助发现漏洞，Anthropic 可能在制造营销噱头
+- **共识**：Mythos Preview 的能力最终会在其他模型中普及，防御方需要加速
+
+**行业影响：**
+- AI 网络安全成为新的热门赛道
+- 「零点击攻击」风险因 AI 能力提升而加剧
+- 企业需要重新评估软件安全策略
+- Anthropic 通过限量发布策略建立高端品牌形象`,
+    date: "2026-04-15 02:00",
+    source: "WIRED / Anthropic",
+    sourceUrl: "https://www.wired.com/story/anthropics-mythos-will-force-a-cybersecurity-reckoning-just-not-the-one-you-think/",
+    href: "/news/news-097",
+  },
+  {
+    id: "news-098",
+    tag: "AI 硬件",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "SoftBank 联合 Sony/Honda 创建「物理 AI」公司 — 2030 年前实现机器人自主控制",
+    summary: "SoftBank 创建新公司，目标 2030 年前开发能自主控制机器和机器人的 AI 模型。项目获得 Sony、Honda、Nippon Steel 等日本巨头支持，标志着 AI 从软件走向物理世界的重大趋势。",
+    content: `## SoftBank「物理 AI」：从软件到物理世界的 AI 革命
+
+2026 年 4 月 13 日，据 Nikkei 报道，SoftBank 创建了一家新公司，专注于「物理 AI」（Physical AI）领域。
+
+**项目目标：**
+- 2030 年前开发出能**自主控制机器和机器人**的 AI 模型
+- 这是 SoftBank 机器人战略的最新举措
+
+**合作阵容：**
+- **Sony**：传感器、消费电子、机器人技术
+- **Honda**：自动驾驶、机器人（ASIMO 传承）
+- **Nippon Steel**：材料、制造基础设施
+- 日本巨头集体押注「主权 AI」能力建设
+
+**趋势意义：**
+- 从「软件 AI」到「物理 AI」是产业演进的下一阶段
+- 各国正加速投入本土 AI 能力（**主权 AI** 趋势）
+- 日本试图在 AI 硬件和机器人领域保持竞争力
+- 与美国（OpenAI/Anthropic）和中国（百度/阿里）形成差异化竞争
+
+**行业背景：**
+- OpenAI、Google、Anthropic 主导软件 AI 世界
+- 物理 AI 是新的竞争战场
+- 机器人、自动驾驶、工业自动化是主要应用场景`,
+    date: "2026-04-15 02:00",
+    source: "The Verge / Nikkei",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-098",
+  },
+  {
+    id: "news-099",
+    tag: "AI 工具",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Google Chrome 推出 AI「Skills」功能 — 50+ 预设技能将 AI 集成到浏览器",
+    summary: "Google Chrome 在 Gemini 侧边栏推出 AI Skills 功能，用户可通过快捷键运行可重复的 AI 提示。Google 提供 50+ 预设技能，涵盖总结视频、优化食谱、评估求职等场景。AI 从独立应用走向浏览器原生集成。",
+    content: `## Google Chrome AI Skills：浏览器原生的 AI 时代
+
+2026 年 4 月 14 日，Google Chrome 推出全新的 AI Skills 功能。
+
+**功能特性：**
+- **Skills** 是可重复的 AI 提示，通过**快捷键**一键运行
+- Google 提供 **50+ 预设技能**，包括：
+  - 总结 YouTube 视频
+  - 优化食谱蛋白质摄入
+  - 评估求职信息
+- 用户也可以通过 Gemini 创建自定义 Skill
+
+**使用方式：**
+- 打开 Chrome 右上角的「Ask Gemini」侧边栏
+- 输入「/」即可选择和运行 Skill
+- Gemini 分析用户共享的浏览器标签页内容
+
+**趋势意义：**
+- AI 从独立应用走向**浏览器层级集成**
+- 类似功能可能在 Edge、Safari 等浏览器中跟进
+- 「AI + 浏览器」成为新的产品形态
+- 用户无需离开浏览器即可获得 AI 辅助
+
+**隐私考量：**
+- AI 会分析用户的浏览数据
+- 用户可在设置中关闭 Gemini 按钮
+- Google 需要在功能性和隐私之间取得平衡`,
+    date: "2026-04-15 02:00",
+    source: "WIRED / Google",
+    sourceUrl: "https://www.wired.com/story/how-to-use-google-chrome-ai-powered-skills/",
+    href: "/news/news-099",
+  },
+  {
     id: "news-091",
     tag: "行业动态",
     tagColor: "bg-orange-500/10 text-orange-300",
