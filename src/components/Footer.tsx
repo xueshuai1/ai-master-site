@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -69,25 +69,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300">
-              保持更新
-            </h4>
-            <p className="text-slate-400 text-sm mb-3">
-              订阅获取最新 AI 资讯和教程
-            </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50"
-              />
-              <button className="px-4 py-2 bg-brand-600 hover:bg-brand-500 rounded-lg text-sm font-medium transition-all whitespace-nowrap">
-                订阅
-              </button>
-            </div>
-          </div>
+
         </div>
 
         {/* Bottom bar */}
