@@ -319,80 +319,6 @@ export const news: NewsItem[] = [
     href: "/news/news-101",
   },
   {
-    id: "news-100",
-    tag: "军事",
-    tagColor: "bg-slate-500/10 text-slate-300",
-    title: "美国陆军开发 Victor 战斗聊天机器人，用真实军事数据训练士兵 AI 助手",
-    summary: "美国陆军 CTO Alex Miller 展示 Victor 原型系统，结合 Reddit 式论坛与 AI 聊天机器人，为士兵提供任务关键信息，包括电子战系统配置等实战建议。",
-    content: `
-
-## 军事 AI：从战场到聊天机器人
-
-2026 年 4 月 8 日，WIRED 报道美国陆军开发 Victor AI 系统。
-
-**Victor 系统：**
-- 结合 **Reddit 式论坛**与 **VictorBot 聊天机器人**
-- 使用**真实军事任务数据**训练
-- 士兵可以询问实战问题，如电子战系统配置
-
-**核心功能：**
-- 根据士兵提问生成**基于实战经验的回答**
-- 引用不同单位的**经验教训和评论**
-- 覆盖从乌克兰战争到"史诗 fury 行动"的实战数据
-
-**军方态度：**
-- 陆军 CTO Alex Miller："电子战是一个很难的话题，Victor 能生成回答并引用所有经验教训"
-- 五角大楼过去两年**加速 AI 军事化**
-- Victor 是军方**自建 AI**的罕见案例（而非采购外部方案）
-
-**行业意义：**
-- 军事 AI 从理论走向实战应用
-- AI 聊天机器人可能成为未来战场的标准装备
-- 引发了关于 AI 军事伦理的讨论`,
-    date: "2026-04-14 14:30",
-    source: "WIRED",
-    sourceUrl: "https://www.wired.com/story/army-developing-ai-system-victor-chatbot-soldiers/",
-    href: "/news/news-100",
-  },
-  {
-    id: "news-099",
-    tag: "硬件",
-    tagColor: "bg-cyan-500/10 text-cyan-300",
-    title: "前 Apple 工程师打造 AI 按钮可穿戴设备，外观酷似 iPod Shuffle，主打隐私保护",
-    summary: "两位前 Apple Vision Pro 开发者 Chris Nolet 和 Ryan Burgoyne 创建 AI 可穿戴设备 Button，仅通过轻触激活录音，在 Humane AI Pin 和 Friend 项链失败后尝试用隐私设计赢得市场。",
-    content: `
-
-## AI 可穿戴新尝试：从"永远监听"到"按需激活"
-
-2026 年 4 月，WIRED 报道前 Apple 工程师的 AI 按钮设备。
-
-**产品特色：**
-- 外观酷似 **iPod Shuffle**
-- **仅通过轻触激活**录音，非"永远监听"
-- 由前 Apple Vision Pro 开发者 **Chris Nolet** 和 **Ryan Burgoyne** 创建
-- 通过 **Y Combinator** 加速器孵化
-
-**市场背景：**
-- **Humane AI Pin**：备受期待的 AI 可穿戴设备，但体验不佳
-- **Friend 项链**：最终沦为地铁广告载体
-- 多款 AI 可穿戴设备**未能找到用户价值**
-
-**隐私差异化：**
-- 主打**隐私保护**，仅在用户主动触发时录音
-- 试图在"AI 助手便利性"和"用户隐私"之间找到平衡
-- 与"永远监听"的 AI 设备形成对比
-
-**行业意义：**
-- AI 可穿戴设备赛道仍在探索产品形态
-- 隐私保护可能成为新的竞争差异化因素
-- 前 Apple 工程师的加入带来了硬件设计经验`,
-    date: "2026-04-14 14:15",
-    source: "WIRED",
-    sourceUrl: "https://www.wired.com/story/this-ai-button-wearable-from-ex-apple-engineers-looks-like-an-ipod-shuffle/",
-    href: "/news/news-099",
-  },
-
-  {
     id: "news-109",
     tag: "硬件",
     tagColor: "bg-amber-500/10 text-amber-300",
@@ -561,5 +487,91 @@ export const news: NewsItem[] = [
     source: "Anthropic",
     sourceUrl: "https://claude.com/blog/cowork-for-enterprise",
     href: "/news/news-110",
+  },
+  {
+    id: "news-114",
+    tag: "企业",
+    tagColor: "bg-teal-500/10 text-teal-300",
+    title: "OpenAI AGI 部署 CEO Fidji Simo 因病休假，公司高层大换血",
+    summary: "OpenAI AGI 部署 CEO Fidji Simo 因神经免疫疾病复发请病假数周，COO Brad Lightcap 转岗特殊项目，CMO Kate Rouch 因乳腺癌治疗休假，OpenAI 正寻找新 CMO 和首席沟通官，为今年 IPO 做准备。",
+    content: `
+
+## OpenAI 高管层大换血
+
+2026 年 4 月 3 日，WIRED 报道 OpenAI 重大领导层重组。
+
+**核心人事变动：**
+- **Fidji Simo**（AGI 部署 CEO，前 ChatGPT/Codex/Sora 负责人）因**神经免疫疾病复发**请病假数周
+- **Brad Lightcap**（COO，Sam Altman 核心副手）转岗**"特殊项目"**角色，接管产品团队
+- **Kate Rouch**（CMO）因**乳腺癌治疗**休假，回归后将担任**更窄范围的角色**
+- **Hannah Wong**（前首席沟通官）已于 1 月离职
+
+**Fidji Simo 的内部信：**
+- "入职前几周我的神经免疫疾病就复发了，过去一个月健康状况特别糟糕"
+- "为了完全专注于工作，我推迟了医学检测和新疗法，没请过一天假"
+- "两周前第一次请假做医学检测，现在清楚我推得太远了"
+
+**OpenAI 的战略调整：**
+- Simo 已**关闭 Sora 应用**，告诉员工需砍掉副业、聚焦核心产品
+- 公司正寻找**新 CMO** 和**首席沟通官**
+- **Chris Lehane** 临时接管沟通团队
+
+**IPO 背景：**
+- OpenAI 正瞄准**今年 IPO**
+- 最近完成 **$1,220 亿**史上最大科技融资轮，估值 **$8,520 亿**
+- 全球用户接近 **10 亿**
+
+**行业影响：**
+- OpenAI 高管层动荡可能影响 IPO 时间表
+- AGI 部署和产品战略面临不确定性
+- Sam Altman 正在重建核心领导团队`,
+    date: "2026-04-14 18:50",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/openais-fidji-simo-is-taking-a-leave-of-absence/",
+    href: "/news/news-114",
+  },
+  {
+    id: "news-113",
+    tag: "芯片",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "Elon Musk 的 Terafab 芯片工厂联手 Intel，1 太瓦级芯片制造计划能否实现？",
+    summary: "Intel CEO 确认将与 Elon Musk 密切合作支持 Terafab 项目，这是 SpaceX 和 Tesla 联合开发的超大规模芯片制造设施，可能耗资数十亿美元，部分分析师高度怀疑 Musk 能否完成如此复杂的资本密集型计划。",
+    content: `
+
+## Terafab：Elon Musk 的芯片制造野心
+
+2026 年 4 月 8 日，WIRED 报道 Elon Musk 的 Terafab 芯片项目。
+
+**Terafab 核心信息：**
+- **1 太瓦级（terawatt）**超高能效芯片制造设施
+- 可能**跨越多个地点**，耗资**数十亿美元**
+- 由 **SpaceX 和 Tesla** 联合开发
+- **Intel CEO Lip-Bu Tan** 确认 Intel 将"密切合作"支持该项目
+
+**Intel 的角色：**
+- Intel 正试图从多年**停滞中复苏**
+- 部分战略是向外部客户**推销产能**
+- Intel 和 Musk 高管上周末在 Intel 标志前**握手合影**
+- Tan 称 Terafab 代表**硅逻辑、内存和封装**的未来构建方式
+
+**Musk 的芯片需求：**
+- **Tesla 汽车**需要大量芯片
+- **机器人军团**（Optimus 等人形机器人）需要芯片
+- **AI 数据中心**（可能包括太空数据中心）需要芯片
+
+**行业怀疑声音：**
+- 部分芯片行业分析师**高度怀疑** Musk 能否完成如此复杂的资本密集型计划
+- Terafab 被描述为**"可能改变游戏规则但风险极高"**的项目
+- MarketWatch："你相信 Elon Musk 吗？"测试 Tesla 投资者信心
+
+**行业背景：**
+- 全球**芯片供应链竞争**加剧
+- 美国正在推动**本土芯片制造**
+- Terafab 如果成功，将**重塑全球芯片制造格局**
+- 但执行风险极高，需要**前所未有的资本和技术投入**`,
+    date: "2026-04-14 18:48",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/5-burning-questions-about-elon-musks-terafab-chip-partnership-with-intel/",
+    href: "/news/news-113",
   },
 ];
