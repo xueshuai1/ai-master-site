@@ -5,54 +5,83 @@ import Link from "next/link";
 import { NewsItem } from "@/data/news";
 
 /**
- * 无缝新闻滚动条
+ * 无缝新闻滚动条 — requestAnimationFrame 逐帧像素控制
  * 
- * 原理：内容 = items × 2，JS 测量单组宽度，动画滚动精确的单组像素距离
- * 在动画结束时第二组正好对齐到第一组的起始位置 → 视觉无缝循环
+ * 弃用 CSS translateX(-50%)（百分比基于元素自身宽度不稳定）
+ * 每帧用 getBoundingClientRect() 精确测量第一组 items 的像素宽度
  */
 export default function NewsTicker({ items }: { items: NewsItem[] }) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [style, setStyle] = useState<React.CSSProperties>({});
+  const posRef = useRef(0);
+  const lastRef = useRef(0);
+  const rafRef = useRef<number>(0);
+  const speed = 200;
+  const [visible, setVisible] = useState(false);
 
-  const calcAnimation = useCallback(() => {
+  const loop = useCallback(() => {
     const track = trackRef.current;
-    if (!track) return;
-
-    const containerWidth = track.parentElement?.offsetWidth || 800;
-    // 单组宽度 = 总滚动宽度的一半（因为我们用了 items × 2）
-    const singleSetWidth = track.scrollWidth / 2;
-
-    if (singleSetWidth <= containerWidth + 20) {
-      setStyle({});
+    const container = containerRef.current;
+    if (!track || !container) {
+      rafRef.current = requestAnimationFrame(loop);
       return;
     }
 
-    // 速度：~150px/s，比之前快一些
-    const speed = 150;
-    const duration = singleSetWidth / speed;
+    // ★ 精确测量第一组 items 的像素宽度
+    const halfCount = Math.floor(track.children.length / 2);
+    let singleW = 0;
+    if (halfCount >= 1 && track.children[0] && track.children[halfCount - 1]) {
+      const first = track.children[0].getBoundingClientRect();
+      const last = track.children[halfCount - 1].getBoundingClientRect();
+      singleW = last.right - first.left;
+    }
 
-    // 关键：设置精确的固定宽度，确保 translateX(-50%) = -singleSetWidth
-    setStyle({
-      width: `${singleSetWidth * 2}px`,
-      animation: `ticker-scroll ${duration.toFixed(1)}s linear infinite`,
-    });
-  }, [items.length]);
+    const containerW = container.offsetWidth;
+
+    if (singleW <= containerW + 10 || singleW <= 0) {
+      posRef.current = 0;
+      track.style.transform = "translateX(0)";
+      lastRef.current = 0;
+      rafRef.current = requestAnimationFrame(loop);
+      return;
+    }
+
+    if (lastRef.current === 0) lastRef.current = performance.now();
+    const now = performance.now();
+    const dt = Math.min((now - lastRef.current) / 1000, 0.1);
+    lastRef.current = now;
+
+    posRef.current += speed * dt;
+    if (posRef.current >= singleW) {
+      posRef.current -= singleW;
+    }
+
+    track.style.transform = `translateX(${-posRef.current}px)`;
+    rafRef.current = requestAnimationFrame(loop);
+  }, [speed]);
 
   useEffect(() => {
-    // 等 DOM 渲染完后测量
-    const t1 = setTimeout(calcAnimation, 200);
-    const t2 = setTimeout(calcAnimation, 800);
-    window.addEventListener("resize", calcAnimation);
+    posRef.current = 0;
+    lastRef.current = 0;
+    setVisible(false);
+    if (trackRef.current) trackRef.current.style.transform = "translateX(0)";
+
+    Promise.all([
+      document.fonts?.ready ?? Promise.resolve(),
+      new Promise<void>(r => setTimeout(r, 1500)),
+    ]).then(() => {
+      setVisible(true);
+      rafRef.current = requestAnimationFrame(loop);
+    });
+
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      window.removeEventListener("resize", calcAnimation);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [calcAnimation]);
+  }, [loop, items.length]);
 
-  if (items.length === 0) return null;
+  if (!items.length) return null;
 
-  const doubled = [...items, ...items];
+  const displayItems = [...items, ...items, ...items, ...items];
 
   return (
     <div className="mt-8 max-w-3xl mx-auto">
@@ -60,13 +89,16 @@ export default function NewsTicker({ items }: { items: NewsItem[] }) {
         <span className="text-sm text-brand-400 font-medium">🔥 最新动态</span>
         <span className="flex-1 h-px bg-white/10" />
       </div>
-      <div className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/5">
+      <div
+        ref={containerRef}
+        className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/5"
+      >
         <div
           ref={trackRef}
           className="flex gap-8 py-3 px-4"
-          style={style}
+          style={{ width: "max-content", opacity: visible ? 1 : 0, transition: "opacity 0.3s" }}
         >
-          {doubled.map((item, i) => (
+          {displayItems.map((item, i) => (
             <Link
               key={`news-${item.id}-${i}`}
               href={item.href}
@@ -83,18 +115,9 @@ export default function NewsTicker({ items }: { items: NewsItem[] }) {
             </Link>
           ))}
         </div>
-        {/* Fade edges */}
         <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-900/90 to-transparent pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/90 to-transparent pointer-events-none" />
       </div>
-
-      <style jsx>{`
-        @keyframes ticker-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}
-      </style>
     </div>
   );
 }
