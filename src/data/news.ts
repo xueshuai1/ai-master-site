@@ -15,183 +15,213 @@ export interface NewsItem {
 }
 
 export const news: NewsItem[] = [
-{
-    id: "news-066",
+  {
+    id: "news-082",
     tag: "安全",
     tagColor: "bg-red-500/10 text-red-300",
-    title: "AI 编程质量危机 -- 编码快 40% 但代码质量显著下降",
-    summary: "SD Times 警告:AI 驱动的编码速度提升 40% 但质量大幅下滑。92% 开发者使用 AI 编程,但 45% AI 生成代码含安全漏洞,信任度从 77% 暴跌至 60%。",
+    title: "Anthropic 警告:AI 自主网络攻击开启网络安全新纪元",
+    summary: "Anthropic 警告 AI 自主威胁标志网络安全军备竞赛进入新阶段,此前泄漏近 3000 个内部文件和 51.2 万行 Claude Code 源代码,发出 8000+ 版权删除通知。",
     content: `
 
-## 2026 AI 编程质量危机
+## AI 网络安全新纪元
 
-2026 年 4 月,SD Times 发出警告:AI 辅助编程虽然提升了开发速度,但代码质量正在急剧下降。
+2026 年 4 月 10 日,Anthropic 发出警告:AI 自主网络攻击标志著网络安全进入全新阶段。
 
-**关键数据:**
-- **92% 的美国开发者每天使用 AI 编程工具**
-- 编码速度提升 **40%**,但代码质量显著下降
-- **45% 的 AI 生成代码含 OWASP Top-10 漏洞**(Databricks 研究)
-- CodeRabbit 分析 470 个 GitHub PR,AI 协作代码比纯人工代码多 **1.7 倍**重大问题
-- **63% 的开发者表示调试 AI 生成代码比手写代码更耗时**
-- 开发者信任度从 77% 暴跌至 **60%**
+**Claude Code 源代码泄漏事件:**
+- Anthropic 意外泄漏近 **3,000 个内部文件**
+- 包含约 **512,000 行 Claude Code 源代码**(1,900 个文件)
+- 泄漏版本为已删除的 **2.1.88 版本**(59.8MB 文件)
+- 被迫发出 **8,000+ 版权删除通知**,涵盖 GitHub 仓库
+- 后来缩减为仅 1 个仓库和 96 个 fork URL
 
-**真实灾难案例:**
-1. **Enrichlead 崩溃** - 独立开发者用 Cursor 零手写代码构建 SaaS,上线后因安全问题永久关闭
-2. **Lovable 数据暴露** - 1,645 个 Lovable 构建的 Web 应用中,超 10% 存在个人信息泄露漏洞
-3. **AI 生成的蜜罐被黑客攻击** - 安全公司用 AI 构建的蜜罐工具本身存在漏洞
+**Mythos 模型泄漏:**
+- 泄漏文件中包含一个名为 **Mythos** 的未发布模型描述
+- 这是 Anthropic 尚未公开的新一代模型
 
-**行业解读:**
-Vibe Coding 赢得了采用战,但正在输掉质量战。行业正在经历"AI 生成的技术债"集中爆发期。当开发团队以更快的速度生产更多但质量更差的代码时,整个软件行业的技术债将呈指数级增长。`,
-    date: "2026-04-14",
-    source: "SD Times / CodeRabbit / Databricks",
-    sourceUrl: "https://sdtimes.com/qa/were-coding-40-faster-but-building-on-sand-the-2026-quality-collapse/",
-    href: "/news/news-066",
-  },
-{
-    id: "news-065",
-    tag: "政策",
-    tagColor: "bg-orange-500/10 text-orange-300",
-    title: "白宫发布国家 AI 政策框架 -- 联邦优先权 vs 州级法规",
-    summary: "特朗普政府发布《国家 AI 政策框架》,建议国会建立全国统一 AI 监管标准,优先于各州法律。保护个人免受 AI 生成数字复制品的未授权使用。",
-    content: `
+**网络安全警告:**
+- AI 自主威胁标志著 **AI 网络军备竞赛进入新阶段**
+- 攻击者可以利用 AI 生成攻击脚本、深度伪造和自动化渗透工具
+- 行业专家警告其他 AI 供应商的类似能力可能在数月内推出
 
-## 白宫国家 AI 政策框架
-
-2026 年 3 月 20 日,特朗普政府正式发布《国家人工智能政策框架》。
-
-**核心建议:**
-- 建立**"最小负担"的全国统一标准**,避免"50 个不一致的州法规"
-- 保护个人免受 AI 生成的**数字复制品**(声音、肖像等)的未授权使用
-- 建立**AI 诉讼工作组**,挑战与联邦政策不一致的州级 AI 法律
-- 保留州级一般适用法(儿童保护、消费者保护等)
-
-**全球监管格局:**
-- **欧盟 AI Act** 也在简化中,延迟高风险 AI 系统适用日期
-- **中国** 持续完善 AI 算法备案和生成式 AI 管理办法
-- 中美欧 AI 监管路径呈现差异化发展趋势
+**安全事件时间线:**
+- 与国防部纠纷中获得**禁令胜诉**
+- 70 天内密集发布 14+ 产品,但遭遇 **5 次宕机**
+- 这是继国防部纠纷后的又一次重大安全事件
 
 **行业影响:**
-AI 监管从"野蛮生长"进入"规则制定"阶段。统一的联邦框架可能降低企业合规成本,但也可能削弱州级创新监管实验。`,
+- 以安全为核心卖点的 Anthropic 遭遇安全危机,品牌信誉受损
+- AI 代码安全成为行业焦点,开发者需要更严格的审查流程
+- 自主 AI 攻击工具的崛起要求防御方也升级 AI 能力`,
     date: "2026-04-14",
-    source: "White House / MoFo / Ropes & Gray",
-    sourceUrl: "https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf",
-    href: "/news/news-065",
+    source: "Cyber News Centre / PCMag / LA Times / TechCrunch",
+    sourceUrl: "https://www.pcmag.com/news/anthropic-issues-8000-copyright-takedowns-to-scrub-claude-code-leak",
+    href: "/news/news-082",
   },
-{
-    id: "news-064",
-    tag: "安全",
-    tagColor: "bg-red-500/10 text-red-300",
-    title: "伊朗黑客攻击美国关键基础设施 -- 地缘政治与数字战争交汇",
-    summary: "Ars Technica 报道伊朗-linked 黑客组织正在破坏美国关键基础设施运营,同时 LinkedIn 因浏览器扩展扫描行为面临两起诉讼。",
+  {
+    id: "news-083",
+    tag: "研究",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "MIT 突破:控制理论让 AI 模型在学习过程中自我瘦身",
+    summary: "MIT 研究人员利用控制理论在 AI 模型学习过程中自动剔除不必要参数,使模型更精简高效,有望大幅降低 AI 推理成本和部署门槛。",
     content: `
 
-## 伊朗黑客攻击美国关键基础设施
+## AI 模型瘦身革命
 
-2026 年 4 月,Ars Technica 报道了伊朗-linked 黑客组织对美国关键基础设施的攻击。
+2026 年 4 月 9 日,MIT 研究人员发表了一项突破性成果:利用控制理论让 AI 模型在学习过程中自动瘦身。
 
-**事件要点:**
-- 伊朗黑客组织成功破坏美国关键基础设施运营
-- 这是地缘政治紧张局势在数字空间的直接体现
-- 攻击手法结合了 AI 辅助工具和传统黑客技术
+**技术原理:**
+- 使用**控制理论**在训练过程中动态评估每个参数的重要性
+- 自动识别并**剔除不必要的参数**,而非训练后剪枝
+- 模型在"学习中瘦身",保持性能的同时减少参数量
 
-**其他安全动态:**
-- **LinkedIn 浏览器扩展扫描**引发两起诉讼--公司被指扫描用户浏览器扩展
-- **Chrome CVE-2026-5281** 零日漏洞正在被积极利用,补丁已发布
-- **Apple 扩大 iOS 18.7.7 更新**以阻止 DarkSword 漏洞利用
-- **Fortinet 修复 CVE-2026-35616** FortiClient EMS 中被积极利用的漏洞
+**核心优势:**
+- **降低推理成本** -- 更少的参数意味着更快的推理速度和更低的算力需求
+- **降低部署门槛** -- 精简模型更容易部署到边缘设备和移动端
+- **保持性能** -- 与训练后剪枝相比,学习中瘦身对模型性能影响更小
 
-**行业解读:**
-网络安全正在从单纯的技术问题升级为地缘政治问题。AI 既被用于防御(Claude Mythos),也被用于攻击(伊朗黑客利用 AI 辅助工具),攻防两端的军备竞赛正在加速。`,
+**应用场景:**
+- **边缘 AI** -- 在手机、IoT 设备上运行更强大的模型
+- **成本优化** -- 企业可以大幅降低 AI API 调用成本
+- **绿色 AI** -- 减少能源消耗,符合可持续发展目标
+
+**行业背景:**
+- 当前 AI 模型参数量越来越大(GPT-5.4 万亿级、Claude Mythos 10 万亿)
+- 大模型推理成本高昂,限制了 AI 的广泛应用
+- 模型压缩技术(量化、剪枝、知识蒸馏)一直是研究热点
+- MIT 的方法提供了一种**端到端的参数优化**新思路
+
+**意义:**
+如果这项技术成熟,可能改变 AI 行业的经济模型——不需要越来越大的模型,而是需要更聪明的训练方法。`,
     date: "2026-04-14",
-    source: "Ars Technica / The Hacker News",
-    sourceUrl: "https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/",
-    href: "/news/news-064",
+    source: "MIT Research / Radical Data Science",
+    sourceUrl: "https://radicaldatascience.wordpress.com/2026/04/09/ai-news-briefs-bulletin-board-for-april-2026/",
+    href: "/news/news-083",
   },
-{
-    id: "news-070",
-    tag: "模型",
-    tagColor: "bg-blue-500/10 text-blue-300",
-    title: "Claude Opus 4.6 vs GPT-5.4 vs Gemini 3.1 - 2026 前沿模型基准对决",
-    summary: "April 2026 最新基准对比:Claude Opus 4.6 代码审查和复杂推理领先($15/$75),GPT-5.4 Thinking GDPVal 达 83.0%,Gemini 3.1 Pro 多模态 94.3% GPQA Diamond。实用模型路由策略出炉。",
-    content: `## 前沿模型基准对决(2026 年 4 月)
+  {
+    id: "news-084",
+    tag: "公司动态",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Google I/O 2026 预告:Gemini AI 和 Android 17 即将揭晓",
+    summary: "Google 宣布 I/O 2026 大会,预计发布 Gemini 重大更新和 Android 17。此前 4 月已发布 Gemini 3D 建模、Colab 学习模式、Gemini 笔记本等工具。",
+    content: `
 
-三大前沿模型的最新基准对比数据已出炉,为开发者和企业提供实用的模型选择指南。
+## Google I/O 2026:AI 生态全面升级
 
-**Claude Opus 4.6(Anthropic)**
-- 代码审查和复杂推理任务全面领先
-- 定价:$15/$75 per 1M tokens(输入/输出)
-- 最适合:关键代码、重要内容创作、深度推理
+Google 宣布 I/O 2026 大会,预计将成为 AI 领域的年度重磅事件。
 
-**GPT-5.4 Thinking(OpenAI)**
-- GDPVal 评分 83.0%,超越人类专业水平
-- 原生计算机使用能力,可跨软件执行多步工作流
-- 100 万 token 上下文窗口
-- 最适合:标准推理、Agent 编排
+**I/O 2026 预期亮点:**
+- **Gemini 重大更新** -- Google 的生成式 AI 系统已深度集成到整个产品生态
+- **Android 17** -- 新一代 Android 系统,AI 功能将是大看点
+- **AI 生态展示** -- Google 如何利用 AI 增强产品和服务
 
-**Gemini 3.1 Pro(Google DeepMind)**
-- GPQA Diamond 94.3%,多模态推理冠军
-- 原生处理文本、音频、图像、视频,无需转录中间层
-- 200 万 token 上下文窗口
-- 最适合:多模态任务、图像分析、翻译
+**Google 4 月 AI 密集发布回顾:**
 
-**实用模型路由策略:**
+| 产品 | 功能 | 发布日期 |
+|------|------|----------|
+| **Gemini 3D 建模** | 生成 3D 模型和图表 | 4 月 9 日 |
+| **Colab Learn Mode** | 个人编码导师 | 4 月 8 日 |
+| **Gemini Notebooks** | 项目管理笔记本 | 4 月 8 日 |
+| **Search Live** | 全球扩展到 200+ 国家 | 4 月 |
+| **Switch to Gemini** | 从 ChatGPT/Claude 导入 | 4 月 |
 
-| 任务类型 | 推荐模型 | 成本 |
-|----------|---------|------|
-| 简单查询、格式化、摘要 | Gemini 3.1 Flash | $0.10/$0.40 |
-| 标准编码、内容生成 | Claude Sonnet 4.6 | $3/$15 |
-| 复杂推理、关键代码 | Claude Opus 4.6 | $15/$75 |
-| 多模态(图像/视频) | Gemini 3.1 Pro | $2/$12 |
-| 代码生成 | Grok 4 | 竞争定价 |
+**Google 的 AI 战略投资:**
+- Alphabet 2026 年资本支出预计 **1,750-1,850 亿美元**
+- Gemini 已深度集成到 Gmail、Calendar、Drive 等核心产品
+- 个人智能功能可自动从 Gmail/Calendar/Drive 提取洞察
+- CEO Sundar Pichai 强调**"美国必须在 AI 领域领先"**
 
-**行业趋势:** 价值正从"哪个模型最聪明"转向"哪个平台能部署持久、自主的 AI 并集成到现有系统"。Conway、Cursor 3 和 OpenAI Agent 项目都指向同一方向--Agent 即产品。`,
+**竞争格局:**
+- Google 正在构建从模型到工具到硬件的**完整 AI 生态**
+- Switch to Gemini 直接挑战 ChatGPT 和 Claude 的用户锁定
+- vibe coding 正在成为主流开发范式`,
     date: "2026-04-14",
-    source: "AIMagicx / LLM Stats / 多方基准",
-    sourceUrl: "https://www.aimagicx.com/blog/claude-opus-4-6-vs-gpt-5-4-vs-gemini-3-1-benchmark-comparison-april-2026",
-    href: "/news/news-070",
+    source: "National Today / Google Blog",
+    sourceUrl: "https://nationaltoday.com/us/ca/mountain-view/news/2026/04/11/google-i-o-2026-announced-major-ai-and-android-reveals/",
+    href: "/news/news-084",
   },
-{
-    id: "news-071",
+  {
+    id: "news-085",
     tag: "融资",
     tagColor: "bg-purple-500/10 text-purple-300",
-    title: "Q1 2026 AI 风投创纪录 - Anthropic 估值 $3800 亿,Agentic AI 赛道爆发",
-    summary: "Crunchbase 数据:Q1 2026 全球风投创历史纪录,AI 是最大推动力。Anthropic $300 亿 Series G(估值 $3800 亿),Agentic AI 赛道 89 轮融资,医疗 AI 交易规模增长 211%。",
-    content: `## Q1 2026 AI 融资狂潮
+    title: "Meta 与 CoreWeave 签订 210 亿 AI 云计算协议 + Big Tech 年度 AI 支出 6500 亿",
+    summary: "Meta 扩大与 CoreWeave 合作,签署 210 亿 AI 云计算协议。Big Tech 2026 年 AI 总支出预计 6500 亿,微软宣布 175 亿印度投资创亚洲记录。",
+    content: `
 
-Crunchbase 数据显示,2026 年第一季度全球风险投资创下历史新高,AI 行业是主要推动力。
+## AI 基础设施投资狂潮
 
-**重大融资轮次:**
+2026 年 4 月,AI 基础设施投资持续加速,各大科技公司纷纷宣布巨额投资计划。
 
-| 公司 | 金额 | 估值 | 轮次 |
-|------|------|------|------|
-| OpenAI | $1220 亿 | $8520 亿 | 史上最大融资 |
-| Anthropic | $300 亿 | $3800 亿 | Series G |
-| xAI | $200 亿 | $2000 亿+ | Series E |
-| SkildAI | $14 亿 | $140 亿 | Series C(机器人) |
-| ElevenLabs | $5 亿 | $110 亿 | Series D(语音 AI) |
-| Cognition AI | - | $100 亿 | 最新轮(自主软件工程) |
-| Runway | $3.15 亿 | $53 亿 | Series E(AI 视频) |
-| Fundamental | $2.55 亿 | - | Series A(大数据分析) |
-| Deepgram | $1.3 亿 | $13 亿 | Series C(语音) |
+**Meta + CoreWeave 210 亿协议:**
+- Meta 扩大与 CoreWeave 的合作伙伴关系
+- 签署 **210 亿** AI 云计算协议
+- 更好地利用 AI 计算资源
+- 此前 Meta 还与 Nebius Group 签署了五年数据中心合同
 
-**Agentic AI 赛道:**
-- 2023 年以来 **89 轮融资**,2024-2025 年急剧加速
-- Cognition AI(自主软件工程 Agent)估值达 $100 亿
+**Big Tech 年度 AI 支出:**
+- 2026 年大型科技公司 AI 总支出预计达 **6,500 亿**
+- 这是前所未有的基础设施投资规模
 
-**医疗 AI 爆发:**
-- 平均交易规模从 2023 年 $36M 飙升至 2025 年 $112M
-- **211% 增长**,两年翻了两倍多
+**其他重大投资:**
+- **微软**: 宣布 **175 亿** 亚洲最大投资,扩展印度 AI 和云基础设施(2026-2029)
+- **OpenAI**: 完成 **1,220 亿** 融资,估值 8,520 亿
+- **Google**: 2026 年资本支出 1,750-1,850 亿
+- **Meta**: 2026 年 AI 支出预计最高 1,350 亿
 
-**早期阶段也火爆:**
-- Seed 轮融资同比增长 30%+
-- 早期阶段融资增长 38%+
-- 美国占比超 80%
+**数据中心热潮:**
+- 全球 AI 数据中心已超过 **4,000 座**
+- 但近半数规划项目因社区反对被推迟
+- 核能成为首选能源方案
 
-**关键趋势:** 资本正从"模型层"向"应用层"和"Agent 层"转移。2026 年已有 17 家美国 AI 公司融资超 1 亿美元。`,
+**行业趋势:**
+- AI 投资正在从"模型层"向"基础设施层"延伸
+- 算力成为 AI 竞争的核心要素
+- 能源和土地成为 AI 扩张的新瓶颈`,
     date: "2026-04-14",
-    source: "Crunchbase / TechCrunch",
-    sourceUrl: "https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/",
-    href: "/news/news-071",
+    source: "Bloomberg / Yahoo Finance / CNBC",
+    sourceUrl: "https://finance.yahoo.com/video/meta-expands-coreweave-partnership-with-new-21b-ai-cloud-deal-194036393.html",
+    href: "/news/news-085",
+  },
+  {
+    id: "news-086",
+    tag: "硬件",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Apple 计划推出 AI 眼镜挑战 Meta + AI Siri 升级 + Google 加密警告",
+    summary: "Apple 计划推出 AI 眼镜与 Meta Ray-Ban 竞争,同时升级 AI Siri。Google 警告加密即将被 AI 破解,引发安全行业震动。",
+    content: `
+
+## AI 硬件竞赛升温
+
+2026 年 4 月,AI 硬件领域出现多个重要动向。
+
+**Apple AI 眼镜计划:**
+- Apple 计划推出 **AI 眼镜**与 Meta 的 Ray-Ban AI 眼镜竞争
+- 这是 Apple 进入可穿戴 AI 设备领域的重要一步
+- Meta 的 Ray-Ban AI 眼镜产量已翻倍,市场反应积极
+
+**AI Siri 升级:**
+- 苹果 **AI Siri** 迎来重大升级(2026 年 4 月)
+- 集成更强大的 AI 模型,提升语音助手能力
+- 可能深度整合 Apple 生态
+
+**Google 加密警告:**
+- Google 警告**加密即将被 AI 破解**
+- 这一警告引发了整个安全行业的震动
+- AI 强大的计算能力可能威胁现有的加密体系
+- 后量子加密迁移变得更加紧迫
+
+**AI 硬件竞争格局:**
+- **Meta**: Ray-Ban AI 眼镜 + Malibu 2 智能手表
+- **Apple**: AI 眼镜(计划中) + AI Siri
+- **Google**: Pixel 设备 AI 功能
+- AI 正在从屏幕走向可穿戴设备
+
+**安全行业震动:**
+- 如果加密被 AI 破解,整个数字安全体系需要重建
+- 企业需要加速迁移到后量子加密标准`,
+    date: "2026-04-14",
+    source: "YouTube / Google / 多方报道",
+    sourceUrl: "https://www.youtube.com/watch?v=y0myLanQVVw",
+    href: "/news/news-086",
   },
 {
     id: "news-072",
