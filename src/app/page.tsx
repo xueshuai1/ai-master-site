@@ -52,13 +52,23 @@ const features = [
 const homeNews = news.slice(0, 6);
 const latestBlogs = blogs.slice(0, 3);
 
-function formatDate(dateStr: string): string {
-  const today = new Date();
-  const d = new Date(dateStr + "T00:00:00");
-  const diff = Math.floor((today.getTime() - d.getTime()) / (1000 * 60 * 60 * 24));
-  if (diff === 0) return "今日";
-  if (diff === 1) return "昨日";
-  if (diff < 7) return `${diff} 天前`;
+function formatNewsTime(dateStr: string): string {
+  const now = new Date();
+  // 支持两种格式："YYYY-MM-DD HH:mm" 和 "YYYY-MM-DD"
+  const parts = dateStr.split(" ");
+  const d = parts.length === 2
+    ? new Date(parts[0] + "T" + parts[1] + ":00")
+    : new Date(parts[0] + "T00:00:00");
+  const diffMs = now.getTime() - d.getTime();
+  const diffMin = Math.floor(diffMs / (1000 * 60));
+  const diffHour = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffDay = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  if (diffMin < 1) return "刚刚";
+  if (diffMin < 60) return `${diffMin} 分钟前`;
+  if (diffHour < 24) return `${diffHour} 小时前`;
+  if (diffDay === 1) return `昨天 ${parts[1] || ""}`.trim();
+  if (diffDay < 7) return `${diffDay} 天前`;
   return dateStr;
 }
 
@@ -269,7 +279,7 @@ export default function Home() {
                   <span className={`px-2.5 py-0.5 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-xs font-medium`}>
                     {item.tag}
                   </span>
-                  <span className="text-xs text-slate-500">{formatDate(item.date)}</span>
+                  <span className="text-xs text-slate-500">{formatNewsTime(item.date)}</span>
                   <span className="text-xs text-slate-600">·</span>
                   <span className="text-xs text-slate-500">{item.source}</span>
                 </div>
