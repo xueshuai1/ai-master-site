@@ -16,6 +16,208 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-100",
+    tag: "产品动态",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Google Gemini 个人智能功能全球上线 — 可访问 Gmail、Photos、YouTube 历史",
+    summary: "Google Gemini 个人智能功能在全球更多地区上线（英国、瑞士和欧洲经济区除外），订阅用户可优先使用。该功能允许 Gemini 读取 Gmail、Google Photos、搜索记录和 YouTube 观看历史，提供更个性化的 AI 服务。",
+    content: `## Google Gemini 个人智能：你的 AI 真正了解你
+
+2026 年 4 月 14 日，Google 宣布 Gemini 个人智能功能在全球更多地区上线。
+
+**核心功能：**
+- Gemini 现在可以访问你的 **Gmail、Google Photos、搜索记录和 YouTube 观看历史**
+- 基于你的个人数据提供更精准、更个性化的回答
+- **Google AI Plus、Pro 和 Ultra 订阅用户**优先体验
+- 免费用户后续开放
+
+**地区限制：**
+- 全球大部分地区已上线
+- **英国、瑞士和欧洲经济区**除外（受隐私法规限制）
+- Google 发言人 Elijah Lawal 确认了这一安排
+
+**隐私争议：**
+- 允许 AI 访问个人通信和浏览历史引发隐私担忧
+- Google 需要平衡个性化与数据安全
+- 欧洲市场的推迟反映了对隐私保护的严格要求
+
+**行业影响：**
+- 这是 Google 将 AI 深度整合到个人生活的关键一步
+- 个人数据成为 AI 竞争的新的护城河
+- 其他科技巨头可能跟进类似功能`,
+    date: "2026-04-15 02:30",
+    source: "The Verge / Google",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-100",
+  },
+  {
+    id: "news-101",
+    tag: "AI 工具",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Microsoft 发布 MAI-Image-2-Efficient — 企业级 AI 图像生成'生产主力'",
+    summary: "Microsoft 在 Foundry 和 MAI Playground 推出 MAI-Image-2-Efficient，这是 MAI-Image-2 的更快更便宜版本，被称为'生产主力'，适用于产品拍摄、营销素材、UI 模型等批量场景。",
+    content: `## Microsoft MAI-Image-2-Efficient：企业级 AI 图像生成
+
+2026 年 4 月 14 日，Microsoft 发布了其最新 AI 图像生成模型 MAI-Image-2-Efficient。
+
+**产品定位：**
+- MAI-Image-2 的**更快、更便宜**版本
+- Microsoft 称其为"**production workhorse**"（生产主力）
+- 专为需要**批量、速度、成本控制**的场景设计
+
+**适用场景：**
+- 产品拍摄图
+- 营销创意素材
+- UI mockup 设计
+- 品牌资产管理
+- 批量管线处理
+
+**发布平台：**
+- **Microsoft Foundry**：企业 AI 模型服务平台
+- **MAI Playground**：Microsoft 的 AI 模型测试平台
+
+**行业意义：**
+- AI 图像生成从实验走向生产环境
+- 成本和速度是企业级 AI 应用的关键考量
+- Microsoft 的 MAI 系列正在形成完整的 AI 产品矩阵`,
+    date: "2026-04-15 02:30",
+    source: "The Verge / Microsoft",
+    sourceUrl: "https://microsoft.ai/news/mai-image-2-efficient/",
+    href: "/news/news-101",
+  },
+  {
+    id: "news-102",
+    tag: "AI 硬件",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Unitree R1 人形机器人即将在 AliExpress 开售 — $4,370 的消费级人形机器人来了",
+    summary: "中国人形机器人制造商 Unitree 准备通过阿里巴巴旗下的 AliExpress 向国际市场销售 R1 人形机器人，售价仅 $4,370。这是消费级人形机器人首次大规模进入电商平台，虽然'买回来做什么'仍是开放问题。",
+    content: `## Unitree R1：$4,370 的人形机器人走进千家万户
+
+2026 年 4 月 13 日，WIRED 报道了中国机器人制造商 Unitree 的最新动向。
+
+**产品信息：**
+- **型号**：Unitree R1
+- **价格**：$4,370（约 31,000 元人民币）
+- **销售渠道**：AliExpress（阿里巴巴旗下跨境电商）
+- **制造商**：Unitree Robotics
+
+**产品特点：**
+- 具备一定的**特技运动能力**
+- 入门级定价让个人消费者也能承受
+- 面向国际市场销售
+
+**行业意义：**
+- 人形机器人首次大规模进入**消费级电商平台**
+- 继汽车可以在 Amazon 购买后，机器人也加入了电商行列
+- $4,370 的价格远低于波士顿动力等竞品
+
+**开放问题：**
+- 个人消费者**买回来能做什么**？应用场景仍不明确
+- 家庭使用场景有限，更多是技术爱好者和开发者
+- 但价格下降趋势表明消费级机器人时代正在到来
+
+**市场背景：**
+- Unitree 是最活跃的机器人制造商之一
+- 各国正在加速推进**主权 AI**和机器人战略
+- 消费级人形机器人市场潜力巨大`,
+    date: "2026-04-15 02:30",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/unitree-r1-humanoid-robot-for-sale-on-aliexpress/",
+    href: "/news/news-102",
+  },
+  {
+    id: "news-103",
+    tag: "学术研究",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "arXiv 新研究：因果分析揭示 LLM 为何生成有害内容 — 后期层 MLP 故障是主因",
+    summary: "新论文通过因果中介分析方法，深入探究了 LLM 生成有害内容的根本原因。研究发现，有害生成主要来自模型后期层的 MLP 模块故障，而非注意力模块，并由一组稀疏神经元作为门控机制。",
+    content: `## LLM 有害内容生成的深层原因
+
+2026 年 4 月 13 日，arXiv 发表了一篇重要论文（arXiv:2604.11663），通过因果中介分析揭示了 LLM 生成有害内容的机制。
+
+**核心发现：**
+
+**1. 有害生成发生在后期层**
+- 有害内容的产生主要出现在模型的**后期层**
+- 早期层用于理解提示中的有害性语境
+- 这种理解通过模型传播，在后期层转化为有害生成
+
+**2. MLP 模块是主要责任方**
+- 有害生成**主要来自 MLP 模块的故障**，而非注意力模块
+- 这一发现挑战了此前对注意力机制是主要问题的假设
+
+**3. 门控神经元机制**
+- 一组**稀疏神经元**充当有害生成的门控机制
+- 这些神经元接收 MLP 模块的有害性信号
+- 最终决定否生成有害内容
+
+**研究方法：**
+- 采用**因果中介分析**（causal mediation analysis）方法
+- 跨模型层、模块（MLP 和注意力块）、单个神经元进行多粒度分析
+- 在多个先进 LLM 上进行了广泛实验
+
+**行业意义：**
+- 为 LLM 安全研究提供了新的理解框架
+- 针对性干预 MLP 模块可能比干预注意力机制更有效
+- 为构建更安全的 AI 系统指明了方向`,
+    date: "2026-04-15 02:30",
+    source: "arXiv 2604.11663",
+    sourceUrl: "https://arxiv.org/abs/2604.11663",
+    href: "/news/news-103",
+  },
+  {
+    id: "news-104",
+    tag: "学术研究",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "arXiv 新研究：RationalRewards — 推理奖励同时提升视觉生成模型的训练和测试表现",
+    summary: "新研究提出 RationalRewards 框架，教奖励模型在评分前生成明确的多维度批评。训练时提供细粒度 RL 奖励，测试时通过'生成-批评-精炼'循环提升输出质量，无需参数更新即可匹敌 RL 微调效果。",
+    content: `## RationalRewards：让 AI 学会"讲道理"地评价图像
+
+2026 年 4 月 13 日，arXiv 发表了 RationalRewards 研究论文（arXiv:2604.11626）。
+
+**核心问题：**
+- 现有的视觉生成奖励模型将丰富的人类判断**简化为单一分数**
+- 丢失了偏好背后的推理过程
+- 无法有效指导生成器优化
+
+**创新方案：RationalRewards**
+
+**1. 训练时：结构化推理奖励**
+- 教奖励模型在评分前生成**明确的多维度批评**
+- 提供可解释的细粒度奖励信号
+- 用于强化学习优化生成器
+
+**2. 测试时：生成-批评-精炼循环**
+- 无需任何参数更新
+- 将批评转化为**针对性的提示词改进**
+- 在不修改模型的情况下提升输出质量
+
+**PARROT 框架：**
+- **Preference-Anchored Rationalization**（偏好锚定合理化）
+- 从现成的偏好数据中恢复高质量推理
+- 通过锚定生成、一致性过滤和蒸馏实现
+
+**实验结果：**
+- RationalRewards（8B）在开源奖励模型中达到**SOTA 偏好预测**
+- 与 Gemini-2.5-Pro 竞争力相当
+- 训练数据比同类基线**少 10-20 倍**
+- 测试时循环效果在多个基准上**匹敌甚至超越 RL 微调**
+
+**行业意义：**
+- 结构化推理可以释放现有生成器的潜力
+- 次优提示词可能掩盖了模型的真实能力
+- 为视觉生成提供了新的优化范式`,
+    date: "2026-04-15 02:30",
+    source: "arXiv 2604.11626",
+    sourceUrl: "https://arxiv.org/abs/2604.11626",
+    href: "/news/news-104",
+  },
+  {
     id: "news-097",
     tag: "AI 安全",
     tagColor: "bg-red-500/10 text-red-300",
