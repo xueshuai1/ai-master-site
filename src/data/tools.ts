@@ -1478,4 +1478,26 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🔀",
   },
+
+  // ==================== 数据处理 ====================
+  {
+    id: "ai-hedge-fund",
+    name: "AI Hedge Fund",
+    category: "data",
+    description: "AI 对冲基金团队（GitHub 54k 星），使用多 Agent 协作模拟真实对冲基金工作流程，包括市场分析、风险评估、投资决策等，开源 AI 金融量化方案",
+    url: "https://github.com/virattt/ai-hedge-fund",
+    tags: ["开源", "量化金融", "多 Agent", "对冲基金"],
+    price: "开源",
+    icon: "💰",
+  },
+  {
+    id: "china-textbook",
+    name: "ChinaTextbook",
+    category: "data",
+    description: "收录所有小初高、大学 PDF 教材（GitHub 69k 星），覆盖中国完整教育体系，是 AI 教育应用和知识库构建的重要数据源",
+    url: "https://github.com/TapXWorld/ChinaTextbook",
+    tags: ["开源", "教育", "PDF 教材", "中文数据"],
+    price: "开源",
+    icon: "📚",
+  },
 ];
