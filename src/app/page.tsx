@@ -120,21 +120,68 @@ export default function Home() {
             </Link>
           </div>
 
+          {/* Stats + Trending */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
             {[
-              { num: `${articles.length}+`, label: "篇教程" },
-              { num: `${tools.length}+`, label: "个工具" },
-              { num: `${news.length}+`, label: "条新闻" },
-              { num: "100%", label: "免费" },
+              { num: `${articles.length}+`, label: "篇教程", trend: "↑ 持续更新" },
+              { num: `${tools.length}+`, label: "个工具", trend: "↑ 精选收录" },
+              { num: `${news.length}+`, label: "条新闻", trend: "↑ 每日更新" },
+              { num: "100%", label: "免费", trend: "❤️ 永远免费" },
             ].map((stat) => (
-              <div key={stat.label}>
+              <div key={stat.label} className="text-center">
                 <div className="text-3xl font-bold text-gradient">{stat.num}</div>
                 <div className="text-slate-400 mt-1">{stat.label}</div>
+                <div className="text-xs text-emerald-400/70 mt-0.5">{stat.trend}</div>
               </div>
             ))}
           </div>
+
+          {/* Latest News Ticker */}
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-sm text-brand-400 font-medium">🔥 最新新闻速览</span>
+              <span className="flex-1 h-px bg-white/10" />
+            </div>
+            <div className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/5">
+              <div className="flex animate-news-ticker gap-6 py-3 px-4">
+                {[...homeNews, ...homeNews].map((item, i) => (
+                  <a
+                    key={`${item.href}-${i}`}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 shrink-0 group"
+                  >
+                    <span className={`px-2 py-0.5 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-[10px] font-medium whitespace-nowrap`}>
+                      {item.tag}
+                    </span>
+                    <span className="text-sm text-slate-300 group-hover:text-brand-300 transition-colors whitespace-nowrap">
+                      {item.title}
+                    </span>
+                  </a>
+                ))}
+              </div>
+              {/* Fade edges */}
+              <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-900/90 to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/90 to-transparent pointer-events-none" />
+            </div>
+          </div>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes news-ticker {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-news-ticker {
+          animation: news-ticker 40s linear infinite;
+        }
+        .animate-news-ticker:hover {
+          animation-play-state: paused;
+        }
+      `}
+      </style>
 
       {/* Features Section */}
       <section id="features" className="py-24 px-4 sm:px-6 lg:px-8">

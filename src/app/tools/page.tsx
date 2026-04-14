@@ -19,7 +19,7 @@ function ToolCard({ tool }: { tool: Tool }) {
       href={tool.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5"
+      className="group block p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 min-w-0 overflow-hidden"
     >
       {/* Header */}
       <div className="flex items-start gap-3 mb-3">
@@ -35,7 +35,7 @@ function ToolCard({ tool }: { tool: Tool }) {
               {tool.price}
             </span>
           </div>
-          <p className="text-xs text-slate-500 mt-0.5 truncate">{tool.url.replace("https://", "")}</p>
+          <p className="text-xs text-slate-500 mt-0.5 truncate max-w-full">{tool.url.replace("https://", "")}</p>
         </div>
         <svg className="w-5 h-5 text-slate-600 group-hover:text-brand-400 transition-colors shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -48,7 +48,7 @@ function ToolCard({ tool }: { tool: Tool }) {
       </p>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-1.5 overflow-hidden">
+      <div className="flex flex-wrap gap-1.5 overflow-hidden max-w-full">
         {tool.tags.slice(0, 4).map((tag) => (
           <span key={tag} className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-400 whitespace-nowrap">
             #{tag}
@@ -210,7 +210,7 @@ export default function ToolsPage() {
 
           {filteredTools.length > 0 ? (
             <>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-hidden">
               {paginatedTools.map((tool) => (
                 <ToolCard key={tool.id} tool={tool} />
               ))}
