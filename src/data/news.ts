@@ -283,42 +283,6 @@ export const news: NewsItem[] = [
     href: "/news/news-102",
   },
   {
-    id: "news-101",
-    tag: "产品",
-    tagColor: "bg-purple-500/10 text-purple-300",
-    title: "AI Agents 开始接管你的约会生活：Pixel Societies 用 AI 数字孪生匹配灵魂伴侣",
-    summary: "伦敦三位开发者创建 Pixel Societies，让 AI Agent 作为个人数字孪生进行社交互动，优化同事、朋友和浪漫伴侣的匹配过程。",
-    content: `
-
-## AI 约会：让你的 Agent 替你相亲
-
-2026 年 4 月 13 日，WIRED 报道 Pixel Societies 项目。
-
-**核心理念：**
-- 为每个人创建**AI 数字孪生**，基于公开数据和个人提供的信息
-- 让 Agent 代替真人在虚拟环境中**与其他人的 Agent 互动**
-- 通过 Agent 间的社交表现来预测真人的兼容性
-
-**技术实现：**
-- 每个 Agent 运行在定制版 LLM 上
-- 混合使用公开数据和个人提供的额外信息
-- 在像素风格的虚拟校园/办公环境中进行社交模拟
-
-**应用场景：**
-- **职场匹配**：找到合拍的同事
-- **社交匹配**：找到志同道合的朋友
-- **浪漫匹配**：优化约会和伴侣选择
-
-**行业意义：**
-- AI Agent 正从工作场景延伸到**个人社交生活**
-- 这代表了"Agent 代理人类决策"的新趋势
-- 但也引发了关于隐私、数据使用和人际关系的伦理讨论`,
-    date: "2026-04-14 15:00",
-    source: "WIRED",
-    sourceUrl: "https://www.wired.com/story/ai-agents-are-coming-for-your-dating-life-next/",
-    href: "/news/news-101",
-  },
-  {
     id: "news-109",
     tag: "硬件",
     tagColor: "bg-amber-500/10 text-amber-300",
@@ -573,5 +537,44 @@ export const news: NewsItem[] = [
     source: "WIRED",
     sourceUrl: "https://www.wired.com/story/5-burning-questions-about-elon-musks-terafab-chip-partnership-with-intel/",
     href: "/news/news-113",
+  },
+  {
+    id: "news-115",
+    tag: "产品",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Meta CEO Mark Zuckerberg 正在训练自己的 AI 替身，取代本人参加内部会议",
+    summary: "据 Financial Times 报道，Meta 正基于 Zuckerberg 的举止、语调、公开声明训练 AI 替身，让员工通过与其互动感受到与创始人的连接。Zuckerberg 同时每周花 5-10 小时亲自编写 Meta AI 项目代码。",
+    content: `
+
+## AI 替身：Zuckerberg 的数字分身
+
+2026 年 4 月 13 日，The Verge 和 Financial Times 报道 Meta CEO 训练 AI 替身。
+
+**AI 替身核心信息：**
+- 基于 **Zuckerberg 的举止、语调、公开声明**训练
+- 目标是让**员工通过与其互动感受到与创始人的连接**
+- Zuckerberg 本人**亲自参与训练**
+- 如果实验成功，Meta 可能允许**创作者制作自己的 AI 替身**
+
+**Zuckerberg 的 AI 日程：**
+- 每周花 **5-10 小时**亲自编写 Meta AI 项目代码
+- 参与**技术评审**，深入技术细节
+- 2024 年 3 月 WSJ 曾报道 Zuckerberg 在创建**帮助自己完成 CEO 任务的 AI agent**（与此项目分开）
+
+**Meta 的 AI 替身布局：**
+- 2024 年 Connect 大会展示过**创作者 AI 替身**的实时 demo
+- 已允许创作者在 **Instagram** 上制作 AI 版本与粉丝评论互动
+- 用户可以在 Meta 平台创建**定制 AI 聊天机器人**
+- 但今年初开始**阻止青少年使用 AI 角色功能**
+
+**行业意义：**
+- 这是**AI 替身从消费级走向企业级**的标志性事件
+- 如果成功，可能开启**CEO AI 替身**的新趋势
+- 但也引发了关于**真实性、隐私、员工关系**的讨论
+- 讽刺的是，Zuckerberg 多年来一直被嘲笑为"不像人"，现在却要用 AI 替身来"人性化"自己`,
+    date: "2026-04-14 19:22",
+    source: "The Verge / Financial Times",
+    sourceUrl: "https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone",
+    href: "/news/news-115",
   },
 ];
