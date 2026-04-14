@@ -6,6 +6,11 @@ import ReactMarkdown from "react-markdown";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
+// Generate heading ID from text
+function headingToId(text: string): string {
+  return text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
+}
+
 // Extract TOC items from markdown content
 function extractToc(content: string) {
   const headingRegex = /^(#{2,3})\s+(.+)$/gm;
@@ -13,12 +18,8 @@ function extractToc(content: string) {
   let match;
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length;
-    let text = match[2].trim();
-    // Strip {#id} anchor syntax if present
-    const idMatch = text.match(/\{#([^}]+)\}$/);
-    const id = idMatch ? idMatch[1] : text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
-    text = text.replace(/\s*\{#[^}]+\}$/, '');
-    toc.push({ level, text, id });
+    const text = match[2].trim();
+    toc.push({ level, text, id: headingToId(text) });
   }
   return toc;
 }
@@ -86,16 +87,7 @@ export default function BlogDetailContent({
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  // Add IDs to headings in rendered markdown - strip heading markers for ID generation
-  const contentWithIds = useMemo(() => {
-    return post.content.replace(/^(#{2,3})\s+(.+)$/gm, (_, hashes, text) => {
-      const id = text
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, "")
-        .replace(/\s+/g, "-");
-      return `${hashes} ${text} {#${id}}`;
-    });
-  }, [post.content]);
+
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
@@ -199,20 +191,14 @@ export default function BlogDetailContent({
                   components={{
                     h2: ({ children, ...props }: any) => {
                       const text = typeof children === 'string' ? children : '';
-                      const match = text.match(/\{#([^}]+)\}$/);
-                      const id = match ? match[1] : '';
-                      const cleanText = text.replace(/\s*\{#[^}]+\}$/, '');
-                      return <h2 id={id} {...props}>{cleanText}</h2>;
+                      return <h2 id={headingToId(text)} {...props}>{children}</h2>;
                     },
                     h3: ({ children, ...props }: any) => {
                       const text = typeof children === 'string' ? children : '';
-                      const match = text.match(/\{#([^}]+)\}$/);
-                      const id = match ? match[1] : '';
-                      const cleanText = text.replace(/\s*\{#[^}]+\}$/, '');
-                      return <h3 id={id} {...props}>{cleanText}</h3>;
+                      return <h3 id={headingToId(text)} {...props}>{children}</h3>;
                     },
                   }}
-                >{contentWithIds}</ReactMarkdown>
+                >{post.content}</ReactMarkdown>
               </article>
 
               {/* Tags */}
