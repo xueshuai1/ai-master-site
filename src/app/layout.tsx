@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import BackToTop from "@/components/BackToTop";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
