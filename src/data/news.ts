@@ -16,6 +16,143 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-092",
+    tag: "融资",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "OpenAI 完成 1220 亿美元融资，估值达 8520 亿美元创 AI 行业纪录",
+    summary: "OpenAI 宣布完成最新一轮融资，募集 1220 亿美元承诺资本，投后估值高达 8520 亿美元，创 AI 行业融资纪录。",
+    content: `
+
+## OpenAI 史上最大融资
+
+2026 年 4 月 14 日，OpenAI 官方宣布完成最新一轮融资。
+
+**融资核心数据：**
+- 承诺资本 **1220 亿美元**，远超市场预期
+- 投后估值达 **8520 亿美元**，接近万亿美元
+- 资金用于下一代模型研发和基础设施建设
+
+**行业影响：**
+- AI 行业的资本集中度进一步向头部公司倾斜
+- 可能加速 AI 模型能力的代际跨越
+- 与 Sam Altman 住宅遭袭事件同日，凸显行业紧张局势`,
+    date: "2026-04-14 09:00",
+    source: "OpenAI 官方博客",
+    sourceUrl: "https://openai.com/index/accelerating-the-next-phase-ai/",
+    href: "/news/news-092",
+  },
+  {
+    id: "news-091",
+    tag: "安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Sam Altman 住宅遭二次袭击，FBI 以国内恐怖主义罪名调查",
+    summary: "Sam Altman 住宅第二次遭 Molotov 鸡尾酒攻击，20 岁嫌疑人面临联邦'国内恐怖主义'指控，Altman 呼吁降低对抗情绪。",
+    content: `
+
+## AI 行业领袖安全危机升级
+
+2026 年 4 月 13 日，Sam Altman 住宅再次遭袭。
+
+**事件详情：**
+- 住宅**第二次**遭 Molotov 鸡尾酒攻击
+- 嫌疑人 Daniel Moreno-Gama，20 岁
+- FBI 以**"国内恐怖主义"**罪名展开联邦调查
+
+**Altman 回应：**
+- 发布个人博客，呼吁**"降低对抗情绪"**
+- 表示不希望事件伤害到家人
+
+**深层忧虑：**
+- AI 技术发展速度与社会接受度之间存在巨大鸿沟
+- 技术领袖人身安全成为行业不可回避的问题`,
+    date: "2026-04-14 08:00",
+    source: "CBS News",
+    sourceUrl: "https://www.cbsnews.com/video/sam-altman-says-we-should-deescalate-the-rhetoric-after-home-hit-with-molotov-cocktail/",
+    href: "/news/news-091",
+  },
+  {
+    id: "news-090",
+    tag: "研究",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "MIT 用控制理论让 AI 模型学习时自我瘦身，推理成本大幅降低",
+    summary: "MIT 研究人员利用控制理论在 AI 模型学习过程中去除不必要参数，使模型更轻量高效，为边缘设备部署提供新思路。",
+    content: `
+
+## AI 模型瘦身革命
+
+2026 年 4 月 9 日，MIT 研究人员发表突破性成果。
+
+**技术原理：**
+- 使用**控制理论**在训练中动态评估参数重要性
+- 自动**剔除不必要参数**，而非训练后剪枝
+- 模型在"学习中瘦身"，保持性能
+
+**核心优势：**
+- **降低推理成本** -- 更少参数 = 更快推理
+- **降低部署门槛** -- 精简模型易部署到边缘设备
+- **保持性能** -- 比训练后剪枝影响更小
+
+**行业意义：**
+如果技术成熟，AI 行业经济模型可能改变——不需要越来越大的模型，而是更聪明的训练方法。`,
+    date: "2026-04-14 07:00",
+    source: "MIT Research",
+    sourceUrl: "https://radicaldatascience.wordpress.com/2026/04/09/ai-news-briefs-bulletin-board-for-april-2026/",
+    href: "/news/news-090",
+  },
+  {
+    id: "news-089",
+    tag: "产品",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Microsoft MAI 发布三个基础模型，正面挑战 OpenAI 和 Google",
+    summary: "微软 MAI 团队发布语音转文字、音频生成和图像生成三个基础模型，成立仅 6 个月快速迭代。",
+    content: `
+
+## Microsoft 自建 AI 栈
+
+2026 年 4 月 2 日，MAI Superintelligence 团队发布三款基础模型。
+
+**三款模型：**
+- **MAI-Transcribe-1**：25 语言语音转文字，速度快 2.5 倍，$0.36/小时
+- **MAI-Voice-1**：1 秒生成 60 秒音频，支持自定义声音
+- **MAI-Image-2**：文本到图像/视频生成，定价低于竞品
+
+**战略意义：**
+- Microsoft 计划 2027 年建立自研大模型体系
+- 自研 + OpenAI 双轨策略，拥有更大灵活性
+- 更低定价可能引发 AI API 价格战`,
+    date: "2026-04-14 06:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+    href: "/news/news-089",
+  },
+  {
+    id: "news-088",
+    tag: "行业",
+    tagColor: "bg-amber-500/10 text-amber-300",
+    title: "Amazon 证实 AI 已成数十亿美元级收入引擎，OpenAI 暗示零售合作",
+    summary: "Amazon 首次确认 AI 业务达数十亿美元规模，OpenAI 暗示可能与 Amazon 在零售领域展开合作。",
+    content: `
+
+## AI 商业化里程碑
+
+2026 年 4 月，AI 行业迎来重要的商业化确认。
+
+**Amazon AI 收入：**
+- 首次确认 AI 业务达**数十亿美元**规模
+- AI 已从成本中心变为真正的收入引擎
+
+**OpenAI × Amazon 合作：**
+- OpenAI 暗示可能与 Amazon 在**零售领域**合作
+- ChatGPT/GPT 模型或深度整合到 Amazon 电商生态
+
+**行业意义：**
+当 Amazon 这样的巨头确认 AI 收入规模，意味着 AI 技术已经进入主流商业应用的核心地带。`,
+    date: "2026-04-14 05:00",
+    source: "TechStartups",
+    sourceUrl: "https://techstartups.com/2026/04/09/top-tech-news-today-april-9-2026/",
+    href: "/news/news-088",
+  },
+  {
     id: "news-082",
     tag: "安全",
     tagColor: "bg-red-500/10 text-red-300",

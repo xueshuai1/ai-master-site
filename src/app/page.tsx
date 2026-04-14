@@ -135,7 +135,7 @@ export default function Home() {
             {[
               { num: `${articles.length}+`, label: "篇教程", trend: "↑ 持续更新" },
               { num: `${tools.length}+`, label: "个工具", trend: "↑ 精选收录" },
-              { num: `${news.length}+`, label: "条新闻", trend: "↑ 每日更新" },
+              { num: `${news.length}+`, label: "条新闻", trend: "↑ 小时级更新" },
               { num: "100%", label: "免费", trend: "❤️ 永远免费" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
