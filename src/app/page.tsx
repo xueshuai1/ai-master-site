@@ -185,7 +185,7 @@ export default function Home() {
           100% { transform: translateX(-50%); }
         }
         .animate-news-ticker {
-          animation: news-ticker 40s linear infinite;
+          animation: news-ticker 25s linear infinite;
         }
         .animate-news-ticker:hover {
           animation-play-state: paused;
