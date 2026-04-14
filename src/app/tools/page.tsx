@@ -121,26 +121,6 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {toolCategories.filter((c) => c.key !== "all").map((c) => (
-              <div
-                key={c.key}
-                className="text-center p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/20 transition-all"
-              >
-                <div className="text-2xl mb-1">{c.icon}</div>
-                <div className="text-sm font-medium text-slate-300">{c.label}</div>
-                <div className="text-xs text-slate-500 mt-0.5">
-                  {tools.filter((t) => t.category === c.key).length} 个
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Search & Filter */}
       <section className="px-4 sm:px-6 lg:px-8 pb-6">
         <div className="max-w-5xl mx-auto">
