@@ -16,6 +16,223 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-110",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "TinyFish AI 发布全栈 Web 基础设施平台 — AI Agent 的搜索/抓取/浏览器/代理一站式解决方案",
+    summary: "TinyFish 从单一 Web Agent 扩展为四产品平台：Web Search（488ms 延迟）、Web Browser（<250ms 冷启动）、Web Fetch（比 MCP 减少 87% Token）、Web Agent（自主多步工作流）。CLI + Agent Skill 让 Claude Code、Cursor 等自动学会调用。",
+    content: `## TinyFish AI：AI Agent 的 Web 基础设施统一平台
+
+2026 年 4 月 14 日，TinyFish 正式发布其全栈 Web 基础设施平台，为 AI Agent 提供一站式 Web 交互能力。
+
+**四大产品：**
+
+**Web Search** — 自定义 Chromium 引擎，P50 延迟仅 488ms（竞品平均 2800ms+），返回干净 JSON 格式的搜索结果。
+
+**Web Browser** — 托管隐身 Chrome 会话，CDP 协议，冷启动 <250ms（竞品 5-10 秒）。内置 28 种 C++ 级别反反爬机制。
+
+**Web Fetch** — 将任意 URL 转换为干净的 Markdown/HTML/JSON，剥离 CSS、脚本、导航、广告等无关内容。CLI 操作仅需约 100 Token，比 MCP 方式减少 **87%**。
+
+**Web Agent** — 在真实网站上执行自主多步工作流：导航、填表、点击、返回结构化结果。
+
+**架构创新：CLI + Agent Skill**
+
+TinyFish 的核心差异化在于其 **CLI + Agent Skill** 组合：
+- CLI 安装：\`npm install -g @tiny-fish/cli\`
+- Agent Skill 安装：\`npx skills add https://github.com/tinyfish-io/skills --skill tinyfish\`
+- 安装后，Claude Code、Cursor、Codex、OpenClaw 等自动学会何时以及如何调用 TinyFish 端点
+- CLI 将输出写入文件系统而非塞入上下文窗口，保持多步任务的上下文清洁
+
+**关键数据：**
+- 复杂多步任务完成率比 MCP 方式高 **2 倍**
+- 每操作 Token 消耗降低 **87%**（100 vs 1500）
+- 搜索延迟降低 **82%**（488ms vs 2800ms）
+- 浏览器冷启动降低 **95%**（<250ms vs 5-10s）
+
+**为什么统一栈很重要：**
+- 所有层级（Search/Fetch/Browser/Agent）自研，非拼接第三方 API
+- 端到端信号：任务成功/失败的每一步都可追踪
+- 会话一致性：整个工作流保持同一 IP、指纹、Cookie
+
+**免费开始：** 500 步免费，无需信用卡。
+
+**行业意义：** AI Agent Web 工具从"碎片化拼接"走向"统一平台"，CLI + Skill 模式代表 Agent 自主使用工具的新范式。`,
+    date: "2026-04-15 04:00",
+    source: "MarkTechPost / TinyFish",
+    sourceUrl: "https://www.marktechpost.com/2026/04/14/tinyfish-ai-releases-full-web-infrastructure-platform-for-ai-agents/",
+    href: "/news/news-110",
+  },
+  {
+    id: "news-111",
+    tag: "AI 模型",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/models.jpg",
+    title: "NVIDIA 发布 Audio Flamingo Next — 最强开源大音频语言模型，超越 Gemini 2.5 Pro",
+    summary: "NVIDIA 与马里兰大学发布 AF-Next，基于 108M 样本/100 万小时音频训练的开源 LALM。三变体覆盖通用 QA、多步推理、音频描述。在 LongAudioBench 上以 73.9 分超越 Gemini 2.5 Pro 的 60.4 分。引入 Temporal Audio Chain-of-Thought 技术。",
+    content: `## Audio Flamingo Next：开源音频语言模型的新里程碑
+
+2026 年 4 月 14 日，NVIDIA 与马里兰大学联合发布 Audio Flamingo Next (AF-Next)，这是目前最强大的开源大音频语言模型。
+
+**三大专属变体：**
+- **AF-Next-Instruct**：通用问答
+- **AF-Next-Think**：高级多步推理
+- **AF-Next-Captioner**：详细音频描述
+
+**架构亮点：**
+- **AF-Whisper 编码器**：定制 Whisper 编码器，在更多样化语料上进一步预训练
+- **音频适配器**：2 层 MLP 映射到 LLM 嵌入空间
+- **LLM 基座**：Qwen-2.5-7B，上下文从 32K 扩展到 **128K**
+- **Rotary Time Embeddings (RoTE)**：用绝对时间戳代替离散序列位置，实现真正的时序推理
+- **流式 TTS**：支持语音到语音交互
+
+**Temporal Audio Chain-of-Thought（时间音频思维链）：**
+- 每步推理显式锚定音频时间戳
+- 减少长录音上的幻觉
+- 训练数据 AF-Think-Time 包含约 43K 样本，平均每条思维链 446 词
+
+**训练规模：**
+- 约 **1.08 亿**样本，约 **100 万小时**音频
+- 四阶段课程训练：预训练→中期训练→后训练→CoT 训练
+- 混合序列并行（Ulysses + Ring Attention）使 128K 上下文训练可行
+
+**基准表现：**
+| 基准 | AF-Next | Gemini 2.5 Pro |
+|------|---------|----------------|
+| MMAU-v05 | 74.20 (Instruct) | 闭源对比 |
+| MMAU-Pro | 58.7 (Think) | 57.4 |
+| LongAudioBench | **73.9** | 60.4 |
+| LongAudioBench (+Speech) | **81.2** | 66.2 |
+| LibriSpeech WER (test-clean) | **1.54** | — |
+
+**关键突破：** 在 LongAudioBench 上，7B 参数的开源模型大幅超越闭源的 Gemini 2.5 Pro，这是开源音频模型的历史性里程碑。
+
+**行业意义：** 音频语言模型正成为多模态 AI 的下一个前沿。AF-Next 证明开源模型在音频理解领域已可超越闭源巨头。`,
+    date: "2026-04-15 04:00",
+    source: "MarkTechPost / arXiv 2604.10905",
+    sourceUrl: "https://arxiv.org/abs/2604.10905",
+    href: "/news/news-111",
+  },
+  {
+    id: "news-112",
+    tag: "AI 框架",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/framework.jpg",
+    title: "SWE-AGILE：7B 模型刷新 SWE-Bench 记录 — 动态推理上下文解决 Agent 效率瓶颈",
+    summary: "KDE Group 提出 SWE-AGILE 框架，通过'滑动窗口详细推理 + 历史推理压缩摘要'解决 ReAct 式 Agent 的上下文爆炸问题。仅用 2.2k 轨迹就在 SWE-Bench-Verified 上为 7B-8B 模型创纪录。",
+    content: `## SWE-AGILE：让小模型 Agent 也能深度推理
+
+2026 年 4 月 13 日，arXiv 发布 SWE-AGILE 论文，提出一种创新的软件 Agent 上下文管理策略。
+
+**核心问题：**
+
+自主软件工程 Agent（ReAct 风格）面临两难：
+- 保留完整推理历史 → **上下文爆炸** + "Lost in the Middle"性能退化
+- 丢弃推理历史 → 每步**重复推理**，效率极低
+
+**SWE-AGILE 的解决方案：**
+
+**动态推理上下文策略**：
+1. **滑动窗口**：保留近期详细推理，确保即时连续性
+2. **推理摘要 (Reasoning Digests)**：将历史推理压缩为简洁摘要
+3. 避免重复分析，同时不丢失关键上下文
+
+**实验结果：**
+- 在 **SWE-Bench-Verified** 上为 7B-8B 模型创纪录
+- 仅使用 **2.2k 轨迹**和 **896 任务**
+- 比全量历史保留方法显著降低 Token 消耗
+
+**技术细节：**
+- 填补推理深度与上下文约束之间的鸿沟
+- 显式 System-2 推理支持深度分析和复杂边缘案例处理
+- 代码开源：github.com/KDEGroup/SWE-AGILE
+
+**行业意义：** 上下文管理是 AI Agent 效率的核心瓶颈。SWE-AGILE 证明通过智能上下文策略，小模型也能达到大模型的 Agent 表现，为资源受限场景提供可行方案。`,
+    date: "2026-04-15 04:00",
+    source: "arXiv 2604.11716",
+    sourceUrl: "https://arxiv.org/abs/2604.11716",
+    href: "/news/news-112",
+  },
+  {
+    id: "news-113",
+    tag: "行业动态",
+    tagColor: "bg-gray-500/10 text-gray-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "Steve Yegge 引爆 Google AI 采用率争议 — Addy Osmani 反驳：40K+ SWE 每周使用 Agentic 编程",
+    summary: "Steve Yegge 声称 Google 工程 AI 采用率与 John Deere 拖拉机公司相当（仅 20% 深度用户），引发 Google 高管集体反驳。Addy Osmani 称 40K+ SWE 每周使用 Agentic 编程，Demis Hassabis 称该帖'完全虚假'。",
+    content: `## Google AI 采用率之争：一场公开的行业辩论
+
+2026 年 4 月 13 日，前 Google/Amazon 工程师 Steve Yegge 在社交媒体发布了一篇引发轰动的帖子。
+
+**Yegge 的核心论点：**
+- Google 工程的 AI 采用 footprint 与 **John Deere 拖拉机公司**相当
+- 行业普遍曲线：**20% Agentic 深度用户、20% 完全拒绝者、60% 仅用 Cursor 等基础聊天工具**
+- 18+ 个月的行业招聘冻结意味着没有外部人才流入来提醒 Google 落后了多少
+- Google 作为 eng 组织已变得" utterly mediocre"
+
+**Google 方面的回应：**
+
+**Addy Osmani（Google 工程师）：**
+- "超过 **40K SWE 每周**在这里使用 Agentic 编程"
+- Googlers 可使用内部版 Antigravity、Gemini CLI、定制模型、Skills、CLIs 和 MCPs
+- "编排器、Agent 循环、虚拟 SWE 团队等系统正积极供员工使用"
+
+**Demis Hassabis（DeepMind CEO）：**
+- "也许告诉你的朋友去做些实际工作，停止传播绝对的胡扯"
+- "这个帖子完全是假的，纯粹的点击诱饵"
+
+**行业背景：**
+- 大厂 AI 工具采纳确实存在分化
+- 20% 深度用户、60% 浅度用户、20% 拒绝者是行业普遍现象
+- Google 内部工具链丰富度确实领先，但采纳率争议反映的是"工具可用性 ≠ 用户接受度"
+
+**启示：**
+- AI 编程工具的"真实采纳率"比厂商宣传的复杂得多
+- 即使是技术最前沿的公司，深度 Agentic  adoption 仍有限
+- 工具易用性和组织文化变革同样重要`,
+    date: "2026-04-15 04:00",
+    source: "Simon Willison's Weblog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/13/steve-yegge/",
+    href: "/news/news-113",
+  },
+  {
+    id: "news-114",
+    tag: "行业动态",
+    tagColor: "bg-gray-500/10 text-gray-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "OpenAI 完成 $1220 亿史上最大融资 + Codex 推出按量付费定价",
+    summary: "OpenAI 完成 1220 亿美元融资，加速下一阶段 AI 发展。同时 Codex 面向团队推出按量付费定价，降低企业 AI 编程门槛。此外 OpenAI 还发布了 AI 儿童安全蓝图和安全奖学金计划。",
+    content: `## OpenAI 的资本与产品双线推进
+
+2026 年 3-4 月，OpenAI 在资本和产品两端同步加速。
+
+**$1220 亿融资（3 月 31 日）：**
+- 史上最大规模的 AI 公司融资
+- 目标：加速下一阶段 AI 发展
+- 反映资本市场对 AGI 路线的持续信心
+
+**Codex 按量付费定价（4 月 2 日）：**
+- 面向团队推出灵活定价模式
+- 降低企业 AI 编程准入门槛
+- 与 Anthropic Claude Code 等企业竞品正面竞争
+
+**安全举措同步推进：**
+- **AI 儿童安全蓝图**：与 NCMEC 和检察长联盟合作，应对 AI 生成的 CSAM 问题
+- **OpenAI 安全奖学金**：培养下一代 AI 安全研究人员
+- **Axios 开发者工具 compromised 响应**：发布更新和安全证书缓解风险
+
+**行业意义：**
+- 巨额融资巩固 OpenAI 在 AGI 竞赛中的领先地位
+- 按量付费定价降低中小企业 AI 采用门槛
+- 安全投入反映 OpenAI 在监管压力下的合规策略
+
+Sam Altman 在《纽约客》专访中坦言："我现在半夜醒来，意识到我低估了语言和叙事的力量"，表达了对 AI 行业方向和 OpenAI 使命的深刻反思。`,
+    date: "2026-04-15 04:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/news/",
+    href: "/news/news-114",
+  },
+  {
     id: "news-105",
     tag: "AI 安全",
     tagColor: "bg-red-500/10 text-red-300",

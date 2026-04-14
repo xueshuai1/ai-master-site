@@ -1,47 +1,47 @@
 # 内容研究报告
 
-**生成时间**：2026-04-15 02:05 CST
+**生成时间**：2026-04-15 04:05 CST
 **研究员**：Content Researcher（阶段 A）
-**数据来源**：The Verge、VentureBeat、WIRED、arXiv
+**数据来源**：The Verge、Simon Willison's Weblog、MarkTechPost、arXiv、OpenAI Blog、Anthropic News
 
 ---
 
 ## TOP 5 热点新闻
 
-### 1. 🔥 Anthropic 发布 Claude Mythos Preview — AI 网络安全"分水岭"
-- **来源**：WIRED / Anthropic
-- **时间**：2026-04-10
-- **摘要**：Anthropic 发布 Claude Mythos Preview 模型，声称能够自主发现任何操作系统/浏览器/软件漏洞并生成利用代码。该模型仅通过 Project Glasswing 联盟向 Microsoft、Apple、Google、Linux Foundation 等数十家组织开放。安全专家认为这是真正的威胁转折，但也质疑 Anthropic 是否在制造营销噱头。
-- **新发现**：这是本轮搜索中发现的**全新故事**，上轮未覆盖。Mythos Preview 的"exploit chain"能力是 AI 安全领域的重大话题。
-- **建议**：⭐ 必须覆盖。AI + 网络安全交叉领域是极具话题性的新方向。
-
-### 2. 🔥 SoftBank 联合 Sony/Honda 创建「物理 AI」公司 — 2030 年前实现机器人自主控制
-- **来源**：The Verge / Nikkei
-- **时间**：2026-04-13
-- **摘要**：SoftBank 创建新公司，目标 2030 年前开发能自主控制机器和机器人的 AI 模型。项目获得 Sony、Honda、Nippon Steel 等日本巨头支持。这是"主权 AI"趋势的最新案例，各国正加速投入本土 AI 能力建设。
-- **新发现**：这是本轮搜索中发现的**全新故事**，"物理 AI"（Physical AI）是一个值得关注的新概念方向。
-- **建议**：⭐ 必须覆盖。从软件 AI 到物理 AI 是产业演进的新阶段。
-
-### 3. 🔥 Google Chrome 推出 AI「Skills」功能 — 50+ 预设 AI 技能集成到浏览器
-- **来源**：WIRED / Google
+### 1. 🔥 TinyFish AI 发布全栈 Web 基础设施平台 — AI Agent 的搜索/抓取/浏览器/代理一站式解决方案
+- **来源**：MarkTechPost / TinyFish
 - **时间**：2026-04-14
-- **摘要**：Google Chrome 在 Gemini 侧边栏中推出 AI Skills 功能，用户可通过快捷键运行可重复的 AI 提示。Google 提供 50+ 预设技能（总结 YouTube 视频、优化食谱蛋白质摄入、评估求职等）。这标志着 AI 从独立应用走向浏览器原生集成。
-- **新发现**：这是本轮搜索中发现的**全新故事**，浏览器内 AI 集成是新的产品趋势。
-- **建议**：建议覆盖。AI 工具形态正在从独立产品转向平台集成。
+- **摘要**：TinyFish 从单一 Web Agent 扩展为四产品平台：Web Agent（自主多步工作流）、Web Search（488ms 延迟，竞品平均 2800ms）、Web Browser（<250ms 冷启动，28 种反反爬机制）、Web Fetch（干净 Markdown/JSON，比 MCP 减少 87% Token 消耗）。CLI + Agent Skill 组合让 Claude Code、Cursor、Codex 等自动学会调用 TinyFish。
+- **新发现**：本轮**全新故事**。统一栈解决多供应商拼接的痛点，CLI 写文件系统而非塞入上下文窗口是架构创新。
+- **建议**：⭐ 必须覆盖。AI Agent Web 基础设施是开发者工具领域的重要趋势。
 
-### 4. 🔥 Anthropic Claude Cowork 企业版发布 — 共享 AI 工作空间支持大规模部署
-- **来源**：The Verge / Anthropic
-- **时间**：2026-04-09
-- **摘要**：Anthropic 的 Claude Cowork 共享 AI 工作空间新增企业级 IT 管理员工具，支持公司范围部署和自主工作流构建。新功能包括将 Zoom 会议转录为行动项。这标志着 AI Agent 从个人工具向企业协作平台的演进。
-- **新发现**：这是本轮搜索中发现的**全新故事**。
-- **建议**：建议覆盖。AI Agent 企业化是重要趋势。
+### 2. 🔥 NVIDIA 发布 Audio Flamingo Next — 最强开源大音频语言模型
+- **来源**：MarkTechPost / arXiv 2604.10905
+- **时间**：2026-04-14
+- **摘要**：NVIDIA 与马里兰大学发布 AF-Next，基于 108M 样本/100 万小时音频训练的开源 LALM。三变体：Instruct（通用 QA）、Think（多步推理）、Captioner（音频描述）。在 LongAudioBench 上超越 Gemini 2.5 Pro（73.9 vs 60.4）。引入 Temporal Audio Chain-of-Thought，每步推理锚定音频时间戳。
+- **新发现**：本轮**全新故事**。音频语言模型是多模态 AI 的下一个前沿。
+- **建议**：⭐ 必须覆盖。开源模型超越闭源是里程碑事件。
 
-### 5. 🔥 马斯克 Terafab 芯片工厂合作 Intel — AI 芯片自主制造野心
-- **来源**：WIRED
-- **时间**：2026-04-08
-- **摘要**：Intel CEO Lip-Bu Tan 宣布将与 Elon Musk 的 Terafab 芯片项目深度合作。Terafab 是 SpaceX 和 Tesla 联合开发的超高性能芯片制造设施，可能耗资数十亿美元。Musk 计划为汽车、机器人和数据中心自产芯片。
-- **新发现**：这是本轮搜索中发现的**全新故事**。AI 芯片供应链自主化是新的竞争维度。
-- **建议**：建议覆盖。芯片制造是 AI 基础设施的关键环节。
+### 3. 🔥 SWE-AGILE：7B 模型刷新 SWE-Bench 记录 — 动态推理上下文策略
+- **来源**：arXiv 2604.11716
+- **时间**：2026-04-13
+- **摘要**：KDE Group 提出 SWE-AGILE 框架，通过"滑动窗口详细推理 + 历史推理压缩摘要"解决 ReAct 式 Agent 在软件工程任务中的上下文爆炸问题。仅用 2.2k 轨迹和 896 任务就在 SWE-Bench-Verified 上为 7B-8B 模型创纪录。
+- **新发现**：本轮**全新故事**。上下文管理是 AI Agent 效率的核心瓶颈。
+- **建议**：建议覆盖。对 Agent 开发有直接参考价值。
+
+### 4. 🔥 Steve Yegge 引爆 Google AI 采用率争议 — 内部回应称 40K+ SWE 每周使用 Agentic 编程
+- **来源**：Simon Willison / Steve Yegge Twitter
+- **时间**：2026-04-13
+- **摘要**：Steve Yegge 声称 Google 工程 AI 采用率与 John Deere 拖拉机公司相当（20% 深度用户、20% 拒绝者、60% 仅用基础聊天工具）。Addy Osmani 代表 Google 反驳称 40K+ SWE 每周使用 Agentic 编程。Demis Hassabis 称该帖"完全是假的"。
+- **新发现**：本轮**全新故事**。大厂 AI 采纳现状是行业关注焦点。
+- **建议**：建议覆盖。反映 AI 工具实际采纳的复杂性。
+
+### 5. 🔥 OpenAI 完成 $1220 亿融资 + Codex 按量付费定价
+- **来源**：OpenAI Blog
+- **时间**：2026-03-31 / 2026-04-02
+- **摘要**：OpenAI 完成 1220 亿美元融资，加速下一阶段 AI 发展。同时 Codex 推出面向团队的按量付费定价，降低企业 AI 编程门槛。
+- **新发现**：本轮**全新故事**。巨额融资反映 AI 行业持续资本热度。
+- **建议**：建议覆盖。行业风向标事件。
 
 ---
 
@@ -49,11 +49,13 @@
 
 | 热点 | 状态 | 备注 |
 |------|------|------|
-| Meta Muse Spark | ✅ 已覆盖 | news-091，需补充更多技术细节（Artificial Analysis 评分 52、1000+ 医师协作训练） |
-| AI 责任法案之争 | ✅ 已覆盖 | news-092 |
-| Microsoft MAI-Image-2-Efficient | ✅ 已覆盖 | 可在工具页新增 |
-| 美国陆军 Victor Chatbot | ✅ 已覆盖 | news-093 |
-| OpenAI 高管动荡 | ✅ 已覆盖 | Fidji Simo 病假 |
+| Anthropic Claude Mythos Preview | ✅ 已覆盖 | news-071, Glasswing 联盟 |
+| SoftBank Physical AI | ✅ 已有相关 | 物理 AI 概念已覆盖 |
+| Google Gemini 个人智能 | ✅ 已覆盖 | news-100 |
+| Microsoft MAI-Image-2-Efficient | ✅ 已覆盖 | news-101 |
+| LLM 有害内容因果分析 | ✅ 已覆盖 | news-103 |
+| RationalRewards 视觉生成 | ✅ 已覆盖 | news-104 |
+| Meta Muse Spark | ✅ 已覆盖 | news-109 |
 
 ---
 
@@ -61,41 +63,47 @@
 
 | 工具/产品 | 公司 | 描述 | URL |
 |-----------|------|------|-----|
-| Claude Mythos Preview | Anthropic | 自主漏洞发现和利用代码生成的 AI 安全模型，Project Glasswing 联盟专用 | https://www.wired.com/story/anthropics-mythos-will-force-a-cybersecurity-reckoning-just-not-the-one-you-think/ |
-| Chrome AI Skills | Google | 浏览器内 AI 技能系统，50+ 预设技能，Gemini 侧边栏集成 | https://www.wired.com/story/how-to-use-google-chrome-ai-powered-skills/ |
-| Claude Cowork Enterprise | Anthropic | 共享 AI 工作空间企业版，支持 IT 管理员大规模部署 | https://claude.com/blog/cowork-for-enterprise |
-| Pixel Societies | 独立开发者 | AI Agent 社交模拟平台，用数字孪生匹配同事/朋友/伴侣 | https://www.wired.com/story/ai-agents-are-coming-for-your-dating-life-next/ |
-| Unitree R1 | Unitree | $4,370 人形机器人，可在 AliExpress 购买 | https://www.wired.com/story/unitree-r1-humanoid-robot-for-sale-on-aliexpress/ |
-| Physical AI | SoftBank | 2030 年前实现自主控制机器/机器人的 AI 模型 | — |
-| Terafab | SpaceX/Tesla + Intel | 超高性能芯片制造设施 | https://www.wired.com/story/5-burning-questions-about-elon-musks-terafab-chip-partnership-with-intel/ |
-| Onix | Onix | "聊天版 Substack"，付费与 AI 版人类专家对话 | https://www.wired.com/story/onix-substack-ai-platform-therapy-medicine-nutrition/ |
+| TinyFish Web Platform | TinyFish | AI Agent 全栈 Web 基础设施：Search/Fetch/Browser/Agent 四合一，CLI + Agent Skill 生态 | https://tinyfish.ai |
+| Audio Flamingo Next (AF-Next) | NVIDIA/UMD | 开源大音频语言模型，100万小时训练，超越 Gemini 2.5 Pro | https://arxiv.org/abs/2604.10905 |
+| SWE-AGILE | KDE Group | 动态推理上下文软件 Agent 框架，7B 模型刷新 SWE-Bench 记录 | https://arxiv.org/abs/2604.11716 |
+| OIDA | Federico Bottino 等 | 组织知识认知基础设施框架，Knowledge Gravity Engine + QUESTION 机制 | https://arxiv.org/abs/2604.11759 |
+| Meerkat | Adam Stein 等 | 跨 Agent 追踪安全违规检测系统，聚类 + Agent 搜索发现稀疏失败 | https://arxiv.org/abs/2604.11806 |
+| Servo 0.1.0 | Servo 团队 | Rust 嵌入式浏览器引擎，发布到 crates.io，含 headless CLI (servo-shot) | https://servo.org/blog/2026/04/13/servo-0.1.0-release/ |
+| Google Vantage | Google AI Research | 基于 LLM 的协作/创造力/批判性思维评测协议 | https://www.marktechpost.com/ |
+| Google ADK Multi-Agent Pipeline | Google | 多 Agent 数据流水线：加载→统计测试→可视化→报告生成 | https://www.marktechpost.com/ |
+| SQLite 3.53.0 | SQLite | 重大更新：ALTER TABLE 约束管理、JSON 函数增强、CLI 模式改进 | https://sqlite.org/releaselog/3_53_0.html |
+| Gemma 4 E2B + MLX | Google | 本地音频转写方案，10.28GB 模型，Mac 上可用 uv + mlx_vlm 运行 | https://huggingface.co/google/gemma-4-E2B |
 
 ---
 
 ## 新概念/新趋势发现
 
-1. **Physical AI（物理 AI）**：从纯软件 AI 扩展到控制物理世界（机器人、自动驾驶、工业自动化）。SoftBank 联合 Sony/Honda 投入此领域，标志着 AI 与物理世界融合的加速。
-2. **AI Exploit Chain（AI 利用链）**：Mythos Preview 展示了 AI 自主发现和串联多个漏洞的能力。这意味着 AI 安全从"防御工具"变为"攻防双刃剑"。
-3. **浏览器原生 AI**：Chrome Skills 代表 AI 从独立应用走向操作系统/浏览器层级的集成趋势。
-4. **AI 数字孪生社交**：Pixel Societies 用 AI Agent 模拟社交互动进行匹配，是 AI Agent 个人化的新方向。
-5. **AI 芯片供应链自主化**：Terafab 代表科技巨头从"买芯片"转向"造芯片"的战略转变。
+1. **AI Agent Web 基础设施统一化**：TinyFish 代表从"拼接多个供应商"到"一站式平台"的趋势。CLI + Skill 让 Agent 自主使用工具是范式转变。
+2. **音频语言模型爆发**：AF-Next 证明开源音频模型已可超越闭源。Temporal Audio CoT 是长音频推理的关键技术。
+3. **上下文管理成为 Agent 核心瓶颈**：SWE-AGILE 的"滑动窗口 + 摘要压缩"策略揭示 Agent 效率的关键在于上下文管理，而非模型大小。
+4. **组织 AI 的认知基础设施**：OIDA 提出"检索不够，需要认知保真度"——AI 需要区分约束性决策与假设、已知与未知。
+5. **AI 安全审计自动化**：Meerkat 展示用 AI 审计 AI 的可能性，发现奖励攻击和开发者作弊。
+6. **大厂 AI 采纳分化**：Steve Yegge 争议揭示即使是最技术先进的公司，AI 工具深度采纳仍仅 20%。
 
 ---
 
 ## 知识空白
 
-1. **Claude Mythos Preview 技术架构**：Anthropic 未公开具体模型大小、训练方法等细节
-2. **Project Glasswing 完整成员名单**：已知 Microsoft/Apple/Google/Linux Foundation，还有哪些？
-3. **SoftBank Physical AI 技术路线**：具体使用什么模型架构？
-4. **Chrome Skills 的隐私影响**：AI 分析浏览数据的安全性如何保障？
-5. **Terafab 具体技术参数**：芯片制程、产能、投资规模等细节尚未公开
+1. **TinyFish 实际性能数据**：官方声称的 2x 任务完成率和 87% Token 减少需要独立验证
+2. **AF-Next 的部署成本**：7B 参数 + 128K 上下文的实际推理开销
+3. **SWE-AGILE 的开源代码**：GitHub 链接尚未确认是否已公开
+4. **OIDA 的 EQS 评估**：正式消融实验（E4）尚未运行
+5. **Google Vantage 评测标准**：具体的协作/创造力指标定义尚未公开
 
 ---
 
 ## 给开发的建议
 
-1. **新增 3 条新闻**：Claude Mythos Preview（P0）、SoftBank Physical AI（P0）、Chrome AI Skills（P1）
-2. **工具页更新**：新增 Claude Mythos Preview（安全工具类）、Chrome AI Skills（浏览器工具类）
-3. **考虑新增标签**：「AI 安全」（Cybersecurity）标签，归类 Mythos Preview 等安全相关容
-4. **考虑新增标签**：「AI 硬件」标签，归类 Physical AI、Terafab、Unitree R1 等内容
-5. **Muse Spark 补充**：在 news-091 中补充 Artificial Analysis 评分 52 分、1000+ 医师协作训练健康推理等细节
+1. **新增 5 条新闻**（P0）：TinyFish AI 平台、Audio Flamingo Next、SWE-AGILE、Steve Yegge Google 争议、OpenAI $1220 亿融资
+2. **工具页更新**（P1）：新增 TinyFish（开发者工具类）、Servo（框架类）
+3. **知识库更新**（P1）：新增"音频语言模型"知识文章（基于 AF-Next 论文）
+4. **新增标签**：考虑添加「音频 AI」标签
+5. **博客选题建议**：
+   - "AI Agent Web 工具栈：从 Firecrawl 到 TinyFish 的演进"
+   - "上下文管理：SWE-AGILE 如何解决 Agent 的'Lost in the Middle'问题"
+   - "组织 AI 的认知基础设施：为什么检索还不够"
