@@ -223,39 +223,41 @@ Google 宣布 I/O 2026 大会,预计将成为 AI 领域的年度重磅事件。
     sourceUrl: "https://www.youtube.com/watch?v=y0myLanQVVw",
     href: "/news/news-086",
   },
-{
-    id: "news-072",
-    tag: "多模态",
-    tagColor: "bg-green-500/10 text-green-300",
-    title: "Grok 4.20 新增视频生成能力 - xAI 多模态版图扩展",
-    summary: "xAI 为 Grok 4.20 新增视频生成功能,结合 500,000 token 上下文窗口和 4-Agent 协作架构,成为多模态竞争新变量,X 平台深度集成。",
-    content: `## Grok 4.20 视频生成能力上线
+  {
+    id: "news-087",
+    tag: "安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "OpenAI、Anthropic、Google 联合对抗中国模型抄袭",
+    summary: "三大 AI 巨头罕见联手，试图遏制中国竞争对手从其模型中提取知识和技术。这是美国顶级 AI 公司首次合作应对中国 AI 崛起带来的挑战。",
+    content: `![news-087](/images/news/security.jpg)
 
-xAI 宣布为其 Grok 4.20 模型新增视频生成能力,标志着 xAI 正式进入多模态 AI 竞争。
+## 美国 AI 巨头罕见联手
 
-**Grok 4.20 核心能力:**
-- **视频生成** - 新增强大的视频创作功能
-- **4-Agent 协作架构** - 多智能体协同处理复杂任务
-- **500,000 token 上下文窗口** - 支持超长内容处理
-- **X 平台深度集成** - 与 Twitter/X 生态无缝连接
-- **新闻实时性领先** - 实时获取最新信息
+2026 年 4 月 6 日，据 Bloomberg 报道，OpenAI、Anthropic 和 Google 开始合作打击中国竞争对手从美国 AI 模型中提取知识和技术。
 
-**多模态竞争格局:**
+**背景：**
+- 中国 AI 公司通过蒸馏、数据提取等方式快速追赶美国模型
+- DeepSeek 等中国模型在 LMSYS 基准测试中已接近美国顶尖水平
+- 中美开放模型差距从 8% 缩小到 1.7%（斯坦福 AI Index 报告）
 
-随着 Grok 加入视频生成赛道,四大前沿模型的多模态能力对比:
-- **Gemini 3.1 Pro** - 原生多模态(文本+音频+图像+视频),200 万 token 窗口
-- **Grok 4.20** - 新增视频生成,X 平台集成优势
-- **GPT-5.4** - 原生计算机使用,多步工作流
-- **Claude Opus 4.6** - 代码和推理最强
+**合作方式：**
+- 共享模型指纹和水印技术
+- 协调应对知识提取攻击
+- 推动行业标准和政策
 
-**行业意义:**
-- 视频生成 AI 正从 Runway($53 亿估值)等专用公司向通用模型扩展
-- xAI 通过 X 平台拥有独特的分发渠道和用户数据优势
-- 多模态能力正在成为前沿模型的"标配"`,
+**行业意义：**
+- 这是美国顶级 AI 公司**首次联合**应对中国 AI 挑战
+- 此前 OpenAI、Anthropic、Google 在模型竞赛中激烈竞争
+- 但面对中国模型的快速崛起，它们选择了合作而非对抗
+
+**全球格局影响：**
+- 斯坦福 AI Index 报告显示中国在 AI 论文和专利申请数量上已超美国
+- 但美国仍产出更多前沿模型（40 vs 15）
+- 这一合作标志着 AI 领域的地缘政治竞争正在升温`,
     date: "2026-04-14",
-    source: "xAI / mean.ceo",
-    sourceUrl: "https://blog.mean.ceo/new-ai-model-releases-news-april-2026/",
-    href: "/news/news-072",
+    source: "Bloomberg / Yahoo Finance",
+    sourceUrl: "https://www.bloomberg.com/news/articles/2026-04-06/openai-anthropic-google-unite-to-combat-model-copying-in-china",
+    href: "/news/news-087",
   },
 {
     id: "news-073",
