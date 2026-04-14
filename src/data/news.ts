@@ -16,6 +16,181 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-105",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "AI 基础设施遭遇破坏攻击 — 非暴力抵抗运动蔓延至物理世界",
+    summary: "尽管绝大多数 AI 抵抗运动采取非暴力形式，但近期针对 AI 基础设施的破坏攻击事件频发，凸显 AI 部署面临的物理安全威胁。从数据中心涂鸦到服务器干扰，AI 反对者正在采取更直接的行动。",
+    content: `## AI 基础设施安全：非暴力抵抗的新战线
+
+2026 年 4 月 15 日，据多家媒体报道，针对 AI 基础设施的破坏行动正在增加。
+
+**事件概述：**
+- 尽管绝大多数 AI 抵抗运动保持**非暴力**原则
+- 近期发生多起针对 AI 硬件和基础设施的破坏事件
+- 这些行动反映了公众对 AI 快速发展的深层焦虑
+
+**背景：**
+- AI 公司正在以史无前例的速度扩张
+- 数据中心建设引发社区反对
+- 隐私和就业担忧推动抵抗运动
+
+**行业意义：**
+- AI 公司需要重新评估**物理安全**策略
+- 不仅是网络安全，现实世界的保护同样重要
+- 社会对 AI 的接受度与部署速度之间的张力日益加剧`,
+    date: "2026-04-15 03:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-105",
+  },
+  {
+    id: "news-106",
+    tag: "AI 工具",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "AI Agent 开始介入你的约会生活 — 从匹配到聊天全包了",
+    summary: "AI Agent 正在从工作场景扩展到个人生活领域，最新趋势是 AI 约会助手——不仅能帮你筛选匹配对象，还能替你聊天、安排约会。这种'AI 代恋'现象引发了关于真实性和人际关系的深入讨论。",
+    content: `## AI Agent 约会：当算法替你去恋爱
+
+2026 年 4 月 15 日，WIRED 报道了 AI Agent 正在进入约会领域的趋势。
+
+**现象描述：**
+- AI Agent 不仅能帮你**筛选匹配对象**
+- 还能**代替你聊天**，甚至**安排约会**
+- 从 Tinder 到 Hinge，AI 正在渗透约会应用的每个环节
+
+**技术实现：**
+- 基于 LLM 的对话生成，模拟用户语言风格
+- 分析对方社交资料，生成个性化回复
+- 根据对话进展自动提议约会时间和地点
+
+**争议焦点：**
+- **真实性问题**：如果 AI 替你聊天，对方爱上的到底是谁？
+- **伦理边界**：AI 代恋是否构成欺骗？
+- **关系质量**：AI 辅助的关系是否能建立真正的亲密感
+
+**行业影响：**
+- 约会应用可能推出官方 AI 助手功能
+- 约会体验从'社交技巧'转向'AI 调优'
+- 这可能彻底改变人类的约会文化`,
+    date: "2026-04-15 03:00",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/ai-agents-are-coming-for-your-dating-life-next/",
+    href: "/news/news-106",
+  },
+  {
+    id: "news-107",
+    tag: "AI 硬件",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "前 Apple 工程师打造 AI 按钮可穿戴设备 — 外形酷似 iPod Shuffle",
+    summary: "一支由前 Apple 工程师组成的团队发布了一款新型 AI 可穿戴设备，外形设计酷似经典的 iPod Shuffle。该设备通过物理按钮触发 AI 交互，试图在智能手表和耳机之外开辟新的 AI 交互形态。",
+    content: `## AI 按钮：从 iPod Shuffle 到 AI 可穿戴
+
+2026 年 4 月 15 日，WIRED 报道了一款由前 Apple 工程师设计的新型 AI 可穿戴设备。
+
+**产品特点：**
+- 外形酷似经典的 **iPod Shuffle**
+- 通过**物理按钮**触发 AI 交互
+- 可穿戴在衣服上或作为吊坠佩戴
+
+**设计理念：**
+- 回归极简物理交互，摆脱屏幕依赖
+- 一键触发，AI 即时响应
+- 适合快速查询、翻译、提醒等场景
+
+**团队背景：**
+- 核心成员来自 **Apple 前硬件工程团队**
+- 深谙消费电子产品的工业设计
+- 试图在 AI 硬件领域复制 iPod 级别的影响力
+
+**行业意义：**
+- AI 可穿戴设备正在探索**多样化形态**
+- 从智能手表、AR 眼镜到 AI 按钮，交互方式百花齐放
+- 物理按钮+AI 的组合可能成为新的交互范式`,
+    date: "2026-04-15 03:00",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/this-ai-button-wearable-from-ex-apple-engineers-looks-like-an-ipod-shuffle/",
+    href: "/news/news-107",
+  },
+  {
+    id: "news-108",
+    tag: "行业动态",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Black Forest Labs：70 人 AI 图像初创公司挑战硅谷巨头",
+    summary: "仅有 70 人的 AI 图像生成初创公司 Black Forest Labs 正在正面挑战 Silicon Valley 的 AI 图像生成巨头。凭借技术创新和精简团队，这家公司证明了在 AI 时代，小团队也能颠覆大市场。",
+    content: `## Black Forest Labs：小团队的大野心
+
+2026 年 4 月 15 日，WIRED 深度报道了 Black Forest Labs 的故事。
+
+**公司概况：**
+- 团队规模仅 **70 人**
+- 专注于 **AI 图像生成**技术
+- 直接挑战 Microsoft、Google 等巨头的 AI 图像产品
+
+**竞争优势：**
+- 技术创新：在图像质量和生成速度上保持领先
+- 精简团队：决策快、迭代快
+- 开源社区：与开发者社区保持紧密互动
+
+**行业意义：**
+- 在 AI 时代，**团队规模不再是决定因素**
+- 小团队凭借技术优势可以颠覆大市场
+- 这可能是 AI 行业的'David vs Goliath'故事
+
+**对比：**
+- Microsoft MAI 系列拥有数千工程师
+- Google Gemini 图像团队规模更大
+- Black Forest Labs 用 70 人正面竞争`,
+    date: "2026-04-15 03:00",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/black-forest-labs-ai-image-generation/",
+    href: "/news/news-108",
+  },
+  {
+    id: "news-109",
+    tag: "产品动态",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tech.jpg",
+    title: "Meta Muse Spark 健康功能引担忧 — 要求用户上传体检数据并给出错误建议",
+    summary: "WIRED 记者实测 Meta 最新 AI 模型 Muse Spark 的健康功能，发现该模型会主动要求用户上传健身追踪器、血糖仪或体检报告数据。尽管 Meta 声称与 1000 多名医生合作训练，但实际给出的健康建议存在明显问题。",
+    content: `## Meta Muse Spark 健康功能：隐私与准确性的双重风险
+
+2026 年 4 月 10 日，WIRED 记者 Reece Rogers 对 Meta 最新 AI 模型 Muse Spark 的健康功能进行了实测。
+
+**功能描述：**
+- Muse Spark 会主动要求用户**上传健康数据**
+- 包括健身追踪器数据、血糖仪读数、体检报告
+- 承诺能「计算趋势、标记模式、可视化展示」
+
+**实测结果：**
+- 尽管 Meta 声称与 **1000 多名医生**合作训练
+- 实际给出的健康建议**存在明显问题**
+- 不是合格医生的替代品
+
+**隐私风险：**
+- 用户上传的健康数据如何被使用和存储？
+- Meta 是否会利用这些健康数据进行广告定向？
+- 健康数据泄露的后果远比其他数据更严重
+
+**行业对比：**
+- OpenAI ChatGPT 和 Anthropic Claude 也有类似健康问答模式
+- 但 Muse Spark 是首个**主动索用户上传健康数据**的主流 AI 模型
+- Meta 计划将 Muse Spark 整合到 Facebook、Instagram 和 WhatsApp
+
+**监管考量：**
+- 健康 AI 建议的准确性尚无明确监管标准
+- 用户可能因 AI 错误建议而延误就医
+- 医疗 AI 的法律责任归属尚不清晰`,
+    date: "2026-04-15 03:00",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/metas-new-ai-asked-for-my-raw-health-data-and-gave-me-terrible-advice/",
+    href: "/news/news-109",
+  },
+  {
     id: "news-100",
     tag: "产品动态",
     tagColor: "bg-green-500/10 text-green-300",
