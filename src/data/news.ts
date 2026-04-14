@@ -16,6 +16,176 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-115",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "OpenAI 推出 GPT-5.4-Cyber 网络防御模型 — TAC 计划扩展至数千名安全防御者",
+    summary: "OpenAI 宣布将 Trusted Access for Cyber (TAC) 计划扩展至数千名已验证的个人防御者和数百个关键软件防御团队。专门为网络安全用例微调了 GPT-5.4-Cyber 模型，遵循民主化访问、迭代部署和生态系统韧性三大原则。",
+    content: `## OpenAI GPT-5.4-Cyber：为网络防御而生的 AI 模型
+
+2026 年 4 月 14 日，OpenAI 正式发布 GPT-5.4-Cyber，这是专门为网络安全防御用例微调的 GPT-5.4 变体模型。
+
+**TAC 计划核心内容：**
+
+**三大原则：**
+
+1. **民主化访问** — 通过明确的客观标准（如强 KYC 和身份验证）决定谁可以访问更高级别能力，而非任意决策
+2. **迭代部署** — 谨慎地将系统投入实际使用，在理解能力和风险后持续更新模型和安全系统
+3. **生态系统韧性投资** — 通过可信访问路径、定向赠款、开源安全倡议和 Codex Security 等技术加速防御社区
+
+**GPT-5.4-Cyber 特性：**
+- 专为防御性网络安全用例优化
+- 支持关键基础设施、公共服务和数字系统的安全防御
+- 与 Codex Security 协同工作，大规模识别和修复漏洞
+
+**背景：**
+- 自 2023 年起通过网络安全赠款计划支持防御者
+- 2025 年开始在模型部署中包含网络安全特定的安全保护措施
+- 今年初推出 Codex Security 研究预览版
+
+**为什么这很重要：** AI 既加速防御者也加速攻击者。OpenAI 的策略是在提升模型能力的同时同步扩展网络防御能力，确保防御者不被落下。
+
+**行业影响：** 这是首家主要 AI 公司专门为网络安全防御发布定制模型，标志着 AI 安全从"通用模型+限制"向"专用防御模型"的范式转变。`,
+    date: "2026-04-15 03:00",
+    source: "OpenAI",
+    sourceUrl: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/",
+    href: "/news/news-115",
+  },
+  {
+    id: "news-116",
+    tag: "行业调查",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "Lightrun 调查：43% AI 生成代码在生产环境需要手动调试 — 亚马逊 3 月宕机敲响警钟",
+    summary: "Lightrun 2026 年 AI 驱动工程报告显示，43% 的 AI 生成代码变更在生产环境中需要手动调试，即使已通过 QA 和暂存测试。零受访者表示对其组织能一次性验证 AI 建议修复「非常有信心」。亚马逊 3 月因 AI 辅助代码变更导致大规模宕机，损失 630 万订单。",
+    content: `## AI 代码的「信任墙」：43% 需要生产环境调试
+
+2026 年 4 月 14 日，Lightrun 发布《2026 年 AI 驱动工程状态报告》，对美英欧 200 名高级网站可靠性和 DevOps 领导的调查揭示了 AI 编码繁荣背后的隐藏成本。
+
+**关键发现：**
+
+**43% 的 AI 生成代码变更需要在生产环境中手动调试**，即使已通过质量保障和暂存测试。
+
+- **0%** 的受访者表示对其组织能仅用一次重新部署周期验证 AI 建议修复「非常有信心」
+- **88%** 报告需要 2-3 次重新部署周期
+- **11%** 需要 4-6 次重新部署周期
+
+**亚马逊 3 月宕机事件：**
+- 3 月 2 日：Amazon.com 中断近 6 小时，损失 12 万订单和 160 万网站错误
+- 3 月 5 日：更严重中断持续 6 小时，美国订单量下降 **99%**，约 **630 万** 订单损失
+- 两起事件均追溯到**未经适当审批部署的 AI 辅助代码变更**
+
+**亚马逊应对：**
+- 启动 90 天代码安全重置，覆盖 335 个关键系统
+- AI 辅助代码变更现在必须由高级工程师审批后才能部署
+
+**市场背景：**
+- Microsoft CEO Satya Nadella 和 Google CEO Sundar Pichai 均声称约 **25%** 的公司代码现在由 AI 生成
+- AIOps 市场 2026 年达 **189.5 亿美元**，预计 2031 年达 377.9 亿美元
+- Google 2025 DORA 报告发现 AI 采用与代码不稳定性增加相关
+
+**Lightrun 首席商务官 Or Maimon：**
+> "0% 的数字表明工程在 AI 采用上正在撞上信任墙。随着 AI 生成代码进入系统，它不仅增加了数量，还减慢了整个部署流水线。"
+
+**行业意义：** AI 工具能以空前速度生成代码，但验证、监控和信任这些代码的系统远远落后。这不仅仅是假设——亚马逊的宕机已经证明了这一点。`,
+    date: "2026-04-15 02:00",
+    source: "VentureBeat / Lightrun",
+    sourceUrl: "https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds",
+    href: "/news/news-116",
+  },
+  {
+    id: "news-117",
+    tag: "公司动态",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/company.jpg",
+    title: "OpenAI 收购科技媒体 TBPN — 硅谷热门 AI 脱口秀团队加入，承诺保持编辑独立性",
+    summary: "OpenAI CEO Fidji Simo 宣布收购 Technology Business Programming Network (TBPN)，这是一档快速增长的科技脱口秀节目，被纽约时报称为「硅谷最新痴迷对象」。TBPN 将保持编辑独立，继续自主选择嘉宾和编辑决策。",
+    content: `## OpenAI 收购 TBPN：从评论到影响
+
+2026 年 4 月 2 日，OpenAI CEO Fidji Simo 宣布收购 TBPN（Technology Business Programming Network）。
+
+**关于 TBPN：**
+- 每日直播科技脱口秀节目，工作日 11:00-15:00 PT 播出
+- 由创业者 Jordi Hays 和 John Coogan 主持
+- 被《纽约时报》称为「硅谷最新痴迷对象」
+- 在 X、YouTube、Spotify 等平台播出
+
+**收购核心条款：**
+- **编辑独立性** — TBPN 将继续自主运营节目、选择嘉宾、做出编辑决策
+- TBPN 将隶属于 OpenAI 战略部门，向 Chris Lehane 汇报
+- Jordi Hays、John Coogan、Dylan Abruscato 及更广泛团队加入 OpenAI
+
+**Fidji Simo 表示：**
+> "标准的企业传播手册不适用于我们。我们正在推动一场真正的技术变革。与其自己重建 TBPN 的能力，不如把他们带进来，支持他们做的事情，帮助他们扩大规模。"
+
+**TBPN 团队回应：**
+> "从评论转向真正影响这项技术的全球分发和理解方式，对我们来说非常重要。"
+
+**行业分析：**
+- 这是 OpenAI 首次收购媒体公司
+- 反映了 AI 公司正在从单纯的技术提供商转变为内容生态的参与者
+- 编辑独立性的承诺是关键——如果 TBPN 失去公信力，收购价值将大幅下降
+
+**意义：** AI 公司正在重新定义企业与媒体的关系，不是控制叙事，而是投资独立的声音。`,
+    date: "2026-04-15 01:00",
+    source: "OpenAI",
+    sourceUrl: "https://openai.com/index/openai-acquires-tbpn/",
+    href: "/news/news-117",
+  },
+  {
+    id: "news-118",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "OpenAI 安全奖学金计划启动 — 资助外部研究员开展 AI 安全与对齐研究",
+    summary: "OpenAI 宣布推出 Safety Fellowship 计划，资助外部研究员、工程师和从业者开展高级 AI 系统安全与对齐研究。项目 2026 年 9 月至 2027 年 2 月运行，优先领域包括安全评估、伦理、鲁棒性、可缓解方案、隐私保护安全方法等。",
+    content: `## OpenAI 安全奖学金：培养下一代 AI 安全人才
+
+2026 年 4 月 6 日，OpenAI 宣布启动 Safety Fellowship 计划，这是一项支持独立安全与对齐研究的试点项目。
+
+**项目详情：**
+- **时间**：2026 年 9 月 14 日至 2027 年 2 月 5 日
+- **地点**：Berkeley Constellation 或远程
+- **申请截止**：2026 年 5 月 3 日
+- **录取通知**：2026 年 7 月 25 日
+
+**优先研究领域：**
+- 安全评估
+- 伦理
+- 鲁棒性
+- 可扩展的缓解方案
+- 隐私保护安全方法
+- 智能体监督
+- 高严重性滥用领域
+
+**奖学金包含：**
+- 每月津贴
+- 算力支持
+- OpenAI 导师持续指导
+- API 额度
+- 与同龄人 cohorts 协作
+
+**申请要求：**
+- 欢迎计算机科学、社会科学、网络安全、隐私、HCI 等相关背景
+- 优先考量研究能力、技术判断力和执行力，而非特定学历
+- 需要推荐信
+
+**产出期望：**
+- 项目结束前需产出实质性研究成果，如论文、基准测试或数据集
+
+**背景：**
+- 这是 OpenAI 首次推出面向外部研究员的安全奖学金
+- 反映了 AI 安全研究从封闭式向开放式协作的转变
+- 与 Anthropic、Google DeepMind 等公司的安全研究计划形成互补
+
+**行业意义：** 顶级 AI 公司正在投资外部安全研究人才，表明行业对 AI 安全的重视程度正在从「合规检查」升级为「系统性研究」。`,
+    date: "2026-04-15 00:30",
+    source: "OpenAI",
+    sourceUrl: "https://openai.com/index/introducing-openai-safety-fellowship/",
+    href: "/news/news-118",
+  },
+  {
     id: "news-110",
     tag: "开发工具",
     tagColor: "bg-green-500/10 text-green-300",
