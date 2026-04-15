@@ -16,6 +16,40 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-193",
+    tag: "行业动态",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "NAACP 起诉 xAI 阻止 Colossus 2 数据中心建设 — 指控 27 台燃气轮机无证运行，违反清洁空气法",
+    summary: "NAACP（全国有色人种协进会）对 xAI 提起诉讼，要求阻止 Elon Musk 在孟菲斯郊外的 Colossus 2 数据中心项目。诉讼指控该项目在未取得空气许可的情况下运行 27 台燃气轮机，违反《清洁空气法》，对黑人社区造成污染和不公正影响。",
+    content: `## NAACP 起诉 xAI：数据中心不应成为社区健康的\"死刑判决\"
+
+2026 年 4 月 15 日，NAACP（美国全国有色人种协进会）对 xAI 提起联邦诉讼，要求阻止 Elon Musk 在田纳西州孟菲斯郊外的 Colossus 2 数据中心项目。
+
+**核心指控：**
+- xAI 在未取得空气许可的情况下运行 27 台燃气轮机
+- 违反《清洁空气法》（Clean Air Act）
+- 排放污染物和已知致癌物质
+
+**社会影响：**
+NAACP 环境与气候正义总监 Abre' Conner 表示：\"这些公司试图逃避明确的空气法律，以运行肮脏的涡轮机，这些涡轮机排放污染和已知致癌物。它们遵循一个可耻的熟悉模式：要求黑人和前线社区承担『创新』的有毒代价。\"
+
+**背景：**
+- Colossus 2 是 xAI 继 Colossus 1 之后的第二个超大规模 AI 训练集群
+- 该数据中心需要大量电力和冷却，燃气轮机提供备用电源
+- AI 基础设施的环境影响正成为越来越大的公共争议
+
+**行业背景：**
+这不是 AI 公司首次面临环境审查。随着 AI 训练和推理需求爆炸式增长，数据中心的能源消耗、水资源使用和碳排放已成为全球性问题。Google、Microsoft、Amazon 都在寻求可再生能源解决方案，但 xAI 此次被指控直接绕过环境法规。
+
+**法律意义：**
+如果 NAACP 胜诉，可能为 AI 数据中心的环保监管树立先例，要求所有 AI 基础设施项目必须经过严格的环境影响评估。`,
+    date: "2026-04-15 20:30",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-193",
+  },
+  {
     id: "news-192",
     tag: "AI 框架",
     tagColor: "bg-yellow-500/10 text-yellow-300",
