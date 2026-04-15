@@ -940,6 +940,17 @@ export const tools: Tool[] = [
     icon: "🍎",
   },
   {
+    id: "mmx-cli",
+    name: "MMX-CLI (MiniMax)",
+    category: "cli",
+    description: "MiniMax 多模态 CLI 工具，Node.js 编写，七大模态命令：text、image、video、speech、music、vision、search，AI Agent 可直接调用生成图像、视频、语音、音乐，零 MCP 配置，支持 Cursor、Claude Code 等 Agent 工具",
+    url: "https://github.com/MiniMax-AI/MMX-CLI",
+    tags: ["多模态", "CLI", "图像生成", "视频生成", "语音合成", "Agent 集成"],
+    price: "免费+付费",
+    icon: "🎛️",
+    updatedAt: "2026-04-15",
+  },
+  {
     id: "larksuite-cli",
     name: "飞书 CLI (LarkSuite)",
     category: "cli",
