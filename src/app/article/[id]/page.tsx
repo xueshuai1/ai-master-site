@@ -115,7 +115,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
       </h2>
 
       {section.body && (
-        <div className="prose prose-invert max-w-none sm:max-w-[65ch] text-base sm:text-lg mb-4
+        <div className="prose prose-invert max-w-none text-base sm:text-lg mb-4
           prose-p:text-slate-300 prose-p:leading-relaxed prose-p:my-3
           prose-strong:text-white prose-strong:font-semibold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
