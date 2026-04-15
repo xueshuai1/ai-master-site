@@ -119,7 +119,7 @@ export default function BlogPage() {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">✍️ {post.author}</span>
                   <div className="flex gap-2 flex-wrap">
-                    {post.tags.map((tag) => (
+                    {post.tags.map((tag: string) => (
                       <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-400">
                         #{tag}
                       </span>

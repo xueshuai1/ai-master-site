@@ -37,7 +37,7 @@ export default function BlogDetailPage({
     .filter(
       (b) =>
         b.id !== post.id &&
-        b.tags.some((t) => post.tags.includes(t))
+        b.tags.some((t: string) => post.tags.includes(t))
     )
     .slice(0, 2);
 
