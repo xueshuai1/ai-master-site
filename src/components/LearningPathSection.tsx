@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
 import { articles, categories } from "@/data/knowledge";
 import ArticleCard from "@/components/ArticleCard";
 
@@ -19,7 +18,74 @@ interface PhaseConfig {
   subPaths?: { emoji: string; label: string; categoryKeys: string[] }[];
 }
 
-const phases: PhaseConfig[] = [
+// 🚀 速成路线 — 先学会用起来（1-2 周就能上手）
+const fastTrackPhases: PhaseConfig[] = [
+  {
+    id: "fast-prompt",
+    title: "Prompt Engineering",
+    emoji: "✏️",
+    duration: "1-2 天",
+    description: "学会和 AI 对话，掌握提示词编写技巧，这是使用 AI 的第一步",
+    categoryKeys: ["llm"],
+    levels: ["入门"],
+    borderColor: "border-l-cyan-500",
+    bgGradient: "from-cyan-500/5 to-transparent",
+    dotColor: "bg-cyan-500",
+    subPaths: [
+      { emoji: "✏️", label: "提示词工程", categoryKeys: ["llm"] },
+    ],
+  },
+  {
+    id: "fast-llm",
+    title: "大语言模型应用",
+    emoji: "🤖",
+    duration: "3-5 天",
+    description: "了解大语言模型原理，学会搭建 RAG 系统、调用 API 开发 AI 应用",
+    categoryKeys: ["llm"],
+    levels: ["入门", "进阶"],
+    borderColor: "border-l-blue-500",
+    bgGradient: "from-blue-500/5 to-transparent",
+    dotColor: "bg-blue-500",
+    subPaths: [
+      { emoji: "🤖", label: "LLM 原理", categoryKeys: ["llm"] },
+      { emoji: "🔍", label: "RAG 实战", categoryKeys: ["llm"] },
+    ],
+  },
+  {
+    id: "fast-agent",
+    title: "AI Agent 实战",
+    emoji: "🦾",
+    duration: "1 周",
+    description: "搭建自己的 AI Agent，学会工具调用、多 Agent 协作，让 AI 帮你自动化工作",
+    categoryKeys: ["agent"],
+    levels: ["入门", "进阶"],
+    borderColor: "border-l-purple-500",
+    bgGradient: "from-purple-500/5 to-transparent",
+    dotColor: "bg-purple-500",
+    subPaths: [
+      { emoji: "🦾", label: "Agent 入门", categoryKeys: ["agent"] },
+    ],
+  },
+  {
+    id: "fast-project",
+    title: "AI 工程化与实践",
+    emoji: "🚀",
+    duration: "1-2 周",
+    description: "将 AI 应用部署到生产环境，学习 AI 工程化最佳实践和真实项目案例",
+    categoryKeys: ["aieng", "practice"],
+    levels: ["入门", "进阶"],
+    borderColor: "border-l-emerald-500",
+    bgGradient: "from-emerald-500/5 to-transparent",
+    dotColor: "bg-emerald-500",
+    subPaths: [
+      { emoji: "🔧", label: "AI 工程化", categoryKeys: ["aieng"] },
+      { emoji: "🌍", label: "实践应用", categoryKeys: ["practice"] },
+    ],
+  },
+];
+
+// 📚 基础路线 — 系统学习（建议 2-3 个月）
+const foundationPhases: PhaseConfig[] = [
   {
     id: "foundation",
     title: "入门基础",
@@ -92,22 +158,19 @@ const phases: PhaseConfig[] = [
 
 const MAX_ARTICLES_DEFAULT = 6;
 
-function getCategoryLabel(key: string): string {
-  const cat = categories.find((c) => c.key === key);
-  return cat ? `${cat.icon} ${cat.label}` : key;
-}
-
 export default function LearningPathSection() {
+  const [route, setRoute] = useState<"fast" | "foundation">("fast");
   const [expandedPhases, setExpandedPhases] = useState<Set<string>>(new Set());
 
+  const activePhases = route === "fast" ? fastTrackPhases : foundationPhases;
+
   const phaseArticles = useMemo(() => {
-    return phases.map((phase) => {
+    return activePhases.map((phase) => {
       const filtered = articles.filter(
         (a) =>
           phase.categoryKeys.includes(a.category) &&
           phase.levels.includes(a.level)
       );
-      // Sort by level (入门 first, then 进阶), then by date
       const levelOrder: Record<string, number> = { 入门: 0, 进阶: 1, 高级: 2 };
       filtered.sort(
         (a, b) =>
@@ -116,7 +179,7 @@ export default function LearningPathSection() {
       );
       return { phase, articles: filtered };
     });
-  }, []);
+  }, [activePhases]);
 
   const toggleExpand = (phaseId: string) => {
     setExpandedPhases((prev) => {
@@ -134,19 +197,64 @@ export default function LearningPathSection() {
     <section className="px-4 sm:px-6 lg:px-8 pb-8">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">
             🗺️ AI 学习路线
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-            从小白到进阶，按阶段系统学习 AI 核心技术
+          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mb-5">
+            选择适合自己的学习路径，从入门到进阶
+          </p>
+
+          {/* Route Toggle */}
+          <div className="inline-flex items-center gap-2 p-1 rounded-xl bg-white/5 border border-white/10">
+            <button
+              onClick={() => { setRoute("fast"); setExpandedPhases(new Set()); }}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                route === "fast"
+                  ? "bg-cyan-500/20 text-cyan-300 shadow-lg shadow-cyan-500/10"
+                  : "text-slate-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              🚀 速成路线
+              <span className="ml-1.5 text-xs text-slate-500">1-2 周</span>
+            </button>
+            <button
+              onClick={() => { setRoute("foundation"); setExpandedPhases(new Set()); }}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                route === "foundation"
+                  ? "bg-emerald-500/20 text-emerald-300 shadow-lg shadow-emerald-500/10"
+                  : "text-slate-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              📚 基础路线
+              <span className="ml-1.5 text-xs text-slate-500">2-3 月</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Route Description */}
+        <div className={`text-center mb-6 px-4 py-3 rounded-xl ${
+          route === "fast"
+            ? "bg-cyan-500/5 border border-cyan-500/10"
+            : "bg-emerald-500/5 border border-emerald-500/10"
+        }`}>
+          <p className={`text-sm ${
+            route === "fast" ? "text-cyan-300" : "text-emerald-300"
+          }`}>
+            {route === "fast"
+              ? "💡 先学会用，再补基础 — 适合想快速上手 AI 应用的开发者"
+              : "📖 循序渐进，系统学习 — 适合想深入理解 AI 原理的学习者"}
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-5 sm:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500/30 via-blue-500/30 via-purple-500/30 to-amber-500/30" />
+          <div className={`absolute left-5 sm:left-6 top-0 bottom-0 w-0.5 ${
+            route === "fast"
+              ? "bg-gradient-to-b from-cyan-500/30 via-blue-500/30 via-purple-500/30 to-emerald-500/30"
+              : "bg-gradient-to-b from-emerald-500/30 via-blue-500/30 via-purple-500/30 to-amber-500/30"
+          }`} />
 
           {phaseArticles.map(({ phase, articles: phaseArts }, idx) => {
             const isExpanded = expandedPhases.has(phase.id);
