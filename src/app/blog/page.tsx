@@ -6,16 +6,18 @@ import { blogs } from "@/data/blogs";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-const blogPosts = blogs.map((b) => ({
-  id: b.id,
-  title: b.title,
-  summary: b.summary,
-  date: b.date,
-  author: b.author,
-  readTime: `${b.readTime} min`,
-  category: b.tags.length > 0 ? b.tags[0] : "行业洞察",
-  tags: b.tags,
-}));
+const blogPosts = blogs
+  .map((b) => ({
+    id: b.id,
+    title: b.title,
+    summary: b.summary,
+    date: b.date,
+    author: b.author,
+    readTime: `${b.readTime} min`,
+    category: b.tags.length > 0 ? b.tags[0] : "行业洞察",
+    tags: b.tags,
+  }))
+  .sort((a, b) => (b.date > a.date ? 1 : b.date < a.date ? -1 : 0));
 
 const blogCategories = ["全部", ...Array.from(new Set(blogs.flatMap((b) => b.tags.slice(0, 1))))];
 

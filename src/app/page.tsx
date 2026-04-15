@@ -49,10 +49,13 @@ const features = [
   },
 ];
 
-// 首页展示：6 条新闻卡片 + 6 条新闻滚动 + 3 篇博客预览
+// 首页展示：6 条新闻卡片 + 6 条新闻滚动 + 6 篇博客预览
+const sortedByDate = <T extends { date: string }>(items: T[]): T[] =>
+  [...items].sort((a, b) => (b.date > a.date ? 1 : b.date < a.date ? -1 : 0));
+
 const homeNews = news.slice(0, 6);
 const tickerNews = news.slice(0, 6);         // 滚动条：最新 6 条（数量可控，加载更快）
-const previewBlogs = blogs.slice(0, 6);      // 博客预览：最新 6 篇
+const previewBlogs = sortedByDate(blogs).slice(0, 6);  // 博客预览：最新 6 篇（时间倒序）
 
 function formatNewsTime(dateStr: string): string {
   const now = new Date();
