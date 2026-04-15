@@ -4937,6 +4937,188 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     href: "/news/news-215",
   },
   {
+    id: "news-216",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "OpenAI 发布下一代网络防御可信访问方案 — 应对 AI 时代的网络安全挑战",
+    summary: "OpenAI 于 4 月 14 日发布面向下一代网络防御的可信访问方案，针对 AI 时代的安全挑战提出全新防御框架。此前 OpenAI 已处理 Axios 开发者工具泄露事件，持续强化企业级 AI 安全能力。",
+    content: `## OpenAI 下一代网络防御方案
+
+2026 年 4 月 14 日，OpenAI 发布网络安全新方案。
+
+**背景：**
+- 4 月 10 日，OpenAI 处理了 Axios 开发者工具泄露事件
+- 4 月 8 日发布"企业 AI 下一阶段"战略
+- 4 月 2 日收购 TBPN（技术背景保护网络）
+
+**核心内容：**
+- **可信访问框架**：为 AI 时代的网络防御建立新的信任模型
+- **企业级安全**：应对大规模 AI 部署带来的新型攻击面
+- **持续投入**：3 月底完成 1220 亿美元融资，加速安全能力建设
+
+**行业意义：**
+- AI 系统正在成为关键基础设施的一部分
+- 传统网络安全模型无法应对 AI Agent 自主行为带来的风险
+- OpenAI 从模型安全扩展到基础设施安全的战略转向`,
+    date: "2026-04-16 00:10",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/",
+    href: "/news/news-216",
+  },
+  {
+    id: "news-217",
+    tag: "AI 教育",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/education.jpg",
+    title: "PAL 个人自适应学习器：AI 将讲座视频实时转化为互动学习体验，根据学生反应动态调整难度",
+    summary: "arXiv 最新论文介绍 PAL（Personal Adaptive Learner），一个 AI 驱动的教育平台。PAL 持续分析多模态讲座内容，通过不同难度的问题与学习者动态互动，并在课程结束后生成个性化摘要。代表 AI 教育从静态适配向实时个性化支持的重大跨越。（arXiv:2604.13017）",
+    content: `## PAL：AI 教育进入实时自适应时代
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.13017），介绍 PAL 个人自适应学习器。
+
+**核心能力：**
+- **多模态内容分析**：实时分析讲座视频的内容和节奏
+- **动态问题生成**：根据学生理解程度生成不同难度的问题
+- **实时适配**：随着课程推进不断调整教学策略
+- **个性化摘要**：课程结束后生成贴合学生兴趣的总结
+
+**与现有平台的区别：**
+- 现有平台：预定义测验、统一进度、通用反馈
+- PAL：上下文感知 + 实时自适应决策
+
+**技术框架：**
+- 统一多模态内容分析与自适应决策
+- 从静态个性化向实时个体化支持的范式转变
+
+**行业意义：**
+- AI 教育工具从"一刀切"走向"千人千面"
+- 实时自适应是教育 AI 的核心挑战，PAL 提供了可行路径`,
+    date: "2026-04-16 00:12",
+    source: "arXiv 2604.13017",
+    sourceUrl: "https://arxiv.org/abs/2604.13017",
+    href: "/news/news-217",
+  },
+  {
+    id: "news-218",
+    tag: "Agent 架构",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/agent.jpg",
+    title: "双轨编码技术：为每条事实记忆添加场景叙事，LLM Agent 跨会话召回率提升 20.2 个百分点",
+    summary: "arXiv 最新研究提出双轨记忆编码（Dual-Trace Memory Encoding），让 LLM Agent 在存储事实的同时记录学习时的具体场景叙事。实验显示跨会话召回准确率从 53.5% 提升至 73.7%，时间推理提升 40pp，知识更新追踪提升 25pp。灵感来自人类记忆的'绘图效应'。（arXiv:2604.12948）",
+    content: `## 双轨编码：让 AI Agent 拥有"情景记忆"
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.12948）。
+
+**问题背景：**
+- 当前 LLM Agent 的持久记忆是扁平的事实记录
+- 缺乏时间推理、变化追踪、跨会话聚合的上下文
+
+**双轨编码方法：**
+- **事实轨**：存储具体事实信息
+- **场景轨**：记录学习该事实时的叙事性场景重建
+- 强制 Agent 在编码时承诺具体的上下文细节
+
+**实验结果（LongMemEval-S 基准）：**
+- 整体准确率：**53.5% → 73.7%**（+20.2pp，p < 0.0001）
+- 时间推理：**+40pp**
+- 知识更新追踪：**+25pp**
+- 多会话聚合：**+30pp**
+- 单会话检索：无显著提升（符合编码特异性理论）
+
+**关键发现：**
+- Token 分析显示双轨编码**没有额外成本**
+- 增益集中在需要上下文推理的场景
+- 初步验证可适配到编码 Agent
+
+**对 Agent 开发的启示：**
+- 纯事实记忆是不够的，需要"场景化"存储
+- 这与人类记忆的工作方式高度一致`,
+    date: "2026-04-16 00:14",
+    source: "arXiv 2604.12948",
+    sourceUrl: "https://arxiv.org/abs/2604.12948",
+    href: "/news/news-218",
+  },
+  {
+    id: "news-219",
+    tag: "论文",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/research.jpg",
+    title: "Cycle-Consistent Search：无需标注数据训练搜索 Agent，用'问题可重构性'作为代理奖励信号",
+    summary: "arXiv 新论文提出循环一致搜索（CCS）框架，灵感来自无监督机器翻译的循环一致性技术。核心假设：最优搜索轨迹应能无损编码问题意图，从而可重构原始问题。通过信息瓶颈（排除最终响应、NER 掩码）防止信息泄露，在 QA 基准上达到与有监督基线相当的性能。（arXiv:2604.12967）",
+    content: `## CCS：无标注训练搜索 Agent 的新范式
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.12967）。
+
+**核心问题：**
+- 现有搜索 Agent 训练依赖黄金标注（标准答案）
+- 标注数据难以大规模获取
+
+**CCS 方法：**
+- 灵感：无监督机器翻译和图像到图像翻译中的循环一致性
+- 核心假设：最优搜索轨迹是问题意图的无损编码
+- 高质量轨迹应能准确重构原始问题
+
+**技术细节：**
+- 使用**信息瓶颈**防止信息泄露
+  - 排除最终响应
+  - 对搜索查询进行 NER 掩码
+- 强制重建依赖检索到的观察和结构框架
+- 奖励信号反映信息充分性而非语言冗余
+
+**实验结果：**
+- 在 QA 基准上达到与有监督基线**相当的性能**
+- 优于 prior 无黄金标注方法
+
+**行业意义：**
+- 为搜索 Agent 训练提供了可扩展的范式
+- 在缺乏标注数据的场景下尤为有价值`,
+    date: "2026-04-16 00:16",
+    source: "arXiv 2604.12967",
+    sourceUrl: "https://arxiv.org/abs/2604.12967",
+    href: "/news/news-219",
+  },
+  {
+    id: "news-220",
+    tag: "AI 框架",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/framework.jpg",
+    title: "LIFE 框架：面向 HPC 前沿系统的节能持续学习 AI Agent 架构，四大组件实现自演进网络管理",
+    summary: "arXiv 论文提出 LIFE（Incremental, Flexible, Energy-efficient）框架，将 AI 系统从单一单体模型转向以 Agent 为中心的系统架构。结合编排器、Agent 上下文工程、新型记忆系统和信息格学习四大组件，实现 HPC 环境下的自演进网络管理和运维。已在 Kubernetes 集群延迟尖峰检测场景验证。（arXiv:2604.12874）",
+    content: `## LIFE：面向未来系统的持续学习 AI 框架
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.12874）。
+
+**背景：**
+- AI 发展改变了 HPC 使用的特性：维度、配置、执行
+- 能源需求大幅放大
+- 现有持续学习能力有限，无法有效管理 HPC
+
+**LIFE 四大组件：**
+1. **编排器（Orchestrator）**：协调各 Agent 组件
+2. **Agent 上下文工程**：动态构建和维护 Agent 工作上下文
+3. **新型记忆系统**：支持增量学习和知识保留
+4. **信息格学习（Information Lattice Learning）**：层次化知识组织
+
+**验证场景：**
+- Kubernetes 集群关键微服务延迟尖峰检测与缓解
+- 闭环运维示例
+
+**架构特点：**
+- Agent 中心而非单体模型
+- 支持多种正交用例泛化
+- 强调能源效率和灵活性
+
+**行业意义：**
+- 代表了超越单体 Transformer 的新方向
+- Agent AI + 类脑架构的互补路径
+- 面向可持续、自适应系统的可行方案`,
+    date: "2026-04-16 00:18",
+    source: "arXiv 2604.12874",
+    sourceUrl: "https://arxiv.org/abs/2604.12874",
+    href: "/news/news-220",
+  },
+  {
     id: "news-195",
     tag: "开源项目",
     tagColor: "bg-orange-500/10 text-orange-300",
