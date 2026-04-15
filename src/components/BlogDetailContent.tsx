@@ -7,11 +7,6 @@ import remarkGfm from "remark-gfm";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-// Generate heading ID from text
-function headingToId(text: string): string {
-  return text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
-}
-
 // Extract TOC items from markdown content
 function extractToc(content: string) {
   const headingRegex = /^(#{2,3})\s+(.+)$/gm;
@@ -20,7 +15,14 @@ function extractToc(content: string) {
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length;
     const text = match[2].trim();
-    toc.push({ level, text, id: headingToId(text) });
+    // Generate the same ID that ReactMarkdown generates
+    const id = text
+      .toLowerCase()
+      .replace(/[\s]+/g, '-')
+      .replace(/[^\w\-]/g, '');
+    if (id) {
+      toc.push({ level, text, id });
+    }
   }
   return toc;
 }
@@ -66,13 +68,14 @@ export default function BlogDetailContent({
       );
       setScrollProgress(progress);
 
-      // Active TOC item
+      // Active TOC item - only highlight one
       const headings = article.querySelectorAll("h2, h3");
       let found = false;
       for (let i = headings.length - 1; i >= 0; i--) {
         const h = headings[i] as HTMLElement;
-        if (h.getBoundingClientRect().top <= 100) {
-          setActiveToc(h.id);
+        const headingId = h.id || "";
+        if (headingId && h.getBoundingClientRect().top <= 100) {
+          setActiveToc(headingId);
           found = true;
           break;
         }
@@ -198,12 +201,18 @@ export default function BlogDetailContent({
                   remarkPlugins={[remarkGfm]}
                   components={{
                     h2: ({ children, ...props }: any) => {
+                      const id = props.id;
+                      if (id) return <h2 id={id} {...props}>{children}</h2>;
                       const text = typeof children === 'string' ? children : '';
-                      return <h2 id={headingToId(text)} {...props}>{children}</h2>;
+                      const headingId = text.toLowerCase().replace(/[\s]+/g, '-').replace(/[^\w\-]/g, '');
+                      return headingId ? <h2 id={headingId} {...props}>{children}</h2> : <h2 {...props}>{children}</h2>;
                     },
                     h3: ({ children, ...props }: any) => {
+                      const id = props.id;
+                      if (id) return <h3 id={id} {...props}>{children}</h3>;
                       const text = typeof children === 'string' ? children : '';
-                      return <h3 id={headingToId(text)} {...props}>{children}</h3>;
+                      const headingId = text.toLowerCase().replace(/[\s]+/g, '-').replace(/[^\w\-]/g, '');
+                      return headingId ? <h3 id={headingId} {...props}>{children}</h3> : <h3 {...props}>{children}</h3>;
                     },
                     table: ({ children, ...props }: any) => (
                       <div className="overflow-x-auto my-6 rounded-xl border border-white/10">
