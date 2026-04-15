@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import MermaidChart from "@/components/MermaidChart";
+import ArticleTocSidebar from "@/components/ArticleTocSidebar";
 import { marked } from "marked";
 
 marked.setOptions({ breaks: true, gfm: true });
@@ -241,6 +242,12 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
   const categoryIcon = categoryIcons[article.category] || "📄";
   const categoryName = categoryNames[article.category] || article.category;
 
+  // Generate TOC from content sections
+  const toc = content.map((item, i) => ({
+    id: `section-${i}`,
+    title: item.title,
+  }));
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
       <ReadingProgressBar />
@@ -280,47 +287,61 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
 
       {/* Article Content */}
       <section className="px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="p-6 rounded-2xl bg-brand-500/5 border border-brand-500/20 mb-12">
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">💡</span>
-              <div>
-                <h3 className="font-semibold text-brand-300 mb-2">文章摘要</h3>
-                <p className="text-slate-300 leading-relaxed">{article.summary}</p>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex gap-8">
+            {/* Main Content */}
+            <div className="flex-1 min-w-0 max-w-4xl">
+              <div className="p-6 rounded-2xl bg-brand-500/5 border border-brand-500/20 mb-12">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">💡</span>
+                  <div>
+                    <h3 className="font-semibold text-brand-300 mb-2">文章摘要</h3>
+                    <p className="text-slate-300 leading-relaxed">{article.summary}</p>
+                  </div>
+                </div>
+              </div>
+
+              <article>
+              {content.map((item, i) => {
+                // Article has real rich content
+                if (item.section) {
+                  return (
+                    <div key={i} id={`section-${i}`} className="mb-10 scroll-mt-24">
+                      <ArticleSectionContent section={item.section} />
+                    </div>
+                  );
+                }
+                // Fallback: generic placeholder content
+                return (
+                  <div key={i} id={`section-${i}`} className="mb-10 scroll-mt-24">
+                    <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                      <span className="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-sm font-bold">
+                        {i + 1}
+                      </span>
+                      {item.title}
+                    </h2>
+                    <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
+                      {item.body}
+                    </p>
+                  </div>
+                );
+              })}
+              </article>
+
+              <div className="mt-12 pt-8 border-t border-white/5">
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">标签</h3>
+                <div className="flex flex-wrap gap-2">
+                  {article.tags.map((tag) => (
+                    <span key={tag} className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full text-sm text-slate-300 transition-colors cursor-pointer">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          {content.map((item, i) => {
-            // Article has real rich content
-            if (item.section) {
-              return <ArticleSectionContent key={i} section={item.section} />;
-            }
-            // Fallback: generic placeholder content
-            return (
-              <div key={i} className="mb-10">
-                <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-sm font-bold">
-                    {i + 1}
-                  </span>
-                  {item.title}
-                </h2>
-                <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-                  {item.body}
-                </p>
-              </div>
-            );
-          })}
-
-          <div className="mt-12 pt-8 border-t border-white/5">
-            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">标签</h3>
-            <div className="flex flex-wrap gap-2">
-              {article.tags.map((tag) => (
-                <span key={tag} className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full text-sm text-slate-300 transition-colors cursor-pointer">
-                  #{tag}
-                </span>
-              ))}
-            </div>
+            {/* TOC Sidebar */}
+            <ArticleTocSidebar toc={toc} contentSelector="article" />
           </div>
         </div>
       </section>
