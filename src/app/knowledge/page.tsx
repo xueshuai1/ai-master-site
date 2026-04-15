@@ -15,7 +15,7 @@ const levelOrder: Record<string, number> = { 入门: 1, 进阶: 2, 高级: 3 };
 export default function KnowledgePage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState<"default" | "level-asc" | "level-desc">("default");
+  const [sortBy, setSortBy] = useState<"default" | "level-asc" | "level-desc">("level-asc");
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredArticles = useMemo(() => {
