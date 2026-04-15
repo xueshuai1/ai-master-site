@@ -102,8 +102,8 @@ export default function NewsPage() {
           {/* Tag Filter - single-row horizontal scroll with fade edges */}
           {allTags.length > 1 && (
             <div className="relative mb-6 -mx-4 sm:-mx-6 lg:-mx-8">
-              <div className="pointer-events-none absolute inset-y-0 -left-4 sm:-left-6 lg:-left-8 w-16 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-[1] sm:hidden" />
-              <div className="pointer-events-none absolute inset-y-0 -right-4 sm:-right-6 lg:-right-8 w-16 bg-gradient-to-l from-slate-950 via-slate-950/80 to-transparent z-[1] sm:hidden" />
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
               <div className="flex gap-1.5 overflow-x-auto pb-2 px-4 sm:px-6 lg:px-8 scrollbar-hide sm:justify-center">
                 {allTags.map(tag => (
                   <button

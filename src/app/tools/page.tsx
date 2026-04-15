@@ -169,10 +169,11 @@ export default function ToolsPage() {
           </div>
 
           {/* Category tabs - single-row horizontal scroll with fade edges */}
-          <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
-            <div className="pointer-events-none absolute inset-y-2 left-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-[1]" />
-            <div className="pointer-events-none absolute inset-y-2 right-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-[1]" />
-            <div className="flex gap-1.5 overflow-x-auto pb-2 scrollbar-hide sm:justify-center relative z-0">
+        </div>
+        <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
+          <div className="flex gap-1.5 overflow-x-auto pb-2 px-4 sm:px-6 lg:px-8 scrollbar-hide sm:justify-center">
               {toolCategories.map((c) => {
                 const count = c.key === "all" ? toolsWithPopularity.length : toolsWithPopularity.filter((t) => t.category === c.key).length;
                 const isActive = activeCategory === c.key;
@@ -193,7 +194,6 @@ export default function ToolsPage() {
                 );
               })}
             </div>
-          </div>
         </div>
       </section>
 
