@@ -99,28 +99,26 @@ export default function NewsPage() {
       {/* News List */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
-          {/* Tag Filter - single-row horizontal scroll with fade edges */}
-          {allTags.length > 1 && (
-            <div className="relative mb-6 -mx-4 sm:-mx-6 lg:-mx-8">
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-              <div className="flex gap-1.5 overflow-x-auto pb-2 px-4 sm:px-6 lg:px-8 scrollbar-hide sm:justify-center">
+          {/* Tag Filter & Stats */}
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-slate-500">
+              最近 3 天 <span className="text-brand-400 font-medium">{filteredNews.length}</span> 条动态
+              {totalPages > 1 && (
+                <span>，第 <span className="text-brand-400 font-medium">{safePage}</span> / {totalPages} 页</span>
+              )}
+            </p>
+            {allTags.length > 1 && (
+              <select
+                value={activeTag}
+                onChange={(e) => handleTagChange(e.target.value)}
+                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+              >
                 {allTags.map(tag => (
-                  <button
-                    key={tag}
-                    onClick={() => handleTagChange(tag)}
-                    className={`shrink-0 px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                      activeTag === tag
-                        ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                        : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    {tag}
-                  </button>
+                  <option key={tag} value={tag}>{tag}</option>
                 ))}
-              </div>
-            </div>
-          )}
+              </select>
+            )}
+          </div>
 
           {paginatedNews.length === 0 ? (
             <div className="text-center py-20">

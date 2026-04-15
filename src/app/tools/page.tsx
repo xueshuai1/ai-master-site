@@ -167,33 +167,6 @@ export default function ToolsPage() {
               className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
             />
           </div>
-
-          {/* Category tabs - single-row horizontal scroll with fade edges */}
-        </div>
-        <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-          <div className="flex gap-1.5 overflow-x-auto pb-2 px-4 sm:px-6 lg:px-8 scrollbar-hide sm:justify-center">
-              {toolCategories.map((c) => {
-                const count = c.key === "all" ? toolsWithPopularity.length : toolsWithPopularity.filter((t) => t.category === c.key).length;
-                const isActive = activeCategory === c.key;
-                return (
-                  <button
-                    key={c.key}
-                    onClick={() => { setActiveCategory(c.key); handleFilterChange(); }}
-                    className={`shrink-0 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                      isActive
-                        ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                        : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    <span className="text-sm sm:text-base">{c.icon}</span>
-                    <span>{c.label}</span>
-                    <span className={`text-[10px] sm:text-xs ${isActive ? "text-brand-200" : "text-slate-600"}`}>{count}</span>
-                  </button>
-                );
-              })}
-            </div>
         </div>
       </section>
 
@@ -208,6 +181,22 @@ export default function ToolsPage() {
               )}
             </p>
             <div className="flex items-center gap-2">
+              {/* Category Filter Dropdown */}
+              <select
+                value={activeCategory}
+                onChange={(e) => { setActiveCategory(e.target.value); handleFilterChange(); }}
+                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+              >
+                {toolCategories.map((c) => {
+                  const count = c.key === "all" ? toolsWithPopularity.length : toolsWithPopularity.filter((t) => t.category === c.key).length;
+                  return (
+                    <option key={c.key} value={c.key}>
+                      {c.icon} {c.label} ({count})
+                    </option>
+                  );
+                })}
+              </select>
+              {/* Sort Dropdown */}
               <select
                 value={sortBy}
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}

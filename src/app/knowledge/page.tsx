@@ -69,11 +69,10 @@ export default function KnowledgePage() {
         </div>
       </section>
 
-      {/* Search & Filter */}
+      {/* Search */}
       <section className="px-4 sm:px-6 lg:px-8 pb-6">
         <div className="max-w-5xl mx-auto">
-          {/* Search bar */}
-          <div className="relative mb-6">
+          <div className="relative">
             <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -85,38 +84,6 @@ export default function KnowledgePage() {
               className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
             />
           </div>
-
-          {/* Category tabs - single-row horizontal scroll with fade edges */}
-        </div>
-        {/* 移出 max-w-5xl，负 margin 延伸到屏幕边缘 */}
-        <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-          <div className="flex gap-1.5 overflow-x-auto pb-2 px-4 sm:px-6 lg:px-8 scrollbar-hide sm:justify-center">
-              {categories.map((c) => {
-                const count = c.key === "all"
-                  ? articles.length
-                  : articles.filter((a) => a.category === c.key).length;
-                const isActive = activeCategory === c.key;
-                return (
-                  <button
-                    key={c.key}
-                    onClick={() => handleFilterChange(setActiveCategory, c.key)}
-                    className={`shrink-0 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                      isActive
-                        ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                        : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    <span className="text-sm sm:text-base">{c.icon}</span>
-                    <span>{c.label}</span>
-                    <span className={`text-[10px] sm:text-xs ${isActive ? "text-brand-200" : "text-slate-600"}`}>
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
         </div>
       </section>
 
@@ -131,6 +98,22 @@ export default function KnowledgePage() {
               )}
             </p>
             <div className="flex items-center gap-2">
+              {/* Category Filter Dropdown */}
+              <select
+                value={activeCategory}
+                onChange={(e) => { handleFilterChange(setActiveCategory, e.target.value); }}
+                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+              >
+                {categories.map((c) => {
+                  const count = c.key === "all" ? articles.length : articles.filter((a) => a.category === c.key).length;
+                  return (
+                    <option key={c.key} value={c.key}>
+                      {c.icon} {c.label} ({count})
+                    </option>
+                  );
+                })}
+              </select>
+              {/* Sort Dropdown */}
               <select
                 value={sortBy}
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}

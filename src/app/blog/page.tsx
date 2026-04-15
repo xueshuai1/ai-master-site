@@ -58,37 +58,26 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Category Filter - single-row horizontal scroll with fade edges */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-4">
-        <div className="max-w-5xl mx-auto">
-        </div>
-        <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-950 via-slate-950/90 to-transparent z-[1] sm:hidden" />
-          <div className="flex gap-1.5 overflow-x-auto pb-2 px-4 sm:px-6 lg:px-8 scrollbar-hide sm:justify-center">
-              {blogCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => handleCategoryChange(cat)}
-                  className={`shrink-0 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                    activeCategory === cat
-                      ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-        </div>
-      </section>
-
       {/* Blog Posts */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
-          <p className="text-sm text-slate-500 mb-6">
-            找到 <span className="text-brand-400 font-medium">{filteredPosts.length}</span> 篇文章{filteredPosts.length !== paginatedPosts.length ? ` · 第 ${safePage}/${totalPages} 页` : ""}
-          </p>
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-slate-500">
+              找到 <span className="text-brand-400 font-medium">{filteredPosts.length}</span> 篇文章
+              {totalPages > 1 && (
+                <span>，第 <span className="text-brand-400 font-medium">{safePage}</span> / {totalPages} 页</span>
+              )}
+            </p>
+            <select
+              value={activeCategory}
+              onChange={(e) => handleCategoryChange(e.target.value)}
+              className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+            >
+              {blogCategories.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          </div>
           <div className="space-y-6">
             {paginatedPosts.map((post, index) => (
               <Link
