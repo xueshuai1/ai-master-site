@@ -3455,4 +3455,120 @@ Lightrun 发布的 2026 年 AI 驱动工程报告揭示了 AI 编码的隐藏成
     sourceUrl: "https://www.wired.com/story/how-the-internet-broke-everyones-bullshit-detectors/",
     href: "/news/news-133",
   },
+  {
+    id: "news-167",
+    tag: "行业动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "互联网最强大的归档工具面临危机 — Wayback Machine 遭主流新闻机构封锁",
+    summary: "WIRED 报道 USA Today、纽约时报等 23 家主要新闻网站已禁止 Internet Archive 的 Wayback Machine 爬取其内容，理由是防范 AI 抓取。超过 100 名记者联名支持 Wayback Machine，呼吁保护这一关键的新闻调查工具。",
+    content: `## Wayback Machine 的生存危机
+
+2026 年 4 月 13 日，WIRED 发表深度报道，揭示互联网归档工具 Wayback Machine 正面临来自新闻行业的系统性封锁。
+
+**新闻机构的封锁：**
+- **USA Today** 母公司 Gannett（旗下 200 多家媒体）禁止 Wayback Machine 爬取其内容
+- **纽约时报**等 23 家主要新闻网站已屏蔽 ia_archiverbot 爬虫
+- **Reddit** 也已加入封锁行列
+- **The Guardian** 虽不屏蔽爬虫，但排除内容于 API 之外并在界面中过滤
+
+**讽刺的现实：**
+- USA Today 近期使用 Wayback Machine 调查 ICE 拘留政策变化
+- Wayback Machine 主任 Mark Graham：「他们能写出这篇报道，正是因为 Wayback Machine 存在。但同时他们又在封锁我们。」
+
+**新闻机构的理由：**
+- USA Today 发言人称这是「屏蔽所有爬虫机器人」的一部分
+- The Guardian 表示担忧 AI 公司可能滥用为存档目的抓取的内容集
+
+**记者的反击：**
+- 电子前沿基金会（EFF）和 Fight for the Future 组织记者联名支持
+- 超过 **100 名记者**签署支持信，包括 Rachel Maddow 等知名媒体人
+- 联名信已提交给 Internet Archive
+
+**深层意义：**
+Wayback Machine 是新闻调查、事实核查和历史记录的关键基础设施。当新闻机构以防止 AI 抓取为由封锁它时，实际上也削弱了自己的调查能力。这反映了 AI 时代的一个核心矛盾：如何在保护内容不被滥用的同时，不破坏公共利益工具。`,
+    date: "2026-04-15 14:24",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/the-internets-most-powerful-archiving-tool-is-in-mortal-peril/",
+    href: "/news/news-167",
+  },
+  {
+    id: "news-168",
+    tag: "安全动态",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "伊朗 Explosive Media 用 AI 乐高视频对抗特朗普 — 合成媒体成为信息战新武器",
+    summary: "WIRED 深度报道伊朗关联组织 Explosive Media 如何利用 AI 生成乐高风格的讽刺视频对抗特朗普政府。这些视频在 X 和 Telegram 上获得数百万播放量，展示了合成媒体在信息战中的强大影响力——24 小时内即可批量生产并病毒传播。",
+    content: `## AI 合成媒体：信息战的新前线
+
+2026 年 4 月 9 日，WIRED 发表深度报道，揭示伊朗关联组织 Explosive Media 如何利用 AI 生成内容进行信息战。
+
+**Explosive Media 的运作：**
+- 自 2026 年 2 月伊朗冲突开始以来，已发布 **12 部以上**病毒式 AI 视频
+- 视频采用精致的乐高风格动画，脚本质量远超伊朗官方账号
+- 团队由年轻的亲伊朗创作者组成，深谙美国互联网文化
+- 部分批评者指称该组织与伊朗政府有关联
+
+**代表性作品：**
+- 特朗普宣布不「抹去整个文明」后数分钟，团队立即发布了完成的乐高风格讽刺视频
+- 视频中特朗普小人偶与海湾国家领导人密谋，伊朗官员按下「回到石器时代」红色按钮
+- 结尾特朗普坐在伊朗 10 点停火协议旁边哭泣，手持白旗吃着塔可——暗讽「Trump Always Chickens Out」(TACO)
+- 视频发布后在 X 和 Telegram 上获得**数百万播放量**
+
+**策略分析：**
+- 团队提前准备了多种场景内容，等待时机发布
+- 深谙美国文化和网络模因，内容在美国受众中广泛传播
+- 甚至有美国人主动向团队提供「有影响力的建议和想法」
+
+**对比分析：**
+- 特朗普政府发布的战争视频与电影片段混合内容，受众限于忠实支持者
+- Explosive Media 的乐高视频则触及了**更广泛的美国受众**
+
+**深层意义：**
+这标志着信息战从传统的官方宣传转向去中心化的 AI 生成内容战。合成媒体不需要永远站得住脚——它只需要在验证追上来之前完成传播。AI 降低了高质量内容生产的门槛，使得小型组织也能与国家级宣传机器抗衡。`,
+    date: "2026-04-15 14:24",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/inside-the-pro-iran-meme-machine-trolling-trump-with-ai-lego-cartoons/",
+    href: "/news/news-168",
+  },
+  {
+    id: "news-169",
+    tag: "行业动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "Google 投资 400 亿美元在德州建数据中心 — 将用大型天然气发电厂供电",
+    summary: "WIRED 报道 Google 与 Crusoe Energy 在德州建设的 Goodnight 数据中心将使用现场天然气涡轮机供电，年排放量超过 450 万吨温室气体，相当于新增 97 万辆燃油车。这标志着即使是承诺可再生能源的科技巨头，在 AI 竞赛中也开始转向化石燃料。",
+    content: `## AI 竞赛下的能源妥协
+
+2026 年 4 月 2 日，WIRED 报道 Google 在德州阿姆斯特朗县的 Goodnight 数据中心项目将部分依赖化石燃料供电。
+
+**排放数据惊人：**
+- 现场天然气涡轮机年排放超过 **450 万吨**温室气体
+- 超过普通天然气发电厂年排放量的 **10 倍**
+- 年排放量超过普通煤电厂
+- 相当于新增 **97 万辆**燃油车上路
+
+**项目规模：**
+- Google 宣布在德州进行 **400 亿美元** AI 投资
+- 数据中心由 AI 基础设施公司 Crusoe 建设
+- 园区包含 6 栋建筑，前 4 栋接入电网，第 5、6 栋由现场天然气厂供电
+- 天然气容量超过 **900 兆瓦**
+- 另有 **265 兆瓦**风能项目
+
+**行业趋势：**
+- Cleanview 创始人 Michael Thomas：「即使有明确气候目标和可再生能源承诺的大型科技公司，也在 AI 竞赛加剧时探索化石燃料投资」
+- Google 发言人称目前「尚未签订」天然气供电合同
+
+**矛盾之处：**
+- Google 长期以来被环保组织视为大型科技公司中可再生能源的典范
+- 但 Goodnight 项目显示，即使是 Google 也在探索离网化石燃料为数据中心供电
+- AI 算力需求的爆炸式增长正在重塑科技公司的能源策略
+
+**深层意义：**
+AI 竞赛正在迫使科技公司在气候承诺和算力需求之间做出选择。当可再生能源无法满足数据中心的快速增长时，化石燃料成为「现实选择」。这一趋势可能对整个科技行业的碳减排目标产生深远影响。`,
+    date: "2026-04-15 14:24",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/a-new-google-funded-data-center-will-be-powered-by-a-massive-gas-plant/",
+    href: "/news/news-169",
+  },
 ];
