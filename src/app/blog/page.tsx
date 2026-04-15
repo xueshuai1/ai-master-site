@@ -58,23 +58,27 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Category Filter */}
+      {/* Category Filter - single-row horizontal scroll with fade edges */}
       <section className="px-4 sm:px-6 lg:px-8 pb-4">
         <div className="max-w-5xl mx-auto">
-          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
-            {blogCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => handleCategoryChange(cat)}
-                className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
-                  activeCategory === cat
-                    ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                    : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="relative">
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-900 to-transparent z-10 rounded-l-xl" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-900 to-transparent z-10 rounded-r-xl" />
+            <div className="flex gap-1.5 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center scrollbar-hide">
+              {blogCategories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => handleCategoryChange(cat)}
+                  className={`shrink-0 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                    activeCategory === cat
+                      ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

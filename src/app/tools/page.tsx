@@ -168,27 +168,31 @@ export default function ToolsPage() {
             />
           </div>
 
-          {/* Category tabs - scrollable on mobile */}
-          <div className="flex flex-wrap gap-2 sm:gap-3 justify-start sm:justify-center pb-2 scrollbar-hide">
-            {toolCategories.map((c) => {
-              const count = c.key === "all" ? toolsWithPopularity.length : toolsWithPopularity.filter((t) => t.category === c.key).length;
-              const isActive = activeCategory === c.key;
-              return (
-                <button
-                  key={c.key}
-                  onClick={() => { setActiveCategory(c.key); handleFilterChange(); }}
-                  className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
-                    isActive
-                      ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                  }`}
-                >
-                  <span>{c.icon}</span>
-                  <span>{c.label}</span>
-                  <span className={`text-xs ${isActive ? "text-brand-200" : "text-slate-600"}`}>{count}</span>
-                </button>
-              );
-            })}
+          {/* Category tabs - single-row horizontal scroll with fade edges */}
+          <div className="relative">
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-900 to-transparent z-10 rounded-l-xl" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-900 to-transparent z-10 rounded-r-xl" />
+            <div className="flex gap-1.5 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center scrollbar-hide">
+              {toolCategories.map((c) => {
+                const count = c.key === "all" ? toolsWithPopularity.length : toolsWithPopularity.filter((t) => t.category === c.key).length;
+                const isActive = activeCategory === c.key;
+                return (
+                  <button
+                    key={c.key}
+                    onClick={() => { setActiveCategory(c.key); handleFilterChange(); }}
+                    className={`shrink-0 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                      isActive
+                        ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                        : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    <span className="text-sm sm:text-base">{c.icon}</span>
+                    <span>{c.label}</span>
+                    <span className={`text-[10px] sm:text-xs ${isActive ? "text-brand-200" : "text-slate-600"}`}>{count}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

@@ -99,22 +99,26 @@ export default function NewsPage() {
       {/* News List */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
-          {/* Tag Filter */}
+          {/* Tag Filter - single-row horizontal scroll with fade edges */}
           {allTags.length > 1 && (
-            <div className="mb-8 flex flex-wrap gap-2 justify-center">
-              {allTags.map(tag => (
-                <button
-                  key={tag}
-                  onClick={() => handleTagChange(tag)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                    activeTag === tag
-                      ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
+            <div className="relative mb-6">
+              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-900 to-transparent z-10 rounded-l-xl" />
+              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-900 to-transparent z-10 rounded-r-xl" />
+              <div className="flex gap-1.5 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center scrollbar-hide">
+                {allTags.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => handleTagChange(tag)}
+                    className={`shrink-0 px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                      activeTag === tag
+                        ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                        : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
