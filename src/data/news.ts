@@ -16,6 +16,147 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-155",
+    tag: "公司动态",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Google Chrome 推出 AI 驱动「Skills」功能 — 浏览器内 AI 自动化新时代",
+    summary: "Google Chrome 新增 AI 驱动的 Skills 功能，用户可一键保存和重复使用 AI 操作序列，将 AI 自动化深度集成到浏览器生态中。",
+    content: `## Google Chrome 推出 AI Skills — 浏览器内自动化新时代
+
+2026 年 4 月 14 日，Google Chrome 正式发布 AI 驱动的 Skills 功能。
+
+**核心功能：**
+- 用户可保存 AI 操作序列，一键重复使用
+- 类似于浏览器内的 AI 自动化脚本
+- 与 Chrome 浏览深度集成，支持网页操作自动化
+
+**行业意义：**
+- 标志着 AI 从独立应用走向浏览器内嵌
+- 降低普通用户自动化门槛
+- 与 Camofox Browser（专为 AI Agent 设计的无头浏览器）形成互补趋势
+
+**竞争格局：**
+- 浏览器 AI 化成为新赛道
+- Microsoft Edge 已有 Copilot 集成
+- AI 浏览器自动化将重塑用户上网习惯`,
+    date: "2026-04-15 12:02",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/how-to-use-google-chrome-ai-powered-skills/",
+    href: "/news/news-155",
+  },
+  {
+    id: "news-154",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "调查：43% 的 AI 生成代码需要在生产环境中调试修复",
+    summary: "最新调查显示近半数 AI 生成的代码变更在生产环境中需要人工调试，凸显 AI 编码质量危机。结合 Axios 供应链投毒和 Amazon 故障，AI 编码安全成为行业焦点。",
+    content: `## AI 编码质量危机：43% 的 AI 生成代码需要生产调试
+
+2026 年 4 月 14 日，VentureBeat 发布最新 AI 编码质量调查数据。
+
+**核心发现：**
+- 43% 的 AI 生成代码变更在生产环境中需要调试修复
+- AI 编码工具从"速度优先"转向"质量优先"的范式转变
+
+**行业背景：**
+- Axios HTTP 库维护者账号被入侵，注入恶意代码，影响 ChatGPT macOS 应用
+- Amazon 两次因 AI 辅助代码变更导致重大生产故障
+- OpenAI 正在发布更新和新证书以缓解 Axios 投毒风险
+
+**影响：**
+- 企业需要 AI 代码审计工具、静态分析和安全扫描
+- AI 编码环境下的依赖管理和安全验证成为刚需
+- 开发者不能完全信任 AI 生成的代码，需要人工审查流程`,
+    date: "2026-04-15 12:02",
+    source: "VentureBeat",
+    sourceUrl: "https://venturebeat.com/ai/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds/",
+    href: "/news/news-154",
+  },
+  {
+    id: "news-153",
+    tag: "行业动态",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Anthropic 公开反对 OpenAI 支持的 AI 责任豁免法案",
+    summary: "OpenAI 支持限制 AI 公司法律责任的法案，Anthropic 公开反对。两家 AI 巨头在监管策略上产生根本分歧，可能影响未来 AI 开发合规要求。",
+    content: `## AI 巨头监管分歧：OpenAI 与 Anthropic 对责任法案立场对立
+
+2026 年 4 月 14 日，Anthropic 公开反对 OpenAI 支持的 AI 责任法案。
+
+**法案核心：**
+- OpenAI 支持的法案试图限制 AI 公司在 AI 导致大规模伤亡或金融灾难时的法律责任
+- Anthropic 认为这是"极端"的责任豁免，不应通过
+
+**双方立场：**
+- OpenAI：主张适度责任限制，鼓励 AI 创新发展
+- Anthropic：坚持 AI 公司应对产品伤害承担完全责任
+
+**行业影响：**
+- 可能影响未来 AI 开发的法律合规要求
+- 反映 AI 行业对监管的不同理解
+- 立法结果将塑造 AI 安全框架的走向`,
+    date: "2026-04-15 12:02",
+    source: "WIRED",
+    sourceUrl: "https://www.wired.com/story/anthropic-opposes-the-extreme-ai-liability-bill-that-openai-backed/",
+    href: "/news/news-153",
+  },
+  {
+    id: "news-152",
+    tag: "公司动态",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Gemini 个人智能全球推广 — 可访问 Gmail/Photos/YouTube 提供个性化 AI",
+    summary: "Google Gemini Personal Intelligence 在全球更多地区上线，允许 AI 访问用户 Gmail、Photos、搜索和 YouTube 历史以提供个性化体验。英国、瑞士和欧洲经济区暂除外。",
+    content: `## Gemini 个人智能全球推广 — AI 深度集成 Google 生态
+
+2026 年 4 月 14 日，Google 宣布 Gemini Personal Intelligence 在全球更多地区推出。
+
+**功能详情：**
+- Gemini 可访问用户的 Gmail、Google Photos、搜索历史和 YouTube 观看历史
+- 基于个人数据提供高度个性化的 AI 回复和建议
+- 面向 AI Plus、Pro、Ultra 订阅用户优先推出，随后覆盖免费用户
+
+**隐私考量：**
+- 英国、瑞士和欧洲经济区暂不推出（GDPR 合规考量）
+- 用户需要主动授权数据访问权限
+
+**竞争意义：**
+- Google 利用生态数据优势构建个性化 AI 护城河
+- 与 OpenAI ChatGPT、Anthropic Claude 形成差异化竞争
+- 个人数据集成深度成为 AI 竞争新维度`,
+    date: "2026-04-15 12:02",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-152",
+  },
+  {
+    id: "news-151",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Microsoft 发布 MAI-Image-2-Efficient — 成本降 41%、速度提升 22% 的 AI 图像模型",
+    summary: "Microsoft 推出 MAI-Image-2-Efficient，定位为“生产级工作马”。在 p50 延迟基准中超越 Google Gemini 3.1 系列 40%，已在 Microsoft Foundry 和 MAI Playground 上线。",
+    content: `## MAI-Image-2-Efficient：更快更便宜的 AI 图像生成
+
+2026 年 4 月 14 日，Microsoft 正式发布 MAI-Image-2-Efficient。
+
+**性能数据：**
+- 成本降低 41%：$5/百万输入 token，$19.50/百万输出 token（原 $33）
+- 速度提升 22%
+- GPU 吞吐效率提高 4 倍（NVIDIA H100, 1024×1024 分辨率）
+- p50 延迟基准超越 Google Gemini 3.1 Flash Image 和 Gemini 3 Pro Image 达 40%
+
+**定位：**
+- "生产级工作马"（Production Workhorse）
+- 适合大批量生成场景：产品图、营销素材、UI 模拟图、品牌资产、批量管线
+
+**竞品对比：**
+- 直接对标 Google Gemini 3 系列图像模型
+- 与 DALL-E 3、Stable Diffusion 3 形成竞争
+- Microsoft 在 AI 图像市场的性价比策略`,
+    date: "2026-04-15 12:02",
+    source: "Microsoft / VentureBeat",
+    sourceUrl: "https://microsoft.ai/news/mai-image-2-efficient/",
+    href: "/news/news-151",
+  },
+  {
     id: "news-148",
     tag: "行业动态",
     tagColor: "bg-purple-500/10 text-purple-300",
