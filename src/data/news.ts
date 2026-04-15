@@ -4743,7 +4743,7 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     href: "/news/news-188",
   },
   {
-    id: "news-210",
+    id: "news-227",
     tag: "多模态",
     tagColor: "bg-indigo-500/10 text-indigo-300",
     coverImage: "/images/news/multimodal.jpg",
@@ -4785,7 +4785,7 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     date: "2026-04-15 20:25",
     source: "arXiv 2604.12812 / CVPR 2026 Highlight",
     sourceUrl: "https://arxiv.org/abs/2604.12812",
-    href: "/news/news-189",
+    href: "/news/news-227",
   },
   {
     id: "news-211",
@@ -5180,7 +5180,7 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     href: "/news/news-220",
   },
   {
-    id: "news-221",
+    id: "news-228",
     tag: "AI 科研",
     tagColor: "bg-violet-500/10 text-violet-300",
     coverImage: "/images/news/research.jpg",
@@ -5215,7 +5215,7 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     date: "2026-04-16 02:20",
     source: "arXiv 2604.13018",
     sourceUrl: "https://arxiv.org/abs/2604.13018",
-    href: "/news/news-221",
+    href: "/news/news-228",
   },
   {
     id: "news-222",
