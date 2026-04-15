@@ -16,6 +16,160 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-134",
+    tag: "安全动态",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "OpenAI 发布 GPT-5.4-Cyber — 专为网络安全防御微调的模型，扩展可信访问计划",
+    summary: "OpenAI 正式发布 GPT-5.4-Cyber，首个专为防御性网络安全场景微调的商业模型变体。同时扩展「Trusted Access for Cyber」计划，用户通过政府 ID 验证可获得网络安全工具的低摩擦访问权限。这是 OpenAI 对 Anthropic Project Glasswing 的直接回应。",
+    content: `## OpenAI GPT-5.4-Cyber：网络安全 AI 新纪元
+
+2026 年 4 月 14 日，OpenAI 正式发布 GPT-5.4-Cyber，这是其首个专门为防御性网络安全场景微调的模型变体。
+
+**核心功能：**
+- GPT-5.4-Cyber 针对网络安全任务进行专门微调
+- 支持二进制逆向工程等高级安全操作
+- 网络安全专家可获得特殊权限
+
+**可信访问计划：**
+OpenAI 扩展了其「Trusted Access for Cyber」计划（2026 年 2 月推出）：
+- 用户通过政府颁发 ID 的照片验证身份（由 Persona 处理）
+- 验证后可获得「减少摩擦」的模型访问权限
+- 部分高级安全工具仍需通过 Google Form 申请
+
+**行业竞争：**
+这是 OpenAI 对 Anthropic Project Glasswing 的直接回应。Anthropic 联合 AWS、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、NVIDIA 和 Palo Alto Networks 共同建立软件安全计划。两家公司都在争夺网络安全 AI 市场的主导权。
+
+**趋势意义：**
+AI 安全正从「通用能力」走向「垂直认证」——获得特殊权限的 AI 模型可以执行更高级的安全操作，但需要额外的身份验证和审批流程。` ,
+    date: "2026-04-15 10:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/",
+    href: "/news/news-134",
+  },
+  {
+    id: "news-135",
+    tag: "工具发布",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "Claude Code 桌面版重设计 — 多代理协作、内置终端、拖拽式工作区",
+    summary: "Anthropic 重设计 Claude Code 桌面应用，新增侧边栏管理多会话、拖拽布局自定义工作区、内置终端和文件编辑器。Claude Cowork 企业版新增 IT 管理员部署工具和 Zoom 会议转录功能。Claude Code 还推出 Routines 功能，支持云端 Mac 离线运行。",
+    content: `## Claude Code 桌面重设计：从单用户工具到团队协作平台
+
+2026 年 4 月 14 日，Anthropic 发布了 Claude Code 桌面应用的全新设计。
+
+**新增功能：**
+- 侧边栏管理多会话：可同时处理多个编码任务
+- 拖拽布局：自定义工作区排列
+- 内置终端：直接在应用内运行命令
+- 内置文件编辑器：无需切换外部编辑器
+
+**Claude Cowork 企业版：**
+- IT 管理员可进行公司级部署
+- 任何人都可以构建和部署自主工作流
+- 新增 Zoom 会议转录→行动项转换功能
+- 需付费计划才能使用
+
+**Claude Code Routines：**
+- 云端 Mac 离线运行
+- 关闭电脑后工作不中断
+- 适合长时间运行的自动化任务
+
+**趋势意义：**
+AI 编码工具正从「单用户辅助工具」向「团队协作平台」演进。多代理管理、会话编排和企业级部署能力将成为核心竞争力。` ,
+    date: "2026-04-15 10:00",
+    source: "The Verge",
+    sourceUrl: "https://claude.com/blog/claude-code-desktop-redesign",
+    href: "/news/news-135",
+  },
+  {
+    id: "news-136",
+    tag: "行业趋势",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "SoftBank 联合 Sony、Honda 成立「物理 AI」公司 — 目标 2030 年自主控制机器人",
+    summary: "SoftBank 创建新公司开发「物理 AI」，目标是到 2030 年构建能自主控制机器和机器人的 AI 模型。Sony、Honda、Nippon Steel 等日本巨头参与。这是主权 AI 趋势的一部分，各国正在加速建立自主 AI 能力。",
+    content: `## SoftBank 物理 AI：从软件到物理世界
+
+2026 年 4 月 14 日，据 Nikkei 报道，SoftBank 创建了专注于「物理 AI」的新公司。
+
+**目标：**
+- 2030 年前构建能自主控制机器和机器人的 AI 模型
+- 联合 Sony、Honda、Nippon Steel 等日本产业巨头
+
+**背景：**
+- 主权 AI（Sovereign AI）趋势加速
+- 各国政府和企业都在建立自主 AI 能力
+- 日本希望在物理 AI 领域保持竞争力
+
+**行业意义：**
+这是 AI 从软件世界走向物理世界的重要信号。SoftBank 此前已投资波士顿动力等机器人公司，此次成立物理 AI 公司表明其正在将 AI 与机器人深度融合。` ,
+    date: "2026-04-15 10:00",
+    source: "The Verge / Nikkei",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-136",
+  },
+  {
+    id: "news-137",
+    tag: "安全动态",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "OpenAI 回应 Axios 供应链攻击 — 开发者工具被劫持投毒，ChatGPT macOS 受影响",
+    summary: "Axios HTTP 库维护者账号被黑客入侵，注入恶意脚本允许远程访问用户设备。该恶意版本可能影响了 ChatGPT 的 macOS 应用。OpenAI 正在发布更新和新证书缓解风险。这是继 Amazon 两次 AI 辅助代码变更导致重大故障后的又一次供应链安全事件。",
+    content: `## Axios 供应链攻击：AI 编码环境的安全警钟
+
+2026 年 4 月 10 日，OpenAI 发布声明回应 Axios HTTP 库被劫持事件。
+
+**事件经过：**
+- Axios HTTP 库维护者账号被黑客入侵
+- 注入了允许远程访问用户设备的恶意脚本
+- 恶意版本影响了 Windows、macOS 和 Linux 用户
+- ChatGPT 的 macOS 应用可能受到影响
+
+**OpenAI 响应：**
+- 发布应用更新
+- 颁发新安全证书
+- 缓解已知风险
+
+**行业背景：**
+这是继 Amazon 3 月两次重大 AI 辅助代码变更故障后的又一次供应链安全事件。43% 的 AI 生成代码需要在生产环境中调试，0% 的工程师对 AI 生成代码部署后行为「非常有信心」。
+
+**趋势：**
+AI 编码安全正成为行业最优先事项。从速度优先到安全优先的转变已经开始，代码审批流程和安全验证将成为标准实践。` ,
+    date: "2026-04-15 10:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/axios-developer-tool-compromise/",
+    href: "/news/news-137",
+  },
+  {
+    id: "news-138",
+    tag: "模型发布",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/model.jpg",
+    title: "Kimi K2.6-code 发布 — 月之暗面万亿参数编程模型，对标 Claude Sonnet 4.6",
+    summary: "月之暗面发布 Kimi K2.6-code，号称万亿参数模型，直接对标 Claude Sonnet 4.6。这是国产大模型在编程领域的又一轮突破，意味着 AI 编码工具竞争正从 OpenAI/Anthropic 扩展到中国市场。",
+    content: `## Kimi K2.6-code：国产编程 AI 新力量
+
+2026 年 4 月 15 日，月之暗面（Moonshot AI）发布 Kimi K2.6-code。
+
+**核心特点：**
+- 万亿参数规模
+- 直接对标 Claude Sonnet 4.6
+- 专注于编程和代码生成场景
+
+**行业背景：**
+- 国产大模型在编程领域持续突破
+- AI 编码工具竞争从 OpenAI/Anthropic 扩展到中国市场
+- Kimi 系列此前已推出 K2.5 等版本
+
+**趋势：**
+编程 AI 正在成为大模型竞争的「主战场」。从通用聊天到专业编程，模型正在向垂直场景深化。中国市场的加入让竞争更加激烈。` ,
+    date: "2026-04-15 10:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/news/27125",
+    href: "/news/news-138",
+  },
+  {
     id: "news-126",
     tag: "平台动态",
     tagColor: "bg-blue-500/10 text-blue-300",
