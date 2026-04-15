@@ -4443,4 +4443,210 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     sourceUrl: "https://arxiv.org/abs/2604.12874",
     href: "/news/news-190",
   },
+  {
+    id: "news-191",
+    tag: "具身智能",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/robot.jpg",
+    title: "Google DeepMind 发布 Gemini Robotics-ER 1.6：增强具身推理与仪表读取能力，赋能物理 AI",
+    summary: "Google DeepMind 发布 Gemini Robotics-ER 1.6，作为机器人的'认知大脑'，新增仪表读取能力（模拟仪表、压力计、数字读数），显著提升空间推理（指向、计数）和多视角成功检测能力。采用双模型架构：ER 1.6 负责高层推理策略，Robotics 1.5 负责底层运动执行。（MarkTechPost 2026-04-15）",
+    content: `## Gemini Robotics-ER 1.6：机器人的认知大脑
+
+2026 年 4 月 15 日，Google DeepMind 发布 Gemini Robotics-ER 1.6，对其具身推理模型进行重大升级。
+
+**双模型架构：**
+- **Gemini Robotics 1.5（VLA 模型）**：处理视觉输入和用户提示，直接转化为物理运动指令——执行者
+- **Gemini Robotics-ER 1.6（具身推理模型）**：理解物理空间、规划和逻辑决策，提供高层洞察指导 VLA——战略家
+
+**1.6 版本关键新增能力：**
+
+**仪表读取（Instrument Reading）—— 全新能力**
+- 解读模拟仪表、压力计、液位视镜和数字读数
+- 面向工业设施巡检场景，Boston Dynamics 核心需求
+- 此前版本完全不具备此能力
+
+**指向能力（Pointing）增强**
+- 像素级精确定位，支持空间推理、关系逻辑、运动推理
+- 内部基准：1.6 正确识别锤子、剪刀、画笔、钳子数量，不误检不存在的物体
+- 1.5 版本会误检（"看到"不存在的手推车）——在机器人管线中会导致级联失败
+
+**成功检测与多视角推理**
+- 判断任务是否完成，决定重试还是进入下一步
+- 增强多摄像头视角信息融合（顶置 + 腕装），适应遮挡和动态环境
+
+**深层意义：**
+- 具身 AI 正从"能看懂"走向"能在真实工业环境中工作"
+- 仪表读取能力意味着机器人可自主执行设施巡检任务
+- 双模型架构（策略 + 执行）可能是机器人 AI 的主流范式`,
+    date: "2026-04-15 20:25",
+    source: "MarkTechPost / Google DeepMind Blog",
+    sourceUrl: "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+    href: "/news/news-191",
+  },
+  {
+    id: "news-192",
+    tag: "浏览器 AI",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    coverImage: "/images/news/browser.jpg",
+    title: "Google 在 Chrome 中推出 'Skills' 功能：将 AI 提示词转化为可复用的一键浏览器工作流",
+    summary: "Google 在 Chrome 浏览器中推出 Skills 功能，用户可将常用 AI 提示词保存为可复用的一键工作流，支持跨多标签页同时执行。Google 同时提供预设 Skills 库，涵盖营养成分计算、产品规格对比等场景。这标志着浏览器级 AI 代理从一次性交互向状态化、可复用工作流的演进。（MarkTechPost 2026-04-14）",
+    content: `## Chrome Skills：浏览器级 AI 提示词管理
+
+2026 年 4 月 14 日，Google 在 Chrome 浏览器中推出 Skills 功能，已面向 Mac、Windows、ChromeOS 用户（英语-美国）开始 rollout。
+
+**核心功能：**
+- 从聊天历史中保存常用 AI 提示词为命名的 Skills
+- 通过斜杠（/）或加号（+）一键调用
+- **跨多标签页执行**——同时对多个页面应用同一 Skill
+- 随时编辑和创建新 Skills
+
+**典型应用场景：**
+- 菜谱页面快速计算蛋白质宏量营养素
+- 跨多个商品标签页对比规格参数
+- 长文档扫描关键信息
+
+**预设 Skills 库：**
+- Google 提供即用型 Skills 库
+- 涵盖产品成分拆解、礼物推荐等场景
+- 用户可浏览、添加、自定义
+
+**系统设计意义：**
+- 相当于浏览器级别的提示词模板管理
+- 类似 LangChain 开发者的系统提示词库，但面向终端用户
+- 多标签页执行 = 浏览器上下文作为检索语料库，Skill 作为查询模板
+
+**安全与隐私：**
+- Google 内置安全防护机制
+- Skills 在浏览器本地管理
+
+**深层意义：**
+- 浏览器原生 AI 从"一次性对话"向"可复用工作流"演进
+- 预示操作系统级 AI 代理的早期形态
+- 非开发者也能构建和使用 AI 工作流`,
+    date: "2026-04-15 20:25",
+    source: "MarkTechPost / Google Blog",
+    sourceUrl: "https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/",
+    href: "/news/news-192",
+  },
+  {
+    id: "news-193",
+    tag: "Agent 学习",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/agent.jpg",
+    title: "基于真实案例的自主 Agent 可迁移专家经验学习框架——从过往任务中提取可复用知识资产",
+    summary: "提出基于案例的学习框架，将 LLM Agent 在过往任务中的经验转化为可复用的知识资产（任务相关知识、分析提示词、操作技能），使 Agent 能将从真实案例中获得的实际经验迁移到新任务。在 6 类复杂任务基准上评估，该方法在所有任务中匹配或超越最佳基线，且优势随任务复杂度增加而扩大。（arXiv:2604.12717）",
+    content: `## 案例学习：让 Agent 从真实经验中成长
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.12717），提出基于案例学习的自主 Agent 专家经验迁移框架。
+
+**背景问题：**
+- LLM Agent 在通用推理任务表现良好
+- 但在复杂真实场景中，难以可靠利用任务结构、关键约束和既往经验
+
+**框架核心：**
+- 将过往任务经验转化为**可复用的知识资产**
+- 包括：任务相关知识、分析提示词、操作技能
+- 不同于纯预训练知识或静态提示，强调从真实案例中提取和重用
+
+**实验设计：**
+- 统一基准：6 类复杂任务
+- 对比基线：Zero-Shot、Few-Shot、Checklist Prompt、Rule Memory
+
+**关键结果：**
+- 在所有任务中**匹配或超越最佳基线**
+- **优势随任务复杂度增加而扩大**
+- 一个 Agent 获取的实用知识可被其他 Agent 复用
+
+**深层意义：**
+- 案例学习可能是构建专业级真实工作 Agent 的可行路径
+- 从"预训练 + 提示"转向"经验积累 + 知识迁移"
+- 为 Agent 的持续学习和专业成长提供框架`,
+    date: "2026-04-15 20:25",
+    source: "arXiv 2604.12717",
+    sourceUrl: "https://arxiv.org/abs/2604.12717",
+    href: "/news/news-193",
+  },
+  {
+    id: "news-194",
+    tag: "AI 教育",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/education.jpg",
+    title: "AI 工具能否提升低认知需求数学任务？11 款 AI 工具评估显示平均仅 64% 成功率",
+    summary: "研究评估 11 款 AI 工具（含 ChatGPT、Claude 等通用工具和 Khanmigo 等数学专用工具）升级低认知需求数学任务的能力。结果显示 AI 工具平均仅 64% 成功率，专用工具仅略优于通用工具（33%-88% 范围）。有趣发现：正确分类任务认知需求的能力与实际升级能力呈负相关（r=-0.35），表明生成性修改与判断性评估是不同的 AI 能力。（arXiv:2604.12743）",
+    content: `## AI 工具升级数学任务的真实能力评估
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.12743），系统评估 AI 工具修改低认知需求数学任务的能力。
+
+**研究设计：**
+- 测试 11 款 AI 工具：6 款通用（ChatGPT、Claude 等）+ 5 款数学专用（Khanmigo 等）
+- 使用 Task Analysis Guide 框架（Stein & Smith, 1998）
+- 提示策略模拟知识渊博教师的典型做法
+
+**核心发现：**
+- 平均成功率仅 **64%**
+- 不同工具表现差异大：**33% - 88%**
+- 专用工具仅适度优于通用工具
+
+**失败模式：**
+- **"欠升级"（Undershooting）**：保持低认知需求
+- **"过升级"（Overshooting）**：提升到教师可能拒绝的过高目标
+
+**反直觉发现：**
+- 正确**分类**任务认知需求的能力与实际**升级**能力呈**负相关**（r = -0.35）
+- 说明生成性修改（generative task）与判断性评估（judgement using rubric）是**不同的 AI 能力**
+
+**深层意义：**
+- AI 在教育内容改编中的潜力被部分高估
+- "能评判"不等于"能改进"
+- 需要专门的方法支持教师修改教学材料`,
+    date: "2026-04-15 20:25",
+    source: "arXiv 2604.12743",
+    sourceUrl: "https://arxiv.org/abs/2604.12743",
+    href: "/news/news-194",
+  },
+  {
+    id: "news-195",
+    tag: "开源项目",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    coverImage: "/images/news/github.jpg",
+    title: "NousResearch hermes-agent 本周暴增 53K Stars 至 88K——'与你共同成长的 Agent'；Archon 开源 AI 编码 Harness 构建器达 18K Stars",
+    summary: "GitHub Trending 本周亮点：NousResearch hermes-agent 一周暴涨 53K stars 至 88.9K，定位为'与你共同成长的 Agent'；Archon 作为首个开源 AI 编码 harness 构建器达 18K stars（+4K/周），使命令式 AI 编码变为确定性和可重复；Kronos 金融大模型 18K stars（+6.5K/周）；claude-mem 自动记忆插件 57K stars（+8.7K/周）。",
+    content: `## GitHub Trending 本周 AI 项目亮点
+
+2026 年 4 月 15 日 GitHub Trending 周榜 AI/ML 相关项目：
+
+**🔥 NousResearch hermes-agent** — 88,942 stars（+52,996/周）
+- "The agent that grows with you"
+- 本周最大涨幅，现象级增长
+- NousResearch 以开源 LLM 著称
+
+**🛠️ Archon** — 18,097 stars（+4,024/周）
+- 首个开源 AI 编码 harness 构建器
+- 使 AI 编码变为**确定性和可重复**
+- 解决 AI 编码"每次结果不同"的痛点
+
+**📊 Kronos** — 18,066 stars（+6,462/周）
+- 金融市场基础模型（Foundation Model）
+- 用 AI 语言建模方法分析金融市场
+
+**🧠 claude-mem** — 56,871 stars（+8,742/周）
+- Claude Code 插件，自动捕获编码会话内容
+- AI 压缩 + 上下文注入未来会话
+
+**📈 ai-hedge-fund** — 54,673 stars（+3,402/周）
+- AI 对冲基金团队
+
+**📚 DeepTutor** — 18,301 stars（+6,401/周）
+- Agent 原生个性化学习助手
+
+**趋势分析：**
+- Agent 相关项目持续霸榜
+- "确定性 AI 编码"（Archon）成为新热点
+- 记忆/经验管理（claude-mem）高增长
+- 金融 AI（Kronos, ai-hedge-fund）活跃`,
+    date: "2026-04-15 20:25",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-195",
+  },
 ];
