@@ -4683,4 +4683,200 @@ Crawl4AI 是专为 AI Agent 设计的开源 Web 爬取框架。
     sourceUrl: "https://github.com/trending?since=weekly",
     href: "/news/news-195",
   },
+  {
+    id: "news-196",
+    tag: "物理 AI",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/robotics.jpg",
+    title: "Google 发布 Gemini Robotics-ER 1.6 — 最强具身推理模型，可让机器人读取仪表盘和压力表",
+    summary: "Google DeepMind 发布 Gemini Robotics-ER 1.6，支持仪器读取（压力表、液位计）、空间推理、多视角理解、任务规划和成功检测。与 Boston Dynamics 合作演示 Spot 机器人读取仪表盘。可作为机器人高层推理大脑，调用 VLA 或第三方工具。",
+    content: `## Gemini Robotics-ER 1.6：让机器人真正理解物理世界
+
+2026 年 4 月 14 日，Google DeepMind 发布 Gemini Robotics-ER 1.6，号称"迄今最安全的机器人模型"。
+
+**核心能力：**
+- **仪器读取（Instrument Reading）**：首次支持读取复杂仪表盘（压力表、液位计等），与 Boston Dynamics Spot 合作演示
+- **空间推理（Pointing）**：可精准指向、计数、比较大小、识别"从-到"关系
+- **成功检测（Success Detection）**：判断任务是否完成，支持多视角（顶视+腕视）综合判断
+- **多视角理解**：融合多个摄像头视角形成连贯的环境理解
+- **工具调用**：可作为机器人高层推理大脑，原生调用 Google Search、VLA 模型或用户自定义函数
+
+**基准表现：**
+- 大幅超越 Gemini Robotics-ER 1.5 和 Gemini 3.0 Flash
+- 在仪器读取评估中启用 agentic vision 后表现最佳
+- 空间推理精度显著提升，能正确处理"不存在的物品"（不会幻觉）
+
+**架构定位：**
+- 作为机器人的**高层推理模型**（High-level reasoning model）
+- 不直接控制电机，而是理解环境、规划任务、检测成功
+- 通过调用底层 VLA（Vision-Language-Action）模型或工具执行具体操作
+
+**开发者访问：**
+- Gemini API 已开放
+- Google AI Studio 可用（模型：gemini-robotics-er-1.6-preview）
+- 配套 Colab 示例已发布
+
+**行业意义：**
+- 具身推理（Embodied Reasoning）是物理 AI 的核心瓶颈
+- Gemini Robotics-ER 1.6 的仪器读取能力让机器人能进入工业场景（读取设备状态）
+- 与 SoftBank 物理 AI 战略、Boston Dynamics 硬件形成完整生态`,
+    date: "2026-04-15 22:00",
+    source: "Google DeepMind",
+    sourceUrl: "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+    href: "/news/news-196",
+  },
+  {
+    id: "news-197",
+    tag: "行业动态",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "Meta 正训练扎克伯格 AI 分身 — 用其语气、举止和公开演讲克隆，员工可与 AI 版 CEO 互动",
+    summary: "据 Financial Times 报道，Meta 正在训练 Mark Zuckerberg 的 AI 分身，基于其形象、声音、举止、语气和公开演讲。若实验成功，Meta 可能允许创作者制作 AI 分身。Zuckerberg 每周花 5-10 小时编码 Meta AI 项目。",
+    content: `## 扎克伯格的 AI 分身：Meta 的"数字克隆"实验
+
+2026 年 4 月 13 日，Financial Times 报道 Meta 正在训练 Mark Zuckerberg 的 AI 分身。
+
+**训练数据：**
+- Zuckerberg 的形象和声音
+- 个人举止和语气风格
+- 所有公开演讲和采访
+
+**目的：**
+- 让员工"感觉与创始人更有连接"
+- AI 分身可与员工互动、提供反馈
+
+**更大计划：**
+- 若 Zuckerberg 分身实验成功，Meta 可能允许创作者制作自己的 AI 分身
+- 2024 年 Meta Connect 已展示过创作者 AI 分身的实时演示
+- Instagram 已允许创作者制作 AI 版本与粉丝互动
+
+**Zuckerberg 的 AI 投入：**
+- 每周花 5-10 小时编码 Meta AI 项目
+- 参与技术评审
+- 此前 WSJ 报道他在构建 AI Agent 帮助自己做 CEO
+
+**深层意义：**
+- 首个企业级 CEO AI 分身案例
+- 预示 AI 克隆将成为企业管理新形态
+- 涉及肖像权、员工知情权、AI 伦理等复杂问题`,
+    date: "2026-04-15 22:00",
+    source: "Financial Times / The Verge",
+    sourceUrl: "https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone",
+    href: "/news/news-197",
+  },
+  {
+    id: "news-198",
+    tag: "物理 AI",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/robotics.jpg",
+    title: "SoftBank 联合 Sony、Honda、Nippon Steel 成立新公司 — 2030 年前打造自主控制机器人的物理 AI",
+    summary: "SoftBank 成立新公司，目标 2030 年前打造可自主控制机器和机器人的 AI 模型。项目获得 Sony、Honda、Nippon Steel 等日本巨头支持。这是日本在'主权 AI'竞赛中的最新举措，与美国和中国 AI 公司竞争。",
+    content: `## SoftBank 的物理 AI 野心：让日本在机器人 AI 领域重新领先
+
+2026 年 4 月 14 日，据 Nikkei 报道，SoftBank 成立新公司专攻"物理 AI"。
+
+**目标：**
+- 2030 年前打造可**自主控制机器和机器人**的 AI 模型
+- 不止是软件，而是能直接操控物理实体的 AI
+
+**合作伙伴：**
+- **Sony**：传感器、机器人硬件
+- **Honda**：人形机器人（Honda Avatar）、自动驾驶
+- **Nippon Steel**：工业场景、制造自动化
+
+**国家战略背景：**
+- 这是日本"主权 AI"战略的一部分
+- 各国正在投入数十亿美元建设自主 AI 能力
+- 与美国（OpenAI、Google、Anthropic）和中国 AI 公司竞争
+
+**行业趋势：**
+- AI 从软件世界走向物理世界
+- 机器人 + AI = 下一个万亿赛道
+- 日本在机器人硬件上有传统优势（Honda ASIMO、Sony Aibo），现在补齐 AI 大脑`,
+    date: "2026-04-15 22:00",
+    source: "Nikkei / The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-198",
+  },
+  {
+    id: "news-199",
+    tag: "开源项目",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    coverImage: "/images/news/github.jpg",
+    title: "Microsoft markitdown 突破 109K Stars — 文档转 Markdown 基础设施新增 MCP Server，可直接接入 Claude Desktop",
+    summary: "Microsoft markitdown 本周暴增 14,615 stars 至 109K。支持 PDF/PPT/Word/Excel/图片/音频/HTML/CSV/ZIP/YouTube/EPub 转 Markdown。新增 MCP Server 集成 Claude Desktop，是 AI 消费文档的关键基础设施。",
+    content: `## markitdown：109K Stars 的文档转换基础设施
+
+Microsoft markitdown 本周增长 14,615 stars，总 stars 达 109,220。
+
+**支持格式：**
+- PDF、PowerPoint、Word、Excel
+- 图片（EXIF 元数据 + OCR）
+- 音频（EXIF 元数据 + 语音转录）
+- HTML、CSV、JSON、XML
+- ZIP 文件（递归处理内容）
+- YouTube URL、EPub
+
+**新增 MCP Server：**
+- markitdown-mcp 包可直接接入 Claude Desktop
+- 通过 Model Context Protocol 让 LLM 应用直接读取各类文档
+- 是 AI 消费企业文档的关键管道
+
+**为什么重要：**
+- Markdown 是 LLM 最友好的文本格式（token 效率高、语义清晰）
+- 企业有大量 PDF/PPT/Word 文档，markitdown 是最佳转换工具
+- MCP Server 让 AI 能直接"阅读"企业文档库
+
+**技术特点：**
+- 轻量级 Python 工具
+- 依赖分组安装（可选依赖）
+- 基于文件流（无临时文件）
+- 保持文档结构（标题、列表、表格、链接）`,
+    date: "2026-04-15 22:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/microsoft/markitdown",
+    href: "/news/news-199",
+  },
+  {
+    id: "news-200",
+    tag: "AI 教育",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/education.jpg",
+    title: "DeepTutor v1.1.0 发布 — 港大开源 Agent 原生学习助手达 18K Stars，新增 LaTeX 解析、WebSocket 重连、Serper 搜索",
+    summary: "港大 HKUDS 开源项目 DeepTutor 发布 v1.1.0，达 18,321 stars（本周 +6,401）。Agent 原生架构，TutorBot 多通道 Bot，Co-Writer 协作写作，持久记忆。新增 LaTeX 数学解析、URL 路由、Snow 主题、Serper 搜索集成、LM Studio/llama.cpp 支持。",
+    content: `## DeepTutor：Agent 原生的个性化学习助手
+
+2026 年 4 月 15 日，DeepTutor 发布 v1.1.0，总 stars 达 18,321。
+
+**v1.1.0 新特性：**
+- LaTeX 块数学解析全面升级
+- LLM 诊断探针 agents.yaml 配置
+- URL 路由 + 可收藏会话
+- Snow 主题
+- WebSocket 心跳 + 自动重连 + 恢复
+- Serper 搜索提供商集成
+- LM Studio 和 llama.cpp 支持
+
+**架构特色：**
+- **Agent 原生**：两层插件模型（Tools + Capabilities）
+- **TutorBot**：多通道 Bot Agent
+- **Co-Writer**：协作写作
+- **Guided Learning**：引导学习
+- **持久记忆**：跨会话学习上下文
+
+**技术栈：**
+- Next.js 16 + React 19
+- 支持多 LLM 提供商（OpenAI、Anthropic、本地模型）
+- Docker 部署
+- Apache-2.0 开源协议
+
+**发展历程：**
+- 39 天达到 10K stars
+- 2026.4.4 发布 v1.0.0（~20 万行代码重写）
+- 每周稳定更新（4 月连续发布 7 个版本）`,
+    date: "2026-04-15 22:00",
+    source: "GitHub / HKUDS",
+    sourceUrl: "https://github.com/HKUDS/DeepTutor",
+    href: "/news/news-200",
+  },
 ];
