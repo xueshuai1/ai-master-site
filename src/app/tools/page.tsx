@@ -135,11 +135,6 @@ export default function ToolsPage() {
     setCurrentPage(1);
   };
 
-  const handleSortChange = (newSort: "default" | "stars") => {
-    setSortBy(newSort);
-    setCurrentPage(1);
-  };
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
       {/* Navigation */}
@@ -173,30 +168,8 @@ export default function ToolsPage() {
             />
           </div>
 
-          {/* Sort + Category filters */}
-          <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
-            <div className="flex gap-1.5 shrink-0 items-center mr-2">
-              <button
-                onClick={() => handleSortChange("default")}
-                className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
-                  sortBy === "default"
-                    ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                    : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                📋 默认
-              </button>
-              <button
-                onClick={() => handleSortChange("stars")}
-                className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
-                  sortBy === "stars"
-                    ? "bg-yellow-500/20 text-yellow-300 shadow-lg shadow-yellow-500/10"
-                    : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                ⭐ 热门
-              </button>
-            </div>
+          {/* Category tabs - scrollable on mobile */}
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-start sm:justify-center pb-2 scrollbar-hide">
             {toolCategories.map((c) => {
               const count = c.key === "all" ? toolsWithPopularity.length : toolsWithPopularity.filter((t) => t.category === c.key).length;
               const isActive = activeCategory === c.key;
@@ -223,10 +196,24 @@ export default function ToolsPage() {
       {/* Tools Grid */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
-          <p className="text-sm text-slate-500 mb-6">
-            找到 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个工具
-            {sortBy === "stars" && " · 按 stars 降序排列"}
-          </p>
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-slate-500">
+              找到 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个工具
+              {totalPages > 1 && (
+                <span>，第 <span className="text-brand-400 font-medium">{safePage}</span> / {totalPages} 页</span>
+              )}
+            </p>
+            <div className="flex items-center gap-2">
+              <select
+                value={sortBy}
+                onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
+                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+              >
+                <option value="default">默认排序</option>
+                <option value="stars">⭐ 热门（stars 降序）</option>
+              </select>
+            </div>
+          </div>
 
           {filteredTools.length > 0 ? (
             <>
