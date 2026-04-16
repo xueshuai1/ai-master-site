@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-04-15T19:14:33.269Z",
-  "totalRepos": 69,
-  "successCount": 20,
+  "fetchedAt": "2026-04-16T13:10:10.419Z",
+  "totalRepos": 71,
+  "successCount": 23,
   "errors": [
     "glm-5",
     "autogen",
@@ -50,149 +50,169 @@
     "argo-cd",
     "flux",
     "openapi-generator",
-    "domain-driven-hexagon",
-    "learn-go-with-tests"
+    "domain-driven-hexagon"
   ],
   "stars": {
+    "learn-go-with-tests": {
+      "stars": 23590,
+      "forks": 2933,
+      "language": "Go",
+      "updatedAt": "2026-04-16T07:42:58Z",
+      "fetchedAt": "2026-04-16T13:09:10.749Z"
+    },
     "clean-ts-api": {
       "stars": 1914,
       "forks": 492,
       "language": "TypeScript",
       "updatedAt": "2026-04-13T15:00:19Z",
-      "fetchedAt": "2026-04-15T19:13:43.080Z"
+      "fetchedAt": "2026-04-16T13:09:13.212Z"
     },
     "awesome-eventstorming": {
       "stars": 2373,
       "forks": 183,
       "language": null,
       "updatedAt": "2026-04-14T14:07:50Z",
-      "fetchedAt": "2026-04-15T19:13:45.557Z"
+      "fetchedAt": "2026-04-16T13:09:15.764Z"
     },
     "leantime": {
-      "stars": 9504,
+      "stars": 9510,
       "forks": 936,
       "language": "PHP",
-      "updatedAt": "2026-04-15T15:58:22Z",
-      "fetchedAt": "2026-04-15T19:13:48.118Z"
+      "updatedAt": "2026-04-16T09:26:23Z",
+      "fetchedAt": "2026-04-16T13:09:18.733Z"
     },
     "fastapi-realworld": {
-      "stars": 3099,
+      "stars": 3100,
       "forks": 700,
       "language": "Python",
-      "updatedAt": "2026-04-14T13:29:05Z",
-      "fetchedAt": "2026-04-15T19:13:50.678Z"
+      "updatedAt": "2026-04-16T09:01:10Z",
+      "fetchedAt": "2026-04-16T13:09:21.298Z"
     },
     "promptfoo": {
-      "stars": 20124,
-      "forks": 1741,
+      "stars": 20168,
+      "forks": 1743,
       "language": "TypeScript",
-      "updatedAt": "2026-04-15T19:12:26Z",
-      "fetchedAt": "2026-04-15T19:13:53.138Z"
+      "updatedAt": "2026-04-16T12:31:15Z",
+      "fetchedAt": "2026-04-16T13:09:23.874Z"
     },
     "garak": {
-      "stars": 7541,
-      "forks": 879,
+      "stars": 7549,
+      "forks": 884,
       "language": "HTML",
-      "updatedAt": "2026-04-15T16:34:10Z",
-      "fetchedAt": "2026-04-15T19:13:56.311Z"
+      "updatedAt": "2026-04-16T12:24:59Z",
+      "fetchedAt": "2026-04-16T13:09:27.017Z"
     },
     "microsoft-promptbench": {
       "stars": 2798,
       "forks": 219,
       "language": "Python",
       "updatedAt": "2026-04-15T06:16:34Z",
-      "fetchedAt": "2026-04-15T19:13:59.378Z"
+      "fetchedAt": "2026-04-16T13:09:30.193Z"
     },
     "markitdown": {
-      "stars": 109370,
-      "forks": 6952,
+      "stars": 110016,
+      "forks": 7027,
       "language": "Python",
-      "updatedAt": "2026-04-15T19:10:52Z",
-      "fetchedAt": "2026-04-15T19:14:01.836Z"
+      "updatedAt": "2026-04-16T13:09:28Z",
+      "fetchedAt": "2026-04-16T13:09:32.764Z"
     },
     "whisper": {
-      "stars": 97814,
-      "forks": 12042,
+      "stars": 97850,
+      "forks": 12044,
       "language": "Python",
-      "updatedAt": "2026-04-15T19:13:00Z",
-      "fetchedAt": "2026-04-15T19:14:04.400Z"
+      "updatedAt": "2026-04-16T12:50:31Z",
+      "fetchedAt": "2026-04-16T13:09:35.328Z"
     },
     "voxcpm": {
-      "stars": 13370,
-      "forks": 1572,
+      "stars": 13638,
+      "forks": 1623,
       "language": "Python",
-      "updatedAt": "2026-04-15T19:09:06Z",
-      "fetchedAt": "2026-04-15T19:14:06.835Z"
+      "updatedAt": "2026-04-16T13:07:53Z",
+      "fetchedAt": "2026-04-16T13:09:37.883Z"
     },
     "ai-hedge-fund": {
-      "stars": 54937,
-      "forks": 9531,
+      "stars": 55516,
+      "forks": 9614,
       "language": "Python",
-      "updatedAt": "2026-04-15T19:13:44Z",
-      "fetchedAt": "2026-04-15T19:14:09.313Z"
+      "updatedAt": "2026-04-16T13:05:08Z",
+      "fetchedAt": "2026-04-16T13:09:40.447Z"
     },
     "china-textbook": {
-      "stars": 69491,
-      "forks": 15517,
+      "stars": 69596,
+      "forks": 15554,
       "language": "Roff",
-      "updatedAt": "2026-04-15T18:03:43Z",
-      "fetchedAt": "2026-04-15T19:14:11.772Z"
+      "updatedAt": "2026-04-16T12:58:03Z",
+      "fetchedAt": "2026-04-16T13:09:43.000Z"
     },
     "claude-mem": {
-      "stars": 57481,
-      "forks": 4643,
+      "stars": 58807,
+      "forks": 4793,
       "language": "TypeScript",
-      "updatedAt": "2026-04-15T19:14:04Z",
-      "fetchedAt": "2026-04-15T19:14:14.228Z"
+      "updatedAt": "2026-04-16T13:09:43Z",
+      "fetchedAt": "2026-04-16T13:09:45.469Z"
     },
     "deep-tutor": {
-      "stars": 18392,
-      "forks": 2423,
+      "stars": 18628,
+      "forks": 2460,
       "language": "Python",
-      "updatedAt": "2026-04-15T19:13:07Z",
-      "fetchedAt": "2026-04-15T19:14:16.660Z"
+      "updatedAt": "2026-04-16T13:08:13Z",
+      "fetchedAt": "2026-04-16T13:09:48.021Z"
     },
     "ai-trader": {
-      "stars": 13402,
-      "forks": 2267,
+      "stars": 13423,
+      "forks": 2273,
       "language": "Python",
-      "updatedAt": "2026-04-15T18:02:46Z",
-      "fetchedAt": "2026-04-15T19:14:19.142Z"
+      "updatedAt": "2026-04-16T12:18:49Z",
+      "fetchedAt": "2026-04-16T13:09:50.584Z"
     },
     "camofox-browser": {
-      "stars": 2558,
-      "forks": 247,
+      "stars": 2610,
+      "forks": 252,
       "language": "JavaScript",
-      "updatedAt": "2026-04-15T18:40:49Z",
-      "fetchedAt": "2026-04-15T19:14:21.705Z"
+      "updatedAt": "2026-04-16T12:59:13Z",
+      "fetchedAt": "2026-04-16T13:09:53.554Z"
     },
     "open-llm-vtuber": {
-      "stars": 6874,
+      "stars": 6885,
       "forks": 899,
       "language": "Python",
-      "updatedAt": "2026-04-15T18:35:26Z",
-      "fetchedAt": "2026-04-15T19:14:24.157Z"
+      "updatedAt": "2026-04-16T12:01:34Z",
+      "fetchedAt": "2026-04-16T13:09:56.109Z"
     },
     "personaplex": {
-      "stars": 9349,
-      "forks": 1308,
+      "stars": 9376,
+      "forks": 1314,
       "language": "Python",
-      "updatedAt": "2026-04-15T18:59:59Z",
-      "fetchedAt": "2026-04-15T19:14:26.720Z"
+      "updatedAt": "2026-04-16T12:30:34Z",
+      "fetchedAt": "2026-04-16T13:09:58.777Z"
     },
     "crawl4ai": {
-      "stars": 64051,
-      "forks": 6566,
+      "stars": 64104,
+      "forks": 6567,
       "language": "Python",
-      "updatedAt": "2026-04-15T19:11:08Z",
-      "fetchedAt": "2026-04-15T19:14:29.149Z"
+      "updatedAt": "2026-04-16T12:44:17Z",
+      "fetchedAt": "2026-04-16T13:10:01.233Z"
     },
     "n8n": {
-      "stars": 184193,
-      "forks": 56826,
+      "stars": 184307,
+      "forks": 56857,
       "language": "TypeScript",
-      "updatedAt": "2026-04-15T19:02:27Z",
-      "fetchedAt": "2026-04-15T19:14:31.266Z"
+      "updatedAt": "2026-04-16T13:09:15Z",
+      "fetchedAt": "2026-04-16T13:10:03.352Z"
+    },
+    "protenix": {
+      "stars": 1819,
+      "forks": 260,
+      "language": "Python",
+      "updatedAt": "2026-04-16T10:17:41Z",
+      "fetchedAt": "2026-04-16T13:10:05.838Z"
+    },
+    "dflash": {
+      "stars": 1463,
+      "forks": 102,
+      "language": "Python",
+      "updatedAt": "2026-04-16T13:09:29Z",
+      "fetchedAt": "2026-04-16T13:10:08.416Z"
     }
   }
 }

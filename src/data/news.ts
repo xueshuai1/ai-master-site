@@ -7022,4 +7022,136 @@ ht+1 = Ā·ht + B̄·e + R̄(ht, e)
     sourceUrl: "https://arxiv.org/abs/2604.12191",
     href: "/news/news-256",
   },
+  {
+    id: "news-257",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "OpenAI Agents SDK 重大升级：模型原生 Harness + 沙盒执行 + MCP/Skills/AGENTS.md 标准化集成",
+    summary: "OpenAI 发布 Agents SDK 新能力：模型原生 Harness 让 Agent 跨文件和工具工作，原生沙盒执行安全工作。集成 MCP 工具调用、Skills 渐进式披露、AGENTS.md 自定义指令、Shell 工具执行、Apply Patch 文件编辑等标准化 Agent 原语。Harness 将持续整合新的 Agent 模式，开发者可专注于领域逻辑。",
+    content: `## OpenAI Agents SDK：从原型到生产的 Agent 基础设施
+
+2026 年 4 月 15 日，OpenAI 官方博客发布。
+
+**核心升级：**
+
+**1. 模型原生 Harness：**
+- 让 Agent 跨文件和工具工作
+- 与前沿模型能力深度对齐
+- 超越模型无关框架的灵活性局限
+
+**2. 原生沙盒执行：**
+- 安全运行 Agent 工作负载
+- 沙盒感知编排
+
+**3. 标准化 Agent 原语集成：**
+- **MCP**：模型上下文协议工具调用
+- **Skills**：渐进式能力披露
+- **AGENTS.md**：自定义指令标准
+- **Shell 工具**：代码执行
+- **Apply Patch 工具**：文件编辑
+- **可配置记忆**：适应不同场景
+
+**行业定位：**
+- 模型无关框架：灵活但未充分利用前沿模型
+- 模型提供商 SDK：接近模型但缺乏 Harness 可见性
+- 托管 Agent API：简化部署但限制运行环境
+- **OpenAI Agents SDK**：对齐模型能力 + 生产就绪
+
+**意义：**
+- Harness 将持续整合新 Agent 模式
+- 开发者减少基础设施更新，专注领域逻辑
+- 标准化推动 Agent 生态统一
+`,
+    date: "2026-04-16 21:06",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/the-next-evolution-of-the-agents-sdk/",
+    href: "/news/news-257",
+  },
+  {
+    id: "news-258",
+    tag: "推理优化",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/reasoning.jpg",
+    title: "CRAFT 推理知识图谱：多候选轨迹共识生成高质量 CoT——平均准确率提升 10%+，超越所有基线",
+    summary: "CRAFT 提出统一框架缓解推理步骤中的内部逻辑错误和步级过度/不足思考问题。发现仅提供标准答案标签无法提升推理能力。构建推理知识图谱（RKG），基于多候选轨迹的共识部分，通过拓扑生成合成高质量轨迹。在逻辑和数学推理基准上一致超越所有基线。（arXiv:2604.14121）",
+    content: `## CRAFT：用共识推理知识图谱提升 CoT 质量
+
+2026 年 4 月 15 日，arXiv 发表论文（arXiv:2604.14121）。
+
+**核心问题：**
+- LLM 推理轨迹存在复杂缺陷：
+  - **步骤内部缺陷**：逻辑错误、幻觉
+  - **步级缺陷**：过度思考、不足思考
+- 反直觉发现：仅提供标准答案标签**无法提升**推理能力
+
+**CRAFT 方案：**
+
+**推理知识图谱（RKG）：**
+1. 生成多个候选推理轨迹
+2. 提取**共识部分**构建知识图谱
+3. 通过**拓扑生成**合成高质量轨迹
+
+**关键洞察：**
+- 单一轨迹不可靠，但多轨迹的**共识部分**可信
+- 知识图谱结构保留了推理的逻辑依赖
+- 拓扑生成确保推理链的连贯性
+
+**实验验证：**
+- 标签预测平均准确率提升 **10%+**
+- 一致超越所有基线
+- 逻辑推理 + 数学推理基准双提升
+- 推理轨迹质量多维度改善
+
+**行业意义：**
+- 为 CoT 合成提供了系统化方法
+- 不依赖人工标注，可扩展
+- 对推理密集型应用有直接价值
+`,
+    date: "2026-04-16 21:08",
+    source: "arXiv 2604.14121",
+    sourceUrl: "https://arxiv.org/abs/2604.14121",
+    href: "/news/news-258",
+  },
+  {
+    id: "news-259",
+    tag: "模型评测",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    coverImage: "/images/news/eval.jpg",
+    title: "从感受到指标：形式化「Vibe-Testing」LLM——个性化提示 + 用户感知评估可改变模型偏好排序",
+    summary: "论文首次研究并形式化用户的「Vibe-Testing」实践：非正式体验式评估（如在自己的工作流相关编码任务上比较模型）。发现结合个性化提示和用户感知评估可以改变哪个模型更受偏好，反映了 Vibe-Testing 在实践中的作用。为连接基准分数和真实世界体验提供了新途径。（arXiv:2604.14137）",
+    content: `## Vibe-Testing：LLM 评估的「直觉」范式
+
+2026 年 4 月 15 日，arXiv 发表论文（arXiv:2604.14137）。
+
+**核心问题：**
+- 基准分数往往无法捕捉模型的真实世界有用性
+- 用户依赖「Vibe-Testing」：非正式体验式评估
+- 但过于随意，无法规模化分析或复现
+
+**形式化定义：**
+Vibe-Testing = 两部分过程：
+1. **个性化测试内容**：用户个人化的测试任务
+2. **个性化评判标准**：用户感知的主观评判
+
+**验证管道：**
+- 生成个性化提示
+- 使用用户感知的主观标准比较模型输出
+- 在编码基准上验证
+
+**关键发现：**
+- 个性化提示 + 用户感知评估**可以改变模型偏好排序**
+- 反映了 Vibe-Testing 在实践中的作用
+- 形式化的 Vibe-Testing 可连接基准分数和真实体验
+
+**行业意义：**
+- 首次将「直觉测试」学术化
+- 为模型选择提供了更贴近实际的评估方式
+- 基准分数 ≠ 真实体验：个性化很重要
+`,
+    date: "2026-04-16 21:10",
+    source: "arXiv 2604.14137",
+    sourceUrl: "https://arxiv.org/abs/2604.14137",
+    href: "/news/news-259",
+  },
 ];
