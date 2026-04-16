@@ -16,6 +16,128 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-271",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "OpenAI Codex 获得 macOS 电脑控制能力 — 可自主操作 Mac 应用，AI 编程进入跨应用编排时代",
+    summary: "OpenAI Codex 迎来重大更新，获得 macOS 原生电脑控制能力，可以自主操作 Mac 上的各类应用。这意味着 AI 编程工具从「代码生成」进化到「跨应用自动化」，开发者可以让 AI 同时操控编辑器、终端、浏览器等多个应用完成复杂工作流。",
+    content: `## Codex 获得 macOS 电脑控制能力
+
+2026 年 4 月 17 日，The Verge 报道 OpenAI Codex 获得 macOS 原生控制能力。
+
+**核心能力：**
+- Codex 现在可以**自主操作 macOS 上的应用**
+- 不再局限于代码编辑环境，可以跨应用工作
+- 支持操控编辑器、终端、浏览器等多个应用
+
+**使用场景：**
+- 在代码编辑器中编写代码
+- 在终端中运行测试和构建
+- 在浏览器中查看文档和调试
+- 跨应用协调完成复杂工作流
+
+**行业意义：**
+- AI 编程工具从「单应用助手」进化到「跨应用编排者」
+- 与 Claude Code 桌面端的多会话管理形成互补路线
+- 预示 AI Agent 将拥有完整的桌面操作能力
+- 开发者角色进一步向「任务编排者」转变
+
+**与竞品的区别：**
+- Claude Code 侧重于多会话并行管理和终端内操作
+- Codex 侧重于跨应用的原生桌面控制
+- 两条路线代表了 AI 编程工具的不同进化方向`,
+    date: "2026-04-17 02:01",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-271",
+  },
+  {
+    id: "news-270",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "Google 发布 Android Skills 代码库和 Android Knowledge 知识库 — AI Agent 获得 Android 开发原生能力",
+    summary: "Google 推出 Android Skills GitHub 仓库和 Android Knowledge 知识库，为 AI Agent 提供执行 Android 开发任务所需的信息和资源。配合升级版的 Android CLI，AI 编程代理可以更高效地完成 Android 应用开发，降低 AI 辅助移动开发的门槛。",
+    content: `## Google Android AI 开发工具链升级
+
+2026 年 4 月 17 日，The Verge 报道 Google 推出 Android AI 开发工具。
+
+**核心内容：**
+
+**1. Android Skills GitHub 仓库**
+- 官方维护的 AI Agent 技能库
+- 为 AI 编码代理提供 Android 开发的结构化知识
+- 涵盖常见 Android 开发任务和最佳实践
+
+**2. Android Knowledge 知识库**
+- 为 AI Agent 提供 Android 开发所需的信息和资源
+- 包含 API 文档、架构指南、组件使用说明
+- 帮助 AI 更准确地生成 Android 代码
+
+**3. Android CLI 升级**
+- 命令行工具功能增强
+- 更好地支持 AI Agent 调用
+- 简化项目创建、构建和部署流程
+
+**行业意义：**
+- AI Agent 移动开发能力大幅提升
+- 官方技能库确保 AI 生成代码的质量和规范
+- 降低 Android 开发门槛，AI 可以辅助更多开发者
+- 与 seomachine（Claude Code SEO 引擎）形成垂直化工具趋势`,
+    date: "2026-04-17 02:02",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-270",
+  },
+  {
+    id: "news-269",
+    tag: "行业动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "Google 与五角大楼洽谈 Gemini 机密环境使用协议 — AI 军事应用进入深水区",
+    summary: "据 The Information 报道，Google 正在与美国国防部洽谈允许 Gemini 在机密环境中使用的协议。这标志着 Google 在军事 AI 合作上态度的重大转变——此前 Google 仅允许在非机密设置中使用 Gemini。拟议的合同语言似乎与 OpenAI 早前和五角大楼达成的协议条款类似，包括技术可用于「所有合法用途」的条款，这意味着不排除自主武器和大规模监控的应用可能。",
+    content: `## Google 与五角大楼：Gemini 进入机密军事应用
+
+2026 年 4 月 17 日，The Verge 和 The Information 报道了 Google 与五角大楼的最新合作进展。
+
+**核心信息：**
+
+**Google 态度转变：**
+- 此前 Google 仅允许国防部在**非机密**环境中使用 Gemini
+- 现在正在洽谈**机密环境**下的使用协议
+- 这代表 Google 军事合作立场的重大逆转
+
+**合同条款：**
+- 拟议语言与 OpenAI 早前和五角大楼的协议**类似**
+- 包含「所有合法用途」（all lawful purposes）条款
+- 律师指出，此前 OpenAI 合同中看似排除自主致命武器和大规模国内监控的语言，**不一定能阻止这些应用**
+
+**当前状态：**
+- Google 目前已有一份合同允许国防部将 Gemini 用于「所有合法用途」
+- 但仅限于**非机密**环境
+- 新协议将扩展至**机密**环境
+
+**背景：**
+- OpenAI 已率先与五角大楼达成 AI 合作协议
+- AI 军事应用正在快速扩展
+- 科技公司与军方的关系日益紧密
+
+**伦理争议：**
+- AI 在军事决策中的角色持续引发伦理讨论
+- 「所有合法用途」条款可能涵盖自主武器系统
+- Google 此前曾因 Project Maven 遭遇员工抗议
+
+**行业意义：**
+- AI 军事化从实验走向实战部署
+- 科技巨头在军事 AI 领域的竞争加剧
+- 监管和伦理框架需要跟上技术发展速度`,
+    date: "2026-04-17 02:03",
+    source: "The Verge / The Information",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-269",
+  },
+  {
     id: "news-265",
     tag: "智能体平台",
     tagColor: "bg-purple-500/10 text-purple-300",
