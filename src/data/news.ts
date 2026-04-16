@@ -16,6 +16,184 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-265",
+    tag: "智能体平台",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/agent.jpg",
+    title: "Anthropic 发布 Claude Managed Agents — 企业级 Agent 部署一站式平台，降低编排复杂度但引发供应商锁定担忧",
+    summary: "Anthropic 推出 Claude Managed Agents 平台，旨在为企业简化 AI Agent 部署的复杂环节，与现有编排框架直接竞争。提供开箱即用的 Agent 管理、监控和扩展能力，但也引发企业对供应商锁定（vendor lock-in）风险的讨论。",
+    content: `## Claude Managed Agents：Anthropic 的企业 Agent 部署平台
+
+2026 年 4 月 14 日，Anthropic 正式发布 Claude Managed Agents 平台。
+
+**核心定位：**
+- 为企业简化 AI Agent 部署流程
+- 削减复杂的编排环节，提供一站式解决方案
+- 与 LangGraph、CrewAI 等现有编排框架直接竞争
+
+**平台能力：**
+- Agent 生命周期管理
+- 自动化监控与扩缩容
+- 企业级安全与合规
+- 开箱即用的集成能力
+
+**争议焦点：**
+- **供应商锁定风险**：一旦采用 Claude Managed Agents，迁移成本可能极高
+- **生态封闭性**：Anthropic 自有平台可能限制与其他 LLM 提供商的互操作性
+- **与开源框架竞争**：可能分流 LangGraph 等开源编排框架的企业用户
+
+**行业意义：**
+- 标志 AI Agent 从「开发者工具」走向「企业级平台」
+- Anthropic 从模型提供商向全栈平台扩展
+- 企业需要在「便利性」与「灵活性」之间权衡`,
+    date: "2026-04-17 00:01",
+    source: "VentureBeat",
+    sourceUrl: "https://venturebeat.com/orchestration/anthropics-claude-managed-agents-gives-enterprises-a-new-one-stop-shop-but",
+    href: "/news/news-265",
+  },
+  {
+    id: "news-264",
+    tag: "多模态",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    coverImage: "/images/news/multimodal.jpg",
+    title: "Gemini 个人智能接入 Google Photos — 根据你的品味和生活方式生成个性化 AI 图像",
+    summary: "Google Gemini 的个人智能功能现已接入 Google Photos，可以分析用户的照片库，生成反映个人品味和生活方式的 AI 图像。这是个人数据驱动 AI 图像生成的首次大规模应用，标志着 AI 从通用创作走向个性化定制。",
+    content: `## Gemini Photos AI：从你的照片库生成个性化图像
+
+2026 年 4 月 16 日，The Verge 报道了 Gemini 个人智能与 Google Photos 的深度集成。
+
+**核心功能：**
+- Gemini 分析 Google Photos 中的照片库
+- 生成反映用户「品味和生活方式」的 AI 图像
+- 基于个人视觉偏好的定制化内容创作
+
+**技术实现：**
+- 个人智能功能分析用户的视觉历史
+- 提取风格偏好、色调、主题等特征
+- 基于这些特征生成新的个性化图像
+
+**使用场景：**
+- 生成符合个人审美的壁纸
+- 创建与个人风格一致的社交媒体内容
+- 基于生活记忆的创意图像生成
+
+**行业意义：**
+- AI 图像生成从「通用提示词」走向「个人化定制」
+- 个人数据成为 AI 创作的核心燃料
+- 与 Midjourney、DALL-E 等通用图像生成工具形成差异化
+- 引发隐私与个性化之间的平衡讨论`,
+    date: "2026-04-17 00:02",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-264",
+  },
+  {
+    id: "news-263",
+    tag: "行业动态",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "纽约客 Ronan Farrow 深度调查：OpenAI 掌门人 Sam Altman 的欺骗声誉及其影响",
+    summary: "纽约客知名调查记者 Ronan Farrow 发表深度报道，探讨 OpenAI CEO Sam Altman 的欺骗声誉为何值得关注。报道追溯了 Altman 从 Y Combinator 到 OpenAI 的职业轨迹，分析其争议性行为对 AI 行业信任和治理的影响。Nilay Patel 在 The Verge 上跟进讨论。",
+    content: `## Ronan Farrow 调查：Sam Altman 的欺骗声誉
+
+2026 年 4 月 16 日，纽约客发表 Ronan Farrow 的深度调查报道。
+
+**报道核心：**
+- 探讨 Sam Altman 的「欺骗声誉」（reputation for deception）
+- 追溯从 Y Combinator 到 OpenAI 的职业轨迹
+- 分析其行为对 AI 行业信任的影响
+
+**关键问题：**
+- OpenAI 从非营利到商业化的转变过程中是否存在误导性陈述？
+- Sam Altman 的公关策略与事实之间的差距
+- AI 行业领袖的诚信对技术治理的重要性
+
+**行业背景：**
+- OpenAI 完成 $1220 亿融资，估值 $8520 亿
+- AI 行业从「增长优先」转向「盈利优先」
+- 公众对 AI 公司透明度的要求日益提高
+
+**深层意义：**
+- AI 行业需要更透明的治理和问责机制
+- 技术领袖的个人声誉直接影响公众对 AI 的信任
+- 调查新闻在 AI 时代的作用更加重要`,
+    date: "2026-04-17 00:03",
+    source: "The New Yorker / The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-263",
+  },
+  {
+    id: "news-262",
+    tag: "融资动态",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    coverImage: "/images/news/funding.jpg",
+    title: "Traza 融资 $210 万 — 用 AI 自动化企业采购工作流，Base10 领投",
+    summary: "Traza 完成 $210 万融资，由 Base10 领投，目标是用 AI 自动化传统采购工作流程。采购领域长期依赖邮件、电子表格和电话沟通，Traza 试图用 AI Agent 重塑供应商谈判、采购订单和供应商沟通等核心环节。",
+    content: `## Traza：AI 重塑企业采购
+
+2026 年 4 月 15 日，VentureBeat 报道 Traza 完成 $210 万融资。
+
+**融资详情：**
+- 金额：$210 万
+- 领投方：Base10
+- 用途：AI 采购自动化平台开发
+
+**核心问题：**
+- 采购是企业软件长期忽视的「后台办公室」
+- 制造业和建筑公司的数十亿美元采购流程仍依赖邮件、电子表格和电话
+- 供应商谈判、采购订单和供应商沟通缺乏数字化
+
+**解决方案：**
+- AI Agent 自动化采购工作流程
+- 供应商谈判辅助
+- 采购订单智能管理
+- 供应商沟通自动化
+
+**行业意义：**
+- AI Agent 正在从编程、客服扩展到企业后台运营
+- 采购自动化的市场规模巨大但数字化程度低
+- 代表 AI Agent 垂直化的又一案例`,
+    date: "2026-04-17 00:04",
+    source: "VentureBeat",
+    sourceUrl: "https://venturebeat.com/orchestration/traza-raises-usd2-1-million-led-by-base10-to-automate-procurement-workflows-with-ai",
+    href: "/news/news-262",
+  },
+  {
+    id: "news-261",
+    tag: "行业动态",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    coverImage: "/images/news/industry.jpg",
+    title: "Allbirds 转型 AI 超算公司 — $5000 万股票按 AI 估值出售，neocloud 市场泡沫初现",
+    summary: "运动品牌 Allbirds 宣布转型为 AI neocloud 公司，机构投资者以旧股价购买 $5000 万股票，然后按 AI 公司新估值转售。The Verge 报道，neocloud 市场开始显现泡沫迹象，传统公司通过 AI 转型叙事获取资本溢价。",
+    content: `## Allbirds 的 AI 转型：从运动鞋到数据中心
+
+2026 年 4 月 15 日，The Verge 报道了 Allbirds 的惊人转型。
+
+**事件经过：**
+- 运动品牌 Allbirds 宣布转型为「AI 超算公司」
+- 机构投资者以旧的「运动鞋公司」价格购买 $5000 万股票
+- 然后按新的「AI neocloud 公司」估值转售
+- 本质上是利用 AI 叙事进行估值套利
+
+**核心分析（Matt Levine）：**
+- 「机构投资者实际上是以旧的破产运动鞋公司价格买入 $5000 万股票，然后以新的 AI neocloud 公司价格卖出」
+- neocloud 市场开始显现泡沫迹象
+
+**行业背景：**
+- AI 基础设施投资热潮推动 neocloud 公司估值飙升
+- 传统公司纷纷宣布 AI 转型以获取资本溢价
+- 数据中心建设需求推动房地产和能源市场
+
+**深层意义：**
+- AI 转型叙事成为资本市场的「万能钥匙」
+- neocloud 投资可能正在重演 .com 泡沫的模式
+- 投资者需要区分真正的 AI 公司和「AI 包装」公司`,
+    date: "2026-04-17 00:05",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/news/912484/allbirds-ai-hyperscale",
+    href: "/news/news-261",
+  },
+  {
     id: "news-260",
     tag: "开发工具",
     tagColor: "bg-green-500/10 text-green-300",
@@ -7197,7 +7375,7 @@ Vibe-Testing = 两部分过程：
     href: "/news/news-260",
   },
   {
-    id: "news-261",
+    id: "news-266",
     tag: "代码工具",
     tagColor: "bg-green-500/10 text-green-300",
     coverImage: "/images/news/tools.jpg",
@@ -7234,6 +7412,6 @@ Vibe-Testing = 两部分过程：
     date: "2026-04-16 22:16",
     source: "arXiv 2604.14053",
     sourceUrl: "https://arxiv.org/abs/2604.14053",
-    href: "/news/news-261",
+    href: "/news/news-266",
   },
 ];
