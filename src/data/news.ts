@@ -7154,4 +7154,86 @@ Vibe-Testing = 两部分过程：
     sourceUrl: "https://arxiv.org/abs/2604.14137",
     href: "/news/news-259",
   },
+  {
+    id: "news-260",
+    tag: "模型适应",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    coverImage: "/images/news/training.jpg",
+    title: "从权重到激活：Steering 是模型适应的下一个前沿——ACL 2026 提出 Steering 应被视为独立适应范式",
+    summary: "ACL 2026 Main 论文首次将 Steering（推理时修改内部激活以影响模型行为）置于与微调、提示等经典适应方法的同一概念框架下比较。提出适应方法的功能性判据，论证 Steering 是一种独特的适应范式：通过激活空间的目标干预实现局部、可逆的行为改变，无需参数更新。为模型适应方法提供了统一分类法。（arXiv:2604.14090）",
+    content: `## Steering：模型适应的新范式
+
+2026 年 4 月 15 日，ACL 2026 Main 论文（arXiv:2604.14090）。
+
+**核心问题：**
+- 后训练适应通常通过参数更新（微调、PEFT）或输入方法（Prompting）实现
+- Steering（推理时修改内部激活）日益流行，但很少与经典方法在同一框架下分析
+
+**核心论点：**
+- **Steering 应被视为一种模型适应方法**
+- 提出适应性方法的功能性判据
+- 用这些判据比较 Steering 与经典替代方案
+
+**Steering 的独特优势：**
+- **激活空间干预**：针对特定激活而非权重
+- **局部行为改变**：精确控制特定行为
+- **完全可逆**：不修改模型参数
+- **无需参数更新**：推理时即时应用
+
+**统一分类法：**
+- 参数更新类：微调、LoRA 等
+- 输入方法类：Prompting、ICL 等
+- **激活干预类：Steering**
+- 三类方法在不同场景各有优势
+
+**行业意义：**
+- 为 Steering 提供了理论正当性
+- 澄清了 Steering 与现有方法的关系
+- 为模型适应方法选择提供了框架
+`,
+    date: "2026-04-16 22:14",
+    source: "arXiv 2604.14090",
+    sourceUrl: "https://arxiv.org/abs/2604.14090",
+    href: "/news/news-260",
+  },
+  {
+    id: "news-261",
+    tag: "代码工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "SA-BPE：源码归属感知的代码分词器正则化——减少未训练 Token，提升推理效率和安全性",
+    summary: "发现代码分词器因训练数据中仓库和语言分布不平衡以及源码特定重复 Token 的 dominance，容易产生未使用的未训练 Token。提出 Source-Attributed BPE (SA-BPE)，通过修改 BPE 目标引入合并跳过（merge skipping）正则化 BPE 训练，显著减少未训练 Token 数量，同时保持与常规 BPE 相同的推理流程。对生产环境实用。（arXiv:2604.14053）",
+    content: `## SA-BPE：让代码分词器更高效更安全
+
+2026 年 4 月 15 日，arXiv 发表论文（arXiv:2604.14053）。
+
+**问题发现：**
+- 代码分词器因训练数据分布不平衡产生**未使用的未训练 Token**
+- 仓库和语言多样性不平衡
+- 源码特定的重复 Token 占据大量词汇表空间
+- 这些 Token 在推理时无法使用
+
+**SA-BPE 方案：**
+
+**Source-Attributed BPE：**
+- 修改 BPE 训练目标
+- 引入**合并跳过（merge skipping）**机制
+- 正则化 BPE 训练，减少过拟合
+
+**关键特性：**
+- 显著减少未训练 Token 数量
+- **保持与常规 BPE 相同的推理流程**
+- 无需修改推理代码
+- 生产环境可直接使用
+
+**行业意义：**
+- 分词器质量影响 LLM 推理速度、语言理解、越狱防御和幻觉风险
+- SA-BPE 提供了高效的分词器正则化工具
+- 对代码 LLM 的效率和安全性有直接提升
+`,
+    date: "2026-04-16 22:16",
+    source: "arXiv 2604.14053",
+    sourceUrl: "https://arxiv.org/abs/2604.14053",
+    href: "/news/news-261",
+  },
 ];
