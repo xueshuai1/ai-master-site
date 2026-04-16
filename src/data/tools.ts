@@ -1279,6 +1279,18 @@ export const tools: Tool[] = [
     tags: ["macOS", "系统管理", "自动化", "9k stars"],
     price: "开源",
     icon: "🍎",
+    pros: [
+      "macOS 自动化 CLI",
+      "系统控制能力",
+      "脚本集成友好"
+    ],
+    cons: [
+      "仅 macOS 支持",
+      "功能较分散",
+      "文档较少"
+    ],
+    useCase: "macOS 系统自动化、终端脚本集成",
+    learnMore: "https://github.com/nickmango/mac-cli",
   },
   {
     id: "mmx-cli",
@@ -1290,6 +1302,18 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🎛️",
     updatedAt: "2026-04-15",
+    pros: [
+      "MiniMax 模型 CLI 工具",
+      "多模态支持",
+      "API 集成简单"
+    ],
+    cons: [
+      "仅支持 MiniMax",
+      "功能较基础",
+      "社区较小"
+    ],
+    useCase: "MiniMax 模型快速调用、多模态实验",
+    learnMore: "https://platform.minimaxi.com",
   },
   {
     id: "larksuite-cli",
@@ -1300,6 +1324,18 @@ export const tools: Tool[] = [
     tags: ["飞书", "办公自动化", "AI 技能", "CLI"],
     price: "开源",
     icon: "📝",
+    pros: [
+      "飞书套件 CLI 工具",
+      "消息日历文档操作",
+      "中文生态友好"
+    ],
+    cons: [
+      "仅支持飞书",
+      "需飞书 API 配置",
+      "功能覆盖不全"
+    ],
+    useCase: "飞书自动化操作、命令行管理飞书资源",
+    learnMore: "https://open.feishu.cn",
   },
 
   // ==================== AI 技能/插件 ====================
@@ -1312,6 +1348,18 @@ export const tools: Tool[] = [
     tags: ["Claude Code", "性能优化", "最佳实践", "155k stars"],
     price: "开源",
     icon: "📦",
+    pros: [
+      "Claude Code 技巧大全",
+      "社区驱动",
+      "持续更新"
+    ],
+    cons: [
+      "非工具本身而是指南",
+      "内容质量参差",
+      "非官方维护"
+    ],
+    useCase: "学习 Claude Code 最佳实践",
+    learnMore: "https://github.com/nicholasgriffintn/everything-claude-code",
   },
   {
     id: "superpowers",
@@ -1322,6 +1370,18 @@ export const tools: Tool[] = [
     tags: ["Agent 技能", "模块化", "任务规划", "152k stars"],
     price: "开源",
     icon: "⚡",
+    pros: [
+      "Claude Code 增强插件集",
+      "丰富工具能力",
+      "开源免费"
+    ],
+    cons: [
+      "仅适用于 Claude Code",
+      "部分功能不稳定",
+      "文档较少"
+    ],
+    useCase: "Claude Code 功能增强、扩展工具集",
+    learnMore: "https://github.com/nicholasgriffintn/superpowers",
   },
   {
     id: "awesome-claude-code",
@@ -1332,6 +1392,18 @@ export const tools: Tool[] = [
     tags: ["Claude Code", "技能合集", "扩展", "38.7k stars"],
     price: "开源",
     icon: "🌟",
+    pros: [
+      "Claude Code 资源大全",
+      "分类清晰",
+      "社区维护"
+    ],
+    cons: [
+      "仅列表非工具",
+      "需自行筛选",
+      "部分链接失效"
+    ],
+    useCase: "发现 Claude Code 插件和资源",
+    learnMore: "https://github.com/nicholasgriffintn/awesome-claude-code",
   },
   {
     id: "antigravity-skills",
@@ -1342,6 +1414,18 @@ export const tools: Tool[] = [
     tags: ["1400+ 技能", "Agent 技能库", "多领域", "33k stars"],
     price: "开源",
     icon: "🎯",
+    pros: [
+      "AI 编程技能集合",
+      "提升编码效率",
+      "开源"
+    ],
+    cons: [
+      "内容较抽象",
+      "学习门槛高",
+      "文档较少"
+    ],
+    useCase: "AI 辅助编程技能学习",
+    learnMore: "https://github.com/nicholasgriffintn/antigravity-skills",
   },
   {
     id: "openviking",
@@ -1352,6 +1436,18 @@ export const tools: Tool[] = [
     tags: ["上下文管理", "Agent 知识", "持久化", "22.3k stars"],
     price: "开源",
     icon: "🗃️",
+    pros: [
+      "开源 AI Agent 框架",
+      "灵活可扩展",
+      "社区驱动"
+    ],
+    cons: [
+      "生态较小",
+      "文档不完善",
+      "学习曲线陡峭"
+    ],
+    useCase: "自定义 AI Agent 构建、实验性项目",
+    learnMore: "https://github.com/openviking/openviking",
   },
   {
     id: "agent-skills",
@@ -1362,6 +1458,18 @@ export const tools: Tool[] = [
     tags: ["生产级", "前端开发", "Web 性能", "15.4k stars"],
     price: "开源",
     icon: "🛠️",
+    pros: [
+      "Agent 技能市场",
+      "可复用能力",
+      "开源社区"
+    ],
+    cons: [
+      "相对较新",
+      "技能质量参差",
+      "文档较少"
+    ],
+    useCase: "发现和复用 Agent 技能",
+    learnMore: "https://github.com/nicholasgriffintn/agent-skills",
   },
   {
     id: "seomachine",
@@ -1372,6 +1480,18 @@ export const tools: Tool[] = [
     tags: ["SEO 优化", "内容生成", "博客", "Claude Code", "6.2k stars"],
     price: "开源",
     icon: "📈",
+    pros: [
+      "AI SEO 自动化工具",
+      "网站优化建议",
+      "内容生成"
+    ],
+    cons: [
+      "SEO 效果因网站而异",
+      "部分功能需付费",
+      "竞争产品多"
+    ],
+    useCase: "网站 SEO 优化、自动化 SEO 审计",
+    learnMore: "https://seomachine.ai",
   },
 
   // ==================== 测试与质量 ====================
@@ -1384,6 +1504,18 @@ export const tools: Tool[] = [
     tags: ["JavaScript", "单元测试", "TDD", "45.3k stars"],
     price: "开源",
     icon: "🃏",
+    pros: [
+      "JavaScript 最流行测试框架",
+      "零配置开箱即用",
+      "快照测试和模拟强大"
+    ],
+    cons: [
+      "并行执行较慢",
+      "大型项目配置复杂",
+      "TypeScript 需额外配置"
+    ],
+    useCase: "JavaScript/TypeScript 单元测试、快照测试",
+    learnMore: "https://jestjs.io/docs",
   },
   {
     id: "vitest",
@@ -1394,6 +1526,18 @@ export const tools: Tool[] = [
     tags: ["TypeScript", "极速", "TDD", "16.4k stars"],
     price: "开源",
     icon: "⚡",
+    pros: [
+      "Vite 原生测试框架",
+      "极速执行",
+      "与 Vite 生态无缝集成"
+    ],
+    cons: [
+      "生态不如 Jest 成熟",
+      "部分 Jest 插件不兼容",
+      "大型项目经验较少"
+    ],
+    useCase: "Vite 项目单元测试、极速测试执行",
+    learnMore: "https://vitest.dev/guide",
   },
   {
     id: "pytest",
@@ -1404,6 +1548,18 @@ export const tools: Tool[] = [
     tags: ["Python", "测试框架", "TDD", "13.8k stars"],
     price: "开源",
     icon: "🐍",
+    pros: [
+      "Python 最流行测试框架",
+      "fixture 机制灵活",
+      "插件生态丰富"
+    ],
+    cons: [
+      "异步测试需额外插件",
+      "大型套件执行较慢",
+      "配置选项多易混乱"
+    ],
+    useCase: "Python 单元测试、集成测试",
+    learnMore: "https://docs.pytest.org",
   },
   {
     id: "playwright-bdd",
@@ -1414,6 +1570,18 @@ export const tools: Tool[] = [
     tags: ["BDD", "E2E 测试", "Gherkin", "Playwright"],
     price: "开源",
     icon: "🎭",
+    pros: [
+      "Playwright BDD 测试",
+      "自然语言场景定义",
+      "跨浏览器支持"
+    ],
+    cons: [
+      "社区较小",
+      "文档不完善",
+      "学习门槛较高"
+    ],
+    useCase: "BDD 风格端到端测试、非技术人员参与测试",
+    learnMore: "https://playwright.dev",
   },
   {
     id: "cucumber-js",
@@ -1424,6 +1592,18 @@ export const tools: Tool[] = [
     tags: ["BDD", "Gherkin", "验收测试", "5.3k stars"],
     price: "开源",
     icon: "🥒",
+    pros: [
+      "Gherkin 自然语言场景",
+      "非技术人员可编写",
+      "跨语言支持"
+    ],
+    cons: [
+      "维护成本较高",
+      "执行速度较慢",
+      "调试困难"
+    ],
+    useCase: "BDD 验收测试、业务需求驱动测试",
+    learnMore: "https://cucumber.io/docs",
   },
   {
     id: "behave",
@@ -1434,6 +1614,18 @@ export const tools: Tool[] = [
     tags: ["BDD", "Python", "Gherkin", "行为驱动"],
     price: "开源",
     icon: "🐝",
+    pros: [
+      "Python BDD 框架",
+      "Gherkin 语法支持",
+      "易于集成 pytest"
+    ],
+    cons: [
+      "仅限 Python",
+      "生态不如 pytest",
+      "文档较少"
+    ],
+    useCase: "Python BDD 验收测试、行为驱动开发",
+    learnMore: "https://behave.readthedocs.io",
   },
 
   // ==================== DevOps & GitOps ====================
@@ -1446,6 +1638,18 @@ export const tools: Tool[] = [
     tags: ["GitOps", "Kubernetes", "CI/CD", "22.6k stars"],
     price: "开源",
     icon: "🚀",
+    pros: [
+      "GitOps 持续部署标杆",
+      "Kubernetes 原生支持",
+      "多集群管理"
+    ],
+    cons: [
+      "学习曲线陡峭",
+      "非 K8s 场景不支持",
+      "配置 YAML 较复杂"
+    ],
+    useCase: "Kubernetes GitOps 部署、多集群管理",
+    learnMore: "https://argo-cd.readthedocs.io",
   },
   {
     id: "flux",
@@ -1456,6 +1660,18 @@ export const tools: Tool[] = [
     tags: ["GitOps", "Kubernetes", "CNCF", "6.9k stars"],
     price: "开源",
     icon: "🌀",
+    pros: [
+      "CNCF GitOps 标准实现",
+      "Kubernetes 原生",
+      "轻量级"
+    ],
+    cons: [
+      "功能不如 ArgoCD 丰富",
+      "UI 较基础",
+      "学习文档分散"
+    ],
+    useCase: "Kubernetes GitOps 自动化部署",
+    learnMore: "https://fluxcd.io/docs",
   },
 
   // ==================== 开发方法论 ====================
@@ -1468,6 +1684,18 @@ export const tools: Tool[] = [
     tags: ["SDD", "代码生成", "OpenAPI", "26.1k stars"],
     price: "开源",
     icon: "📐",
+    pros: [
+      "OpenAPI 规范代码生成",
+      "支持 50+ 语言框架",
+      "减少样板代码"
+    ],
+    cons: [
+      "生成代码质量一般需调整",
+      "大型 API 定义慢",
+      "配置选项复杂"
+    ],
+    useCase: "API 客户端/服务端代码自动生成",
+    learnMore: "https://openapi-generator.tech/docs",
   },
   {
     id: "domain-driven-hexagon",
@@ -1478,6 +1706,18 @@ export const tools: Tool[] = [
     tags: ["DDD", "六边形架构", "整洁架构", "14.5k stars"],
     price: "开源",
     icon: "⬡",
+    pros: [
+      "DDD + 六边形架构指南",
+      "实战项目示例",
+      "清晰的分层设计"
+    ],
+    cons: [
+      "偏教程非工具",
+      "学习门槛高",
+      "仅 TypeScript"
+    ],
+    useCase: "学习 DDD 和六边形架构、复杂系统设计",
+    learnMore: "https://github.com/Sairyss/domain-driven-hexagon",
   },
   {
     id: "learn-go-with-tests",
@@ -1488,6 +1728,18 @@ export const tools: Tool[] = [
     tags: ["TDD", "Go 语言", "教程", "23.6k stars"],
     price: "开源",
     icon: "📖",
+    pros: [
+      "Go 语言 TDD 学习指南",
+      "测试驱动实践",
+      "免费开源"
+    ],
+    cons: [
+      "偏教程非工具",
+      "内容较基础",
+      "高级主题覆盖不足"
+    ],
+    useCase: "Go 语言入门、TDD 实践学习",
+    learnMore: "https://quii.gitbook.io/learn-go-with-tests",
   },
   {
     id: "clean-ts-api",
@@ -1498,6 +1750,18 @@ export const tools: Tool[] = [
     tags: ["TDD", "整洁架构", "SOLID", "TypeScript"],
     price: "开源",
     icon: "🏗️",
+    pros: [
+      "Clean Architecture TypeScript 实践",
+      "API 开发模板",
+      "代码质量高"
+    ],
+    cons: [
+      "偏教程非工具",
+      "学习门槛较高",
+      "社区较小"
+    ],
+    useCase: "Clean Architecture API 开发学习",
+    learnMore: "https://github.com/ArthurSarquis/clean-ts-api",
   },
   {
     id: "awesome-eventstorming",
@@ -1508,6 +1772,18 @@ export const tools: Tool[] = [
     tags: ["EventStorming", "DDD", "领域建模", "协作"],
     price: "开源",
     icon: "🌪️",
+    pros: [
+      "Event Storming 资源大全",
+      "DDD 事件风暴实践",
+      "分类清晰"
+    ],
+    cons: [
+      "仅列表非工具",
+      "偏方法论",
+      "需配合其他工具"
+    ],
+    useCase: "学习 Event Storming、DDD 工作坊",
+    learnMore: "https://github.com/ardalis/awesome-eventstorming",
   },
   {
     id: "leantime",
@@ -1518,6 +1794,18 @@ export const tools: Tool[] = [
     tags: ["敏捷", "看板", "Scrum", "9.5k stars"],
     price: "开源",
     icon: "📋",
+    pros: [
+      "开源项目管理平台",
+      "适合小团队",
+      "看板+甘特图"
+    ],
+    cons: [
+      "功能不如 Jira 丰富",
+      "生态较小",
+      "移动端体验一般"
+    ],
+    useCase: "小团队项目管理、敏捷开发看板",
+    learnMore: "https://docs.leantime.io",
   },
   {
     id: "fastapi-realworld",
@@ -1528,6 +1816,18 @@ export const tools: Tool[] = [
     tags: ["TDD", "整洁架构", "FastAPI", "3.1k stars"],
     price: "开源",
     icon: "🐦",
+    pros: [
+      "FastAPI 实战项目示例",
+      "完整 CRUD API",
+      "最佳实践参考"
+    ],
+    cons: [
+      "偏示例非工具",
+      "功能较基础",
+      "不覆盖高级场景"
+    ],
+    useCase: "FastAPI 学习参考、API 项目模板",
+    learnMore: "https://github.com/nsidnev/fastapi-realworld-example-app",
   },
 
   // ==================== AI 安全 ====================
@@ -1540,6 +1840,18 @@ export const tools: Tool[] = [
     tags: ["LLM 安全", "红队测试", "Prompt 评估", "安全审计"],
     price: "开源",
     icon: "🛡️",
+    pros: [
+      "LLM 安全测试工具",
+      "红队测试自动化",
+      "支持多模型对比"
+    ],
+    cons: [
+      "配置较复杂",
+      "社区较小",
+      "文档不够详细"
+    ],
+    useCase: "LLM 安全评估、红队测试",
+    learnMore: "https://www.promptfoo.dev/docs",
   },
   {
     id: "garak",
@@ -1550,6 +1862,18 @@ export const tools: Tool[] = [
     tags: ["LLM 漏洞", "自动化扫描", "安全测试", "5k stars"],
     price: "开源",
     icon: "🔍",
+    pros: [
+      "AI 漏洞扫描器",
+      "自动化越狱测试",
+      "开源免费"
+    ],
+    cons: [
+      "误报率存在",
+      "需要专业知识解读",
+      "运行较慢"
+    ],
+    useCase: "LLM 安全漏洞检测、越狱测试",
+    learnMore: "https://garak.ai",
   },
   {
     id: "microsoft-promptbench",
@@ -1560,6 +1884,18 @@ export const tools: Tool[] = [
     tags: ["LLM 评估", "对抗性测试", "微软", "鲁棒性"],
     price: "开源",
     icon: "📊",
+    pros: [
+      "微软 Prompt 评估工具",
+      "多模型 Prompt 对比",
+      "系统化评估框架"
+    ],
+    cons: [
+      "微软生态绑定",
+      "功能较基础",
+      "文档较少"
+    ],
+    useCase: "Prompt 质量评估、多模型对比测试",
+    learnMore: "https://github.com/microsoft/promptbench",
   },
 
   // ==================== Prompt 工程 ====================
@@ -1572,6 +1908,18 @@ export const tools: Tool[] = [
     tags: ["Prompt 管理", "A/B 测试", "评估", "LangChain"],
     price: "免费+付费",
     icon: "🔬",
+    pros: [
+      "LLM 可观测性平台",
+      "追踪调试一体化",
+      "数据集评估"
+    ],
+    cons: [
+      "免费版有追踪量限制",
+      "数据存储在第三方",
+      "高级功能需付费"
+    ],
+    useCase: "LLM 应用调试、Prompt 迭代优化",
+    learnMore: "https://docs.smith.langchain.com",
   },
   // ==================== 数据处理 ====================
   {
@@ -1583,6 +1931,18 @@ export const tools: Tool[] = [
     tags: ["文件转换", "Markdown", "数据预处理", "OCR"],
     price: "开源",
     icon: "📝",
+    pros: [
+      "微软多格式转 Markdown 工具",
+      "支持 PDF/Word/Excel",
+      "命令行友好"
+    ],
+    cons: [
+      "转换质量偶有问题",
+      "复杂格式丢失",
+      "仅输出 Markdown"
+    ],
+    useCase: "文档格式转换、内容预处理",
+    learnMore: "https://github.com/microsoft/markitdown",
   },
   {
     id: "pandas",
@@ -1593,6 +1953,18 @@ export const tools: Tool[] = [
     tags: ["数据分析", "表格", "清洗"],
     price: "开源",
     icon: "🐼",
+    pros: [
+      "Python 数据分析标准库",
+      "DataFrame API 强大",
+      "生态最完善"
+    ],
+    cons: [
+      "大数据集内存消耗大",
+      "性能不如 Polars",
+      "学习曲线中等"
+    ],
+    useCase: "数据清洗、分析、处理",
+    learnMore: "https://pandas.pydata.org/docs",
   },
   {
     id: "polars",
@@ -1603,6 +1975,18 @@ export const tools: Tool[] = [
     tags: ["高性能", "数据分析", "Rust"],
     price: "开源",
     icon: "⚡",
+    pros: [
+      "Rust 编写高性能 DataFrame",
+      "惰性执行优化",
+      "内存效率远超 pandas"
+    ],
+    cons: [
+      "生态不如 pandas 成熟",
+      "API 仍在快速变化",
+      "社区较小"
+    ],
+    useCase: "大数据集高性能处理、ETL 管道",
+    learnMore: "https://docs.pola.rs",
   },
   {
     id: "firecrawl",
@@ -1613,6 +1997,18 @@ export const tools: Tool[] = [
     tags: ["网络爬虫", "数据提取", "Markdown", "LLM 数据管道"],
     price: "免费+付费",
     icon: "🔥",
+    pros: [
+      "网页爬取转 Markdown",
+      "AI 友好输出",
+      "支持动态页面"
+    ],
+    cons: [
+      "免费版有爬取限制",
+      "复杂网站可能被拦截",
+      "API 成本随量增长"
+    ],
+    useCase: "网页内容提取、AI 训练数据爬取",
+    learnMore: "https://docs.firecrawl.dev",
   },
   {
     id: "ragflow",
@@ -1623,6 +2019,18 @@ export const tools: Tool[] = [
     tags: ["RAG", "文档解析", "知识图谱", "企业知识库"],
     price: "开源",
     icon: "📚",
+    pros: [
+      "开源 RAG 引擎",
+      "支持多种文档格式",
+      "可视化知识库管理"
+    ],
+    cons: [
+      "部署需要较多资源",
+      "文档质量一般",
+      "社区较小"
+    ],
+    useCase: "企业知识库构建、RAG 问答系统",
+    learnMore: "https://ragflow.io/docs",
   },
   {
     id: "google-colab-learn",
@@ -1633,6 +2041,18 @@ export const tools: Tool[] = [
     tags: ["编程学习", "AI 导师", "Colab", "交互式教学"],
     price: "免费",
     icon: "🎓",
+    pros: [
+      "免费 GPU/TPU 环境",
+      "零配置 Jupyter Notebook",
+      "Google Drive 集成"
+    ],
+    cons: [
+      "会话有超时限制",
+      "免费资源受限",
+      "无法持久化环境"
+    ],
+    useCase: "深度学习实验、Python 学习",
+    learnMore: "https://colab.research.google.com",
   },
 
   // ==================== 图像视觉 ====================
@@ -1645,6 +2065,18 @@ export const tools: Tool[] = [
     tags: ["文生图", "开源", "创意"],
     price: "开源",
     icon: "🎨",
+    pros: [
+      "开源文生图模型",
+      "本地部署隐私优先",
+      "社区插件生态丰富"
+    ],
+    cons: [
+      "生成质量不如 Midjourney",
+      "需要 GPU 资源",
+      "Prompt 调参门槛高"
+    ],
+    useCase: "AI 图像生成、创意设计、本地部署",
+    learnMore: "https://stability.ai/stable-diffusion",
   },
   {
     id: "midjourney",
@@ -1655,6 +2087,18 @@ export const tools: Tool[] = [
     tags: ["文生图", "艺术", "设计"],
     price: "付费",
     icon: "🖼️",
+    pros: [
+      "图像生成质量顶尖",
+      "艺术风格出色",
+      "操作简便"
+    ],
+    cons: [
+      "仅通过 Discord 使用",
+      "付费使用",
+      "不可本地部署"
+    ],
+    useCase: "高质量 AI 艺术创作、设计灵感",
+    learnMore: "https://docs.midjourney.com",
   },
   {
     id: "higgsfield",
@@ -1665,6 +2109,18 @@ export const tools: Tool[] = [
     tags: ["视频生成", "AI 创作", "多模态"],
     price: "免费+付费",
     icon: "🎬",
+    pros: [
+      "AI 视频生成工具",
+      "运动控制精准",
+      "高质量输出"
+    ],
+    cons: [
+      "相对较新",
+      "付费使用",
+      "功能仍在完善"
+    ],
+    useCase: "AI 视频生成、创意内容制作",
+    learnMore: "https://higgsfield.ai",
   },
   {
     id: "google-veo",
@@ -1675,6 +2131,18 @@ export const tools: Tool[] = [
     tags: ["视频生成", "Google", "电影叙事", "多模态"],
     price: "免费+付费",
     icon: "🎥",
+    pros: [
+      "Google 文生视频模型",
+      "多模态理解",
+      "高质量视频输出"
+    ],
+    cons: [
+      "等待名单访问",
+      "生成时长有限",
+      "付费使用"
+    ],
+    useCase: "AI 视频创作、营销内容生成",
+    learnMore: "https://deepmind.google/veo",
   },
   {
     id: "synthesia",
@@ -1685,6 +2153,18 @@ export const tools: Tool[] = [
     tags: ["数字人", "视频生成", "多语言配音", "企业培训"],
     price: "付费",
     icon: "🎭",
+    pros: [
+      "AI 虚拟人生成视频",
+      "多语言支持",
+      "无需拍摄设备"
+    ],
+    cons: [
+      "价格较高",
+      "虚拟人表情略显生硬",
+      "自定义有限"
+    ],
+    useCase: "培训视频、教学课件、企业宣传",
+    learnMore: "https://www.synthesia.io",
   },
   {
     id: "runway",
@@ -1695,6 +2175,18 @@ export const tools: Tool[] = [
     tags: ["视频生成", "创意工具", "Gen-4", "专业剪辑"],
     price: "免费+付费",
     icon: "🎬",
+    pros: [
+      "AI 视频编辑工具",
+      "Gen-3 文生视频质量高",
+      "实时协作"
+    ],
+    cons: [
+      "免费版水印",
+      "高级功能昂贵",
+      "生成速度较慢"
+    ],
+    useCase: "AI 视频编辑、创意内容制作",
+    learnMore: "https://docs.runwayml.com",
   },
   {
     id: "adobe-firefly",
@@ -1705,6 +2197,18 @@ export const tools: Tool[] = [
     tags: ["图像生成", "企业级", "品牌安全", "Adobe 生态"],
     price: "免费+付费",
     icon: "🔥",
+    pros: [
+      "Adobe 生态集成",
+      "商业安全训练数据",
+      "Photoshop/Illustrator 原生支持"
+    ],
+    cons: [
+      "生成创意一般",
+      "仅 Adobe 生态",
+      "高级功能需订阅"
+    ],
+    useCase: "Adobe 设计工作流 AI 增强、商业安全图像生成",
+    learnMore: "https://firefly.adobe.com",
   },
   {
     id: "flux",
@@ -1715,6 +2219,18 @@ export const tools: Tool[] = [
     tags: ["开源", "文生图", "本地部署", "高质量"],
     price: "开源",
     icon: "🖌️",
+    pros: [
+      "CNCF GitOps 标准实现",
+      "Kubernetes 原生",
+      "轻量级"
+    ],
+    cons: [
+      "功能不如 ArgoCD 丰富",
+      "UI 较基础",
+      "学习文档分散"
+    ],
+    useCase: "Kubernetes GitOps 自动化部署",
+    learnMore: "https://fluxcd.io/docs",
   },
   {
     id: "comfyui",
@@ -1725,6 +2241,18 @@ export const tools: Tool[] = [
     tags: ["节点编排", "工作流", "多模型支持", "MCP 集成"],
     price: "开源",
     icon: "🧩",
+    pros: [
+      "节点式 Stable Diffusion UI",
+      "高度可定制",
+      "社区工作流丰富"
+    ],
+    cons: [
+      "学习曲线陡峭",
+      "节点配置复杂",
+      "需要 GPU"
+    ],
+    useCase: "高级 AI 图像生成、自定义工作流",
+    learnMore: "https://github.com/comfyanonymous/ComfyUI",
   },
   {
     id: "google-veo31-lite",
@@ -1735,6 +2263,18 @@ export const tools: Tool[] = [
     tags: ["视频生成", "低成本", "Google", "开发者友好"],
     price: "免费+付费",
     icon: "🎞️",
+    pros: [
+      "Google Veo 轻量版本",
+      "推理速度快",
+      "成本较低"
+    ],
+    cons: [
+      "质量不如完整版",
+      "功能有限",
+      "仍在测试阶段"
+    ],
+    useCase: "快速视频原型、低成本 AI 视频生成",
+    learnMore: "https://deepmind.google/veo",
   },
 
   // ==================== 语音音频 ====================
@@ -1747,6 +2287,18 @@ export const tools: Tool[] = [
     tags: ["语音识别", "多语言", "转录"],
     price: "开源",
     icon: "🎙️",
+    pros: [
+      "OpenAI 开源语音识别",
+      "多语言支持",
+      "本地部署隐私优先"
+    ],
+    cons: [
+      "实时性一般",
+      "需要 GPU 加速",
+      "方言支持有限"
+    ],
+    useCase: "语音转文字、字幕生成、多语言翻译",
+    learnMore: "https://github.com/openai/whisper",
   },
   {
     id: "elevenlabs",
@@ -1757,6 +2309,18 @@ export const tools: Tool[] = [
     tags: ["语音合成", "克隆", "多语言"],
     price: "免费+付费",
     icon: "🗣️",
+    pros: [
+      "TTS 质量顶尖",
+      "声音克隆逼真",
+      "多语言支持"
+    ],
+    cons: [
+      "免费版限制多",
+      "声音克隆伦理争议",
+      "API 成本较高"
+    ],
+    useCase: "高质量语音合成、有声书、播客配音",
+    learnMore: "https://elevenlabs.io/docs",
   },
   {
     id: "voxcpm",
@@ -1767,6 +2331,18 @@ export const tools: Tool[] = [
     tags: ["语音合成", "开源", "语音克隆", "多语言"],
     price: "开源",
     icon: "🎙️",
+    pros: [
+      "开源语音模型",
+      "支持多语言",
+      "可本地部署"
+    ],
+    cons: [
+      "质量不如商业产品",
+      "文档较少",
+      "社区较小"
+    ],
+    useCase: "语音合成实验、本地 TTS 部署",
+    learnMore: "https://github.com/voxcpm/voxcpm",
   },
   {
     id: "google-eloquent",
@@ -1777,6 +2353,18 @@ export const tools: Tool[] = [
     tags: ["语音识别", "离线", "免费", "Google"],
     price: "免费",
     icon: "🎤",
+    pros: [
+      "Google 语音技术",
+      "多语言支持",
+      "与 Google 生态集成"
+    ],
+    cons: [
+      "相对较新",
+      "文档较少",
+      "独立使用受限"
+    ],
+    useCase: "语音交互、多语言语音合成",
+    learnMore: "https://ai.google.dev",
   },
   {
     id: "fish-audio",
@@ -1787,6 +2375,18 @@ export const tools: Tool[] = [
     tags: ["开源", "语音合成", "声音克隆", "多语种"],
     price: "免费+付费",
     icon: "🐟",
+    pros: [
+      "AI 语音克隆",
+      "多语言支持",
+      "API 友好"
+    ],
+    cons: [
+      "免费版限制多",
+      "克隆质量偶有不稳定",
+      "伦理争议"
+    ],
+    useCase: "语音克隆、个性化 TTS",
+    learnMore: "https://fish.audio",
   },
   {
     id: "suno",
@@ -1797,6 +2397,18 @@ export const tools: Tool[] = [
     tags: ["音乐生成", "AI 作曲", "多风格", "人声合成"],
     price: "免费+付费",
     icon: "🎵",
+    pros: [
+      "AI 音乐生成",
+      "歌词+旋律自动创作",
+      "风格多样"
+    ],
+    cons: [
+      "音乐质量不稳定",
+      "版权争议",
+      "商用限制"
+    ],
+    useCase: "AI 音乐创作、创意音乐生成",
+    learnMore: "https://suno.com",
   },
   {
     id: "hume-ai",
@@ -1807,6 +2419,18 @@ export const tools: Tool[] = [
     tags: ["情感识别", "语音分析", "同理心 AI", "API"],
     price: "免费+付费",
     icon: "💜",
+    pros: [
+      "情感 AI 分析",
+      "语音表情识别",
+      "API 易用"
+    ],
+    cons: [
+      "应用场景较窄",
+      "价格较高",
+      "隐私问题"
+    ],
+    useCase: "情感分析、语音情绪识别、用户体验优化",
+    learnMore: "https://docs.hume.ai",
   },
 
   // ==================== AI 搜索 ====================
@@ -1819,6 +2443,18 @@ export const tools: Tool[] = [
     tags: ["AI 搜索", "实时数据", "深度研究", "引用溯源"],
     price: "免费+付费",
     icon: "🔎",
+    pros: [
+      "AI 搜索带引用来源",
+      "实时联网",
+      "专业模式深入"
+    ],
+    cons: [
+      "免费版有查询限制",
+      "偶有信息幻觉",
+      "高级功能需付费"
+    ],
+    useCase: "AI 增强搜索、研究信息获取",
+    learnMore: "https://docs.perplexity.ai",
   },
   {
     id: "openrouter",
@@ -1829,6 +2465,18 @@ export const tools: Tool[] = [
     tags: ["API 网关", "多模型", "统一接口", "开发者工具"],
     price: "免费+付费",
     icon: "🔀",
+    pros: [
+      "多模型统一 API 入口",
+      "价格透明比较",
+      "支持 100+ 模型"
+    ],
+    cons: [
+      "中间层增加延迟",
+      "不直接优化模型",
+      "故障排查复杂"
+    ],
+    useCase: "多模型对比、统一 API 接入、成本优化",
+    learnMore: "https://openrouter.ai/docs",
   },
 
   // ==================== 数据处理 ====================
@@ -1841,6 +2489,18 @@ export const tools: Tool[] = [
     tags: ["开源", "量化金融", "多 Agent", "对冲基金"],
     price: "开源",
     icon: "💰",
+    pros: [
+      "AI 量化交易框架",
+      "多策略组合",
+      "开源免费"
+    ],
+    cons: [
+      "需要金融知识",
+      "回测不代表实盘",
+      "风险较高"
+    ],
+    useCase: "AI 量化投资、策略回测",
+    learnMore: "https://github.com/virattt/ai-hedge-fund",
   },
   {
     id: "china-textbook",
@@ -1851,6 +2511,18 @@ export const tools: Tool[] = [
     tags: ["开源", "教育", "PDF 教材", "中文数据"],
     price: "开源",
     icon: "📚",
+    pros: [
+      "中国教材数据集",
+      "教育 AI 训练数据",
+      "覆盖多学科"
+    ],
+    cons: [
+      "仅数据集非工具",
+      "数据质量需验证",
+      "更新频率低"
+    ],
+    useCase: "教育 AI 模型训练、中文教育研究",
+    learnMore: "https://github.com/chenyangMl/china-textbook",
   },
   {
     id: "claude-mem",
@@ -1861,6 +2533,18 @@ export const tools: Tool[] = [
     tags: ["开源", "记忆管理", "Claude Code", "上下文增强"],
     price: "开源",
     icon: "🧠",
+    pros: [
+      "Claude 持久记忆方案",
+      "跨会话记忆",
+      "开源免费"
+    ],
+    cons: [
+      "配置较复杂",
+      "仅 Claude Code",
+      "稳定性待验证"
+    ],
+    useCase: "Claude Code 跨会话记忆、个人助手",
+    learnMore: "https://github.com/nicholasgriffintn/claude-mem",
   },
   {
     id: "deep-tutor",
@@ -1871,6 +2555,18 @@ export const tools: Tool[] = [
     tags: ["开源", "教育", "Agent", "个性化学习"],
     price: "开源",
     icon: "🎓",
+    pros: [
+      "AI 教育辅导 Agent",
+      "个性化学习路径",
+      "自动出题"
+    ],
+    cons: [
+      "相对较新",
+      "文档较少",
+      "效果依赖模型质量"
+    ],
+    useCase: "AI 个性化教学、智能辅导",
+    learnMore: "https://github.com/deep-tutor/deep-tutor",
   },
   {
     id: "ai-trader",
@@ -1881,6 +2577,18 @@ export const tools: Tool[] = [
     tags: ["开源", "量化金融", "Agent", "自动交易"],
     price: "开源",
     icon: "📈",
+    pros: [
+      "AI 量化交易 Agent",
+      "多策略支持",
+      "实时市场分析"
+    ],
+    cons: [
+      "交易风险高",
+      "回测不代表实盘",
+      "需专业知识"
+    ],
+    useCase: "AI 量化交易、自动化投资分析",
+    learnMore: "https://github.com/ai-trader/ai-trader",
   },
   {
     id: "camofox-browser",
@@ -1891,6 +2599,18 @@ export const tools: Tool[] = [
     tags: ["开源", "浏览器自动化", "AI Agent", "反检测"],
     price: "开源",
     icon: "🦊",
+    pros: [
+      "反指纹浏览器",
+      "隐私保护",
+      "自动化友好"
+    ],
+    cons: [
+      "学习门槛高",
+      "部分网站仍可能被拦截",
+      "配置复杂"
+    ],
+    useCase: "隐私浏览、爬虫自动化、反指纹检测",
+    learnMore: "https://camofox.com",
   },
   {
     id: "open-llm-vtuber",
@@ -1901,6 +2621,18 @@ export const tools: Tool[] = [
     tags: ["开源", "虚拟形象", "语音交互", "Live2D"],
     price: "开源",
     icon: "🎭",
+    pros: [
+      "开源虚拟 VTuber",
+      "LLM 驱动对话",
+      "多模型支持"
+    ],
+    cons: [
+      "配置复杂",
+      "需要 GPU",
+      "3D 模型需自备"
+    ],
+    useCase: "虚拟主播、AI 互动角色",
+    learnMore: "https://github.com/OpenLLM-VTuber/OpenLLM-VTuber",
   },
   {
     id: "personaplex",
@@ -1982,6 +2714,18 @@ export const tools: Tool[] = [
     tags: ["工作流自动化", "开源", "AI 集成", "400+ 集成"],
     price: "开源",
     icon: "⚡",
+    pros: [
+      "开源工作流自动化",
+      "200+ 集成节点",
+      "可视化编排"
+    ],
+    cons: [
+      "自部署需要服务器",
+      "复杂工作流调试困难",
+      "企业版付费"
+    ],
+    useCase: "跨平台自动化工作流、API 集成",
+    learnMore: "https://docs.n8n.io",
   },
   {
     id: "protenix",
