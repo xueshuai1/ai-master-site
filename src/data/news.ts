@@ -6368,4 +6368,112 @@ Microsoft markitdown 本周增长 14,615 stars，总 stars 达 109,220。
     sourceUrl: "https://www.marktechpost.com/2026/04/15/google-ai-launches-gemini-3-1-flash-tts-a-new-benchmark-in-expressive-and-controllable-ai-voice/",
     href: "/news/news-246",
   },
+  {
+    id: "news-247",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/security.jpg",
+    title: "CIA 通信推理攻击：从黑盒中推断多 Agent 系统通信拓扑，AUC 达 0.87，峰值 0.99",
+    summary: "ACL 2026 论文揭示 LLM 多 Agent 系统的一个关键隐私风险：通信拓扑可在黑盒设定下被推断。提出 CIA（Communication Inference Attack）攻击方法，通过对抗性查询诱导中间 Agent 的推理输出，建模语义相关性。在优化通信拓扑的 MAS 上平均 AUC 0.87，峰值 0.99，暴露重大隐私风险。（arXiv:2604.12461）",
+    content: `## CIA：多 Agent 系统的通信拓扑推断攻击
+
+2026 年 4 月 14 日，ACL 2026 Main 论文（arXiv:2604.12461）。
+
+**核心问题：**
+- LLM 多 Agent 系统的通信拓扑是核心架构设计
+- 在黑盒设定下，攻击者可推断 Agent 间的通信关系
+- 暴露系统漏洞和知识产权风险
+
+**CIA 攻击方法：**
+- **Communication Inference Attack**
+- 构造新型对抗性查询
+- 诱导中间 Agent 的推理输出
+- 通过全局偏差解耦和 LLM 引导的弱监督建模语义相关性
+
+**实验结果：**
+- 平均 AUC：**0.87**
+- 峰值 AUC：**0.99**
+- 在优化通信拓扑的 MAS 上验证
+
+**行业意义：**
+- 多 Agent 系统隐私保护的警钟
+- 通信拓扑设计需要考虑安全防御
+- 为 MAS 安全评估提供了新基准
+`,
+    date: "2026-04-16 14:18",
+    source: "arXiv 2604.12461",
+    sourceUrl: "https://arxiv.org/abs/2604.12461",
+    href: "/news/news-247",
+  },
+  {
+    id: "news-248",
+    tag: "推理优化",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    coverImage: "/images/news/reasoning.jpg",
+    title: "HCoT 启发式思维分类提示：结合专家系统启发式规则的结构化推理，超越 ToT 的准确率与 Token 效率",
+    summary: "HCoT 提出新的提示框架，将专家系统启发式分类模型集成到 LLM 生成过程中，控制推理过程并提供可复用的抽象解决方案。在归纳推理任务上超越 ToT 和 CoT，在 24 Game 任务上相比 ToT-BFS 显著提升 Token 效率。在准确率和 Token 使用上达到 Pareto 前沿平衡。（arXiv:2604.12390）",
+    content: `## HCoT：让 LLM 推理像专家系统一样结构化
+
+2026 年 4 月 14 日，arXiv 发表论文（arXiv:2604.12390）。
+
+**LLM 推理的两个根本缺陷：**
+1. **贝叶斯式随机生成**：每个 token 从上下文依赖的概率分布采样，导致随机决策轨迹而非确定性规划
+2. **推理与决策静态解耦**：动态检索的领域知识无法动态调整底层推理策略
+
+**HCoT 方案：**
+- **Heuristic-Classification-of-Thoughts** 提示模式
+- 将专家系统启发式分类模型集成到 LLM 生成过程
+- 控制推理过程 + 提供可复用的抽象解决方案
+- 兼容多种 LLM
+
+**实验结果：**
+- 在复杂归纳推理任务上**超越 ToT 和 CoT**
+- 24 Game 任务：Token 效率显著优于 ToT-BFS
+- 准确率 + Token 使用达到 **Pareto 前沿平衡**
+
+**行业意义：**
+- 提示工程的新一代方向
+- 将经典 AI 专家系统方法与现代 LLM 结合
+- 为复杂问题解决提供结构化推理框架
+`,
+    date: "2026-04-16 14:20",
+    source: "arXiv 2604.12390",
+    sourceUrl: "https://arxiv.org/abs/2604.12390",
+    href: "/news/news-248",
+  },
+  {
+    id: "news-249",
+    tag: "隐私保护",
+    tagColor: "bg-slate-500/10 text-slate-300",
+    coverImage: "/images/news/privacy.jpg",
+    title: "LLM 顺序遗忘框架：在政治敏感环境中实现「被遗忘权」，正向微调 + 层受限负向微调",
+    summary: "提出轻量级顺序遗忘框架，明确分离保留和抑制目标：先通过正向微调稳定良性能力，再应用层受限负向微调抑制指定敏感模式，同时保持通用语言能力。在 SemEval-2025 LLM 遗忘基准上验证有效行为抑制，对事实准确性和流畅度影响最小。GPT-2 比 DistilGPT-2 更具鲁棒性。（arXiv:2604.12459）",
+    content: `## LLM 顺序遗忘：在政治敏感环境中落实「被遗忘权」
+
+2026 年 4 月 14 日，PoliticalNLP 2026 论文（arXiv:2604.12459）。
+
+**核心问题：**
+- LLM 在政治敏感环境中的部署面临 GDPR「被遗忘权」等监管要求
+- 大规模生成系统如何落实数据擦除原则
+
+**顺序遗忘框架：**
+1. **正向微调**：稳定良性能力
+2. **层受限负向微调**：抑制指定敏感模式，同时保持通用语言能力
+
+**实验验证：**
+- SemEval-2025 LLM 遗忘基准
+- 有效行为抑制
+- 对事实准确性和流畅度**影响最小**
+- GPT-2 比 DistilGPT-2 更具鲁棒性 → 模型容量在隐私对齐适应中起关键作用
+
+**行业意义：**
+- 为 LLM 隐私合规提供了可操作的解决方案
+- 在政治敏感环境中特别重要
+- 轻量级、可复现、易于部署
+`,
+    date: "2026-04-16 14:22",
+    source: "arXiv 2604.12459",
+    sourceUrl: "https://arxiv.org/abs/2604.12459",
+    href: "/news/news-249",
+  },
 ];
