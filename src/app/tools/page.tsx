@@ -67,7 +67,7 @@ function ToolCard({ tool }: { tool: Tool }) {
       </div>
 
       {/* Description */}
-      <p className="text-slate-400 text-sm leading-relaxed mb-2 line-clamp-2">
+      <p className="text-slate-400 text-sm leading-relaxed mb-2 line-clamp-3">
         {tool.description}
       </p>
 
