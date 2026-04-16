@@ -239,10 +239,10 @@ const foundationRoute: RouteDef = {
 // 🛡️ AI 安全路线
 const securityRoute: RouteDef = {
   id: "security",
-  name: "AI 安全",
+  name: "AI 安全与防护",
   emoji: "🛡️",
   duration: "1-2 月",
-  description: "守护 AI 世界 — 适合关注 AI 安全风险与防护的人",
+  description: "学习 AI 伦理、隐私保护、对抗攻击与防御 — 守护 AI 世界的安全底线",
   target: "适合安全工程师、AI 产品经理、关注 AI 伦理的开发者",
   color: "from-red-500/20 to-orange-500/20",
   borderColor: "border-red-500/30",
@@ -310,10 +310,10 @@ const securityRoute: RouteDef = {
 // 🔧 工程师路线
 const engineerRoute: RouteDef = {
   id: "engineer",
-  name: "工程师",
+  name: "AI 工程化与部署",
   emoji: "🔧",
   duration: "2-4 月",
-  description: "从开发到部署全流程 — 适合想成为 AI 工程师的人",
+  description: "从模型训练到生产部署全流程 — 掌握 MLOps、模型优化与服务化",
   target: "适合有编程基础，想系统学习 AI 工程化全流程的开发者",
   color: "from-amber-500/20 to-green-500/20",
   borderColor: "border-amber-500/30",
@@ -395,10 +395,10 @@ const engineerRoute: RouteDef = {
 // 🎨 创意 AI 路线
 const creativeRoute: RouteDef = {
   id: "creative",
-  name: "创意 AI",
+  name: "AI 创意与内容生成",
   emoji: "🎨",
   duration: "1-2 月",
-  description: "掌握图像、音频、视频生成技术 — 适合创作者和设计师",
+  description: "掌握 AI 绘画、音乐、视频生成技术 — 用 AI 释放创造力",
   target: "适合设计师、内容创作者、对生成式 AI 感兴趣的开发者",
   color: "from-pink-500/20 to-purple-500/20",
   borderColor: "border-pink-500/30",
