@@ -122,7 +122,8 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
           prose-a:text-brand-400 hover:prose-a:underline
           [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_ul]:text-slate-300
           [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1.5 [&_ol]:text-slate-300
-          [&_li]:leading-relaxed" dangerouslySetInnerHTML={{ __html: marked.parse(section.body) as string }} />
+          [&_li]:leading-relaxed
+          [&_p]:break-words [&_p]:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: marked.parse(section.body) as string }} />
       )}
 
       {section.code && section.code.length > 0 && (
