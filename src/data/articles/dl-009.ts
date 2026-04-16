@@ -139,12 +139,12 @@ X = np.array([[1.0, 2.0, 3.0, 4.0, 5.0]])
 print("原始输出:", X)
 dropout = DropoutLayer(p=0.4)
 
-print("\\n训练模式 (多次运行，观察不同子集):")
+print("\ 训练模式 (多次运行，观察不同子集):")
 for i in range(5):
     out = dropout.forward(X.copy())
     print(f"  Run {i+1}: {out}")
 
-print("\\n推理模式 (确定性输出):")
+print("\ 推理模式 (确定性输出):")
 dropout.training = False
 out = dropout.forward(X.copy())
 print(f"  Inference: {out}")`,
@@ -224,17 +224,17 @@ for drop_rate in [0.0, 0.3, 0.5]:
           ],
         },
         mermaid: `graph LR
-    A["输入层"] --> B["隐藏层 1\nDropout p=0.2"]
-    B --> C["隐藏层 2\nDropout p=0.5"]
-    C --> D["隐藏层 3\nDropout p=0.5"]
-    D --> E["输出层\n无 Dropout"]
+    A["输入层"] --> B["隐藏层 1 Dropout p=0.2"]
+    B --> C["隐藏层 2 Dropout p=0.5"]
+    C --> D["隐藏层 3 Dropout p=0.5"]
+    D --> E["输出层 无 Dropout"]
     
     subgraph "训练时"
         F["随机选择 50% 神经元置零"]
     end
     
     subgraph "推理时"
-        G["所有神经元激活\nInverted Dropout 无需调整"]
+        G["所有神经元激活 Inverted Dropout 无需调整"]
     end
     
     style F fill:#fff3e0
@@ -371,7 +371,7 @@ train_with_and_without_bn()`,
     D --> E["缩放偏移: y = γ · x̂ + β"]
     E --> F["输出到下一层"]
     
-    G["移动平均更新\nrunning_mean\nrunning_var"] -.-> B
+    G["移动平均更新 running_mean running_var"] -.-> B
     G -.-> C
     
     style D fill:#bbdefb
@@ -435,9 +435,9 @@ bn_out = bn.forward(X.reshape(-1, 8)).reshape(X.shape)
 ln = LayerNorm(8)
 ln_out = ln.forward(X)
 
-print(f"\\nBN: 输出均值 = {bn_out.mean(axis=0).mean():.6f} (应接近 0)")
+print(f"\ BN: 输出均值 = {bn_out.mean(axis=0).mean():.6f} (应接近 0)")
 print(f"LN: 输出均值 = {ln_out.mean():.6f}")
-print(f"\\nBN 在样本间一致性: std across batch = {bn_out.std(axis=0).mean():.4f}")
+print(f"\ BN 在样本间一致性: std across batch = {bn_out.std(axis=0).mean():.4f}")
 print(f"LN 在样本间一致性: std across batch = {ln_out.std(axis=0).mean():.4f}")`,
           },
           {
@@ -504,13 +504,13 @@ for mode in ["Pre-LN", "Post-LN"]:
         A1["样本1 [c1, c2, c3]"] --> BN
         A2["样本2 [c1, c2, c3]"] --> BN
         A3["样本3 [c1, c2, c3]"] --> BN
-        BN["沿 batch 维度\n统计每个特征"]
+        BN["沿 batch 维度 统计每个特征"]
     end
     
     subgraph "Layer Normalization"
         direction LR
         B1["样本1 [c1, c2, c3]"] --> LN
-        LN["沿特征维度\n统计每个样本"]
+        LN["沿特征维度 统计每个样本"]
     end
     
     style BN fill:#bbdefb
@@ -589,7 +589,7 @@ def test_small_batch_norm():
     for bs in batch_sizes:
         print(f"{bs:>10} | {bn_perf[bs]:>6.1f} | {gn_perf[bs]:>7.1f} | {ln_perf[bs]:>6.1f}")
     
-    print("\\n关键观察:")
+    print("\ 关键观察:")
     print(f"  BN 从 BS=2→64 提升了 {bn_perf[64]-bn_perf[2]:.1f}%")
     print(f"  GN 从 BS=2→64 仅提升了 {gn_perf[64]-gn_perf[2]:.1f}%")
     print(f"  BS=2 时 GN 比 BN 高 {gn_perf[2]-bn_perf[2]:.1f}%")
@@ -597,7 +597,7 @@ def test_small_batch_norm():
 test_small_batch_norm()
 
 # 目标检测中的 GroupNorm 应用
-print("\\nGroupNorm 在目标检测中的优势:")
+print("\ GroupNorm 在目标检测中的优势:")
 print("  - 检测/分割任务 batch size 通常较小（显存限制）")
 print("  - GN 在小 batch 下性能稳定")
 print("  - Mask R-CNN + GN 比 + BN 在 COCO 上 mAP 高 2-3%")`,
@@ -616,8 +616,8 @@ print("  - Mask R-CNN + GN 比 + BN 在 COCO 上 mAP 高 2-3%")`,
         mermaid: `graph LR
     A["归一化方法选择"] --> B{"任务类型"}
     
-    B -->|"图像分类\n大 batch"| C["BatchNorm"]
-    B -->|"检测/分割\n小 batch"| D["GroupNorm"]
+    B -->|"图像分类 大 batch"| C["BatchNorm"]
+    B -->|"检测/分割 小 batch"| D["GroupNorm"]
     B -->|"风格迁移"| E["InstanceNorm"]
     B -->|"序列模型"| F["LayerNorm"]
     B -->|"分布式训练"| G["SyncBN"]
@@ -654,7 +654,7 @@ def compare_l2_vs_weight_decay():
     print("Weight Decay: w := w - lr * grad - lr * λ * w")
     print("→ 两者在 SGD 中完全等价 ✓")
     
-    print("\\n=== Adam 优化器 ===")
+    print("\ === Adam 优化器 ===")
     print("L2 正则化: w := w - lr * m_hat / (√v_hat + ε) - lr * λ * w")
     print("            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 自适应学习率调整梯度")
     print("Weight Decay (AdamW): w := w - lr * m_hat / (√v_hat + ε) - lr * λ * w")
@@ -750,8 +750,8 @@ print(f"  差异:   {np.linalg.norm(w1 - w2):.6f}")`,
     C --> E["L2: λ/2·w²"]
     C --> F["Elastic Net: α·L1 + (1-α)·L2"]
     
-    D --> G["稀疏解\n特征选择"]
-    E --> H["小权重\n泛化更好"]
+    D --> G["稀疏解 特征选择"]
+    E --> H["小权重 泛化更好"]
     F --> I["兼顾稀疏和小权重"]
     
     style E fill:#c8e6c9
@@ -879,7 +879,7 @@ def get_best_practice(architecture):
     }
     
     if architecture in best_practices:
-        print(f"\\n{'='*50}")
+        print(f"\ {'='*50}")
         print(f"  {architecture} 最佳正则化策略")
         print(f"{'='*50}")
         for key, value in best_practices[architecture].items():
@@ -912,9 +912,9 @@ for arch in ["ResNet (CNN)", "Transformer (NLP)", "Vision Transformer", "RNN/LST
     B -->|"RNN/LSTM"| E["LayerNorm + 层间 Dropout"]
     B -->|"小全连接网络"| F["Dropout (0.5) + L2"]
     
-    C --> G["数据增强\nCosine LR"]
-    D --> H["Warmup + 强数据增强\nMixup/CutMix"]
-    E --> I["梯度裁剪\nReduceLROnPlateau"]
+    C --> G["数据增强 Cosine LR"]
+    D --> H["Warmup + 强数据增强 Mixup/CutMix"]
+    E --> I["梯度裁剪 ReduceLROnPlateau"]
     F --> J["早停 Early Stopping"]
     
     style C fill:#c8e6c9

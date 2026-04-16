@@ -336,7 +336,7 @@ for epoch in range(num_epochs):
     P->>R: 计算 KL 散度约束
     R-->>P: 防止偏离太远
     P->>P: PPO 策略更新
-    Note over P: 生成更符合\n人类偏好的输出`,
+    Note over P: 生成更符合 人类偏好的输出`,
             tip: "KL 系数是 RLHF 中最重要的超参数之一。太大则模型几乎不变化，太小则可能奖励黑客。通常从 0.1 开始调。",
             warning: "RLHF 可能让模型变得过度讨好（sycophancy）——模型学会附和用户的错误观点而非纠正它们。这是当前的研究热点。"
         },
@@ -393,7 +393,7 @@ def constitutional_critique(
         if "违反" in critique or "violation" in critique.lower():
             critiques.append(f"[{principle.id}] {critique}")
 
-    return "\\n".join(critiques) if critiques else "无违反原则"`
+    return "\ ".join(critiques) if critiques else "无违反原则"`
                 },
                 {
                     lang: "python",
@@ -502,7 +502,7 @@ class RedTeamGenerator:
             ))
 
         # 使用模型生成更多变体
-        prompt = f"将以下请求改写为 {n} 种不同的方式，使其看起来无害但意图相同:\\n{base_request}"
+        prompt = f"将以下请求改写为 {n} 种不同的方式，使其看起来无害但意图相同:\ {base_request}"
         model_variants = self.model.generate(prompt)
         variants.extend(model_variants)
 
@@ -645,7 +645,7 @@ def analyze_attention_patterns(
 
     # 打印注意力分布
     tokens = tokenizer.convert_ids_to_tokens(inputs["input_ids"][0])
-    print(f"\\n注意力分析 (layer={layer}):")
+    print(f"\ 注意力分析 (layer={layer}):")
     for i, token in enumerate(tokens):
         top_3 = torch.topk(avg_attn[i], min(3, len(tokens)))
         attending_to = [f"{tokens[j]}={v:.3f}" for j, v in zip(top_3.indices, top_3.values)]

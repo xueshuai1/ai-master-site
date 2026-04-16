@@ -93,12 +93,12 @@ print(f"词数: {len(sentence)}")
                 ],
             },
             mermaid: `graph TD
-    A["原始句子\\n词序列"] --> B["句法分析器"]
-    B --> C["成分分析\\n短语结构树"]
-    B --> D["依存分析\\n依存关系树"]
-    C --> E["应用场景：\\n机器翻译\\n语法纠错"]
-    D --> F["应用场景：\\n信息抽取\\n问答系统"]
-    B -.->|共同基础| G["上下文无关文法\\nCFG"]`,
+    A["原始句子\ 词序列"] --> B["句法分析器"]
+    B --> C["成分分析\ 短语结构树"]
+    B --> D["依存分析\ 依存关系树"]
+    C --> E["应用场景：\ 机器翻译\ 语法纠错"]
+    D --> F["应用场景：\ 信息抽取\ 问答系统"]
+    B -.->|共同基础| G["上下文无关文法\ CFG"]`,
             tip: "成分分析和依存分析不是竞争关系——它们从不同视角刻画句子结构。实际工程中，依存分析因其简洁性和与语义的直接对应关系，在现代 NLP 中使用更广泛。",
             warning: "句法分析不等于语义分析！句法关注的是语法结构的合法性，一个句法正确的句子可能语义荒谬（如「颜色无色的绿色想法激烈地睡觉」，Chomsky 的经典例子）。",
         },
@@ -361,11 +361,11 @@ probabilistic_cky(["the", "cat", "chased", "the", "dog"], pcfg, lex)`,
                 ],
             },
             mermaid: `graph TB
-    A["CKY 表格填充"] --> B["span=1\n填充对角线"]
-    B --> C["span=2\n宽度为2的跨度"]
-    C --> D["span=3\n宽度为3的跨度"]
-    D --> E["span=n-1\n完整句子"]
-    E --> F{"start\n在 table[0][n-1]?"}
+    A["CKY 表格填充"] --> B["span=1 填充对角线"]
+    B --> C["span=2 宽度为2的跨度"]
+    C --> D["span=3 宽度为3的跨度"]
+    D --> E["span=n-1 完整句子"]
+    E --> F{"start 在 table[0][n-1]?"}
     F -->|是| G["重建树结构"]
     F -->|否| H["句子不在文法中"]
     
@@ -450,13 +450,13 @@ for token in doc:
           f"head={token.head.text:10s} | "
           f"dep={token.dep_}")
 
-print("\\n=== 成分分析 ===")
+print("\ === 成分分析 ===")
 # spaCy 的成分分析需要额外模型
 # 这里展示如何提取名词短语作为成分的近似
 for np in doc.noun_chunks:
     print(f"  NP: {np.text} (root={np.root.text})")
 
-print("\\n=== 依存树可视化 ===")
+print("\ === 依存树可视化 ===")
 # 构建邻接表
 adj = {}
 for token in doc:
@@ -478,11 +478,11 @@ for head_idx, children in adj.items():
                 ],
             },
             mermaid: `graph TD
-    A["句子结构分析"] --> B["成分分析\nConstituency"]
-    A --> C["依存分析\nDependency"]
-    B --> D["短语递归\nNP/VP/PP"]
+    A["句子结构分析"] --> B["成分分析 Constituency"]
+    A --> C["依存分析 Dependency"]
+    B --> D["短语递归 NP/VP/PP"]
     B --> E["Penn Treebank"]
-    C --> F["二元关系\nhead-dependent"]
+    C --> F["二元关系 head-dependent"]
     C --> G["Universal Dependencies"]
     D --> H["优点：短语边界清晰"]
     E --> I["缺点：标注成本高"]
@@ -641,14 +641,14 @@ print("  - 更适合神经网络学习（动作选择更局部）")`,
                 ],
             },
             mermaid: `graph LR
-    A["初始状态\nStack=[ROOT]\nBuffer=[w1,w2,...,wn]"] --> B{"Oracle 决策"}
-    B -->|"SHIFT"| C["w1 入栈\nStack=[ROOT,w1]"]
-    B -->|"LEFT-ARC"| D["建立左依存\n弹出栈顶"]
-    B -->|"RIGHT-ARC"| E["建立右依存\n弹出次顶"]
+    A["初始状态 Stack=[ROOT] Buffer=[w1,w2,...,wn]"] --> B{"Oracle 决策"}
+    B -->|"SHIFT"| C["w1 入栈 Stack=[ROOT,w1]"]
+    B -->|"LEFT-ARC"| D["建立左依存 弹出栈顶"]
+    B -->|"RIGHT-ARC"| E["建立右依存 弹出次顶"]
     C --> B
     D --> B
     E --> B
-    B -->|"Buffer 空 + Stack=[ROOT]"| F["解析完成\n输出依存树"]
+    B -->|"Buffer 空 + Stack=[ROOT]"| F["解析完成 输出依存树"]
     style A fill:#f9d,stroke:#333
     style F fill:#bfb,stroke:#333`,
             tip: "转移动作的选择（oracle）是训练转移分析器的关键。Oracle 可以从 gold 依存树中自动提取——这称为动态 oracle（dynamic oracle），它允许在训练过程中容忍错误并恢复。",
@@ -783,11 +783,11 @@ print(f"Eisner 最优分数: {result:.4f}")`,
                 ],
             },
             mermaid: `graph TD
-    A["句子 w1...wn"] --> B["编码器\nBiLSTM/Transformer"]
-    B --> C["打分矩阵\nscores[i][j]"]
+    A["句子 w1...wn"] --> B["编码器 BiLSTM/Transformer"]
+    B --> C["打分矩阵 scores[i][j]"]
     C --> D{"是否投射？"}
-    D -->|是| E["Eisner 算法\nO(n³)"]
-    D -->|否| F["Chu-Liu/Edmonds\nO(n²)"]
+    D -->|是| E["Eisner 算法 O(n³)"]
+    D -->|否| F["Chu-Liu/Edmonds O(n²)"]
     E --> G["最优投射树"]
     F --> H["最优非投射树"]
     G --> I["依存关系输出"]
@@ -843,7 +843,7 @@ def extract_svo(doc):
     return svos
 
 svos = extract_svo(doc)
-print(f"\\nSVO 三元组: {svos}")
+print(f"\ SVO 三元组: {svos}")
 # 输出: [('cat', 'chased', 'mouse')]`,
                 },
                 {
@@ -872,7 +872,7 @@ for sentence in doc.sentences:
 nlp_const = stanza.Pipeline("en", processors="tokenize,pos,constituency")
 doc_const = nlp_const("The cat chased the dog")
 for sent in doc_const.sentences:
-    print(f"\\n成分树: {sent.constituency}")
+    print(f"\ 成分树: {sent.constituency}")
 
 # 批量处理
 sentences = [
@@ -880,9 +880,9 @@ sentences = [
     "The dog ran away quickly.",
     "Both animals lived happily.",
 ]
-docs = nlp("\\n".join(sentences))
+docs = nlp("\ ".join(sentences))
 for i, sent in enumerate(docs.sentences):
-    print(f"\\n句子 {i+1}: {[w.text for w in sent.words]}")`,
+    print(f"\ 句子 {i+1}: {[w.text for w in sent.words]}")`,
                 },
             ],
             table: {
@@ -900,13 +900,13 @@ for i, sent in enumerate(docs.sentences):
             },
             mermaid: `graph LR
     A["原始文本"] --> B{"选择工具"}
-    B -->|"工业场景\n速度优先"| C["spaCy"]
-    B -->|"学术场景\n准确率优先"| D["Stanza"]
-    C --> E["BiLSTM/Transformer\n+ Arc-Eager"]
-    D --> F["Biaffine Attention\n+ 图算法"]
-    E --> G["Universal Dependencies\n输出"]
+    B -->|"工业场景 速度优先"| C["spaCy"]
+    B -->|"学术场景 准确率优先"| D["Stanza"]
+    C --> E["BiLSTM/Transformer + Arc-Eager"]
+    D --> F["Biaffine Attention + 图算法"]
+    E --> G["Universal Dependencies 输出"]
     F --> G
-    G --> H["下游应用：\n信息抽取\n问答\n机器翻译"]
+    G --> H["下游应用： 信息抽取 问答 机器翻译"]
     style A fill:#f9d,stroke:#333
     style H fill:#bfb,stroke:#333`,
             tip: "spaCy 的 Transformer 模型（en_core_web_trf）比默认的 en_core_web_sm 准确率更高，但速度稍慢。生产环境中可以用小模型做快速过滤，大模型做精分析。",

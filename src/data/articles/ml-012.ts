@@ -350,7 +350,7 @@ for w in ['uniform', 'distance']:
     print(f"weights={w:>10s} | 准确率: {acc:.4f}")
 
 # 查看不同 K 值下的加权效果
-print("\\n不同 K 值的加权效果:")
+print("\ 不同 K 值的加权效果:")
 print(f"{'K':>3s} | {'uniform':>8s} | {'distance':>8s}")
 print("-" * 28)
 for k in [1, 3, 5, 7, 9, 11, 15]:
@@ -534,7 +534,7 @@ classifiers = {
 for name, (X, y) in datasets.items():
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.3, random_state=42)
-    print(f"\\n=== {name.upper()} 数据集 ===")
+    print(f"\ === {name.upper()} 数据集 ===")
     for clf_name, clf in classifiers.items():
         clf.fit(X_train, y_train)
         acc = accuracy_score(y_test, clf.predict(X_test))
@@ -591,13 +591,13 @@ for n in [1000, 5000, 10000, 50000]:
             mermaid: `graph TD
     A["选择分类器"] --> B{"数据规模？"}
     B -->|小/中 (n<10K)| C{"决策边界形状？"}
-    B -->|大 (n>50K)| D["避免 KNN\n考虑随机森林/线性模型"]
+    B -->|大 (n>50K)| D["避免 KNN 考虑随机森林/线性模型"]
     C -->|线性可分| E["逻辑回归"]
     C -->|复杂非线性| F["KNN / SVM / 树模型"]
     F --> G{"需要解释性？"}
     G -->|是| H["决策树"]
     G -->|否| I["KNN / SVM"]
-    D --> J["随机森林\n梯度提升"]`,
+    D --> J["随机森林 梯度提升"]`,
             warning: "KNN 在高维数据（d > 100）中会遭遇「维度诅咒」：所有样本之间的距离趋于相同，KNN 退化为随机猜测。遇到高维数据先用 PCA 降维，或直接换用其他算法。",
         },
         {
@@ -643,7 +643,7 @@ grid_search.fit(X_train, y_train)
 
 print(f"最佳参数: {grid_search.best_params_}")
 print(f"最佳准确率: {grid_search.best_score_:.4f}")
-print(f"\\n测试集报告:")
+print(f"\ 测试集报告:")
 print(classification_report(y_test, grid_search.predict(X_test),
                             target_names=data.target_names))`,
                 },
@@ -682,7 +682,7 @@ print(f"  KD 树:    {t_kd*1000:.2f} ms  ({t_brute/t_kd:.1f}x 加速)")
 print(f"  Ball 树:  {t_bt*1000:.2f} ms  ({t_brute/t_bt:.1f}x 加速)")
 
 # 验证结果一致性
-print(f"\\nKD 树最近邻索引: {indices_kd[0]}")
+print(f"\ KD 树最近邻索引: {indices_kd[0]}")
 print(f"暴力搜索最近邻:    {k_indices_brute}")
 print(f"结果一致: {set(indices_kd[0]) == set(k_indices_brute)}"
 )`,

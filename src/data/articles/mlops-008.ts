@@ -20,9 +20,9 @@ export const article: Article = {
 
 2024-2025 年是 LLM 量化技术爆发的年份。GPTQ、AWQ、SmoothQuant、bitsandbytes 的 NF4 格式、以及 llama.cpp 的 K-quants 体系，构成了一个完整的量化工具链。理解它们的区别和适用场景，是每个 AI 工程师的必修课。`,
             mermaid: `graph LR
-    A["FP16 全精度\n14GB (7B模型)"] -->|"INT8 量化"| B["INT8\n7GB (~99%精度)"]
-    B -->|"INT4 量化"| C["INT4 GPTQ\n3.5GB (~95%精度)"]
-    C -->|"INT2 量化"| D["INT2/1-bit\n1.75GB (~85%精度)"]
+    A["FP16 全精度 14GB (7B模型)"] -->|"INT8 量化"| B["INT8 7GB (~99%精度)"]
+    B -->|"INT4 量化"| C["INT4 GPTQ 3.5GB (~95%精度)"]
+    C -->|"INT2 量化"| D["INT2/1-bit 1.75GB (~85%精度)"]
     
     style A fill:#e3f2fd
     style B fill:#fff3e0
@@ -263,12 +263,12 @@ print(tokenizer.decode(output[0], skip_special_tokens=True))
 
 在 NVIDIA H100 上，SmoothQuant INT8 模型的推理速度可以达到 FP16 的 1.3-1.5 倍；如果进一步结合 TensorRT-LLM 的 FP8 支持，加速比可以达到 1.8 倍以上。`,
             mermaid: `graph TD
-    A["异常激活值"] -->|"乘以 s^(-1)"| B["平滑后的激活值\n适合 INT8 量化"]
-    C["权重矩阵"] -->|"乘以 s"| D["缩放后的权重\n仍适合 INT8 量化"]
+    A["异常激活值"] -->|"乘以 s^(-1)"| B["平滑后的激活值 适合 INT8 量化"]
+    C["权重矩阵"] -->|"乘以 s"| D["缩放后的权重 仍适合 INT8 量化"]
     
     B --> E["W8A8 推理"]
     D --> E
-    E --> F["INT8 Tensor Core\n最大推理加速"]
+    E --> F["INT8 Tensor Core 最大推理加速"]
     
     style A fill:#fce4ec
     style C fill:#e3f2fd

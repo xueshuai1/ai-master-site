@@ -112,7 +112,7 @@ def softmax_without_scale(d_k=64):
 print("=== 无缩放时 softmax 的行为 ===")
 softmax_without_scale()
 
-print("\\n=== 有缩放 (除以 √d_k) ===")
+print("\ === 有缩放 (除以 √d_k) ===")
 for d in [8, 32, 64, 128, 512]:
     scores = torch.randn(1000, d) / math.sqrt(d)
     weights = torch.softmax(scores, dim=-1)
@@ -346,7 +346,7 @@ positions = pe.pe[0, :20, :].numpy()
 print(f"位置编码形状: {positions.shape}")
 print(f"(20个位置 × 64维)")
 # 不同维度使用不同频率
-print(f"\\n位置 0 的前8维: {positions[0, :8].round(3)}")
+print(f"\ 位置 0 的前8维: {positions[0, :8].round(3)}")
 print(f"位置 5 的前8维: {positions[5, :8].round(3)}")
 print(f"位置 10 的前8维: {positions[10, :8].round(3)}")`,
           },
@@ -429,7 +429,7 @@ print(f"FFN 参数量: {sum(p.numel() for p in ffn.parameters()):,}")`,
         mermaid: `graph TD
     A["选择序列模型"] --> B{"序列长度？"}
     B -->|< 512| C{"需要什么能力？"}
-    B -->|> 4096| D["高效 Transformer\nFlash Attention / Linear Attn"]
+    B -->|> 4096| D["高效 Transformer Flash Attention / Linear Attn"]
     B -->|512-4096| E["标准 Transformer"]
     C -->|"流式/低延迟"| F["RNN/LSTM"]
     C -->|"局部模式"| G["CNN / Convolutions"]
