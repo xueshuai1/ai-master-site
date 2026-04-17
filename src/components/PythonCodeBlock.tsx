@@ -102,7 +102,24 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
 
       await pyodide.runPythonAsync(code);
     } catch (err: any) {
-      setError(err.message || String(err));
+      const msg = err.message || String(err);
+      // 识别不支持的库，给出友好提示
+      const unsupportedModules = msg.match(/No module named '(.*?)'/)?.[1];
+      if (unsupportedModules) {
+        const bigModules = ['torch', 'tensorflow', 'tf', 'keras', 'jax', 'scikit-learn', 'sklearn', 'xgboost', 'lightgbm', 'opencv', 'cv2'];
+        if (bigModules.some(m => unsupportedModules.includes(m))) {
+          setError(
+            `无法加载模块「${unsupportedModules}」\n\n` +
+            `📦 Pyodide 是浏览器内运行的 Python 环境，不支持大型 C 扩展库（如 torch/tensorflow/opencv 等）。\n\n` +
+            `✅ 支持的常用库：numpy、matplotlib、pandas、scipy、sympy、json、re、os 等标准库和纯 Python 库。\n\n` +
+            `💡 如需运行此代码，建议使用本地 Python 环境或云端 Jupyter Notebook。`
+          );
+        } else {
+          setError(`模块「${unsupportedModules}」未安装。\n\nPyodide 环境仅预装了标准库和部分纯 Python 库（numpy、pandas、matplotlib 等）。`);
+        }
+      } else {
+        setError(msg);
+      }
     } finally {
       setRunning(false);
       setLoading(false);
