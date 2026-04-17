@@ -2639,7 +2639,7 @@ export const tools: Tool[] = [
   {
     id: "open-llm-vtuber",
     name: "Open-LLM-VTuber",
-    category: "application",
+    category: "audio",
     description: "本地运行的 Live2D 虚拟形象+语音交互系统（GitHub 6.9k 星），结合 LLM + TTS + Live2D，支持免手语音交互、语音打断，跨平台运行",
     url: "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
     tags: ["开源", "虚拟形象", "语音交互", "Live2D"],

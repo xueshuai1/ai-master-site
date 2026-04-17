@@ -11,10 +11,12 @@ export interface ArticleSection {
   warning?: string;
 }
 
+export type CategoryKey = "ml" | "dl" | "nlp" | "cv" | "llm" | "agent" | "rl" | "genai" | "multimodal" | "aieng" | "practice" | "mlops" | "ethics" | "math";
+
 export interface Article {
   id: string;
   title: string;
-  category: string;
+  category: CategoryKey;
   tags: string[];
   summary: string;
   date: string;
