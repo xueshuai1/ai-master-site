@@ -86,8 +86,8 @@ AI 不是一夜之间冒出来的。它经历了三次浪潮：
 
 > **2026 年的 LLM 已经不是「聊天机器人」了。** 它们是能干活的数字员工——能编程、能分析数据、能做研究、能帮你完成日常工作流中的重复任务。`,
             mermaid: `graph LR
-    A["人工智能<br/>AI"] --> B["机器学习<br/>Machine Learning"]
-    B --> C["深度学习<br/>Deep Learning"]
+    A["人工智能\\nAI"] --> B["机器学习\\nMachine Learning"]
+    B --> C["深度学习\\nDeep Learning"]
     C --> D[Transformer]
     D --> E[GPT 系列]
     D --> F[Claude 系列]

@@ -70,8 +70,8 @@ export const article: Article = {
 语言模型输出具有高度的可预测性。对于常见的词汇和句式，一个小模型就能猜对大部分 token。只有遇到复杂推理、罕见词汇或需要深度理解的部分，才需要大模型介入。`,
       mermaid: `sequenceDiagram
     participant User as 用户输入
-    participant Draft as 草稿模型<br/>(小, 快)
-    participant Target as 目标模型<br/>(大, 慢)
+    participant Draft as 草稿模型\n(小, 快)
+    participant Target as 目标模型\n(大, 慢)
     
     User->>Draft: 上下文
     Draft->>Draft: 生成 token 1
@@ -80,7 +80,7 @@ export const article: Article = {
     Draft->>Draft: 生成 token 4
     Draft->>Target: 4 个候选 token
     Target->>Target: 并行验证
-    Target->>User: 接受 token 1-3<br/>拒绝 token 4
+    Target->>User: 接受 token 1-3\n拒绝 token 4
     Note over Target: 从 token 4 位置重新开始`,
     },
     {
