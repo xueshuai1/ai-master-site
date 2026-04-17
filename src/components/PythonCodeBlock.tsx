@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 declare global {
   interface Window {
@@ -8,9 +8,49 @@ declare global {
   }
 }
 
-// Pyodide 全局单例缓存 —— 只加载一次
+// Pyodide 全局单例缓存
 let globalPyodide: any = null;
 let loadingPromise: Promise<any> | null = null;
+
+// Pyodide 内置包映射：import 名 → pyodide 包名
+const PYODIDE_PACKAGES: Record<string, string> = {
+  numpy: 'numpy',
+  'numpy.random': 'numpy',
+  'numpy.linalg': 'numpy',
+  'numpy.fft': 'numpy',
+  scipy: 'scipy',
+  'scipy.stats': 'scipy',
+  'scipy.optimize': 'scipy',
+  'scipy.integrate': 'scipy',
+  'scipy.linalg': 'scipy',
+  pandas: 'pandas',
+  matplotlib: 'matplotlib',
+  'matplotlib.pyplot': 'matplotlib',
+  sklearn: 'scikit-learn',
+  'sklearn.linear_model': 'scikit-learn',
+  'sklearn.datasets': 'scikit-learn',
+  sympy: 'sympy',
+  networkx: 'networkx',
+  requests: 'requests',
+  beautifulsoup4: 'beautifulsoup4',
+  bs4: 'beautifulsoup4',
+  lxml: 'lxml',
+  yaml: 'pyyaml',
+  pyyaml: 'pyyaml',
+  pillow: 'pillow',
+  PIL: 'pillow',
+  'PIL.Image': 'pillow',
+  sqlite3: 'sqlite3',
+  pytest: 'pytest',
+  micropip: 'micropip',
+  pytz: 'pytz',
+  'dateutil': 'python-dateutil',
+  'python-dateutil': 'python-dateutil',
+  'html.parser': 'html5lib',
+  html5lib: 'html5lib',
+  xarray: 'xarray',
+  packaging: 'packaging',
+};
 
 /** 动态加载 CDN script 标签 */
 function loadScript(src: string): Promise<void> {
@@ -28,19 +68,71 @@ function loadScript(src: string): Promise<void> {
   });
 }
 
+/** 从 Python 代码中提取 import 的模块名 */
+function extractImports(code: string): string[] {
+  const imports = new Set<string>();
+
+  // 匹配 import X, import X.Y, import X as Z
+  const importRegex = /^import\s+([a-zA-Z0-9_.]+)/gm;
+  let match;
+  while ((match = importRegex.exec(code)) !== null) {
+    imports.add(match[1]);
+  }
+
+  // 匹配 from X import Y
+  const fromRegex = /^from\s+([a-zA-Z0-9_.]+)\s+import/gm;
+  while ((match = fromRegex.exec(code)) !== null) {
+    imports.add(match[1]);
+  }
+
+  return Array.from(imports);
+}
+
+/** 将 import 名映射到 pyodide 包名（去重） */
+function resolvePackages(code: string): string[] {
+  const importNames = extractImports(code);
+  const packages = new Set<string>();
+
+  for (const imp of importNames) {
+    // 直接匹配
+    if (PYODIDE_PACKAGES[imp]) {
+      packages.add(PYODIDE_PACKAGES[imp]);
+      continue;
+    }
+
+    // 尝试匹配前缀（如 numpy.linalg → numpy）
+    let found = false;
+    for (const [key, pkg] of Object.entries(PYODIDE_PACKAGES)) {
+      if (imp.startsWith(key + '.')) {
+        packages.add(pkg);
+        found = true;
+        break;
+      }
+    }
+
+    // 如果没找到，尝试包名本身（纯 Python 包，后续用 micropip）
+    if (!found && importNames.length > 0) {
+      // 取顶级包名（requests, flask 等）
+      const topLevel = imp.split('.')[0];
+      // 不在内置列表中，稍后可能需要 micropip
+      packages.add(topLevel);
+    }
+  }
+
+  return Array.from(packages);
+}
+
 async function getPyodide(): Promise<any> {
   if (globalPyodide) return globalPyodide;
   if (loadingPromise) return loadingPromise;
 
   loadingPromise = (async () => {
-    // 1. 加载 CDN script
     await loadScript('https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js');
 
     if (!window.loadPyodide) {
       throw new Error('Pyodide 加载失败：loadPyodide 未定义');
     }
 
-    // 2. 初始化 pyodide
     globalPyodide = await window.loadPyodide({
       indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.25.1/full/',
     });
@@ -61,13 +153,14 @@ interface PythonCodeBlockProps {
 export default function PythonCodeBlock({ code, lang, filename, CopyButtonComponent }: PythonCodeBlockProps) {
   const [running, setRunning] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string>('');
   const [output, setOutput] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const outputRef = useRef<HTMLDivElement>(null);
 
   const handleRun = useCallback(async () => {
-    // 如果已有结果，切换显示/隐藏
+    // 已有结果则切换显示/隐藏
     if (showResult && !running && !loading) {
       setShowResult(false);
       return;
@@ -77,6 +170,7 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
     setLoading(false);
     setError(null);
     setOutput([]);
+    setStatusMessage('');
     setShowResult(true);
 
     setTimeout(() => {
@@ -85,8 +179,28 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
 
     try {
       setLoading(true);
+      setStatusMessage('正在加载 Python 环境...');
+
       const pyodide = await getPyodide();
+
+      // 检测需要预加载的包
+      const packages = resolvePackages(code);
+      const builtInPackages = packages.filter(
+        (p) => PYODIDE_PACKAGES[p] || Object.values(PYODIDE_PACKAGES).includes(p)
+      );
+
+      if (builtInPackages.length > 0) {
+        setStatusMessage(`正在安装依赖：${builtInPackages.join(', ')}...`);
+        try {
+          await pyodide.loadPackage(builtInPackages);
+        } catch (e: any) {
+          // 预加载失败不影响执行，可能在 micropip 中安装
+          console.warn('Pyodide package load failed:', e);
+        }
+      }
+
       setLoading(false);
+      setStatusMessage('正在执行...');
 
       // 捕获 stdout/stderr
       pyodide.setStdout({
@@ -101,25 +215,52 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
       });
 
       await pyodide.runPythonAsync(code);
+      setStatusMessage('');
     } catch (err: any) {
-      const msg = err.message || String(err);
-      // 识别不支持的库，给出友好提示
-      const unsupportedModules = msg.match(/No module named '(.*?)'/)?.[1];
-      if (unsupportedModules) {
-        const bigModules = ['torch', 'tensorflow', 'tf', 'keras', 'jax', 'scikit-learn', 'sklearn', 'xgboost', 'lightgbm', 'opencv', 'cv2'];
-        if (bigModules.some(m => unsupportedModules.includes(m))) {
-          setError(
-            `无法加载模块「${unsupportedModules}」\n\n` +
-            `📦 Pyodide 是浏览器内运行的 Python 环境，不支持大型 C 扩展库（如 torch/tensorflow/opencv 等）。\n\n` +
-            `✅ 支持的常用库：numpy、matplotlib、pandas、scipy、sympy、json、re、os 等标准库和纯 Python 库。\n\n` +
-            `💡 如需运行此代码，建议使用本地 Python 环境或云端 Jupyter Notebook。`
-          );
-        } else {
-          setError(`模块「${unsupportedModules}」未安装。\n\nPyodide 环境仅预装了标准库和部分纯 Python 库（numpy、pandas、matplotlib 等）。`);
+      const errMsg = err.message || String(err);
+
+      // 如果是因为模块未安装，自动尝试用 micropip 安装
+      if (errMsg.includes('micropip.install') || errMsg.includes('not installed')) {
+        const moduleNameMatch = errMsg.match(/'([^']+)'/);
+        if (moduleNameMatch) {
+          const missingModule = moduleNameMatch[1];
+          setStatusMessage(`正在自动安装 ${missingModule}...`);
+
+          try {
+            const pyodide = await getPyodide();
+            await pyodide.runPythonAsync(`
+              import micropip
+              await micropip.install("${missingModule}")
+            `);
+            setStatusMessage(`${missingModule} 安装完成，正在执行...`);
+
+            // 重新设置 stdout/stderr
+            pyodide.setStdout({
+              batched: (msg: string) => {
+                setOutput((prev) => [...prev, msg]);
+              },
+            });
+            pyodide.setStderr({
+              batched: (msg: string) => {
+                setOutput((prev) => [...prev, msg]);
+              },
+            });
+
+            // 重新执行
+            await pyodide.runPythonAsync(code);
+            setStatusMessage('');
+            return;
+          } catch (retryErr: any) {
+            setError(`自动安装 ${missingModule} 失败：${retryErr.message || String(retryErr)}`);
+            setStatusMessage('');
+          }
         }
-      } else {
-        setError(msg);
       }
+
+      if (!error) {
+        setError(errMsg);
+      }
+      setStatusMessage('');
     } finally {
       setRunning(false);
       setLoading(false);
@@ -130,6 +271,7 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
     setOutput([]);
     setError(null);
     setShowResult(false);
+    setStatusMessage('');
   }, []);
 
   const isPython = lang === 'python' || lang === 'py';
@@ -159,7 +301,7 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                     </svg>
-                    加载中
+                    {statusMessage || '加载...'}
                   </>
                 ) : running ? (
                   <>
@@ -167,7 +309,7 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                     </svg>
-                    运行中
+                    {statusMessage || '执行...'}
                   </>
                 ) : (
                   <>▶ 运行</>
@@ -195,22 +337,22 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
             </button>
           </div>
           <div className="p-4 font-mono text-sm min-h-[2rem] max-h-96 overflow-y-auto">
-            {loading && (
+            {loading && statusMessage && (
               <div className="flex items-center gap-2 text-amber-400">
                 <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
-                <span>正在加载 Python 环境（首次约 10MB，请稍候）...</span>
+                <span>{statusMessage}</span>
               </div>
             )}
-            {running && !loading && (
+            {running && !loading && statusMessage && (
               <div className="flex items-center gap-2 text-brand-400">
                 <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
-                <span>正在执行...</span>
+                <span>{statusMessage}</span>
               </div>
             )}
             {!loading && !running && (
