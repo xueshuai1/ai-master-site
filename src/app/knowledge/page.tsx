@@ -131,6 +131,32 @@ export default function KnowledgePage() {
               </div>
             </div>
           </section>
+
+          {/* Tiled Category Grid — PC only */}
+          <section className="hidden lg:block px-4 sm:px-6 lg:px-8 pb-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-6 gap-3">
+                {categoryData.map((c) => {
+                  const isActive = activeCategory === c.key;
+                  return (
+                    <button
+                      key={c.key}
+                      onClick={() => handleFilterChange(setActiveCategory, c.key)}
+                      className={`flex flex-col items-center gap-1.5 p-4 rounded-xl border transition-all cursor-pointer ${
+                        isActive
+                          ? "bg-brand-500/10 border-brand-500/30 shadow-lg shadow-brand-500/10 scale-[1.02]"
+                          : "bg-white/5 border-white/10 hover:border-brand-500/30 hover:bg-white/8 hover:scale-[1.02]"
+                      }`}
+                    >
+                      <span className="text-2xl">{c.icon}</span>
+                      <span className="text-sm font-medium text-slate-200">{c.label}</span>
+                      <span className="text-xs text-slate-500">{c.count} 篇</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
         </>
       )}
 
@@ -144,15 +170,33 @@ export default function KnowledgePage() {
               找到 <span className="text-brand-400 font-medium">{filteredArticles.length}</span> 篇文章
             </p>
             <div className="flex items-center gap-2">
-              <CategoryFilter
-                categories={categoryData}
-                activeCategory={activeCategory}
-                onChange={(key) => handleFilterChange(setActiveCategory, key)}
-              />
+              {/* Mobile CategoryFilter — hidden on PC where tiled grid is used */}
+              <div className="lg:hidden">
+                <CategoryFilter
+                  categories={categoryData}
+                  activeCategory={activeCategory}
+                  onChange={(key) => handleFilterChange(setActiveCategory, key)}
+                />
+              </div>
+              {/* Desktop sort select */}
+              <div className="hidden lg:block">
               <select
                 value={sortBy}
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
                 className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+              >
+                <option value="default">排序</option>
+                <option value="level-asc">难度 ↑</option>
+                <option value="level-desc">难度 ↓</option>
+                <option value="date-desc">时间最新</option>
+                <option value="date-asc">时间最早</option>
+              </select>
+              </div>
+              {/* Mobile sort select */}
+              <select
+                value={sortBy}
+                onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
+                className="lg:hidden px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
                 <option value="default">排序</option>
                 <option value="level-asc">难度 ↑</option>
