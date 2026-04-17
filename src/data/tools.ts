@@ -2367,6 +2367,30 @@ export const tools: Tool[] = [
     learnMore: "https://ai.google.dev",
   },
   {
+    id: "gemini-flash-tts",
+    name: "Gemini 3.1 Flash TTS",
+    category: "audio",
+    description: "Google Gemini 3.1 Flash TTS 文本转语音模型，支持提示词驱动的声音定制（口音、场景、情感），可生成多说话人对话音频，通过 Gemini API 调用（2026.04 发布）",
+    url: "https://ai.google.dev/gemini-api/docs/audio",
+    tags: ["语音合成", "TTS", "提示词控制", "Google", "多说话人"],
+    price: "免费+付费",
+    icon: "🗣️",
+    pros: [
+      "提示词驱动声音定制（口音、场景、风格）",
+      "支持多说话人对话模式",
+      "情感标签控制（[whisper]、[shouting] 等）",
+      "基于 Gemini 3.1 架构，音质自然",
+      "通过标准 Gemini API 调用"
+    ],
+    cons: [
+      "仅输出音频文件，不支持流式",
+      "需要 Gemini API Key",
+      "暂不支持实时语音合成"
+    ],
+    useCase: "播客配音、有声书、游戏角色语音、多语言语音内容生成",
+    learnMore: "https://ai.google.dev/gemini-api/docs/audio",
+  },
+  {
     id: "fish-audio",
     name: "Fish Audio",
     category: "audio",
