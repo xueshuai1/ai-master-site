@@ -256,8 +256,8 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
 
       {/* Article Header */}
       <section className="pt-28 pb-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-2 text-sm text-slate-400 mb-6">
             <Link href="/" className="hover:text-slate-300 transition-colors">首页</Link>
             <span>/</span>
             <Link href="/knowledge" className="hover:text-slate-300 transition-colors">知识库</Link>

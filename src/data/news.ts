@@ -16,6 +16,80 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-289",
+    tag: "AI 产品",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    coverImage: "/images/news/claude.jpg",
+    title: "Anthropic 发布 Claude Design：AI 驱动的设计协作平台，基于 Opus 4.7 打造",
+    summary: "Anthropic 推出 Claude Design，作为 Anthropic Labs 系列的首款产品，用户可与 Claude 协作创建设计稿、原型、演示文稿、营销材料等视觉作品。基于最新 Opus 4.7 模型，面向付费订阅用户提供研究预览版。",
+    content: `## Anthropic 发布 Claude Design：AI 驱动的设计协作平台
+
+2026 年 4 月 17 日，Anthropic 正式发布 Claude Design。
+
+**核心功能：**
+
+**1. AI 协作设计**
+- 与 Claude 协作创建专业视觉作品
+- 支持设计稿、原型、演示文稿、营销材料等多种格式
+- 自然语言驱动，降低设计门槛
+
+**2. 基于 Opus 4.7**
+- 搭载 Anthropic 最新 Opus 4.7 模型
+- 更强的视觉理解和生成能力
+- 更好的设计质量和细节控制
+
+**3. Anthropic Labs 首款产品**
+- 标志着 Anthropic 从纯模型公司向应用产品公司扩展
+- 研究预览版面向付费订阅用户开放
+- 探索 AI 在创意工作流中的新范式
+
+**行业影响：**
+- Anthropic 从"模型提供商"走向"应用产品提供商"
+- AI 设计工具市场竞争加剧（对标 Canva AI、Figma AI 等）
+- Opus 4.7 的首个重磅应用场景，展示模型实力
+
+**竞品对比：**
+- Canva Magic Design：侧重模板化设计
+- Figma AI：侧重设计辅助和自动化
+- Claude Design：侧重自然语言协作，从概念到成品
+`,
+    date: "2026-04-18 00:01",
+    source: "Anthropic News",
+    sourceUrl: "https://www.anthropic.com/news",
+    href: "/news/news-289",
+  },
+  {
+    id: "news-288",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    coverImage: "/images/news/safety.jpg",
+    title: "Anthropic 发布 Opus 4.7：专注网络安全的最强模型，Project Glasswing 联合十大科技巨头",
+    summary: "Anthropic 发布 Opus 4.7，号称其最强的网络安全专用模型。Project Glasswing 联合 AWS、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、NVIDIA、Palo Alto Networks，共同保护全球关键软件基础设施安全。",
+    content: `## Opus 4.7 与 Project Glasswing：Anthropic 进军网络安全
+
+2026 年 4 月 7 日，Anthropic 宣布 Project Glasswing 安全计划。
+
+**Opus 4.7 模型：**
+- 专注网络安全领域的最强模型
+- 支持漏洞检测、代码审计、安全分析
+- 已被 Nvidia、Apple、JPMorgan Chase 等大型企业使用
+
+**Project Glasswing 联盟：**
+- 联合 11 家科技巨头共同行动
+- 参与者：AWS、Anthropic、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、NVIDIA、Palo Alto Networks
+- 目标：保护全球最关键的软件基础设施
+
+**行业影响：**
+- AI 网络安全进入"联盟作战"阶段
+- 头部企业意识到供应链安全的集体责任
+- Opus 4.7 的性能基准引发行业关注
+`,
+    date: "2026-04-17 23:59",
+    source: "Anthropic News / The Verge",
+    sourceUrl: "https://www.anthropic.com/news",
+    href: "/news/news-288",
+  },
+  {
     id: "news-287",
     tag: "AI 开发",
     tagColor: "bg-blue-500/10 text-blue-300",
