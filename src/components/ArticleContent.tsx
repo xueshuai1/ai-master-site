@@ -11,12 +11,12 @@ function MarkdownBody({ text }: { text: string }) {
   return (
     <div
       className="prose prose-invert max-w-none
-        prose-p:text-slate-300 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:my-3
-        prose-strong:text-white dark:prose-strong:text-white prose-strong:font-semibold
-        prose-code:text-pink-300 dark:prose-code:text-pink-300 prose-code:bg-black/5 dark:prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+        prose-p:text-slate-300 prose-p:leading-relaxed prose-p:my-3
+        prose-strong:text-white prose-strong:font-semibold
+        prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
         prose-a:text-brand-400 hover:prose-a:underline
-        [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_ul]:text-slate-300 dark:[&_ul]:text-slate-300
-        [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1.5 [&_ol]:text-slate-300 dark:[&_ol]:text-slate-300
+        [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_ul]:text-slate-300
+        [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1.5 [&_ol]:text-slate-300
         [&_li]:leading-relaxed"
       dangerouslySetInnerHTML={{ __html: html }}
     />
@@ -126,7 +126,7 @@ function CodeBlock({ lang, code }: { lang: string; code: string }) {
         <span className="font-mono text-xs">{langLabel}</span>
         <button
           onClick={() => navigator.clipboard.writeText(code)}
-          className="text-xs text-slate-400 dark:text-slate-400 hover:text-white dark:hover:text-white transition-colors"
+          className="text-xs text-slate-400 hover:text-white transition-colors"
         >
           📋 复制
         </button>
@@ -141,11 +141,11 @@ function ContentTable({ table }: { table: { headers: string[]; rows: string[][] 
     <div className="overflow-x-auto my-6 rounded-xl border border-white/10">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-black/5 dark:bg-white/5">
+          <tr className="bg-white/5">
             {table.headers.map((h, i) => (
               <th
                 key={i}
-                className="px-4 py-3 text-left font-semibold text-brand-300 dark:text-brand-300 border-b border-white/10 whitespace-nowrap"
+                className="px-4 py-3 text-left font-semibold text-brand-300 border-b border-white/10 whitespace-nowrap"
               >
                 {h}
               </th>
@@ -157,15 +157,15 @@ function ContentTable({ table }: { table: { headers: string[]; rows: string[][] 
             <tr
               key={ri}
               className={`${
-                ri % 2 === 0 ? "bg-transparent" : "bg-black/[0.02] dark:bg-white/[0.02]"
-              } hover:bg-black/5 dark:hover:bg-white/5 transition-colors`}
+                ri % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"
+              } hover:bg-white/5 transition-colors`}
             >
               {row.map((cell, ci) => (
                 <td
                   key={ci}
-                  className="px-4 py-3 text-slate-300 dark:text-slate-300 border-b border-white/5 prose prose-invert prose-sm max-w-none
-                    prose-strong:text-white dark:prose-strong:text-white prose-strong:font-semibold
-                    prose-code:text-pink-300 dark:prose-code:text-pink-300 prose-code:bg-black/5 dark:prose-code:bg-white/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+                  className="px-4 py-3 text-slate-300 border-b border-white/5 prose prose-invert prose-sm max-w-none
+                    prose-strong:text-white prose-strong:font-semibold
+                    prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
                     [&_p]:my-0 [&_p]:inline"
                 >
                   <MarkdownBody text={cell} />
@@ -190,9 +190,9 @@ function TipBox({ text, type }: { text: string; type: "tip" | "warning" }) {
       }`}
     >
       <span className="text-xl shrink-0">{isTip ? "💡" : "⚠️"}</span>
-      <div className="text-sm text-slate-300 dark:text-slate-300 leading-relaxed prose prose-invert max-w-none
-        prose-strong:text-white dark:prose-strong:text-white prose-strong:font-semibold
-        prose-code:text-pink-300 dark:prose-code:text-pink-300 prose-code:bg-black/5 dark:prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+      <div className="text-sm text-slate-300 leading-relaxed prose prose-invert max-w-none
+        prose-strong:text-white prose-strong:font-semibold
+        prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
         [&_p]:my-0">
         <MarkdownBody text={text} />
       </div>

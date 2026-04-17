@@ -60,7 +60,7 @@ const teamValues = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-brand-950 text-gray-900 dark:text-white">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
       {/* Navigation */}
       <Navbar activePath="/about" />
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             关于 <span className="text-gradient">AI Master</span>
           </h1>
-          <p className="text-lg text-slate-400 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
             我们致力于成为最优质的中文 AI 学习平台，<br className="hidden sm:block" />
             让每个人都能掌握人工智能技术。
           </p>
@@ -89,11 +89,11 @@ export default function AboutPage() {
               {teamValues.map((v) => (
                 <div
                   key={v.title}
-                  className="p-6 rounded-2xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-500/20 transition-all"
+                  className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/20 transition-all"
                 >
                   <div className="text-3xl mb-3">{v.icon}</div>
                   <h3 className="text-lg font-semibold mb-2">{v.title}</h3>
-                  <p className="text-slate-400 dark:text-slate-400 text-sm leading-relaxed">{v.desc}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">{v.desc}</p>
                 </div>
               ))}
             </div>
@@ -108,11 +108,11 @@ export default function AboutPage() {
               {techStack.map((t) => (
                 <div
                   key={t.name}
-                  className="text-center p-5 rounded-xl bg-black/5 dark:bg-white/5 border border-white/5"
+                  className="text-center p-5 rounded-xl bg-white/5 border border-white/5"
                 >
                   <div className="text-3xl mb-2">{t.icon}</div>
                   <div className="font-semibold text-sm">{t.name}</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-500 mt-1">{t.desc}</div>
+                  <div className="text-xs text-slate-500 mt-1">{t.desc}</div>
                 </div>
               ))}
             </div>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                       {m.date}
                     </span>
                     <h3 className="text-lg font-semibold mb-1">{m.title}</h3>
-                    <p className="text-slate-400 dark:text-slate-400 text-sm">{m.desc}</p>
+                    <p className="text-slate-400 text-sm">{m.desc}</p>
                   </div>
                 </div>
               ))}
@@ -155,7 +155,7 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               加入我们
             </h2>
-            <p className="text-slate-400 dark:text-slate-400 mb-8 max-w-lg mx-auto">
+            <p className="text-slate-400 mb-8 max-w-lg mx-auto">
               如果你也热爱 AI 技术，欢迎一起建设这个平台。无论是贡献文章、推荐工具还是分享经验，每一份力量都很重要。
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -167,7 +167,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/"
-                className="px-8 py-3 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-xl font-semibold transition-all hover:-translate-y-0.5"
+                className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold transition-all hover:-translate-y-0.5"
               >
                 🏠 返回首页
               </Link>

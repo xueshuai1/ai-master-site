@@ -4,14 +4,16 @@
 
 :root {
   --foreground-rgb: 15, 23, 42;
-  --background-start-rgb: 249, 250, 251;
-  --background-end-rgb: 229, 231, 235;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 241, 245, 249;
 }
 
-.dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 23, 42;
-  --background-end-rgb: 30, 27, 75;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 23, 42;
+    --background-end-rgb: 30, 27, 75;
+  }
 }
 
 html {
@@ -47,24 +49,14 @@ body {
   }
 
   .bg-glass {
-    background: rgba(0, 0, 0, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .dark .bg-glass {
     background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .bg-glass-light {
-    background: rgba(0, 0, 0, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .dark .bg-glass-light {
     background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }

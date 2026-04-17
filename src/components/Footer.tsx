@@ -26,14 +26,14 @@ export default function Footer() {
               <span className="text-2xl">🍪</span>
               <span className="text-xl font-bold text-gradient">AI Master</span>
             </Link>
-            <p className="text-slate-400 dark:text-slate-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               AI Master 致力于成为最优质的中文 AI 学习平台，让每个人都能掌握人工智能技术。
             </p>
           </div>
 
           {/* Learning */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300 dark:text-slate-300">
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300">
               学习资源
             </h4>
             <ul className="space-y-2.5">
@@ -41,7 +41,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 dark:text-slate-400 hover:text-white dark:hover:text-white text-sm transition-colors"
+                    className="text-slate-400 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300 dark:text-slate-300">
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300">
               关于
             </h4>
             <ul className="space-y-2.5">
@@ -60,7 +60,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 dark:text-slate-400 hover:text-white dark:hover:text-white text-sm transition-colors"
+                    className="text-slate-400 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 dark:text-slate-500 text-sm">
+          <p className="text-slate-500 text-sm">
             © 2026 AI Master. All rights reserved. Built with ❤️ and AI.
           </p>
           <div className="flex items-center gap-4">
@@ -82,7 +82,7 @@ export default function Footer() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 dark:text-slate-500 hover:text-white dark:hover:text-white transition-colors"
+              className="text-slate-500 hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ export default function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 dark:text-slate-500 hover:text-white dark:hover:text-white transition-colors"
+              className="text-slate-500 hover:text-white transition-colors"
               aria-label="Twitter"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

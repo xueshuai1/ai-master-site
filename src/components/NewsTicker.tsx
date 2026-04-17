@@ -96,7 +96,7 @@ export default function NewsTicker({ items }: { items: NewsItem[] }) {
       </div>
       <div
         ref={containerRef}
-        className="relative overflow-hidden rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-white/5 cursor-pointer"
+        className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/5 cursor-pointer"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -116,14 +116,14 @@ export default function NewsTicker({ items }: { items: NewsItem[] }) {
               >
                 {item.tag}
               </span>
-              <span className="text-sm text-slate-300 dark:text-slate-300 group-hover:text-brand-300 transition-colors whitespace-nowrap">
+              <span className="text-sm text-slate-300 group-hover:text-brand-300 transition-colors whitespace-nowrap">
                 {item.title}
               </span>
             </Link>
           ))}
         </div>
-        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-900/90 dark:from-slate-900/90 from-gray-100/90 to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/90 dark:from-slate-900/90 from-gray-100/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-900/90 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/90 to-transparent pointer-events-none" />
       </div>
     </div>
   );

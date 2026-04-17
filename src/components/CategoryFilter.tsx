@@ -66,7 +66,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange, s
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
           hasSelection
             ? "bg-brand-600/20 text-brand-300 border border-brand-500/30"
-            : "bg-black/5 dark:bg-white/5 text-slate-400 border border-white/10 hover:bg-black/10 dark:hover:bg-white/10 hover:text-white"
+            : "bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 hover:text-white"
         }`}
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange, s
           <div className="fixed inset-0 z-40 sm:hidden" onClick={() => setOpen(false)} />
 
           {/* Dropdown */}
-          <div className="absolute right-0 top-full mt-2 z-50 w-64 rounded-xl bg-slate-900/95 dark:bg-slate-900/95 bg-gray-100/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden">
+          <div className="absolute right-0 top-full mt-2 z-50 w-64 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden">
             {/* Header */}
             <div className="px-4 py-2.5 border-b border-white/5 flex items-center justify-between">
               <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">分类</span>
@@ -121,7 +121,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange, s
                     className={`w-full flex items-center justify-between px-4 py-2 text-sm transition-all ${
                       isActive
                         ? "text-brand-300 bg-brand-500/10"
-                        : "text-slate-400 hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
+                        : "text-slate-400 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -151,7 +151,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange, s
                     className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       sortBy === "default"
                         ? "bg-brand-500/20 text-brand-300"
-                        : "bg-black/5 dark:bg-white/5 text-slate-400 hover:text-white"
+                        : "bg-white/5 text-slate-400 hover:text-white"
                     }`}
                   >
                     默认
@@ -161,7 +161,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange, s
                     className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       sortBy === "stars"
                         ? "bg-brand-500/20 text-brand-300"
-                        : "bg-black/5 dark:bg-white/5 text-slate-400 hover:text-white"
+                        : "bg-white/5 text-slate-400 hover:text-white"
                     }`}
                   >
                     ⭐ 热门

@@ -36,14 +36,14 @@ function ToolCard({ tool }: { tool: Tool }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <div
-      className="group block p-5 rounded-2xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 min-w-0 overflow-hidden"
+      className="group block p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 min-w-0 overflow-hidden"
     >
       {/* Header */}
       <div className="flex items-start gap-3 mb-3">
         <span className="text-3xl">{tool.icon}</span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-lg font-semibold group-hover:text-brand-300 dark:hover:text-brand-300 transition-colors">
+            <h3 className="text-lg font-semibold group-hover:text-brand-300 transition-colors">
               {tool.name}
             </h3>
             <span
@@ -62,18 +62,18 @@ function ToolCard({ tool }: { tool: Tool }) {
               </span>
             )}
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-500 mt-0.5 truncate max-w-full">{tool.url.replace("https://", "")}</p>
+          <p className="text-xs text-slate-500 mt-0.5 truncate max-w-full">{tool.url.replace("https://", "")}</p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-slate-400 dark:text-slate-400 text-sm leading-relaxed mb-2 line-clamp-3">
+      <p className="text-slate-400 text-sm leading-relaxed mb-2 line-clamp-3">
         {tool.description}
       </p>
 
       {/* Use Case */}
       {tool.useCase && (
-        <p className="text-xs text-slate-500 dark:text-slate-500 mb-3 flex items-center gap-1">
+        <p className="text-xs text-slate-500 mb-3 flex items-center gap-1">
           <span className="text-brand-400">🎯</span> {tool.useCase}
         </p>
       )}
@@ -81,12 +81,12 @@ function ToolCard({ tool }: { tool: Tool }) {
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5 overflow-hidden max-w-full mb-3">
         {tool.tags.slice(0, 4).map((tag) => (
-          <span key={tag} className="px-2 py-0.5 bg-black/5 dark:bg-white/5 rounded-md text-xs text-slate-400 dark:text-slate-400 whitespace-nowrap">
+          <span key={tag} className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-400 whitespace-nowrap">
             #{tag}
           </span>
         ))}
         {tool.tags.length > 4 && (
-          <span className="px-2 py-0.5 bg-black/5 dark:bg-white/5 rounded-md text-xs text-slate-500">
+          <span className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-500">
             +{tool.tags.length - 4}
           </span>
         )}
@@ -97,7 +97,7 @@ function ToolCard({ tool }: { tool: Tool }) {
         <>
           <button
             onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(!expanded); }}
-            className="text-xs text-brand-400 hover:text-brand-300 dark:hover:text-brand-300 transition-colors flex items-center gap-1 mb-2"
+            className="text-xs text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1 mb-2"
           >
             {expanded ? "收起" : "查看优缺点"} {expanded ? "▲" : "▼"}
           </button>
@@ -107,7 +107,7 @@ function ToolCard({ tool }: { tool: Tool }) {
                 <div>
                   <p className="text-emerald-400 font-medium mb-1">✅ 优点</p>
                   {tool.pros.map((p, i) => (
-                    <p key={i} className="text-slate-400 dark:text-slate-400 flex items-start gap-1">
+                    <p key={i} className="text-slate-400 flex items-start gap-1">
                       <span className="text-emerald-500 mt-0.5 shrink-0">•</span> {p}
                     </p>
                   ))}
@@ -117,7 +117,7 @@ function ToolCard({ tool }: { tool: Tool }) {
                 <div>
                   <p className="text-red-400 font-medium mb-1">⚠️ 限制</p>
                   {tool.cons.map((c, i) => (
-                    <p key={i} className="text-slate-400 dark:text-slate-400 flex items-start gap-1">
+                    <p key={i} className="text-slate-400 flex items-start gap-1">
                       <span className="text-red-500 mt-0.5 shrink-0">•</span> {c}
                     </p>
                   ))}
@@ -129,14 +129,14 @@ function ToolCard({ tool }: { tool: Tool }) {
       )}
 
       {/* Footer */}
-      <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-200 dark:border-white/5">
+      <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/5">
         {tool.learnMore ? (
           <a
             href={tool.learnMore}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="text-xs text-brand-400 hover:text-brand-300 dark:hover:text-brand-300 transition-colors flex items-center gap-1"
+            className="text-xs text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1"
           >
             📖 官方文档
           </a>
@@ -145,7 +145,7 @@ function ToolCard({ tool }: { tool: Tool }) {
           href={tool.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-slate-500 dark:text-slate-500 hover:text-brand-400 dark:hover:text-brand-400 transition-colors flex items-center gap-1"
+          className="text-xs text-slate-500 hover:text-brand-400 transition-colors flex items-center gap-1"
         >
           访问工具 →
         </a>
@@ -201,7 +201,7 @@ export default function ToolsPage() {
   }));
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-brand-950 text-gray-900 dark:text-white">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
       <Navbar activePath="/tools" />
 
       {/* Hero */}
@@ -210,7 +210,7 @@ export default function ToolsPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             🛠️ AI <span className="text-gradient">工具集</span>
           </h1>
-          <p className="text-slate-400 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             精选最实用的 AI 工具与框架，提升你的开发效率
           </p>
         </div>
@@ -228,7 +228,7 @@ export default function ToolsPage() {
               placeholder="搜索工具、标签..."
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); handleFilterChange(); }}
-              className="w-full pl-12 pr-4 py-3 bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-gray-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+              className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
             />
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function ToolsPage() {
               <select
                 value={sortBy}
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
-                className="hidden sm:block px-3 py-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-sm text-slate-400 dark:text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+                className="hidden sm:block px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
                 <option value="default">排序</option>
                 <option value="stars">⭐ 热门</option>
@@ -275,7 +275,7 @@ export default function ToolsPage() {
                   <button
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                     disabled={safePage === 1}
-                    className="px-4 py-2 rounded-lg bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-sm font-medium text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                    className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                   >
                     ← 上一页
                   </button>
@@ -286,7 +286,7 @@ export default function ToolsPage() {
                       className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${
                         page === safePage
                           ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                          : "bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
+                          : "bg-white/5 border border-white/10 text-slate-400 hover:bg-white/10 hover:text-white"
                       }`}
                     >
                       {page}
@@ -295,7 +295,7 @@ export default function ToolsPage() {
                   <button
                     onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                     disabled={safePage === totalPages}
-                    className="px-4 py-2 rounded-lg bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-sm font-medium text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                    className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                   >
                     下一页 →
                   </button>
@@ -305,7 +305,7 @@ export default function ToolsPage() {
           ) : (
             <div className="text-center py-20">
               <div className="text-5xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-slate-300 dark:text-gray-900 dark:text-slate-300 mb-2">没有找到相关工具</h3>
+              <h3 className="text-xl font-semibold text-slate-300 mb-2">没有找到相关工具</h3>
               <p className="text-slate-500">试试其他关键词或切换分类</p>
               <button
                 onClick={() => { setSearchQuery(""); setActiveCategory("all"); setSortBy("default"); setCurrentPage(1); }}
