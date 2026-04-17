@@ -279,7 +279,7 @@ export default function BlogDetailContent({
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold mb-8">📚 相关文章推荐</h2>
             <div className="grid sm:grid-cols-2 gap-5">
               {relatedPosts.map((rel) => (
@@ -307,7 +307,7 @@ export default function BlogDetailContent({
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center p-10 rounded-3xl bg-gradient-to-r from-brand-600/10 to-accent-600/10 border border-brand-500/20">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               继续探索更多 AI 内容
