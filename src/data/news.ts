@@ -16,6 +16,84 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-287",
+    tag: "AI 开发",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    coverImage: "/images/news/codex.jpg",
+    title: "OpenAI 发布 Codex 重大升级：几乎全能自主编程，支持独立操作 macOS 应用和网页",
+    summary: "OpenAI 宣布 Codex 从代码助手升级为自主 AI 开发者，能够独立操作 macOS 应用、浏览器和各类开发工具。新版 Codex 支持多步骤复杂任务，从环境配置到应用部署全流程自主完成，并引入视觉理解能力可直接'看'屏幕进行操作。",
+    content: `## OpenAI Codex 重大升级：几乎全能自主编程
+
+2026 年 4 月 16 日，OpenAI 发布 Codex 重大更新。
+
+**核心升级：**
+
+**1. macOS 应用自主操作**
+- Codex 现在可以直接操控 macOS 上的应用程序
+- 支持 Finder、Terminal、Xcode 等各类工具
+- 通过视觉理解屏幕内容，模拟人类操作
+
+**2. 浏览器自动化**
+- 能够自主浏览网页、填写表单、点击按钮
+- 支持多标签页操作和复杂 Web 交互
+- 可用于 Web 测试、数据收集等场景
+
+**3. 端到端开发流程**
+- 从需求分析到代码编写、测试、部署全流程
+- 支持多文件项目管理和版本控制
+- 可独立运行 debug 和修复流程
+
+**行业影响：**
+- AI 开发者从'辅助编码'进入'自主开发'阶段
+- 可能改变软件工程的协作模式
+- 引发关于 AI 自主性和安全性的讨论`,
+    date: "2026-04-17 21:52",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/blog",
+    href: "/news/news-287",
+  },
+  {
+    id: "news-288",
+    tag: "AI 科研",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/life-sciences.jpg",
+    title: "OpenAI 推出 GPT-Rosalind：专为生命科学研究设计的 AI 模型",
+    summary: "OpenAI 发布 GPT-Rosalind，首个针对生命科学研究优化的 AI 模型，支持基因组分析、蛋白质结构预测、文献综述等科研场景。以 Rosalind Franklin 命名，纪念她在 DNA 结构发现中的关键贡献。",
+    content: `## GPT-Rosalind：生命科学专属 AI
+
+2026 年 4 月 16 日，OpenAI 发布 GPT-Rosalind 模型。
+
+**核心功能：**
+
+**1. 基因组分析**
+- 支持 DNA/RNA 序列分析和模式识别
+- 辅助基因变异解读和功能预测
+- 可处理大规模基因组数据集
+
+**2. 蛋白质研究**
+- 蛋白质结构预测和功能注释
+- 蛋白质相互作用网络分析
+- 药物靶点识别辅助
+
+**3. 科研文献处理**
+- 快速解读和总结生命科学文献
+- 跨文献知识提取和关联分析
+- 研究趋势和空白领域识别
+
+**命名由来：**
+- 以 Rosalind Franklin 命名
+- 纪念她在 DNA 双螺旋结构发现中的关键贡献
+
+**行业影响：**
+- AI 从通用走向垂直专业化
+- 加速生命科学研究效率
+- 降低生物学研究门槛`,
+    date: "2026-04-17 21:53",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/news/",
+    href: "/news/news-288",
+  },
+  {
     id: "news-285",
     tag: "AI 安全",
     tagColor: "bg-red-500/10 text-red-300",
