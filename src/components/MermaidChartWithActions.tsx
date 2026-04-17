@@ -16,18 +16,60 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     setSvgContent(svg);
   }, []);
 
-  // Download SVG
+  // Download as PNG with dark background
   const handleDownload = useCallback(() => {
     if (!svgContent) return;
-    const blob = new Blob([svgContent], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'mermaid-chart.svg';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+    const svgEl = svgDoc.querySelector('svg');
+    if (!svgEl) return;
+
+    // 获取 SVG 尺寸
+    const viewBox = svgEl.getAttribute('viewBox')?.split(/\s+/).map(Number);
+    const width = viewBox ? viewBox[2] : 800;
+    const height = viewBox ? viewBox[3] : 600;
+    // 2x 高清
+    const scale = 2;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = width * scale;
+    canvas.height = height * scale;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.scale(scale, scale);
+
+    // 深色背景
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, width, height);
+
+    const svgBlob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(svgBlob);
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, width, height);
+      URL.revokeObjectURL(url);
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'mermaid-chart.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+      }, 'image/png');
+    };
+    img.onerror = () => {
+      // 降级：直接下载 SVG
+      const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'mermaid-chart.svg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    };
+    img.src = url;
   }, [svgContent]);
 
   // Open in modal
