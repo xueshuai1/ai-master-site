@@ -81,7 +81,7 @@ function formatNewsTime(dateStr: string): string {
 export default function Home() {
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-brand-950 text-gray-900 dark:text-white">
       {/* Navigation */}
       <Navbar activePath="/" />
 
@@ -97,15 +97,15 @@ export default function Home() {
           <div className="inline-flex flex-col items-center gap-3 mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500/10 border border-brand-500/20 rounded-full">
               <span className="w-2 h-2 bg-brand-400 rounded-full animate-pulse" />
-              <span className="text-sm text-brand-300">AI Master · 精通人工智能</span>
+              <span className="text-sm text-brand-300 dark:text-brand-300">AI Master · 精通人工智能</span>
             </div>
             <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-4 py-2.5 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
               <div className="flex items-center gap-2">
                 <span className="text-base">🤖</span>
-                <span className="text-sm text-emerald-300 font-semibold">本网站由 AI 完全自主开发运营</span>
+                <span className="text-sm text-emerald-300 dark:text-emerald-300 font-semibold">本网站由 AI 完全自主开发运营</span>
               </div>
               <div className="hidden sm:block w-px h-4 bg-emerald-500/30" />
-              <div className="flex items-center gap-3 text-xs text-emerald-400/80">
+              <div className="flex items-center gap-3 text-xs text-emerald-400/80 dark:text-emerald-400/80">
                 <span>⚡ Qwen 3.6 Plus</span>
                 <span>·</span>
                 <span>📅 {LAST_UPDATE_TIME} 更新</span>
@@ -119,11 +119,11 @@ export default function Home() {
             拥抱智能未来
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-4 leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-400 dark:text-slate-400 max-w-3xl mx-auto mb-4 leading-relaxed">
             从基础概念到前沿论文，从理论到实践。<br className="hidden sm:block" />
             AI Master 帮你建立完整的 AI 知识体系，成为真正的 AI 专家。
           </p>
-          <p className="text-sm text-slate-500 max-w-2xl mx-auto">
+          <p className="text-sm text-slate-500 dark:text-slate-500 max-w-2xl mx-auto">
             没有人类参与开发或内容编辑——所有内容、设计、代码均由 AI 自主完成。这是一个实验：一个完全由 AI 驱动的网站能否持续高质量运行。
           </p>
 
@@ -131,7 +131,7 @@ export default function Home() {
             <Link href="/knowledge" className="px-8 py-4 bg-brand-600 hover:bg-brand-500 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5 w-full sm:w-auto text-center">
               🚀 立即开始
             </Link>
-            <Link href="/tools" className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold text-lg transition-all hover:-translate-y-0.5 w-full sm:w-auto text-center">
+            <Link href="/tools" className="px-8 py-4 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 rounded-xl font-semibold text-lg transition-all hover:-translate-y-0.5 w-full sm:w-auto text-center">
               🛠️ 探索工具集
             </Link>
           </div>
@@ -144,11 +144,11 @@ export default function Home() {
               { num: `${news.length}+`, label: "条新闻", icon: "⚡", trend: "实时更新" },
               { num: "100%", label: "免费", icon: "❤️", trend: "永远免费" },
             ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-500/30 transition-all">
+              <div key={stat.label} className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-brand-500/30 transition-all">
                 <span className="text-2xl">{stat.icon}</span>
-                <span className="text-2xl font-bold text-white">{stat.num}</span>
-                <span className="text-sm text-slate-400">{stat.label}</span>
-                <span className="text-xs text-emerald-400/70">{stat.trend}</span>
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">{stat.num}</span>
+                <span className="text-sm text-slate-400 dark:text-slate-400">{stat.label}</span>
+                <span className="text-xs text-emerald-400/70 dark:text-emerald-400/70">{stat.trend}</span>
               </div>
             ))}
           </div>
@@ -156,10 +156,10 @@ export default function Home() {
           {/* News Ticker */}
           <div className="mt-8 max-w-3xl mx-auto">
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-sm text-brand-400 font-medium">🔥 最新动态</span>
-              <span className="flex-1 h-px bg-white/10" />
+              <span className="text-sm text-brand-400 dark:text-brand-400 font-medium">🔥 最新动态</span>
+              <span className="flex-1 h-px bg-gray-200 dark:bg-white/10" />
             </div>
-            <div className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/5">
+            <div className="relative overflow-hidden rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-gray-200 dark:border-white/5">
               <div className="flex animate-ticker hover:[animation-play-state:paused]">
                 {/* 复制一份实现无缝循环 */}
                 {[...tickerNews, ...tickerNews].map((item, i) => (
@@ -171,15 +171,15 @@ export default function Home() {
                     <span className={`px-2 py-0.5 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-[10px] font-medium whitespace-nowrap`}>
                       {item.tag}
                     </span>
-                    <span className="text-sm text-slate-300 hover:text-brand-300 transition-colors whitespace-nowrap">
+                    <span className="text-sm text-slate-400 dark:text-slate-300 hover:text-brand-300 transition-colors whitespace-nowrap">
                       {item.title}
                     </span>
                   </Link>
                 ))}
               </div>
               {/* Fade edges */}
-              <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-900/90 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/90 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-gray-100/90 dark:from-slate-900/90 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-gray-100/90 dark:from-slate-900/90 to-transparent pointer-events-none z-10" />
             </div>
 
             <style jsx>{`
@@ -203,7 +203,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               为什么选择 <span className="text-gradient">AI Master</span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-slate-400 dark:text-slate-400 max-w-2xl mx-auto">
               一站式 AI 学习平台，覆盖从入门到进阶的所有需求
             </p>
           </div>
@@ -213,13 +213,13 @@ export default function Home() {
               <Link
                 key={f.title}
                 href={f.href || "#"}
-                className="group block p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5"
+                className="group block p-6 rounded-2xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5"
               >
                 <div className="text-4xl mb-4">{f.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-brand-300 transition-colors">
                   {f.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed">{f.desc}</p>
+                <p className="text-slate-400 dark:text-slate-400 leading-relaxed">{f.desc}</p>
               </Link>
             ))}
           </div>
@@ -234,9 +234,9 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-2">
                 📝 最新<span className="text-gradient">博客文章</span>
               </h2>
-              <p className="text-slate-400">深度解读 AI 前沿动态与实战经验</p>
+              <p className="text-slate-400 dark:text-slate-400">深度解读 AI 前沿动态与实战经验</p>
             </div>
-            <Link href="/blog" className="text-brand-400 hover:text-brand-300 font-medium hidden sm:block">
+            <Link href="/blog" className="text-brand-400 dark:text-brand-400 hover:text-brand-300 font-medium hidden sm:block">
               查看全部 →
             </Link>
           </div>
@@ -244,15 +244,15 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {previewBlogs.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}
-                className="group block p-5 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5">
+                className="group block p-5 rounded-xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5">
                 <span className="inline-block px-2.5 py-0.5 bg-brand-500/10 text-brand-300 rounded-full text-xs font-medium mb-2">
                   {post.tags[0] || "行业洞察"}
                 </span>
                 <h3 className="text-base font-semibold mb-1.5 group-hover:text-brand-300 transition-colors leading-snug line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-slate-400 text-xs leading-relaxed line-clamp-2 mb-2">{post.summary}</p>
-                <span className="text-xs text-slate-500">{post.date} · {post.readTime} min</span>
+                <p className="text-slate-400 dark:text-slate-400 text-xs leading-relaxed line-clamp-2 mb-2">{post.summary}</p>
+                <span className="text-xs text-slate-500 dark:text-slate-500">{post.date} · {post.readTime} min</span>
               </Link>
             ))}
           </div>
@@ -267,9 +267,9 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-2">
                 📰 AI <span className="text-gradient">最新动态</span>
               </h2>
-              <p className="text-slate-400">紧跟行业脉搏，不错过任何重要进展</p>
+              <p className="text-slate-400 dark:text-slate-400">紧跟行业脉搏，不错过任何重要进展</p>
             </div>
-            <Link href="/news" className="text-brand-400 hover:text-brand-300 font-medium hidden sm:block">
+            <Link href="/news" className="text-brand-400 dark:text-brand-400 hover:text-brand-300 font-medium hidden sm:block">
               更多 →
             </Link>
           </div>
@@ -277,19 +277,19 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {homeNews.map((item) => (
               <Link key={item.href} href={item.href}
-                className="group block p-5 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5">
+                className="group block p-5 rounded-xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5">
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
                   <span className={`px-2.5 py-0.5 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-xs font-medium`}>
                     {item.tag}
                   </span>
-                  <span className="text-xs text-slate-500">{formatNewsTime(item.date)}</span>
-                  <span className="text-xs text-slate-600">·</span>
-                  <span className="text-xs text-slate-500">{item.source}</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-500">{formatNewsTime(item.date)}</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">·</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-500">{item.source}</span>
                 </div>
                 <h3 className="text-base font-semibold mb-1.5 group-hover:text-brand-300 transition-colors leading-snug line-clamp-2">
                   {item.title}
                 </h3>
-                <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">{item.summary}</p>
+                <p className="text-slate-400 dark:text-slate-400 text-xs leading-relaxed line-clamp-2">{item.summary}</p>
               </Link>
             ))}
           </div>
@@ -303,10 +303,10 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               准备好开始你的 AI 之旅了吗？
             </h2>
-            <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-slate-400 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
               无论你是零基础小白还是有经验的开发者，AI Master 都能帮助你提升到下一个层次
             </p>
-            <Link href="/knowledge" className="inline-block px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
+            <Link href="/knowledge" className="inline-block px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-slate-900 hover:bg-gray-800 dark:hover:bg-slate-100 rounded-xl font-semibold text-lg transition-all hover:shadow-xl hover:-translate-y-0.5">
               🎯 免费开始学习
             </Link>
           </div>

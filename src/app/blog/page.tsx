@@ -59,7 +59,7 @@ export default function BlogPage() {
   const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-brand-950 text-gray-900 dark:text-white">
       <Navbar activePath="/blog" />
 
       {/* Hero */}
@@ -68,7 +68,7 @@ export default function BlogPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             📝 AI <span className="text-gradient">博客</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             深度解读 AI 前沿动态、技术对比、实战经验和行业洞察
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className={`group block p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 ${
+                className={`group block p-6 rounded-2xl bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 ${
                   index === 0 ? "sm:col-span-2" : ""
                 }`}
               >
@@ -106,13 +106,13 @@ export default function BlogPage() {
                   <span className="text-xs text-slate-500">📖 {post.readTime}</span>
                 </div>
 
-                <h2 className={`font-bold mb-2 group-hover:text-brand-300 transition-colors leading-snug ${
+                <h2 className={`font-bold mb-2 group-hover:text-brand-300 dark:hover:text-brand-300 transition-colors leading-snug ${
                   index === 0 ? "text-xl sm:text-2xl" : "text-lg"
                 }`}>
                   {post.title}
                 </h2>
 
-                <p className="text-slate-400 text-sm leading-relaxed mb-3 line-clamp-2">
+                <p className="text-slate-400 dark:text-slate-400 text-sm leading-relaxed mb-3 line-clamp-2">
                   {post.summary}
                 </p>
 
@@ -120,7 +120,7 @@ export default function BlogPage() {
                   <span className="text-xs text-slate-500">✍️ {post.author}</span>
                   <div className="flex gap-2 flex-wrap">
                     {post.tags.map((tag: string) => (
-                      <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-400">
+                      <span key={tag} className="px-2 py-0.5 bg-black/5 dark:bg-white/5 rounded text-xs text-slate-400">
                         #{tag}
                       </span>
                     ))}
@@ -136,7 +136,7 @@ export default function BlogPage() {
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={safePage === 1}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-black/5 dark:bg-white/5 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
               >
                 ← 上一页
               </button>
@@ -147,7 +147,7 @@ export default function BlogPage() {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     page === safePage
                       ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                      : "bg-black/5 dark:bg-white/5 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
                   }`}
                 >
                   {page}
@@ -156,7 +156,7 @@ export default function BlogPage() {
               <button
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={safePage === totalPages}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-black/5 dark:bg-white/5 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
               >
                 下一页 →
               </button>

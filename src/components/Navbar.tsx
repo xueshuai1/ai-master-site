@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavLink {
   label: string;
@@ -65,7 +66,7 @@ export default function Navbar({ activePath }: { activePath?: string }) {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     isActive
                       ? "text-brand-400 bg-brand-500/10"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      : "text-slate-300 dark:text-slate-300 hover:text-white hover:bg-white/5 dark:hover:bg-white/5"
                   }`}
                 >
                   {link.label}
@@ -80,35 +81,38 @@ export default function Navbar({ activePath }: { activePath?: string }) {
             </Link>
           </div>
 
-          {/* Mobile hamburger button */}
-          <button
-            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "关闭菜单" : "打开菜单"}
-            aria-expanded={mobileMenuOpen}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
+          {/* Theme toggle + Mobile hamburger button */}
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <button
+              className="md:hidden p-2 rounded-lg text-slate-300 dark:text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "关闭菜单" : "打开菜单"}
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                {mobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 

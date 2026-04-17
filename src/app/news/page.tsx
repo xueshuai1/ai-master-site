@@ -94,7 +94,7 @@ export default function NewsPage() {
   }));
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-brand-950 text-gray-900 dark:text-white">
       <Navbar activePath="/news" />
 
       {/* Hero */}
@@ -103,11 +103,11 @@ export default function NewsPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             📰 AI <span className="text-gradient">最新动态</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             紧跟行业脉搏，不错过任何重要进展
           </p>
           {recentNews.length > 0 && (
-            <p className="text-sm text-slate-500 mt-3">
+            <p className="text-sm text-slate-500 dark:text-slate-500 mt-3">
               最近 3 天共 <span className="text-brand-400 font-medium">{recentNews.length}</span> 条动态
             </p>
           )}
@@ -134,7 +134,7 @@ export default function NewsPage() {
           {paginatedNews.length === 0 ? (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">📭</div>
-              <h2 className="text-xl font-semibold text-slate-400 mb-2">暂无最新动态</h2>
+              <h2 className="text-xl font-semibold text-slate-400 dark:text-slate-400 mb-2">暂无最新动态</h2>
               <p className="text-slate-500">请稍后再来查看</p>
             </div>
           ) : (
@@ -143,23 +143,23 @@ export default function NewsPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/20 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5"
+                  className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 hover:border-brand-500/20 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5"
                 >
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-2 flex-wrap">
                       <span className={`px-2.5 py-0.5 ${item.tagColor || "bg-brand-500/10 text-brand-300"} rounded-full text-xs font-medium`}>
                         {item.tag}
                       </span>
-                      <span className="text-xs text-slate-500 font-mono">{formatNewsTime(item.date)}</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-500 font-mono">{formatNewsTime(item.date)}</span>
                       <span className="text-xs text-slate-600">·</span>
-                      <span className="text-xs text-slate-500 truncate">{item.source}</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-500 truncate">{item.source}</span>
                     </div>
 
-                    <h3 className="text-lg font-semibold group-hover:text-brand-300 transition-colors leading-snug mb-2">
+                    <h3 className="text-lg font-semibold group-hover:text-brand-300 dark:hover:text-brand-300 transition-colors leading-snug mb-2">
                       {item.title}
                     </h3>
 
-                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
+                    <p className="text-slate-400 dark:text-slate-400 text-sm leading-relaxed line-clamp-2">
                       {item.summary}
                     </p>
                   </div>
@@ -174,7 +174,7 @@ export default function NewsPage() {
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={safePage === 1}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-black/5 dark:bg-white/5 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
               >
                 ← 上一页
               </button>
@@ -197,7 +197,7 @@ export default function NewsPage() {
                       className={`w-9 h-9 rounded-lg text-sm font-medium transition-all ${
                         isActive
                           ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                          : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                          : "bg-black/5 dark:bg-white/5 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
                       }`}
                     >
                       {page}
@@ -208,7 +208,7 @@ export default function NewsPage() {
               <button
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={safePage === totalPages}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-black/5 dark:bg-white/5 text-slate-400 dark:text-slate-400 hover:bg-black/10 dark:bg-white/10 hover:text-white"
               >
                 下一页 →
               </button>

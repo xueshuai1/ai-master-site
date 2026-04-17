@@ -50,7 +50,7 @@ const fastRoute: RouteDef = {
       icon: "🌍",
       color: "from-white/10 to-slate-500/10",
       borderColor: "border-white/20",
-      badgeColor: "bg-white/10 text-white",
+      badgeColor: "bg-black/10 dark:bg-black/10 dark:bg-white/10 text-white",
       steps: [
         { title: "AI 是什么？", desc: "从概念到实践的全景导览——AI 的三次浪潮、AI/ML/DL 的关系、2026 年主流技术栈", tags: ["AI 入门", "技术全景"] },
         { title: "2026 年 AI 能做什么", desc: "编程、创作、研究、工作流的真实案例与工具推荐", tags: ["应用场景", "工具"] },
@@ -135,7 +135,7 @@ const foundationRoute: RouteDef = {
       icon: "🌍",
       color: "from-white/10 to-slate-500/10",
       borderColor: "border-white/20",
-      badgeColor: "bg-white/10 text-white",
+      badgeColor: "bg-black/10 dark:bg-black/10 dark:bg-white/10 text-white",
       steps: [
         { title: "AI 是什么？", desc: "从概念到实践的全景导览——AI 的三次浪潮、AI/ML/DL 的关系、2026 年主流技术栈", tags: ["AI 入门", "技术全景"] },
         { title: "2026 年 AI 能做什么", desc: "编程、创作、研究、工作流的真实案例与工具推荐", tags: ["应用场景", "工具"] },
@@ -255,7 +255,7 @@ const securityRoute: RouteDef = {
       icon: "🌍",
       color: "from-white/10 to-slate-500/10",
       borderColor: "border-white/20",
-      badgeColor: "bg-white/10 text-white",
+      badgeColor: "bg-black/10 dark:bg-black/10 dark:bg-white/10 text-white",
       steps: [
         { title: "AI 是什么？", desc: "从概念到实践的全景导览——AI 的三次浪潮、AI/ML/DL 的关系、2026 年主流技术栈", tags: ["AI 入门", "技术全景"] },
         { title: "2026 年 AI 能做什么", desc: "编程、创作、研究、工作流的真实案例与工具推荐", tags: ["应用场景", "工具"] },
@@ -326,7 +326,7 @@ const engineerRoute: RouteDef = {
       icon: "🌍",
       color: "from-white/10 to-slate-500/10",
       borderColor: "border-white/20",
-      badgeColor: "bg-white/10 text-white",
+      badgeColor: "bg-black/10 dark:bg-black/10 dark:bg-white/10 text-white",
       steps: [
         { title: "AI 是什么？", desc: "从概念到实践的全景导览——AI 的三次浪潮、AI/ML/DL 的关系、2026 年主流技术栈", tags: ["AI 入门", "技术全景"] },
         { title: "2026 年 AI 能做什么", desc: "编程、创作、研究、工作流的真实案例与工具推荐", tags: ["应用场景", "工具"] },
@@ -411,7 +411,7 @@ const creativeRoute: RouteDef = {
       icon: "🌍",
       color: "from-white/10 to-slate-500/10",
       borderColor: "border-white/20",
-      badgeColor: "bg-white/10 text-white",
+      badgeColor: "bg-black/10 dark:bg-black/10 dark:bg-white/10 text-white",
       steps: [
         { title: "AI 是什么？", desc: "从概念到实践的全景导览——AI 的三次浪潮、AI/ML/DL 的关系、2026 年主流技术栈", tags: ["AI 入门", "技术全景"] },
         { title: "2026 年 AI 能做什么", desc: "编程、创作、研究、工作流的真实案例与工具推荐", tags: ["应用场景", "工具"] },
@@ -471,7 +471,7 @@ export default function RoadmapPage() {
   const route = allRoutes.find((r) => r.id === activeRoute) || fastRoute;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-brand-950 text-gray-900 dark:text-white">
       <Navbar activePath="/roadmap" />
 
       {/* Hero */}
@@ -484,7 +484,7 @@ export default function RoadmapPage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             选择你的 <span className="text-gradient">学习路线</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-slate-400 dark:text-slate-400 text-lg max-w-2xl mx-auto mb-8">
             根据你的目标和背景，选择最适合的学习路径
           </p>
 
@@ -497,7 +497,7 @@ export default function RoadmapPage() {
                 className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all border ${
                   activeRoute === r.id
                     ? `${r.badgeColor} ${r.borderColor} shadow-lg`
-                    : "text-slate-400 border-white/10 hover:text-white hover:border-white/20 hover:bg-white/5"
+                    : "text-slate-400 dark:text-slate-400 border-gray-200 dark:border-white/10 hover:text-gray-900 dark:text-white dark:hover:text-gray-900 dark:text-white hover:border-gray-200 dark:hover:border-gray-200 dark:border-white/20 hover:bg-white/5"
                 }`}
               >
                 {r.emoji} {r.name}
@@ -507,12 +507,12 @@ export default function RoadmapPage() {
           </div>
 
           {/* Active Route Description */}
-          <div className={`p-5 rounded-2xl bg-white/5 border border-white/10 max-w-2xl mx-auto`}>
+          <div className={`p-5 rounded-2xl bg-black/5 dark:bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 max-w-2xl mx-auto`}>
             <p className={`text-base font-medium mb-1 ${route.badgeColor.split(" ")[1]}`}>
               {route.emoji} {route.name}路线
             </p>
-            <p className="text-slate-300 text-sm mb-2">{route.description}</p>
-            <p className="text-slate-500 text-xs">👥 {route.target}</p>
+            <p className="text-slate-300 dark:text-slate-300 text-sm mb-2">{route.description}</p>
+            <p className="text-slate-500 dark:text-slate-500 text-xs">👥 {route.target}</p>
           </div>
         </div>
       </section>
@@ -529,7 +529,7 @@ export default function RoadmapPage() {
                   className={`relative rounded-2xl border transition-all ${
                     isExpanded
                       ? `bg-gradient-to-r ${phase.color} ${phase.borderColor}`
-                      : "bg-white/5 border-white/5 hover:border-white/10"
+                      : "bg-black/5 dark:bg-black/5 dark:bg-white/5 border-gray-200 dark:border-gray-200 dark:border-white/5 hover:border-white/10"
                   }`}
                 >
                   {/* Phase header */}
@@ -541,8 +541,8 @@ export default function RoadmapPage() {
                     <div
                       className={`shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl border-2 transition-all ${
                         isExpanded
-                          ? "bg-brand-600 border-brand-400 text-white scale-110"
-                          : "bg-white/5 border-white/10 text-slate-400"
+                          ? "bg-brand-600 border-brand-400 text-gray-900 dark:text-white scale-110"
+                          : "bg-black/5 dark:bg-black/5 dark:bg-white/5 border-gray-200 dark:border-white/10 text-slate-400"
                       }`}
                     >
                       {phase.icon}
@@ -558,14 +558,14 @@ export default function RoadmapPage() {
                           {phase.duration}
                         </span>
                       </div>
-                      <p className="text-sm text-slate-500 mt-0.5">
+                      <p className="text-sm text-slate-500 dark:text-slate-500 mt-0.5">
                         {phase.steps.length} 个学习模块 · 点击展开详情
                       </p>
                     </div>
 
                     {/* Expand arrow */}
                     <svg
-                      className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${
+                      className={`w-5 h-5 text-slate-400 dark:text-slate-400 shrink-0 transition-transform duration-300 ${
                         isExpanded ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -584,7 +584,7 @@ export default function RoadmapPage() {
                         {phase.steps.map((step, idx) => (
                           <div
                             key={idx}
-                            className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-500/20 transition-all"
+                            className="flex items-start gap-4 p-4 rounded-xl bg-black/5 dark:bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-gray-200 dark:border-white/5 hover:border-brand-500/20 transition-all"
                           >
                             {/* Step number */}
                             <div className="shrink-0 w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-sm font-bold">
@@ -596,14 +596,14 @@ export default function RoadmapPage() {
                               <h4 className="font-semibold text-sm sm:text-base mb-1">
                                 {step.title}
                               </h4>
-                              <p className="text-sm text-slate-400 leading-relaxed">
+                              <p className="text-sm text-slate-400 dark:text-slate-400 leading-relaxed">
                                 {step.desc}
                               </p>
                               <div className="flex flex-wrap gap-1.5 mt-2">
                                 {step.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-500"
+                                    className="px-2 py-0.5 bg-black/5 dark:bg-black/5 dark:bg-white/5 rounded text-xs text-slate-500"
                                   >
                                     #{tag}
                                   </span>
@@ -629,7 +629,7 @@ export default function RoadmapPage() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               选择你的起点，开始学习吧！
             </h2>
-            <p className="text-slate-400 mb-8 max-w-lg mx-auto">
+            <p className="text-slate-400 dark:text-slate-400 mb-8 max-w-lg mx-auto">
               无论你现在处于哪个阶段，都能在这里找到适合的学习内容
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -641,7 +641,7 @@ export default function RoadmapPage() {
               </Link>
               <Link
                 href="/tools"
-                className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold transition-all hover:-translate-y-0.5"
+                className="px-8 py-3 bg-black/5 dark:bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:bg-black/10 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-xl font-semibold transition-all hover:-translate-y-0.5"
               >
                 🛠️ 探索 AI 工具
               </Link>
