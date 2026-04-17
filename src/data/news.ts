@@ -16,6 +16,87 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-283",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "Claude Code 桌面端重大重设计：多 Agent 管理 + 侧边栏会话 + 拖拽工作区",
+    summary: "Anthropic 发布 Claude Code 桌面端重设计，新增侧边栏管理多个并发 AI Agent 会话，支持拖拽自定义工作区布局，内置终端和文件编辑器。开发者可同时运行多个独立任务（如代码审查、文档生成、测试编写），并在同一工作区中切换，大幅提升多任务并行开发效率。",
+    content: `## Claude Code 重设计：多 Agent 并行开发成为现实
+
+2026 年 4 月 14 日，Anthropic 发布 Claude Code 桌面端重大重设计。
+
+**核心变化：**
+
+**1. 侧边栏会话管理**
+- 新增侧边栏，可同时查看和管理多个 Claude Code 会话
+- 每个会话独立运行，互不干扰
+- 支持会话命名、搜索、快速切换
+
+**2. 拖拽自定义工作区**
+- 工作区布局完全可自定义
+- 拖拽调整面板大小和位置
+- 根据任务类型优化布局（编码、审查、调试）
+
+**3. 内置终端和文件编辑器**
+- 终端直接集成在应用内，无需切换
+- 文件编辑器支持语法高亮、自动补全
+- 与 Claude 的对话上下文实时同步
+
+**4. 多 Agent 并行**
+- 可同时运行多个 Claude Agent 处理不同任务
+- 例如：一个 Agent 做代码审查，一个写文档，一个跑测试
+- 每个 Agent 有独立的上下文和文件访问权限
+
+**行业意义：**
+- 从单任务工具进化为多 Agent 开发环境
+- 与 Cursor、GitHub Copilot 等形成差异化竞争
+- 代表 AI 编程工具从"辅助编码"到"团队协作"的范式转变`,
+    date: "2026-04-17 12:38",
+    source: "The Verge / Anthropic",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-283",
+  },
+  {
+    id: "news-284",
+    tag: "开发工具",
+    tagColor: "bg-green-500/10 text-green-300",
+    coverImage: "/images/news/tools.jpg",
+    title: "Google 发布 Android AI Agent Skills 仓库 + Knowledge Base — Android 开发进入 AI 辅助时代",
+    summary: "Google 同步推出两项面向 Android 开发者的 AI 基础设施：Android Skills GitHub 仓库（提供 AI Agent 可执行的标准化技能定义）和 Android Knowledge Base（结构化知识库，帮助 AI Agent 理解 Android 开发最佳实践）。配合升级的 Android CLI，Android 开发者现在可以通过自然语言让 AI Agent 完成从项目创建到代码审查的全流程。",
+    content: `## Google 为 Android 开发打造 AI Agent 基础设施
+
+2026 年 4 月 16 日，The Verge 报道 Google 推出面向 Android 开发的 AI Agent 支持。
+
+**两项核心发布：**
+
+**1. Android Skills GitHub 仓库**
+- 提供标准化的 AI Agent 技能定义文件
+- 涵盖：项目创建、组件生成、Gradle 配置、测试编写、性能分析
+- 遵循 AGENTS.md 规范，兼容 Claude Code、Cursor 等主流 AI 编程工具
+- 社区贡献驱动，持续扩展
+
+**2. Android Knowledge Base**
+- 结构化知识库，覆盖 Android 开发全栈
+- 包含：Material Design 规范、Jetpack Compose 最佳实践、架构模式
+- 安全指南、性能优化、无障碍设计
+- AI Agent 可直接引用，减少幻觉和错误建议
+
+**配套升级：**
+- Android CLI 工具升级，支持自然语言指令
+- 可与 AI Agent 无缝集成
+
+**行业意义：**
+- 降低 AI Agent 在 Android 开发中的门槛
+- 标准化技能定义让不同 AI 工具可以复用同一套 Android 知识
+- 与 OpenAI Codex 的 macOS 电脑控制能力形成互补生态
+- 代表平台厂商开始为 AI Agent 提供一等公民支持`,
+    date: "2026-04-17 12:38",
+    source: "The Verge / Google",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-284",
+  },
+  {
     id: "news-282",
     tag: "前沿研究",
     tagColor: "bg-purple-500/10 text-purple-300",
