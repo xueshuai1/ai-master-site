@@ -130,6 +130,95 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     }
   }, [svgContent]);
 
+  // Touch events for mobile pinch-to-zoom and pan
+  const touchState = useRef({
+    initialDistance: 0,
+    initialZoom: 1,
+    lastTouchX: 0,
+    lastTouchY: 0,
+    lastTapTime: 0,
+  });
+
+  const getTouchDistance = (t1: React.Touch, t2: React.Touch) => {
+    return Math.sqrt(Math.pow(t2.clientX - t1.clientX, 2) + Math.pow(t2.clientY - t1.clientY, 2));
+  };
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (!showModal) return;
+    const ts = touchState.current;
+
+    if (e.touches.length === 2) {
+      // Pinch start
+      e.preventDefault();
+      ts.initialDistance = getTouchDistance(e.touches[0], e.touches[1]);
+      ts.initialZoom = zoom;
+      ts.lastTouchX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      ts.lastTouchY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+    } else if (e.touches.length === 1) {
+      // Double tap detection
+      const now = Date.now();
+      if (now - ts.lastTapTime < 300) {
+        // Double tap — zoom in or reset
+        if (zoom > 1.2) {
+          setZoom(1);
+          setPanX(0);
+          setPanY(0);
+        } else {
+          setZoom(2.5);
+          // Zoom toward tap position
+          const touch = e.touches[0];
+          const rect = (e.target as HTMLElement).getBoundingClientRect();
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          setPanX((centerX - touch.clientX + rect.left) * 0.5);
+          setPanY((centerY - touch.clientY + rect.top) * 0.5);
+        }
+        ts.lastTapTime = 0;
+      } else {
+        ts.lastTapTime = now;
+        // Pan start
+        ts.lastTouchX = e.touches[0].clientX;
+        ts.lastTouchY = e.touches[0].clientY;
+      }
+    }
+  }, [showModal, zoom]);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!showModal) return;
+    const ts = touchState.current;
+
+    if (e.touches.length === 2) {
+      // Pinch zoom
+      e.preventDefault();
+      const dist = getTouchDistance(e.touches[0], e.touches[1]);
+      const scale = dist / ts.initialDistance;
+      const newZoom = Math.max(0.25, Math.min(5, ts.initialZoom * scale));
+      setZoom(newZoom);
+
+      // Also pan during pinch
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      setPanX(p => p + (midX - ts.lastTouchX));
+      setPanY(p => p + (midY - ts.lastTouchY));
+      ts.lastTouchX = midX;
+      ts.lastTouchY = midY;
+    } else if (e.touches.length === 1 && zoom > 1.2) {
+      // Pan (only when zoomed in)
+      const dx = e.touches[0].clientX - ts.lastTouchX;
+      const dy = e.touches[0].clientY - ts.lastTouchY;
+      setPanX(p => p + dx);
+      setPanY(p => p + dy);
+      ts.lastTouchX = e.touches[0].clientX;
+      ts.lastTouchY = e.touches[0].clientY;
+    }
+  }, [showModal, zoom]);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (!showModal) return;
+    // Prevent default to avoid ghost clicks
+    e.preventDefault();
+  }, [showModal]);
+
   const handleZoom = useCallback(() => {
     setZoom(1);
     setPanX(0);
@@ -184,7 +273,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
           onClick={() => setShowModal(false)}
         >
           <div className="flex items-center justify-between px-6 py-3 border-b border-white/10 bg-slate-900/80 shrink-0">
-            <span className="text-sm text-slate-400">Mermaid 图表 — 滚轮缩放 · 拖拽平移 · +/- 键缩放 · 0 重置 · ESC 关闭</span>
+            <span className="text-sm text-slate-400">Mermaid 图表 — PC: 滚轮缩放/拖拽平移 · 手机: 双指缩放/双击放大/单指拖拽</span>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setZoom(z => Math.max(z - 0.25, 0.25))}
@@ -226,12 +315,15 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
 
           {/* Canvas */}
           <div
-            className="flex-1 overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing"
+            className="flex-1 overflow-hidden flex items-center justify-center touch-none"
             onWheel={handleWheel}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <div
               ref={zoomRef}
