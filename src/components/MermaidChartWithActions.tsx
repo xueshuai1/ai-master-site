@@ -131,6 +131,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
   }, [svgContent]);
 
   // Touch events for mobile pinch-to-zoom and pan
+  const containerRef = useRef<HTMLDivElement>(null);
   const touchState = useRef({
     initialDistance: 0,
     initialZoom: 1,
@@ -140,90 +141,96 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     isPinching: false,
   });
 
-  const getTouchDistance = (t1: React.Touch, t2: React.Touch) => {
+  const getTouchDistance = (t1: Touch, t2: Touch) => {
     return Math.sqrt(Math.pow(t2.clientX - t1.clientX, 2) + Math.pow(t2.clientY - t1.clientY, 2));
   };
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    if (!showModal) return;
+  // Use native touch events (not React synthetic) to properly handle preventDefault
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || !showModal) return;
+
     const ts = touchState.current;
 
-    if (e.touches.length === 2) {
-      e.preventDefault();
-      ts.initialDistance = getTouchDistance(e.touches[0], e.touches[1]);
-      ts.initialZoom = zoom;
-      ts.lastTouchX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-      ts.lastTouchY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-      ts.isPinching = true;
-    } else if (e.touches.length === 1 && !ts.isPinching) {
-      const now = Date.now();
-      if (now - ts.lastTapTime < 300) {
-        // Double tap — zoom in/out
-        if (zoom > 1.2) {
-          setZoom(1);
-          setPanX(0);
-          setPanY(0);
-        } else {
-          setZoom(2.5);
-        }
-        ts.lastTapTime = 0;
-      } else {
-        ts.lastTapTime = now;
-        ts.lastTouchX = e.touches[0].clientX;
-        ts.lastTouchY = e.touches[0].clientY;
-      }
-    }
-  }, [showModal, zoom]);
+    const onTouchStart = (e: TouchEvent) => {
+      const touches = e.touches;
 
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (!showModal) return;
-    const ts = touchState.current;
-
-    if (e.touches.length === 2) {
-      e.preventDefault();
-      const dist = getTouchDistance(e.touches[0], e.touches[1]);
-      const scale = dist / ts.initialDistance;
-      const newZoom = Math.max(0.25, Math.min(5, ts.initialZoom * scale));
-      setZoom(newZoom);
-
-      // Pan during pinch — move delta directly (no zoom multiplier needed for pinch)
-      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-      setPanX(p => p + (midX - ts.lastTouchX));
-      setPanY(p => p + (midY - ts.lastTouchY));
-      ts.lastTouchX = midX;
-      ts.lastTouchY = midY;
-    } else if (e.touches.length === 1 && !ts.isPinching) {
-      // Single finger pan
-      const dx = e.touches[0].clientX - ts.lastTouchX;
-      const dy = e.touches[0].clientY - ts.lastTouchY;
-      // Only pan if moved more than 5px (avoid conflict with double-tap)
-      if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
-        e.preventDefault();
-        // Move at 1:1 ratio for natural feel
-        setPanX(p => p + dx);
-        setPanY(p => p + dy);
-        ts.lastTouchX = e.touches[0].clientX;
-        ts.lastTouchY = e.touches[0].clientY;
-      }
-    }
-  }, [showModal]);
-
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    if (!showModal) return;
-    const ts = touchState.current;
-    if (e.touches.length < 2) {
-      ts.isPinching = false;
-      // Reset pinch baseline when going from 2 fingers to 1
-      if (e.touches.length === 1) {
+      if (touches.length === 2) {
+        ts.initialDistance = getTouchDistance(touches[0], touches[1]);
         ts.initialZoom = zoom;
-        ts.lastTouchX = e.touches[0].clientX;
-        ts.lastTouchY = e.touches[0].clientY;
+        ts.lastTouchX = (touches[0].clientX + touches[1].clientX) / 2;
+        ts.lastTouchY = (touches[0].clientY + touches[1].clientY) / 2;
+        ts.isPinching = true;
+      } else if (touches.length === 1 && !ts.isPinching) {
+        const now = Date.now();
+        if (now - ts.lastTapTime < 300) {
+          // Double tap — zoom in/out
+          if (zoom > 1.2) {
+            setZoom(1);
+            setPanX(0);
+            setPanY(0);
+          } else {
+            setZoom(2.5);
+          }
+          ts.lastTapTime = 0;
+        } else {
+          ts.lastTapTime = now;
+          ts.lastTouchX = touches[0].clientX;
+          ts.lastTouchY = touches[0].clientY;
+        }
       }
-    }
-    if (e.touches.length === 0) {
-      e.preventDefault();
-    }
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const touches = e.touches;
+
+      if (touches.length === 2) {
+        e.preventDefault();
+        const dist = getTouchDistance(touches[0], touches[1]);
+        const scale = dist / ts.initialDistance;
+        const newZoom = Math.max(0.25, Math.min(5, ts.initialZoom * scale));
+        setZoom(newZoom);
+
+        const midX = (touches[0].clientX + touches[1].clientX) / 2;
+        const midY = (touches[0].clientY + touches[1].clientY) / 2;
+        setPanX(p => p + (midX - ts.lastTouchX));
+        setPanY(p => p + (midY - ts.lastTouchY));
+        ts.lastTouchX = midX;
+        ts.lastTouchY = midY;
+      } else if (touches.length === 1 && !ts.isPinching) {
+        const dx = touches[0].clientX - ts.lastTouchX;
+        const dy = touches[0].clientY - ts.lastTouchY;
+        if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
+          e.preventDefault();
+          setPanX(p => p + dx);
+          setPanY(p => p + dy);
+          ts.lastTouchX = touches[0].clientX;
+          ts.lastTouchY = touches[0].clientY;
+        }
+      }
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      const touches = e.touches;
+      if (touches.length < 2) {
+        ts.isPinching = false;
+        if (touches.length === 1) {
+          ts.initialZoom = zoom;
+          ts.lastTouchX = touches[0].clientX;
+          ts.lastTouchY = touches[0].clientY;
+        }
+      }
+    };
+
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    el.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    return () => {
+      el.removeEventListener('touchstart', onTouchStart);
+      el.removeEventListener('touchmove', onTouchMove);
+      el.removeEventListener('touchend', onTouchEnd);
+    };
   }, [showModal, zoom]);
 
   const handleZoom = useCallback(() => {
@@ -322,15 +329,14 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
 
           {/* Canvas */}
           <div
-            className="flex-1 overflow-hidden flex items-center justify-center touch-none"
+            ref={containerRef}
+            className="flex-1 overflow-hidden flex items-center justify-center"
+            style={{ touchAction: 'none' }}
             onWheel={handleWheel}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
           >
             <div
               ref={zoomRef}
