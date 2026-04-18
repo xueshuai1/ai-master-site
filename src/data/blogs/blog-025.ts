@@ -1,28 +1,38 @@
-import type { BlogPost } from './blog-types';
-export const blog: BlogPost = {
-    id: "blog-025",
-    title: "OIDA 框架：为什么组织 AI 不能只靠 RAG——认知基础设施的崛起",
-    summary:
-      "arXiv 2026 年 4 月的新论文提出 OIDA 框架，直指当前企业 AI 的核心痛点：RAG 系统能找到'相关'内容，但无法区分已定决策与废弃假设、争议观点与共识事实。论文引入'知识重力引擎'和'无知建模'机制，证明了组织 AI 的天花板不是检索保真度，而是认知保真度。这是企业知识库从'文档存储'向'认知基础设施'演进的关键一步。",
-    content: `
-## 引言：当 AI 无法分辨"已定决策"和"废弃假设"
+import { BlogPost, ArticleSection } from './blog-types';
 
-2026 年 4 月 14 日，arXiv 发表了一篇引人深思的论文：**"Retrieval Is Not Enough: Why Organizational AI Needs Epistemic Infrastructure"**（arXiv:2604.11759）。这篇论文提出了一个看似简单却极其关键的问题：
+const content: ArticleSection[] = [
+  {
+    title: "引言：当 AI 无法分辨\"已定决策\"和\"废弃假设\"",
+    body: `2026 年 4 月 14 日，arXiv 发表了一篇引人深思的论文：**"Retrieval Is Not Enough: Why Organizational AI Needs Epistemic Infrastructure"**（arXiv:2604.11759）。这篇论文提出了一个看似简单却极其关键的问题：
 
 **当 AI Agent 在企业知识库中检索信息时，它能否分辨哪些是已经做出的决策、哪些是被否定的方案、哪些是仍在争论中的议题？**
 
 答案令人不安：**不能。**
 
-当前的 RAG 系统只能找到"语义相关"的内容，却无法理解这些内容的**认知状态**。对于一个需要基于组织知识做出决策的 AI Agent 来说，这不仅是效率问题，更是根本性的能力缺陷。
-
-## 背景：RAG 的认知盲区
-
-### RAG vs OIDA：架构对比
+当前的 RAG 系统只能找到"语义相关"的内容，却无法理解这些内容的**认知状态**。对于一个需要基于组织知识做出决策的 AI Agent 来说，这不仅是效率问题，更是根本性的能力缺陷。`,
+  },
+  {
+    title: "背景：RAG 的认知盲区",
+    body: `### RAG vs OIDA：架构对比
 
 传统 RAG 和 OIDA 框架在知识处理流程上有着根本性的差异。下图展示了两者的核心架构对比：
 
-\`\`\`mermaid
-graph TD
+OIDA 在传统 RAG 的基础上增加了**认知状态过滤**、**知识重力引擎**和**无知建模**三个关键层，从根本上解决了 RAG 的认知盲区问题。
+
+### RAG 的三大认知盲区
+
+**盲区一：无法区分认知状态**
+
+组织知识中，不同类型的信息具有完全不同的认知地位：已定决策、废弃假设、争议观点、已知事实、未解问题。RAG 系统对所有这些信息一视同仁——只要语义相关就检索出来。但这对决策来说可能是灾难性的。
+
+**盲区二：无法识别矛盾**
+
+组织知识中经常存在矛盾信息。RAG 系统无法识别和处理这些矛盾，可能同时给出互相冲突的建议。
+
+**盲区三：不知道组织"不知道"什么**
+
+RAG 只能检索"已有的知识"，但无法识别"组织还不知道什么"。而后者——认知盲区——往往比已有知识更有价值。`,
+    mermaid: `graph TD
     subgraph Traditional_RAG ["传统 RAG 架构"]
         A1[用户查询] --> B1[向量检索]
         B1 --> C1[语义相似度匹配]
@@ -45,28 +55,11 @@ graph TD
     end
 
     classDef rag fill:#ffcccc,stroke:#ff6666,stroke-width:2px;
-    classDef oida fill:#ccffcc,stroke:#66ff66,stroke-width:2px;
-\`\`\`
-
-OIDA 在传统 RAG 的基础上增加了**认知状态过滤**、**知识重力引擎**和**无知建模**三个关键层，从根本上解决了 RAG 的认知盲区问题。
-
-### RAG 的三大认知盲区
-
-**盲区一：无法区分认知状态**
-
-组织知识中，不同类型的信息具有完全不同的认知地位：已定决策、废弃假设、争议观点、已知事实、未解问题。RAG 系统对所有这些信息一视同仁——只要语义相关就检索出来。但这对决策来说可能是灾难性的。
-
-**盲区二：无法识别矛盾**
-
-组织知识中经常存在矛盾信息。RAG 系统无法识别和处理这些矛盾，可能同时给出互相冲突的建议。
-
-**盲区三：不知道组织"不知道"什么**
-
-RAG 只能检索"已有的知识"，但无法识别"组织还不知道什么"。而后者——认知盲区——往往比已有知识更有价值。
-
-## OIDA 框架的四大创新
-
-### 创新一：知识对象（Knowledge Objects）
+    classDef oida fill:#ccffcc,stroke:#66ff66,stroke-width:2px;`,
+  },
+  {
+    title: "OIDA 框架的四大创新",
+    body: `### 创新一：知识对象（Knowledge Objects）
 
 OIDA 将组织知识结构化为类型化的知识对象，每个对象携带：
 - **认知类别**：事实、决策、假设、问题
@@ -75,25 +68,6 @@ OIDA 将组织知识结构化为类型化的知识对象，每个对象携带：
 - **带符号的矛盾边**：标记知识对象之间的矛盾关系
 
 知识对象之间的关系网络构成了组织认知的骨架。下图展示了知识对象之间的连接与矛盾关系：
-
-\`\`\`mermaid
-graph LR
-    F1["事实: Q2营收增长15%"]:::fact
-    D1["决策: 采用微服务架构"]:::decision
-    H1["假设: 用户需求将持续增长"]:::hypothesis
-    Q1["问题: 如何降低云成本?"]:::question
-
-    F1 -->|支持| D1
-    H1 -->|支持| D1
-    D1 -.->|矛盾| H2["废弃假设: 单体架构足够"]
-    F1 -->|支持| Q1
-    H1 -.->|矛盾| F2["事实: 市场需求趋于平稳"]
-
-    classDef fact fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
-    classDef decision fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
-    classDef hypothesis fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
-    classDef question fill:#fce4ec,stroke:#c2185b,stroke-width:2px;
-\`\`\`
 
 知识对象之间不仅有**支持关系**（实线），还有**矛盾关系**（虚线），这使得 OIDA 能够主动识别和处理组织知识中的冲突。
 
@@ -113,50 +87,45 @@ graph LR
 
 无知建模的核心逻辑可以用以下状态机来理解：
 
-\`\`\`mermaid
-stateDiagram-v2
-    [*] --> NewQuestion: 发现未知领域
-    NewQuestion --> Aging: 时间推移
-    Aging --> Escalated: 超过阈值(30天)
-    Escalated --> Critical: 超过临界值(90天)
-    Critical --> Answered: 问题被解答
-    Answered --> KnowledgeObject: 转化为知识
-    Escalated --> Answered
-    Aging --> Answered
-
-    note right of NewQuestion
-        初始重要性较低
-        但逆衰减开始
-    end note
-    note right of Critical
-        重要性达到峰值
-        需要优先处理
-    end note
-    note right of KnowledgeObject
-        无知转化为
-        结构化知识
-    end note
-\`\`\`
-
 这种机制确保组织不会"忘记自己不知道什么"——这正是传统知识管理系统最大的漏洞。
 
 ### 创新四：认知质量评分（EQS）
 
-五组件评估体系：完整性、一致性、时效性、可追溯性、循环性分析。
+五组件评估体系：完整性、一致性、时效性、可追溯性、循环性分析。`,
+    mermaid: `graph LR
+    F1["事实: Q2营收增长15%"]:::fact
+    D1["决策: 采用微服务架构"]:::decision
+    H1["假设: 用户需求将持续增长"]:::hypothesis
+    Q1["问题: 如何降低云成本?"]:::question
 
-## 实验验证
+    F1 -->|支持| D1
+    H1 -->|支持| D1
+    D1 -.->|矛盾| H2["废弃假设: 单体架构足够"]
+    F1 -->|支持| Q1
+    H1 -.->|矛盾| F2["事实: 市场需求趋于平稳"]
 
-| 条件 | Token 数量 | EQS 评分 |
-|------|-----------|----------|
-| OIDA RAG | 3,868 | 0.530 |
-| 全量上下文 | 108,687 | 0.848 |
+    classDef fact fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+    classDef decision fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef hypothesis fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    classDef question fill:#fce4ec,stroke:#c2185b,stroke-width:2px;`,
+    code: [],
+  },
+  {
+    title: "实验验证",
+    body: `为了更直观地理解 OIDA 框架的工作原理，以下是核心组件的 Python 实现示例。
 
-为了更直观地理解 OIDA 框架的工作原理，以下是核心组件的 Python 实现示例。
-
-### Python 示例 1：知识对象与重力引擎
-
-\`\`\`python
-from dataclasses import dataclass, field
+### Python 示例 1：知识对象与重力引擎`,
+    table: {
+      headers: ["条件", "Token 数量", "EQS 评分"],
+      rows: [
+        ["OIDA RAG", "3,868", "0.530"],
+        ["全量上下文", "108,687", "0.848"],
+      ],
+    },
+    code: [
+      {
+        lang: "python",
+        code: `from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional
 import math
@@ -253,13 +222,11 @@ for oid, obj in engine.objects.items():
 # 输出:
 # f1 [fact]: importance=0.527
 # d1 [decision]: importance=0.521
-# q1 [question]: importance=0.576 (逆衰减使其上升!)
-\`\`\`
-
-### Python 示例 2：认知质量评分（EQS）
-
-\`\`\`python
-class EpistemicQualityScorer:
+# q1 [question]: importance=0.576 (逆衰减使其上升!)`,
+      },
+      {
+        lang: "python",
+        code: `class EpistemicQualityScorer:
     """五组件 EQS 评估体系"""
 
     @staticmethod
@@ -352,21 +319,18 @@ objects["q1"].links = ["f1"]
 
 eqs = EpistemicQualityScorer.calculate_eqs(objects)
 print(f"EQS Score: {eqs:.3f}")
-# 输出: EQS Score: 0.640
-\`\`\`
-
-OIDA 仅用了 **1/28** 的 Token 预算就达到了有意义的认知质量。QUESTION 机制的 Fisher 检验 p=0.0325，OR=21.0。
-
-OIDA 仅用了 **1/28** 的 Token 预算就达到了有意义的认知质量。QUESTION 机制的 Fisher 检验 p=0.0325，OR=21.0。
-
-## 对行业的影响
+# 输出: EQS Score: 0.640`,
+      },
+    ],
+  },
+  {
+    title: "对行业的影响",
+    body: `OIDA 仅用了 **1/28** 的 Token 预算就达到了有意义的认知质量。QUESTION 机制的 Fisher 检验 p=0.0325，OR=21.0。
 
 OIDA 预示着企业知识管理的范式转变：从"文档存储库"走向"认知基础设施"。对 AI Agent 部署的关键洞察：**Agent 的能力上限不是模型大小或检索精度，而是组织知识的认知结构质量。**
 
-下图总结了 OIDA 框架的整体工作流程：
-
-\`\`\`mermaid
-flowchart LR
+下图总结了 OIDA 框架的整体工作流程：`,
+    mermaid: `flowchart LR
     A[组织知识库] --> B[知识对象化]
     B --> C[知识重力引擎]
     C --> D{认知状态分类}
@@ -390,19 +354,27 @@ flowchart LR
     style C fill:#bbdefb,stroke:#1976d2,stroke-width:3px
     style I fill:#ffcdd2,stroke:#d32f2f,stroke-width:3px
     style J fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
-    style N fill:#fff9c4,stroke:#f9a825,stroke-width:2px
-\`\`\`
-
-## 个人观点
-
-这篇论文揭示了一个 AI 行业普遍忽视的问题：我们一直在花大价钱优化模型和检索算法，却很少关注组织知识本身的结构质量。这就像在破旧的公路上跑法拉利——引擎再强，路况不好也跑不快。
+    style N fill:#fff9c4,stroke:#f9a825,stroke-width:2px`,
+  },
+  {
+    title: "个人观点",
+    body: `这篇论文揭示了一个 AI 行业普遍忽视的问题：我们一直在花大价钱优化模型和检索算法，却很少关注组织知识本身的结构质量。这就像在破旧的公路上跑法拉利——引擎再强，路况不好也跑不快。
 
 ---
 
 *论文来源：arXiv:2604.11759, April 14, 2026*
 *关键词：OIDA、认知基础设施、知识管理、RAG、企业 AI*`,
-    date: "2026-04-14",
-    author: "AI Master",
-    tags: ["OIDA", "认知基础设施", "知识管理", "RAG", "企业 AI", "arXiv 2026"],
-    readTime: 12,
-  };
+  },
+];
+
+export const blog: BlogPost = {
+  id: "blog-025",
+  title: "OIDA 框架：为什么组织 AI 不能只靠 RAG——认知基础设施的崛起",
+  date: "2026-04-14",
+  readTime: 12,
+  summary:
+    "arXiv 2026 年 4 月的新论文提出 OIDA 框架，直指当前企业 AI 的核心痛点：RAG 系统能找到'相关'内容，但无法区分已定决策与废弃假设、争议观点与共识事实。论文引入'知识重力引擎'和'无知建模'机制，证明了组织 AI 的天花板不是检索保真度，而是认知保真度。这是企业知识库从'文档存储'向'认知基础设施'演进的关键一步。",
+  tags: ["OIDA", "认知基础设施", "知识管理", "RAG", "企业 AI", "arXiv 2026"],
+  author: "AI Master",
+  content,
+};

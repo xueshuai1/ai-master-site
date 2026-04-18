@@ -1,23 +1,23 @@
-import type { BlogPost } from './blog-types';
+import { BlogPost, ArticleSection } from './blog-types';
+
 export const blog: BlogPost = {
-    id: "blog-024",
-    title: "AI 安全攻防战 2026：从 Mythos 到 CrowdStrike，AI 如何重塑网络安全格局",
-    summary: "2026 年 4 月，AI 安全领域迎来多重转折：Anthropic 发布强大到不能公开的 Mythos 模型，联合 40+ 科技巨头启动 Glasswing 防御计划；CrowdStrike 报告揭示 AI 正在加速网络攻击，朝鲜黑客完成史上最大加密货币盗窃；MIT 研究揭示 LLM 有害内容的统一内在机制。AI 安全已从理论问题升级为紧迫的现实挑战。",
-    content: `
-## 引言：AI 安全的分水岭时刻
-
-2026 年 4 月，AI 安全领域同时发生多起重磅事件，标志着这个行业正在经历从"理论讨论"到"实战应对"的根本性转变。当最顶尖的 AI 公司开始认为自己的模型"太危险而不能公开发布"时，我们知道游戏规则已经改变了。
-
-## 一、Anthropic Mythos：强大到不能公开的 AI 模型
-
-### 事件概述
+  id: "blog-024",
+  title: "AI 安全攻防战 2026：从 Mythos 到 CrowdStrike，AI 如何重塑网络安全格局",
+  date: "2026-04-14",
+  readTime: 18,
+  summary: "2026 年 4 月，AI 安全领域迎来多重转折：Anthropic 发布强大到不能公开的 Mythos 模型，联合 40+ 科技巨头启动 Glasswing 防御计划；CrowdStrike 报告揭示 AI 正在加速网络攻击，朝鲜黑客完成史上最大加密货币盗窃；MIT 研究揭示 LLM 有害内容的统一内在机制。AI 安全已从理论问题升级为紧迫的现实挑战。",
+  tags: ["AI 安全", "Mythos", "Glasswing", "CrowdStrike", "网络攻防", "LLM 安全", "漏洞发现"],
+  author: "AI Master",
+  content: [
+    {
+      title: "引言：AI 安全的分水岭时刻",
+      body: `2026 年 4 月，AI 安全领域同时发生多起重磅事件，标志着这个行业正在经历从"理论讨论"到"实战应对"的根本性转变。当最顶尖的 AI 公司开始认为自己的模型"太危险而不能公开发布"时，我们知道游戏规则已经改变了。`,
+    },
+    {
+      title: "一、Anthropic Mythos：强大到不能公开的 AI 模型",
+      body: `### 事件概述
 
 2026 年 4 月 7 日，Anthropic 正式发布了 **Claude Mythos Preview**——该公司有史以来最强大的 AI 模型。但这个模型的发布方式前所未有：
-
-- **不公开发布**：Mythos 被证明"过于强大"，仅限受限访问
-- **Glasswing 网络安全计划**：联合 Apple、Amazon、Microsoft、Google、Nvidia 等 40+ 家科技巨头
-- **自主发现数千个高危漏洞**：涵盖所有主流操作系统和 Web 浏览器
-- **17 年历史的 FreeBSD 远程代码执行漏洞**：Mythos 自主发现并编写了完整利用代码
 
 ### 为什么这很重要
 
@@ -30,16 +30,15 @@ Mythos 的能力揭示了一个令人不安的现实：
 ### Glasswing 联盟的战略意义
 
 Glasswing 计划的独特之处在于它的**协作防御**模式：
-- 40+ 家公司共享 Mythos 发现的漏洞信息
-- 联合修复关键基础设施中的安全隐患
-- 建立行业级的 AI 辅助安全标准
 
-这与传统的"各自为战"的安全模式形成鲜明对比，代表了 AI 时代安全协作的新范式。
-
-### Glasswing 联盟协作架构
-
-\`\`\`mermaid
-graph TB
+这与传统的"各自为战"的安全模式形成鲜明对比，代表了 AI 时代安全协作的新范式。`,
+      list: [
+        "**不公开发布**：Mythos 被证明\"过于强大\"，仅限受限访问",
+        "**Glasswing 网络安全计划**：联合 Apple、Amazon、Microsoft、Google、Nvidia 等 40+ 家科技巨头",
+        "**自主发现数千个高危漏洞**：涵盖所有主流操作系统和 Web 浏览器",
+        "**17 年历史的 FreeBSD 远程代码执行漏洞**：Mythos 自主发现并编写了完整利用代码",
+      ],
+      mermaid: `graph TB
     subgraph Anthropic
         M[Claude Mythos Preview]
     end
@@ -68,15 +67,10 @@ graph TB
     Am -->|协同修复| R
     Mi -->|协同修复| R
     G -->|协同修复| R
-    R -->|标准化| S
-\`\`\`
-
-### 漏洞发现自动化示例
-
-以下是模拟 AI 辅助漏洞扫描的 Python 示例，展示自动化安全评估的工作流程：
-
-\`\`\`python
-import hashlib
+    R -->|标准化| S`,
+      code: [{
+        lang: "python",
+        code: `import hashlib
 from dataclasses import dataclass, field
 from typing import List, Optional
 from datetime import datetime
@@ -158,42 +152,42 @@ if __name__ == "__main__":
         print(f"[{target}] 发现 {len(vulns)} 个漏洞")
 
     report = scanner.generate_report()
-    print(f"\n总报告: {report}")
-\`\`\`
-
-## 二、CrowdStrike 2026 威胁报告：AI 加速的网络攻击
-
-### 核心发现
+    print(f"\\n总报告: {report}")`,
+      }],
+    },
+    {
+      title: "二、CrowdStrike 2026 威胁报告：AI 加速的网络攻击",
+      body: `### 核心发现
 
 CrowdStrike 发布的 2026 全球威胁报告揭示了 AI 如何改变网络攻击的格局：
 
 **攻击方 AI 应用：**
-- **PUNK SPIDER** 使用 AI 生成脚本加速凭证转储和擦除取证证据
-- **FAMOUS CHOLLIMA（朝鲜黑客组织）** 利用 AI 生成身份进行内部渗透操作
-- AI 辅助的**深度伪造**和**自动化渗透工具**正在普及
 
 **重大事件：**
-- **14.6 亿美元加密货币盗窃**——史上最大单笔金融抢劫案
-- 朝鲜黑客组织利用 AI 绕过传统安全检测
-- 网络攻击的复杂性和速度都在指数级增长
 
 ### 攻防双刃剑
 
 当 Anthropic 的 Mythos 在防御端自主发现数千漏洞的同时，攻击者也在利用 AI：
 
-| 维度 | 防御方（Mythos/Glasswing） | 攻击方（黑客组织） |
-|------|--------------------------|-------------------|
-| AI 应用 | 自主漏洞扫描、安全加固 | AI 生成攻击脚本、身份伪造 |
-| 目标 | 保护关键基础设施 | 窃取数据、金融攻击 |
-| 规模 | 40+ 科技巨头联盟 | 国家级黑客组织 |
-| 影响 | 预防性、系统性 | 针对性、高价值 |
-
-这是一场**AI 对 AI 的军备竞赛**。
-
-### AI 攻防对抗流程图
-
-\`\`\`mermaid
-sequenceDiagram
+这是一场**AI 对 AI 的军备竞赛**。`,
+      list: [
+        "**PUNK SPIDER** 使用 AI 生成脚本加速凭证转储和擦除取证证据",
+        "**FAMOUS CHOLLIMA（朝鲜黑客组织）** 利用 AI 生成身份进行内部渗透操作",
+        "AI 辅助的**深度伪造**和**自动化渗透工具**正在普及",
+        "**14.6 亿美元加密货币盗窃**——史上最大单笔金融抢劫案",
+        "朝鲜黑客组织利用 AI 绕过传统安全检测",
+        "网络攻击的复杂性和速度都在指数级增长",
+      ],
+      table: {
+        headers: ["维度", "防御方（Mythos/Glasswing）", "攻击方（黑客组织）"],
+        rows: [
+          ["AI 应用", "自主漏洞扫描、安全加固", "AI 生成攻击脚本、身份伪造"],
+          ["目标", "保护关键基础设施", "窃取数据、金融攻击"],
+          ["规模", "40+ 科技巨头联盟", "国家级黑客组织"],
+          ["影响", "预防性、系统性", "针对性、高价值"],
+        ],
+      },
+      mermaid: `sequenceDiagram
     participant D as 防御方 AI (Mythos)
     participant S as 安全基础设施
     participant A as 攻击方 AI (黑客)
@@ -212,32 +206,28 @@ sequenceDiagram
     D->>S: 更新防御规则
     Note over A,T: 攻击循环
 
-    Note over D,A: AI vs AI 军备竞赛持续升级
-\`\`\`
-
-## 三、MIT 研究：LLM 有害内容的统一内在机制
-
-### 突破性发现
+    Note over D,A: AI vs AI 军备竞赛持续升级`,
+    },
+    {
+      title: "三、MIT 研究：LLM 有害内容的统一内在机制",
+      body: `### 突破性发现
 
 2026 年 4 月 10 日，arXiv 发表了论文"Large Language Models Generate Harmful Content Using a Distinct, Unified Mechanism"（arXiv:2604.09544），揭示了 LLM 安全的一个根本性问题：
 
 **核心发现：**
-- LLM 生成有害内容依赖于一个**紧凑的、跨所有有害类型通用的权重子集**
-- 有害能力与正常能力是**分离的**——理论上可以针对性处理
-- 对齐训练会**压缩**有害权重（而非消除），这解释了为什么微调攻击如此有效
 
 ### 安全意义
 
-这项研究为 AI 安全提供了全新的技术路径：
-
-1. **从"行为安全"到"结构安全"**：不再只关注模型输出了什么，而是理解内部结构
-2. **权重级安全分析**：通过目标性剪枝降低有害性，不影响正常能力
-3. **微调安全的新认知**：任何微调都可能触及有害能力权重，需要重新评估
-
-### LLM 有害内容生成机制示意
-
-\`\`\`mermaid
-graph LR
+这项研究为 AI 安全提供了全新的技术路径：`,
+      list: [
+        "LLM 生成有害内容依赖于一个**紧凑的、跨所有有害类型通用的权重子集**",
+        "有害能力与正常能力是**分离的**——理论上可以针对性处理",
+        "对齐训练会**压缩**有害权重（而非消除），这解释了为什么微调攻击如此有效",
+        "**从\"行为安全\"到\"结构安全\"**：不再只关注模型输出了什么，而是理解内部结构",
+        "**权重级安全分析**：通过目标性剪枝降低有害性，不影响正常能力",
+        "**微调安全的新认知**：任何微调都可能触及有害能力权重，需要重新评估",
+      ],
+      mermaid: `graph LR
     subgraph 正常能力
         N1[语言理解]
         N2[知识推理]
@@ -267,32 +257,28 @@ graph LR
     style H1 fill:#ff6b6b
     style H2 fill:#ff6b6b
     style H3 fill:#ff6b6b
-    style A fill:#4ecdc4
-\`\`\`
-
-## 四、伊朗黑客攻击：地缘政治与数字战争
-
-### 事件概述
+    style A fill:#4ecdc4`,
+    },
+    {
+      title: "四、伊朗黑客攻击：地缘政治与数字战争",
+      body: `### 事件概述
 
 Ars Technica 报道，伊朗-linked 黑客组织正在破坏美国关键基础设施运营：
 
-- 攻击手法结合了**AI 辅助工具**和传统黑客技术
-- 这是**地缘政治紧张局势**在数字空间的直接体现
-- LinkedIn 因浏览器扩展扫描行为面临两起诉讼
-
 ### 更大的图景
 
-网络安全正在从单纯的技术问题升级为**地缘政治问题**：
-- 国家级 AI 攻防能力成为战略资产
-- 关键基础设施（电网、水利、交通）成为主要目标
-- AI 既被用于防御（Mythos），也被用于攻击（伊朗黑客）
-
-### AI 威胁分析工具示例
-
-以下 Python 代码演示如何对威胁情报数据进行基础分析，帮助安全团队快速评估威胁等级：
-
-\`\`\`python
-import json
+网络安全正在从单纯的技术问题升级为**地缘政治问题**：`,
+      list: [
+        "攻击手法结合了**AI 辅助工具**和传统黑客技术",
+        "这是**地缘政治紧张局势**在数字空间的直接体现",
+        "LinkedIn 因浏览器扩展扫描行为面临两起诉讼",
+        "国家级 AI 攻防能力成为战略资产",
+        "关键基础设施（电网、水利、交通）成为主要目标",
+        "AI 既被用于防御（Mythos），也被用于攻击（伊朗黑客）",
+      ],
+      code: [{
+        lang: "python",
+        code: `import json
 from enum import Enum
 from dataclasses import dataclass, asdict
 from datetime import datetime
@@ -353,7 +339,7 @@ def analyze_threats(events: list[ThreatEvent]) -> dict:
     return {
         "total_events": len(events),
         "ai_assisted_ratio": f"{ai_assisted_count}/{len(events)}",
-        "total_financial_impact": f"\${total_financial:,}",
+        "total_financial_impact": f"$\\{total_financial:,}",
         "top_actors": dict(actors.most_common()),
         "top_attack_types": dict(attack_types.most_common()),
         "assessment": "AI辅助攻击占比过高，需加强防御",
@@ -363,23 +349,38 @@ def analyze_threats(events: list[ThreatEvent]) -> dict:
 # === 运行分析 ===
 if __name__ == "__main__":
     result = analyze_threats(THREAT_DATABASE)
-    print(json.dumps(result, indent=2, ensure_ascii=False))
-\`\`\`
+    print(json.dumps(result, indent=2, ensure_ascii=False))`,
+      }],
+    },
+    {
+      title: "五、2026 AI 安全趋势总结",
+      body: `### 五大趋势
 
-## 五、2026 AI 安全趋势总结
+### 给开发者的建议
 
-### 五大趋势
+**如果你在使用 AI 编程工具：**
 
-1. **AI 能力超越人类安全研究员**：Mythos 证明了 AI 在漏洞发现方面已经超越人类
-2. **攻防双方都在武装 AI**：不再是"AI vs 人类"，而是"AI vs AI"
-3. **安全从个人行为到联盟协作**：Glasswing 代表新的安全协作模式
-4. **内部结构安全成为新前沿**：MIT 研究揭示了模型内部安全的可干预性
-5. **地缘政治数字化**：网络安全成为国家战略的核心组成部分
+**如果你在构建 AI 应用：**
 
-### 2026 AI 安全趋势雷达图
-
-\`\`\`mermaid
-quadrantChart
+**如果你关注 AI 安全职业：**`,
+      list: [
+        "**AI 能力超越人类安全研究员**：Mythos 证明了 AI 在漏洞发现方面已经超越人类",
+        "**攻防双方都在武装 AI**：不再是\"AI vs 人类\"，而是\"AI vs AI\"",
+        "**安全从个人行为到联盟协作**：Glasswing 代表新的安全协作模式",
+        "**内部结构安全成为新前沿**：MIT 研究揭示了模型内部安全的可干预性",
+        "**地缘政治数字化**：网络安全成为国家战略的核心组成部分",
+        "92% 的开发者使用 AI 编程，但 45% 的 AI 生成代码含安全漏洞",
+        "审查 AI 生成的代码，特别关注输入验证、权限控制和加密实现",
+        "使用 CodeRabbit 等 AI 代码审查工具进行二次检查",
+        "实施 Prompt 注入防护",
+        "工具调用实施最小权限原则",
+        "监控异常使用模式",
+        "定期进行安全评估和渗透测试",
+        "AI 安全正在成为最热门的安全子领域",
+        "掌握 LLM 内部机制分析（权重级安全）将是核心竞争力",
+        "Glasswing 类项目可能创造大量新岗位",
+      ],
+      mermaid: `quadrantChart
     title AI 安全威胁 vs 应对能力矩阵
     x-axis "低威胁" --> "高威胁"
     y-axis "弱应对" --> "强应对"
@@ -390,28 +391,10 @@ quadrantChart
     "AI 辅助漏洞发现": [0.80, 0.85]
     "Glasswing 协作防御": [0.40, 0.90]
     "MIT 权重级安全": [0.30, 0.75]
-    "LLM 对齐防护": [0.60, 0.60]
-\`\`\`
-
-### 给开发者的建议
-
-**如果你在使用 AI 编程工具：**
-- 92% 的开发者使用 AI 编程，但 45% 的 AI 生成代码含安全漏洞
-- 审查 AI 生成的代码，特别关注输入验证、权限控制和加密实现
-- 使用 CodeRabbit 等 AI 代码审查工具进行二次检查
-
-**如果你在构建 AI 应用：**
-- 实施 Prompt 注入防护
-- 工具调用实施最小权限原则
-- 监控异常使用模式
-- 定期进行安全评估和渗透测试
-
-### Prompt 注入防护示例
-
-以下 Python 代码展示一个基础的 Prompt 注入检测和防护层：
-
-\`\`\`python
-import re
+    "LLM 对齐防护": [0.60, 0.60]`,
+      code: [{
+        lang: "python",
+        code: `import re
 from dataclasses import dataclass
 
 
@@ -423,11 +406,11 @@ class SecurityResult:
 
 
 PROMPT_INJECTION_PATTERNS = [
-    (r"(?i)(ignore\s+(all\s+)?(previous|above))", "忽略指令"),
-    (r"(?i)(system\s*(prompt|instruction)\s*[:=])", "系统提示泄露"),
-    (r"(?i)(you\s+are\s+now|pretend\s+to\s+be|act\s+as)", "角色覆盖"),
-    (r"(?i)(output\s*(the|your)\s*(raw|full|complete))", "原始输出提取"),
-    (r"(?i)(bypass|override|disable)\s+(security|safety|filter)", "安全绕过"),
+    (r"(?i)(ignore\\s+(all\\s+)?(previous|above))", "忽略指令"),
+    (r"(?i)(system\\s*(prompt|instruction)\\s*[:=])", "系统提示泄露"),
+    (r"(?i)(you\\s+are\\s+now|pretend\\s+to\\s+be|act\\s+as)", "角色覆盖"),
+    (r"(?i)(output\\s*(the|your)\\s*(raw|full|complete))", "原始输出提取"),
+    (r"(?i)(bypass|override|disable)\\s+(security|safety|filter)", "安全绕过"),
 ]
 
 
@@ -457,21 +440,16 @@ if __name__ == "__main__":
 
     for inp in test_inputs:
         result = check_prompt_injection(inp)
-        status = "\u2705 安全" if result.is_safe else f"\u26a0\ufe0f {result.risk_level}"
+        status = "\\u2705 安全" if result.is_safe else f"\\u26a0\\ufe0f {result.risk_level}"
         print(f"[{status}] {inp[:60]}...")
         if result.flagged_patterns:
             print(f"   触发: {', '.join(result.flagged_patterns)}")
-        print()
-\`\`\`
-
-**如果你关注 AI 安全职业：**
-- AI 安全正在成为最热门的安全子领域
-- 掌握 LLM 内部机制分析（权重级安全）将是核心竞争力
-- Glasswing 类项目可能创造大量新岗位
-
-## 结语：AI 安全的新纪元
-
-2026 年 4 月的这些事件共同描绘了一个清晰的图景：**AI 安全不再是 AI 发展的"副产品"，而是 AI 发展的核心驱动力之一。**
+        print()`,
+      }],
+    },
+    {
+      title: "结语：AI 安全的新纪元",
+      body: `2026 年 4 月的这些事件共同描绘了一个清晰的图景：**AI 安全不再是 AI 发展的"副产品"，而是 AI 发展的核心驱动力之一。**
 
 当 Anthropic 选择限制 Mythos 的访问，当 CrowdStrike 警告 AI 加速攻击，当 MIT 揭示 LLM 的有害机制——这些都在传递同一个信号：我们进入了 AI 安全的新纪元。
 
@@ -483,8 +461,6 @@ if __name__ == "__main__":
 
 *事件来源：Anthropic 官方博客、CrowdStrike 2026 Global Threat Report、arXiv:2604.09544、Ars Technica、NYT*
 *关键词：AI 安全、Mythos、Glasswing、CrowdStrike、LLM 安全、漏洞发现、网络攻防*`,
-    date: "2026-04-14",
-    author: "AI Master",
-    tags: ["AI 安全", "Mythos", "Glasswing", "CrowdStrike", "网络攻防", "LLM 安全", "漏洞发现"],
-    readTime: 18,
-  };
+    },
+  ],
+};
