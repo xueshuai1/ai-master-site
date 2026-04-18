@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { articles, categories } from "@/data/knowledge";
 import { LAST_UPDATE_TIME } from "@/data/update-time";
@@ -14,11 +15,46 @@ const PAGE_SIZE = 9;
 const levelOrder: Record<string, number> = { 入门: 1, 进阶: 2, 高级: 3 };
 
 export default function KnowledgePage() {
-  const [mode, setMode] = useState<"all" | "path">("all");
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState<"default" | "level-asc" | "level-desc" | "date-desc" | "date-asc">("level-asc");
-  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Initialize state from URL query params
+  const [mode, setMode] = useState<"all" | "path">((searchParams.get("mode") as "all" | "path") || "all");
+  const [activeCategory, setActiveCategory] = useState(searchParams.get("cat") || "all");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
+  type SortKey = "default" | "level-asc" | "level-desc" | "date-desc" | "date-asc";
+  const [sortBy, setSortBy] = useState<SortKey>((searchParams.get("sort") as SortKey) || "level-asc");
+  const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1") || 1);
+
+  // Flag to skip initial URL sync (we already init from URL)
+  const isInitialMount = useRef(true);
+
+  // Sync state → URL
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (mode !== "all") return;
+
+    const params = new URLSearchParams();
+    if (activeCategory !== "all") params.set("cat", activeCategory);
+    if (searchQuery) params.set("q", searchQuery);
+    if (sortBy !== "level-asc") params.set("sort", sortBy);
+    if (currentPage > 1) params.set("page", String(currentPage));
+
+    const query = params.toString();
+    const url = query ? `${pathname}?${query}` : pathname;
+    router.replace(url, { scroll: false });
+  }, [mode, activeCategory, searchQuery, sortBy, currentPage, pathname, router]);
+
+  // When switching to path mode, clear URL params
+  useEffect(() => {
+    if (mode === "path") {
+      router.replace(pathname, { scroll: false });
+    }
+  }, [mode, pathname, router]);
 
   const filteredArticles = useMemo(() => {
     let result = articles.filter((a) => {
@@ -170,7 +206,6 @@ export default function KnowledgePage() {
               找到 <span className="text-brand-400 font-medium">{filteredArticles.length}</span> 篇文章
             </p>
             <div className="flex items-center gap-2">
-              {/* Mobile CategoryFilter — hidden on PC where tiled grid is used */}
               <div className="lg:hidden">
                 <CategoryFilter
                   categories={categoryData}
@@ -178,7 +213,6 @@ export default function KnowledgePage() {
                   onChange={(key) => handleFilterChange(setActiveCategory, key)}
                 />
               </div>
-              {/* Desktop sort select */}
               <div className="hidden lg:block">
               <select
                 value={sortBy}
@@ -192,7 +226,6 @@ export default function KnowledgePage() {
                 <option value="date-asc">时间最早</option>
               </select>
               </div>
-              {/* Mobile sort select */}
               <select
                 value={sortBy}
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
