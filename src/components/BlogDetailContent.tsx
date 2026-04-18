@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import LazyMermaid from "@/components/LazyMermaid";
+import MermaidChartWithActions from "@/components/MermaidChartWithActions";
 import CopyButton from "@/components/CopyButton";
 import PythonCodeBlock from "@/components/PythonCodeBlock";
 
@@ -217,7 +217,15 @@ export default function BlogDetailContent({
                       const headingId = text.toLowerCase().replace(/[\s]+/g, '-').replace(/[^\w\-]/g, '');
                       return headingId ? <h3 id={headingId} {...props}>{children}</h3> : <h3 {...props}>{children}</h3>;
                     },
-                    pre: ({ children }: any) => <>{children}</>,
+                    pre: ({ children, ...props }: any) => {
+                      // react-markdown 的渲染顺序：pre(code(...))
+                      // code 自定义渲染器如果返回了非 <code> 元素（如 MermaidChartWithActions），
+                      // 则 children.type 不会是 'code'，此时 pre 应该透传避免双层包裹
+                      if (children && typeof children === 'object' && children.type !== 'code') {
+                        return children;
+                      }
+                      return <pre className="my-4" {...props}>{children}</pre>;
+                    },
                     table: ({ children, ...props }: any) => (
                       <div className="overflow-x-auto my-6 rounded-xl border border-white/10">
                         <table className="w-full text-sm" {...props}>{children}</table>
@@ -234,9 +242,9 @@ export default function BlogDetailContent({
                       const codeStr = String(children).replace(/\n$/, '');
                       const isBlock = className && className.startsWith('language-');
                       if (isBlock && match) {
-                        // Mermaid code blocks → lazy render chart
+                        // Mermaid code blocks → render chart
                         if (match[1] === 'mermaid') {
-                          return <LazyMermaid chart={codeStr} />;
+                          return <MermaidChartWithActions chart={codeStr} />;
                         }
                         // Python code blocks → run button + copy (component has its own wrapper)
                         if (match[1] === 'python' || match[1] === 'py') {

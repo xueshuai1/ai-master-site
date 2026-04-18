@@ -48,121 +48,87 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
 
   // Mouse wheel zoom
   const handleWheel = useCallback((e: React.WheelEvent) => {
+    if (!showModal) return;
     e.preventDefault();
-    const delta = e.deltaY > 0 ? -0.15 : 0.15;
-    setZoom(z => Math.min(Math.max(z + delta, 0.25), 5));
-  }, []);
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    setZoom(z => Math.max(0.25, Math.min(5, z + delta)));
+  }, [showModal]);
 
-  // Pan with mouse drag
+  // Pan
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if (e.button === 0) {
-      setIsPanning(true);
-      panStart.current = { x: e.clientX - panX, y: e.clientY - panY };
-    }
-  }, [panX, panY]);
+    if (!showModal) return;
+    setIsPanning(true);
+    panStart.current = { x: e.clientX - panX, y: e.clientY - panY };
+  }, [showModal, panX, panY]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (isPanning) {
-      setPanX(e.clientX - panStart.current.x);
-      setPanY(e.clientY - panStart.current.y);
-    }
+    if (!isPanning) return;
+    setPanX(e.clientX - panStart.current.x);
+    setPanY(e.clientY - panStart.current.y);
   }, [isPanning]);
 
-  const handleMouseUp = useCallback(() => setIsPanning(false), []);
+  const handleMouseUp = useCallback(() => {
+    setIsPanning(false);
+  }, []);
 
-  // Download as PNG via canvas
   const handleDownload = useCallback(async () => {
     if (!svgContent) return;
     setDlStatus('loading');
 
-    // Safety timeout — reset status after 8 seconds no matter what
-    const safetyTimer = setTimeout(() => {
-      setDlStatus('idle');
-    }, 8000);
+    const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgContent)}`;
 
     try {
-      // Ensure xmlns for Image to parse correctly
-      const cleanSvg = svgContent.includes('xmlns')
-        ? svgContent
-        : svgContent.replace(/<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
-
-      // Parse SVG to get dimensions
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(cleanSvg, 'image/svg+xml');
-      const svgEl = doc.querySelector('svg');
-      const vb = svgEl?.getAttribute('viewBox');
-      let width = 1200, height = 800;
-
-      if (vb) {
-        const [, , vw, vh] = vb.split(/\s+/).map(Number);
-        if (vw && vh) { width = vw; height = vh; }
-      }
-
-      // Scale up for better quality
-      const scale = 2;
-      const w = width * scale;
-      const h = height * scale;
-
-      const blob = new Blob([cleanSvg], { type: 'image/svg+xml;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
       const img = new Image();
-
-      const finish = () => {
-        clearTimeout(safetyTimer);
-        URL.revokeObjectURL(url);
-      };
-
       img.onload = () => {
-        try {
-          const canvas = document.createElement('canvas');
-          canvas.width = w;
-          canvas.height = h;
-          const ctx = canvas.getContext('2d');
-          if (!ctx) throw new Error('No 2d context');
-          ctx.scale(scale, scale);
-          ctx.drawImage(img, 0, 0);
+        const canvas = document.createElement('canvas');
+        const scale = 2;
+        canvas.width = img.naturalWidth * scale;
+        canvas.height = img.naturalHeight * scale;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
-          canvas.toBlob((pngBlob) => {
-            if (pngBlob) {
-              const pngUrl = URL.createObjectURL(pngBlob);
-              const a = document.createElement('a');
-              a.href = pngUrl;
-              a.download = 'mermaid-chart.png';
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
-              URL.revokeObjectURL(pngUrl);
-            }
-            setDlStatus('done');
-            setTimeout(() => setDlStatus('idle'), 2000);
-            finish();
-          }, 'image/png');
+        ctx.fillStyle = '#1a1a2e';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        let pngUrl: string | null = null;
+        try {
+          pngUrl = canvas.toDataURL('image/png');
+          const a = document.createElement('a');
+          a.href = pngUrl;
+          a.download = 'mermaid-chart.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(pngUrl);
         } catch {
-          // Canvas failed — fallback to SVG download
-          fallbackDownload(url);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'mermaid-chart.svg';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
         }
+        setDlStatus('done');
+        setTimeout(() => setDlStatus('idle'), 2000);
       };
       img.onerror = () => {
-        fallbackDownload(url);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'mermaid-chart.svg';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        setDlStatus('done');
+        setTimeout(() => setDlStatus('idle'), 2000);
       };
       img.src = url;
     } catch {
-      clearTimeout(safetyTimer);
       setDlStatus('idle');
     }
   }, [svgContent]);
-
-  const fallbackDownload = (url: string) => {
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'mermaid-chart.svg';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    setDlStatus('done');
-    setTimeout(() => setDlStatus('idle'), 2000);
-  };
 
   const handleZoom = useCallback(() => {
     setZoom(1);
@@ -173,8 +139,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
 
   return (
     <>
-      {/* Chart container with action buttons */}
-      <div className="relative group">
+      <div className="relative group my-6">
         <div className="absolute top-2 right-2 z-10 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <button
             onClick={handleDownload}
@@ -218,11 +183,9 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex flex-col"
           onClick={() => setShowModal(false)}
         >
-          {/* Header */}
           <div className="flex items-center justify-between px-6 py-3 border-b border-white/10 bg-slate-900/80 shrink-0">
             <span className="text-sm text-slate-400">Mermaid 图表 — 滚轮缩放 · 拖拽平移 · +/- 键缩放 · 0 重置 · ESC 关闭</span>
             <div className="flex items-center gap-2">
-              {/* Zoom controls */}
               <button
                 onClick={() => setZoom(z => Math.max(z - 0.25, 0.25))}
                 className="p-1.5 rounded-md hover:bg-white/10 text-slate-400 hover:text-white transition-all"
@@ -252,7 +215,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
               <button
                 onClick={() => setShowModal(false)}
                 className="p-1.5 rounded-md hover:bg-white/10 text-slate-400 hover:text-white transition-all ml-2"
-                title="关闭 (ESC)"
+                title="关闭"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -261,11 +224,9 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
             </div>
           </div>
 
-          {/* Content — zoomable & pannable */}
+          {/* Canvas */}
           <div
-            ref={zoomRef}
-            className="flex-1 overflow-hidden p-4 cursor-grab active:cursor-grabbing"
-            onClick={(e) => e.stopPropagation()}
+            className="flex-1 overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing"
             onWheel={handleWheel}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -273,14 +234,11 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
             onMouseLeave={handleMouseUp}
           >
             <div
-              className="flex justify-center items-center min-h-full transition-transform duration-100"
-              style={{ transform: `translate(${panX}px, ${panY}px) scale(${zoom})`, transformOrigin: 'center center' }}
-            >
-              <div
-                className="[&>svg]:block [&>svg]:max-w-none [&>svg]:h-auto"
-                dangerouslySetInnerHTML={{ __html: svgContent }}
-              />
-            </div>
+              ref={zoomRef}
+              className="transition-transform duration-100"
+              style={{ transform: `translate(${panX}px, ${panY}px) scale(${zoom})` }}
+              dangerouslySetInnerHTML={{ __html: svgContent }}
+            />
           </div>
         </div>
       )}
