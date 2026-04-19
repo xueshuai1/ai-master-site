@@ -16,6 +16,141 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-308",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 发布 Codex for (almost) everything：AI 从代码生成迈向自主执行计算机操作",
+    summary: "OpenAI 宣布 Codex 现在可以自主操控 macOS 应用——打开 Finder、操作 Safari、编辑文档，全程无需人类干预。同时发布新一代 Agents SDK，提供标准化的 Agent 构建工具链。这标志着 AI 编程从「生成代码片段」迈入「自主完成任务」的全新范式。",
+    content: `## Codex 自主执行：AI 编程的第三次范式跃迁
+
+2026 年 4 月 16 日，OpenAI 发布「Codex for (almost) everything」，这是 AI 编程领域的里程碑事件。
+
+**核心能力：**
+- 自主操控 macOS 应用（Finder、Safari、Pages 等）
+- 端到端任务执行：从理解意图到完成操作
+- 多步推理与错误恢复
+- 视觉感知 + 语义理解 + 操作执行的完整架构
+
+**Agents SDK 同步演进：**
+- Agent 编排器：多 Agent 协作管理
+- 工具注册中心：标准化接口
+- 记忆管理系统：上下文与向量检索
+- 沙箱执行环境：安全隔离
+- 人类在环接口：关键步骤确认
+
+**与现有工具对比：**
+- GitHub Copilot：仅限编辑器内补全
+- Cursor：编辑器内对话
+- Claude Code：终端命令执行
+- **Codex：完整 GUI 操作，任意应用**
+
+**影响：** 开发者工作流将从「编写代码」转向「定义目标」，AI Agent 成为执行主体。`,
+    date: "2026-04-19 14:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/codex-for-almost-everything/",
+    href: "/news/news-308",
+  },
+  {
+    id: "news-307",
+    tag: "AI 产品",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Anthropic 发布 Claude Design：AI 驱动的设计协作平台，从创意到代码一站式闭环",
+    summary: "Anthropic Labs 推出 Claude Design，支持自然语言生成设计稿、设计系统自动学习、精细化控制和多格式导出。设计完成后一键交由 Claude Code 变为生产代码，实现从设计到开发的全流程自动化。同时发布 Opus 4.7 和 Project Glasswing 安全计划。",
+    content: `## Claude Design：Anthropic 的设计革命
+
+2026 年 4 月 17 日，Anthropic 发布 Claude Design，这是 AI 设计领域的重大突破。
+
+**核心功能：**
+- 自然语言生成：文本描述 → 完整设计稿
+- 设计系统自动学习：读取代码库和设计文件
+- 精细化控制：内联评论、直接编辑、自定义滑块
+- 多格式导入导出：支持 DOCX/PPTX/Canva/PDF/HTML
+- 设计到代码闭环：一键交给 Claude Code 实现
+
+**同时发布：**
+- **Opus 4.7**：最强网络安全模型，支持 xhigh 思考强度
+- **Project Glasswing**：联合 40+ 科技巨头的防御联盟
+- Anthropic 年化收入已达 300 亿美元，IPO 在即
+
+**行业影响：** 直接挑战 Figma（80-90% 市场份额）和 Adobe Creative Cloud，标志着 AI 从「辅助工具」向「创作主体」的转变。`,
+    date: "2026-04-19 13:50",
+    source: "Anthropic Blog",
+    sourceUrl: "https://www.anthropic.com/news/introducing-claude-design",
+    href: "/news/news-307",
+  },
+  {
+    id: "news-306",
+    tag: "AI 研究",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "OpenAI 发布 GPT-Rosalind：专为生命科学研究优化的 AI 模型",
+    summary: "OpenAI 推出 GPT-Rosalind，专门针对生命科学研究场景优化。该模型在基因组分析、蛋白质结构预测、药物发现等领域表现出色，将加速生物医学研究进程。",
+    content: `## GPT-Rosalind：AI 加速生命科学
+
+2026 年 4 月 16 日，OpenAI 发布 GPT-Rosalind，这是首个专为生命科学研究优化的大语言模型。
+
+**核心能力：**
+- 基因组序列分析
+- 蛋白质结构预测
+- 药物分子设计
+- 文献综述与假设生成
+
+**科学意义：** Rosalind 以 DNA 双螺旋结构发现者 Rosalind Franklin 命名，象征着 AI 在基础科学研究中的新角色——不仅是工具，更是科研合作伙伴。`,
+    date: "2026-04-19 13:40",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/introducing-gpt-rosalind/",
+    href: "/news/news-306",
+  },
+  {
+    id: "news-305",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Simon Willison 深度分析：Claude Opus 4.6 到 4.7 的 System Prompt 演进轨迹",
+    summary: "Simon Willison 利用 Anthropic 公开的 System Prompt 历史，深入分析了 Opus 4.6 到 4.7 的系统提示词变化。发现 Opus 4.7 在工具调用、错误恢复和多步推理方面做了大量优化，反映了 Anthropic 对 Agent 能力的持续强化。",
+    content: `## Opus 4.7 System Prompt 深度分析
+
+2026 年 4 月 18 日，Simon Willison 发布了对 Claude Opus 4.6 和 4.7 系统提示词的详细对比分析。
+
+**分析方法：**
+- 利用 Anthropic 公开的 system prompt 历史记录
+- 构建 git-based 探索工具追踪变化
+- 逐段对比 4.6 和 4.7 的 prompt 差异
+
+**关键发现：**
+- 工具调用指令更加精确和结构化
+- 错误恢复策略得到显著加强
+- 多步推理的指导更加清晰
+- 对 Agent 场景的适配明显增强
+
+**启示：** System Prompt 的演进反映了 AI 能力发展的方向——从「回答问题」到「执行任务」。`,
+    date: "2026-04-19 13:30",
+    source: "Simon Willison's Weblog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
+    href: "/news/news-305",
+  },
+  {
+    id: "news-304",
+    tag: "AI 基础设施",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI 发布新一代 Agents SDK：标准化 Agent 构建工具链全面升级",
+    summary: "OpenAI 发布 Agents SDK 的重大更新，提供 Agent 编排器、工具注册中心、记忆管理系统、沙箱执行环境和人类在环接口等核心模块，为开发者构建自主 AI Agent 提供了完整的标准化工具链。",
+    content: `## Agents SDK 全面升级
+
+2026 年 4 月 15 日，OpenAI 发布新一代 Agents SDK。
+
+**核心模块：**
+- **Agent Orchestrator**：多 Agent 协作管理
+- **Tool Registry**：标准化工具注册
+- **Memory System**：统一记忆管理
+- **Sandbox Runtime**：安全执行环境
+- **Human-in-the-Loop**：关键步骤确认
+
+**开发者价值：** 从「手写 Agent 逻辑」到「配置 Agent 工作流」，大幅降低自主 Agent 的开发门槛。`,
+    date: "2026-04-19 13:20",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/the-next-evolution-of-the-agents-sdk/",
+    href: "/news/news-304",
+  },
+  {
     id: "news-303",
     tag: "AI 安全",
     tagColor: "bg-red-500/10 text-red-300",
