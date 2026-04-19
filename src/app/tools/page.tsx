@@ -14,8 +14,9 @@ const toolsWithPopularity: Tool[] = tools.map(t => {
   const altData = (githubStars as any).alternativeTo?.[t.id];
   return {
     ...t,
-    githubStars: ghData?.stars ?? null,
+    githubStars: ghData?.stars ?? t.githubStars ?? null,
     altToLikes: altData?.likes ?? null,
+    repoCreatedAt: ghData?.createdAt ?? (t as any).createdAt ?? null,
   };
 });
 
