@@ -19,6 +19,15 @@ const toolsWithPopularity: Tool[] = tools.map(t => {
     repoCreatedAt: ghData?.createdAt ?? (t as any).createdAt ?? null,
     delta: ghData?.delta ?? null,
     previousStars: ghData?.previousStars ?? null,
+    // GitHub 完整数据
+    forks: ghData?.forks ?? null,
+    watchers: ghData?.watchers ?? null,
+    language: ghData?.language ?? null,
+    license: ghData?.license ?? null,
+    homepage: ghData?.homepage ?? null,
+    lastUpdated: ghData?.updatedAt ?? null,
+    openIssues: ghData?.openIssues ?? null,
+    topics: ghData?.topics ?? null,
   };
 });
 
@@ -71,6 +80,64 @@ function ToolCard({ tool }: { tool: Tool }) {
         ))}
         {tool.tags.length > 4 && <span className="px-2 py-0.5 bg-white/5 rounded-md text-xs text-slate-500">+{tool.tags.length - 4}</span>}
       </div>
+
+      {/* GitHub 元数据 */}
+      {((tool as any).language || (tool as any).forks != null || (tool as any).repoCreatedAt || (tool as any).license) && (
+        <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 mb-3 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+          {(tool as any).language && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span className="text-slate-500">语言</span>
+              <span className="text-slate-300">{(tool as any).language}</span>
+            </div>
+          )}
+          {(tool as any).forks != null && (tool as any).forks > 0 && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">🍴 Forks</span>
+              <span className="text-slate-300">{(tool as any).forks.toLocaleString()}</span>
+            </div>
+          )}
+          {(tool as any).watchers != null && (tool as any).watchers > 0 && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">👀 Watch</span>
+              <span className="text-slate-300">{(tool as any).watchers.toLocaleString()}</span>
+            </div>
+          )}
+          {(tool as any).openIssues != null && (tool as any).openIssues > 0 && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">🔧 Issues</span>
+              <span className="text-slate-300">{(tool as any).openIssues.toLocaleString()}</span>
+            </div>
+          )}
+          {(tool as any).repoCreatedAt && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">📅 上线</span>
+              <span className="text-slate-300">{new Date((tool as any).repoCreatedAt).toLocaleDateString('zh-CN')}</span>
+            </div>
+          )}
+          {(tool as any).lastUpdated && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">🔄 更新</span>
+              <span className="text-slate-300">{new Date((tool as any).lastUpdated).toLocaleDateString('zh-CN')}</span>
+            </div>
+          )}
+          {(tool as any).license && (tool as any).license !== 'null' && (
+            <div className="flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">📄 协议</span>
+              <span className="text-slate-300">{(tool as any).license}</span>
+            </div>
+          )}
+          {(tool as any).delta != null && (tool as any).delta !== 0 && (
+            <div className="col-span-2 flex items-center gap-1.5 text-xs">
+              <span className="text-slate-500">📈 增长</span>
+              <span className={(tool as any).delta > 0 ? 'text-green-400' : 'text-red-400'}>
+                {(tool as any).delta > 0 ? '↑' : '↓'}{(tool as any).delta > 0 ? '+' : ''}{(tool as any).delta.toLocaleString()} ⭐
+                <span className="text-slate-500 ml-1">（对比上次检查）</span>
+              </span>
+            </div>
+          )}
+        </div>
+      )}
       {(tool.pros?.length || tool.cons?.length) && (
         <>
           <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(!expanded); }} className="text-xs text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1 mb-2">
