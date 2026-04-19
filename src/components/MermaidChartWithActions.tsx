@@ -146,36 +146,106 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
   const handleDownload = useCallback(async () => {
     if (!svgContent) return;
     setDlStatus('loading');
-    const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgContent)}`;
+    
     try {
-      const img = new Image();
-      img.onload = () => {
-        const c = document.createElement('canvas');
-        const SCALE = 4; // 4x for high-res PNG
-        c.width = img.naturalWidth * SCALE; c.height = img.naturalHeight * SCALE;
-        const ctx = c.getContext('2d');
-        if (!ctx) return;
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
-        ctx.fillStyle = '#1a1a2e'; ctx.fillRect(0, 0, c.width, c.height);
-        ctx.drawImage(img, 0, 0, c.width, c.height);
-        try {
-          const pu = c.toDataURL('image/png');
-          const a = document.createElement('a'); a.href = pu; a.download = 'mermaid-chart.png';
-          document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(pu);
-        } catch {
-          const a = document.createElement('a'); a.href = url; a.download = 'mermaid-chart.svg';
-          document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-        }
-        setDlStatus('done'); setTimeout(() => setDlStatus('idle'), 2000);
-      };
-      img.onerror = () => {
-        const a = document.createElement('a'); a.href = url; a.download = 'mermaid-chart.svg';
+      // Use SVG directly with proper high-DPI rendering
+      const SCALE = 4;
+      
+      // Parse the SVG to get dimensions and inject explicit width/height
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(svgContent, 'image/svg+xml');
+      const svgEl = doc.querySelector('svg');
+      if (!svgEl) {
+        // Fallback to SVG download
+        const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = 'chart.svg';
         document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
         setDlStatus('done'); setTimeout(() => setDlStatus('idle'), 2000);
+        return;
+      }
+      
+      // Extract viewBox
+      const vb = svgEl.getAttribute('viewBox');
+      let w = parseFloat(svgEl.getAttribute('width') || '0');
+      let h = parseFloat(svgEl.getAttribute('height') || '0');
+      
+      if (vb && (w === 0 || h === 0)) {
+        const parts = vb.split(/[\s,]+/).filter(Boolean).map(Number);
+        if (parts.length >= 4) {
+          w = parts[2];
+          h = parts[3];
+          // Inject explicit width/height so Image renders at correct size
+          svgEl.setAttribute('width', String(w));
+          svgEl.setAttribute('height', String(h));
+        }
+      }
+      
+      // Ensure minimum resolution
+      if (w < 600) w = 600;
+      if (h < 400) h = 400;
+      
+      // Serialize the modified SVG
+      const serializer = new XMLSerializer();
+      const modifiedSvg = serializer.serializeToString(svgEl);
+      
+      const canvasW = Math.round(w * SCALE);
+      const canvasH = Math.round(h * SCALE);
+      
+      // Create blob from modified SVG
+      const svgBlob = new Blob([modifiedSvg], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+      
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvasW;
+        canvas.height = canvasH;
+        const ctx = canvas.getContext('2d', { alpha: false })!;
+        
+        // High quality rendering
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        
+        // Fill background
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(0, 0, canvasW, canvasH);
+        
+        // Draw at high resolution
+        ctx.drawImage(img, 0, 0, canvasW, canvasH);
+        URL.revokeObjectURL(url);
+        
+        // Export as high-quality PNG
+        canvas.toBlob((blob) => {
+          if (!blob) {
+            // Fallback
+            const a = document.createElement('a'); a.href = url; a.download = 'chart.svg';
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            setDlStatus('done'); setTimeout(() => setDlStatus('idle'), 2000);
+            return;
+          }
+          const pngUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a'); a.href = pngUrl; a.download = `chart-${canvasW}x${canvasH}.png`;
+          document.body.appendChild(a); a.click(); document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(pngUrl), 1000);
+          setDlStatus('done'); setTimeout(() => setDlStatus('idle'), 2000);
+        }, 'image/png', 1.0);
       };
+      
+      img.onerror = () => {
+        // Fallback to SVG download
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'chart.svg';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        setDlStatus('done'); setTimeout(() => setDlStatus('idle'), 2000);
+      };
+      
       img.src = url;
-    } catch { setDlStatus('idle'); }
+    } catch {
+      setDlStatus('idle');
+    }
   }, [svgContent]);
 
   const handleZoom = useCallback(() => {

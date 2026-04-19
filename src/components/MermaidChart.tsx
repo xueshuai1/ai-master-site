@@ -22,7 +22,31 @@ export default function MermaidChart({ chart, onSvgReady }: MermaidChartProps) {
           startOnLoad: false,
           theme: 'dark',
           securityLevel: 'loose',
-          fontFamily: 'system-ui, sans-serif',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          themeVariables: {
+            fontSize: '18px',
+            primaryColor: '#1e3a5f',
+            primaryTextColor: '#e2e8f0',
+            primaryBorderColor: '#3b82f6',
+            lineColor: '#60a5fa',
+            secondaryColor: '#1a2744',
+            tertiaryColor: '#0f172a',
+          },
+          flowchart: {
+            curve: 'basis',
+            padding: 20,
+            nodeSpacing: 30,
+            rankSpacing: 50,
+            htmlLabels: true,
+            useMaxWidth: false,
+          },
+          sequence: {
+            useMaxWidth: false,
+            wrap: true,
+          },
+          gantt: {
+            useMaxWidth: false,
+          },
         });
 
         const id = `mermaid-${Math.random().toString(36).substring(2, 9)}`;
