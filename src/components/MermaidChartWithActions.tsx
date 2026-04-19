@@ -165,10 +165,44 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
         return;
       }
       
-      // Force anti-aliasing on all SVG elements
-      svgEl.setAttribute('shape-rendering', 'geometricPrecision');
-      svgEl.setAttribute('text-rendering', 'geometricPrecision');
-      svgEl.setAttribute('image-rendering', 'high-quality');
+      // Inject high-quality rendering styles into SVG
+      const styleEl = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
+      styleEl.textContent = `
+        * { shape-rendering: geometricPrecision !important; text-rendering: geometricPrecision !important; }
+        path, line, rect, circle, polygon, polyline {
+          stroke-linecap: round !important;
+          stroke-linejoin: round !important;
+        }
+        /* Increase stroke widths for crispness */
+        .edgePath .path { stroke-width: 2px !important; }
+        .edgeLabel { font-size: 14px !important; }
+        .node rect, .node circle, .node polygon { stroke-width: 2px !important; }
+        .cluster rect { stroke-width: 1.5px !important; }
+        text { font-size: 14px !important; }
+      `;
+      if (svgEl.firstChild) svgEl.insertBefore(styleEl, svgEl.firstChild);
+      else svgEl.appendChild(styleEl);
+      
+      // Double SVG resolution: enlarge viewBox + scale content
+      // This gives the browser 2x more vector detail to rasterize
+      const viewBox = svgEl.getAttribute('viewBox');
+      if (viewBox) {
+        const parts = viewBox.split(/[\s,]+/).filter(Boolean).map(Number);
+        if (parts.length >= 4) {
+          const RES = 2;
+          const [vx, vy, vw, vh] = parts;
+          svgEl.setAttribute('viewBox', `${vx} ${vy} ${vw * RES} ${vh * RES}`);
+          svgEl.setAttribute('width', String(vw * RES));
+          svgEl.setAttribute('height', String(vh * RES));
+          // Wrap content in scaled group to maintain visual proportions
+          const g = doc.createElementNS('http://www.w3.org/2000/svg', 'g');
+          g.setAttribute('transform', `scale(${RES})`);
+          while (svgEl.childNodes.length > 0) {
+            g.appendChild(svgEl.childNodes[0]);
+          }
+          svgEl.appendChild(g);
+        }
+      }
       
       // Extract viewBox
       const vb = svgEl.getAttribute('viewBox');
