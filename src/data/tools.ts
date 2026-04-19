@@ -1,5 +1,5 @@
-// AI Tools directory data — 2026.04.15 重构版
-// 新增分类：MCP 服务器、CLI 工具、AI 技能/插件、测试与质量、DevOps & GitOps、开发方法论、AI 安全、Prompt 工程
+// AI Tools directory data — 2026.04.19 分类体系重构版
+
 
 export interface Tool {
   id: string;
@@ -28,20 +28,16 @@ export interface Tool {
 export const toolCategories = [
   { key: "all", label: "全部", icon: "🔧" },
   { key: "llm", label: "大语言模型", icon: "🤖" },
+  { key: "agent", label: "AI Agent", icon: "🦾" },
   { key: "framework", label: "开发框架", icon: "⚙️" },
-  { key: "agent", label: "智能体平台", icon: "🦾" },
-  { key: "mcp", label: "MCP 服务器", icon: "🔌" },
   { key: "cli", label: "CLI 工具", icon: "💻" },
-  { key: "skills", label: "AI 技能/插件", icon: "🧩" },
-  { key: "testing", label: "测试与质量", icon: "🧪" },
-  { key: "devops", label: "DevOps & GitOps", icon: "🚀" },
-  { key: "methodology", label: "开发方法论", icon: "📐" },
-  { key: "security", label: "AI 安全", icon: "🛡️" },
-  { key: "prompt", label: "Prompt 工程", icon: "✏️" },
+  { key: "plugin", label: "MCP & 插件", icon: "🔌" },
   { key: "data", label: "数据处理", icon: "📊" },
-  { key: "vision", label: "图像视觉", icon: "🎨" },
-  { key: "audio", label: "语音音频", icon: "🎙️" },
+  { key: "multimodal", label: "多模态", icon: "🎨" },
   { key: "search", label: "AI 搜索", icon: "🔍" },
+  { key: "security", label: "AI 安全", icon: "🛡️" },
+  { key: "devops", label: "DevOps", icon: "🚀" },
+  { key: "education", label: "教育学习", icon: "📚" },
 ];
 
 export const tools: Tool[] = [
@@ -101,7 +97,7 @@ export const tools: Tool[] = [
   {
       id: "everything-claude-code",
       name: "Everything Claude Code",
-      category: "skills",
+      category: "plugin",
       description: "Claude Code 代理性能优化系统，155,893 stars，包含最佳实践、工作流模板、性能调优和扩展技能，Claude Code 用户必备",
       url: "https://github.com/nicholasgriffintn/everything-claude-code",
       tags: ["Claude Code", "性能优化", "最佳实践", "160k stars"],
@@ -124,7 +120,7 @@ export const tools: Tool[] = [
   {
       id: "superpowers",
       name: "Superpowers (obra)",
-      category: "skills",
+      category: "plugin",
       description: "AI Agent 技能框架，151,998 stars，提供模块化 Agent 技能库，支持任务规划、代码生成、文档处理等多种技能组合",
       url: "https://github.com/obra/superpowers",
       tags: ["Agent 技能", "模块化", "任务规划", "152k stars"],
@@ -306,7 +302,7 @@ export const tools: Tool[] = [
   {
       id: "whisper",
       name: "OpenAI Whisper",
-      category: "audio",
+      category: "multimodal",
       description: "开源语音识别模型，支持多语言转录和翻译",
       url: "https://github.com/openai/whisper",
       tags: ["语音识别", "多语言", "转录"],
@@ -505,7 +501,7 @@ export const tools: Tool[] = [
   {
       id: "jest",
       name: "Jest",
-      category: "testing",
+      category: "framework",
       description: "最受欢迎的 JavaScript 测试框架，由 Meta 维护，支持 TDD 开发模式，单元测试、快照测试、Mock 系统一应俱全，45,300+ stars",
       url: "https://github.com/jestjs/jest",
       tags: ["JavaScript", "单元测试", "TDD", "45.3k stars"],
@@ -543,7 +539,7 @@ export const tools: Tool[] = [
   {
       id: "awesome-claude-code",
       name: "Awesome Claude Code",
-      category: "skills",
+      category: "plugin",
       description: "Claude Code 技能和工具合集精选列表，38,700+ stars，收录最佳扩展、技能包和工作流",
       url: "https://github.com/hesreallyhim/awesome-claude-code",
       tags: ["Claude Code", "技能合集", "扩展", "38.7k stars"],
@@ -566,7 +562,7 @@ export const tools: Tool[] = [
   {
       id: "antigravity-skills",
       name: "Antigravity Skills",
-      category: "skills",
+      category: "plugin",
       description: "1400+ AI Agent 技能库，覆盖编程、数据分析、内容创作、自动化等各个领域，33,000+ stars",
       url: "https://github.com/sickn33/antigravity-awesome-skills",
       tags: ["1400+ 技能", "Agent 技能库", "多领域", "33k stars"],
@@ -619,7 +615,7 @@ export const tools: Tool[] = [
   {
       id: "openapi-generator",
       name: "OpenAPI Generator",
-      category: "methodology",
+      category: "education",
       description: "从 OpenAPI 规范自动生成 API 客户端 SDK、服务端 stub、文档和配置，规格驱动开发（SDD）的标杆工具，26,100+ stars",
       url: "https://github.com/OpenAPITools/openapi-generator",
       tags: ["SDD", "代码生成", "OpenAPI", "26.1k stars"],
@@ -672,7 +668,7 @@ export const tools: Tool[] = [
   {
       id: "learn-go-with-tests",
       name: "Learn Go with Tests",
-      category: "methodology",
+      category: "education",
       description: "通过测试驱动开发（TDD）学习 Go 语言的经典教程，TDD 最佳实践指南，每章从一个测试开始，23,600+ stars",
       url: "https://github.com/quii/learn-go-with-tests",
       tags: ["TDD", "Go 语言", "教程", "23.6k stars"],
@@ -718,7 +714,7 @@ export const tools: Tool[] = [
   {
       id: "openviking",
       name: "OpenViking (Volcengine)",
-      category: "skills",
+      category: "plugin",
       description: "AI Agent 上下文数据库，火山引擎开源的 Agent 知识管理系统，支持上下文持久化和共享，22,300+ stars",
       url: "https://github.com/volcengine/OpenViking",
       tags: ["上下文管理", "Agent 知识", "持久化", "22.3k stars"],
@@ -833,7 +829,7 @@ export const tools: Tool[] = [
   {
       id: "agent-skills",
       name: "Agent Skills (addyosmani)",
-      category: "skills",
+      category: "plugin",
       description: "生产级 AI Agent 工程技能库，由 Google 工程师 Addy Osmani 维护，15,400+ stars，聚焦前端开发和 Web 性能",
       url: "https://github.com/addyosmani/agent-skills",
       tags: ["生产级", "前端开发", "Web 性能", "15.4k stars"],
@@ -872,7 +868,7 @@ export const tools: Tool[] = [
   {
       id: "vitest",
       name: "Vitest",
-      category: "testing",
+      category: "framework",
       description: "基于 Vite 的新一代极速测试框架，兼容 Jest API，支持 TDD 模式，TypeScript 原生支持，16,400+ stars",
       url: "https://github.com/vitest-dev/vitest",
       tags: ["TypeScript", "极速", "TDD", "16.4k stars"],
@@ -910,7 +906,7 @@ export const tools: Tool[] = [
   {
       id: "voxcpm",
       name: "VoxCPM2 (OpenBMB)",
-      category: "audio",
+      category: "multimodal",
       description: "清华大学开源无 Tokenizer 语音合成模型，2B 参数，支持 30 种语言、48kHz 录音棚级音质、零样本语音克隆和创意声音设计，GitHub Trending 热门项目",
       url: "https://github.com/OpenBMB/VoxCPM",
       tags: ["语音合成", "开源", "语音克隆", "多语言"],
@@ -933,7 +929,7 @@ export const tools: Tool[] = [
   {
       id: "domain-driven-hexagon",
       name: "Domain-Driven Hexagon",
-      category: "methodology",
+      category: "education",
       description: "DDD + 六边形架构 + 整洁架构实战指南，含 TypeScript/Node.js 完整代码示例，领域驱动设计最佳实践，14,500+ stars",
       url: "https://github.com/Sairyss/domain-driven-hexagon",
       tags: ["DDD", "六边形架构", "整洁架构", "14.5k stars"],
@@ -956,7 +952,7 @@ export const tools: Tool[] = [
   {
       id: "pytest",
       name: "pytest",
-      category: "testing",
+      category: "framework",
       description: "Python 最流行的测试框架，支持从小型单元测试到复杂功能测试，fixture 系统和插件生态强大，13,800+ stars",
       url: "https://github.com/pytest-dev/pytest",
       tags: ["Python", "测试框架", "TDD", "13.8k stars"],
@@ -1017,7 +1013,7 @@ export const tools: Tool[] = [
   {
       id: "mcp-chrome",
       name: "MCP Chrome (hangwin)",
-      category: "mcp",
+      category: "plugin",
       description: "浏览器自动化 MCP 服务器，让 AI Agent 通过标准 MCP 协议控制 Chrome 浏览器，支持页面导航、点击、表单填写、截图、DOM 提取等完整浏览器操作能力。11,200+ GitHub Star，是 MCP 生态中最受欢迎的浏览器控制服务器之一。支持多标签页管理和等待策略，使 Agent 能够完成网页交互、数据抓取和自动化测试等复杂任务",
       url: "https://github.com/hangwin/mcp-chrome",
       tags: ["浏览器自动化", "Chrome", "Agent 控制", "11k stars"],
@@ -1063,7 +1059,7 @@ export const tools: Tool[] = [
   {
       id: "leantime",
       name: "Leantime",
-      category: "methodology",
+      category: "education",
       description: "面向非项目经理的敏捷项目管理工具，支持看板、冲刺、OKR、 retrospectives，兼顾 ADHD 用户需求，9,500+ stars",
       url: "https://github.com/Leantime/leantime",
       tags: ["敏捷", "看板", "Scrum", "9.5k stars"],
@@ -1170,7 +1166,7 @@ export const tools: Tool[] = [
   {
       id: "open-llm-vtuber",
       name: "Open-LLM-VTuber",
-      category: "audio",
+      category: "multimodal",
       description: "本地运行的 Live2D 虚拟形象+语音交互系统（GitHub 6.9k 星），结合 LLM + TTS + Live2D，支持免手语音交互、语音打断，跨平台运行",
       url: "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
       tags: ["开源", "虚拟形象", "语音交互", "Live2D"],
@@ -1216,7 +1212,7 @@ export const tools: Tool[] = [
   {
       id: "mcp-registry",
       name: "MCP Registry (modelcontextprotocol)",
-      category: "mcp",
+      category: "plugin",
       description: "MCP（Model Context Protocol）官方注册中心，提供 MCP 服务器的发现、验证和分发能力，是 MCP 生态的核心基础设施。开发者可以在此注册和发布 MCP 服务器，使用者可以快速发现经过验证的工具。6,700+ GitHub Star，随着 MCP 协议的普及，注册中心在 Agent 工具生态中的作用日益重要",
       url: "https://github.com/modelcontextprotocol/registry",
       tags: ["MCP 生态", "注册中心", "官方", "基础设施"],
@@ -1231,7 +1227,7 @@ export const tools: Tool[] = [
   {
       id: "seomachine",
       name: "SEOMachine (TheCraigHewitt)",
-      category: "skills",
+      category: "plugin",
       description: "Claude Code 专用 SEO 优化博客内容生成工作区，支持调研、写作、分析和优化内容，6,200+ stars，周增长 2,500+",
       url: "https://github.com/TheCraigHewitt/seomachine",
       tags: ["SEO 优化", "内容生成", "博客", "Claude Code", "6.2k stars"],
@@ -1254,7 +1250,7 @@ export const tools: Tool[] = [
   {
       id: "desktop-commander-mcp",
       name: "DesktopCommanderMCP",
-      category: "mcp",
+      category: "plugin",
       description: "终端控制 MCP 服务器，让 AI Agent 通过标准 MCP 协议执行终端命令、文件读写、目录浏览、进程管理等桌面操作。5,900+ GitHub Star，是 MCP 生态中赋予 Agent 本地系统控制能力的关键工具。支持权限控制和沙箱执行，Agent 可以安全地进行文件管理、系统信息查询和脚本执行等任务",
       url: "https://github.com/wonderwhy-er/DesktopCommanderMCP",
       tags: ["终端控制", "命令执行", "文件操作", "5.9k stars"],
@@ -1269,7 +1265,7 @@ export const tools: Tool[] = [
   {
       id: "mcp-playwright",
       name: "MCP Playwright",
-      category: "mcp",
+      category: "plugin",
       description: "Playwright 浏览器自动化的 MCP 实现，将成熟的 Playwright 测试框架能力通过标准 MCP 协议暴露给 AI Agent。支持网页抓取、表单自动化、E2E 测试场景、SPA 应用交互等完整浏览器自动化能力。5,400+ GitHub Star，相比原生浏览器 MCP 方案，Playwright 的跨浏览器支持（Chromium/Firefox/WebKit）和成熟 API 使其在复杂场景下更可靠",
       url: "https://github.com/executeautomation/mcp-playwright",
       tags: ["Playwright", "浏览器自动化", "网页抓取", "5.4k stars"],
@@ -1284,7 +1280,7 @@ export const tools: Tool[] = [
   {
       id: "awesome-mcp-servers",
       name: "Awesome MCP Servers",
-      category: "mcp",
+      category: "plugin",
       description: "MCP 服务器精选合集，收录 500+ 个 MCP 服务器项目，涵盖数据库、API、开发工具、生产力工具、社交媒体、智能家居等各个领域。作为 MCP 生态的导航和发现入口，帮助开发者和用户快速找到所需的服务集成，5,400+ GitHub Star。社区持续更新和分类整理，是了解 MCP 工具生态全景的最佳入口",
       url: "https://github.com/appcypher/awesome-mcp-servers",
       tags: ["合集", "500+ 服务器", "生态", "5.4k stars"],
@@ -1299,7 +1295,7 @@ export const tools: Tool[] = [
   {
       id: "cucumber-js",
       name: "Cucumber.js",
-      category: "testing",
+      category: "framework",
       description: "JavaScript/Node.js 版本的 BDD 框架，用自然语言（Gherkin）编写可执行规范，Given-When-Then 模式，5,300+ stars",
       url: "https://github.com/cucumber/cucumber-js",
       tags: ["BDD", "Gherkin", "验收测试", "5.3k stars"],
@@ -1322,7 +1318,7 @@ export const tools: Tool[] = [
   {
       id: "mobile-mcp",
       name: "Mobile MCP (mobile-next)",
-      category: "mcp",
+      category: "plugin",
       description: "移动端自动化 MCP 服务器，支持 iOS 和 Android 设备控制，让 AI Agent 通过标准 MCP 协议操控手机。支持屏幕截图、点击、滑动、文本输入等移动端交互操作，以及应用启动、权限管理等系统级功能。4,500+ GitHub Star，是 MCP 生态中连接 Agent 与移动设备的关键桥梁，适合移动端测试和自动化场景",
       url: "https://github.com/mobile-next/mobile-mcp",
       tags: ["移动端", "iOS", "Android", "4.5k stars"],
@@ -1337,7 +1333,7 @@ export const tools: Tool[] = [
   {
       id: "spec-workflow-mcp",
       name: "Spec Workflow MCP",
-      category: "mcp",
+      category: "plugin",
       description: "规格工作流 MCP 服务器，将软件开发的规格驱动理念引入 AI Agent 工作流。支持需求分析、规格文档自动生成、代码审查对照规格验证、以及开发流程的标准化管理。4,100+ GitHub Star，适合重视工程规范和需求可追溯性的开发团队",
       url: "https://github.com/Pimzino/spec-workflow-mcp",
       tags: ["规格驱动", "工作流", "需求分析", "4.1k stars"],
@@ -1352,7 +1348,7 @@ export const tools: Tool[] = [
   {
       id: "behave",
       name: "Behave (Python BDD)",
-      category: "testing",
+      category: "framework",
       description: "Python 的 BDD 框架，灵感来自 Ruby 版 Cucumber，支持 Gherkin 语法，行为驱动测试首选",
       url: "https://github.com/behave/behave",
       tags: ["BDD", "Python", "Gherkin", "行为驱动"],
@@ -1390,7 +1386,7 @@ export const tools: Tool[] = [
 {
       id: "fastapi-realworld",
       name: "FastAPI RealWorld",
-      category: "methodology",
+      category: "education",
       description: "用 FastAPI 实现的 RealWorld 示例应用，演示 TDD + 整洁架构最佳实践，完整的全栈开发参考，3,100+ stars",
       url: "https://github.com/nsidnev/fastapi-realworld-example-app",
       tags: ["TDD", "整洁架构", "FastAPI", "3.1k stars"],
@@ -1513,7 +1509,7 @@ export const tools: Tool[] = [
   {
       id: "awesome-eventstorming",
       name: "Awesome EventStorming",
-      category: "methodology",
+      category: "education",
       description: "EventStorming 资源精选列表，DDD 领域建模的核心协作方法论，通过事件风暴探索业务领域，2,400+ stars",
       url: "https://github.com/mariuszgil/awesome-eventstorming",
       tags: ["EventStorming", "DDD", "领域建模", "协作"],
@@ -1536,7 +1532,7 @@ export const tools: Tool[] = [
   {
       id: "clean-ts-api",
       name: "Clean TS API",
-      category: "methodology",
+      category: "education",
       description: "Node.js + TypeScript API 实战，融合 TDD、整洁架构、设计模式和 SOLID 原则，完整项目示例，1,900+ stars",
       url: "https://github.com/rmanguinho/clean-ts-api",
       tags: ["TDD", "整洁架构", "SOLID", "TypeScript"],
@@ -1589,7 +1585,7 @@ export const tools: Tool[] = [
   {
       id: "playwright-bdd",
       name: "Playwright BDD",
-      category: "testing",
+      category: "framework",
       description: "Playwright 的 BDD 扩展，支持用 Gherkin 语法编写端到端测试场景，自然语言描述验收标准",
       url: "https://github.com/vitalets/playwright-bdd",
       tags: ["BDD", "E2E 测试", "Gherkin", "Playwright"],
