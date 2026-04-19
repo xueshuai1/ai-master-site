@@ -1,0 +1,19 @@
+{
+  "microsoft/promptbench": 2,
+  "microsoft/markitdown": 112,
+  "openai/whisper": 98,
+  "OpenBMB/VoxCPM": 14,
+  "virattt/ai-hedge-fund": 56,
+  "TapXWorld/ChinaTextbook": 70,
+  "thedotmack/claude-mem": 62,
+  "HKUDS/DeepTutor": 19,
+  "HKUDS/AI-Trader": 13,
+  "jo-inc/camofox-browser": 2,
+  "Open-LLM-VTuber/Open-LLM-VTuber": 6,
+  "NVIDIA/personaplex": 9,
+  "unclecode/crawl4ai": 64,
+  "n8n-io/n8n": 185,
+  "bytedance/Protenix": 1,
+  "z-lab/dflash": 1,
+  "rowboatlabs/rowboat": 12
+}

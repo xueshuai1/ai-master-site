@@ -71,6 +71,7 @@ export const tools: Tool[] = [
       cons: ["配置复杂", "非 Python 语言支持弱", "文档不够详细"],
       useCase: "多 Agent 代码协作、复杂调试任务、自动化编程",
       learnMore: "https://microsoft.github.io/autogen",
+      githubStars: 57201,
     },
   {
       id: "google-adk",
@@ -85,6 +86,7 @@ export const tools: Tool[] = [
       cons: ["相对较新，生态不如 LangChain", "主要支持 Python", "文档和社区仍在建设中", "非 Google 生态集成较少"],
       useCase: "Google 生态内 Agent 系统构建、企业级多智能体应用",
       learnMore: "https://google.github.io/adk-docs",
+      githubStars: 19103,
     },
   {
       id: "llama-stack",
@@ -114,6 +116,7 @@ export const tools: Tool[] = [
       cons: ["相对小众，社区较小", "文档不完善", "仅支持 Python", "需要配合其他 Harness 框架使用"],
       useCase: "Agent 行为分析、调试和可观测性、生产 Harness 监控",
       learnMore: "https://github.com/HKUDS/OpenHarness",
+      githubStars: 10378,
     },
   {
       id: "karpathy-skills",
@@ -129,6 +132,7 @@ export const tools: Tool[] = [
       cons: ["偏重 Claude Code 生态", "内容更新依赖社区贡献", "非框架而是指南集合", "部分内容可能过时"],
       useCase: "LLM 辅助编程最佳实践学习、Claude Code 行为优化",
       learnMore: "https://github.com/forrestchang/andrej-karpathy-skills",
+      githubStars: 59083,
     },
   {
       id: "archon",
@@ -144,6 +148,7 @@ export const tools: Tool[] = [
       cons: ["学习曲线较陡", "相对较新，生态不成熟", "TypeScript-only 限制", "需要预先定义规范"],
       useCase: "规范化 AI 编程流程、确保代码质量一致性、团队协作开发",
       learnMore: "https://github.com/coleam00/Archon",
+      githubStars: 18828,
     },
   {
       id: "hermes-agent",
@@ -159,6 +164,7 @@ export const tools: Tool[] = [
       cons: ["项目较新稳定性待验证", "文档和社区建设初期", "持续学习机制安全性存疑", "生产环境使用经验少"],
       useCase: "可成长 AI Agent 研究、持续学习任务、Agent 能力演进",
       learnMore: "https://github.com/NousResearch/hermes-agent",
+      githubStars: 100280,
     },
   {
       id: "github-copilot",
@@ -187,6 +193,7 @@ export const tools: Tool[] = [
       cons: ["相对较新生态不成熟", "Rust 编写定制门槛高", "文档和教程较少", "社区规模较小"],
       useCase: "本地 AI Agent 开发、MCP 生态工具集成、多 LLM 灵活切换",
       learnMore: "https://block.github.io/goose",
+      githubStars: 42664,
     },
   {
       id: "smolagents",
@@ -201,6 +208,7 @@ export const tools: Tool[] = [
       cons: ["功能相对简单", "生产级能力有限", "文档和示例较少", "复杂任务支持不足"],
       useCase: "Agent 入门学习、快速原型开发、Hugging Face 生态实验",
       learnMore: "https://huggingface.co/docs/smolagents",
+      githubStars: 26726,
     },
   {
       id: "openmanus",
@@ -215,6 +223,7 @@ export const tools: Tool[] = [
       cons: [`复杂长任务成功率不够稳定`, `依赖 LLM API 调用成本`, `沙箱安全机制较薄弱`, `文档和社区教程仍在完善中`],
       useCase: `自主任务执行、网页自动化、个人工作流编排`,
       learnMore: `https://github.com/mannaandpoem/OpenManus`,
+      githubStars: 419,
     },
   {
       id: "copaw",
@@ -229,6 +238,7 @@ export const tools: Tool[] = [
       cons: ["社区规模较小", "文档和教程不够完善", "部分插件需要自行开发", "大规模并发能力有限"],
       useCase: "个人 AI 助理搭建、多平台聊天机器人、本地化 AI 服务",
       learnMore: "https://github.com/agentscope-ai/CoPaw",
+      githubStars: 15604,
     },
   {
       id: "deerflow",
@@ -257,6 +267,7 @@ export const tools: Tool[] = [
       cons: ["多 Agent 调试和监控较复杂", "依赖 LLM API 成本高", "学习曲线较陡峭", "生产部署经验较少"],
       useCase: "复杂多步骤任务自动化、多模态数据分析、开源 Agent 研究",
       learnMore: "https://github.com/camel-ai/owl",
+      githubStars: 19665,
     },
   {
       id: "mem-ai",
@@ -271,6 +282,7 @@ export const tools: Tool[] = [
       cons: ["项目较新稳定性待验证", "记忆宫殿配置需要学习成本", "大规模知识库性能待测试", "社区和文档仍在完善中"],
       useCase: "Agent 长期记忆、跨会话上下文保持、个性化 AI 助手",
       learnMore: "https://github.com/MemPalace/mempalace",
+      githubStars: 47929,
     },
   {
       id: "aichat",
@@ -328,6 +340,7 @@ export const tools: Tool[] = [
       cons: ["生态相对早期工具数量有限", "依赖 Anthropic 主导方向", "社区贡献流程尚不完善", "注册和审核周期较长"],
       useCase: "MCP 服务器发现与发布、Agent 工具生态建设、MCP 标准推广",
       learnMore: "https://modelcontextprotocol.io",
+      githubStars: 6696,
     },
   {
       id: "desktop-commander-mcp",
@@ -342,6 +355,7 @@ export const tools: Tool[] = [
       cons: ["权限配置不当存在安全风险", "跨平台兼容性差异", "复杂命令执行可能不稳定", "需要本地运行无法远程使用"],
       useCase: "AI Agent 本地文件管理、系统运维自动化、终端命令辅助执行",
       learnMore: "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+      githubStars: 5914,
     },
   {
       id: "mcp-playwright",
@@ -356,6 +370,7 @@ export const tools: Tool[] = [
       cons: ["依赖 Node.js 环境", "复杂页面交互需额外配置", "资源消耗比轻量方案高", "5.4k stars 社区规模一般"],
       useCase: "Agent 网页自动化、E2E 测试辅助、动态网页数据抓取",
       learnMore: "https://github.com/executeautomation/mcp-playwright",
+      githubStars: 5449,
     },
   {
       id: "awesome-mcp-servers",
@@ -370,6 +385,7 @@ export const tools: Tool[] = [
       cons: ["仅收录列表无实际功能", "部分项目质量参差不齐", "更新依赖社区贡献", "缺少详细的比较和评测"],
       useCase: "MCP 服务器发现与选型、生态调研、Agent 工具集成参考",
       learnMore: "https://github.com/appcypher/awesome-mcp-servers",
+      githubStars: 5415,
     },
   {
       id: "mobile-mcp",
@@ -384,6 +400,7 @@ export const tools: Tool[] = [
       cons: ["4.5k stars 生态较小", "iOS 限制较多需越狱或特定配置", "移动端连接稳定性依赖网络", "文档和教程较少"],
       useCase: "移动端 AI 自动化测试、手机远程控制、跨设备 Agent 任务",
       learnMore: "https://github.com/mobile-next/mobile-mcp",
+      githubStars: 4609,
     },
   {
       id: "spec-workflow-mcp",
@@ -398,6 +415,7 @@ export const tools: Tool[] = [
       cons: ["规格编写有一定学习成本", "小型项目流程过重", "社区相对较小", "需要团队统一规范才能发挥效果"],
       useCase: "规格驱动开发、需求文档自动化、AI 辅助代码审查",
       learnMore: "https://github.com/Pimzino/spec-workflow-mcp",
+      githubStars: 4132,
     },
   {
       id: "gemini-cli",
@@ -412,6 +430,7 @@ export const tools: Tool[] = [
       cons: ["仅支持 Gemini 模型", "终端交互不如 IDE 直观", "需要配置 API 密钥", "对非 Google 生态用户吸引力有限"],
       useCase: "终端编程辅助、代码快速生成、Gemini 开发者日常使用",
       learnMore: "https://github.com/google-gemini/gemini-cli",
+      githubStars: 101725,
     },
   {
       id: "openhands",
@@ -426,6 +445,7 @@ export const tools: Tool[] = [
       cons: ["复杂任务成功率不够稳定", "Docker 资源消耗较大", "对大型代码库处理能力有限", "需要较强的硬件配置"],
       useCase: "自动修复 GitHub Issue、自主软件开发、编程基准研究",
       learnMore: "https://github.com/OpenHands/OpenHands",
+      githubStars: 71465,
     },
   {
       id: "cc-switch",
@@ -440,6 +460,7 @@ export const tools: Tool[] = [
       cons: ["仅管理切换不提供 AI 能力", "依赖被管理工具的正常安装", "部分工具兼容性问题偶有发生", "学习各工具本身仍需时间"],
       useCase: "多 AI 编程工具用户日常切换、开发环境统一管理、工具配置备份",
       learnMore: "https://github.com/farion1231/cc-switch",
+      githubStars: 47011,
     },
   {
       id: "googleworkspace-cli",
@@ -454,6 +475,7 @@ export const tools: Tool[] = [
       cons: ["仅限 Google 生态不支持其他平台", "OAuth 授权配置对新手不友好", "部分高级 API 需要额外权限", "终端操作不如 Web 界面直观"],
       useCase: "Google Workspace 终端自动化、批量邮件和文件管理、办公流程脚本化",
       learnMore: "https://github.com/googleworkspace/cli",
+      githubStars: 25013,
     },
   {
       id: "mac-cli",
@@ -476,6 +498,7 @@ export const tools: Tool[] = [
       ],
       useCase: "macOS 系统自动化、终端脚本集成",
       learnMore: "https://github.com/nickmango/mac-cli",
+      githubStars: 9057,
     },
   {
       id: "mmx-cli",
@@ -565,6 +588,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Claude Code 功能增强、扩展工具集",
       learnMore: "https://github.com/nicholasgriffintn/superpowers",
+      githubStars: 159217,
     },
   {
       id: "awesome-claude-code",
@@ -587,6 +611,7 @@ export const tools: Tool[] = [
       ],
       useCase: "发现 Claude Code 插件和资源",
       learnMore: "https://github.com/nicholasgriffintn/awesome-claude-code",
+      githubStars: 39643,
     },
   {
       id: "antigravity-skills",
@@ -631,6 +656,7 @@ export const tools: Tool[] = [
       ],
       useCase: "自定义 AI Agent 构建、实验性项目",
       learnMore: "https://github.com/openviking/openviking",
+      githubStars: 22538,
     },
   {
       id: "agent-skills",
@@ -653,6 +679,7 @@ export const tools: Tool[] = [
       ],
       useCase: "发现和复用 Agent 技能",
       learnMore: "https://github.com/nicholasgriffintn/agent-skills",
+      githubStars: 17648,
     },
   {
       id: "seomachine",
@@ -675,6 +702,7 @@ export const tools: Tool[] = [
       ],
       useCase: "网站 SEO 优化、自动化 SEO 审计",
       learnMore: "https://seomachine.ai",
+      githubStars: 6415,
     },
   {
       id: "jest",
@@ -697,6 +725,7 @@ export const tools: Tool[] = [
       ],
       useCase: "JavaScript/TypeScript 单元测试、快照测试",
       learnMore: "https://jestjs.io/docs",
+      githubStars: 45334,
     },
   {
       id: "vitest",
@@ -719,6 +748,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Vite 项目单元测试、极速测试执行",
       learnMore: "https://vitest.dev/guide",
+      githubStars: 16380,
     },
   {
       id: "pytest",
@@ -785,6 +815,7 @@ export const tools: Tool[] = [
       ],
       useCase: "BDD 验收测试、业务需求驱动测试",
       learnMore: "https://cucumber.io/docs",
+      githubStars: 5311,
     },
   {
       id: "behave",
@@ -807,6 +838,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Python BDD 验收测试、行为驱动开发",
       learnMore: "https://behave.readthedocs.io",
+      githubStars: 3473,
     },
   {
       id: "argo-cd",
@@ -829,6 +861,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Kubernetes GitOps 部署、多集群管理",
       learnMore: "https://argo-cd.readthedocs.io",
+      githubStars: 22643,
     },
   {
       id: "flux",
@@ -851,6 +884,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Kubernetes GitOps 自动化部署",
       learnMore: "https://fluxcd.io/docs",
+      githubStars: 6870,
     },
   {
       id: "openapi-generator",
@@ -917,6 +951,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Go 语言入门、TDD 实践学习",
       learnMore: "https://quii.gitbook.io/learn-go-with-tests",
+      githubStars: 23595,
     },
   {
       id: "clean-ts-api",
@@ -939,6 +974,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Clean Architecture API 开发学习",
       learnMore: "https://github.com/ArthurSarquis/clean-ts-api",
+      githubStars: 1914,
     },
   {
       id: "awesome-eventstorming",
@@ -961,6 +997,7 @@ export const tools: Tool[] = [
       ],
       useCase: "学习 Event Storming、DDD 工作坊",
       learnMore: "https://github.com/ardalis/awesome-eventstorming",
+      githubStars: 2374,
     },
   {
       id: "leantime",
@@ -983,6 +1020,7 @@ export const tools: Tool[] = [
       ],
       useCase: "小团队项目管理、敏捷开发看板",
       learnMore: "https://docs.leantime.io",
+      githubStars: 9520,
     },
   {
       id: "fastapi-realworld",
@@ -1005,6 +1043,7 @@ export const tools: Tool[] = [
       ],
       useCase: "FastAPI 学习参考、API 项目模板",
       learnMore: "https://github.com/nsidnev/fastapi-realworld-example-app",
+      githubStars: 3104,
     },
   {
       id: "promptfoo",
@@ -1027,6 +1066,7 @@ export const tools: Tool[] = [
       ],
       useCase: "LLM 安全评估、红队测试",
       learnMore: "https://www.promptfoo.dev/docs",
+      githubStars: 20275,
     },
   {
       id: "garak",
@@ -1049,6 +1089,7 @@ export const tools: Tool[] = [
       ],
       useCase: "LLM 安全漏洞检测、越狱测试",
       learnMore: "https://garak.ai",
+      githubStars: 7566,
     },
   {
       id: "microsoft-promptbench",
@@ -1071,6 +1112,7 @@ export const tools: Tool[] = [
       ],
       useCase: "Prompt 质量评估、多模型对比测试",
       learnMore: "https://github.com/microsoft/promptbench",
+      githubStars: 2798,
     },
   {
       id: "markitdown",
@@ -1093,6 +1135,7 @@ export const tools: Tool[] = [
       ],
       useCase: "文档格式转换、内容预处理",
       learnMore: "https://github.com/microsoft/markitdown",
+      githubStars: 112226,
     },
   {
       id: "whisper",
@@ -1159,6 +1202,7 @@ export const tools: Tool[] = [
       ],
       useCase: "AI 量化投资、策略回测",
       learnMore: "https://github.com/virattt/ai-hedge-fund",
+      githubStars: 56211,
     },
   {
       id: "china-textbook",
@@ -1181,6 +1225,7 @@ export const tools: Tool[] = [
       ],
       useCase: "教育 AI 模型训练、中文教育研究",
       learnMore: "https://github.com/chenyangMl/china-textbook",
+      githubStars: 69999,
     },
   {
       id: "claude-mem",
@@ -1291,6 +1336,7 @@ export const tools: Tool[] = [
       ],
       useCase: "虚拟主播、AI 互动角色",
       learnMore: "https://github.com/OpenLLM-VTuber/OpenLLM-VTuber",
+      githubStars: 6912,
     },
   {
       id: "personaplex",
@@ -1305,6 +1351,7 @@ export const tools: Tool[] = [
       cons: ["9.3k stars 生态不成熟", "对 NVIDIA 硬件依赖较强", "文档和社区较少", "配置复杂度较高"],
       useCase: "企业个性化 AI 助手、多模态交互应用、NVIDIA 生态集成",
       learnMore: "https://github.com/NVIDIA/personaplex",
+      githubStars: 9449,
     },
   {
       id: "crawl4ai",
@@ -1369,6 +1416,7 @@ export const tools: Tool[] = [
       ],
       useCase: "跨平台自动化工作流、API 集成",
       learnMore: "https://docs.n8n.io",
+      githubStars: 184651,
     },
   {
       id: "protenix",
@@ -1383,6 +1431,7 @@ export const tools: Tool[] = [
       cons: ["1.8k stars 生态较小", "计算资源需求大", "文档和教程较少", "仅聚焦蛋白质领域"],
       useCase: "蛋白质结构预测、AI 辅助药物研发、生物信息学研究",
       learnMore: "https://github.com/bytedance/Protenix",
+      githubStars: 1823,
     },
   {
       id: "dflash",
@@ -1411,5 +1460,141 @@ export const tools: Tool[] = [
       cons: ["依赖 Google 生态（Gmail/Calendar/Drive）", "需要配置 API 密钥（Deepgram、ElevenLabs 等）", "相对较新，生态不如成熟产品", "Windows/Linux 版本可能不如 Mac 稳定"],
       useCase: "个人知识管理、会议准备、邮件起草、项目上下文追踪、语音备忘录智能整理",
       learnMore: "https://www.rowboatlabs.com/",
+      githubStars: 12834,
     },
+  {
+    id: "claude-code",
+    name: "Claude Code (Anthropic)",
+    category: "cli",
+    description: "Anthropic 官方 AI 编程助手，终端内运行的智能体编码工具，直接读取项目上下文并编写、调试、测试代码，支持 Claude Sonnet/Opus 4 模型，2026 年最热门的 AI 编码工具之一",
+    url: "https://github.com/anthropics/claude-code",
+    tags: ["编码助手", "终端", "Anthropic", "Claude"],
+    price: "免费+付费",
+    icon: "🤖",
+    githubStars: 115665,
+    pros: ["Anthropic 官方工具，深度集成 Claude 模型", "终端内直接使用，无需切换 IDE", "自动读取项目上下文", "编码能力强"],
+    cons: ["需要 API 付费", "终端界面学习成本", "复杂项目可能需要 IDE 配合"],
+    useCase: "AI 辅助编码、代码审查、Bug 修复",
+    learnMore: "https://docs.anthropic.com/en/docs/claude-code/overview",
+  },
+  {
+    id: "ollama",
+    name: "Ollama",
+    category: "llm",
+    description: "本地运行开源大语言模型的最简方案，支持 Llama、Qwen、DeepSeek 等主流模型，一键安装、自动下载模型、提供 OpenAI 兼容 API，是 AI 开发者本地部署的首选工具",
+    url: "https://github.com/ollama/ollama",
+    tags: ["本地部署", "开源模型", "API"],
+    price: "开源",
+    icon: "🦙",
+    githubStars: 169397,
+    pros: ["一键安装极简体验", "支持众多开源模型", "OpenAI 兼容 API", "本地运行数据隐私安全"],
+    cons: ["需要较好 GPU 才能运行大模型", "显存要求高", "不如云端模型能力强"],
+    useCase: "本地运行开源 LLM、离线 AI 开发、模型测试",
+    learnMore: "https://ollama.com",
+  },
+  {
+    id: "langchain",
+    name: "LangChain",
+    category: "framework",
+    description: "最流行的 LLM 应用开发框架，提供链式编排、Retrieval-Augmented Generation (RAG)、Agent 构建等核心能力，覆盖 Python 和 JavaScript 双生态，134K+ stars",
+    url: "https://github.com/langchain-ai/langchain",
+    tags: ["RAG", "Agent", "链式编排", "生态最大"],
+    price: "开源",
+    icon: "⛓️",
+    githubStars: 134011,
+    pros: ["生态最大、社区最活跃", "覆盖 RAG/Agent/Chain 全场景", "Python+JS 双语言"],
+    cons: ["抽象层多、学习曲线陡", "有时过于重量级", "文档分散"],
+    useCase: "LLM 应用开发、RAG 系统、AI Agent 构建",
+    learnMore: "https://python.langchain.com",
+  },
+  {
+    id: "dify",
+    name: "Dify",
+    category: "agent",
+    description: "生产级 AI 应用开发平台，提供可视化工作流编排、RAG 引擎、Agent 编排、模型接入等一站式能力，支持 SaaS 和自部署，适合企业快速构建 AI 应用",
+    url: "https://github.com/langgenius/dify",
+    tags: ["可视化", "RAG", "企业级", "低代码"],
+    price: "免费+付费",
+    icon: "🔮",
+    githubStars: 138277,
+    pros: ["可视化编排降低开发门槛", "内置 RAG 引擎和知识库管理", "支持自部署和数据安全", "企业级权限管理"],
+    cons: ["相对重量级", "自部署需要一定运维成本", "高级功能需付费"],
+    useCase: "企业 AI 应用快速开发、智能客服、知识库问答",
+    learnMore: "https://docs.dify.ai",
+  },
+  {
+    id: "auto-gpt",
+    name: "AutoGPT",
+    category: "agent",
+    description: "最早的自主 AI Agent 项目之一，183K+ stars，允许 GPT-4 自主执行任务（浏览网页、写文件、运行代码），开创性探索 AI Agent 自主能力边界",
+    url: "https://github.com/Significant-Gravitas/AutoGPT",
+    tags: ["自主Agent", "任务执行", "先驱项目"],
+    price: "开源",
+    icon: "🤖",
+    githubStars: 183549,
+    pros: ["自主执行任务的先驱", "社区大、生态丰富", "支持多种 LLM"],
+    cons: ["稳定性不如手动控制", "任务复杂时容易出错", "需要 API 费用"],
+    useCase: "自主任务探索、AI Agent 能力研究、简单自动化",
+    learnMore: "https://docs.agpt.co",
+  },
+  {
+    id: "langflow",
+    name: "Langflow",
+    category: "framework",
+    description: "可视化 AI 工作流构建工具，拖拽式界面编排 LLM 管道，支持 LangChain 组件，147K+ stars。适合快速原型和教学演示，降低 AI 开发门槛",
+    url: "https://github.com/langflow-ai/langflow",
+    tags: ["可视化", "拖拽", "LangChain", "低代码"],
+    price: "开源",
+    icon: "🌊",
+    githubStars: 147094,
+    pros: ["拖拽式界面直观", "与 LangChain 兼容", "适合原型和教学"],
+    cons: ["复杂逻辑不够灵活", "可视化界面性能开销", "不适合生产级大规模管道"],
+    useCase: "AI 工作流原型、教学演示、快速验证想法",
+    learnMore: "https://docs.langflow.org",
+  },
+  {
+    id: "open-webui",
+    name: "Open WebUI",
+    category: "llm",
+    description: "最流行的开源 LLM Web 界面，支持 Ollama、OpenAI API 等多种后端，132K+ stars。提供对话管理、多模型切换、插件系统等丰富功能，是本地 AI 开发者的首选前端",
+    url: "https://github.com/open-webui/open-webui",
+    tags: ["Web界面", "开源", "Ollama", "多模型"],
+    price: "开源",
+    icon: "💬",
+    githubStars: 132591,
+    pros: ["开源免费", "支持多种后端", "界面美观功能丰富", "插件生态活跃"],
+    cons: ["需要 Docker 部署", "配置有一定门槛", "插件质量参差不齐"],
+    useCase: "本地 LLM Web 界面、多模型管理、个人 AI 助手",
+    learnMore: "https://docs.openwebui.com",
+  },
+  {
+    id: "firecrawl",
+    name: "Firecrawl",
+    category: "data",
+    description: "AI 友好的网页抓取 API，支持 URL → Markdown/结构化数据，110K+ stars。专为 LLM 应用设计，自动处理 JS 渲染、分页、反爬，是 RAG 系统的理想数据源",
+    url: "https://github.com/firecrawl/firecrawl",
+    tags: ["爬虫", "API", "LLM数据源", "Markdown"],
+    price: "免费+付费",
+    icon: "🔥",
+    githubStars: 110669,
+    pros: ["专为 LLM 设计", "自动处理 JS 渲染", "反爬能力强", "API 简单易用"],
+    cons: ["免费额度有限", "大规模抓取需付费", "依赖外部服务"],
+    useCase: "RAG 系统数据源、AI 训练数据收集、网站内容提取",
+    learnMore: "https://docs.firecrawl.dev",
+  },
+  {
+    id: "browser-use",
+    name: "Browser Use",
+    category: "agent",
+    description: "让 AI Agent 控制浏览器的开源框架，88K+ stars。支持自动化浏览网页、点击、填写表单、提取数据，是构建 Web Agent 的基础设施",
+    url: "https://github.com/browser-use/browser-use",
+    tags: ["浏览器自动化", "Web Agent", "Playwright"],
+    price: "开源",
+    icon: "🌐",
+    githubStars: 88502,
+    pros: ["AI 控制浏览器的标准方案", "基于 Playwright 稳定", "支持复杂 Web 交互"],
+    cons: ["需要理解浏览器交互模式", "复杂页面可能不稳定", "需要 AI 模型配合"],
+    useCase: "Web 自动化、AI 网页操作、数据采集",
+    learnMore: "https://docs.browser-use.com",
+  }
 ];
