@@ -148,7 +148,8 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     setDlStatus('loading');
     
     try {
-      const SCALE = 4;
+      // High-quality PNG: thicken strokes/fonts in SVG, then large canvas
+      const SCALE = 6;
       const parser = new DOMParser();
       const doc = parser.parseFromString(svgContent, 'image/svg+xml');
       const svgEl = doc.querySelector('svg');
@@ -161,32 +162,44 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
         return;
       }
       
-      // Inject CSS to thicken strokes and fonts in the SVG
-      const styleEl = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
-      styleEl.textContent = `
-        * { shape-rendering: geometricPrecision !important; text-rendering: geometricPrecision !important; }
-        path, line, rect, circle, polygon, polyline, ellipse {
-          stroke-linecap: round !important;
-          stroke-linejoin: round !important;
-        }
-        .edgePath .path { stroke-width: 3px !important; }
-        .node rect, .node circle, .node polygon, .node ellipse { stroke-width: 2.5px !important; }
-        .cluster rect { stroke-width: 2px !important; }
-        text, .label { font-size: 16px !important; }
-        .edgeLabel { font-size: 14px !important; }
-      `;
-      if (svgEl.firstChild) svgEl.insertBefore(styleEl, svgEl.firstChild);
-      else svgEl.appendChild(styleEl);
+      // Anti-aliasing on SVG root
+      svgEl.setAttribute('shape-rendering', 'geometricPrecision');
+      svgEl.setAttribute('text-rendering', 'geometricPrecision');
       
-      // Get dimensions from viewBox or attributes
+      // Thicken ALL strokes 3x and fonts 1.5x by directly modifying attributes
+      const allEls = svgEl.querySelectorAll('*');
+      allEls.forEach((el) => {
+        const tag = el.tagName.toLowerCase();
+        if (['path', 'line', 'rect', 'circle', 'polygon', 'polyline', 'ellipse'].includes(tag)) {
+          const sw = el.getAttribute('stroke-width');
+          if (sw) {
+            const val = parseFloat(sw);
+            if (val > 0 && val < 10) {
+              el.setAttribute('stroke-width', String(Math.round(val * 3 * 10) / 10));
+            }
+          }
+          el.setAttribute('stroke-linecap', 'round');
+          el.setAttribute('stroke-linejoin', 'round');
+        }
+        if (tag === 'text' || tag === 'tspan') {
+          const fs = el.getAttribute('font-size');
+          if (fs) {
+            const val = parseFloat(fs);
+            if (val > 0 && val < 50) {
+              el.setAttribute('font-size', String(Math.round(val * 1.5 * 10) / 10));
+            }
+          }
+        }
+      });
+      
+      // Get final dimensions
       let svgW = parseFloat(svgEl.getAttribute('width') || '0');
       let svgH = parseFloat(svgEl.getAttribute('height') || '0');
-      const viewBox = svgEl.getAttribute('viewBox');
-      if (viewBox && (svgW === 0 || svgH === 0)) {
-        const parts = viewBox.split(/[\s,]+/).filter(Boolean).map(Number);
-        if (parts.length >= 4) {
-          svgW = parts[2];
-          svgH = parts[3];
+      if (svgW === 0 || svgH === 0) {
+        const vb2 = svgEl.getAttribute('viewBox');
+        if (vb2) {
+          const parts = vb2.split(/[\s,]+/).filter(Boolean).map(Number);
+          if (parts.length >= 4) { svgW = parts[2]; svgH = parts[3]; }
         }
       }
       if (svgW < 600) svgW = 600;
