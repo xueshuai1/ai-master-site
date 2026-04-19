@@ -148,8 +148,8 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     setDlStatus('loading');
     
     try {
-      // High-quality PNG: thicken strokes/fonts in SVG, then large canvas
-      const SCALE = 6;
+      // Ultra-high-res PNG: use a very large canvas so vector rasterization is crisp
+      const SCALE = 10;
       const parser = new DOMParser();
       const doc = parser.parseFromString(svgContent, 'image/svg+xml');
       const svgEl = doc.querySelector('svg');
@@ -166,7 +166,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
       svgEl.setAttribute('shape-rendering', 'geometricPrecision');
       svgEl.setAttribute('text-rendering', 'geometricPrecision');
       
-      // Thicken ALL strokes 3x and fonts 1.5x by directly modifying attributes
+      // Thicken ALL strokes 4x and fonts 1.8x — KEY FIX for jagged edges
       const allEls = svgEl.querySelectorAll('*');
       allEls.forEach((el) => {
         const tag = el.tagName.toLowerCase();
@@ -174,8 +174,8 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
           const sw = el.getAttribute('stroke-width');
           if (sw) {
             const val = parseFloat(sw);
-            if (val > 0 && val < 10) {
-              el.setAttribute('stroke-width', String(Math.round(val * 3 * 10) / 10));
+            if (val > 0 && val < 20) {
+              el.setAttribute('stroke-width', String(Math.round(val * 4 * 10) / 10));
             }
           }
           el.setAttribute('stroke-linecap', 'round');
@@ -185,8 +185,8 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
           const fs = el.getAttribute('font-size');
           if (fs) {
             const val = parseFloat(fs);
-            if (val > 0 && val < 50) {
-              el.setAttribute('font-size', String(Math.round(val * 1.5 * 10) / 10));
+            if (val > 0 && val < 100) {
+              el.setAttribute('font-size', String(Math.round(val * 1.8 * 10) / 10));
             }
           }
         }
@@ -263,7 +263,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
       <div className="relative group my-6">
         <div className="absolute top-2 right-2 z-10 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <button onClick={handleDownload} disabled={!svgContent || dlStatus === 'loading'}
-            className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed" title="下载 PNG">
+            className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed hidden md:flex" title="下载 PNG">
             {dlStatus === 'loading' ? <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
               : dlStatus === 'done' ? <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               : <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>}
