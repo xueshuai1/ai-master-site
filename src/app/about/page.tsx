@@ -16,7 +16,7 @@ const milestones = [
   {
     date: "2026-04",
     title: "项目启动",
-    desc: "AI Master 网站正式上线，包含知识库、工具集等核心功能",
+    desc: "AI Master 网站正式上线，包含知识库、GitHub AI 精选等核心功能",
   },
   {
     date: "2026-05",

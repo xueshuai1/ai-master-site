@@ -178,8 +178,8 @@ export default function ToolsPage() {
 
       <section className="pt-28 pb-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">🛠️ AI <span className="text-gradient">工具集</span></h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">精选最实用的 AI 工具与框架，提升你的开发效率</p>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">🛠️ <span className="text-gradient">GitHub AI 精选</span></h1>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">精选最实用的 GitHub AI 项目与框架，提升你的开发效率</p>
         </div>
       </section>
 

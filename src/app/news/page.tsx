@@ -45,7 +45,7 @@ function formatNewsTime(dateStr: string): string {
 const tagIcons: Record<string, string> = {
   "行业动态": "📡",
   "AI 安全": "🔒",
-  "AI 工具": "🛠️",
+  "GitHub AI 项目": "🛠️",
   "学术研究": "🔬",
   "公司动态": "🏢",
   "产品动态": "📦",

@@ -151,9 +151,12 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
       const img = new Image();
       img.onload = () => {
         const c = document.createElement('canvas');
-        c.width = img.naturalWidth * 2; c.height = img.naturalHeight * 2;
+        const SCALE = 4; // 4x for high-res PNG
+        c.width = img.naturalWidth * SCALE; c.height = img.naturalHeight * SCALE;
         const ctx = c.getContext('2d');
         if (!ctx) return;
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
         ctx.fillStyle = '#1a1a2e'; ctx.fillRect(0, 0, c.width, c.height);
         ctx.drawImage(img, 0, 0, c.width, c.height);
         try {
