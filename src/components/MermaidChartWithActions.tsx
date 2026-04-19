@@ -149,7 +149,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     
     try {
       // Use SVG directly with proper high-DPI rendering
-      const SCALE = 6; // 6x for ultra-high-res PNG
+      const SCALE = 4; // 4x for high-res PNG
       
       // Parse the SVG to get dimensions and inject explicit width/height
       const parser = new DOMParser();
@@ -165,62 +165,44 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
         return;
       }
       
-      // Inject high-quality rendering styles into SVG
+      // Strategy for high-quality PNG:
+      // 1. Inject CSS to make strokes/fonts thicker in the SVG (prevents thin lines looking jagged)
+      // 2. Ensure SVG has explicit width/height from viewBox
+      // 3. Draw SVG on a large canvas — browser rasterizes vector at canvas resolution
+      
+      // Inject CSS to thicken all SVG elements
       const styleEl = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
       styleEl.textContent = `
         * { shape-rendering: geometricPrecision !important; text-rendering: geometricPrecision !important; }
-        path, line, rect, circle, polygon, polyline {
+        path, line, rect, circle, polygon, polyline, ellipse {
           stroke-linecap: round !important;
           stroke-linejoin: round !important;
         }
-        /* Increase stroke widths for crispness */
-        .edgePath .path { stroke-width: 2px !important; }
+        /* Thicker strokes — these look crisp at 4x resolution */
+        .edgePath .path { stroke-width: 3px !important; }
+        .node rect, .node circle, .node polygon, .node ellipse { stroke-width: 2.5px !important; }
+        .cluster rect { stroke-width: 2px !important; }
+        text, .label { font-size: 16px !important; }
         .edgeLabel { font-size: 14px !important; }
-        .node rect, .node circle, .node polygon { stroke-width: 2px !important; }
-        .cluster rect { stroke-width: 1.5px !important; }
-        text { font-size: 14px !important; }
       `;
       if (svgEl.firstChild) svgEl.insertBefore(styleEl, svgEl.firstChild);
       else svgEl.appendChild(styleEl);
       
-      // Double SVG resolution: enlarge viewBox + scale content
-      // This gives the browser 2x more vector detail to rasterize
-      const viewBox = svgEl.getAttribute('viewBox');
-      if (viewBox) {
-        const parts = viewBox.split(/[\s,]+/).filter(Boolean).map(Number);
-        if (parts.length >= 4) {
-          const RES = 2;
-          const [vx, vy, vw, vh] = parts;
-          svgEl.setAttribute('viewBox', `${vx} ${vy} ${vw * RES} ${vh * RES}`);
-          svgEl.setAttribute('width', String(vw * RES));
-          svgEl.setAttribute('height', String(vh * RES));
-          // Wrap content in scaled group to maintain visual proportions
-          const g = doc.createElementNS('http://www.w3.org/2000/svg', 'g');
-          g.setAttribute('transform', `scale(${RES})`);
-          while (svgEl.childNodes.length > 0) {
-            g.appendChild(svgEl.childNodes[0]);
-          }
-          svgEl.appendChild(g);
-        }
-      }
-      
-      // Extract viewBox
-      const vb = svgEl.getAttribute('viewBox');
+      // Ensure explicit width/height from viewBox
       let w = parseFloat(svgEl.getAttribute('width') || '0');
       let h = parseFloat(svgEl.getAttribute('height') || '0');
-      
+      const vb = svgEl.getAttribute('viewBox');
       if (vb && (w === 0 || h === 0)) {
         const parts = vb.split(/[\s,]+/).filter(Boolean).map(Number);
         if (parts.length >= 4) {
           w = parts[2];
           h = parts[3];
-          // Inject explicit width/height so Image renders at correct size
           svgEl.setAttribute('width', String(w));
           svgEl.setAttribute('height', String(h));
         }
       }
       
-      // Ensure minimum resolution
+      // Minimum dimensions
       if (w < 600) w = 600;
       if (h < 400) h = 400;
       

@@ -16,6 +16,86 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-309",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "NousResearch Hermes Agent 单周暴涨 4.2 万星——可成长型 AI Agent 成本周最火开源项目",
+    summary: "NousResearch 的 Hermes Agent 本周增长 42,612 stars，总星数突破 10 万，成为 GitHub 本周增长最快的 AI 项目。该项目的核心理念是「与你一起成长的 Agent」，支持持续学习和能力累积，代表了 AI Agent 从静态工具向进化伙伴的范式转变。",
+    content: `## Hermes Agent：AI Agent 的「进化论」
+
+2026 年 4 月，NousResearch 的 Hermes Agent 以爆炸级速度席卷 GitHub，单周增长 42,612 stars，总星数突破 100,757，成为本周最受瞩目的开源 AI 项目。
+
+**核心理念：与你一起成长的 Agent**
+
+不同于传统 AI 工具的「开箱即用」模式，Hermes Agent 强调持续进化能力：
+
+- **经验累积**：Agent 在执行任务过程中积累经验和知识
+- **能力叠加**：新能力可以增量添加，不需要重新训练
+- **自我优化**：通过反思和反馈不断提升任务执行效率
+- **个性化适配**：根据用户的使用习惯和工作场景逐步调优
+
+**技术架构亮点：**
+
+1. **模块化技能系统**：Agent 通过加载不同技能模块来扩展能力边界
+2. **记忆持久化**：跨会话记忆保留，避免「每次都是重新开始」
+3. **反馈学习循环**：用户反馈直接转化为 Agent 的行为调整
+4. **开放生态**：社区可以贡献技能模块，形成能力增长飞轮
+
+**为什么增长如此爆炸？**
+
+Hermes Agent 的爆发式增长反映了市场对「可进化 AI」的强烈需求。当前主流 AI 工具（如 ChatGPT、Claude）虽然能力强，但每次对话都是「失忆」的。Hermes Agent 试图打破这一局限，让 AI 真正成为「越来越懂你的伙伴」。
+
+**与同类项目对比：**
+
+| 项目 | 核心定位 | 增长方式 | 当前 Stars |
+|------|---------|---------|------------|
+| Hermes Agent | 可成长 AI | 经验累积 | 100,757 |
+| GenericAgent | 自进化技能树 | 从种子生长 | 4,375 |
+| Evolver (GEP) | 基因组进化引擎 | 遗传算法 | 5,247 |
+| OpenManus | 自主任务执行 | 任务驱动 | 419 |
+
+**影响与展望：**
+
+Hermes Agent 的成功验证了一个方向：未来的 AI 不仅仅是「更强」，更是「更懂你」。可成长型 Agent 可能成为 2026 年 AI 领域最重要的技术趋势之一。`,
+    date: "2026-04-19",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-309",
+  },
+  {
+    id: "news-310",
+    tag: "AI 研究",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Kronos 金融基础模型：AI 预测市场的下一个前沿，周增 6,000 星",
+    summary: "shiyu-coder 团队发布的 Kronos 是专为金融市场设计的 Foundation Model，将时间序列预测与大语言模型融合理解市场文本数据。一周内增长 6,026 stars，总计 19,460 stars，成为 AI for Finance 领域最受关注的项目。",
+    content: `## Kronos：当大模型走进华尔街
+
+金融市场预测一直是 AI 最具挑战性也最具商业价值的应用场景之一。2026 年 4 月，Kronos 项目横空出世，以 19,460 stars 和周增 6,026 的速度成为 AI for Finance 领域的明星。
+
+**核心技术：双模态融合**
+
+Kronos 的创新在于将两种截然不同的数据类型统一到一个模型中：
+
+1. **文本理解**：利用 LLM 处理金融新闻、财报、研报等非结构化文本
+2. **时间序列预测**：专用 Transformer 处理价格、成交量等结构化市场数据
+3. **交叉注意力融合**：文本语义信号与市场时序信号通过交叉注意力机制深度交互
+
+**应用场景：**
+
+- 多市场覆盖：股票、期货、加密货币
+- 多时间粒度：分钟级到月级的灵活预测
+- 不确定性量化：不仅给出预测值，还提供置信区间
+- 事件驱动分析：重大新闻发布后的市场反应预测
+
+**为什么值得关注？**
+
+传统量化模型（如 ARIMA、LSTM）只能处理数值数据，忽略了金融市场中「信息」的核心作用。Kronos 首次将「读新闻」和「看行情」融合到一个统一框架中，更接近人类交易员的决策方式。`,
+    date: "2026-04-19",
+    source: "GitHub",
+    sourceUrl: "https://github.com/shiyu-coder/Kronos",
+    href: "/news/news-310",
+  },
+  {
     id: "news-308",
     tag: "AI Agent",
     tagColor: "bg-blue-500/10 text-blue-300",
