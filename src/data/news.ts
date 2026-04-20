@@ -16,6 +16,68 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-314",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "NousResearch Hermes Agent 单周暴涨 38,000 星突破 102K——可成长型 AI Agent 爆发",
+    summary: "NousResearch 的 Hermes Agent 本周增长 38,194 stars，总计 102,374 stars，成为 GitHub 增长最快的 AI Agent 项目。其核心理念「可成长型 Agent」通过经验压缩、知识注入和持续学习，让 Agent 在执行任务中不断提升能力。同时 GenericAgent（4,568 星）和 Evolver（5,569 星）也代表自进化 Agent 的不同技术路线，标志 2026 年 AI Agent 从「静态工具」走向「持续进化」的范式转变。",
+    content: `## Hermes Agent：会成长的 AI Agent
+
+2026 年 4 月第三周，NousResearch 的 Hermes Agent 以单周 38,194 stars 的爆炸级增长席卷 GitHub，总星数突破 102,000，成为本周增长最快的 AI 开源项目。
+
+**核心理念：Agent 应该在使用中变强**
+
+Hermes Agent 的创新在于「可成长」架构：
+1. 每次任务执行后，自动将完整轨迹压缩为可复用的知识
+2. 遇到类似任务时，检索并注入相关知识到上下文
+3. 随着使用次数增加，Agent 的决策质量持续提升
+
+**自进化 Agent 三足鼎立：**
+
+与此同时，另外两个自进化 Agent 项目也在快速增长：
+
+- **GenericAgent**（4,568 星，周增 3,512）：从 3.3K 行种子代码开始，自主生长技能树，以 6 倍更少的 token 消耗实现全系统控制
+- **Evolver**（5,569 星，周增 3,434）：基于 GEP（Genome Evolution Protocol）的群体进化引擎，多个 Agent 变体竞争进化
+
+这三个项目代表了自进化 Agent 的三条技术路线：经验积累型（Hermes）、技能生长型（GenericAgent）和群体进化型（Evolver）。2026 年，AI Agent 不再是一次性部署的静态工具，而是能够在实际使用中持续进化的「活系统」。
+
+**对开发者的意义：**
+
+自进化 Agent 特别适合长期运行的场景——客服 Agent 随着处理的工单越来越多而变得更精准，代码审查 Agent 随着审查的代码量增加而发现更多潜在问题。这正是 AI 从「工具」走向「伙伴」的关键一步。`,
+    date: "2026-04-20",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-314",
+  },
+  {
+    id: "news-315",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Claude-Mem 自动记忆插件周增 14,556 星突破 63K——Agent 记忆成为刚需",
+    summary: "Claude-Mem 是一个 Claude Code 插件，自动捕获编码会话中的所有操作，用 AI 压缩为上下文并注入未来会话。本周增长 14,556 stars，总计 63,380 stars。这反映了 Agent 记忆系统正从「实验性功能」变为「开发者刚需」——没有记忆的 Agent 就像没有经验的员工，每次都要从零开始。",
+    content: `## Claude-Mem：让 Agent 拥有持久记忆
+
+Claude-Mem 本周以 14,556 stars 的增长成为 GitHub 第二大增速的 AI 项目，总星数达到 63,380。
+
+**工作原理：**
+
+1. **自动捕获**：记录 Claude Code 在编码会话中的每一个操作——文件读写、命令执行、错误和修复
+2. **AI 压缩**：使用 Claude Agent SDK 将海量操作日志压缩为结构化的知识摘要
+3. **上下文注入**：下次会话开始时，自动检索相关知识并注入上下文
+
+**为什么这个需求如此强烈：**
+
+开发者每天在多个编码会话之间切换。没有记忆的 Agent 每次都要重新理解项目结构、已知问题和已做决策。Claude-Mem 解决了这个痛点——Agent 可以「记住」上次做了什么、遇到了什么问题、采用了什么解决方案。
+
+**与 Hermes Agent 的关系：**
+
+Claude-Mem 和 Hermes Agent 在理念上高度一致：都是让 AI 从经验中学习。区别在于 Claude-Mem 聚焦编码场景，而 Hermes Agent 是通用 Agent 平台。两者可以互补使用——Claude-Mem 提供编码记忆，Hermes Agent 提供更广泛的经验积累。`,
+    date: "2026-04-20",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-315",
+  },
+  {
     id: "news-311",
     tag: "AI Agent",
     tagColor: "bg-blue-500/10 text-blue-300",
