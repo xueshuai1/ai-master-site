@@ -16,6 +16,59 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "news-316",
+    tag: "AI 趋势",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Salesforce 推出 Headless 360：API 即 UI，全面支持 AI Agent 接入",
+    summary: "Salesforce 发布 Headless 360，将整个平台暴露为 API、MCP 和 CLI，AI Agent 可直接通过 API 访问数据和工作流，无需浏览器界面。Marc Benioff 宣布 'No Browser Required'，标志 SaaS 行业从 GUI-first 向 API-first 的范式转移。",
+    content: `## Salesforce Headless 360：No Browser Required
+
+2026 年 4 月，Salesforce CEO Marc Benioff 宣布推出 Headless 360，将整个 Salesforce 平台（包括 CRM、Agentforce 和 Slack）暴露为 API、MCP 和 CLI。
+
+**核心特性：**
+- 全平台 API 化：所有功能可通过 API 调用
+- MCP 协议支持：AI Agent 可直接发现和调用 Salesforce 工具
+- CLI 接口：支持脚本化操作和批量处理
+
+**行业影响：**
+这是 SaaS 行业从 GUI-first 向 API-first 的标志性转变。当 Salesforce 这样的企业 SaaS 巨头都转向 headless 模式时，整个行业都将跟进。
+
+Matt Webb 在 Interconnected 博客中指出：「使用个人 AI 的体验比直接使用服务更好；而 headless 服务对个人 AI 来说比用机器人控制鼠标在 GUI 上点击更快捷、更可靠。」`,
+    date: "2026-04-20",
+    source: "Salesforce / Matt Webb",
+    sourceUrl: "https://interconnected.org/home/2026/04/18/headless",
+    href: "/news/news-316",
+  },
+  {
+    id: "news-317",
+    tag: "AI 产品",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Google 发布 Gemini 3.1 Flash TTS：用提示词控制语音生成风格",
+    summary: "Google 发布 Gemini 3.1 Flash TTS，新一代文本转语音模型可通过提示词精确控制语音风格、情感、语速和音色。用户可以用自然语言描述想要的声音效果，如'充满活力的早间电台主持风格'，模型会生成匹配的音频输出。",
+    content: `## Gemini 3.1 Flash TTS：提示词驱动语音生成
+
+Google 发布了 Gemini 3.1 Flash TTS，这是一个全新的文本转语音模型，最大的创新是**用提示词控制语音风格**。
+
+**核心特性：**
+- **提示词控制**：用自然语言描述想要的语音效果，如"伦敦风格、充满活力的电台主持人"
+- **细粒度控制**：可指定语速、情感、口音、节奏等多个维度
+- **场景化音频**：支持生成带有背景音效和环境音的完整音频场景
+
+**Prompting Guide 亮点：**
+Google 发布的 prompting guide 展示了惊人的控制粒度。用户可以定义完整的"音频角色档案"，包括：
+- 声音特征（音调、音色、呼吸感）
+- 表演风格（动态范围、投影方式）
+- 节奏控制（语速、停顿、重音）
+- 口音和方言
+
+**技术意义：**
+这标志着 TTS 从"选择预设声音"进化到"用自然语言编程声音"，为 AI 语音助手、内容创作和游戏开发带来全新的可能性。`,
+    date: "2026-04-20",
+    source: "Google Blog",
+    sourceUrl: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+    href: "/news/news-317",
+  },
+  {
     id: "news-314",
     tag: "AI Agent",
     tagColor: "bg-blue-500/10 text-blue-300",
