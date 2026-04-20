@@ -65,6 +65,7 @@ export const tools: Tool[] = [
     useCase: "个人 AI 助手部署、自动化工作流、多模型统一管理",
     learnMore: "https://openclaw.ai",
     githubStars: 360872,
+    updatedAt: "2026-04-20",
   },
 {
       id: "n8n",
@@ -88,6 +89,7 @@ export const tools: Tool[] = [
       useCase: "跨平台自动化工作流、API 集成",
       learnMore: "https://docs.n8n.io",
       githubStars: 184801,
+    updatedAt: "2026-04-20",
     },
   {
     id: "auto-gpt",
@@ -99,6 +101,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🤖",
     githubStars: 183588,
+    updatedAt: "2026-04-20",
     pros: ["自主执行任务的先驱", "社区大、生态丰富", "支持多种 LLM"],
     cons: ["稳定性不如手动控制", "任务复杂时容易出错", "需要 API 费用"],
     useCase: "自主任务探索、AI Agent 能力研究、简单自动化",
@@ -114,6 +117,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🦙",
     githubStars: 169487,
+    updatedAt: "2026-04-20",
     pros: ["一键安装极简体验", "支持众多开源模型", "OpenAI 兼容 API", "本地运行数据隐私安全"],
     cons: ["需要较好 GPU 才能运行大模型", "显存要求高", "不如云端模型能力强"],
     useCase: "本地运行开源 LLM、离线 AI 开发、模型测试",
@@ -141,6 +145,7 @@ export const tools: Tool[] = [
       useCase: "Claude Code 功能增强、扩展工具集",
       learnMore: "https://github.com/nicholasgriffintn/superpowers",
       githubStars: 160777,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: duplicate everything-claude-code (nicholasgriffintn) — affaan-m 版本保留 */
   {
@@ -157,6 +162,7 @@ export const tools: Tool[] = [
       useCase: "日常编程助手、代码补全、企业级 AI 编程部署",
       learnMore: "https://docs.github.com/en/copilot",
       githubStars: 150000,
+    updatedAt: "2026-04-20",
     },
   {
     id: "langflow",
@@ -168,6 +174,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🌊",
     githubStars: 147147,
+    updatedAt: "2026-04-20",
     pros: ["拖拽式界面直观", "与 LangChain 兼容", "适合原型和教学"],
     cons: ["复杂逻辑不够灵活", "可视化界面性能开销", "不适合生产级大规模管道"],
     useCase: "AI 工作流原型、教学演示、快速验证想法",
@@ -183,6 +190,7 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🔮",
     githubStars: 138426,
+    updatedAt: "2026-04-20",
     pros: ["可视化编排降低开发门槛", "内置 RAG 引擎和知识库管理", "支持自部署和数据安全", "企业级权限管理"],
     cons: ["相对重量级", "自部署需要一定运维成本", "高级功能需付费"],
     useCase: "企业 AI 应用快速开发、智能客服、知识库问答",
@@ -198,6 +206,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "⛓️",
     githubStars: 134148,
+    updatedAt: "2026-04-20",
     pros: ["生态最大、社区最活跃", "覆盖 RAG/Agent/Chain 全场景", "Python+JS 双语言"],
     cons: ["抽象层多、学习曲线陡", "有时过于重量级", "文档分散"],
     useCase: "LLM 应用开发、RAG 系统、AI Agent 构建",
@@ -213,6 +222,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "💬",
     githubStars: 132760,
+    updatedAt: "2026-04-20",
     pros: ["开源免费", "支持多种后端", "界面美观功能丰富", "插件生态活跃"],
     cons: ["需要 Docker 部署", "配置有一定门槛", "插件质量参差不齐"],
     useCase: "本地 LLM Web 界面、多模型管理、个人 AI 助手",
@@ -228,6 +238,7 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🤖",
     githubStars: 116088,
+    updatedAt: "2026-04-20",
     pros: ["Anthropic 官方工具，深度集成 Claude 模型", "终端内直接使用，无需切换 IDE", "自动读取项目上下文", "编码能力强"],
     cons: ["需要 API 付费", "终端界面学习成本", "复杂项目可能需要 IDE 配合"],
     useCase: "AI 辅助编码、代码审查、Bug 修复",
@@ -267,6 +278,7 @@ export const tools: Tool[] = [
     price: "免费+付费",
     icon: "🔥",
     githubStars: 110963,
+    updatedAt: "2026-04-20",
     pros: ["专为 LLM 设计", "自动处理 JS 渲染", "反爬能力强", "API 简单易用"],
     cons: ["免费额度有限", "大规模抓取需付费", "依赖外部服务"],
     useCase: "RAG 系统数据源、AI 训练数据收集、网站内容提取",
@@ -302,6 +314,7 @@ export const tools: Tool[] = [
       useCase: "终端编程辅助、代码快速生成、Gemini 开发者日常使用",
       learnMore: "https://github.com/google-gemini/gemini-cli",
       githubStars: 101861,
+    updatedAt: "2026-04-20",
     },
   {
       id: "whisper",
@@ -325,6 +338,7 @@ export const tools: Tool[] = [
       useCase: "语音转文字、字幕生成、多语言翻译",
       learnMore: "https://github.com/openai/whisper",
       githubStars: 98062,
+    updatedAt: "2026-04-20",
     },
   {
     id: "browser-use",
@@ -336,6 +350,7 @@ export const tools: Tool[] = [
     price: "开源",
     icon: "🌐",
     githubStars: 88811,
+    updatedAt: "2026-04-20",
     pros: ["AI 控制浏览器的标准方案", "基于 Playwright 稳定", "支持复杂 Web 交互"],
     cons: ["需要理解浏览器交互模式", "复杂页面可能不稳定", "需要 AI 模型配合"],
     useCase: "Web 自动化、AI 网页操作、数据采集",
@@ -355,6 +370,7 @@ export const tools: Tool[] = [
       useCase: "自动修复 GitHub Issue、自主软件开发、编程基准研究",
       learnMore: "https://github.com/OpenHands/OpenHands",
       githubStars: 71548,
+    updatedAt: "2026-04-20",
     },
   {
       id: "china-textbook",
@@ -378,6 +394,7 @@ export const tools: Tool[] = [
       useCase: "教育 AI 模型训练、中文教育研究",
       learnMore: "https://github.com/chenyangMl/china-textbook",
       githubStars: 70080,
+    updatedAt: "2026-04-20",
     },
   {
       id: "crawl4ai",
@@ -393,6 +410,7 @@ export const tools: Tool[] = [
       useCase: "AI 数据采集、RAG 知识库构建、网页内容结构化提取",
       learnMore: "https://docs.crawl4ai.com",
       githubStars: 64316,
+    updatedAt: "2026-04-20",
     },
   {
       id: "karpathy-skills",
@@ -475,6 +493,7 @@ export const tools: Tool[] = [
       useCase: "AI 投资策略研究、多 Agent 金融协作实验、量化分析学习",
       learnMore: "https://github.com/virattt/ai-hedge-fund",
       githubStars: 56461,
+    updatedAt: "2026-04-20",
     },
   {
       id: "mem-ai",
@@ -490,6 +509,7 @@ export const tools: Tool[] = [
       useCase: "Agent 长期记忆、跨会话上下文保持、个性化 AI 助手",
       learnMore: "https://github.com/MemPalace/mempalace",
       githubStars: 48312,
+    updatedAt: "2026-04-20",
     },
   {
       id: "cc-switch",
@@ -505,6 +525,7 @@ export const tools: Tool[] = [
       useCase: "多 AI 编程工具用户日常切换、开发环境统一管理、工具配置备份",
       learnMore: "https://github.com/farion1231/cc-switch",
       githubStars: 47611,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: jest — 非 AI 工具 */
   {
@@ -521,6 +542,7 @@ export const tools: Tool[] = [
       useCase: "本地 AI Agent 开发、MCP 生态工具集成、多 LLM 灵活切换",
       learnMore: "https://block.github.io/goose",
       githubStars: 42664,
+    updatedAt: "2026-04-20",
     },
   {
       id: "awesome-claude-code",
@@ -544,6 +566,7 @@ export const tools: Tool[] = [
       useCase: "发现 Claude Code 插件和资源",
       learnMore: "https://github.com/nicholasgriffintn/awesome-claude-code",
       githubStars: 39830,
+    updatedAt: "2026-04-20",
     },
   {
       id: "antigravity-skills",
@@ -567,6 +590,7 @@ export const tools: Tool[] = [
       useCase: "AI 辅助编程技能学习",
       learnMore: "https://github.com/nicholasgriffintn/antigravity-skills",
       githubStars: 34070,
+    updatedAt: "2026-04-20",
     },
   {
       id: "smolagents",
@@ -582,6 +606,7 @@ export const tools: Tool[] = [
       useCase: "Agent 入门学习、快速原型开发、Hugging Face 生态实验",
       learnMore: "https://huggingface.co/docs/smolagents",
       githubStars: 26746,
+    updatedAt: "2026-04-20",
     },
   {
       id: "llama-stack",
@@ -597,6 +622,7 @@ export const tools: Tool[] = [
       useCase: "Llama 模型统一部署、微调流水线、多模型路由服务",
       learnMore: "https://llama-stack.readthedocs.io",
       githubStars: 26726,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: openapi-generator — 非 AI 工具 */
     /* REMOVED: googleworkspace-cli — 非 AI 工具 */
@@ -614,6 +640,7 @@ export const tools: Tool[] = [
       useCase: "深度行业调研、学术研究辅助、市场分析报告生成",
       learnMore: "https://github.com/microsoft/DeerFlow",
       githubStars: 24900,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: learn-go-with-tests — 非 AI 工具 */
     /* REMOVED: argo-cd — 非 AI 工具 */
@@ -639,6 +666,7 @@ export const tools: Tool[] = [
       useCase: "自定义 AI Agent 构建、实验性项目",
       learnMore: "https://github.com/openviking/openviking",
       githubStars: 22620,
+    updatedAt: "2026-04-20",
     },
   {
       id: "voicebox",
@@ -654,6 +682,7 @@ export const tools: Tool[] = [
       useCase: `播客/有声书自动化、游戏 NPC 配音、AI 语音助手、视频内容配音、无障碍朗读`,
       learnMore: `https://github.com/jamiepine/voicebox`,
       githubStars: 21460,
+    updatedAt: "2026-04-20",
     },
   {
       id: "promptfoo",
@@ -677,6 +706,7 @@ export const tools: Tool[] = [
       useCase: "LLM 安全评估、红队测试",
       learnMore: "https://www.promptfoo.dev/docs",
       githubStars: 20329,
+    updatedAt: "2026-04-20",
     },
   {
       id: "deep-tutor",
@@ -700,6 +730,7 @@ export const tools: Tool[] = [
       useCase: "AI 个性化教学、智能辅导",
       learnMore: "https://github.com/deep-tutor/deep-tutor",
       githubStars: 20328,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: kronos — 非 AI 工具 */
   {
@@ -716,6 +747,7 @@ export const tools: Tool[] = [
       useCase: "复杂多步骤任务自动化、多模态数据分析、开源 Agent 研究",
       learnMore: "https://github.com/camel-ai/owl",
       githubStars: 19671,
+    updatedAt: "2026-04-20",
     },
   {
       id: "google-adk",
@@ -731,6 +763,7 @@ export const tools: Tool[] = [
       useCase: "Google 生态内 Agent 系统构建、企业级多智能体应用",
       learnMore: "https://google.github.io/adk-docs",
       githubStars: 19130,
+    updatedAt: "2026-04-20",
     },
   {
       id: "archon",
@@ -770,6 +803,7 @@ export const tools: Tool[] = [
       useCase: "发现和复用 Agent 技能",
       learnMore: "https://github.com/nicholasgriffintn/agent-skills",
       githubStars: 18125,
+    updatedAt: "2026-04-20",
     },
   {
       id: "multica",
@@ -802,6 +836,7 @@ export const tools: Tool[] = [
       useCase: "个人 AI 助理搭建、多平台聊天机器人、本地化 AI 服务",
       learnMore: "https://github.com/agentscope-ai/CoPaw",
       githubStars: 15604,
+    updatedAt: "2026-04-20",
     },
   {
       id: "voxcpm",
@@ -825,6 +860,7 @@ export const tools: Tool[] = [
       useCase: "语音合成实验、本地 TTS 部署",
       learnMore: "https://github.com/voxcpm/voxcpm",
       githubStars: 14978,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: domain-driven-hexagon — 非 AI 工具 */
     /* REMOVED: pytest — 非 AI 工具 */
@@ -843,6 +879,7 @@ export const tools: Tool[] = [
       useCase: "个人知识管理、会议准备、邮件起草、项目上下文追踪、语音备忘录智能整理",
       learnMore: "https://www.rowboatlabs.com/",
       githubStars: 12894,
+    updatedAt: "2026-04-20",
     },
   {
       id: "mcp-chrome",
@@ -858,6 +895,7 @@ export const tools: Tool[] = [
       useCase: "AI Agent 网页操作、自动化数据抓取、端到端浏览器测试",
       learnMore: "https://github.com/hangwin/mcp-chrome",
       githubStars: 11267,
+    updatedAt: "2026-04-20",
     },
   {
       id: "openharness",
@@ -889,6 +927,7 @@ export const tools: Tool[] = [
       useCase: "终端 AI 对话、Shell 命令辅助、本地文档检索问答",
       learnMore: "https://github.com/sigoden/aichat",
       githubStars: 9865,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: leantime — 非 AI 工具 */
   {
@@ -905,6 +944,7 @@ export const tools: Tool[] = [
       useCase: "企业个性化 AI 助手、多模态交互应用、NVIDIA 生态集成",
       learnMore: "https://github.com/NVIDIA/personaplex",
       githubStars: 9481,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: mac-cli — 非 AI 工具 */
   {
@@ -929,6 +969,7 @@ export const tools: Tool[] = [
       useCase: "飞书自动化操作、命令行管理飞书资源",
       learnMore: "https://open.feishu.cn",
       githubStars: 8282,
+    updatedAt: "2026-04-20",
     },
   {
       id: "garak",
@@ -952,6 +993,7 @@ export const tools: Tool[] = [
       useCase: "LLM 安全漏洞检测、越狱测试",
       learnMore: "https://garak.ai",
       githubStars: 7566,
+    updatedAt: "2026-04-20",
     },
   {
       id: "open-llm-vtuber",
@@ -975,6 +1017,7 @@ export const tools: Tool[] = [
       useCase: "虚拟主播、AI 互动角色",
       learnMore: "https://github.com/OpenLLM-VTuber/OpenLLM-VTuber",
       githubStars: 6929,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: flux — 非 AI 工具 */
   {
@@ -991,6 +1034,7 @@ export const tools: Tool[] = [
       useCase: "MCP 服务器发现与发布、Agent 工具生态建设、MCP 标准推广",
       learnMore: "https://modelcontextprotocol.io",
       githubStars: 6703,
+    updatedAt: "2026-04-20",
     },
   {
       id: "seomachine",
@@ -1014,6 +1058,7 @@ export const tools: Tool[] = [
       useCase: "网站 SEO 优化、自动化 SEO 审计",
       learnMore: "https://seomachine.ai",
       githubStars: 6522,
+    updatedAt: "2026-04-20",
     },
   {
       id: "desktop-commander-mcp",
@@ -1029,6 +1074,7 @@ export const tools: Tool[] = [
       useCase: "AI Agent 本地文件管理、系统运维自动化、终端命令辅助执行",
       learnMore: "https://github.com/wonderwhy-er/DesktopCommanderMCP",
       githubStars: 5918,
+    updatedAt: "2026-04-20",
     },
   {
       id: "evolver",
@@ -1060,6 +1106,7 @@ export const tools: Tool[] = [
       useCase: "Agent 网页自动化、E2E 测试辅助、动态网页数据抓取",
       learnMore: "https://github.com/executeautomation/mcp-playwright",
       githubStars: 5453,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: duplicate awesome-mcp-servers (appcypher, 5.4k stars) — punkpeye 版本保留 (85k stars) */
   {
@@ -1076,6 +1123,7 @@ export const tools: Tool[] = [
       useCase: "Claude Code 编码质量提升、LLM 编程行为优化、开发团队规范",
       learnMore: "https://github.com/multica-ai/andrej-karpathy-skills",
       githubStars: 5388,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: cucumber-js — 非 AI 工具 */
   {
@@ -1108,6 +1156,7 @@ export const tools: Tool[] = [
       useCase: "移动端 AI 自动化测试、手机远程控制、跨设备 Agent 任务",
       learnMore: "https://github.com/mobile-next/mobile-mcp",
       githubStars: 4619,
+    updatedAt: "2026-04-20",
     },
   {
       id: "spec-workflow-mcp",
@@ -1123,6 +1172,7 @@ export const tools: Tool[] = [
       useCase: "规格驱动开发、需求文档自动化、AI 辅助代码审查",
       learnMore: "https://github.com/Pimzino/spec-workflow-mcp",
       githubStars: 4133,
+    updatedAt: "2026-04-19",
     },
     /* REMOVED: behave — 非 AI 工具 */
   {
@@ -1135,6 +1185,7 @@ export const tools: Tool[] = [
       price: "开源",
       icon: "🧠",
       githubStars: 3200,
+    updatedAt: "2026-04-20",
       pros: ["自进化架构持续学习", "SWE-Pro 基准表现优秀", "中国团队开发中文优化", "配套 CLI 工具生态"],
       cons: ["相对较新生态不成熟", "国际知名度较低", "文档和教程较少", "多模态能力待验证"],
       useCase: "中文 Agent 任务、自主编码、自进化 AI 研究",
@@ -1155,6 +1206,7 @@ export const tools: Tool[] = [
       useCase: "中文 NLP 任务、代码生成、本地部署",
       learnMore: "https://github.com/zai-org/GLM-5",
       githubStars: 2990,
+    updatedAt: "2026-04-20",
     },
   {
       id: "camofox-browser",
@@ -1178,6 +1230,7 @@ export const tools: Tool[] = [
       useCase: "隐私浏览、爬虫自动化、反指纹检测",
       learnMore: "https://camofox.com",
       githubStars: 2818,
+    updatedAt: "2026-04-20",
     },
   {
       id: "mmx-cli",
@@ -1225,6 +1278,7 @@ export const tools: Tool[] = [
       useCase: "Prompt 质量评估、多模型对比测试",
       learnMore: "https://github.com/microsoft/promptbench",
       githubStars: 2798,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: awesome-eventstorming — 非 AI 工具 */
   {
@@ -1241,6 +1295,7 @@ export const tools: Tool[] = [
       useCase: "LLM 推理性能优化、高吞吐推理场景、学术研究",
       learnMore: "https://github.com/z-lab/dflash",
       githubStars: 1925,
+    updatedAt: "2026-04-20",
     },
     /* REMOVED: clean-ts-api — 非 AI 工具 */
     /* REMOVED: protenix — 非 AI 工具 */
@@ -1259,6 +1314,7 @@ export const tools: Tool[] = [
       useCase: `自主任务执行、网页自动化、个人工作流编排`,
       learnMore: `https://github.com/mannaandpoem/OpenManus`,
       githubStars: 422,
+    updatedAt: "2026-04-20",
     },
   {
       id: "dive-into-llms",
@@ -1284,6 +1340,7 @@ export const tools: Tool[] = [
       useCase: "大语言模型系统学习、从零掌握 Transformer 到 RLHF 全流程",
       learnMore: "https://github.com/Lordog/dive-into-llms",
       githubStars: 32752,
+    updatedAt: "2026-04-20",
     },
   {
       id: "omi",
@@ -1310,6 +1367,7 @@ export const tools: Tool[] = [
       useCase: "随身 AI 助手、会议记录、生活提醒、多模态交互体验",
       learnMore: "https://github.com/BasedHardware/omi",
       githubStars: 11485,
+    updatedAt: "2026-04-20",
     },
   {
     id: "stable-diffusion-webui",
@@ -1325,6 +1383,7 @@ export const tools: Tool[] = [
     useCase: "AI 图像生成、艺术创作、模型微调、设计辅助",
     learnMore: "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
     githubStars: 162491,
+    updatedAt: "2026-04-20",
   },
   {
     id: "transformers",
@@ -1340,6 +1399,7 @@ export const tools: Tool[] = [
     useCase: "NLP 任务、文本分类、问答系统、多模态模型调用",
     learnMore: "https://huggingface.co/docs/transformers",
     githubStars: 159648,
+    updatedAt: "2026-04-20",
   },
   {
     id: "comfyui",
@@ -1355,6 +1415,7 @@ export const tools: Tool[] = [
     useCase: "高级图像生成工作流、批量图片处理、模型对比实验",
     learnMore: "https://github.com/comfyanonymous/ComfyUI",
     githubStars: 109363,
+    updatedAt: "2026-04-20",
   },
   {
     id: "ragflow",
@@ -1370,6 +1431,7 @@ export const tools: Tool[] = [
     useCase: "企业知识库问答、文档智能检索、RAG 应用开发",
     learnMore: "https://ragflow.io/docs",
     githubStars: 78566,
+    updatedAt: "2026-04-20",
   },
   {
     id: "vllm",
@@ -1385,6 +1447,7 @@ export const tools: Tool[] = [
     useCase: "生产环境 LLM 推理服务、高并发 API 服务、模型部署优化",
     learnMore: "https://docs.vllm.ai",
     githubStars: 77418,
+    updatedAt: "2026-04-20",
   },
   {
     id: "lobehub",
@@ -1400,6 +1463,7 @@ export const tools: Tool[] = [
     useCase: "个人 AI 工作台、多模型统一入口、Agent 协作平台",
     learnMore: "https://lobehub.com",
     githubStars: 75393,
+    updatedAt: "2026-04-20",
   },
   {
     id: "gpt-academic",
@@ -1415,6 +1479,7 @@ export const tools: Tool[] = [
     useCase: "论文阅读与翻译、学术写作辅助、代码理解与剖析",
     learnMore: "https://github.com/binary-husky/gpt_academic",
     githubStars: 70480,
+    updatedAt: "2026-04-20",
   },
   {
     id: "llama-factory",
@@ -1430,6 +1495,7 @@ export const tools: Tool[] = [
     useCase: "LLM/VLM 微调训练、领域适配模型开发、学术研究和实验",
     learnMore: "https://github.com/hiyouga/LLaMA-Factory",
     githubStars: 70362,
+    updatedAt: "2026-04-20",
   },
   {
     id: "metagpt",
@@ -1445,6 +1511,7 @@ export const tools: Tool[] = [
     useCase: "小型软件项目自动生成、多 Agent 协作研究、AI 辅助开发原型",
     learnMore: "https://docs.deepwisdom.ai/main/en/MetaGPT/",
     githubStars: 67270,
+    updatedAt: "2026-04-20",
   },
   {
     id: "flowise",
@@ -1460,6 +1527,7 @@ export const tools: Tool[] = [
     useCase: "RAG 应用快速搭建、AI 工作流原型、教学演示",
     learnMore: "https://docs.flowiseai.com",
     githubStars: 52081,
+    updatedAt: "2026-04-20",
   },
   {
     id: "awesome-llm-apps",
@@ -1475,6 +1543,7 @@ export const tools: Tool[] = [
     useCase: "AI 应用开发学习、RAG 系统参考实现、项目灵感来源",
     learnMore: "https://github.com/shubhamsaboo/awesome-llm-apps",
     githubStars: 106546,
+    updatedAt: "2026-04-20",
   },
   {
     id: "llm-course",
@@ -1490,6 +1559,7 @@ export const tools: Tool[] = [
     useCase: "LLM 系统学习、AI 开发者成长指南、技术路线图参考",
     learnMore: "https://github.com/mlabonne/llm-course",
     githubStars: 78479,
+    updatedAt: "2026-04-20",
   },
   {
     id: "llms-from-scratch",
@@ -1505,6 +1575,7 @@ export const tools: Tool[] = [
     useCase: "深入理解 LLM 原理、从零实现 Transformer、学术研究和技术深造",
     learnMore: "https://github.com/rasbt/LLMs-from-scratch",
     githubStars: 91127,
+    updatedAt: "2026-04-20",
   },
   {
     id: "paddleocr",
@@ -1520,6 +1591,7 @@ export const tools: Tool[] = [
     useCase: "文档数字化、车牌识别、票据处理、多语言文字提取",
     learnMore: "https://github.com/PaddlePaddle/PaddleOCR",
     githubStars: 75995,
+    updatedAt: "2026-04-20",
   },
   {
     id: "everything-claude-code",
@@ -1535,6 +1607,7 @@ export const tools: Tool[] = [
     useCase: "Claude Code 用户性能优化、AI 编程效率提升",
     learnMore: "https://github.com/affaan-m/everything-claude-code",
     githubStars: 161753,
+    updatedAt: "2026-04-20",
   },
   {
     id: "awesome-mcp-servers",
@@ -1550,6 +1623,7 @@ export const tools: Tool[] = [
     useCase: "MCP 生态探索、工具集成选型参考、AI Agent 扩展",
     learnMore: "https://github.com/punkpeye/awesome-mcp-servers",
     githubStars: 85134,
+    updatedAt: "2026-04-20",
   },
   {
     id: "prompt-engineering-guide",
@@ -1565,6 +1639,7 @@ export const tools: Tool[] = [
     useCase: "Prompt 工程学习、大模型使用技巧提升、AI 应用开发入门",
     learnMore: "https://github.com/dair-ai/prompt-engineering-guide",
     githubStars: 73558,
+    updatedAt: "2026-04-20",
   },
   {
     id: "openai-cookbook",
@@ -1580,6 +1655,7 @@ export const tools: Tool[] = [
     useCase: "OpenAI API 学习、应用开发参考、技术最佳实践",
     learnMore: "https://github.com/openai/openai-cookbook",
     githubStars: 72838,
+    updatedAt: "2026-04-20",
   },
   {
     id: "openbb",
@@ -1595,6 +1671,7 @@ export const tools: Tool[] = [
     useCase: "金融数据分析、量化投资研究、市场数据监控",
     learnMore: "https://docs.openbb.co",
     githubStars: 66139,
+    updatedAt: "2026-04-20",
   },
   {
     id: "gpt4free",
@@ -1610,6 +1687,7 @@ export const tools: Tool[] = [
     useCase: "模型对比测试、低成本 AI 体验、学习和研究用途",
     learnMore: "https://github.com/xtekky/gpt4free",
     githubStars: 66037,
+    updatedAt: "2026-04-20",
   },
   {
     id: "scikit-learn",
@@ -1625,6 +1703,7 @@ export const tools: Tool[] = [
     useCase: "传统机器学习任务、数据分析、模型原型开发",
     learnMore: "https://scikit-learn.org",
     githubStars: 65876,
+    updatedAt: "2026-04-20",
   },
   {
     id: "keras",
@@ -1640,6 +1719,7 @@ export const tools: Tool[] = [
     useCase: "深度学习模型开发、快速原型验证、工业级模型训练部署",
     learnMore: "https://keras.io",
     githubStars: 64020,
+    updatedAt: "2026-04-20",
   },
   {
     id: "deer-flow",
@@ -1655,6 +1735,7 @@ export const tools: Tool[] = [
     useCase: "复杂任务自动化、AI Agent 开发、长程推理场景",
     learnMore: "https://github.com/bytedance/deer-flow",
     githubStars: 62901,
+    updatedAt: "2026-04-20",
   },
   {
     id: "unsloth",
@@ -1670,6 +1751,7 @@ export const tools: Tool[] = [
     useCase: "LLM 微调训练、个性化模型定制、消费级显卡微调大模型",
     learnMore: "https://unsloth.ai",
     githubStars: 62269,
+    updatedAt: "2026-04-20",
   },
   {
     id: "openpilot",
@@ -1685,6 +1767,7 @@ export const tools: Tool[] = [
     useCase: "辅助驾驶升级、自动驾驶技术研究、ADAS 系统开发参考",
     learnMore: "https://comma.ai/openpilot",
     githubStars: 60671,
+    updatedAt: "2026-04-20",
   },
   {
     id: "llm-app",
@@ -1700,6 +1783,7 @@ export const tools: Tool[] = [
     useCase: "企业知识库构建、实时 RAG 应用、文档智能问答系统",
     learnMore: "https://github.com/pathwaycom/llm-app",
     githubStars: 59967,
+    updatedAt: "2026-04-20",
   },
   {
     id: "real-time-voice-cloning",
@@ -1715,6 +1799,7 @@ export const tools: Tool[] = [
     useCase: "语音合成、角色配音、语音辅助工具、创意内容制作",
     learnMore: "https://github.com/corentinj/real-time-voice-cloning",
     githubStars: 59640,
+    updatedAt: "2026-04-20",
   },
   {
     id: "anything-llm",
@@ -1730,6 +1815,7 @@ export const tools: Tool[] = [
     useCase: "企业文档智能问答、本地 AI 知识库、隐私敏感场景的 AI 应用",
     learnMore: "https://useanything.com",
     githubStars: 58641,
+    updatedAt: "2026-04-20",
   },
   {
     id: "yolov5",
@@ -1745,6 +1831,7 @@ export const tools: Tool[] = [
     useCase: "实时目标检测、工业质检、安防监控、自动驾驶感知",
     learnMore: "https://docs.ultralytics.com/yolov5",
     githubStars: 57248,
+    updatedAt: "2026-04-20",
   },
   {
     id: "meilisearch",
@@ -1760,6 +1847,7 @@ export const tools: Tool[] = [
     useCase: "网站搜索、产品搜索、文档检索、AI 混合搜索应用",
     learnMore: "https://www.meilisearch.com",
     githubStars: 57234,
+    updatedAt: "2026-04-20",
   },
   {
     id: "ai-agents-for-beginners",
@@ -1775,6 +1863,7 @@ export const tools: Tool[] = [
     useCase: "AI Agent 入门学习、技术转型参考、团队培训教材",
     learnMore: "https://github.com/microsoft/ai-agents-for-beginners",
     githubStars: 57048,
+    updatedAt: "2026-04-20",
   },
   {
     id: "gpt-sovits",
@@ -1790,6 +1879,7 @@ export const tools: Tool[] = [
     useCase: "个性化语音合成、虚拟主播配音、多语种内容制作",
     learnMore: "https://github.com/RVC-Boss/GPT-SoVITS",
     githubStars: 56826,
+    updatedAt: "2026-04-20",
   },
     /* REMOVED: mirofish — 非 AI 工具 */
   {
@@ -1806,6 +1896,7 @@ export const tools: Tool[] = [
     useCase: "人脸验证、考勤系统、照片整理、智能相册",
     learnMore: "https://github.com/ageitgey/face_recognition",
     githubStars: 56311,
+    updatedAt: "2026-04-20",
   },
   {
     id: "ultralytics",
@@ -1821,6 +1912,7 @@ export const tools: Tool[] = [
     useCase: "工业质检、自动驾驶感知、视频监控、医学影像分析",
     learnMore: "https://docs.ultralytics.com",
     githubStars: 56193,
+    updatedAt: "2026-04-20",
   },
   {
     id: "gpt-engineer",
@@ -1836,6 +1928,7 @@ export const tools: Tool[] = [
     useCase: "快速原型开发、项目脚手架生成、代码自动化编写",
     learnMore: "https://gptengineer.dev",
     githubStars: 55215,
+    updatedAt: "2026-04-20",
   },
   {
     id: "faceswap",
@@ -1851,6 +1944,7 @@ export const tools: Tool[] = [
     useCase: "影视后期特效、创意视频制作、学术研究",
     learnMore: "https://forum.faceswap.dev",
     githubStars: 55193,
+    updatedAt: "2026-04-20",
   },
   {
     id: "awesome-claude-skills",
@@ -1866,6 +1960,7 @@ export const tools: Tool[] = [
     useCase: "Claude 技能发现与选型、AI 工具生态学习、效率提升参考",
     learnMore: "https://github.com/composiohq/awesome-claude-skills",
     githubStars: 55095,
+    updatedAt: "2026-04-20",
   },
   {
     id: "learn-claude-code",
@@ -1881,6 +1976,7 @@ export const tools: Tool[] = [
     useCase: "学习 Agent 架构、理解代码 AI 原理、教学和研究",
     learnMore: "https://github.com/shareai-lab/learn-claude-code",
     githubStars: 55049,
+    updatedAt: "2026-04-20",
   },
   {
     id: "chatgpt-desktop",
@@ -1896,6 +1992,7 @@ export const tools: Tool[] = [
     useCase: "日常 AI 对话、内容创作辅助、学习问答",
     learnMore: "https://github.com/lencx/ChatGPT",
     githubStars: 54367,
+    updatedAt: "2026-04-20",
   },
   {
     id: "mem0",
@@ -1911,6 +2008,7 @@ export const tools: Tool[] = [
     useCase: "个性化 AI 助手、长期对话记忆、用户画像构建",
     learnMore: "https://mem0.ai",
     githubStars: 53592,
+    updatedAt: "2026-04-20",
   },
   {
     id: "context7",
@@ -1926,6 +2024,7 @@ export const tools: Tool[] = [
     useCase: "代码问答、技术文档检索、开发辅助、AI 编程助手增强",
     learnMore: "https://context7.com",
     githubStars: 53227,
+    updatedAt: "2026-04-20",
   },
   {
     id: "oh-my-openagent",
@@ -1941,6 +2040,7 @@ export const tools: Tool[] = [
     useCase: "Agent 快速开发、自动化工作流构建、多模型切换实验",
     learnMore: "https://github.com/code-yeongyu/oh-my-openagent",
     githubStars: 52967,
+    updatedAt: "2026-04-20",
   },
     /* REMOVED: trendradar — 非 AI 工具 */
   {
@@ -1957,6 +2057,7 @@ export const tools: Tool[] = [
     useCase: "量化交易策略研究、投资决策辅助、金融 AI 教学",
     learnMore: "https://github.com/TauricResearch/TradingAgents",
     githubStars: 51885,
+    updatedAt: "2026-04-20",
   },
   {
     id: "whisper-cpp",
@@ -1972,6 +2073,7 @@ export const tools: Tool[] = [
     useCase: "语音转文字、会议记录、播客字幕生成、离线语音识别",
     learnMore: "https://github.com/ggml-org/whisper.cpp",
     githubStars: 48793,
+    updatedAt: "2026-04-20",
   },
   {
     id: "llama-index",
@@ -1987,6 +2089,7 @@ export const tools: Tool[] = [
     useCase: "企业知识库构建、文档智能问答、RAG 应用开发、数据分析 Agent",
     learnMore: "https://docs.llamaindex.ai",
     githubStars: 48716,
+    updatedAt: "2026-04-20",
   },
   {
     id: "minimind",
@@ -2002,6 +2105,7 @@ export const tools: Tool[] = [
     useCase: "GPT 原理学习、模型训练入门、教学演示、算法实验",
     learnMore: "https://github.com/jingyaogong/minimind",
     githubStars: 47704,
+    updatedAt: "2026-04-20",
   },
   {
     id: "made-with-ml",
@@ -2017,6 +2121,7 @@ export const tools: Tool[] = [
     useCase: "ML 工程师能力提升、MLOps 学习、生产级项目参考",
     learnMore: "https://madewithml.com",
     githubStars: 47348,
+    updatedAt: "2026-04-20",
   },
   {
     id: "claude-code-best-practice",
@@ -2032,6 +2137,7 @@ export const tools: Tool[] = [
     useCase: "Claude Code 效率提升、提示词优化学习、最佳实践参考",
     learnMore: "https://github.com/shanraisshan/claude-code-best-practice",
     githubStars: 46808,
+    updatedAt: "2026-04-20",
   },
   {
     id: "jeecgboot",
@@ -2047,6 +2153,7 @@ export const tools: Tool[] = [
     useCase: "企业后台系统快速开发、内部管理系统搭建、低代码平台选型",
     learnMore: "https://www.jeecg.com",
     githubStars: 45892,
+    updatedAt: "2026-04-20",
   },
   {
     id: "localai",
@@ -2062,6 +2169,7 @@ export const tools: Tool[] = [
     useCase: "隐私敏感场景、离线 AI 应用、本地模型部署、开发测试环境",
     learnMore: "https://localai.io",
     githubStars: 45607,
+    updatedAt: "2026-04-20",
   },
   {
     id: "coqui-tts",
@@ -2077,6 +2185,7 @@ export const tools: Tool[] = [
     useCase: "语音合成服务、有声书制作、虚拟主播、无障碍辅助",
     learnMore: "https://tts.readthedocs.io",
     githubStars: 45126,
+    updatedAt: "2026-04-20",
   },
   {
     id: "litellm",
@@ -2092,6 +2201,7 @@ export const tools: Tool[] = [
     useCase: "多模型统一接入、LLM 网关、成本优化、高可用 AI 服务架构",
     learnMore: "https://docs.litellm.ai",
     githubStars: 43985,
+    updatedAt: "2026-04-20",
   },
   {
     id: "cherry-studio",
@@ -2107,6 +2217,7 @@ export const tools: Tool[] = [
     useCase: "日常 AI 对话、自动化任务处理、个人知识管理",
     learnMore: "https://github.com/CherryHQ/cherry-studio",
     githubStars: 43887,
+    updatedAt: "2026-04-20",
   },
   {
     id: "milvus",
@@ -2122,6 +2233,7 @@ export const tools: Tool[] = [
     useCase: "RAG 向量存储、推荐系统、以图搜图、语义搜索",
     learnMore: "https://milvus.io",
     githubStars: 43875,
+    updatedAt: "2026-04-20",
   },
   {
     id: "easyspider",
@@ -2137,6 +2249,7 @@ export const tools: Tool[] = [
     useCase: "网页数据采集、竞品监控、价格跟踪、内容聚合",
     learnMore: "https://github.com/NaiboWang/EasySpider",
     githubStars: 43797,
+    updatedAt: "2026-04-20",
   },
   {
     id: "aider",
@@ -2152,6 +2265,7 @@ export const tools: Tool[] = [
     useCase: "日常编码辅助、代码重构、Bug 修复、项目理解",
     learnMore: "https://aider.chat",
     githubStars: 43608,
+    updatedAt: "2026-04-20",
   },
   {
     id: "cowagent",
@@ -2167,6 +2281,7 @@ export const tools: Tool[] = [
     useCase: "微信智能客服、个人 AI 助理、社群自动化管理",
     learnMore: "https://github.com/zhayujie/chatgpt-on-wechat",
     githubStars: 43545,
+    updatedAt: "2026-04-20",
   },
     /* REMOVED: duplicate goose (second entry, 42788 stars) — Goose (Block) 版本保留 (42664 stars, 更详细) */
   {
@@ -2183,6 +2298,7 @@ export const tools: Tool[] = [
     useCase: "模型演示、原型展示、内部工具快速搭建",
     learnMore: "https://www.gradio.app",
     githubStars: 42385,
+    updatedAt: "2026-04-20",
   },
   {
     id: "deepspeed",
@@ -2198,6 +2314,7 @@ export const tools: Tool[] = [
     useCase: "大语言模型训练、大规模分布式训练、显存优化",
     learnMore: "https://www.deepspeed.ai",
     githubStars: 42156,
+    updatedAt: "2026-04-20",
   },
   {
     id: "colossalai",
@@ -2213,6 +2330,7 @@ export const tools: Tool[] = [
     useCase: "大模型预训练、微调加速、分布式训练优化",
     learnMore: "https://www.colossalai.org",
     githubStars: 41373,
+    updatedAt: "2026-04-20",
   },
   {
     id: "qlib",
@@ -2228,6 +2346,7 @@ export const tools: Tool[] = [
     useCase: "量化策略研究、AI 选股、投资组合优化、金融数据分析",
     learnMore: "https://qlib.readthedocs.io",
     githubStars: 41008,
+    updatedAt: "2026-04-20",
   },
     /* REMOVED: bettafish — 非 AI 工具 */
   {
@@ -2244,6 +2363,7 @@ export const tools: Tool[] = [
     useCase: "个人 AI 助手、本地智能对话、轻量级自动化任务",
     learnMore: "https://github.com/nanobot-ai/nanobot",
     githubStars: 40178,
+    updatedAt: "2026-04-20",
   },
   {
     id: "caveman",
@@ -2259,6 +2379,7 @@ export const tools: Tool[] = [
     useCase: "Claude Code 用户降低 token 成本、提升编码会话效率",
     learnMore: "https://github.com/juliusbrussee/caveman",
     githubStars: 39866,
+    updatedAt: "2026-04-20",
   },
   {
     id: "chatbox",
@@ -2274,6 +2395,7 @@ export const tools: Tool[] = [
     useCase: "多模型统一管理、日常 AI 对话、对话历史管理",
     learnMore: "https://chatboxai.app",
     githubStars: 39526,
+    updatedAt: "2026-04-20",
   },
   {
     id: "quivr",
@@ -2289,6 +2411,7 @@ export const tools: Tool[] = [
     useCase: "个人知识库构建、文档智能问答、企业内部知识管理",
     learnMore: "https://quivr.app",
     githubStars: 39116,
+    updatedAt: "2026-04-20",
   },
   {
     id: "chattts",
@@ -2304,6 +2427,7 @@ export const tools: Tool[] = [
     useCase: "虚拟角色配音、有声内容制作、语音助手声音生成",
     learnMore: "https://github.com/2noise/ChatTTS",
     githubStars: 39109,
+    updatedAt: "2026-04-20",
   },
   {
     id: "mindsdb",
@@ -2319,5 +2443,6 @@ export const tools: Tool[] = [
     useCase: "数据库智能分析、预测建模、AI 增强查询",
     learnMore: "https://mindsdb.com",
     githubStars: 39018,
+    updatedAt: "2026-04-20",
   },
 ];
