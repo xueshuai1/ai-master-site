@@ -81,6 +81,11 @@
 
 ## 📋 每次心跳执行清单
 
+### Step 0 — 执行前自审（必做！）
+1. 读 `EVOLUTION.md` 最新 3 条记录，了解上次做了什么、效果如何、待改进什么
+2. 读 `ANTI-LOOP.md`，记住：同一工具最多 2 次，同一问题反复 3 次就换方案
+3. 带着「上次有什么问题？这次怎么改进？」的意识执行
+
 1. **知识巡检**（必做）：搜索 AI 前沿 → 发现新方向 → 生成知识库文章（如有缺失）
 2. **工具巡检**（必做）：搜索新工具 → 更新老工具信息（如有需要）
 3. **新闻更新**（选做）：先运行 `node scripts/clean-old-news.mjs` 清理 3 天以外旧数据，再追加 2-3 条最新动态
@@ -106,8 +111,10 @@ Vercel（已连接）
 4. 决定下一步开发/优化什么（AI 主题）
 5. 写代码（移动端+PC端响应式）
 6. 测试确保能跑
-7. git add . && git commit && git push origin main
-8. 追加进度到 /Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
+7. **自我反思（必做！）**：做了什么？效果如何？同样的问题是否重复？下次怎么改进？
+8. 更新 `EVOLUTION.md`（如有新发现/新反思）
+9. git add . && git commit && git push origin main
+10. 追加进度到 /Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
 
 ## 🧪 QA 自检清单（每次改代码后必须执行）
 

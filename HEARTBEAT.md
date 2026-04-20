@@ -12,6 +12,11 @@
 
 ## 📋 每次心跳执行清单
 
+### Step 0 — 执行前自审（必做！）
+1. 读 `EVOLUTION.md` 最新 3 条记录，了解上次做了什么、效果如何、待改进什么
+2. 读 `ANTI-LOOP.md`，记住：同一工具最多 2 次，同一问题反复 3 次就换方案
+3. 带着「上次有什么问题？这次怎么改进？」的意识执行
+
 ### P0 — 知识巡检（必做）
 1. 搜索 AI 前沿动态（arXiv、OpenAI Blog、Anthropic News、Google AI Blog、Simon Willison 等）
 2. 发现值得写入知识库的新技术/新论文/新工具
