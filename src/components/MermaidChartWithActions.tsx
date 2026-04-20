@@ -152,54 +152,58 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     
     try {
       // Ensure SVG has xmlns for proper rendering
-      const svgStr = svgContent.includes('xmlns=') 
+      let svgStr = svgContent.includes('xmlns=') 
         ? svgContent 
         : svgContent.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
       
-      // Render SVG to canvas, then export as PNG
-      const img = new Image();
-      const svgBlob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
-      const url = URL.createObjectURL(svgBlob);
+      // Extract width/height from SVG attributes, fallback to viewBox
+      let w = 800, h = 600;
+      const viewBoxMatch = svgStr.match(new RegExp('viewBox="([\\d.]+)\\s+([\\d.]+)\\s+([\\d.]+)\\s+([\\d.]+)"'));
+      if (viewBoxMatch) {
+        w = parseFloat(viewBoxMatch[3]);
+        h = parseFloat(viewBoxMatch[4]);
+      }
+      const widthMatch = svgStr.match(new RegExp('width="(\\d+)"'));
+      const heightMatch = svgStr.match(new RegExp('height="(\\d+)"'));
+      if (widthMatch) w = parseInt(widthMatch[1]);
+      if (heightMatch) h = parseInt(heightMatch[1]);
       
+      // Convert SVG to data URL (base64) — most compatible across browsers
+      const svgBase64 = btoa(unescape(encodeURIComponent(svgStr)));
+      const dataUrl = `data:image/svg+xml;base64,${svgBase64}`;
+      
+      const img = new Image();
       img.onload = () => {
-        // 2x scale for crisp rendering
         const scale = 2;
         const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth * scale;
-        canvas.height = img.naturalHeight * scale;
+        canvas.width = w * scale;
+        canvas.height = h * scale;
         const ctx = canvas.getContext('2d');
         if (!ctx) { setDlStatus('idle'); return; }
         
-        ctx.fillStyle = '#0f172a'; // dark background to match theme
+        ctx.fillStyle = '#0f172a';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.scale(scale, scale);
         ctx.drawImage(img, 0, 0);
         
-        canvas.toBlob((pngBlob) => {
-          if (!pngBlob) { setDlStatus('idle'); return; }
-          const pngUrl = URL.createObjectURL(pngBlob);
-          const a = document.createElement('a');
-          a.href = pngUrl;
-          a.download = 'chart.png';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          setTimeout(() => URL.revokeObjectURL(pngUrl), 1000);
-          
-          setDlStatus('done');
-          setTimeout(() => setDlStatus('idle'), 2000);
-        }, 'image/png');
+        const pngDataUrl = canvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        a.href = pngDataUrl;
+        a.download = 'chart.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
         
-        URL.revokeObjectURL(url);
+        setDlStatus('done');
+        setTimeout(() => setDlStatus('idle'), 2000);
       };
       
       img.onerror = () => {
         console.error('Failed to render SVG to image');
         setDlStatus('idle');
-        URL.revokeObjectURL(url);
       };
       
-      img.src = url;
+      img.src = dataUrl;
     } catch (e) {
       console.error('Download failed:', e);
       setDlStatus('idle');
@@ -214,7 +218,7 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
   return (
     <>
       <div className="relative group my-6">
-        <div className="absolute top-2 right-2 z-10 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <div className="absolute top-2 right-2 z-10 flex gap-1.5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">
           <button onClick={handleDownload} disabled={!svgContent || dlStatus === 'loading'}
             className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex" title="下载 PNG">
             {dlStatus === 'loading' ? <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
