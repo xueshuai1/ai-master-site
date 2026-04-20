@@ -434,7 +434,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                 📚 浏览知识库
               </Link>
               <Link href="/tools" className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-semibold transition-all hover:-translate-y-0.5">
-                🛠️ 探索工具集
+                🛠️ 探索 AI 工具
               </Link>
             </div>
           </div>

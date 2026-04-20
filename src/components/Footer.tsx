@@ -10,7 +10,7 @@ const footerLinks = {
   about: [
     { label: "关于我们", href: "/about" },
     { label: "博客文章", href: "/blog" },
-    { label: "AI 工具集", href: "/tools" },
+    { label: "AI 工具", href: "/tools" },
     { label: "联系我们", href: "/about" },
   ],
 };
