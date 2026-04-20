@@ -57,8 +57,9 @@ export default function MermaidChart({ chart, onSvgReady }: MermaidChartProps) {
           setSvg(svg);
           onSvgReady?.(svg);
         }
-      } catch {
+      } catch (err) {
         // Silently fail — suppressErrorRendering prevents bomb icon
+        console.error('MermaidChart render failed:', err);
         if (mounted) {
           setError('');
           setSvg('');

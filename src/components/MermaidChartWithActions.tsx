@@ -143,91 +143,65 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
     return () => { el.removeEventListener('touchstart', onStart); el.removeEventListener('touchmove', onMove); el.removeEventListener('touchend', onEnd); };
   }, [showModal]);
 
-  const handleDownload = useCallback(async () => {
-    if (!svgContent) return;
+  const handleDownload = useCallback(() => {
+    if (!svgContent) {
+      console.warn('MermaidChartWithActions: no SVG content to download');
+      return;
+    }
     setDlStatus('loading');
     
     try {
-      const SCALE = 3;
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(svgContent, 'image/svg+xml');
-      const svgEl = doc.querySelector('svg');
-      if (!svgEl) {
-        throw new Error('No SVG element');
-      }
+      // Ensure SVG has xmlns for proper rendering
+      const svgStr = svgContent.includes('xmlns=') 
+        ? svgContent 
+        : svgContent.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
       
-      // Get dimensions from viewBox or width/height
-      let svgW = parseFloat(svgEl.getAttribute('width') || '0');
-      let svgH = parseFloat(svgEl.getAttribute('height') || '0');
-      if (svgW === 0 || svgH === 0) {
-        const vb = svgEl.getAttribute('viewBox');
-        if (vb) {
-          const parts = vb.split(/[\s,]+/).filter(Boolean).map(Number);
-          if (parts.length >= 4) { svgW = parts[2]; svgH = parts[3]; }
-        }
-      }
-      if (svgW < 400) svgW = 400;
-      if (svgH < 300) svgH = 300;
-      
-      const canvasW = Math.min(4000, Math.round(svgW * SCALE));
-      const canvasH = Math.min(3000, Math.round(svgH * SCALE));
-      
-      const svgBlob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+      // Render SVG to canvas, then export as PNG
+      const img = new Image();
+      const svgBlob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
       const url = URL.createObjectURL(svgBlob);
       
-      const img = new Image();
       img.onload = () => {
-        try {
-          const canvas = document.createElement('canvas');
-          canvas.width = canvasW;
-          canvas.height = canvasH;
-          const ctx = canvas.getContext('2d', { alpha: false });
-          if (!ctx) { throw new Error('No canvas context'); }
+        // 2x scale for crisp rendering
+        const scale = 2;
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth * scale;
+        canvas.height = img.naturalHeight * scale;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) { setDlStatus('idle'); return; }
+        
+        ctx.fillStyle = '#0f172a'; // dark background to match theme
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.scale(scale, scale);
+        ctx.drawImage(img, 0, 0);
+        
+        canvas.toBlob((pngBlob) => {
+          if (!pngBlob) { setDlStatus('idle'); return; }
+          const pngUrl = URL.createObjectURL(pngBlob);
+          const a = document.createElement('a');
+          a.href = pngUrl;
+          a.download = 'chart.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(pngUrl), 1000);
           
-          ctx.fillStyle = '#0f172a';
-          ctx.fillRect(0, 0, canvasW, canvasH);
-          ctx.drawImage(img, 0, 0, canvasW, canvasH);
-          URL.revokeObjectURL(url);
-          
-          canvas.toBlob((blob) => {
-            if (!blob) {
-              setDlStatus('idle');
-              return;
-            }
-            const pngUrl = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = pngUrl;
-            a.download = 'chart.png';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            setTimeout(() => URL.revokeObjectURL(pngUrl), 1000);
-            setDlStatus('done');
-            setTimeout(() => setDlStatus('idle'), 2000);
-          }, 'image/png', 1.0);
-        } catch {
-          setDlStatus('idle');
-        }
+          setDlStatus('done');
+          setTimeout(() => setDlStatus('idle'), 2000);
+        }, 'image/png');
+        
+        URL.revokeObjectURL(url);
       };
       
       img.onerror = () => {
+        console.error('Failed to render SVG to image');
+        setDlStatus('idle');
         URL.revokeObjectURL(url);
-        // Fallback: download as SVG
-        const svgBlob2 = new Blob([svgContent], { type: 'image/svg+xml' });
-        const svgUrl = URL.createObjectURL(svgBlob2);
-        const a = document.createElement('a');
-        a.href = svgUrl;
-        a.download = 'chart.svg';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(svgUrl);
-        setDlStatus('done');
-        setTimeout(() => setDlStatus('idle'), 2000);
       };
       
       img.src = url;
-    } catch {
+    } catch (e) {
+      console.error('Download failed:', e);
       setDlStatus('idle');
     }
   }, [svgContent]);
@@ -242,13 +216,13 @@ export default function MermaidChartWithActions({ chart }: MermaidChartWithActio
       <div className="relative group my-6">
         <div className="absolute top-2 right-2 z-10 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <button onClick={handleDownload} disabled={!svgContent || dlStatus === 'loading'}
-            className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed hidden md:flex" title="下载 PNG">
+            className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex" title="下载 PNG">
             {dlStatus === 'loading' ? <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
               : dlStatus === 'done' ? <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               : <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>}
           </button>
           <button onClick={handleZoom} disabled={!svgContent}
-            className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed hidden md:flex" title="放大查看">
+            className="p-1.5 rounded-md bg-slate-800/80 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-700 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex" title="放大查看">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" /></svg>
           </button>
         </div>
