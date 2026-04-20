@@ -16,6 +16,64 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-327",
+    tag: "AI 工程化",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "MCP 全面指南上线：从协议原理到生产级 Agent 集成，AI Agent 的「USB-C」标准",
+    summary: "AI Master 知识库新增 MCP（Model Context Protocol）深度文章，详解三层架构、JSON-RPC 通信机制、Tools/Resources/Prompts 三大能力，附完整 Python MCP Server 实现和 Claude Desktop 配置实战。MCP 正在成为 AI Agent 连接外部工具的标准协议。",
+    content: `## MCP：AI Agent 的「USB-C」标准
+
+2026 年，AI Agent 正从「孤立模型」走向「生态系统」。MCP（Model Context Protocol）由 Anthropic 提出，正在成为连接 Agent 与外部工具的标准协议——就像 USB-C 统一了物理接口一样。
+
+**核心价值：**
+- **标准化连接**：一个 MCP Server 可以被 Claude Desktop、Cursor、任何支持 MCP 的 Agent 直接使用
+- **安全隔离**：在 Agent 和工具之间提供安全层，控制权限、验证输入
+- **能力发现**：Agent 可以自动发现 MCP Server 提供了哪些工具，无需硬编码
+
+**MCP vs 传统 API 集成：**
+| 维度 | 传统 API | MCP |
+|------|---------|-----|
+| 集成方式 | 每个工具单独适配 | 统一协议，一次实现处处可用 |
+| 能力发现 | 查阅文档 | 自动 Discovery |
+| 安全模型 | API Key 直接暴露 | MCP Server 作为安全代理层 |
+| 多 Agent 支持 | 每个框架单独适配 | 一个 Server 服务所有客户端 |
+
+**生态现状：** Claude Desktop、Cursor、n8n、LangChain 均已原生支持 MCP。Python 和 TypeScript SDK 均成熟可用。
+
+📖 完整文章：AI Master 知识库 → AI 工程化 → "MCP 全面指南：从协议原理到生产级 Agent 集成"`,
+    date: "2026-04-21 06:00",
+    source: "AI Master 知识库",
+    sourceUrl: "https://github.com/modelcontextprotocol/specification",
+    href: "/article/mcp-001",
+  },
+{
+    id: "news-326",
+    tag: "产品动态",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Simon Willison 实测 Claude Opus 4.7 Tokenizer：系统提示词 +46% 成本，图片支持 3 倍提升",
+    summary: "Simon Willison 用自研 Token Counter 工具实测 Claude Opus 4.7 的新 tokenizer：系统提示词 token 数 +46%，30 页 PDF +8%，但高分辨率图片支持从 ~1MP 跃升至 ~3.75MP（2576px 长边）。价格不变但实际成本因 token 膨胀增加约 40%。",
+    content: `## Claude Opus 4.7 Tokenizer 实测分析
+
+Simon Willison 升级了他的 Claude Token Counter 工具，新增多模型对比功能，对 Opus 4.7 进行了全面测试：
+
+**文本 Token 变化：**
+- 系统提示词：Opus 4.7 比 4.6 多用 46% token
+- 普通文本：+1.0-1.35x（取决于内容类型）
+- 30 页 PDF（15MB）：仅 +8%（60,934 vs 56,482 tokens）
+
+**图片 Token 变化：**
+- 682x318 小图：几乎相同（314 vs 310 tokens）
+- 3456x2234 大图（3.7MB）：4.7 是 4.6 的 3.01x —— 但这完全因为 4.7 能处理更高分辨率
+
+**成本影响：** Opus 4.7 定价与 4.6 相同（$5/百万输入，$25/百万输出），但因 token 膨胀，实际成本增加约 40%。
+
+**技术背景：** Anthropic 称 Opus 4.7 的 tokenizer 改进是为了更好地处理文本结构，tradeoff 是 token 数量增加。`,
+    date: "2026-04-21 01:00",
+    source: "Simon Willison Blog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
+    href: "/news/news-326",
+  },
+{
     id: "news-325",
     tag: "AI Agent",
     tagColor: "bg-blue-500/10 text-blue-300",
