@@ -306,11 +306,10 @@ export default function ToolsPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-slate-500">收录 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个开源项目</p>
+            <p className="hidden lg:block text-sm text-slate-500">收录 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个开源项目</p>
             <div className="flex items-center gap-2">
-              {/* Mobile: category + sort tabs */}
+              {/* Mobile: sort tabs + category */}
               <div className="lg:hidden flex items-center gap-2">
-                <CategoryFilter categories={categoryData} activeCategory={activeCategory} onChange={(key) => setActiveCategory(key)} />
                 <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-lg p-0.5">
                   {([
                     ["stars", "⭐ Stars"],
@@ -330,6 +329,7 @@ export default function ToolsPage() {
                     </button>
                   ))}
                 </div>
+                <CategoryFilter categories={categoryData} activeCategory={activeCategory} onChange={(key) => setActiveCategory(key)} />
               </div>
               {/* Desktop: sort select */}
               <div className="hidden lg:flex items-center gap-2">
