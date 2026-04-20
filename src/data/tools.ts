@@ -474,29 +474,6 @@ export const tools: Tool[] = [
   {
       id: "ai-hedge-fund",
       name: "AI Hedge Fund",
-      category: "data",
-      description: "AI 对冲基金团队（GitHub 54k 星），使用多 Agent 协作模拟真实对冲基金工作流程，包括市场分析、风险评估、投资决策等，开源 AI 金融量化方案",
-      url: "https://github.com/virattt/ai-hedge-fund",
-      tags: ["开源", "量化金融", "多 Agent", "对冲基金"],
-      price: "开源",
-      icon: "💰",
-      pros: [
-        "AI 量化交易框架",
-        "多策略组合",
-        "开源免费"
-      ],
-      cons: [
-        "需要金融知识",
-        "回测不代表实盘",
-        "风险较高"
-      ],
-      useCase: "AI 量化投资、策略回测",
-      learnMore: "https://github.com/virattt/ai-hedge-fund",
-      githubStars: 56399,
-    },
-  {
-      id: "ai-hedge-fund",
-      name: "AI Hedge Fund",
       category: "agent",
       description: `AI 对冲基金团队，56,362 stars，本周增长 4,458 stars。将多个 AI Agent 组织成一个完整的对冲基金团队——包括分析师、风险经理、交易员等角色，每个 Agent 有明确的职责和决策权限。Agent 之间通过结构化通信协作，最终产出投资建议。支持多数据源（市场数据、新闻、社交媒体情绪），是 AI + Finance + Multi-Agent 的交叉前沿项目。`,
       url: "https://github.com/virattt/ai-hedge-fund",
@@ -877,31 +854,7 @@ export const tools: Tool[] = [
       githubStars: 19645,
       updatedAt: "2026-04-19",
     },
-  {
-      id: "kronos",
-      name: "Kronos",
-      category: "llm",
-      description: `Kronos 是专为金融市场设计的 Foundation Model（基础模型），将金融市场的「语言」作为建模对象。19,624 stars，本周增长 4,455 stars。与传统量化模型不同，Kronos 将价格序列、交易量、新闻情绪等多源数据统一建模，支持市场预测、风险评估和投资组合优化。Python 实现，提供预训练权重和 fine-tuning 脚本，是 AI + Finance 领域最前沿的开源项目。`,
-      url: "https://github.com/shiyu-coder/Kronos",
-      tags: ["金融 AI", "基础模型", "量化交易", "市场预测"],
-      price: "开源",
-      icon: "📈",
-      pros: [
-        "首创将金融市场作为语言建模",
-        "多源数据统一建模",
-        "提供预训练权重和 fine-tuning 脚本",
-        "AI + Finance 最前沿的开源项目"
-      ],
-      cons: [
-        "金融预测本身具有极高不确定性",
-        "需要大量金融领域专业知识",
-        "回测结果不代表实盘表现",
-        "社区仍在早期阶段"
-      ],
-      useCase: "市场趋势预测、风险评估、量化策略研究",
-      learnMore: "https://github.com/shiyu-coder/Kronos",
-      githubStars: 19645,
-    },
+
   {
       id: "google-adk",
       name: "Google ADK (Agent Development Kit)",
@@ -1622,21 +1575,7 @@ export const tools: Tool[] = [
       learnMore: "https://platform.minimaxi.com",
       githubStars: 2800,
     },
-  {
-      id: "mmx-cli",
-      name: "MMX-CLI",
-      category: "cli",
-      description: "MiniMax 命令行工具，为 AI Agent 提供图像、视频、语音、音乐、视觉、搜索的原生访问能力。适合 Agent 自主调用的多模态 CLI 接口，支持七大模态命令（text/image/video/speech/music/vision/search），零 MCP 配置即可集成到 Agent 工作流",
-      url: "https://github.com/MiniMax-AI",
-      tags: ["CLI", "多模态", "Agent 工具", "MiniMax"],
-      price: "免费",
-      icon: "💻",
-      pros: ["七大模态一站式覆盖", "Agent 原生设计", "零 MCP 配置", "Node.js 易于集成"],
-      cons: ["依赖 MiniMax API", "免费额度有限", "文档不够完善", "国际用户访问可能受限"],
-      useCase: "Agent 多模态任务自动化、AI 工作流集成多模态能力",
-      learnMore: "https://github.com/MiniMax-AI/MMX-CLI",
-      githubStars: 2800,
-    },
+
 {
       id: "microsoft-promptbench",
       name: "PromptBench (Microsoft)",
