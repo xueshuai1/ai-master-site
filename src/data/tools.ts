@@ -41,6 +41,31 @@ export const toolCategories = [
 ];
 
 export const tools: Tool[] = [
+  {
+    id: "openclaw",
+    name: "OpenClaw",
+    category: "agent",
+    description: "个人 AI 助手框架，支持任何操作系统和平台。GitHub 360K+ stars，是最受欢迎的开源个人 AI 助手项目。采用 lobster way 设计理念，强调数据自主权和隐私保护，支持多模型、多平台、多技能扩展",
+    url: "https://github.com/openclaw/openclaw",
+    tags: ["个人AI助手", "开源", "多平台", "多模型", "技能系统"],
+    price: "开源",
+    icon: "🦞",
+    pros: [
+      "跨平台支持（macOS/Linux/Windows）",
+      "丰富的技能生态（40+ 内置技能）",
+      "支持任意 LLM 后端",
+      "数据完全自主可控",
+      "活跃社区和持续更新"
+    ],
+    cons: [
+      "学习曲线较陡",
+      "需要自行配置模型 API",
+      "高级功能需要一定技术基础"
+    ],
+    useCase: "个人 AI 助手部署、自动化工作流、多模型统一管理",
+    learnMore: "https://openclaw.ai",
+    githubStars: 360683,
+  },
 {
       id: "n8n",
       name: "n8n",
