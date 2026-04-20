@@ -87,6 +87,32 @@ Voicebox 是一个全面的开源语音合成平台，功能覆盖：
     href: "/news/news-320",
   },
 {
+    id: "news-321",
+    tag: "AI 基础设施",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "OMI 随身 AI 硬件突破 11K 星：AI 从云端走向可穿戴设备",
+    summary: "BasedHardware/omi 本周增长 2,896 星，总计 11,485 星。这是一个开源的随身 AI 硬件——AI 项链，能实时感知你的屏幕和对话，提供智能建议。在 Gemini 3.1 Flash TTS、Voicebox 等语音 AI 项目的推动下，2026 年 AI 正从纯软件走向硬件化。",
+    content: `## OMI：随身 AI 硬件新物种
+
+OMI 是 2026 年最引人注目的 AI 硬件项目之一。这个开源的 AI 项链能够：
+
+- **实时感知**：通过摄像头和麦克风持续捕捉环境信息
+- **智能分析**：多模态 AI 理解视觉和音频输入
+- **主动建议**：根据你的场景提供智能提醒和建议
+- **开源设计**：硬件设计和软件完全开源，支持 DIY
+
+**本周增长：** +2,896 stars
+**技术栈：** Dart（跨平台移动端）
+
+OMI 代表了一个重要趋势：AI 正在从「手机上的 App」走向「随身硬件」。当 AI 能够持续感知你的环境和状态时，它的价值将从「被动回答」升级为「主动协助」。
+
+同期值得关注的 AI 硬件项目还包括 Rabbit R1 的后续发展、Humane AI Pin 的转型，以及各大厂商正在布局的 AI 眼镜。2026 年可能是 AI 硬件的元年。`,
+    date: "2026-04-20",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/BasedHardware/omi",
+    href: "/news/news-321",
+  },
+{
     id: "news-316",
     tag: "AI 趋势",
     tagColor: "bg-purple-500/10 text-purple-300",
