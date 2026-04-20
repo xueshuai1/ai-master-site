@@ -58,19 +58,6 @@ const homeNews = sortedNews.slice(0, 6);
 const tickerNews = sortedNews.slice(6, 12);   // 滚动条：第 7-12 条动态（与卡片区不重复）
 const previewBlogs = sortedByDate(blogs).slice(0, 6);  // 博客预览：最新 6 篇（时间倒序）
 
-// 和 /news 页面统一取最近3天新闻的逻辑
-function getLast3DaysNewsCount(): number {
-  const now = new Date();
-  const threeDaysAgo = new Date(now);
-  threeDaysAgo.setDate(now.getDate() - 2);
-  threeDaysAgo.setHours(0, 0, 0, 0);
-  return news.filter((n) => {
-    const datePart = n.date.split(" ")[0];
-    const d = new Date(datePart + "T00:00:00");
-    return d >= threeDaysAgo;
-  }).length;
-}
-
 function formatNewsTime(dateStr: string): string {
   const now = new Date();
   // 支持两种格式："YYYY-MM-DD HH:mm" 和 "YYYY-MM-DD"
@@ -154,7 +141,7 @@ export default function Home() {
             {[
               { num: `${articles.length}+`, label: "篇教程", icon: "📚", trend: "持续更新" },
               { num: `${tools.length}+`, label: "个工具", icon: "🛠️", trend: "精选收录" },
-              { num: `${getLast3DaysNewsCount()}+`, label: "条动态", icon: "⚡", trend: "最近更新" },
+              { num: `${blogs.length}+`, label: "篇博客", icon: "✍️", trend: "持续更新" },
               { num: "100%", label: "免费", icon: "❤️", trend: "永远免费" },
             ].map((stat) => (
               <div key={stat.label} className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-500/30 transition-all">
