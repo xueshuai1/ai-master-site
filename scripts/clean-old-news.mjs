@@ -10,11 +10,12 @@ import { dirname, join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const newsFile = join(__dirname, '..', 'src', 'data', 'news.ts');
 
-// 保留 3 天内的新闻
+// 保留最近 3 天（与前端 getLast3DaysNews() 逻辑对齐：getDate() - 2）
+// ⚠️ 不用 toISOString()，会转 UTC 导致时差偏移
 const cutoff = new Date();
-cutoff.setDate(cutoff.getDate() - 3);
+cutoff.setDate(cutoff.getDate() - 2);
 cutoff.setHours(0, 0, 0, 0);
-const cutoffStr = cutoff.toISOString().split('T')[0];
+const cutoffStr = `${cutoff.getFullYear()}-${String(cutoff.getMonth()+1).padStart(2,'0')}-${String(cutoff.getDate()).padStart(2,'0')}`;
 
 const content = readFileSync(newsFile, 'utf-8');
 
