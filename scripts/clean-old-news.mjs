@@ -1,6 +1,7 @@
 /**
  * 清理 news.ts 中 3 天以外的旧新闻
  * 运行: node scripts/clean-old-news.mjs
+ * 应在更新新闻前执行，防止数据无限膨胀
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';

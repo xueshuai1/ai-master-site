@@ -26,8 +26,9 @@
 4. 🔴 **遗漏检查（新增）**：用 GitHub API 搜索 stars>50K 的 AI 项目，对比 tools.ts 已有 ID，发现漏掉的高星项目必须收录
 
 ### P2 — 首页新闻（选做，不要花太多时间）
+- 🔴 **先运行 `node scripts/clean-old-news.mjs` 清理 3 天以外旧数据**
 - 2-5 条最新动态即可
-- 来源：The Verge、TechCrunch、arXiv、各官方博客
+- 来源：The Verge、TechCrurch、arXiv、各官方博客
 - 不要依赖单一 API，哪个能用就用哪个
 - 滚动条上限 6 条，date 格式 `YYYY-MM-DD HH:mm`
 
