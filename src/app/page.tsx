@@ -140,7 +140,7 @@ export default function Home() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { num: `${articles.length}+`, label: "篇教程", icon: "📚", trend: "持续更新" },
-              { num: `${tools.length}+`, label: "个工具", icon: "🛠️", trend: "精选收录" },
+              { num: `${tools.length}+`, label: "个开源项目", icon: "🛠️", trend: "精选收录" },
               { num: `${blogs.length}+`, label: "篇博客", icon: "✍️", trend: "持续更新" },
               { num: "100%", label: "免费", icon: "❤️", trend: "永远免费" },
             ].map((stat) => (
