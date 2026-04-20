@@ -436,7 +436,7 @@ export const tools: Tool[] = [
       id: "claude-mem",
       name: "Claude-Mem (thedotmack)",
       category: "agent",
-      description: "Claude Code 自动记忆插件（GitHub 56k 星），自动捕获编码会话中的所有操作，用 AI 压缩后注入后续会话，解决上下文丢失问题，支持长期记忆和智能检索",
+      description: "Claude Code 自动记忆插件（GitHub 63,839 星），自动捕获编码会话中的所有操作，用 AI 压缩后注入后续会话，解决上下文丢失问题，支持长期记忆和智能检索。单周增长 14,556 星，是 2026 年增长最快的 Agent 记忆工具",
       url: "https://github.com/thedotmack/claude-mem",
       tags: ["开源", "记忆管理", "Claude Code", "上下文增强"],
       price: "开源",
@@ -444,7 +444,8 @@ export const tools: Tool[] = [
       pros: [
         "Claude 持久记忆方案",
         "跨会话记忆",
-        "开源免费"
+        "开源免费",
+        "单周增长 14,556 星，社区爆发式认可"
       ],
       cons: [
         "配置较复杂",
@@ -452,8 +453,9 @@ export const tools: Tool[] = [
         "稳定性待验证"
       ],
       useCase: "Claude Code 跨会话记忆、个人助手",
-      learnMore: "https://github.com/nicholasgriffintn/claude-mem",
-      githubStars: 63768,
+      learnMore: "https://github.com/thedotmack/claude-mem",
+      githubStars: 63839,
+      updatedAt: "2026-04-20",
     },
   {
       id: "autogen",

@@ -55,7 +55,12 @@
 AI 工具每天冒出来，工具集必须是活的。
 
 #### 1. 发现新工具
-- GitHub trending AI 项目（周增长 >1000 stars）
+- GitHub Trending AI 项目（周增长 >1000 stars）
+- **🔴 GitHub Topics 扫描（新增核心策略）**：
+  - 维护本地 `data/ai-topics.json` AI 相关 topics 库
+  - 每次巡检按 topic 搜索高星项目（`topic:xxx stars:>minStars`）
+  - 对比 tools.ts 已有项目，发现遗漏立即收录
+  - 发现新 topic → 更新本地 topic 库
 - HuggingFace 新模型 / 新 Space
 - Product Hunt AI 分类
 - 各大公司最新发布（OpenAI、Anthropic、Google、Meta、NVIDIA）

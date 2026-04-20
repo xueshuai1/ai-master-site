@@ -16,6 +16,37 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-322",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Agent 记忆系统爆发：Claude-Mem 突破 63K 星 + MemPalace 记忆宫殿架构——记忆成为 Agent 刚需基础设施",
+    summary: "2026 年 4 月，AI Agent 记忆系统从实验性功能变为开发者刚需。Claude-Mem 单周暴涨 14,556 星突破 63K，MemPalace 提出记忆宫殿架构 + AAAK 30x 压缩技术（170 token 启动检索），LongMemEval 基准准确率 96.6%。记忆系统正成为 Agent 从「工具」走向「伙伴」的关键基础设施。",
+    content: `## Agent 记忆系统：2026 年最被低估的 AI 趋势
+
+当所有人都在关注 AI Agent 的执行能力时，一个更根本的趋势正在悄然爆发：**Agent 记忆系统**。
+
+**三大记忆方案同时爆发：**
+
+1. **Claude-Mem（63K+ stars，周增 14,556）**：自动捕获 Claude Code 编码会话中的所有操作，AI 压缩后注入后续会话，解决上下文丢失问题
+2. **MemPalace（22K+ stars）**：记忆宫殿架构 + AAAK 30x 压缩，仅 170 token 启动检索，LongMemEval 基准准确率 96.6%
+3. **OpenViking（22K+ stars）**：火山引擎开源的 Agent 上下文数据库，支持上下文持久化和多 Agent 共享
+
+**三种记忆路线：**
+- **经验型**（Claude-Mem）：记录 Agent 做了什么，压缩为可复用知识
+- **知识型**（MemPalace）：结构化图谱记忆，支持复杂查询和关联发现
+- **上下文型**（OpenViking）：持久化 Agent 当前状态，支持中断恢复和共享
+
+**为什么记忆是刚需？**
+没有记忆的 Agent 就像没有经验的员工——每次任务都从零开始。随着 Agent 在日常工作中被频繁使用，跨会话记忆从「锦上添花」变成了「不可或缺」。
+
+**对开发者的意义：**
+记忆系统 + RAG + Fine-tuning 三者组合，将为 Agent 提供完整的知识体系：Fine-tuning 提供基础能力，RAG 提供外部知识，记忆提供个人经验。`,
+    date: "2026-04-20",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-322",
+  },
+{
     id: "news-318",
     tag: "AI Agent",
     tagColor: "bg-blue-500/10 text-blue-300",

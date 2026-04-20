@@ -1,0 +1,313 @@
+{
+  "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
+  "lastUpdated": "2026-04-20T18:50:00.000Z",
+  "minStarsThreshold": 5000,
+  "topics": [
+    {
+      "topic": "artificial-intelligence",
+      "url": "https://github.com/topics/artificial-intelligence",
+      "minStars": 10000,
+      "description": "AI 综合"
+    },
+    {
+      "topic": "machine-learning",
+      "url": "https://github.com/topics/machine-learning",
+      "minStars": 10000,
+      "description": "机器学习"
+    },
+    {
+      "topic": "deep-learning",
+      "url": "https://github.com/topics/deep-learning",
+      "minStars": 10000,
+      "description": "深度学习"
+    },
+    {
+      "topic": "large-language-models",
+      "url": "https://github.com/topics/large-language-models",
+      "minStars": 5000,
+      "description": "大语言模型"
+    },
+    {
+      "topic": "llm",
+      "url": "https://github.com/topics/llm",
+      "minStars": 5000,
+      "description": "LLM"
+    },
+    {
+      "topic": "generative-ai",
+      "url": "https://github.com/topics/generative-ai",
+      "minStars": 5000,
+      "description": "生成式 AI"
+    },
+    {
+      "topic": "ai-agent",
+      "url": "https://github.com/topics/ai-agent",
+      "minStars": 5000,
+      "description": "AI Agent"
+    },
+    {
+      "topic": "langchain",
+      "url": "https://github.com/topics/langchain",
+      "minStars": 3000,
+      "description": "LangChain 生态"
+    },
+    {
+      "topic": "rag",
+      "url": "https://github.com/topics/rag",
+      "minStars": 3000,
+      "description": "RAG 检索增强生成"
+    },
+    {
+      "topic": "retrieval-augmented-generation",
+      "url": "https://github.com/topics/retrieval-augmented-generation",
+      "minStars": 3000,
+      "description": "RAG"
+    },
+    {
+      "topic": "vector-database",
+      "url": "https://github.com/topics/vector-database",
+      "minStars": 3000,
+      "description": "向量数据库"
+    },
+    {
+      "topic": "computer-vision",
+      "url": "https://github.com/topics/computer-vision",
+      "minStars": 5000,
+      "description": "计算机视觉"
+    },
+    {
+      "topic": "natural-language-processing",
+      "url": "https://github.com/topics/natural-language-processing",
+      "minStars": 5000,
+      "description": "NLP"
+    },
+    {
+      "topic": "nlp",
+      "url": "https://github.com/topics/nlp",
+      "minStars": 5000,
+      "description": "NLP"
+    },
+    {
+      "topic": "transformer",
+      "url": "https://github.com/topics/transformer",
+      "minStars": 3000,
+      "description": "Transformer 架构"
+    },
+    {
+      "topic": "diffusion-models",
+      "url": "https://github.com/topics/diffusion-models",
+      "minStars": 3000,
+      "description": "扩散模型"
+    },
+    {
+      "topic": "stable-diffusion",
+      "url": "https://github.com/topics/stable-diffusion",
+      "minStars": 5000,
+      "description": "Stable Diffusion"
+    },
+    {
+      "topic": "text-to-image",
+      "url": "https://github.com/topics/text-to-image",
+      "minStars": 3000,
+      "description": "文生图"
+    },
+    {
+      "topic": "text-to-video",
+      "url": "https://github.com/topics/text-to-video",
+      "minStars": 2000,
+      "description": "文生视频"
+    },
+    {
+      "topic": "speech-recognition",
+      "url": "https://github.com/topics/speech-recognition",
+      "minStars": 3000,
+      "description": "语音识别"
+    },
+    {
+      "topic": "text-to-speech",
+      "url": "https://github.com/topics/text-to-speech",
+      "minStars": 3000,
+      "description": "语音合成"
+    },
+    {
+      "topic": "reinforcement-learning",
+      "url": "https://github.com/topics/reinforcement-learning",
+      "minStars": 3000,
+      "description": "强化学习"
+    },
+    {
+      "topic": "autonomous-driving",
+      "url": "https://github.com/topics/autonomous-driving",
+      "minStars": 3000,
+      "description": "自动驾驶"
+    },
+    {
+      "topic": "robotics",
+      "url": "https://github.com/topics/robotics",
+      "minStars": 3000,
+      "description": "机器人"
+    },
+    {
+      "topic": "mcp",
+      "url": "https://github.com/topics/mcp",
+      "minStars": 2000,
+      "description": "Model Context Protocol"
+    },
+    {
+      "topic": "model-context-protocol",
+      "url": "https://github.com/topics/model-context-protocol",
+      "minStars": 2000,
+      "description": "MCP"
+    },
+    {
+      "topic": "ai-chatbot",
+      "url": "https://github.com/topics/ai-chatbot",
+      "minStars": 3000,
+      "description": "AI 聊天机器人"
+    },
+    {
+      "topic": "chatbot",
+      "url": "https://github.com/topics/chatbot",
+      "minStars": 5000,
+      "description": "聊天机器人"
+    },
+    {
+      "topic": "llm-framework",
+      "url": "https://github.com/topics/llm-framework",
+      "minStars": 2000,
+      "description": "LLM 框架"
+    },
+    {
+      "topic": "ai-tooling",
+      "url": "https://github.com/topics/ai-tooling",
+      "minStars": 2000,
+      "description": "AI 工具链"
+    },
+    {
+      "topic": "prompt-engineering",
+      "url": "https://github.com/topics/prompt-engineering",
+      "minStars": 2000,
+      "description": "提示工程"
+    },
+    {
+      "topic": "fine-tuning",
+      "url": "https://github.com/topics/fine-tuning",
+      "minStars": 3000,
+      "description": "微调"
+    },
+    {
+      "topic": "llmops",
+      "url": "https://github.com/topics/llmops",
+      "minStars": 2000,
+      "description": "LLM 运维"
+    },
+    {
+      "topic": "ai-safety",
+      "url": "https://github.com/topics/ai-safety",
+      "minStars": 2000,
+      "description": "AI 安全"
+    },
+    {
+      "topic": "alignment",
+      "url": "https://github.com/topics/alignment",
+      "minStars": 2000,
+      "description": "AI 对齐"
+    },
+    {
+      "topic": "multimodal",
+      "url": "https://github.com/topics/multimodal",
+      "minStars": 3000,
+      "description": "多模态"
+    },
+    {
+      "topic": "vision-language-model",
+      "url": "https://github.com/topics/vision-language-model",
+      "minStars": 2000,
+      "description": "视觉语言模型"
+    },
+    {
+      "topic": "embodied-ai",
+      "url": "https://github.com/topics/embodied-ai",
+      "minStars": 1000,
+      "description": "具身智能"
+    },
+    {
+      "topic": "world-models",
+      "url": "https://github.com/topics/world-models",
+      "minStars": 1000,
+      "description": "世界模型"
+    },
+    {
+      "topic": "ai-search",
+      "url": "https://github.com/topics/ai-search",
+      "minStars": 2000,
+      "description": "AI 搜索"
+    },
+    {
+      "topic": "knowledge-graph",
+      "url": "https://github.com/topics/knowledge-graph",
+      "minStars": 2000,
+      "description": "知识图谱"
+    },
+    {
+      "topic": "graph-neural-network",
+      "url": "https://github.com/topics/graph-neural-network",
+      "minStars": 1000,
+      "description": "图神经网络"
+    },
+    {
+      "topic": "federated-learning",
+      "url": "https://github.com/topics/federated-learning",
+      "minStars": 1000,
+      "description": "联邦学习"
+    },
+    {
+      "topic": "edge-ai",
+      "url": "https://github.com/topics/edge-ai",
+      "minStars": 1000,
+      "description": "边缘 AI"
+    },
+    {
+      "topic": "ai-chip",
+      "url": "https://github.com/topics/ai-chip",
+      "minStars": 1000,
+      "description": "AI 芯片"
+    },
+    {
+      "topic": "neural-network",
+      "url": "https://github.com/topics/neural-network",
+      "minStars": 5000,
+      "description": "神经网络"
+    },
+    {
+      "topic": "pytorch",
+      "url": "https://github.com/topics/pytorch",
+      "minStars": 3000,
+      "description": "PyTorch 生态"
+    },
+    {
+      "topic": "tensorflow",
+      "url": "https://github.com/topics/tensorflow",
+      "minStars": 3000,
+      "description": "TensorFlow 生态"
+    },
+    {
+      "topic": "huggingface",
+      "url": "https://github.com/topics/huggingface",
+      "minStars": 3000,
+      "description": "HuggingFace 生态"
+    },
+    {
+      "topic": "openai",
+      "url": "https://github.com/topics/openai",
+      "minStars": 3000,
+      "description": "OpenAI 生态"
+    },
+    {
+      "topic": "anthropic",
+      "url": "https://github.com/topics/anthropic",
+      "minStars": 2000,
+      "description": "Anthropic 生态"
+    }
+  ]
+}

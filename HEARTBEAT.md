@@ -19,11 +19,15 @@
 4. 发现缺失 → 立即生成新文章 或 更新旧文章
 
 ### P1 — 工具巡检（必做）
-1. 搜索新 AI 工具（GitHub trending、HuggingFace、Product Hunt AI）
+1. 搜索新 AI 工具（GitHub Trending + **Topics 扫描** + HuggingFace、Product Hunt AI）
 2. 检查已有工具信息是否需要更新（版本、定价、功能变化）
 3. 发现值得收录的新工具 → 更新 tools.ts
-4. 🔴 **遗漏检查（新增）**：用 GitHub API 搜索 stars>50K 的 AI 项目，对比 tools.ts 已有 ID，发现漏掉的高星项目必须收录
-4. 🔴 **遗漏检查（新增）**：用 GitHub API 搜索 stars>50K 的 AI 项目，对比 tools.ts 已有 ID，发现漏掉的高星项目必须收录
+4. 🔴 **Topics 扫描机制（新增）**：
+   - 读取 `data/ai-topics.json` 中的 AI 相关 topics 列表
+   - 对每个 topic 用 GitHub API 搜索 `topic:xxx stars:>minStars` 的高星项目
+   - 对比 tools.ts 已有项目，发现遗漏立即收录
+   - 发现新 topic → 更新 ai-topics.json 本地库
+5. 🔴 **全量比对机制**：用 GitHub API 搜索 `stars:>50K language:Python topic:artificial-intelligence` 等关键词，对比 tools.ts 已有 ID，发现遗漏的高星项目必须收录
 
 ### P2 — 首页新闻（选做，不要花太多时间）
 - 🔴 **先运行 `node scripts/clean-old-news.mjs` 清理 3 天以外旧数据**
