@@ -1524,7 +1524,7 @@ export const tools: Tool[] = [
   {
     id: "everything-claude-code",
     name: "Everything Claude Code",
-    category: "llm",
+    category: "education",
     description: "Claude Code 性能优化系统，161,753+ stars。提供 skills、memories、instincts 三大核心模块，大幅提升 Claude Code 的代码生成质量和开发效率",
     url: "https://github.com/affaan-m/everything-claude-code",
     tags: ["Claude", "性能优化", "skills", "memories"],
