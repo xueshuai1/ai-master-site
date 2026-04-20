@@ -19,15 +19,15 @@ const toolsWithPopularity: Tool[] = tools.map(t => {
     repoCreatedAt: ghData?.createdAt ?? (t as any).createdAt ?? null,
     delta: ghData?.delta ?? null,
     previousStars: ghData?.previousStars ?? null,
-    // GitHub 完整数据
-    forks: ghData?.forks ?? null,
-    watchers: ghData?.watchers ?? null,
-    language: ghData?.language ?? null,
-    license: ghData?.license ?? null,
-    homepage: ghData?.homepage ?? null,
-    lastUpdated: ghData?.updatedAt ?? null,
-    openIssues: ghData?.openIssues ?? null,
-    topics: ghData?.topics ?? null,
+    // GitHub 完整数据 — 优先 stars.json，回退到 tools.ts 字段
+    forks: ghData?.forks ?? (t as any).forks ?? null,
+    watchers: ghData?.watchers ?? (t as any).watchers ?? null,
+    language: ghData?.language ?? (t as any).language ?? null,
+    license: ghData?.license ?? (t as any).license ?? null,
+    homepage: ghData?.homepage ?? (t as any).homepage ?? null,
+    lastUpdated: ghData?.updatedAt ?? (t as any).updatedAt ?? null,
+    openIssues: ghData?.openIssues ?? (t as any).openIssues ?? null,
+    topics: ghData?.topics ?? (t as any).topics ?? null,
   };
 });
 
