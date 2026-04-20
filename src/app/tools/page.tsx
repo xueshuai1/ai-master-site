@@ -192,45 +192,17 @@ export default function ToolsPage() {
   const isInitialMount = useRef(true);
   const syncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Track previous category/sort to detect changes
-  const prevCategoryRef = useRef(activeCategory);
-  const prevSortRef = useRef(sortBy);
-
   // Unified effect: detect category/sort changes → reset page → sync URL
   useEffect(() => {
-    const categoryChanged = prevCategoryRef.current !== activeCategory;
-    const sortChanged = prevSortRef.current !== sortBy;
-    prevCategoryRef.current = activeCategory;
-    prevSortRef.current = sortBy;
-
-    const needReset = categoryChanged || sortChanged;
-    const effectivePage = needReset ? 1 : currentPage;
-
-    if (needReset) setCurrentPage(1);
-
     if (isInitialMount.current) { isInitialMount.current = false; return; }
-    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
-    syncTimerRef.current = setTimeout(() => {
-      const params = new URLSearchParams();
-      if (activeCategory !== "all") params.set("cat", activeCategory);
-      if (searchQuery) params.set("q", searchQuery);
-      if (sortBy !== "stars") params.set("sort", sortBy);
-      if (effectivePage > 1) params.set("page", String(effectivePage));
-      const query = params.toString();
-      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
-    }, 300);
-    return () => { if (syncTimerRef.current) clearTimeout(syncTimerRef.current); };
-  }, [activeCategory, searchQuery, sortBy, currentPage, pathname, router]);
-
-  // Calculate effective page for rendering (handles async currentPage reset)
-  const prevCatForPageRef = useRef(activeCategory);
-  const prevSortForPageRef = useRef(sortBy);
-  const catOrSortChanged = prevCatForPageRef.current !== activeCategory || prevSortForPageRef.current !== sortBy;
-  if (catOrSortChanged) {
-    prevCatForPageRef.current = activeCategory;
-    prevSortForPageRef.current = sortBy;
-  }
-  const displayPage = catOrSortChanged ? 1 : currentPage;
+    setCurrentPage(1);
+    const params = new URLSearchParams();
+    if (activeCategory !== "all") params.set("cat", activeCategory);
+    if (searchQuery) params.set("q", searchQuery);
+    if (sortBy !== "stars") params.set("sort", sortBy);
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  }, [activeCategory, searchQuery, sortBy, pathname, router]);
 
   const filteredTools = useMemo(() => {
     let result = toolsWithPopularity.filter((t) => {
@@ -264,7 +236,7 @@ export default function ToolsPage() {
   }, [activeCategory, searchQuery, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(filteredTools.length / TOOLS_PER_PAGE));
-  const safePage = Math.min(displayPage, totalPages);
+  const safePage = Math.min(currentPage, totalPages);
   const paginatedTools = filteredTools.slice((safePage - 1) * TOOLS_PER_PAGE, safePage * TOOLS_PER_PAGE);
 
   const categoryData = toolCategories.map((c) => ({
