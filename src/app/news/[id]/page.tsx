@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 function MarkdownContent({ content }: { content: string }) {
   const html = marked.parse(content) as string;
   return (
+    <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
     <div
       className="prose prose-invert prose-lg max-w-none
         prose-h2:text-xl prose-h2:font-bold prose-h2:text-brand-300 prose-h2:mt-8 prose-h2:mb-4
@@ -27,9 +28,10 @@ function MarkdownContent({ content }: { content: string }) {
         [&_table]:w-full [&_table]:border-collapse [&_table]:my-6
         [&_th]:bg-white/5 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold [&_th]:border-b [&_th]:border-white/10
         [&_td]:px-4 [&_td]:py-2 [&_td]:border-b [&_td]:border-white/5
-        [&_hr]:border-white/10 [&_hr]:my-8"
+        [&_hr]:border-white/10 [&_hr]:my-8 [&_table]:text-sm [&_th]:px-3 [&_th]:py-1.5 [&_td]:px-3 [&_td]:py-1.5 [&_table]:whitespace-nowrap [&_table]:w-auto"
       dangerouslySetInnerHTML={{ __html: html }}
     />
+    </div>
   );
 }
 
