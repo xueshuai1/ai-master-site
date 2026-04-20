@@ -10,7 +10,11 @@ const content: ArticleSection[] = [
 - **EvoMap Evolver**：提出 GEP（Genome Evolution Protocol）基因组进化协议，通过群体竞争产生更优 Agent
 
 这不是巧合。这三个项目代表了 AI Agent 从「被动执行」走向「主动进化」的三条不同技术路线。本文将深度解析每条路线的技术原理、优劣对比，以及如何在实践中应用自我进化 Agent。`,
-    tip: "**阅读收获：**\\n- 理解 AI Agent 自我进化的三种技术范式\\n- 掌握 Hermes/GenericAgent/Evolver 的核心机制\\n- 通过 Python 代码实现一个简易的自进化 Agent\\n- 了解自进化 Agent 的工程化挑战与解决方案",
+    tip: `**阅读收获：**
+- 理解 AI Agent 自我进化的三种技术范式
+- 掌握 Hermes/GenericAgent/Evolver 的核心机制
+- 通过 Python 代码实现一个简易的自进化 Agent
+- 了解自进化 Agent 的工程化挑战与解决方案`,
   },
   {
     title: "一、为什么 AI Agent 需要自我进化？",
@@ -293,7 +297,7 @@ class SkillTree:
             description=description,
             precondition="所有子技能的前置条件均满足",
             parameters=params,
-            implementation="\\n".join(impl_parts),
+            implementation="\n".join(impl_parts),
             dependencies=sub_skills,
         )
 
@@ -610,7 +614,7 @@ if __name__ == "__main__":
         stats = evolver.evolve_one_generation(tasks, mutation_rate=0.15)
         print(f"{stats['generation']:4d} | {stats['best_fitness']:10.4f} | {stats['avg_fitness']:10.4f} | {stats['std_fitness']:8.4f}")
     
-    print(f"\\n🏆 最终精英个体基因：")
+    print(f"\n🏆 最终精英个体基因：")
     for i, elite in enumerate(evolver.select_elites()):
         print(f"  Elite #{i+1}: 探索率={elite.exploration_rate:.2f}, "
               f"推理深度={elite.reasoning_depth}, 记忆窗口={elite.memory_window}")`,
