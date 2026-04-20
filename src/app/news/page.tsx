@@ -10,6 +10,20 @@ import CategoryFilter from "@/components/CategoryFilter";
 
 const NEWS_PER_PAGE = 9;
 
+// 统一取最近3天新闻的逻辑
+function getLast3DaysNews() {
+  const now = new Date();
+  const threeDaysAgo = new Date(now);
+  threeDaysAgo.setDate(now.getDate() - 2);
+  threeDaysAgo.setHours(0, 0, 0, 0);
+
+  return news.filter((n) => {
+    const datePart = n.date.split(" ")[0];
+    const d = new Date(datePart + "T00:00:00");
+    return d >= threeDaysAgo;
+  });
+}
+
 function formatNewsTime(dateStr: string): string {
   const now = new Date();
   const parts = dateStr.split(" ");
@@ -48,6 +62,9 @@ export default function NewsPage() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
+  // 统一使用最近3天的数据，和首页统计保持一致
+  const recentNews = useMemo(() => getLast3DaysNews(), []);
+
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1") || 1);
   const [activeTag, setActiveTag] = useState(searchParams.get("tag") || "全部");
 
@@ -62,36 +79,36 @@ export default function NewsPage() {
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }, [activeTag, currentPage, pathname, router]);
 
-  const sortedNews = useMemo(
-    () => [...news].sort((a, b) => b.date.localeCompare(a.date)),
-    []
-  );
-
   const allTags = useMemo(() => {
-    const tags = Array.from(new Set(news.map(n => n.tag)));
+    const tags = Array.from(new Set(recentNews.map(n => n.tag)));
     return ["全部", ...tags.sort()];
-  }, []);
+  }, [recentNews]);
 
   const filteredNews = useMemo(() => {
-    if (activeTag === "全部") return sortedNews;
-    return sortedNews.filter(n => n.tag === activeTag);
-  }, [activeTag, sortedNews]);
+    if (activeTag === "全部") return recentNews;
+    return recentNews.filter(n => n.tag === activeTag);
+  }, [recentNews, activeTag]);
+
+  const sortedNews = useMemo(
+    () => [...filteredNews].sort((a, b) => b.date.localeCompare(a.date)),
+    [filteredNews]
+  );
 
   const handleTagChange = (tag: string) => {
     setActiveTag(tag);
     setCurrentPage(1);
   };
 
-  const totalPages = Math.max(1, Math.ceil(filteredNews.length / NEWS_PER_PAGE));
+  const totalPages = Math.max(1, Math.ceil(sortedNews.length / NEWS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
   const startIndex = (safePage - 1) * NEWS_PER_PAGE;
-  const paginatedNews = filteredNews.slice(startIndex, startIndex + NEWS_PER_PAGE);
+  const paginatedNews = sortedNews.slice(startIndex, startIndex + NEWS_PER_PAGE);
 
   const tagCategoryData = allTags.map((tag) => ({
     key: tag,
     icon: tag === "全部" ? "🏷️" : (tagIcons[tag] || "📌"),
     label: tag,
-    count: tag === "全部" ? news.length : news.filter((n) => n.tag === tag).length,
+    count: tag === "全部" ? recentNews.length : recentNews.filter((n) => n.tag === tag).length,
   }));
 
   return (
@@ -107,9 +124,11 @@ export default function NewsPage() {
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             紧跟行业脉搏，不错过任何重要进展
           </p>
-          <p className="text-sm text-slate-500 mt-3">
-            收录 <span className="text-brand-400 font-medium">{news.length}</span> 条 AI 动态
-          </p>
+          {recentNews.length > 0 && (
+            <p className="text-sm text-slate-500 mt-3">
+              最近 3 天共 <span className="text-brand-400 font-medium">{recentNews.length}</span> 条动态
+            </p>
+          )}
         </div>
       </section>
 
