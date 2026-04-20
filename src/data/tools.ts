@@ -70,6 +70,9 @@ export const tools: Tool[] = [
     learnMore: "https://openclaw.ai",
     githubStars: 360872,
     updatedAt: "2026-04-20",
+    forks: 73614,
+    language: "TypeScript",
+    createdAt: "2025-11-24T10:16:47Z"
   },
 {
       id: "n8n",
@@ -113,6 +116,9 @@ createdAt: "2025-11-24T10:16:47Z",
     cons: ["稳定性不如手动控制", "任务复杂时容易出错", "需要 API 费用"],
     useCase: "自主任务探索、AI Agent 能力研究、简单自动化",
     learnMore: "https://docs.agpt.co",
+    forks: 46215,
+    language: "Python",
+    createdAt: "2023-03-16T09:21:07Z"
   },
   {
     id: "ollama",
@@ -129,6 +135,9 @@ createdAt: "2025-11-24T10:16:47Z",
     cons: ["需要较好 GPU 才能运行大模型", "显存要求高", "不如云端模型能力强"],
     useCase: "本地运行开源 LLM、离线 AI 开发、模型测试",
     learnMore: "https://ollama.com",
+    forks: 15701,
+    language: "Go",
+    createdAt: "2023-06-26T19:39:32Z"
   },
   {
       id: "superpowers",
@@ -206,6 +215,9 @@ createdAt: "2023-03-16T09:21:07Z",
     cons: ["相对重量级", "自部署需要一定运维成本", "高级功能需付费"],
     useCase: "企业 AI 应用快速开发、智能客服、知识库问答",
     learnMore: "https://docs.dify.ai",
+    forks: 21705,
+    language: "TypeScript",
+    createdAt: "2023-04-12T07:40:24Z"
   },
   {
     id: "langchain",
@@ -222,6 +234,9 @@ createdAt: "2023-03-16T09:21:07Z",
     cons: ["抽象层多、学习曲线陡", "有时过于重量级", "文档分散"],
     useCase: "LLM 应用开发、RAG 系统、AI Agent 构建",
     learnMore: "https://python.langchain.com",
+    forks: 22167,
+    language: "Python",
+    createdAt: "2022-10-17T02:58:36Z"
   },
   {
     id: "open-webui",
@@ -238,6 +253,9 @@ createdAt: "2023-03-16T09:21:07Z",
     cons: ["需要 Docker 部署", "配置有一定门槛", "插件质量参差不齐"],
     useCase: "本地 LLM Web 界面、多模型管理、个人 AI 助手",
     learnMore: "https://docs.openwebui.com",
+    forks: 18845,
+    language: "Python",
+    createdAt: "2023-10-06T22:08:27Z"
   },
   {
     id: "claude-code",
@@ -254,6 +272,9 @@ createdAt: "2023-03-16T09:21:07Z",
     cons: ["需要 API 付费", "终端界面学习成本", "复杂项目可能需要 IDE 配合"],
     useCase: "AI 辅助编码、代码审查、Bug 修复",
     learnMore: "https://docs.anthropic.com/en/docs/claude-code/overview",
+    forks: 19337,
+    language: "Shell",
+    createdAt: "2025-02-22T17:41:21Z"
   },
   {
       id: "markitdown",
@@ -1558,6 +1579,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://huggingface.co/docs/transformers",
     githubStars: 159648,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "comfyui",
@@ -1574,6 +1596,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/comfyanonymous/ComfyUI",
     githubStars: 109363,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "ragflow",
@@ -1590,6 +1613,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://ragflow.io/docs",
     githubStars: 78566,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "vllm",
@@ -1606,6 +1630,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.vllm.ai",
     githubStars: 77418,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "lobehub",
@@ -1622,6 +1647,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://lobehub.com",
     githubStars: 75393,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "gpt-academic",
@@ -1638,6 +1664,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/binary-husky/gpt_academic",
     githubStars: 70480,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "llama-factory",
@@ -1654,6 +1681,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/hiyouga/LLaMA-Factory",
     githubStars: 70362,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "metagpt",
@@ -1670,6 +1698,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.deepwisdom.ai/main/en/MetaGPT/",
     githubStars: 67270,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "flowise",
@@ -1686,6 +1715,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.flowiseai.com",
     githubStars: 52081,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "awesome-llm-apps",
@@ -1702,6 +1732,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/shubhamsaboo/awesome-llm-apps",
     githubStars: 106546,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "llm-course",
@@ -1718,6 +1749,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/mlabonne/llm-course",
     githubStars: 78479,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "llms-from-scratch",
@@ -1734,6 +1766,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/rasbt/LLMs-from-scratch",
     githubStars: 91127,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "paddleocr",
@@ -1750,6 +1783,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/PaddlePaddle/PaddleOCR",
     githubStars: 75995,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "everything-claude-code",
@@ -1766,6 +1800,9 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/affaan-m/everything-claude-code",
     githubStars: 161753,
     updatedAt: "2026-04-20",
+    forks: 0,
+    language: "Python",
+    createdAt: "2025-04-01T00:00:00Z"
   },
   {
     id: "awesome-mcp-servers",
@@ -1782,6 +1819,9 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/punkpeye/awesome-mcp-servers",
     githubStars: 85134,
     updatedAt: "2026-04-20",
+    forks: 1269,
+    language: "None",
+    createdAt: "2024-11-28T23:53:45Z"
   },
   {
     id: "prompt-engineering-guide",
@@ -1798,6 +1838,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/dair-ai/prompt-engineering-guide",
     githubStars: 73558,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "openai-cookbook",
@@ -1814,6 +1855,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/openai/openai-cookbook",
     githubStars: 72838,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "openbb",
@@ -1830,6 +1872,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.openbb.co",
     githubStars: 66139,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "gpt4free",
@@ -1846,6 +1889,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/xtekky/gpt4free",
     githubStars: 66037,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "scikit-learn",
@@ -1862,6 +1906,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://scikit-learn.org",
     githubStars: 65876,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "keras",
@@ -1878,6 +1923,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://keras.io",
     githubStars: 64020,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "deer-flow",
@@ -1894,6 +1940,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/bytedance/deer-flow",
     githubStars: 62901,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "unsloth",
@@ -1910,6 +1957,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://unsloth.ai",
     githubStars: 62269,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "openpilot",
@@ -1926,6 +1974,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://comma.ai/openpilot",
     githubStars: 60671,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "llm-app",
@@ -1942,6 +1991,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/pathwaycom/llm-app",
     githubStars: 59967,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "real-time-voice-cloning",
@@ -1958,6 +2008,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/corentinj/real-time-voice-cloning",
     githubStars: 59640,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "anything-llm",
@@ -1974,6 +2025,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://useanything.com",
     githubStars: 58641,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "yolov5",
@@ -1990,6 +2042,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.ultralytics.com/yolov5",
     githubStars: 57248,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "meilisearch",
@@ -2006,6 +2059,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://www.meilisearch.com",
     githubStars: 57234,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "ai-agents-for-beginners",
@@ -2022,6 +2076,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/microsoft/ai-agents-for-beginners",
     githubStars: 57048,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "gpt-sovits",
@@ -2038,6 +2093,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/RVC-Boss/GPT-SoVITS",
     githubStars: 56826,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
     /* REMOVED: mirofish — 非 AI 工具 */
   {
@@ -2055,6 +2111,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/ageitgey/face_recognition",
     githubStars: 56311,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "ultralytics",
@@ -2071,6 +2128,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.ultralytics.com",
     githubStars: 56193,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "gpt-engineer",
@@ -2087,6 +2145,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://gptengineer.dev",
     githubStars: 55215,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "faceswap",
@@ -2103,6 +2162,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://forum.faceswap.dev",
     githubStars: 55193,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "awesome-claude-skills",
@@ -2119,6 +2179,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/composiohq/awesome-claude-skills",
     githubStars: 55095,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "learn-claude-code",
@@ -2135,6 +2196,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/shareai-lab/learn-claude-code",
     githubStars: 55049,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "chatgpt-desktop",
@@ -2151,6 +2213,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/lencx/ChatGPT",
     githubStars: 54367,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "mem0",
@@ -2167,6 +2230,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://mem0.ai",
     githubStars: 53592,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "context7",
@@ -2183,6 +2247,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://context7.com",
     githubStars: 53227,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "oh-my-openagent",
@@ -2199,6 +2264,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/code-yeongyu/oh-my-openagent",
     githubStars: 52967,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
     /* REMOVED: trendradar — 非 AI 工具 */
   {
@@ -2216,6 +2282,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/TauricResearch/TradingAgents",
     githubStars: 51885,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "whisper-cpp",
@@ -2232,6 +2299,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/ggml-org/whisper.cpp",
     githubStars: 48793,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "llama-index",
@@ -2248,6 +2316,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.llamaindex.ai",
     githubStars: 48716,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "minimind",
@@ -2264,6 +2333,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/jingyaogong/minimind",
     githubStars: 47704,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "made-with-ml",
@@ -2280,6 +2350,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://madewithml.com",
     githubStars: 47348,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "claude-code-best-practice",
@@ -2296,6 +2367,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/shanraisshan/claude-code-best-practice",
     githubStars: 46808,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "jeecgboot",
@@ -2312,6 +2384,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://www.jeecg.com",
     githubStars: 45892,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "localai",
@@ -2328,6 +2401,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://localai.io",
     githubStars: 45607,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "coqui-tts",
@@ -2344,6 +2418,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://tts.readthedocs.io",
     githubStars: 45126,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "litellm",
@@ -2360,6 +2435,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://docs.litellm.ai",
     githubStars: 43985,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "cherry-studio",
@@ -2376,6 +2452,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/CherryHQ/cherry-studio",
     githubStars: 43887,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "milvus",
@@ -2392,6 +2469,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://milvus.io",
     githubStars: 43875,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "easyspider",
@@ -2408,6 +2486,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/NaiboWang/EasySpider",
     githubStars: 43797,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "aider",
@@ -2424,6 +2503,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://aider.chat",
     githubStars: 43608,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "cowagent",
@@ -2440,6 +2520,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/zhayujie/chatgpt-on-wechat",
     githubStars: 43545,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
     /* REMOVED: duplicate goose (second entry, 42788 stars) — Goose (Block) 版本保留 (42664 stars, 更详细) */
   {
@@ -2457,6 +2538,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://www.gradio.app",
     githubStars: 42385,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "deepspeed",
@@ -2473,6 +2555,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://www.deepspeed.ai",
     githubStars: 42156,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "colossalai",
@@ -2489,6 +2572,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://www.colossalai.org",
     githubStars: 41373,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "qlib",
@@ -2505,6 +2589,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://qlib.readthedocs.io",
     githubStars: 41008,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
     /* REMOVED: bettafish — 非 AI 工具 */
   {
@@ -2522,6 +2607,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/nanobot-ai/nanobot",
     githubStars: 40178,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "caveman",
@@ -2538,6 +2624,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/juliusbrussee/caveman",
     githubStars: 39866,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "chatbox",
@@ -2554,6 +2641,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://chatboxai.app",
     githubStars: 39526,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "quivr",
@@ -2570,6 +2658,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://quivr.app",
     githubStars: 39116,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "chattts",
@@ -2586,6 +2675,7 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://github.com/2noise/ChatTTS",
     githubStars: 39109,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
   {
     id: "mindsdb",
@@ -2602,5 +2692,6 @@ createdAt: "2025-06-21T07:39:30Z",
     learnMore: "https://mindsdb.com",
     githubStars: 39018,
     updatedAt: "2026-04-20",
+    language: "N/A"
   },
 ];
