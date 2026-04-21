@@ -16,6 +16,29 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-335",
+    tag: "博客更新",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "博客深度长文：自进化 AI Agent 全景解析——Hermes 107K 星背后的三大技术路线与混合架构实战",
+    summary: "AI Master 博客发布 35 分钟深度长文，解析 2026 年 4 月 GitHub 最热的自进化 Agent 赛道：Hermes Agent（107K 星）、GenericAgent（5.4K 星）、Evolver（6.2K 星）三大技术路线对比，附带完整的 Python 自进化框架实现代码和混合架构设计。",
+    content: `## 自进化 AI Agent：2026 年最激动人心的 AI 范式转变
+
+本周三个自进化 Agent 项目合计周增 **38,000+ 星**，标志着 AI Agent 正从「被动执行」向「自主进化」范式转变。
+
+**文章覆盖：**
+- **Hermes Agent**：多 Agent 群体进化路线，107K+ 星，一周暴涨 30,630 星
+- **GenericAgent**：技能树自主生长路线，5.4K 星，6x Token 效率优化
+- **Evolver**：GEP 基因组进化路线，6.2K 星，群体竞争选择
+- **混合架构**：融合三大路线的最佳实践，含 Mermaid 架构图和 Python 代码
+- **安全与伦理**：自进化能力的风险控制框架
+
+📖 阅读全文：/blog/blog-039`,
+    date: "2026-04-22",
+    source: "AI Master 博客",
+    sourceUrl: "https://ai-master.cc/blog/blog-039",
+    href: "/news/news-335"
+  },
+{
     id: "news-334",
     tag: "知识库更新",
     tagColor: "bg-blue-500/10 text-blue-300",
