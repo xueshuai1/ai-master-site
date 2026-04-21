@@ -16,6 +16,29 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-331",
+    tag: "知识库更新",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "AI Agent 记忆系统深度文章上线：四层架构、Claude-Mem 机制解析与 Python 实战",
+    summary: "AI Master 知识库新增 32 分钟深度长文「AI Agent 记忆系统架构」，涵盖工作记忆、情景记忆、语义记忆、程序记忆四层架构，对比 Claude-Mem、MemPalace、Zep 五大方案，附带完整的 Python 混合型记忆系统实现（含向量数据库检索、记忆压缩、遗忘机制）和智能压缩器代码。",
+    content: `## AI Agent 记忆系统：从「无脑」到「有记忆」的范式跃迁
+
+2026 年 4 月，Claude-Mem 两周狂揽 64K 星，MemPalace 发布 48 小时即获 22K 星——记忆正在成为 AI Agent 的核心竞争力。
+
+**文章亮点：**
+- **四层记忆架构**：工作记忆、情景记忆、语义记忆、程序记忆的完整设计
+- **五大方案对比**：Claude-Mem、MemPalace、LangChain Memory、Zep、LlamaIndex 多维度分析
+- **Python 实战代码**：完整的混合型记忆系统实现，含 ChromaDB 向量存储、记忆压缩器、遗忘机制
+- **2026 技术选型**：向量数据库、嵌入模型、压缩策略的全面对比
+- **Mermaid 架构图**：四层架构流转图、方案选择决策树
+
+\ud83d\udcd6 完整文章：AI Master 知识库 → AI Agent → "AI Agent 记忆系统架构：从短期缓存到长期记忆宫殿"`,
+    date: "2026-04-21 14:00",
+    source: "AI Master 知识库",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-331",
+  },
+{
     id: "news-327",
     tag: "AI 工程化",
     tagColor: "bg-green-500/10 text-green-300",
