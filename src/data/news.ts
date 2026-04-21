@@ -16,6 +16,87 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-334",
+    tag: "知识库更新",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Claude Opus 4.7 Tokenizer 变革深度解析：Token 膨胀 46%、图像处理 3 倍提升与成本应对指南",
+    summary: "AI Master 知识库新增 28 分钟深度长文，解析 Claude Opus 4.7 新 Tokenizer 导致的 Token 膨胀（系统提示词 1.46x）、图像处理能力飞跃（682px→2576px），附带完整的 Python Token 成本分析工具和膨胀实验代码。",
+    content: `## Claude Opus 4.7 Tokenizer 变革：更贵但更准？
+
+2026 年 4 月，Anthropic 发布 Claude Opus 4.7，引入全新 Tokenizer。Simon Willison 实测发现系统提示词 Token 膨胀 46%，但高分辨率图像处理能力提升 3 倍。
+
+**文章亮点：**
+- **Token 膨胀分析**：不同内容类型的膨胀系数（系统提示词 1.46x、代码 1.2x、普通文本 1.15x）
+- **成本数学模型**：日调用 100 万次的月成本增加 $138,000 的详细计算
+- **Python 实战工具**：完整的 Token 成本分析器和膨胀实验框架
+- **5 条应对策略**：精简系统提示词、分级使用模型、缓存优化、成本监控、善用图像优势
+
+📖 文章链接：/knowledge/llm-018`,
+    date: "2026-04-21",
+    source: "Simon Willison Blog + Anthropic 官方",
+    sourceUrl: "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
+    href: "/news/news-334"
+  },
+{
+    id: "news-333",
+    tag: "GitHub Trending",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "GitHub 本周 AI Trending：Hermes Agent 单周 30K 星、Claude-Mem 突破 64K 星、自进化 Agent 全面爆发",
+    summary: "2026 年 4 月 21 日 GitHub Trending 周报：NousResearch Hermes Agent 单周暴涨 30,630 星（总 106,834 星）；Claude-Mem 两周狂揽 64,759 星；GenericAgent 和 Evolver 代表自进化 Agent 两大路线（技能树 vs GEP 基因组进化）；微软 MarkItDown 突破 113K 星。",
+    content: `## GitHub AI Trending 周报（4.14-4.21）
+
+**🔥 爆炸级增长：**
+- **NousResearch/hermes-agent**：106,834 stars（+30,630/周）——可成长型 AI Agent 平台
+- **thedotmack/claude-mem**：64,759 stars（+12,472/周）——Claude Code 自动记忆插件
+- **microsoft/markitdown**：113,728 stars（+7,084/周）——文件转 Markdown 工具
+
+**🚀 快速增长：**
+- **multica-ai/multica**：18,072 stars（+7,009/周）——开源 Agent 管理平台
+- **jamiepine/voicebox**：21,942 stars（+5,936/周）——开源语音合成工作室
+- **Lordog/dive-into-llms**：33,171 stars（+5,703/周）——动手学大模型中文教程
+
+**🧬 自进化 Agent 两大路线：**
+- **lsdefine/GenericAgent**（5,269 stars）：技能树生长路线，3.3K 行种子代码自主扩展
+- **EvoMap/evolver**（6,152 stars）：GEP 基因组进化路线，群体竞争+交叉繁殖
+
+**💡 值得关注的中小项目：**
+- **forrestchang/andrej-karpathy-skills**：Andrej Karpathy 的 CLAUDE.md 编码最佳实践
+- **OpenBMB/VoxCPM**：Tokenizer-Free 多语言语音合成，15,222 stars
+- **BasedHardware/omi**：AI 屏幕助手，能看屏幕、听对话、给建议，11,723 stars`,
+    date: "2026-04-21",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-333"
+  },
+{
+    id: "news-332",
+    tag: "趋势洞察",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Headless AI 爆发：Salesforce 推出 Headless 360，API 成为新 UI，AI Agent 直接调用企业服务",
+    summary: "Marc Benioff 宣布 Salesforce Headless 360——整个 Salesforce 平台通过 API、MCP 和 CLI 暴露，AI Agent 可直接访问数据和执行工作流，无需浏览器。Matt Webb 和 Brandur Leach 预测 API-first 经济即将回归，API 可用性将成为 SaaS 产品的关键竞争力。",
+    content: `## Headless AI：API 即 UI 的时代来临
+
+**什么是 Headless AI？**
+
+Matt Webb 在 interconnected.org 提出：使用个人 AI 的体验比直接使用服务更好；而 headless 服务对 AI Agent 来说比通过 GUI 操作更快速可靠。
+
+Marc Benioff 在 Twitter 上宣布 Salesforce Headless 360：
+> "Welcome Salesforce Headless 360: No Browser Required! Our API is the UI."
+
+**这对行业意味着什么？**
+
+Brandur Leach 预测：**API 可用性将成为 SaaS 产品的关键差异化因素**。当 AI Agent 可以替代人类用户时，拥有完善 API 的产品将占据压倒性优势。这对现有的按人头定价的 SaaS 模式将是巨大冲击——AI Agent 不需要"座位"，它需要的是 API 调用。
+
+**行动建议：**
+- 开发者：优先选择提供完善 API/MCP 接口的服务
+- 产品方：尽快暴露 API，否则将被 AI Agent 生态淘汰
+- 企业：评估 Headless 架构对现有 SaaS 采购策略的影响`,
+    date: "2026-04-21",
+    source: "Simon Willison Blog + Salesforce 官方",
+    sourceUrl: "https://simonwillison.net/2026/Apr/19/headless-everything/",
+    href: "/news/news-332"
+  },
+{
     id: "news-331",
     tag: "知识库更新",
     tagColor: "bg-blue-500/10 text-blue-300",
