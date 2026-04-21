@@ -16,6 +16,18 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-347",
+    tag: "产品动态",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI 发布 ChatGPT Images 2.0：Sam Altman 称「从 gpt-image-1 到 2.0 的跃升等同于 GPT-3 到 GPT-5」",
+    summary: "OpenAI 正式发布 ChatGPT Images 2.0，新一代图像生成模型。Sam Altman 在直播中表示，从 gpt-image-1 到 gpt-image-2 的飞跃等同于从 GPT-3 到 GPT-5 的跨越。新模型在照片级真实感、文本渲染、复杂构图方面显著提升，直接集成到 ChatGPT 对话中，用户无需任何技术门槛即可生成高质量图像。",
+    content: `## ChatGPT Images 2.0 的核心升级\n\n**质量飞跃：**\n- Sam Altman 官方称从 gpt-image-1 到 2.0 的跃升「等同于 GPT-3 到 GPT-5」\n- 照片级真实感显著提升，特别是在人物肖像和场景光影方面\n- 文本渲染能力大幅改善，生成图像中的文字更清晰可读\n- 复杂构图理解力增强，能处理多主体、多层级的场景描述\n\n**集成到 ChatGPT 对话：**\n- 用户直接在对话中描述需求即可生成图片\n- 支持多轮迭代："把背景换成日落"、"加上一个戴帽子的人"\n- 零门槛使用，无需任何技术背景或专业工具\n- 与 ChatGPT 的文本理解能力深度结合，可以基于对话上下文生成\n\n**与竞品的对比：**\n- Midjourney v7：艺术感更强，但需要 Discord/订阅，学习成本高\n- Flux.1：开源免费，质量接近商用级，但需要 GPU 和一定技术基础\n- ChatGPT Images 2.0：最易用，适合大众用户和快速原型\n- DALL-E 3：上一代产品，2.0 在各方面均有显著提升\n\n**实际测试：**\n- Simon Willison 测试了 \"raccoon with a ham radio\" 等趣味 prompt\n- 生成质量在复杂场景和细节处理上明显优于前代\n- 文本渲染仍有改进空间，但已可满足日常需求`,
+    date: "2026-04-22 06:00",
+    source: "OpenAI / Simon Willison's Weblog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/21/gpt-image-2/",
+    href: "/news/news-347"
+  },
+{
     id: "news-344",
     tag: "产品动态",
     tagColor: "bg-purple-500/10 text-purple-300",
