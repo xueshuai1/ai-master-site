@@ -8,6 +8,23 @@ const ARTICLES_DIR = './src/data/articles';
 let errors = [];
 let warnings = [];
 
+// 🔴 0. 验证 news.ts 所有 href 必须指向 /news/news-XXX
+console.log('🔍 验证新闻链接...');
+const newsContent = readFileSync('./src/data/news.ts', 'utf-8');
+const newsItems = newsContent.match(/id:\s*"([^"]+)"[\s\S]*?href:\s*"([^"]+)"/g);
+if (newsItems) {
+  for (const match of newsContent.matchAll(/id:\s*"([^"]+)"[\s\S]*?href:\s*"([^"]+)"/g)) {
+    const id = match[1];
+    const href = match[2];
+    const expected = `/news/${id}`;
+    if (!href.startsWith('/news/news-')) {
+      errors.push(`  ❌ 新闻 ${id} 的 href 为 "${href}"，必须指向 "${expected}"`);
+    } else if (href !== expected) {
+      warnings.push(`  ⚠️ 新闻 ${id} 的 href "${href}" 与 ID 不匹配，预期 "${expected}"`);
+    }
+  }
+}
+
 // 1. 验证所有文章分类 key
 console.log('🔍 验证文章数据...');
 const articleFiles = readdirSync(ARTICLES_DIR).filter(f => f.endsWith('.ts'));
@@ -68,7 +85,7 @@ if (errors.length > 0) {
   console.error(`\n共 ${errors.length} 个错误，请修复后再构建。\n`);
   process.exit(1);
 } else {
-  console.log(`✅ 数据验证通过（检查了 ${articleFiles.length} 篇文章、分类定义、工具数据）`);
+  console.log(`✅ 数据验证通过（检查了 ${articleFiles.length} 篇文章、分类定义、工具数据、新闻链接）`);
 }
 
 if (warnings.length > 0) {

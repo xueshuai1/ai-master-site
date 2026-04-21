@@ -24,6 +24,7 @@
 - 移动端+PC端响应式友好
 - 每次只做一个改动，做好再推下一个
 - 🔴 **所有内容必须是中文** — 新闻、博客、知识库文章的 title/summary/content 必须用中文生成
+- 🔴 **新闻 href 铁律** — news.ts 中每条新闻的 href 必须严格等于 `/news/${id}`，例如 id="news-327" → href="/news/news-327"。绝不允许指向 /tools、/blog、/article 等任何外部页面！
 
 ---
 
