@@ -12,7 +12,7 @@ const navLinks: NavLink[] = [
   { label: "首页", href: "/" },
   { label: "知识库", href: "/knowledge" },
   { label: "GitHub AI 精选", href: "/tools" },
-  { label: "博客", href: "/blog" },
+  { label: "AI博客", href: "/blog" },
   { label: "最新AI动态", href: "/news" },
   { label: "学习路线", href: "/roadmap" },
   { label: "关于", href: "/about" },
