@@ -4,6 +4,12 @@
   "minStarsThreshold": 5000,
   "topics": [
     {
+      "topic": "ai",
+      "url": "https://github.com/topics/ai",
+      "minStars": 10000,
+      "description": "人工智能（AI）综合"
+    },
+    {
       "topic": "artificial-intelligence",
       "url": "https://github.com/topics/artificial-intelligence",
       "minStars": 10000,
