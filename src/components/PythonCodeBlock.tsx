@@ -428,7 +428,7 @@ export default function PythonCodeBlock({ code, lang, filename, CopyButtonCompon
           </div>
         </div>
         <pre className="p-4 overflow-x-auto overflow-y-auto max-h-[400px] text-sm">
-          <code className="font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: highlightPy(code) }} />
+          <code className="font-mono whitespace-pre text-slate-300" dangerouslySetInnerHTML={{ __html: highlightPy(code) }} />
         </pre>
       </div>
 
