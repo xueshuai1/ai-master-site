@@ -30,6 +30,8 @@ const codeBlockStyle = `
     border-radius: 12px;
     padding: 0;
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 400px;
     margin: 16px 0;
   }
   pre.code-block .code-header {
