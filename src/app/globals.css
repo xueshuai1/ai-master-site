@@ -58,11 +58,11 @@ body {
   white-space: normal;
 }
 
-/* 文章强调文字 — 亮金色 */
+/* 文章强调文字 — 亮金色 fallback（无 Tailwind prose-strong 类时使用） */
 .prose strong,
 .prose-invert strong {
-  color: #fbbf24 !important;
-  font-weight: 700 !important;
+  color: #fbbf24;
+  font-weight: 700;
 }
 
 @layer utilities {
