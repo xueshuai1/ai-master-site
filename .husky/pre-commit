@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "🔍 检查 Mermaid 配色对比度..."
+node scripts/check-mermaid-contrast.js
