@@ -204,7 +204,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
                   </div>
                 </div>
                 <pre className="p-4 overflow-auto max-h-[400px] text-sm">
-                  <code className="text-slate-300 font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: getCodeHighlight(block.code, block.lang) }} />
+                  <code className="font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: getCodeHighlight(block.code, block.lang) }} />
                 </pre>
               </div>
             );
