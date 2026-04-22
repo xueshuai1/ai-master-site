@@ -14,6 +14,46 @@ import { parseMarkdown } from "@/components/MarkdownBody";
 
 marked.setOptions({ breaks: true, gfm: true });
 
+// ── Simple syntax highlighting for bash/dockerfile ──
+function escapeHtml(text: string): string {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function highlightBash(code: string): string {
+  const escaped = escapeHtml(code);
+  return escaped
+    .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
+    .replace(/(--?\w[\w-]*)/g, '<span class="token-parameter">$1</span>')
+    .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat)\b/g, '<span class="token-function">$1</span>')
+    .replace(/("[^"]*"|'[^']*')/g, '<span class="token-string">$1</span>');
+}
+
+function highlightDockerfile(code: string): string {
+  const escaped = escapeHtml(code);
+  return escaped
+    .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
+    .replace(/\b(FROM|WORKDIR|COPY|RUN|EXPOSE|CMD|ENTRYPOINT|ENV|ARG|ADD|USER|VOLUME|LABEL|MAINTAINER|HEALTHCHECK|ONBUILD|STOPSIGNAL|SHELL|AS)\b/g, '<span class="token-keyword">$1</span>')
+    .replace(/("[^"]*"|'[^']*')/g, '<span class="token-string">$1</span>');
+}
+
+function highlightText(code: string): string {
+  return escapeHtml(code);
+}
+
+function getCodeHighlight(code: string, lang: string): string {
+  switch (lang.toLowerCase()) {
+    case "bash":
+    case "sh":
+    case "shell":
+      return highlightBash(code);
+    case "dockerfile":
+    case "docker":
+      return highlightDockerfile(code);
+    default:
+      return highlightText(code);
+  }
+}
+
 const levelColors: Record<string, string> = {
   入门: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
   进阶: "bg-amber-500/10 text-amber-300 border-amber-500/20",
@@ -155,7 +195,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
                   </div>
                 </div>
                 <pre className="p-4 overflow-auto max-h-[400px] text-sm">
-                  <code className="text-slate-300 font-mono whitespace-pre">{block.code}</code>
+                  <code className="text-slate-300 font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: getCodeHighlight(block.code, block.lang) }} />
                 </pre>
               </div>
             );
