@@ -252,9 +252,9 @@ print("聚类:", cluster_summarize(sample, 3))`,
     G --> I
     H --> I
     
-    style D fill:#bbdefb
-    style G fill:#c8e6c9
-    style H fill:#fff9c4`,
+    style D fill:#1e3a5f
+    style G fill:#14532d
+    style H fill:#713f12`,
         tip: "在新闻摘要任务中，Lead-3 是一个极强的基线。任何新模型都应该先和 Lead-3 比较——如果超不过它，说明模型还没有真正学到摘要能力，只是在拟合位置偏好。",
         warning: "TextRank 的计算复杂度为 O(n²)（n 为句子数），长文档（>500 句）会很慢。此时可以用 Maximal Marginal Relevance（MMR）代替，它在保证信息量的同时控制冗余。",
       },
@@ -432,10 +432,10 @@ class PointerGenerator(nn.Module):
     J --> K["输出词: 新一代"]
     K --> E
     
-    style G fill:#fff9c4
-    style H fill:#c8e6c9
-    style I fill:#bbdefb
-    style J fill:#ffcdd2`,
+    style G fill:#713f12
+    style H fill:#14532d
+    style I fill:#1e3a5f
+    style J fill:#7f1d1d`,
         tip: "注意力可视化是调试 Seq2Seq 摘要模型的利器。将 α_{t,i} 矩阵画成热力图，可以直观看到模型在生成每个摘要词时关注源文本的哪些部分。如果注意力过于分散或集中在无关位置，说明模型没有学会正确对齐。",
         warning: "Seq2Seq 模型在训练中容易暴露偏差（Exposure Bias）：训练时使用教师强制（真实前一个词作为输入），但推理时使用模型自己的输出。这会导致误差累积——模型遇到自己生成的错误词时无法恢复。解决方法：Scheduled Sampling（逐步减少教师强制比例）或强化学习训练。",
       },
@@ -605,10 +605,10 @@ print("5. 推理时: 对 C(n, m) 个候选组合打分，选最高分的")`,
     I --> J["按原文顺序拼接"]
     J --> K["抽取式摘要"]
     
-    style C fill:#c8e6c9
-    style F fill:#bbdefb
-    style G fill:#fff9c4
-    style I fill:#ffcdd2`,
+    style C fill:#14532d
+    style F fill:#1e3a5f
+    style G fill:#713f12
+    style I fill:#7f1d1d`,
         tip: "MatchSum 的核心洞察是：传统的句子分类方法优化的是「每个句子是否重要」，但摘要评价的是「一组句子的整体质量」。对比学习直接优化组合质量，更符合摘要任务的本质。",
         warning: "BERT 的最大序列长度通常限制为 512 token，而一篇新闻文章可能有 1000+ token。处理长文档时需要截断、分段编码或使用长文本变体（如 Longformer、BigBird）。截断会丢失文章后半部分的信息。",
       },
@@ -771,10 +771,10 @@ print("  no_repeat_ngram_size=3: 禁止 3-gram 重复（减少复读）")`,
     G --> H["摘要文本"]
     H --> I["ROUGE 评估"]
     
-    style C fill:#c8e6c9
-    style D fill:#bbdefb
-    style E fill:#fff9c4
-    style G fill:#ffcdd2`,
+    style C fill:#14532d
+    style D fill:#1e3a5f
+    style E fill:#713f12
+    style G fill:#7f1d1d`,
         tip: "使用 BART-large-CNN 或 T5-large 作为起点——这些是官方在 CNN/DailyMail 数据集上预微调的版本，开箱即用效果远好于基础版。如果你的领域特殊（如医疗、法律），再用领域数据微调。",
         warning: "BART/T5 生成的摘要可能包含「幻觉」——模型生成的内容在源文档中不存在。这是生成式摘要最严重的问题。解决方案：（1）使用 Pointer-Generator 混合机制；（2）训练时加入事实一致性惩罚；（3）后处理阶段用 NLI 模型检测幻觉。",
       },
@@ -912,10 +912,10 @@ for n in seq_lens:
     I --> K
     J --> K
     
-    style C fill:#bbdefb
-    style D fill:#c8e6c9
-    style E fill:#fff9c4
-    style F fill:#e1bee7`,
+    style C fill:#1e3a5f
+    style D fill:#14532d
+    style E fill:#713f12
+    style F fill:#581c87`,
         tip: "对于超过 4096 token 的文档，LED（Longformer-Encoder-Decoder）是目前性价比最高的选择——它支持 16384 token 输入，且在 CNN/DailyMail 上达到了接近 BART-large 的 ROUGE 分数。",
         warning: "Map-Reduce 方法的最大问题是信息碎片化：每段的摘要可能丢失跨段落的重要关联。如果文档有明确的章节结构（如论文），按章节分段比固定长度分段效果好得多。",
       },
@@ -1093,11 +1093,11 @@ print("预算有限? → T5-small 量化 / 开源模型")`,
     I -->|"CPU / 边缘"| L["ONNX Runtime"]
     I -->|"高并发 API"| M["vLLM / TensorRT-LLM"]
     
-    style C fill:#c8e6c9
-    style D fill:#bbdefb
-    style J fill:#fff9c4
-    style K fill:#ffcdd2
-    style M fill:#e1bee7`,
+    style C fill:#14532d
+    style D fill:#1e3a5f
+    style J fill:#713f12
+    style K fill:#7f1d1d
+    style M fill:#581c87`,
         tip: "中文摘要推荐优先尝试 cnled-wiki-3072（复旦 NLP 团队开源），它基于 Longformer 架构，支持 3072 token 输入，在中文 LCSTS 数据集上表现优秀。如果是极短摘要需求（一句话概括），Pegasus 的 XSum 变体效果更好。",
         warning: "生产部署前一定要做事实一致性检测！生成式模型的幻觉问题是真实存在的。建议在 pipeline 中加入 NLI（自然语言推理）后处理步骤：用预训练 NLI 模型检查摘要中的每个事实声明是否被源文档蕴含。如果不蕴含，标记为潜在幻觉并人工审核。",
       },

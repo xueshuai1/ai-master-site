@@ -120,12 +120,12 @@ print("预训练权重已加载，可直接在下游任务上微调")`,
     D -->|"Transformer 双向自注意力"| E["预训练+微调范式"]
     E --> F["11 项 NLP 任务 SOTA"]
     
-    style A fill:#ffcdd2
-    style B fill:#ffe0b2
-    style C fill:#fff9c4
-    style D fill:#c8e6c9
-    style E fill:#bbdefb
-    style F fill:#e1bee7`,
+    style A fill:#7f1d1d
+    style B fill:#7c2d12
+    style C fill:#713f12
+    style D fill:#14532d
+    style E fill:#1e3a5f
+    style F fill:#581c87`,
         tip: "理解 BERT 的关键不是记住架构细节，而是理解它解决的核心问题：如何让模型在阅读一个词的同时，同时看到它左边和右边的所有上下文。这就是'双向'的真正含义。",
         warning: "BERT 的'双向'并非真正自由的双向——MLM 预训练中存在 'seen token leak' 问题（微调时能看到所有词，预训练时 [MASK] 位置看不到真实词）。这种预训练-微调不一致在后续研究中被 RoBERTa 等人修正。",
       },
@@ -300,10 +300,10 @@ print(f"\\n输入形状: {x.shape} → 输出形状: {out.shape}")`,
         G
     end
     
-    style A fill:#bbdefb
-    style C fill:#c8e6c9
-    style F fill:#fff3e0
-    style H fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style C fill:#14532d
+    style F fill:#7c2d12
+    style H fill:#581c87`,
         tip: "注意力头可视化是理解 BERT 内部运作的最佳方式。使用 bertviz 库可以看到：某些头专门学习句法关系（如主谓一致），某些头关注局部窗口（类似 n-gram），还有些头学到长距离依赖。",
       },
       {
@@ -458,10 +458,10 @@ for rate in [0.05, 0.10, 0.15, 0.25, 0.50]:
     G --> H["预测被 mask 位置的词"]
     H --> I["CrossEntropy Loss"]
     
-    style A fill:#bbdefb
-    style C fill:#fff9c4
-    style G fill:#c8e6c9
-    style I fill:#ffcdd2`,
+    style A fill:#1e3a5f
+    style C fill:#713f12
+    style G fill:#14532d
+    style I fill:#7f1d1d`,
         tip: "如果你想在自定义数据上继续预训练 BERT，MLM 是唯一需要的任务。准备纯文本语料，用 DataCollatorForLanguageModeling 自动处理掩码，无需任何标注。",
         warning: "MLM 的一个局限是无法生成文本——因为它同时看到左右上下文，无法用于自回归生成。这就是为什么 BERT 适合理解任务（分类、NER、问答），但不适合生成任务（翻译、摘要）。生成任务需要 GPT 这样的解码器架构。",
       },
@@ -643,10 +643,10 @@ for a, b, label in pairs:
     E --> G["SOP: 调换顺序"]
     G --> H["必须理解句序逻辑"]
     
-    style A fill:#bbdefb
-    style B fill:#fff9c4
-    style E fill:#c8e6c9
-    style H fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style B fill:#713f12
+    style E fill:#14532d
+    style H fill:#581c87`,
         tip: "现代 BERT 变体（RoBERTa、ELECTRA 等）都已弃用 NSP。如果你从头预训练 BERT，直接去掉 NSP，把省下来的计算资源用于更多 MLM 训练步数——RoBERTa 证明了这样效果更好。",
         warning: "NSP 任务太简单并不意味着句子间建模不重要。相反，它意味着 NSP 作为一个训练信号不够强。像 SOP、文档级 MLM（Whole Document Masking）等更难的句子间任务仍然值得研究。",
       },
@@ -822,10 +822,10 @@ print(f"相似度概率: {probs[0][1]:.4f}")`,
     F --> G
     G --> H["任务特定模型"]
     
-    style A fill:#bbdefb
-    style B fill:#fff9c4
-    style G fill:#c8e6c9
-    style H fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style B fill:#713f12
+    style G fill:#14532d
+    style H fill:#581c87`,
         tip: "微调学习率建议 2e-5 ~ 5e-5，比预训练学习率（1e-4）小一个数量级。BERT 预训练权重已经很好，太大的学习率会破坏已有的语言表示。训练轮数通常 2-4 轮就够，多了会过拟合。",
         warning: "微调时一定要注意学习率！2e-5 是经验值，如果你发现模型在验证集上迅速过拟合，尝试降低到 1e-5 或增加 warmup 比例。另外，batch size 会影响效果——大的 batch size 通常需要更大的学习率。",
       },
@@ -1036,11 +1036,11 @@ print("  结果: SuperGLUE 超越人类水平")`,
     E -->|"判别式训练"| J["更高效的预训练"]
     F -->|"解耦注意力"| K["超越人类水平"]
     
-    style A fill:#bbdefb
-    style B fill:#c8e6c9
-    style C fill:#c8e6c9
-    style D fill:#fff3e0
-    style F fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style B fill:#14532d
+    style C fill:#14532d
+    style D fill:#7c2d12
+    style F fill:#581c87`,
         tip: "实际项目中，DistilBERT 通常是性价比最高的选择——97% 的性能、40% 的模型大小、60% 的速度提升。除非你的任务非常难（如复杂推理），否则没必要用 full BERT。",
         warning: "ALBERT 的参数共享虽然减少了参数量，但也限制了模型的表达能力。在需要深层语义理解的任务上（如复杂问答、多跳推理），ALBERT 可能不如同等规模的独立层模型。选择模型时要考虑任务特性。",
       },
@@ -1274,11 +1274,11 @@ print("  5. ONNX 导出: 转换为 ONNX 格式加速推理")
     I --> J["推理部署"]
     J --> K["ONNX 量化加速"]
     
-    style A fill:#bbdefb
-    style D fill:#fff9c4
-    style G fill:#c8e6c9
-    style I fill:#e1bee7
-    style K fill:#fff3e0`,
+    style A fill:#1e3a5f
+    style D fill:#713f12
+    style G fill:#14532d
+    style I fill:#581c87
+    style K fill:#7c2d12`,
         tip: "实战中最有用的技巧：先用 distilbert 跑通全流程，确认 pipeline 没问题后再换 bert-base 追求精度。distilbert 的训练速度是 bert-base 的 2 倍，能快速验证你的数据预处理和训练逻辑是否正确。",
         warning: "常见的微调陷阱：(1) 忘记设置 truncation=True，超长序列会报错；(2) 学习率用太大（如 1e-3），直接破坏预训练权重；(3) 训练太多轮（>10），严重过拟合；(4) 没有早停，保存的是过拟合的最后一轮而非最佳轮次。",
       },

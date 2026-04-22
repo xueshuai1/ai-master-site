@@ -122,8 +122,8 @@ class VoxelGrid:
     B --> F["NeRF 训练\n隐式神经表示"]
     F --> G["新视角渲染"]
     D --> G
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style G fill:#14532d`,
             tip: "入门 3D 视觉建议先掌握点云和网格的基本操作，NeRF 和 SDF 可以后续深入",
             warning: "体素表示的内存消耗随分辨率呈立方增长，64^3 的体素需要 256MB，128^3 则需 2GB"
         },
@@ -245,9 +245,9 @@ demonstrate_maxpool_invariance()`
     E --> F["全局 MaxPool\n聚合所有点"]
     F --> G["MLP 分类器\n输出类别"]
     C -.-> H["逐点特征\n用于分割"]
-    style A fill:#e1f5fe
-    style F fill:#fff3e0
-    style G fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style F fill:#7c2d12
+    style G fill:#14532d`,
             tip: "PointNet 的 T-Net 是可学习的空间变换器，类似 STN，让网络自动学习最佳对齐方式",
             warning: "PointNet 对每个点独立处理，缺乏局部上下文建模——小物体或精细结构容易被忽略"
         },
@@ -366,8 +366,8 @@ class DepthRegression(nn.Module):
     F --> G["稠密深度图"]
     G --> H["深度图融合\n多视图一致性"]
     H --> I["3D 点云\n+ 表面网格"]
-    style A fill:#e1f5fe
-    style I fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style I fill:#14532d`,
             tip: "MVS 的深度假设范围（min_depth/max_depth）需要根据场景尺度调整，设置过窄会导致截断",
             warning: "MVS 在弱纹理区域（白墙、天空）和反光表面（玻璃、水面）上表现很差，这些区域缺乏可靠的匹配线索"
         },
@@ -517,8 +517,8 @@ def volume_rendering(rays, points, densities, rgbs,
     D --> G["体积渲染积分\nC = sum(T * alpha * rgb)"]
     F --> G
     G --> H["像素颜色\n渲染结果"]
-    style A fill:#e1f5fe
-    style H fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style H fill:#14532d`,
             tip: "NeRF 的位置编码频率选择至关重要——低频捕获大尺度结构，高频捕获精细纹理",
             warning: "NeRF 训练非常慢（数小时到数天），且每场景独立训练，无法直接泛化到未见过的场景"
         },
@@ -665,8 +665,8 @@ reconstruct_mesh_from_cloud("fused.ply", "reconstructed.obj")`
     F --> G["深度图融合\n稠密点云"]
     G --> H["泊松重建\n三角网格"]
     H --> I["纹理映射\n最终 3D 模型"]
-    style A fill:#e1f5fe
-    style I fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style I fill:#14532d`,
             tip: "SfM 阶段的照片覆盖率至关重要——相邻照片之间至少需要 60% 的重叠区域才能保证可靠匹配",
             warning: "POW 重建对法向量方向敏感，需要确保所有法向量朝向一致（可以使用 PCA 或传播法进行法线统一）"
         },
@@ -806,8 +806,8 @@ def compute_bev_iou(box1, boxes2):
     D --> E["3D 边界框\n(x,y,z,w,l,h,θ)"]
     E --> F["3D NMS\n去除冗余"]
     F --> G["最终检测结果\n类别 + 位置 + 方向"]
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style G fill:#14532d`,
             tip: "PointPillars 是自动驾驶实时检测的首选方案——精度和速度达到了最佳平衡",
             warning: "3D 检测的朝向角 θ 存在 180 度歧义（前后对称），需要使用朝向分类（direction classification）来解决"
         },
@@ -948,9 +948,9 @@ def train_instant_ngp(data_dir, output_dir,
     G --> H["配准 + 重建"]
     H --> I["三角网格\n可视化"]
     end
-    style A fill:#e1f5fe
-    style F fill:#e8f5e9
-    style I fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style F fill:#14532d
+    style I fill:#7c2d12`,
             tip: "Instant-NGP 的训练只需几十秒——准备好 transforms.json 和照片后，运行一条命令即可开始",
             warning: "NeRF 训练数据质量直接决定结果——照片需要覆盖目标物体的所有角度，且光照条件尽量一致"
         }

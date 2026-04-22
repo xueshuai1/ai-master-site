@@ -131,8 +131,8 @@ print(f"参数总量: {sum(p.numel() for p in model.parameters()):,}")`,
         D3 --> DM["Decoder yₘ"]
     end
     
-    style C fill:#fff3e0
-    style En fill:#c8e6c9`,
+    style C fill:#7c2d12
+    style En fill:#14532d`,
             tip: "动手实验：用 PyTorch 实现一个 mini Seq2Seq，在 toy 数据集上（如反转字符串）训练，观察编码器是否真正学会了「压缩语义」。尝试用不同长度的输入测试，看看压缩瓶颈在哪里显现。",
         },
         {
@@ -245,8 +245,8 @@ class Attention(nn.Module):
         S -->|"c₂"| D2
     end
     
-    style S fill:#fff3e0
-    style D2 fill:#c8e6c9`,
+    style S fill:#7c2d12
+    style D2 fill:#14532d`,
             tip: "理解注意力的关键是「查询-键-值」范式：解码器的当前状态是 query，编码器的所有隐藏状态既是 key 也是 value。这个范式后来成为了所有注意力变体的统一框架。",
         },
         {
@@ -357,9 +357,9 @@ print("已保存 attention_viz.png")`,
         Sum --> C["上下文向量 cₜ"]
     end
     
-    style S fill:#bbdefb
-    style H fill:#c8e6c9
-    style C fill:#fff3e0`,
+    style S fill:#1e3a5f
+    style H fill:#14532d
+    style C fill:#7c2d12`,
             warning: "Bahdanau 注意力的一个常见实现陷阱：别忘了 padding mask！输入序列通常会被 padding 到相同长度，如果不 mask 掉 padding 位置的注意力分数，softmax 会给无效位置分配非零权重，导致模型学习到错误信号。",
         },
         {
@@ -488,8 +488,8 @@ analyze_head_diversity(mock_attn, n_heads=8)`,
         Oh -->|"concat + W_O"| Out["Output (seq_len, d_model)"]
     end
     
-    style X fill:#bbdefb
-    style Out fill:#c8e6c9`,
+    style X fill:#1e3a5f
+    style Out fill:#14532d`,
             tip: "多头注意力的头数 n_heads 通常设为 8 或 16，每个头的维度 d_k 保持在 64 左右效果最佳。这不是硬性规定，但大量实验表明：头太少则表达能力不足，头太多则每个头分到的参数太少，容易退化为冗余。",
         },
         {
@@ -607,9 +607,9 @@ visualize_positional_encoding()`,
         HighDim["高维度 (d=d-2,d)"] -->|低频| Global["粗粒度位置区分"]
     end
     
-    style I fill:#bbdefb
-    style E fill:#c8e6c9
-    style O fill:#fff3e0`,
+    style I fill:#1e3a5f
+    style E fill:#14532d
+    style O fill:#7c2d12`,
             warning: "位置编码的维度必须与词嵌入维度完全匹配！如果使用预训练的词嵌入（如 GloVe），需要确保 d_model 等于词嵌入维度，或者增加一个额外的线性投影层。另外，正弦编码在位置 0 处的编码是全零，这意味着第一个 token 的表示完全由词嵌入决定——在某些任务中可能导致信息损失。",
         },
         {
@@ -755,8 +755,8 @@ print("梯度归因提供了另一种理解模型决策的视角")`,
         A4["因果干预"] -->|"真正因果测试"| R4["最可靠但最复杂"]
     end
     
-    style L4 fill:#fff3e0
-    style R1 fill:#ffcdd2`,
+    style L4 fill:#7c2d12
+    style R1 fill:#7f1d1d`,
             tip: "实用建议：在调试 NLP 模型时，第一步应该是可视化注意力权重。如果你看到某个头完全退化为均匀分布（所有位置权重几乎相同），说明这个头可能没有学到有用的模式，可以考虑减少头数或调整学习率。",
         },
         {
@@ -922,9 +922,9 @@ test_transformer_encoder()`,
         Res2 --> L2
     end
     
-    style Input fill:#bbdefb
-    style Output fill:#c8e6c9
-    style MHA fill:#fff3e0`,
+    style Input fill:#1e3a5f
+    style Output fill:#14532d
+    style MHA fill:#7c2d12`,
             warning: "常见实现错误：(1) 忘了在词嵌入后乘以 √d_model——这会导致嵌入和位置编码的尺度不一致；(2) LayerNorm 的位置——原始 Transformer 使用 post-norm（残差后归一化），但 pre-norm（归一化在残差前）在深层网络中更稳定；(3) FFN 的 hidden 维度通常是 d_model 的 4 倍，不要太小；(4) 训练时务必使用 teacher forcing 或类似策略，否则自回归解码器容易崩溃。",
         },
     ],

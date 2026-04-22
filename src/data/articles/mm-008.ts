@@ -387,8 +387,8 @@ Sora 和其他视频生成模型已经展示了初步的世界模型能力——
     F --> G["世界模型"]
     G --> H["具身智能"]
     
-    style A fill:#ff9999
-    style H fill:#99ff99`,
+    style A fill:#7f1d1d
+    style H fill:#14532d`,
             tip: "推荐工具：nerfstudio（3D 重建框架）、gsplat（高斯溅射优化库）、Open3D（3D 数据处理）、Kaolin（NVIDIA 3D 深度学习库）、Three.js（Web 3D 可视化）。这些工具覆盖了从数据处理到渲染可视化的完整工作流。",
         }
     ]

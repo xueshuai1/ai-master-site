@@ -29,9 +29,9 @@ MoE 的核心价值在于**解耦了模型容量和计算成本**。你可以无
     E --> F
     F --> G["输出"]
     
-    style C fill:#4CAF50
-    style D fill:#4CAF50
-    style E fill:#E0E0E0`,
+    style C fill:#4CAF50,color:#1e293b
+    style D fill:#4CAF50,color:#1e293b
+    style E fill:#374151`,
             tip: "MoE 的精髓：模型可以很大，但每次只需要'请几位专家'。就像医院有很多专科医生，但每个病人只看其中两三个。",
         },
         {

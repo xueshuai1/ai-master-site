@@ -33,7 +33,7 @@ export const article: Article = {
                     ["自回归模型", "精确似然", "慢(串行)", "高", "高"]
                 ]
             },
-            mermaid: "graph LR\n    A[\"基础分布 z_0 ~ N(0,I)\"] -->|f_1| B[\"z_1\"]\n    B -->|f_2| C[\"z_2\"]\n    C -->|...| D[\"z_K\"]\n    D -->|\"x = z_K\"| E[\"目标分布 p(x)\"]\n    A -.->|\"log p(z_0)\"| F[\"精确似然\"]\n    F -.->|\"log|det J|\"| G[\"log p(x)\"]\n    style E fill:#4CAF50\n    style G fill:#2196F3",
+            mermaid: "graph LR\n    A[\"基础分布 z_0 ~ N(0,I)\"] -->|f_1| B[\"z_1\"]\n    B -->|f_2| C[\"z_2\"]\n    C -->|...| D[\"z_K\"]\n    D -->|\"x = z_K\"| E[\"目标分布 p(x)\"]\n    A -.->|\"log p(z_0)\"| F[\"精确似然\"]\n    F -.->|\"log|det J|\"| G[\"log p(x)\"]\n    style E fill:#4CAF50\n    style G fill:#2196F3,color:#1e293b",
             tip: "变量变换公式是 Flow 模型的数学根基，理解它对后续所有 Flow 变体都至关重要。",
             warning: "雅可比行列式为负时取绝对值，但实际实现中通常用 log|det| 保证数值稳定性。"
         },
@@ -61,7 +61,7 @@ export const article: Article = {
                     ["参数数量", "2D+1", "D+2", "O(D)"]
                 ]
             },
-            mermaid: "graph TD\n    A[\"输入 z\"] --> B[\"Planar Flow\"]\n    A --> C[\"Radial Flow\"]\n    B -->|\"f(z) = z + u*h(w^T z+b)\"| D[\"切平面扰动\"]\n    C -->|\"f(z) = z + beta*h(r)*(z-z_ref)\"| E[\"径向扰动\"]\n    D --> F[\"组合 Flow\"]\n    E --> F\n    F -->|\"z_0 to z_1 to ... to z_K\"| G[\"复杂变换\"]\n    style G fill:#4CAF50",
+            mermaid: "graph TD\n    A[\"输入 z\"] --> B[\"Planar Flow\"]\n    A --> C[\"Radial Flow\"]\n    B -->|\"f(z) = z + u*h(w^T z+b)\"| D[\"切平面扰动\"]\n    C -->|\"f(z) = z + beta*h(r)*(z-z_ref)\"| E[\"径向扰动\"]\n    D --> F[\"组合 Flow\"]\n    E --> F\n    F -->|\"z_0 to z_1 to ... to z_K\"| G[\"复杂变换\"]\n    style G fill:#4CAF50,color:#1e293b",
             tip: "Planar Flow 的可逆性条件 w^T u > -1 可通过参数重参数化自动满足，避免训练中的投影操作。",
             warning: "单个 Planar 或 Radial Flow 表达能力很弱，至少需要堆叠 8-32 层才能建模复杂分布。"
         },
@@ -88,7 +88,7 @@ export const article: Article = {
                     ["256 层", "~1.7", "梯度可能消失", "强", "18.0"]
                 ]
             },
-            mermaid: "graph LR\n    A[\"N(0,I) 圆形\"] -->|1层 Planar| B[\"轻微变形\"]\n    B -->|4层 Planar| C[\"S 形弯曲\"]\n    C -->|16层 Planar| D[\"复杂形状\"]\n    D -->|64层 Planar| E[\"高度非线性流形\"]\n    style A fill:#4CAF50\n    style E fill:#f44336",
+            mermaid: "graph LR\n    A[\"N(0,I) 圆形\"] -->|1层 Planar| B[\"轻微变形\"]\n    B -->|4层 Planar| C[\"S 形弯曲\"]\n    C -->|16层 Planar| D[\"复杂形状\"]\n    D -->|64层 Planar| E[\"高度非线性流形\"]\n    style A fill:#4CAF50,color:#1e293b\n    style E fill:#f44336,color:#1e293b",
             tip: "训练深层 Flow 时，使用正交初始化或单位初始化作为起点，可以显著改善收敛速度。",
             warning: "Flow 层数过多会导致逆变换需要数值迭代求解，推理速度急剧下降。"
         },
@@ -116,7 +116,7 @@ export const article: Article = {
                     ["批量归一化", "稳定激活值分布", "O(D)", "可逆（训练时固定统计量）"]
                 ]
             },
-            mermaid: "graph TD\n    A[\"输入 z\"] --> B[\"分割: z_a | z_b\"]\n    B --> C[\"z_a 保持不变\"]\n    B --> D[\"s(z_a), t(z_a) 网络\"]\n    D --> E[\"z_b' = z_b * exp(s) + t\"]\n    C --> F[\"拼接: z_a | z_b'\"]\n    E --> F\n    F --> G[\"输出 x\"]\n    G -.->|\"log|det| = sum(s)\"| H[\"似然计算\"]\n    style C fill:#4CAF50\n    style E fill:#2196F3",
+            mermaid: "graph TD\n    A[\"输入 z\"] --> B[\"分割: z_a | z_b\"]\n    B --> C[\"z_a 保持不变\"]\n    B --> D[\"s(z_a), t(z_a) 网络\"]\n    D --> E[\"z_b' = z_b * exp(s) + t\"]\n    C --> F[\"拼接: z_a | z_b'\"]\n    E --> F\n    F --> G[\"输出 x\"]\n    G -.->|\"log|det| = sum(s)\"| H[\"似然计算\"]\n    style C fill:#4CAF50\n    style E fill:#2196F3,color:#1e293b",
             tip: "s 网络的最后一层用较小的初始化权重（如 0.01），可以防止初始缩放因子过大导致训练不稳定。",
             warning: "RealNVP 的交替分割策略确保每个维度都能被变换，如果忘记交替，只有一半维度会被建模。"
         },
@@ -144,7 +144,7 @@ export const article: Article = {
                     ["训练稳定性", "较好", "很好(ActNorm 初始化)"]
                 ]
             },
-            mermaid: "graph TD\n    A[\"输入 z\"] --> B[\"ActNorm\"]\n    B --> C[\"可逆 1x1 卷积 (W)\"]\n    C --> D[\"仿射耦合层\"]\n    D --> E[\"ActNorm\"]\n    E --> F[\"输出 x\"]\n    subgraph Glow Step\n    B\n    C\n    D\n    E\n    end\n    style C fill:#FF9800",
+            mermaid: "graph TD\n    A[\"输入 z\"] --> B[\"ActNorm\"]\n    B --> C[\"可逆 1x1 卷积 (W)\"]\n    C --> D[\"仿射耦合层\"]\n    D --> E[\"ActNorm\"]\n    E --> F[\"输出 x\"]\n    subgraph Glow Step\n    B\n    C\n    D\n    E\n    end\n    style C fill:#FF9800,color:#1e293b",
             tip: "Glow 的 LU 分解参数化确保 W 始终可逆且行列式计算为 O(D)，避免直接学习 DxD 矩阵的 O(D^3) 求逆。",
             warning: "可逆 1x1 卷积的参数量为 O(D^2)，在高维通道下内存占用显著，建议 C < 1024。"
         },
@@ -172,7 +172,7 @@ export const article: Article = {
                     ["自回归约束", "MADE 掩码", "IAF 参数化", "耦合层分割"]
                 ]
             },
-            mermaid: "graph LR\n    A[\"密度估计任务\"] --> B{\"选择 Flow\"}\n    C[\"快速采样任务\"] --> B\n    B -->|需要密度| D[\"MAF (并行密度)\"]\n    B -->|需要采样| E[\"IAF (并行采样)\"]\n    B -->|两者都要| F[\"RealNVP/Glow\"]\n    D --> G[\"MADE 掩码\"]\n    E --> H[\"自回归参数化\"]\n    F --> I[\"耦合层\"]\n    style B fill:#FF9800",
+            mermaid: "graph LR\n    A[\"密度估计任务\"] --> B{\"选择 Flow\"}\n    C[\"快速采样任务\"] --> B\n    B -->|需要密度| D[\"MAF (并行密度)\"]\n    B -->|需要采样| E[\"IAF (并行采样)\"]\n    B -->|两者都要| F[\"RealNVP/Glow\"]\n    D --> G[\"MADE 掩码\"]\n    E --> H[\"自回归参数化\"]\n    F --> I[\"耦合层\"]\n    style B fill:#FF9800,color:#1e293b",
             tip: "实践中可以组合使用：训练时用 MAF 计算似然，推理时用 IAF 并行采样，两者共享参数。",
             warning: "MAF 的逆变换是串行的，维度 D 很大时（如图像 D=3072），采样速度会成为严重瓶颈。"
         },
@@ -200,7 +200,7 @@ export const article: Article = {
                     ["雅可比行列式", "log|det J| 均值", "在 [-2, 2] 范围", "趋近 -inf（变换退化）"]
                 ]
             },
-            mermaid: "graph TD\n    A[\"Two-Moons 数据\"] --> B[\"标准化\"]\n    B --> C[\"mini-batch 采样\"]\n    C --> D[\"Flow 逆变换 z, log_det\"]\n    D --> E[\"NLL = -log p(z) - log_det\"]\n    E --> F[\"Adam 更新\"]\n    F --> G{\"收敛?\"}\n    G -->|否| C\n    G -->|是| H[\"采样生成\"]\n    H --> I[\"可视化评估\"]\n    style E fill:#FF9800\n    style H fill:#4CAF50",
+            mermaid: "graph TD\n    A[\"Two-Moons 数据\"] --> B[\"标准化\"]\n    B --> C[\"mini-batch 采样\"]\n    C --> D[\"Flow 逆变换 z, log_det\"]\n    D --> E[\"NLL = -log p(z) - log_det\"]\n    E --> F[\"Adam 更新\"]\n    F --> G{\"收敛?\"}\n    G -->|否| C\n    G -->|是| H[\"采样生成\"]\n    H --> I[\"可视化评估\"]\n    style E fill:#FF9800,color:#1e293b\n    style H fill:#4CAF50,color:#1e293b",
             tip: "训练 2D Flow 时用可视化的方式调试非常高效，每 50 epoch 画一次散点图，可以直观发现模式崩塌或变换退化。",
             warning: "梯度裁剪是 Flow 训练的标配，不裁剪的话雅可比行列式可能导致梯度爆炸。"
         },

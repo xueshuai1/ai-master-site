@@ -24,10 +24,10 @@ export const article: Article = {
     B -->|"INT4 量化"| C["INT4 GPTQ 3.5GB (~95%精度)"]
     C -->|"INT2 量化"| D["INT2/1-bit 1.75GB (~85%精度)"]
     
-    style A fill:#e3f2fd
-    style B fill:#fff3e0
-    style C fill:#e8f5e9
-    style D fill:#fce4ec`,
+    style A fill:#0c4a6e
+    style B fill:#7c2d12
+    style C fill:#14532d
+    style D fill:#881337`,
         },
         {
             title: "2. 量化的基础：PTQ 与 QAT 两大范式",
@@ -270,9 +270,9 @@ print(tokenizer.decode(output[0], skip_special_tokens=True))
     D --> E
     E --> F["INT8 Tensor Core 最大推理加速"]
     
-    style A fill:#fce4ec
-    style C fill:#e3f2fd
-    style E fill:#e8f5e9`,
+    style A fill:#881337
+    style C fill:#0c4a6e
+    style E fill:#14532d`,
         },
         {
             title: "6. 量化格式全景：GGUF、NF4、K-quants 实战对比",

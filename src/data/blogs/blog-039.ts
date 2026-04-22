@@ -41,7 +41,7 @@ const content: ArticleSection[] = [
         D1 --> D2["多角色 Agent 协作\n经验积累与反思\n持续自我改进"]
     end
     
-    style A fill:#6366f1,stroke:#818cf8,color:#fff
+    style A fill:#3730a3,stroke:#6366f1,color:#f1f5f9
     style B fill:#10b981,stroke:#34d399,color:#fff
     style C fill:#f59e0b,stroke:#fbbf24,color:#fff
     style D fill:#ef4444,stroke:#f87171,color:#fff`,
@@ -627,7 +627,7 @@ if __name__ == "__main__":
         O --> B
     end
     
-    style A fill:#6366f1,stroke:#818cf8,color:#fff
+    style A fill:#3730a3,stroke:#6366f1,color:#f1f5f9
     style I fill:#10b981,stroke:#34d399,color:#fff
     style O fill:#f59e0b,stroke:#fbbf24,color:#fff`,
   },

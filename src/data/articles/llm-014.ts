@@ -35,8 +35,8 @@ export const article: Article = {
     D1 --> F
     E1 --> F
     
-    style A fill:#fff3e0
-    style F fill:#c8e6c9`,
+    style A fill:#7c2d12
+    style F fill:#14532d`,
             tip: "核心原则：永远不要只依赖一个评测基准来判断模型的好坏。好的评测体系应该像体检报告——包含多个指标，互相验证，综合判断。",
         },
         {
@@ -222,9 +222,9 @@ for rank, (model, rating) in enumerate(elo.get_rankings(), 1):
     E --> E1["客观题"]
     F --> F1["文本生成质量"]
     
-    style B fill:#bbdefb
-    style C fill:#c8e6c9
-    style D fill:#fff3e0`,
+    style B fill:#1e3a5f
+    style C fill:#14532d
+    style D fill:#7c2d12`,
         },
         {
             title: "4. 评测陷阱与 Goodhart 定律",
@@ -405,9 +405,9 @@ print("评测框架初始化完成")`,
     H --> I["定期更新测试集"]
     I -.->|防止污染| C
     
-    style A fill:#e3f2fd
-    style G fill:#c8e6c9
-    style H fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style G fill:#14532d
+    style H fill:#7c2d12`,
             tip: "评测体系的维护是一个持续过程。至少每季度更新一次测试集，确保评测数据不被训练数据污染。同时跟踪行业最新基准，确保你的评测体系与时俱进。",
         },
         {
@@ -463,10 +463,10 @@ print("评测框架初始化完成")`,
     G --> J["人格特征"]
     G --> K["生态完整性"]
     
-    style A fill:#ffcdd2
-    style C fill:#fff3e0
-    style E fill:#c8e6c9
-    style G fill:#e3f2fd`,
+    style A fill:#7f1d1d
+    style C fill:#7c2d12
+    style E fill:#14532d
+    style G fill:#0c4a6e`,
             warning: "评测的最终目的是服务于用户，而不是服务于排行榜。如果你发现自己在为了某个基准的分数而优化模型，而不是为了用户的实际需求而优化——停下来，重新审视你的目标。",
         },
     ],

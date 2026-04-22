@@ -225,9 +225,9 @@ for depth in [1, 2, 3, 5, 8, 15]:
     C --> H["验证误差低"]
     D --> I["训练误差极低"]
     D --> J["验证误差升高"]
-    style B fill:#ffcccc
-    style C fill:#ccffcc
-    style D fill:#ffcccc`,
+    style B fill:#7f1d1d
+    style C fill:#14532d
+    style D fill:#7f1d1d`,
             tip: "当你不确定模型状态时，先把模型复杂度调高——如果训练误差仍然很高，说明问题不在过拟合，而在模型能力不足。",
             warning: "不要看到训练误差高就盲目增加模型复杂度——先检查数据质量和特征工程，脏数据会让任何复杂模型都表现不佳。",
         },

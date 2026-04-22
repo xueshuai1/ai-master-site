@@ -305,7 +305,7 @@ class EEATEvaluator:
     style D fill:#10b981,stroke:#10b981,color:#fff
     style F fill:#f59e0b,stroke:#f59e0b,color:#fff
     style H fill:#ef4444,stroke:#ef4444,color:#fff
-    style K fill:#8b5cf6,stroke:#8b5cf6,color:#fff`,
+    style K fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9`,
       code: [{
         lang: "python",
         code: `from dataclasses import dataclass

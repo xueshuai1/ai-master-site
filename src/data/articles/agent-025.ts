@@ -47,14 +47,14 @@ Claude-Mem（thedotmack）在短短两周内狂揽 64,577 stars，单周增长 1
     F --> G["决策层\nDecision"]
     G --> H["行动输出\nAction"]
     
-    style A fill:#339af0
-    style B fill:#ffd43b
-    style C fill:#ff6b6b
-    style D fill:#ffd43b
-    style E fill:#51cf66
-    style F fill:#845ef7
-    style G fill:#ff922b
-    style H fill:#339af0`,
+    style A fill:#339af0,color:#1e293b
+    style B fill:#ffd43b,color:#1e293b
+    style C fill:#ff6b6b,color:#1e293b
+    style D fill:#ffd43b,color:#1e293b
+    style E fill:#51cf66,color:#1e293b
+    style F fill:#7c3aed,color:#f1f5f9
+    style G fill:#ff922b,color:#1e293b
+    style H fill:#339af0,color:#1e293b`,
     },
     {
       title: "2. AI Agent 记忆系统的四层架构",
@@ -128,10 +128,10 @@ Claude-Mem 和 GenericAgent 的核心创新之一就是**程序记忆的自动�
     C -->|"模式归纳"| D
     D -.->|"指导决策"| A
     
-    style A fill:#ff6b6b
-    style B fill:#ffd43b
-    style C fill:#51cf66
-    style D fill:#845ef7`,
+    style A fill:#ff6b6b,color:#1e293b
+    style B fill:#ffd43b,color:#1e293b
+    style C fill:#51cf66,color:#1e293b
+    style D fill:#7c3aed,color:#f1f5f9`,
     },
     {
       title: "3. 记忆系统的核心组件与技术选型",
@@ -874,12 +874,12 @@ if __name__ == "__main__":
     E --> I["核心：对话历史 + RAG"]
     F --> J["核心：四层架构 + 安全隔离"]
     
-    style A fill:#339af0
-    style B fill:#ffd43b
-    style C fill:#ff6b6b
-    style D fill:#ffd43b
-    style E fill:#51cf66
-    style F fill:#845ef7`,
+    style A fill:#339af0,color:#1e293b
+    style B fill:#ffd43b,color:#1e293b
+    style C fill:#ff6b6b,color:#1e293b
+    style D fill:#ffd43b,color:#1e293b
+    style E fill:#51cf66,color:#1e293b
+    style F fill:#7c3aed,color:#f1f5f9`,
     },
   ],
 };

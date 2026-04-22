@@ -191,8 +191,8 @@ print(f"测试集 RMSE: {np.sqrt(mse):.4f}")`
     D --> E["更新累计统计量"]
     E --> B
     B -->|"遍历完"| F["编码完成"]
-    style D fill:#ff9900
-    style F fill:#4CAF50`,
+    style D fill:#ff9900,color:#1e293b
+    style F fill:#4CAF50,color:#1e293b`,
             tip: "prior_count 越大编码越平滑，对稀有类别效果更好；一般从 1.0 开始调优",
             warning: "有序编码的结果依赖于排列顺序，CatBoost 默认使用多个排列取平均来降低方差"
         },
@@ -310,8 +310,8 @@ for name, model in [("Ordered", model_ordered), ("Plain", model_plain)]:
     G --> H["可能有泄露"]
     F --> I["泛化能力强"]
     H --> J["训练集过拟合"]
-    style F fill:#4CAF50
-    style H fill:#f44336`,
+    style F fill:#4CAF50,color:#1e293b
+    style H fill:#f44336,color:#1e293b`,
             tip: "数据集小于 5000 条且有高基数类别特征时，优先使用 Ordered 模式",
             warning: "Ordered 模式在大数据集上训练速度明显慢于 Plain，超过 50 万样本建议切换"
         },
@@ -423,8 +423,8 @@ print(f"L2 正则化: {model.get_param('l2_leaf_reg')}")
     I --> L["L2-N2: f4 <= 0.4"]
     I --> M["L2-N3: f6 <= 0.2"]
 
-    style E fill:#4CAF50
-    style D fill:#ff9900`,
+    style E fill:#4CAF50,color:#1e293b
+    style D fill:#ff9900,color:#1e293b`,
             tip: "对称树深度 4-10 通常是最佳范围，配合较多树数量（500-2000）效果最佳",
             warning: "对称树的表达能力受限，在极其复杂的数据集上可能不如 XGBoost 的非对称树"
         },
@@ -560,8 +560,8 @@ plt.show()`
     C --> G["精度优先"]
     E --> H["均衡选择"]
     F --> I["速度优先"]
-    style C fill:#ff9900
-    style F fill:#4CAF50`,
+    style C fill:#ff9900,color:#1e293b
+    style F fill:#4CAF50,color:#1e293b`,
             tip: "表格数据竞赛首选 CatBoost，生产大数据集首选 LightGBM，需要精细控制选 XGBoost",
             warning: "不要在含大量类别特征的数据集上直接用 XGBoost 而不做类别编码处理"
         },
@@ -682,8 +682,8 @@ print(f"最优参数: {model_grid.get_params()}")`
     F --> G["调 l2_leaf_reg: 1, 3, 5"]
     G --> H["调 random_strength"]
     H --> I["最终验证"]
-    style D fill:#ff9900
-    style I fill:#4CAF50`,
+    style D fill:#ff9900,color:#1e293b
+    style I fill:#4CAF50,color:#1e293b`,
             tip: "先调 learning_rate 和 iterations 确定规模，再调 depth 和 l2_leaf_reg 控制过拟合，最后微调 random_strength",
             warning: "不要同时大幅调整多个参数——每次只改一个或两个，否则无法判断是哪个参数产生了效果"
         },
@@ -825,9 +825,9 @@ print("\\n模型已导出: churn_model.cbm (原生) / churn_model.onnx (通用)"
     H --> I["特征重要性"]
     I --> J["模型导出"]
     J --> K["生产部署"]
-    style D fill:#ff9900
-    style E fill:#ff9900
-    style K fill:#4CAF50`,
+    style D fill:#ff9900,color:#1e293b
+    style E fill:#ff9900,color:#1e293b
+    style K fill:#4CAF50,color:#1e293b`,
             tip: "生产环境中使用 eval_set 和 early_stopping，而不是固定 iterations——这样能自动适应不同数据分布",
             warning: "导出 ONNX 模型时，CatBoost 的类别特征处理逻辑可能不完全保留，部署前务必验证预测一致性"
         },

@@ -172,10 +172,10 @@ def check_markov_property(history_data):
     C --> D["新状态 S'"]
     C --> E["奖励 R"]
     D --> B
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style D fill:#e1f5fe
-    style E fill:#fce4ec`,
+    style A fill:#0c4a6e
+    style B fill:#7c2d12
+    style D fill:#0c4a6e
+    style E fill:#881337`,
         warning: "MDP 建模的关键在于状态设计。如果状态不包含足够信息（比如缺少历史），马尔可夫性就不成立，算法效果会大打折扣。",
       },
       {

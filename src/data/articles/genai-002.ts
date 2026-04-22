@@ -60,7 +60,7 @@ export const article: Article = {
                     ["缩放因子 Scaling", "(B, 4, 64, 64)", "(B, 4, 64, 64)", "0.18215", "稳定训练"]
                 ]
             },
-            mermaid: `graph LR\n    A["像素图像 3x512x512"] --> B["Encoder 卷积网络"]\n    B --> C["均值 mu + 方差 log_var"]\n    C --> D["重参数化采样"]\n    D --> E["潜在表示 4x64x64"]\n    E --> F["扩散过程 U-Net"]\n    E --> G["Decoder 转置卷积"]\n    G --> H["重构图像 3x512x512"]\n    style E fill:#2196F3\n    style F fill:#FF9800`,
+            mermaid: `graph LR\n    A["像素图像 3x512x512"] --> B["Encoder 卷积网络"]\n    B --> C["均值 mu + 方差 log_var"]\n    C --> D["重参数化采样"]\n    D --> E["潜在表示 4x64x64"]\n    E --> F["扩散过程 U-Net"]\n    E --> G["Decoder 转置卷积"]\n    G --> H["重构图像 3x512x512"]\n    style E fill:#2196F3\n    style F fill:#FF9800,color:#1e293b`,
             tip: "VAE 的重构质量直接影响最终生成图像的细节，选择高质量的 VAE 至关重要。",
             warning: "潜在空间中的操作（如编辑 latent）需要小心，超出训练分布可能导致解码异常。"
         },
@@ -87,7 +87,7 @@ export const article: Article = {
                     ["对比损失", "InfoNCE", "batch_size", "图文对齐"]
                 ]
             },
-            mermaid: `graph TD\n    A["文本提示词"] --> B["BPE Tokenizer"]\n    B --> C["Token IDs [77]"]\n    C --> D["Transformer Encoder"]\n    D --> E["Hidden States [77, 768]"]\n    E --> F["Linear Projection"]\n    F --> G["Text Embeddings [77, 1024]"]\n    G -->|"Cross-Attention Key/Value"| H["U-Net 去噪网络"]\n    style G fill:#9C27B0`,
+            mermaid: `graph TD\n    A["文本提示词"] --> B["BPE Tokenizer"]\n    B --> C["Token IDs [77]"]\n    C --> D["Transformer Encoder"]\n    D --> E["Hidden States [77, 768]"]\n    E --> F["Linear Projection"]\n    F --> G["Text Embeddings [77, 1024]"]\n    G -->|"Cross-Attention Key/Value"| H["U-Net 去噪网络"]\n    style G fill:#9C27B0,color:#1e293b`,
             tip: "使用加权提示词 (word:1.3) 可以增强特定概念的表达强度，这是常用的提示词技巧。",
             warning: "CLIP 对否定词理解较弱，negative prompt 在 Stable Diffusion 中作为独立机制处理。"
         },
@@ -118,7 +118,7 @@ export const article: Article = {
                     ["Up Block 3", "320->320", "64x64", "无", "最终输出"]
                 ]
             },
-            mermaid: `graph TD\n    A["Latent 4x64x64"] --> D0["Down 0: 320ch"]\n    D0 --> D1["Down 1: 640ch, 32x32"]\n    D1 --> D2["Down 2: 1280ch, 16x16, Attn"]\n    D2 --> D3["Down 3: 1280ch, 8x8, Attn"]\n    D3 --> M["Middle: 1280ch, Attn+CrossAttn"]\n    M --> U0["Up 0: 1280ch, 8x8, Attn"]\n    U0 --> U1["Up 1: 640ch, 16x16, Attn"]\n    U1 --> U2["Up 2: 320ch, 32x32"]\n    U2 --> U3["Up 3: 320ch, 64x64"]\n    U3 --> O["Noise Pred 4x64x64"]\n    T["Text Emb [77,1024]"] -->|"CrossAttn"| M\n    T -->|"CrossAttn"| D2\n    T -->|"CrossAttn"| D3\n    style M fill:#FF9800`,
+            mermaid: `graph TD\n    A["Latent 4x64x64"] --> D0["Down 0: 320ch"]\n    D0 --> D1["Down 1: 640ch, 32x32"]\n    D1 --> D2["Down 2: 1280ch, 16x16, Attn"]\n    D2 --> D3["Down 3: 1280ch, 8x8, Attn"]\n    D3 --> M["Middle: 1280ch, Attn+CrossAttn"]\n    M --> U0["Up 0: 1280ch, 8x8, Attn"]\n    U0 --> U1["Up 1: 640ch, 16x16, Attn"]\n    U1 --> U2["Up 2: 320ch, 32x32"]\n    U2 --> U3["Up 3: 320ch, 64x64"]\n    U3 --> O["Noise Pred 4x64x64"]\n    T["Text Emb [77,1024]"] -->|"CrossAttn"| M\n    T -->|"CrossAttn"| D2\n    T -->|"CrossAttn"| D3\n    style M fill:#FF9800,color:#1e293b`,
             tip: "使用 torch.compile 编译 U-Net 可以获得 20-40% 的推理加速，需要 PyTorch 2.0+。",
             warning: "修改 U-Net 架构（如添加层）后必须重新训练，不能直接复用预训练权重。"
         },
@@ -147,7 +147,7 @@ export const article: Article = {
                     ["Heun", "ODE 二阶", "15-20", "中", "很好", "确定"]
                 ]
             },
-            mermaid: `graph LR\n    A["随机噪声 z_T"] --> B["采样器选择"]\n    B --> C["DDIM: 确定性 ODE\"]\n    B --> D["DPM-Solver: 高阶 ODE"]\n    B --> E["Euler a: 随机 SDE"]\n    C --> F["20-50步收敛"]\n    D --> G["10-20步收敛"]\n    E --> H["20-30步收敛"]\n    F --> I["稳定但慢"]\n    G --> J["快速且优质"]\n    H --> K["多样性好"]\n    style J fill:#4CAF50`,
+            mermaid: `graph LR\n    A["随机噪声 z_T"] --> B["采样器选择"]\n    B --> C["DDIM: 确定性 ODE\"]\n    B --> D["DPM-Solver: 高阶 ODE"]\n    B --> E["Euler a: 随机 SDE"]\n    C --> F["20-50步收敛"]\n    D --> G["10-20步收敛"]\n    E --> H["20-30步收敛"]\n    F --> I["稳定但慢"]\n    G --> J["快速且优质"]\n    H --> K["多样性好"]\n    style J fill:#4CAF50,color:#1e293b`,
             tip: "日常使用推荐 DPM++ 2M Karras，25 步即可获得优秀质量。",
             warning: "步数少于 10 时所有采样器质量都会明显下降，不要为了速度过度减少步数。"
         },
@@ -174,7 +174,7 @@ export const article: Article = {
                     ["IP-Adapter", "图像参考", "~100MB", "低", "风格/内容参考"]
                 ]
             },
-            mermaid: `graph TD\n    A["预训练 SD 模型"] --> B["ControlNet 结构控制"]\n    A --> C["LoRA 风格控制"]\n    A --> D["Textual Inversion 新概念"]\n    B --> E["边缘图/深度图/姿态"]\n    C --> F["动漫/写实/油画风格"]\n    D --> G["自定义触发词 <sks>"]\n    E --> H["组合生成"]\n    F --> H\n    G --> H\n    H --> I["高精度可控图像"]\n    style H fill:#FF5722`,
+            mermaid: `graph TD\n    A["预训练 SD 模型"] --> B["ControlNet 结构控制"]\n    A --> C["LoRA 风格控制"]\n    A --> D["Textual Inversion 新概念"]\n    B --> E["边缘图/深度图/姿态"]\n    C --> F["动漫/写实/油画风格"]\n    D --> G["自定义触发词 <sks>"]\n    E --> H["组合生成"]\n    F --> H\n    G --> H\n    H --> I["高精度可控图像"]\n    style H fill:#FF5722,color:#1e293b`,
             tip: "LoRA 可以叠加使用（如风格 LoRA + 角色 LoRA），通过调整各自权重实现精细控制。",
             warning: "ControlNet 的条件图必须与生成图像分辨率一致，否则会引入伪影。"
         },
@@ -202,7 +202,7 @@ export const article: Article = {
                     ["8-bit 量化", "~50%", "-10%", "需要 bitsandbytes"]
                 ]
             },
-            mermaid: `graph TD\n    A["用户输入"] --> B{"选择管道"}\n    B -->|"文本"| C["Text2Image Pipeline"]\n    B -->|"文本+图像"| D["Img2Img Pipeline"]\n    B -->|"文本+图像+掩码"| E["Inpaint Pipeline"]\n    B -->|"图像参考"| F["IP-Adapter Pipeline"]\n    C --> G["优化配置"]\n    D --> G\n    E --> G\n    F --> G\n    G --> H["VAE + U-Net + CLIP"]\n    H --> I["采样器迭代"]\n    I --> J["输出生成图像"]\n    style B fill:#FF9800\n    style G fill:#2196F3`,
+            mermaid: `graph TD\n    A["用户输入"] --> B{"选择管道"}\n    B -->|"文本"| C["Text2Image Pipeline"]\n    B -->|"文本+图像"| D["Img2Img Pipeline"]\n    B -->|"文本+图像+掩码"| E["Inpaint Pipeline"]\n    B -->|"图像参考"| F["IP-Adapter Pipeline"]\n    C --> G["优化配置"]\n    D --> G\n    E --> G\n    F --> G\n    G --> H["VAE + U-Net + CLIP"]\n    H --> I["采样器迭代"]\n    I --> J["输出生成图像"]\n    style B fill:#FF9800,color:#1e293b\n    style G fill:#2196F3,color:#1e293b`,
             tip: "使用 seed 固定随机数生成器，确保相同提示词和参数产生完全相同的结果。",
             warning: "生产环境务必设置 safety_checker 或使用自定义内容审核管道。"
         },

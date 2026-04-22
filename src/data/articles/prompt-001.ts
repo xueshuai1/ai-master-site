@@ -58,9 +58,9 @@ export const article: Article = {
     C --> H[准确率: ~60%]
     G --> I[准确率: ~90%]
     
-    style B fill:#f9d,stroke:#333
-    style H fill:#f66,stroke:#333
-    style I fill:#6f6,stroke:#333`,
+    style B fill:#7c2d12,stroke:#333
+    style H fill:#7f1d1d,stroke:#333
+    style I fill:#14532d,stroke:#333`,
     },
     {
       title: "2.1 Zero-Shot CoT：最简单的思维链",
@@ -122,8 +122,8 @@ Few-Shot CoT 给示范，让模型照着学。
     E --> F[模型模仿推理模式]
     F --> G[输出推理过程 + 答案]
     
-    style A fill:#bbf
-    style G fill:#bfb`,
+    style A fill:#1e3a5f
+    style G fill:#14532d`,
     },
     {
       title: "2.3 Few-Shot CoT 实战代码",
@@ -511,10 +511,10 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
     
     I --> K[得出结论]
     
-    style A fill:#bbf
-    style K fill:#bfb
-    style E1 fill:#f66
-    style J fill:#f66`,
+    style A fill:#1e3a5f
+    style K fill:#14532d
+    style E1 fill:#7f1d1d
+    style J fill:#7f1d1d`,
     },
     {
       title: "5.1 ToT 与 CoT 的对比",
@@ -580,9 +580,9 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
     L -->|不通过| N[重试/降级]
     N --> L
     
-    style A fill:#bbf
-    style M fill:#bfb
-    style N fill:#f66`,
+    style A fill:#1e3a5f
+    style M fill:#14532d
+    style N fill:#7f1d1d`,
     },
     {
       title: "6.1 生产级 Prompt 系统代码",

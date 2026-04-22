@@ -275,11 +275,11 @@ class Seq2Seq(nn.Module):
     J --> K["processing"]
     K --> L["<eos>"]
     
-    style A fill:#bbdefb
-    style B fill:#c8e6c9
-    style D fill:#fff9c4
-    style E fill:#ffe0b2
-    style L fill:#ffcdd2`,
+    style A fill:#1e3a5f
+    style B fill:#14532d
+    style D fill:#713f12
+    style E fill:#7c2d12
+    style L fill:#7f1d1d`,
         tip: "Teacher Forcing Ratio 应从 1.0 逐渐衰减到接近 0，这叫做 Scheduled Sampling。训练初期依赖教师强制加速收敛，后期减少依赖以缓解暴露偏差，使模型更适应推理时的自回归生成。",
         warning: "固定长度上下文向量是 Seq2Seq 架构的「信息瓶颈」——无论源句子多长，编码器都必须将所有信息压缩到一个固定维度的向量中。当源句子超过 30 个词时，编码器会严重丢失信息，导致翻译质量急剧下降。",
       },
@@ -401,10 +401,10 @@ class AttentionDecoderRNN(nn.Module):
     I --> J["LSTM 更新"]
     J --> K["输出 y_t 概率"]
     
-    style A fill:#bbdefb
-    style B fill:#fff9c4
-    style G fill:#c8e6c9
-    style K fill:#ffe0b2`,
+    style A fill:#1e3a5f
+    style B fill:#713f12
+    style G fill:#14532d
+    style K fill:#7c2d12`,
         tip: "训练时保存注意力权重矩阵，用热力图可视化对齐关系。好的注意力图应该呈现对角线模式（源词和目标词按顺序对齐），这对调试翻译模型非常有帮助。",
         warning: "注意力机制的计算复杂度为 O(src_len × d²)，当源句子很长时（如超过 100 词），每步解码都要计算对所有源位置的对齐分数。这是后续 Transformer 需要解决的问题——但先有了注意力突破，才有后面的架构革命。",
       },
@@ -558,9 +558,9 @@ class TransformerBlock(nn.Module):
     H -.-> I["Concat Heads"]
     I -.-> B
     
-    style A fill:#bbdefb
-    style B fill:#fff9c4
-    style F fill:#c8e6c9`,
+    style A fill:#1e3a5f
+    style B fill:#713f12
+    style F fill:#14532d`,
         tip: "Transformer 的位置编码设计极其精妙——正弦函数的特性使得模型可以学习相对位置关系：PE(pos+k) 可以表示为 PE(pos) 的线性函数。这解释了为什么 Transformer 在训练时未见过的句子长度上也能泛化。",
         warning: "Transformer 的自注意力计算复杂度为 O(N²·d)，其中 N 是序列长度。当 N 超过 4096 时，内存和计算开销急剧增长。对于超长序列（如文档级翻译），需要使用 Sparse Attention、Linformer 或 Longformer 等变体。",
       },
@@ -815,8 +815,8 @@ for name, count in strategies.items():
     F --> H["混合训练"]
     H --> I["低资源翻译模型"]
     
-    style A fill:#ffcdd2
-    style I fill:#c8e6c9`,
+    style A fill:#7f1d1d
+    style I fill:#14532d`,
         tip: "回译是性价比最高的低资源增强方法——目标语言的单语数据通常比平行语料容易获取 100 倍以上。即使反向翻译模型质量不高，回译生成的伪数据也能提供显著的 BLEU 增益（通常 +5-10）。",
         warning: "回译的核心风险是「错误累积」——如果反向翻译模型质量差，生成的伪平行语料中会有很多错误翻译。这些错误数据会让正向翻译模型学到错误的映射关系。解决方案：(1) 使用 beam search 而非 greedy 解码生成更高质量的伪数据；(2) 对伪数据置信度打分，只保留高质量样本。",
       },
@@ -1002,10 +1002,10 @@ print("训练完成后调用 trainer.save_model('./final-model') 保存")`,
     I --> J["导出 ONNX / 推送到 Hub"]
     J --> K["部署推理服务"]
     
-    style A fill:#bbdefb
-    style F fill:#fff9c4
-    style I fill:#c8e6c9
-    style K fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style F fill:#713f12
+    style I fill:#14532d
+    style K fill:#581c87`,
         tip: "训练翻译模型时，先用小规模数据（1000 句）跑通整个 pipeline，确认 loss 正常下降、BLEU 分数有意义，再用全量数据训练。这可以节省大量调试时间。",
         warning: "翻译模型微调时最容易犯的错是：(1) 忘记使用 as_target_tokenizer() 上下文管理器——不同语言的分词器可能不同；(2) 评估时没有将 label 中的 -100 替换为 pad_token_id——这会导致解码错误；(3) 训练和推理时使用不同的分词器——确保预处理和推理的分词配置完全一致。",
       },

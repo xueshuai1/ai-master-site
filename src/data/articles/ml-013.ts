@@ -369,8 +369,8 @@ print(f"最高测试准确率: {test_scores[best_idx]:.4f}")`,
     E -->|否| B
     E -->|是| F["加权组合所有模型"]
     F --> G["最终预测"]
-    style D fill:#fff3e0
-    style F fill:#c8e6c9`,
+    style D fill:#7c2d12
+    style F fill:#14532d`,
             tip: "梯度提升的学习率（learning_rate）和树数量（n_estimators）是一对需要联合调优的超参数。小学习率（0.01-0.05）配合更多树通常比大学习率配合少量树效果更好、更稳定。",
         },
         {
@@ -491,8 +491,8 @@ for name, pred in strategies.items():
     E --> F["元特征矩阵"]
     F --> G["元学习器: 逻辑回归"]
     G --> H["最终预测"]
-    style F fill:#e1f5ff
-    style G fill:#c8e6c9`,
+    style F fill:#0c4a6e
+    style G fill:#14532d`,
             warning: "Stacking 最容易犯的错误是用基模型在训练集上的预测直接训练元学习器——这会导致严重的数据泄露和过拟合。必须使用 K 折交叉验证（Out-of-Fold）来生成元特征。",
         },
         {

@@ -227,12 +227,12 @@ for lhs, rhs_list in cnf_rules.items():
     C -->|"→"| G["NP"]
     G -->|"→"| H["Det"]
     G -->|"→"| I["N"]
-    style A fill:#f9d,stroke:#333
-    style D fill:#bbf,stroke:#333
-    style E fill:#bbf,stroke:#333
-    style F fill:#bbf,stroke:#333
-    style H fill:#bbf,stroke:#333
-    style I fill:#bbf,stroke:#333`,
+    style A fill:#7c2d12,stroke:#333
+    style D fill:#1e3a5f,stroke:#333
+    style E fill:#1e3a5f,stroke:#333
+    style F fill:#1e3a5f,stroke:#333
+    style H fill:#1e3a5f,stroke:#333
+    style I fill:#1e3a5f,stroke:#333`,
             tip: "CKY 算法要求 CFG 必须是乔姆斯基范式（CNF）。任何 CFG 都可以等价转换为 CNF，转换过程中可能引入新的非终结符，但不改变文法生成的语言。",
             warning: "CFG 无法捕获自然语言中的某些现象，如跨距依赖（cross-serial dependencies）和某些一致关系（agreement）。这也是为什么后续发展出了树邻接文法（TAG）等更强的形式化方法。",
         },
@@ -369,9 +369,9 @@ probabilistic_cky(["the", "cat", "chased", "the", "dog"], pcfg, lex)`,
     F -->|是| G["重建树结构"]
     F -->|否| H["句子不在文法中"]
     
-    style A fill:#f9d,stroke:#333
-    style G fill:#bfb,stroke:#333
-    style H fill:#fbb,stroke:#333`,
+    style A fill:#7c2d12,stroke:#333
+    style G fill:#14532d,stroke:#333
+    style H fill:#881337,stroke:#333`,
             tip: "CKY 算法的三重循环（span → i → k）是经典的动态规划模式。理解这个循环顺序是掌握 CKY 的关键：外层枚举跨度大小，确保计算 (i,j) 时所有更小的子问题已经解决。",
             warning: "CKY 的 O(n³) 复杂度对长句子来说仍然很慢。实际系统中通常使用带剪枝的 CKY（只保留高概率候选）或直接使用神经句法分析器。",
         },
@@ -490,7 +490,7 @@ for head_idx, children in adj.items():
     G --> K["缺点：丢失短语信息"]
     H -.->|现代趋势| L["依存分析更流行"]
     J -.->|现代趋势| L
-    style L fill:#bfb,stroke:#333`,
+    style L fill:#14532d,stroke:#333`,
             tip: "Universal Dependencies 是当前最主流的依存标注体系，覆盖了 100+ 种语言。如果你的项目涉及多语言 NLP，强烈建议以 UD 作为依存分析的标注标准。",
             warning: "成分树和依存树之间可以相互转换，但转换过程中会丢失信息。不要假设一种表示可以完全无损地转换为另一种。",
         },
@@ -649,8 +649,8 @@ print("  - 更适合神经网络学习（动作选择更局部）")`,
     D --> B
     E --> B
     B -->|"Buffer 空 + Stack=[ROOT]"| F["解析完成 输出依存树"]
-    style A fill:#f9d,stroke:#333
-    style F fill:#bfb,stroke:#333`,
+    style A fill:#7c2d12,stroke:#333
+    style F fill:#14532d,stroke:#333`,
             tip: "转移动作的选择（oracle）是训练转移分析器的关键。Oracle 可以从 gold 依存树中自动提取——这称为动态 oracle（dynamic oracle），它允许在训练过程中容忍错误并恢复。",
             warning: "基础的 Arc-Standard/Arc-Eager 只能处理投射性（projective）依存树，即没有交叉边的树。自然语言中存在约 25% 的非投射结构，需要额外扩展（如 swap 动作）来处理。",
         },
@@ -792,8 +792,8 @@ print(f"Eisner 最优分数: {result:.4f}")`,
     F --> H["最优非投射树"]
     G --> I["依存关系输出"]
     H --> I
-    style C fill:#f9d,stroke:#333
-    style I fill:#bfb,stroke:#333`,
+    style C fill:#7c2d12,stroke:#333
+    style I fill:#14532d,stroke:#333`,
             tip: "在实际系统中，图-based 和转移-based 方法经常结合使用：转移-based 用于快速推断（O(n)），图-based 用于生成训练数据或后处理修正。",
             warning: "Eisner 算法只适用于投射性树。如果你的语料包含大量非投射结构（如自由语序语言），必须使用 Chu-Liu/Edmonds 算法。",
         },
@@ -907,8 +907,8 @@ for i, sent in enumerate(docs.sentences):
     E --> G["Universal Dependencies 输出"]
     F --> G
     G --> H["下游应用： 信息抽取 问答 机器翻译"]
-    style A fill:#f9d,stroke:#333
-    style H fill:#bfb,stroke:#333`,
+    style A fill:#7c2d12,stroke:#333
+    style H fill:#14532d,stroke:#333`,
             tip: "spaCy 的 Transformer 模型（en_core_web_trf）比默认的 en_core_web_sm 准确率更高，但速度稍慢。生产环境中可以用小模型做快速过滤，大模型做精分析。",
             warning: "spaCy 的依存分析模型是在特定语料上训练的，对于非标准英语（如社交媒体文本、方言）效果可能下降。如果处理特殊领域文本，建议使用领域数据微调模型。",
         },

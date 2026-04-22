@@ -24,9 +24,9 @@ export const article: Article = {
     D --> E["支持向量确定边界"]
     E --> F["新样本分类"]
     
-    style A fill:#bbdefb
-    style D fill:#c8e6c9
-    style F fill:#fff3e0`,
+    style A fill:#1e3a5f
+    style D fill:#14532d
+    style F fill:#7c2d12`,
         tip: "关键洞察：SVM 的最终决策只依赖于支持向量（那些离边界最近的样本），与远离边界的样本无关。这意味着 SVM 对异常值有一定的鲁棒性——只要异常值不是支持向量。",
       },
       {

@@ -29,9 +29,9 @@ export const article: Article = {
     E -->|"效果满意"| G["模型部署"]
     G --> H["持续监控与更新"]
 
-    classDef data fill:#e1f5fe
-    classDef process fill:#fff3e0
-    classDef decision fill:#e8f5e9
+    classDef data fill:#0c4a6e
+    classDef process fill:#7c2d12
+    classDef decision fill:#14532d
     class A,B,C data
     class D,E,G,H process
     class F decision`,
@@ -157,7 +157,7 @@ for i, w in enumerate(model.coef_[0]):
     E -->|"是"| F["预测类别 1"]
     E -->|"否"| G["预测类别 0"]
 
-    classDef func fill:#e3f2fd
+    classDef func fill:#0c4a6e
     class B,C,D func`,
       },
       {

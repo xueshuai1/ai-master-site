@@ -74,8 +74,8 @@ for i, std in enumerate(activations):
     C --> G["训练崩溃 NaN"]
     D --> H["网络退化为线性"]
     E --> I["训练顺利收敛"]
-    style E fill:#c8e6c9
-    style I fill:#c8e6c9`,
+    style E fill:#14532d
+    style I fill:#14532d`,
             tip: "检查初始化的实用技巧：在网络初始化后跑一批随机数据，打印每层激活值的均值和标准差。如果均值远离 0 或标准差逐层剧烈变化（相差 > 10 倍），说明初始化方案需要调整。",
             warning: "永远不要将所有权重初始化为零或同一个常数——这会导致「对称性问题」，同一层的所有神经元在训练中始终更新相同的梯度，网络退化为单个神经元的线性组合。",
         },
@@ -239,8 +239,8 @@ class HeInitializedNet(nn.Module):
     D -->|He| F["Var = 2/n_in\n稳定 ✅"]
     F --> G["深层 ReLU 网络\n顺利训练"]
     E --> H["深层 ReLU 网络\n梯度消失 ❌"]
-    style F fill:#c8e6c9
-    style G fill:#c8e6c9`,
+    style F fill:#14532d
+    style G fill:#14532d`,
             tip: "mode 参数的选择：kaiming_normal_(weight, mode='fan_in') 保持前向传播方差稳定；mode='fan_out' 保持反向传播方差稳定。实战中 mode='fan_out' 配合 ReLU 往往收敛更快，因为梯度流更重要。",
             warning: "Kaiming 初始化是为 ReLU 系列设计的。如果你的网络使用 Tanh 或 Sigmoid，请切换回 Xavier 初始化——用 Kaiming 初始化 Tanh 网络会导致激活值方差过大，可能引发梯度爆炸。",
         },
@@ -319,7 +319,7 @@ class StableRNN(nn.Module):
     E --> F["||Wx|| = ||x||"]
     F --> G["任意深度\n范数不变"]
     G --> H["无梯度消失/爆炸"]
-    style H fill:#c8e6c9`,
+    style H fill:#14532d`,
             tip: "正交初始化特别适合 RNN/LSTM/GRU 的隐藏-隐藏权重矩阵（weight_hh）。输入-隐藏权重矩阵（weight_ih）仍可以用 Xavier 或 He 初始化，因为输入数据本身已经做了归一化。",
             warning: "正交初始化只适用于方阵或接近方阵的矩阵。当 fan_in 和 fan_out 差异很大时（如 1000→10 的全连接层），正交约束会严重限制表达能力，此时不如用 He 或 Xavier。",
         },
@@ -413,7 +413,7 @@ class LayerScaledTransformer(nn.Module):
     D --> G
     F --> G
     G --> H["1000+ 层可训练"]
-    style H fill:#c8e6c9`,
+    style H fill:#14532d`,
             tip: "Layer-Scaling 与残差连接配合时，缩放的是残差分支（conv-bn-conv）的输出，而不是跳跃连接本身。跳跃连接保持恒等映射，这是 ResNet 稳定性的关键。",
             warning: "过度缩放会导致深层的梯度信号过弱，反而减慢收敛速度。建议缩放因子不要超过 1/sqrt(2)，否则可能需要更大的初始学习率来补偿。",
         },
@@ -523,7 +523,7 @@ print("He 梯度范数:", analyze_gradients(model_h, x, target))` },
     G --> I
     H --> I
     I --> J["快速稳定收敛"]
-    style J fill:#c8e6c9`,
+    style J fill:#14532d`,
             tip: "实用调试技巧：在训练的前 10 个 step 中，记录每层的梯度范数和激活值标准差。如果看到某层的梯度范数是其他层的 100 倍以上，说明初始化或学习率需要调整。这是比看 loss 曲线更敏感的早期预警信号。",
             warning: "BatchNorm 的存在会部分掩盖初始化问题，因为它会对每层输出做归一化。但这不代表初始化不重要——BN 只能修复均值和方差，无法修复梯度的方向性。好的初始化 + BN 的组合仍然比单纯依赖 BN 收敛更快。",
         },
@@ -637,9 +637,9 @@ for s, loss in results.items():
     F --> H
     E --> I["⚠️ 适合 Tanh"]
     G --> J["❌ 完全不收敛"]
-    style H fill:#c8e6c9
-    style I fill:#fff3e0
-    style J fill:#ffcdd2`,
+    style H fill:#14532d
+    style I fill:#7c2d12
+    style J fill:#7f1d1d`,
             tip: "PyTorch 提供了便捷的 apply 方法来统一初始化：model.apply(lambda m: nn.init.kaiming_normal_(m.weight) if isinstance(m, nn.Linear) else None)。对于复杂网络，建议写专门的 _init_weights 方法，按层类型分别处理。",
             warning: "实验中发现：如果网络中混合使用了多种激活函数（如卷积层用 ReLU、输出层用 Sigmoid），需要分别对不同层应用不同的初始化方案。统一用一种初始化可能导致某些层初始化不当。",
         },

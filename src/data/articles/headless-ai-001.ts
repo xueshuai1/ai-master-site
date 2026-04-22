@@ -36,8 +36,8 @@ export const article: Article = {
         B2 --> D2[外部系统集成]
     end
     
-    style A2 fill:#ff6b35
-    style B2 fill:#4ecdc4
+    style A2 fill:#ff6b35,color:#1e293b
+    style B2 fill:#4ecdc4,color:#1e293b
     style B1 fill:#95a5a6
 `,
     },
@@ -359,8 +359,8 @@ if __name__ == "__main__":
     I1 --> I2
     I1 --> I3
     
-    style A1 fill:#ff6b35
-    style I1 fill:#4ecdc4
+    style A1 fill:#ff6b35,color:#1e293b
+    style I1 fill:#4ecdc4,color:#1e293b
 `,
     },
     {
@@ -523,11 +523,11 @@ if __name__ == "__main__":
         R5 --> R5b[敏感领域限制]
     end
     
-    style R1 fill:#ff4444
-    style R2 fill:#ff8800
-    style R3 fill:#ffcc00
-    style R4 fill:#ffcc00
-    style R5 fill:#44cc44
+    style R1 fill:#ff4444,color:#1e293b
+    style R2 fill:#ff8800,color:#1e293b
+    style R3 fill:#ffcc00,color:#1e293b
+    style R4 fill:#ffcc00,color:#1e293b
+    style R5 fill:#44cc44,color:#1e293b
 `,
     },
   ],

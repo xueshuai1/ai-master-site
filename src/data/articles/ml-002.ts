@@ -316,9 +316,9 @@ for i in np.argsort(perm_imp)[::-1][:5]:
     D --> E["SHAP 可解释性分析"]
     E --> F["业务决策报告"]
 
-    style A fill:#bbdefb
-    style C fill:#c8e6c9
-    style F fill:#fff3e0`,
+    style A fill:#1e3a5f
+    style C fill:#14532d
+    style F fill:#7c2d12`,
         tip: "实战建议：拿到新数据集，先跑随机森林基线 → 排列重要性筛特征 → SHAP 生成可解释性报告。这套流程适用于 80% 的表格数据场景。",
       },
     ],

@@ -181,11 +181,11 @@ SWE-bench 社区推出了 **SWE-bench Multimodal**，将评估范围从纯代码
     E --> E1["工具选择准确率"]
     F --> F1["安全事件检出率"]
     
-    style B fill:#e3f2fd
-    style C fill:#fff3e0
-    style D fill:#e8f5e9
-    style E fill:#fce4ec
-    style F fill:#f3e5f5`,
+    style B fill:#0c4a6e
+    style C fill:#7c2d12
+    style D fill:#14532d
+    style E fill:#881337
+    style F fill:#581c87`,
     },
     {
       title: "Python 实战：构建 Agent 评估框架",
@@ -681,12 +681,12 @@ Agent 的 Token 消耗远高于单纯的 LLM 对话，因为：
     E --> E1["压缩：减少推理步骤"]
     F --> F1["压缩：结果摘要"]
     
-    style A fill:#8b5cf6,color:#fff
-    style B1 fill:#e3f2fd
-    style C1 fill:#e3f2fd
-    style D1 fill:#e3f2fd
-    style E1 fill:#e3f2fd
-    style F1 fill:#e3f2fd`,
+    style A fill:#5b21b6,color:#f1f5f9
+    style B1 fill:#0c4a6e
+    style C1 fill:#0c4a6e
+    style D1 fill:#0c4a6e
+    style E1 fill:#0c4a6e
+    style F1 fill:#0c4a6e`,
     },
     {
       title: "Agent 评估的最佳实践：从实验室到生产环境",

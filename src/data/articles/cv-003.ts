@@ -61,8 +61,8 @@ print(f"前5个类别: {imagenet.classes[:5]}")
     B --> C["全连接层"]
     C --> D["Softmax"]
     D --> E["类别预测"]
-    style A fill:#e1f5fe
-    style E fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style E fill:#14532d`,
             tip: "入门建议先用 CIFAR-10 练手，ImageNet 全量训练需要多张 GPU 跑数天",
             warning: "ImageNet 数据集超过 150GB，下载和预处理需要充足的磁盘空间"
         },
@@ -214,8 +214,8 @@ print(f"3x3 x3 感受野: {rf_3x3}")  # 7
             mermaid: `graph LR
     A["7x7 卷积\n参数量: 49C²"] --> B["等效感受野 7x7"]
     C["3x3 → 3x3 → 3x3\n参数量: 27C²"] --> B
-    style C fill:#e8f5e9
-    style A fill:#fff3e0
+    style C fill:#14532d
+    style A fill:#7c2d12
     subgraph 结论
     B --> D["3x3 堆叠参数减少 45%\n且增加 2 次非线性变换"]
     end`,
@@ -312,8 +312,8 @@ calc_flops_with_bottleneck(256, 64, 256)
     G --> H
     H --> J["输出 Tensor"]
     end
-    style I fill:#e1f5fe
-    style J fill:#e8f5e9`,
+    style I fill:#0c4a6e
+    style J fill:#14532d`,
             tip: "理解 Inception 的核心是理解「让网络自己决定哪个感受野最有效」，而不是人工设计",
             warning: "GoogLeNet 的 1x1 卷积降维比例需要根据通道数仔细调，降得太狠会丢失信息"
         },
@@ -407,9 +407,9 @@ res = ResBlock(64)
     H --> G
     G --> I["ReLU"]
     I --> J["输出"]
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9
-    style J fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style G fill:#14532d
+    style J fill:#7c2d12`,
             tip: "ResNet 的 shortcut 是理解所有现代架构的基础——DenseNet、Transformer 的 skip connection 都源自这一思想",
             warning: "使用预训练 ResNet 做迁移学习时，记得替换最后的全连接层以匹配你的类别数"
         },
@@ -503,8 +503,8 @@ for b in range(8):
     D --> G["EfficientNet-B1~B7\n系列模型"]
     E --> G
     F --> G
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style G fill:#14532d`,
             tip: "实际部署时优先选 EfficientNet-B0 或 B3，在精度和速度之间取得最佳平衡",
             warning: "EfficientNet 使用了 SiLU/Swish 激活函数，如果你的硬件不支持 SiLU 加速，推理速度会下降"
         },
@@ -598,9 +598,9 @@ print(f"可训练参数: {sum(p.numel() for p in model.parameters() if p.require
     H --> I["只训练分类头"]
     I --> J["微调整个网络"]
     end
-    style A fill:#e1f5fe
-    style F fill:#e8f5e9
-    style J fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style F fill:#14532d
+    style J fill:#7c2d12`,
             tip: "torchvision 的 weights API (v0.13+) 比旧的 pretrained=True 更灵活，可以选不同版本的权重",
             warning: "推理前必须调用 model.eval()，否则 BatchNorm 会用 batch 统计量而非运行统计量，导致结果不稳定"
         }

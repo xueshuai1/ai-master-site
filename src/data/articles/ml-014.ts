@@ -233,13 +233,13 @@ for s in result:
     C --> F["L3: gain=2.0"]
     C --> G["R3: gain=2.0"]
 
-    style A fill:#ff6b6b
-    style B fill:#ffd93d
-    style C fill:#6bcb77
-    style D fill:#4d96ff
-    style E fill:#a8a8a8
-    style F fill:#a8a8a8
-    style G fill:#a8a8a8`,
+    style A fill:#ff6b6b,color:#1e293b
+    style B fill:#ffd93d,color:#1e293b
+    style C fill:#6bcb77,color:#1e293b
+    style D fill:#4d96ff,color:#1e293b
+    style E fill:#374151
+    style F fill:#374151
+    style G fill:#374151`,
             tip: "Leaf-wise 模式下 num_leaves 是最重要的超参数，建议从 31 开始，逐步增大到 63、127 观察验证集表现",
             warning: "Leaf-wise 不加 max_depth 约束时，树会疯狂向一侧生长，导致训练集完美拟合但验证集性能极差"
         },

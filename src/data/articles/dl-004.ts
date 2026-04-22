@@ -208,8 +208,8 @@ print(f"多头参数量: {multi_head_params:,} (相同，但表达能力更强)"
     C --> W["W_o 线性变换"]
     W --> Y["输出"]
     
-    style C fill:#f59e0b
-    style W fill:#10b981`,
+    style C fill:#f59e0b,color:#1e293b
+    style W fill:#10b981,color:#1e293b`,
       },
       {
         title: "4. Transformer 整体架构",
@@ -302,10 +302,10 @@ class TransformerDecoderLayer(nn.Module):
     N --> O["Linear + Softmax"]
     O --> P["输出概率分布"]
     
-    style C fill:#bbdefb
-    style K fill:#c8e6c9
-    style E fill:#fff3e0
-    style M fill:#fff3e0`,
+    style C fill:#1e3a5f
+    style K fill:#14532d
+    style E fill:#7c2d12
+    style M fill:#7c2d12`,
       },
       {
         title: "5. 位置编码：让模型感知顺序",

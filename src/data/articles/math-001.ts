@@ -225,7 +225,7 @@ print(f"旋转后: {v_rotated}")  # 近似 [0, 1]`
     B --> C["输出向量 Wv"]
     C --> D["激活函数"]
     D --> E["下一层输入"]
-    style B fill:#f9d,stroke:#333`,
+    style B fill:#7c2d12,stroke:#333`,
       tip: "使用 @ 运算符进行矩阵乘法比 np.matmul 更简洁，且是 Python 3.5+ 的标准写法。",
       warning: "矩阵乘法要求左矩阵的列数等于右矩阵的行数。维度不匹配时会报错，调试时先 print(shape) 检查维度。"
     },

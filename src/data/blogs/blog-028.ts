@@ -178,7 +178,7 @@ competitor_skill = Skill(
     C -.触发执行.-> D
     D -.返回结果.-> B
     
-    style A fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style A fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
     style B fill:#3b82f6,stroke:#3b82f6,color:#fff
     style C fill:#10b981,stroke:#10b981,color:#fff
     style D fill:#f59e0b,stroke:#f59e0b,color:#fff`,

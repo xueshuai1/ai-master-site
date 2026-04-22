@@ -61,7 +61,7 @@ export const article: Article = {
                     ["1000", "0.000", "~0%", "~100%", "纯高斯噪声"]
                 ]
             },
-            mermaid: `graph LR\n    A["x_0 清晰图像"] -->|q(x_1|x_0)| B["x_1 轻微噪声"]\n    B -->|q(x_2|x_1)| C["x_2 更多噪声"]\n    C -->|"..."| D["x_t 高度噪声"]\n    D -->|"..."| E["x_T 纯噪声"]\n    style A fill:#4CAF50\n    style E fill:#f44336`,
+            mermaid: `graph LR\n    A["x_0 清晰图像"] -->|q(x_1|x_0)| B["x_1 轻微噪声"]\n    B -->|q(x_2|x_1)| C["x_2 更多噪声"]\n    C -->|"..."| D["x_t 高度噪声"]\n    D -->|"..."| E["x_T 纯噪声"]\n    style A fill:#4CAF50,color:#1e293b\n    style E fill:#f44336,color:#1e293b`,
             tip: "实际训练中 alpha_bar 可以预先计算并缓存，避免每一步重复计算 cumprod。",
             warning: "beta_t 调度不当会导致训练发散或信息过早丢失，建议从线性调度开始调参。"
         },
@@ -114,7 +114,7 @@ export const article: Article = {
                     ["x_0-prediction", "||x_0 - x_0_hat||^2", "alpha_bar_t", "特殊需求", "重构更准确"]
                 ]
             },
-            mermaid: `graph LR\n    A["随机采样 t"] --> B["前向加噪 x_t"]\n    B --> C["U-Net 预测噪声\"]\n    C --> D["MSE 计算损失"]\n    D --> E["反向传播更新权重"]\n    E --> F["重复直到收敛"]\n    style D fill:#FF9800`,
+            mermaid: `graph LR\n    A["随机采样 t"] --> B["前向加噪 x_t"]\n    B --> C["U-Net 预测噪声\"]\n    C --> D["MSE 计算损失"]\n    D --> E["反向传播更新权重"]\n    E --> F["重复直到收敛"]\n    style D fill:#FF9800,color:#1e293b`,
             tip: "使用 EMA（指数移动平均）权重进行推理可以显著提升生成质量，训练时保存 EMA 模型。",
             warning: "DDPM 需要 1000 步采样，训练时间较长，建议先用小 T 值调试代码。"
         },
@@ -141,7 +141,7 @@ export const article: Article = {
                     ["DPM-Solver", "20", "~0.3", "3.1", "是（确定）", "支持"]
                 ]
             },
-            mermaid: `graph LR\n    A["DDPM: 1000步"] -->|20x 加速| B["DDIM: 50步"]\n    B -->|质量相当| C["FID ~3.8\"]\n    B -->|确定性| D["支持插值"]\n    B -->|ODE 视角| E["DPM-Solver"]\n    style B fill:#2196F3`,
+            mermaid: `graph LR\n    A["DDPM: 1000步"] -->|20x 加速| B["DDIM: 50步"]\n    B -->|质量相当| C["FID ~3.8\"]\n    B -->|确定性| D["支持插值"]\n    B -->|ODE 视角| E["DPM-Solver"]\n    style B fill:#2196F3,color:#1e293b`,
             tip: "eta=0 得到确定性 DDIM，eta=1 回到随机 DDPM，可以调节 eta 在质量和多样性间权衡。",
             warning: "DDIM 步数过少（<10）时质量会明显下降，需根据具体任务选择合适的步数。"
         },
@@ -197,7 +197,7 @@ export const article: Article = {
                     ["dropout_rate", "0.1", "条件控制减弱", "容易过拟合"]
                 ]
             },
-            mermaid: `graph TD\n    A["CIFAR-10 数据\"] --> B["数据增强 + 归一化\"]\n    B --> C["前向加噪 x_t"]\n    C --> D["U-Net 预测噪声\"]\n    D --> E["MSE 损失"]\n    E --> F["AdamW 更新\"]\n    F --> G{"100 epoch?"}\n    G -->|否| C\n    G -->|是| H["DDIM 采样生成"]\n    H --> I["保存图像"]\n    style G fill:#FF9800\n    style H fill:#4CAF50`,
+            mermaid: `graph TD\n    A["CIFAR-10 数据\"] --> B["数据增强 + 归一化\"]\n    B --> C["前向加噪 x_t"]\n    C --> D["U-Net 预测噪声\"]\n    D --> E["MSE 损失"]\n    E --> F["AdamW 更新\"]\n    F --> G{"100 epoch?"}\n    G -->|否| C\n    G -->|是| H["DDIM 采样生成"]\n    H --> I["保存图像"]\n    style G fill:#FF9800,color:#1e293b\n    style H fill:#4CAF50,color:#1e293b`,
             tip: "使用 torch.amp.autocast 混合精度训练可以节省约 50% 显存，加速 1.5-2 倍。",
             warning: "CIFAR-10 虽然小但足以验证管线正确性，不要跳过这一步直接上大模型。"
         },

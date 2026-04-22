@@ -227,10 +227,10 @@ HBM 的产能瓶颈不在 DRAM 晶圆制造，而在**先进封装**：
     G --> H["AI 服务器\nCloud Providers"]
     
     style A fill:#3b82f6,stroke:#3b82f6,color:#fff
-    style B fill:#6366f1,stroke:#6366f1,color:#fff
-    style C fill:#6366f1,stroke:#6366f1,color:#fff
-    style D fill:#8b5cf6,stroke:#8b5cf6,color:#fff
-    style E fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style B fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
+    style C fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
+    style D fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
+    style E fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
     style F fill:#ef4444,stroke:#ef4444,color:#fff
     style G fill:#f59e0b,stroke:#f59e0b,color:#fff
     style H fill:#10b981,stroke:#10b981,color:#fff`,

@@ -89,8 +89,8 @@ for year, desc in ocr_evolution.items():
     C --> D["文字识别\n图像 → 文本"]
     D --> E["后处理\n纠错/格式化"]
     E --> F["结构化输出"]
-    style A fill:#e1f5fe
-    style F fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style F fill:#14532d`,
             tip: "入门 OCR 建议先用 PaddleOCR 的预训练模型跑通一个完整 Pipeline，理解检测和识别两个阶段的输出格式后再深入研究算法细节",
             warning: "不要把 OCR 简单等同于「图片转文字」——真实场景中光照不均、透视变形、文字粘连、多语言混合等问题远比想象中复杂"
         },
@@ -191,10 +191,10 @@ for i, conf in enumerate(data["conf"]):
     E --> F["LSTM 识别\n字符分类"]
     F --> G["语言模型\n字典校正"]
     G --> H["输出文本"]
-    style A fill:#e1f5fe
-    style H fill:#e8f5e9
-    style C fill:#fff3e0
-    style D fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style H fill:#14532d
+    style C fill:#7c2d12
+    style D fill:#7c2d12`,
             tip: "对于扫描文档，Tesseract 的 PSM 6（统一文本块）和 PSM 3（全自动）通常效果最好；如果是单行文字（如车牌），用 PSM 7",
             warning: "Tesseract 在中文场景下的训练数据（chi_sim）质量一般，如果识别率低，可以考虑用 LSTM 模式（--oem 1）配合自定义训练数据"
         },
@@ -358,8 +358,8 @@ class DBNet(nn.Module):
     H --> K["文字区域"]
     I --> K
     J --> K
-    style A fill:#e1f5fe
-    style K fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style K fill:#14532d`,
             tip: "如果只处理水平文字（如文档扫描），CTPN 精度足够且实现简单；如果需要处理自然场景中的多方向文字，DBNet 是当前最优选择",
             warning: "EAST 虽然速度快，但对小文字（高度 < 10 像素）检测效果差，因为 4 倍下采样会丢失小文字信息"
         },
@@ -505,8 +505,8 @@ print(f"识别结果: {indices_to_text(decoded_indices)}")`
     D --> E["全连接\n字符分类"]
     E --> F["CTC 解码\n去重 + 去 blank"]
     F --> G["输出文本"]
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style G fill:#14532d`,
             tip: "CRNN 的输入图像高度通常设为 32 像素——这是经验值，太低会丢失笔画细节，太高会增加计算量且无额外收益",
             warning: "CTC 假设字符之间条件独立，无法建模字符间的依赖关系（如「q」后面大概率跟「u」），这是 CRNN 的理论上限"
         },
@@ -639,8 +639,8 @@ print(f"识别结果: {indices_to_text(decoded_indices)}")`
     E --> D
     D --> F["迭代纠错\n视觉 + 语言交互"]
     F --> G["输出: 文本 + 位置"]
-    style A fill:#e1f5fe
-    style G fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style G fill:#14532d`,
             tip: "端到端方法适合需要高精度且算力充足的场景；如果只需要简单文字识别，检测+识别两阶段方案更灵活且更容易调试",
             warning: "端到端模型的训练需要大量标注数据（检测框 + 文本标签），标注成本是两阶段方案的 2-3 倍"
         },
@@ -763,8 +763,8 @@ for name, m in models.items():
     J --> M
     L --> M
     M --> N["最终输出"]
-    style A fill:#e1f5fe
-    style N fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style N fill:#14532d`,
             tip: "移动端部署首选 PP-OCRv4 超轻量模型（仅 6MB），如果对精度要求高则用 Server 版模型；生产环境建议先用 PPOCRLabel 工具标注数据再微调",
             warning: "PaddleOCR 默认的文字长度限制是 25 个字符，如果需要识别长文本（如段落），需要修改 max_text_length 参数并重新训练"
         },
@@ -912,9 +912,9 @@ strategies = {
     H --> K
     I --> K
     J --> K
-    style A fill:#e1f5fe
-    style K fill:#e8f5e9
-    style F fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style K fill:#14532d
+    style F fill:#7c2d12`,
             tip: "对于多语言混合文档，推荐先用 PaddleOCR 的多语言模型做粗识别，再对识别置信度低的区域用专用语言模型做精识别",
             warning: "手写识别的准确率远低于印刷体——即使是最好的 TrOCR 模型，在自由手写中文上的准确率也只有 60-70%，不能用于对准确率要求严格的场景"
         },

@@ -40,11 +40,11 @@ export const article: Article = {
     E -->|"知识压缩"| F["能力更新"]
     F -->|"更强能力"| C
     
-    style A fill:#ff6b6b
-    style C fill:#51cf66
-    style D fill:#339af0
-    style E fill:#ffd43b
-    style F fill:#845ef7`,
+    style A fill:#ff6b6b,color:#1e293b
+    style C fill:#51cf66,color:#1e293b
+    style D fill:#339af0,color:#1e293b
+    style E fill:#ffd43b,color:#1e293b
+    style F fill:#7c3aed,color:#f1f5f9`,
     },
     {
       title: "2. 技术路线一：NousResearch Hermes Agent —— 经验压缩与知识注入",
@@ -513,12 +513,12 @@ if __name__ == "__main__":
     K --> B
     L --> B
     
-    style A fill:#ffd43b
-    style B fill:#339af0
-    style C fill:#ff6b6b
-    style J fill:#845ef7
-    style K fill:#51cf66
-    style L fill:#ff6b6b`,
+    style A fill:#ffd43b,color:#1e293b
+    style B fill:#339af0,color:#1e293b
+    style C fill:#ff6b6b,color:#1e293b
+    style J fill:#7c3aed,color:#f1f5f9
+    style K fill:#51cf66,color:#1e293b
+    style L fill:#ff6b6b,color:#1e293b`,
     },
     {
       title: "7. Python 实战：混合式 Self-Evolving Agent 完整实现",

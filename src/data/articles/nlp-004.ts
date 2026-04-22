@@ -142,9 +142,9 @@ print("  4. 这些约束在 CRF 解码时自动 enforced")`,
     G --> H["解码: 提取实体片段"]
     H --> I["输出: (实体文本, 类型, 位置)"]
     
-    style A fill:#bbdefb
-    style F fill:#c8e6c9
-    style I fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style F fill:#14532d
+    style I fill:#581c87`,
         tip: "初学者从 BIO 开始，掌握后再切换到 BIOES。BIOES 在 CoNLL-2003 等基准上通常比 BIO 高 0.5-1 个百分点的 F1，但如果你只有少量标注数据，BIO 更不容易过拟合。",
         warning: "标注一致性是 NER 最大的坑。同一个实体边界在不同标注员之间可能不同（如「北京大学」是 [北京] + [大学] 还是 [北京大学]？），标注前必须制定详细的标注规范文档。",
       },
@@ -345,10 +345,10 @@ print(f"  ... 共 {len(features)} 个特征")`,
     D --> E["CRF"]
     E -->|"全局归一化 Z(X)"| F["最优标签序列"]
     
-    style A fill:#ffcdd2
-    style C fill:#fff9c4
-    style E fill:#c8e6c9
-    style F fill:#e1bee7`,
+    style A fill:#7f1d1d
+    style C fill:#713f12
+    style E fill:#14532d
+    style F fill:#581c87`,
         tip: "CRF 的特征工程是体力活但回报巨大。手工特征如「词是否全大写」「是否包含数字」「词后缀是 -tion 还是 -ing」在实体边界判断上非常有效。即使今天用深度学习，这些特征思想仍然适用（作为预训练模型的补充）。",
         warning: "MEMM 的标注偏置问题（Label Bias）常被忽视。由于 MEMM 在每个位置做局部归一化（Σᵧ P(y|y₋₁, x) = 1），状态转移少的标签（如 O）更容易被选到，导致模型偏好产生短实体。CRF 的全局归一化解决了这个问题。",
       },
@@ -544,11 +544,11 @@ for chars in words:
     G --> H["CRF: 转移矩阵 + Viterbi"]
     H --> I["最优标签序列"]
     
-    style A fill:#bbdefb
-    style C fill:#fff9c4
-    style F fill:#c8e6c9
-    style H fill:#e1bee7
-    style I fill:#ffcdd2`,
+    style A fill:#1e3a5f
+    style C fill:#713f12
+    style F fill:#14532d
+    style H fill:#581c87
+    style I fill:#7f1d1d`,
         tip: "BiLSTM-CRF 是学习序列标注的最佳起点。PyTorch 的 torchcrf 或 keras-contrib 的 CRF 层可以直接用。建议先在小型数据集（如 1000 句）上跑通整个 pipeline，再扩展到完整数据集。",
         warning: "BiLSTM 是序列模型，无法并行化训练——这是它最大的性能瓶颈。GPU 利用率通常只有 30-50%。如果你的数据集很大（> 100 万句），考虑直接用 Transformer 架构。",
       },
@@ -698,10 +698,10 @@ print(f"\\n  词数: {total_words} → Token数: {total_tokens} (膨胀率: {tot
     F --> G["首子词策略合并"]
     G --> H["实体提取"]
     
-    style A fill:#bbdefb
-    style C fill:#c8e6c9
-    style E fill:#fff9c4
-    style H fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style C fill:#14532d
+    style E fill:#713f12
+    style H fill:#581c87`,
         tip: "微调 BERT 做 NER 时，学习率很关键：BERT 主体用 2e-5 ~ 5e-5，分类头用 1e-3 ~ 1e-4。两者使用不同学习率（discriminative fine-tuning）通常比统一学习率高 0.5-1 个 F1 点。",
         warning: "BERT 的最大输入长度是 512 tokens。如果你的文档很长（如法律文档、医疗记录），实体可能跨 [SEP] 截断边界。解决方案：滑动窗口切分（overlap 50-100 tokens），或者用 Longformer/BigBird 等长文档模型。",
       },
@@ -892,10 +892,10 @@ print("  '该校'(句子 2) 指代 '北京大学' → 需要共指消解")`,
     F --> G["共指消解"]
     G --> H["文档级实体图"]
     
-    style A fill:#bbdefb
-    style C fill:#fff9c4
-    style F fill:#c8e6c9
-    style H fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style C fill:#713f12
+    style F fill:#14532d
+    style H fill:#581c87`,
         tip: "嵌套实体推荐使用 Span-based 方法。虽然复杂度是 O(T²)，但可以用 max_len 截断长片段（实体通常不超过 10 个 token），实际复杂度约 O(T·max_len)。",
         warning: "跨句实体需要共指消解的配合。如果没有共指消解模型，一个简单的启发式规则是：同一文档中相同实体名称的多次提及合并为同一实体，取第一次出现的类型和位置。",
       },
@@ -1094,10 +1094,10 @@ print("  结论: 必须看严格匹配的 F1!")`,
     F --> H["F1 = 2PR / (P+R)"]
     G --> H
     
-    style C fill:#c8e6c9
-    style D fill:#ffcdd2
-    style E fill:#fff9c4
-    style H fill:#e1bee7`,
+    style C fill:#14532d
+    style D fill:#7f1d1d
+    style E fill:#713f12
+    style H fill:#581c87`,
         tip: "汇报 NER 结果时，除了总体 F1，一定要报告每个类别的 F1。有些模型总体 F1 很高，但对罕见类别（如 PRODUCT、LAW）的召回率几乎为零。如果你的应用场景需要识别特定类别，只看总体 F1 会严重误导。",
         warning: "评估时最常见的错误：(1) 将 token 级准确率当 F1 报——token 级 95% 准确率在 NER 中可能对应 F1 < 70%；(2) 评估集包含训练集中的实体（数据泄露）；(3) 没有区分严格匹配和宽松匹配——宽松匹配 F1 通常比严格匹配高 3-8 个百分点。",
       },
@@ -1286,10 +1286,10 @@ print("  trainer.train()")`,
     J --> K["模型迭代"]
     K --> A
     
-    style A fill:#bbdefb
-    style B fill:#fff9c4
-    style I fill:#c8e6c9
-    style J fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style B fill:#713f12
+    style I fill:#14532d
+    style J fill:#581c87`,
         tip: "生产环境推荐 spaCy + HuggingFace 混合方案：用 HuggingFace 训练高精度模型，导出为 ONNX 格式后用 spaCy 的 pipeline 加载。这样既享受了 Transformer 的精度，又获得了 spaCy 的推理速度和工程便利。",
         warning: "标注数据的质量直接决定 NER 模型的上限。一个常见的错误是用自动标注（规则匹配或弱监督）生成大量训练数据，但标注噪声会严重损害模型性能。宁可要 1000 条人工精标数据，不要 10 万条自动标注数据。",
       },

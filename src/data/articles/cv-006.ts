@@ -122,9 +122,9 @@ print("N:N 搜索: 两张照片之间所有人配对 → 相册聚类")
     G --> H{"任务类型"}
     H --> I["1:1 验证\n余弦相似度 > 阈值"]
     H --> J["1:N 识别\nTop-K 检索"]
-    style A fill:#e1f5fe
-    style I fill:#e8f5e9
-    style J fill:#fff3e0`,
+    style A fill:#0c4a6e
+    style I fill:#14532d
+    style J fill:#7c2d12`,
             tip: "工业级系统通常将检测和识别部署为独立的微服务——检测服务追求高吞吐，识别服务追求低延迟，两者通过消息队列解耦",
             warning: "不要在原始图像上直接做识别——没有经过对齐的人脸在特征空间中会产生巨大的 intra-class 方差，严重影响识别精度"
         },
@@ -259,9 +259,9 @@ class ViolaJonesDetector:
     H --> I["通过所有阶段\n→ 人脸候选"]
     I --> J["非极大值抑制\n合并重叠框"]
     J --> K["输出检测框"]
-    style A fill:#e1f5fe
-    style K fill:#e8f5e9
-    style F fill:#ffcdd2`,
+    style A fill:#0c4a6e
+    style K fill:#14532d
+    style F fill:#7f1d1d`,
             tip: "理解 Viola-Jones 的级联思想对学习现代检测器（如 RetinaNet 的 Focal Loss 思想）非常有帮助——本质上都是让模型专注于「难样本」而非「简单背景」",
             warning: "Viola-Jones 对侧脸（>30°）和遮挡人脸效果极差，且检测精度上限受限于 Haar 特征的表达能力，现代项目不建议使用"
         },
@@ -410,9 +410,9 @@ class RNet(nn.Module):
     I --> J{"通过 O-Net\n阈值 ≥ 0.7?"}
     J -->|否| F
     J -->|是| K["输出边界框\n+ 5 点 landmark"]
-    style A fill:#e1f5fe
-    style K fill:#e8f5e9
-    style F fill:#ffcdd2`,
+    style A fill:#0c4a6e
+    style K fill:#14532d
+    style F fill:#7f1d1d`,
             tip: "MTCNN 的 min_face_size 参数决定了能检测到的最小人脸——设为 20 可以检测到约 20 像素宽的人脸，但会增加 P-Net 的计算量",
             warning: "MTCNN 在密集人脸场景（超过 50 张脸）下速度显著下降，因为 R-Net 和 O-Net 需要对每个候选窗口单独推理，考虑改用 RetinaFace"
         },
@@ -553,8 +553,8 @@ def visualize_alignment(image, landmarks, aligned_face):
     F --> G["warpAffine\n仿射变换"]
     G --> H["112x112\n对齐人脸"]
     H --> I["送入识别网络\n特征提取"]
-    style A fill:#e1f5fe
-    style I fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style I fill:#14532d`,
             tip: "ArcFace 官方代码使用 112x112 输出尺寸和上述 ARCFACE_REF 参考点，如果你的识别模型是基于 ArcFace 训练的，务必使用完全相同的对齐参数",
             warning: "如果检测器 landmark 定位不准确（例如侧脸时眼角点偏移），对齐结果会产生系统性偏差——对齐质量直接决定了识别上限"
         },
@@ -716,9 +716,9 @@ def identify_face(query_embedding, gallery_embeddings, gallery_ids, top_k=5):
     F -->|推理| H["直接输出嵌入"]
     G --> I["最小化类内角度\n最大化类间角度"]
     H --> J["余弦相似度\n最近邻匹配"]
-    style A fill:#e1f5fe
-    style I fill:#fff3e0
-    style J fill:#e8f5e9`,
+    style A fill:#0c4a6e
+    style I fill:#7c2d12
+    style J fill:#14532d`,
             tip: "ArcFace 的 s=64 和 m=0.50 是经验值——m 太大会导致类间过度分离，m 太小则区分度不足，建议在 0.35-0.55 范围内调参",
             warning: "特征归一化（L2 normalize）是必须的——ArcFace 的角度边际公式假设输入特征模长为 1，如果不归一化，训练会不稳定甚至发散"
         },
@@ -851,10 +851,10 @@ print("最优选择: ArcFace > CosFace > SphereFace > Triplet Loss > Softmax")
     D -->|"精确几何边际"| E["ArcFace\ncos(θ + m)"]
     E --> F["类内角度压缩\n类间角度推开"]
     F --> G["超球面均匀分布\n最优区分度"]
-    style A fill:#ffcdd2
-    style B fill:#fff3e0
-    style E fill:#e8f5e9
-    style G fill:#c8e6c9`,
+    style A fill:#7f1d1d
+    style B fill:#7c2d12
+    style E fill:#14532d
+    style G fill:#14532d`,
             tip: "新项目直接选择 ArcFace 作为起点——它已经是最成熟、效果最好的选择，无需再比较其他损失函数",
             warning: "Triplet Loss 的 margin α 和 ArcFace 的 margin m 是完全不同的概念——Triplet 的 α 是欧氏距离差值（通常 0.2-0.5），ArcFace 的 m 是弧度（通常 0.35-0.55），不要混淆"
         },
@@ -1082,9 +1082,9 @@ if __name__ == "__main__":
     E --> L["实时模式\n视频流处理"]
     L --> M["降帧率\n每 1 秒识别"]
     M --> F
-    style A fill:#e1f5fe
-    style J fill:#e8f5e9
-    style K fill:#ffcdd2`,
+    style A fill:#0c4a6e
+    style J fill:#14532d
+    style K fill:#7f1d1d`,
             tip: "生产环境中注册每人至少 3-5 张不同光线/角度的照片，系统会自动取多张特征的平均值，显著提高识别鲁棒性",
             warning: "face_recognition 的 tolerance=0.45 是默认值——降低到 0.35 可以减少误识（把陌生人认错），但会增加拒识率（认不出真人），需要根据场景权衡"
         }

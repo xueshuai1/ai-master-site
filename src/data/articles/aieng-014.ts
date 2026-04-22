@@ -30,12 +30,12 @@ export const article: Article = {
     D --> D3[分步执行]
     D --> D4[自我修正]
     D --> D5[全流程闭环]
-    style D fill:#4ade80,stroke:#16a34a,stroke-width:3px
-    style D1 fill:#bbf7d0
-    style D2 fill:#bbf7d0
-    style D3 fill:#bbf7d0
-    style D4 fill:#bbf7d0
-    style D5 fill:#bbf7d0`,
+    style D fill:#4ade80,color:#1e293b,stroke:#16a34a,stroke-width:3px
+    style D1 fill:#14532d
+    style D2 fill:#14532d
+    style D3 fill:#14532d
+    style D4 fill:#14532d
+    style D5 fill:#14532d`,
     },
     {
       title: "2. 五大 AI 编程工具深度对比",
@@ -136,13 +136,13 @@ $ claude
     F --> F2[Lint 检查]
     F --> F3[Diff 分析]
     
-    style A fill:#fef08a
-    style H fill:#86efac
-    style B fill:#bfdbfe
-    style C fill:#bfdbfe
-    style D fill:#bfdbfe
-    style E fill:#bfdbfe
-    style F fill:#bfdbfe`,
+    style A fill:#713f12
+    style H fill:#14532d
+    style B fill:#1e3a5f
+    style C fill:#1e3a5f
+    style D fill:#1e3a5f
+    style E fill:#1e3a5f
+    style F fill:#1e3a5f`,
     },
     {
       title: "6. 实战：用 Python + MCP 构建自定义 AI 编程助手",
@@ -412,12 +412,12 @@ if __name__ == "__main__":
     E --> E2[表单填写]
     F --> F1[REST 调用]
     F --> F2[GraphQL 查询]
-    style B fill:#fbbf24,stroke:#f59e0b,stroke-width:3px
-    style A fill:#60a5fa
-    style C fill:#86efac
-    style D fill:#86efac
-    style E fill:#86efac
-    style F fill:#86efac`,
+    style B fill:#fbbf24,color:#1e293b,stroke:#f59e0b,stroke-width:3px
+    style A fill:#60a5fa,color:#1e293b
+    style C fill:#14532d
+    style D fill:#14532d
+    style E fill:#14532d
+    style F fill:#14532d`,
     },
     {
       title: "8. 选择建议：不同场景下的最佳工具",

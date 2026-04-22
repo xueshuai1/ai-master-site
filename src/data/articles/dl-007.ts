@@ -106,8 +106,8 @@ for epoch in range(50):
     B -. "生产环境少用" .-> G["仅理论分析"]
     C -. "纯 SGD 很少用" .-> G
     D --> H["现代深度学习默认"]
-    style D fill:#c8e6c9
-    style H fill:#c8e6c9`,
+    style D fill:#14532d
+    style H fill:#14532d`,
             tip: "Mini-batch size 的选择：越大梯度估计越准，但泛化能力可能下降。常用 32、64、128、256——这些都是 2 的幂，利于 GPU 内存对齐。",
             warning: "学习率是优化器最重要的超参数，没有之一。学习率设置不当，再高级的优化器也无济于事。务必配合学习率调度策略使用。",
         },
@@ -201,9 +201,9 @@ print(f"Momentum 缓冲数量: {len(sgd_momentum.state)}")` },
     D -->|惯性保持| F["平缓方向加速"]
     G["Nesterov"] -->|提前看一步| H["接近最优时减速"]
     G -->|前瞻梯度| I["避免冲过头"]
-    style B fill:#ffcdd2
-    style E fill:#c8e6c9
-    style H fill:#c8e6c9`,
+    style B fill:#7f1d1d
+    style E fill:#14532d
+    style H fill:#14532d`,
             tip: "Momentum 的 β 通常设为 0.9——这意味着当前的速度中 90% 来自历史积累，10% 来自当前梯度。这提供了良好的惯性与响应性平衡。",
             warning: "动量过大（如 β>0.99）可能导致模型冲过最优点，训练初期损失反而上升。建议从 β=0.9 开始，观察训练曲线后微调。",
         },
@@ -292,8 +292,8 @@ optimizer_with_mom = torch.optim.RMSprop(
     A -->|梯度平方 EMA| E["RMSProp"]
     E -->|β=0.99 衰减历史| F["学习率稳定可调"]
     F --> G["RNN/非平稳任务"]
-    style C fill:#ffcdd2
-    style G fill:#c8e6c9`,
+    style C fill:#7f1d1d
+    style G fill:#14532d`,
             tip: "RMSProp 的学习率通常设为 0.001，比 SGD 小一个数量级。这是因为分母 √E[g²] 已经对梯度做了缩放，较大的 lr 容易导致更新步长过大。",
             warning: "AdaGrad 在训练后期学习率趋零是致命缺陷。如果你的训练 loss 在后期几乎不变，检查是否误用了 AdaGrad 而没有调整初始学习率。",
         },
@@ -375,9 +375,9 @@ print(f"状态字典中有多少组参数: {len(optimizer.state)}")
     C --> E["v̂ = v / (1-β₂ᵗ)"]
     D --> F["θ = θ - η·m̂/(√v̂+ε)"]
     E --> F
-    style D fill:#fff9c4
-    style E fill:#fff9c4
-    style F fill:#c8e6c9`,
+    style D fill:#713f12
+    style E fill:#713f12
+    style F fill:#14532d`,
             tip: "Adam 几乎可以当作默认优化器使用——它的默认超参数在绝大多数任务上开箱即用。如果不确定用什么优化器，选 Adam 通常不会错。",
             warning: "Adam 的 weight_decay 参数与 L2 正则化并不等价（见下一章）。如果你使用了 weight_decay，实际上应该用 AdamW 而非 Adam + weight_decay。",
         },
@@ -469,8 +469,8 @@ scheduler = OneCycleLR(
     E["AdamW"] -->|权重衰减独立| F["直接作用于参数"]
     F --> G["正则化强度一致"]
     G --> H["更优泛化"]
-    style D fill:#ffcdd2
-    style H fill:#c8e6c9`,
+    style D fill:#7f1d1d
+    style H fill:#14532d`,
             tip: "PyTorch 1.7+ 中 AdamW 已经是内置优化器。如果你还在用 Adam(weight_decay=0.01)，请立即切换为 AdamW——这是零成本的改进。",
             warning: "AdamW 的 weight_decay 通常设为 0.01（比 SGD 的 L2 正则大）。在微调预训练模型时，可以对 backbone 用较小的 weight_decay（如 0.001），对新加的 head 用较大的 weight_decay。",
         },
@@ -571,7 +571,7 @@ plt.savefig("optimizer_comparison.png", dpi=150)` },
     D --> G["89% 测试精度\n收敛快"]
     E -. "调参充分" .-> H["最佳泛化"]
     G -. "默认配置" .-> I["最佳性价比"]
-    style I fill:#c8e6c9`,
+    style I fill:#14532d`,
             tip: "AdamW 是性价比最高的选择——默认配置下就能获得接近最优的结果。如果你有充足的时间和调参经验，SGD+Momentum 可能带来 1-2% 的额外提升。",
             warning: "对比实验必须使用相同的训练配置（学习率调度、数据增强、训练轮数等）。否则优化器之间的差异可能来自超参数而非优化器本身。",
         },
@@ -695,8 +695,8 @@ def train_model(model, trainloader, testloader, epochs=100, device='cuda'):
     F --> G
     G --> H["梯度裁剪 max_norm=1.0"]
     H --> I["保存最优模型"]
-    style C fill:#c8e6c9
-    style I fill:#c8e6c9`,
+    style C fill:#14532d
+    style I fill:#14532d`,
             tip: "实战黄金法则：先用 AdamW + 默认参数跑通整个流程，确认模型能正常学习。如果你对最后 1-2% 的精度有执念，再尝试 SGD + Momentum 调参。",
             warning: "梯度裁剪（clip_grad_norm_）在训练 RNN 和 Transformer 时几乎是必需的——不裁剪时偶尔的梯度爆炸会毁掉整个训练过程。AdamW 对此有一定鲁棒性，但裁剪仍然是最佳实践。",
         },

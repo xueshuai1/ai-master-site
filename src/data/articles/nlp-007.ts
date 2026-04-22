@@ -155,10 +155,10 @@ for pred, gold in predictions:
     E --> J["预测 start/end 位置"]
     F --> K["Seq2Seq 生成"]
     
-    style A fill:#bbdefb
-    style D fill:#fff9c4
-    style E fill:#c8e6c9
-    style F fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style D fill:#713f12
+    style E fill:#14532d
+    style F fill:#581c87`,
         tip: "选择 QA 类型时应从用户需求出发：如果用户需要可验证、可追溯的答案（如法律、医疗领域），抽取式 QA 更合适；如果需要自然语言回答（如客服对话），生成式 QA 体验更好。",
         warning: "生成式 QA 的幻觉问题是工业部署的最大障碍。模型可能生成看似合理但事实错误的答案，且用户难以辨别。关键场景下必须结合检索增强（RAG）或后处理事实校验来降低幻觉风险。",
       },
@@ -300,9 +300,9 @@ for r in records:
     H --> K["模型训练"]
     I --> L["验证/调参"]
     
-    style A fill:#bbdefb
-    style G fill:#fff9c4
-    style K fill:#c8e6c9`,
+    style A fill:#1e3a5f
+    style G fill:#713f12
+    style K fill:#14532d`,
         tip: "SQuAD 2.0 的无解问题占比约 35%，训练时建议使用 null token 策略——当模型判断问题无解时，让 start 和 end 位置都指向一个特殊的 [CLS] token，这样可以将「无解判断」转化为一个分类任务。",
         warning: "SQuAD 的答案全部是维基百科文章中的连续子串，这限制了数据集的多样性。真实场景中的答案可能是多句话、需要推理的组合信息，或者根本无法从单一文档中找到。SQuAD 上表现好的模型在开放域场景中可能大幅退化。",
       },
@@ -480,10 +480,10 @@ print(f"窗口大小: 512 tokens, 步长: 128 tokens")`,
     I --> J
     J --> K["答案: context[start:end]"]
     
-    style A fill:#bbdefb
-    style D fill:#fff9c4
-    style J fill:#c8e6c9
-    style K fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style D fill:#713f12
+    style J fill:#14532d
+    style K fill:#581c87`,
         tip: "BERT QA 推理时，不要只取 start 和 end 各自概率最高的位置——应该考虑跨度约束（end >= start），并对所有合法 (start, end) 组合计算联合概率 P(start, end) = P_start(start) × P_end(end)，取概率最高的跨度。",
         warning: "BERT 的 512 token 限制是抽取式 QA 的最大瓶颈。当答案跨越 512 token 边界时，单个窗口无法捕获完整答案。解决方案：(1) 使用滑动窗口 + 重叠切分；(2) 采用 Longformer、BigBird 等支持长序列的模型；(3) 使用 hierarchical encoding（先段落编码再答案抽取）。",
       },
@@ -647,10 +647,10 @@ print(f"置信度: 0.97 (多文档一致)")`,
     I --> J["答案聚合"]
     J --> K["最终答案 + 置信度"]
     
-    style A fill:#bbdefb
-    style D fill:#fff9c4
-    style G fill:#c8e6c9
-    style K fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style D fill:#713f12
+    style G fill:#14532d
+    style K fill:#581c87`,
         tip: "检索阶段的质量和效率决定了整个 ODQA 系统的上限。建议：(1) 文档编码器可以离线预计算，只需在 FAISS 中构建一次索引；(2) 使用产品量化（Product Quantization）压缩文档向量，将 768 维降至 64 维，可将内存占用降低 10 倍以上且召回率损失 < 2%。",
         warning: "开放域 QA 的最大陷阱是「检索失败即回答失败」——如果正确答案所在的文档没有被检索到，阅读器再好也无济于事。这就是为什么检索质量（Recall@K）比阅读器精度更重要。建议至少检索 top-20 文档，并定期更新文档索引。",
       },
@@ -782,10 +782,10 @@ print("\\n优势: 答案可追溯、降低幻觉、支持实时更新知识库")
     E -.-> J["交叉注意力\n关注文档内容"]
     H -.-> K["可追溯验证"]
     
-    style A fill:#bbdefb
-    style E fill:#fff9c4
-    style G fill:#c8e6c9
-    style K fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style E fill:#713f12
+    style G fill:#14532d
+    style K fill:#581c87`,
         tip: "RAG 系统的提示词工程至关重要。建议在提示中明确要求模型「仅基于参考文档回答」并「引用来源文档编号」，这可以显著降低幻觉率。同时，在提示词末尾加上「如果文档中没有答案，请如实说明不知道」，避免模型编造答案。",
         warning: "RAG 的性能高度依赖于检索质量。如果检索器召回的文档与问题无关，生成器会基于错误信息生成答案，甚至比不检索更差（因为模型会「信任」错误的上下文）。建议在检索后增加一个「相关性过滤」步骤，用交叉编码器（Cross-Encoder）重新排序检索结果。",
       },
@@ -971,10 +971,10 @@ print("4. 聚合全局信息 → 回答问题")`,
     C -.->|"桥接实体"| D
     E -.->|"桥接实体"| F
     
-    style A fill:#bbdefb
-    style C fill:#fff9c4
-    style E fill:#c8e6c9
-    style G fill:#e1bee7`,
+    style A fill:#1e3a5f
+    style C fill:#713f12
+    style E fill:#14532d
+    style G fill:#581c87`,
         tip: "多跳 QA 的成功关键不在于模型有多复杂，而在于检索是否能覆盖所有推理路径上的文档。建议采用「扩展检索」策略——不仅检索与问题直接相关的文档，还检索与问题中实体相关的文档，以提高推理路径的覆盖率。",
         warning: "多跳推理中的「误差累积」问题比单文档 QA 严重得多——如果第一跳检索或提取的中间实体错误，后续所有推理都会偏离正确路径。建议在每一步推理后进行「一致性检查」，确保中间结果与问题逻辑一致。",
       },
@@ -1189,10 +1189,10 @@ print("4. 批处理推理: 合并多个问题的推理请求")`,
     E --> I["~20ms 延迟"]
     F --> J["~10ms 延迟"]
     
-    style A fill:#ffcdd2
-    style C fill:#fff9c4
-    style F fill:#c8e6c9
-    style J fill:#a5d6a7`,
+    style A fill:#7f1d1d
+    style C fill:#713f12
+    style F fill:#14532d
+    style J fill:#14532d`,
         tip: "生产环境部署 QA 系统时，建议采用「快速失败」策略——如果检索阶段的相关文档分数低于阈值，直接返回「无法回答」而不是强行生成答案。这比生成错误答案后再修正要好得多。",
         warning: "不要在推理时动态加载模型——每次加载 BERT 模型需要 2-3 秒，会严重影响响应时间。正确做法是在服务启动时预加载模型到内存或 GPU，推理时直接使用已加载的模型实例。对于多 GPU 部署，使用 torch.nn.DataParallel 或 HuggingFace Accelerate 实现模型并行。",
       },

@@ -26,7 +26,7 @@ export const article: Article = {
     B --> C["解码阶段\n逐 token 生成\n内存带宽瓶颈"]
     C --> D["输出文本"]
 
-    style C fill:#f87171`,
+    style C fill:#f87171,color:#1e293b`,
     },
     {
       title: "解码阶段的数学本质",
@@ -274,7 +274,7 @@ def speculative_decode_with_medusa(model, medusa_heads, input_ids,
     D["DFlash 块扩散"] --> E["草稿模型并行生成块分布\nPosition1, Position2, Position3\n独立预测"]
     E --> F["目标模型单次前向传播\n验证所有位置\n错误不累积"]
 
-    style D fill:#34d399`,
+    style D fill:#34d399,color:#1e293b`,
     },
     {
       title: "方向四：DDTree —— 树形推测解码（2026 最新）",

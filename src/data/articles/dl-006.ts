@@ -280,8 +280,8 @@ class BasicBlock(nn.Module):
     C --> E["ResNet (2015)\n残差连接"]
     D --> E
     E --> F["ResNet-152\n超越人类水平"]
-    style A fill:#e1f5fe
-    style F fill:#c8e6c9`,
+    style A fill:#0c4a6e
+    style F fill:#14532d`,
             tip: "学习架构演进时，重点关注「为什么需要新架构」——每个经典网络都是为了解决前一代的某个瓶颈而诞生的。",
             warning: "不要盲目追求更深的网络。ResNet 之前，人们发现单纯增加层数反而会导致训练误差上升（退化问题），残差连接才是关键突破。",
         },
@@ -564,7 +564,7 @@ for epoch in range(100):
     F -->|是| G["模型部署"]
     F -->|否| H["调整架构/超参数"]
     H --> C
-    style G fill:#c8e6c9`,
+    style G fill:#14532d`,
             tip: "CIFAR-10 是学习 CNN 的最佳入门数据集——比 MNIST 有挑战性，又比 ImageNet 容易快速迭代。先用简单 CNN 达到 85%+，再尝试 ResNet 达到 93%+。",
             warning: "训练时别忘了 model.train() 和 model.eval() 模式切换——Dropout 和 BatchNorm 在这两种模式下的行为不同，搞错会严重影响精度。",
         },
