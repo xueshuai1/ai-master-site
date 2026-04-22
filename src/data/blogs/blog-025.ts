@@ -38,8 +38,8 @@ RAG 只能检索"已有的知识"，但无法识别"组织还不知道什么"。
         B1 --> C1[语义相似度匹配]
         C1 --> D1[返回 Top-K 文档]
         D1 --> E1[LLM 生成回答]
-        style B1 fill:#ffcccc
-        style C1 fill:#ffcccc
+        style B1 fill:#7f1d1d
+        style C1 fill:#7f1d1d
     end
 
     subgraph OIDA_Framework ["OIDA 认知基础设施"]
@@ -49,13 +49,13 @@ RAG 只能检索"已有的知识"，但无法识别"组织还不知道什么"。
         D2 --> E2[无知建模补充]
         E2 --> F2[EQS 质量评估]
         F2 --> G2[LLM 生成回答]
-        style C2 fill:#ccffcc
-        style D2 fill:#ccffcc
-        style E2 fill:#ccffcc
+        style C2 fill:#14532d
+        style D2 fill:#14532d
+        style E2 fill:#14532d
     end
 
-    classDef rag fill:#ffcccc,stroke:#ff6666,stroke-width:2px;
-    classDef oida fill:#ccffcc,stroke:#66ff66,stroke-width:2px;`,
+    classDef rag fill:#7f1d1d,stroke:#ff6666,stroke-width:2px;
+    classDef oida fill:#14532d,stroke:#66ff66,stroke-width:2px;`,
   },
   {
     title: "OIDA 框架的四大创新",
@@ -104,10 +104,10 @@ OIDA 将组织知识结构化为类型化的知识对象，每个对象携带：
     F1 -->|支持| Q1
     H1 -.->|矛盾| F2["事实: 市场需求趋于平稳"]
 
-    classDef fact fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
-    classDef decision fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
-    classDef hypothesis fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
-    classDef question fill:#fce4ec,stroke:#c2185b,stroke-width:2px;`,
+    classDef fact fill:#0c4a6e,stroke:#1976d2,stroke-width:2px;
+    classDef decision fill:#14532d,stroke:#388e3c,stroke-width:2px;
+    classDef hypothesis fill:#7c2d12,stroke:#f57c00,stroke-width:2px;
+    classDef question fill:#881337,stroke:#c2185b,stroke-width:2px;`,
     code: [],
   },
   {
@@ -351,10 +351,10 @@ OIDA 预示着企业知识管理的范式转变：从"文档存储库"走向"认
     L -->|否| N[补充无知建模]
     N --> C
 
-    style C fill:#bbdefb,stroke:#1976d2,stroke-width:3px
-    style I fill:#ffcdd2,stroke:#d32f2f,stroke-width:3px
-    style J fill:#c8e6c9,stroke:#388e3c,stroke-width:3px
-    style N fill:#fff9c4,stroke:#f9a825,stroke-width:2px`,
+    style C fill:#1e3a5f,stroke:#1976d2,stroke-width:3px
+    style I fill:#7f1d1d,stroke:#d32f2f,stroke-width:3px
+    style J fill:#14532d,stroke:#388e3c,stroke-width:3px
+    style N fill:#713f12,stroke:#f9a825,stroke-width:2px`,
   },
   {
     title: "个人观点",
