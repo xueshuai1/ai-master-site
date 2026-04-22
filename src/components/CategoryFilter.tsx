@@ -89,7 +89,7 @@ export default function CategoryFilter({ categories, activeCategory, onChange }:
       {open && (
         <>
           {/* Backdrop (mobile) */}
-          <div className="fixed inset-0 z-40 sm:hidden" onClick={() => setOpen(false)} />
+          <div className="fixed inset-0 z-40 sm:hidden" onClick={(e) => { e.stopPropagation(); setOpen(false); }} />
 
           {/* Dropdown */}
           <div className="absolute right-0 top-full mt-2 z-50 w-64 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden">

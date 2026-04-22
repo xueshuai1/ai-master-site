@@ -804,6 +804,34 @@ createdAt: "2020-01-05T04:11:06Z",
       createdAt: "2026-03-20T10:00:00Z",
       language: "Markdown"
     },
+    {
+      id: "android-reverse-engineering-skill",
+      name: "Android Reverse Engineering Skill",
+      category: "cli",
+      description: `Claude Code 专用技能文件，用于 Android 应用逆向工程。自动化 APK 反编译、Smali 分析、动态调试等流程。GitHub 4,460 星，周增 2,813 星，是本周增长最快的 Claude Code 技能之一。`,
+      url: "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+      tags: ["Claude Code", "Android", "逆向工程", "安全分析", "Trending"],
+      price: "开源",
+      icon: "🤖",
+      pros: [
+        "自动化 Android 逆向流程，大幅降低门槛",
+        "专为 Claude Code 优化，对话式交互",
+        "适合安全研究和 APK 分析场景",
+        "本周增长 2,813 星，社区活跃度高"
+      ],
+      cons: [
+        "仅适用于 Claude Code",
+        "需要一定的 Android 基础知识",
+        "专业逆向工程仍需人工验证结果"
+      ],
+      useCase: "Android APK 逆向分析、安全审计、恶意软件分析、竞品技术分析",
+      learnMore: "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+      githubStars: 4460,
+      updatedAt: "2026-04-22",
+      forks: 507,
+      createdAt: "2026-04-14T08:00:00Z",
+      language: "Shell"
+    },
   {
     id: "metagpt",
     name: "MetaGPT",
