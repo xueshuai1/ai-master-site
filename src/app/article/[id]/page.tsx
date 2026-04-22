@@ -21,19 +21,23 @@ function escapeHtml(text: string): string {
 
 function highlightBash(code: string): string {
   const escaped = escapeHtml(code);
-  return escaped
+  // Match strings using escaped quotes (after escapeHtml, " → &quot;, ' → &#39;)
+  const withStrings = escaped.replace(/(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/g, '<span class="token-str">$1</span>');
+  return withStrings
     .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
     .replace(/(--?\w[\w-]*)/g, '<span class="token-parameter">$1</span>')
     .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat)\b/g, '<span class="token-function">$1</span>')
-    .replace(/("[^"]*"|'[^']*')/g, '<span class="token-string">$1</span>');
+    .replace(/token-str/g, 'token-string');
 }
 
 function highlightDockerfile(code: string): string {
   const escaped = escapeHtml(code);
-  return escaped
+  // Match strings first
+  const withStrings = escaped.replace(/(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/g, '<span class="token-str">$1</span>');
+  return withStrings
     .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
     .replace(/\b(FROM|WORKDIR|COPY|RUN|EXPOSE|CMD|ENTRYPOINT|ENV|ARG|ADD|USER|VOLUME|LABEL|MAINTAINER|HEALTHCHECK|ONBUILD|STOPSIGNAL|SHELL|AS)\b/g, '<span class="token-keyword">$1</span>')
-    .replace(/("[^"]*"|'[^']*')/g, '<span class="token-string">$1</span>');
+    .replace(/token-str/g, 'token-string');
 }
 
 function highlightText(code: string): string {
