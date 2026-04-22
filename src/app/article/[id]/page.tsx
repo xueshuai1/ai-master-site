@@ -10,6 +10,7 @@ import CopyButton from "@/components/CopyButton";
 import PythonCodeBlock from "@/components/PythonCodeBlock";
 import ArticleTocSidebar from "@/components/ArticleTocSidebar";
 import { marked } from "marked";
+import { parseMarkdown } from "@/components/MarkdownBody";
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -126,7 +127,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
           [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_ul]:text-slate-300
           [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1.5 [&_ol]:text-slate-300
           [&_li]:leading-relaxed
-          [&_p]:break-words [&_p]:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: marked.parse(section.body) as string }} />
+          [&_p]:break-words [&_p]:whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: parseMarkdown(section.body) }} />
       )}
 
       {section.code && section.code.length > 0 && (
@@ -185,7 +186,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
                     <td key={ci} className="px-4 py-3 text-slate-300 prose prose-invert prose-sm max-w-none
                       prose-strong:text-white prose-strong:font-semibold
                       prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                      [&_p]:my-0 [&_p]:inline" dangerouslySetInnerHTML={{ __html: marked.parse(cell) as string }} />
+                      [&_p]:my-0 [&_p]:inline" dangerouslySetInnerHTML={{ __html: parseMarkdown(cell) }} />
                   ))}
                 </tr>
               ))}
@@ -199,7 +200,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
           {section.list.map((item, i) => (
             <li key={i} className="flex items-start gap-2 text-slate-300 leading-relaxed">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-400 flex-shrink-0" />
-              <span dangerouslySetInnerHTML={{ __html: marked.parse(item) as string }} />
+              <span dangerouslySetInnerHTML={{ __html: parseMarkdown(item) }} />
             </li>
           ))}
         </ul>
@@ -209,14 +210,14 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
         <div className="my-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm prose prose-invert max-w-none
           prose-strong:text-white prose-strong:font-semibold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-          [&_p]:my-0 [&_p]:text-emerald-300" dangerouslySetInnerHTML={{ __html: `💡 ${marked.parse(section.tip) as string}` }} />
+          [&_p]:my-0 [&_p]:text-emerald-300" dangerouslySetInnerHTML={{ __html: `💡 ${parseMarkdown(section.tip)}` }} />
       )}
 
       {section.warning && (
         <div className="my-4 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-sm prose prose-invert max-w-none
           prose-strong:text-white prose-strong:font-semibold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-          [&_p]:my-0 [&_p]:text-amber-300" dangerouslySetInnerHTML={{ __html: `⚠️ ${marked.parse(section.warning) as string}` }} />
+          [&_p]:my-0 [&_p]:text-amber-300" dangerouslySetInnerHTML={{ __html: `⚠️ ${parseMarkdown(section.warning)}` }} />
       )}
     </div>
   );

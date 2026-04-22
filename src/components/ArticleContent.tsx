@@ -1,56 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { marked } from "marked";
 import { ArticleSection } from "@/data/knowledge";
-
-marked.setOptions({ breaks: true, gfm: true });
-
-function renderCodeBlock(code: string, lang: string): string {
-  const escaped = code
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-  const highlighted = highlightCode(escaped, lang);
-  const langLabel = lang ? (lang.charAt(0).toUpperCase() + lang.slice(1)) : "Code";
-  const copyId = `copy-${Math.random().toString(36).slice(2, 10)}`;
-  return `
-    <pre class="code-block">
-      <div class="code-header">
-        <span class="font-mono text-xs">${langLabel}</span>
-        <button onclick="navigator.clipboard.writeText(this.closest('pre').querySelector('code').textContent);this.textContent='✅ 已复制';setTimeout(()=>this.textContent='📋 复制',1500)" class="text-xs text-slate-400 hover:text-white transition-colors cursor-pointer" id="${copyId}">
-          📋 复制
-        </button>
-      </div>
-      <code>${highlighted}</code>
-    </pre>`;
-}
-
-function MarkdownBody({ text }: { text: string }) {
-  // Custom renderer for fenced code blocks → use our CodeBlock style
-  const renderer = new marked.Renderer();
-  const origCode = renderer.code.bind(renderer);
-  renderer.code = function(token) {
-    const lang = (token as any).lang || "";
-    const code = (token as any).text || "";
-    return renderCodeBlock(code, lang);
-  };
-
-  const html = marked.parse(text, { renderer }) as string;
-  return (
-    <div
-      className="prose prose-invert max-w-none
-        prose-p:text-slate-300 prose-p:leading-relaxed prose-p:my-3
-        prose-strong:text-amber-400 prose-strong:font-bold
-        prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-        prose-a:text-brand-400 hover:prose-a:underline
-        [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_ul]:text-slate-300
-        [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1.5 [&_ol]:text-slate-300
-        [&_li]:leading-relaxed"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  );
-}
+import { MarkdownBody } from "@/components/MarkdownBody";
 
 const codeBlockStyle = `
   pre.code-block {
