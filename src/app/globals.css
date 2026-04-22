@@ -33,17 +33,20 @@ body {
 }
 
 /* Mermaid chart text wrapping & contrast */
-.mermaid-chart .node text {
-  fill: #e2e8f0 !important;
-}
-.mermaid-chart .edgeLabel {
-  fill: #e2e8f0 !important;
-}
-.mermaid-chart .cluster text {
-  fill: #e2e8f0 !important;
+.mermaid-chart .node text,
+.mermaid-chart .edgeLabel,
+.mermaid-chart .cluster text,
+.mermaid-chart .label,
+.mermaid-chart .flowchart-label text,
+.mermaid-chart .sequence-label text,
+.mermaid-chart .state-label text,
+.mermaid-chart .pie-label text,
+.mermaid-chart .gantt-label text {
+  fill: #f1f5f9 !important;
+  color: #f1f5f9 !important;
 }
 .mermaid-chart .label {
-  color: #e2e8f0 !important;
+  color: #f1f5f9 !important;
 }
 .mermaid-chart foreignObject {
   overflow: visible;
