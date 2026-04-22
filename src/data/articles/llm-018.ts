@@ -392,19 +392,7 @@ if __name__ == "__main__":
 系统提示词的膨胀系数最高（1.46x），而它又在每次 API 调用中重复发送。精简系统提示词是降低成本的**最有效手段**。
 
 **优化前（约 150 Token → 219 Token）：**
-\`\`\`
-你是一位经验丰富的 Python 工程师，擅长构建高并发的分布式系统。
-你的任务是审查用户提供的代码，找出潜在的性能瓶颈、安全漏洞和架构问题。
-审查时需要关注：时间复杂度、内存使用、线程安全、异常处理、日志记录。
-请用简洁专业的语言给出审查意见，包含具体修改建议和代码示例。
-\`\`\`
-
 **优化后（约 90 Token → 131 Token）：**
-\`\`\`
-审查 Python 代码，关注：复杂度、安全、线程、异常、日志。
-输出：问题列表 + 修改建议 + 代码示例。
-\`\`\`
-
 **节省：每次调用减少 88 Token，日调用 100 万次可节省约 $4,400/月。**
 
 ### 策略二：使用缓存减少重复计算
@@ -425,17 +413,6 @@ if __name__ == "__main__":
 ### 策略四：监控和预警
 
 建立 Token 消耗的监控体系：
-
-\`\`\`python
-# 每日 Token 消耗监控
-def monitor_daily_usage(api_client, threshold_usd=1000):
-    today_usage = api_client.get_usage(period="today")
-    if today_usage.total_cost > threshold_usd:
-        send_alert(f"⚠️ 今日 API 成本 \${today_usage.total_cost}，超过阈值 \${threshold_usd}")
-        # 自动降级到更便宜的模型
-        switch_to_model("claude-sonnet-4-6")
-\`\`\`
-
 ### 策略五：利用 Opus 4.7 的图像优势
 
 如果你的应用涉及图像处理，Opus 4.7 的 2576px 分辨率支持意味着你可以：
@@ -444,6 +421,33 @@ def monitor_daily_usage(api_client, threshold_usd=1000):
 - 用一次 API 调用替代多次低分辨率调用
 
 对于图表分析、设计审核等场景，这可能是**净收益**——虽然 Token 增加，但任务成功率提升带来的价值更大。`,
+    code: [
+      {
+        lang: "text",
+        code: `
+你是一位经验丰富的 Python 工程师，擅长构建高并发的分布式系统。
+你的任务是审查用户提供的代码，找出潜在的性能瓶颈、安全漏洞和架构问题。
+审查时需要关注：时间复杂度、内存使用、线程安全、异常处理、日志记录。
+请用简洁专业的语言给出审查意见，包含具体修改建议和代码示例。`,
+      },
+      {
+        lang: "text",
+        code: `
+审查 Python 代码，关注：复杂度、安全、线程、异常、日志。
+输出：问题列表 + 修改建议 + 代码示例。`,
+      },
+      {
+        lang: "python",
+        code: `
+# 每日 Token 消耗监控
+def monitor_daily_usage(api_client, threshold_usd=1000):
+    today_usage = api_client.get_usage(period="today")
+    if today_usage.total_cost > threshold_usd:
+        send_alert(f"⚠️ 今日 API 成本 \${today_usage.total_cost}，超过阈值 \${threshold_usd}")
+        # 自动降级到更便宜的模型
+        switch_to_model("claude-sonnet-4-6")`,
+      },
+    ],
       warning: "⚠️ 不要盲目升级！如果你的应用主要是简单文本处理且对成本敏感，继续使用 Opus 4.6 是更明智的选择。Token 膨胀带来的成本增加可能超过质量提升的价值。"
     },
     {

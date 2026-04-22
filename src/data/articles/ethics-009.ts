@@ -483,45 +483,6 @@ if __name__ == "__main__":
 **合规即代码（Compliance as Code）**
 
 越来越多的团队采用「合规即代码」方法，将合规检查集成到 CI/CD 流水线中：
-
-\`\`\`yaml
-# .github/workflows/ai-compliance.yml
-name: AI Compliance Check
-
-on: [push, pull_request]
-
-jobs:
-  compliance:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run Garak LLM Scanner
-        run: |
-          pip install garak
-          garak --model_type openai --model_name gpt-4 \
-                --probes prompt_injection,encoding,xss
-
-      - name: Run PyRIT Red Team
-        run: |
-          python scripts/red_team_test.py \
-            --config config/redteam.yaml \
-            --output reports/redteam.md
-
-      - name: Check Training Data Licenses
-        run: |
-          python scripts/check_data_licenses.py \
-            --data-dir data/training \
-            --report reports/data_compliance.md
-
-      - name: Upload Compliance Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: compliance-report
-          path: reports/
-\`\`\`
-
 **最佳实践：将合规检查集成到开发流程**
 
 \`mermaid

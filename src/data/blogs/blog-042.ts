@@ -76,9 +76,11 @@ OpenAI 借机抢占市场，明确 Codex 的低价策略：
 Agentic Coding（Claude Code / Codex）：
 - 每次请求：10K-100K+ token 输入（整个代码库上下文）
 - 单次 agentic session：可能产生 50-200 次子请求
-- 日均 token 消耗：**5M-50M+**（增长 100-1000 倍）
-
-\`\`\`python
+- 日均 token 消耗：**5M-50M+**（增长 100-1000 倍）`,
+    code: [
+      {
+        lang: "python",
+        code: `
 # 传统 Copilot：每次补完消耗 ~200 tokens
 def calculate_total(prices):
     total = 0  # ← Copilot 补完这行
@@ -95,8 +97,9 @@ def calculate_total(prices):
 # → 编写 30 个测试用例 (~500K tokens)
 # → 运行测试，修复失败 (~200K tokens)
 # → 更新文档 (~200K tokens)
-# 总消耗：~5M tokens（是传统模式的 8000 倍）
-\`\`\``,
+# 总消耗：~5M tokens（是传统模式的 8000 倍）`,
+      },
+    ],
     table: {
       headers: ["定价维度", "GitHub Copilot", "Claude Code", "OpenAI Codex"],
       rows: [
@@ -127,17 +130,6 @@ GitHub 的新定价体系核心变化是引入了**双层用量限制**：
 - Pro+ 的限制是 Pro 的 5 倍以上
 
 **乘数机制**是关键创新：
-\`\`\`
-实际消耗 = Token 数量 × 模型乘数
-
-例如：
-- GPT-4o: 乘数 1x
-- Claude Sonnet: 乘数 1.5x
-- Claude Opus: 乘数 3x
-
-同样的 1M token，用 Opus 消耗的额度是 GPT-4o 的 3 倍。
-\`\`\`
-
 这意味着：**选择更强模型 = 更快触及用量上限**。
 
 ### 3.2 Anthropic Claude：试探性提价，信任危机
@@ -162,6 +154,20 @@ OpenAI 的策略很明确：
 - **市场信号**：利用竞争对手的混乱期抢夺用户
 
 这是典型的「趁你病要你命」策略——在 Anthropic 和 GitHub 因提价引发不满时，OpenAI 保持低价，吸引开发者迁移。`,
+    code: [
+      {
+        lang: "text",
+        code: `
+实际消耗 = Token 数量 × 模型乘数
+
+例如：
+- GPT-4o: 乘数 1x
+- Claude Sonnet: 乘数 1.5x
+- Claude Opus: 乘数 3x
+
+同样的 1M token，用 Opus 消耗的额度是 GPT-4o 的 3 倍。`,
+      },
+    ],
     warning: `**开发者的隐性成本：**
 即使用月费不变，GitHub Copilot 的 token 乘数机制意味着：同样的使用量，如果你从 GPT-4o 切换到 Claude Opus，你的「有效消耗」会增加 3 倍。你可能不会多付月费，但会更快触及用量上限，被迫升级或等待。`,
   },
@@ -181,14 +187,6 @@ OpenAI 的策略很明确：
 ### 4.2 成本优化策略
 
 **策略一：模型降级**
-\`\`\`
-对于简单任务（代码补完、小修改），使用低乘数模型：
-- GPT-4o 或 Sonnet → 乘数 1-1.5x
-- 保留 Opus 给复杂任务（架构设计、代码审查）
-
-预期效果：用量消耗降低 40-60%
-\`\`\`
-
 **策略二：使用 Plan 模式**
 GitHub Copilot 的 Plan 模式可以先规划再执行，减少不必要的 token 消耗：
 - Plan 模式比直接执行节省 30-50% token
@@ -199,8 +197,20 @@ GitHub Copilot 的 Plan 模式可以先规划再执行，减少不必要的 toke
 - 并行 3 个 Agent = 3 倍 token 消耗
 - 非必要情况下单 Agent 顺序执行
 
-**策略四：工具组合策略**
-\`\`\`
+**策略四：工具组合策略**`,
+    code: [
+      {
+        lang: "text",
+        code: `
+对于简单任务（代码补完、小修改），使用低乘数模型：
+- GPT-4o 或 Sonnet → 乘数 1-1.5x
+- 保留 Opus 给复杂任务（架构设计、代码审查）
+
+预期效果：用量消耗降低 40-60%`,
+      },
+      {
+        lang: "text",
+        code: `
 推荐组合（成本最优）：
 ┌─────────────────────────────────────────┐
 │ 日常编码 → OpenAI Codex ($20/月)        │
@@ -210,8 +220,9 @@ GitHub Copilot 的 Plan 模式可以先规划再执行，减少不必要的 toke
 │                                         │
 │ 总成本：$40-50/月 vs 升级 Pro+ $39/月   │
 │ 但覆盖场景更广，无单一用量限制          │
-└─────────────────────────────────────────┘
-\`\`\``,
+└─────────────────────────────────────────┘`,
+      },
+    ],
   },
   {
     title: "五、行业趋势：从定价战争看 AI 编码的未来",
@@ -220,18 +231,7 @@ GitHub Copilot 的 Plan 模式可以先规划再执行，减少不必要的 toke
 这次定价变动的本质是**AI 编码工具的商业模式还不确定**。
 
 传统 SaaS 的定价逻辑：
-\`\`\`
-成本 = 固定基础设施 + 可变边际成本（趋近于 0）
-定价 = 成本 + 利润边际
-\`\`\`
-
 AI Agent SaaS 的定价逻辑：
-\`\`\`
-成本 = 固定基础设施 + 可变边际成本（随用量线性增长）
-每个用户可能消耗 $1-$1000/月的算力
-定价 = ???（没有人知道正确答案）
-\`\`\`
-
 ### 5.2 三种可能的定价范式
 
 **范式一：按 Token 消耗计费（AWS 模式）**
@@ -263,17 +263,33 @@ AI Agent SaaS 的定价逻辑：
 
 - **Ollama + 本地模型**：完全免费，但需要硬件投入
 - **Claude Code 开源替代**：Aider、Continue 等项目将持续受益
-- **Self-hosted Agent**：在企业环境中，自托管 AI Agent 将更具吸引力
-
-\`\`\`bash
+- **Self-hosted Agent**：在企业环境中，自托管 AI Agent 将更具吸引力`,
+    code: [
+      {
+        lang: "text",
+        code: `
+成本 = 固定基础设施 + 可变边际成本（趋近于 0）
+定价 = 成本 + 利润边际`,
+      },
+      {
+        lang: "text",
+        code: `
+成本 = 固定基础设施 + 可变边际成本（随用量线性增长）
+每个用户可能消耗 $1-$1000/月的算力
+定价 = ???（没有人知道正确答案）`,
+      },
+      {
+        lang: "bash",
+        code: `
 # 开源替代方案示例：Aider（完全免费）
 pip install aider-chat
 aider --model ollama_codellama --architect-mode
 
 # 本地部署 Ollama + CodeLlama
 ollama pull codellama:70b
-# 硬件需求：至少 48GB VRAM（A6000 或 2x 3090）
-\`\`\``,
+# 硬件需求：至少 48GB VRAM（A6000 或 2x 3090）`,
+      },
+    ],
     tip: `**给独立开发者的建议：**
 如果你每月的 AI 编码工具预算在 $20-40，当前的「多工具组合」策略是最优解。
 不要把所有鸡蛋放在一个篮子里——分散使用 Codex、Claude Code 和开源工具，可以避免任何单一厂商定价变化对你的影响。`,

@@ -167,15 +167,6 @@ Claude Design 的出现不是一个简单的功能扩展，而是代表了 **AI 
 **技术架构：**
 
 Claude Design 的核心技术栈包括三个层次：
-
-\`\`\`
-Opus 4.7（基础模型）
-    ↓
-视觉理解层（图像/原型/演示文稿解析）
-    ↓
-生成层（原型代码、设计资产、排版方案）
-\`\`\`
-
 视觉理解层利用 Opus 4.7 的多模态能力，能够解析 Figma 文件、Sketch 设计稿、甚至是手绘草图。生成层则输出可编辑的设计资产（SVG、CSS、React 组件等），而非简单的图片。
 
 **对设计师工作流的影响：**
@@ -195,6 +186,17 @@ Claude Design 不是要取代设计师，而是将设计师的角色从「执行
 | 理解设计约束 | ✅ 品牌/规范/无障碍 | ❌ | 部分 | 部分 |
 | 多轮迭代 | ✅ 深度迭代 | ❌ 单次生成 | ✅ | ✅ |
 | 编程集成 | ✅ 输出 React/CSS | ❌ | 部分 | ❌ |`,
+    code: [
+      {
+        lang: "text",
+        code: `
+Opus 4.7（基础模型）
+    ↓
+视觉理解层（图像/原型/演示文稿解析）
+    ↓
+生成层（原型代码、设计资产、排版方案）`,
+      },
+    ],
     },
     {
       title: "Mythos Preview 与 Project Glasswing：AI 安全的实战化里程碑",
@@ -482,18 +484,6 @@ Claude Code 是基于 Claude 模型构建的终端内编程助手，核心能力
 **3. 产品线的战略协同**
 
 Anthropic 的产品线呈现出清晰的战略协同：
-
-\`\`\`
-Opus 4.7（最强模型）
-    ↓
-    ├── Claude（通用对话）
-    ├── Claude Code（编程）
-    ├── Claude Design（设计）
-    └── Mythos（安全研究）
-        ↓
-    Project Glasswing（行业联盟）
-\`\`\`
-
 这种「底层模型 → 垂直应用 → 行业生态」的结构，使 Anthropic 能够在保持核心竞争力的同时，逐步扩展市场覆盖面。
 
 **4. 社区与开发者生态**
@@ -503,6 +493,20 @@ Anthropic 在开发者社区中的口碑持续上升：
 - Claude 的 API 设计被开发者认为是最友好的
 - 文档质量和开发者工具受到广泛好评
 - 安全研究的开源贡献（如 Constitutional AI 论文）提升了学术影响力`,
+    code: [
+      {
+        lang: "text",
+        code: `
+Opus 4.7（最强模型）
+    ↓
+    ├── Claude（通用对话）
+    ├── Claude Code（编程）
+    ├── Claude Design（设计）
+    └── Mythos（安全研究）
+        ↓
+    Project Glasswing（行业联盟）`,
+      },
+    ],
       mermaid: `graph TD
     A["AI 模型市场格局"] --> B["OpenAI"]
     A --> C["Anthropic"]

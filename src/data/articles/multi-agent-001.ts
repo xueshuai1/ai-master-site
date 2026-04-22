@@ -52,10 +52,6 @@ export const article: Article = {
 流水线模式是最直观的多 Agent 架构：任务按照预定义的顺序依次经过不同的 Agent，每个 Agent 负责一个特定阶段。
 
 **典型流程：**
-\`\`\`
-用户输入 → 分析 Agent → 搜索 Agent → 综合 Agent → 审查 Agent → 最终输出
-\`\`\`
-
 **特点：**
 - 每个 Agent 的输入是前一个 Agent 的输出
 - 流程固定，易于理解和调试
@@ -70,13 +66,6 @@ export const article: Article = {
 群聊模式让所有 Agent 在同一个"对话空间"中交流，通过轮流发言或竞争发言来协作完成任务。
 
 **典型流程：**
-\`\`\`
-用户提出问题 → 所有 Agent 同时收到问题
-→ Agent A 发言 → Agent B 基于 A 的发言补充或反驳
-→ Agent C 综合 A 和 B 的观点 → Manager Agent 判断是否达成共识
-→ 达成共识 → 输出最终答案；未达成共识 → 继续讨论
-\`\`\`
-
 **特点：**
 - Agent 之间可以互相启发、互相纠错
 - 模拟人类团队的头脑风暴过程
@@ -91,13 +80,6 @@ export const article: Article = {
 层次化模式引入一个 Manager Agent 来协调多个 Worker Agent，Manager 负责任务分解和分配，Worker 负责执行具体子任务。
 
 **典型流程：**
-\`\`\`
-用户提交复杂任务 → Manager Agent 分解为子任务
-→ 分配给 Worker A（子任务 1）和 Worker B（子任务 2）
-→ Worker A 和 Worker B 并行执行
-→ Manager 汇总结果并整合 → 输出
-\`\`\`
-
 **特点：**
 - 最接近真实公司的组织结构
 - Manager 可以动态调整任务分配策略
@@ -112,13 +94,6 @@ export const article: Article = {
 图结构模式将 Agent 工作流建模为有向图，每个节点是一个 Agent 或决策点，边定义了执行顺序和条件跳转。
 
 **典型流程：**
-\`\`\`
-[START] → [Router: 判断任务类型]
-  → 代码任务 → [Code Agent] → [Review Agent] → [END]
-  → 写作任务 → [Writer Agent] → [Editor Agent] → [END]
-  → 研究任务 → [Search Agent] → [Synthesis Agent] → [END]
-\`\`\`
-
 **特点：**
 - 最灵活的架构：支持条件分支、循环、并行
 - 可以表达复杂的工作流逻辑
@@ -127,6 +102,37 @@ export const article: Article = {
 **局限：**
 - 设计和调试复杂度最高
 - 需要清晰定义每个节点的状态输入输出`,
+    code: [
+      {
+        lang: "text",
+        code: `
+用户输入 → 分析 Agent → 搜索 Agent → 综合 Agent → 审查 Agent → 最终输出`,
+      },
+      {
+        lang: "text",
+        code: `
+用户提出问题 → 所有 Agent 同时收到问题
+→ Agent A 发言 → Agent B 基于 A 的发言补充或反驳
+→ Agent C 综合 A 和 B 的观点 → Manager Agent 判断是否达成共识
+→ 达成共识 → 输出最终答案；未达成共识 → 继续讨论`,
+      },
+      {
+        lang: "text",
+        code: `
+用户提交复杂任务 → Manager Agent 分解为子任务
+→ 分配给 Worker A（子任务 1）和 Worker B（子任务 2）
+→ Worker A 和 Worker B 并行执行
+→ Manager 汇总结果并整合 → 输出`,
+      },
+      {
+        lang: "text",
+        code: `
+[START] → [Router: 判断任务类型]
+  → 代码任务 → [Code Agent] → [Review Agent] → [END]
+  → 写作任务 → [Writer Agent] → [Editor Agent] → [END]
+  → 研究任务 → [Search Agent] → [Synthesis Agent] → [END]`,
+      },
+    ],
       mermaid: `graph LR
     subgraph "流水线模式"
         A1["分析"] --> A2["搜索"] --> A3["综合"] --> A4["审查"]
@@ -181,17 +187,21 @@ export const article: Article = {
       body: `CrewAI 是目前最流行的多 Agent 编排框架，采用「角色 + 任务 + 流程」的声明式 API，让你像组建真实团队一样配置多 Agent 系统。
 
 ### 4.1 安装与基础配置
-
-\`\`\`bash
-pip install crewai crewai-tools
-export OPENAI_API_KEY="your-api-key"
-\`\`\`
-
 ### 4.2 定义 Agent 角色
 
 在 CrewAI 中，每个 Agent 就是一个有明确角色定位的团队成员：
-
-\`\`\`python
+### 4.3 定义任务并组装团队
+### 4.4 切换到层次化模式`,
+    code: [
+      {
+        lang: "bash",
+        code: `
+pip install crewai crewai-tools
+export OPENAI_API_KEY="your-api-key"`,
+      },
+      {
+        lang: "python",
+        code: `
 from crewai import Agent, Task, Crew
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
 
@@ -230,12 +240,11 @@ writer = Agent(
     能够让不同背景的读者都能理解并产生兴趣。""",
     verbose=True,
     allow_delegation=False,
-)
-\`\`\`
-
-### 4.3 定义任务并组装团队
-
-\`\`\`python
+)`,
+      },
+      {
+        lang: "python",
+        code: `
 # 定义任务 - 每个任务绑定到特定 Agent
 research_task = Task(
     description="研究 {topic} 领域的最新进展，重点关注 2026 年的突破性成果。"
@@ -271,12 +280,11 @@ crew = Crew(
 
 # 执行
 result = crew.kickoff(inputs={"topic": "多智能体编排框架"})
-print(result)
-\`\`\`
-
-### 4.4 切换到层次化模式
-
-\`\`\`python
+print(result)`,
+      },
+      {
+        lang: "python",
+        code: `
 # 添加 Manager Agent
 manager = Agent(
     role="研究总监",
@@ -291,8 +299,9 @@ hierarchical_crew = Crew(
     verbose=True,
     process=Process.hierarchical,  # 切换到层次化模式
     manager_agent=manager,
-)
-\`\`\``,
+)`,
+      },
+    ],
       tip: "CrewAI 的核心优势在于**声明式 API**——你只需要定义角色、任务和流程，框架自动处理 Agent 间的协调和状态传递。对于大多数内容创作和研究报告场景，CrewAI 是最佳选择。",
     },
     {
@@ -308,8 +317,12 @@ LangGraph 将工作流建模为一个**状态图**（State Graph）：
 - **Conditional Edge**：根据状态值动态选择下一个节点
 
 ### 5.2 构建代码审查工作流
-
-\`\`\`python
+### 5.3 添加条件分支
+这段代码展示了 LangGraph 的核心优势：**显式状态管理 + 灵活的路由逻辑**。你可以精确控制每个节点的输入输出，实现复杂的条件分支和循环回溯。`,
+    code: [
+      {
+        lang: "python",
+        code: `
 from typing import TypedDict, Annotated
 from langgraph.graph import StateGraph, END
 import operator
@@ -406,12 +419,11 @@ def process_data(data):
 
 print(f"审查意见: {result['review_comments']}")
 print(f"Bug 数量: {result['bugs_found']}")
-print(f"最终判定: {result['final_verdict']}")
-\`\`\`
-
-### 5.3 添加条件分支
-
-\`\`\`python
+print(f"最终判定: {result['final_verdict']}")`,
+      },
+      {
+        lang: "python",
+        code: `
 def should_loop_back(state: CodeReviewState) -> str:
     """决定是否需要重新审查"""
     if state["needs_rework"] and state["bugs_found"] > 3:
@@ -426,10 +438,9 @@ graph.add_conditional_edges(
         "rework": "static_analysis",  # 回到静态分析重新开始
         "done": END,
     }
-)
-\`\`\`
-
-这段代码展示了 LangGraph 的核心优势：**显式状态管理 + 灵活的路由逻辑**。你可以精确控制每个节点的输入输出，实现复杂的条件分支和循环回溯。`,
+)`,
+      },
+    ],
       mermaid: `graph TD
     A["START"] --> B["Static Analysis\n静态分析"]
     B --> C["Security Review\n安全审查"]
@@ -485,7 +496,28 @@ graph.add_conditional_edges(
 **问题 1：Agent 产出质量不稳定**
 
 **诊断方法：**
-\`\`\`python
+**常见原因：**
+- Prompt 不够精确：Agent 不知道预期的输出格式和标准
+- 工具返回结果不一致：搜索工具有时返回丰富结果，有时返回空
+- 温度参数过高：创意性 Agent 适合高温度，但分析型 Agent 应该低温度
+
+**问题 2：多 Agent 之间信息丢失**
+
+**诊断方法：**
+### 7.2 性能优化
+
+**优化 1：并行执行独立任务**
+**优化 2：缓存中间结果**
+**优化 3：控制 Token 消耗**
+
+多 Agent 系统的 Token 消耗是单一 Agent 的 N 倍（N = Agent 数量）。优化策略：
+- 为每个 Agent 设置独立的 max_tokens 限制
+- 使用摘要代替完整对话历史
+- 定期清理不再使用的中间状态`,
+    code: [
+      {
+        lang: "python",
+        code: `
 # 给每个 Agent 添加独立的日志记录
 import logging
 
@@ -496,30 +528,20 @@ class TracedAgent(Agent):
         logger.info(f"[{self.role}] 开始执行: {task[:50]}...")
         result = super().execute(task)
         logger.info(f"[{self.role}] 完成，产出长度: {len(str(result))} 字符")
-        return result
-\`\`\`
-
-**常见原因：**
-- Prompt 不够精确：Agent 不知道预期的输出格式和标准
-- 工具返回结果不一致：搜索工具有时返回丰富结果，有时返回空
-- 温度参数过高：创意性 Agent 适合高温度，但分析型 Agent 应该低温度
-
-**问题 2：多 Agent 之间信息丢失**
-
-**诊断方法：**
-\`\`\`python
+        return result`,
+      },
+      {
+        lang: "python",
+        code: `
 # 在 CrewAI 中检查任务间传递的内容
 for task in crew.tasks:
     print(f"任务: {task.description}")
     print(f"输入来源: {task.context}")  # 查看这个任务依赖哪些前置任务
-    print("---")
-\`\`\`
-
-### 7.2 性能优化
-
-**优化 1：并行执行独立任务**
-
-\`\`\`python
+    print("---")`,
+      },
+      {
+        lang: "python",
+        code: `
 # CrewAI 支持并行任务
 parallel_tasks = [
     Task(description="搜索 {topic} 的技术论文", agent=researcher),
@@ -531,12 +553,11 @@ crew = Crew(
     agents=[researcher],
     tasks=parallel_tasks,
     # 默认就是并行的
-)
-\`\`\`
-
-**优化 2：缓存中间结果**
-
-\`\`\`python
+)`,
+      },
+      {
+        lang: "python",
+        code: `
 import hashlib
 import json
 from pathlib import Path
@@ -559,15 +580,9 @@ def cached_search(query: str) -> str:
     with open(cache_file, "w") as f:
         json.dump({"query": query, "result": result}, f)
 
-    return result
-\`\`\`
-
-**优化 3：控制 Token 消耗**
-
-多 Agent 系统的 Token 消耗是单一 Agent 的 N 倍（N = Agent 数量）。优化策略：
-- 为每个 Agent 设置独立的 max_tokens 限制
-- 使用摘要代替完整对话历史
-- 定期清理不再使用的中间状态`,
+    return result`,
+      },
+    ],
     },
     {
       title: "8. 2026 年 Multi-Agent 的最新趋势",

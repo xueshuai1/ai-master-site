@@ -50,11 +50,6 @@ export const article: Article = {
 **工作原理**：Transformer 的自注意力机制需要每个 token 的 Key 和 Value 向量来计算注意力分数。在预填充阶段，模型为 prompt 中的每个 token 计算 K 和 V。在解码阶段，每生成一个新 token，只需要计算这个新 token 的 K 和 V，然后将其追加到已有 KV Cache 中，再与历史 K/V 一起计算注意力。
 
 **KV Cache 的内存开销**：对于一个 70B 参数模型，使用 FP16 精度，KV Cache 的内存开销约为：
-
-\`\`\`
-KV Cache = 2 × num_layers × num_heads × head_dim × seq_len × batch_size × sizeof(FP16)
-\`\`\`
-
 对于 Llama-3-70B（80 层，64 个 head，head_dim=128），当 seq_len=4096、batch_size=1 时，KV Cache 约需 **4GB**。当 batch_size=128 时，KV Cache 约需 **512GB**——这已经超过单张 H100 的显存容量。
 
 **KV Cache 的管理挑战**：

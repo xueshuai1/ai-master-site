@@ -49,25 +49,6 @@ MCP 的目标很简单但影响深远：
       body: `MCP 采用**客户端-服务器-主机（Client-Server-Host）**三层架构：
 
 ### 三层模型
-
-\`\`\`
-┌─────────────────────────────────────────┐
-│              Host Application            │
-│    (Claude Desktop / Cursor / IDE)       │
-│                                          │
-│  ┌──────────────────────────────────┐   │
-│  │         MCP Client                │   │
-│  │  (协议实现 + 能力发现 + 安全层)    │   │
-│  └──────────────────────────────────┘   │
-│              ▲    ▲    ▲                 │
-│              │    │    │                 │
-│  ┌───────────┼────┼────┼───────────┐    │
-│  │  MCP Server │ MCP Server │ MCP Server │   │
-│  │  (GitHub)   │  (File)    │  (Database)  │   │
-│  └───────────┴────┴────┴───────────┘    │
-└─────────────────────────────────────────┘
-\`\`\`
-
 ### 三层职责
 
 **1. Host（宿主应用）**
@@ -91,7 +72,34 @@ MCP 的目标很简单但影响深远：
 MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
 
 **请求格式：**
-\`\`\`json
+**响应格式：**
+**传输层支持：**
+- **stdio**：标准输入输出（本地进程）
+- **SSE**（Server-Sent Events）：HTTP 长连接（远程服务）
+- **WebSocket**：双向通信（实时交互）`,
+    code: [
+      {
+        lang: "text",
+        code: `
+┌─────────────────────────────────────────┐
+│              Host Application            │
+│    (Claude Desktop / Cursor / IDE)       │
+│                                          │
+│  ┌──────────────────────────────────┐   │
+│  │         MCP Client                │   │
+│  │  (协议实现 + 能力发现 + 安全层)    │   │
+│  └──────────────────────────────────┘   │
+│              ▲    ▲    ▲                 │
+│              │    │    │                 │
+│  ┌───────────┼────┼────┼───────────┐    │
+│  │  MCP Server │ MCP Server │ MCP Server │   │
+│  │  (GitHub)   │  (File)    │  (Database)  │   │
+│  └───────────┴────┴────┴───────────┘    │
+└─────────────────────────────────────────┘`,
+      },
+      {
+        lang: "json",
+        code: `
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -100,11 +108,11 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
     "name": "search_github",
     "arguments": {"query": "MCP protocol", "limit": 5}
   }
-}
-\`\`\`
-
-**响应格式：**
-\`\`\`json
+}`,
+      },
+      {
+        lang: "json",
+        code: `
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -113,13 +121,9 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
       {"type": "text", "text": "Found 5 repositories..."}
     ]
   }
-}
-\`\`\`
-
-**传输层支持：**
-- **stdio**：标准输入输出（本地进程）
-- **SSE**（Server-Sent Events）：HTTP 长连接（远程服务）
-- **WebSocket**：双向通信（实时交互）`
+}`,
+      },
+    ]
     },
     {
       title: "MCP 三大核心能力",
@@ -179,14 +183,20 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
       body: `下面是一个完整的 Python MCP Server 实现，提供 GitHub 搜索和文件操作能力：
 
 ### 安装依赖
-
-\`\`\`bash
-pip install mcp
-\`\`\`
-
 ### 完整实现
+### 配置 Claude Desktop 使用此 MCP Server
 
-\`\`\`python
+在 Claude Desktop 的配置文件中（\`~/Library/Application Support/Claude/claude_desktop_config.json\`）：
+重启 Claude Desktop 后，Agent 就能自动发现并使用这些工具了！`,
+    code: [
+      {
+        lang: "bash",
+        code: `
+pip install mcp`,
+      },
+      {
+        lang: "python",
+        code: `
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Tool, TextContent, ImageContent
@@ -375,14 +385,11 @@ async def main():
         )
 
 if __name__ == "__main__":
-    asyncio.run(main())
-\`\`\`
-
-### 配置 Claude Desktop 使用此 MCP Server
-
-在 Claude Desktop 的配置文件中（\`~/Library/Application Support/Claude/claude_desktop_config.json\`）：
-
-\`\`\`json
+    asyncio.run(main())`,
+      },
+      {
+        lang: "json",
+        code: `
 {
   "mcpServers": {
     "ai-master-tools": {
@@ -393,10 +400,9 @@ if __name__ == "__main__":
       }
     }
   }
-}
-\`\`\`
-
-重启 Claude Desktop 后，Agent 就能自动发现并使用这些工具了！`
+}`,
+      },
+    ]
     },
     {
       title: "MCP 在 2026 的生态现状",
@@ -440,8 +446,16 @@ if __name__ == "__main__":
       body: `MCP 的安全模型是其核心价值之一。理解它对于生产级部署至关重要。
 
 ### 安全架构
+### 安全最佳实践
 
-\`\`\`
+**1. 最小权限原则**
+**2. 输入验证**
+**3. 敏感信息脱敏**
+**4. 审计日志**`,
+    code: [
+      {
+        lang: "text",
+        code: `
 ┌─────────────────────────────────────────────┐
 │              用户 / Agent                    │
 │              (不可信环境)                     │
@@ -460,13 +474,11 @@ if __name__ == "__main__":
 │           外部系统 (数据库/API)              │
 │  • 最小权限访问                               │
 │  • 数据脱敏                                   │
-└─────────────────────────────────────────────┘
-\`\`\`
-
-### 安全最佳实践
-
-**1. 最小权限原则**
-\`\`\`python
+└─────────────────────────────────────────────┘`,
+      },
+      {
+        lang: "python",
+        code: `
 # ❌ 危险：允许 Agent 访问整个文件系统
 @app.list_resources()
 async def list_resources():
@@ -484,11 +496,11 @@ async def list_resources():
             uri="file:///workspace/src",
             name="Source Code"
         )
-    ]
-\`\`\`
-
-**2. 输入验证**
-\`\`\`python
+    ]`,
+      },
+      {
+        lang: "python",
+        code: `
 import re
 
 @app.call_tool()
@@ -506,11 +518,11 @@ async def call_tool(name: str, arguments: dict):
         # 只允许白名单命令
         allowed_prefixes = ['ls ', 'cat ', 'grep ', 'head ', 'wc ']
         if not any(cmd.startswith(p) for p in allowed_prefixes):
-            raise ValueError("命令不在白名单中")
-\`\`\`
-
-**3. 敏感信息脱敏**
-\`\`\`python
+            raise ValueError("命令不在白名单中")`,
+      },
+      {
+        lang: "python",
+        code: `
 import re
 
 def sanitize_output(text: str) -> str:
@@ -521,11 +533,11 @@ def sanitize_output(text: str) -> str:
     text = re.sub(r'"password":\\s*"[^"]*"', '"password": "[REDACTED]"', text)
     # 移除 IP 地址（可选）
     text = re.sub(r'\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', '[REDACTED_IP]', text)
-    return text
-\`\`\`
-
-**4. 审计日志**
-\`\`\`python
+    return text`,
+      },
+      {
+        lang: "python",
+        code: `
 import logging
 import json
 from datetime import datetime
@@ -543,8 +555,9 @@ async def call_tool(name: str, arguments: dict):
         "status": "success"
     }))
     
-    # 正常处理...
-\`\`\``
+    # 正常处理...`,
+      },
+    ]
     },
     {
       title: "Headless AI + MCP：未来的 Agent 服务架构",
@@ -562,16 +575,6 @@ Simon Willison 在 2026 年 4 月引用的 Matt Webb 观点：
 - 用户通过个人 AI 助手（如 OpenClaw）间接使用服务
 
 ### MCP + Headless 架构
-
-\`\`\`
-用户 ──→ [个人 AI 助手] ──→ [MCP Client] ──→ [MCP Server] ──→ [Headless Service]
-                                              │
-                                              ├──→ GitHub API
-                                              ├──→ 数据库
-                                              ├──→ 文件系统
-                                              └──→ 任何 MCP 服务
-\`\`\`
-
 **这个架构的优势：**
 
 1. **统一入口**：用户只需要一个 AI 助手，就能访问所有服务
@@ -582,8 +585,24 @@ Simon Willison 在 2026 年 4 月引用的 Matt Webb 观点：
 ### 构建 Headless MCP 服务
 
 下面是一个将现有 REST API 转换为 MCP Server 的示例：
-
-\`\`\`python
+**部署方式：**
+- 本地：通过 stdio 连接
+- 远程：通过 SSE 或 WebSocket
+- 容器化：Docker + Kubernetes 部署`,
+    code: [
+      {
+        lang: "text",
+        code: `
+用户 ──→ [个人 AI 助手] ──→ [MCP Client] ──→ [MCP Server] ──→ [Headless Service]
+                                              │
+                                              ├──→ GitHub API
+                                              ├──→ 数据库
+                                              ├──→ 文件系统
+                                              └──→ 任何 MCP 服务`,
+      },
+      {
+        lang: "python",
+        code: `
 from mcp.server import Server
 from mcp.server.fastmcp import FastMCP
 import httpx
@@ -631,13 +650,9 @@ async def get_app_config() -> str:
     """
 
 if __name__ == "__main__":
-    mcp.run()
-\`\`\`
-
-**部署方式：**
-- 本地：通过 stdio 连接
-- 远程：通过 SSE 或 WebSocket
-- 容器化：Docker + Kubernetes 部署`
+    mcp.run()`,
+      },
+    ]
     },
     {
       title: "MCP vs 其他 Agent 工具方案的全面对比",
