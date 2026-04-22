@@ -16,6 +16,148 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-350",
+    tag: "行业动态",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "GitHub Copilot Individual 计划重大调整：暂停新注册、收紧用量限制、Pro 计划移除 Opus 模型",
+    summary: "GitHub 宣布 Copilot Individual 计划重大变更：暂停 Pro/Pro+/Student 新注册；引入基于 token 消耗和模型乘数的用量限制；Pro 计划不再提供 Opus 模型（仅限 $39/月的 Pro+）；现有用户可在 5 月 20 日前取消并获得退款。GitHub 称「Agent 工作流已根本性改变 Copilot 的算力需求」，这是 AI 编码工具领域继 Claude Code 定价风波后的又一重大定价调整。",
+    content: `## GitHub Copilot Individual 计划重大调整
+
+**变更详情（2026 年 4 月 20 日发布）：**
+
+**1. 暂停新注册**
+- Copilot Pro、Pro+、Student 计划全部暂停接受新用户
+- 官方说法：「暂停注册让我们能更有效地服务现有用户」
+
+**2. 收紧用量限制**
+- 引入双层限制：Session 限制 + Weekly（7 天滚动）限制
+- 基于两个因素：Token 消耗量 + 模型乘数（Model Multiplier）
+- Pro+ 的用量限制是 Pro 的 5 倍以上
+- VS Code 和 Copilot CLI 现已实时显示剩余用量
+
+**3. 模型可用性调整**
+- Pro 计划不再提供 Opus 模型
+- Opus 4.7 仅限 Pro+（$39/月）可用
+- Opus 4.5 和 4.6 将从 Pro+ 中移除
+
+**4. 退款政策**
+- 5 月 20 日前取消 Pro 或 Pro+ 订阅可获得剩余时间的全额退款
+
+## 为什么做出这些变更？
+
+GitHub 官方博客明确说明：
+
+> "Agentic workflows have fundamentally changed Copilot's compute demands. Long-running, parallelized sessions now regularly consume far more resources than the original plan structure was built to support."
+
+**翻译：** Agent 工作流已经根本性改变了 Copilot 的算力需求。长时间运行的并行 session 现在经常消耗远超原计划结构所能支持的资源。
+
+**背景数据：**
+- 6 个月前，重度 LLM 用户的 token 消耗量比现在低一个数量级
+- 编码 Agent 的消耗量远超传统补全工具
+- Copilot 之前按请求收费（per-request），而非按 token 收费，这意味着单个 agentic 请求可能消耗大量 token 但只算一次费用
+
+## 用量限制机制详解
+
+**Session 限制：**
+- 防止高峰期服务过载
+- 大多数用户不应受影响
+- 达到限制后必须等待重置窗口
+
+**Weekly 限制：**
+- 7 天滚动窗口内的 token 消耗上限
+- 每个模型有不同的乘数（Multiplier）
+- 如果达到 Weekly 限制但仍有 premium requests 剩余，可继续使用 Auto model selection
+- Pro 用户可升级到 Pro+ 来提高限制
+
+**关键区别：** 用量限制 ≠ Premium Requests
+- Premium Requests 决定你能用哪些模型、多少次
+- 用量限制是基于 token 的防护栏，限制你在给定时间窗口内消耗的 token 总量
+- 你可能还有 premium requests 剩余，但仍然触及用量限制
+
+## 如何避免触及限制？
+
+GitHub 给出的建议：
+1. **简单任务使用乘数较低的模型** — 乘数越大，越快触及限制
+2. **升级到 Pro+** — Pro 用户可提高 5 倍以上限制
+3. **使用 Plan 模式** — VS Code 和 Copilot CLI 均支持，能提高效率并改善任务成功率
+4. **减少并行工作流** — /fleet 等工具会导致更高的 token 消耗，接近限制时应谨慎使用
+
+## 行业影响
+
+这是继 Claude Code 定价风波后，AI 编码工具领域的又一重大定价调整：
+
+| 厂商 | 变更 | 影响 |
+|------|------|------|
+| GitHub Copilot | 暂停注册 + 用量限制 + 移除 Opus | Individual 用户受限 |
+| Anthropic Claude Code | 试探性提价后撤回 | 信任受损 |
+| OpenAI Codex | 保持 FREE/PLUS 可用 | 趁势抢占市场 |
+
+**趋势：** 三大 AI 编码工具的定价策略正在快速分化。Agent 工作流的算力消耗是核心驱动力——当一次 agentic session 可能消耗过去一个月的 token 量时，原有定价模型必然崩溃。
+
+**给开发者的建议：**
+- 如果你频繁使用 agentic 功能，预计成本可能上升
+- 考虑使用 Plan 模式减少不必要的 token 消耗
+- 关注 OpenAI Codex 作为替代方案（目前保持低价）
+- 评估开源替代方案（Ollama + 本地模型）`,
+    date: "2026-04-22 12:30",
+    source: "GitHub Blog / Simon Willison's Weblog",
+    sourceUrl: "https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/",
+    href: "/news/news-350"
+  },
+{
+    id: "news-351",
+    tag: "GitHub Trending",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "GitHub 本周 AI Trending（4.15-4.22）：Hermes Agent 突破 108K 星、claude-mem 达 65K 星、自进化 Agent 持续爆发",
+    summary: "2026 年 4 月 22 日 GitHub Trending 周报：NousResearch Hermes Agent 达 108,735 星（周增 25,081）；claude-mem 达 65,294 星（周增 10,356）；markitdown 达 114,214 星（周增 6,012）；multica 18,735 星（周增 6,223）；voicebox 22,208 星（周增 5,198）；dive-into-llms 33,423 星（周增 5,167）。本周新上榜：GenericAgent 5,649 星（自进化技能树）、Evolver 6,393 星（GEP 基因组进化）、OpenAI Agents Python 24,435 星（官方多 Agent 框架）。",
+    content: `## GitHub AI Trending 周报（4.15-4.22）
+
+**🔥 爆炸级增长：**
+- **NousResearch/hermes-agent**：108,735 stars（+25,081/周）——可成长型 AI Agent 平台
+- **thedotmack/claude-mem**：65,294 stars（+10,356/周）——Claude Code 自动记忆插件
+- **multica-ai/multica**：18,735 stars（+6,223/周）——开源 Agent 管理平台
+- **microsoft/markitdown**：114,214 stars（+6,012/周）——文件转 Markdown + MCP Server
+
+**🚀 快速增长：**
+- **jamiepine/voicebox**：22,208 stars（+5,198/周）——开源语音合成工作室
+- **Lordog/dive-into-llms**：33,423 stars（+5,167/周）——动手学大模型中文教程
+- **openai/openai-agents-python**：24,435 stars（+3,546/周）——OpenAI 官方多 Agent 框架
+- **virattt/ai-hedge-fund**：56,846 stars（+3,104/周）——AI 对冲基金
+- **BasedHardware/omi**：11,866 stars（+3,863/周）——AI 屏幕助手
+- **shiyu-coder/Kronos**：20,092 stars（+2,458/周）——金融市场基础模型
+- **OpenBMB/VoxCPM**：15,406 stars（+2,599/周）——Tokenizer-Free 多语言语音合成
+
+**🆕 本周新上榜：**
+- **lsdefine/GenericAgent**：5,649 stars（+4,223/周）——自进化 Agent，3.3K 行种子代码自主生长技能树，6 倍更少 token 消耗实现全系统控制
+- **EvoMap/evolver**：6,393 stars（+4,376/周）——GEP 基因组进化引擎，群体竞争+交叉繁殖
+- **forrestchang/andrej-karpathy-skills**：CLAUDE.md 编码最佳实践，来自 Karpathy 对 LLM 编码陷阱的观察
+- **Tracer-Cloud/opensre**：2,187 stars（+1,395/周）——开源 AI SRE Agent 工具包
+- **z-lab/dflash**：2,103 stars（+909/周）——推测解码新范式：Block Diffusion for Flash Speculative Decoding
+- **SimoneAvogadro/android-reverse-engineering-skill**：4,480 stars（+2,813/周）——Claude Code Android 逆向工程技能
+
+**💡 值得关注的中小项目：**
+- **warproxxx/poly_data**：1,482 stars（+435/周）——Polymarket 数据检索器
+
+## 趋势分析
+
+**自进化 Agent 双路线并驾齐驱：**
+- **GenericAgent**（技能树路线）：通过元认知循环逐步扩展技能库，像生物进化一样生长能力
+- **Evolver**（基因组进化路线）：将 Agent 能力编码为「基因组」，通过群体竞争和交叉繁殖产生更优后代
+- 两者代表了 2026 年「自进化 Agent」方向的两种核心范式
+
+**OpenAI 官方 Agent 框架持续升温：**
+- openai-agents-python 已达 24K+ 星，是 OpenAI 在 Agent 生态上的官方布局
+- 轻量级、支持多 Agent 工作流，与 LangChain/AutoGen 形成竞争
+
+**语音 AI 赛道持续火热：**
+- voicebox（22K）+ VoxCPM（15K）双星闪耀
+- 语音合成从 TTS 工具走向「创作工作室」范式`,
+    date: "2026-04-22 13:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-351"
+  },
+{
     id: "news-349",
     tag: "产品动态",
     tagColor: "bg-red-500/10 text-red-300",
