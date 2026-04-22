@@ -16,6 +16,74 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-352",
+    tag: "模型发布",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Qwen3.6-27B 发布：27B 密集模型全面超越 397B MoE 旗舰，Agentic Coding 能力惊艳社区",
+    summary: "通义千问发布 Qwen3.6-27B，一款仅 27B 参数的密集模型，在所有主要编程基准上超越前代旗舰 Qwen3.5-397B-A17B（397B MoE）。模型文件仅 55.6GB（前代 807GB），Q4 量化版 16.8GB 可在消费级硬件运行，llama.cpp 实测推理速度约 25 tokens/s。",
+    content: `## Qwen3.6-27B：小身材，大能力
+
+2026 年 4 月 22 日，阿里巴巴通义千问团队正式发布 **Qwen3.6-27B**，这是 2026 年开源 AI 领域最受瞩目的模型发布之一。
+
+**核心亮点：**
+
+- **27B 密集模型超越 397B MoE**：Qwen3.6-27B 在所有主要编程基准上超越了前代旗舰 Qwen3.5-397B-A17B
+- **极致压缩**：模型文件仅 55.6GB，而前代 Qwen3.5-397B 需要 807GB
+- **消费级可部署**：Unsloth 提供的 Q4_K_M 量化版仅 16.8GB，可在 RTX 4090 或 M 系列 Mac 上运行
+- **Agentic Coding 旗舰级表现**：在 SWE-bench、HumanEval、MBPP 等编程基准上表现优异
+
+**Simon Willison 实测数据：**
+- 使用 llama.cpp + Q4_K_M 量化，推理速度约 **25 tokens/s**
+- 生成 4,444 tokens（SVG 鹈鹕骑自行车）耗时 2 分 53 秒
+- 生成 6,575 tokens（复杂 SVG）耗时 4 分 25 秒
+
+**技术背景：**
+Qwen3.6-27B 从 MoE 架构回归 Dense 架构，通过更高质量的训练数据、课程学习策略和专项编程微调，实现了参数效率的质的飞跃。这证明了「训练质量比参数规模更重要」的理念。`,
+    date: "2026-04-23 01:30",
+    source: "Qwen Blog / Simon Willison",
+    sourceUrl: "https://qwen.ai/blog?id=qwen3.6-27b",
+    href: "/news/news-352",
+  },
+{
+    id: "news-353",
+    tag: "多模态",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI 发布 ChatGPT Images 2.0：图像生成能力从 GPT-3 级别跃升至 GPT-5 级别",
+    summary: "OpenAI 发布 ChatGPT Images 2.0，Sam Altman 称从 gpt-image-1 到 gpt-image-2 的飞跃相当于从 GPT-3 到 GPT-5 的跨越。新版本在图像质量、细节还原和指令遵循方面均有显著提升。",
+    content: `## ChatGPT Images 2.0：图像生成的巨大飞跃
+
+2026 年 4 月 21 日，OpenAI 正式发布 **ChatGPT Images 2.0**，这是其最新的图像生成模型。
+
+**发布亮点：**
+
+- Sam Altman 在直播中表示：从 gpt-image-1 到 gpt-image-2 的飞跃相当于 **从 GPT-3 到 GPT-5 的跨越**
+- 图像质量和细节还原有显著提升
+- 对复杂指令的理解和遵循能力大幅增强
+
+**Simon Willison 实测：**
+
+Simon Willison 第一时间对 ChatGPT Images 2.0 进行了测试，验证了其在复杂场景下的表现。与前代相比，新版本在处理以下场景时表现更好：
+
+- 复杂的人物和动物渲染
+- 文字生成（在图像中嵌入准确的文字）
+- 多元素组合场景
+- 高分辨率输出
+
+**行业影响：**
+
+ChatGPT Images 2.0 的发布进一步加剧了 AI 图像生成领域的竞争。当前主要玩家包括：
+- OpenAI: ChatGPT Images 2.0
+- Midjourney: v6/v7 系列
+- Stable Diffusion: SD3/SDXL 系列
+- Google: Imagen 3
+
+这对于内容创作者、设计师和 AI 开发者来说是一个重要的工具升级。`,
+    date: "2026-04-23 01:00",
+    source: "OpenAI / Simon Willison",
+    sourceUrl: "https://openai.com/index/introducing-chatgpt-images-2-0/",
+    href: "/news/news-353",
+  },
+{
     id: "news-350",
     tag: "行业动态",
     tagColor: "bg-orange-500/10 text-orange-300",
