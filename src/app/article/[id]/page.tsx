@@ -21,23 +21,30 @@ function escapeHtml(text: string): string {
 
 function highlightBash(code: string): string {
   const escaped = escapeHtml(code);
-  // Match strings using escaped quotes (after escapeHtml, " → &quot;, ' → &#39;)
-  const withStrings = escaped.replace(/(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/g, '<span class="token-str">$1</span>');
-  return withStrings
-    .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
-    .replace(/(--?\w[\w-]*)/g, '<span class="token-parameter">$1</span>')
-    .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat)\b/g, '<span class="token-function">$1</span>')
-    .replace(/token-str/g, 'token-string');
+  // Use placeholders to avoid nested span issues
+  let result = escaped
+    .replace(/(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/g, '\x00STR:$1\x00')
+    .replace(/(#.*)/g, '\x00CMT:$1\x00')
+    .replace(/(--?\w[\w-]*)/g, '\x00PAR:$1\x00')
+    .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat)\b/g, '\x00FN:$1\x00');
+  // Convert placeholders to spans
+  return result
+    .replace(/\x00STR:(.*?)\x00/g, "<span class='token-string'>$1</span>")
+    .replace(/\x00CMT:(.*?)\x00/g, "<span class='token-comment'>$1</span>")
+    .replace(/\x00PAR:(.*?)\x00/g, "<span class='token-parameter'>$1</span>")
+    .replace(/\x00FN:(.*?)\x00/g, "<span class='token-function'>$1</span>");
 }
 
 function highlightDockerfile(code: string): string {
   const escaped = escapeHtml(code);
-  // Match strings first
-  const withStrings = escaped.replace(/(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/g, '<span class="token-str">$1</span>');
-  return withStrings
-    .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
-    .replace(/\b(FROM|WORKDIR|COPY|RUN|EXPOSE|CMD|ENTRYPOINT|ENV|ARG|ADD|USER|VOLUME|LABEL|MAINTAINER|HEALTHCHECK|ONBUILD|STOPSIGNAL|SHELL|AS)\b/g, '<span class="token-keyword">$1</span>')
-    .replace(/token-str/g, 'token-string');
+  let result = escaped
+    .replace(/(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/g, '\x00STR:$1\x00')
+    .replace(/(#.*)/g, '\x00CMT:$1\x00')
+    .replace(/\b(FROM|WORKDIR|COPY|RUN|EXPOSE|CMD|ENTRYPOINT|ENV|ARG|ADD|USER|VOLUME|LABEL|MAINTAINER|HEALTHCHECK|ONBUILD|STOPSIGNAL|SHELL|AS)\b/g, '\x00KW:$1\x00');
+  return result
+    .replace(/\x00STR:(.*?)\x00/g, "<span class='token-string'>$1</span>")
+    .replace(/\x00CMT:(.*?)\x00/g, "<span class='token-comment'>$1</span>")
+    .replace(/\x00KW:(.*?)\x00/g, "<span class='token-keyword'>$1</span>");
 }
 
 function highlightText(code: string): string {
