@@ -456,6 +456,14 @@ node scripts/validate-article.mjs src/data/articles/你的文章.ts
 - 校验不通过 → 根据报错修复（配色问题参考 docs/MERMAID-COLORS.md，代码块问题检查 code: 数组和 title 字段）
 - 校验通过 → 继续
 
+### 5.6. 🔴 工具校验（如果新增了工具，必须执行）
+```bash
+node scripts/validate-tools.mjs
+```
+- 校验不通过 → 说明有重复 id 或缺少必填字段，**必须先清理重复**
+- ❌ 收录新工具前必须先检查 id 是否已存在：`grep -c 'id: "xxx"' src/data/tools.ts`，结果必须为 0
+- 校验通过 → 继续
+
 ### 6. 提交并推送
 ```bash
 git config user.email "578050550@qq.com" && git config user.name "xueshuai1"
