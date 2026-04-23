@@ -28,6 +28,92 @@
 
 ---
 
+## 🔴🔴🔴 文章格式铁律（新增/修改知识库文章前必读！）
+
+### 1. Mermaid 图表配色
+- ❌ **禁止使用浅色**（400-500 色阶）和 Material Design 浅色：`#ef4444` `#f59e0b` `#10b981` `#6366f1` `#8b5cf6` `#ec4899` `#f3e5f5` `#e1f5fe` `#c8e6c9` `#fff3e0`
+- ✅ **必须使用深色**（800-900 色阶）+ 白字 `color:#fff`：`#991b1b` `#92400e` `#064e3b` `#3730a3` `#581c87` `#1e3a5f`
+- 完整配色表：`docs/MERMAID-COLORS.md`
+
+**示例：**
+```
+style C fill:#991b1b,stroke:#b91c1c,color:#fff
+style B fill:#064e3b,stroke:#059669,color:#fff
+```
+
+### 2. 代码块格式（最高频出错！）
+- ❌ **禁止**在 body 中写 `\`\`\`lang ... \`\`\` 代码块 — MarkdownBody 不会渲染语法高亮
+- ✅ **必须**把代码放在 `code: [{ lang, code, title }]` 数组中
+- body 中用**描述性文字**指向代码，如「（见下方代码：LessHumanAgent 完整实现）」
+- **每个 code 块必须有 `title` 字段**，与 body 中的引用文字对应
+
+**正确示例（整个 section）：**
+```
+{
+  title: "五、Python 实战",
+  body: `下面我们用 Python 实现。
+
+### 实现 1：核心 Agent
+
+（见下方代码：LessHumanAgent 完整实现）
+
+### 实现 2：约束验证
+
+（见下方代码：约束验证器实现）`,
+  code: [
+    {
+      lang: "python",
+      title: "LessHumanAgent 完整实现",
+      code: `import json
+import time
+...
+# 完整代码放这里`,
+    },
+    {
+      lang: "python",
+      title: "约束验证器实现",
+      code: `from enum import Enum
+...
+# 完整代码放这里`,
+    },
+  ],
+}
+```
+
+**错误示例（不要这样写！）：**
+```
+// ❌ 错误1：代码嵌在 body 里
+body: `文字...
+\`\`\`python
+import json
+\`\`\`
+...文字`,
+
+// ❌ 错误2：code 块没有 title
+code: [{
+  lang: "python",
+  code: `import json...`,
+}],
+
+// ❌ 错误3：body 用「见代码块1」这种无意义引用
+body: `...（见代码块 1）...`,
+```
+
+### 3. 发布前校验（必须执行）
+```bash
+node scripts/validate-article.mjs src/data/articles/你的文章.ts
+```
+- 校验不通过 → **禁止提交**，根据报错修复
+- 校验通过 → 继续
+
+### 4. ❌ 绝对禁止的操作
+- ❌ 禁止运行 `extract-code.js` — 该脚本有 bug，会破坏 body 文本
+- ❌ 禁止在 body 中嵌入 `\`\`\`lang ... \`\`\` 代码块
+- ❌ 禁止使用浅色 Mermaid 配色
+- ❌ 禁止 code 块缺少 `title` 字段
+
+---
+
 ## 执行流程
 
 ### 1. 拉取最新代码
@@ -206,23 +292,6 @@ grep 'title:' src/data/blogs/blog-*.ts | grep -i "关键词"
 - 像维基百科条目一样详实，不是简单的摘要
 - 每次运行至少要新增或大幅改进 1-2 条知识条目
 
-### 🔴 文章格式铁律（写入前必读！）
-
-**1. Mermaid 图表配色**
-- ❌ 禁止使用浅色（400-500 色阶）和 Material Design 浅色：`#ef4444` `#f59e0b` `#10b981` `#6366f1` `#8b5cf6` `#ec4899` `#f3e5f5` `#e1f5fe` `#c8e6c9` `#fff3e0`
-- ✅ 必须使用深色（800-900 色阶）：`#991b1b` `#92400e` `#064e3b` `#3730a3` `#581c87` `#1e3a5f`
-- 完整配色表：`docs/MERMAID-COLORS.md`
-
-**2. 代码块必须提取到 code: 数组**
-- ❌ 代码不能嵌在 body 的 `\`\`\`lang ... \`\`\`` 中（MarkdownBody 不会渲染语法高亮）
-- ✅ 代码必须放在 section 的 `code: [{ lang: "xxx", code: `...` }]` 数组中
-- body 中用「（见代码块 N）」引用代码
-- ❌ 禁止运行 extract-code.js — 该脚本有 bug 会破坏 body 文本
-
-**3. 发布前校验**
-- 每写完文章必须运行：`node scripts/validate-article.mjs <文件路径>`
-- 校验不通过 = 禁止提交，根据报错修复
-
 ---
 
 ## 📝 老文章更新机制
@@ -291,7 +360,7 @@ npm run build
 ```bash
 node scripts/validate-article.mjs src/data/articles/你的文章.ts
 ```
-- 校验不通过 → 根据报错修复（配色问题参考 docs/MERMAID-COLORS.md，代码块问题运行 extract-code.js）
+- 校验不通过 → 根据报错修复（配色问题参考 docs/MERMAID-COLORS.md，代码块问题检查 code: 数组和 title 字段）
 - 校验通过 → 继续
 
 ### 6. 提交并推送
