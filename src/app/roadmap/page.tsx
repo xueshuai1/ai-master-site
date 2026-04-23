@@ -144,7 +144,7 @@ const foundationRoute: RouteDef = {
       ],
     },
     {
-      phase: 7,
+      phase: 2,
       title: "入门基础",
       duration: "4-6 周",
       icon: "🌱",
@@ -159,7 +159,7 @@ const foundationRoute: RouteDef = {
       ],
     },
     {
-      phase: 7,
+      phase: 3,
       title: "机器学习进阶",
       duration: "6-8 周",
       icon: "📊",
@@ -174,7 +174,7 @@ const foundationRoute: RouteDef = {
       ],
     },
     {
-      phase: 7,
+      phase: 4,
       title: "深度学习",
       duration: "8-10 周",
       icon: "🧠",
@@ -190,7 +190,7 @@ const foundationRoute: RouteDef = {
       ],
     },
     {
-      phase: 7,
+      phase: 5,
       title: "专业方向",
       duration: "8-12 周",
       icon: "🎯",
@@ -205,7 +205,7 @@ const foundationRoute: RouteDef = {
       ],
     },
     {
-      phase: 7,
+      phase: 6,
       title: "大语言模型",
       duration: "6-8 周",
       icon: "🤖",
@@ -264,7 +264,7 @@ const securityRoute: RouteDef = {
       ],
     },
     {
-      phase: 3,
+      phase: 2,
       title: "AI 伦理与公平性",
       duration: "1-2 周",
       icon: "⚖️",
@@ -545,11 +545,11 @@ export default function RoadmapPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
-            {route.phases.map((phase) => {
+            {route.phases.map((phase, idx) => {
               const isExpanded = expandedPhase === phase.phase;
               return (
                 <div
-                  key={phase.phase}
+                  key={`${route.id}-${idx}`}
                   className={`relative rounded-2xl border transition-all ${
                     isExpanded
                       ? `bg-gradient-to-r ${phase.color} ${phase.borderColor}`
