@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { articles } from "@/data/knowledge";
 import ArticleCard from "@/components/ArticleCard";
 
@@ -159,6 +159,7 @@ export default function LearningPathSection() {
   const savedRoute = typeof window !== 'undefined' ? sessionStorage.getItem('lp-route') : null;
   const [activeRoute, setActiveRoute] = useState<string>(savedRoute || "fast");
   const [expandedPhases, setExpandedPhases] = useState<Set<string>>(new Set());
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Persist route to sessionStorage so it survives navigation to article and back
   useEffect(() => {
@@ -166,6 +167,22 @@ export default function LearningPathSection() {
       sessionStorage.setItem('lp-route', activeRoute);
     }
   }, [activeRoute]);
+
+  // Scroll active route button into view after restore from sessionStorage
+  const scrollToActive = useCallback(() => {
+    if (scrollRef.current) {
+      const activeBtn = scrollRef.current.querySelector('[data-active="true"]') as HTMLElement;
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (savedRoute && savedRoute !== 'fast') {
+      requestAnimationFrame(scrollToActive);
+    }
+  }, [savedRoute, scrollToActive]);
 
   const route = allRoutes.find(r => r.id === activeRoute) || fastRoute;
 
@@ -201,10 +218,11 @@ export default function LearningPathSection() {
 
         {/* Route Selector — scrollable on mobile */}
         <div className="flex justify-center mb-6">
-          <div className="flex gap-2 overflow-x-auto pb-2 max-w-full scrollbar-hide">
+          <div ref={scrollRef} className="flex gap-2 overflow-x-auto pb-2 max-w-full scrollbar-hide">
             {allRoutes.map(r => (
               <button
                 key={r.id}
+                data-active={activeRoute === r.id ? 'true' : undefined}
                 onClick={() => { setActiveRoute(r.id); setExpandedPhases(new Set()); }}
                 className={`shrink-0 px-3 py-2 rounded-xl text-sm font-medium transition-all border whitespace-nowrap ${
                   activeRoute === r.id
