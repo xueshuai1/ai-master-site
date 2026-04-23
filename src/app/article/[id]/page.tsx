@@ -199,7 +199,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
                 <div className="flex items-center justify-between px-4 py-2 bg-white/5 text-sm text-slate-400">
                   <span className="font-mono">{block.lang}</span>
                   <div className="flex items-center gap-2">
-                    {block.filename && <span>{block.filename}</span>}
+                    {block.filename && <span key={block.filename}>{block.filename}</span>}
                     <CopyButton text={block.code} />
                   </div>
                 </div>
@@ -341,9 +341,9 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2 text-sm text-slate-400 mb-6">
             <Link href="/" className="hover:text-slate-300 transition-colors">首页</Link>
-            <span>/</span>
+            <span key="sep1">/</span>
             <Link href="/knowledge" className="hover:text-slate-300 transition-colors">知识库</Link>
-            <span>/</span>
+            <span key="sep2">/</span>
             <span className="text-slate-400 truncate">{article.title}</span>
           </div>
 
@@ -413,9 +413,9 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                 <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">标签</h3>
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag) => (
-                    <span key={tag} className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full text-sm text-slate-300 transition-colors cursor-pointer">
+                    <Link href={`/knowledge?search=${encodeURIComponent(tag)}`} className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full text-sm text-slate-300 transition-colors">
                       #{tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               </div>
