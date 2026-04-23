@@ -233,6 +233,80 @@ async function main() {
   const reportPath = path.join(ROOT, 'data/missing-projects-report.json');
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   console.error(`\n💾 详细报告已保存到 ${reportPath}`);
+
+  // === 自动发现新 topics ===
+  console.error(`\n\n🔎 开始自动发现新 topics...`);
+  
+  const existingTopics = new Set(topics.map(t => t.topic));
+  const newTopics = [];
+  const allDiscoveredTopics = new Set();
+  
+  // 从所有扫描到的项目中收集 topics
+  for (const project of uniqueMissing) {
+    if (Array.isArray(project.topics)) {
+      for (const t of project.topics) {
+        allDiscoveredTopics.add(t);
+      }
+    }
+  }
+  
+  // 找出本地没有的新 topics
+  const aiKeywords = [
+    'ai', 'ml', 'deep', 'neural', 'llm', 'gpt', 'chat', 'agent',
+    'transformer', 'diffusion', 'vision', 'nlp', 'language', 'model',
+    'generative', 'machine-learning', 'reinforcement', 'embedding',
+    'multimodal', 'speech', 'voice', 'image', 'video', 'text',
+    'robot', 'autonomous', 'cognitive', 'inference', 'training',
+    'rag', 'vector', 'mcp', 'prompt', 'fine-tune', 'quantiz',
+    'cuda', 'gpu', 'tensor', 'pytorch', 'tensorflow', 'hugging',
+    'openai', 'anthropic', 'gemini', 'claude', 'llama', 'mistral',
+    'stable-diffusion', 'comfyui', 'langchain', 'crew', 'autogen',
+    'webui', 'gradio', 'streamlit', 'pipeline', 'orchestrat',
+    'knowledge-graph', 'semantic', 'retrieval', 'search',
+    'face', 'pose', 'gesture', 'ocr', 'detection', 'segment',
+    'gan', 'vae', 'diffusion', 'super-resolution', 'upscale',
+    'audio', 'music', 'tts', 'stt', 'whisper', 'synthesis',
+    'agi', 'world-model', 'embodied', 'sim-to-real',
+    'federated', 'edge', 'on-device', 'mobile', 'lightweight',
+    'benchmark', 'dataset', 'evaluation', 'alignment', 'safety',
+    'explainable', 'interpret', 'bias', 'fairness', 'privacy',
+  ];
+  
+  for (const topic of allDiscoveredTopics) {
+    if (existingTopics.has(topic)) continue;
+    
+    // 检查是否包含 AI 关键词
+    const isAiRelated = aiKeywords.some(keyword => 
+      topic.toLowerCase().includes(keyword)
+    );
+    
+    if (isAiRelated) {
+      newTopics.push({
+        topic: topic,
+        url: `https://github.com/topics/${topic}`,
+        minStars: 2000,  // 新发现的 topic 默认 2000 stars
+        description: `（自动发现）${topic}`
+      });
+    }
+  }
+  
+  if (newTopics.length > 0) {
+    console.error(`\n🆕 发现 ${newTopics.length} 个新 AI 相关 topics！`);
+    
+    // 追加到 ai-topics.json
+    topicsData.topics.push(...newTopics);
+    topicsData.lastUpdated = new Date().toISOString();
+    fs.writeFileSync(TOPICS_FILE, JSON.stringify(topicsData, null, 2), 'utf8');
+    console.error(`✅ 已更新 ${TOPICS_FILE}`);
+    
+    // 列出新 topics
+    console.error('\n新 topics 列表：');
+    for (const t of newTopics.sort((a, b) => a.topic.localeCompare(b.topic))) {
+      console.error(`  • ${t.topic} (minStars: ${t.minStars})`);
+    }
+  } else {
+    console.error('\n✅ 没有发现新的 AI 相关 topics');
+  }
 }
 
 // 根据 topics 建议分类
