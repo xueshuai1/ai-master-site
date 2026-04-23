@@ -634,28 +634,59 @@ if __name__ == "__main__":
 - 用 GEP 优化技能的调用顺序和参数
 
 这种混合架构可能是未来自进化 Agent 的主流方向。`,
-      mermaid: `gantt
-    title 自进化 Agent 技术路线图
-    dateFormat  YYYY-MM
-    axisFormat  %Y年%m月
+      mermaid: `graph LR
+    subgraph "2026 Q1-Q2 基础架构"
+        A1[GenericAgent 种子代码]
+        A2[Evolver GEP 引擎]
+        A3[可审计安全框架]
+    end
 
-    section 技能树进化
-    GenericAgent 种子代码      :done, 2026-01, 2026-04
-    元认知循环优化            :active, 2026-04, 2026-07
-    经验缓存+Token 效率优化    :active, 2026-04, 2026-06
-    多技能并行进化            :2026-07, 2026-10
-    混合架构（+GEP 管理）      :2026-09, 2026-12
+    subgraph "2026 Q2-Q3 核心优化"
+        B1[元认知循环优化]
+        B2[经验缓存+效率优化]
+        B3[适应度函数优化]
+        B4[多目标进化]
+    end
 
-    section 基因组进化
-    Evolver GEP 引擎          :done, 2026-02, 2026-04
-    适应度函数优化            :active, 2026-04, 2026-07
-    多目标进化                :2026-06, 2026-09
-    可审计安全框架            :2026-05, 2026-08
-    混合架构（+LLM 生成）      :2026-09, 2026-12
+    subgraph "2026 Q3-Q4 架构融合"
+        C1[多技能并行进化]
+        C2[混合架构研究]
+        C3[GEP 管理技能树]
+        C4[LLM 生成技能实现]
+    end
 
-    section 融合趋势
-    混合架构研究              :crit, 2026-09, 2026-12
-    工业级部署               :2027-01, 2027-06`,
+    subgraph "2027+ 工业部署"
+        D1[大规模应用验证]
+        D2[标准化安全框架]
+    end
+
+    A1 --> B1
+    A1 --> B2
+    A2 --> B3
+    A2 --> B4
+    A3 --> B3
+    B1 --> C1
+    B2 --> C1
+    B3 --> C3
+    B4 --> C3
+    C1 --> D1
+    C2 --> D1
+    C3 --> D2
+    C4 --> D2
+
+    style A1 fill:#1e3a5f,stroke:#60a5fa,color:#fff
+    style A2 fill:#1e3a5f,stroke:#60a5fa,color:#fff
+    style A3 fill:#1e3a5f,stroke:#60a5fa,color:#fff
+    style B1 fill:#064e3b,stroke:#059669,color:#fff
+    style B2 fill:#064e3b,stroke:#059669,color:#fff
+    style B3 fill:#064e3b,stroke:#059669,color:#fff
+    style B4 fill:#064e3b,stroke:#059669,color:#fff
+    style C1 fill:#3730a3,stroke:#6366f1,color:#fff
+    style C2 fill:#3730a3,stroke:#6366f1,color:#fff
+    style C3 fill:#3730a3,stroke:#6366f1,color:#fff
+    style C4 fill:#3730a3,stroke:#6366f1,color:#fff
+    style D1 fill:#92400e,stroke:#d97706,color:#fff
+    style D2 fill:#92400e,stroke:#d97706,color:#fff`,
     },
     {
       title: "六、实战：构建一个简易自进化 Agent",
