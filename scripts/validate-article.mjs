@@ -120,38 +120,9 @@ function getSafeAlternative(badColor) {
   return map[badColor] || '#1e3a5f';
 }
 
-// ===== 代码块提取检查 =====
-
-function checkCodeBlocksExtracted(content, filePath) {
-  const errors = [];
-  
-  // 检查 body 中是否有嵌入的 \`\`\` 代码块
-  const escapedBacktick = /\\`\\`\\`/g;
-  const rawBacktick = /```/g;
-  
-  let match;
-  const escapedBlocks = [];
-  while ((match = escapedBacktick.exec(content)) !== null) {
-    escapedBlocks.push(match.index);
-  }
-  
-  if (escapedBlocks.length > 0) {
-    // 检查对应的 section 是否有 code: 字段
-    // 如果有 \`\`\` 但没有 code: 字段，说明代码块未提取
-    const hasCodeField = content.includes('code: [') || content.includes('code:[');
-    const codeBlockCount = Math.floor(escapedBlocks.length / 2); // 开+闭
-    
-    if (!hasCodeField && codeBlockCount > 0) {
-      errors.push({
-        file: filePath,
-        type: 'code_not_extracted',
-        message: `body 中包含 ${codeBlockCount} 个代码块（用反引号嵌入），但未提取到 code: 字段。请运行 node scripts/extract-code.js ${filePath}`,
-      });
-    }
-  }
-  
-  return errors;
-}
+// ===== 代码块检查 =====
+// 注意：body 中嵌入代码块（\`\`\`）是合法的格式，不报错
+// 只检查是否有 extract-code.js 导致的 garbled text（在 checkBasicFormat 中）
 
 // ===== 基本格式检查 =====
 
@@ -179,6 +150,49 @@ function checkBasicFormat(content, filePath) {
   const bodyCount = (content.match(/body:\s*`/g) || []).length;
   if (sectionCount > 0 && bodyCount === 0) {
     errors.push({ file: filePath, type: 'missing_body', message: `有 ${sectionCount} 个 section title 但无 body 字段` });
+  }
+  
+  // 🔴 检测 extract-code.js 导致的 body 损坏（garbled text）
+  // extract-code.js 会替换代码块为 "xxx 代码如下：" 残骸
+  const garbledTexts = [
+    '流程如下：',
+    'json 代码如下：',
+    'python 代码如下：',
+  ];
+  
+  // 逐行扫描，检测 body 模板字符串内的 garbled text
+  const lines = content.split('\n');
+  let inBody = false;
+  let backtickBalance = 0;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    
+    // 检测进入 body 模板字符串
+    if (line.includes('body: `')) {
+      inBody = true;
+    }
+    
+    // 检测退出 body 模板字符串（行以 `, 或 ` 结尾，且不在代码块内）
+    if (inBody) {
+      for (const text of garbledTexts) {
+        if (line.includes(text)) {
+          errors.push({ 
+            file: filePath, 
+            type: 'garbled_body', 
+            line: i + 1,
+            message: `body 中有 extract-code.js 残骸 "${text}" — 代码块被提取到了 code: 字段，应还原为 body 内的代码块` 
+          });
+          break;
+        }
+      }
+      
+      // 简单检测 body 模板结束（行末尾有 ` 且不是转义的 \`）
+      const trimmed = line.trimEnd();
+      if (trimmed.endsWith('`,') || trimmed.endsWith('`,')) {
+        inBody = false;
+      }
+    }
   }
   
   return errors;
@@ -232,11 +246,7 @@ for (const filePath of filesToCheck) {
   const mermaidErrors = checkMermaidColors(content, relPath);
   allErrors.push(...mermaidErrors.map(e => ({ ...e, severity: 'error' })));
   
-  // 2. 代码块提取检查
-  const codeErrors = checkCodeBlocksExtracted(content, relPath);
-  allErrors.push(...codeErrors);
-  
-  // 3. 基本格式检查
+  // 2. 基本格式检查（含 garbled body 检测）
   const formatErrors = checkBasicFormat(content, relPath);
   allErrors.push(...formatErrors.map(e => ({ ...e, severity: 'error' })));
 }
@@ -265,7 +275,9 @@ if (errors.length > 0) {
   for (const [file, fileErrors] of Object.entries(byFile)) {
     console.error(`📄 ${file}:`);
     for (const e of fileErrors) {
-      if (e.line) {
+      if (e.type === 'garbled_body') {
+        console.error(`  L${e.line}: ❌ ${e.message}`);
+      } else if (e.line && e.fill) {
         console.error(`  L${e.line}: fill:${e.fill} + color:${e.text} → 对比度 ${e.ratio}:1 < 4.5:1`);
         console.error(`    💡 建议：将 fill:${e.fill} 改为 fill:${e.suggestion}（同色系深色）`);
       } else {

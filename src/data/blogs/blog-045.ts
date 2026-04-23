@@ -150,12 +150,12 @@ Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/Jav
     E2 --> F
     E3 --> F
     
-    style A fill:#e1f5fe
-    style F fill:#c8e6c9
-    style B fill:#fff3e0
-    style C fill:#fff3e0
-    style D fill:#fff3e0
-    style E fill:#fff3e0`,
+    style A fill:#1e3a5f
+    style F fill:#064e3b
+    style B fill:#92400e
+    style C fill:#92400e
+    style D fill:#92400e
+    style E fill:#92400e`,
   },
   {
     title: "四、实战：构建你的 AI 辅助安全审计工具",
@@ -471,8 +471,8 @@ Claude Mythos 在 Firefox 上的成功意味着：
     C3 --> C4[修复后 AI 复验]
     end
     
-    style B2 fill:#c8e6c9
-    style C4 fill:#fff3e0`,
+    style B2 fill:#064e3b
+    style C4 fill:#92400e`,
   },
   {
     title: "六、开发者行动指南：如何应对 AI 安全时代",

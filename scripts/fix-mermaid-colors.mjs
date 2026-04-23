@@ -51,6 +51,28 @@ const COLOR_MAP = {
   '#65a30d': '#4d7c0f',  // lime-600 → lime-700
   '#2563eb': '#1d4ed8',  // blue-600 → blue-700
   '#3b82f6': '#1d4ed8',  // blue-500 → blue-700
+  // Material Design light colors — dangerously low contrast with white text
+  '#e1f5fe': '#1e3a5f',  // MD light blue 50 → deep navy
+  '#b3e5fc': '#075985',  // MD light blue 100 → deep blue
+  '#81d4fa': '#075985',  // MD light blue 200 → deep blue
+  '#c8e6c9': '#064e3b',  // MD light green 100 → deep green
+  '#a5d6a7': '#064e3b',  // MD light green 200 → deep green
+  '#81c784': '#064e3b',  // MD light green 300 → deep green
+  '#fff3e0': '#92400e',  // MD orange 50 → deep amber
+  '#ffe0b2': '#92400e',  // MD orange 100 → deep amber
+  '#ffcc80': '#92400e',  // MD orange 200 → deep amber
+  '#fff9c4': '#713f12',  // MD yellow 100 → deep yellow
+  '#fff59d': '#713f12',  // MD yellow 200 → deep yellow
+  '#f8bbd0': '#831843',  // MD pink 100 → deep pink
+  '#f48fb1': '#831843',  // MD pink 200 → deep pink
+  '#e1bee7': '#581c87',  // MD purple 100 → deep purple
+  '#ce93d8': '#581c87',  // MD purple 200 → deep purple
+  '#b2ebf2': '#164e63',  // MD cyan 100 → deep cyan
+  '#80deea': '#164e63',  // MD cyan 200 → deep cyan
+  '#d7ccc8': '#5d4037',  // MD brown 100 → deep brown
+  '#bcaaa4': '#5d4037',  // MD brown 200 → deep brown
+  '#cfd8dc': '#374151',  // MD blue grey 100 → deep grey
+  '#b0bec5': '#374151',  // MD blue grey 200 → deep grey
 };
 
 // 也修复 stroke 色

@@ -168,11 +168,31 @@ Agent 的行为应该尽可能可预测。
 
 **Human-like Agent 的输出：**
 
-流程如下：
+\`\`\`
+好的，我来帮你创建一个用户认证系统。首先，我需要考虑几个关键方面：安全性、可扩展性、用户体验等。
+
+让我先分析一下需求...我觉得使用 JWT 是个不错的选择，因为它...
+
+以下是我的实现方案（请注意这只是一个初步版本，可能需要调整）：
+
+[代码]
+
+你觉得这个方案怎么样？如果有任何问题或需要修改的地方，请告诉我。我可以...
+\`\`\`
 
 **Less Human Agent 的输出：**
 
-json 代码如下：
+\`\`\`json
+{
+  "task": "user_authentication_system",
+  "implementation": "JWT",
+  "files": [
+    {"path": "auth.py", "content": "[完整代码]"},
+    {"path": "config.py", "content": "[完整代码]"}
+  ],
+  "status": "complete"
+}
+\`\`\`
 
 ### 场景 2：数据处理任务
 
@@ -186,40 +206,10 @@ json 代码如下：
 > "哎呀，我遇到了一个问题。看起来 API 返回了一个错误。让我想想怎么办...也许我们可以重试？或者换一种方法？你觉得我们应该怎么做？"
 
 **Less Human Agent：**
-> json 代码如下：,
-      code: [
-    {
-      lang: "text",
-      code: `好的，我来帮你创建一个用户认证系统。首先，我需要考虑几个关键方面：安全性、可扩展性、用户体验等。
 
-让我先分析一下需求...我觉得使用 JWT 是个不错的选择，因为它...
-
-以下是我的实现方案（请注意这只是一个初步版本，可能需要调整）：
-
-[代码]
-
-你觉得这个方案怎么样？如果有任何问题或需要修改的地方，请告诉我。我可以...
-`,
-    },
-    {
-      lang: "json",
-      code: `{
-  "task": "user_authentication_system",
-  "implementation": "JWT",
-  "files": [
-    {"path": "auth.py", "content": "[完整代码]"},
-    {"path": "config.py", "content": "[完整代码]"}
-  ],
-  "status": "complete"
-}
-`,
-    },
-    {
-      lang: "json",
-      code: `> {"error": "API_TIMEOUT", "retry": 3, "fallback": "cached_data", "status": "recovered"}
-> `,
-    }
-      ]`,
+\`\`\`json
+{"error": "API_TIMEOUT", "retry": 3, "fallback": "cached_data", "status": "recovered"}
+\`\`\``,
       table: {
         headers: ["维度", "Human-like Agent", "Less Human Agent", "差异"],
         rows: [
@@ -240,15 +230,8 @@ json 代码如下：
 
 ### 实现 1：零冗余 Agent 核心
 
-python 代码如下：
-
-### 实现 2：带约束验证的执行管道
-
-python 代码如下：,
-      code: [
-    {
-      lang: "python",
-      code: `import json
+\`\`\`python
+import json
 import time
 from typing import Any, Optional
 from dataclasses import dataclass
@@ -347,11 +330,12 @@ if __name__ == "__main__":
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
     # 输出: {"status": "success", "result": {...}, "attempts": 1}
-`,
-    },
-    {
-      lang: "python",
-      code: `from enum import Enum
+\`\`\`
+
+### 实现 2：带约束验证的执行管道
+
+\`\`\`python
+from enum import Enum
 from dataclasses import dataclass
 from typing import Protocol
 
@@ -428,9 +412,7 @@ try:
     print("执行代码生成...")
 except ConstraintViolationError as e:
     print(f"FAIL FAST: {e}")  # 硬约束违反，立即失败
-`,
-    }
-      ]`,
+\`\`\``,
     },
     {
       title: "六、Less Human Agent 在 2026 年的实践案例",
@@ -503,19 +485,8 @@ n8n 的工作流引擎是 Less Human 理念的极致体现：
 
 最实用的方案是**混合模式**——同一个 Agent 系统根据任务类型自动切换行为模式：
 
-python 代码如下：
-
-### 关键原则：模式切换应该是透明的
-
-用户不应该需要知道 Agent 使用了哪种模式。Agent 应该：
-- 自动检测任务类型
-- 选择合适的行为模式
-- 在模式间平滑切换
-- 保持一致的用户体验,
-      code: [
-    {
-      lang: "python",
-      code: `from enum import Enum
+\`\`\`python
+from enum import Enum
 
 class AgentMode(Enum):
     LESS_HUMAN = "less_human"  # 精确执行模式
@@ -549,9 +520,15 @@ class AdaptiveAgent:
             # 混合模式：先用 Less Human 执行，再用 Human-like 解释结果
             result = self.less_human.execute(task)
             return self.human_like.explain(result)
-`,
-    }
-      ]`,
+\`\`\`
+
+### 关键原则：模式切换应该是透明的
+
+用户不应该需要知道 Agent 使用了哪种模式。Agent 应该：
+- 自动检测任务类型
+- 选择合适的行为模式
+- 在模式间平滑切换
+- 保持一致的用户体验`,
       mermaid: `graph TB
     A["用户输入任务"] --> B["任务分类器\nTask Classifier"]
 
