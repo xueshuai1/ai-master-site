@@ -78,7 +78,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
             </Link>
             <span>/</span>
             <Link href="/news" className="hover:text-brand-300 transition-colors">
-              AI 动态
+              AI 资讯
             </Link>
           </div>
 
