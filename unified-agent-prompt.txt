@@ -42,16 +42,18 @@ style B fill:#064e3b,stroke:#059669,color:#fff
 ```
 
 **✅ 合法的 Mermaid 图表类型（只能用以下类型）：**
-- `graph TD` / `graph LR` / `graph BT` / `graph RL`（流程图/架构图）
+- `graph TD` / `graph LR` / `graph BT` / `graph RL`（流程图/架构图）— **最推荐**
 - `sequenceDiagram`（时序图）
 - `pie`（饼图）
-- `gantt`（甘特图）
 - `stateDiagram-v2`（状态图）
 - `classDiagram`（类图）
 - `erDiagram`（实体关系图）
 - `journey`（用户旅程图）
 - `quadrantChart`（象限图）
 - `mindmap`（思维导图）
+
+**⚠️ 慎用类型：**
+- `gantt`（甘特图）— 中文标签过长会导致文字重叠、日期截断，**不推荐用于中文内容**。如需展示时间线/路线图，改用 `graph LR` + subgraph 分组
 
 **❌ 非法的 Mermaid 图表类型（禁止使用）：**
 - `tree-beta` — 不是合法类型，会渲染为空白块
@@ -128,7 +130,41 @@ node scripts/validate-article.mjs src/data/articles/你的文章.ts
 - ❌ 禁止在 body 中嵌入 `\`\`\`lang ... \`\`\` 代码块
 - ❌ 禁止使用浅色 Mermaid 配色
 - ❌ 禁止 code 块缺少 `title` 字段
-- ❌ 禁止使用非法 Mermaid 类型（如 `tree-beta`），只能使用 `graph TD` / `graph LR` / `sequenceDiagram` / `pie` 等合法类型
+- ❌ 禁止使用非法 Mermaid 类型（如 `tree-beta`），只能使用合法类型列表中的类型
+- ❌ 禁止使用 `gantt`（甘特图）渲染中文内容 — 中文标签过长会导致日期和文字重叠、截断
+
+### 5. 📊 Mermaid 图表最佳实践
+
+**节点文字限制：**
+- 每个节点的文字 **不超过 12 个中文字**
+- 过长文字拆分为多个节点，或用 `\n` 换行
+- 使用 `[短文字]` 而非 `[这段文字很长很长很长]`
+
+**时间线/路线图替代方案：** 用 `graph TD` / `graph LR` + subgraph 分组：
+```
+graph LR
+    subgraph "阶段1: 2026 Q1-Q2"
+        A1[种子代码]
+        A2[GEP 引擎]
+    end
+    subgraph "阶段2: 2026 Q2-Q3"
+        B1[元认知优化]
+        B2[效率优化]
+    end
+    A1 --> B1
+    A2 --> B2
+```
+
+### 6. ⚠️ 历史事故记录（不要再犯！）
+
+| 日期 | 事故 | 根因 | 修复 | 预防措施 |
+|------|------|------|------|----------|
+| 2026-04-23 | agent-027 代码未渲染 | 代码嵌在 body 的 `\`\`\` 中 | 提取到 code: 数组 | 铁律禁止 body 代码块 |
+| 2026-04-23 | agent-027 body 残骸文本 | extract-code.js bug | 手动修复 body | 永久禁用 extract-code.js |
+| 2026-04-23 | blog-045 配色不可读 | MD 浅色 + 白字对比度不足 | 替换为深色 | validator 拦截 |
+| 2026-04-23 | agent-028 tree-beta 空白块 | 非法 mermaid 类型 | 改为 graph TD | validator 拦截 |
+| 2026-04-23 | self-evolving-agent 甘特图重叠 | 中文标签过长 | 改为 graph LR | 禁止 gantt 中文内容 |
+| 2026-04-23 | Prompt 指令矛盾 | 步骤 5.5 让运行 extract-code.js 但铁律禁止 | 删除矛盾指令 | 定期检查 Prompt 一致性 |
 
 ---
 
