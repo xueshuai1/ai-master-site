@@ -124,6 +124,35 @@ function getSafeAlternative(badColor) {
 // 注意：body 中嵌入代码块（\`\`\`）是合法的格式，不报错
 // 只检查是否有 extract-code.js 导致的 garbled text（在 checkBasicFormat 中）
 
+// ===== Mermaid 类型检查 =====
+const VALID_MERMAID_TYPES = new Set([
+  'graph TD', 'graph LR', 'graph BT', 'graph RL',
+  'flowchart TD', 'flowchart LR', 'flowchart BT', 'flowchart RL',
+  'sequenceDiagram', 'pie', 'gantt', 'stateDiagram-v2',
+  'classDiagram', 'erDiagram', 'journey', 'quadrantChart', 'mindmap',
+]);
+
+function checkMermaidTypes(content, filePath) {
+  const errors = [];
+  // Capture full type: "graph TD", "graph LR", "sequenceDiagram", "stateDiagram-v2", "tree-beta", etc.
+  const mermaidRegex = /mermaid:\s*`([a-zA-Z][a-zA-Z0-9-]*(?:\s+(?:TD|LR|BT|RL|v2))?)/g;
+  let match;
+  while ((match = mermaidRegex.exec(content)) !== null) {
+    const type = match[1];
+    const lineNum = (content.substring(0, match.index).match(/\n/g) || []).length + 1;
+    if (!VALID_MERMAID_TYPES.has(type)) {
+      const suggestion = type.startsWith('graph') || type.startsWith('flowchart') ? 'graph TD' : 'graph TD';
+      errors.push({
+        file: filePath,
+        type: 'invalid_mermaid_type',
+        line: lineNum,
+        message: `Mermaid 类型 "${type}" 不合法，会渲染为空白块。建议使用: ${suggestion}`,
+      });
+    }
+  }
+  return errors;
+}
+
 // ===== 基本格式检查 =====
 
 function checkBasicFormat(content, filePath) {
@@ -246,7 +275,11 @@ for (const filePath of filesToCheck) {
   const mermaidErrors = checkMermaidColors(content, relPath);
   allErrors.push(...mermaidErrors.map(e => ({ ...e, severity: 'error' })));
   
-  // 2. 基本格式检查（含 garbled body 检测）
+  // 2. Mermaid 类型检查
+  const mermaidTypeErrors = checkMermaidTypes(content, relPath);
+  allErrors.push(...mermaidTypeErrors.map(e => ({ ...e, severity: 'error' })));
+  
+  // 3. 基本格式检查（含 garbled body 检测）
   const formatErrors = checkBasicFormat(content, relPath);
   allErrors.push(...formatErrors.map(e => ({ ...e, severity: 'error' })));
 }
@@ -277,6 +310,8 @@ if (errors.length > 0) {
     for (const e of fileErrors) {
       if (e.type === 'garbled_body') {
         console.error(`  L${e.line}: ❌ ${e.message}`);
+      } else if (e.type === 'invalid_mermaid_type') {
+        console.error(`  L${e.line}: ❌ ${e.message}`);
       } else if (e.line && e.fill) {
         console.error(`  L${e.line}: fill:${e.fill} + color:${e.text} → 对比度 ${e.ratio}:1 < 4.5:1`);
         console.error(`    💡 建议：将 fill:${e.fill} 改为 fill:${e.suggestion}（同色系深色）`);
@@ -297,8 +332,9 @@ if (warnings.length > 0) {
 
 console.error('\n💡 修复指南：');
 console.error('  1. Mermaid 配色 → 使用 docs/MERMAID-COLORS.md 中的安全配色表');
-console.error('  2. 代码块未提取 → 运行: node scripts/extract-code.js <文件路径>');
-console.error('  3. 格式问题 → 参考 src/data/knowledge.ts 中的 Article 类型定义');
+console.error('  2. Mermaid 类型 → 只能使用 graph TD/LR、sequenceDiagram、pie 等合法类型');
+console.error('  3. 代码块未提取 → 检查 code: 数组和 title 字段');
+console.error('  4. 格式问题 → 参考 src/data/knowledge.ts 中的 Article 类型定义');
 console.error('');
 
 process.exit(1);
