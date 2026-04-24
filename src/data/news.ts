@@ -16,6 +16,18 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
 {
+    id: "news-376",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "GPT-5.5 发布：OpenAI 最新旗舰模型在 Codex 编程和复杂推理方面显著提升",
+    summary: 'OpenAI 于 4 月 23 日发布 GPT-5.5 模型，作为 GPT-5 系列的重大升级。GPT-5.5 在 Agentic Coding、复杂推理、多模态理解方面显著提升，保持了 GPT-5.4 的定价（$5/$30）。Simon Willison 评测称其「快速、有效且高度胜任」。',
+    content: `## GPT-5.5：OpenAI 在 Agentic Coding 领域的又一次升级\n\n**2026 年 4 月 23 日**，OpenAI 在 Codex 平台正式推出 GPT-5.5 模型，同时向付费 ChatGPT 订阅用户逐步开放。\n\n### 核心改进\n\n- **Agentic Coding 专项优化**：更长的规划链路、更精准的大代码库理解\n- **推理 token 效率改进**：更少的 thinking tokens 达到相同质量\n- **多模态融合深化**：图片、文档、架构图的理解能力增强\n\n### 定价\n\n保持 GPT-5.4 的定价：$5/M 输入 / $30/M 输出，性能提升但成本不变。\n\n### 竞品对比\n\n在编程能力上 GPT-5.5 仍领先，但 DeepSeek V4-Pro 以 1/14 的价格提供了接近的性能，而 Qwen3.6-27B 以 27B 参数量逼近了 MoE 大模型的表现。\n\n### 接入方式\n\n- **Codex 平台**：首发平台，支持完整的 Agentic Coding\n- **OpenAI API**：标准 chat.completions 接口，模型名 "gpt-5.5"\n- **半官方 Codex API**：社区反向工程的接口，可提前体验`,
+    date: "2026-04-25 02:00",
+    source: "OpenAI + Simon Willison Blog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/23/gpt-5-5/",
+    href: "/news/news-376",
+  },
+  {
     id: "news-373",
     tag: "框架发布",
     tagColor: "bg-purple-500/10 text-purple-300",
