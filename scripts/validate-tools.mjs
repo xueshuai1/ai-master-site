@@ -4,6 +4,7 @@
  * 检查项：
  * 1. id 唯一性
  * 2. 必填字段完整性
+ * 3. 🔴 工具名称不能包含括号（()（）[]【】{}《》）— 用 category/tag 标注来源
  */
 
 import { readFileSync } from 'fs';
@@ -25,6 +26,22 @@ while ((m = idRegex.exec(content)) !== null) {
 }
 
 let hasError = false;
+
+// 🔴 工具名称不能包含括号
+const nameRegex = /name:\s*"([^"]+)"/g;
+let nameMatch;
+while ((nameMatch = nameRegex.exec(content)) !== null) {
+  const name = nameMatch[1];
+  const hasBrackets = /[()（）\[\]【】{}《》]/.test(name);
+  if (hasBrackets) {
+    console.error(`❌ 工具名称包含括号："${name}" — 请去掉括号，用 category 或 tag 标注来源/归属`);
+    hasError = true;
+  }
+}
+
+if (hasError) {
+  process.exit(1);
+}
 
 // Check duplicates
 const counts = {};
