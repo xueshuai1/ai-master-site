@@ -168,11 +168,13 @@ function highlightPython(code: string): string {
 }
 
 function highlightBash(code: string): string {
+  // Apply parameter highlighting BEFORE wrapping to avoid matching inside HTML tags
   return escapeHtml(code)
-    .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
+    .replace(/(--?\w[\w-]*)/g, '\x00PARAM:$1\x00')
     .replace(/\b(pip|vllm|npm|npx|yarn|apt|brew|curl|wget|docker|git|python|node|cd|ls|mkdir|rm|cp|mv|cat|echo|export|source|sudo|chmod|chown)\b/g,
       '<span class="token-function">$1</span>')
-    .replace(/(--?\w[\w-]*)/g, '<span class="token-parameter">$1</span>');
+    .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
+    .replace(/\x00PARAM:(.*?)\x00/g, '<span class="token-parameter">$1</span>');
 }
 
 function highlightCode(code: string, lang: string): string {
@@ -216,9 +218,9 @@ export function parseMarkdown(text: string): string {
   result = result.replace(placeholderRe, () => {
     const { lang, code } = codeBlocks[index++];
     const langLabel = lang || "code";
-    const escaped = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const highlighted = highlightCode(code, lang);
     const svgCopy = '<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>';
-    return `<div class="space-y-4 my-6"><div class="rounded-xl overflow-hidden bg-slate-900/80 border border-white/10"><div class="flex items-center justify-between px-4 py-2 bg-white/5 text-sm text-slate-400"><span class="font-mono">${langLabel}</span><div class="flex items-center gap-2"><button onclick="navigator.clipboard.writeText(this.closest('.space-y-4').querySelector('code').textContent);this.innerHTML='${svgCopy}已复制';var b=this;setTimeout(()=>b.innerHTML='${svgCopy}复制',1500)" class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all duration-200 text-slate-400 hover:text-white hover:bg-white/10" title="复制代码">${svgCopy}复制</button></div></div><pre class="p-4 overflow-x-auto overflow-y-auto max-h-[400px] text-sm"><code class="text-slate-300 font-mono whitespace-pre">${escaped}</code></pre></div></div>`;
+    return `<div class="space-y-4 my-6"><div class="rounded-xl overflow-hidden bg-slate-900/80 border border-white/10"><div class="flex items-center justify-between px-4 py-2 bg-white/5 text-sm text-slate-400"><span class="font-mono">${langLabel}</span><div class="flex items-center gap-2"><button onclick="navigator.clipboard.writeText(this.closest('.space-y-4').querySelector('code').textContent);this.innerHTML='${svgCopy}已复制';var b=this;setTimeout(()=>b.innerHTML='${svgCopy}复制',1500)" class="inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all duration-200 text-slate-400 hover:text-white hover:bg-white/10" title="复制代码">${svgCopy}复制</button></div></div><pre class="p-4 overflow-x-auto overflow-y-auto max-h-[400px] text-sm"><code class="text-slate-300 font-mono whitespace-pre">${highlighted}</code></pre></div></div>`;
   });
 
   return result;
