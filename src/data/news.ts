@@ -28,6 +28,45 @@ export const news: NewsItem[] = [
     href: "/news/news-376",
   },
   {
+    id: "news-377",
+    tag: "数据库",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "honker 发布：将 PostgreSQL NOTIFY/LISTEN 语义引入 SQLite 的 Rust 扩展",
+    summary: 'Simon Willison 推荐 honker——将 PostgreSQL NOTIFY/LISTEN 通知机制和事务型外盒模式引入 SQLite。支持 Queue（工作队列）和 Stream（持久化事件流），通过 WAL 1ms 轮询实现低延迟消息通知，特别适合 AI Agent 任务队列和事件溯源场景。',
+    content: `## honker：SQLite 上的消息队列革命
+
+**2026 年 4 月 24 日**，russellromney 发布的 honker 项目受到 Simon Willison 强烈推荐。
+
+### 核心功能
+
+- **Queue 队列**：类 Redis BLPOP 的工作队列，支持 ACK/NACK、Worker 崩溃重试
+- **Stream 数据流**：Kafka 风格的持久化事件流，支持消费者组和偏移量管理
+- **事务型外盒模式**：确保数据写入与消息发送的原子一致性
+- **20+ 自定义 SQL 函数**：notify、stream_publish、queue_enqueue 等
+- **多语言绑定**：官方 Python 支持，社区可扩展 Go/Node.js/Rust
+
+### 性能特征
+
+| 指标 | 数值 |
+|------|------|
+| WAL 轮询间隔 | 1ms |
+| 消息消费延迟 | 1-5ms |
+| 单 DB 并发写入 | ~1000 TPS |
+| 内存占用 | < 50MB |
+
+### 适用场景
+
+- **AI Agent 任务队列**：可靠的 Agent 任务分发和执行跟踪
+- **实时事件推送**：Dashboard 实时更新、数据变更捕获
+- **边缘部署**：零额外服务，随 SQLite 一起部署
+
+honker 不是 Kafka/RabbitMQ 的替代品——它解决的是不同的问题。如果你的场景是单机/边缘部署、需要零运维和事务一致性，honker 是目前 SQLite 生态中最好的选择。`,
+    date: "2026-04-25 08:00",
+    source: "Simon Willison Blog + GitHub",
+    sourceUrl: "https://simonwillison.net/2026/Apr/24/honker/",
+    href: "/news/news-377",
+  },
+  {
     id: "news-373",
     tag: "框架发布",
     tagColor: "bg-purple-500/10 text-purple-300",
