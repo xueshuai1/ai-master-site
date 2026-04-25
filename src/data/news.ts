@@ -2302,4 +2302,141 @@ if agent.verify_effect():  # 验证效果
     sourceUrl: "https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/",
     href: "/news/news-382",
   },
+  {
+    id: "news-383",
+    tag: "行业观察",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "「人们不需要自动化」：The Verge 长文剖析 AI 为何不受大众欢迎——Software Brain 的盲区",
+    summary: 'The Verge CEO Nilay Patel 发布长文兼视频分析「人们为什么不喜欢 AI」，核心观点是：被「软件思维」统治的商业界将一切视为可自动化的循环，但人类体验无法被数据库捕获。"Regular people don\'t see the opportunity to write code as an opportunity at all. The people do not yearn for automation."——普通人根本不渴望自动化。',
+    content: `## 「人们不需要自动化」：2026 年最值得思考的 AI 反思文章
+
+**2026 年 4 月 24 日**，The Verge CEO Nilay Patel 发布了一篇引起广泛讨论的长文和视频随笔，探讨了一个尖锐的问题：**为什么 AI 使用量持续飙升，但公众对 AI 的态度却越来越负面？**
+
+### 核心概念：「Software Brain」（软件思维）
+
+Nilay 创造了一个新词「Software Brain」——指那些将世界视为可自动化系统的人，他们试图用信息流和数据建模来理解一切。
+
+> "Software brain has ruled the business world for a long time. AI has just made it easier than ever for more people to make more software than ever before — for every kind of business to automate big chunks of itself with software."
+
+### 关键洞察
+
+**1. 不是所有人都是开发者**
+> "Regular people don't see the opportunity to write code as an opportunity at all."
+
+对技术人员来说，AI 编程工具（Claude Code、Codex）是革命性的。但对普通人来说，"能写代码"根本不是一种吸引力。
+
+**2. 人类体验无法被数据库捕获**
+> "The entire human experience cannot be captured in a database. That's the limit of software brain. That's why people hate AI. It flattens them."
+
+AI 将一切扁平化为数据和流程——这正是普通人反感它的原因。
+
+**3. 自动化的悖论**
+Nilay 自嘲是 "full-on smart home sicko"（智能家居狂人），家里的灯光、窗帘、温控都有数十种自动化规则。但他也承认：Apple、Google、Amazon 努力了十多年，仍然无法让普通人在乎智能家居。
+
+### 对 AI 行业的启示
+
+这篇文章的核心价值在于提醒 AI 开发者：**技术的成功不等于用户的接受**。ChatGPT 的使用量确实在飙升，但这更多反映的是「没得选」而不是「真喜欢」。
+
+对 AI 产品设计的启示：
+- **不要假设用户想要自动化一切**——很多场景下人类更在意控制感和透明度
+- **技术服务于人，而非替代人**——AI 产品应该增强人类能力，而非将人排除在外
+- **关注「非开发者」需求**——整个行业过度聚焦开发者工具，而忽略了更广泛的用户群体
+
+Simon Willison 收录了这篇文章，称其为 "a superb piece of commentary, and something I expect I'll be thinking about for a long time"（一篇出色的评论文章，我预计我会思考很久）。
+
+**来源：** The Verge / Nilay Patel / Simon Willison
+**链接：** https://www.theverge.com/podcast/917029/software-brain-ai-backlash-databases-automation`,
+    date: "2026-04-25 18:00",
+    source: "The Verge / Simon Willison",
+    sourceUrl: "https://www.theverge.com/podcast/917029/software-brain-ai-backlash-databases-automation",
+    href: "/news/news-383",
+  },
+  {
+    id: "news-384",
+    tag: "GitHub 趋势",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "2026.04.25 GitHub AI 周报：hermes-agent 突破 116K 星周增 19K，multica 达 21K，自进化 Agent 持续霸榜",
+    summary: '本周 GitHub AI Trending：NousResearch hermes-agent 达 116K 星（周增 19,019），multica 达 21K 星（周增 5,421），claude-mem 达 67K 星，voicebox 达 23K 星，GenericAgent 周增 3,483 星达 7K。DeepSeek 开源 DeepGEMM（FP8 GEMM 内核库），context-mode 提供 98% 上下文窗口压缩。',
+    content: `## GitHub AI Trending 周报（4/19-4/25）
+
+**🔥 爆炸级增长：**
+- **NousResearch/hermes-agent**：115,827 stars（+19,019/周）——「与你一同成长的 Agent」，17,043 forks，持续霸榜
+- **thedotmack/claude-mem**：67,191 stars（+5,961/周）——Claude Code 自动记忆捕获与注入，5,716 forks
+- **multica-ai/multica**：20,830 stars（+5,421/周）——开源托管 Agent 平台，2,534 forks
+
+**🚀 快速增长：**
+- **jamiepine/voicebox**：23,230 stars（+3,540/周）——开源 AI 语音工作室，2,735 forks
+- **lsdefine/GenericAgent**：6,987 stars（+3,483/周）——自进化技能树 Agent，6 倍 token 效率
+- **EvoMap/evolver**：6,856 stars（+3,099/周）——GEP 基因组进化引擎
+- **Lordog/dive-into-llms**：34,327 stars（+2,886/周）——动手学大模型中文教程
+
+**🆕 值得关注的中小项目：**
+- **zilliztech/claude-context**：9,198 stars（+2,878/周）——代码搜索 MCP for Claude Code
+- **mksglu/context-mode**：9,926 stars（+2,315/周）——AI 编码助手上下文优化，98% 压缩
+- **deepseek-ai/DeepGEMM**：7,012 stars（+605/周）——FP8 GEMM 高性能内核库
+- **Alishahryar1/free-claude-code**：10,365 stars（+5,160/周）——终端免费使用 Claude Code
+- **Tracer-Cloud/opensre**：2,993 stars（+1,623/周）——开源 AI SRE Agent 工具包
+- **SimoneAvogadro/android-reverse-engineering-skill**：4,888 stars（+2,258/周）——Claude Code Android 逆向技能
+
+**📊 趋势分析：**
+
+**自进化 Agent 三强鼎立格局已形成：**
+- **hermes-agent**（116K）：人机协作路线，经验积累驱动成长
+- **GenericAgent**（7K）：技能树生长路线，元认知循环扩展能力
+- **evolver**（6.9K）：GEP 基因组路线，群体竞争+交叉繁殖
+
+**Claude Code 生态持续膨胀：**
+- claude-mem（67K）：记忆系统
+- claude-context（9K）：代码搜索 MCP
+- andrej-karpathy-skills（4K）：编码质量指令
+- context-mode（9.9K）：上下文窗口优化
+
+**语音 AI 赛道持续升温：**
+- voicebox（23K）+ VoxCPM + Gemini 3.1 Flash TTS，2026 年是语音 AI 爆发之年
+
+**AI SRE 成为新赛道：**
+- opensre 代表了一个新兴方向——用 AI Agent 运维和监控系统，这可能是 AI 从「开发」走向「运维」的标志性趋势`,
+    date: "2026-04-25 18:05",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-384",
+  },
+  {
+    id: "news-385",
+    tag: "AI 基础设施",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "DeepSeek 开源 DeepGEMM：FP8 GEMM 高性能内核库，为下一代推理基础设施铺路",
+    summary: 'DeepSeek 发布 DeepGEMM——专为 FP8 精度设计的高性能 GEMM 内核库，提供细粒度缩放能力。GitHub 7,012 星。在 FP8 成为推理主流格式的 2026 年，DeepGEMM 是高性能推理栈的关键基础设施，可显著提升 LLM 推理速度和降低算力成本。',
+    content: `## DeepGEMM：FP8 推理时代的基石库
+
+**2026 年 4 月**，DeepSeek 开源了 DeepGEMM——一个专为 FP8 精度设计的通用矩阵乘法（GEMM）内核库。
+
+### 为什么 FP8 GEMM 如此重要？
+
+GEMM（General Matrix Multiplication）是深度学习推理中最核心的计算操作。LLM 的每一层 transformer 都在大量执行矩阵乘法。FP8（8-bit 浮点数）相比 FP16/BF16 可以将显存占用和计算量减半，同时精度损失极小。
+
+### DeepGEMM 的核心特性
+
+- **细粒度缩放**：支持 per-token、per-channel 级别的动态缩放，最大限度保留精度
+- **CUDA 内核优化**：针对 NVIDIA GPU 架构深度优化，包括 Tensor Core 的高效利用
+- **Clean API**：接口简洁，易于集成到现有推理框架中
+- **开源免费**：Apache 2.0 协议，商业友好
+
+### 行业背景
+
+2026 年，FP8 推理已经成为主流：
+- NVIDIA Hopper 和 Blackwell 架构原生支持 FP8 Tensor Core
+- GPT-5.5、Claude Opus 4.7、DeepSeek V4-Pro 等旗舰模型均支持 FP8 推理
+- Qwen3.6-27B 等开源模型也提供 FP8 量化版本
+
+**对开发者的意义：**
+DeepGEMM 为构建高性能 LLM 推理引擎提供了关键的基础设施。如果你正在自研推理服务或使用 vLLM、TGI 等框架，关注 DeepGEMM 的集成进展，它可能带来 30-50% 的推理性能提升。
+
+**来源：** GitHub / DeepSeek
+**链接：** https://github.com/deepseek-ai/DeepGEMM`,
+    date: "2026-04-25 18:05",
+    source: "GitHub",
+    sourceUrl: "https://github.com/deepseek-ai/DeepGEMM",
+    href: "/news/news-385",
+  },
 ];
