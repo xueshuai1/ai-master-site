@@ -1,3 +1,18 @@
 #!/bin/sh
-echo "🔍 检查 Mermaid 配色对比度..."
-node scripts/check-mermaid-contrast.js
+
+# 获取本次提交中变更的 .ts 文章文件（只检查有变动的）
+CHANGED_ARTICLES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^src/data/(articles|blogs)/.*\.ts$' || true)
+
+if [ -n "$CHANGED_ARTICLES" ]; then
+  echo "🔍 校验变动文章（$CHANGED_ARTICLES）..."
+  for f in $CHANGED_ARTICLES; do
+    node scripts/validate-article.mjs "$f"
+    if [ $? -ne 0 ]; then
+      echo "❌ 校验失败，提交已拦截。请修复后重试。"
+      exit 1
+    fi
+  done
+fi
+
+echo "🔍 检查渲染层高亮逻辑..."
+node scripts/validate-rendering.mjs
