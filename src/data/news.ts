@@ -2475,4 +2475,46 @@ DeepGEMM 为构建高性能 LLM 推理引擎提供了关键的基础设施。如
     sourceUrl: "https://github.com/trending?since=weekly",
     href: "/news/news-388",
   },
+  {
+    id: "news-389",
+    tag: "LLM 推理",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "DeepGEMM 开源引爆 FP8 推理浪潮：AI Master 发布 FP8 推理基础设施全景指南",
+    summary: 'DeepSeek DeepGEMM（FP8 GEMM 高性能内核库）开源后，FP8 推理从「实验性优化」正式进入「行业标准」阶段。AI Master 同步发布 35 分钟深度文章，从 FP8 数学原理、NVIDIA Hopper/Blackwell 硬件支持、vLLM/TensorRT-LLM 框架集成到 DeepGEMM 源码解析，全面覆盖 2026 年 FP8 推理技术全景。',
+    content: `## FP8 推理：2026 年的显存减半革命
+
+**2026 年 4 月 25 日**，DeepSeek 开源 DeepGEMM——专为 FP8 精度设计的高性能 GEMM 内核库。短短 24 小时内，GitHub 7,012 星，成为 LLM 推理基础设施领域的焦点。
+
+### FP8 的核心价值
+
+- **显存减半**：70B 模型从 140GB（FP16）降到 70GB（FP8），所需 H100 从 8 张减到 4 张
+- **精度几乎无损**：perplexity 差异 <0.1，输出质量损失 <1%
+- **推理加速**：FP8 Tensor Core 提供 1,979 TFLOPS 吞吐量（H100）
+- **实现简洁**：相比 INT8 的复杂缩放策略，FP8 自带指数位，天然支持大动态范围
+
+### DeepGEMM 的技术亮点
+
+DeepGEMM 的核心创新是 **per-token + per-channel 双维度细粒度缩放**——每个 token 和每个输出通道都有独立的缩放因子，最大限度保留精度的同时保持 FP8 的计算效率。
+
+### 推理框架支持
+
+| 框架 | FP8 权重 | FP8 KV Cache | DeepGEMM 集成 |
+|------|---------|-------------|-------------|
+| vLLM | ✅ 成熟 | ⚠️ 实验性 | 🔄 推进中 |
+| TensorRT-LLM | ✅ 成熟 | ✅ 成熟 | ✅ 兼容 |
+| SGLang | ⚠️ 实验性 | ✅ 成熟 | ❌ 无 |
+
+### 成本收益
+
+以月均 1000 万次推理请求为例：FP16（8×H100）月成本 $56,000 vs FP8（4×H100）月成本 $28,000——**节省 50%**，延迟从 120ms 降到 95ms。
+
+**AI Master 知识库新增文章：**「FP8 推理基础设施全景：从 DeepGEMM 到 vLLM」——含 3 个 Mermaid 图 + 3 个 Python 可运行代码块 + 2 个对比表格 + 2 个详细表格，35 分钟深度阅读。
+
+**来源：** DeepSeek GitHub + AI Master 知识库
+**链接：** https://github.com/deepseek-ai/DeepGEMM`,
+    date: "2026-04-26 00:12",
+    source: "DeepSeek + AI Master",
+    sourceUrl: "https://github.com/deepseek-ai/DeepGEMM",
+    href: "/news/news-389",
+  },
 ];
