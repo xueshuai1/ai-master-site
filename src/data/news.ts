@@ -2290,4 +2290,16 @@ if agent.verify_effect():  # 验证效果
     sourceUrl: "https://github.com/trending?since=weekly",
     href: "/news/news-381",
   },
+  {
+    id: "news-382",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 发布 GPT-5.5 Prompting Guide：从最小提示到 verbosity 参数的全面指南",
+    summary: 'OpenAI 随 GPT-5.5 同步发布详细 Prompting Guide，核心建议包括：将 GPT-5.5 视为全新模型族而非替代品；从最小有效提示开始调优；使用 verbosity 参数（low/medium/high）精确控制输出；工具调用前发送用户可见确认信息。Simon Willison 称其「对长时间推理任务至关重要」。',
+    content: `## GPT-5.5 Prompting Guide 核心要点\n\n**2026 年 4 月 25 日**，OpenAI 随 GPT-5.5 模型发布了一份详尽的 Prompting Guide，涵盖了从基础到高级的提示词设计技巧。\n\n### 关键建议一：从空白开始\n\nOpenAI 明确警告开发者不要把旧模型的 prompt 直接用于 GPT-5.5：\n\n> "To get the most out of GPT-5.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4. Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack."\n\n这意味着每个新项目都应该从最简洁的 prompt 开始测试，逐步添加引导词，而不是一开始就套用 500+ 字的系统提示。\n\n### 关键建议二：verbosity 参数控制\n\nGPT-5.5 的 \`verbosity\` 参数允许精确控制输出详细程度：\`low\`（简洁）、\`medium\`（平衡）、\`high\`（详细）。这比在 prompt 文本里写 "请简短/详细" 更有效。\n\n### 关键建议三：预更新模式\n\n对于需要长时间推理的多步骤任务，在执行前先发送 1-2 句话的确认信息，告知用户正在做什么。OpenAI 注意到 Codex 已经在这样做，效果显著。\n\n### 关键建议四：image_detail 参数\n\nGPT-5.4 和 5.5 支持 \`image_detail\` 参数（low/high/auto/original），控制模型对图片的分析深度，影响 token 消耗和分析精度。\n\n### 影响\n\n这份指南实际上重新定义了 2026 年的 Prompt Engineering 最佳实践。最核心的范式转变是：从「越长的 prompt 越好」到「最小有效提示 + 参数控制」。`,
+    date: "2026-04-25 16:00",
+    source: "OpenAI + Simon Willison Blog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/",
+    href: "/news/news-382",
+  },
 ];
