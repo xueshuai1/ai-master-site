@@ -24,16 +24,27 @@ function escapeHtml(text: string): string {
 
 function highlightBash(code: string): string {
   const escaped = escapeHtml(code);
+  // Use \x01 as delimiter — \x00 creates word boundaries that let keywords match inside
+  const params: string[] = [];
+  const strings: string[] = [];
+  const comments: string[] = [];
   let result = escaped
-    .replace(/("[^"]*"|'[^']*')/g, '\x00STR:$1\x00')
-    .replace(/(#.*)/g, '\x00CMT:$1\x00')
-    .replace(/(--?\w[\w-]*)/g, '\x00PAR:$1\x00')
-    .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat)\b/g, '\x00FN:$1\x00');
-  return result
-    .replace(/\x00STR:(.*?)\x00/g, "<span class='token-string'>$1</span>")
-    .replace(/\x00CMT:(.*?)\x00/g, "<span class='token-comment'>$1</span>")
-    .replace(/\x00PAR:(.*?)\x00/g, "<span class='token-parameter'>$1</span>")
-    .replace(/\x00FN:(.*?)\x00/g, "<span class='token-function'>$1</span>");
+    .replace(/("[^"]*"|'[^']*')/g, (_m, s) => {
+      strings.push(s); return `\x01S${strings.length - 1}\x01`;
+    })
+    .replace(/(#.*)/g, (_m, c) => {
+      comments.push(c); return `\x01C${comments.length - 1}\x01`;
+    })
+    .replace(/(--?[a-zA-Z][a-zA-Z0-9-]*)/g, (_m, p) => {
+      params.push(p); return `\x01P${params.length - 1}\x01`;
+    })
+    .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat|export|sudo|chmod|chown)\b/g,
+      '<span class="token-function">$1</span>');
+  // Restore in reverse order of extraction
+  comments.forEach((c, i) => { result = result.replace(`\x01C${i}\x01`, `<span class='token-comment'>${c}</span>`); });
+  params.forEach((p, i) => { result = result.replace(`\x01P${i}\x01`, `<span class='token-parameter'>${p}</span>`); });
+  strings.forEach((s, i) => { result = result.replace(`\x01S${i}\x01`, `<span class='token-string'>${s}</span>`); });
+  return result;
 }
 
 function highlightDockerfile(code: string): string {

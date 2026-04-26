@@ -159,12 +159,44 @@ function highlightPython(code: string): string {
 }
 
 function highlightBash(code: string): string {
-  return escapeHtml(code)
-    .replace(/(--?\w[\w-]*)/g, '\x00PARAM:$1\x00')
+  const escaped = escapeHtml(code);
+  // Use 'Z' as delimiter — it IS a word character, so \b keyword boundaries
+  // cannot form at the delimiter boundary. "ZPAR0Z" has no \b inside it.
+  const params: string[] = [];
+  const strings: string[] = [];
+  let processed = escaped
+    .replace(/("[^"]*"|'[^']*')/g, (_m, s) => {
+      strings.push(s);
+      return `ZSTR${strings.length - 1}Z`;
+    })
+    .replace(/(--?[a-zA-Z][a-zA-Z0-9-]*)/g, (_m, p) => {
+      params.push(p);
+      return `ZPAR${params.length - 1}Z`;
+    });
+  
+  // Now \b keyword patterns CANNOT match inside ZPAR0Z etc (no word boundary at Z)
+  processed = processed
+    .replace(/#(.*)/gm, '<span class="token-comment">#$1</span>')
     .replace(/\b(pip|vllm|npm|npx|yarn|apt|brew|curl|wget|docker|git|python|node|cd|ls|mkdir|rm|cp|mv|cat|echo|export|source|sudo|chmod|chown)\b/g,
-      '<span class="token-function">$1</span>')
+      '<span class="token-function">$1</span>');
+  
+  // Restore: replace ZPARnZ with styled parameter
+  params.forEach((p, i) => {
+    processed = processed.replace(`ZPAR${i}Z`, `<span class="token-parameter">${p}</span>`);
+  });
+  strings.forEach((s, i) => {
+    processed = processed.replace(`ZSTR${i}Z`, `<span class="token-string">${s}</span>`);
+  });
+  
+  return processed;
+}
+
+function highlightYaml(code: string): string {
+  return escapeHtml(code)
     .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
-    .replace(/\x00PARAM:(.*?)\x00/g, '<span class="token-parameter">$1</span>');
+    .replace(/("[^"]*"|'[^']*')/g, '<span class="token-string">$1</span>')
+    .replace(/\b(true|false|yes|no|null|none)\b/gi, '<span class="token-keyword">$1</span>')
+    .replace(/(\d+\.?\d*)/g, '<span class="token-number">$1</span>');
 }
 
 function highlightCode(code: string, lang: string): string {
@@ -176,6 +208,26 @@ function highlightCode(code: string, lang: string): string {
     case "sh":
     case "shell":
       return highlightBash(code);
+    case "yaml":
+    case "yml":
+      return highlightYaml(code);
+    case "json":
+      return escapeHtml(code)
+        .replace(/("[^"]*")\s*:/g, '<span class="token-keyword">$1</span>:')
+        .replace(/:\s*("[^"]*")/g, ': <span class="token-string">$1</span>')
+        .replace(/\b(true|false|null)\b/g, '<span class="token-keyword">$1</span>')
+        .replace(/(\d+\.?\d*)/g, '<span class="token-number">$1</span>');
+    case "typescript":
+    case "ts":
+    case "javascript":
+    case "js":
+      return highlightPython(code); // Reuse Python tokenizer for JS/TS (similar syntax)
+    case "dockerfile":
+    case "docker":
+      return escapeHtml(code)
+        .replace(/(#.*)/g, '<span class="token-comment">$1</span>')
+        .replace(/\b(FROM|WORKDIR|COPY|RUN|EXPOSE|CMD|ENTRYPOINT|ENV|ARG|ADD|USER|VOLUME|LABEL|MAINTAINER|HEALTHCHECK|ONBUILD|STOPSIGNAL|SHELL|AS)\b/g, '<span class="token-keyword">$1</span>')
+        .replace(/("[^"]*"|'[^']*')/g, '<span class="token-string">$1</span>');
     default:
       return escapeHtml(code);
   }
