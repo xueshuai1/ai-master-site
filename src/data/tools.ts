@@ -104,6 +104,35 @@ export const tools: Tool[] = [
     createdAt: "2019-06-22T09:24:21Z"
   },
   {
+    id: "autoresearch",
+    name: "Karpathy autoresearch",
+    category: "agent",
+    description: "Andrej Karpathy 开源的自主科研框架，让 AI Agent 自主运行 ML 研究实验。基于 nanochat 单 GPU 训练框架，Agent 自主修改训练代码、短时验证、保留有效改动。发布即登顶 GitHub Trending，76K+ stars。研究者只需写 program.md 描述研究方向，Agent 自主完成实验循环",
+    url: "https://github.com/karpathy/autoresearch",
+    tags: ["自主科研", "Karpathy", "nanochat", "单GPU训练", "AI Agent", "实验自动化", "LLM训练"],
+    price: "开源",
+    icon: "🔬",
+    pros: [
+      "极简设计（仅3个核心文件），Agent 完全理解代码",
+      "单 GPU 即可运行研究实验",
+      "program.md 范式：研究者写方向，Agent 做实验",
+      "一夜运行 50+ 个实验，远超人类效率"
+    ],
+    cons: [
+      "需要 GPU 资源和 AI Agent 平台配置",
+      "5 分钟训练不足以判断长期效果",
+      "目前仅适用于小型模型实验",
+      "Agent 可能做出无意义的代码修改"
+    ],
+    useCase: "ML 研究自动化、超参数探索、模型架构搜索、低成本 AI 实验",
+    learnMore: "https://github.com/karpathy/autoresearch",
+    githubStars: 76709,
+    updatedAt: "2026-04-27",
+    forks: 51,
+    language: "Python",
+    createdAt: "2026-03-15T00:00:00Z"
+  },
+  {
     id: "auto-gpt",
     name: "AutoGPT",
     category: "agent",
