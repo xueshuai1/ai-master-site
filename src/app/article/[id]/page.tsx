@@ -24,26 +24,26 @@ function escapeHtml(text: string): string {
 
 function highlightBash(code: string): string {
   const escaped = escapeHtml(code);
-  // Use \x01 as delimiter — \x00 creates word boundaries that let keywords match inside
+  // Use 'Z' as delimiter — it IS a word character, so \b keyword boundaries
+  // cannot form at the delimiter boundary. "ZPAR0Z" has no \b inside it.
   const params: string[] = [];
   const strings: string[] = [];
   const comments: string[] = [];
   let result = escaped
     .replace(/("[^"]*"|'[^']*')/g, (_m, s) => {
-      strings.push(s); return `\x01S${strings.length - 1}\x01`;
+      strings.push(s); return `ZSTR${strings.length - 1}Z`;
     })
     .replace(/(#.*)/g, (_m, c) => {
-      comments.push(c); return `\x01C${comments.length - 1}\x01`;
+      comments.push(c); return `ZCMT${comments.length - 1}Z`;
     })
     .replace(/(--?[a-zA-Z][a-zA-Z0-9-]*)/g, (_m, p) => {
-      params.push(p); return `\x01P${params.length - 1}\x01`;
+      params.push(p); return `ZPAR${params.length - 1}Z`;
     })
     .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat|export|sudo|chmod|chown)\b/g,
       '<span class="token-function">$1</span>');
-  // Restore in reverse order of extraction
-  comments.forEach((c, i) => { result = result.replace(`\x01C${i}\x01`, `<span class='token-comment'>${c}</span>`); });
-  params.forEach((p, i) => { result = result.replace(`\x01P${i}\x01`, `<span class='token-parameter'>${p}</span>`); });
-  strings.forEach((s, i) => { result = result.replace(`\x01S${i}\x01`, `<span class='token-string'>${s}</span>`); });
+  comments.forEach((c, i) => { result = result.replace(`ZCMT${i}Z`, `<span class='token-comment'>${c}</span>`); });
+  params.forEach((p, i) => { result = result.replace(`ZPAR${i}Z`, `<span class='token-parameter'>${p}</span>`); });
+  strings.forEach((s, i) => { result = result.replace(`ZSTR${i}Z`, `<span class='token-string'>${s}</span>`); });
   return result;
 }
 
