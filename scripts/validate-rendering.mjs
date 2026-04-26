@@ -147,12 +147,20 @@ const sourceChecks = [
     }
   },
   {
-    name: 'MarkdownBody highlightYaml 使用 Z 占位符',
-    pass: () => source.includes('ZCMT') && source.includes('highlightYaml')
+    name: 'MarkdownBody highlightYaml 使用安全占位符',
+    pass: () => {
+      const yamlFunc = source.match(/function highlightYaml[\s\S]*?^}/m);
+      if (!yamlFunc) return false;
+      return yamlFunc[0].includes('YC') && yamlFunc[0].includes('YS') && !yamlFunc[0].includes('\\x00');
+    }
   },
   {
-    name: 'MarkdownBody highlightJson 使用 Z 占位符',
-    pass: () => source.includes('ZKEY') && source.includes('highlightJson')
+    name: 'MarkdownBody highlightJson 使用安全占位符',
+    pass: () => {
+      const jsonFunc = source.match(/function highlightJson[\s\S]*?^}/m);
+      if (!jsonFunc) return false;
+      return jsonFunc[0].includes('YK') && !jsonFunc[0].includes('\\x00');
+    }
   },
   {
     name: '文章页 highlightBash 使用 Z 占位符',
