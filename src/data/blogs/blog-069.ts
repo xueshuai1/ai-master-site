@@ -1,17 +1,17 @@
 // GPT-5.5 深度解析：OpenAI 最新旗舰模型的架构演进、能力边界与 API 实战
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "llm-020",
+export const blog: BlogPost = {
+  id: "blog-069",
+  author: "AI Master",
   title: "GPT-5.5 深度解析：OpenAI 最新旗舰模型的架构演进、能力边界与 API 实战",
   category: "llm",
   tags: ["GPT-5.5", "OpenAI", "大语言模型", "推理能力", "多模态", "API", "Codex", "Agentic Coding"],
   summary: "2026 年 4 月 23 日，OpenAI 发布 GPT-5.5 模型，作为 GPT-5 系列的重大升级。GPT-5.5 在 Codex 编程、复杂推理、多模态理解方面显著提升，同时通过半官方 Codex API 提供开发者接入。本文从架构推测、能力评估、定价策略到 Python/Codex API 实战，全面解析 GPT-5.5 与 DeepSeek V4、Qwen3.6-27B 等竞品的前沿对决。",
   date: "2026-04-25",
-  readTime: "35 min",
-  level: "进阶",
-  content: [
+  readTime: 35,
+content: [
     {
       title: "一、GPT-5.5 发布背景：OpenAI 的半年迭代节奏",
       body: `2026 年 4 月 23 日，OpenAI 在 OpenAI Codex 平台正式推出 **GPT-5.5** 模型，同时向付费 ChatGPT 订阅用户逐步开放访问权限。这是 OpenAI 自 GPT-5 系列发布以来的最重要模型更新。

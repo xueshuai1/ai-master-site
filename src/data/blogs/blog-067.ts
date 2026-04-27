@@ -1,17 +1,17 @@
 // AI Agent 记忆系统深度指南：mempalace 与 claude-mem 架构解析
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "agent-030",
+export const blog: BlogPost = {
+  id: "blog-067",
+  author: "AI Master",
   title: "AI Agent 记忆系统实战：mempalace 与 claude-mem 架构深度解析与自主实现",
   category: "agent",
   tags: ["AI 记忆系统", "mempalace", "claude-mem", "向量记忆", "情景记忆", "语义记忆", "记忆压缩", "RAG 进阶", "Agent 长期记忆", "2026 前沿"],
   summary: "AI Agent 的记忆系统正经历范式转变。mempalace（49K stars）以多维度记忆架构重新定义了 Agent 记忆系统，claude-mem（67K stars）用 AI 驱动的记忆压缩方案将 Claude Code 会话记忆效率提升 98%。本文深度对比两款项目的技术架构，揭示记忆编码、压缩、检索、遗忘的完整链路，并提供从零构建生产级 Agent 记忆系统的 Python 实战代码。",
   date: "2026-04-25",
-  readTime: "35 min",
-  level: "高级",
-  content: [
+  readTime: 35,
+content: [
     {
       title: "1. 记忆系统的范式演进：从简单 RAG 到多维自主记忆",
       body: `2026 年是 AI Agent 记忆系统爆发的一年。早期的 Agent 记忆方案大多停留在简单的向量检索（RAG）层面——将对话历史嵌入后存入向量数据库，需要时检索最相似的前 K 条。但这种方案存在三个根本缺陷：缺乏记忆的组织结构（所有内容平铺在向量空间中）、没有记忆压缩机制（对话越长检索质量越差）、无法区分不同类型记忆（事实、偏好、情景、技能）。

@@ -1,17 +1,17 @@
 // Karpathy autoresearch 深度解析：AI 自主科研新范式
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "autoresearch-001",
+export const blog: BlogPost = {
+  id: "blog-060",
+  author: "AI Master",
   title: "Karpathy autoresearch 深度解析：AI Agent 自主做科研，单 GPU overnight 训练出更好的模型",
   category: "aieng",
   tags: ["Karpathy", "autoresearch", "自主科研", "AI Agent", "nanochat", "实验自动化", "LLM 训练"],
   summary: "2026 年 3 月，Andrej Karpathy 开源 autoresearch 项目，让 AI Agent 自主运行研究实验。发布即登顶 GitHub Trending，总星 76,709。项目核心理念：研究者不再手写训练代码，而是编写 program.md 指导 AI Agent 自主实验——修改代码、训练 5 分钟、验证结果、保留或丢弃、循环迭代。本文将深入剖析 autoresearch 的架构设计、Agent 工作流、program.md 范式，并附完整的 Python 实战代码和复现指南。",
   date: "2026-04-27",
-  readTime: "25 min",
-  level: "进阶",
-  content: [
+  readTime: 25,
+content: [
     {
       title: "一、autoresearch 的诞生背景：为什么需要 AI 自主科研？",
       body: `## 传统 ML 研究的瓶颈

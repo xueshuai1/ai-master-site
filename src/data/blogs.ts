@@ -2,6 +2,14 @@ import type { BlogPost } from './blogs/blog-types';
 export type { BlogPost } from './blogs/blog-types';
 
 import { blog as blog025 } from './blogs/blog-025';
+
+
+
+
+
+
+
+
 import { blog as blog023 } from './blogs/blog-023';
 import { blog as blog021 } from './blogs/blog-021';
 import { blog as blog018 } from './blogs/blog-018';
@@ -49,6 +57,22 @@ import { default as blog056 } from './blogs/blog-056';
 import { blog as blog057 } from './blogs/blog-057';
 import { default as blog058 } from './blogs/blog-058';
 import { default as blog059 } from './blogs/blog-059';
+import { blog as autoresearch001 } from './blogs/blog-060';
+import { blog as dspy001 } from './blogs/blog-061';
+import { blog as aieng020 } from './blogs/blog-062';
+import { blog as agent031 } from './blogs/blog-063';
+import { blog as aieng018 } from './blogs/blog-064';
+import { blog as context001 } from './blogs/blog-065';
+import { blog as gpt55Guide } from './blogs/blog-066';
+import { blog as agent030 } from './blogs/blog-067';
+import { blog as aieng016 } from './blogs/blog-068';
+import { blog as llm020 } from './blogs/blog-069';
+import { blog as agent029 } from './blogs/blog-070';
+import { blog as deepseekV4 } from './blogs/blog-071';
+import { blog as screenAi001 } from './blogs/blog-072';
+import { blog as selfEvolvingAgent } from './blogs/blog-073';
+import { blog as agent028 } from './blogs/blog-074';
+import { blog as practice014 } from './blogs/blog-075';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -99,4 +123,20 @@ export const blogs: BlogPost[] = [
   blog013,
   blog011,
   blog030,
+  autoresearch001,
+  dspy001,
+  aieng020,
+  agent031,
+  aieng018,
+  context001,
+  gpt55Guide,
+  agent030,
+  aieng016,
+  llm020,
+  agent029,
+  deepseekV4,
+  screenAi001,
+  selfEvolvingAgent,
+  agent028,
+  practice014,
 ];

@@ -1,7 +1,7 @@
 export interface ArticleSection {
   title: string;
   body?: string;
-  code?: { lang: string; code: string; filename?: string }[];
+  code?: { lang: string; code: string; filename?: string; title?: string }[];
   table?: { headers: string[]; rows: string[][] };
   mermaid?: string;
   list?: string[];

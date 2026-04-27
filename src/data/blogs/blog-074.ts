@@ -1,17 +1,17 @@
 // 自进化 AI Agent 架构深度解析：从 GenericAgent 到 Evolver
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "agent-028",
+export const blog: BlogPost = {
+  id: "blog-074",
+  author: "AI Master",
   title: "自进化 AI Agent 架构深度解析：GenericAgent、Evolver 与 2026 年 Agent 进化范式",
   category: "agent",
   tags: ["自进化 Agent", "GenericAgent", "Evolver", "技能树", "基因组进化", "事件驱动", "Hermes Agent", "AI Agent 架构", "2026 前沿"],
   summary: "2026 年 4 月，GitHub Trending 被自进化 AI Agent 项目霸榜：GenericAgent 单周 4,216 星，Evolver 单周 638 星，Hermes Agent 突破 110K 星。这些项目的共同特征是能自主学习和进化——通过技能树生长、基因组突变、事件驱动累积等方式，Agent 可以在不依赖人工干预的情况下持续进化能力。本文深度解析三大自进化架构的设计原理、对比分析、Python 实现方案，以及如何在自己的项目中应用自进化模式。",
   date: "2026-04-23",
-  readTime: "45 min",
-  level: "进阶",
-  content: [
+  readTime: 45,
+content: [
     {
       title: "一、自进化 Agent 爆发：2026 年 GitHub Trending 的范式信号",
       body: `2026 年 4 月，GitHub Trending weekly 榜单上出现了令人瞩目的现象——**自进化（Self-Evolving）AI Agent 项目占据了前三席**：

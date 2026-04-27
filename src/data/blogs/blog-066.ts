@@ -1,17 +1,17 @@
 // GPT-5.5 全面指南：OpenAI 最新旗舰模型的架构升级、Prompt 工程与实战应用
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "gpt55-guide",
+export const blog: BlogPost = {
+  id: "blog-066",
+  author: "AI Master",
   title: "GPT-5.5 全面指南：OpenAI 最新旗舰模型的架构升级、Prompt 工程与 Agentic Coding 实战",
   category: "llm",
   tags: ["GPT-5.5", "OpenAI", "Agentic Coding", "Prompt Engineering", "Codex", "多模态", "编程助手", "大语言模型"],
   summary: "2026 年 4 月 23 日，OpenAI 发布 GPT-5.5 模型——GPT-5 系列的重大升级。GPT-5.5 在 Agentic Coding、复杂推理、多模态理解方面显著提升，同时保持 GPT-5.4 的定价。本文从架构变化、Prompt 工程最佳实践、Codex 编程实战到 API 迁移指南，全面解析 GPT-5.5 的能力与使用方法。",
   date: "2026-04-25",
-  readTime: "35 min",
-  level: "进阶",
-  content: [
+  readTime: 35,
+content: [
     {
       title: "一、GPT-5.5 发布背景与核心定位",
       body: `2026 年 4 月 23 日，OpenAI 正式在 Codex 平台推出 **GPT-5.5** 模型，并逐步向付费 ChatGPT 订阅用户开放。这是自 GPT-5 系列发布以来最重要的模型更新。

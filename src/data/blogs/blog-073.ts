@@ -1,17 +1,17 @@
 // Self-Evolving AI Agents - 知识文章
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "self-evolving-agent",
+export const blog: BlogPost = {
+  id: "blog-073",
+  author: "AI Master",
   title: "自进化 AI Agent 全景解析：从 GenericAgent 到基因组进化，2026 年最热门的 AI 范式",
   category: "agent",
   tags: ["自进化 Agent", "GenericAgent", "Evolver", "技能树进化", "基因组进化", "元认知", "GEP"],
   summary: "2026 年 GitHub Trending 被自进化 AI Agent 霸榜。本文深度解析两大技术路线（技能树生长 vs 基因组进化）、核心架构、Python 实战实现，以及 GenericAgent、Evolver、Hermes Agent 等热门项目的技术对比。",
   date: "2026-04-23",
-  readTime: "40 min",
-  level: "高级",
-  content: [
+  readTime: 40,
+content: [
     {
       title: "一、什么是自进化 AI Agent？",
       body: `自进化 AI Agent（Self-Evolving AI Agent）是 2026 年 AI 领域最具颠覆性的范式之一。传统 AI Agent 的能力完全依赖人工编程——开发者手动添加技能、工具调用能力和知识。而自进化 Agent 能够在与环境交互的过程中**自主扩展能力**，无需人工编码更新。

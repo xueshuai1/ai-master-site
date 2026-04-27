@@ -1,17 +1,17 @@
 // DSPy 深度解析：斯坦福声明式语言模型编程框架如何改变 AI 应用开发范式
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "dspy-001",
+export const blog: BlogPost = {
+  id: "blog-061",
+  author: "AI Master",
   title: "DSPy 深度解析：斯坦福声明式语言模型编程框架如何改变 AI 应用开发范式 —— 从 Prompt 手写模板到可优化 Pipeline",
   category: "aieng",
   tags: ["DSPy", "Stanford", "声明式编程", "Prompt 优化", "LM Programming", "LLM Pipeline", "AI 工程化", "自优化", "LangChain 替代"],
   summary: "DSPy（Declarative Self-improving Python）是斯坦福大学 Omar Khattab 团队开发的声明式语言模型编程框架。它将传统的手写 Prompt 转变为可编译、可优化的模块化 Pipeline，通过自动编译和优化器大幅提升 LLM 应用的性能和可维护性。本文从核心理念、架构设计、编程范式对比到实战代码，全面解析 DSPy 如何重塑 AI 应用开发。",
   date: "2026-04-26",
-  readTime: "38 min",
-  level: "进阶",
-  content: [
+  readTime: 38,
+content: [
     {
       title: "一、DSPy 是什么：从 Prompt 工程到 LM 编程",
       body: `**DSPy**（Declarative Self-improving Python）是由斯坦福大学 NLP 组 Omar Khattab（现任 Stanford 助理教授，前 Databricks/Mosaic ML 研究员）开发的开源框架，旨在解决 LLM 应用开发中的核心痛点：**Prompt 的脆弱性和不可优化性**。

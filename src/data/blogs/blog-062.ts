@@ -1,17 +1,17 @@
 // Karpathy 四大原则：LLM 编码陷阱与 Claude Code 最佳实践
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "aieng020",
+export const blog: BlogPost = {
+  id: "blog-062",
+  author: "AI Master",
   title: "Karpathy 四大原则：LLM 编码陷阱与 Claude Code 最佳实践",
   category: "aieng",
   tags: ["Karpathy", "LLM 编码", "Claude Code", "编码 Agent", "最佳实践", "代码质量", "AI 编程", "Prompt Engineering", "2026 前沿"],
   summary: "Andrej Karpathy 指出 LLM 编码存在四大陷阱：错误假设、过度复杂化、随意修改无关代码、缺乏目标验证。社区据此提炼出「思考先行、极简优先、精准修改、目标驱动」四大原则，并形成 GitHub 本周 Trending #2（88.9K stars）的开源项目。本文深度解析四大原则的核心逻辑，提供可运行的 Python 实现，帮助开发者将 LLM 编码效率提升 3-5 倍。",
   date: "2026-04-26",
-  readTime: "30 min",
-  level: "进阶",
-  content: [
+  readTime: 30,
+content: [
     {
       title: "1. 引言：LLM 编码的黄金时代与陷阱",
       body: `2026 年 4 月，GitHub Trending 上出现了一个引人注目的项目：**andrej-karpathy-skills**，短短一周内暴涨 29,917 星，总星数达到 88,943，稳居周榜第二。

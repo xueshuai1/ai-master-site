@@ -1,17 +1,17 @@
 // Claude Code 生态全景：从编码 Agent 到记忆插件，2026 年最强 AI 编程工具链
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "aieng-016",
+export const blog: BlogPost = {
+  id: "blog-068",
+  author: "AI Master",
   title: "Claude Code 生态全景深度解析：编码 Agent 架构、记忆系统、插件生态与实战工作流（2026 年版）",
   category: "aieng",
   tags: ["Claude Code", "AI 编程", "Coding Agent", "claude-mem", "CLAUDE.md", "记忆系统", "Harness 架构", "Anthropic", "AI 开发工具", "2026 前沿"],
   summary: "2026 年 Claude Code 已成为全球开发者最主流的 AI 编程工具，围绕它形成了一个庞大的生态系统：claude-mem（67K 星，自动记忆捕获与注入）、claude-context（9K 星，代码搜索 MCP 服务）、andrej-karpathy-skills（提升编码行为的质量指令）。Anthropic 刚刚发布了 Claude Code 质量问题的完整 Postmortem，揭示了 Harness 层的深层架构挑战。本文从 Harness vs Model 的架构本质出发，深度解析 Claude Code 生态的记忆系统、上下文管理、质量保障和最佳实践，并提供完整的实战工作流指南。",
   date: "2026-04-25",
-  readTime: "45 min",
-  level: "进阶",
-  content: [
+  readTime: 45,
+content: [
     {
       title: "一、Claude Code：2026 年 AI 编程的「基础设施」",
       body: `Claude Code 是 Anthropic 推出的终端 AI 编程助手，它让开发者可以通过自然语言指令在终端中完成代码编写、修改、调试和重构。到 2026 年 4 月，Claude Code 已经从「实验性工具」成长为**全球开发者的日常编程基础设施**。

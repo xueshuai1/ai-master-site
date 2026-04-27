@@ -1,17 +1,17 @@
 // Screen AI & Visual AI Agents - 知识文章
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "screen-ai-001",
+export const blog: BlogPost = {
+  id: "blog-072",
+  author: "AI Master",
   title: "Screen AI 与视觉 Agent 全景解析：从 Computer Use 到 Omi，AI 终于「看到」了世界",
   category: "agent",
   tags: ["Screen AI", "Computer Use", "视觉 Agent", "Omi", "GUI Agent", "多模态", "桌面自动化", "Anthropic", "2026"],
   summary: "2026 年最激动人心的 AI 范式转变之一：AI 不再仅仅通过文本交互，而是直接「看」屏幕、理解 GUI、操控鼠标键盘。本文深度解析 Computer Use API、屏幕视觉 Agent 架构、Omi 等热门项目，并附 Python 实战代码。",
   date: "2026-04-24",
-  readTime: "35 min",
-  level: "进阶",
-  content: [
+  readTime: 35,
+content: [
     {
       title: "一、什么是 Screen AI？为什么它突然火了？",
       body: `**Screen AI（屏幕 AI）** 是指能够直接「看」和理解计算机屏幕截图、GUI 界面，并据此执行操作的 AI 系统。

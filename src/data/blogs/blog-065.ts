@@ -1,17 +1,17 @@
 // AI 编码 Agent 上下文窗口优化深度指南
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "context-001",
+export const blog: BlogPost = {
+  id: "blog-065",
+  author: "AI Master",
   title: "AI 编码 Agent 上下文窗口优化：从 context-mode 看 2026 年 Agent 效率革命",
   category: "agent",
   tags: ["上下文窗口", "context-mode", "编码 Agent", "Token 优化", "Claude Code", "Codex", "Cursor", "AI 效率", "2026 前沿"],
   summary: "2026 年 4 月，context-mode 以 98% 上下文窗口缩减能力冲上 GitHub Trending（近 10K stars），揭示了 AI 编码 Agent 面临的核心瓶颈——上下文窗口爆炸。本文深度解析上下文窗口优化的技术原理、主流方案对比（context-mode、claude-mem、GenericAgent 技能树等）、Python 实现指南，以及如何在实际项目中应用这些优化策略，让 AI 编码 Agent 的效率提升 6 倍以上。",
   date: "2026-04-25",
-  readTime: "40 min",
-  level: "进阶",
-  content: [
+  readTime: 40,
+content: [
     {
       title: "一、上下文窗口爆炸：AI 编码 Agent 的「失忆症」",
       body: `当你用 Claude Code、Codex 或 Cursor 等 AI 编码 Agent 处理一个中大型项目时，是否经常遇到这样的场景：

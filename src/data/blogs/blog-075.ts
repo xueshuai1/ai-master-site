@@ -1,17 +1,17 @@
 // AI 编程工具全景对比 2026：Claude Code / GitHub Copilot / Cursor / Codex / Windsurf / Roo Code
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "practice-014",
+export const blog: BlogPost = {
+  id: "blog-075",
+  author: "AI Master",
   title: "AI 编程工具全景对比 2026：Claude Code、Copilot、Cursor、Codex、Windsurf、Roo Code 深度横评与选型指南",
   category: "practice",
   tags: ["AI 编程", "Claude Code", "GitHub Copilot", "Cursor", "OpenAI Codex", "Windsurf", "Roo Code", "工具选型", "开发者工具", "AI 辅助编程"],
   summary: "2026 年是 AI 编程工具爆发之年：Claude Code 经历定价风波后稳固 $100/月 Max 计划定位，GitHub Copilot 收紧个人版用量限制，OpenAI Codex 以自主执行能力搅动市场，Cursor 和 Windsurf 持续迭代。本文从架构原理、核心能力、使用体验、定价策略、适用场景五个维度进行全面横评，提供完整的选型决策框架和实战评测代码，帮你选出最适合自己的 AI 编程助手。",
   date: "2026-04-24",
-  readTime: "45 min",
-  level: "进阶",
-  content: [
+  readTime: 45,
+content: [
     {
       title: "引言：2026 年 AI 编程工具市场的剧变",
       body: `2026 年 4 月，AI 编程工具市场经历了前所未有的动荡与进化。短短一个月内，我们见证了：

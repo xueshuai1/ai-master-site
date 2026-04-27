@@ -1,17 +1,17 @@
 // OpenAI Agents Python SDK 深度解读：多 Agent 工作流新范式
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "agent-029",
+export const blog: BlogPost = {
+  id: "blog-070",
+  author: "AI Master",
   title: "OpenAI Agents Python SDK 深度解读：多 Agent 工作流新范式与 2026 年框架全景对比",
   category: "agent",
   tags: ["OpenAI Agents SDK", "多 Agent 编排", "Handoff 模式", "Sandbox Agent", "Guardrails", "CrewAI", "LangGraph", "AutoGen", "multica", "Agent 框架对比", "2026 前沿"],
   summary: "OpenAI 官方发布的 Agents Python SDK 以 25K 星成为本周 GitHub AI 趋势榜首。它引入了 Handoff 委托、Guardrails 安全防护、Sandbox Agent 沙箱执行、Realtime Voice Agent 实时语音等创新概念。本文深度解析 OpenAI Agents SDK 的完整架构，将其与 CrewAI、LangGraph、AutoGen 3.0、multica 进行系统对比，并提供多 Agent 协作系统的完整 Python 实战代码，帮助开发者在 2026 年的 Agent 框架生态中做出正确选择。",
   date: "2026-04-25",
-  readTime: "42 min",
-  level: "进阶",
-  content: [
+  readTime: 42,
+content: [
     {
       title: "0. 引言：OpenAI 为什么要发布自己的 Agent SDK？",
       body: `**2026 年 4 月**，OpenAI 正式发布 Agents Python SDK（openai/openai-agents-python），两周内突破 **25,000 stars**，成为 GitHub AI 领域最受关注的新项目。

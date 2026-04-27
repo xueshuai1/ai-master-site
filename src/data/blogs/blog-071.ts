@@ -1,17 +1,17 @@
 // DeepSeek V4 深度解析：1.6T MoE 模型如何以极低价格挑战前沿
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "deepseek-v4",
+export const blog: BlogPost = {
+  id: "blog-071",
+  author: "AI Master",
   title: "DeepSeek V4 深度解析：1.6T MoE 模型以极低价格挑战前沿 —— 架构创新、定价策略与本地部署实战",
   category: "llm",
   tags: ["DeepSeek", "DeepSeek V4", "MoE", "Mixture of Experts", "开源模型", "本地部署", "大语言模型", "模型定价", "HuggingFace"],
   summary: "2026 年 4 月 24 日，DeepSeek 发布 V4 系列首批预览模型：DeepSeek-V4-Pro（1.6T 总参数/49B 激活）和 DeepSeek-V4-Flash（284B 总参数/13B 激活）。V4-Pro 成为当前最大的开源权重模型，定价仅为 GPT-5.5 的 1/14。本文从 MoE 架构优化、KV Cache 压缩、基准测试、定价策略、本地部署（含 Unsloth 量化 + llama.cpp）到 Python 实战，全面解析 DeepSeek V4 如何以极低价格挑战前沿模型。",
   date: "2026-04-24",
-  readTime: "40 min",
-  level: "进阶",
-  content: [
+  readTime: 40,
+content: [
     {
       title: "一、DeepSeek V4 发布背景：为什么 V4 是 2026 年最重要的开源模型更新",
       body: `2026 年 4 月 24 日，中国 AI 实验室 DeepSeek 发布了备受期待的 V4 系列首批预览模型：**DeepSeek-V4-Pro** 和 **DeepSeek-V4-Flash**。

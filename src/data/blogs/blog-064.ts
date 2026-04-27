@@ -1,17 +1,17 @@
 // Claude Code 质量危机与事后分析：AI 编程助手的可靠性工程实践
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "aieng-018",
+export const blog: BlogPost = {
+  id: "blog-064",
+  author: "AI Master",
   title: "Claude Code 质量危机深度分析：从 Anthropic 事后报告看 AI 编程助手的可靠性工程",
   category: "aieng",
   tags: ["Claude Code", "Anthropic", "AI 编程助手", "质量保障", "事后分析", "可靠性工程", "评测基准", "回归测试"],
   summary: "2026 年 4 月 23 日，Anthropic 发布 Claude Code 质量危机的事后分析报告，确认过去两个月用户反馈的『质量下降』确有其事——根源不在模型本身，而是 Claude Code harness 中的三个独立缺陷。本文从事前评测体系设计、CI 集成质量保障、回归测试自动化、用户反馈闭环四个维度，深度分析 AI 编程助手可靠性工程的最佳实践。含 3 个 Mermaid 架构图 + 3 个 Python 可运行评测脚本 + 3 个对比表格。",
   date: "2026-04-26",
-  readTime: "35 min",
-  level: "进阶",
-  content: [
+  readTime: 35,
+content: [
     {
       title: "一、事件回顾：两个月的质量下降与一次深刻的事后分析",
       body: `2026 年 4 月 23 日，Anthropic 在官方博客发布了 [《April 23 Postmortem》](https://www.anthropic.com/engineering/april-23-postmortem)，承认过去两个月内 Claude Code 用户反馈的「质量下降」确实存在，并详细披露了三个导致问题的根因。

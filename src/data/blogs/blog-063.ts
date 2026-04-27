@@ -1,17 +1,17 @@
 // 自进化 AI Agent：从 GenericAgent 到 Skill Tree 自主能力构建
 
-import { Article } from '../knowledge';
+import type { BlogPost } from './blog-types';
 
-export const article: Article = {
-  id: "agent-031",
+export const blog: BlogPost = {
+  id: "blog-063",
+  author: "AI Master",
   title: "自进化 AI Agent 实战：GenericAgent 架构解析与技能树自主构建系统",
   category: "agent",
   tags: ["自进化 Agent", "GenericAgent", "技能树", "自主能力构建", "Agent 进化", "LLM Agent", "元学习", "2026 前沿", "自动技能发现"],
   summary: "自进化 AI Agent 代表了 2026 年 Agent 架构的最新范式。GenericAgent（GitHub 7,117 stars，本周 +3,483）从 3.3K 行种子代码开始，自主构建技能树并实现完全系统控制，同时相比传统 Agent 框架减少 6 倍 token 消耗。本文深度解析自进化 Agent 的核心架构，揭示技能发现、技能评估、技能整合和持续优化的完整链路，并提供从零构建技能树的 Python 实战代码。",
   date: "2026-04-26",
-  readTime: "35 min",
-  level: "高级",
-  content: [
+  readTime: 35,
+content: [
     {
       title: "1. 自进化 Agent 范式：从手动编程到自主生长",
       body: `2026 年 AI Agent 领域最令人兴奋的发展方向之一是「自进化」——Agent 不再依赖人类开发者手动编写每一个技能和工具调用逻辑，而是能够从种子代码出发，自主发现新能力、评估能力价值、整合已有技能，并持续优化整个技能树。
