@@ -12,7 +12,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 
-const VALID_CATEGORIES = ['llm', 'agent', 'multimodal', 'devops', 'cli', 'plugin', 'data', 'frontend', 'video', 'audio', 'image', 'coding', 'research', 'security', 'education', 'productivity'];
+const VALID_CATEGORIES = ['llm', 'agent', 'multimodal', 'devops', 'cli', 'plugin', 'data', 'frontend', 'video', 'audio', 'image', 'coding', 'research', 'security', 'education', 'productivity', 'finance', 'framework', 'aieng', 'cv', 'search'];
 
 let errors = 0;
 let warnings = 0;

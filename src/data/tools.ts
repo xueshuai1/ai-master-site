@@ -3890,4 +3890,27 @@ createdAt: "2025-06-21T07:39:30Z",
       learnMore: "https://pika.art",
       updatedAt: "2026-04-22",
     },
+    {
+      id: "finceptterminal",
+      name: "FinceptTerminal",
+      category: "finance",
+      description: "开源金融 AI 终端，提供高级市场分析、投资研究和经济数据工具。15.6K stars，周增超万星。支持股票、加密货币、外汇等多市场数据交互式探索，集成 AI 辅助决策和量化策略回测。Python 构建，MIT 开源协议，旨在打破 Bloomberg Terminal 垄断，为个人投资者和小型团队提供专业级金融分析能力。",
+      url: "https://github.com/Fincept-Corporation/FinceptTerminal",
+      tags: ["金融 AI", "开源", "市场分析", "投资研究", "量化回测", "MIT"],
+      price: "开源",
+      icon: "📊",
+      pros: [
+        "打破 Bloomberg Terminal 垄断（$24K/年 → 免费开源）",
+        "多市场数据覆盖：股票、加密货币、外汇",
+        "集成 AI 辅助决策和量化策略回测",
+        "周增超万星，社区活跃度高"
+      ],
+      cons: [
+        "项目较新，生态仍在建设",
+        "专业数据源需额外配置（如 Alpha Vantage API key）"
+      ],
+      useCase: "个人投资者、量化分析师、金融研究者使用开源工具替代昂贵商业终端",
+      learnMore: "https://github.com/Fincept-Corporation/FinceptTerminal",
+      githubStars: 15681,
+    },
 ];
