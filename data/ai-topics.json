@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-04-27T17:43:02.692Z",
+  "lastUpdated": "2026-04-27T17:58:49.845Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -776,6 +776,480 @@
       "url": "https://github.com/topics/openai-chatgpt",
       "minStars": 5000,
       "description": "OpenAI ChatGPT 生态"
+    },
+    {
+      "topic": "agentic",
+      "url": "https://github.com/topics/agentic",
+      "minStars": 2000,
+      "description": "agentic"
+    },
+    {
+      "topic": "superagent",
+      "url": "https://github.com/topics/superagent",
+      "minStars": 5000,
+      "description": "superagent"
+    },
+    {
+      "topic": "llm-local",
+      "url": "https://github.com/topics/llm-local",
+      "minStars": 5000,
+      "description": "llm local"
+    },
+    {
+      "topic": "llm-prompting",
+      "url": "https://github.com/topics/llm-prompting",
+      "minStars": 5000,
+      "description": "llm prompting"
+    },
+    {
+      "topic": "llm-security",
+      "url": "https://github.com/topics/llm-security",
+      "minStars": 3000,
+      "description": "llm security"
+    },
+    {
+      "topic": "open-ai",
+      "url": "https://github.com/topics/open-ai",
+      "minStars": 5000,
+      "description": "open ai"
+    },
+    {
+      "topic": "agentic-rag",
+      "url": "https://github.com/topics/agentic-rag",
+      "minStars": 2000,
+      "description": "agentic rag"
+    },
+    {
+      "topic": "ai-agents-framework",
+      "url": "https://github.com/topics/ai-agents-framework",
+      "minStars": 5000,
+      "description": "ai agents framework"
+    },
+    {
+      "topic": "custom-ai-agents",
+      "url": "https://github.com/topics/custom-ai-agents",
+      "minStars": 5000,
+      "description": "custom ai agents"
+    },
+    {
+      "topic": "local-llm",
+      "url": "https://github.com/topics/local-llm",
+      "minStars": 5000,
+      "description": "local llm"
+    },
+    {
+      "topic": "localai",
+      "url": "https://github.com/topics/localai",
+      "minStars": 5000,
+      "description": "localai"
+    },
+    {
+      "topic": "agentic-agi",
+      "url": "https://github.com/topics/agentic-agi",
+      "minStars": 5000,
+      "description": "agentic agi"
+    },
+    {
+      "topic": "llm-agent",
+      "url": "https://github.com/topics/llm-agent",
+      "minStars": 2000,
+      "description": "LLM Agent"
+    },
+    {
+      "topic": "vector-search",
+      "url": "https://github.com/topics/vector-search",
+      "minStars": 3000,
+      "description": "向量搜索"
+    },
+    {
+      "topic": "voice-cloneai",
+      "url": "https://github.com/topics/voice-cloneai",
+      "minStars": 5000,
+      "description": "voice cloneai"
+    },
+    {
+      "topic": "agent-development",
+      "url": "https://github.com/topics/agent-development",
+      "minStars": 5000,
+      "description": "agent development"
+    },
+    {
+      "topic": "agent-skills",
+      "url": "https://github.com/topics/agent-skills",
+      "minStars": 2000,
+      "description": "agent skills"
+    },
+    {
+      "topic": "autonomous-agent",
+      "url": "https://github.com/topics/autonomous-agent",
+      "minStars": 2000,
+      "description": "autonomous agent"
+    },
+    {
+      "topic": "code-generation",
+      "url": "https://github.com/topics/code-generation",
+      "minStars": 2000,
+      "description": "代码生成"
+    },
+    {
+      "topic": "gpt-engineer",
+      "url": "https://github.com/topics/gpt-engineer",
+      "minStars": 5000,
+      "description": "gpt engineer"
+    },
+    {
+      "topic": "deep-neural-networks",
+      "url": "https://github.com/topics/deep-neural-networks",
+      "minStars": 5000,
+      "description": "deep neural networks"
+    },
+    {
+      "topic": "deeplearning",
+      "url": "https://github.com/topics/deeplearning",
+      "minStars": 3000,
+      "description": "deeplearning"
+    },
+    {
+      "topic": "neural-nets",
+      "url": "https://github.com/topics/neural-nets",
+      "minStars": 5000,
+      "description": "neural nets"
+    },
+    {
+      "topic": "speech-to-text",
+      "url": "https://github.com/topics/speech-to-text",
+      "minStars": 5000,
+      "description": "语音转文字"
+    },
+    {
+      "topic": "distributed-ml",
+      "url": "https://github.com/topics/distributed-ml",
+      "minStars": 5000,
+      "description": "distributed ml"
+    },
+    {
+      "topic": "mlops",
+      "url": "https://github.com/topics/mlops",
+      "minStars": 5000,
+      "description": "mlops"
+    },
+    {
+      "topic": "spring-ai",
+      "url": "https://github.com/topics/spring-ai",
+      "minStars": 5000,
+      "description": "spring ai"
+    },
+    {
+      "topic": "speech",
+      "url": "https://github.com/topics/speech",
+      "minStars": 3000,
+      "description": "speech"
+    },
+    {
+      "topic": "speech-synthesis",
+      "url": "https://github.com/topics/speech-synthesis",
+      "minStars": 3000,
+      "description": "语音合成"
+    },
+    {
+      "topic": "ai-gateway",
+      "url": "https://github.com/topics/ai-gateway",
+      "minStars": 5000,
+      "description": "ai gateway"
+    },
+    {
+      "topic": "llm-gateway",
+      "url": "https://github.com/topics/llm-gateway",
+      "minStars": 5000,
+      "description": "LLM 网关"
+    },
+    {
+      "topic": "vertex-ai",
+      "url": "https://github.com/topics/vertex-ai",
+      "minStars": 5000,
+      "description": "vertex ai"
+    },
+    {
+      "topic": "gpt-35-turbo",
+      "url": "https://github.com/topics/gpt-35-turbo",
+      "minStars": 5000,
+      "description": "gpt 35 turbo"
+    },
+    {
+      "topic": "embedding-database",
+      "url": "https://github.com/topics/embedding-database",
+      "minStars": 5000,
+      "description": "embedding database"
+    },
+    {
+      "topic": "embedding-similarity",
+      "url": "https://github.com/topics/embedding-similarity",
+      "minStars": 5000,
+      "description": "embedding similarity"
+    },
+    {
+      "topic": "embedding-store",
+      "url": "https://github.com/topics/embedding-store",
+      "minStars": 5000,
+      "description": "embedding store"
+    },
+    {
+      "topic": "ai-workflow-optimization",
+      "url": "https://github.com/topics/ai-workflow-optimization",
+      "minStars": 5000,
+      "description": "ai workflow optimization"
+    },
+    {
+      "topic": "ai-workflows",
+      "url": "https://github.com/topics/ai-workflows",
+      "minStars": 3000,
+      "description": "ai workflows"
+    },
+    {
+      "topic": "coding-agent",
+      "url": "https://github.com/topics/coding-agent",
+      "minStars": 5000,
+      "description": "coding agent"
+    },
+    {
+      "topic": "foundation-models",
+      "url": "https://github.com/topics/foundation-models",
+      "minStars": 5000,
+      "description": "foundation models"
+    },
+    {
+      "topic": "natural-language-inference",
+      "url": "https://github.com/topics/natural-language-inference",
+      "minStars": 5000,
+      "description": "natural language inference"
+    },
+    {
+      "topic": "vector",
+      "url": "https://github.com/topics/vector",
+      "minStars": 5000,
+      "description": "vector"
+    },
+    {
+      "topic": "ai-agent-skills",
+      "url": "https://github.com/topics/ai-agent-skills",
+      "minStars": 5000,
+      "description": "ai agent skills"
+    },
+    {
+      "topic": "ai-coding",
+      "url": "https://github.com/topics/ai-coding",
+      "minStars": 3000,
+      "description": "AI 编程"
+    },
+    {
+      "topic": "offline-llm",
+      "url": "https://github.com/topics/offline-llm",
+      "minStars": 5000,
+      "description": "offline llm"
+    },
+    {
+      "topic": "whatsapp-ai",
+      "url": "https://github.com/topics/whatsapp-ai",
+      "minStars": 5000,
+      "description": "whatsapp ai"
+    },
+    {
+      "topic": "agent-native",
+      "url": "https://github.com/topics/agent-native",
+      "minStars": 5000,
+      "description": "agent native"
+    },
+    {
+      "topic": "ai-assistant",
+      "url": "https://github.com/topics/ai-assistant",
+      "minStars": 5000,
+      "description": "AI 助手"
+    },
+    {
+      "topic": "generative-ui",
+      "url": "https://github.com/topics/generative-ui",
+      "minStars": 5000,
+      "description": "generative ui"
+    },
+    {
+      "topic": "voice-ai",
+      "url": "https://github.com/topics/voice-ai",
+      "minStars": 5000,
+      "description": "voice ai"
+    },
+    {
+      "topic": "ai-tutor",
+      "url": "https://github.com/topics/ai-tutor",
+      "minStars": 5000,
+      "description": "ai tutor"
+    },
+    {
+      "topic": "multi-agent-systems",
+      "url": "https://github.com/topics/multi-agent-systems",
+      "minStars": 2000,
+      "description": "multi agent systems"
+    },
+    {
+      "topic": "llm-eval",
+      "url": "https://github.com/topics/llm-eval",
+      "minStars": 5000,
+      "description": "LLM 评估"
+    },
+    {
+      "topic": "llm-evaluation",
+      "url": "https://github.com/topics/llm-evaluation",
+      "minStars": 3000,
+      "description": "LLM 评估"
+    },
+    {
+      "topic": "llm-evaluation-framework",
+      "url": "https://github.com/topics/llm-evaluation-framework",
+      "minStars": 5000,
+      "description": "llm evaluation framework"
+    },
+    {
+      "topic": "prompt-testing",
+      "url": "https://github.com/topics/prompt-testing",
+      "minStars": 5000,
+      "description": "prompt testing"
+    },
+    {
+      "topic": "genai-chatbot",
+      "url": "https://github.com/topics/genai-chatbot",
+      "minStars": 5000,
+      "description": "genai chatbot"
+    },
+    {
+      "topic": "llm-tools",
+      "url": "https://github.com/topics/llm-tools",
+      "minStars": 5000,
+      "description": "llm tools"
+    },
+    {
+      "topic": "ai-agents-automation",
+      "url": "https://github.com/topics/ai-agents-automation",
+      "minStars": 5000,
+      "description": "ai agents automation"
+    },
+    {
+      "topic": "pi-agent",
+      "url": "https://github.com/topics/pi-agent",
+      "minStars": 5000,
+      "description": "pi agent"
+    },
+    {
+      "topic": "embedding",
+      "url": "https://github.com/topics/embedding",
+      "minStars": 5000,
+      "description": "embedding"
+    },
+    {
+      "topic": "voyage-ai",
+      "url": "https://github.com/topics/voyage-ai",
+      "minStars": 5000,
+      "description": "voyage ai"
+    },
+    {
+      "topic": "ai-art-generator",
+      "url": "https://github.com/topics/ai-art-generator",
+      "minStars": 5000,
+      "description": "ai art generator"
+    },
+    {
+      "topic": "ai-image-generation",
+      "url": "https://github.com/topics/ai-image-generation",
+      "minStars": 5000,
+      "description": "ai image generation"
+    },
+    {
+      "topic": "ai-video-generation",
+      "url": "https://github.com/topics/ai-video-generation",
+      "minStars": 5000,
+      "description": "ai video generation"
+    },
+    {
+      "topic": "higgsfield-ai",
+      "url": "https://github.com/topics/higgsfield-ai",
+      "minStars": 5000,
+      "description": "higgsfield ai"
+    },
+    {
+      "topic": "kling-ai",
+      "url": "https://github.com/topics/kling-ai",
+      "minStars": 5000,
+      "description": "kling ai"
+    },
+    {
+      "topic": "ai-companion",
+      "url": "https://github.com/topics/ai-companion",
+      "minStars": 5000,
+      "description": "ai companion"
+    },
+    {
+      "topic": "ai-vtuber",
+      "url": "https://github.com/topics/ai-vtuber",
+      "minStars": 5000,
+      "description": "ai vtuber"
+    },
+    {
+      "topic": "ai-waifu",
+      "url": "https://github.com/topics/ai-waifu",
+      "minStars": 5000,
+      "description": "ai waifu"
+    },
+    {
+      "topic": "agent-evolution",
+      "url": "https://github.com/topics/agent-evolution",
+      "minStars": 5000,
+      "description": "agent evolution"
+    },
+    {
+      "topic": "agent-framework",
+      "url": "https://github.com/topics/agent-framework",
+      "minStars": 5000,
+      "description": "agent framework"
+    },
+    {
+      "topic": "agent-protocol",
+      "url": "https://github.com/topics/agent-protocol",
+      "minStars": 5000,
+      "description": "agent protocol"
+    },
+    {
+      "topic": "auditable-ai",
+      "url": "https://github.com/topics/auditable-ai",
+      "minStars": 5000,
+      "description": "auditable ai"
+    },
+    {
+      "topic": "prompt-governance",
+      "url": "https://github.com/topics/prompt-governance",
+      "minStars": 5000,
+      "description": "prompt governance"
+    },
+    {
+      "topic": "terminal-ai",
+      "url": "https://github.com/topics/terminal-ai",
+      "minStars": 5000,
+      "description": "terminal ai"
+    },
+    {
+      "topic": "on-device-ai",
+      "url": "https://github.com/topics/on-device-ai",
+      "minStars": 5000,
+      "description": "端侧 AI"
+    },
+    {
+      "topic": "ai-sre",
+      "url": "https://github.com/topics/ai-sre",
+      "minStars": 5000,
+      "description": "ai sre"
+    },
+    {
+      "topic": "prompt",
+      "url": "https://github.com/topics/prompt",
+      "minStars": 5000,
+      "description": "prompt"
     }
   ]
 }
