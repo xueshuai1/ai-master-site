@@ -216,7 +216,10 @@ export default function BlogDetailContent({ post, relatedPosts }: { post: BlogPo
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
             <span>✍️ {post.author}</span>
-            <span>📅 {post.date}</span>
+            <span>📅 创建 {post.date}</span>
+            {post.updatedAt && (
+              <span className="text-amber-400">🔄 更新 {post.updatedAt}</span>
+            )}
             <span>📖 {post.readTime} min 阅读</span>
           </div>
         </div>

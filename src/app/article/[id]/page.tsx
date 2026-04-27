@@ -381,7 +381,10 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
-            <span>📅 {article.date}</span>
+            <span>📅 创建 {article.date}</span>
+            {article.updatedAt && (
+              <span className="text-amber-400">🔄 更新 {article.updatedAt}</span>
+            )}
             <span>📖 {article.readTime} 阅读</span>
             <span>🏷️ {article.tags.map((t) => `#${t}`).join(" ")}</span>
           </div>

@@ -15,7 +15,8 @@ export interface BlogPost {
   category?: string;
   summary: string;
   content: ArticleSection[];
-  date: string;
+  date: string;          // 创建日期
+  updatedAt?: string;    // 更新日期（仅当文章被更新时存在）
   author: string;
   tags: string[];
   readTime: number;

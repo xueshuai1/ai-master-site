@@ -19,7 +19,8 @@ export interface Article {
   category: CategoryKey;
   tags: string[];
   summary: string;
-  date: string;
+  date: string;          // 创建日期
+  updatedAt?: string;    // 更新日期（仅当文章被更新时存在）
   readTime: string;
   level: "入门" | "进阶" | "高级";
   content?: ArticleSection[];
