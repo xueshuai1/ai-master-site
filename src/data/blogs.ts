@@ -68,6 +68,7 @@ import { blog as deepseekV4 } from './blogs/blog-071';
 import { blog as screenAi001 } from './blogs/blog-072';
 import { blog as agent028 } from './blogs/blog-074';
 import { blog as practice014 } from './blogs/blog-075';
+import { blog as worldModel001 } from './blogs/blog-079';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -130,4 +131,5 @@ export const blogs: BlogPost[] = [
 
   agent028,
   practice014,
+  worldModel001,
 ];

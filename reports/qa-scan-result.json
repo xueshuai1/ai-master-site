@@ -1196,6 +1196,9 @@
     "✅ src/data/blogs/blog-077.ts: Mermaid 配色",
     "✅ src/data/blogs/blog-077.ts: HTML 标签",
     "✅ src/data/blogs/blog-077.ts: 必填字段完整",
+    "✅ src/data/blogs/blog-078.ts: 代码块格式",
+    "✅ src/data/blogs/blog-078.ts: Mermaid 配色",
+    "✅ src/data/blogs/blog-078.ts: 必填字段完整",
     "✅ src/data/blogs/blog-types.ts: 代码块格式",
     "✅ src/data/blogs/blog-types.ts: Mermaid 配色",
     "✅ src/data/blogs/blog-types.ts: HTML 标签",
@@ -1248,6 +1251,7 @@
     "❌ src/data/blogs/blog-067.ts: HTML 标签 — 发现 1 处: 发现未转义 HTML 标签",
     "❌ src/data/blogs/blog-074.ts: HTML 标签 — 发现 1 处: 发现未转义 HTML 标签",
     "❌ src/data/blogs/blog-075.ts: Mermaid 配色 — 发现 1 处: 发现浅色 Mermaid 配色",
+    "❌ src/data/blogs/blog-078.ts: HTML 标签 — 发现 1 处: 发现未转义 HTML 标签",
     "❌ src/data/blogs/blog-types.ts: 必填字段缺失 — title:false, body:false, summary:false",
     "❌ news.ts: 14 条站内 source"
   ],

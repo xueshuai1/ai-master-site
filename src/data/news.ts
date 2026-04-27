@@ -2937,4 +2937,141 @@ DeepGEMM 的核心创新是 **per-token + per-channel 双维度细粒度缩放**
     sourceUrl: "https://techcrunch.com/2026/04/25/apple-new-ceo/",
     href: "/news/news-424",
   },
+  {
+    id: "news-425",
+    tag: "AI 商业",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 结束与 Microsoft 关于 $500 亿 Amazon 交易的法律纠纷",
+    summary: "OpenAI 与 Microsoft 就 OpenAI 与 Amazon 的 $500 亿合作协议达成和解，结束了此前 Microsoft 对该交易提出的法律挑战。",
+    content: `## OpenAI 与 Microsoft 和解
+
+**2026 年 4 月 27 日**，OpenAI 与 Microsoft 就 OpenAI 与 Amazon 的大规模合作协议达成法律和解。
+
+### 背景
+
+此前 Microsoft 对 OpenAI 与 Amazon 的 $500 亿交易提出法律挑战，认为这违反了 OpenAI 与 Microsoft 之间的独家合作协议。和解条款未公开，但意味着 OpenAI 现在可以同时与多个云巨头合作。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/`,
+    date: "2026-04-28 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/",
+    href: "/news/news-425",
+  },
+  {
+    id: "news-426",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Google Meet 语音翻译功能扩展到移动端：实时跨语言通话成为现实",
+    summary: "Google Meet 的 AI 语音翻译功能开始向移动设备推送，支持 6 种语言之间的实时翻译，并模拟原始说话人的声音特征。",
+    content: `## Google Meet AI 翻译走向移动
+
+**2026 年 4 月 27 日**，Google Meet 的 AI 语音翻译功能开始向移动端推送。
+
+### 核心能力
+
+- **实时翻译**：两人用不同语言对话，Meet 自动翻译并以近似原始声音播放
+- **支持语言**：英语、西班牙语、法语、德语、葡萄牙语、意大利语
+- **声音模拟**：翻译后的语音保留原始说话人的声音特征
+
+Simon Willison 实测发现：两台笔记本浏览器之间运行良好，但 iPhone 和 iPad 之间尚不稳定。
+
+**来源：** Google Workspace Updates / Simon Willison
+**链接：** https://workspaceupdates.googleblog.com/2026/04/speech-translation-in-google-meet-is-now-rolling-out-to-mobile-devices.html`,
+    date: "2026-04-28 00:00",
+    source: "Google Workspace + Simon Willison",
+    sourceUrl: "https://workspaceupdates.googleblog.com/2026/04/speech-translation-in-google-meet-is-now-rolling-out-to-mobile-devices.html",
+    href: "/news/news-426",
+  },
+  {
+    id: "news-427",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Anthropic 更新选举安全保障措施：AI 在民主进程中的角色引发关注",
+    summary: "Anthropic 发布选举安全保障更新，详细说明其防止 AI 被滥用于干预选举的技术和政策措施。",
+    content: `## Anthropic 选举安全更新
+
+**2026 年 4 月 24 日**，Anthropic 发布了选举安全保障的最新更新。
+
+### 核心措施
+
+- 限制 Claude 在政治内容生成方面的能力
+- 加强对选举相关滥用的检测和防范
+- 与选举安全机构合作建立行业标准
+
+**来源：** Anthropic
+**链接：** https://www.anthropic.com/news/election-safeguards-update`,
+    date: "2026-04-28 00:00",
+    source: "Anthropic",
+    sourceUrl: "https://www.anthropic.com/news/election-safeguards-update",
+    href: "/news/news-427",
+  },
+  {
+    id: "news-428",
+    tag: "AI 人才",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Anthropic 与 NEC 合作：培养日本最大的 AI 工程人才队伍",
+    summary: "Anthropic 宣布与日本 NEC 合作，共同培养日本最大的 AI 工程人才队伍，推动 Claude 在日本企业市场的普及。",
+    content: `## Anthropic × NEC：日本 AI 人才布局
+
+**2026 年 4 月 24 日**，Anthropic 与 NEC 宣布合作培养日本最大的 AI 工程人才队伍。
+
+Anthropic 正在通过合作伙伴在全球各地构建本地化的人才生态。
+
+**来源：** Anthropic
+**链接：** https://www.anthropic.com/news/anthropic-nec`,
+    date: "2026-04-28 00:00",
+    source: "Anthropic",
+    sourceUrl: "https://www.anthropic.com/news/anthropic-nec",
+    href: "/news/news-428",
+  },
+  {
+    id: "news-429",
+    tag: "AI 算力",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Anthropic 与 Amazon 扩展合作：新增高达 5 GW 的计算资源",
+    summary: "Anthropic 宣布与 Amazon 扩展合作，新增高达 5 GW 计算资源，构建行业最庞大的计算基础设施网络。",
+    content: `## Anthropic 算力布局持续扩张
+
+**2026 年 4 月 20 日**，Anthropic 与 Amazon 宣布扩展合作，新增高达 5 GW 的计算资源。
+
+| 合作伙伴 | 算力规模 | 时间 |
+|---------|---------|------|
+| Amazon | 5 GW | 2026-04-20 |
+| Google + Broadcom | 多 GW | 2026-04-06 |
+
+算力正在成为 AI 公司的核心竞争力。
+
+**来源：** Anthropic
+**链接：** https://www.anthropic.com/news/anthropic-amazon-compute`,
+    date: "2026-04-28 00:00",
+    source: "Anthropic",
+    sourceUrl: "https://www.anthropic.com/news/anthropic-amazon-compute",
+    href: "/news/news-429",
+  },
+  {
+    id: "news-430",
+    tag: "AI 论文",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "arXiv 前沿论文：Agentic World Modeling 提出 AI Agent 构建世界模型的理论框架",
+    summary: "40 余位研究者联合发表论文，系统提出 AI Agent 构建世界模型的理论框架，被认为是通往 AGI 的关键路径之一。",
+    content: `## Agentic World Modeling：让 AI 学会「思考世界」
+
+**2026 年 4 月 27 日**，论文「Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond」在 arXiv 发布（[2604.22748](https://arxiv.org/abs/2604.22748)）。
+
+### 核心贡献
+
+1. **理论基础**：定义世界模型的三元组 (S, T, R)
+2. **能力框架**：反事实推理、多步规划、因果发现、知识迁移
+3. **基本规律**：表达力-效率权衡、模型漂移定律、组合泛化律
+
+本站 AI Master 博客对本文进行了深度解读（[blog-079](/blog/blog-079)）。
+
+**来源：** arXiv
+**链接：** https://arxiv.org/abs/2604.22748`,
+    date: "2026-04-28 00:00",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org/abs/2604.22748",
+    href: "/news/news-430",
+  },
 ];
