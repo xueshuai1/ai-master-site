@@ -61,16 +61,31 @@
 
 ## 🔴🔴🔴 文章格式铁律（新增/修改知识库文章前必读！）
 
-### 1. Mermaid 图表配色和类型
+### 1. Mermaid 图表配色和类型（2026-04-28 事故后增强）
+- ❌ **禁止使用 `style X fill:#颜色` 语法** — 这是历史事故根因！`style fill` 会覆盖 mermaid 默认样式，导致节点文字不可见、图表变黑块/空白块（aieng-021 事故）
+- ✅ **必须使用 `classDef` + `class` 语法** — 如下方示例，这是唯一合法的节点着色方式（2026-04-28 事故后增强）
+
+**🔴 语法铁律：**
+- ❌ **禁止使用 `style X fill:...` 语法** — 会导致渲染为空白块/黑块（aieng-021 事故）
+- ✅ **必须使用 `classDef` + `class` 语法** — 详见下方示例
 - ❌ **禁止使用浅色**（400-500 色阶）和 Material Design 浅色：`#ef4444` `#f59e0b` `#10b981` `#6366f1` `#8b5cf6` `#ec4899` `#f3e5f5` `#e1f5fe` `#c8e6c9` `#fff3e0`
 - ✅ **必须使用深色**（800-900 色阶）+ 白字 `color:#fff`：`#991b1b` `#92400e` `#064e3b` `#3730a3` `#581c87` `#1e3a5f`
 - 完整配色表：`docs/MERMAID-COLORS.md`
 
-**示例：**
+**✅ 正确示例（必须用 classDef）：**
 ```
-style C fill:#991b1b,stroke:#b91c1c,color:#fff
-style B fill:#064e3b,stroke:#059669,color:#fff
+graph TB
+    A[节点1] --> B[节点2]
+    classDef important fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class A important;
 ```
+
+**❌ 错误示例（禁止！）：**
+```
+graph TB
+    A[节点1] --> B[节点2]
+    style A fill:#991b1b  ← 禁止！必须用 classDef
+    style B fill:#1e3a5f  ← 禁止！这是 aieng-021 事故根因
 
 **✅ 合法的 Mermaid 图表类型（只能用以下类型）：**
 - `graph TD` / `graph LR` / `graph BT` / `graph RL`（流程图/架构图）— **最推荐**
@@ -199,6 +214,9 @@ graph LR
 | 2026-04-25 | prompt-003 mermaid 渲染为代码框 | parseMarkdown 把 mermaid 当成普通代码块高亮 | mermaid 独立占位符 → .mermaid-container 图表容器 + BodyMermaidRenderer 客户端渲染 | validate-article 拦截 + validate-rendering 检查 |
 | 2026-04-25 | agent-029 bash 代码无高亮 | parseMarkdown 的 placeholder 替换只 escapeHtml 不调 highlightCode | 改为调用 highlightCode(code, lang) | validate-rendering 检查 highlightCode 调用 |
 | 2026-04-25 | bash 高亮产生嵌套 span | highlightBash 先替换命令再替换参数，参数 regex 匹配到已生成的 class 名 | 参数替换改用 \x00PARAM 占位符，先标记后还原 | validate-rendering 检查嵌套 span |
+| 2026-04-28 | aieng-021 Mermaid 渲染为空白块/黑块 | 使用 `style X fill:#1e3a5f` 语法（深色填充在深色主题下不可见） | 改用 `classDef` + `class` 语法 | validate-rendering 拦截 style 语法、validate-article 拦截 |
+| 2026-04-28 | aieng-021 Python 代码渲染为代码框 | 代码嵌在 body 的 `\`\`\`python` 中，MarkdownBody 当成代码块渲染 | 提取到 `code: []` 数组 | validate-article 已拦截，但 AI 仍违反 → 加强 Prompt 强调 |
+| 2026-04-28 | aieng-021 页面出现多处空白块 | Mermaid 图表使用了不合法的 style 语法 + 空 body 段落 | 修复 Mermaid 语法 + 删除空段落 | validate-rendering 新增空白块检查 |
 
 ---
 
@@ -457,6 +475,14 @@ node scripts/validate-tools.mjs
 ```
 - 校验不通过 → 说明有重复 id 或缺少必填字段，**必须先清理重复**
 - ❌ 收录新工具前必须先检查 id 是否已存在：`grep -c 'id: "xxx"' src/data/tools.ts`，结果必须为 0
+- 校验通过 → 继续
+- 校验通过 → 继续
+
+### 5.7. 🔴 渲染质量检查（2026-04-28 新增 — aieng-021 事故后强制加入）
+```bash
+node scripts/validate-rendering.mjs src/data/articles/你的文章.ts
+```
+- 校验不通过 → 根据报错修复（body 代码块、Mermaid style 语法、浅色配色、空 body 段落等）
 - 校验通过 → 继续
 
 ### 6. 提交并推送

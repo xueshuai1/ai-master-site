@@ -167,8 +167,10 @@ graph LR
     Researcher --> Writer
     Writer --> User
     
-    style Coordinator fill:#1e3a5f
-    style Reviewer fill:#1e3a5f
+    classDef coord fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Coordinator coord
+    classDef rev fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Reviewer rev
 \`\`\`
 
 **Multi-Agent 的关键设计决策：**
@@ -224,9 +226,12 @@ graph TB
     Episodic --> Semantic
     Semantic --> Procedural
     
-    style Context fill:#1e3a5f
-    style Episodic fill:#1e3a5f
-    style Semantic fill:#1e3a5f
+    classDef ctx fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Context ctx
+    classDef epi fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Episodic epi
+    classDef sem fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Semantic sem
 \`\`\`
 
 ### 三层记忆详解
@@ -535,11 +540,16 @@ graph LR
     C --> D["v4: 动态工具发现"]
     D --> E["v5: 工具自治编排"]
     
-    style A fill:#1e3a5f
-    style B fill:#1e3a5f
-    style C fill:#1e3a5f
-    style D fill:#1e3a5f
-    style E fill:#1e3a5f
+    classDef sa fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class A sa
+    classDef sb fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class B sb
+    classDef sc fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class C sc
+    classDef sd fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class D sd
+    classDef se fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class E se
 \`\`\`
 
 ### 工具编排架构设计
@@ -577,9 +587,12 @@ graph TB
     Retryer --> T3
     Retryer --> T4
     
-    style Registry fill:#1e3a5f
-    style Selector fill:#1e3a5f
-    style Scheduler fill:#1e3a5f
+    classDef reg fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Registry reg
+    classDef sel fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Selector sel
+    classDef sch fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Scheduler sch
 \`\`\`
 
 ### 工具注册与 Schema 定义
@@ -1183,9 +1196,12 @@ graph TB
     AgentService --> Metrics
     Metrics --> Alerting
     
-    style AgentService fill:#1e3a5f
-    style LLM fill:#1e3a5f
-    style Tracing fill:#1e3a5f
+    classDef ags fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class AgentService ags
+    classDef llm fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class LLM llm
+    classDef tra fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class Tracing tra
 \`\`\`
 
 ### 生产部署关键检查清单
