@@ -44,6 +44,7 @@ export const toolCategories = [
   { key: "education", label: "教育学习", icon: "📚" },
   { key: "cv", label: "计算机视觉", icon: "👁️" },
   { key: "aieng", label: "AI 工程化", icon: "🔧" },
+  { key: "finance", label: "金融 AI", icon: "💰" },
 ];
 
 export const tools: Tool[] = [

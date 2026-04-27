@@ -66,7 +66,6 @@ import { blog as llm020 } from './blogs/blog-069';
 import { blog as agent029 } from './blogs/blog-070';
 import { blog as deepseekV4 } from './blogs/blog-071';
 import { blog as screenAi001 } from './blogs/blog-072';
-import { blog as selfEvolvingAgent } from './blogs/blog-073';
 import { blog as agent028 } from './blogs/blog-074';
 import { blog as practice014 } from './blogs/blog-075';
 
@@ -128,7 +127,7 @@ export const blogs: BlogPost[] = [
   agent029,
   deepseekV4,
   screenAi001,
-  selfEvolvingAgent,
+
   agent028,
   practice014,
 ];
