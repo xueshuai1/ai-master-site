@@ -218,10 +218,10 @@ class MultiDimensionalMemory:
       },
       mermaid: `graph TD
     Q["用户查询"] --> MR["记忆路由器"]
-    MR --> SM["语义记忆<br/>事实检索"]
-    MR --> EM["情景记忆<br/>时序检索"]
-    MR --> PM["程序记忆<br/>技能图"]
-    MR --> UP["用户画像<br/>偏好检索"]
+    MR --> SM["语义记忆 事实检索"]
+    MR --> EM["情景记忆 时序检索"]
+    MR --> PM["程序记忆 技能图"]
+    MR --> UP["用户画像 偏好检索"]
     SM --> FU["融合排序"]
     EM --> FU
     PM --> FU
@@ -466,17 +466,17 @@ class HybridMemorySystem:
 第三，记忆的自进化。结合自进化 Agent（如 GenericAgent 和 Evolver）的能力，记忆系统本身也能进化——自动发现更好的记忆组织方式、优化检索策略、调整遗忘阈值。这正是 2026 年最令人兴奋的方向。`,
       mermaid: `graph TD
     subgraph "现在"
-      A1["简单 RAG<br/>平铺向量"]
-      A2["mempalace<br/>多维度记忆"]
-      A3["claude-mem<br/>AI 压缩记忆"]
+      A1["简单 RAG 平铺向量"]
+      A2["mempalace 多维度记忆"]
+      A3["claude-mem AI 压缩记忆"]
     end
     subgraph "近期"
-      B1["混合记忆系统<br/>压缩 + 多维度"]
-      B2["自适应压缩<br/>按任务类型调整"]
+      B1["混合记忆系统 压缩 + 多维度"]
+      B2["自适应压缩 按任务类型调整"]
     end
     subgraph "未来"
-      C1["记忆网络<br/>跨 Agent 共享"]
-      C2["自进化记忆<br/>AI 自主优化"]
+      C1["记忆网络 跨 Agent 共享"]
+      C2["自进化记忆 AI 自主优化"]
     end
     A1 --> B1
     A2 --> B1

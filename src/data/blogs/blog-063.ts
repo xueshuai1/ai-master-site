@@ -211,7 +211,7 @@ class SeedAgent:
       mermaid: `graph TD
     subgraph "种子阶段"
       A["3.3K 行种子代码"]
-      A --> B["基础技能<br/>文件读写/命令执行"]
+      A --> B["基础技能 文件读写/命令执行"]
     end
     subgraph "发现阶段"
       B --> C["操作历史分析"]
@@ -221,7 +221,7 @@ class SeedAgent:
       E -->|否| C
     end
     subgraph "验证阶段"
-      F --> G["技能注册<br/>status=DISCOVERING"]
+      F --> G["技能注册 status=DISCOVERING"]
       G --> H["多次执行测试"]
       H --> I{"成功率 ≥ 80%？"}
       I -->|是| J["status=ACTIVE"]
@@ -634,11 +634,11 @@ if __name__ == "__main__":
         },
       ],
       mermaid: `graph LR
-    A["初始化<br/>3 种子技能"] --> B["1-10 次操作<br/>发现 2 个复合技能"]
-    B --> C["10-30 次操作<br/>技能验证 ACTIVE"]
-    C --> D["30-50 次操作<br/>抽象提升模式层"]
-    D --> E["50+ 次操作<br/>Token 编译+动态选择"]
-    E --> F["稳定期<br/>技能持续增长"]
+    A["初始化 3 种子技能"] --> B["1-10 次操作 发现 2 个复合技能"]
+    B --> C["10-30 次操作 技能验证 ACTIVE"]
+    C --> D["30-50 次操作 抽象提升模式层"]
+    D --> E["50+ 次操作 Token 编译+动态选择"]
+    E --> F["稳定期 技能持续增长"]
     style A fill:#1e3a5f
     style F fill:#1e3a5f`,
       tip: "构建自进化 Agent 时，安全是首要考虑。种子代码中的 exec_command 技能在生产环境中应该被沙箱化，限制可执行的命令范围和文件系统访问权限。建议初期使用白名单模式，只允许预定义的命令执行。",

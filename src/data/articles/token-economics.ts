@@ -661,7 +661,7 @@ def stream_with_budget(client: openai.OpenAI,
 - [Simon Willison: Claude Token Counts](https://simonwillison.net/2026/Apr/20/claude-token-counts/)
 - [tiktoken 库文档](https://github.com/openai/tiktoken)`,
       mermaid: `mindmap
-  root((Token 经济学<br/>优化体系))
+  root((Token 经济学 优化体系))
     原理
       BPE 分词
       WordPiece
