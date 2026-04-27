@@ -55,7 +55,6 @@ import { default as blog054 } from './blogs/blog-054';
 import { blog as blog055 } from './blogs/blog-055';
 import { default as blog056 } from './blogs/blog-056';
 import { blog as blog057 } from './blogs/blog-057';
-import { default as blog058 } from './blogs/blog-058';
 import { default as blog059 } from './blogs/blog-059';
 import { blog as autoresearch001 } from './blogs/blog-060';
 import { blog as dspy001 } from './blogs/blog-061';
@@ -76,7 +75,6 @@ import { blog as practice014 } from './blogs/blog-075';
 
 export const blogs: BlogPost[] = [
   blog059,
-  blog058,
   blog057,
   blog056,
   blog055,
