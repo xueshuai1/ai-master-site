@@ -100,7 +100,7 @@ P2（建议）：X 个
 
 ### 全局状态: `reports/pipeline-status.md`
 ```
-# 流水线状态（每个阶段追加一行，保留最近 24 行）
+# 流水线状态（每个阶段追加一行，保留最近 48 行）
 
 | 时间 | 阶段 | 做了什么 | 状态 |
 |------|------|---------|------|
@@ -116,27 +116,27 @@ P2（建议）：X 个
 
 **Stage1 研究员（:00 / :04 / ...）：**
 1. `reports/latest-qa-report.md`（Stage4 上一轮结果）— 了解网站当前质量状态
-2. `reports/pipeline-status.md`（最近 12 行）— 看上一完整周期做了什么
+2. `reports/pipeline-status.md`（最近 24 行）— 完整 24 小时历史（6 个周期）
 3. `KNOWLEDGE-BASE-PLAN.md` — 知识缺口
 → 写 `reports/latest-content-findings.md`
 → 追加到 `reports/pipeline-status.md`
 
 **Stage2 PM（:01 / :05 / ...）：**
 1. `reports/latest-content-findings.md`（Stage1 本轮发现）— 本轮素材
-2. `reports/pipeline-status.md`（最近 12 行）— 上下文
+2. `reports/pipeline-status.md`（最近 24 行）— 完整 24 小时历史
 → 写文章 → 写 `reports/latest-production-report.md`
 → 追加到 `reports/pipeline-status.md`
 
 **Stage3 开发（:02 / :06 / ...）：**
 1. `reports/latest-production-report.md`（Stage2 本轮需求）— 开发需求
 2. `reports/latest-qa-report.md`（Stage4 上一轮问题）— bug 列表
-3. `reports/pipeline-status.md`（最近 12 行）— 上下文
+3. `reports/pipeline-status.md`（最近 24 行）— 完整 24 小时历史
 → 写 `reports/latest-dev-log.md`
 → 追加到 `reports/pipeline-status.md`
 
 **Stage4 QA（:03 / :07 / ...）：**
 1. `reports/latest-dev-log.md`（Stage3 本轮改动）— 知道改了啥，重点测
-2. `reports/pipeline-status.md`（最近 12 行）— 上下文
+2. `reports/pipeline-status.md`（最近 24 行）— 完整 24 小时历史
 → 跑 QA → 写 `reports/latest-qa-report.md`
 → 追加到 `reports/pipeline-status.md`
 
@@ -144,6 +144,6 @@ P2（建议）：X 个
 
 ## 设计原则
 1. **每个报告 ≤ 500 字** — 精简、只保留关键信息
-2. **上下文通过 pipeline-status.md 传递** — 每个阶段追加一行，24 行 = 完整 2 天历史
+2. **上下文通过 pipeline-status.md 传递** — 每个阶段追加一行，读 24 行 = 完整 24 小时历史（6 个完整周期），保留 48 行 = 2 天
 3. **每个阶段只读 2-3 个文件** — 控制上下文，不读 12 个
 4. **不改变原执行意图** — 内容收集、文章写作、开发修复、QA 验证，一个不少
