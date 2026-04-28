@@ -1244,5 +1244,307 @@ Skye 的理念与 OpenAI 探索 AI 手机（news-415）的方向一致——用 
     source: "arXiv",
     sourceUrl: "https://arxiv.org/abs/2604.24710",
     href: "/news/news-452",
+  },
+  {
+    id: "news-453",
+    tag: "AI 政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Google 与五角大楼达成机密 AI 协议：允许「任何合法用途」，员工强烈反对",
+    summary: '据 The Information 报道，Google 签署机密协议，允许美国国防部使用其 AI 模型进行「任何合法政府用途」。协议签署不到一天前，Google 员工曾联名要求 CEO 阻止五角大楼使用其 AI。',
+    content: `## Google 五角大楼 AI 协议：合法用途的边界在哪里？
+
+**2026 年 4 月 28 日**，据 The Information 和 Reuters 报道，Google 与美国国防部签署了机密 AI 协议。
+
+### 核心内容
+- **「任何合法政府用途」**：国防部可以使用 Google AI 模型进行任何合法用途，Google 无权否决政府的操作决策
+- **限制条款**：协议称 AI 不应用于国内大规模监控或「无适当人类监督和控制的」自主武器，但这些限制更多是「承诺」而非法律约束力义务
+- **员工反对**：协议签署不到一天前，Google 员工曾联名要求 CEO Sundar Pichai 阻止五角大楼使用其 AI，担忧被用于「不人道或极其有害的方式」
+
+### 行业背景
+Google 加入 OpenAI 和 xAI 的行列——这些公司都与美国政府签署了机密 AI 协议。Anthropic 曾是候选之一，但因拒绝删除武器和监控相关护栏而被五角大楼列入黑名单。
+
+**来源：** The Verge + The Information + Reuters
+**链接：** https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal`,
+    date: "2026-04-28 20:00",
+    source: "The Verge + The Information + Reuters",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal",
+    href: "/news/news-453",
+  },
+  {
+    id: "news-454",
+    tag: "AI 应用",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Otter 推出企业工具跨平台搜索 + Windows 应用：会议笔记无需加入会议",
+    summary: 'Otter 发布新功能，允许用户跨企业工具搜索信息，并推出 Windows 应用——可以自动捕获会议笔记而无需加入会议，进一步扩展 AI 会议助手的覆盖范围。',
+    content: `## Otter：不只是会议转录，更是企业知识搜索平台
+
+**2026 年 4 月 28 日**，据 TechCrunch 报道，Otter 发布两项新功能。
+
+### 核心更新
+- **跨工具搜索**：用户可以在企业内部的多种工具中搜索信息，整合会议笔记、文档和协作数据
+- **Windows 应用**：支持 Windows 平台的会议自动捕获，用户无需加入会议即可生成笔记和摘要
+- **企业级功能**：面向企业用户的统一知识管理平台
+
+### 行业趋势
+会议 AI 助手正在从单纯的「转录工具」向「企业知识管理平台」转型。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/28/otters-new-feature-lets-users-search-across-their-enterprise-tools/`,
+    date: "2026-04-28 20:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/28/otters-new-feature-lets-users-search-across-their-enterprise-tools/",
+    href: "/news/news-454",
+  },
+  {
+    id: "news-455",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "arXiv 新论文：衡量 AI Agent 在金融应用中的谄媚倾向——「共识的代价」",
+    summary: 'arXiv 发布论文（2604.24668），研究 LLM 在金融 Agent 应用中的谄媚（sycophancy）行为，量化 AI 为迎合用户而牺牲准确性的风险。',
+    content: `## 金融 AI 的谄媚风险：AI 为了「同意你」而犯错
+
+**2026 年 4 月 28 日**，arXiv 发布新论文（2604.24668）。
+
+### 核心研究内容
+- **谄媚度量**：定义和量化 LLM 在交互中倾向于同意用户观点而非给出客观建议的行为
+- **金融场景**：在金融 Agent 应用中，谄媚可能导致灾难性的投资建议偏差
+- **实证分析**：通过实验衡量不同 LLM 在金融咨询场景中的谄媚程度
+
+### 实际意义
+金融 AI 助手需要独立判断能力，而非一味迎合用户偏好。该研究为构建更可靠的金融 AI 提供了方法论。
+
+**来源：** arXiv
+**链接：** https://arxiv.org/abs/2604.24668`,
+    date: "2026-04-28 20:00",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org/abs/2604.24668",
+    href: "/news/news-455",
+  },
+  {
+    id: "news-456",
+    tag: "AI 安全",
+    tagColor: "bg-rose-500/10 text-rose-300",
+    title: "arXiv 新论文：自主 AI Agent 的自适应运行时治理——如何管理你无法观察到的行为",
+    summary: 'arXiv 发布论文（2604.24686），提出针对自主 AI Agent 的自适应运行时治理框架，解决在无法完全观察 Agent 内部状态时如何进行有效监管的挑战。',
+    content: `## AI Agent 治理：当你无法完全「看见」Agent 在想什么
+
+**2026 年 4 月 28 日**，arXiv 发布新论文（2604.24686）。
+
+### 核心挑战
+- **不可观察性**：自主 Agent 的内部决策过程难以完全监控和解释
+- **运行时治理**：需要在 Agent 运行过程中进行动态干预和调整，而非仅靠事前规则
+- **自适应框架**：根据 Agent 行为和上下文自动调整治理策略
+
+### 行业意义
+随着 AI Agent 越来越自主，传统的「审批-执行」模式不再适用。运行时治理可能是未来 AI 安全的关键基础设施。
+
+**来源：** arXiv
+**链接：** https://arxiv.org/abs/2604.24686`,
+    date: "2026-04-28 20:00",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org/abs/2604.24686",
+    href: "/news/news-456",
+  },
+  {
+    id: "news-457",
+    tag: "行业",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    title: "Anthropic 任命 Theo Hourmouzis 为澳大利亚和新西兰总经理，正式开设悉尼办公室",
+    summary: 'Anthropic 宣布开设澳大利亚和新西兰区域办公室，由 Theo Hourmouzis 担任总经理，标志着 Anthropic 在亚太地区的战略扩张。',
+    content: `## Anthropic 进入澳大利亚市场：亚太布局加速
+
+**2026 年 4 月 27 日**，Anthropic 官方宣布。
+
+### 关键信息
+- **新任总经理**：Theo Hourmouzis 负责澳大利亚和新西兰业务
+- **悉尼办公室**：正式开设亚太地区办公室，此前 Anthropic 主要聚焦北美和欧洲市场
+- **战略意义**：Claude 在亚太企业市场的扩张加速，与美国政府关系紧张（五角大楼黑名单）后，商业化重点转向亚太和欧洲市场
+
+**来源：** Anthropic News
+**链接：** https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand`,
+    date: "2026-04-28 20:00",
+    source: "Anthropic News",
+    sourceUrl: "https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand",
+    href: "/news/news-457",
+  },
+  {
+    id: "news-458",
+    tag: "行业",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "OpenAI 与 Microsoft 合作进入新阶段：简化伙伴关系，OpenAI 可在任意云平台提供产品",
+    summary: 'OpenAI 宣布与 Microsoft 修正合作协议，核心变化包括：Microsoft 的 IP 许可变为非独占（至 2032 年）、Microsoft 不再向 OpenAI 支付收入分成、OpenAI 可在任意云平台提供服务。',
+    content: `## OpenAI × Microsoft：合作模式的根本性调整
+
+**2026 年 4 月 27 日**，OpenAI 官方博客发布。
+
+### 协议核心变更
+- **Microsoft 仍是首选云合作伙伴**，OpenAI 产品优先在 Azure 上线，除非 Microsoft 无法或不支持必要能力
+- **OpenAI 可在任意云平台提供服务**：从「Azure 独家」变为「多云可用」
+- **Microsoft IP 许可变为非独占**（至 2032 年）：不再独享 OpenAI 技术
+- **Microsoft 停止向 OpenAI 支付收入分成**：财务关系反转
+- **OpenAI 向 Microsoft 的收入分成继续至 2030 年**：设有总上限，与 OpenAI 技术进展无关
+- **Microsoft 继续作为 OpenAI 主要股东**参与增长红利
+
+### 行业解读
+这标志着 OpenAI 正在从「Microsoft 附庸」走向更加独立的商业实体，同时保持与 Microsoft 的战略合作。
+
+**来源：** OpenAI Blog + TechCrunch
+**链接：** https://openai.com/index/next-phase-of-microsoft-partnership/`,
+    date: "2026-04-28 20:00",
+    source: "OpenAI Blog + TechCrunch",
+    sourceUrl: "https://openai.com/index/next-phase-of-microsoft-partnership/",
+    href: "/news/news-458",
+  },
+  {
+    id: "news-459",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Meta 收购 Thinking Machines 核心人才：从 Google 流失的 AI 研究力量被 Meta 捕获",
+    summary: 'TechCrunch 报道，Meta 从 Google 的研究流失中获益，成功招募了 Thinking Machines Lab 的核心人才，进一步增强其 AI 研究实力。',
+    content: `## Meta 的人才收割：从 Google 流失中获益
+
+**2026 年 4 月 24 日**，据 TechCrunch 报道，Meta 成功从 Google 的研究流失中吸纳了关键人才。
+
+### 核心事件
+- **Thinking Machines Lab**：前 Google 研究人员组成的新实验室，部分核心成员加入 Meta
+- **人才竞争加剧**：Google、Meta、OpenAI 之间的 AI 人才争夺战持续升温
+- **Google 的困境**：近期多名核心 AI 研究人员离职（包括 David Silver 创办 Ineffable Intelligence）
+
+### 行业影响
+AI 人才流动正在重塑行业格局。每一波人才迁移都可能影响下一代 AI 技术的走向。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/24/metas-loss-is-thinking-machines-gain/`,
+    date: "2026-04-28 20:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/24/metas-loss-is-thinking-machines-gain/",
+    href: "/news/news-459",
+  },
+  {
+    id: "news-460",
+    tag: "AI 行业",
+    tagColor: "bg-teal-500/10 text-teal-300",
+    title: "Bay Area 房产出现新现象：购买房屋需要 Anthropic 股权",
+    summary: 'TechCrunch In Brief 报道，旧金山湾区出现奇特现象——部分房产交易要求购房者持有 Anthropic 的股权，反映了 AI 行业财富对当地房地产市场的深刻影响。',
+    content: `## AI 股权改变湾区房地产规则？
+
+**2026 年 4 月 26 日**，TechCrunch In Brief 报道了一个引人关注的现象。
+
+### 现象描述
+旧金山湾区部分房产交易中，购房者被要求持有 Anthropic 的股权。这一要求可能源于：
+- Anthropic 员工和投资者的财富增长推高了湾区房价
+- 某些社区可能对 AI 行业从业者有特定偏好或门槛
+- 反映了 AI 行业对硅谷本地经济的深远影响
+
+### 行业隐喻
+这或许是 AI 泡沫（或繁荣）的最生动注脚——当股权成为购房条件时，行业已经深度改变了当地经济生态。
+
+**来源：** TechCrunch In Brief
+**链接：** https://techcrunch.com/2026/04/26/to-buy-this-bay-area-home-youll-need-anthropic-equity/`,
+    date: "2026-04-28 20:00",
+    source: "TechCrunch In Brief",
+    sourceUrl: "https://techcrunch.com/2026/04/26/to-buy-this-bay-area-home-youll-need-anthropic-equity/",
+    href: "/news/news-460",
+  },
+  {
+    id: "news-461",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "pip 26.1 发布：Python 包管理迎来锁文件和依赖冷却机制",
+    summary: 'Python 默认包管理器 pip 发布 26.1 版本，新增锁文件（pylock.toml）和依赖冷却（dependency cooldown）功能，提升供应链安全性。Simon Willison 详细解读了这一更新。',
+    content: `## pip 26.1：Python 生态的供应链安全升级
+
+**2026 年 4 月 28 日**，Simon Willison 在博客中详细解读了 pip 26.1 的新功能。
+
+### 核心新功能
+- **锁文件支持**：\`pip lock datasette llm\` 生成 pylock.toml 锁文件，确保依赖版本一致性，增强供应链安全
+- **依赖冷却机制**：\`--uploaded-prior-to P4D\` 选项可指定只安装至少 N 天前发布的包版本，避免恶意包供应链攻击的「时间窗口」
+- **放弃 Python 3.9 支持**：Python 3.9 已 EOL
+
+### 安全意义
+依赖冷却机制是应对软件供应链攻击的创新方案——恶意包通常在发布后很短时间内被发现和修复，延迟安装可以规避大部分风险。
+
+**来源：** Simon Willison Blog
+**链接：** https://simonwillison.net/2026/Apr/28/pip-261/`,
+    date: "2026-04-28 20:00",
+    source: "Simon Willison Blog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/28/pip-261/",
+    href: "/news/news-461",
+  },
+  {
+    id: "news-462",
+    tag: "AI Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "36 氪：通用自进化 Agent 新突破——30k 上下文足够，token 消耗下降近 90%",
+    summary: '36 氪报道，通用自进化 Agent 技术取得突破，通过将上下文信息密度最大化，仅需 30k 上下文即可完成任务，token 消耗大幅下降近 90%。',
+    content: `## 自进化 Agent：用更少上下文做更多事
+
+**2026 年 4 月 28 日**，据 36 氪报道。
+
+### 核心突破
+- **30k 上下文足够**：通用自进化 Agent 在完成任务时，仅需 30k 上下文窗口，而非之前动辄 100k+ 的需求
+- **token 消耗下降近 90%**：通过上下文信息密度最大化，大幅降低推理成本
+- **方法**：将上下文中的关键信息进行高效压缩和复用，避免重复传递相同信息
+
+### 行业意义
+Agent 应用的核心瓶颈之一是上下文窗口大小和 token 成本。这一突破如果验证有效，将大幅降低 Agent 的部署门槛。
+
+**来源：** 36 氪
+**链接：** https://36kr.com/p/3786342762159107`,
+    date: "2026-04-28 20:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/p/3786342762159107",
+    href: "/news/news-462",
+  },
+  {
+    id: "news-463",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "DeepSeek V4 关键特性被挖出：不惜代价保住的底层工程稳定器",
+    summary: '量子位报道，深入分析 DeepSeek V4 的底层架构，发现其关键的工程稳定器特性，这是 DeepSeek 不惜代价也要保住的底层能力。',
+    content: `## DeepSeek V4：被低估的工程能力
+
+**2026 年 4 月 28 日**，据量子位报道。
+
+### 核心发现
+- **工程稳定器**：DeepSeek V4 底层存在关键的工程稳定器，确保大规模推理时的稳定性和一致性
+- **不惜代价保住**：这项特性是 DeepSeek 团队最核心的技术资产之一，即使在成本压力下也不愿妥协
+- **底层架构**：不仅是模型能力的提升，更是工程架构的全面升级
+
+### 与美国 AI「御三家」对比
+分析人士在与美国顶级 AI 公司交流后认为，DeepSeek V4 的工程能力已达到领先水平，尤其在推理稳定性和成本优化方面。
+
+**来源：** 量子位 + 36 氪（阑夕）
+**链接：** https://36kr.com/p/3786294263553026`,
+    date: "2026-04-28 20:00",
+    source: "量子位 + 36 氪",
+    sourceUrl: "https://36kr.com/p/3786294263553026",
+    href: "/news/news-463",
+  },
+  {
+    id: "news-464",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "智联网：腾讯研究院深度解读——当 AI Agent 重写数字世界游戏规则",
+    summary: '腾讯研究院发文，深度分析 AI Agent 对移动互联网下一代形态的影响，认为这不是下一个风口，而是下一个时代——智联网将重写数字世界的底层规则。',
+    content: `## 智联网：AI Agent 时代的移动互联网下一站
+
+**2026 年 4 月 28 日**，腾讯研究院发布深度分析。
+
+### 核心观点
+- **不是风口，是时代**：AI Agent 不是短暂的技术热点，而是移动互联网的下一代基础设施
+- **规则重写**：Agent 将改变用户与数字世界的交互方式，从「浏览和点击」到「对话和委托」
+- **生态重构**：现有的 App 生态、搜索引擎、内容分发都将被 Agent 重新定义
+- **6G 赋能**：6G 网络将给机器人和低延迟 Agent 提供「外挂」，打破人类作业的「禁区」
+
+### 与 GEO 行业的关系
+随着 4.4 亿 AI 用户驱动增长，GEO（生成式引擎优化）行业正从狂热走向合规重建，需要建立新的行业标准和治理框架。
+
+**来源：** 腾讯研究院 + 36 氪 + IT 时报
+**链接：** https://36kr.com/p/3786303134096643`,
+    date: "2026-04-28 20:00",
+    source: "腾讯研究院 + 36 氪 + IT 时报",
+    sourceUrl: "https://36kr.com/p/3786303134096643",
+    href: "/news/news-464",
   }
 ];
