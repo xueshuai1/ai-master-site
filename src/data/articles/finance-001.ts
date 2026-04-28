@@ -15,7 +15,7 @@ export const article: Article = {
     {
       title: "1. 为什么 AI 正在接管华尔街？",
       body: `华尔街的历史本质上是一部**信息处理效率**的进化史。\n\n1970 年代，交易员用电话和纸笔传递信息；1990 年代，电子交易系统让信息延迟从分钟级降到毫秒级；2010 年代，高频交易将延迟压缩到微秒级；2020 年代，LLM 让信息理解从「数字」扩展到了「语义」。\n\n**但 2026 年出现了一个根本性变化：AI 不再只是「处理信息」，而是开始「做决策」。**\n\n[**virattt/ai-hedge-fund**](https://github.com/virattt/ai-hedge-fund)（56,548 stars，本周增长 4,458 星）是这一趋势的标志性项目。它不是简单的「AI 预测股价」工具，而是将多个 AI Agent 组织成一个**完整的对冲基金团队**，每个 Agent 有明确的角色、职责、决策权限和协作协议——就像现实中的对冲基金一样。\n\n> 「单个 AI Agent 就像一个聪明但经验不足的分析师；多个 AI Agent 协作则像一个成熟的投资团队——有不同视角、相互制衡、集体决策。」\n\n这个项目之所以在两周内引爆社区，是因为它回答了一个关键问题：**如果 AI 能编程（Claude Code）、能写报告（GPT-4o）、能做研究（Perplexity），那为什么不能做投资决策？**\n\n答案是：技术上完全可行，关键是如何设计多 Agent 协作架构。`,
-      mermaid: `timeline
+      mermaid: `graph TD
     title 金融信息处理的 AI 进化史
     1970s : 电话 + 纸笔
            : 人工分析，延迟分钟级
@@ -82,11 +82,11 @@ export const article: Article = {
     C2 --> D1
     D1 --> D2
 
-    style B1 fill:#4f46e5,stroke:#6366f1,color:#fff
-    style B2 fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style B1 fill:#4f46e5,stroke:#4f46e5,color:#fff
+    style B2 fill:#7c3aed,stroke:#7c3aed,color:#fff
     style B3 fill:#2563eb,stroke:#3b82f6,color:#fff
-    style C1 fill:#991b1b,stroke:#ef4444,color:#fff
-    style C2 fill:#047857,stroke:#10b981,color:#fff`,
+    style C1 fill:#991b1b,stroke:#dc2626,color:#fff
+    style C2 fill:#047857,stroke:#059669,color:#fff`,
     },
     {
       title: "3. 核心 Agent 角色深度解析",
@@ -559,8 +559,8 @@ if __name__ == "__main__":
     E -->|通过| F["交易计划"]
     E -->|不通过| G["调整/拒绝"]
     
-    style B fill:#991b1b,stroke:#ef4444,color:#fff
-    style E fill:#991b1b,stroke:#ef4444,color:#fff`,
+    style B fill:#991b1b,stroke:#dc2626,color:#fff
+    style E fill:#991b1b,stroke:#dc2626,color:#fff`,
     },
     {
       title: "6. 对比分析：多 Agent vs 传统量化 vs 人类基金经理",
@@ -596,10 +596,10 @@ if __name__ == "__main__":
     D -->|"感知扩展"| E
     E -->|"网络效应"| F
 
-    style C fill:#4f46e5,stroke:#6366f1,color:#fff
-    style D fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style C fill:#4f46e5,stroke:#4f46e5,color:#fff
+    style D fill:#7c3aed,stroke:#7c3aed,color:#fff
     style E fill:#2563eb,stroke:#3b82f6,color:#fff
-    style F fill:#047857,stroke:#10b981,color:#fff`,
+    style F fill:#047857,stroke:#059669,color:#fff`,
     },
     {
       title: "8. 总结与行动建议",

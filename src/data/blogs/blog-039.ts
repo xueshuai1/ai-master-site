@@ -25,7 +25,7 @@ const content: ArticleSection[] = [
   {
     title: "一、自进化 Agent 的三大技术路线全景",
     body: `2026 年的自进化 Agent 生态，已经形成了三条清晰的技术路线，每条路线代表不同的进化哲学：`,
-    mermaid: `graph TB
+    mermaid: `graph TD
     subgraph "自进化 AI Agent 技术路线"
         A[自进化 Agent] --> B[技能树生长路线]
         A --> C[GEP 基因组进化路线]
@@ -41,7 +41,7 @@ const content: ArticleSection[] = [
         D1 --> D2["多角色 Agent 协作\n经验积累与反思\n持续自我改进"]
     end
     
-    style A fill:#3730a3,stroke:#6366f1,color:#f1f5f9
+    style A fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
     style B fill:#047857,stroke:#34d399,color:#fff
     style C fill:#b45309,stroke:#fbbf24,color:#fff
     style D fill:#b91c1c,stroke:#f87171,color:#fff`,
@@ -591,7 +591,7 @@ if __name__ == "__main__":
 └─────────────────────────────────────────────┘`,
       },
     ],
-    mermaid: `graph TB
+    mermaid: `graph TD
     subgraph "混合自进化架构"
         A[用户任务] --> B[Planner Agent]
         B --> C[技能树查询]
@@ -611,7 +611,7 @@ if __name__ == "__main__":
         O --> B
     end
     
-    style A fill:#3730a3,stroke:#6366f1,color:#f1f5f9
+    style A fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
     style I fill:#047857,stroke:#34d399,color:#fff
     style O fill:#b45309,stroke:#fbbf24,color:#fff`,
   },
@@ -684,6 +684,7 @@ if __name__ == "__main__":
 ];
 
 export const blog: BlogPost = {
+    category: "ai-analysis",
   id: "blog-039",
   title: "自进化 AI Agent 全景解析：Hermes 107K 星背后的三大技术路线与混合架构实战",
   summary: "2026 年 4 月，自进化 AI Agent 成为 GitHub 最热赛道——Hermes Agent 一周暴涨 30,630 星突破 107K，GenericAgent 和 Evolver 分别代表技能树生长和 GEP 基因组进化路线。本文深度解析三大技术路线的架构对比、核心创新、Python 实战代码，以及混合架构的最佳实践。",

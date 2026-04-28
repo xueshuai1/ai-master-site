@@ -121,13 +121,13 @@ McKinsey 的数据很残酷：
 4. **应用层**：面向用户的产品
 
 如果只关注 Harness 而忽视数据治理，Agent 在生产环境中会遇到大量"幻觉"问题 —— 但其实那不是模型的问题，是数据的问题。`,
-        mermaid: `graph TB
+        mermaid: `graph TD
     A["应用层\\n用户界面"] --> B["Harness 层\\nLangGraph / CrewAI / AutoGen"]
     B --> C["数据治理层\\n验证 / 认证 / 血缘追踪"]
     C --> D["模型层\\nLLM 推理引擎"]
     D --> C
     C --> E["可信数据源\\n认证表 / 实时元数据"]
-    style C fill:#f59e0b,stroke:#d97706,color:#000`,
+    style C fill:#d97706,stroke:#d97706,color:#000`,
         tip: "实际建议：在评估 Harness 框架时，除了比较功能特性，还要评估它与你现有数据治理基础设施的集成能力。没有好的数据，再好的 Harness 也只是给 Agent 提供垃圾输入的管道。",
       },
       {

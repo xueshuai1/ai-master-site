@@ -398,7 +398,7 @@ if __name__ == "__main__":
     {
       title: "7. MCP：AI 编程工具的「USB-C」标准",
       body: `2026 年最重要的 AI 基础设施之一是 **MCP（Model Context Protocol）**——由 Anthropic 提出的模型上下文协议。它正在成为 AI 编程工具的 "USB-C 标准"。\n\n**为什么 MCP 如此重要？**\n\n在 MCP 出现之前，每个 AI 编程工具都需要自己实现一套工具调用接口：Claude Code 有自己的工具集，Cursor 有自己的插件系统，Cline 有自己的 API。这导致了严重的碎片化——开发者需要为每个工具单独配置、单独维护。\n\nMCP 通过标准化的 JSON-RPC 协议，让「工具」成为可插拔的模块。任何支持 MCP 的 AI 应用都可以调用任何 MCP 服务器提供的工具——无论是文件读写、数据库查询、API 调用还是浏览器自动化。\n\n**MCP 的三层架构：**`,
-      mermaid: `graph TB
+      mermaid: `graph TD
     A[LLM / AI 应用] -->|MCP Client| B[MCP 协议层]
     B -->|JSON-RPC| C[MCP Server 1: 文件系统]
     B -->|JSON-RPC| D[MCP Server 2: 数据库]
@@ -412,7 +412,7 @@ if __name__ == "__main__":
     E --> E2[表单填写]
     F --> F1[REST 调用]
     F --> F2[GraphQL 查询]
-    style B fill:#78350f,color:#f1f5f9,stroke:#f59e0b,stroke-width:3px
+    style B fill:#78350f,color:#f1f5f9,stroke:#d97706,stroke-width:3px
     style A fill:#1e3a5f,color:#f1f5f9
     style C fill:#14532d
     style D fill:#14532d
@@ -426,7 +426,7 @@ if __name__ == "__main__":
     {
       title: "9. 未来展望：2026 下半年及以后",
       body: `AI 编程工具的发展速度正在加速。以下是几个值得关注的趋势：\n\n**1. 多 Agent 协作编程**：未来的编程不再是「一个开发者 + 一个 AI」，而是「一个人类架构师 + 多个 AI 开发者 Agent」。类似于 ai-hedge-fund 的多 Agent 架构，编程 Agent 将分工协作——一个负责写代码、一个负责测试、一个负责代码审查、一个负责文档。\n\n**2. 代码库级长期记忆**：像 Claude-Mem 这样的记忆工具将与编程工具深度集成。AI 不再每次从零开始理解项目，而是基于长期记忆直接上手工作。这意味着 AI 对你项目的理解会随时间越来越深。\n\n**3. 自进化编程 Agent**：像 GenericAgent 和 Evolver 这样的自进化框架将与编程工具结合，让 AI 编程助手能够从每次交互中学习、优化自己的工作方式。\n\n**4. MCP 生态爆发**：随着 MCP 成为事实标准，将出现海量的 MCP 服务器——数据库、CI/CD、监控、安全扫描、设计工具……AI 编程助手将能调用几乎任何开发工具。\n\n**5. 端侧 AI 编程**：随着模型压缩技术的进步，小型编程模型将能在本地运行，实现零延迟、零隐私泄露的代码补全和生成。\n\n> 2026 年不是 AI 编程的终点，而是真正的起点。当 AI 从「辅助工具」变为「自主协作者」，软件开发的本质正在被重新定义。最大的赢家不是某个工具，而是每一个使用 AI 的开发者——因为编程的门槛正在以前所未有的速度降低。`,
-      mermaid: `timeline
+      mermaid: `graph TD
     title AI 编程工具发展时间线
     2021 Q4 : GitHub Copilot 发布<br/>AI 补全时代开启
     2023 Q1 : ChatGPT + 代码解释器<br/>对话式编程萌芽

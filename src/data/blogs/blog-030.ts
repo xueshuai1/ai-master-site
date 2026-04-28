@@ -71,7 +71,7 @@ class DesignElementType(Enum):
 class DesignSystem:
     """从团队代码库和设计文件中自动学习的设计系统"""
     brand_name: str
-    colors: dict  # {"primary": "#3b82f6", "secondary": "#10b981"}
+    colors: dict  # {"primary": "#3b82f6", "secondary": "#059669"}
     typography: dict  # {"heading": "Inter Bold", "body": "Inter Regular"}
     spacing_scale: list  # [4, 8, 12, 16, 24, 32, 48]
     components: dict  # {"button": {...}, "card": {...}, "nav": {...}}
@@ -405,6 +405,7 @@ class CodeHandoffSpec:
 ];
 
 export const blog: BlogPost = {
+    category: "ai-design",
   id: "blog-030",
   title: "Claude Design + Opus 4.7 深度解读：Anthropic 如何用 AI 设计工具挑战 Figma",
   summary: "2026 年 4 月，Anthropic 同时发布 Claude Design 和 Opus 4.7，标志着公司从模型供应商转型为全栈产品公司。Claude Design 能用自然语言生成完整设计稿并一键转为代码，Brilliant 用 2 次提示词完成了其他工具需要 20+ 次的复杂页面。本文深度解读 Claude Design 的技术架构、与 Figma/Adobe 的全面对比、Opus 4.7 的双轨模型策略（公开版 vs 强大到不能发布的 Mythos）、Anthropic 从 $9B 到 $30B 收入的狂飙，以及 AI 设计工具对行业的深远影响。",

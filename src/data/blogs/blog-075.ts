@@ -37,7 +37,7 @@ content: [
     
     style D fill:#1d4ed8,stroke:#1d4ed8,color:#fff
     style E fill:#047857,stroke:#047857,color:#fff
-    style F fill:#059669,stroke:#059669,color:#fff`,
+    style F fill:#1e3a5f,stroke:#2563eb,color:#fff`,
     },
     {
       title: "一、六大主流工具全景解析",
@@ -442,7 +442,7 @@ if __name__ == "__main__":
     style A fill:#1e3a5f,stroke:#1e3a5f,color:#fff
     style B2 fill:#047857,stroke:#047857,color:#fff
     style C1 fill:#dc2626,stroke:#dc2626,color:#fff
-    style D1 fill:#f59e0b,stroke:#f59e0b,color:#000
+    style D1 fill:#d97706,stroke:#d97706,color:#000
     style E1 fill:#7c3aed,stroke:#7c3aed,color:#fff`,
     },
     {
