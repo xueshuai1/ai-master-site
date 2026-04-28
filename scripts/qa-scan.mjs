@@ -11,8 +11,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const results = { pass: [], fail: [], warn: [] };
 
-function checkRegex(file, ruleName, regex, message) {
-  const content = readFileSync(join(ROOT, file), 'utf8');
+/** 移除代码块、mermaid、表格和 <pre>，避免 HTML 检查误报 */
+function stripCodeBlocks(content) {
+  return content
+    .replace(/```[\s\S]*?```/g, '')   // 标准 ``` 代码块
+    .replace(/mermaid:\s*`[\s\S]*?`/g, '') // mermaid 模板字面量（内含 <br/> 等）
+    .replace(/code:\s*`[\s\S]*?`/g, '')   // code 模板字面量（内含 React JSX 等）
+    .replace(/<pre>[\s\S]*?<\/pre>/g, '') // <pre> ASCII 图表（合理用法）
+    .replace(/table:\s*\{[\s\S]*?\},?\s*\n\s*\}/g, '') // table 块（单元格中可能有 <br>）
+}
+
+function checkRegex(file, ruleName, regex, message, stripCode = false) {
+  let content = readFileSync(join(ROOT, file), 'utf8');
+  if (stripCode) content = stripCodeBlocks(content);
   const matches = content.match(regex);
   if (matches && matches.length > 0) {
     results.fail.push(`❌ ${file}: ${ruleName} — 发现 ${matches.length} 处: ${message}`);
@@ -22,6 +33,11 @@ function checkRegex(file, ruleName, regex, message) {
 }
 
 function checkRequired(file, content) {
+  // 跳过类型定义文件（如 blog-types.ts）
+  if (file.endsWith('-types.ts')) {
+    results.pass.push(`✅ ${file}: 必填字段完整（类型定义文件，跳过）`);
+    return;
+  }
   const hasTitle = /title:\s*['"`]/.test(content);
   const hasBody = /body:\s*['"`]/.test(content);
   const hasSummary = /summary:\s*['"`]/.test(content);
@@ -48,7 +64,7 @@ for (const file of articleFiles) {
   const content = readFileSync(join(ROOT, file), 'utf8');
   checkRegex(file, '代码块格式', /```/, 'body 中发现 ``` 代码块');
   checkRegex(file, 'Mermaid 配色', /#ef4444|#f59e0b|#10b981|#6366f1|#8b5cf6|#ec4899|#06b6d4|#84cc16/, '发现浅色 Mermaid 配色');
-  checkRegex(file, 'HTML 标签', /<br[^>]*>|<\/br>|<p[^>]*>|<\/p>|<div[^>]*>|<\/div>/, '发现未转义 HTML 标签');
+  checkRegex(file, 'HTML 标签', /<br[^>]*>|<\/br>|<p[^>]*>|<\/p>|<div[^>]*>|<\/div>/, '发现未转义 HTML 标签', true);
   checkRequired(file, content);
 }
 
@@ -65,7 +81,7 @@ for (const file of blogFiles) {
   const content = readFileSync(join(ROOT, file), 'utf8');
   checkRegex(file, '代码块格式', /```/, 'body 中发现 ``` 代码块');
   checkRegex(file, 'Mermaid 配色', /#ef4444|#f59e0b|#10b981|#6366f1|#8b5cf6|#ec4899|#06b6d4|#84cc16/, '发现浅色 Mermaid 配色');
-  checkRegex(file, 'HTML 标签', /<br[^>]*>|<\/br>|<p[^>]*>|<\/p>|<div[^>]*>|<\/div>/, '发现未转义 HTML 标签');
+  checkRegex(file, 'HTML 标签', /<br[^>]*>|<\/br>|<p[^>]*>|<\/p>|<div[^>]*>|<\/div>/, '发现未转义 HTML 标签', true);
   checkRequired(file, content);
 }
 
