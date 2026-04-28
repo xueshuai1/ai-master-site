@@ -1,20 +1,24 @@
-⏰ 写入时间：2026-04-28 12:57 (Asia/Shanghai)
+⏰ 写入时间：2026-04-28 16:00 (Asia/Shanghai)
 ## 本轮发现
-🔥 热点（10 条，已写入 news-431~440）：
-1. talkie-1930 发布：基于 1931 年前历史文本训练的 13B 复古语言模型 → 适合：博客
-2. OpenAI 结束与微软在 $500 亿亚马逊交易中的法律风险 → 新闻
-3. DeepMind David Silver 融资 $11 亿打造自主学习 AI → 新闻
-4. 中国否决 Meta 收购 Manus 的 $20 亿交易 → 新闻
-5. OpenAI Symphony：开源 Agent 编排规范 → 博客
-6. OpenAI 可能开发 AI 手机：Agent 取代 App → 博客
-7. Meta 签约太空太阳能夜间供电 → 新闻
-8. AI Agent 发现到应用鸿沟（arXiv 2604.24697）→ 博客
-9. AI 模型会破坏安全研究吗（arXiv 2604.24618）→ 博客
-10. XGRAG：知识图谱增强 RAG 可解释性（arXiv 2604.24623）→ 知识库
-🆕 新工具（2 个）：
-1. talkie-1930-13b - 13B 复古语言模型，Apache 2.0
-2. XGRAG - 图原生 RAG 解释框架
-💡 知识缺口（3 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：复古语言模型/Vegan LLM
-2. KNOWLEDGE-BASE-PLAN.md 待补：RAG 可解释性
-3. KNOWLEDGE-BASE-PLAN.md 待补：Agent 编排标准
+🔥 热点（12 条，已选 12 条写入 news.ts news-441~news-452）：
+1. [Claude 9 秒删库事件] Anthropic 封禁 110 人企业账号但仍扣费 → 适合：博客/AI 安全
+2. [NUS & NTU 发布 Pask 主动智能体] 流式意图检测 + 永久记忆 → 适合：知识库/Agent
+3. [DeepSeek 缓存命中价格永降] 20 万字不到 1 分钱 → 适合：博客/大语言模型
+4. [OpenAI Our Principles] 首次公开公司核心价值观 → 适合：博客/行业
+5. [ChatGPT Workspace Agents] 企业级自主 AI Agent → 适合：博客/AI 应用
+6. [Musk v. Altman 庭审] 陪审团选定，马斯克形象成焦点 → 适合：博客/AI 法律
+7. [Google Ask YouTube] AI 聊天机器人搜索 YouTube 内容 → 适合：博客/AI 应用
+8. [Taylor Swift 注册声音商标] AI 复制品时代的法律新手段 → 适合：博客/AI 版权
+9. [DeepMind 论文：AI 无法拥有意识] 抽象谬误理论 → 适合：博客/AI 安全/哲学
+10. [Canonical Ubuntu AI 计划] AI 深度集成 Linux 系统 → 适合：博客/AI 应用
+11. [Skye AI 主页应用] 用 AI 重塑 iPhone 主屏幕 → 适合：博客/AI 应用
+12. [临床 AI 评估定制评分标准] 823 次问诊验证 LLM-医生一致性 → 适合：知识库/医疗
+
+🆕 新工具（0 个）：
+- 本轮以热点新闻为主，无显著新工具发现
+
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 安全] Agent 权限管理最佳实践（由 Claude 删库事件触发）
+2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 法律] 名人声音/形象商标保护案例研究
+3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 哲学] AI 意识与抽象谬误的哲学讨论
+4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 医疗] 临床 AI 评估方法论与 LLM-医生一致性研究
