@@ -23,7 +23,7 @@ const content: ArticleSection[] = [
 当遇到超出预设范围的任务时，传统 Agent 只能失败或求助人类。而自我进化 Agent 的核心思想是：**Agent 应该能够像生物一样，通过与环境交互不断学习新技能、优化已有能力、适应新的任务域。**
 
 这个愿景可以追溯到 Richard Sutton 的 "Bitter Lesson"——历史上 AI 的最大进步都来自利用计算能力的通用方法（搜索、学习），而非人类手工编码的知识。自我进化 Agent 正是这一理念的最新实践：与其让开发者手动添加每一个工具，不如让 Agent 自己发现、学习、固化工具。`,
-    mermaid: `graph TB
+    mermaid: `graph TD
     A[传统 AI Agent] --> B[预定义工具集]
     B --> C[固定能力边界]
     C --> D[遇到新任务 → 失败/求助]
@@ -635,7 +635,7 @@ if __name__ == "__main__":
         ["Token 效率", "中（检索 + 注入增加上下文）", "高（固化后 token 大幅减少）", "低（评估阶段需要大量并行执行）"],
         ["适用场景", "日常对话、客服、知识问答", "系统管理、代码开发、复杂任务", "策略优化、自动化测试、A/B 实验"],
         ["工程难度", "中（需要好的压缩和检索）", "高（需要安全的技能验证沙箱）", "极高（需要分布式评估框架）"],
-        ["代表项目", "NousResearch Hermes Agent<br>103K+ stars", "lsdefine GenericAgent<br>4.7K stars", "EvoMap Evolver<br>5.8K stars"],
+        ["代表项目", "NousResearch Hermes Agent（103K+ stars）", "lsdefine GenericAgent（4.7K stars）", "EvoMap Evolver（5.8K stars）"],
         ["开源状态", "✅ 完全开源", "✅ 完全开源", "✅ 完全开源"],
       ],
     },
@@ -720,12 +720,13 @@ if __name__ == "__main__":
 export const blog: BlogPost = {
   id: "blog-035",
   title: "Self-Evolving AI Agent 三强争霸：Hermes vs GenericAgent vs Evolver 深度解析",
+  category: "agent",
   summary: "2026 年 4 月，GitHub Trending 上三个自我进化 AI Agent 项目引爆社区：NousResearch Hermes Agent（103K stars）、GenericAgent（4.7K stars）、Evolver（5.8K stars）。本文深度解析三条技术路线——经验压缩、技能树生长、基因组进化协议——的核心机制、全面对比，以及附带的 Python 实现代码。",
   date: "2026-04-20",
   author: "AI Master",
   readTime: 22,
   tags: ["AI Agent", "自我进化", "Hermes", "GenericAgent", "Evolver", "GEP", "技能树", "GitHub Trending"],
-  content,
+  content: content,
 };
 
 export default blog;

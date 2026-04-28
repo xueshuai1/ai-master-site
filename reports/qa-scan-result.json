@@ -1094,6 +1094,7 @@
     "✅ src/data/blogs/blog-034.ts: 必填字段完整",
     "✅ src/data/blogs/blog-035.ts: 代码块格式",
     "✅ src/data/blogs/blog-035.ts: Mermaid 配色",
+    "✅ src/data/blogs/blog-035.ts: HTML 标签",
     "✅ src/data/blogs/blog-035.ts: 必填字段完整",
     "✅ src/data/blogs/blog-036.ts: 代码块格式",
     "✅ src/data/blogs/blog-036.ts: Mermaid 配色",
@@ -1271,7 +1272,6 @@
     "❌ src/data/articles/aieng-014.ts: Mermaid 配色 — 发现 1 处: 发现浅色 Mermaid 配色",
     "❌ src/data/articles/finance-001.ts: Mermaid 配色 — 发现 1 处: 发现浅色 Mermaid 配色",
     "❌ src/data/blogs/blog-030.ts: Mermaid 配色 — 发现 1 处: 发现浅色 Mermaid 配色",
-    "❌ src/data/blogs/blog-035.ts: HTML 标签 — 发现 1 处: 发现未转义 HTML 标签",
     "❌ src/data/blogs/blog-039.ts: Mermaid 配色 — 发现 1 处: 发现浅色 Mermaid 配色",
     "❌ src/data/blogs/blog-075.ts: Mermaid 配色 — 发现 1 处: 发现浅色 Mermaid 配色"
   ],

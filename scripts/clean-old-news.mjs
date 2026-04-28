@@ -1,7 +1,8 @@
 /**
- * 清理 news.ts 中 3 天以外的旧新闻
+ * 清理 news.ts 中 2 周以外的旧新闻
  * 运行: node scripts/clean-old-news.mjs
  * 应在更新新闻前执行，防止数据无限膨胀
+ * 保留 2 周有利于 SEO：持续产生新内容，同时保持合理的数据量
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
@@ -10,10 +11,10 @@ import { dirname, join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const newsFile = join(__dirname, '..', 'src', 'data', 'news.ts');
 
-// 保留最近 3 天（与前端 getLast3DaysNews() 逻辑对齐：getDate() - 2）
+// 保留最近 14 天（2 周）
 // ⚠️ 不用 toISOString()，会转 UTC 导致时差偏移
 const cutoff = new Date();
-cutoff.setDate(cutoff.getDate() - 2);
+cutoff.setDate(cutoff.getDate() - 13);
 cutoff.setHours(0, 0, 0, 0);
 const cutoffStr = `${cutoff.getFullYear()}-${String(cutoff.getMonth()+1).padStart(2,'0')}-${String(cutoff.getDate()).padStart(2,'0')}`;
 
@@ -55,7 +56,7 @@ for (const ch of body) {
 
 console.log(`当前总计 ${items.length} 条新闻`);
 
-// 过滤：只保留 3 天内的
+// 过滤：只保留 2 周内的
 const kept = items.filter(item => {
   const m = item.match(/date:\s*["']([^"']+)["']/);
   if (!m) return true; // 无法解析的保守保留

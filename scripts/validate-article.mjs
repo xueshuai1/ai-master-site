@@ -220,7 +220,7 @@ function checkBasicFormat(content, filePath) {
   }
   
   // 检查 content 数组是否存在
-  if (!content.includes('content: [')) {
+  if (!content.includes('content: [') && !content.includes('content,')) {
     errors.push({ file: filePath, type: 'missing_content', message: '缺少 content: [] 数组' });
   }
   
