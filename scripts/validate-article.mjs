@@ -398,6 +398,19 @@ for (const filePath of filesToCheck) {
       allErrors.push(e);
     }
   }
+
+  // 3.5. Mermaid 数量检查：每篇文章至少 2 个图表（2026-04-29 用户指示）
+  const mermaidMatches = content.match(/mermaid:\s*`/g);
+  const mermaidCount = mermaidMatches ? mermaidMatches.length : 0;
+  if (mermaidCount < 2) {
+    allErrors.push({
+      file: relPath,
+      line: 0,
+      type: 'insufficient_mermaid',
+      severity: 'error',
+      message: `文章只有 ${mermaidCount} 个 Mermaid 图表，至少需要 2 个！文章可以没有代码块，但不能没有文本绘图。`
+    });
+  }
   
   // 4. 代码块嵌入检查（body 中的 \`\`\`python 必须提取到 section.code）
   const codeBlockErrors = checkCodeBlocksInBody(content, relPath);

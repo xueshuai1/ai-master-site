@@ -68,6 +68,17 @@ function checkMermaidPercent(content, file) {
   }
 }
 
+/** 检查文章是否包含至少 2 个 Mermaid 图表（2026-04-29 用户指示） */
+function checkMermaidCount(content, file) {
+  const mermaidMatches = content.match(/mermaid:\s*`/g);
+  const count = mermaidMatches ? mermaidMatches.length : 0;
+  if (count < 2) {
+    results.fail.push(`❌ ${file}: Mermaid 图表数量不足 — 只有 ${count} 个，至少需要 2 个。文章可以没有代码块，但不能没有文本绘图。`);
+  } else {
+    results.pass.push(`✅ ${file}: Mermaid 图表数量 ${count} 个（≥ 2）`);
+  }
+}
+
 function checkRegex(file, ruleName, regex, message, stripCode = false) {
   let content = readFileSync(join(ROOT, file), 'utf8');
   if (stripCode) content = stripCodeBlocks(content);
@@ -109,6 +120,7 @@ console.log(`共 ${articleFiles.length} 篇文章\n`);
 
 for (const file of articleFiles) {
   const content = readFileSync(join(ROOT, file), 'utf8');
+  checkMermaidCount(content, file);
   checkRegex(file, '代码块格式', /```/, 'body 中发现 ``` 代码块');
   checkRegex(file, 'Mermaid 浅色', /#ef4444|#f59e0b|#10b981|#6366f1|#8b5cf6|#ec4899|#06b6d4|#84cc16/, '发现浅色 Mermaid 配色');
   checkClassDefContrast(content, file);
@@ -129,6 +141,7 @@ console.log(`共 ${blogFiles.length} 篇博客\n`);
 
 for (const file of blogFiles) {
   const content = readFileSync(join(ROOT, file), 'utf8');
+  checkMermaidCount(content, file);
   checkRegex(file, '代码块格式', /```/, 'body 中发现 ``` 代码块');
   checkRegex(file, 'Mermaid 浅色', /#ef4444|#f59e0b|#10b981|#6366f1|#8b5cf6|#ec4899|#06b6d4|#84cc16/, '发现浅色 Mermaid 配色');
   checkClassDefContrast(content, file);
