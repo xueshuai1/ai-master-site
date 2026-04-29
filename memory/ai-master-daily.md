@@ -46,3 +46,4 @@
 - commit: 5dbc99f2
 - [20:00] 2a058e66 — 研究员: 收集12来源(国外7+国内5), 更新新闻12条(news-532~543), 缺口4项, 已推送
 - [21:19] e231dd01 — PM阶段2: 知识库[agent-037 BCI脑机接口技术路线]+博客[blog-089 Scout AI自主军事AI], 深度校验通过, Build+TS全通过, 已推送
+- [23:00] 3c435f8c — QA: 修blog-022结构崩坏(mermaid塞入list数组导致prerender失败)+blog-042 mermaid类型错误, 补充3个mermaid图, 补category×2, Build+TS+QA 1669/0/0全通过
