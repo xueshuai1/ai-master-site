@@ -66,3 +66,4 @@
 - AI Infra 创业爆发：多起超亿美元融资
 - [01:18] 791a9175 — PM阶段2: 知识库[agent-038 Agent编排标准]+博客[blog-090 AI Infra创业爆发], 深度校验通过, Build+TS全通过, 已推送
 - [02:00] 15ff7a64 — 开发: 集成agent-038+blog-090, 修14 bug(对比度12+category 3+验证脚本1), bug-hash清零, Build+TS+QA全通过, 已推送
+- [05:09] 0231b7f0 — PM: 新增知识库[ethics-010 军事AI伦理](7742字/10章/3代码)+博客[blog-091 YouTube AI搜索](7459字/9章/3代码), 深度校验+Build+TS全通过
