@@ -113,18 +113,27 @@ print("N:N 搜索: 两张照片之间所有人配对 → 相册聚类")
                 ]
             },
             mermaid: `graph LR
-    A["原始图像"] --> B["人脸检测\nMTCNN/RetinaFace"]
+    A["原始图像"] --> B["人脸检测
+MTCNN/RetinaFace"]
     B --> C["边界框 + 关键点"]
-    C --> D["人脸对齐\n相似变换"]
-    D --> E["归一化图像\n112x112 RGB"]
-    E --> F["特征提取\nArcFace/FaceNet"]
+    C --> D["人脸对齐
+相似变换"]
+    D --> E["归一化图像
+112x112 RGB"]
+    E --> F["特征提取
+ArcFace/FaceNet"]
     F --> G["512 维嵌入向量"]
     G --> H{"任务类型"}
-    H --> I["1:1 验证\n余弦相似度 > 阈值"]
-    H --> J["1:N 识别\nTop-K 检索"]
-    style A fill:#0c4a6e
-    style I fill:#14532d
-    style J fill:#7c2d12`,
+    H --> I["1:1 验证
+余弦相似度 > 阈值"]
+    H --> J["1:N 识别
+Top-K 检索"]
+    class J s2
+    class I s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "工业级系统通常将检测和识别部署为独立的微服务——检测服务追求高吞吐，识别服务追求低延迟，两者通过消息队列解耦",
             warning: "不要在原始图像上直接做识别——没有经过对齐的人脸在特征空间中会产生巨大的 intra-class 方差，严重影响识别精度"
         },
@@ -248,20 +257,30 @@ class ViolaJonesDetector:
                 ]
             },
             mermaid: `graph TD
-    A["输入图像"] --> B["构建图像金字塔\n多尺度缩放"]
-    B --> C["滑动窗口\n逐位置扫描"]
-    C --> D["积分图计算\nO(1) 特征值"]
-    D --> E{"Stage 1\n2 个弱分类器"}
+    A["输入图像"] --> B["构建图像金字塔
+多尺度缩放"]
+    B --> C["滑动窗口
+逐位置扫描"]
+    C --> D["积分图计算
+O(1) 特征值"]
+    D --> E{"Stage 1
+2 个弱分类器"}
     E -->|"99％ 窗口被拒"| F["丢弃 ✗"]
-    E -->|"1％ 通过"| G{"Stage 2\n10 个弱分类器"}
+    E -->|"1％ 通过"| G{"Stage 2
+10 个弱分类器"}
     G -->|"80％ 被拒"| F
     G -->|"20％ 通过"| H["... 后续阶段"]
-    H --> I["通过所有阶段\n→ 人脸候选"]
-    I --> J["非极大值抑制\n合并重叠框"]
+    H --> I["通过所有阶段
+→ 人脸候选"]
+    I --> J["非极大值抑制
+合并重叠框"]
     J --> K["输出检测框"]
-    style A fill:#0c4a6e
-    style K fill:#14532d
-    style F fill:#7f1d1d`,
+    class F s2
+    class K s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
             tip: "理解 Viola-Jones 的级联思想对学习现代检测器（如 RetinaNet 的 Focal Loss 思想）非常有帮助——本质上都是让模型专注于「难样本」而非「简单背景」",
             warning: "Viola-Jones 对侧脸（>30°）和遮挡人脸效果极差，且检测精度上限受限于 Haar 特征的表达能力，现代项目不建议使用"
         },
@@ -398,21 +417,33 @@ class RNet(nn.Module):
                 ]
             },
             mermaid: `graph TD
-    A["输入图像"] --> B["图像金字塔\n多尺度缩放"]
-    B --> C["P-Net 全卷积\n滑动预测"]
-    C --> D["候选边界框\n+ NMS 合并"]
-    D --> E{"通过 P-Net\n阈值 ≥ 0.6?"}
+    A["输入图像"] --> B["图像金字塔
+多尺度缩放"]
+    B --> C["P-Net 全卷积
+滑动预测"]
+    C --> D["候选边界框
++ NMS 合并"]
+    D --> E{"通过 P-Net
+阈值 ≥ 0.6?"}
     E -->|否| F["丢弃 ✗"]
-    E -->|是| G["R-Net 24x24\n批量推理"]
-    G --> H{"通过 R-Net\n阈值 ≥ 0.7?"}
+    E -->|是| G["R-Net 24x24
+批量推理"]
+    G --> H{"通过 R-Net
+阈值 ≥ 0.7?"}
     H -->|否| F
-    H -->|是| I["O-Net 48x48\n精细检测"]
-    I --> J{"通过 O-Net\n阈值 ≥ 0.7?"}
+    H -->|是| I["O-Net 48x48
+精细检测"]
+    I --> J{"通过 O-Net
+阈值 ≥ 0.7?"}
     J -->|否| F
-    J -->|是| K["输出边界框\n+ 5 点 landmark"]
-    style A fill:#0c4a6e
-    style K fill:#14532d
-    style F fill:#7f1d1d`,
+    J -->|是| K["输出边界框
++ 5 点 landmark"]
+    class F s2
+    class K s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
             tip: "MTCNN 的 min_face_size 参数决定了能检测到的最小人脸——设为 20 可以检测到约 20 像素宽的人脸，但会增加 P-Net 的计算量",
             warning: "MTCNN 在密集人脸场景（超过 50 张脸）下速度显著下降，因为 R-Net 和 O-Net 需要对每个候选窗口单独推理，考虑改用 RetinaFace"
         },
@@ -544,17 +575,27 @@ def visualize_alignment(image, landmarks, aligned_face):
                 ]
             },
             mermaid: `graph TD
-    A["检测框 + 5 关键点"] --> B["计算重心\nsrc_mean, dst_mean"]
-    B --> C["去中心化\n减去均值"]
-    C --> D["计算尺度比\nscale = dst/src"]
-    C --> E["计算旋转角\ncosθ, sinθ"]
-    D --> F["构建 2x3\n变换矩阵"]
+    A["检测框 + 5 关键点"] --> B["计算重心
+src_mean, dst_mean"]
+    B --> C["去中心化
+减去均值"]
+    C --> D["计算尺度比
+scale = dst/src"]
+    C --> E["计算旋转角
+cosθ, sinθ"]
+    D --> F["构建 2x3
+变换矩阵"]
     E --> F
-    F --> G["warpAffine\n仿射变换"]
-    G --> H["112x112\n对齐人脸"]
-    H --> I["送入识别网络\n特征提取"]
-    style A fill:#0c4a6e
-    style I fill:#14532d`,
+    F --> G["warpAffine
+仿射变换"]
+    G --> H["112x112
+对齐人脸"]
+    H --> I["送入识别网络
+特征提取"]
+    class I s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "ArcFace 官方代码使用 112x112 输出尺寸和上述 ARCFACE_REF 参考点，如果你的识别模型是基于 ArcFace 训练的，务必使用完全相同的对齐参数",
             warning: "如果检测器 landmark 定位不准确（例如侧脸时眼角点偏移），对齐结果会产生系统性偏差——对齐质量直接决定了识别上限"
         },
@@ -707,18 +748,28 @@ def identify_face(query_embedding, gallery_embeddings, gallery_ids, top_k=5):
                 ]
             },
             mermaid: `graph TD
-    A["对齐人脸\n112x112"] --> B["Backbone\nResNet-50"]
+    A["对齐人脸
+112x112"] --> B["Backbone
+ResNet-50"]
     B --> C["2048 维特征"]
-    C --> D["Bottleneck\nBN + Dropout + Linear"]
-    D --> E["512 维嵌入\nL2 归一化"]
+    C --> D["Bottleneck
+BN + Dropout + Linear"]
+    D --> E["512 维嵌入
+L2 归一化"]
     E --> F{"训练 or 推理?"}
-    F -->|训练| G["ArcFace 分类头\n角度边际 + CrossEntropy"]
+    F -->|训练| G["ArcFace 分类头
+角度边际 + CrossEntropy"]
     F -->|推理| H["直接输出嵌入"]
-    G --> I["最小化类内角度\n最大化类间角度"]
-    H --> J["余弦相似度\n最近邻匹配"]
-    style A fill:#0c4a6e
-    style I fill:#7c2d12
-    style J fill:#14532d`,
+    G --> I["最小化类内角度
+最大化类间角度"]
+    H --> J["余弦相似度
+最近邻匹配"]
+    class J s2
+    class I s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "ArcFace 的 s=64 和 m=0.50 是经验值——m 太大会导致类间过度分离，m 太小则区分度不足，建议在 0.35-0.55 范围内调参",
             warning: "特征归一化（L2 normalize）是必须的——ArcFace 的角度边际公式假设输入特征模长为 1，如果不归一化，训练会不稳定甚至发散"
         },
@@ -845,16 +896,28 @@ print("最优选择: ArcFace > CosFace > SphereFace > Triplet Loss > Softmax")
                 ]
             },
             mermaid: `graph TD
-    A["Softmax\n无边际"] -->|"加距离约束"| B["Triplet Loss\nd(a,p) + α < d(a,n)"]
-    B -->|"回到分类框架\n加角度约束"| C["SphereFace\ncos(m·θ)"]
-    C -->|"简化边际形式"| D["CosFace\ncos(θ) - m"]
-    D -->|"精确几何边际"| E["ArcFace\ncos(θ + m)"]
-    E --> F["类内角度压缩\n类间角度推开"]
-    F --> G["超球面均匀分布\n最优区分度"]
-    style A fill:#7f1d1d
-    style B fill:#7c2d12
-    style E fill:#14532d
-    style G fill:#14532d`,
+    A["Softmax
+无边际"] -->|"加距离约束"| B["Triplet Loss
+d(a,p) + α < d(a,n)"]
+    B -->|"回到分类框架
+加角度约束"| C["SphereFace
+cos(m·θ)"]
+    C -->|"简化边际形式"| D["CosFace
+cos(θ) - m"]
+    D -->|"精确几何边际"| E["ArcFace
+cos(θ + m)"]
+    E --> F["类内角度压缩
+类间角度推开"]
+    F --> G["超球面均匀分布
+最优区分度"]
+    class G s3
+    class E s2
+    class B s1
+    class A s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d
+    classDef s3 fill:#14532d`,
             tip: "新项目直接选择 ArcFace 作为起点——它已经是最成熟、效果最好的选择，无需再比较其他损失函数",
             warning: "Triplet Loss 的 margin α 和 ArcFace 的 margin m 是完全不同的概念——Triplet 的 α 是欧氏距离差值（通常 0.2-0.5），ArcFace 的 m 是弧度（通常 0.35-0.55），不要混淆"
         },
@@ -1069,22 +1132,38 @@ if __name__ == "__main__":
                 ]
             },
             mermaid: `graph TD
-    A["系统启动\n加载人脸库"] --> B["注册模式\n录入新人照片"]
-    B --> C["提取 128 维\n特征向量"]
-    C --> D["序列化存储\npickle / 向量数据库"]
-    A --> E["识别模式\n处理新图像"]
-    E --> F["检测人脸\nMTCNN/HOG"]
-    F --> G["提取特征\nResNet-34"]
-    G --> H["线性扫描\n数据库比对"]
-    H --> I["距离 < 阈值?\n(0.45)"]
-    I -->|是| J["返回身份\n+ 置信度"]
-    I -->|否| K["Unknown\n陌生人"]
-    E --> L["实时模式\n视频流处理"]
-    L --> M["降帧率\n每 1 秒识别"]
+    A["系统启动
+加载人脸库"] --> B["注册模式
+录入新人照片"]
+    B --> C["提取 128 维
+特征向量"]
+    C --> D["序列化存储
+pickle / 向量数据库"]
+    A --> E["识别模式
+处理新图像"]
+    E --> F["检测人脸
+MTCNN/HOG"]
+    F --> G["提取特征
+ResNet-34"]
+    G --> H["线性扫描
+数据库比对"]
+    H --> I["距离 < 阈值?
+(0.45)"]
+    I -->|是| J["返回身份
++ 置信度"]
+    I -->|否| K["Unknown
+陌生人"]
+    E --> L["实时模式
+视频流处理"]
+    L --> M["降帧率
+每 1 秒识别"]
     M --> F
-    style A fill:#0c4a6e
-    style J fill:#14532d
-    style K fill:#7f1d1d`,
+    class K s2
+    class J s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
             tip: "生产环境中注册每人至少 3-5 张不同光线/角度的照片，系统会自动取多张特征的平均值，显著提高识别鲁棒性",
             warning: "face_recognition 的 tolerance=0.45 是默认值——降低到 0.35 可以减少误识（把陌生人认错），但会增加拒识率（认不出真人），需要根据场景权衡"
         }

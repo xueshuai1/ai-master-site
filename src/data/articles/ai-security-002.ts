@@ -535,10 +535,12 @@ Google 提出的 SLSA 框架为软件供应链安全定义了从 Level 0 到 Lev
     C4 --> D
     
     D --> E["可信赖的 AI 系统"]
-    
-    style C fill:#047857,color:#fff
-    style D fill:#1d4ed8,color:#fff
-    style E fill:#b45309,color:#fff`,
+    class E s2
+    class D s1
+    class C s0
+    classDef s0 fill:#047857,color:#fff
+    classDef s1 fill:#1d4ed8,color:#fff
+    classDef s2 fill:#b45309,color:#fff`,
             tip: "2026 年的安全共识：供应链安全不再是安全团队的责任，而是每个开发者的基本素养。就像你不会在生产环境中使用未加密的 HTTP 一样，你也不应该使用未经安全审查的依赖。",
         },
     ],

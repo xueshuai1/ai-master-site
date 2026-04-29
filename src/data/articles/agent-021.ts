@@ -16,7 +16,8 @@ export const article: Article = {
       title: "1. 为什么 2026 年是「AI 团队」元年？",
       body: `回顾 2025 年，AI Agent 的核心叙事是**「单个 Agent 能做什么」**——能不能自主编码？能不能操作浏览器？能不能调用 API？这些问题的答案在 2025 年底已经基本明朗：单个 Agent 可以在限定场景下完成复杂任务。\n\n但进入 2026 年，问题变成了：**「多个 Agent 如何协作？」**\n\n这不是一个量变，而是一个质变。单个 Agent 无论多强，都有能力边界——上下文窗口有限、专业知识有限、无法同时处理多个独立任务。而 Agent 团队可以通过**分工协作**突破这些限制。\n\n2026 年 4 月，三个信号同时出现，标志着「AI 团队」元年的到来：\n\n- **Multica**（github.com/multica-ai/multica）：开源 Managed Agents 平台，单周暴涨 7,831 星，总计 16,826 星。核心理念是「把编程 Agent 变成真正的团队成员」——你可以给 Agent 分配任务、追踪它的进度、看它累积技能\n- **OpenAI Agents SDK**：标准化 Agent 构建工具链，原生支持 Agent 编排和 Handoff（任务交接）\n- **n8n AI 工作流**（184K 星）：从工作流自动化平台进化为 AI Agent 编排平台，支持多 Agent 协作管道\n\n这些项目的共同点是：**不再把 Agent 当工具，而是当「同事」。**`,
       mermaid: `graph LR
-    A["2025: 单 Agent 时代"] -->|"能力天花板\n单个 Agent 无法突破"| B["2026: AI 团队时代"]
+    A["2025: 单 Agent 时代"] -->|"能力天花板
+单个 Agent 无法突破"| B["2026: AI 团队时代"]
     
     subgraph 单 Agent 局限
     A1["上下文窗口有限"]
@@ -39,9 +40,12 @@ export const article: Article = {
     B --> B3
     B --> B4
     
-    C["🔥 Multica\n16K+ 星\n周增 7,831"] -.-> B
+    C["🔥 Multica
+16K+ 星
+周增 7,831"] -.-> B
     D["OpenAI Agents SDK"] -.-> B
-    E["n8n AI 编排\n184K 星"] -.-> B`,
+    E["n8n AI 编排
+184K 星"] -.-> B`,
       tip: "Managed Agent 不是 Multi-Agent 的简单升级。Multi-Agent 关注「多个 Agent 如何对话」，Managed Agent 关注「如何管理团队：分配任务、追踪进度、评估绩效、累积技能」。这是从「技术框架」到「管理系统」的跃迁。"
     },
     {
@@ -57,20 +61,25 @@ export const article: Article = {
     subgraph Managed Agent 平台
     ML["管理层 Management Layer"]
     
-    ML -->|"任务分配"| MA4["Agent A\n前端开发"]
-    ML -->|"任务分配"| MA5["Agent B\n后端开发"]
-    ML -->|"任务分配"| MA6["Agent C\n测试"]
+    ML -->|"任务分配"| MA4["Agent A
+前端开发"]
+    ML -->|"任务分配"| MA5["Agent B
+后端开发"]
+    ML -->|"任务分配"| MA6["Agent C
+测试"]
     
     MA4 -->|"进度汇报"| ML
     MA5 -->|"进度汇报"| ML
     MA6 -->|"进度汇报"| ML
     
-    ML --> SK["技能库\nSkill Registry"]
+    ML --> SK["技能库
+Skill Registry"]
     SK -->|"技能注入"| MA4
     SK -->|"技能注入"| MA5
     SK -->|"技能注入"| MA6
     
-    ML --> PE["绩效评估\nPerformance Eval"]
+    ML --> PE["绩效评估
+Performance Eval"]
     end
     
     Multi-Agent 框架 -.->|"缺乏"| M1["任务管理"]
@@ -349,12 +358,17 @@ if __name__ == "__main__":
       title: "4. Managed Agent 的核心技术组件",
       body: `构建一个 Managed Agent 平台需要解决四个核心技术问题：\n\n### 4.1 任务理解与分解\n\n当用户提交一个复杂任务（如「开发一个带用户认证的博客系统」）时，平台需要：\n1. 理解任务的整体目标和约束条件\n2. 将任务拆解为可独立执行的子任务\n3. 识别子任务之间的依赖关系\n\n这通常需要一个**规划 Agent（Planner）**，使用 LLM 的推理能力进行分析。\n\n### 4.2 Agent 匹配与调度\n\n任务分解后，需要将每个子任务分配给最合适的 Agent。匹配策略包括：\n- **技能匹配**：Agent 的技能是否与任务需求匹配\n- **负载平衡**：避免某个 Agent 过载而其他 Agent 闲置\n- **历史绩效**：优先分配给在该类任务上表现好的 Agent\n- **上下文亲和性**：将相关子任务分配给同一个 Agent，减少上下文切换\n\n### 4.3 执行监控与异常处理\n\nAgent 在执行过程中可能遇到各种问题：API 调用失败、逻辑错误、资源不足等。平台需要：\n- 实时监控 Agent 的执行状态\n- 检测超时、死循环等异常情况\n- 提供人工介入的接口\n- 支持任务重试和回滚\n\n### 4.4 经验累积与知识共享\n\n这是 Managed Agent 区别于 Multi-Agent 的核心能力。平台需要：\n- 从每次任务执行中提取可复用的知识\n- 将知识结构化（技能、模式、最佳实践）\n- 在后续任务中自动注入相关知识\n- 支持 Agent 之间的知识共享`,
       mermaid: `graph TD
-    U["用户提交任务"] --> P["Planner Agent\n任务分解"]
-    P --> T1["子任务 A\n前端开发"]
-    P --> T2["子任务 B\n后端开发"]
-    P --> T3["子任务 C\n测试"]
+    U["用户提交任务"] --> P["Planner Agent
+任务分解"]
+    P --> T1["子任务 A
+前端开发"]
+    P --> T2["子任务 B
+后端开发"]
+    P --> T3["子任务 C
+测试"]
 
-    T1 --> S["调度引擎\nScheduler"]
+    T1 --> S["调度引擎
+Scheduler"]
     T2 --> S
     T3 --> S
 
@@ -362,15 +376,19 @@ if __name__ == "__main__":
     S -->|"技能+负载匹配"| A2["Backend Agent"]
     S -->|"技能+负载匹配"| A3["QA Agent"]
 
-    A1 -->|"执行中"| M["监控中心\nMonitor"]
+    A1 -->|"执行中"| M["监控中心
+Monitor"]
     A2 -->|"执行中"| M
     A3 -->|"执行中"| M
 
-    M -->|"正常"| R["聚合结果\n返回用户"]
-    M -->|"异常"| H["人工介入\nHuman-in-the-loop"]
+    M -->|"正常"| R["聚合结果
+返回用户"]
+    M -->|"异常"| H["人工介入
+Human-in-the-loop"]
     H -->|"修正后继续"| S
 
-    A1 -->|"经验提取"| K["知识库\nKnowledge Base"]
+    A1 -->|"经验提取"| K["知识库
+Knowledge Base"]
     A2 -->|"经验提取"| K
     A3 -->|"经验提取"| K
 
@@ -722,21 +740,28 @@ if __name__ == "__main__":
       body: `Managed Agent 平台还处在非常早期的阶段。以下几个方向值得持续关注：\n\n**自进化 Agent 团队**：将自进化机制（如 agent-020 中讨论的 Hermes Agent、GenericAgent、Evolver）引入团队层面。不仅单个 Agent 可以进化，整个团队的协作模式、任务分配策略、知识共享机制也可以进化。\n\n**跨组织 Agent 协作**：不同公司、不同项目的 Agent 如何安全地协作？这需要标准化的协议（类似 MCP 协议之于工具集成），以及信任机制。\n\n**Agent 经济模型**：当 Agent 可以自主完成任务时，如何计量和结算？可能出现「Agent 技能市场」、「Agent 劳动力市场」等新经济模式。\n\n**法律与合规**：AI 团队完成的工作，知识产权归属谁？Agent 犯错的法律责任如何界定？这些都是 2026-2027 年需要解决的关键问题。\n\n**与自进化的结合**：Managed Agent + Self-Evolving Agent 可能是终极形态——团队不仅管理 Agent，还帮助 Agent 进化；进化的 Agent 又让团队更强大。这是一个正反馈循环。`,
       mermaid: `graph TD
     subgraph 2026: 当前
-    A1["Managed Agent 平台\nMultica / n8n"]
-    A2["自进化 Agent\nHermes / GenericAgent"]
+    A1["Managed Agent 平台
+Multica / n8n"]
+    A2["自进化 Agent
+Hermes / GenericAgent"]
     A3["MCP 协议标准化"]
     end
 
     subgraph 2026 Q3-Q4
-    B1["自进化 Agent 团队\n团队级进化"]
-    B2["Agent 技能市场\n共享技能模块"]
+    B1["自进化 Agent 团队
+团队级进化"]
+    B2["Agent 技能市场
+共享技能模块"]
     B3["跨组织协作协议"]
     end
 
     subgraph 2027
-    C1["Agent 经济体\n自主协作 + 经济结算"]
-    C2["人类-AI 混合团队\n人类和 Agent 共同工作"]
-    C3["监管框架\n法律 + 合规"]
+    C1["Agent 经济体
+自主协作 + 经济结算"]
+    C2["人类-AI 混合团队
+人类和 Agent 共同工作"]
+    C3["监管框架
+法律 + 合规"]
     end
 
     A1 --> B1

@@ -357,7 +357,7 @@ fl.client.start_numpy_client(server_address="0.0.0.0:8080",
                     ["个性化 FL", "保留客户端特异性", "异构数据场景", "中"]
                 ]
             },
-            mermaid: `graph TD TB
+            mermaid: `graph TD
     A["中央服务器"] -->|"下发全局模型"| B["客户端 1"]
     A -->|"下发全局模型"| C["客户端 2"]
     A -->|"下发全局模型"| D["客户端 N"]
@@ -368,9 +368,12 @@ fl.client.start_numpy_client(server_address="0.0.0.0:8080",
     F -->|"上传更新"| A
     G -->|"上传更新"| A
     A -->|"FedAvg 聚合"| A
-    style B fill:#0c4a6e
-    style C fill:#0c4a6e
-    style D fill:#0c4a6e`,
+    class D s2
+    class C s1
+    class B s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#0c4a6e
+    classDef s2 fill:#0c4a6e`,
             tip: "在非独立同分布（Non-IID）数据场景下，建议使用 FedProx 或 SCAFFOLD 等改进算法",
             warning: "纯联邦学习不等于隐私安全，模型梯度仍可通过逆向工程泄露训练数据"
         },
@@ -459,9 +462,10 @@ print("CrypTen 支持在加密状态下执行完整的神经网络推理")`
     C -->|"加密计算"| D["f(x, y)"]
     D -->|"解密"| E["参与方 A 得到结果"]
     D -->|"解密"| F["参与方 B 得到结果"]
-    style C fill:#7c2d12
     C -.->|"A 不知道 y"| A
-    C -.->|"B 不知道 x"| B`,
+    C -.->|"B 不知道 x"| B
+    class C s0
+    classDef s0 fill:#7c2d12`,
             tip: "对于简单的统计聚合任务，秘密分享的开销远小于混淆电路，优先选择轻量级方案",
             warning: "MPC 的性能瓶颈主要在通信而非计算，高延迟网络会显著拖慢 MPC 协议执行"
         },
@@ -559,9 +563,10 @@ print(f"推理结果: {encrypted_result.decrypt()}")`
     D -->|"密文"| E["客户端"]
     E --> F["HE 解密"]
     F --> G["明文结果"]
-    style C fill:#881337
     C -.->|"服务器无法看到明文"| B
-    C -.->|"服务器无法看到明文"| D`,
+    C -.->|"服务器无法看到明文"| D
+    class C s0
+    classDef s0 fill:#881337`,
             tip: "CKKS 方案最适合 ML 推理，它原生支持浮点数运算且精度可调",
             warning: "同态加密无法高效处理 ReLU 等非线性激活函数，需要使用多项式近似（如 square 激活）"
         },
@@ -657,7 +662,7 @@ class DPFedAvgClient(fl.client.NumPyClient):
                     ["TF Encrypted", "隐私保护推理", "TensorFlow", "MPC, DP"]
                 ]
             },
-            mermaid: `graph TD TB
+            mermaid: `graph TD
     A["隐私保护 ML 技术栈"] --> B["差分隐私 DP"]
     A --> C["联邦学习 FL"]
     A --> D["安全多方计算 MPC"]

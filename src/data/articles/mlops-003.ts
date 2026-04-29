@@ -285,12 +285,15 @@ loaded_model = mlflow.sklearn.load_model(model_uri)`
                 ]
             },
             mermaid: `graph LR
-    A["log_model"] --> B["Version N\n(None)"]
+    A["log_model"] --> B["Version N
+(None)"]
     B -->|"transition"| C["Staging"]
     C -->|"测试通过"| D["Production"]
     C -->|"测试失败"| E["Archived"]
-    D -->|"新版本就绪"| F["Archive +\n新版本 Production"]
-    F --> G["Version N+1\n(Production)"]`,
+    D -->|"新版本就绪"| F["Archive +
+新版本 Production"]
+    F --> G["Version N+1
+(Production)"]`,
             tip: "使用 MLflow 别名功能代替硬编码版本号加载模型。这样可以在不修改推理代码的情况下切换模型版本。",
             warning: "archive_existing_versions=True 会自动将旧版本归档。在调用前确认旧版本确实不需要保留在生产状态，避免误操作导致服务中断。",
         },
@@ -386,13 +389,18 @@ print(f"Found {len(gpu_models)} models trained on A100")`
                 ]
             },
             mermaid: `graph TD
-    A["模型注册"] --> B["系统元数据\n自动采集"]
-    A --> C["自定义标签\n手动设置"]
-    B --> D["创建时间/运行ID/\n模型格式"]
-    C --> E["data_version\nowner/compliance"]
+    A["模型注册"] --> B["系统元数据
+自动采集"]
+    A --> C["自定义标签
+手动设置"]
+    B --> D["创建时间/运行ID/
+模型格式"]
+    C --> E["data_version
+owner/compliance"]
     D --> F["完整模型画像"]
     E --> F
-    F --> G["可搜索/可过滤\n可审计"]`,
+    F --> G["可搜索/可过滤
+可审计"]`,
             tip: "在训练脚本中内置标签自动采集逻辑，避免人工遗忘。例如使用装饰器自动记录训练时长和数据版本。",
             warning: "标签值是字符串类型，不要用标签存储大段文本或二进制数据。对于复杂元数据，使用 MLflow 的 log_param 或外部文档链接。",
         },
@@ -514,7 +522,8 @@ jobs:
     D -->|"通过"| E["合规审批"]
     E -->|"通过"| F["灰度发布"]
     F -->|"通过"| G["Production"]
-    F -->|"异常"| H["回滚到\n上一版本"]`,
+    F -->|"异常"| H["回滚到
+上一版本"]`,
             tip: "将审批流程自动化到最大程度。自动验证应该覆盖 80% 以上的检查项，人工只关注剩余 20% 需要专业判断的部分。",
             warning: "跳过审批流程直接推 Production 是 ML 系统的最大风险之一。即使在紧急情况下，也应走快速审批通道而不是完全绕过审批。",
         },
@@ -617,11 +626,17 @@ if "s3://data-lake/churn/v2.parquet" in graph.nodes:
                 ]
             },
             mermaid: `graph TD
-    A["原始数据\ns3://raw/churn/"] --> B["特征工程\nfeature_store"]
-    B --> C["训练运行\nrun_id: abc123"]
-    C --> D["模型权重\nchurn_predictor:v3"]
-    D --> E["部署服务\n/api/v1/predict"]
-    E --> F["业务指标\nA/B 实验结果"]
+    A["原始数据
+s3://raw/churn/"] --> B["特征工程
+feature_store"]
+    B --> C["训练运行
+run_id: abc123"]
+    C --> D["模型权重
+churn_predictor:v3"]
+    D --> E["部署服务
+/api/v1/predict"]
+    E --> F["业务指标
+A/B 实验结果"]
     A -.->|"血缘追溯"| D
     B -.->|"血缘追溯"| D
     C -.->|"血缘追溯"| D`,

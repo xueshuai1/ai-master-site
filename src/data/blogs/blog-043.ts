@@ -39,7 +39,7 @@ const content: ArticleSection[] = [
 | Agent 自主循环 | ✅ 多步自主执行 | ✅ 多步自主执行 | ⚠️ 有限（Agent mode）|
 
 **关键发现：** OpenAI Codex 是唯一开源、唯一默认沙箱安全执行、唯一在 FREE 计划中可用的工具。这三点使其在 2026 年的定价竞争中占据了独特的「平民化」定位。`,
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     subgraph "开发者输入"
         A["📝 自然语言需求"]
     end

@@ -42,7 +42,7 @@ const content: ArticleSection[] = [
 **MCP（Model Context Protocol）工具生态**是 2026 年最热门的方案：通过标准化的工具接口，Agent 可以连接任意知识源（数据库、文件系统、API、代码库等），按需调用。它相当于「给 Agent 一个万能遥控器」。
 
 这三种方案不是互斥的，而是可以组合使用的。理解它们各自的定位，是做出正确选型的前提。`,
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     subgraph "方案一：RAG"
         A1[用户问题] --> B1[Embedding 模型]
         B1 --> C1[向量检索]

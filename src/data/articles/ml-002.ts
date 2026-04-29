@@ -188,7 +188,7 @@ class DecisionTreeClassifier:
 随机森林通过两种随机性来确保树之间的多样性：Bootstrap 采样（有放回抽样），每棵树使用不同的训练子集；特征随机选择，在每个分裂点只从随机选择的 k 个特征中寻找最佳分裂。
 
 这种设计使得随机森林几乎不会过拟合（随着树的数量增加，泛化误差收敛到一个下界）、不需要剪枝、对异常值鲁棒、可以并行训练。而且它天然支持特征重要性评估。`,
-        mermaid: `graph TD TB
+        mermaid: `graph TD
     A["原始训练集"] --> B["Bootstrap 采样 1"]
     A --> C["Bootstrap 采样 2"]
     A --> D["Bootstrap 采样 N"]
@@ -315,10 +315,12 @@ for i in np.argsort(perm_imp)[::-1][:5]:
     C --> D["Top-K 特征子集"]
     D --> E["SHAP 可解释性分析"]
     E --> F["业务决策报告"]
-
-    style A fill:#1e3a5f
-    style C fill:#14532d
-    style F fill:#7c2d12`,
+    class F s2
+    class C s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
         tip: "实战建议：拿到新数据集，先跑随机森林基线 → 排列重要性筛特征 → SHAP 生成可解释性报告。这套流程适用于 80% 的表格数据场景。",
       },
     ],

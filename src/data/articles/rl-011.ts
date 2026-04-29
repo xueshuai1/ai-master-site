@@ -96,12 +96,20 @@ class ModelBasedAgent:
 - 自动调整模型参数或结构
 - 持续学习新的环境规律`,
       mermaid: `graph TD
-    L1["L1 Predictor\n单步预测\ns, a -> s', r"] --> L2["L2 Simulator\n多步推演\n尊重领域规律"]
-    L2 --> L3["L3 Evolver\n自主修正模型\n预测失败时更新"]
-    
-    style L1 fill:#1e3a8a,stroke:#1e3a8a,color:#fff
-    style L2 fill:#14532d,stroke:#14532d,color:#fff
-    style L3 fill:#581c87,stroke:#581c87,color:#fff`,
+    L1["L1 Predictor
+单步预测
+s, a -> s', r"] --> L2["L2 Simulator
+多步推演
+尊重领域规律"]
+    L2 --> L3["L3 Evolver
+自主修正模型
+预测失败时更新"]
+    class L3 s2
+    class L2 s1
+    class L1 s0
+    classDef s0 fill:#1e3a8a,stroke:#1e3a8a,color:#fff
+    classDef s1 fill:#14532d,stroke:#14532d,color:#fff
+    classDef s2 fill:#581c87,stroke:#581c87,color:#fff`,
     },
     {
       title: "4. 四种规律领域",

@@ -1042,7 +1042,7 @@ def main():
           ["监控日志", "Python logging", "性能追踪与错误记录", "日志级别, 采样率"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["用户请求"] --> B["CustomerServiceSystem"]
     B --> C["加载会话历史"]
     C --> D["LangChain Agent"]

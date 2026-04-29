@@ -30,11 +30,15 @@ export const article: Article = {
 
 2026 年行业共识：**模型能力已经趋同，真正的差异化在于 Harness 层**。`,
         mermaid: `graph TD
-    A["用户目标"] --> B["应用层\\n产品界面"]
-    B --> C["Harness 层\\n工具调用 / 任务规划 / 上下文管理"]
-    C --> D["模型层\\nLLM 推理引擎"]
+    A["用户目标"] --> B["应用层\
+产品界面"]
+    B --> C["Harness 层\
+工具调用 / 任务规划 / 上下文管理"]
+    C --> D["模型层\
+LLM 推理引擎"]
     D --> C
-    C --> E["外部工具\\nAPI / 代码执行 / 浏览器"]
+    C --> E["外部工具\
+API / 代码执行 / 浏览器"]
     E --> C
     C --> F["执行结果"]`,
         tip: "关键洞察：Gartner 预测到 2026 年底，40% 的企业应用将包含任务特定的 AI Agent（2025 年不到 5%）。Harness 已经从可选工具变成了基础设施。",
@@ -122,12 +126,18 @@ McKinsey 的数据很残酷：
 
 如果只关注 Harness 而忽视数据治理，Agent 在生产环境中会遇到大量"幻觉"问题 —— 但其实那不是模型的问题，是数据的问题。`,
         mermaid: `graph TD
-    A["应用层\\n用户界面"] --> B["Harness 层\\nLangGraph / CrewAI / AutoGen"]
-    B --> C["数据治理层\\n验证 / 认证 / 血缘追踪"]
-    C --> D["模型层\\nLLM 推理引擎"]
+    A["应用层\
+用户界面"] --> B["Harness 层\
+LangGraph / CrewAI / AutoGen"]
+    B --> C["数据治理层\
+验证 / 认证 / 血缘追踪"]
+    C --> D["模型层\
+LLM 推理引擎"]
     D --> C
-    C --> E["可信数据源\\n认证表 / 实时元数据"]
-    style C fill:#d97706,stroke:#d97706,color:#000`,
+    C --> E["可信数据源\
+认证表 / 实时元数据"]
+    class C s0
+    classDef s0 fill:#d97706,stroke:#d97706,color:#000`,
         tip: "实际建议：在评估 Harness 框架时，除了比较功能特性，还要评估它与你现有数据治理基础设施的集成能力。没有好的数据，再好的 Harness 也只是给 Agent 提供垃圾输入的管道。",
       },
       {

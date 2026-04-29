@@ -89,7 +89,7 @@ def medical_metrics(y_true: np.ndarray, y_pred: np.ndarray,
           ["生理监测", "时序模型, 异常检测", "ECG, EEG, 血氧", "88%-96%"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["医疗数据源"] --> B["影像数据"]
     A --> C["电子病历"]
     A --> D["基因组数据"]
@@ -206,12 +206,17 @@ def load_dicom_image(filepath: str) -> np.ndarray:
         ]
       },
       mermaid: `graph LR
-    A["原始影像"] --> B["预处理\nHU归一化"]
-    B --> C["数据增强\n翻转/旋转/噪声"]
-    C --> D["特征提取\nCNN/Transformer"]
-    D --> E["多尺度融合\n跳跃连接"]
+    A["原始影像"] --> B["预处理
+HU归一化"]
+    B --> C["数据增强
+翻转/旋转/噪声"]
+    C --> D["特征提取
+CNN/Transformer"]
+    D --> E["多尺度融合
+跳跃连接"]
     E --> F["分割/检测头"]
-    F --> G["后处理\n连通域分析"]
+    F --> G["后处理
+连通域分析"]
     G --> H["临床报告"]`,
       tip: "医学影像分割首选 nnU-Net，它自适应配置网络架构和训练策略，在多个医疗分割基准上取得最优结果",
       warning: "DICOM 影像必须做 HU 值转换和窗宽窗位调整，直接使用原始像素值会导致模型完全无法学习"
@@ -311,7 +316,7 @@ class EHRTransformer(nn.Module):
           ["药物相互作用", "处方+文献", "相互作用类型", "知识图谱+LLM"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["电子病历原文"] --> B["文本预处理"]
     B --> C["分词与标准化"]
     C --> D["预训练语言模型"]
@@ -453,12 +458,15 @@ class MoleculeVAE(nn.Module):
         ]
       },
       mermaid: `graph LR
-    A["靶点蛋白"] --> B["结构预测\nAlphaFold"]
+    A["靶点蛋白"] --> B["结构预测
+AlphaFold"]
     B --> C["结合口袋分析"]
-    D["化合物库"] --> E["虚拟筛选\nGNN 评分"]
+    D["化合物库"] --> E["虚拟筛选
+GNN 评分"]
     C --> E
     E --> F["命中化合物"]
-    F --> G["先导优化\n生成模型"]
+    F --> G["先导优化
+生成模型"]
     G --> H["ADMET 预测"]
     H --> I{"性质达标?"}
     I -->|"否"| G
@@ -559,9 +567,10 @@ def predict_drug_sensitivity(model, gene_data, drug_data, scaler):
           ["启动子预测", "基因组序列", "卷积+注意力", "基因工程"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["患者样本"] --> B["全基因组测序"]
-    B --> C["变异检测\nDeepVariant"]
+    B --> C["变异检测
+DeepVariant"]
     C --> D["变异注释"]
     D --> E["药物基因组分析"]
     E --> F["药物敏感性矩阵"]
@@ -656,7 +665,7 @@ class DPSGDTrainer:
           ["ISO 13485", "质量管理", "全生命周期管理", "模型版本追溯"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["原始医疗数据"] --> B["匿名化处理"]
     B --> C["差分隐私训练"]
     C --> D["联邦学习聚合"]
@@ -818,15 +827,23 @@ def train_epoch(model, dataloader, criterion, optimizer, device):
           ["可解释性", "Grad-CAM", "最后一层卷积", "定位病灶区域"]
         ]
       },
-      mermaid: `graph TD TB
-    A["X 光影像\nChestX-ray14"] --> B["预处理\nResize+归一化"]
-    B --> C["数据增强\n翻转/仿射/调色"]
-    C --> D["EfficientNet-B0\n迁移学习"]
-    D --> E["Focal Loss\n处理不平衡"]
-    E --> F["多标签分类\n8 种病理"]
-    F --> G["评估\nAUC + Grad-CAM"]
+      mermaid: `graph TD
+    A["X 光影像
+ChestX-ray14"] --> B["预处理
+Resize+归一化"]
+    B --> C["数据增强
+翻转/仿射/调色"]
+    C --> D["EfficientNet-B0
+迁移学习"]
+    D --> E["Focal Loss
+处理不平衡"]
+    E --> F["多标签分类
+8 种病理"]
+    F --> G["评估
+AUC + Grad-CAM"]
     G --> H{"AUC > 0.85?"}
-    H -->|"否"| I["调整学习率\n增加增强"]
+    H -->|"否"| I["调整学习率
+增加增强"]
     I --> D
     H -->|"是"| J["导出 TorchScript"]
     J --> K["部署推理服务"]

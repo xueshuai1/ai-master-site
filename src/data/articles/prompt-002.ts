@@ -38,7 +38,7 @@ export const article: Article = {
 - 发现边缘案例，**准确率提升 10-40%**
 - 建立回归检测，**防止线上事故**
 - 为团队提供统一标准，**减少沟通成本**`,
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A[编写初始 Prompt] --> B[设计评估标准]
     B --> C[构建测试数据集]
     C --> D[自动化批量评估]
@@ -245,7 +245,7 @@ class PromptEvaluator:
         }`,
         },
       ],
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A[测试数据集 JSON] --> B[PromptEvaluator]
     C[Prompt 模板] --> B
     B --> D[批量执行测试]
@@ -484,7 +484,7 @@ class PromptVersionManager:
         }`,
         },
       ],
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A[开发者修改 Prompt] --> B[提交 PR]
     B --> C[CI 触发回归检测]
     C --> D{与基线对比}

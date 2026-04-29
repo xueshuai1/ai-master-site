@@ -169,23 +169,32 @@ SWE-bench 社区推出了 **SWE-bench Multimodal**，将评估范围从纯代码
 **2026 年新版 ToolBench 2.0：**
 增加了多工具组合调用场景（如"先搜索 → 再翻译 → 最后生成报告"），以及工具失败时的降级处理能力。`,
       mermaid: `graph LR
-    A["Agent 基准测试"] --> B["SWE-bench\n编程能力"]
-    A --> C["WebArena\n网页交互"]
-    A --> D["AgentBench\n多场景综合"]
-    A --> E["ToolBench\n工具调用"]
-    A --> F["AISafetyBench\n安全评估"]
+    A["Agent 基准测试"] --> B["SWE-bench
+编程能力"]
+    A --> C["WebArena
+网页交互"]
+    A --> D["AgentBench
+多场景综合"]
+    A --> E["ToolBench
+工具调用"]
+    A --> F["AISafetyBench
+安全评估"]
     
     B --> B1["Issue 解决率"]
     C --> C1["任务成功率"]
     D --> D1["场景覆盖率"]
     E --> E1["工具选择准确率"]
     F --> F1["安全事件检出率"]
-    
-    style B fill:#0c4a6e
-    style C fill:#7c2d12
-    style D fill:#14532d
-    style E fill:#881337
-    style F fill:#581c87`,
+    class F s4
+    class E s3
+    class D s2
+    class C s1
+    class B s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d
+    classDef s3 fill:#881337
+    classDef s4 fill:#581c87`,
     },
     {
       title: "Python 实战：构建 Agent 评估框架",
@@ -680,13 +689,18 @@ Agent 的 Token 消耗远高于单纯的 LLM 对话，因为：
     D --> D1["压缩：摘要裁剪"]
     E --> E1["压缩：减少推理步骤"]
     F --> F1["压缩：结果摘要"]
-    
-    style A fill:#5b21b6,color:#f1f5f9
-    style B1 fill:#0c4a6e
-    style C1 fill:#0c4a6e
-    style D1 fill:#0c4a6e
-    style E1 fill:#0c4a6e
-    style F1 fill:#0c4a6e`,
+    class F1 s5
+    class E1 s4
+    class D1 s3
+    class C1 s2
+    class B1 s1
+    class A s0
+    classDef s0 fill:#5b21b6,color:#f1f5f9
+    classDef s1 fill:#0c4a6e
+    classDef s2 fill:#0c4a6e
+    classDef s3 fill:#0c4a6e
+    classDef s4 fill:#0c4a6e
+    classDef s5 fill:#0c4a6e`,
     },
     {
       title: "Agent 评估的最佳实践：从实验室到生产环境",

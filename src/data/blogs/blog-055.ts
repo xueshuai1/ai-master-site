@@ -18,7 +18,27 @@ const post: BlogPost = {
     {
       title: "一、事故时间线：两个月内的三次手术",
       body: `让我们先建立完整的时间线，理解每个变更是什么时候发生的、影响了什么。\n\n**Bug #1：推理默认值降级（3月4日 - 4月7日）**\n\n3 月 4 日，Anthropic 将 Claude Code 的默认推理级别从 high 降为 medium，目的是减少 Opus 4.6 在高推理模式下的超长延迟问题。这个决定本身有一定道理——用户反映 UI 看起来「卡死」了。\n\n4 月 7 日，在大量用户反馈后，Anthropic 回滚了这个变更，将 Opus 4.7 的默认推理级别设为 xhigh。\n\n**Bug #2：缓存清理 Bug（3月26日 - 4月10日）**\n\n3 月 26 日，Anthropic 上线了一个「效率优化」：如果会话空闲超过 1 小时，清理该会话中的旧推理历史（thinking blocks），因为此时 prompt 缓存已经失效，保留这些旧消息只会增加 uncached token 的成本。\n\n但实现有 Bug：清理不是「一次性」的，而是**每个后续请求都在清理**。一旦会话跨过空闲阈值，之后所有的请求都只保留最近一个 reasoning block，丢弃之前的所有推理历史。\n\n4 月 10 日在 v2.1.101 版本中修复。\n\n**Bug #3：系统提示词过度优化（4月16日 - 4月20日）**\n\n4 月 16 日，为配合即将发布的 Opus 4.7（该模型本身倾向于更冗长），Anthropic 在 Claude Code 的系统提示词中增加了一条指令：\n\n\`Length limits: keep text between tool calls to ≤25 words. Keep final responses to ≤100 words unless the task requires more detail.\`\n\n这条指令的初衷是好的——控制输出长度、减少 token 消耗。但在与其他提示词变更组合后，直接损害了编码质量。4 月 20 日回滚。`,
-      mermaid: `graph LR\n    A["3月4日\\n推理默认值降级\\nhigh→medium"] --> B["用户反馈变笨\\n体验下降"]\n    C["3月26日\\n缓存清理Bug"] --> D["每个请求都清理\\n推理历史丢失"]\n    E["4月16日\\n系统提示词限制"] --> F["编码质量下降\\n3％评估分数降低"]\n    B --> G["2个月质量下降\\n用户信任危机"]\n    D --> G\n    F --> G\n    G --> H["4月20日\\n全部修复\\nv2.1.116"]\n    H --> I["4月24日\\n发布Postmortem\\n重置用量限制"]`,
+      mermaid: `graph LR
+    A["3月4日\
+推理默认值降级\
+high→medium"] --> B["用户反馈变笨\
+体验下降"]
+    C["3月26日\
+缓存清理Bug"] --> D["每个请求都清理\
+推理历史丢失"]
+    E["4月16日\
+系统提示词限制"] --> F["编码质量下降\
+3％评估分数降低"]
+    B --> G["2个月质量下降\
+用户信任危机"]
+    D --> G
+    F --> G
+    G --> H["4月20日\
+全部修复\
+v2.1.116"]
+    H --> I["4月24日\
+发布Postmortem\
+重置用量限制"]`,
     },
     {
       title: "二、Bug #2 深度拆解：一个缓存优化如何变成灾难",
@@ -60,13 +80,26 @@ function handleResume(sessionId: string, idleTime: number) {
     {
       title: "",
       body: `### 复合效应：问题如何自我放大`,
-      mermaid: `sequenceDiagram\n    participant U as 用户\n    participant CC as Claude Code\n    participant API as Anthropic API\n    participant Cache as Prompt Cache\n\n    Note over U,Cache: 会话空闲 > 1小时，缓存被逐出\n    U->>CC: 发送消息\n    CC->>API: 请求+clear_thinking flag=true\n    API->>Cache: 缓存未命中(已逐出)\n    API-->>CC: 返回响应(只保留最近一个thinking)\n    CC-->>U:  Claude开始忘事...\n    loop 每个后续请求
+      mermaid: `sequenceDiagram
+    participant U as 用户
+    participant CC as Claude Code
+    participant API as Anthropic API
+    participant Cache as Prompt Cache
+
+    Note over U,Cache: 会话空闲 > 1小时，缓存被逐出
+    U->>CC: 发送消息
+    CC->>API: 请求+clear_thinking flag=true
+    API->>Cache: 缓存未命中(已逐出)
+    API-->>CC: 返回响应(只保留最近一个thinking)
+    CC-->>U:  Claude开始忘事...
+    loop 每个后续请求
         U->>CC: 继续对话
         CC->>API: 请求+clear_thinking flag仍为true
         API->>API: 丢弃所有旧thinking
         API-->>CC: 返回不完整上下文
         CC-->>U: 重复/遗忘/奇怪的工具选择
-    end\n    Note over U,Cache: 用户困惑，用量消耗加剧`,
+    end
+    Note over U,Cache: 用户困惑，用量消耗加剧`,
     },
     {
       title: "",
@@ -240,7 +273,28 @@ if __name__ == "__main__":
     {
       title: "五、Claude Code Harness 架构解析",
       body: `这次事故揭示了 AI 编码工具的一个关键架构层次：Harness 层（编排层）。让我们通过架构图理解 Claude Code 的整体结构，以及三个 Bug 分别影响了哪些层级。`,
-      mermaid: `graph TD\n    subgraph User["用户交互层"]\n        UI[CLI / VSCode 扩展]\n        Display[消息展示层]\n    end\n    \n    subgraph Harness["Harness 编排层 ← 三个 Bug 都在这里"]\n        Prompt[系统提示词管理]\n        Context[上下文/缓存管理]\n        Router[模型路由]\n        Effort[推理级别控制]\n    end\n    \n    subgraph Model["模型层（未受影响）"]\n        Sonnet[Claude Sonnet 4.6]\n        Opus[Claude Opus 4.6/4.7]\n    end\n    \n    subgraph API["API 基础设施层"]\n        Cache[Prompt Caching]\n        Messages[Messages API]\n    end
+      mermaid: `graph TD
+    subgraph User["用户交互层"]
+        UI[CLI / VSCode 扩展]
+        Display[消息展示层]
+    end
+    
+    subgraph Harness["Harness 编排层 ← 三个 Bug 都在这里"]
+        Prompt[系统提示词管理]
+        Context[上下文/缓存管理]
+        Router[模型路由]
+        Effort[推理级别控制]
+    end
+    
+    subgraph Model["模型层（未受影响）"]
+        Sonnet[Claude Sonnet 4.6]
+        Opus[Claude Opus 4.6/4.7]
+    end
+    
+    subgraph API["API 基础设施层"]
+        Cache[Prompt Caching]
+        Messages[Messages API]
+    end
     
     UI --> Prompt
     UI --> Effort
@@ -252,9 +306,10 @@ if __name__ == "__main__":
     Sonnet --> Messages
     Opus --> Messages
     Messages --> Cache
-    
-    style Harness fill:#1e3a5f
-    style Model fill:#1e3a5f`,
+    class Model s1
+    class Harness s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f`,
     },
     {
       title: "",

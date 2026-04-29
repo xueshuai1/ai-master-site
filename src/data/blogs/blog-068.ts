@@ -45,12 +45,16 @@ content: [
     E --> E1[karpathy-skills: 质量指令]
     E --> E2[自定义 MCP 工具]
     E --> E3[Agent SDK 集成]
-    
-    style A fill:#1a1a2e,stroke:#e94560,color:#fff
-    style B fill:#16213e,stroke:#0f3460,color:#fff
-    style C fill:#16213e,stroke:#0f3460,color:#fff
-    style D fill:#16213e,stroke:#0f3460,color:#fff
-    style E fill:#16213e,stroke:#0f3460,color:#fff`,
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1a1a2e,stroke:#e94560,color:#fff
+    classDef s1 fill:#16213e,stroke:#0f3460,color:#fff
+    classDef s2 fill:#16213e,stroke:#0f3460,color:#fff
+    classDef s3 fill:#16213e,stroke:#0f3460,color:#fff
+    classDef s4 fill:#16213e,stroke:#0f3460,color:#fff`,
     },
     {
       title: "二、Harness vs Model：Claude Code 问题的本质",
@@ -651,11 +655,14 @@ else:
         J --> L[生成进度总结]
         L --> M[更新架构文档]
     end
-    
-    style A fill:#2d6a4f,color:#fff
-    style E fill:#1a1a2e,color:#fff
-    style H fill:#1e3a5f
-    style L fill:#264653,color:#fff`,
+    class L s3
+    class H s2
+    class E s1
+    class A s0
+    classDef s0 fill:#2d6a4f,color:#fff
+    classDef s1 fill:#1a1a2e,color:#fff
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#264653,color:#fff`,
     },
     {
       title: "八、总结与展望",

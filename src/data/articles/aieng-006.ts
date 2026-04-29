@@ -34,7 +34,19 @@ export const article: Article = {
                     ["监控告警", "出了问题才发现", "主动检测 drift"]
                 ]
             },
-            mermaid: `graph TD\n    A[特征痛点] --> B[特征重复计算]\n    A --> C[线上线下不一致]\n    A --> D[特征发现困难]\n    A --> E[缺乏监控]\n    B --> F[特征平台]\n    C --> F\n    D --> F\n    E --> F\n    F --> G[特征注册表]\n    F --> H[在线存储]\n    F --> I[离线存储]\n    F --> J[统一 API]`,
+            mermaid: `graph TD
+    A[特征痛点] --> B[特征重复计算]
+    A --> C[线上线下不一致]
+    A --> D[特征发现困难]
+    A --> E[缺乏监控]
+    B --> F[特征平台]
+    C --> F
+    D --> F
+    E --> F
+    F --> G[特征注册表]
+    F --> H[在线存储]
+    F --> I[离线存储]
+    F --> J[统一 API]`,
             tip: "在引入特征平台之前，先盘点团队现有的特征数量和复用情况。如果特征少于 10 个且只有一个模型，可能还不需要特征平台。",
             warning: "不要试图一次性将所有历史特征迁移到特征平台。应该从新的特征开始，逐步迁移，避免大规模重构带来风险。"
         },
@@ -62,7 +74,13 @@ export const article: Article = {
                     ["容量规模", "TB 到 PB 级", "GB 到 TB 级"]
                 ]
             },
-            mermaid: `graph LR\n    A[数据源] --> B[离线存储]\n    B -->|Parquet/BigQuery| C[批量训练]\n    B -->|materialize| D[在线存储]\n    D -->|Redis/DynamoDB| E[实时推理]\n    B -->|时间旅行查询| C\n    D -->|毫秒级读取| E`,
+            mermaid: `graph LR
+    A[数据源] --> B[离线存储]
+    B -->|Parquet/BigQuery| C[批量训练]
+    B -->|materialize| D[在线存储]
+    D -->|Redis/DynamoDB| E[实时推理]
+    B -->|时间旅行查询| C
+    D -->|毫秒级读取| E`,
             tip: "选择在线存储时，优先考虑 Redis，它社区成熟、文档丰富，且 Feast 对 Redis 的支持最完善。生产环境建议使用 Redis Cluster 保证高可用。",
             warning: "离线和在线存储之间的 materialize 任务如果延迟执行，会导致在线特征不是最新的，直接影响推理质量。必须监控 materialize 的执行状态。"
         },
@@ -90,7 +108,14 @@ export const article: Article = {
                     ["Stream View", "流式特征来源", "实时数据管道"]
                 ]
             },
-            mermaid: `graph TD\n    A[DataSource] --> B[Feature View]\n    B --> C[Feature Service]\n    E[Entity] --> B\n    E --> C\n    B -->|materialize| D[Online Store]\n    C -->|get_online_features| F[模型推理]\n    B -->|get_historical_features| G[模型训练]`,
+            mermaid: `graph TD
+    A[DataSource] --> B[Feature View]
+    B --> C[Feature Service]
+    E[Entity] --> B
+    E --> C
+    B -->|materialize| D[Online Store]
+    C -->|get_online_features| F[模型推理]
+    B -->|get_historical_features| G[模型训练]`,
             tip: "Feature View 的 ttl 设置要谨慎：ttl 过短会导致在线特征过早过期，ttl 过长会浪费存储空间。根据业务场景设置合理的 ttl。",
             warning: "Feature View 的 schema 必须与数据源中的实际列名和类型严格匹配。类型不匹配会在 materialize 时导致静默的数据丢失。"
         },
@@ -118,7 +143,14 @@ export const article: Article = {
                     ["DynamoDB", "AWS 高并发", "极低延迟", "按读写计费"]
                 ]
             },
-            mermaid: `graph TD\n    A[特征定义文件] -->|feast apply| B[注册表]\n    B -->|快照| C[S3/GCS 存储]\n    B -->|缓存| D[本地缓存 600s]\n    D --> E[查询请求]\n    C -->|TTL 过期| D\n    A -->|版本控制| F[Git]\n    F -->|PR 审查| A`,
+            mermaid: `graph TD
+    A[特征定义文件] -->|feast apply| B[注册表]
+    B -->|快照| C[S3/GCS 存储]
+    B -->|缓存| D[本地缓存 600s]
+    D --> E[查询请求]
+    C -->|TTL 过期| D
+    A -->|版本控制| F[Git]
+    F -->|PR 审查| A`,
             tip: "注册表的 cache_ttl 需要根据实际查询频率调整。高并发场景下设置较短的 TTL 以保证数据新鲜度，低频场景可以设置更长的 TTL 减少远程读取。",
             warning: "注册表文件是 Feast 系统的核心元数据，必须做好备份。如果注册表丢失，所有的特征定义和版本历史都会丢失，即使底层数据还在也无法使用。"
         },
@@ -146,7 +178,16 @@ export const article: Article = {
                     ["更新延迟", "在线存储未及时同步", "materialize 调度", "数据新鲜度监控"]
                 ]
             },
-            mermaid: `graph TD\n    A[训练请求] --> B[point-in-time join]\n    B --> C[离线存储]\n    C -->|历史快照| D[训练数据集]\n    E[推理请求] --> F[在线查询]\n    F --> G[在线存储]\n    G -->|最新值| H[推理结果]\n    B -.->|同一 Feature View| F\n    I[PSI 检测] --> D\n    I --> H`,
+            mermaid: `graph TD
+    A[训练请求] --> B[point-in-time join]
+    B --> C[离线存储]
+    C -->|历史快照| D[训练数据集]
+    E[推理请求] --> F[在线查询]
+    F --> G[在线存储]
+    G -->|最新值| H[推理结果]
+    B -.->|同一 Feature View| F
+    I[PSI 检测] --> D
+    I --> H`,
             tip: "在模型上线前，务必使用 PSI 等统计方法对比训练集和推理集的特征分布。即使 Feast 保证了一致性，上游数据源的变化也可能导致 drift。",
             warning: "point-in-time join 要求 entity_df 中的 event_timestamp 必须准确。如果时间戳有误，训练数据中可能混入未来信息，导致模型评估结果虚高但线上表现糟糕。"
         },
@@ -174,7 +215,20 @@ export const article: Article = {
                     ["错误率", "超过 1%", "P1", "检查系统日志"]
                 ]
             },
-            mermaid: `graph TD\n    A[Feature View] --> B[新鲜度检查]\n    A --> C[缺失率检查]\n    A --> D[值范围检查]\n    A --> E[分布漂移检测]\n    B --> F{异常?}\n    C --> F\n    D --> F\n    E --> F\n    F -->|"Yes"| G[触发告警]\n    F -->|"No"| H[记录指标]\n    G --> I[通知负责人]\n    I --> J[排查修复]\n    H --> K[Grafana 仪表盘]`,
+            mermaid: `graph TD
+    A[Feature View] --> B[新鲜度检查]
+    A --> C[缺失率检查]
+    A --> D[值范围检查]
+    A --> E[分布漂移检测]
+    B --> F{异常?}
+    C --> F
+    D --> F
+    E --> F
+    F -->|"Yes"| G[触发告警]
+    F -->|"No"| H[记录指标]
+    G --> I[通知负责人]
+    I --> J[排查修复]
+    H --> K[Grafana 仪表盘]`,
             tip: "为新上线的特征设置更严格的监控阈值，运行 2-4 周确认稳定后再调整为正常阈值。新特征的数据模式往往需要一段时间才能稳定。",
             warning: "监控告警过多会导致告警疲劳，团队会开始忽略告警。应该区分告警级别，只有 P1 级别的告警才需要立即响应，P2 可以在工作时间内处理。"
         },
@@ -202,7 +256,18 @@ export const article: Article = {
                     ["推理集成", "get_online_features", "特征向量", "检查延迟和准确性"]
                 ]
             },
-            mermaid: `graph TD\n    A[feast init] --> B[创建项目结构]\n    B --> C[定义 Entity + View]\n    C --> D[feast apply]\n    D --> E[注册表更新]\n    E --> F[feast materialize]\n    F --> G[在线存储填充]\n    G --> H[训练: get_historical]\n    G --> I[推理: get_online]\n    H --> J[训练模型]\n    I --> K[实时预测]\n    D -.->|CI/CD| L[自动化部署]`,
+            mermaid: `graph TD
+    A[feast init] --> B[创建项目结构]
+    B --> C[定义 Entity + View]
+    C --> D[feast apply]
+    D --> E[注册表更新]
+    E --> F[feast materialize]
+    F --> G[在线存储填充]
+    G --> H[训练: get_historical]
+    G --> I[推理: get_online]
+    H --> J[训练模型]
+    I --> K[实时预测]
+    D -.->|CI/CD| L[自动化部署]`,
             tip: "在团队中推广 Feast 时，先做一个小型的端到端 POC 项目，让团队成员看到从特征定义到推理服务的完整流程，比单纯讲解概念更有说服力。",
             warning: "生产环境部署时，feast apply 和 materialize 应该在 CI/CD 流水线中自动执行，而不是手动运行。手动操作容易遗漏步骤或在不恰当的时间执行。"
         },

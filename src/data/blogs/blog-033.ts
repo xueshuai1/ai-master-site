@@ -52,7 +52,7 @@ Simon Willison 等资深开发者通过实测发现，Opus 4.7 的 tokenizer 在
     body: `Opus 4.7 的定价与 4.6 相同：输入 $5/百万 tokens，输出 $25/百万 tokens。但由于 token 通胀，实际成本会显著增加。
 
 以下是三种典型场景的成本对比分析：`,
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     A["典型使用场景"] --> B["简单问答"]
     A --> C["长文档分析"]
     A --> D["多模态图片理解"]

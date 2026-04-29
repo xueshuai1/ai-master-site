@@ -34,7 +34,21 @@ export const article: Article = {
                     ["生成质量", "不适用", "中等（偏模糊）"]
                 ]
             },
-            mermaid: `graph LR\n    A["输入 x"] --> B["经典编码器"]\n    B --> C["确定向量 z"]\n    C --> D["解码器"]\n    D --> E["重构 x_hat"]\n    A2["输入 x"] --> F["VAE 编码器"]\n    F --> G["mu, logvar"]\n    G --> H["采样 z"]\n    H --> I["VAE 解码器"]\n    I --> J["重构 x_hat"]\n    style F fill:#4CAF50\n    style G fill:#78350f,color:#f1f5f9`,
+            mermaid: `graph LR
+    A["输入 x"] --> B["经典编码器"]
+    B --> C["确定向量 z"]
+    C --> D["解码器"]
+    D --> E["重构 x_hat"]
+    A2["输入 x"] --> F["VAE 编码器"]
+    F --> G["mu, logvar"]
+    G --> H["采样 z"]
+    H --> I["VAE 解码器"]
+    I --> J["重构 x_hat"]
+
+    class F s0
+    classDef s0 fill:#14532d
+
+    class G s1`,
             tip: "对数方差 logvar 比直接学方差 sigma 更稳定，因为 logvar 的取值范围是全体实数，无需额外的约束。",
             warning: "经典自编码器不能直接用于生成，因为潜空间中存在大量空白区域，随机采样大概率落入无意义区域。"
         },
@@ -62,7 +76,17 @@ export const article: Article = {
                     ["theta, phi", "模型参数", "可学习", "联合优化"]
                 ]
             },
-            mermaid: `graph TD\n    A["先验 p(z) ~ N(0,I)"] -->|采样 z| B["解码器 p(x|z)"]\n    B -->|生成| C["数据 x"]\n    C -->|编码| D["近似后验 q(z|x)"]\n    D -->|逼近| E["真实后验 p(z|x)"]\n    E -->|贝叶斯定理| A\n    style A fill:#4CAF50\n    style B fill:#2196F3\n    style D fill:#78350f,color:#f1f5f9`,
+            mermaid: `graph TD
+    A["先验 p(z) ~ N(0,I)"] -->|采样 z| B["解码器 p(x|z)"]
+    B -->|生成| C["数据 x"]
+    C -->|编码| D["近似后验 q(z|x)"]
+    D -->|逼近| E["真实后验 p(z|x)"]
+    E -->|贝叶斯定理| A
+
+    class A s0
+    classDef s0 fill:#14532d
+
+    class B s1`,
             tip: "先验选择为标准正态分布不是唯一选择，也可以用混合高斯或 VampPrior 来提升生成能力。",
             warning: "边缘似然 p(x) 在高维空间中是不可计算的，这就是为什么 VAE 必须通过变分下界来间接优化。"
         },
@@ -89,7 +113,20 @@ export const article: Article = {
                     ["Concrete 分布", "连续松弛离散变量", "可导", "中", "可学习离散结构"]
                 ]
             },
-            mermaid: `graph LR\n    A["编码器"] --> B["mu, logvar"]\n    B --> C["std = exp(logvar/2)"]\n    D["eps ~ N(0,I)"] --> E["z = mu + std * eps"]\n    C --> E\n    E --> F["解码器"]\n    F --> G["重构损失"]\n    G -.梯度.-> E\n    E -.梯度.-> B\n    style D fill:#f44336\n    style E fill:#064e3b,color:#f1f5f9`,
+            mermaid: `graph LR
+    A["编码器"] --> B["mu, logvar"]
+    B --> C["std = exp(logvar/2)"]
+    D["eps ~ N(0,I)"] --> E["z = mu + std * eps"]
+    C --> E
+    E --> F["解码器"]
+    F --> G["重构损失"]
+    G -.梯度.-> E
+    E -.梯度.-> B
+
+    class D s0
+    classDef s0 fill:#991b1b
+
+    class E s1`,
             tip: "实现时推荐使用 logvar 而不是 sigma，可以避免数值溢出问题，sigma = exp(logvar / 2) 始终为正。",
             warning: "重参数化要求潜变量分布是连续且可微的，对于离散潜变量需要使用 Gumbel-Softmax 等替代方案。"
         },
@@ -115,7 +152,18 @@ export const article: Article = {
                     ["对数似然", "log p(x)", "理论最优目标", "不可直接计算", "不可直接计算"]
                 ]
             },
-            mermaid: `graph TD\n    A["log p(x)"] -->|公式| B["ELBO + KL[q||p(z|x)]"]\n    B --> C["ELBO = E_q[log p(x|z)]"]\n    B --> D["- KL[q(z|x)||p(z)]"]\n    C --> E["重构质量"]\n    D --> F["潜空间正则"]\n    E -.张力.-> F\n    style A fill:#f44336\n    style C fill:#4CAF50\n    style D fill:#1e3a5f,color:#f1f5f9`,
+            mermaid: `graph TD
+    A["log p(x)"] -->|公式| B["ELBO + KL[q||p(z|x)]"]
+    B --> C["ELBO = E_q[log p(x|z)]"]
+    B --> D["- KL[q(z|x)||p(z)]"]
+    C --> E["重构质量"]
+    D --> F["潜空间正则"]
+    E -.张力.-> F
+
+    class A s0
+    classDef s0 fill:#991b1b
+
+    class C s1`,
             tip: "训练初期 KL 项往往占主导（posterior collapse），可以逐步增大 KL 权重（KL annealing）来缓解。",
             warning: "如果 KL 项直接归零，说明发生了 posterior collapse，VAE 退化为普通自编码器，完全丧失了生成能力。"
         },
@@ -142,7 +190,21 @@ export const article: Article = {
                     ["beta > 20", "很差", "过解耦", "信息严重丢失", "通常不推荐"]
                 ]
             },
-            mermaid: `graph LR\n    A["输入 x"] --> B["beta-VAE 编码器"]\n    B --> C["mu, logvar"]\n    C --> D["重参数化采样"]\n    D --> E["VAE 解码器"]\n    E --> F["重构 x_hat"]\n    G["beta > 1"] -->|增大 KL 权重| H["潜变量解耦"]\n    H --> I["z1: 颜色"]\n    H --> J["z2: 形状"]\n    H --> K["z3: 姿态"]\n    style G fill:#78350f,color:#f1f5f9\n    style H fill:#064e3b,color:#f1f5f9`,
+            mermaid: `graph LR
+    A["输入 x"] --> B["beta-VAE 编码器"]
+    B --> C["mu, logvar"]
+    C --> D["重参数化采样"]
+    D --> E["VAE 解码器"]
+    E --> F["重构 x_hat"]
+    G["beta > 1"] -->|增大 KL 权重| H["潜变量解耦"]
+    H --> I["z1: 颜色"]
+    H --> J["z2: 形状"]
+    H --> K["z3: 姿态"]
+
+    class G s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+
+    class H s1`,
             tip: "实践中 beta 从 0 开始逐步 annealing 到 4 是最稳定的策略，可以避免训练初期的 posterior collapse。",
             warning: "beta 过大时重构质量会急剧下降，需要在解耦度和生成质量之间做取舍，没有银弹。"
         },
@@ -173,7 +235,23 @@ export const article: Article = {
                     ["典型应用", "表征学习", "图像生成", "高质量生成"]
                 ]
             },
-            mermaid: `graph TD\n    A["生成模型"] --> B["VAE"]\n    A --> C["GAN"]\n    A --> D["Diffusion"]\n    B --> E["概率推断"]\n    B --> F["ELBO"]\n    C --> G["对抗训练"]\n    C --> H["min-max 博弈"]\n    D --> I["渐进去噪"]\n    D --> J["SDE/ODE"]\n    E -.融合.-> G\n    F -.启发.-> I\n    style B fill:#4CAF50\n    style C fill:#78350f,color:#f1f5f9\n    style D fill:#1e3a5f,color:#f1f5f9`,
+            mermaid: `graph TD
+    A["生成模型"] --> B["VAE"]
+    A --> C["GAN"]
+    A --> D["Diffusion"]
+    B --> E["概率推断"]
+    B --> F["ELBO"]
+    C --> G["对抗训练"]
+    C --> H["min-max 博弈"]
+    D --> I["渐进去噪"]
+    D --> J["SDE/ODE"]
+    E -.融合.-> G
+    F -.启发.-> I
+
+    class B s0
+    classDef s0 fill:#14532d
+
+    class C s1`,
             tip: "选择模型时，如果需要可解释的潜空间和稳定训练，VAE 是最佳起点；如果追求极致视觉效果，Diffusion 是首选。",
             warning: "GAN 的模式崩溃问题在复杂数据集上很难完全解决，VAE 和 Diffusion 更可靠。"
         },
@@ -200,7 +278,20 @@ export const article: Article = {
                     ["KL 散度检查", "训练过程中监控", "不趋近于 0", "避免 posterior collapse"]
                 ]
             },
-            mermaid: `graph TD\n    A["MNIST 数据集"] --> B["训练 VAE"]\n    B --> C["收敛: ~120 损失"]\n    C --> D["随机采样生成"]\n    C --> E["潜空间插值"]\n    C --> F["潜空间可视化"]\n    D --> G["生成新数字"]\n    E --> H["数字平滑渐变"]\n    F --> I["2D 潜空间图"]\n    style A fill:#4CAF50\n    style B fill:#2196F3\n    style C fill:#78350f,color:#f1f5f9`,
+            mermaid: `graph TD
+    A["MNIST 数据集"] --> B["训练 VAE"]
+    B --> C["收敛: ~120 损失"]
+    C --> D["随机采样生成"]
+    C --> E["潜空间插值"]
+    C --> F["潜空间可视化"]
+    D --> G["生成新数字"]
+    E --> H["数字平滑渐变"]
+    F --> I["2D 潜空间图"]
+
+    class A s0
+    classDef s0 fill:#14532d
+
+    class B s1`,
             tip: "潜维度设为 2 虽然可视化方便，但会限制生成质量。实际应用中使用 32-128 维更合适。",
             warning: "MNIST 过于简单，VAE 实现正确后务必在更复杂的数据集（如 CIFAR-10、CelebA）上验证。"
         },

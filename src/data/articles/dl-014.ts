@@ -117,8 +117,11 @@ bilevel_nas_formulation()`,
             },
             mermaid: `graph LR
     subgraph "NAS 三要素"
-        A["搜索空间\nSearch Space"] --> B["搜索策略\nSearch Strategy"]
-        B --> C["评估策略\nEvaluation Strategy"]
+        A["搜索空间
+Search Space"] --> B["搜索策略
+Search Strategy"]
+        B --> C["评估策略
+Evaluation Strategy"]
     end
     
     subgraph "搜索空间"
@@ -128,26 +131,35 @@ bilevel_nas_formulation()`,
     end
     
     subgraph "搜索策略"
-        B1["强化学习\nRL"]
-        B2["进化算法\nEA"]
-        B3["梯度优化\nGradient"]
+        B1["强化学习
+RL"]
+        B2["进化算法
+EA"]
+        B3["梯度优化
+Gradient"]
         B4["随机/网格搜索"]
     end
     
     subgraph "评估策略"
-        C1["从头训练\nFrom Scratch"]
-        C2["权重共享\nWeight Sharing"]
-        C3["低精度代理\nProxy"]
-        C4["零成本指标\nZero-Cost"]
+        C1["从头训练
+From Scratch"]
+        C2["权重共享
+Weight Sharing"]
+        C3["低精度代理
+Proxy"]
+        C4["零成本指标
+Zero-Cost"]
     end
     
     A --> A1 & A2 & A3
     B --> B1 & B2 & B3 & B4
     C --> C1 & C2 & C3 & C4
-    
-    style A fill:#1e3a5f
-    style B fill:#14532d
-    style C fill:#7c2d12`,
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "理解 NAS 的第一步是记住它的三个核心组件：搜索空间定义了「能搜什么」，搜索策略决定了「怎么搜」，评估策略解决了「搜得太慢怎么办」。这三个组件的任何组合都能构成一个 NAS 方法。",
         },
         {
@@ -291,10 +303,12 @@ analyze_search_space()`,
         Skip["Skip Connect"]
         Zero["Zero (无边)"]
     end
-    
-    style I0 fill:#1e3a5f
-    style I1 fill:#1e3a5f
-    style N5 fill:#14532d`,
+    class N5 s2
+    class I1 s1
+    class I0 s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#14532d`,
             warning: "搜索空间设计中的常见陷阱：(1) 包含 skip_connect 太多会导致搜索倾向于全部跳过的退化架构；(2) 不包含足够多的下采样操作会导致感受野不足；(3) 忽略 FLOPs 约束会搜出计算量过大的网络；(4) 在 CIFAR-10 上搜索的 cell 直接迁移到 ImageNet 时可能表现不佳，因为数据尺度差异太大。",
         },
         {
@@ -455,10 +469,12 @@ def mock_evaluate(arch):
         G2 -->|"交替优化"| G3["优化架构参数 α"]
         G3 -->|"取 argmax"| G4["离散架构"]
     end
-    
-    style RL3 fill:#14532d
-    style EA2 fill:#7c2d12
-    style G1 fill:#1e3a5f`,
+    class G1 s2
+    class EA2 s1
+    class RL3 s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#1e3a5f`,
             tip: "如果你的算力有限（< 8 GPU），强烈建议从随机搜索或正则进化开始。令人惊讶的是，Li & Talwalkar (2019) 的论文证明：对于许多 NAS 搜索空间，随机搜索 + 良好的评估策略可以匹敌甚至超越复杂的 RL/EA 方法。不要迷信复杂算法。",
         },
         {
@@ -625,10 +641,12 @@ def search(supernet, val_loader, num_samples=100):
         C1["权重纠缠 (Weight Entanglement)"] -->|"一个架构的优化影响其他"| C2["评估排名不可靠"]
         C2 -->|"可能选错架构"| C3["最终性能低于预期"]
     end
-    
-    style S3 fill:#14532d
-    style S6 fill:#7c2d12
-    style C2 fill:#7f1d1d`,
+    class C2 s2
+    class S6 s1
+    class S3 s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#7f1d1d`,
             warning: "权重共享有一个被严重低估的问题：超网络训练时，不同子架构共享的权重会相互干扰。Yu et al. (2020) 的论文证明：超网络中的架构排名与从零训练的排名相关性可能低至 0.2。这意味着你搜出的最佳架构可能根本不是真正的最佳。解决方向包括：权重解耦训练、公平的公平比较（fair comparison）策略、以及多路径训练。",
         },
         {
@@ -791,10 +809,12 @@ def train_darts_step(model, train_loader, val_loader, opt_w, opt_alpha, device):
         I["skip-connect α 快速增长"] -->|"主导梯度"| J["其他操作无法更新"]
         J -->|"退化架构"| K["网络变成浅层 skip 堆叠"]
     end
-    
-    style B fill:#7c2d12
-    style D fill:#14532d
-    style K fill:#7f1d1d`,
+    class K s2
+    class D s1
+    class B s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
             tip: "DARTS 的性能崩溃是搜索过程中最值得警惕的问题。一个实用的防御策略是：在搜索过程中监控每条边上各操作的权重分布。如果某条边过早地集中到单一操作（熵低于阈值），可以对该边施加熵正则化或温度退火来延缓决策。另一个技巧是增加验证集的比例，因为架构参数 α 的优化完全依赖验证集信号。",
         },
         {
@@ -965,8 +985,11 @@ for i in range(4):
             },
             mermaid: `graph TD
     subgraph "EfficientNet 设计流程"
-        A["基线搜索\n(NAS 搜索 B0)"] --> B["复合缩放\n(α, β, γ 网格搜索)"]
-        B --> C["统一缩放\ndepth × width × resolution"]
+        A["基线搜索
+(NAS 搜索 B0)"] --> B["复合缩放
+(α, β, γ 网格搜索)"]
+        B --> C["统一缩放
+depth × width × resolution"]
         C --> D["EfficientNet B0 → B7"]
     end
     
@@ -981,10 +1004,12 @@ for i in range(4):
         I["MNASNet: 端到端搜索完整架构"] -->|"直接搜大网络"| J["搜索成本高"]
         K["EfficientNet: 小网络 + 缩放规则"] -->|"间接高效"| L["搜索成本低"]
     end
-    
-    style A fill:#14532d
-    style E fill:#14532d
-    style K fill:#1e3a5f`,
+    class K s2
+    class E s1
+    class A s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#14532d
+    classDef s2 fill:#1e3a5f`,
             warning: "复合缩放虽然优雅，但有一个隐藏假设：深度、宽度和分辨率的最优缩放比例在模型规模变化时保持不变。后续研究（Tan & Le 2021, EfficientNetV2）发现这个假设在大规模模型上并不完全成立——更大模型需要更少的扩展（尤其是分辨率）。EfficientNetV2 因此引入了「渐进学习」策略，在训练过程中逐步增加图像大小，避免早期阶段训练不稳定。",
         },
         {
@@ -1140,14 +1165,20 @@ if __name__ == "__main__":
             },
             mermaid: `graph TD
     subgraph "NNI NAS 完整流程"
-        A["定义搜索空间\nJSON 格式"] --> B["编写可搜索模型\n使用 nni.get_next_parameter()"]
-        B --> C["配置实验\nconfig.yaml"]
-        C --> D["启动 NNI\nnnictl create"]
+        A["定义搜索空间
+JSON 格式"] --> B["编写可搜索模型
+使用 nni.get_next_parameter()"]
+        B --> C["配置实验
+config.yaml"]
+        C --> D["启动 NNI
+nnictl create"]
         D --> E["Tuner 采样参数"]
         E --> F["Trial 训练模型"]
-        F --> G["报告准确率\nnni.report_final_result()"]
+        F --> G["报告准确率
+nni.report_final_result()"]
         G -->|"反馈"| E
-        G --> H["搜索完成\nnni.retain_final_parameters()"]
+        G --> H["搜索完成
+nni.retain_final_parameters()"]
     end
     
     subgraph "NNI Web UI"
@@ -1155,10 +1186,12 @@ if __name__ == "__main__":
         I -->|"可视化"| K["超参数影响"]
         I -->|"对比"| L["最佳配置"]
     end
-    
-    style A fill:#1e3a5f
-    style H fill:#14532d
-    style E fill:#7c2d12`,
+    class E s2
+    class H s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "NNI 实战建议：(1) 先用 Random tuner 跑 50 个 trial 作为基线，再换 TPE 搜索，这样可以直观看到贝叶斯优化的效果；(2) 设置合理的 trial 预算——每个 trial 的训练 epoch 不必太多（10-20 即可），NAS 关注的是相对排名而非绝对精度；(3) 使用 NNI 的 Web UI（默认 localhost:8080）实时监控搜索进度，可以提前终止明显不好的 trial；(4) 搜索完成后，用 nni.retain_final_parameters() 获取最优配置，然后从零完整训练该架构以获得最终性能。",
         },
     ],

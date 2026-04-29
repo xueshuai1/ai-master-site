@@ -266,10 +266,12 @@ class SmartRouter:
     E --> I[返回结果 + 记录成本]
     F --> I
     G --> I
-    
-    style E fill:#1e3a5f
-    style F fill:#0d4a2e
-    style G fill:#4a2d0d`
+    class G s2
+    class F s1
+    class E s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#0d4a2e
+    classDef s2 fill:#4a2d0d`
     },
     {
       title: "总结：2026 年模型选择的范式转变",

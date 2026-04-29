@@ -22,7 +22,8 @@ export const article: Article = {
     A --> C["相机位姿估计"]
     B --> D["3D 场景表示"]
     C --> D
-    D --> E["NeRF\n神经辐射场"]
+    D --> E["NeRF
+神经辐射场"]
     D --> F["3D 高斯溅射"]
     D --> G["显式网格/点云"]
     E --> H["新视角合成"]
@@ -386,9 +387,10 @@ Sora 和其他视频生成模型已经展示了初步的世界模型能力——
     E --> F["3D-LLM"]
     F --> G["世界模型"]
     G --> H["具身智能"]
-    
-    style A fill:#7f1d1d
-    style H fill:#14532d`,
+    class H s1
+    class A s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d`,
             tip: "推荐工具：nerfstudio（3D 重建框架）、gsplat（高斯溅射优化库）、Open3D（3D 数据处理）、Kaolin（NVIDIA 3D 深度学习库）、Three.js（Web 3D 可视化）。这些工具覆盖了从数据处理到渲染可视化的完整工作流。",
         }
     ]

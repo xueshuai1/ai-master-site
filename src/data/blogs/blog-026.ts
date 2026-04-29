@@ -51,11 +51,14 @@ RLVR 优化的目标函数是 P(y|x)——给定输入 x，生成正确答案 y 
     C4 --> C5[更新 P(y)]
     B5 -.梯度对齐.-> D[更强推理能力]
     C5 -.梯度对齐.-> D
-
-    style A fill:#1a1a2e,color:#eee
-    style B fill:#16213e,color:#eee
-    style C fill:#0f3460,color:#eee
-    style D fill:#b91c1c,color:#fff`,
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1a1a2e,color:#eee
+    classDef s1 fill:#16213e,color:#eee
+    classDef s2 fill:#0f3460,color:#eee
+    classDef s3 fill:#b91c1c,color:#fff`,
         },
         {
             title: "负样本强化：让模型学会不走错路",

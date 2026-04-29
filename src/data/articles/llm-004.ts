@@ -293,7 +293,7 @@ deepspeed_config = {
                     ["ZeRO-3", "参数 + 梯度 + 优化器", "高（频繁 AllGather）", "超大模型"]
                 ]
             },
-            mermaid: `graph TD TB
+            mermaid: `graph TD
     A["70B 参数模型"] --> B["张量并行 ×8"]
     B --> C["流水线 ×4"]
     C --> D["数据并行 ×16"]

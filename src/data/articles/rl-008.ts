@@ -231,7 +231,7 @@ class CTDE_Mixer(nn.Module):
                     ["信用分配", "全局奖励 + 个体贡献", "所有 Q_i 值", "分解奖励信号"],
                 ]
             },
-            mermaid: `graph TD TB
+            mermaid: `graph TD
     subgraph Training
         S["全局状态 s"] --> M["混合网络"]
         Q1["Q1(o1,a1)"] --> M
@@ -404,13 +404,16 @@ class MADDPG_Critic(nn.Module):
                 ]
             },
             mermaid: `graph TD
-    A["Q1(o1,a1)"] --> H["Hypernetwork\n(state-dependent weights)"]
+    A["Q1(o1,a1)"] --> H["Hypernetwork
+(state-dependent weights)"]
     B["Q2(o2,a2)"] --> H
     C["Q3(o3,a3)"] --> H
-    H -->|"|w1|, |w2|, |w3|"| M["混合层\nF.elu(dot product)"]
+    H -->|"|w1|, |w2|, |w3|"| M["混合层
+F.elu(dot product)"]
     M -->|"最终混合权重"| F["Q_total"]
     S["全局状态 s"] -.->|"生成参数"| H
-    F -->|"最大化 argmax"| G["保证等价于\nargmax_i Q_i"]`,
+    F -->|"最大化 argmax"| G["保证等价于
+argmax_i Q_i"]`,
             tip: "QMIX 的单调性约束虽然限制了表达能力，但保证了训练稳定性和分散执行的一致性",
             warning: "对于需要非单调协调策略的场景（如某些需要牺牲的角色），QMIX 可能不是最佳选择"
         },

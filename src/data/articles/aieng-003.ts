@@ -314,8 +314,10 @@ docker logs -f inference-gpu`
     E --> F["下载模型"]
     F --> G["启动 FastAPI"]
     G --> H["服务就绪"]
-    style C fill:#581c87,stroke:#333
-    style F fill:#713f12,stroke:#333`,
+    class F s1
+    class C s0
+    classDef s0 fill:#581c87,stroke:#333
+    classDef s1 fill:#713f12,stroke:#333`,
             tip: "使用多阶段构建可以大幅减小镜像体积，把编译工具和依赖安装放在第一阶段，只拷贝最终产物到第二阶段的生产镜像。",
             warning: "容器内不要用 root 用户运行服务，创建专用用户并设置最小权限，这是生产环境的基本安全要求。"
         },
@@ -637,8 +639,10 @@ spec:
     G -->|是| H["逐步放量"]
     G -->|否| I["自动回滚"]
     H --> J["全量发布"]
-    style I fill:#7f1d1d,stroke:#333
-    style J fill:#14532d,stroke:#333`,
+    class J s1
+    class I s0
+    classDef s0 fill:#7f1d1d,stroke:#333
+    classDef s1 fill:#14532d,stroke:#333`,
             tip: "每次模型更新前保留旧版本镜像至少 7 天，这样即使新版本上线后发现问题，回滚只需要切回旧镜像，几秒钟就能完成。",
             warning: "不要在金丝雀阶段使用有状态的服务实例，灰度流量可能不均匀导致部分用户的数据状态不一致。确保推理服务是无状态的。"
         },

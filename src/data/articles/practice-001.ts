@@ -389,7 +389,7 @@ class DINAttention(nn.Module):
           ["NCF", "神经网络替代内积", "MLP 隐式交互", "通用推荐"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["输入特征"] --> B["Embedding 层"]
     B --> C["FM 层"]
     B --> D["DNN 层"]
@@ -733,7 +733,7 @@ class CompleteRecommender:
           ["AB 实验", "效果验证与迭代", "分流 + 统计检验", "统计显著性"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["原始数据"] --> B["特征工程"]
     B --> C["训练数据集"]
     C --> D["模型训练"]

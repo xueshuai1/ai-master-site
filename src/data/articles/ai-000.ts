@@ -86,18 +86,24 @@ AI 不是一夜之间冒出来的。它经历了三次浪潮：
 
 > **2026 年的 LLM 已经不是「聊天机器人」了。** 它们是能干活的数字员工——能编程、能分析数据、能做研究、能帮你完成日常工作流中的重复任务。`,
             mermaid: `graph LR
-    A["人工智能\\nAI"] --> B["机器学习\\nMachine Learning"]
-    B --> C["深度学习\\nDeep Learning"]
+    A["人工智能\
+AI"] --> B["机器学习\
+Machine Learning"]
+    B --> C["深度学习\
+Deep Learning"]
     C --> D[Transformer]
     D --> E[GPT 系列]
     D --> F[Claude 系列]
     D --> G[Gemini 系列]
     D --> H[Qwen / DeepSeek / GLM]
-    
-    style A fill:#1e3a5f,stroke:#4a9eff,color:#fff
-    style B fill:#1e3a5f,stroke:#4a9eff,color:#fff
-    style C fill:#1e3a5f,stroke:#4a9eff,color:#fff
-    style D fill:#0d47a1,stroke:#42a5f5,color:#fff`
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f,stroke:#4a9eff,color:#fff
+    classDef s1 fill:#1e3a5f,stroke:#4a9eff,color:#fff
+    classDef s2 fill:#1e3a5f,stroke:#4a9eff,color:#fff
+    classDef s3 fill:#0d47a1,stroke:#42a5f5,color:#fff`
         },
         {
             title: "2. 2026 年的 AI 能做什么？",

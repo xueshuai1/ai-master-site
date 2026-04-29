@@ -79,7 +79,12 @@ def train_ae(model, dataloader, epochs=50, lr=1e-3):
                     ["解码器", "(batch, 32)", "(batch, 784)", "从潜向量重建数据"]
                 ]
             },
-            mermaid: `graph LR\n    A["输入 x"] --> B["编码器 f"]\n    B --> C["潜向量 z"]\n    C --> D["解码器 g"]\n    D --> E["重建 x'"]\n    E -. MSE Loss .-> A`,
+            mermaid: `graph LR
+    A["输入 x"] --> B["编码器 f"]
+    B --> C["潜向量 z"]
+    C --> D["解码器 g"]
+    D --> E["重建 x'"]
+    E -. MSE Loss .-> A`,
             tip: "潜空间维度是关键超参数：太小会丢失信息，太大会导致恒等映射",
             warning: "不要对未归一化的数据直接使用 MSE 损失，先做 Min-Max 标准化到 [0,1]"
         },
@@ -150,7 +155,15 @@ X_pca_recon = pca.inverse_transform(z_pca)
                     ["784", "~0.0", "1.0x", "否（恒等映射风险）"]
                 ]
             },
-            mermaid: `graph TD\n    A["输入 784 维"] --> B["Linear 512"]\n    B --> C["Linear 256"]\n    C --> D["Linear 128"]\n    D --> E["潜空间 32"]\n    E --> F["Linear 128"]\n    F --> G["Linear 256"]\n    G --> H["Linear 512"]\n    H --> I["输出 784 维"]`,
+            mermaid: `graph TD
+    A["输入 784 维"] --> B["Linear 512"]
+    B --> C["Linear 256"]
+    C --> D["Linear 128"]
+    D --> E["潜空间 32"]
+    E --> F["Linear 128"]
+    F --> G["Linear 256"]
+    G --> H["Linear 512"]
+    H --> I["输出 784 维"]`,
             tip: "逐步缩小潜空间维度，观察重建质量的变化曲线，找到拐点即最优维度",
             warning: "网络容量过大会抵消欠完备约束的效果，增加隐藏层参数时需要同时减小潜空间维度"
         },
@@ -231,7 +244,13 @@ X_pca_recon = pca.inverse_transform(z_pca)
                     ["去噪", "输入加噪声", "鲁棒性强", "图像去噪/增强"]
                 ]
             },
-            mermaid: `graph LR\n    A["干净输入 x"] --> B["加噪声 x_tilde"]\n    B --> C["编码器"]\n    C --> D["潜向量 z"]\n    D --> E["解码器"]\n    E --> F["重建 x'"]\n    F -. 对比干净 x .-> G["损失计算"]`,
+            mermaid: `graph LR
+    A["干净输入 x"] --> B["加噪声 x_tilde"]
+    B --> C["编码器"]
+    C --> D["潜向量 z"]
+    D --> E["解码器"]
+    E --> F["重建 x'"]
+    F -. 对比干净 x .-> G["损失计算"]`,
             tip: "去噪噪声强度建议从 0.1-0.3 开始，过大则重建任务过于困难导致不收敛",
             warning: "稀疏自编码器的 KL 散度计算需要 clamp 防止 log(0)，否则会出现 NaN"
         },
@@ -304,7 +323,16 @@ def sample_vae(model, n_samples, latent_dim, device):
                     ["潜空间质量", "可能不连续", "连续且平滑"]
                 ]
             },
-            mermaid: `graph TD\n    A["输入 x"] --> B["编码器"]\n    B --> C["mu"]\n    B --> D["log_var"]\n    C --> E["重参数化"]\n    D --> E\n    F["epsilon ~ N(0,1)"] --> E\n    E --> G["z = mu + sigma*eps"]\n    G --> H["解码器"]\n    H --> I["重建 x'"]`,
+            mermaid: `graph TD
+    A["输入 x"] --> B["编码器"]
+    B --> C["mu"]
+    B --> D["log_var"]
+    C --> E["重参数化"]
+    D --> E
+    F["epsilon ~ N(0,1)"] --> E
+    E --> G["z = mu + sigma*eps"]
+    G --> H["解码器"]
+    H --> I["重建 x'"]`,
             tip: "使用 beta-VAE（增大 KL 权重）可以得到更解耦的潜变量，便于理解和操控",
             warning: "VAE 生成结果往往偏模糊，这是因为 KL 散度项鼓励潜变量接近标准正态分布，牺牲了部分重建精度"
         },
@@ -389,7 +417,14 @@ def train_aae_step(aae, x, optimizer_ae, optimizer_d, device):
                     ["计算开销", "低", "较高（需判别器）", "最低"]
                 ]
             },
-            mermaid: `graph TD\n    A["输入 x"] --> B["编码器"]\n    B --> C["z_encoder"]\n    C --> D["解码器"]\n    D --> E["重建 x'"]\n    C --> F["判别器"]\n    G["z_prior ~ N(0,1)"] --> F\n    F --> H["real/fake"]`,
+            mermaid: `graph TD
+    A["输入 x"] --> B["编码器"]
+    B --> C["z_encoder"]
+    C --> D["解码器"]
+    D --> E["重建 x'"]
+    C --> F["判别器"]
+    G["z_prior ~ N(0,1)"] --> F
+    F --> H["real/fake"]`,
             tip: "使用 Wasserstein 距离代替标准 GAN 损失可以显著提升 AAE 训练稳定性",
             warning: "AAE 需要平衡三个阶段的训练步数，建议 1:1:1 或根据损失动态调整比例"
         },
@@ -462,7 +497,13 @@ def latent_arithmetic(model, z_a, z_b, z_c, alpha=1.0):
                     ["数据压缩", "欠完备编码", "原始数据", "压缩表示"]
                 ]
             },
-            mermaid: `graph LR\n    A["正常数据"] --> B["训练 AE"]\n    B --> C["低重建误差"]\n    D["异常数据"] --> E["测试 AE"]\n    E --> F["高重建误差"]\n    C --> G["阈值设定"]\n    F --> H["异常判定"]`,
+            mermaid: `graph LR
+    A["正常数据"] --> B["训练 AE"]
+    B --> C["低重建误差"]
+    D["异常数据"] --> E["测试 AE"]
+    E --> F["高重建误差"]
+    C --> G["阈值设定"]
+    F --> H["异常判定"]`,
             tip: "异常检测中使用 Per-Sample MSE 而非 Batch MSE，逐样本判断更准确",
             warning: "异常检测的阈值选择至关重要，建议用 ROC 曲线或 PR 曲线在验证集上寻找最优阈值"
         },
@@ -561,7 +602,16 @@ with torch.no_grad():
                     ["稳定阶段", "15-30", "80-75", "生成质量稳定"]
                 ]
             },
-            mermaid: `graph TD\n    A["MNIST 28x28"] --> B["Conv2d 32"]\n    B --> C["Conv2d 64"]\n    C --> D["Conv2d 128"]\n    D --> E["Flatten"]\n    E --> F["mu + logvar"]\n    F --> G["Reparameterize"]\n    G --> H["FC Decode"]\n    H --> I["ConvTranspose 恢复"]\n    I --> J["28x28 重建"]`,
+            mermaid: `graph TD
+    A["MNIST 28x28"] --> B["Conv2d 32"]
+    B --> C["Conv2d 64"]
+    C --> D["Conv2d 128"]
+    D --> E["Flatten"]
+    E --> F["mu + logvar"]
+    F --> G["Reparameterize"]
+    G --> H["FC Decode"]
+    H --> I["ConvTranspose 恢复"]
+    I --> J["28x28 重建"]`,
             tip: "使用 2D 潜空间（latent_dim=2）可以可视化整个潜空间分布，便于理解 VAE 的流形学习过程",
             warning: "MNIST 图像已经是 0-1 范围，不需要额外归一化；如果使用自定义数据集，务必确认输入范围匹配 Sigmoid 输出"
         }

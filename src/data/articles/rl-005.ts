@@ -193,7 +193,8 @@ class ActorCriticNetwork(nn.Module):
     E --> G["A < 0: decrease prob"]
     F --> H["Policy Update"]
     G --> H
-    style E fill:#0c4a6e`,
+    class E s0
+    classDef s0 fill:#0c4a6e`,
             tip: "优势函数比直接用回报更新策略更稳定。直觉：它告诉 Agent 这个动作是好于还是差于平均水平，而不是简单地告诉回报是多少。",
             warning: "如果 Critic 的 V(s) 估计非常不准确（比如训练初期），优势函数会引入系统性偏差。训练初期可以考虑用更大的 Critic 学习率或预热策略。"
         },
@@ -549,8 +550,10 @@ def explain_gae():
     D["TD Error delta_{t+3}"] -->|"Weight (gamma*lambda)^3"| G
     E["..."] -->|"Decaying weights"| G
     G --> F["Advantage A(s,a)"]
-    style G fill:#7c2d12
-    style F fill:#14532d`,
+    class F s1
+    class G s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
             tip: "GAE 的 lambda=0.95 是一个经验性的黄金值，在大多数任务中都能取得很好的效果。只有在你明确知道偏差或方差是瓶颈时，才需要调整这个参数。",
             warning: "GAE 计算中 dones 标志的处理很关键。如果 done 时没有正确截断（设置 non_terminal = 0），会导致跨 episode 的 bootstrap 污染，严重影响训练。"
         },
@@ -659,7 +662,8 @@ def explain_gae():
     D -->|"log_prob"| L["Log Probability"]
     A -->|"tanh clip"| TA["Clipped Action"]
     TA --> ENV["Continuous Control Env"]
-    style D fill:#0c4a6e`,
+    class D s0
+    classDef s0 fill:#0c4a6e`,
             tip: "连续策略的标准差初始值很关键：太大导致早期探索过于随机，太小导致策略陷入局部最优。建议 log_std 初始化为 -0.5 到 0.0 之间。",
             warning: "使用 tanh 压缩动作后，需要额外的修正项来计算正确的对数概率（雅可比行列式修正）。否则策略梯度的方向可能不正确，导致训练不稳定。"
         },
@@ -840,8 +844,10 @@ if __name__ == "__main__":
     G --> H{"Training Done?"}
     H -->|"No"| B
     H -->|"Yes"| I["Save Model"]
-    style D fill:#7c2d12
-    style E fill:#14532d`,
+    class E s1
+    class D s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
             tip: "Pendulum 环境的状态表示使用 cos(theta) 和 sin(theta) 而非直接用角度 theta，这是为了保持周期性。这是连续控制任务中常见的状态编码技巧。",
             warning: "A2C 在 Pendulum 上可能训练不稳定，因为策略梯度方法对超参数很敏感。如果奖励没有改善，尝试降低学习率（1e-4）、增大 GAE lambda（0.98）或增加 rollout_steps（4096）。"
         }

@@ -106,9 +106,12 @@ print("线性模型无法拟合复杂的 Q 函数曲面")`
     E --> G["表达能力有限"]
     F --> H["神经网络 = DQN"]
     H --> I["端到端学习"]
-    style C fill:#14532d
-    style H fill:#7c2d12
-    style I fill:#0c4a6e`,
+    class I s2
+    class H s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#0c4a6e`,
             tip: "理解 DQN 的关键：它不是发明了新算法，而是用神经网络替换了 Q 值表。核心创新在于解决了神经网络与 Q-Learning 结合时的稳定性问题。",
             warning: "直接上神经网络替换 Q 值表会发散！原因是 Q 值的自举更新与神经网络的非线性拟合相互放大误差，导致训练不稳定。DQN 的两大技术正是为了解决这个问题。"
         },
@@ -220,8 +223,10 @@ print(f"选择动作: {np.argmax(q_values)}")`
     F --> G["FC1: 512 ReLU"]
     G --> H["FC2: n_actions 线性"]
     H --> I["Q(s, a1)...Q(s, an)"]
-    style A fill:#7f1d1d
-    style I fill:#14532d`,
+    class I s1
+    class A s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d`,
             tip: "DQN 输出所有动作的 Q 值而不是单个 Q(s,a)。这样一次前向传播就能评估所有动作，大幅提高效率。",
             warning: "原始 Atari 游戏的帧率是 60fps，DQN 每 4 帧执行一次动作（frame skip=4）。这既加速训练也保持了时序信息的连贯性。"
         },
@@ -334,8 +339,10 @@ print(f"TD 误差: mean={result['mean_td_error']:.3f}, max={result['max_td_error
     E --> F["计算 TD 目标"]
     F --> G["梯度下降更新 Q 网络"]
     G --> A
-    style C fill:#14532d
-    style E fill:#7c2d12`,
+    class E s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12`,
             tip: "经验回放容量不必设置过大。对于简单环境如 CartPole，50000 容量已经足够。Atari 游戏建议 100 万以上。",
             warning: "开始学习前必须让缓冲区积累足够多的经验。如果缓冲区太小就开始训练，会导致采样到高度相关的数据，违背了经验回放的初衷。"
         },
@@ -440,8 +447,10 @@ compare_target_update_strategies()`
     F["TD 目标"] --> G["损失: (目标 - Q)^2"]
     G --> H["梯度下降"]
     H --> A
-    style A fill:#0c4a6e
-    style D fill:#7c2d12`,
+    class D s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12`,
             tip: "软更新（Polyak averaging）通常比硬更新更稳定。tau=0.005 意味着目标网络每次只吸收 Q 网络 0.5% 的新信息，变化非常平滑。",
             warning: "如果不使用目标网络，直接用同一个网络计算 Q 值和 TD 目标，DQN 在大多数 Atari 游戏上都会发散。目标网络不是可选优化，而是 DQN 能工作的必要条件。"
         },
@@ -547,8 +556,10 @@ class DoubleDQNTrainer:
     F --> G
     G --> H["计算 TD 误差"]
     H --> I["更新 Q 网络"]
-    style E fill:#14532d
-    style F fill:#14532d`,
+    class F s1
+    class E s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#14532d`,
             tip: "Double DQN 只需修改一行代码就能从标准 DQN 升级。将 TD 目标中的 max Q_target 改为 Q_target(argmax Q) 即可。",
             warning: "Double DQN 并不总是优于标准 DQN。在某些环境中，适度的高估反而有助于探索。建议在具体任务上对比实验。"
         },
@@ -642,9 +653,12 @@ visualize_dueling_decomposition()`
     E --> F["选择 argmax Q(s,a)"]
     G["标准 DQN"] -->|"直接输出 Q(s,a)"| F
     H["Dueling DQN"] --> B
-    style C fill:#14532d
-    style D fill:#7c2d12
-    style H fill:#0c4a6e`,
+    class H s2
+    class D s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#0c4a6e`,
             tip: "Dueling 架构在动作重要性差异大的环境中效果最好。在 CartPole 这种简单环境中提升不明显，但在 Atari 的复杂场景中提升可达 20%。",
             warning: "减均值操作 Q = V + A - mean(A) 是关键。如果不减均值，网络会有无限多个等价的参数组合（V 加一个常数，A 减同一个常数），导致训练不稳定。"
         },
@@ -810,9 +824,12 @@ class AtariDQN:
     I --> J{"达到目标奖励?"}
     J -->|否| C
     J -->|是| K["保存模型"]
-    style D fill:#7c2d12
-    style H fill:#14532d
-    style K fill:#0c4a6e`,
+    class K s2
+    class H s1
+    class D s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d
+    classDef s2 fill:#0c4a6e`,
             tip: "CartPole 是验证 DQN 实现是否正确的首选环境。如果 CartPole 不能在 200 个 episode 内达到 195+ 的平均奖励，说明代码有 bug。",
             warning: "Atari 训练需要大量计算资源。原版 DQN 在单块 GPU 上训练 Breakout 需要数天时间。建议使用 Gymnasium 的 wrapper（如 AtariPreprocessing）来简化预处理。"
         }

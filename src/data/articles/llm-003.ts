@@ -249,10 +249,12 @@ for i, chunk in enumerate(chunks):
     E --> F["Cross-Encoder 重排序"]
     F --> G["Final Top-K"]
     G --> H["组装 Prompt"]
-    
-    style A fill:#0c4a6e
-    style G fill:#14532d
-    style H fill:#7c2d12`,
+    class H s2
+    class G s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
         list: [
           "中文场景优先选择 BGE-m3 或 m3e 等中文优化模型",
           "向量维度不必盲目追求高维——768 维通常已经足够",
@@ -467,12 +469,16 @@ test_cases = [
     C --> G["Graph RAG"]
     D --> H["Self-RAG"]
     E --> I["多模态 RAG"]
-    
-    style A fill:#1e3a5f
-    style F fill:#14532d
-    style G fill:#14532d
-    style H fill:#14532d
-    style I fill:#14532d`,
+    class I s4
+    class H s3
+    class G s2
+    class F s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#14532d
+    classDef s3 fill:#14532d
+    classDef s4 fill:#14532d`,
         warning: "架构选择建议：从基础 RAG 开始，先评估效果，再按需升级到高级模式。不要一开始就上 Agentic RAG 或 Graph RAG——复杂度会显著增加开发和维护成本。",
         list: [
           "生产环境建议：基础 RAG + Cross-Encoder 重排序 + 查询改写，性价比最高",

@@ -56,7 +56,14 @@ print(f"1e8 + 1.0 = {x + y}")  # 结果等于 1e8`
             ["FP64", "64", "11", "52", "~16位", "2.2e-308 ~ 1.8e+308"],
           ]
         },
-        mermaid: `graph TD\n    A["输入数据"] --> B["FP32 表示"]\n    B --> C["运算中舍入误差累积"]\n    C --> D["梯度计算"]\n    D --> E["参数更新"]\n    E --> F["精度损失影响收敛"]\n    B --> G["关键操作用 FP64"]\n    C --> H["Kahan 求和补偿"]`,
+        mermaid: `graph TD
+    A["输入数据"] --> B["FP32 表示"]
+    B --> C["运算中舍入误差累积"]
+    C --> D["梯度计算"]
+    D --> E["参数更新"]
+    E --> F["精度损失影响收敛"]
+    B --> G["关键操作用 FP64"]
+    C --> H["Kahan 求和补偿"]`,
         tip: "在关键数值计算中使用 FP64 或 Kahan 求和算法可以显著减少累积误差",
         warning: "不要假设浮点数运算满足结合律：(a + b) + c 不等于 a + (b + c)"
       },
@@ -111,7 +118,14 @@ print(f"safe_log(0) = {safe_log(0.0)}")`
             ["梯度消失", "下溢传播", "参数不更新", "sigmoid, tanh 深层"],
           ]
         },
-        mermaid: `graph LR\n    A["输入 x"] --> B{"x > 88.7?"}\n    B -->|是| C["上溢 → Inf"]\n    B -->|否| D{"x < -87.3?"}\n    D -->|是| E["下溢 → 0"]\n    D -->|否| F["正常计算"]\n    C --> G["NaN 传播"]\n    E --> H["log(0) = -inf"]`,
+        mermaid: `graph LR
+    A["输入 x"] --> B{"x > 88.7?"}
+    B -->|是| C["上溢 → Inf"]
+    B -->|否| D{"x < -87.3?"}
+    D -->|是| E["下溢 → 0"]
+    D -->|否| F["正常计算"]
+    C --> G["NaN 传播"]
+    E --> H["log(0) = -inf"]`,
         tip: "在对数空间中计算概率乘积，用 log-sum-exp 技巧处理 Softmax",
         warning: "FP32 中 exp(x) 在 x > 88.7 时必然上溢，这是硬限制而非实现问题"
       },
@@ -170,7 +184,13 @@ print(f"概率和: {np.sum(probs, axis=-1)[0, 0]:.6f}")  # 应为 1.0`
             ["带 mask", "无", "低", "注意力机制", "O(n)"],
           ]
         },
-        mermaid: `graph TD\n    A["原始 logits"] --> B["减去最大值"]\n    B --> C["exp 计算"]\n    C --> D["求和归一化"]\n    D --> E["概率分布"]\n    A -.不稳定.-> F["直接 exp → 上溢"]\n    B -.关键技巧.-> G["所有指数 ≤ 0"]`,
+        mermaid: `graph TD
+    A["原始 logits"] --> B["减去最大值"]
+    B --> C["exp 计算"]
+    C --> D["求和归一化"]
+    D --> E["概率分布"]
+    A -.不稳定.-> F["直接 exp → 上溢"]
+    B -.关键技巧.-> G["所有指数 ≤ 0"]`,
         tip: "在 Transformer 中，attention 的 Softmax 前必须加上 attention mask 的负无穷值",
         warning: "减去最大值只能防止上溢，极小的概率值仍会下溢为 0，在长序列中需额外注意"
       },
@@ -236,7 +256,13 @@ print(f"naive 损失: {naive_loss:.4f}")`
             ["log 概率相加", "sum(log p_i)", "log(sum(exp)) 替代", "下溢", "语言模型"],
           ]
         },
-        mermaid: `graph TD\n    A["输入向量 x"] --> B["c = max(x)"]\n    B --> C["计算 exp(x_i - c)"]\n    C --> D["sum + log"]\n    D --> E["+ c 还原"]\n    E --> F["log-sum-exp 结果"]\n    F --> G["交叉熵: LSE - x[target]"]`,
+        mermaid: `graph TD
+    A["输入向量 x"] --> B["c = max(x)"]
+    B --> C["计算 exp(x_i - c)"]
+    C --> D["sum + log"]
+    D --> E["+ c 还原"]
+    E --> F["log-sum-exp 结果"]
+    F --> G["交叉熵: LSE - x[target]"]`,
         tip: "计算交叉熵损失时，永远使用 log-softmax 路径而不是 softmax-then-log",
         warning: "LSE 中的减法 c + log(sum(exp(x-c))) 在 c 极大时可能损失精度，极端情况需要特殊处理"
       },
@@ -293,7 +319,13 @@ print(f"原始范数: {original_norm:.1f}, 裁剪后: {clipped_norm:.1f}")`
             ["Leaky ReLU", "{0.01, 1}", "轻微消失", "无限制", "推荐默认"],
           ]
         },
-        mermaid: `graph LR\n    A["深层网络"] --> B["链式法则连乘"]\n    B --> C{"谱范数 > 1?"}\n    C -->|是| D["梯度爆炸 → NaN"]\n    C -->|否| E["梯度消失 → 0"]\n    D --> F["梯度裁剪"]\n    E --> G["ReLU + 残差连接"]`,
+        mermaid: `graph LR
+    A["深层网络"] --> B["链式法则连乘"]
+    B --> C{"谱范数 > 1?"}
+    C -->|是| D["梯度爆炸 → NaN"]
+    C -->|否| E["梯度消失 → 0"]
+    D --> F["梯度裁剪"]
+    E --> G["ReLU + 残差连接"]`,
         tip: "使用残差连接（ResNet）让梯度拥有直接回传路径，从根本上缓解消失问题",
         warning: "梯度裁剪不能解决梯度消失，只能防止爆炸。消失问题需要从架构层面解决"
       },
@@ -362,7 +394,14 @@ print(f"当前缩放系数: {scaler.scale}")`
             ["FP8", "5", "2~3", "5.7e+4", "推理, 前沿实验"],
           ]
         },
-        mermaid: `graph TD\n    A["FP32 权重"] --> B["Cast to FP16"]\n    B --> C["FP16 前向传播"]\n    C --> D["Loss × scale"]\n    D --> E["FP16 反向传播"]\n    E --> F["Unscale 梯度"]\n    F --> G["FP32 优化器更新"]\n    G --> A`,
+        mermaid: `graph TD
+    A["FP32 权重"] --> B["Cast to FP16"]
+    B --> C["FP16 前向传播"]
+    C --> D["Loss × scale"]
+    D --> E["FP16 反向传播"]
+    E --> F["Unscale 梯度"]
+    F --> G["FP32 优化器更新"]
+    G --> A`,
         tip: "在 Ampere 及更新架构的 GPU 上优先使用 BF16，它比 FP16 稳定得多",
         warning: "FP16 的动态范围过小，不做 Loss Scaling 时梯度极易下溢为 0"
       },
@@ -438,7 +477,17 @@ print("6. 监控 loss 和梯度范数")`
             ["梯度保护", "clip_grad_norm_", "无裁剪", "nn.utils.clip_grad_norm_"],
           ]
         },
-        mermaid: `graph TD\n    A["训练开始"] --> B["正确初始化"]\n    B --> C["AMP 混合精度"]\n    C --> D["前向 + 稳定损失"]\n    D --> E["反向传播"]\n    E --> F{"NaN 检测"}\n    F -->|是| G["定位问题操作"]\n    F -->|否| H["梯度裁剪"]\n    H --> I["优化器更新"]\n    I --> J["监控指标"]\n    J --> C`,
+        mermaid: `graph TD
+    A["训练开始"] --> B["正确初始化"]
+    B --> C["AMP 混合精度"]
+    C --> D["前向 + 稳定损失"]
+    D --> E["反向传播"]
+    E --> F{"NaN 检测"}
+    F -->|是| G["定位问题操作"]
+    F -->|否| H["梯度裁剪"]
+    H --> I["优化器更新"]
+    I --> J["监控指标"]
+    J --> C`,
         tip: "在关键路径上使用 torch.autograd.detect_anomaly(True) 可以快速定位 NaN 的精确来源",
         warning: "set_detect_anomaly 会显著降低训练速度，仅用于调试，不要在正常训练时开启"
       },

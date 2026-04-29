@@ -34,7 +34,18 @@ export const article: Article = {
                     ["Kendryte K210", "0.8 TOPS", "0.3W", "超低成本 RISC-V"]
                 ]
             },
-            mermaid: `graph LR\n    A[云端训练] --> B[模型优化]\n    B --> C[格式转换]\n    C --> D[边缘部署]\n    D --> E[手机 NPU]\n    D --> F[Jetson GPU]\n    D --> G[Edge TPU]\n    D --> H[MCU DSP]\n    E --> I[本地推理]\n    F --> I\n    G --> I\n    H --> I`,
+            mermaid: `graph LR
+    A[云端训练] --> B[模型优化]
+    B --> C[格式转换]
+    C --> D[边缘部署]
+    D --> E[手机 NPU]
+    D --> F[Jetson GPU]
+    D --> G[Edge TPU]
+    D --> H[MCU DSP]
+    E --> I[本地推理]
+    F --> I
+    G --> I
+    H --> I`,
             tip: "在选择边缘硬件之前，先明确你的延迟目标、功耗预算和模型类型，这三者共同决定了最合适的平台。",
             warning: "不要假设云端模型可以直接部署到边缘设备，边缘设备的内存和算力限制通常需要对模型进行显著的压缩和优化。"
         },
@@ -62,7 +73,17 @@ export const article: Article = {
                     ["动态范围量化", "0.2-1.5%", "低", "激活值量化"]
                 ]
             },
-            mermaid: `graph TD\n    A[FP32 模型] --> B{量化策略}\n    B -->|"PTQ"| C[校准数据集]\n    B -->|"QAT"| D[插入伪量化节点]\n    C --> E[收集激活范围]\n    D --> F[微调训练]\n    E --> G[生成 INT8 模型]\n    F --> G\n    G --> H[精度验证]\n    H -->|"达标"| I[部署]\n    H -->|"不达标"| D`,
+            mermaid: `graph TD
+    A[FP32 模型] --> B{量化策略}
+    B -->|"PTQ"| C[校准数据集]
+    B -->|"QAT"| D[插入伪量化节点]
+    C --> E[收集激活范围]
+    D --> F[微调训练]
+    E --> G[生成 INT8 模型]
+    F --> G
+    G --> H[精度验证]
+    H -->|"达标"| I[部署]
+    H -->|"不达标"| D`,
             tip: "对于大多数 CV 任务，PTQ 已经足够使用，先用 PTQ 快速验证，只有精度不达标时再考虑 QAT。",
             warning: "量化校准数据集必须与真实推理数据的分布一致，否则量化的激活范围估计会严重偏差。"
         },
@@ -90,7 +111,16 @@ export const article: Article = {
                     ["WebGPU", "浏览器 GPU", "Web 推理", "中等"]
                 ]
             },
-            mermaid: `graph LR\n    A[PyTorch] --> B[ONNX 导出]\n    C[TensorFlow] --> B\n    D[JAX] --> B\n    B --> E[ONNX 模型文件]\n    E --> F[ONNX Runtime]\n    E --> G[TensorRT 转换]\n    E --> H[CoreML 转换]\n    E --> I[OpenVINO 转换]\n    F --> J[多端推理]`,
+            mermaid: `graph LR
+    A[PyTorch] --> B[ONNX 导出]
+    C[TensorFlow] --> B
+    D[JAX] --> B
+    B --> E[ONNX 模型文件]
+    E --> F[ONNX Runtime]
+    E --> G[TensorRT 转换]
+    E --> H[CoreML 转换]
+    E --> I[OpenVINO 转换]
+    F --> J[多端推理]`,
             tip: "导出 ONNX 时尽量使用最新支持的 opset 版本，新版本通常包含更多优化和更好的算子覆盖。",
             warning: "PyTorch 中的某些动态控制流（如条件分支中的不同输出形状）在导出 ONNX 时可能被截断，需要用 torch.jit.script 或 torch.onnx.dynamo_export 处理。"
         },
@@ -118,7 +148,15 @@ export const article: Article = {
                     ["多流并发", "并行执行多个推理", "2-4x 吞吐", "无"]
                 ]
             },
-            mermaid: `graph LR\n    A[ONNX 模型] --> B[TensorRT 解析]\n    B --> C[图优化]\n    C --> D[内核自动调优]\n    D --> E[精度校准 INT8]\n    E --> F[构建引擎]\n    F --> G[序列化保存]\n    G --> H[推理执行]\n    H --> I[性能监控]`,
+            mermaid: `graph LR
+    A[ONNX 模型] --> B[TensorRT 解析]
+    B --> C[图优化]
+    C --> D[内核自动调优]
+    D --> E[精度校准 INT8]
+    E --> F[构建引擎]
+    F --> G[序列化保存]
+    G --> H[推理执行]
+    H --> I[性能监控]`,
             tip: "FP16 模式是性价比最高的优化选项，在几乎不损失精度的前提下可以获得 1.5-3 倍的加速，建议作为首选开启。",
             warning: "TensorRT 引擎是针对特定 GPU 架构编译的，在 A100 上构建的引擎不能直接在 T4 上运行，需要为每种 GPU 单独构建。"
         },
@@ -146,7 +184,16 @@ export const article: Article = {
                     ["PyTorch Mobile", "CPU/GPU", ".ptl", "Lite Interpreter"]
                 ]
             },
-            mermaid: `graph LR\n    A[PyTorch 模型] --> B{目标平台}\n    B -->|"iOS"| C[CoreML Tools]\n    B -->|"Android"| D[TFLite Converter]\n    C --> E[.mlpackage]\n    D --> F[.tflite]\n    E --> G[Neural Engine]\n    F --> H[NNAPI Delegate]\n    G --> I[iOS 推理]\n    H --> J[Android 推理]`,
+            mermaid: `graph LR
+    A[PyTorch 模型] --> B{目标平台}
+    B -->|"iOS"| C[CoreML Tools]
+    B -->|"Android"| D[TFLite Converter]
+    C --> E[.mlpackage]
+    D --> F[.tflite]
+    E --> G[Neural Engine]
+    F --> H[NNAPI Delegate]
+    G --> I[iOS 推理]
+    H --> J[Android 推理]`,
             tip: "iOS 部署优先使用 CoreML 的 MLProgram 格式而非旧版 NeuralNetwork 格式，MLProgram 支持更多算子且性能更好。",
             warning: "移动端模型转换后一定要在真实设备上验证精度，模拟器或桌面端转换工具的精度不代表真机推理结果。"
         },
@@ -174,7 +221,16 @@ export const article: Article = {
                     ["剪枝 + 量化组合", "8-16x", "1-3%", "高", "好"]
                 ]
             },
-            mermaid: `graph TD\n    A[大型教师模型] --> B[知识蒸馏]\n    C[原始模型] --> D[迭代剪枝]\n    D --> E[剪枝后模型]\n    E --> B\n    B --> F[小型学生模型]\n    F --> G[INT8 量化]\n    G --> H[边缘部署模型]\n    A -.->|"Logits 指导"| B\n    H --> I[精度验证]`,
+            mermaid: `graph TD
+    A[大型教师模型] --> B[知识蒸馏]
+    C[原始模型] --> D[迭代剪枝]
+    D --> E[剪枝后模型]
+    E --> B
+    B --> F[小型学生模型]
+    F --> G[INT8 量化]
+    G --> H[边缘部署模型]
+    A -.->|"Logits 指导"| B
+    H --> I[精度验证]`,
             tip: "组合策略中，建议先做剪枝再做蒸馏最后量化，这个顺序可以最大化压缩效果同时最小化精度损失。",
             warning: "知识蒸馏需要教师模型和学生模型在相同的数据上同时运行，内存开销是单独训练的两倍，注意硬件资源限制。"
         },
@@ -202,7 +258,19 @@ export const article: Article = {
                     ["生产部署", "引擎文件 + 应用", "在线服务", "端到端压测", "视需求而定"]
                 ]
             },
-            mermaid: `graph TD\n    A[PyTorch ResNet50] --> B[torch.onnx.export]\n    B --> C[model.onnx]\n    C --> D{ONNX 验证}\n    D -->|"Pass"| E[TensorRT 构建 FP16]\n    D -->|"Fail"| F[检查 opset / 算子]\n    F --> B\n    E --> G[model.engine]\n    G --> H[推理精度验证]\n    H -->|"OK"| I[性能基准测试]\n    H -->|"NG"| J[调整构建参数]\n    J --> E\n    I --> K[生产部署]`,
+            mermaid: `graph TD
+    A[PyTorch ResNet50] --> B[torch.onnx.export]
+    B --> C[model.onnx]
+    C --> D{ONNX 验证}
+    D -->|"Pass"| E[TensorRT 构建 FP16]
+    D -->|"Fail"| F[检查 opset / 算子]
+    F --> B
+    E --> G[model.engine]
+    G --> H[推理精度验证]
+    H -->|"OK"| I[性能基准测试]
+    H -->|"NG"| J[调整构建参数]
+    J --> E
+    I --> K[生产部署]`,
             tip: "将 TensorRT 引擎构建步骤从推理服务中分离出来，在部署前离线构建并序列化引擎文件，避免服务启动时的长时间等待。",
             warning: "ONNX 到 TensorRT 的转换可能因为不支持的算子而失败，如果遇到问题可以尝试降低 opset 版本或在 PyTorch 端替换等价算子。"
         },

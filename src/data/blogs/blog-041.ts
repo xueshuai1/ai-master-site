@@ -69,12 +69,16 @@ const content: ArticleSection[] = [
     H --> I{还有更多?}
     I -->|"是"| B
     I -->|"否"| J["🎉 生成完成"]
-    
-    style A fill:#1e3a5f
-    style B fill:#2d5a27
-    style D fill:#5a2d82
-    style E fill:#8b6914
-    style J fill:#1a5276`,
+    class J s4
+    class E s3
+    class D s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#2d5a27
+    classDef s2 fill:#5a2d82
+    classDef s3 fill:#8b6914
+    classDef s4 fill:#1a5276`,
   },
   {
     title: "二、四大推测解码方案全面对比",
@@ -116,15 +120,22 @@ Medusa 的架构可以用下图表示：`,
     E --> H
     F --> H
     G --> H
-    
-    style A fill:#1e3a5f
-    style B fill:#2d5a27
-    style C fill:#5a4a2d
-    style D fill:#8b3a3a
-    style E fill:#8b5a3a
-    style F fill:#8b7a3a
-    style G fill:#8b9a3a
-    style H fill:#3a5a8b`,
+    class H s7
+    class G s6
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#2d5a27
+    classDef s2 fill:#5a4a2d
+    classDef s3 fill:#8b3a3a
+    classDef s4 fill:#8b5a3a
+    classDef s5 fill:#92400e
+    classDef s6 fill:#92400e
+    classDef s7 fill:#3a5a8b`,
   },
   {
     title: "2.2 DFlash：Block Diffusion 新范式",
@@ -497,15 +508,22 @@ if __name__ == "__main__":
     D -->|"否"| F{代码生成场景?}
     F -->|"是"| G["Eagle<br/>隐藏状态预测 / 2-4×"]
     F -->|"否"| H["Medusa<br/>多解码头 / 2-3×"]
-    
-    style A fill:#1e3a5f
-    style B fill:#5a4a2d
-    style C fill:#2d5a27
-    style D fill:#5a4a2d
-    style E fill:#8b3a3a
-    style F fill:#5a4a2d
-    style G fill:#3a5a8b
-    style H fill:#5a2d82`,
+    class H s7
+    class G s6
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#5a4a2d
+    classDef s2 fill:#2d5a27
+    classDef s3 fill:#5a4a2d
+    classDef s4 fill:#8b3a3a
+    classDef s5 fill:#5a4a2d
+    classDef s6 fill:#3a5a8b
+    classDef s7 fill:#5a2d82`,
     tip: `**DFlash 项目信息：**
 - GitHub: https://github.com/z-lab/dflash
 - Stars: 2,103+（2026 年 4 月 Trending）

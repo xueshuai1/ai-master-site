@@ -95,10 +95,12 @@ bias_variance_decomposition()`,
     B -->|太低| D["欠拟合: 高偏差"]
     B -->|适中| E["最佳: 低偏差低方差"]
     B -->|太高| F["过拟合: 高方差"]
-    
-    style D fill:#7f1d1d
-    style E fill:#14532d
-    style F fill:#7f1d1d`,
+    class F s2
+    class E s1
+    class D s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
         tip: "学习曲线是诊断过拟合/欠拟合最有效的工具。如果训练误差和验证误差都很高→欠拟合（增大模型容量）；如果训练误差低但验证误差高→过拟合（加正则化或更多数据）。",
       },
       {
@@ -236,9 +238,10 @@ for drop_rate in [0.0, 0.3, 0.5]:
     subgraph "推理时"
         G["所有神经元激活 Inverted Dropout 无需调整"]
     end
-    
-    style F fill:#7c2d12
-    style G fill:#14532d`,
+    class G s1
+    class F s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
         warning: "Dropout 不要在 BatchNorm 之后使用！因为 BatchNorm 已经提供了正则化效果，二者叠加会导致训练不稳定。如果同时使用，Dropout 应放在 BatchNorm 之前。",
       },
       {
@@ -373,9 +376,10 @@ train_with_and_without_bn()`,
     
     G["移动平均更新 running_mean running_var"] -.-> B
     G -.-> C
-    
-    style D fill:#1e3a5f
-    style E fill:#14532d`,
+    class E s1
+    class D s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d`,
         warning: "Batch Size 太小（< 8）时 BN 效果很差！因为 mini-batch 的统计量估计不准确。小 batch 场景下应使用 LayerNorm 或 GroupNorm。另外，BN 对 RNN 不友好，因为序列长度可变。",
       },
       {
@@ -498,7 +502,7 @@ for mode in ["Pre-LN", "Post-LN"]:
             ["Transformer 适用性", "差（需固定 batch）", "极好（标准配置）", "LN 是 Transformer 的标准"],
           ],
         },
-        mermaid: `graph TD TB
+        mermaid: `graph TD
     subgraph "Batch Normalization"
         direction LR
         A1["样本1 [c1, c2, c3]"] --> BN
@@ -512,9 +516,10 @@ for mode in ["Pre-LN", "Post-LN"]:
         B1["样本1 [c1, c2, c3]"] --> LN
         LN["沿特征维度 统计每个样本"]
     end
-    
-    style BN fill:#1e3a5f
-    style LN fill:#14532d`,
+    class LN s1
+    class BN s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d`,
         tip: "Transformer 中使用 Pre-LayerNorm 而非 Post-LayerNorm 可以大幅提升训练稳定性。原始论文用的是 Post-LN，但后续研究发现 Pre-LN 几乎消除了梯度消失问题，允许训练更深的模型。",
       },
       {
@@ -625,10 +630,12 @@ print("  - Mask R-CNN + GN 比 + BN 在 COCO 上 mAP 高 2-3%")`,
     D --> H{"通道分组"}
     H -->|"G=1"| I["= LayerNorm"]
     H -->|"G=C"| J["= InstanceNorm"]
-    
-    style C fill:#14532d
-    style D fill:#1e3a5f
-    style F fill:#7c2d12`,
+    class F s2
+    class D s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#7c2d12`,
         tip: "如果你在训练目标检测或语义分割模型，batch size 受显存限制无法增大——直接上 GroupNorm（32 组是默认值），比死磕 BatchNorm 效果更好。",
       },
       {
@@ -753,10 +760,12 @@ print(f"  差异:   {np.linalg.norm(w1 - w2):.6f}")`,
     D --> G["稀疏解 特征选择"]
     E --> H["小权重 泛化更好"]
     F --> I["兼顾稀疏和小权重"]
-    
-    style E fill:#14532d
-    style G fill:#7c2d12
-    style H fill:#1e3a5f`,
+    class H s2
+    class G s1
+    class E s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#1e3a5f`,
         warning: "偏置（bias）和归一化层的参数（BN/LN 的 γ, β）不应该加 Weight Decay！偏置本身就不容易过拟合（每个样本共享），归一化层的 γ 控制输出尺度，收缩它会导致表达能力下降。",
       },
       {
@@ -916,11 +925,14 @@ for arch in ["ResNet (CNN)", "Transformer (NLP)", "Vision Transformer", "RNN/LST
     D --> H["Warmup + 强数据增强 Mixup/CutMix"]
     E --> I["梯度裁剪 ReduceLROnPlateau"]
     F --> J["早停 Early Stopping"]
-    
-    style C fill:#14532d
-    style D fill:#1e3a5f
-    style E fill:#7c2d12
-    style F fill:#581c87`,
+    class F s3
+    class E s2
+    class D s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#7c2d12
+    classDef s3 fill:#581c87`,
         tip: "正则化不是越多越好！BN + Dropout 同时使用时，Dropout 率从 0.5 降到 0.1-0.2。大模型（如 ViT-Huge）甚至可以去掉 Dropout，依靠 Weight Decay 和数据增强就够了。记住：奥卡姆剃刀——最简单的有效方案就是最好的方案。",
       },
     ],

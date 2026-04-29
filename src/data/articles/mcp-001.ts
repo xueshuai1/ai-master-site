@@ -160,7 +160,7 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
     },
     {
       title: "MCP 请求流程架构图",
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     subgraph "Agent 发起请求"
         A[Agent 决定调用工具] --> B[Client 发现可用 Tools]
     end

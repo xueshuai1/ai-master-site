@@ -72,7 +72,8 @@ logs/
     E --> F["比较结果"]
     F -->|选最优| G["注册模型"]
     F -->|不理想| B
-    style G fill:#064e3b,color:#f1f5f9,stroke:#388E3C`,
+    class G s0
+    classDef s0 fill:#064e3b,color:#f1f5f9,stroke:#388E3C`,
             tip: "实验追踪系统不是锦上添花，而是 ML 项目的必需品。项目第一天就配置好，比后期迁移成本低 100 倍。",
         },
         {
@@ -151,10 +152,14 @@ entry_points:
         E["Projects"] -.->|打包| A
         F["Registry"] -.->|版本| D
     end
-    style A fill:#1e3a5f,stroke:#1d4ed8
-    style B fill:#0c4a6e
-    style C fill:#0c4a6e
-    style D fill:#0c4a6e`,
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f,stroke:#1d4ed8
+    classDef s1 fill:#0c4a6e
+    classDef s2 fill:#0c4a6e
+    classDef s3 fill:#0c4a6e`,
             warning: "MLflow Tracking 默认使用本地文件系统存储，团队协作时必须配置远程后端（如 S3 + MySQL），否则数据会分散在各开发者的机器上。",
         },
         {
@@ -315,10 +320,14 @@ print(f"版本间预测差异率: {diff:.2%}")`,
     C --> D["Archived 归档"]
     B -.->|测试失败| A
     C -.->|回滚| B
-    style C fill:#064e3b,color:#f1f5f9,stroke:#388E3C
-    style A fill:#78350f
-    style B fill:#1e3a5f,color:#f1f5f9
-    style D fill:#374151`,
+    class D s3
+    class B s2
+    class A s1
+    class C s0
+    classDef s0 fill:#064e3b,color:#f1f5f9,stroke:#388E3C
+    classDef s1 fill:#78350f
+    classDef s2 fill:#1e3a5f,color:#f1f5f9
+    classDef s3 fill:#374151`,
             warning: "模型版本一旦进入 Production 阶段就不能直接删除。必须先将阶段转换为 Archived，然后才能删除。这是防止误删生产模型的安全机制。",
         },
         {
@@ -398,8 +407,10 @@ wandb.save("model.pkl")
     D -->|模型管理| C
     D -->|深度学习研究| E
     D -->|生产部署| C
-    style C fill:#064e3b,color:#f1f5f9
-    style E fill:#1e3a5f,color:#f1f5f9`,
+    class E s1
+    class C s0
+    classDef s0 fill:#064e3b,color:#f1f5f9
+    classDef s1 fill:#1e3a5f,color:#f1f5f9`,
             tip: "不需要二选一。很多团队用 W&B 做实验探索（它的可视化更好），用 MLflow 做模型管理（它的 Registry 更成熟），两者互补而非互斥。",
         },
         {
@@ -480,7 +491,8 @@ stages:
     D --> F["远程存储 S3/GCS"]
     B --> G["完整可复现快照"]
     F -.->|按需拉取| G
-    style G fill:#064e3b,color:#f1f5f9,stroke:#388E3C`,
+    class G s0
+    classDef s0 fill:#064e3b,color:#f1f5f9,stroke:#388E3C`,
             warning: "DVC 不会自动同步 Git 和远程存储。切换 Git 分支后必须运行 dvc checkout 来同步数据。忘记这一步会导致代码和数据版本不匹配，产生难以调试的错误。",
         },
         {

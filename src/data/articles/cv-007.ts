@@ -84,13 +84,19 @@ for year, desc in ocr_evolution.items():
                 ]
             },
             mermaid: `graph LR
-    A["输入图像"] --> B["文字检测\n定位文字区域"]
-    B --> C["文字裁剪\n提取 ROI"]
-    C --> D["文字识别\n图像 → 文本"]
-    D --> E["后处理\n纠错/格式化"]
+    A["输入图像"] --> B["文字检测
+定位文字区域"]
+    B --> C["文字裁剪
+提取 ROI"]
+    C --> D["文字识别
+图像 → 文本"]
+    D --> E["后处理
+纠错/格式化"]
     E --> F["结构化输出"]
-    style A fill:#0c4a6e
-    style F fill:#14532d`,
+    class F s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "入门 OCR 建议先用 PaddleOCR 的预训练模型跑通一个完整 Pipeline，理解检测和识别两个阶段的输出格式后再深入研究算法细节",
             warning: "不要把 OCR 简单等同于「图片转文字」——真实场景中光照不均、透视变形、文字粘连、多语言混合等问题远比想象中复杂"
         },
@@ -184,17 +190,27 @@ for i, conf in enumerate(data["conf"]):
                 ]
             },
             mermaid: `graph TD
-    A["输入图像"] --> B["预处理\n二值化/去噪/倾斜校正"]
-    B --> C["连通域分析\n找出文字区域"]
-    C --> D["字符分割\n单个字符切分"]
-    D --> E["特征提取\nHOG / 轮廓"]
-    E --> F["LSTM 识别\n字符分类"]
-    F --> G["语言模型\n字典校正"]
+    A["输入图像"] --> B["预处理
+二值化/去噪/倾斜校正"]
+    B --> C["连通域分析
+找出文字区域"]
+    C --> D["字符分割
+单个字符切分"]
+    D --> E["特征提取
+HOG / 轮廓"]
+    E --> F["LSTM 识别
+字符分类"]
+    F --> G["语言模型
+字典校正"]
     G --> H["输出文本"]
-    style A fill:#0c4a6e
-    style H fill:#14532d
-    style C fill:#7c2d12
-    style D fill:#7c2d12`,
+    class D s3
+    class C s2
+    class H s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12
+    classDef s3 fill:#7c2d12`,
             tip: "对于扫描文档，Tesseract 的 PSM 6（统一文本块）和 PSM 3（全自动）通常效果最好；如果是单行文字（如车牌），用 PSM 7",
             warning: "Tesseract 在中文场景下的训练数据（chi_sim）质量一般，如果识别率低，可以考虑用 LSTM 模式（--oem 1）配合自定义训练数据"
         },
@@ -346,20 +362,30 @@ class DBNet(nn.Module):
                 ]
             },
             mermaid: `graph TD
-    A["输入图像"] --> B["Backbone 特征提取\nResNet / MobileNet"]
-    B --> C["FPN 特征金字塔\n多尺度融合"]
+    A["输入图像"] --> B["Backbone 特征提取
+ResNet / MobileNet"]
+    B --> C["FPN 特征金字塔
+多尺度融合"]
     C --> D["检测头分支"]
-    D --> E["CTPN: Anchor 分类\n+ 边界回归 + LSTM"]
-    D --> F["EAST: 像素分数图\n+ 旋转框几何参数"]
-    D --> G["DBNet: 概率图\n+ 阈值图 + 二值化"]
-    E --> H["文本行 Proposal\n→ 文本行组合"]
-    F --> I["旋转矩形框\n→ NMS 过滤"]
-    G --> J["近似二值图\n→ 轮廓提取"]
+    D --> E["CTPN: Anchor 分类
++ 边界回归 + LSTM"]
+    D --> F["EAST: 像素分数图
++ 旋转框几何参数"]
+    D --> G["DBNet: 概率图
++ 阈值图 + 二值化"]
+    E --> H["文本行 Proposal
+→ 文本行组合"]
+    F --> I["旋转矩形框
+→ NMS 过滤"]
+    G --> J["近似二值图
+→ 轮廓提取"]
     H --> K["文字区域"]
     I --> K
     J --> K
-    style A fill:#0c4a6e
-    style K fill:#14532d`,
+    class K s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "如果只处理水平文字（如文档扫描），CTPN 精度足够且实现简单；如果需要处理自然场景中的多方向文字，DBNet 是当前最优选择",
             warning: "EAST 虽然速度快，但对小文字（高度 < 10 像素）检测效果差，因为 4 倍下采样会丢失小文字信息"
         },
@@ -499,14 +525,22 @@ print(f"识别结果: {indices_to_text(decoded_indices)}")`
                 ]
             },
             mermaid: `graph LR
-    A["文字图像\n32×W"] --> B["CNN 卷积\n5 层卷积 + 池化"]
-    B --> C["特征序列\nW/16 × 512"]
-    C --> D["BiLSTM\n上下文建模"]
-    D --> E["全连接\n字符分类"]
-    E --> F["CTC 解码\n去重 + 去 blank"]
+    A["文字图像
+32×W"] --> B["CNN 卷积
+5 层卷积 + 池化"]
+    B --> C["特征序列
+W/16 × 512"]
+    C --> D["BiLSTM
+上下文建模"]
+    D --> E["全连接
+字符分类"]
+    E --> F["CTC 解码
+去重 + 去 blank"]
     F --> G["输出文本"]
-    style A fill:#0c4a6e
-    style G fill:#14532d`,
+    class G s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "CRNN 的输入图像高度通常设为 32 像素——这是经验值，太低会丢失笔画细节，太高会增加计算量且无额外收益",
             warning: "CTC 假设字符之间条件独立，无法建模字符间的依赖关系（如「q」后面大概率跟「u」），这是 CRNN 的理论上限"
         },
@@ -632,15 +666,22 @@ print(f"识别结果: {indices_to_text(decoded_indices)}")`
                 ]
             },
             mermaid: `graph TD
-    A["输入图像"] --> B["共享 Backbone\n特征提取"]
-    B --> C["检测分支\n文字区域 Proposal"]
-    B --> D["识别分支\n字符序列"]
-    C --> E["RoI Align\n区域规范化"]
+    A["输入图像"] --> B["共享 Backbone
+特征提取"]
+    B --> C["检测分支
+文字区域 Proposal"]
+    B --> D["识别分支
+字符序列"]
+    C --> E["RoI Align
+区域规范化"]
     E --> D
-    D --> F["迭代纠错\n视觉 + 语言交互"]
+    D --> F["迭代纠错
+视觉 + 语言交互"]
     F --> G["输出: 文本 + 位置"]
-    style A fill:#0c4a6e
-    style G fill:#14532d`,
+    class G s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "端到端方法适合需要高精度且算力充足的场景；如果只需要简单文字识别，检测+识别两阶段方案更灵活且更容易调试",
             warning: "端到端模型的训练需要大量标注数据（检测框 + 文本标签），标注成本是两阶段方案的 2-3 倍"
         },
@@ -748,10 +789,15 @@ for name, m in models.items():
                 ]
             },
             mermaid: `graph TD
-    A["PaddleOCR\n整体架构"] --> B["文本检测\nDB++"]
-    A --> C["文本方向分类\n180° 翻转检测"]
-    A --> D["文本识别\nSVTR_LCNet"]
-    A --> E["后处理\n排版分析"]
+    A["PaddleOCR
+整体架构"] --> B["文本检测
+DB++"]
+    A --> C["文本方向分类
+180° 翻转检测"]
+    A --> D["文本识别
+SVTR_LCNet"]
+    A --> E["后处理
+排版分析"]
     B --> F["概率图 + 阈值图"]
     F --> G["可微二值化"]
     G --> H["文字区域框"]
@@ -763,8 +809,10 @@ for name, m in models.items():
     J --> M
     L --> M
     M --> N["最终输出"]
-    style A fill:#0c4a6e
-    style N fill:#14532d`,
+    class N s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "移动端部署首选 PP-OCRv4 超轻量模型（仅 6MB），如果对精度要求高则用 Server 版模型；生产环境建议先用 PPOCRLabel 工具标注数据再微调",
             warning: "PaddleOCR 默认的文字长度限制是 25 个字符，如果需要识别长文本（如段落），需要修改 max_text_length 参数并重新训练"
         },
@@ -904,17 +952,22 @@ strategies = {
     B --> D["中文"]
     B --> E["其他语言"]
     B --> F["混合 / 未知"]
-    C --> G["英文专用模型\nCRNN"]
-    D --> H["中文专用模型\nPP-OCRv4"]
+    C --> G["英文专用模型
+CRNN"]
+    D --> H["中文专用模型
+PP-OCRv4"]
     E --> I["对应语言模型"]
     F --> J["统一大模型 / 多模态"]
     G --> K["识别结果"]
     H --> K
     I --> K
     J --> K
-    style A fill:#0c4a6e
-    style K fill:#14532d
-    style F fill:#7c2d12`,
+    class F s2
+    class K s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "对于多语言混合文档，推荐先用 PaddleOCR 的多语言模型做粗识别，再对识别置信度低的区域用专用语言模型做精识别",
             warning: "手写识别的准确率远低于印刷体——即使是最好的 TrOCR 模型，在自由手写中文上的准确率也只有 60-70%，不能用于对准确率要求严格的场景"
         },

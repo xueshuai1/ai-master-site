@@ -189,10 +189,13 @@ class GAPClassifier(nn.Module):
             mermaid: `graph LR
     A["4×4 特征图"] -->|2×2 窗口| B["最大池化"]
     A -->|2×2 窗口| C["平均池化"]
-    B --> D["2×2 输出\n保留局部最强信号"]
-    C --> E["2×2 输出\n保留整体平均信息"]
+    B --> D["2×2 输出
+保留局部最强信号"]
+    C --> E["2×2 输出
+保留整体平均信息"]
     A -->|全局窗口| F["全局平均池化"]
-    F --> G["1×1 输出\n通道级摘要"]`,
+    F --> G["1×1 输出
+通道级摘要"]`,
             tip: "池化层没有可学习参数，它只是固定的下采样操作。理解它与步幅卷积（Strided Convolution）的区别很重要——后者是可学习的下采样。",
             warning: "过度使用池化会丢失太多空间信息，导致小目标检测性能下降。现代架构倾向于用步幅卷积或更深的网络替代过多池化。",
         },
@@ -274,14 +277,22 @@ class BasicBlock(nn.Module):
                 ],
             },
             mermaid: `graph TD
-    A["LeNet-5 (1998)\n6万参数"] --> B["AlexNet (2012)\n6000万参数"]
-    B --> C["VGG-16 (2014)\n1.38亿参数"]
-    B --> D["GoogLeNet (2014)\nInception"]
-    C --> E["ResNet (2015)\n残差连接"]
+    A["LeNet-5 (1998)
+6万参数"] --> B["AlexNet (2012)
+6000万参数"]
+    B --> C["VGG-16 (2014)
+1.38亿参数"]
+    B --> D["GoogLeNet (2014)
+Inception"]
+    C --> E["ResNet (2015)
+残差连接"]
     D --> E
-    E --> F["ResNet-152\n超越人类水平"]
-    style A fill:#0c4a6e
-    style F fill:#14532d`,
+    E --> F["ResNet-152
+超越人类水平"]
+    class F s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "学习架构演进时，重点关注「为什么需要新架构」——每个经典网络都是为了解决前一代的某个瓶颈而诞生的。",
             warning: "不要盲目追求更深的网络。ResNet 之前，人们发现单纯增加层数反而会导致训练误差上升（退化问题），残差连接才是关键突破。",
         },
@@ -349,8 +360,10 @@ print(f"ResNet-18 Params: {clever_format(params, '%.2f')}")
     B --> C["C_out × (K×K×C_in + 1)"]
     A --> D["FLOPs 计算"]
     D --> E["2 × K×K×C_in × H_out×W_out×C_out"]
-    C --> F["决定模型大小\n存储/过拟合"]
-    E --> G["决定推理速度\n计算复杂度"]`,
+    C --> F["决定模型大小
+存储/过拟合"]
+    E --> G["决定推理速度
+计算复杂度"]`,
             tip: "面试常考：为什么两个 3×3 卷积等价于一个 5×5 卷积但参数更少？答：两个 3×3 的参数是 2×3×3×C² = 18C²，一个 5×5 是 25C²，节省 28% 的参数。",
             warning: "FLOPs 只是理论计算量，实际推理速度还受内存带宽、并行度、算子实现影响。低 FLOPs 不代表一定快（如 MobileNet 的深度可分离卷积）。",
         },
@@ -425,9 +438,12 @@ scheduler = CosineAnnealingLR(optimizer, T_max=50, eta_min=1e-7)
             },
             mermaid: `graph TD
     A["ImageNet 预训练权重"] --> B{"数据量?"}
-    B -->|< 1K| C["冻结所有层\n仅训练分类头"]
-    B -->|1K-10K| D["冻结低层\n微调高层+分类头"]
-    B -->|> 10K| E["小学习率\n全量微调"]
+    B -->|< 1K| C["冻结所有层
+仅训练分类头"]
+    B -->|1K-10K| D["冻结低层
+微调高层+分类头"]
+    B -->|> 10K| E["小学习率
+全量微调"]
     C --> F["快速部署"]
     D --> G["平衡精度与速度"]
     E --> H["最佳性能"]`,
@@ -556,15 +572,21 @@ for epoch in range(100):
                 ],
             },
             mermaid: `graph TD
-    A["CIFAR-10 数据集\n60K 张 32x32"] --> B["数据增强\n裁剪/翻转/归一化"]
-    B --> C["CNN 模型\n6 层卷积 + 2 层全连接"]
-    C --> D["SGD + 动量 0.9\nweight_decay=5e-4"]
-    D --> E["训练 100 epochs\n余弦学习率衰减"]
+    A["CIFAR-10 数据集
+60K 张 32x32"] --> B["数据增强
+裁剪/翻转/归一化"]
+    B --> C["CNN 模型
+6 层卷积 + 2 层全连接"]
+    C --> D["SGD + 动量 0.9
+weight_decay=5e-4"]
+    D --> E["训练 100 epochs
+余弦学习率衰减"]
     E --> F{"测试精度 > 90％?"}
     F -->|是| G["模型部署"]
     F -->|否| H["调整架构/超参数"]
     H --> C
-    style G fill:#14532d`,
+    class G s0
+    classDef s0 fill:#14532d`,
             tip: "CIFAR-10 是学习 CNN 的最佳入门数据集——比 MNIST 有挑战性，又比 ImageNet 容易快速迭代。先用简单 CNN 达到 85%+，再尝试 ResNet 达到 93%+。",
             warning: "训练时别忘了 model.train() 和 model.eval() 模式切换——Dropout 和 BatchNorm 在这两种模式下的行为不同，搞错会严重影响精度。",
         },

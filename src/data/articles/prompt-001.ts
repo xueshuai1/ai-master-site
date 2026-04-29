@@ -57,10 +57,12 @@ export const article: Article = {
     F --> G[得出结论]
     C --> H[准确率: ~60％]
     G --> I[准确率: ~90％]
-    
-    style B fill:#7c2d12,stroke:#333
-    style H fill:#7f1d1d,stroke:#333
-    style I fill:#14532d,stroke:#333`,
+    class I s2
+    class H s1
+    class B s0
+    classDef s0 fill:#7c2d12,stroke:#333
+    classDef s1 fill:#7f1d1d,stroke:#333
+    classDef s2 fill:#14532d,stroke:#333`,
     },
     {
       title: "2.1 Zero-Shot CoT：最简单的思维链",
@@ -115,15 +117,19 @@ Few-Shot CoT 给示范，让模型照着学。
 
 在更复杂的任务上（如符号推理、多步算术），Few-Shot CoT 比 Zero-Shot CoT 高出 10-20 个百分点。`,
       mermaid: `graph LR
-    A[输入问题] --> B[Few-Shot 示例 1\n问题→推理→答案]
-    B --> C[Few-Shot 示例 2\n问题→推理→答案]
-    C --> D[Few-Shot 示例 3\n问题→推理→答案]
+    A[输入问题] --> B[Few-Shot 示例 1
+问题→推理→答案]
+    B --> C[Few-Shot 示例 2
+问题→推理→答案]
+    C --> D[Few-Shot 示例 3
+问题→推理→答案]
     D --> E[目标问题]
     E --> F[模型模仿推理模式]
     F --> G[输出推理过程 + 答案]
-    
-    style A fill:#1e3a5f
-    style G fill:#14532d`,
+    class G s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d`,
     },
     {
       title: "2.3 Few-Shot CoT 实战代码",
@@ -510,11 +516,14 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
     H2 -->|得分 0.4| J[放弃]
     
     I --> K[得出结论]
-    
-    style A fill:#1e3a5f
-    style K fill:#14532d
-    style E1 fill:#7f1d1d
-    style J fill:#7f1d1d`,
+    class J s3
+    class E1 s2
+    class K s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d
+    classDef s3 fill:#7f1d1d`,
     },
     {
       title: "5.1 ToT 与 CoT 的对比",
@@ -579,10 +588,12 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
     L -->|通过| M[输出]
     L -->|不通过| N[重试/降级]
     N --> L
-    
-    style A fill:#1e3a5f
-    style M fill:#14532d
-    style N fill:#7f1d1d`,
+    class N s2
+    class M s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
     },
     {
       title: "6.1 生产级 Prompt 系统代码",

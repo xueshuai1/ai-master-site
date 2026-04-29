@@ -64,12 +64,16 @@ class SimpleRAGMemory:
     B --> C["平铺存储在同一集合"]
     C --> D["查询时相似度匹配"]
     D --> E["返回 Top-K 结果"]
-    style A fill:#1e3a5f
-    style C fill:#1e3a5f
-    style D fill:#1e3a5f
-    style E fill:#1e3a5f
     classDef simple fill:#374151,stroke:#333
-    class A,C,D,E simple`,
+    class A,C,D,E simple
+    class E s3
+    class D s2
+    class C s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#1e3a5f`,
     },
     {
       title: "2. mempalace 架构：多维度记忆系统的生产级实现",
@@ -230,9 +234,12 @@ class MultiDimensionalMemory:
     R --> CC["记忆巩固"]
     CC --> SM
     CC -->|"重要信息"| EM
-    style MR fill:#1e3a5f
-    style FU fill:#1e3a5f
-    style CC fill:#1e3a5f`,
+    class CC s2
+    class FU s1
+    class MR s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#1e3a5f`,
     },
     {
       title: "3. claude-mem 架构：AI 驱动的记忆压缩机制",
@@ -484,8 +491,10 @@ class HybridMemorySystem:
     B1 --> C1
     B1 --> C2
     B2 --> C2
-    style C1 fill:#1e3a5f
-    style C2 fill:#1e3a5f`,
+    class C2 s1
+    class C1 s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f`,
       tip: "实践中建议从简单方案开始：先用 RAG 验证记忆需求，再逐步引入压缩或多维度架构。过度设计记忆系统会消耗大量开发时间，而用户可能只需要记住几个关键偏好。",
       warning: "记忆系统涉及用户隐私数据，生产环境必须实现加密存储、访问控制和数据删除机制。mempalace 和 claude-mem 的开源版本主要用于本地使用，企业部署需要额外评估合规性。",
     },

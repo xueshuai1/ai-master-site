@@ -26,11 +26,14 @@ export const article: Article = {
     B -->|"上传梯度"| A
     C -->|"上传梯度"| A
     D -->|"上传梯度"| A
-    
-    style A fill:#0c4a6e
-    style B fill:#7c2d12
-    style C fill:#7c2d12
-    style D fill:#7c2d12`,
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#7c2d12
+    classDef s3 fill:#7c2d12`,
         },
         {
             title: "2. FedAvg：联邦学习的基石算法",

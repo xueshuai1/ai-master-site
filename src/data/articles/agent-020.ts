@@ -16,11 +16,16 @@ export const article: Article = {
       title: "1. 从静态 Agent 到自进化 Agent：范式的根本转变",
       body: `过去两年的 AI Agent 几乎都是**静态**的：开发者预先定义好工具列表、Prompt 模板和工作流程，Agent 在运行时只能在这些预设范围内操作。这种设计存在一个根本缺陷——**Agent 无法从经验中学习**。\n\n2026 年，三个几乎同时出现的开源项目打破了这一局限：\n\n- **NousResearch Hermes Agent**（101K stars，单周暴涨 42,612 stars）：提出「可成长型 Agent」概念，Agent 通过执行任务积累经验，压缩为可复用的知识模块注入未来会话\n- **GenericAgent**（4.4K stars，周增 3,218 stars）：从 3.3K 行种子代码开始，自主生长技能树，以 6 倍更少的 token 消耗实现全系统控制\n- **EvoMap Evolver**（5.3K stars，周增 2,964 stars）：基于 GEP（Genome Evolution Protocol）的群体进化引擎，多个 Agent 变体竞争进化\n\n这三种方案代表了自进化 Agent 的三条技术路线：**经验积累型**、**技能生长型**和**群体进化型**。`,
       mermaid: `graph TD
-    A["静态 Agent\n预定义工具 + 固定 Prompt"] -->|"无法从经验中学习"| B["能力天花板低\n无法适应新场景"]
+    A["静态 Agent
+预定义工具 + 固定 Prompt"] -->|"无法从经验中学习"| B["能力天花板低
+无法适应新场景"]
     A --> C["2026 范式转变"]
-    C --> D["经验积累型\nHermes Agent"]
-    C --> E["技能生长型\nGenericAgent"]
-    C --> F["群体进化型\nEvolver/GEP"]
+    C --> D["经验积累型
+Hermes Agent"]
+    C --> E["技能生长型
+GenericAgent"]
+    C --> F["群体进化型
+Evolver/GEP"]
     D --> G["记忆压缩 + 上下文注入"]
     E --> H["自主发现操作 → 固化技能"]
     F --> I["变异 + 选择 + 交叉繁殖"]
@@ -42,7 +47,9 @@ export const article: Article = {
     A->>A: 执行任务（记录完整轨迹）
     A->>U: 返回结果
     A->>M: 触发经验压缩
-    M->>M: 提取关键决策点\n过滤冗余信息\n生成知识摘要
+    M->>M: 提取关键决策点
+过滤冗余信息
+生成知识摘要
     M->>V: 存储压缩知识
     Note over U,V: 下次遇到类似任务时
     U->>A: 提交新任务
@@ -746,13 +753,20 @@ if __name__ == "__main__":
       body: `自进化 Agent 不仅是一个技术趋势，它可能从根本上改变我们与 AI 的交互方式：\n\n**个人 Agent 的个性化**：你的 Agent 会随着使用时间变得越来越懂你——记住你的偏好、习惯和决策模式。这不是简单的「记忆」，而是真正的「个性化进化」。\n\n**企业 Agent 的持续优化**：7×24 小时运行的客服 Agent、代码审查 Agent、数据监控 Agent 可以通过群体进化持续优化，无需人工干预。\n\n**开源生态的加速**：Hermes Agent 单周 42K stars 的增长说明社区对自进化 Agent 的极度渴望。未来可能会出现「Agent 技能市场」——开发者共享经过验证的技能模块，其他 Agent 可以直接加载。\n\n**安全与治理的新挑战**：自进化 Agent 的行为可能偏离初始设计，如何确保其安全性和可控性是 2026-2027 年最重要的研究课题之一。Anthropic 的 Glasswing 计划（40+ 科技巨头参与）和 MIT 的 LLM 安全机制研究已经开始探索这一方向。\n\n**与垂直 Agent 的结合**：自进化 + 垂直化 = 领域专家 Agent。想象一个自进化的医疗诊断 Agent，随着处理的病例越来越多，诊断准确率持续提升——这就是 AI 医疗的未来。`,
       mermaid: `graph TD
     title 自进化 Agent 发展路线图
-    2024 Q4 : 概念萌芽\nAutoGPT 尝试自我改进
-    2025 Q2 : 经验记忆\nClaude-Mem 等记忆项目出现
-    2025 Q4 : 技能生长\nGenericAgent 提出技能树概念
-    2026 Q1 : 群体进化\nEvolver 发布 GEP 协议
-    2026 Q2 : 爆发增长\nHermes Agent 单周 42K stars
-    2026 Q3-Q4 : 标准化?\n评估基准 + 安全框架
-    2027 : 生产级应用?\n企业级自进化 Agent 平台`,
+    2024 Q4 : 概念萌芽
+AutoGPT 尝试自我改进
+    2025 Q2 : 经验记忆
+Claude-Mem 等记忆项目出现
+    2025 Q4 : 技能生长
+GenericAgent 提出技能树概念
+    2026 Q1 : 群体进化
+Evolver 发布 GEP 协议
+    2026 Q2 : 爆发增长
+Hermes Agent 单周 42K stars
+    2026 Q3-Q4 : 标准化?
+评估基准 + 安全框架
+    2027 : 生产级应用?
+企业级自进化 Agent 平台`,
       tip: "如果你想跟踪自进化 Agent 的最新进展，建议关注以下项目：NousResearch/hermes-agent（经验积累）、lsdefine/GenericAgent（技能生长）、EvoMap/evolver（群体进化）、thedotmack/claude-mem（记忆系统）。这四个项目代表了当前最前沿的探索方向。"
     },
     {

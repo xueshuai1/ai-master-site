@@ -30,12 +30,18 @@ export const article: Article = {
     D --> D3[分步执行]
     D --> D4[自我修正]
     D --> D5[全流程闭环]
-    style D fill:#064e3b,color:#f1f5f9,stroke:#16a34a,stroke-width:3px
-    style D1 fill:#14532d
-    style D2 fill:#14532d
-    style D3 fill:#14532d
-    style D4 fill:#14532d
-    style D5 fill:#14532d`,
+    class D5 s5
+    class D4 s4
+    class D3 s3
+    class D2 s2
+    class D1 s1
+    class D s0
+    classDef s0 fill:#064e3b,color:#f1f5f9,stroke:#16a34a,stroke-width:3px
+    classDef s1 fill:#14532d
+    classDef s2 fill:#14532d
+    classDef s3 fill:#14532d
+    classDef s4 fill:#14532d
+    classDef s5 fill:#14532d`,
     },
     {
       title: "2. 五大 AI 编程工具深度对比",
@@ -135,14 +141,20 @@ $ claude
     F --> F1[测试运行]
     F --> F2[Lint 检查]
     F --> F3[Diff 分析]
-    
-    style A fill:#713f12
-    style H fill:#14532d
-    style B fill:#1e3a5f
-    style C fill:#1e3a5f
-    style D fill:#1e3a5f
-    style E fill:#1e3a5f
-    style F fill:#1e3a5f`,
+    class F s6
+    class E s5
+    class D s4
+    class C s3
+    class B s2
+    class H s1
+    class A s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#14532d
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#1e3a5f
+    classDef s4 fill:#1e3a5f
+    classDef s5 fill:#1e3a5f
+    classDef s6 fill:#1e3a5f`,
     },
     {
       title: "6. 实战：用 Python + MCP 构建自定义 AI 编程助手",
@@ -412,12 +424,18 @@ if __name__ == "__main__":
     E --> E2[表单填写]
     F --> F1[REST 调用]
     F --> F2[GraphQL 查询]
-    style B fill:#78350f,color:#f1f5f9,stroke:#d97706,stroke-width:3px
-    style A fill:#1e3a5f,color:#f1f5f9
-    style C fill:#14532d
-    style D fill:#14532d
-    style E fill:#14532d
-    style F fill:#14532d`,
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class A s1
+    class B s0
+    classDef s0 fill:#78350f,color:#f1f5f9,stroke:#d97706,stroke-width:3px
+    classDef s1 fill:#1e3a5f,color:#f1f5f9
+    classDef s2 fill:#14532d
+    classDef s3 fill:#14532d
+    classDef s4 fill:#14532d
+    classDef s5 fill:#14532d`,
     },
     {
       title: "8. 选择建议：不同场景下的最佳工具",

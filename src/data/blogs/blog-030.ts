@@ -335,11 +335,14 @@ class CodeHandoffSpec:
     C --> J["Claude Design"]
     C --> K["Claude Code"]
     C --> L["Claude Pro/Max/Team/Enterprise"]
-    
-    style B fill:#b91c1c,stroke:\#dc2626,color:#fff
-    style C fill:#b45309,stroke:\#d97706,color:#fff
-    style D fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    style E fill:#047857,stroke:\#059669,color:#fff`,
+    class E s3
+    class D s2
+    class C s1
+    class B s0
+    classDef s0 fill:#b91c1c,stroke:\#dc2626,color:#fff
+    classDef s1 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s2 fill:#1d4ed8,stroke:\#2563eb,color:#fff
+    classDef s3 fill:#047857,stroke:\#059669,color:#fff`,
     warning: "Anthropic 的双轨模型策略引发一个重要思考：当 AI 能力强大到可能危害社会时，AI 公司是否有责任限制其公开可用性？这是一个没有标准答案的伦理问题。Anthropic 选择了保守路线，但这可能为未来的 AI 安全治理树立先例。",
   },
   {
@@ -355,11 +358,14 @@ class CodeHandoffSpec:
     A["2021-2024<br/>模型供应商"] -->|API 收入| B["2025<br/>聊天应用"]
     B -->|订阅收入| C["2026<br/>全栈产品公司"]
     C -->|Design + Code + Labs| D["未来<br/>AI 操作系统?"]
-    
-    style A fill:#475569,stroke:\#64748b,color:#fff
-    style B fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    style C fill:#b45309,stroke:\#d97706,color:#fff
-    style D fill:#b91c1c,stroke:\#dc2626,color:#fff`,
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#475569,stroke:\#64748b,color:#fff
+    classDef s1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
+    classDef s2 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s3 fill:#b91c1c,stroke:\#dc2626,color:#fff`,
     table: {
       headers: ["公司", "最新年化收入", "增长速度", "IPO 状态", "核心产品"],
       rows: [
@@ -397,10 +403,12 @@ class CodeHandoffSpec:
     B1 --> E["代表: Canva AI<br/>Adobe Sensei"]
     C1 --> F["代表: Midjourney<br/>DALL-E / Stable Diffusion"]
     D1 --> G["代表: Claude Design<br/>Adobe Firefly AI 助手"]
-    
-    style B1 fill:#475569,stroke:\#64748b,color:#fff
-    style C1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    style D1 fill:#b45309,stroke:\#d97706,color:#fff`,
+    class D1 s2
+    class C1 s1
+    class B1 s0
+    classDef s0 fill:#475569,stroke:\#64748b,color:#fff
+    classDef s1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
+    classDef s2 fill:#b45309,stroke:\#d97706,color:#fff`,
   },
 ];
 

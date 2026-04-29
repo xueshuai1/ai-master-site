@@ -183,7 +183,7 @@ print(f"单头参数量: {single_head_params:,}")
 print(f"多头参数量: {multi_head_params:,} (相同，但表达能力更强)")`,
           },
         ],
-        mermaid: `graph TD TB
+        mermaid: `graph TD
     X["输入 X"] --> Q["W_q → Q"]
     X --> K["W_k → K"]
     X --> V["W_v → V"]
@@ -207,9 +207,10 @@ print(f"多头参数量: {multi_head_params:,} (相同，但表达能力更强)"
     A3 --> C
     C --> W["W_o 线性变换"]
     W --> Y["输出"]
-    
-    style C fill:#78350f,color:#f1f5f9
-    style W fill:#064e3b,color:#f1f5f9`,
+    class W s1
+    class C s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+    classDef s1 fill:#064e3b,color:#f1f5f9`,
       },
       {
         title: "4. Transformer 整体架构",
@@ -279,7 +280,7 @@ class TransformerDecoderLayer(nn.Module):
         return x`,
           },
         ],
-        mermaid: `graph TD TB
+        mermaid: `graph TD
     subgraph "编码器 (Encoder × N)"
         A["输入 Embedding"] --> B["位置编码"]
         B --> C["Multi-Head Self-Attention"]
@@ -301,11 +302,14 @@ class TransformerDecoderLayer(nn.Module):
     
     N --> O["Linear + Softmax"]
     O --> P["输出概率分布"]
-    
-    style C fill:#1e3a5f
-    style K fill:#14532d
-    style E fill:#7c2d12
-    style M fill:#7c2d12`,
+    class M s3
+    class E s2
+    class K s1
+    class C s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12
+    classDef s3 fill:#7c2d12`,
       },
       {
         title: "5. 位置编码：让模型感知顺序",

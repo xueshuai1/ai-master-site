@@ -25,7 +25,8 @@ export const blog: BlogPost = {
 这篇论文尝试回答：如果让 Agent 拥有世界模型，会发生什么？`,
       mermaid: `graph TD
     A[感知输入] --> B[状态编码]
-    B --> C[世界模型\n状态空间 S]
+    B --> C[世界模型
+状态空间 S]
     C --> D{内心模拟}
     D --> E[预测结果]
     D --> F[反事实推理]
@@ -54,8 +55,11 @@ export const blog: BlogPost = {
 
 机器世界模型经历了三个阶段：规则驱动的物理模型（1980s）、数据驱动的神经网络模型（2010s）、以及如今的 Agentic World Model —— 将世界模型与 Agent 架构深度融合。`,
       mermaid: `graph TD
-    A[规则驱动模型\n1980s] --> B[神经网络模型\n2010s]
-    B --> C[Agentic World Model\n2026]
+    A[规则驱动模型
+1980s] --> B[神经网络模型
+2010s]
+    B --> C[Agentic World Model
+2026]
     
     A1[物理规则] --> A
     A2[预定义约束] --> A

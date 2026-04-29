@@ -426,9 +426,10 @@ print(result["code"])`,
     I -->|是| J[自我修正]
     I -->|否| K[✅ 完成]
     J --> D
-    
-    style A fill:#1e3a5f,color:#fff
-    style K fill:#166534,color:#fff`,
+    class K s1
+    class A s0
+    classDef s0 fill:#1e3a5f,color:#fff
+    classDef s1 fill:#166534,color:#fff`,
     },
     {
       title: "五、API 迁移指南：从 GPT-5.4 到 GPT-5.5",
@@ -535,9 +536,10 @@ for old, new in zip(gpt54_results, gpt55_results):
     F --> H{所有用例通过?}
     H -->|是| I[✅ 迁移完成]
     H -->|否| G
-    
-    style A fill:#1e3a5f,color:#fff
-    style I fill:#166534,color:#fff`,
+    class I s1
+    class A s0
+    classDef s0 fill:#1e3a5f,color:#fff
+    classDef s1 fill:#166534,color:#fff`,
     },
     {
       title: "六、GPT-5.5 与竞品的全面对比",
@@ -719,10 +721,12 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
     K[本地部署之选] --> L[Qwen3.6-27B]
     L --> M[27B 参数]
     M --> N[单卡可运行]
-    
-    style F fill:#1e3a5f,color:#fff
-    style J fill:#166534,color:#fff
-    style N fill:#b45309,color:#fff`,
+    class N s2
+    class J s1
+    class F s0
+    classDef s0 fill:#1e3a5f,color:#fff
+    classDef s1 fill:#166534,color:#fff
+    classDef s2 fill:#b45309,color:#fff`,
     },
   ],
 };

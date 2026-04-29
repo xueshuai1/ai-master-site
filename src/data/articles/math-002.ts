@@ -274,9 +274,12 @@ print("  中心不变，主轴方向由 U 的列向量决定")`
     A["单位圆"] -->|"V^T 旋转"| B["单位圆"]
     B -->|"Sigma 伸缩"| C["椭圆 轴长=sigma"]
     C -->|"U 旋转"| D["最终椭圆"]
-    style A fill:#0c4a6e
-    style C fill:#7c2d12
-    style D fill:#14532d`,
+    class D s2
+    class C s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
       tip: "奇异值的比值（最大/最小）就是矩阵的条件数，条件数越大，线性方程组求解越不稳定。",
       warning: "当最小奇异值为零时，矩阵是奇异的，线性方程组要么无解要么有无穷多解。"
     },

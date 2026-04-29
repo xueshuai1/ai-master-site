@@ -194,7 +194,8 @@ verify_policy_gradient_theorem()`
     F --> H["更新 theta"]
     G --> H
     H --> A
-    style C fill:#7c2d12`,
+    class C s0
+    classDef s0 fill:#7c2d12`,
             warning: "策略梯度定理最反直觉的一点是：不需要对环境转移概率 P(s'|s,a) 求导。因为 Q(s,a) 已经包含了环境动力学信息。"
         },
         {
@@ -315,8 +316,10 @@ def train_reinforce(env_name="CartPole-v1", episodes=1000, lr=0.01, gamma=0.99):
     E --> F["标准化 G_t"]
     F --> G["更新 theta"]
     G --> B
-    style D fill:#7c2d12
-    style E fill:#14532d`,
+    class E s1
+    class D s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
             tip: "实践中对回报做标准化（减均值除标准差）能显著稳定训练，这是 REINFORCE 最重要的工程技巧之一。"
         },
         {
@@ -413,8 +416,10 @@ compare_variance_with_baseline()`
     E --> G["期望值不变"]
     H["最优基线"] --> I["b*(s) = E[Q^2]/E[Q]"]
     I --> F
-    style C fill:#7f1d1d
-    style F fill:#14532d`,
+    class F s1
+    class C s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d`,
             warning: "实践中最简单的基线是回报的移动平均。它不需要额外的值网络，但效果已经相当不错。"
         },
         {
@@ -502,7 +507,8 @@ analyze_gae_lambda()`
     D --> E["策略更新"]
     F["lambda 小"] -->|偏差大方差小| B
     G["lambda 大"] -->|偏差小方差大| B
-    style B fill:#0c4a6e`,
+    class B s0
+    classDef s0 fill:#0c4a6e`,
             tip: "GAE 中的 lambda 是最重要的超参数之一。通常 lambda=0.95 在偏差和方差之间取得了很好的平衡。"
         },
         {
@@ -647,8 +653,10 @@ def evaluate(agent, n_episodes=10):
     I --> J["更新策略+基线"]
     J --> A
     K["值网络 V(s)"] -.->|基线| I
-    style C fill:#14532d
-    style K fill:#7c2d12`,
+    class K s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12`,
             warning: "CartPole 的 solved 标准是最近 100 集平均奖励 >= 195。REINFORCE 通常在 200-400 个 episode 内可以达到。"
         },
         {
@@ -759,8 +767,10 @@ for action_s, state_d, eff, name in scenarios:
     G -->|中| I["PPO / A3C"]
     J["Actor-Critic"] --> K["结合两者优势"]
     K --> L["工业界首选"]
-    style J fill:#0c4a6e
-    style L fill:#14532d`,
+    class L s1
+    class J s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             warning: "现代强化学习中，纯 REINFORCE 已经很少单独使用。Actor-Critic 架构（特别是 PPO 和 SAC）结合了两者的优势，是工业界的首选。但理解 REINFORCE 是理解所有高级策略梯度算法的基础。"
         }
     ],

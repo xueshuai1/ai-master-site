@@ -217,11 +217,16 @@ plt.show()`,
 
 Adam（Adaptive Moment Estimation）是目前最常用的优化器，结合了动量和自适应学习率的思想：它同时维护梯度的一阶矩（均值）和二阶矩（方差）的指数加权平均估计，对每个参数使用自适应的学习率。Adam 的默认超参数（α=0.001, β₁=0.9, β₂=0.999, ε=1e-8）在大多数场景下都表现良好，这也是它成为首选的原因。`,
         mermaid: `flowchart LR
-    A["损失函数\nMSE / CrossEntropy"] --> B["计算梯度\n∇L(w)"]
+    A["损失函数
+MSE / CrossEntropy"] --> B["计算梯度
+∇L(w)"]
     B --> C{"优化器"}
     C -->|"SGD"| D["w ← w - α·∇L"]
-    C -->|"Momentum"| E["v ← βv + ∇L\nw ← w - α·v"]
-    C -->|"Adam"| F["m ← β₁m + (1-β₁)·g\nv ← β₂v + (1-β₂)·g²\nw ← w - α·m̂/(√v̂+ε)"]
+    C -->|"Momentum"| E["v ← βv + ∇L
+w ← w - α·v"]
+    C -->|"Adam"| F["m ← β₁m + (1-β₁)·g
+v ← β₂v + (1-β₂)·g²
+w ← w - α·m̂/(√v̂+ε)"]
     D --> G["新参数 w"]
     E --> G
     F --> G

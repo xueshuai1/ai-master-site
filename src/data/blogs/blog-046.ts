@@ -55,7 +55,7 @@ Qwen3.6-27B 选择回归 Dense 架构，是一次深思熟虑的战略转向。D
 2. **推理能力增强训练**：通过 CoT（Chain of Thought）和 sFT（Supervised Fine-Tuning）强化推理链
 3. **工具使用能力**：增强了代码执行、文件操作、多轮调试等 Agent 能力
 4. **指令遵循优化**：在复杂多约束任务上的表现显著提升`,
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     subgraph Qwen3.5-397B-A17B MoE 架构
     A1[输入 Token] --> A2[Router 路由器]
     A2 --> A3[专家网络 Top-2]
@@ -75,10 +75,12 @@ Qwen3.6-27B 选择回归 Dense 架构，是一次深思熟虑的战略转向。D
     A7 -.性能对比.-> C{编程基准测试}
     B4 -.性能对比.-> C
     C --> D[Qwen3.6-27B ✅ 胜出]
-    
-    style D fill:#064e3b
-    style B4 fill:#1e3a5f
-    style A7 fill:#ffebee`,
+    class A7 s2
+    class B4 s1
+    class D s0
+    classDef s0 fill:#064e3b
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#991b1b`,
     table: {
       headers: ["特性", "Qwen3.5-397B-A17B (MoE)", "Qwen3.6-27B (Dense)", "提升/变化"],
       rows: [
@@ -447,10 +449,12 @@ Simon 用 Qwen3.6-27B 完成了两个著名的「鹈鹕骑自行车」测试：
     G -->|失败| I[错误分析]
     I --> J[代码修复]
     J --> F
-    
-    style H fill:#064e3b
-    style B fill:#1e3a5f
-    style I fill:#92400e`,
+    class I s2
+    class B s1
+    class H s0
+    classDef s0 fill:#064e3b
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#92400e`,
     table: {
       headers: ["能力维度", "Qwen3.6-27B", "Claude Sonnet 4.6", "GPT-4o", "Llama-3.3-70B"],
       rows: [

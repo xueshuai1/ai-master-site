@@ -386,9 +386,12 @@ print(apply_padding(img, 1, "replicate"))`,
                 ],
             },
             mermaid: `graph TD
-  A["输入 5×5"] -->|"P=0 (Valid)"| B["输出 3×3\n边界丢失"]
-  A -->|"P=1 (Same)"| C["输出 5×3\n保留边界"]
-  A -->|"P=2"| D["输出 7×7\n信息扩展"]`,
+  A["输入 5×5"] -->|"P=0 (Valid)"| B["输出 3×3
+边界丢失"]
+  A -->|"P=1 (Same)"| C["输出 5×3
+保留边界"]
+  A -->|"P=2"| D["输出 7×7
+信息扩展"]`,
             tip: "入门阶段记住一个规则：大多数卷积层用 Same 填充（PyTorch 中 padding=kernel_size//2），需要缩小尺寸时用 stride=2 或 pooling，不要混用无填充的卷积。",
             warning: "PyTorch 的 Conv2d 默认 padding=0（Valid 模式）！如果想保持尺寸不变，需要手动设置 padding=kernel_size//2。Keras 的 Conv2D 默认也是 valid，但可以设置 padding='same' 自动计算填充量。",
         },

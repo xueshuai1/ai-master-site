@@ -607,11 +607,16 @@ class ToolAuditSystem:
 | 审计范围 | Agent 操作日志 | Agent 操作 + 通信日志 |
 | 攻击面 | 用户输入 + 外部数据 | 用户输入 + 外部数据 + Agent 间通信 |`,
             mermaid: `graph TD
-    A["用户请求"] --> B["网关层\\n身份认证 + 输入过滤"]
-    B --> C["Agent 协调器\\n任务分配 + 权限管理"]
-    C --> D["Agent A\\n数据分析"]
-    C --> E["Agent B\\n代码执行"]
-    C --> F["Agent C\\n报告生成"]
+    A["用户请求"] --> B["网关层\
+身份认证 + 输入过滤"]
+    B --> C["Agent 协调器\
+任务分配 + 权限管理"]
+    C --> D["Agent A\
+数据分析"]
+    C --> E["Agent B\
+代码执行"]
+    C --> F["Agent C\
+报告生成"]
     
     D -.通信审查.-> E
     E -.通信审查.-> F

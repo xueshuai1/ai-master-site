@@ -23,10 +23,12 @@ export const article: Article = {
     C --> D["选择最大间隔超平面"]
     D --> E["支持向量确定边界"]
     E --> F["新样本分类"]
-    
-    style A fill:#1e3a5f
-    style D fill:#14532d
-    style F fill:#7c2d12`,
+    class F s2
+    class D s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
         tip: "关键洞察：SVM 的最终决策只依赖于支持向量（那些离边界最近的样本），与远离边界的样本无关。这意味着 SVM 对异常值有一定的鲁棒性——只要异常值不是支持向量。",
       },
       {

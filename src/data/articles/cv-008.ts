@@ -137,10 +137,14 @@ for name, props in model_comparison.items():
     C --> G["GAN：对抗博弈"]
     C --> H["Diffusion：逐步加噪去噪"]
     C --> I["Score-based：分数匹配"]
-    style A fill:#0c4a6e
-    style D fill:#7c2d12
-    style G fill:#7f1d1d
-    style H fill:#14532d`,
+    class H s3
+    class G s2
+    class D s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#7f1d1d
+    classDef s3 fill:#14532d`,
             tip: "入门生成模型建议先理解 VAE 的重参数化技巧——它是连接概率论与深度学习的桥梁，理解了 VAE 再学 Diffusion 会轻松很多",
             warning: "不要盲目追求 GAN 的生成质量——GAN 的训练需要大量调参经验（学习率、架构、正则化），对新手极不友好"
         },
@@ -264,11 +268,15 @@ class AdaIN(nn.Module):
                 ]
             },
             mermaid: `graph LR
-    A["随机向量 z"] --> B["Mapping Network\n8层 MLP"]
+    A["随机向量 z"] --> B["Mapping Network
+8层 MLP"]
     B --> C["中间向量 w"]
-    C --> D["AdaIN 注入\n浅层：粗粒度"]
-    C --> E["AdaIN 注入\n中层：中粒度"]
-    C --> F["AdaIN 注入\n深层：细粒度"]
+    C --> D["AdaIN 注入
+浅层：粗粒度"]
+    C --> E["AdaIN 注入
+中层：中粒度"]
+    C --> F["AdaIN 注入
+深层：细粒度"]
     G["噪声注入"] --> D
     G --> E
     G --> F
@@ -276,9 +284,12 @@ class AdaIN(nn.Module):
     E --> I["中间分辨率"]
     F --> J["最终分辨率"]
     H --> I --> J --> K["生成图像"]
-    style A fill:#0c4a6e
-    style C fill:#7c2d12
-    style K fill:#14532d`,
+    class K s2
+    class C s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "StyleGAN 的截断技巧（truncation trick）是提升生成质量的关键——truncation_psi 设 0.7 适合高质量生成，设 1.0 适合探索潜在空间多样性",
             warning: "StyleGAN 只适合生成固定分辨率的图像（如人脸），不适合可变分辨率或条件生成任务——它的架构是专门为高质量人脸生成设计的"
         },
@@ -421,12 +432,18 @@ def train_diffusion(model, dataloader, scheduler, epochs=100):
     C -->|"学习去噪"| D["..."]
     D -->|"学习去噪"| E["x_1"]
     E -->|"学习去噪"| F["生成数据 x_0"]
-    style A fill:#0c4a6e
-    style B fill:#7f1d1d
-    style F fill:#14532d
-    style C fill:#7c2d12
-    style D fill:#7c2d12
-    style E fill:#7c2d12`,
+    class E s5
+    class D s4
+    class C s3
+    class F s2
+    class B s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#14532d
+    classDef s3 fill:#7c2d12
+    classDef s4 fill:#7c2d12
+    classDef s5 fill:#7c2d12`,
             tip: "训练扩散模型时，余弦噪声调度（cosine schedule）比线性调度能产生更高质量的样本——因为它在低噪声区域（接近 x_0）分配了更多时间步",
             warning: "扩散模型的推理速度是最大瓶颈——标准 DDPM 需要 1000 步去噪，生成一张图可能需要数秒，不直接用于实时场景"
         },
@@ -557,10 +574,14 @@ class ImageEditor:
     A["真实图像 x_0"] -->|"DDIM 反向编码"| B["初始噪声 x_T"]
     B -->|"编辑操作"| C["编辑后噪声 x_T'"]
     C -->|"DDIM 正向采样"| D["编辑后图像 x_0'"]
-    style A fill:#0c4a6e
-    style B fill:#7c2d12
-    style C fill:#7c2d12
-    style D fill:#14532d`,
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#7c2d12
+    classDef s3 fill:#14532d`,
             tip: "DDIM 的 eta=0 确定性采样不仅速度快，还支持图像编辑——先编码再修改潜在空间再解码，是图像编辑的实用方案",
             warning: "DDIM 加速采样的步数不能无限减少——当步数低于 10 时，生成质量急剧下降，此时应考虑更高级的采样器（如 DPM-Solver）"
         },
@@ -696,9 +717,12 @@ for model, fid in sorted(fid_benchmarks.items(), key=lambda x: x[1]):
     C --> H["Precision & Recall"]
     D --> I["CLIP Score: 图文匹配"]
     D --> J["人类评估：AMT"]
-    style A fill:#0c4a6e
-    style E fill:#14532d
-    style G fill:#7c2d12`,
+    class G s2
+    class E s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "FID 评估时，真实集和生成集的样本量都应至少 10000 张，否则 FID 值方差很大、不可靠；小样本评估时建议用 KID（Kernel Inception Distance），它是无偏估计",
             warning: "FID 不是绝对指标——不同论文报告的 FID 值可能因 Inception 模型版本、归一化方式、随机种子等而差异巨大，跨论文比较 FID 没有意义"
         },
@@ -832,10 +856,14 @@ for scenario in scenarios:
     F -->|否| G{"需要图像编辑?"}
     G -->|是| E
     G -->|否| H["GAN 或 Diffusion 均可"]
-    style A fill:#0c4a6e
-    style C fill:#7f1d1d
-    style E fill:#14532d
-    style H fill:#7c2d12`,
+    class H s3
+    class E s2
+    class C s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#14532d
+    classDef s3 fill:#7c2d12`,
             tip: "实际项目中不要陷入「二选一」的思维陷阱——可以组合使用：用 Diffusion 做粗生成，用 GAN 做精修（Refinement），结合两者优势",
             warning: "CFG scale 不是越大越好——超过 15 会导致图像过饱和、颜色失真、出现 artifacts，Stable Diffusion 的推荐范围是 5-10"
         },
@@ -1008,9 +1036,12 @@ def generate_samples(model_path: str = 'diffusion_mnist_ema.pt', n: int = 16):
     K -->|是| L["保存 EMA 模型权重"]
     L --> M["DDIM 采样生成图像"]
     M --> N["保存生成结果"]
-    style A fill:#0c4a6e
-    style L fill:#7c2d12
-    style N fill:#14532d`,
+    class N s2
+    class L s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "训练扩散模型时强烈建议使用 EMA 权重——即使训练损失已经收敛，EMA 权重的生成质量通常比最新训练权重高 10-20%（FID 指标）",
             warning: "不要在扩散模型训练中用太大的学习率（>1e-3）——虽然 MSE 损失看起来稳定，但生成质量会显著下降，因为模型会学到退化解（预测零噪声）"
         },

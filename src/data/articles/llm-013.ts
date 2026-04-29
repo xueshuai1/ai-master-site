@@ -201,11 +201,14 @@ print("负载均衡辅助损失函数已定义")`,
     D --> G["专家坍塌风险"]
     G -.->|"严重"| H["某些专家从未被激活"]
     E --> I["所有专家均衡训练"]
-    
-    style D fill:#7c2d12
-    style G fill:#7f1d1d
-    style H fill:#7f1d1d
-    style I fill:#14532d`,
+    class I s3
+    class H s2
+    class G s1
+    class D s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#7f1d1d
+    classDef s3 fill:#14532d`,
             warning: "辅助损失的权重系数是关键的超参数。太小（< 0.001）无法防止专家坍塌；太大（> 0.1）会过度约束路由器，降低模型的表达能力。Mixtral 使用 0.02，Switch Transformer 使用 0.01。",
         },
         {
@@ -272,9 +275,10 @@ print("负载均衡辅助损失函数已定义")`,
     E --> J["Mixtral, Qwen-MoE 等"]
     F --> K["7B-13B Dense 模型"]
     I --> L["13B-70B Dense 模型"]
-    
-    style E fill:#14532d
-    style D fill:#1e3a5f`,
+    class D s1
+    class E s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#1e3a5f`,
         },
         {
             title: "6. 前沿 MoE 模型案例分析",
@@ -387,9 +391,10 @@ print(f"  稀疏率: {(1 - active/total)*100:.1f}%")`,
     E --> H["细粒度 MoE"]
     E --> I["MoE + 长上下文"]
     E --> J["推理优化"]
-    
-    style A fill:#0c4a6e
-    style E fill:#14532d`,
+    class E s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             list: [
                 "MoE 是大模型扩展的必经之路——稠密模型的 Scaling Law 终将遇到物理极限",
                 "混合专家（共享专家 + 路由专家）是当前最实用的设计模式",

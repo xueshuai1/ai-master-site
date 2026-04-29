@@ -13,7 +13,7 @@ const content: ArticleSection[] = [
       "流水线气泡严重，GPU 利用率低",
       "随着模型规模增大，通信成本呈线性甚至超线性增长",
     ],
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     A["CPU 内存: 参数存储"] <-->|"PCIe"| B["GPU: 计算"]
     B -->|"前向"| C["Layer 1"]
     C -->|"预取"| D["Layer 2"]

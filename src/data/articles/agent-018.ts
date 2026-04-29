@@ -560,15 +560,22 @@ class RedTeamSession:
     E --> F["修复建议"]
     F --> G["回归验证"]
     G --> H["报告输出"]
-    
-    style A fill:#1e3a5f
-    style B fill:#2d4a6f
-    style C fill:#2d4a6f
-    style D fill:#2d4a6f
-    style E fill:#2d4a6f
-    style F fill:#3d5a7f
-    style G fill:#3d5a7f
-    style H fill:#4d6a8f`,
+    class H s7
+    class G s6
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#2d4a6f
+    classDef s2 fill:#2d4a6f
+    classDef s3 fill:#2d4a6f
+    classDef s4 fill:#2d4a6f
+    classDef s5 fill:#3d5a7f
+    classDef s6 fill:#3d5a7f
+    classDef s7 fill:#4d6a8f`,
     },
     {
       title: "持续安全监控：Agent 运行时的安全防线",

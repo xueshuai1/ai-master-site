@@ -91,10 +91,14 @@ class VideoActionDataset(Dataset):
         ],
       },
       mermaid: `graph TD
-    A["视频输入"] --> B["预处理\n(解码/采样)"]
-    B --> C["空间特征提取\n(每帧 CNN/ViT)"]
-    C --> D["时序建模\n(TCN/Transformer/RNN)"]
-    D --> E["分类头\n(FC + Softmax)"]
+    A["视频输入"] --> B["预处理
+(解码/采样)"]
+    B --> C["空间特征提取
+(每帧 CNN/ViT)"]
+    C --> D["时序建模
+(TCN/Transformer/RNN)"]
+    D --> E["分类头
+(FC + Softmax)"]
     E --> F["动作标签"]
     subgraph "关键挑战"
       G["计算复杂度 O(T×H×W)"]
@@ -195,7 +199,9 @@ print(f"3D kernel shape: {conv3d.weight.shape}")  # (128, 64, 3, 3, 3)`,
         ],
       },
       mermaid: `graph LR
-    A["2D 卷积核\nk×k"] -->|复制 N 次| B["3D 卷积核\nN×k×k"]
+    A["2D 卷积核
+k×k"] -->|复制 N 次| B["3D 卷积核
+N×k×k"]
     B -->|除以 N 归一化| C["初始 3D 权重"]
     C -->|视频数据微调| D["I3D 网络"]
     subgraph "膨胀过程"
@@ -296,14 +302,17 @@ print(f"Flow shape: {flow_stacked.shape}")  # (20, 224, 224)`,
           ["融合策略", "加权平均概率", "空间:时间 ≈ 1:2", "无需训练"],
         ],
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["视频"] --> B["RGB 帧"]
     A --> C["光流计算"]
-    B --> D["空间流 CNN\n(ResNet/VGG)"]
-    C --> E["时间流 CNN\n(ResNet 20ch)"]
+    B --> D["空间流 CNN
+(ResNet/VGG)"]
+    C --> E["时间流 CNN
+(ResNet 20ch)"]
     D --> F["空间分类概率"]
     E --> G["时间分类概率"]
-    F --> H["加权融合\n×1 + ×2"]
+    F --> H["加权融合
+×1 + ×2"]
     G --> H
     H --> I["最终预测"]`,
       tip: "实际部署时，光流计算可以用 TV-L1 算法替代 Farneback 方法，虽然更慢但精度更高。也可以使用深度学习光流估计（如 RAFT）获得更准确的运动场。",
@@ -416,15 +425,20 @@ class TimeSformerAttention(nn.Module):
         ],
       },
       mermaid: `graph LR
-    A["帧特征序列\n(B, T, C)"] --> B["空间注意力\n每帧独立"]
-    B --> C["时间注意力\n跨帧聚合"]
-    C --> D["融合表示\n(B, T×P, C)"]
+    A["帧特征序列
+(B, T, C)"] --> B["空间注意力
+每帧独立"]
+    B --> C["时间注意力
+跨帧聚合"]
+    C --> D["融合表示
+(B, T×P, C)"]
     D --> E["分类头"]
 
     subgraph "分离注意力的优势"
       F["空间: 捕获物体关系"]
       G["时间: 捕获运动演化"]
-      H["复杂度从 O((TP)²)\n降至 O(T²+P²)"]
+      H["复杂度从 O((TP)²)
+降至 O(T²+P²)"]
     end
     B -.-> F
     C -.-> G
@@ -676,10 +690,14 @@ class SlowFastNetwork(nn.Module):
         ],
       },
       mermaid: `graph TD
-    A["视频输入"] --> B["慢速采样\n(低频取帧)"]
-    A --> C["快速采样\n(全帧取)"]
-    B --> D["Slow 通路\n(深网络, 多通道)"]
-    C --> E["Fast 通路\n(浅网络, 少通道)"]
+    A["视频输入"] --> B["慢速采样
+(低频取帧)"]
+    A --> C["快速采样
+(全帧取)"]
+    B --> D["Slow 通路
+(深网络, 多通道)"]
+    C --> E["Fast 通路
+(浅网络, 少通道)"]
     E -->|横向连接| D
     D --> F["拼接特征"]
     E --> F
@@ -827,7 +845,8 @@ print(f"Sampled shape: {frames.shape}")  # (64, H, W, 3)`,
     A["视频文件.mp4"] --> B["decord 解码"]
     B --> C["均匀采样 64 帧"]
     C --> D["Resize 224×224"]
-    D --> E["归一化\n(ImageNet mean/std)"]
+    D --> E["归一化
+(ImageNet mean/std)"]
     E --> F["I3D 前向传播"]
     F --> G["Softmax 概率"]
     G --> H["Top-5 预测结果"]

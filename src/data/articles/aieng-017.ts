@@ -396,12 +396,16 @@ with db.transaction() as tx:
     
     J --> K[Dashboard]
     J --> L[API]
-    
-    style B fill:#1e3a5f,stroke:#333,color:#f1f5f9
-    style D fill:#1e3a5f,stroke:#333,color:#f1f5f9
-    style F fill:#1e3a5f,stroke:#333,color:#f1f5f9
-    style H fill:#1e3a5f,stroke:#333,color:#f1f5f9
-    style J fill:#1e3a5f,stroke:#333,color:#f1f5f9`,
+    class J s4
+    class H s3
+    class F s2
+    class D s1
+    class B s0
+    classDef s0 fill:#1e3a5f,stroke:#333,color:#f1f5f9
+    classDef s1 fill:#1e3a5f,stroke:#333,color:#f1f5f9
+    classDef s2 fill:#1e3a5f,stroke:#333,color:#f1f5f9
+    classDef s3 fill:#1e3a5f,stroke:#333,color:#f1f5f9
+    classDef s4 fill:#1e3a5f,stroke:#333,color:#f1f5f9`,
     },
     {
       title: "六、性能基准与部署指南",

@@ -22,11 +22,15 @@ export const article: Article = {
 
 这就是 LLM 推理的核心瓶颈：**内存墙（Memory Wall）**。`,
       mermaid: `graph LR
-    A["输入 Prompt"] --> B["预填充阶段\n并行计算\nGPU 利用率高"]
-    B --> C["解码阶段\n逐 token 生成\n内存带宽瓶颈"]
+    A["输入 Prompt"] --> B["预填充阶段
+并行计算
+GPU 利用率高"]
+    B --> C["解码阶段
+逐 token 生成
+内存带宽瓶颈"]
     C --> D["输出文本"]
-
-    style C fill:#7f1d1d,color:#f1f5f9`,
+    class C s0
+    classDef s0 fill:#7f1d1d,color:#f1f5f9`,
     },
     {
       title: "解码阶段的数学本质",
@@ -145,12 +149,17 @@ outputs = llm.generate(prompts, sampling_params)`,
 
 当 k=5，α=0.8 时，理论加速比 ≈ 5×0.8 + 1 = **5 倍**。`,
       mermaid: `graph TD
-    A["Step 1: 草稿模型\n生成 5 个候选 token"] --> B["Step 2: 目标模型\n一次性计算 5 个位置的 logits"]
+    A["Step 1: 草稿模型
+生成 5 个候选 token"] --> B["Step 2: 目标模型
+一次性计算 5 个位置的 logits"]
     B --> C{"Step 3: 验证"}
-    C -->|"4 个接受"| D["接受前 4 个 token\n第 5 个重新采样"]
-    C -->|"0 个接受"| E["全部丢弃\n重新采样"]
+    C -->|"4 个接受"| D["接受前 4 个 token
+第 5 个重新采样"]
+    C -->|"0 个接受"| E["全部丢弃
+重新采样"]
     
-    D --> F["实际收益: 1 次前向传播\n生成 4 个 token"]
+    D --> F["实际收益: 1 次前向传播
+生成 4 个 token"]
     E --> G["无收益, 但也没损失"]`,
     },
     {
@@ -268,13 +277,19 @@ def speculative_decode_with_medusa(model, medusa_heads, input_ids,
 - 线性推测：0.8^5 = 32.8% 概率全部接受
 - 块扩散：期望接受 5×0.8 = **4 个 token**`,
       mermaid: `graph TD
-    A["传统推测解码"] --> B["草稿模型自回归生成\nToken1 → Token2 → Token3"]
-    B --> C["目标模型验证单条路径\n错误会累积传播"]
+    A["传统推测解码"] --> B["草稿模型自回归生成
+Token1 → Token2 → Token3"]
+    B --> C["目标模型验证单条路径
+错误会累积传播"]
 
-    D["DFlash 块扩散"] --> E["草稿模型并行生成块分布\nPosition1, Position2, Position3\n独立预测"]
-    E --> F["目标模型单次前向传播\n验证所有位置\n错误不累积"]
-
-    style D fill:#064e3b,color:#f1f5f9`,
+    D["DFlash 块扩散"] --> E["草稿模型并行生成块分布
+Position1, Position2, Position3
+独立预测"]
+    E --> F["目标模型单次前向传播
+验证所有位置
+错误不累积"]
+    class D s0
+    classDef s0 fill:#064e3b,color:#f1f5f9`,
     },
     {
       title: "方向四：DDTree —— 树形推测解码（2026 最新）",
@@ -543,7 +558,8 @@ print(analyze_moe_efficiency(671, 37, 256))
     B -->|"长文本 OOM"| E["PagedAttention"]
 
     D -->|"能"| F["Medusa 微调"]
-    D -->|"不能"| G["推测解码\n独立草稿模型"]
+    D -->|"不能"| G["推测解码
+独立草稿模型"]
 
     C --> H["效果满意？"]
     G --> H

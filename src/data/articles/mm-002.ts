@@ -96,8 +96,10 @@ print(f"VQA v2 训练集样本数: {len(dataset)}")`
     E --> F["推理模块"]
     F --> G["答案解码器"]
     G --> H["输出答案 A"]
-    style A fill:#0c4a6e
-    style H fill:#14532d`,
+    class H s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "建议先从 VQA v2 小规模子集开始调试，确认数据加载和预处理流程正确后再跑全量数据",
             warning: "VQA v2 存在明显的语言偏置（Language Bias），部分问题仅凭问题文本即可猜出答案，评测时务必使用 test-std 或 test-dev 标准拆分",
         },
@@ -230,8 +232,10 @@ class MCBPool(nn.Module):
     G --> H["IFFT"]
     H --> I["sqrt + L2 归一化"]
     I --> J["融合特征 [B, 16000]"]
-    style G fill:#713f12
-    style J fill:#14532d`,
+    class J s1
+    class G s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#14532d`,
             tip: "MCB 虽然有效，但输出维度高达 16000，内存消耗大。实际使用时可以先用 MLB（低秩双线性池化）做原型验证，确认效果后再升级 MCB",
             warning: "Count Sketch 的随机哈希矩阵在训练时必须固定（requires_grad=False），否则梯度会破坏投影的数学性质",
         },
@@ -463,7 +467,7 @@ print(f"跨模态输出形状: {output.shape}")`
                     ["BLIP-2", "ViT-g", "OPT/FlanT5", "Q-Former 桥接", "~85.0%+"],
                 ],
             },
-            mermaid: `graph TD TB
+            mermaid: `graph TD
     A["输入图像"] --> B["Patch 分割 16x16"]
     B --> C["线性投影 + 位置编码"]
     D["输入问题"] --> E["词嵌入 + 位置编码"]
@@ -473,8 +477,10 @@ print(f"跨模态输出形状: {output.shape}")`
     G --> H["CLS 输出"]
     H --> I["答案分类头"]
     I --> J["输出答案"]
-    style G fill:#0c4a6e
-    style F fill:#713f12`,
+    class F s1
+    class G s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#713f12`,
             tip: "Transformer-based VQA 模型对预训练数据量依赖很大，建议先在大规模图文对数据上做预训练，再在 VQA 数据集上微调",
             warning: "ViT 风格的模型需要将图像 resize 到固定分辨率（如 384x384），长宽比变化会引入变形，建议使用 letterbox padding 保持原始比例",
         },
@@ -582,8 +588,10 @@ class VILBERTForVQA(PreTrainedModel):
     H --> I["微调 VQA 任务"]
     I --> J["VQA 分类头"]
     J --> K["答案预测"]
-    style B fill:#7c2d12
-    style I fill:#14532d`,
+    class I s1
+    class B s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
             tip: "ViLBERT 和 LXMERT 都提供 HuggingFace Transformers 实现，可以直接用 from_pretrained 加载，微调时建议冻结前 6 层 Transformer，只训练高层和分类头，这样训练更快且不易过拟合",
             warning: "多模态预训练模型通常使用 Faster R-CNN 在 Visual Genome 上提取的区域特征作为视觉输入，如果你没有预提取的特征，需要先运行检测器，这一步可能非常耗时",
         },
@@ -687,8 +695,10 @@ class VQAEvaluator:
     I --> L["对抗性数据"]
     J --> M["结构化推理"]
     K --> N["生成式 VQA"]
-    style E fill:#713f12
-    style I fill:#7f1d1d`,
+    class I s1
+    class E s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#7f1d1d`,
             tip: "评估时建议使用官方的 VQA Evaluation Toolkit，它已经实现了 score 计算和类型分组统计，可以直接从 vqa-tools 仓库获取",
             warning: "VQA Score 的 min(n/3, 1.0) 阈值意味着即使模型预测完全正确，如果 10 个标注者中只有 1 人写了这个答案，得分也只有 0.33——这不是模型的问题，而是标注本身的不一致性",
         },
@@ -802,9 +812,12 @@ for q, a in zip(questions, answers):
     F --> G["生成答案"]
     G --> H["后处理"]
     H --> I["最终输出"]
-    style D fill:#0c4a6e
-    style F fill:#7c2d12
-    style G fill:#14532d`,
+    class G s2
+    class F s1
+    class D s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "对于生产环境部署，建议使用 INT8 或 INT4 量化将 BLIP-2 的显存需求降低 50%-75%，同时保持几乎相同的准确率。HuggingFace 的 bitsandbytes 库可以直接使用 load_in_8bit=True 参数加载模型",
             warning: "生成式 VQA 模型的 max_new_tokens 设置过小会导致答案被截断，设置过大会引入无意义的后续文本。一般 VQA 答案 5-10 个 token 足够，建议 max_new_tokens 设为 20 并在后处理中按句号或换行截断",
         },

@@ -61,8 +61,10 @@ print(f"前5个类别: {imagenet.classes[:5]}")
     B --> C["全连接层"]
     C --> D["Softmax"]
     D --> E["类别预测"]
-    style A fill:#0c4a6e
-    style E fill:#14532d`,
+    class E s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "入门建议先用 CIFAR-10 练手，ImageNet 全量训练需要多张 GPU 跑数天",
             warning: "ImageNet 数据集超过 150GB，下载和预处理需要充足的磁盘空间"
         },
@@ -134,19 +136,26 @@ plt.show()
                 ]
             },
             mermaid: `graph TD
-    A["224x224x3\n输入"] --> B["Conv 96@11x11\ns=4"]
+    A["224x224x3
+输入"] --> B["Conv 96@11x11
+s=4"]
     B --> C["ReLU + LRN"]
-    C --> D["MaxPool 3x3\ns=2"]
+    C --> D["MaxPool 3x3
+s=2"]
     D --> E["Conv 256@5x5"]
     E --> F["ReLU + LRN"]
-    F --> G["MaxPool 3x3\ns=2"]
+    F --> G["MaxPool 3x3
+s=2"]
     G --> H["Conv 384@3x3"]
     H --> I["Conv 384@3x3"]
     I --> J["Conv 256@3x3"]
     J --> K["MaxPool"]
-    K --> L["FC 4096\n+ Dropout"]
-    L --> M["FC 4096\n+ Dropout"]
-    M --> N["FC 1000\nSoftmax"]`,
+    K --> L["FC 4096
++ Dropout"]
+    L --> M["FC 4096
++ Dropout"]
+    M --> N["FC 1000
+Softmax"]`,
             tip: "AlexNet 参数量约 6000 万，其中全连接层占了绝大部分，可以用全局平均池化替代全连接层来压缩参数",
             warning: "LRN（局部响应归一化）在后来的研究中被证明效果有限，现代架构基本不再使用"
         },
@@ -212,13 +221,18 @@ print(f"3x3 x3 感受野: {rf_3x3}")  # 7
                 ]
             },
             mermaid: `graph LR
-    A["7x7 卷积\n参数量: 49C²"] --> B["等效感受野 7x7"]
-    C["3x3 → 3x3 → 3x3\n参数量: 27C²"] --> B
-    style C fill:#14532d
-    style A fill:#7c2d12
+    A["7x7 卷积
+参数量: 49C²"] --> B["等效感受野 7x7"]
+    C["3x3 → 3x3 → 3x3
+参数量: 27C²"] --> B
     subgraph 结论
-    B --> D["3x3 堆叠参数减少 45％\n且增加 2 次非线性变换"]
-    end`,
+    B --> D["3x3 堆叠参数减少 45％
+且增加 2 次非线性变换"]
+    end
+    class A s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7c2d12`,
             tip: "VGG 的权重可以直接迁移到任何 3x3 卷积架构中作为预训练初始化",
             warning: "VGG-16 的 138M 参数中 90% 在全连接层，实际部署时可用 GAP 替代以大幅压缩模型"
         },
@@ -306,14 +320,17 @@ calc_flops_with_bottleneck(256, 64, 256)
     D --> E["5x5 Conv"]
     I --> F["3x3 MaxPool"]
     F --> G["1x1 Conv"]
-    A --> H["Concat\n通道拼接"]
+    A --> H["Concat
+通道拼接"]
     C --> H
     E --> H
     G --> H
     H --> J["输出 Tensor"]
     end
-    style I fill:#0c4a6e
-    style J fill:#14532d`,
+    class J s1
+    class I s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "理解 Inception 的核心是理解「让网络自己决定哪个感受野最有效」，而不是人工设计",
             warning: "GoogLeNet 的 1x1 卷积降维比例需要根据通道数仔细调，降得太狠会丢失信息"
         },
@@ -403,13 +420,17 @@ res = ResBlock(64)
     D --> E["BN"]
     E --> F{"维度匹配?"}
     F -->|"是"| G["y = F(x) + x"]
-    F -->|"否"| H["shortcut 1x1\n匹配维度"]
+    F -->|"否"| H["shortcut 1x1
+匹配维度"]
     H --> G
     G --> I["ReLU"]
     I --> J["输出"]
-    style A fill:#0c4a6e
-    style G fill:#14532d
-    style J fill:#7c2d12`,
+    class J s2
+    class G s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "ResNet 的 shortcut 是理解所有现代架构的基础——DenseNet、Transformer 的 skip connection 都源自这一思想",
             warning: "使用预训练 ResNet 做迁移学习时，记得替换最后的全连接层以匹配你的类别数"
         },
@@ -495,16 +516,25 @@ for b in range(8):
                 ]
             },
             mermaid: `graph LR
-    A["NAS 搜索\n基础架构 B0"] --> B["确定复合系数\nα, β, γ"]
-    B --> C["统一缩放\nφ = 0~7"]
-    C --> D["增加深度\nd = α^φ"]
-    C --> E["增加宽度\nw = β^φ"]
-    C --> F["增加分辨率\nr = γ^φ"]
-    D --> G["EfficientNet-B1~B7\n系列模型"]
+    A["NAS 搜索
+基础架构 B0"] --> B["确定复合系数
+α, β, γ"]
+    B --> C["统一缩放
+φ = 0~7"]
+    C --> D["增加深度
+d = α^φ"]
+    C --> E["增加宽度
+w = β^φ"]
+    C --> F["增加分辨率
+r = γ^φ"]
+    D --> G["EfficientNet-B1~B7
+系列模型"]
     E --> G
     F --> G
-    style A fill:#0c4a6e
-    style G fill:#14532d`,
+    class G s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "实际部署时优先选 EfficientNet-B0 或 B3，在精度和速度之间取得最佳平衡",
             warning: "EfficientNet 使用了 SiLU/Swish 激活函数，如果你的硬件不支持 SiLU 加速，推理速度会下降"
         },
@@ -598,9 +628,12 @@ print(f"可训练参数: {sum(p.numel() for p in model.parameters() if p.require
     H --> I["只训练分类头"]
     I --> J["微调整个网络"]
     end
-    style A fill:#0c4a6e
-    style F fill:#14532d
-    style J fill:#7c2d12`,
+    class J s2
+    class F s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "torchvision 的 weights API (v0.13+) 比旧的 pretrained=True 更灵活，可以选不同版本的权重",
             warning: "推理前必须调用 model.eval()，否则 BatchNorm 会用 batch 统计量而非运行统计量，导致结果不稳定"
         }

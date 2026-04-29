@@ -26,14 +26,24 @@ GitHub 宣布：暂停 Pro/Pro+/Student 新用户注册；引入基于 token 消
 这三件事揭示了一个核心趋势：**AI Agent 工作流的算力需求正在指数级增长，商业公司正在重新评估定价模型以应对成本压力。**`,
       mermaid: `graph TD
     title AI 编程助手定价时间线
-    2024 Q3 : GitHub Copilot\n$10/月（Pro）
-    2025 Q1 : Claude Code 上线\n$20/月（Pro）
-    2025 Q2 : Windsurf 上线\n$12/月
-    2026 Q1 : Claude Code\n达千万级用户
-    2026 Q4 : OpenAI Codex\n上线（免费+Plus）
-    2026.04.20 : GitHub Copilot\n暂停注册+用量限制
-    2026.04.21 : Claude Code\n尝试涨价至$100/月
-    2026.04.22 : Claude Code\n撤回涨价\nOpenAI Codex\n宣布永久免费`,
+    2024 Q3 : GitHub Copilot
+$10/月（Pro）
+    2025 Q1 : Claude Code 上线
+$20/月（Pro）
+    2025 Q2 : Windsurf 上线
+$12/月
+    2026 Q1 : Claude Code
+达千万级用户
+    2026 Q4 : OpenAI Codex
+上线（免费+Plus）
+    2026.04.20 : GitHub Copilot
+暂停注册+用量限制
+    2026.04.21 : Claude Code
+尝试涨价至$100/月
+    2026.04.22 : Claude Code
+撤回涨价
+OpenAI Codex
+宣布永久免费`,
       tip: `**关键洞察：** GitHub 官方博客明确表示「Agent 工作流已根本性改变了 Copilot 的算力需求」——6 个月前重度 LLM 用户的 token 消耗量比现在低一个数量级。这意味着 AI 编程工具的边际成本远高于传统 SaaS 工具。`,
     },
     {
@@ -84,24 +94,32 @@ Anthropic 在 Opus 4.7 中引入了更新的 tokenizer，导致相同输入的 t
 据估算，一个典型的 1 小时编码 session，AI Agent 消耗的 tokens 约为：
 - 传统 LLM 对话：~50K tokens
 - AI 编码 Agent：~500K-2M tokens（高 10-40 倍）`,
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A[用户输入编程任务] --> B[Agent 分析需求]
-    B --> C[读取项目文件\n~200K tokens]
-    C --> D[搜索相关代码\n~50K tokens]
-    D --> E[生成修改方案\n~100K tokens]
-    E --> F[执行代码修改\n~150K tokens]
+    B --> C[读取项目文件
+~200K tokens]
+    C --> D[搜索相关代码
+~50K tokens]
+    D --> E[生成修改方案
+~100K tokens]
+    E --> F[执行代码修改
+~150K tokens]
     F --> G{运行测试?}
-    G -->|Yes| H[执行测试命令\n~30K tokens]
+    G -->|Yes| H[执行测试命令
+~30K tokens]
     G -->|No| I[完成任务]
     H --> J{测试通过?}
     J -->|No| E
-    J -->|Yes| K[最终验证\n~80K tokens]
+    J -->|Yes| K[最终验证
+~80K tokens]
     K --> I
     I --> L[总消耗: ~600K-2M tokens]
-    
-    style L fill:#ff6b6b
-    style C fill:#ffd93d
-    style E fill:#6bcb77`,
+    class E s2
+    class C s1
+    class L s0
+    classDef s0 fill:#991b1b
+    classDef s1 fill:#92400e
+    classDef s2 fill:#14532d`,
       code: [
         {
           lang: "python",
@@ -362,11 +380,14 @@ print("   （相比全部使用 Opus 4.7）")`,
     G --> H[Continue.dev + 本地 LLM]
     G --> I[OpenClaw + 任意模型]
     G --> J[Aider + Ollama]
-    
-    style C fill:#90EE90
-    style E fill:#FFB6C1
-    style F fill:#87CEEB
-    style G fill:#FFD700`,
+    class G s3
+    class F s2
+    class E s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#991b1b
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#92400e`,
       code: [
         {
           lang: "python",
@@ -490,21 +511,30 @@ if __name__ == "__main__":
 4. **投资本地能力**：即使现在依赖商业 API，也应该开始搭建本地 AI 能力，为未来做准备
 5. **学会评估 ROI**：AI 编程助手的价值不在于「用不用」，而在于「怎么用」——正确的使用方式可以让 ROI 提升 10 倍`,
       mermaid: `graph TD
-    A[2026 Q2] --> B[价格战加剧\n免费 tier 增多]
+    A[2026 Q2] --> B[价格战加剧
+免费 tier 增多]
     A --> C[用量限制标配化]
     B --> D[2026 Q3]
     C --> D
-    D --> E[混合策略成为主流\n本地+云端智能路由]
+    D --> E[混合策略成为主流
+本地+云端智能路由]
     E --> F[2026 Q4]
-    F --> G[本地部署普及\n消费级 GPU 可运行\n14B-32B 编码模型]
-    F --> H[Agent 效率提升\n推测解码降低\n50％ token 消耗]
+    F --> G[本地部署普及
+消费级 GPU 可运行
+14B-32B 编码模型]
+    F --> H[Agent 效率提升
+推测解码降低
+50％ token 消耗]
     G --> I[2027]
     H --> I
-    I --> J[开源方案占据\n30％+ 市场份额]
-    
-    style B fill:#90EE90
-    style E fill:#FFD700
-    style J fill:#FF6B6B`,
+    I --> J[开源方案占据
+30％+ 市场份额]
+    class J s2
+    class E s1
+    class B s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#92400e
+    classDef s2 fill:#991b1b`,
       tip: `**行动清单：**
 1. 今天：评估你目前的 AI 编程助手使用情况，计算月度 token 消耗
 2. 本周：搭建本地 Ollama + Qwen2.5-Coder 环境，测试日常开发场景

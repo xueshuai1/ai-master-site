@@ -232,14 +232,20 @@ for s in result:
     B --> E["R2: gain=2.5"]
     C --> F["L3: gain=2.0"]
     C --> G["R3: gain=2.0"]
-
-    style A fill:#7f1d1d,color:#f1f5f9
-    style B fill:#78350f,color:#f1f5f9,color:#1e293b
-    style C fill:#064e3b,color:#f1f5f9
-    style D fill:#1e3a5f,color:#f1f5f9
-    style E fill:#374151
-    style F fill:#374151
-    style G fill:#374151`,
+    class G s6
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#7f1d1d,color:#f1f5f9
+    classDef s1 fill:#78350f,color:#f1f5f9,color:#1e293b
+    classDef s2 fill:#064e3b,color:#f1f5f9
+    classDef s3 fill:#1e3a5f,color:#f1f5f9
+    classDef s4 fill:#374151
+    classDef s5 fill:#374151
+    classDef s6 fill:#374151`,
             tip: "Leaf-wise 模式下 num_leaves 是最重要的超参数，建议从 31 开始，逐步增大到 63、127 观察验证集表现",
             warning: "Leaf-wise 不加 max_depth 约束时，树会疯狂向一侧生长，导致训练集完美拟合但验证集性能极差"
         },

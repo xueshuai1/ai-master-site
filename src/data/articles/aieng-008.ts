@@ -33,7 +33,19 @@ export const article: Article = {
                     ["成功指标", "实验可追溯率", "模型部署频率", "模型线上稳定性"]
                 ]
             },
-            mermaid: `graph TD\n    A[数据收集] --> B[数据预处理]\n    B --> C[特征工程]\n    C --> D[实验与训练]\n    D --> E{评估达标?}\n    E -->|No| D\n    E -->|Yes| F[模型注册]\n    F --> G[模型部署]\n    G --> H[线上监控]\n    H --> I{性能退化?}\n    I -->|Yes| D\n    I -->|No| H\n    H --> J[模型退役]`,
+            mermaid: `graph TD
+    A[数据收集] --> B[数据预处理]
+    B --> C[特征工程]
+    C --> D[实验与训练]
+    D --> E{评估达标?}
+    E -->|No| D
+    E -->|Yes| F[模型注册]
+    F --> G[模型部署]
+    G --> H[线上监控]
+    H --> I{性能退化?}
+    I -->|Yes| D
+    I -->|No| H
+    H --> J[模型退役]`,
             tip: "从 Level 0 迈向 Level 1 时，优先建立实验追踪和模型注册机制，这是投入产出比最高的两步。",
             warning: "不要一开始就追求 Level 2 的全自动化。MLOps 成熟度应该与团队规模和数据量匹配，过度工程化是最大的陷阱。"
         },
@@ -60,7 +72,18 @@ export const article: Article = {
                     ["特征存储", "特征一致性与复用", "Feast, Tecton, Hopsworks", "特征复用率"]
                 ]
             },
-            mermaid: `graph TD\n    A[原始数据源] --> B[数据摄取]\n    B --> C[数据质量检查]\n    C --> D{质量达标?}\n    D -->|No| E[告警并阻断]\n    D -->|Yes| F[特征工程]\n    F --> G[特征存储]\n    G --> H[训练数据集]\n    H --> I[数据版本注册]\n    I --> J[训练管道]\n    E --> K[数据修复流程]\n    K --> B`,
+            mermaid: `graph TD
+    A[原始数据源] --> B[数据摄取]
+    B --> C[数据质量检查]
+    C --> D{质量达标?}
+    D -->|No| E[告警并阻断]
+    D -->|Yes| F[特征工程]
+    F --> G[特征存储]
+    G --> H[训练数据集]
+    H --> I[数据版本注册]
+    I --> J[训练管道]
+    E --> K[数据修复流程]
+    K --> B`,
             tip: "在训练管道中加入数据 schema 校验作为第一步，schema 变更时立即阻断训练，比训练完成后才发现数据问题成本低得多。",
             warning: "数据集版本化不等于数据备份。版本管理的核心是元数据追踪和可复现性，而非简单的数据拷贝。需要明确版本策略，避免存储成本失控。"
         },
@@ -87,7 +110,17 @@ export const article: Article = {
                     ["TensorBoard", "训练可视化", "本地", "基础"]
                 ]
             },
-            mermaid: `graph LR\n    A[定义实验假设] --> B[设计实验参数]\n    B --> C[运行训练]\n    C --> D[记录参数和指标]\n    D --> E[存储模型 artifact]\n    E --> F[对比分析]\n    F --> G{找到最优配置?}\n    G -->|No| B\n    G -->|Yes| H[注册最佳模型]\n    F --> I[生成实验报告]\n    I --> J[知识沉淀]`,
+            mermaid: `graph LR
+    A[定义实验假设] --> B[设计实验参数]
+    B --> C[运行训练]
+    C --> D[记录参数和指标]
+    D --> E[存储模型 artifact]
+    E --> F[对比分析]
+    F --> G{找到最优配置?}
+    G -->|No| B
+    G -->|Yes| H[注册最佳模型]
+    F --> I[生成实验报告]
+    I --> J[知识沉淀]`,
             tip: "为每次实验设置 meaningful 的 tags，比如 'baseline'、'ablation-no-features'、'hyperopt-round1'，后续查询时效率会大幅提升。",
             warning: "不要只记录最终指标，中间过程指标（如每个 epoch 的 loss 和 validation score）同样重要，它们能帮你诊断过拟合和学习率问题。"
         },
@@ -114,7 +147,20 @@ export const article: Article = {
                     ["嵌套交叉验证", "超参数+模型选择", "无偏估计", "计算量极大"]
                 ]
             },
-            mermaid: `graph TD\n    A[训练配置锁定] --> B[数据加载]\n    B --> C[模型训练]\n    C --> D[交叉验证]\n    D --> E{CV 结果达标?}\n    E -->|No| F[调整配置]\n    F --> C\n    E -->|Yes| G[测试集评估]\n    G --> H[基线对比]\n    H --> I{优于基线?}\n    I -->|No| F\n    I -->|Yes| J[鲁棒性检查]\n    J --> K[生成验证报告]\n    K --> L[模型注册候选]`,
+            mermaid: `graph TD
+    A[训练配置锁定] --> B[数据加载]
+    B --> C[模型训练]
+    C --> D[交叉验证]
+    D --> E{CV 结果达标?}
+    E -->|No| F[调整配置]
+    F --> C
+    E -->|Yes| G[测试集评估]
+    G --> H[基线对比]
+    H --> I{优于基线?}
+    I -->|No| F
+    I -->|Yes| J[鲁棒性检查]
+    J --> K[生成验证报告]
+    K --> L[模型注册候选]`,
             tip: "训练管道的每个步骤都应该输出明确的 artifact，这样即使中间步骤失败，也能从断点恢复，而不是从头开始。",
             warning: "测试集必须在整个开发过程中严格隔离，只能在最终验证时使用一次。频繁使用测试集调参会导致数据泄露，使测试结果失去意义。"
         },
@@ -141,7 +187,20 @@ export const article: Article = {
                     ["异步推理", "秒-分钟", "中", "图像生成、翻译", "Celery, Redis Queue"]
                 ]
             },
-            mermaid: `graph TD\n    A[模型注册为 Production] --> B[构建服务镜像]\n    B --> C[部署到 Kubernetes]\n    C --> D[健康检查]\n    D --> E{健康?}\n    E -->|No| F[回滚]\n    E -->|Yes| G[配置流量路由]\n    G --> H[启动服务]\n    H --> I[监控延迟和错误率]\n    I --> J{指标正常?}\n    J -->|No| K[自动扩缩容或告警]\n    J -->|Yes| L[正常运行]\n    K --> M{超过最大实例?}\n    M -->|Yes| N[降级策略]`,
+            mermaid: `graph TD
+    A[模型注册为 Production] --> B[构建服务镜像]
+    B --> C[部署到 Kubernetes]
+    C --> D[健康检查]
+    D --> E{健康?}
+    E -->|No| F[回滚]
+    E -->|Yes| G[配置流量路由]
+    G --> H[启动服务]
+    H --> I[监控延迟和错误率]
+    I --> J{指标正常?}
+    J -->|No| K[自动扩缩容或告警]
+    J -->|Yes| L[正常运行]
+    K --> M{超过最大实例?}
+    M -->|Yes| N[降级策略]`,
             tip: "在部署前用负载测试工具（如 k6 或 Locust）模拟生产流量，确认服务在预期 QPS 下的延迟和稳定性。",
             warning: "模型文件的加载是内存密集操作。在多模型共存的场景下，需要严格控制每个模型的内存配额，避免 OOM 导致全部服务崩溃。"
         },
@@ -169,7 +228,24 @@ export const article: Article = {
                     ["公平性", "群体间性能差异", "差异 >15%", "偏差调查"]
                 ]
             },
-            mermaid: `graph TD\n    A[生产推理请求] --> B[记录输入输出]\n    B --> C[实时指标聚合]\n    C --> D[漂移检测]\n    C --> E[性能监控]\n    D --> F{漂移超标?}\n    E --> G{性能达标?}\n    F -->|Yes| H[P2 告警]\n    F -->|No| I[正常]\n    G -->|No| J[P1 告警]\n    G -->|Yes| I\n    H --> K[评估是否需要重新训练]\n    J --> L[自动扩容/降级]\n    K --> M{需要重新训练?}\n    M -->|Yes| N[触发 CT 管道]\n    M -->|No| I\n    L --> O{恢复?}\n    O -->|No| P[升级告警]`,
+            mermaid: `graph TD
+    A[生产推理请求] --> B[记录输入输出]
+    B --> C[实时指标聚合]
+    C --> D[漂移检测]
+    C --> E[性能监控]
+    D --> F{漂移超标?}
+    E --> G{性能达标?}
+    F -->|Yes| H[P2 告警]
+    F -->|No| I[正常]
+    G -->|No| J[P1 告警]
+    G -->|Yes| I
+    H --> K[评估是否需要重新训练]
+    J --> L[自动扩容/降级]
+    K --> M{需要重新训练?}
+    M -->|Yes| N[触发 CT 管道]
+    M -->|No| I
+    L --> O{恢复?}
+    O -->|No| P[升级告警]`,
             tip: "建立监控仪表板（Dashboard）是第一步，但更重要的是定义清晰的告警响应 Runbook，确保每条告警都有明确的负责人和处理流程。",
             warning: "避免设置过于敏感的告警阈值。如果团队每天收到 50+ 条告警，说明阈值设置不合理，会导致真正的 Critical 告警被忽略。"
         },
@@ -197,7 +273,28 @@ export const article: Article = {
                     ["CI/CD", "GitHub Actions + ArgoCD", "代码到生产的自动化", "部署成功率 > 99%"]
                 ]
             },
-            mermaid: `graph TD\n    subgraph 数据层\n        A1[Kafka Events] --> A2[Flink Streaming]\n        A2 --> A3[Feast Feature Store]\n    end\n    subgraph 训练层\n        B1[Airflow DAG] --> B2[MLflow Training]\n        B2 --> B3[Optuna Tuning]\n        B3 --> B4[Model Registry]\n    end\n    subgraph 服务层\n        C1[KServe] --> C2[Istio Routing]\n        C2 --> C3[A/B Testing]\n    end\n    subgraph 监控层\n        D1[Prometheus] --> D2[Drift Detection]\n        D2 --> D3[Alert Manager]\n    end\n    A3 --> B1\n    B4 --> C1\n    C1 --> D1\n    D3 -->|Trigger Retraining| B1`,
+            mermaid: `graph TD
+    subgraph 数据层
+        A1[Kafka Events] --> A2[Flink Streaming]
+        A2 --> A3[Feast Feature Store]
+    end
+    subgraph 训练层
+        B1[Airflow DAG] --> B2[MLflow Training]
+        B2 --> B3[Optuna Tuning]
+        B3 --> B4[Model Registry]
+    end
+    subgraph 服务层
+        C1[KServe] --> C2[Istio Routing]
+        C2 --> C3[A/B Testing]
+    end
+    subgraph 监控层
+        D1[Prometheus] --> D2[Drift Detection]
+        D2 --> D3[Alert Manager]
+    end
+    A3 --> B1
+    B4 --> C1
+    C1 --> D1
+    D3 -->|Trigger Retraining| B1`,
             tip: "MLOps 项目的成功不取决于工具的先进性，而取决于团队的工程纪律。从最简单的管道开始，逐步增加自动化程度。",
             warning: "不要在项目初期就引入所有工具。每个工具都会增加运维复杂度和学习成本。先解决核心问题（训练和部署），再逐步完善监控和持续训练。"
         }

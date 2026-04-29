@@ -193,12 +193,18 @@ Anthropic 不只是提供一个 **API endpoint**，而是帮助企业客户**将
     D --> E[收入大幅增长]
     E --> F[更多安全投入]
     F --> A
-    style A fill:#78350F,stroke:#F59E0B,color:#fff
-    style B fill:#78350F,stroke:#F59E0B,color:#fff
-    style C fill:#78350F,stroke:#F59E0B,color:#fff
-    style D fill:#78350F,stroke:#F59E0B,color:#fff
-    style E fill:#78350F,stroke:#F59E0B,color:#fff
-    style F fill:#78350F,stroke:#F59E0B,color:#fff`,
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#78350F,stroke:#F59E0B,color:#fff
+    classDef s1 fill:#78350F,stroke:#F59E0B,color:#fff
+    classDef s2 fill:#78350F,stroke:#F59E0B,color:#fff
+    classDef s3 fill:#78350F,stroke:#F59E0B,color:#fff
+    classDef s4 fill:#78350F,stroke:#F59E0B,color:#fff
+    classDef s5 fill:#78350F,stroke:#F59E0B,color:#fff`,
         tip: "如果你是 **AI 创业者**，Anthropic 的企业策略值得学习：**不要试图在所有市场同时竞争**，而是选择一个**你最擅长的细分市场**（如安全敏感型企业客户），在这个市场中做到**第一**，然后再逐步扩展。Anthropic 的策略是**先企业后消费者**，这与 OpenAI 的**先消费者后企业**形成了**鲜明对比**。",
         warning: "企业市场的**销售周期远长于**消费者市场。从初次接触到签约，大型企业客户的采购周期通常是 **3-9 个月**。这意味着 Anthropic 的企业客户增长策略需要**长期的耐心**和**持续的资源投入**。如果你的公司**现金流紧张**，企业市场可能不是**最佳的切入点**。"
     },

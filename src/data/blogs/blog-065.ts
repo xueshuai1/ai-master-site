@@ -60,10 +60,12 @@ content: [
     Memory --> |失忆| Agent
     Memory --> |Token 浪费| Cost[API 成本飙升]
     Memory --> |信息稀释| Quality[推理质量下降]
-    
-    style Memory fill:#7f1d1d
-    style Cost fill:#7f1d1d
-    style Quality fill:#7f1d1d`
+    class Quality s2
+    class Cost s1
+    class Memory s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#7f1d1d`
     },
     {
       title: "二、2026 年上下文优化三大流派",
@@ -156,10 +158,12 @@ GenericAgent（lsdefine/GenericAgent，7,036⭐）采用了完全不同的思路
     A3 --> Out[注入上下文]
     B3 --> Out
     C3 --> Out
-    
-    style A1 fill:#1e3a5f
-    style B1 fill:#064e3b
-    style C1 fill:#581c87`
+    class C1 s2
+    class B1 s1
+    class A1 s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#064e3b
+    classDef s2 fill:#581c87`
     },
     {
       title: "三、context-mode 深度解析：98% 压缩率是如何做到的？",
@@ -919,11 +923,14 @@ agent = Agent(
     A2 --> B1
     B2 --> C1
     C3 --> D1
-    
-    style C1 fill:#064e3b
-    style C2 fill:#1e3a5f
-    style C3 fill:#581c87
-    style D3 fill:#713f12`
+    class D3 s3
+    class C3 s2
+    class C2 s1
+    class C1 s0
+    classDef s0 fill:#064e3b
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#581c87
+    classDef s3 fill:#713f12`
     },
   ],
 };

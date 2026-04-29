@@ -185,7 +185,7 @@ def check_safety(text: str) -> float:
           ["RAG 检索", "召回率、Top-K 命中率、上下文质量", "召回率 < 70%", "专用 RAG 监控"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     subgraph "AI 可观测性架构"
         A[LLM 推理服务] --> B[Observation SDK]
         C[RAG 检索服务] --> B

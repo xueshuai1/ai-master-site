@@ -29,15 +29,21 @@ export const article: Article = {
 
 这不仅是工程上的优化，更是范式上的转变——从「一个强大的大脑」走向「一个高效的团队」。`,
       mermaid: `graph TD
-    A["单一 Agent 瓶颈"] --> B["能力边界\n一个模型无法精通所有领域"]
-    A --> C["自我纠错不足\n同样的思维模式无法发现自身盲点"]
-    A --> D["串行处理\n无法并行执行子任务"]
+    A["单一 Agent 瓶颈"] --> B["能力边界
+一个模型无法精通所有领域"]
+    A --> C["自我纠错不足
+同样的思维模式无法发现自身盲点"]
+    A --> D["串行处理
+无法并行执行子任务"]
     B --> E["多 Agent 协作解决方案"]
     C --> E
     D --> E
-    E --> F["专业分工\n不同 Agent 负责不同领域"]
-    E --> G["互相审查\nAgent 之间交叉验证产出"]
-    E --> H["并行执行\n多个 Agent 同时工作"]
+    E --> F["专业分工
+不同 Agent 负责不同领域"]
+    E --> G["互相审查
+Agent 之间交叉验证产出"]
+    E --> H["并行执行
+多个 Agent 同时工作"]
     F --> I["更高质量输出"]
     G --> I
     H --> I`,
@@ -442,12 +448,17 @@ graph.add_conditional_edges(
       },
     ],
       mermaid: `graph TD
-    A["START"] --> B["Static Analysis\n静态分析"]
-    B --> C["Security Review\n安全审查"]
-    C --> D["Decide Verdict\n做出判定"]
+    A["START"] --> B["Static Analysis
+静态分析"]
+    B --> C["Security Review
+安全审查"]
+    C --> D["Decide Verdict
+做出判定"]
     D -->|"bugs ≤ 2"| E["✅ 通过"]
-    D -->|"bugs > 2\n需返工"| B
-    D -->|"bugs > 3\n重大问题"| B
+    D -->|"bugs > 2
+需返工"| B
+    D -->|"bugs > 3
+重大问题"| B
     E --> F["END"]`,
       warning: "LangGraph 的灵活性也是其最大的学习成本。建议在以下场景选择 LangGraph：需要条件分支、需要循环回溯、需要并行处理节点、需要精确的状态控制。简单的线性流程请用 CrewAI。",
     },
@@ -606,14 +617,22 @@ Claude-Mem 等记忆系统的出现，让多 Agent 团队可以**共享跨会话
 
 随着端侧推理能力的提升（见 Edge AI 文章），小型多 Agent 系统开始能够在本地设备上运行——不需要云端 API，就能实现基本的多角色协作。`,
       mermaid: `graph TD
-    A["2026 Multi-Agent 趋势"] --> B["协议标准化\nMCP + A2A"]
-    A --> C["团队自组织\nAuto-Select Agents"]
-    A --> D["共享记忆\n跨会话知识累积"]
-    A --> E["边缘部署\n端侧多 Agent 运行"]
-    B --> F["互操作性\n跨框架协作"]
-    C --> G["零配置\n任务驱动组队"]
-    D --> H["集体智慧\n团队经验复用"]
-    E --> I["隐私优先\n本地化部署"]`,
+    A["2026 Multi-Agent 趋势"] --> B["协议标准化
+MCP + A2A"]
+    A --> C["团队自组织
+Auto-Select Agents"]
+    A --> D["共享记忆
+跨会话知识累积"]
+    A --> E["边缘部署
+端侧多 Agent 运行"]
+    B --> F["互操作性
+跨框架协作"]
+    C --> G["零配置
+任务驱动组队"]
+    D --> H["集体智慧
+团队经验复用"]
+    E --> I["隐私优先
+本地化部署"]`,
     },
     {
       title: "9. 总结：从单兵到团队的范式跃迁",

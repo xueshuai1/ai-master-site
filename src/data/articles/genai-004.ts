@@ -40,8 +40,10 @@ export const article: Article = {
     D -->|"x = z_K"| E["目标分布 p(x)"]
     A -.->|"log p(z_0)"| F["精确似然"]
     F -.->|"log|det J|"| G["log p(x)"]
-    style E fill:#4CAF50
-    style G fill:#1e3a5f,color:#f1f5f9`,
+    class G s1
+    class E s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#1e3a5f,color:#f1f5f9`,
             tip: "变量变换公式是 Flow 模型的数学根基，理解它对后续所有 Flow 变体都至关重要。",
             warning: "雅可比行列式为负时取绝对值，但实际实现中通常用 log|det| 保证数值稳定性。"
         },
@@ -77,7 +79,8 @@ export const article: Article = {
     D --> F["组合 Flow"]
     E --> F
     F -->|"z_0 to z_1 to ... to z_K"| G["复杂变换"]
-    style G fill:#064e3b,color:#f1f5f9`,
+    class G s0
+    classDef s0 fill:#064e3b,color:#f1f5f9`,
             tip: "Planar Flow 的可逆性条件 w^T u > -1 可通过参数重参数化自动满足，避免训练中的投影操作。",
             warning: "单个 Planar 或 Radial Flow 表达能力很弱，至少需要堆叠 8-32 层才能建模复杂分布。"
         },
@@ -109,8 +112,10 @@ export const article: Article = {
     B -->|4层 Planar| C["S 形弯曲"]
     C -->|16层 Planar| D["复杂形状"]
     D -->|64层 Planar| E["高度非线性流形"]
-    style A fill:#064e3b,color:#f1f5f9
-    style E fill:#7f1d1d,color:#f1f5f9`,
+    class E s1
+    class A s0
+    classDef s0 fill:#064e3b,color:#f1f5f9
+    classDef s1 fill:#7f1d1d,color:#f1f5f9`,
             tip: "训练深层 Flow 时，使用正交初始化或单位初始化作为起点，可以显著改善收敛速度。",
             warning: "Flow 层数过多会导致逆变换需要数值迭代求解，推理速度急剧下降。"
         },
@@ -147,8 +152,10 @@ export const article: Article = {
     E --> F
     F --> G["输出 x"]
     G -.->|"log|det| = sum(s)"| H["似然计算"]
-    style C fill:#4CAF50
-    style E fill:#1e3a5f,color:#f1f5f9`,
+    class E s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#1e3a5f,color:#f1f5f9`,
             tip: "s 网络的最后一层用较小的初始化权重（如 0.01），可以防止初始缩放因子过大导致训练不稳定。",
             warning: "RealNVP 的交替分割策略确保每个维度都能被变换，如果忘记交替，只有一半维度会被建模。"
         },
@@ -188,7 +195,8 @@ export const article: Article = {
     D
     E
     end
-    style C fill:#78350f,color:#f1f5f9`,
+    class C s0
+    classDef s0 fill:#78350f,color:#f1f5f9`,
             tip: "Glow 的 LU 分解参数化确保 W 始终可逆且行列式计算为 O(D)，避免直接学习 DxD 矩阵的 O(D^3) 求逆。",
             warning: "可逆 1x1 卷积的参数量为 O(D^2)，在高维通道下内存占用显著，建议 C < 1024。"
         },
@@ -225,7 +233,8 @@ export const article: Article = {
     D --> G["MADE 掩码"]
     E --> H["自回归参数化"]
     F --> I["耦合层"]
-    style B fill:#78350f,color:#f1f5f9`,
+    class B s0
+    classDef s0 fill:#78350f,color:#f1f5f9`,
             tip: "实践中可以组合使用：训练时用 MAF 计算似然，推理时用 IAF 并行采样，两者共享参数。",
             warning: "MAF 的逆变换是串行的，维度 D 很大时（如图像 D=3072），采样速度会成为严重瓶颈。"
         },
@@ -263,8 +272,10 @@ export const article: Article = {
     G -->|否| C
     G -->|是| H["采样生成"]
     H --> I["可视化评估"]
-    style E fill:#78350f,color:#f1f5f9
-    style H fill:#064e3b,color:#f1f5f9`,
+    class H s1
+    class E s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+    classDef s1 fill:#064e3b,color:#f1f5f9`,
             tip: "训练 2D Flow 时用可视化的方式调试非常高效，每 50 epoch 画一次散点图，可以直观发现模式崩塌或变换退化。",
             warning: "梯度裁剪是 Flow 训练的标配，不裁剪的话雅可比行列式可能导致梯度爆炸。"
         },

@@ -28,8 +28,9 @@ MoE 并非新概念——Jacobs 等人在 1991 年就提出了 Mixture of Expert
     D --> G["加权求和"]
     E --> G
     G --> H["输出 Token"]
-    style F fill:#374151
-`,
+
+    class F s0
+    classDef s0 fill:#374151`,
       tip: "MoE 的核心优势：用稀疏激活实现大模型的能力、小模型的推理成本。总参数与激活参数可以相差数倍甚至数十倍。",
     },
     {

@@ -73,17 +73,23 @@ VoiceBox 采用三阶段流水线：
         },
       ],
       mermaid: `graph TD
-    A["输入文本"] --> B["文本编码器\nText Encoder"]
-    C["参考音频（可选）"] --> D["音频编码器\nAudio Encoder"]
+    A["输入文本"] --> B["文本编码器
+Text Encoder"]
+    C["参考音频（可选）"] --> D["音频编码器
+Audio Encoder"]
     B --> E["语义嵌入"]
     D --> F["音色嵌入"]
-    E --> G["条件扩散模型\nConditional Diffusion"]
+    E --> G["条件扩散模型
+Conditional Diffusion"]
     F --> G
     H["情感参数"] --> G
     I["语速控制"] --> G
-    G --> J["梅尔频谱\nMel Spectrogram"]
-    J --> K["声码器\nVocoder (HiFi-GAN)"]
-    K --> L["输出音频\n24kHz / 48kHz"]`,
+    G --> J["梅尔频谱
+Mel Spectrogram"]
+    J --> K["声码器
+Vocoder (HiFi-GAN)"]
+    K --> L["输出音频
+24kHz / 48kHz"]`,
     },
     {
       title: "三、扩散模型在语音合成中的应用",

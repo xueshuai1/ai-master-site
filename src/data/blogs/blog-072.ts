@@ -45,11 +45,16 @@ content: [
     I --> J
     J --> K[截图验证]
     K --> D
-    style A fill:#1e3a5f,color:#f1f5f9
-    style B fill:#1e3a5f,color:#f1f5f9
-    style D fill:#1e3a5f,color:#f1f5f9
-    style J fill:#1e3a5f,color:#f1f5f9
-    style K fill:#1e3a5f,color:#f1f5f9`
+    class K s4
+    class J s3
+    class D s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f,color:#f1f5f9
+    classDef s1 fill:#1e3a5f,color:#f1f5f9
+    classDef s2 fill:#1e3a5f,color:#f1f5f9
+    classDef s3 fill:#1e3a5f,color:#f1f5f9
+    classDef s4 fill:#1e3a5f,color:#f1f5f9`
     },
     {
       title: "三、核心模块深度解析",
@@ -446,11 +451,14 @@ print(json.dumps(agent.get_failure_report(), indent=2))`
     D --> H[人类批准/拒绝]
     H -->|批准| C
     H -->|拒绝| I[中止]
-    
-    style A fill:#1e3a5f,color:#f1f5f9
-    style B fill:#1e3a5f,color:#f1f5f9
-    style D fill:#1e3a5f,color:#f1f5f9
-    style H fill:#1e3a5f,color:#f1f5f9`
+    class H s3
+    class D s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f,color:#f1f5f9
+    classDef s1 fill:#1e3a5f,color:#f1f5f9
+    classDef s2 fill:#1e3a5f,color:#f1f5f9
+    classDef s3 fill:#1e3a5f,color:#f1f5f9`
     },
     {
       title: "九、2026 年 Screen AI 的未来趋势",

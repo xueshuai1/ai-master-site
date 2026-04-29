@@ -123,11 +123,16 @@ export const article: Article = {
 
 **机器人与具身 AI**依赖仿真环境生成训练数据。NVIDIA Isaac Sim、MuJoCo、PyBullet 等仿真平台可以生成数百万个机器人操作的训练样本，涵盖各种物体、场景和操作策略。Sim-to-Real 技术将这些在仿真中训练的策略转移到真实机器人上。`,
             mermaid: `graph LR
-    A["合成数据应用"] --> B["自动驾驶\nCorner Case 生成"]
-    A --> C["医疗 AI\n隐私保护"]
-    A --> D["金融风控\n跨机构协作"]
-    A --> E["工业质检\n缺陷样本生成"]
-    A --> F["机器人\nSim-to-Real 训练"]
+    A["合成数据应用"] --> B["自动驾驶
+Corner Case 生成"]
+    A --> C["医疗 AI
+隐私保护"]
+    A --> D["金融风控
+跨机构协作"]
+    A --> E["工业质检
+缺陷样本生成"]
+    A --> F["机器人
+Sim-to-Real 训练"]
     
     B --> B1["CARLA"]
     B --> B2["DRIVE Sim"]

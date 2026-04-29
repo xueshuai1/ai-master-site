@@ -48,8 +48,10 @@ export const blog: BlogPost = {
         B4 --> B5[多模态服务编排]
         B5 --> B6[知识图谱与向量库]
     end
-    style B3 fill:#581c87,color:#fff
-    style B4 fill:#7C3AED,color:#fff`,
+    class B4 s1
+    class B3 s0
+    classDef s0 fill:#581c87,color:#fff
+    classDef s1 fill:#7C3AED,color:#fff`,
             table: {
                 headers: ["维度", "移动互联网", "智联网"],
                 rows: [
@@ -396,11 +398,14 @@ print(f"年市场规模: {annual_api_calls * avg_cost_per_call:,.0f} 元")`
 
     D --> D1["智联网成主流范式"]
     D --> D2["Agent原生OS"]
-
-    style A fill:#581c87,color:#fff
-    style B fill:#7C3AED,color:#fff
-    style C fill:#6D28D9,color:#fff
-    style D fill:#5B21B6,color:#fff`
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#581c87,color:#fff
+    classDef s1 fill:#7C3AED,color:#fff
+    classDef s2 fill:#6D28D9,color:#fff
+    classDef s3 fill:#5B21B6,color:#fff`
         }
     ]
 };

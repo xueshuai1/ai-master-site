@@ -67,8 +67,10 @@ def reflect_on_output(text: str, criteria: str) -> ReflectionResult:
     E --> F[用户发现错误]
     F --> G[手动重试]
     D --> H[任务完成]
-    style E fill:#7f1d1d
-    style H fill:#14532d`,
+    class H s1
+    class E s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d`,
             tip: "反思机制的核心价值在于将错误发现从「用户侧」移到「Agent 侧」，大幅降低人工干预频率",
             warning: "不要期望 LLM 在没有任何外部信号的情况下自发反思——必须通过架构设计强制引入反思步骤"
         },
@@ -264,8 +266,10 @@ result = agent.run("找出 2024 年诺贝尔物理学奖得主的研究贡献")`
     E --> F[逐步执行]
     F --> G[汇总结果]
     G --> H[最终答案]
-    style B fill:#1e3a5f
-    style E fill:#14532d`,
+    class E s1
+    class B s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d`,
             tip: "对于依赖关系复杂的任务，在规划阶段使用拓扑排序确保执行顺序正确",
             warning: "规划阶段的质量至关重要——一个有缺陷的计划会导致所有后续步骤都是无用功"
         },
@@ -385,9 +389,11 @@ class TreeOfThoughts:
     E --> H[最优解]
     F --> I((...))
     G --> J((...))
-    style H fill:#14532d
-    style X fill:#7f1d1d
-    style C stroke:#f99,stroke-dasharray: 5 5`,
+    style C stroke:#f99,stroke-dasharray: 5 5
+    class X s1
+    class H s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7f1d1d`,
             tip: "Beam Width 是 ToT 最重要的超参数——太小容易剪掉最优路径，太大会指数级增加 token 消耗",
             warning: "评估函数（Evaluator）的准确性直接决定 ToT 的搜索质量——评分偏差会导致系统性剪掉正确路径"
         },
@@ -498,8 +504,10 @@ class GraphOfThoughts:
     F --> G[精炼 v3]
     A -.反馈.-> A
     G --> H[最终答案]
-    style D fill:#1e3a5f
-    style H fill:#14532d`,
+    class H s1
+    class D s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d`,
             tip: "GoT 最适合需要多源信息整合的场景——当问题需要从不同维度/角度分别思考再汇总时，优先考虑图结构",
             warning: "图的复杂度随节点和边数快速增长——建议限制最大节点数（<50），避免 token 预算爆炸"
         },
@@ -590,9 +598,12 @@ class GraphOfThoughts:
     F -->|是| G[输出]
     F -->|否| H[生成修正]
     H --> A
-    style F fill:#713f12
-    style G fill:#14532d
-    style H fill:#7f1d1d`,
+    class H s2
+    class G s1
+    class F s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
             tip: "在反思提示词中明确指定输出格式（如 JSON），方便后续程序化处理反思结果",
             warning: "避免使用引导性过强的反思提示词——如果提示词中隐含了期望的答案方向，LLM 可能会迎合而不是真正反思"
         },
@@ -724,8 +735,10 @@ class SelfCorrectingCoder:
     F -->|测试失败| H[分析错误信息]
     H --> I[反思 + 生成修复]
     I --> C
-    style G fill:#14532d
-    style H fill:#7f1d1d`,
+    class H s1
+    class G s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7f1d1d`,
             tip: "为测试用例覆盖边界条件——好的测试用例是自纠错 Agent 最强大的「老师」",
             warning: "设置合理的超时限制（如 10 秒），防止生成的代码包含无限循环导致 Agent 卡死"
         }

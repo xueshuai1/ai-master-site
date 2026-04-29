@@ -232,10 +232,14 @@ class SeedAgent:
       L --> M["技能合并/分层"]
       M --> N["技能树更新"]
     end
-    style A fill:#1e3a5f
-    style F fill:#1e3a5f
-    style J fill:#1e3a5f
-    style N fill:#1e3a5f`,
+    class N s3
+    class J s2
+    class F s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#1e3a5f`,
     },
     {
       title: "2. 技能树架构：从扁平列表到有向无环图",
@@ -433,10 +437,14 @@ class SkillDAG:
     I --> K
     I --> L
     J --> M
-    style G fill:#1e3a5f
-    style K fill:#1e3a5f
-    style L fill:#1e3a5f
-    style M fill:#1e3a5f`,
+    class M s3
+    class L s2
+    class K s1
+    class G s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#1e3a5f`,
     },
     {
       title: "3. Token 优化：为什么自进化 Agent 更省 token？",
@@ -639,8 +647,10 @@ if __name__ == "__main__":
     C --> D["30-50 次操作 抽象提升模式层"]
     D --> E["50+ 次操作 Token 编译+动态选择"]
     E --> F["稳定期 技能持续增长"]
-    style A fill:#1e3a5f
-    style F fill:#1e3a5f`,
+    class F s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f`,
       tip: "构建自进化 Agent 时，安全是首要考虑。种子代码中的 exec_command 技能在生产环境中应该被沙箱化，限制可执行的命令范围和文件系统访问权限。建议初期使用白名单模式，只允许预定义的命令执行。",
       warning: "自进化 Agent 的技能自动发现机制可能导致意外行为的积累。在生产部署前，必须对技能树进行人工审计，确保所有注册的技能都符合预期行为。建议实现技能审批流程：新发现的技能进入 PENDING 状态，需要人工确认后才能转为 ACTIVE。",
     },
@@ -688,10 +698,14 @@ if __name__ == "__main__":
     C --> F
     F --> G
     G --> H
-    style H fill:#1e3a5f
-    style D fill:#1e3a5f
-    style E fill:#1e3a5f
-    style F fill:#1e3a5f`,
+    class F s3
+    class E s2
+    class D s1
+    class H s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#1e3a5f
+    classDef s2 fill:#1e3a5f
+    classDef s3 fill:#1e3a5f`,
     },
   ],
 };

@@ -96,8 +96,10 @@ plt.show()`,
     B --> C["排序并取 K 个最近邻居"]
     C --> D["邻居投票"]
     D --> E["多数表决 → 预测类别"]
-    style A fill:#0c4a6e
-    style E fill:#14532d`,
+    class E s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "KNN 是理解机器学习「距离」概念的最佳起点——它不拟合任何参数，纯粹依赖样本间的几何关系做决策。",
         },
         {

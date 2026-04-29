@@ -38,8 +38,6 @@ RAG 只能检索"已有的知识"，但无法识别"组织还不知道什么"。
         B1 --> C1[语义相似度匹配]
         C1 --> D1[返回 Top-K 文档]
         D1 --> E1[LLM 生成回答]
-        style B1 fill:#7f1d1d
-        style C1 fill:#7f1d1d
     end
 
     subgraph OIDA_Framework ["OIDA 认知基础设施"]
@@ -49,13 +47,20 @@ RAG 只能检索"已有的知识"，但无法识别"组织还不知道什么"。
         D2 --> E2[无知建模补充]
         E2 --> F2[EQS 质量评估]
         F2 --> G2[LLM 生成回答]
-        style C2 fill:#14532d
-        style D2 fill:#14532d
-        style E2 fill:#14532d
     end
 
     classDef rag fill:#7f1d1d,stroke:#ff6666,stroke-width:2px;
-    classDef oida fill:#14532d,stroke:#66ff66,stroke-width:2px;`,
+    classDef oida fill:#14532d,stroke:#66ff66,stroke-width:2px;
+    class E2 s4
+    class D2 s3
+    class C2 s2
+    class C1 s1
+    class B1 s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#14532d
+    classDef s3 fill:#14532d
+    classDef s4 fill:#14532d`,
   },
   {
     title: "OIDA 框架的四大创新",
@@ -350,11 +355,14 @@ OIDA 预示着企业知识管理的范式转变：从"文档存储库"走向"认
     L -->|是| M[高质量 RAG 回答]
     L -->|否| N[补充无知建模]
     N --> C
-
-    style C fill:#1e3a5f,stroke:#1976d2,stroke-width:3px
-    style I fill:#7f1d1d,stroke:#d32f2f,stroke-width:3px
-    style J fill:#14532d,stroke:#388e3c,stroke-width:3px
-    style N fill:#713f12,stroke:#f9a825,stroke-width:2px`,
+    class N s3
+    class J s2
+    class I s1
+    class C s0
+    classDef s0 fill:#1e3a5f,stroke:#1976d2,stroke-width:3px
+    classDef s1 fill:#7f1d1d,stroke:#d32f2f,stroke-width:3px
+    classDef s2 fill:#14532d,stroke:#388e3c,stroke-width:3px
+    classDef s3 fill:#713f12,stroke:#f9a825,stroke-width:2px`,
   },
   {
     title: "个人观点",

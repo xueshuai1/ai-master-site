@@ -107,13 +107,18 @@ class BruteForceSearcher:
           ]
         },
         mermaid: `graph LR
-    A["原始数据\n图片/文本/音频"] --> B["模态编码器\nCLIP/BERT/Wav2Vec"]
-    B --> C["高维向量\n[512/768/1024]"]
-    C --> D["向量数据库\nFAISS/Milvus"]
+    A["原始数据
+图片/文本/音频"] --> B["模态编码器
+CLIP/BERT/Wav2Vec"]
+    B --> C["高维向量
+[512/768/1024]"]
+    C --> D["向量数据库
+FAISS/Milvus"]
     E["查询"] --> F["编码为向量"]
     F --> G["相似度计算"]
     D --> G
-    G --> H["排序\nTop-K"]
+    G --> H["排序
+Top-K"]
     H --> I["返回结果"]`,
         tip: "在大多数多模态场景中，余弦相似度是首选度量，因为嵌入方向比幅度承载了更多语义信息",
         warning: "暴力检索在数据量超过 1000 万条时延迟不可接受，必须切换到近似最近邻（ANN）算法"
@@ -276,11 +281,13 @@ class SimpleHNSW:
           ]
         },
         mermaid: `graph TD
-    A["高维向量库\n[N, D]"] --> B{"选择 ANN 算法"}
+    A["高维向量库
+[N, D]"] --> B{"选择 ANN 算法"}
     B --> C["IVF 倒排"]
     B --> D["PQ 量化"]
     B --> E["HNSW 图"]
-    C --> C1["K-means 聚类\n粗筛候选"]
+    C --> C1["K-means 聚类
+粗筛候选"]
     C1 --> C2["子集内暴力搜索"]
     D --> D1["子空间分解"]
     D1 --> D2["码本查表求和"]
@@ -415,15 +422,22 @@ def measure_modality_gap(image_embeddings: torch.Tensor, text_embeddings: torch.
           ]
         },
         mermaid: `graph TD
-    A["图像编码器"] --> B["图像嵌入\n[原始空间]"]
-    C["文本编码器"] --> D["文本嵌入\n[原始空间]"]
-    B --> E["投影头\nImage Proj"]
-    D --> F["投影头\nText Proj"]
-    E --> G["共享语义空间\n[512 维]"]
+    A["图像编码器"] --> B["图像嵌入
+[原始空间]"]
+    C["文本编码器"] --> D["文本嵌入
+[原始空间]"]
+    B --> E["投影头
+Image Proj"]
+    D --> F["投影头
+Text Proj"]
+    E --> G["共享语义空间
+[512 维]"]
     F --> G
-    G --> H["匹配对靠近\n非匹配对远离"]
+    G --> H["匹配对靠近
+非匹配对远离"]
     H --> I["InfoNCE 损失"]
-    I --> J["反向传播\n更新投影头"]
+    I --> J["反向传播
+更新投影头"]
     J --> E
     J --> F`,
         tip: "在资源有限时，可以先用预训练模型（如 CLIP）提取特征，再训练一个轻量投影头做域适配，效果接近从头联合训练",
@@ -571,12 +585,18 @@ class TwoStageRetrieval:
           ]
         },
         mermaid: `graph LR
-    A["用户查询\n自然语言文本"] --> B["文本编码器\nCLIP Text"]
+    A["用户查询
+自然语言文本"] --> B["文本编码器
+CLIP Text"]
     B --> C["查询向量"]
-    C --> D["阶段1: 召回\nFAISS 搜索"]
-    D --> E["候选集\nTop-100"]
-    E --> F["阶段2: 精排\nBLIP 交叉注意力"]
-    F --> G["最终排序\nTop-10"]
+    C --> D["阶段1: 召回
+FAISS 搜索"]
+    D --> E["候选集
+Top-100"]
+    E --> F["阶段2: 精排
+BLIP 交叉注意力"]
+    F --> G["最终排序
+Top-10"]
     G --> H["返回图像结果"]
     I["图像数据库"] -.-> D`,
         tip: "两阶段检索是工业界标准方案：CLIP 召回保证效率（毫秒级），BLIP 精排保证精度（融合分数可调节权重）",
@@ -733,11 +753,15 @@ class MilvusVectorDB:
           ]
         },
         mermaid: `graph TD
-    A["应用层\n检索/推荐"] --> B["向量数据库"]
+    A["应用层
+检索/推荐"] --> B["向量数据库"]
     B --> C{"选择方案"}
-    C --> D["FAISS\n嵌入式库"]
-    C --> E["Milvus\n分布式"]
-    C --> F["Pinecone\nSaaS"]
+    C --> D["FAISS
+嵌入式库"]
+    C --> E["Milvus
+分布式"]
+    C --> F["Pinecone
+SaaS"]
     D --> D1["IVF/PQ/HNSW"]
     D1 --> D2["单节点存储"]
     D2 --> D3["GPU 加速"]
@@ -888,16 +912,25 @@ class ColdStartRecommender:
           ]
         },
         mermaid: `graph TD
-    A["用户行为\n点击/收藏/购买"] --> B["用户塔\nUser Embedding"]
-    C["商品图片"] --> D["视觉编码器\nResNet/CLIP"]
-    E["商品描述"] --> F["文本编码器\nBERT/CLIP"]
-    D --> G["物品多模态塔\n特征融合"]
+    A["用户行为
+点击/收藏/购买"] --> B["用户塔
+User Embedding"]
+    C["商品图片"] --> D["视觉编码器
+ResNet/CLIP"]
+    E["商品描述"] --> F["文本编码器
+BERT/CLIP"]
+    D --> G["物品多模态塔
+特征融合"]
     F --> G
-    B --> H["交互融合\nMLP + Attention"]
+    B --> H["交互融合
+MLP + Attention"]
     G --> H
-    H --> I["预测分数\nCTR/评分"]
-    I --> J["排序\nTop-N 推荐"]
-    J --> K["用户反馈\n点击/跳过"]
+    H --> I["预测分数
+CTR/评分"]
+    I --> J["排序
+Top-N 推荐"]
+    J --> K["用户反馈
+点击/跳过"]
     K --> A`,
         tip: "多模态特征与协同过滤信号结合（多任务学习）是最佳实践，比单一信号提升 10-20% 的推荐精度",
         warning: "多模态推荐系统需要处理大量的图像和文本特征，存储和计算开销是纯协同过滤系统的 3-5 倍"

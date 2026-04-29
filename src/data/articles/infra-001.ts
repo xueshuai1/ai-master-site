@@ -32,21 +32,29 @@ export const article: Article = {
 
 这就是为什么 HBM 比 GPU 核心本身更重要——**它决定了 AI 算力的实际上限**。`,
       mermaid: `graph TD
-    A["AI 算力需求\n指数增长"] --> B["GPU 计算能力\nFP8 3958 TFLOPS"]
-    A --> C["HBM 内存供应\n仅满足 60％ 需求"]
+    A["AI 算力需求
+指数增长"] --> B["GPU 计算能力
+FP8 3958 TFLOPS"]
+    A --> C["HBM 内存供应
+仅满足 60％ 需求"]
     
     B --> D{"内存墙瓶颈"}
     C --> D
     
-    D --> E["容量不足\n模型无法加载"]
-    D --> F["带宽不足\nGPU 空转等待"]
-    D --> G["延迟过高\n推理性能下降"]
+    D --> E["容量不足
+模型无法加载"]
+    D --> F["带宽不足
+GPU 空转等待"]
+    D --> G["延迟过高
+推理性能下降"]
     
-    E --> H["需要模型并行 /\n激活检查点"]
+    E --> H["需要模型并行 /
+激活检查点"]
     F --> I["算力利用率 < 40％"]
     G --> J["推理延迟 > 100ms"]
     
-    H --> K["实际可用算力\n远低于理论值"]
+    H --> K["实际可用算力
+远低于理论值"]
     I --> K
     J --> K
     
@@ -218,22 +226,37 @@ HBM 的产能瓶颈不在 DRAM 晶圆制造，而在**先进封装**：
 
 2025-2026 年，台积电将 CoWoS 产能扩大了 2-3 倍，但仍然供不应求。这直接导致了 GPU 出货量的上限。`,
       mermaid: `graph LR
-    A["DRAM 晶圆制造\nSK 海力士/三星/美光"] --> B["TSV 打孔\n硅通孔加工"]
-    B --> C["芯片堆叠\n8-16 层 DRAM"]
-    C --> D["MR-MUF / NCF 封装\n底部填充"]
-    D --> E["HBM 成品测试\n3-5x 传统 DRAM"]
-    E --> F["CoWoS 封装\n台积电"]
-    F --> G["GPU + HBM 模组\nNVIDIA/AMD"]
-    G --> H["AI 服务器\nCloud Providers"]
-    
-    style A fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    style B fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
-    style C fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
-    style D fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
-    style E fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
-    style F fill:#b91c1c,stroke:\#dc2626,color:#fff
-    style G fill:#b45309,stroke:\#d97706,color:#fff
-    style H fill:#047857,stroke:\#059669,color:#fff`,
+    A["DRAM 晶圆制造
+SK 海力士/三星/美光"] --> B["TSV 打孔
+硅通孔加工"]
+    B --> C["芯片堆叠
+8-16 层 DRAM"]
+    C --> D["MR-MUF / NCF 封装
+底部填充"]
+    D --> E["HBM 成品测试
+3-5x 传统 DRAM"]
+    E --> F["CoWoS 封装
+台积电"]
+    F --> G["GPU + HBM 模组
+NVIDIA/AMD"]
+    G --> H["AI 服务器
+Cloud Providers"]
+    class H s7
+    class G s6
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1d4ed8,stroke:\#2563eb,color:#fff
+    classDef s1 fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
+    classDef s2 fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
+    classDef s3 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
+    classDef s4 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
+    classDef s5 fill:#b91c1c,stroke:\#dc2626,color:#fff
+    classDef s6 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s7 fill:#047857,stroke:\#059669,color:#fff`,
     },
     {
       title: "HBM 供应链产能模型",

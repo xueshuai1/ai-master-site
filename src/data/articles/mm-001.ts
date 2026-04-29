@@ -74,7 +74,8 @@ for name, desc in multimodal_approaches.items():
     A --> C["文本编码器"]
     B --> D["图像特征"]
     C --> E["文本特征"]
-    D --> F["对比损失\nInfoNCE"]
+    D --> F["对比损失
+InfoNCE"]
     E --> F
     F --> G["统一表征空间"]`,
         tip: "理解 CLIP 的关键在于把握其设计哲学：简单架构 + 海量数据 > 复杂架构 + 有限数据",
@@ -172,13 +173,16 @@ def build_vit_encoder(patch_size=32, embed_dim=768):
           ]
         },
         mermaid: `graph TD
-    A["输入图像\n224x224x3"] --> B["图像编码器"]
+    A["输入图像
+224x224x3"] --> B["图像编码器"]
     B --> C["ResNet 或 ViT"]
-    C --> D["特征向量\nembed_dim"]
+    C --> D["特征向量
+embed_dim"]
     D --> E["L2 归一化"]
     E --> F["图像特征"]
 
-    G["输入文本\n<76 tokens"] --> H["文本编码器"]
+    G["输入文本
+<76 tokens"] --> H["文本编码器"]
     H --> I["Transformer"]
     I --> J["[EOS] token 输出"]
     J --> K["线性投影"]
@@ -282,11 +286,17 @@ def show_temperature_effect():
           ]
         },
         mermaid: `graph LR
-    A["Image Features\n[N, D]"] --> B["相似度矩阵\nS = I·T^T / tau"]
-    C["Text Features\n[N, D]"] --> B
-    B --> D["logits_per_image\n[N, N]"]
-    B --> E["logits_per_text\n[N, N]"]
-    D --> F["CrossEntropy\nlabels=diag"]
+    A["Image Features
+[N, D]"] --> B["相似度矩阵
+S = I·T^T / tau"]
+    C["Text Features
+[N, D]"] --> B
+    B --> D["logits_per_image
+[N, N]"]
+    B --> E["logits_per_text
+[N, N]"]
+    D --> F["CrossEntropy
+labels=diag"]
     E --> F
     F --> G["InfoNCE Loss"]
     F --> H["反向传播"]
@@ -401,12 +411,14 @@ def ensemble_prompt_classification(model, preprocess, image, class_names):
         mermaid: `graph LR
     A["输入图像"] --> B["图像编码器"]
     B --> C["图像特征"]
-    D["类别名称列表"] --> E["提示模板\na photo of a {class}"]
+    D["类别名称列表"] --> E["提示模板
+a photo of a {class}"]
     E --> F["文本编码器"]
     F --> G["文本特征"]
     C --> H["余弦相似度"]
     G --> H
-    H --> I["Softmax\n概率分布"]
+    H --> I["Softmax
+概率分布"]
     I --> J["预测类别"]`,
         tip: "使用 Ensembled Prompting 可以带来 3-5% 的零样本准确率提升，几乎免费",
         warning: "零样本分类在细粒度分类任务（如 Stanford Cars）上表现较差，因为训练数据中的类别描述不够具体"
@@ -515,15 +527,22 @@ def build_clip_optimizer(model, lr=5e-4, weight_decay=0.2, warmup_steps=2000):
           ]
         },
         mermaid: `graph TD
-    A["网络爬取\n图文对"] --> B["数据清洗\n启发式过滤"]
-    B --> C["训练集\n4 亿样本"]
-    C --> D["DataLoader\nbatch_size=32768"]
-    D --> E["AdamW 优化器\nlr=1e-3"]
+    A["网络爬取
+图文对"] --> B["数据清洗
+启发式过滤"]
+    B --> C["训练集
+4 亿样本"]
+    C --> D["DataLoader
+batch_size=32768"]
+    D --> E["AdamW 优化器
+lr=1e-3"]
     E --> F["InfoNCE 损失"]
     F --> G["梯度更新"]
     G --> E
-    E --> H["Cosine 衰减\n+ Warmup"]
-    H --> I["收敛模型\nViT-L/14 @ 32 epochs"]`,
+    E --> H["Cosine 衰减
++ Warmup"]
+    H --> I["收敛模型
+ViT-L/14 @ 32 epochs"]`,
         tip: "数据质量比数量更重要，后续研究通过数据过滤（如 Aesthetic Score、CLIPScore）用更少数据达到更好效果",
         warning: "互联网爬取数据包含大量有害和偏见内容，训练前需要进行伦理审核和安全过滤"
       },
@@ -772,13 +791,16 @@ class CLIPIImageSearch:
         },
         mermaid: `graph LR
     A["查询文本"] --> B["CLIP 文本编码器"]
-    B --> C["查询向量\n[1, D]"]
+    B --> C["查询向量
+[1, D]"]
     D["图像库"] --> E["CLIP 图像编码器"]
-    E --> F["图像向量矩阵\n[N, D]"]
+    E --> F["图像向量矩阵
+[N, D]"]
     F --> G["FAISS 索引"]
     C --> H["最近邻搜索"]
     G --> H
-    H --> I["Top-K 结果\n(相似度分数 + 图像ID)"]
+    H --> I["Top-K 结果
+(相似度分数 + 图像ID)"]
     I --> J["返回检索结果"]`,
         tip: "大规模图像检索时，先用 CLIP 做粗排，再用更精细的模型（如 BLIP-2）做精排，兼顾效率和精度",
         warning: "FAISS 索引在高维空间（D>512）中检索精度会下降，建议选择合适的模型维度"

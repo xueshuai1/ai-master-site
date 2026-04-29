@@ -40,17 +40,24 @@ export const article: Article = {
     A --> C["产品监管"]
     A --> D["知识产权监管"]
 
-    B --> B1["NAACP v xAI\n数据中心排放"]
+    B --> B1["NAACP v xAI
+数据中心排放"]
     B --> B2["AI 碳足迹披露"]
     B --> B3["能源使用许可"]
 
-    C --> C1["EU AI Act\n风险分级监管"]
-    C --> C2["NIST AI RMF\n风险管理框架"]
-    C --> C3["中国算法备案\n生成式 AI 管理"]
+    C --> C1["EU AI Act
+风险分级监管"]
+    C --> C2["NIST AI RMF
+风险管理框架"]
+    C --> C3["中国算法备案
+生成式 AI 管理"]
 
-    D --> D1["Getty v Stability\n训练数据版权"]
-    D --> D2["AI 生成内容\n权利归属"]
-    D --> D3["深度伪造\n肖像权保护"]
+    D --> D1["Getty v Stability
+训练数据版权"]
+    D --> D2["AI 生成内容
+权利归属"]
+    D --> D3["深度伪造
+肖像权保护"]
 
     classDef env fill:#15803d,stroke:\#16a34a,color:#fff
     classDef product fill:#1d4ed8,stroke:\#2563eb,color:#fff

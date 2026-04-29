@@ -16,10 +16,14 @@ export const article: Article = {
       title: "AI Agent 的十字路口：通用 vs 垂直",
       body: `2024-2025 年，AI Agent 的主旋律是**「通用性」**：一个 Agent 能写代码、能聊天、能做分析、能搜索。人们相信，只要模型足够强大，一个 Agent 就能胜任所有任务。\n\n但 2026 年的现实给出了不同的答案：**通用 Agent 什么都懂一点，但什么都不精**。\n\n当开发者需要写生产级代码时，他们会用 Cursor 或 Claude Code；当营销人员需要 SEO 内容时，他们会用 seomachine；当交易员需要量化策略时，他们会用 AI-Trader。每个领域都在孕育自己的专业 Agent，而这些专业 Agent 的能力已经远超通用 Agent 在该领域的表现。`,
       mermaid: `graph TD
-    A["2024-2025\n通用 Agent 时代"] --> B["什么都能做\n但什么都不精"]
-    A --> C["ChatGPT / Claude\n一个模型搞定一切"]
+    A["2024-2025
+通用 Agent 时代"] --> B["什么都能做
+但什么都不精"]
+    A --> C["ChatGPT / Claude
+一个模型搞定一切"]
     
-    D["2026\n垂直 Agent 时代"] --> E["每个领域一个专家级 Agent"]
+    D["2026
+垂直 Agent 时代"] --> E["每个领域一个专家级 Agent"]
     D --> F["seomachine → SEO 内容"]
     D --> G["AI-Trader → 金融交易"]
     D --> H["Firefly AI → 创意设计"]
@@ -27,10 +31,12 @@ export const article: Article = {
     
     B -.->|能力不足| J["用户转向专业工具"]
     C -.->|生态迁移| K["垂直工作空间崛起"]
-    
-    style A fill:#b45309,stroke:\#d97706,color:#fff
-    style D fill:#047857,stroke:\#059669,color:#fff
-    style E fill:#1d4ed8,stroke:\#2563eb,color:#fff`,
+    class E s2
+    class D s1
+    class A s0
+    classDef s0 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s1 fill:#047857,stroke:\#059669,color:#fff
+    classDef s2 fill:#1d4ed8,stroke:\#2563eb,color:#fff`,
     },
     {
       title: "为什么通用 Agent 不够用？",
@@ -282,11 +288,14 @@ class EEATEvaluator:
         "**自主复盘**：交易结束后自主分析盈亏原因，优化策略",
       ],
       mermaid: `graph TD
-    A["市场数据源\n新闻/财报/K线/社交媒体"] --> B["信息提取 Agent"]
-    B --> C["信号生成\n看涨/看跌/中性"]
+    A["市场数据源
+新闻/财报/K线/社交媒体"] --> B["信息提取 Agent"]
+    B --> C["信号生成
+看涨/看跌/中性"]
     
     C --> D["策略生成 Agent"]
-    D --> E["策略库\n动量/均值回归/套利"]
+    D --> E["策略库
+动量/均值回归/套利"]
     
     E --> F["执行 Agent"]
     F --> G["下单/止损/止盈"]
@@ -300,12 +309,16 @@ class EEATEvaluator:
     K --> L["盈亏分析"]
     L --> M["策略优化"]
     M --> D
-    
-    style B fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    style D fill:#047857,stroke:\#059669,color:#fff
-    style F fill:#b45309,stroke:\#d97706,color:#fff
-    style H fill:#b91c1c,stroke:\#dc2626,color:#fff
-    style K fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9`,
+    class K s4
+    class H s3
+    class F s2
+    class D s1
+    class B s0
+    classDef s0 fill:#1d4ed8,stroke:\#2563eb,color:#fff
+    classDef s1 fill:#047857,stroke:\#059669,color:#fff
+    classDef s2 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s3 fill:#b91c1c,stroke:\#dc2626,color:#fff
+    classDef s4 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9`,
       code: [{
         lang: "python",
         code: `from dataclasses import dataclass
@@ -441,10 +454,15 @@ class AgentTrader:
       title: "垂直 Agent 的技术架构模式",
       body: `分析上述案例，可以总结出垂直 Agent 工作空间的**通用技术架构模式**：`,
       mermaid: `graph TD
-    A["领域知识层\n专业知识库/规则/最佳实践"] --> B["工作流引擎层\n标准化流程编排"]
-    B --> C["工具集成层\n领域专属工具/API"]
-    C --> D["评估反馈层\n领域质量指标"]
-    D --> E["学习优化层\n持续改进"]
+    A["领域知识层
+专业知识库/规则/最佳实践"] --> B["工作流引擎层
+标准化流程编排"]
+    B --> C["工具集成层
+领域专属工具/API"]
+    C --> D["评估反馈层
+领域质量指标"]
+    D --> E["学习优化层
+持续改进"]
     
     A -.->|约束| B
     B -.->|调用| C

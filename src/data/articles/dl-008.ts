@@ -91,8 +91,10 @@ loss.backward()  # 梯度可以反向传播` },
     E --> F["参数更新 θ = θ - η·∂L/∂θ"]
     F --> A
     G["评估指标"] -. "不参与训练" .-> H["准确率/F1/AUC"]
-    style B fill:#14532d
-    style H fill:#713f12`,
+    class H s1
+    class B s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#713f12`,
             tip: "选择损失函数的第一原则：匹配你的任务类型。回归任务用回归损失，分类任务用分类损失，不要混用。一个模型中也可以组合多个损失函数（多任务学习）。",
             warning: "损失函数的值本身没有绝对意义——它只在与自身历史对比时才有意义。不同损失函数的数值范围差异巨大，不要跨损失函数比较数值大小。",
         },
@@ -186,8 +188,10 @@ print(f"none: {mse_none(y_pred, y_true)}")           # 每个样本独立损失`
     D --> F["梯度 = sign(e) → 有界"]
     E --> G["收敛快"]
     F --> H["鲁棒性强"]
-    style C fill:#14532d
-    style D fill:#14532d`,
+    class D s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#14532d`,
             tip: "如果数据中存在异常值（常见于真实场景），优先选择 Huber 或 Smooth L1 而非 MSE。Smooth L1 的默认 β=1.0 适用于大多数情况，不需要额外调参。",
             warning: "MAE 在零点不可微，虽然 PyTorch 用次梯度处理，但在优化器（如 Adam）中可能导致数值不稳定。如果必须用 MAE，建议配合 SGD 而非 Adam。",
         },
@@ -272,14 +276,18 @@ print(f"CrossEntropy: {loss_multi:.4f}")` },
             },
             mermaid: `graph TD
     A["原始 logit"] --> B{"任务类型?"}
-    B -->|二分类| C["BCEWithLogitsLoss\nSigmoid + BCE 合并"]
-    B -->|多分类| D["CrossEntropyLoss\nSoftmax + NLL 合并"]
+    B -->|二分类| C["BCEWithLogitsLoss
+Sigmoid + BCE 合并"]
+    B -->|多分类| D["CrossEntropyLoss
+Softmax + NLL 合并"]
     C --> E["标签: 0/1"]
     D --> F["标签: 类别索引 0~K-1"]
     E --> G["损失 = -[y·log(σ(x)) + (1-y)·log(1-σ(x))]"]
     F --> H["损失 = -log(exp(x_c) / Σexp(x_i))"]
-    style C fill:#14532d
-    style D fill:#14532d`,
+    class D s1
+    class C s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#14532d`,
             tip: "PyTorch 的 CrossEntropyLoss 和 BCEWithLogitsLoss 都接受原始 logit 值——不要在前面手动加 Softmax 或 Sigmoid，否则会导致重复变换，数值不稳定且结果错误。",
             warning: "交叉熵损失对类别不平衡敏感。当正负样本比例为 1:100 时，模型只需预测「全部为负类」就能获得 99% 的准确率，但损失值仍然很高。此时需要考虑 Focal Loss 或类别权重。",
         },
@@ -373,13 +381,19 @@ print(f"Focal Loss: {loss:.4f}")` },
             },
             mermaid: `graph TD
     A["标准交叉熵: -log(p_t)"] --> B{"p_t 大小?"}
-    B -->|p_t ≈ 1 易分| C["损失仍显著\n被大量简单样本主导"]
-    B -->|p_t ≈ 0 难分| D["损失很大\n正常贡献"]
+    B -->|p_t ≈ 1 易分| C["损失仍显著
+被大量简单样本主导"]
+    B -->|p_t ≈ 0 难分| D["损失很大
+正常贡献"]
     E["Focal Loss: -(1-p_t)^γ·log(p_t)"] --> F{"p_t 大小?"}
-    F -->|p_t ≈ 1 易分| G["(1-p_t)^γ → 0\n损失被大幅压缩"]
-    F -->|p_t ≈ 0 难分| H["(1-p_t)^γ → 1\n损失几乎不变"]
-    style C fill:#7f1d1d
-    style G fill:#14532d`,
+    F -->|p_t ≈ 1 易分| G["(1-p_t)^γ → 0
+损失被大幅压缩"]
+    F -->|p_t ≈ 0 难分| H["(1-p_t)^γ → 1
+损失几乎不变"]
+    class G s1
+    class C s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d`,
             tip: "Focal Loss 的 γ=2 是 RetinaNet 论文的经验值，但在不同任务上可能需要调整。建议从 γ=2 开始，如果模型仍然被简单样本主导，可以增大到 3 或 4。",
             warning: "Focal Loss 只对二分类直接适用。多分类场景需要为每个类别独立计算 Focal Loss 然后求和，或者使用 Class-Balanced Loss 等替代方案。",
         },
@@ -472,10 +486,14 @@ def hard_triplet_mining(anchor, positive, negative, margin=1.0):
     C --> E["损失 = max(0, d(A,P) + m - d(A,N))"]
     D --> E
     E --> F{"损失 > 0?"}
-    F -->|是| G["需要学习\n正样本太远或负样本太近"]
-    F -->|否| H["三元组已好\n损失为 0"]
-    style G fill:#7f1d1d
-    style H fill:#14532d`,
+    F -->|是| G["需要学习
+正样本太远或负样本太近"]
+    F -->|否| H["三元组已好
+损失为 0"]
+    class H s1
+    class G s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d`,
             tip: "三元组挖掘（Triplet Mining）是 Triplet Loss 成功的关键。随机采样三元组效率极低（大多数三元组损失为 0），建议使用半困难三元组（Semi-Hard Negative Mining）——选择距离在 d(A,P) 和 d(A,P)+margin 之间的负样本。",
             warning: "Triplet Loss 对 margin 非常敏感。margin 太小，模型学不到区分能力；margin 太大，训练困难且可能不收敛。建议从 margin=1.0 开始，观察训练曲线的损失变化。",
         },
@@ -590,8 +608,10 @@ print(f"Composite Loss: {loss:.4f}")` },
     I --> J{"收敛?"}
     J -->|否| C
     J -->|是| K["完成"]
-    style E fill:#713f12
-    style K fill:#14532d`,
+    class K s1
+    class E s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#14532d`,
             tip: "自定义损失函数的梯度验证技巧：使用 torch.autograd.gradcheck 自动检查梯度是否正确。对简单输入（如全 1 tensor）计算数值梯度和解析梯度，两者应一致。",
             warning: "自定义损失函数中最常见的错误是使用了不可微的操作（如 torch.argmax、torch.where 的条件部分）。这些操作会阻断梯度流，导致模型无法学习。需要用 Gumbel-Softmax 或直通估计器替代。",
         },
@@ -743,7 +763,8 @@ def train_with_loss_comparison(model, trainloader, valloader,
     G --> J
     H --> J
     I --> J
-    style J fill:#14532d`,
+    class J s0
+    classDef s0 fill:#14532d`,
             tip: "Label Smoothing 是 CrossEntropyLoss 的正则化技巧——将 one-hot 标签的 1.0 改为 0.9，其余 0.1 分给其他类别。PyTorch 中设置 label_smoothing=0.1 即可启用，几乎免费提升 0.5-1% 的精度。",
             warning: "在同一个训练流程中频繁切换损失函数会导致训练不稳定。正确的做法是：先用一种损失函数跑完基线，分析不足后再换另一种从头训练，而不是在中途切换。",
         },

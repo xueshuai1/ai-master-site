@@ -28,15 +28,24 @@ export const article: Article = {
 - 如何处理 Agent 运行时的错误和异常
 - 如何将 Agent 从玩具变成生产可用`,
       mermaid: `graph TD
-    A["用户输入\n任务描述"] --> B["Agent Core\n推理引擎"]
-    B --> C["短期记忆\n会话上下文"]
-    B --> D["长期记忆\n向量检索"]
-    B --> E["工具调度器\nTool Dispatcher"]
+    A["用户输入
+任务描述"] --> B["Agent Core
+推理引擎"]
+    B --> C["短期记忆
+会话上下文"]
+    B --> D["长期记忆
+向量检索"]
+    B --> E["工具调度器
+Tool Dispatcher"]
 
-    E --> F["Web 搜索\n工具"]
-    E --> G["代码执行\n工具"]
-    E --> H["文件操作\n工具"]
-    E --> I["API 调用\n工具"]
+    E --> F["Web 搜索
+工具"]
+    E --> G["代码执行
+工具"]
+    E --> H["文件操作
+工具"]
+    E --> I["API 调用
+工具"]
 
     F --> J["搜索结果"]
     G --> K["执行输出"]
@@ -48,13 +57,18 @@ export const article: Article = {
     L --> B
     M --> B
 
-    B --> N["生成最终\n回答"]
-    N --> O["经验写入\n长期记忆"]
-
-    style B fill:#4338ca,stroke:#4338ca,color:#fff
-    style C fill:#047857,stroke:#047857,color:#fff
-    style D fill:#6d28d9,stroke:#6d28d9,color:#fff
-    style E fill:#92400e,stroke:#b45309,color:#fff`,
+    B --> N["生成最终
+回答"]
+    N --> O["经验写入
+长期记忆"]
+    class E s3
+    class D s2
+    class C s1
+    class B s0
+    classDef s0 fill:#4338ca,stroke:#4338ca,color:#fff
+    classDef s1 fill:#047857,stroke:#047857,color:#fff
+    classDef s2 fill:#6d28d9,stroke:#6d28d9,color:#fff
+    classDef s3 fill:#92400e,stroke:#b45309,color:#fff`,
     },
     {
       title: "二、Agent 的核心架构设计",

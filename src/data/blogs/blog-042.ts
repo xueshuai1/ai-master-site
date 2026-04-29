@@ -57,12 +57,19 @@ OpenAI 借机抢占市场，明确 Codex 的低价策略：
 - Codex 保持 FREE 和 PLUS（$20）可用
 - 暗示「我们有足够的算力」——直接对标 Anthropic 的算力焦虑`,
     mermaid: `graph LR
-    A["4/20 GitHub Copilot\n暂停注册 + 收紧限制"] --> B["4/22 Anthropic\n静默提价测试"]
-    B --> C["社区强烈反弹\nReddit/HN/Twitter"]
-    C --> D["Anthropic 数小时后\n撤回变更"]
-    C --> E["OpenAI 趁势宣布\nCodex 保持低价"]
-    D --> F["Claude Code 仍 $20/月\n但信任受损"]
-    E --> G["Codex 成为\n性价比首选"]`,
+    A["4/20 GitHub Copilot
+暂停注册 + 收紧限制"] --> B["4/22 Anthropic
+静默提价测试"]
+    B --> C["社区强烈反弹
+Reddit/HN/Twitter"]
+    C --> D["Anthropic 数小时后
+撤回变更"]
+    C --> E["OpenAI 趁势宣布
+Codex 保持低价"]
+    D --> F["Claude Code 仍 $20/月
+但信任受损"]
+    E --> G["Codex 成为
+性价比首选"]`,
   },
   {
     title: "二、Agentic Coding 如何颠覆 SaaS 定价模型",

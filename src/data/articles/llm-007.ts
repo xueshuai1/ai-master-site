@@ -97,9 +97,11 @@ def profile_inference(model_name: str, prompt: str,
             },
             mermaid: `graph TD
     A["推理请求"] --> B["Prefill 阶段"]
-    B -->|"计算密集型\nGPU 利用率高"| C["首 Token 延迟"]
+    B -->|"计算密集型
+GPU 利用率高"| C["首 Token 延迟"]
     C --> D["Decode 阶段"]
-    D -->|"内存带宽瓶颈\nGPU 利用率 < 30％"| E["逐 Token 生成"]
+    D -->|"内存带宽瓶颈
+GPU 利用率 < 30％"| E["逐 Token 生成"]
     E --> F["KV Cache 增长"]
     F --> G{达到最大长度?}
     G -->|否| D
@@ -187,8 +189,10 @@ def groupwise_int4_quantize(weight: torch.Tensor,
     C -->|"裁剪到范围"| D["INT8/INT4"]
     D -->|"存储 + 推理"| E["反量化恢复"]
     E -->|"乘回 scale"| F["近似 FP32"]
-    style D fill:#14532d
-    style F fill:#78350f,color:#f1f5f9,color:#1e293b`,
+    class F s1
+    class D s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#78350f,color:#f1f5f9,color:#1e293b`,
             tip: "对 LLM 做量化时，优先使用逐通道（per-channel）量化而非逐张量（per-tensor）量化——逐通道的精度损失通常只有逐张量的 1/3 到 1/5，因为每层不同通道的权重分布差异很大。",
             warning: "直接对 Embedding 层和 LM Head 做量化会导致显著的精度下降。这两个层对数值精度极为敏感，建议保持 FP16 不变，只量化中间的 Linear 层。"
         },
@@ -625,10 +629,12 @@ for chunk in response:
                 ]
             },
             mermaid: `graph TD
-    A["推理请求队列"] --> B["PagedAttention\n内存管理器"]
+    A["推理请求队列"] --> B["PagedAttention
+内存管理器"]
     B --> C["按需分配 KV Block"]
     C --> D["GPU 执行前向传播"]
-    D --> E["Continuous Batching\n调度器"]
+    D --> E["Continuous Batching
+调度器"]
     E -->|请求完成| F["释放 KV Block"]
     E -->|请求未完成| G["下一轮 Decode"]
     F --> B
@@ -732,10 +738,12 @@ print(result.stdout)`
     C --> F["编译 Metal/Vulkan/OpenCL"]
     D --> G["一键下载运行"]
     E --> H["GGUF 格式加载"]
-    F --> I["端侧推理\n离线 + 隐私"]
+    F --> I["端侧推理
+离线 + 隐私"]
     G --> I
     H --> I
-    I --> J["应用集成\nSDK / API"]`,
+    I --> J["应用集成
+SDK / API"]`,
             tip: "在 Mac M 系列芯片上运行 7B INT4 模型，MLC-LLM 和 llama.cpp 的推理速度通常在 15-30 tokens/s——足够流畅的对话体验。13B INT4 约 8-15 tokens/s，仍可接受。",
             warning: "端侧部署最大的瓶颈是内存（RAM）而非显存。MacBook 的统一内存虽然可以被 GPU 直接使用，但如果系统同时运行多个应用（浏览器、IDE 等），可用内存可能不足以加载大模型。建议至少 16GB 内存运行 7B 模型，32GB 运行 13B 模型。"
         },

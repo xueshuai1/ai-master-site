@@ -59,11 +59,14 @@ content: [
     Experience --> Audit[进化轨迹审计]
     Audit --> Genes[基因胶囊库]
     Genes --> Growth
-
-    style Seed fill:#1e3a5f
-    style Growth fill:#064e3b
-    style Selection fill:#713f12
-    style Audit fill:#581c87`
+    class Audit s3
+    class Selection s2
+    class Growth s1
+    class Seed s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#064e3b
+    classDef s2 fill:#713f12
+    classDef s3 fill:#581c87`
     },
     {
       title: "二、GenericAgent：技能树生长架构",

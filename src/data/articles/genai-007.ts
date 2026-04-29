@@ -32,7 +32,15 @@ export const article: Article = {
                     ["Flow", "变量变换公式", "精确似然", "双射映射", "最大似然"]
                 ]
             },
-            mermaid: `graph TD\n    A["学习目标: p_data(x)"] --> B["VAE"]\n    A --> C["GAN"]\n    A --> D["Diffusion"]\n    A --> E["Flow"]\n    B --> B1["变分下界 ELBO"]\n    C --> C1["对抗博弈 min-max"]\n    D --> D1["逐步去噪"]\n    E --> E1["可逆变换 det(J)"]`,
+            mermaid: `graph TD
+    A["学习目标: p_data(x)"] --> B["VAE"]
+    A --> C["GAN"]
+    A --> D["Diffusion"]
+    A --> E["Flow"]
+    B --> B1["变分下界 ELBO"]
+    C --> C1["对抗博弈 min-max"]
+    D --> D1["逐步去噪"]
+    E --> E1["可逆变换 det(J)"]`,
             tip: "入门建议先掌握 VAE 的变分推断思想，它是理解后续 Diffusion 的 ELBO 推导的基础。",
             warning: "不要孤立学习某个模型，横向对比才能理解各自的设计动机和妥协。"
         },
@@ -59,7 +67,13 @@ export const article: Article = {
                     ["典型应用", "基础生成", "表示学习", "图像生成"]
                 ]
             },
-            mermaid: `graph LR\n    A["输入 x"] --> B["编码器 q(z|x)"]\n    B --> C["mu, logvar"]\n    C --> D["重参数化 z = mu + sigma * eps"]\n    D --> E["解码器 p(x|z)"]\n    E --> F["重构 x_hat"]\n    F --> G["ELBO = 重构 - KL"]`,
+            mermaid: `graph LR
+    A["输入 x"] --> B["编码器 q(z|x)"]
+    B --> C["mu, logvar"]
+    C --> D["重参数化 z = mu + sigma * eps"]
+    D --> E["解码器 p(x|z)"]
+    E --> F["重构 x_hat"]
+    F --> G["ELBO = 重构 - KL"]`,
             tip: "尝试 beta-VAE（增大 KL 权重）可以获得更好的解纠缠隐空间，对可控生成很有帮助。",
             warning: "VAE 的 KL 坍缩（KL 趋近于零）是常见问题，需确保网络容量平衡和适当的学习率。"
         },
@@ -86,7 +100,16 @@ export const article: Article = {
                     ["StyleGAN", "自适应风格注入", "细粒度可控性", "Karras 2019"]
                 ]
             },
-            mermaid: `graph TD TB\n    A["随机噪声 z"] --> B["生成器 G"]\n    B --> C["假样本 G(z)"]\n    D["真实数据 x"] --> E["判别器 D"]\n    C --> E\n    E --> F["真/假判断"]\n    F -->|"梯度"| G["更新 D"]\n    F -->|"梯度"| H["更新 G"]\n    G --> E\n    H --> B`,
+            mermaid: `graph TD
+    A["随机噪声 z"] --> B["生成器 G"]
+    B --> C["假样本 G(z)"]
+    D["真实数据 x"] --> E["判别器 D"]
+    C --> E
+    E --> F["真/假判断"]
+    F -->|"梯度"| G["更新 D"]
+    F -->|"梯度"| H["更新 G"]
+    G --> E
+    H --> B`,
             tip: "WGAN-GP 是目前最稳定的 GAN 训练范式，建议作为 GAN 入门首选。",
             warning: "GAN 训练需要仔细监控判别器损失，判别器过强会导致生成器梯度消失。"
         },
@@ -113,7 +136,15 @@ export const article: Article = {
                     ["Stable Diffusion", "20-50", "N/A", "隐空间扩散", "VAE 压缩 + CLIP"]
                 ]
             },
-            mermaid: `graph LR\n    A["纯噪声 x_T"] -->|"去噪 t"| B["x_{T-1}"]\n    B -->|"去噪 t-1"| C["x_{T-2}"]\n    C -->|"..."| D["..."]\n    D -->|"去噪 2"| E["x_1"]\n    E -->|"去噪 1"| F["清晰样本 x_0"]\n    G["噪声预测网络 epsilon_theta"] -.-> B\n    G -.-> C\n    G -.-> E`,
+            mermaid: `graph LR
+    A["纯噪声 x_T"] -->|"去噪 t"| B["x_{T-1}"]
+    B -->|"去噪 t-1"| C["x_{T-2}"]
+    C -->|"..."| D["..."]
+    D -->|"去噪 2"| E["x_1"]
+    E -->|"去噪 1"| F["清晰样本 x_0"]
+    G["噪声预测网络 epsilon_theta"] -.-> B
+    G -.-> C
+    G -.-> E`,
             tip: "实际部署时优先使用 DDIM 或 LCM 加速采样，50 步以内即可获得优质结果。",
             warning: "DDPM 默认 1000 步采样在推理时极慢，必须使用加速方法才能投入生产。"
         },
@@ -140,7 +171,12 @@ export const article: Article = {
                     ["Continuous Normalizing Flow", "神经 ODE", "数值积分", "高", "动态建模"]
                 ]
             },
-            mermaid: `graph LR\n    A["简单分布 p(z)"] -->|"f_1 可逆变换"| B["z_1"]\n    B -->|"f_2 可逆变换"| C["z_2"]\n    C -->|"..."| D["z_K"]\n    D -->|"f_K 可逆变换"| E["复杂分布 p(x)"]\n    E -->|"|det(df/dx)|"| F["精确似然"]`,
+            mermaid: `graph LR
+    A["简单分布 p(z)"] -->|"f_1 可逆变换"| B["z_1"]
+    B -->|"f_2 可逆变换"| C["z_2"]
+    C -->|"..."| D["z_K"]
+    D -->|"f_K 可逆变换"| E["复杂分布 p(x)"]
+    E -->|"|det(df/dx)|"| F["精确似然"]`,
             tip: "Flow 适合需要精确似然评估的场景（如异常检测），不追求极致生成质量时是最佳选择。",
             warning: "Flow 的可逆性约束严重限制了模型架构选择，无法直接使用标准卷积和池化层。"
         },
@@ -169,7 +205,17 @@ export const article: Article = {
                     ["工业应用", "较少", "广泛", "主流", "小众"]
                 ]
             },
-            mermaid: `graph TD\n    A["任务需求分析"] --> B{需要精确似然?}\n    B -->|"是"| C["Flow"]\n    B -->|"否"| D{需要极致质量?}\n    D -->|"是"| E["Diffusion"]\n    D -->|"否"| F{需要实时推理?}\n    F -->|"是"| G["VAE / GAN"]\n    F -->|"否"| E\n    G --> H{训练资源充足?}\n    H -->|"是"| I["GAN (StyleGAN)"]\n    H -->|"否"| J["VAE"]`,
+            mermaid: `graph TD
+    A["任务需求分析"] --> B{需要精确似然?}
+    B -->|"是"| C["Flow"]
+    B -->|"否"| D{需要极致质量?}
+    D -->|"是"| E["Diffusion"]
+    D -->|"否"| F{需要实时推理?}
+    F -->|"是"| G["VAE / GAN"]
+    F -->|"否"| E
+    G --> H{训练资源充足?}
+    H -->|"是"| I["GAN (StyleGAN)"]
+    H -->|"否"| J["VAE"]`,
             tip: "大多数实际场景中，Diffusion + DDIM 加速（50 步）在质量和速度之间取得了最佳平衡。",
             warning: "对比指标高度依赖任务和超参配置，表格数据基于典型设置，实际需求可能有差异。"
         },
@@ -199,7 +245,18 @@ export const article: Article = {
                     ["文本到图像", "Diffusion", "GAN", "跨模态对齐"]
                 ]
             },
-            mermaid: `graph TD\n    A["开始选型"] --> B{"需要精确似然?"}\n    B -->|"是"| C["Normalizing Flow"]\n    B -->|"否"| D{"需要实时推理?"}\n    D -->|"是"| E{"特定领域人脸/物体?"}\n    E -->|"是"| F["GAN (StyleGAN)"]\n    E -->|"否"| G["VAE"]\n    D -->|"否"| H{"需要文本/条件引导?"}\n    H -->|"是"| I["Diffusion + CFG"]\n    H -->|"否"| J{"追求最高质量?"}\n    J -->|"是"| K["Diffusion (DDIM 加速)"]\n    J -->|"否"| L["VAE 或 GAN"]`,
+            mermaid: `graph TD
+    A["开始选型"] --> B{"需要精确似然?"}
+    B -->|"是"| C["Normalizing Flow"]
+    B -->|"否"| D{"需要实时推理?"}
+    D -->|"是"| E{"特定领域人脸/物体?"}
+    E -->|"是"| F["GAN (StyleGAN)"]
+    E -->|"否"| G["VAE"]
+    D -->|"否"| H{"需要文本/条件引导?"}
+    H -->|"是"| I["Diffusion + CFG"]
+    H -->|"否"| J{"追求最高质量?"}
+    J -->|"是"| K["Diffusion (DDIM 加速)"]
+    J -->|"否"| L["VAE 或 GAN"]`,
             tip: "实际项目中可以先从预训练 Diffusion 模型微调开始，这通常是最快达到可用质量的路径。",
             warning: "不要为了追求新颖性而选择 Flow 或 GAN，除非你的任务明确要求精确似然或实时推理。"
         },

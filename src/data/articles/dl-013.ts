@@ -144,10 +144,12 @@ for i in range(3):
             U --> H_new["h_v' (新状态)"]
         end
     end
-    
-    style M fill:#1e3a5f
-    style A fill:#7c2d12
-    style U fill:#14532d`,
+    class U s2
+    class A s1
+    class M s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "消息传递框架的关键直觉：每个节点就像社交网络中的人，通过和周围朋友交流（message），综合大家的观点（aggregate），然后更新自己的想法（update）。层数越多，一个人的观点受越远的朋友影响。",
             warning: "消息传递中的过度平滑（Over-smoothing）问题：随着层数增加，所有节点的表示会趋于相同，失去区分能力。实践中 GNN 通常不超过 4 层，深层 GNN 需要残差连接、跳跃连接或归一化技巧来缓解。",
         },
@@ -296,9 +298,10 @@ simulate_cora_experiment()`
         Approx --> Renorm["重归一化技巧"]
         Renorm --> Final["H' = σ(D̃^(-1/2)ÃD̃^(-1/2)HW)"]
     end
-    
-    style L fill:#1e3a5f
-    style Final fill:#14532d`,
+    class Final s1
+    class L s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d`,
             tip: "GCN 的层数不宜过多——2-3 层通常就够了。超过 4 层会出现严重的过度平滑问题，节点表示趋于相同，失去区分能力。如果需要更深的网络，务必加入残差连接（residual connection）或使用 Jumping Knowledge 网络。",
             warning: "GCN 是直推式（Transductive）学习：训练和测试都在同一张图上进行，无法直接泛化到未见过的节点。如果图结构在训练后发生变化，或者需要处理动态新增的节点，应使用 GraphSAGE 等归纳式方法。此外，GCN 假设图结构是给定的，无法处理边缺失或噪声边的情况。",
         },
@@ -466,10 +469,12 @@ attn_weights = visualize_gat_attention(gat, h, edges, None)`
         O1 & O2 & ON --> Concat["拼接 / 平均"]
         Concat --> H_new["h_i'"]
     end
-    
-    style Hi fill:#1e3a5f
-    style Hj fill:#14532d
-    style H_new fill:#7c2d12`,
+    class H_new s2
+    class Hj s1
+    class Hi s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "GAT 的多头注意力头数不宜过多——通常 4-8 个头就足够了。头太多会导致注意力分散，每个头学到的模式可能变得冗余。可以通过计算不同头之间的注意力相似度来判断是否冗余：如果两个头的注意力分布高度相关（cosine similarity > 0.8），可以考虑减少头数。",
             warning: "GAT 的注意力系数只在邻居范围内做 softmax 归一化，这意味着注意力权重不具备跨节点可比性。节点 i 给节点 j 的注意力系数 α_ij 与节点 k 给节点 j 的注意力系数 α_kj 不能直接比较——它们在不同的 softmax 分布中。因此，不要简单地将全局注意力权重视为节点重要性的度量。",
         },
@@ -667,10 +672,12 @@ print(f"  参数量: {sum(p.numel() for p in model.parameters()):,}")`
             Pos & Neg --> Loss["对比损失"]
         end
     end
-    
-    style V fill:#1e3a5f
-    style Hv fill:#14532d
-    style Loss fill:#7c2d12`,
+    class Loss s2
+    class Hv s1
+    class V s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7c2d12`,
             tip: "GraphSAGE 的采样大小不需要很大——实验表明 S_1 = 10-25, S_2 = 5-10 就能取得很好的效果。过大的采样会浪费计算资源，且不一定带来性能提升。关键是要让采样策略覆盖足够的结构多样性，而不是简单地追求更多的邻居。",
             warning: "GraphSAGE 的采样策略引入了随机性，这意味着同一个节点在不同训练轮次中可能看到不同的邻居子集。这种随机性有助于正则化，但也可能导致训练不稳定。实践中需要仔细选择采样大小（通常 S_1 = 25, S_2 = 10）和学习率。此外，采样大小过小会丢失重要邻居信息，过大则失去采样带来的效率优势。",
         },
@@ -873,10 +880,12 @@ test_graph_classification()`
             MLP --> Pred["预测 y_G"]
         end
     end
-    
-    style GCN fill:#1e3a5f
-    style HG fill:#7c2d12
-    style Pred fill:#14532d`,
+    class Pred s2
+    class HG s1
+    class GCN s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "图分类任务中，组合多种池化策略往往比单一方法效果更好。例如，同时使用全局平均池化和 SAGPool，然后将两种读出的特征拼接，可以捕获全局统计信息和局部判别信息。另一个实用技巧是：在池化之前先做 2-3 层 GNN 编码，让节点表示包含足够的上下文信息。",
             warning: "图池化中的 top-k 操作（如 SAGPool）是不可导的，这意味着梯度只能流向被选中的节点，未被选中的节点无法获得梯度更新。这可能导致训练不稳定，特别是在池化比例较低时。可以考虑使用 Gumbel-Softmax 等可微近似来缓解这个问题。"
         },
@@ -1066,10 +1075,12 @@ print("  3. 社交网络异常检测 (结构特征 + GNN)")`
         D -.密集连接.-> F["欺诈用户"]
         E -.密集连接.-> F
     end
-    
-    style U1 fill:#1e3a5f
-    style C1 fill:#14532d
-    style D fill:#7f1d1d`,
+    class D s2
+    class C1 s1
+    class U1 s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
             tip: "在实际部署推荐系统时，可以采用离线预计算 + 在线召回的两阶段策略：离线阶段用 GNN 预计算所有商品表示并构建索引，在线阶段只需计算用户表示并进行快速最近邻搜索。这样可以将延迟从秒级降到毫秒级。同时，定期增量更新节点表示而非全量重训练，可以大幅节省计算资源。",
             warning: "不同应用场景中的图可能非常巨大（推荐系统中的用户-商品图可达数十亿节点），直接使用全图 GNN 不可行。必须使用采样策略（如 GraphSAGE 的邻居采样、PinSage 的随机游走）或分布式 GNN 框架（如 DGL 的分布式训练）。此外，推荐系统中的数据泄露问题需要特别注意：不能让用户看到未来才会交互的商品。",
         },
@@ -1269,10 +1280,12 @@ print("  pip install torch-geometric")`
         Backward --> Update["参数更新"]
         Update --> Eval["测试集评估"]
     end
-    
-    style Raw fill:#1e3a5f
-    style Model fill:#7c2d12
-    style Eval fill:#14532d`,
+    class Eval s2
+    class Model s1
+    class Raw s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#7c2d12
+    classDef s2 fill:#14532d`,
             tip: "PyG 的 edge_index 格式是 (2, num_edges)，其中第 0 行是源节点索引，第 1 行是目标节点索引。这与 NetworkX 和 DGL 的习惯不同，初学者容易搞混。建议在使用 PyG 时，始终用 edge_index[0] 表示源节点，edge_index[1] 表示目标节点，不要混淆顺序。另外，对于有向图和无向图，PyG 的处理方式不同——无向图需要确保每条边都有反向边。",
             warning: "PyG 的图分类 DataLoader 会自动将多个图拼接为一个大图（通过 batch 向量区分）。这意味着如果你的图非常大，即使 batch_size=1，拼接后的图也可能超出 GPU 内存。对于大图分类任务，需要使用梯度累积或减小图尺寸。另一个常见陷阱：NodeDataLoader 和 DataLoader 的 batching 行为不同——前者按节点采样，后者按图拼接——混用会导致维度错误。",
         },

@@ -85,14 +85,22 @@ Flow Matching 是 2026 年最热门的技术方向之一。相比扩散模型的
     E --> F[2025 Flux + Flow Matching]
     F --> G[2026 Sora 2 + 视频 Diffusion]
     G --> H[2026 ChatGPT Images 2.0]
-    style A fill:#7f1d1d,color:#f1f5f9
-    style B fill:#ffa94d,color:#1e293b
-    style C fill:#78350f,color:#f1f5f9,color:#1e293b
-    style D fill:#064e3b,color:#f1f5f9
-    style E fill:#1e3a5f
-    style F fill:#4c1d95
-    style G fill:#831843
-    style H fill:#064e3b`,
+    class H s7
+    class G s6
+    class F s5
+    class E s4
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#7f1d1d,color:#f1f5f9
+    classDef s1 fill:#ffa94d,color:#1e293b
+    classDef s2 fill:#78350f,color:#f1f5f9,color:#1e293b
+    classDef s3 fill:#064e3b,color:#f1f5f9
+    classDef s4 fill:#1e3a5f
+    classDef s5 fill:#4c1d95
+    classDef s6 fill:#831843
+    classDef s7 fill:#064e3b`,
     },
     {
       title: "三、主流文生图模型对比（2026 年 4 月）",

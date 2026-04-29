@@ -35,11 +35,13 @@ export const article: Article = {
         B2 --> C2[(数据库)]
         B2 --> D2[外部系统集成]
     end
-    
-    style A2 fill:#78350f,color:#f1f5f9
-    style B2 fill:#064e3b,color:#f1f5f9
-    style B1 fill:#475569
-`,
+
+    class B1 s2
+    class B2 s1
+    class A2 s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+    classDef s1 fill:#064e3b,color:#f1f5f9
+    classDef s2 fill:#475569`,
     },
     {
       title: "为什么 Headless AI 正在爆发？",
@@ -358,10 +360,11 @@ if __name__ == "__main__":
     S3 --> I1
     I1 --> I2
     I1 --> I3
-    
-    style A1 fill:#78350f,color:#f1f5f9
-    style I1 fill:#064e3b,color:#f1f5f9
-`,
+
+    class I1 s1
+    class A1 s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+    classDef s1 fill:#064e3b,color:#f1f5f9`,
     },
     {
       title: "从 GUI-first 到 Headless AI 的迁移路径",
@@ -522,13 +525,17 @@ if __name__ == "__main__":
         R5[🟢 低: 合规] --> R5a[自主决策审计]
         R5 --> R5b[敏感领域限制]
     end
-    
-    style R1 fill:#7f1d1d,color:#f1f5f9
-    style R2 fill:#78350f,color:#f1f5f9
-    style R3 fill:#78350f,color:#f1f5f9,color:#1e293b
-    style R4 fill:#78350f,color:#f1f5f9,color:#1e293b
-    style R5 fill:#064e3b,color:#f1f5f9
-`,
+
+    class R5 s4
+    class R4 s3
+    class R3 s2
+    class R2 s1
+    class R1 s0
+    classDef s0 fill:#7f1d1d,color:#f1f5f9
+    classDef s1 fill:#78350f,color:#f1f5f9
+    classDef s2 fill:#78350f,color:#f1f5f9,color:#1e293b
+    classDef s3 fill:#78350f,color:#f1f5f9,color:#1e293b
+    classDef s4 fill:#064e3b,color:#f1f5f9`,
     },
   ],
 };

@@ -64,10 +64,12 @@ GPT-5.5 在以下方面与 GPT-5.x 有本质差异：
     G --> H["优化: 工具描述"]
     H --> I["A/B 验证每个变更"]
     I --> J["最终 GPT-5.5 Prompt"]
-    
-    style B fill:#1e3a5f,color:#fff
-    style D fill:#1e3a5f,color:#fff
-    style J fill:#1e3a5f,color:#fff`,
+    class J s2
+    class D s1
+    class B s0
+    classDef s0 fill:#1e3a5f,color:#fff
+    classDef s1 fill:#1e3a5f,color:#fff
+    classDef s2 fill:#1e3a5f,color:#fff`,
     code: [
       {
         lang: "python",
@@ -438,9 +440,10 @@ for detail in ["low", "auto", "high", "original"]:
     B --> C["更好的理解"]
     B --> D["更少的冲突"]
     B --> E["更低的 token 成本"]
-    
-    style A fill:#1e3a5f,color:#fff
-    style B fill:#1e3a5f,color:#fff`,
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f,color:#fff
+    classDef s1 fill:#1e3a5f,color:#fff`,
     code: [
       {
         lang: "python",
@@ -643,10 +646,12 @@ else:
         F --> H["带推理的回答 ~200-1000 tokens"]
         E --> I["深度推理回答 ~1000-5000 tokens"]
     end
-    
-    style D fill:#1e3a5f,color:#fff
-    style F fill:#ffd43b,color:#000
-    style E fill:#1e3a5f,color:#fff`,
+    class E s2
+    class F s1
+    class D s0
+    classDef s0 fill:#1e3a5f,color:#fff
+    classDef s1 fill:#ffd43b,color:#000
+    classDef s2 fill:#1e3a5f,color:#fff`,
     code: [
       {
         lang: "python",
@@ -859,8 +864,8 @@ OpenAI 的 GPT-5.5 Prompting Guide 是一个非常有价值的资源。建议所
     D1 --> G
     E1 --> G
     F1 --> G
-    
-    style G fill:#1e3a5f,color:#fff`,
+    class G s0
+    classDef s0 fill:#1e3a5f,color:#fff`,
   },
 ],
 };

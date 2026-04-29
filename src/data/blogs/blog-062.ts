@@ -42,8 +42,10 @@ Karpathy 的原话振聋发聩：
     G --> J
     H --> J
     I --> J
-    style A fill:#ff6b6b,color:#fff
-    style J fill:#51cf66,color:#fff`,
+    class J s1
+    class A s0
+    classDef s0 fill:#991b1b,color:#fff
+    classDef s1 fill:#14532d,color:#fff`,
     },
     {
       title: "2. 原则一：思考先行（Think Before Coding）",
@@ -334,8 +336,10 @@ if __name__ == "__main__":
         I --> J[50-100 行]
         J --> K[清晰可维护]
     end
-    style F fill:#ff6b6b,color:#fff
-    style K fill:#51cf66,color:#fff`,
+    class K s1
+    class F s0
+    classDef s0 fill:#991b1b,color:#fff
+    classDef s1 fill:#14532d,color:#fff`,
     },
     {
       title: "4. 原则三：精准修改（Surgical Changes）",

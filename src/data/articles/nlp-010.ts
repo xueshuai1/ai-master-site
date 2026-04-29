@@ -249,10 +249,12 @@ print("  -> Multi-ref BLEU is fairer than single-ref")`,
     F --> I["BLEU = BP x GeomMean"]
     H --> I
     I --> J["Score 0-100"]
-
-    style A fill:#1e3a5f
-    style C fill:#14532d
-    style J fill:#7f1d1d`,
+    class J s2
+    class C s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
         tip: "BLEU 的几何平均设计很巧妙——任何一个 n-gram 阶数为 0，整个 BLEU 就为 0。这迫使模型必须在各个粒度上都有一定表现。",
         warning: "BLEU 对词序变化极其敏感。'the cat on mat sat the' 和 'the cat sat on the mat' 的 4-gram 匹配几乎为零，尽管词完全一样。",
       },
@@ -373,10 +375,12 @@ print("Even with insertions, ROUGE-L still finds core content coverage")`,
     F --> H["F1 = 2PR/(P+R)"]
     G --> H
     H --> I["ROUGE Score"]
-
-    style A fill:#1e3a5f
-    style C fill:#14532d
-    style I fill:#7f1d1d`,
+    class I s2
+    class C s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#14532d
+    classDef s2 fill:#7f1d1d`,
         tip: "实际使用中，ROUGE-1、ROUGE-2 和 ROUGE-L 三个指标通常一起报告。ROUGE-1 反映词覆盖率，ROUGE-2 反映短语覆盖率，ROUGE-L 反映整体结构覆盖——三者互补。",
         warning: "ROUGE 和 BLEU 有相同的根本局限：基于表面匹配，不真正理解语义。如果生成摘要用同义词替换了参考摘要中的词，ROUGE 会判为不匹配，尽管语义完全正确。",
       },
@@ -545,9 +549,10 @@ for ref, hyp, desc in test_cases:
     H --> I["F-mean (alpha=9)"]
     I --> J["Chunk Penalty"]
     J --> K["METEOR Score"]
-
-    style B fill:#713f12
-    style K fill:#7f1d1d`,
+    class K s1
+    class B s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#7f1d1d`,
         tip: "如果你的任务涉及丰富的同义词替换（如文学翻译、创意写作），METEOR 比 BLEU 更能反映真实质量。",
         warning: "METEOR 依赖外部语言资源（WordNet、词干提取器），这对低资源语言可能不可用。此时 BLEU 反而是更实际的选择。",
       },
@@ -664,8 +669,8 @@ print("5. Sensitive to vocabulary size")`,
     G -->|"20-50"| I["Good"]
     G -->|"50-100"| J["Fair"]
     G -->|"> 100"| K["Poor"]
-
-    style F fill:#7f1d1d`,
+    class F s0
+    classDef s0 fill:#7f1d1d`,
         tip: "训练语言模型时，Perplexity 是最重要的监控指标。验证集 PP 持续下降但测试集 PP 上升说明过拟合——需要早停或增加正则化。",
         warning: "低 Perplexity 的模型可能生成重复或无聊的文本（因为过度偏好高频词）。PP 只是概率预测的度量，不直接衡量生成质量。",
       },
@@ -808,10 +813,12 @@ print("  - Expensive (~50ms/sentence on GPU)")`,
     H --> J["F1 = 2PR/(P+R)"]
     I --> J
     J --> K["BERTScore"]
-
-    style B fill:#581c87
-    style D fill:#581c87
-    style K fill:#7f1d1d`,
+    class K s2
+    class D s1
+    class B s0
+    classDef s0 fill:#581c87
+    classDef s1 fill:#581c87
+    classDef s2 fill:#7f1d1d`,
         tip: "如果项目有 GPU 资源且对评估质量要求高，BERTScore 是当前最佳选择。没有 GPU 可用 distilbert-base 来平衡速度和准确性。",
         warning: "BERTScore 不是万能的。生成文本中添加了无关但语义合理的句子，BERTScore 可能反而上升。需要结合 BLEU 等基于匹配的指标综合判断。",
       },
@@ -931,9 +938,10 @@ print("    print(f'{model_name}: BLEU={score[\"bleu\"]:.2f}')")`,
     H --> K
     I --> K
     J --> K
-
-    style B fill:#713f12
-    style K fill:#581c87`,
+    class K s1
+    class B s0
+    classDef s0 fill:#713f12
+    classDef s1 fill:#581c87`,
         tip: "论文中报告 BLEU 分数时，一定要用 sacrebleu 并附上签名输出。这确保了其他研究者可以用你的配置复现结果——这是学术诚信的基本要求。",
         warning: "不要在论文中报告自己手写的 BLEU 实现结果。不同实现之间的差异可能导致 1-3 分的 BLEU 差距，足以改变结论。始终使用 sacrebleu。",
       },

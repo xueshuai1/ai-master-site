@@ -32,7 +32,11 @@ export const article: Article = {
           ["太阳从东边升起", "≈1", "≈0"]
         ]
       },
-      mermaid: `graph LR\n    A["不确定事件"] --> B["概率分布"]\n    B --> C["自信息 I(x) = -log P(x)"]\n    C --> D["单位: bit / nat"]\n    C --> E["独立事件可加"]`,
+      mermaid: `graph LR
+    A["不确定事件"] --> B["概率分布"]
+    B --> C["自信息 I(x) = -log P(x)"]
+    C --> D["单位: bit / nat"]
+    C --> E["独立事件可加"]`,
       tip: "理解自信息是理解信息论所有后续概念的基石。",
       warning: "概率为 0 的事件信息量无穷大，计算时需做数值截断。"
     },
@@ -57,7 +61,12 @@ export const article: Article = {
           ["泊松分布", "λ", "≈ 0.5 log(2πeλ)", "随 λ 增长"]
         ]
       },
-      mermaid: `graph TD\n    A["随机变量 X"] --> B["概率分布 P(x)"]\n    B --> C["自信息 -log P(x)"]\n    C --> D["期望: H(X) = E[-log P(x)]"]\n    D --> E["熵值越大, 不确定性越高"]\n    E --> F["均匀分布时熵最大"]`,
+      mermaid: `graph TD
+    A["随机变量 X"] --> B["概率分布 P(x)"]
+    B --> C["自信息 -log P(x)"]
+    C --> D["期望: H(X) = E[-log P(x)]"]
+    D --> E["熵值越大, 不确定性越高"]
+    E --> F["均匀分布时熵最大"]`,
       tip: "记住: 熵不是关于某个具体值的不确定性，而是整个分布的平均不确定性。",
       warning: "实际计算中 log(0) 会返回 -inf，务必先过滤零概率项。"
     },
@@ -82,7 +91,12 @@ export const article: Article = {
           ["错误预测", "[0.7,0.2,0.1]", "[0.2,0.3,0.50]", "1.446"]
         ]
       },
-      mermaid: `graph LR\n    A["真实分布 P"] --> C["交叉熵 H(P,Q)"]\n    B["预测分布 Q"] --> C\n    C --> D["H(P,Q) = H(P) + D_KL(P||Q)"]\n    D --> E["Q越接近P, 代价越小"]\n    D --> F["Q=P时, H(P,Q)=H(P)"]`,
+      mermaid: `graph LR
+    A["真实分布 P"] --> C["交叉熵 H(P,Q)"]
+    B["预测分布 Q"] --> C
+    C --> D["H(P,Q) = H(P) + D_KL(P||Q)"]
+    D --> E["Q越接近P, 代价越小"]
+    D --> F["Q=P时, H(P,Q)=H(P)"]`,
       tip: "训练神经网络时，最小化交叉熵等价于最大化数据的对数似然。",
       warning: "交叉熵不对称: H(P,Q) ≠ H(Q,P)，注意参数的顺序。"
     },
@@ -108,7 +122,12 @@ export const article: Article = {
           ["为零条件", "P=Q", "P=Q", "P=Q"]
         ]
       },
-      mermaid: `graph TD\n    A["KL 散度 D_KL(P||Q)"] --> B["非负: D_KL ≥ 0"]\n    A --> C["非对称: D_KL(P||Q) ≠ D_KL(Q||P)"]\n    A --> D["D_KL = H(P,Q) - H(P)"]\n    A --> E["Q 近似 P 的信息损失"]\n    C --> F["JS 散度: 对称化版本"]`,
+      mermaid: `graph TD
+    A["KL 散度 D_KL(P||Q)"] --> B["非负: D_KL ≥ 0"]
+    A --> C["非对称: D_KL(P||Q) ≠ D_KL(Q||P)"]
+    A --> D["D_KL = H(P,Q) - H(P)"]
+    A --> E["Q 近似 P 的信息损失"]
+    C --> F["JS 散度: 对称化版本"]`,
       tip: "PPO 算法中用 KL 散度约束新旧策略的差异，防止策略更新过大导致崩溃。",
       warning: "当 Q(x)=0 而 P(x)>0 时，KL 散度为无穷大，训练中需确保 Q 的支撑集覆盖 P。"
     },
@@ -134,7 +153,12 @@ export const article: Article = {
           ["链式法则", "I(X;Y,Z) = I(X;Z) + I(X;Y|Z)", "多变量互信息分解"]
         ]
       },
-      mermaid: `graph LR\n    A["联合分布 P(X,Y)"] --> B["互信息 I(X;Y)"]\n    C["独立假设 P(X)P(Y)"] --> B\n    B --> D["I = H(X) - H(X|Y)"]\n    B --> E["I = H(X) + H(Y) - H(X,Y)"]\n    B --> F["I = D_KL(P(X,Y)||P(X)P(Y))"]`,
+      mermaid: `graph LR
+    A["联合分布 P(X,Y)"] --> B["互信息 I(X;Y)"]
+    C["独立假设 P(X)P(Y)"] --> B
+    B --> D["I = H(X) - H(X|Y)"]
+    B --> E["I = H(X) + H(Y) - H(X,Y)"]
+    B --> F["I = D_KL(P(X,Y)||P(X)P(Y))"]`,
       tip: "互信息能捕捉任意形式的统计依赖，而不仅仅是线性关系，这在特征选择中非常有用。",
       warning: "互信息的估计在高维空间中非常困难，样本量不足时容易高估。"
     },
@@ -160,7 +184,13 @@ export const article: Article = {
           ["标签平滑交叉熵", "防止过拟合", "软化硬标签"]
         ]
       },
-      mermaid: `graph TD\n    A["Logits"] --> B["Softmax"]\n    B --> C["预测概率 P"]\n    D["真实标签 Y"] --> E["交叉熵损失"]\n    C --> E\n    E --> F["梯度: P - Y"]\n    F --> G["反向传播更新权重"]`,
+      mermaid: `graph TD
+    A["Logits"] --> B["Softmax"]
+    B --> C["预测概率 P"]
+    D["真实标签 Y"] --> E["交叉熵损失"]
+    C --> E
+    E --> F["梯度: P - Y"]
+    F --> G["反向传播更新权重"]`,
       tip: "Softmax + 交叉熵的组合梯度极其简洁，这就是为什么它成为分类任务的标准配置。",
       warning: "极端类别不平衡时，标准交叉熵会被多数类主导，需要使用 Focal Loss 或加权交叉熵。"
     },
@@ -185,7 +215,13 @@ export const article: Article = {
           ["基尼不纯度", "1 - Σ p^2", "计算快", "对极端概率不敏感"]
         ]
       },
-      mermaid: `graph TD\n    A["数据集 D"] --> B["计算总熵 H(D)"]\n    B --> C["对每个特征 A"]\n    C --> D["计算条件熵 H(D|A)"]\n    D --> E["信息增益 IG = H(D) - H(D|A)"]\n    E --> F["选择 IG 最大的特征分裂"]\n    F --> G["递归构建子树"]`,
+      mermaid: `graph TD
+    A["数据集 D"] --> B["计算总熵 H(D)"]
+    B --> C["对每个特征 A"]
+    C --> D["计算条件熵 H(D|A)"]
+    D --> E["信息增益 IG = H(D) - H(D|A)"]
+    E --> F["选择 IG 最大的特征分裂"]
+    F --> G["递归构建子树"]`,
       tip: "实际应用中 C4.5 和 CART 的增益比和基尼指数比单纯信息增益更稳健。",
       warning: "信息增益对唯一值特征（如 ID）会给出最大值，但这会导致严重的过拟合。"
     }

@@ -32,7 +32,13 @@ export const article: Article = {
                     ["混合模式", "可变", "低", "高", "部分", "智能音箱"]
                 ]
             },
-            mermaid: `graph TD\n    A[传感器/摄像头] --> B[边缘设备]\n    B -->|本地推理| C[实时响应]\n    B -->|仅结果上报| D[云端]\n    D -->|模型更新| B\n    C --> E[用户反馈]\n    B -.->|无网络| C`,
+            mermaid: `graph TD
+    A[传感器/摄像头] --> B[边缘设备]
+    B -->|本地推理| C[实时响应]
+    B -->|仅结果上报| D[云端]
+    D -->|模型更新| B
+    C --> E[用户反馈]
+    B -.->|无网络| C`,
             tip: "优先在模型设计阶段就考虑边缘约束，选择 MobileNetV3、EfficientNet-Lite 等专为移动端优化的架构，比后期压缩大模型效果好得多。",
             warning: "不要忽略功耗约束。边缘设备通常由电池供电，高功耗推理会导致设备快速发热和续航骤降，直接影响用户体验。"
         },
@@ -59,7 +65,15 @@ export const article: Article = {
                     ["混合精度", "微调", "接近无损", "大模型部署", "TensorRT/ONNX"]
                 ]
             },
-            mermaid: `graph LR\n    A[FP32 训练模型] --> B{量化策略}\n    B -->|简单快速| C[动态量化]\n    B -->|推荐方案| D[PTQ 静态量化]\n    B -->|最高精度| E[QAT 量化感知]\n    C --> F[FP16/INT8]\n    D --> F\n    E --> F\n    F --> G[INT8 边缘模型]`,
+            mermaid: `graph LR
+    A[FP32 训练模型] --> B{量化策略}
+    B -->|简单快速| C[动态量化]
+    B -->|推荐方案| D[PTQ 静态量化]
+    B -->|最高精度| E[QAT 量化感知]
+    C --> F[FP16/INT8]
+    D --> F
+    E --> F
+    F --> G[INT8 边缘模型]`,
             tip: "PTQ 量化前务必先融合 Conv+BN+ReLU 模块，否则量化效果大打折扣。使用 torch.ao.quantization.fuse_modules 一行即可完成。",
             warning: "量化后一定要在验证集上评估精度损失。如果精度下降超过 2%，建议改用 QAT 或尝试混合精度量化策略。"
         },
@@ -87,7 +101,14 @@ export const article: Article = {
                     ["WebNNExecutionProvider", "浏览器硬件加速", "中", "Web 浏览器"]
                 ]
             },
-            mermaid: `graph LR\n    A[PyTorch] -->|torch.onnx| B[ONNX 模型]\n    C[TensorFlow] -->|tf2onnx| B\n    D[PaddlePaddle] -->|paddle2onnx| B\n    B -->|onnx-coreml| E[CoreML]\n    B -->|tflite_convert| F[TFLite]\n    B -->|trtexec| G[TensorRT]\n    B -->|ORT| H[ONNX Runtime]`,
+            mermaid: `graph LR
+    A[PyTorch] -->|torch.onnx| B[ONNX 模型]
+    C[TensorFlow] -->|tf2onnx| B
+    D[PaddlePaddle] -->|paddle2onnx| B
+    B -->|onnx-coreml| E[CoreML]
+    B -->|tflite_convert| F[TFLite]
+    B -->|trtexec| G[TensorRT]
+    B -->|ORT| H[ONNX Runtime]`,
             tip: "导出 ONNX 时尽量使用最新的 opset 版本（当前推荐 17+），新版本支持更多算子和更好的优化策略。",
             warning: "ONNX 不支持所有 PyTorch 算子，特别是自定义算子和部分动态操作。导出失败时，用 torch.onnx.export 的 custom_opsets 参数注册自定义算子。"
         },
@@ -116,7 +137,16 @@ export const article: Article = {
                     ["开发语言", "Swift / Objective-C", "Kotlin / Java / C++"]
                 ]
             },
-            mermaid: `graph TD\n    A[ONNX 模型] --> B{目标平台}\n    B -->|iOS/macOS| C[coremltools]\n    B -->|Android| D[TFLite Converter]\n    C --> E[.mlpackage]\n    D --> F[.tflite]\n    E --> G[Swift App]\n    F --> H[Kotlin App]\n    G --> I[Neural Engine]\n    H --> J[NNAPI / NPU]`,
+            mermaid: `graph TD
+    A[ONNX 模型] --> B{目标平台}
+    B -->|iOS/macOS| C[coremltools]
+    B -->|Android| D[TFLite Converter]
+    C --> E[.mlpackage]
+    D --> F[.tflite]
+    E --> G[Swift App]
+    F --> H[Kotlin App]
+    G --> I[Neural Engine]
+    H --> J[NNAPI / NPU]`,
             tip: "CoreML 的 ML Program 格式（iOS 15+）比旧的 NeuralNetwork 格式性能更好且支持更多算子。转换时始终指定 convert_to=mlprogram。",
             warning: "TFLite 对动态形状支持有限。如果模型有变长序列输入，需要使用 TFLite 的 SignatureDef 或固定输入形状。"
         },
@@ -142,7 +172,13 @@ export const article: Article = {
                     ["FP8", "8-bit float", "3-5x", "1/4", "Hopper/Ada (>= 8.9)"]
                 ]
             },
-            mermaid: `graph LR\n    A[ONNX 模型] -->|trtexec / Python API| B[TensorRT Builder]\n    B -->|层融合| C[优化计算图]\n    C -->|内核调优| D[选择最优 CUDA 内核]\n    D -->|精度校准| E[FP16 / INT8 Engine]\n    E -->|序列化| F[.engine 文件]\n    F -->|加载运行| G[推理执行]`,
+            mermaid: `graph LR
+    A[ONNX 模型] -->|trtexec / Python API| B[TensorRT Builder]
+    B -->|层融合| C[优化计算图]
+    C -->|内核调优| D[选择最优 CUDA 内核]
+    D -->|精度校准| E[FP16 / INT8 Engine]
+    E -->|序列化| F[.engine 文件]
+    F -->|加载运行| G[推理执行]`,
             tip: "使用 trtexec 命令行工具可以快速测试 TensorRT 优化效果：trtexec --onnx=model.onnx --fp16 --saveEngine=model.engine，无需写代码。",
             warning: "TensorRT Engine 文件和 GPU 架构强绑定。在 Jetson Orin 上构建的 engine 不能在 Jetson Nano 上运行，需要分别为每个目标设备构建。"
         },
@@ -169,7 +205,13 @@ export const article: Article = {
                     ["组合策略", "8-20x", "中 (3-8%)", "高", "4-8x 加速"]
                 ]
             },
-            mermaid: `graph TD\n    A[大模型 Teacher] -->|蒸馏| B[小模型 Student]\n    A -->|剪枝| C[稀疏 Teacher]\n    C -->|蒸馏| B\n    B -->|量化| D[压缩模型]\n    D -->|INT8| E[边缘部署]\n    A -.->|直接量化| E`,
+            mermaid: `graph TD
+    A[大模型 Teacher] -->|蒸馏| B[小模型 Student]
+    A -->|剪枝| C[稀疏 Teacher]
+    C -->|蒸馏| B
+    B -->|量化| D[压缩模型]
+    D -->|INT8| E[边缘部署]
+    A -.->|直接量化| E`,
             tip: "知识蒸馏的温度参数 T 很关键：T 越大教师输出越平滑，蒸馏效果通常越好。推荐从 T=4 开始，在 2-8 范围内搜索最佳值。",
             warning: "结构化剪枝的通道选择策略很重要。不要随机剪枝，务必基于 L1/L2 范数选择最不重要的通道，否则精度会严重下降。"
         },
@@ -196,7 +238,16 @@ export const article: Article = {
                     ["iOS 集成", "CoreML 文件", "Swift App", "Xcode + Vision", "端到端测试"]
                 ]
             },
-            mermaid: `graph TD\n    A[PyTorch 训练] -->|jit.trace| B[TorchScript]\n    B -->|torch.onnx.export| C[ONNX 模型]\n    C -->|onnx-simplifier| D[简化 ONNX]\n    D -->|coremltools| E[CoreML ML Program]\n    E -->|FP16 量化| F[优化 CoreML]\n    F -->|Xcode 导入| G[iOS App]\n    G -->|Vision 框架| H[实时分类]\n    C -.->|"精度验证"| I[对比测试]\n    I -.->|"通过"| E`,
+            mermaid: `graph TD
+    A[PyTorch 训练] -->|jit.trace| B[TorchScript]
+    B -->|torch.onnx.export| C[ONNX 模型]
+    C -->|onnx-simplifier| D[简化 ONNX]
+    D -->|coremltools| E[CoreML ML Program]
+    E -->|FP16 量化| F[优化 CoreML]
+    F -->|Xcode 导入| G[iOS App]
+    G -->|Vision 框架| H[实时分类]
+    C -.->|"精度验证"| I[对比测试]
+    I -.->|"通过"| E`,
             tip: "在 ONNX 到 CoreML 转换时，如果模型包含不支持的算子，可以用 coremltools 的 RegisterCustomOP 注册自定义算子，或者在 PyTorch 端用支持的算子替换。",
             warning: "iOS 应用打包时，CoreML 模型文件会被压缩进 App Bundle。如果模型超过 100 MB，建议使用按需资源（On-Demand Resources）在运行时从 App Store 下载模型。"
         },

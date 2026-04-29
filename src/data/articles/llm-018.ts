@@ -49,20 +49,33 @@ Claude 系列一直使用 BPE 算法。Opus 4.7 的新 Tokenizer 在以下几个
 
 新 Tokenizer 会根据上下文调整切分边界。同一个词在不同语境下可能被切分为不同数量的 Token，以最大化语义保真度。`,
       mermaid: `graph LR
-    A["原始文本\nArtificial Intelligence is transforming software"] --> B["Opus 4.6 Tokenizer\n(旧版)"]
-    A --> C["Opus 4.7 Tokenizer\n(新版)"]
+    A["原始文本
+Artificial Intelligence is transforming software"] --> B["Opus 4.6 Tokenizer
+(旧版)"]
+    A --> C["Opus 4.7 Tokenizer
+(新版)"]
     
-    B --> D["Token 序列\n[Artificial][ Intelligence][ is][ transforming][ software]\n5 tokens"]
-    C --> E["Token 序列\n[Art][ific][ial][ Intel][lig][ence][ is][ trans][form][ing][ soft][ware]\n12 tokens"]
+    B --> D["Token 序列
+[Artificial][ Intelligence][ is][ transforming][ software]
+5 tokens"]
+    C --> E["Token 序列
+[Art][ific][ial][ Intel][lig][ence][ is][ trans][form][ing][ soft][ware]
+12 tokens"]
     
-    D --> F["模型理解\n粗粒度语义单元"]
-    E --> G["模型理解\n细粒度语义单元\n更好的组合灵活性"]
+    D --> F["模型理解
+粗粒度语义单元"]
+    E --> G["模型理解
+细粒度语义单元
+更好的组合灵活性"]
     
-    F -.->|理解较粗糙| H["推理准确度\nBaseline"]
-    G -.->|理解更精细| I["推理准确度\n+15-20％"]
-    
-    style E fill:#78350f,color:#f1f5f9
-    style I fill:#064e3b,color:#f1f5f9`
+    F -.->|理解较粗糙| H["推理准确度
+Baseline"]
+    G -.->|理解更精细| I["推理准确度
++15-20％"]
+    class I s1
+    class E s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+    classDef s1 fill:#064e3b,color:#f1f5f9`
     },
     {
       title: "3. 实际成本影响：数学分析与对比",
@@ -99,24 +112,37 @@ Anthropic 给出的范围是 1.0-1.35 倍，但实际测试显示：
 | 高分辨率图片 | 3.01x | 大图片因分辨率提升导致 Token 大幅增加 |
 
 关键发现：**系统提示词的膨胀最严重**。如果你的应用使用长系统提示词（如详细的角色设定、任务规范），升级后成本会显著上升。建议优化系统提示词，移除冗余内容。`,
-      mermaid: `graph TD TB
-    A["应用架构成本分析"] --> B["系统提示词\n1.46x 膨胀"]
-    A --> C["用户输入\n1.0-1.2x 膨胀"]
-    A --> D["输出 Token\n0x 膨胀"]
-    A --> E["图像输入\n1.0-3.01x 膨胀"]
+      mermaid: `graph TD
+    A["应用架构成本分析"] --> B["系统提示词
+1.46x 膨胀"]
+    A --> C["用户输入
+1.0-1.2x 膨胀"]
+    A --> D["输出 Token
+0x 膨胀"]
+    A --> E["图像输入
+1.0-3.01x 膨胀"]
     
-    B --> B1["💰 成本影响最大\n因为每次调用都重复"]
-    C --> C1["💰 成本影响中等\n取决于用户输入长度"]
-    D --> D1["💰 无直接影响\n输出 Token 数不变"]
-    E --> E1["💰 取决于图片大小\n小图不变，大图 3x"]
+    B --> B1["💰 成本影响最大
+因为每次调用都重复"]
+    C --> C1["💰 成本影响中等
+取决于用户输入长度"]
+    D --> D1["💰 无直接影响
+输出 Token 数不变"]
+    E --> E1["💰 取决于图片大小
+小图不变，大图 3x"]
     
-    B1 --> F["优化建议:\n精简系统提示词"]
-    C1 --> G["优化建议:\n引导用户简洁输入"]
-    E1 --> H["优化建议:\n预处理压缩图片"]
-    
-    style B fill:#7f1d1d,color:#f1f5f9
-    style B1 fill:#7f1d1d
-    style F fill:#064e3b,color:#f1f5f9`
+    B1 --> F["优化建议:
+精简系统提示词"]
+    C1 --> G["优化建议:
+引导用户简洁输入"]
+    E1 --> H["优化建议:
+预处理压缩图片"]
+    class F s2
+    class B1 s1
+    class B s0
+    classDef s0 fill:#7f1d1d,color:#f1f5f9
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#064e3b,color:#f1f5f9`
     },
     {
       title: "4. 图像处理能力飞跃：从 682px 到 2576px",

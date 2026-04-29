@@ -34,7 +34,15 @@ export const article: Article = {
                     ["模型部署", "Eval Metrics", "Serving Endpoint", "BentoML, Seldon"]
                 ]
             },
-            mermaid: `graph LR\n    A[数据源] --> B[数据收集]\n    B --> C[数据验证]\n    C --> D[特征工程]\n    D --> E[模型训练]\n    E --> F[模型评估]\n    F --> G{是否达标?}\n    G -->|"Yes"| H[模型部署]\n    G -->|"No"| D`,
+            mermaid: `graph LR
+    A[数据源] --> B[数据收集]
+    B --> C[数据验证]
+    C --> D[特征工程]
+    D --> E[模型训练]
+    E --> F[模型评估]
+    F --> G{是否达标?}
+    G -->|"Yes"| H[模型部署]
+    G -->|"No"| D`,
             tip: "设计流水线时，先定义清晰的输入输出契约，再实现具体逻辑。这样每个步骤都可以独立测试和替换。",
             warning: "不要在流水线步骤中硬编码路径或配置参数，应使用环境变量或配置文件统一管理。"
         },
@@ -62,7 +70,16 @@ export const article: Article = {
                     ["标签泄漏", "特征相关性分析", "移除泄漏特征", "极高"]
                 ]
             },
-            mermaid: `graph TD\n    A[原始数据源] --> B[数据抽取]\n    B --> C[Schema 验证]\n    C --> D{验证通过?}\n    D -->|"No"| E[告警 + 隔离]\n    D -->|"Yes"| F[质量检查]\n    F --> G{质量达标?}\n    G -->|"No"| E\n    G -->|"Yes"| H[漂移检测]\n    H --> I[存储到数据仓库]`,
+            mermaid: `graph TD
+    A[原始数据源] --> B[数据抽取]
+    B --> C[Schema 验证]
+    C --> D{验证通过?}
+    D -->|"No"| E[告警 + 隔离]
+    D -->|"Yes"| F[质量检查]
+    F --> G{质量达标?}
+    G -->|"No"| E
+    G -->|"Yes"| H[漂移检测]
+    H --> I[存储到数据仓库]`,
             tip: "为每个数据源设置数据契约文档，明确字段含义、类型约束和更新频率，这比事后排查数据问题高效得多。",
             warning: "数据验证失败时不要静默跳过，必须阻断流水线并触发告警，否则劣质数据会污染整个训练过程。"
         },
@@ -90,7 +107,15 @@ export const article: Article = {
                     ["降维特征", "PCA/UMAP", "高维数据", "可解释性降低"]
                 ]
             },
-            mermaid: `graph LR\n    A[原始数据] --> B[特征提取]\n    B --> C[特征变换]\n    C --> D[特征选择]\n    D --> E[特征存储]\n    E --> F[在线存储 Redis]\n    E --> G[离线存储 Parquet]\n    F --> H[实时推理]\n    G --> I[离线训练]`,
+            mermaid: `graph LR
+    A[原始数据] --> B[特征提取]
+    B --> C[特征变换]
+    C --> D[特征选择]
+    D --> E[特征存储]
+    E --> F[在线存储 Redis]
+    E --> G[离线存储 Parquet]
+    F --> H[实时推理]
+    G --> I[离线训练]`,
             tip: "使用 Feast 等特征存储可以确保训练和推理使用完全一致的特征计算逻辑，这是防止训练推理偏差的关键手段。",
             warning: "特征工程中严禁使用未来信息，特别是在时间序列场景中，必须确保每个时间点的特征只依赖历史数据。"
         },
@@ -118,7 +143,16 @@ export const article: Article = {
                     ["嵌套交叉验证", "内外双层", "模型选择+评估", "极高"]
                 ]
             },
-            mermaid: `graph TD\n    A[训练数据] --> B[数据划分]\n    B --> C[K 折交叉验证]\n    C --> D[超参数搜索]\n    D --> E[Optuna 调优]\n    E --> F{找到最优?}\n    F -->|"No"| D\n    F -->|"Yes"| G[最终训练]\n    G --> H[MLflow 记录]\n    H --> I[模型注册]`,
+            mermaid: `graph TD
+    A[训练数据] --> B[数据划分]
+    B --> C[K 折交叉验证]
+    C --> D[超参数搜索]
+    D --> E[Optuna 调优]
+    E --> F{找到最优?}
+    F -->|"No"| D
+    F -->|"Yes"| G[最终训练]
+    G --> H[MLflow 记录]
+    H --> I[模型注册]`,
             tip: "使用 Optuna 的 prune 功能可以在训练早期终止表现不佳的 trial，大幅节省计算资源。",
             warning: "超参数搜索时必须在验证集上评估，绝不能使用测试集，否则会导致模型对测试集过拟合。"
         },
@@ -146,7 +180,16 @@ export const article: Article = {
                     ["RMSE", "sqrt(MSE)", "回归任务", "对异常值敏感"]
                 ]
             },
-            mermaid: `graph LR\n    A[候选模型集] --> B[离线评估]\n    B --> C[多指标对比]\n    C --> D{指标达标?}\n    D -->|"No"| E[重新训练]\n    D -->|"Yes"| F[模型注册]\n    F --> G[A/B 测试]\n    G --> H{业务指标提升?}\n    H -->|"Yes"| I[全量发布]\n    H -->|"No"| J[回滚]`,
+            mermaid: `graph LR
+    A[候选模型集] --> B[离线评估]
+    B --> C[多指标对比]
+    C --> D{指标达标?}
+    D -->|"No"| E[重新训练]
+    D -->|"Yes"| F[模型注册]
+    F --> G[A/B 测试]
+    G --> H{业务指标提升?}
+    H -->|"Yes"| I[全量发布]
+    H -->|"No"| J[回滚]`,
             tip: "在类别不均衡场景中，优先关注精确率和召回率的平衡，而不是单纯追求准确率。",
             warning: "模型评估必须使用完全独立于训练和调优过程的测试集，否则会给出过于乐观的评估结果。"
         },
@@ -174,7 +217,19 @@ export const article: Article = {
                     ["金丝雀发布", "小流量验证", "生产发布", "自动回滚"]
                 ]
             },
-            mermaid: `graph TD\n    A[代码提交] --> B[代码测试]\n    B --> C{通过?}\n    C -->|"No"| D[修复代码]\n    C -->|"Yes"| E[数据验证]\n    E --> F{通过?}\n    F -->|"No"| G[检查数据]\n    F -->|"Yes"| H[模型训练]\n    H --> I[模型评估]\n    I --> J{优于基线?}\n    J -->|"No"| K[分析原因]\n    J -->|"Yes"| L[自动部署]\n    L --> M[监控告警]`,
+            mermaid: `graph TD
+    A[代码提交] --> B[代码测试]
+    B --> C{通过?}
+    C -->|"No"| D[修复代码]
+    C -->|"Yes"| E[数据验证]
+    E --> F{通过?}
+    F -->|"No"| G[检查数据]
+    F -->|"Yes"| H[模型训练]
+    H --> I[模型评估]
+    I --> J{优于基线?}
+    J -->|"No"| K[分析原因]
+    J -->|"Yes"| L[自动部署]
+    L --> M[监控告警]`,
             tip: "将模型性能回归测试集成到 CI 中，可以自动拦截性能下降的模型变更，防止劣质模型进入生产环境。",
             warning: "ML 流水线的 CI/CD 比传统软件更复杂，因为除了代码和数据两个维度，模型本身也是一个独立的变更源。"
         },
@@ -202,7 +257,17 @@ export const article: Article = {
                     ["可视化", "优秀", "优秀", "一般"]
                 ]
             },
-            mermaid: `graph TD\n    A[数据到达] --> B[Airflow DAG 触发]\n    B --> C[数据抽取]\n    C --> D[数据验证]\n    D --> E[Kubeflow Pipeline]\n    E --> F[特征工程]\n    F --> G[分布式训练]\n    G --> H[模型评估]\n    H --> I{通过?}\n    I -->|"Yes"| J[部署到生产]\n    I -->|"No"| K[通知团队]`,
+            mermaid: `graph TD
+    A[数据到达] --> B[Airflow DAG 触发]
+    B --> C[数据抽取]
+    C --> D[数据验证]
+    D --> E[Kubeflow Pipeline]
+    E --> F[特征工程]
+    F --> G[分布式训练]
+    G --> H[模型评估]
+    H --> I{通过?}
+    I -->|"Yes"| J[部署到生产]
+    I -->|"No"| K[通知团队]`,
             tip: "小规模团队可以先从 Airflow 开始，它上手更简单且生态成熟；当需要大规模分布式训练时再考虑 Kubeflow。",
             warning: "Kubeflow 需要完善的 Kubernetes 运维能力支撑，如果没有 K8s 经验，建议从托管服务开始而非自建。"
         },

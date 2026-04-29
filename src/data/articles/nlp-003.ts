@@ -327,7 +327,7 @@ class BiLSTMAttention(nn.Module):
                     ["TextRCNN", "中（100-500万）", "中慢", "中长文本", "上下文 + 局部特征融合"],
                 ]
             },
-            mermaid: `graph TD TB
+            mermaid: `graph TD
     A["输入文本"] --> B["Embedding 层"]
     B --> C1["Conv1D (k=3)"]
     B --> C2["Conv1D (k=4)"]

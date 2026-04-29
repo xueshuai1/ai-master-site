@@ -45,25 +45,35 @@ export const article: Article = {
       body: `ai-hedge-fund 的核心设计哲学是**角色分离 + 结构化协作**。它模仿了真实对冲基金的组织结构，将投资决策流程拆解为多个专业角色，每个角色由一个独立的 AI Agent 承担。\n\n**典型对冲基金的团队结构：**\n\n1. **基本面分析师（Fundamental Analyst）**：研究公司财务报表、行业趋势、竞争优势，给出长期估值判断。\n2. **技术分析师（Technical Analyst）**：分析价格走势、交易量、技术指标（MA、RSI、MACD），判断短期趋势。\n3. **情绪分析师（Sentiment Analyst）**：分析新闻、社交媒体情绪、市场恐慌指数（VIX），评估市场情绪面。\n4. **风险经理（Risk Manager）**：评估每笔交易的风险收益比，设置止损线，控制仓位集中度。\n5. **投资组合经理（Portfolio Manager）**：综合各方意见，做出最终的投资决策——买什么、卖什么、买多少。\n\n在 ai-hedge-fund 中，每个角色都是一个独立的 LLM Agent，它们通过**结构化的消息格式**进行通信，最终由投资组合经理汇总所有意见并生成交易计划。\n\n**关键设计原则：**\n\n- **独立性**：每个 Agent 独立分析，不受其他 Agent 偏见影响（类似于真实基金中分析师独立提交报告）\n- **制衡性**：风险经理有一票否决权，防止过于激进的决策\n- **可追溯性**：每个决策都有完整的推理链，可以回溯到具体的 Agent 意见\n- **可扩展性**：可以轻松添加新的 Agent 角色（如宏观分析师、量化研究员）`,
       mermaid: `graph TD
     subgraph "数据层"
-        A1["市场数据 API\n(价格/交易量)"]
-        A2["财务报表 API\n(收入/利润/现金流)"]
-        A3["新闻/社交媒体 API\n(情绪数据)"]
+        A1["市场数据 API
+(价格/交易量)"]
+        A2["财务报表 API
+(收入/利润/现金流)"]
+        A3["新闻/社交媒体 API
+(情绪数据)"]
     end
 
     subgraph "分析层 - 独立 Agent"
-        B1["基本面分析师 Agent\n📊 估值分析"]
-        B2["技术分析师 Agent\n📈 趋势判断"]
-        B3["情绪分析师 Agent\n💭 情绪评估"]
+        B1["基本面分析师 Agent
+📊 估值分析"]
+        B2["技术分析师 Agent
+📈 趋势判断"]
+        B3["情绪分析师 Agent
+💭 情绪评估"]
     end
 
     subgraph "决策层"
-        C1["风险经理 Agent\n🛡️ 风险评估"]
-        C2["投资组合经理 Agent\n💼 最终决策"]
+        C1["风险经理 Agent
+🛡️ 风险评估"]
+        C2["投资组合经理 Agent
+💼 最终决策"]
     end
 
     subgraph "执行层"
-        D1["交易计划\n(买入/卖出/持仓)"]
-        D2["仓位管理\n(分配比例/止损)"]
+        D1["交易计划
+(买入/卖出/持仓)"]
+        D2["仓位管理
+(分配比例/止损)"]
     end
 
     A1 --> B2
@@ -81,12 +91,16 @@ export const article: Article = {
 
     C2 --> D1
     D1 --> D2
-
-    style B1 fill:#4f46e5,stroke:#4f46e5,color:#fff
-    style B2 fill:#7c3aed,stroke:#7c3aed,color:#fff
-    style B3 fill:#2563eb,stroke:#3b82f6,color:#fff
-    style C1 fill:#991b1b,stroke:#dc2626,color:#fff
-    style C2 fill:#047857,stroke:#059669,color:#fff`,
+    class C2 s4
+    class C1 s3
+    class B3 s2
+    class B2 s1
+    class B1 s0
+    classDef s0 fill:#4f46e5,stroke:#4f46e5,color:#fff
+    classDef s1 fill:#7c3aed,stroke:#7c3aed,color:#fff
+    classDef s2 fill:#2563eb,stroke:#3b82f6,color:#fff
+    classDef s3 fill:#991b1b,stroke:#dc2626,color:#fff
+    classDef s4 fill:#047857,stroke:#059669,color:#fff`,
     },
     {
       title: "3. 核心 Agent 角色深度解析",
@@ -558,9 +572,10 @@ if __name__ == "__main__":
     C --> E{"风险审查"}
     E -->|通过| F["交易计划"]
     E -->|不通过| G["调整/拒绝"]
-    
-    style B fill:#991b1b,stroke:#dc2626,color:#fff
-    style E fill:#991b1b,stroke:#dc2626,color:#fff`,
+    class E s1
+    class B s0
+    classDef s0 fill:#991b1b,stroke:#dc2626,color:#fff
+    classDef s1 fill:#991b1b,stroke:#dc2626,color:#fff`,
     },
     {
       title: "6. 对比分析：多 Agent vs 传统量化 vs 人类基金经理",
@@ -585,21 +600,29 @@ if __name__ == "__main__":
       title: "7. 未来展望：AI 金融的下一个爆发点在哪里？",
       body: `2026 年只是 AI 金融的起点。以下几个方向正在酝酿下一波爆发：\n\n**1. 实时多模态金融分析**\n\n当前的 ai-hedge-fund 主要依赖文本和数字数据。未来，AI 将能够实时分析：CEO 电话会议的语气变化（音频分析）、卫星图像中的工厂开工情况（视觉分析）、供应链物流数据（IoT 数据）。这些多模态信息的综合将大幅提升分析的准确性。\n\n**2. 自进化交易策略**\n\n结合 NousResearch Hermes Agent 的可成长特性和 GenericAgent 的技能树生长机制，AI 交易 Agent 可以从历史交易经验中自主学习——哪些策略在什么市场环境下有效、哪些信号是噪音、如何根据市场变化调整策略权重。\n\n**3. 去中心化 AI 金融网络**\n\n多个对冲基金的 AI Agent 之间是否会形成某种「市场共识」？这类似于 DeFi 中的自动化做市商（AMM），但决策者是 AI Agent 而非算法。这种 AI-to-AI 的金融交互模式将创造全新的市场微观结构。\n\n**4. 监管科技（RegTech）**\n\nAI 不仅是交易工具，也是监管工具。监管机构可以用 AI Agent 实时监控市场异常、检测内幕交易、识别系统性风险。这将形成一个「AI vs AI」的博弈格局。\n\n**5. 个人 AI 理财顾问**\n\n对冲基金级的 AI 技术最终会下沉到个人投资者。想象一个 AI Agent 了解你的财务状况、风险偏好、人生目标，并像私人银行家一样为你管理资产——成本可能只是传统理财顾问的 1/10。`,
       mermaid: `graph TD
-    A["AI 金融演进路线"] --> B["2024-2025: 单模型预测\n股价预测、情绪分析"]
-    A --> C["2026: 多 Agent 协作\nai-hedge-fund 模式"]
-    A --> D["2027: 自进化策略\n从经验中自主学习"]
-    A --> E["2028: 多模态实时分析\n音频+视觉+IoT"]
-    A --> F["2029+: AI-to-AI 金融市场\n去中心化决策网络"]
+    A["AI 金融演进路线"] --> B["2024-2025: 单模型预测
+股价预测、情绪分析"]
+    A --> C["2026: 多 Agent 协作
+ai-hedge-fund 模式"]
+    A --> D["2027: 自进化策略
+从经验中自主学习"]
+    A --> E["2028: 多模态实时分析
+音频+视觉+IoT"]
+    A --> F["2029+: AI-to-AI 金融市场
+去中心化决策网络"]
 
     B -->|"角色分离"| C
     C -->|"经验累积"| D
     D -->|"感知扩展"| E
     E -->|"网络效应"| F
-
-    style C fill:#4f46e5,stroke:#4f46e5,color:#fff
-    style D fill:#7c3aed,stroke:#7c3aed,color:#fff
-    style E fill:#2563eb,stroke:#3b82f6,color:#fff
-    style F fill:#047857,stroke:#059669,color:#fff`,
+    class F s3
+    class E s2
+    class D s1
+    class C s0
+    classDef s0 fill:#4f46e5,stroke:#4f46e5,color:#fff
+    classDef s1 fill:#7c3aed,stroke:#7c3aed,color:#fff
+    classDef s2 fill:#2563eb,stroke:#3b82f6,color:#fff
+    classDef s3 fill:#047857,stroke:#059669,color:#fff`,
     },
     {
       title: "8. 总结与行动建议",

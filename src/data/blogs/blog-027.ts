@@ -135,7 +135,7 @@ print(result)
   {
     title: "第二阶段：Plan-and-Execute — 学会规划",
     body: "ReAct 是\"边想边做\"，Plan-and-Execute 是**先想清楚整个计划，再一步步执行**：",
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     A[用户请求] --> B[Planner: 生成执行计划]
     B --> C{计划是否完整?}
     C -->|否| D[Re-planner: 调整计划]
@@ -260,9 +260,10 @@ class PlanAndExecuteAgent:
     C -->|是| D[修正]
     D --> B
     C -->|否| E[输出最终结果]
-    
-    style B fill:#f9a825,color:#000
-    style D fill:#b91c1c,color:#fff`,
+    class D s1
+    class B s0
+    classDef s0 fill:#f9a825,color:#000
+    classDef s1 fill:#b91c1c,color:#fff`,
   },
   {
     title: "Reflection 的四种模式",
@@ -343,15 +344,20 @@ Revised: [修正后的回答，如无修改则保持原样]"""
   {
     title: "第四阶段：多 Agent 协作 — 团队作战",
     body: "当任务复杂度超过单个 Agent 的能力时，就需要**多 Agent 协作**——每个 Agent 专注一个领域，像团队一样工作。",
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     subgraph "多 Agent 架构"
-        Orchestrator["🎯 编排器\\n(理解任务、分配工作)"]
+        Orchestrator["🎯 编排器\
+(理解任务、分配工作)"]
         
         subgraph "Worker Agents"
-            Researcher["🔍 研究员\\n(搜索、分析)"]
-            Coder["💻 程序员\\n(写代码、调试)"]
-            Reviewer["🧪 审核员\\n(测试、审查)"]
-            Writer["✍️ 写作者\\n(文档、报告)"]
+            Researcher["🔍 研究员\
+(搜索、分析)"]
+            Coder["💻 程序员\
+(写代码、调试)"]
+            Reviewer["🧪 审核员\
+(测试、审查)"]
+            Writer["✍️ 写作者\
+(文档、报告)"]
         end
         
         Orchestrator --> Researcher
@@ -529,11 +535,14 @@ print(team.get_summary())`,
     J --> K{是否涉及多个领域?}
     K -->|否| J
     K -->|是| L[多 Agent 协作]
-    
-    style C fill:#4caf50,color:#000
-    style G fill:#1d4ed8,color:#fff
-    style I fill:#ff9800,color:#000
-    style L fill:#b91c1c,color:#fff`,
+    class L s3
+    class I s2
+    class G s1
+    class C s0
+    classDef s0 fill:#4caf50,color:#000
+    classDef s1 fill:#1d4ed8,color:#fff
+    classDef s2 fill:#ff9800,color:#000
+    classDef s3 fill:#b91c1c,color:#fff`,
   },
   {
     title: "实战案例：用多 Agent 构建知识图谱",

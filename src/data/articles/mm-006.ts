@@ -115,15 +115,22 @@ print(f"节省: {savings:.1f}%")`
           ]
         },
         mermaid: `graph TD
-    A["输入视频\nT x H x W x 3"] --> B["Patch 切分\nT x (P x D)"]
+    A["输入视频
+T x H x W x 3"] --> B["Patch 切分
+T x (P x D)"]
     B --> C["时间位置编码"]
     B --> D["空间位置编码"]
-    C --> E["时间自注意力\n跨帧交互"]
-    D --> F["空间自注意力\n帧内交互"]
-    E --> G["时序融合特征\nT x D"]
+    C --> E["时间自注意力
+跨帧交互"]
+    D --> F["空间自注意力
+帧内交互"]
+    E --> G["时序融合特征
+T x D"]
     F --> G
-    G --> H["分类头\n全连接层"]
-    H --> I["视频类别\n概率分布"]`,
+    G --> H["分类头
+全连接层"]
+    H --> I["视频类别
+概率分布"]`,
         tip: "TimeSformer 的时空分解注意力将复杂度从 O(T^2 * P^2 * D) 降低到 O(T * P^2 * D + P * T^2 * D)，在 16 帧 196 个 patch 的场景下节省了约 96% 的计算量",
         warning: "3D CNN 的参数量随时间维度线性增长，当输入帧数超过 64 帧时 GPU 显存容易溢出。处理长视频时应使用 TimeSformer 或 Video Swin 等基于 Transformer 的方法"
       },
@@ -232,14 +239,23 @@ print(f"Max pooling:  {max_emb.shape}, 取各维度最大值")`
           ]
         },
         mermaid: `graph LR
-    A["视频\nT 帧图像"] --> B["视觉编码器\nCLIP/TimeSformer"]
-    C["文本\n标题/描述"] --> D["文本编码器\nBERT/CLIP Text"]
-    B --> E["视频嵌入\nV [B, D]"]
-    D --> F["文本嵌入\nT [B, D]"]
-    E --> G["相似度矩阵\nS = V @ T.T"]
+    A["视频
+T 帧图像"] --> B["视觉编码器
+CLIP/TimeSformer"]
+    C["文本
+标题/描述"] --> D["文本编码器
+BERT/CLIP Text"]
+    B --> E["视频嵌入
+V [B, D]"]
+    D --> F["文本嵌入
+T [B, D]"]
+    E --> G["相似度矩阵
+S = V @ T.T"]
     F --> G
-    G --> H["InfoNCE 损失\n双向对比"]
-    H --> I["统一的\n视频-文本空间"]`,
+    G --> H["InfoNCE 损失
+双向对比"]
+    H --> I["统一的
+视频-文本空间"]`,
         tip: "CLIP4Clip 使用预训练的 CLIP 图像编码器逐帧提取特征再做 Mean Pooling，这种方式无需额外训练视频编码器，大大降低了计算成本。对于资源有限的场景是首选方案",
         warning: "逐帧提取 CLIP 特征的方法忽略了帧间时序关系，对于依赖动作顺序理解的任务（如时序定位）效果有限。需要考虑使用时序编码器增强时间建模能力"
       },
@@ -364,14 +380,23 @@ print(f"Exact Match Accuracy: {acc:.2%}")`
           ]
         },
         mermaid: `graph LR
-    A["视频\nT 帧"] --> B["视觉编码器\nCLIP/ViT"]
-    C["问题\n自然语言"] --> D["文本编码器\nLLM"]
-    B --> E["视觉 token 序列\n[N_v, D]"]
-    D --> F["文本 token 嵌入\n[N_t, D]"]
-    E --> G["拼接序列\n[video_tokens + text_tokens]"]
+    A["视频
+T 帧"] --> B["视觉编码器
+CLIP/ViT"]
+    C["问题
+自然语言"] --> D["文本编码器
+LLM"]
+    B --> E["视觉 token 序列
+[N_v, D]"]
+    D --> F["文本 token 嵌入
+[N_t, D]"]
+    E --> G["拼接序列
+[video_tokens + text_tokens]"]
     F --> G
-    G --> H["大语言模型\n因果语言建模"]
-    H --> I["生成的答案\n自然语言"]`,
+    G --> H["大语言模型
+因果语言建模"]
+    H --> I["生成的答案
+自然语言"]`,
         tip: "在 VideoQA 中，视觉 token 的数量直接影响计算成本。对于 8 帧输入，每帧 256 个 token 会产生 2048 个视觉 token。可以通过 token 剪枝（如 Token Merging）将 token 数量减少 50% 而不显著降低准确率",
         warning: "直接拼接视频 token 和文本 token 会超出大语言模型的上下文长度限制。对于长视频（超过 64 帧），必须使用时序压缩或分层采样策略减少视觉 token 数量"
       },
@@ -523,13 +548,20 @@ print(f"CIDEr: {score:.4f}")`
           ]
         },
         mermaid: `graph LR
-    A["视频\nT 帧"] --> B["视觉特征提取\nViT/CLIP"]
-    B --> C["时序建模\nTransformer"]
-    C --> D["视觉-语言投影\nMLP 层"]
-    E["描述生成"] --> F["语言模型\nGPT/LLaMA"]
+    A["视频
+T 帧"] --> B["视觉特征提取
+ViT/CLIP"]
+    B --> C["时序建模
+Transformer"]
+    C --> D["视觉-语言投影
+MLP 层"]
+    E["描述生成"] --> F["语言模型
+GPT/LLaMA"]
     D --> F
-    F --> G["自回归解码\n逐词生成"]
-    G --> H["自然语言描述\n句子"]`,
+    F --> G["自回归解码
+逐词生成"]
+    G --> H["自然语言描述
+句子"]`,
         tip: "使用 Q-Former 或 Perceiver 等查询式压缩器将视觉 token 数量从 N 压缩到 Q（通常 Q=32 或 64），可以显著降低大语言模型的推理延迟，同时保持描述质量",
         warning: "BLEU 和 ROUGE 指标对词汇重叠敏感，但可能忽略语义等价的不同表达。例如 the boy runs fast 和 a fast running boy 表达相同意思但 BLEU 分数很低。应同时参考 CIDEr 和 SPICE 等语义指标"
       },
@@ -665,15 +697,24 @@ print(f"Mean IoU: {mean_iou(predictions, ground_truths):.4f}")`
           ]
         },
         mermaid: `graph LR
-    A["视频\nT 个时间步"] --> B["视觉编码\nCNN/Transformer"]
-    C["文本查询\n句子"] --> D["文本编码\nBERT"]
-    B --> E["时序特征序列\n[T, D]"]
-    D --> F["查询向量\n[1, D]"]
+    A["视频
+T 个时间步"] --> B["视觉编码
+CNN/Transformer"]
+    C["文本查询
+句子"] --> D["文本编码
+BERT"]
+    B --> E["时序特征序列
+[T, D]"]
+    D --> F["查询向量
+[1, D]"]
     E --> G["交叉注意力融合"]
     F --> G
-    G --> H["可学习时刻查询\n[Q, D]"]
-    H --> I["预测头\nStart/End/IoU"]
-    I --> J["时间段预测\n(起始, 结束)"]`,
+    G --> H["可学习时刻查询
+[Q, D]"]
+    H --> I["预测头
+Start/End/IoU"]
+    I --> J["时间段预测
+(起始, 结束)"]`,
         tip: "Moment-DETR 的可学习查询数量 Q 决定了模型能同时预测的最大时间段数。对于单时间段定位任务，设置 Q=10 是一个经验性的合理值，既保证了足够的候选查询，又不会引入过多的冗余计算",
         warning: "时序定位对视频帧率的敏感度很高。如果训练时使用 30fps 的视频而推理时使用 24fps，预测的时间段会产生系统性偏移。实际部署时必须确保帧率一致或在预处理阶段统一重采样"
       },
@@ -800,15 +841,25 @@ benchmark_compression_methods(64, 256, 1024)`
           ]
         },
         mermaid: `graph TD
-    A["原始视频\n任意时长"] --> B["均匀采样\nN 帧"]
-    B --> C["视觉编码\nViT/CLIP"]
-    C --> D["Token 压缩\nQ-Former/Perceiver"]
-    D --> E["紧凑视觉表示\n[Q, D]"]
-    F["指令/问题\n文本"] --> G["文本编码\nTokenizer"]
-    G --> H["拼接\n[visual + text tokens]"]
+    A["原始视频
+任意时长"] --> B["均匀采样
+N 帧"]
+    B --> C["视觉编码
+ViT/CLIP"]
+    C --> D["Token 压缩
+Q-Former/Perceiver"]
+    D --> E["紧凑视觉表示
+[Q, D]"]
+    F["指令/问题
+文本"] --> G["文本编码
+Tokenizer"]
+    G --> H["拼接
+[visual + text tokens]"]
     E --> H
-    H --> I["大语言模型\nLLaMA/Qwen"]
-    I --> J["多模态理解\n输出响应"]`,
+    H --> I["大语言模型
+LLaMA/Qwen"]
+    I --> J["多模态理解
+输出响应"]`,
         tip: "选择压缩策略时应考虑任务类型。视频描述生成和简单问答可以使用较强的压缩（Q-Former 64-128 queries），而时序定位需要保留时间信息，应该使用帧级别的表示（如均匀采样 + 时间位置编码）",
         warning: "过强的 token 压缩会导致时间信息丢失。如果压缩后的 token 数量少于视频中的关键事件数量，模型将无法区分视频中发生的不同事件。对于包含 5 个以上独立事件的视频，建议保留至少 256 个视觉 token"
       },
@@ -971,16 +1022,26 @@ def multi_query_search(queries: list[str],
           ]
         },
         mermaid: `graph LR
-    A["视频目录\n.mp4 / .avi"] --> B["帧提取\nOpenCV 均匀采样"]
-    B --> C["帧预处理\nResize + Normalize"]
-    C --> D["视觉编码\nCLIP/TimeSformer"]
-    D --> E["时间池化\nMean Pooling"]
-    E --> F["视频嵌入向量\n存入数据库"]
-    G["自然语言查询"] --> H["文本编码\nCLIP Text"]
-    H --> I["余弦相似度\n查询 vs 所有视频"]
+    A["视频目录
+.mp4 / .avi"] --> B["帧提取
+OpenCV 均匀采样"]
+    B --> C["帧预处理
+Resize + Normalize"]
+    C --> D["视觉编码
+CLIP/TimeSformer"]
+    D --> E["时间池化
+Mean Pooling"]
+    E --> F["视频嵌入向量
+存入数据库"]
+    G["自然语言查询"] --> H["文本编码
+CLIP Text"]
+    H --> I["余弦相似度
+查询 vs 所有视频"]
     F --> I
-    I --> J["排序\nTop-K 结果"]
-    J --> K["返回相关视频\n及置信分数"]`,
+    I --> J["排序
+Top-K 结果"]
+    J --> K["返回相关视频
+及置信分数"]`,
         tip: "对于大规模视频检索（超过 1 万个视频），建议先将所有视频嵌入存入 FAISS 向量数据库，使用 IVF-PQ 索引结构进行近似检索。这可以将检索延迟从线性 O(N) 降低到亚线性级别",
         warning: "VideoCLIP 在训练数据分布之外的领域（如医疗视频、卫星视频）上表现可能显著下降。对于领域特定的检索任务，应在目标领域数据上进行微调或使用领域适配器（Domain Adapter）"
       },

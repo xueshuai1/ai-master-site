@@ -33,7 +33,18 @@ export const article: Article = {
                     ["灰度发布", "天级", "中", "高", "渐进上线"]
                 ]
             },
-            mermaid: `graph TD\n    A[模型改进想法] --> B[离线评估]\n    B --> C{离线指标达标?}\n    C -->|"No"| A\n    C -->|"Yes"| D[Shadow 模式运行]\n    D --> E{Shadow 指标达标?}\n    E -->|"No"| A\n    E -->|"Yes"| F[设计 A/B 实验]\n    F --> G[线上 A/B 测试]\n    G --> H{实验结论显著?}\n    H -->|"Yes"| I[全量发布]\n    H -->|"No"| J[分析原因]`,
+            mermaid: `graph TD
+    A[模型改进想法] --> B[离线评估]
+    B --> C{离线指标达标?}
+    C -->|"No"| A
+    C -->|"Yes"| D[Shadow 模式运行]
+    D --> E{Shadow 指标达标?}
+    E -->|"No"| A
+    E -->|"Yes"| F[设计 A/B 实验]
+    F --> G[线上 A/B 测试]
+    G --> H{实验结论显著?}
+    H -->|"Yes"| I[全量发布]
+    H -->|"No"| J[分析原因]`,
             tip: "在启动 A/B 测试之前，先用 Shadow 模式跑几天，在不影响用户的前提下验证新模型是否正常运行。",
             warning: "不要在 A/B 测试中途随意修改实验配置或提前查看结果做决策，这会严重 inflate Type I error。"
         },
@@ -60,7 +71,16 @@ export const article: Article = {
                     ["实验周期", "7-14 天", "覆盖完整的用户行为周期"]
                 ]
             },
-            mermaid: `graph LR\n    A[假设定义] --> B[指标选择]\n    B --> C[样本量计算]\n    C --> D[随机化策略]\n    D --> E[预热期设置]\n    E --> F[实验启动]\n    F --> G[数据收集]\n    G --> H{达到最小样本量?}\n    H -->|"No"| G\n    H -->|"Yes"| I[统计分析]`,
+            mermaid: `graph LR
+    A[假设定义] --> B[指标选择]
+    B --> C[样本量计算]
+    C --> D[随机化策略]
+    D --> E[预热期设置]
+    E --> F[实验启动]
+    F --> G[数据收集]
+    G --> H{达到最小样本量?}
+    H -->|"No"| G
+    H -->|"Yes"| I[统计分析]`,
             tip: "实验周期至少覆盖一个完整的业务周期（比如一周），以消除周末效应等周期性波动。",
             warning: "样本量计算基于的基线率和效应量是估计值，实际运行中需要持续监控并确保数据质量。"
         },
@@ -87,7 +107,18 @@ export const article: Article = {
                     ["先验", "无", "实验前的信念", "可用历史数据构建"]
                 ]
             },
-            mermaid: `graph TD\n    A[收集数据] --> B[计算 p 值]\n    B --> C{p < 0.05?}\n    C -->|"Yes"| D[检查效应量]\n    C -->|"No"| E[统计不显著]\n    D --> F{效应量有业务意义?}\n    F -->|"Yes"| G[发布新版本]\n    F -->|"No"| H[继续优化]\n    E --> I[检查功效是否充足]\n    I --> J{样本量够吗?}\n    J -->|"No"| K[延长实验]\n    J -->|"Yes"| L[接受无差异结论]`,
+            mermaid: `graph TD
+    A[收集数据] --> B[计算 p 值]
+    B --> C{p < 0.05?}
+    C -->|"Yes"| D[检查效应量]
+    C -->|"No"| E[统计不显著]
+    D --> F{效应量有业务意义?}
+    F -->|"Yes"| G[发布新版本]
+    F -->|"No"| H[继续优化]
+    E --> I[检查功效是否充足]
+    I --> J{样本量够吗?}
+    J -->|"No"| K[延长实验]
+    J -->|"Yes"| L[接受无差异结论]`,
             tip: "始终同时报告 p 值、效应量和置信区间，三者结合才能给出完整的实验结论。",
             warning: "不要 peeking——在实验未达到预定样本量之前就反复查看结果并提前终止，这会严重扭曲 p 值。"
         },
@@ -114,7 +145,16 @@ export const article: Article = {
                     ["固定 A/B", "无探索", "O(1)", "严谨统计推断", "结论明确可靠"]
                 ]
             },
-            mermaid: `graph LR\n    A[用户到达] --> B[算法选择版本]\n    B --> C[用户交互]\n    C --> D[收集反馈]\n    D --> E{奖励为正?}\n    E -->|"Yes"| F[增加该版本权重]\n    E -->|"No"| G[降低该版本权重]\n    F --> H[更新后验分布]\n    G --> H\n    H --> A`,
+            mermaid: `graph LR
+    A[用户到达] --> B[算法选择版本]
+    B --> C[用户交互]
+    C --> D[收集反馈]
+    D --> E{奖励为正?}
+    E -->|"Yes"| F[增加该版本权重]
+    E -->|"No"| G[降低该版本权重]
+    F --> H[更新后验分布]
+    G --> H
+    H --> A`,
             tip: "Thompson Sampling 在大多数实际场景中表现最优，特别是当你有多次实验机会时，它的 regret 增长是对数级的。",
             warning: 'MAB 算法不适合需要明确统计结论的场景。如果你需要向管理层汇报 "A 比 B 好 X%，p<0.05"，还是用传统 A/B 测试。'
         },
@@ -141,7 +181,20 @@ export const article: Article = {
                     ["Full Rollout", "100%", "24h", "全量稳定性", "回滚到 50%"]
                 ]
             },
-            mermaid: `graph LR\n    A[新模型通过 A/B] --> B[Canary 1％]\n    B --> C{监控 24h}\n    C -->|"OK"| D[Canary 5％]\n    C -->|"Alert"| E[立即回滚]\n    D --> F{监控 24h}\n    F -->|"OK"| G[Canary 25％]\n    F -->|"Alert"| H[回滚到 1％]\n    G --> I{监控 48h}\n    I -->|"OK"| J[Canary 50％]\n    I -->|"Alert"| K[回滚到 5％]\n    J --> L{监控 48h}\n    L -->|"OK"| M[Full 100％]\n    L -->|"Alert"| N[回滚到 25％]`,
+            mermaid: `graph LR
+    A[新模型通过 A/B] --> B[Canary 1％]
+    B --> C{监控 24h}
+    C -->|"OK"| D[Canary 5％]
+    C -->|"Alert"| E[立即回滚]
+    D --> F{监控 24h}
+    F -->|"OK"| G[Canary 25％]
+    F -->|"Alert"| H[回滚到 1％]
+    G --> I{监控 48h}
+    I -->|"OK"| J[Canary 50％]
+    I -->|"Alert"| K[回滚到 5％]
+    J --> L{监控 48h}
+    L -->|"OK"| M[Full 100％]
+    L -->|"Alert"| N[回滚到 25％]`,
             tip: "灰度发布的每个阶段都应该有明确的退出标准（success criteria）和回滚触发条件，提前写好 Runbook。",
             warning: "不要在非工作时间推进灰度阶段，万一出问题需要团队快速响应。选择工作日的上午推进新阶段。"
         },
@@ -168,7 +221,20 @@ export const article: Article = {
                     ["用户投诉激增", "工单量翻倍", "30 分钟内", "告警+人工"]
                 ]
             },
-            mermaid: `graph TD\n    A[监控指标异常] --> B{超过阈值?}\n    B -->|"No"| C[继续观察]\n    B -->|"Yes"| D[触发告警]\n    D --> E{错误率或延迟?}\n    E -->|"Yes"| F[自动回滚]\n    E -->|"No"| G[人工评估]\n    G --> H{需要回滚?}\n    H -->|"Yes"| I[手动回滚]\n    H -->|"No"| J[调整阈值]\n    F --> K[记录回滚事件]\n    I --> K\n    K --> L[根因分析]\n    L --> M[改进模型]`,
+            mermaid: `graph TD
+    A[监控指标异常] --> B{超过阈值?}
+    B -->|"No"| C[继续观察]
+    B -->|"Yes"| D[触发告警]
+    D --> E{错误率或延迟?}
+    E -->|"Yes"| F[自动回滚]
+    E -->|"No"| G[人工评估]
+    G --> H{需要回滚?}
+    H -->|"Yes"| I[手动回滚]
+    H -->|"No"| J[调整阈值]
+    F --> K[记录回滚事件]
+    I --> K
+    K --> L[根因分析]
+    L --> M[改进模型]`,
             tip: "定期进行回滚演练（Chaos Engineering），验证回滚流程的可靠性和速度，就像消防演习一样重要。",
             warning: "回滚不等于放弃。每次回滚后必须做根因分析，否则同样的问题会在下次发布时重现。"
         },
@@ -195,7 +261,24 @@ export const article: Article = {
                     ["部署编排", "版本切换与回滚", "K8s + Istio", "部署成功率"]
                 ]
             },
-            mermaid: `sequenceDiagram\n    participant DS as 数据科学家\n    participant ML as MLflow Registry\n    participant AB as A/B 测试服务\n    participant API as 模型服务 API\n    participant U as 用户\n\n    DS->>ML: 训练模型并注册为 Staging\n    ML->>AB: 创建实验 (控制组 vs Staging)\n    U->>API: 发送请求\n    API->>AB: 查询用户实验分组\n    AB-->>API: 返回 variant (control/variant)\n    API->>API: 路由到对应模型版本\n    API-->>U: 返回预测结果\n    API->>AB: 记录预测结果与指标\n    AB->>AB: 定期运行统计分析\n    AB->>DS: 发送实验报告\n    DS->>ML: 实验通过，推进到 Production`,
+            mermaid: `sequenceDiagram
+    participant DS as 数据科学家
+    participant ML as MLflow Registry
+    participant AB as A/B 测试服务
+    participant API as 模型服务 API
+    participant U as 用户
+
+    DS->>ML: 训练模型并注册为 Staging
+    ML->>AB: 创建实验 (控制组 vs Staging)
+    U->>API: 发送请求
+    API->>AB: 查询用户实验分组
+    AB-->>API: 返回 variant (control/variant)
+    API->>API: 路由到对应模型版本
+    API-->>U: 返回预测结果
+    API->>AB: 记录预测结果与指标
+    AB->>AB: 定期运行统计分析
+    AB->>DS: 发送实验报告
+    DS->>ML: 实验通过，推进到 Production`,
             tip: "将 MLflow Webhook 与 Slack/飞书集成，模型版本状态变更时自动通知团队，保持信息透明。",
             warning: "MLflow Model Registry 的 stage 转换是异步操作，在高并发场景下需要加锁防止并发冲突。"
         }

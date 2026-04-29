@@ -32,7 +32,13 @@ export const article: Article = {
                     ["Level 3", "持续训练", "端到端全自动", "Kubeflow, TFX"]
                 ]
             },
-            mermaid: `graph TD\n    A[Level 0 手动流程] --> B[Level 1 ML流水线]\n    B --> C[Level 2 CICD流水线]\n    C --> D[Level 3 持续训练]\n    B -.->|"数据版本控制"| E[DVC]\n    C -.->|"实验追踪"| F[MLflow]\n    D -.->|"编排引擎"| G[Kubeflow]`,
+            mermaid: `graph TD
+    A[Level 0 手动流程] --> B[Level 1 ML流水线]
+    B --> C[Level 2 CICD流水线]
+    C --> D[Level 3 持续训练]
+    B -.->|"数据版本控制"| E[DVC]
+    C -.->|"实验追踪"| F[MLflow]
+    D -.->|"编排引擎"| G[Kubeflow]`,
             tip: "从 Level 0 跃迁到 Level 1 的第一步是将 Notebook 中的代码重构为可复用的 Python 脚本，并建立参数化配置文件。",
             warning: "不要一上来就追求 Level 3 的完整架构。多数团队应该先从 Level 1 开始，先解决可复现性问题，再逐步自动化。"
         },
@@ -59,7 +65,13 @@ export const article: Article = {
                     ["dvc repro", "增量重运行", "无对应", "命令行"]
                 ]
             },
-            mermaid: `graph LR\n    A[原始数据] -->|dvc add| B[.dvc 元数据文件]\n    B -->|git commit| C[Git 仓库]\n    A -->|dvc push| D[S3 远程存储]\n    C -->|git clone| E[新环境]\n    D -->|dvc pull| E\n    E -->|dvc repro| F[自动重建产物]`,
+            mermaid: `graph LR
+    A[原始数据] -->|dvc add| B[.dvc 元数据文件]
+    B -->|git commit| C[Git 仓库]
+    A -->|dvc push| D[S3 远程存储]
+    C -->|git clone| E[新环境]
+    D -->|dvc pull| E
+    E -->|dvc repro| F[自动重建产物]`,
             tip: "为数据集使用语义化的版本标签，例如 dvc tag v1.2.0，这样在回滚实验时可以精确还原数据状态。",
             warning: "DVC 不会自动删除远程存储中不再被引用的数据文件。定期运行 dvc gc 来清理孤儿文件，但操作前务必备份。"
         },
@@ -87,7 +99,18 @@ export const article: Article = {
                     ["团队协作", "需自建 Server", "原生支持", "W&B 协作功能更完善"]
                 ]
             },
-            mermaid: `graph TD\n    A[训练脚本] -->|log_params| B[实验追踪系统]\n    A -->|log_metrics| B\n    A -->|log_model| B\n    B --> C[参数数据库]\n    B --> D[指标时间序列]\n    B --> E[模型 Artifacts]\n    C --> F[UI 对比面板]\n    D --> F\n    E --> F\n    F --> G{选择最佳模型}\n    G -->|注册| H[模型注册表]`,
+            mermaid: `graph TD
+    A[训练脚本] -->|log_params| B[实验追踪系统]
+    A -->|log_metrics| B
+    A -->|log_model| B
+    B --> C[参数数据库]
+    B --> D[指标时间序列]
+    B --> E[模型 Artifacts]
+    C --> F[UI 对比面板]
+    D --> F
+    E --> F
+    F --> G{选择最佳模型}
+    G -->|注册| H[模型注册表]`,
             tip: "在 MLflow 中使用嵌套运行（nested runs）来组织实验：外层运行代表实验组，内层运行代表单次超参数尝试。",
             warning: "不要在实验追踪中记录敏感信息，如 API Key 或数据库密码。MLflow 的参数存储默认是明文可读的。"
         },
@@ -113,7 +136,14 @@ export const article: Article = {
                     ["Archived", "已下线退役", "新版本替代", "保留 artifact"]
                 ]
             },
-            mermaid: `graph LR\n    A[实验模型] -->|register| B[Model Registry]\n    B --> C{版本阶段}\n    C -->|通过测试| D[Staging]\n    D -->|性能达标| E[Production]\n    E -->|新版本上线| F[Archived]\n    D -->|测试失败| G[回退到 None]\n    E -->|性能下降| H[告警 + 回滚]`,
+            mermaid: `graph LR
+    A[实验模型] -->|register| B[Model Registry]
+    B --> C{版本阶段}
+    C -->|通过测试| D[Staging]
+    D -->|性能达标| E[Production]
+    E -->|新版本上线| F[Archived]
+    D -->|测试失败| G[回退到 None]
+    E -->|性能下降| H[告警 + 回滚]`,
             tip: "为每个注册模型维护一份 Model Card，记录训练数据、评估指标、已知限制和公平性分析，这是 AI 治理的重要实践。",
             warning: "模型注册表的权限控制容易被忽视。生产阶段的模型应该设置为只读，只有经过审批的流水线才能执行阶段转换。"
         },
@@ -140,7 +170,16 @@ export const article: Article = {
                     ["生产部署", "集成测试、延迟测试", "评估通过后", "自动回滚"]
                 ]
             },
-            mermaid: `graph TD\n    A[代码 Push] --> B[代码测试]\n    B -->|通过| C[数据验证]\n    C -->|通过| D[训练 + 评估]\n    D -->|指标达标| E[部署到 Staging]\n    E -->|A/B 测试通过| F[部署到 Production]\n    B -->|失败| X[阻止合并]\n    C -->|失败| X\n    D -->|指标不达标| X\n    F -->|线上异常| G[自动回滚]`,
+            mermaid: `graph TD
+    A[代码 Push] --> B[代码测试]
+    B -->|通过| C[数据验证]
+    C -->|通过| D[训练 + 评估]
+    D -->|指标达标| E[部署到 Staging]
+    E -->|A/B 测试通过| F[部署到 Production]
+    B -->|失败| X[阻止合并]
+    C -->|失败| X
+    D -->|指标不达标| X
+    F -->|线上异常| G[自动回滚]`,
             tip: "在 CI 中使用缓存（如 GitHub Actions 的 cache）来加速依赖安装和数据下载，可以显著缩短流水线执行时间。",
             warning: "不要在 CI 中训练完整的深度学习模型，这会消耗大量时间和资源。CI 中的训练应该使用小规模数据集和少量 epoch 做冒烟测试。"
         },
@@ -166,7 +205,18 @@ export const article: Article = {
                     ["手动触发", "人工判断", "即时", "重大业务变更"]
                 ]
             },
-            mermaid: `graph TD\n    A[生产环境] -->|收集数据| B[数据监控]\n    B --> C{漂移检测}\n    C -->|漂移超标| D[触发训练]\n    C -->|正常| B\n    A -->|性能监控| E{性能检查}\n    E -->|低于阈值| D\n    E -->|正常| A\n    D --> F[训练新模型]\n    F --> G{评估对比}\n    G -->|更优| H[自动部署]\n    G -->|不优| I[记录并保留]`,
+            mermaid: `graph TD
+    A[生产环境] -->|收集数据| B[数据监控]
+    B --> C{漂移检测}
+    C -->|漂移超标| D[触发训练]
+    C -->|正常| B
+    A -->|性能监控| E{性能检查}
+    E -->|低于阈值| D
+    E -->|正常| A
+    D --> F[训练新模型]
+    F --> G{评估对比}
+    G -->|更优| H[自动部署]
+    G -->|不优| I[记录并保留]`,
             tip: "为持续训练设置合理的冷却期（cooldown period），避免在短时间内因数据波动触发频繁训练，浪费计算资源。",
             warning: "持续训练不等于持续部署。训练完成的新模型必须经过严格的评估流程，否则可能将性能更差的模型部署到生产环境。"
         },
@@ -193,7 +243,16 @@ export const article: Article = {
                     ["Artifact", "输入/输出数据", "文件/对象", "InputPath/OutputPath"]
                 ]
             },
-            mermaid: `graph TD\n    A[数据源] -->|下载| B[数据预处理组件]\n    B -->|训练集| C[模型训练组件]\n    B -->|测试集| D[模型评估组件]\n    C -->|模型文件| D\n    D -->|指标| E{达标?}\n    E -->|是| F[模型注册组件]\n    E -->|否| G[告警组件]\n    F --> H[部署到生产]\n    G --> I[通知数据科学家]`,
+            mermaid: `graph TD
+    A[数据源] -->|下载| B[数据预处理组件]
+    B -->|训练集| C[模型训练组件]
+    B -->|测试集| D[模型评估组件]
+    C -->|模型文件| D
+    D -->|指标| E{达标?}
+    E -->|是| F[模型注册组件]
+    E -->|否| G[告警组件]
+    F --> H[部署到生产]
+    G --> I[通知数据科学家]`,
             tip: "在 Kubeflow 中使用缓存机制（execution_caching），相同的输入和代码不会重复执行组件，可以显著节省开发调试时间。",
             warning: "Kubeflow Pipelines 的安装和维护成本较高，需要 Kubernetes 集群管理经验。对于小团队，建议先用 MLflow Pipelines 或 GitHub Actions 起步。"
         },

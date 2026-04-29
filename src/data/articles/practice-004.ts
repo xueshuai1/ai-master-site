@@ -977,7 +977,7 @@ DEFAULT_CONFIG = {
           ["翻译输出", "审核通过内容", "多语言版本", "翻译一致性"]
         ]
       },
-      mermaid: `graph TD TB
+      mermaid: `graph TD
     A["需求输入"] --> B["内容规划"]
     B --> C["大纲生成"]
     C --> D["正文生成"]

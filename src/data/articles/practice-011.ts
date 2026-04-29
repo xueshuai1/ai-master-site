@@ -28,23 +28,28 @@ export const article: Article = {
 
 工具解决的是「我能做什么」的问题——我能写文章、能画图、能剪辑视频。工作流解决的是「我如何系统地完成一个任务」的问题——从选题调研、素材收集、内容创作、质量审核到多平台发布，整个链路自动化。`,
       mermaid: `graph TD
-    A["2024-2025\n单点工具时代"] --> B["ChatGPT → 写文章"]
+    A["2024-2025
+单点工具时代"] --> B["ChatGPT → 写文章"]
     A --> C["Midjourney → 画图"]
     A --> D["Suno → 作曲"]
     A --> E["Runway → 视频"]
     
-    F["2026\n端到端工作流时代"] --> G["seomachine → SEO 内容工厂"]
+    F["2026
+端到端工作流时代"] --> G["seomachine → SEO 内容工厂"]
     F --> H["Chrome AI Skills → 浏览器工作流"]
     F --> I["Firefly AI → 自主设计"]
     F --> J["Codex → 全栈自动化"]
     
     B -.->|手动串联| K["用户在不同平台间切换"]
     G -.->|自动编排| L["一条命令完成全流程"]
-    
-    style A fill:#b45309,stroke:\#d97706,color:#fff
-    style F fill:#047857,stroke:\#059669,color:#fff
-    style K fill:#b91c1c,stroke:\#dc2626,color:#fff
-    style L fill:#1d4ed8,stroke:\#2563eb,color:#fff`,
+    class L s3
+    class K s2
+    class F s1
+    class A s0
+    classDef s0 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s1 fill:#047857,stroke:\#059669,color:#fff
+    classDef s2 fill:#b91c1c,stroke:\#dc2626,color:#fff
+    classDef s3 fill:#1d4ed8,stroke:\#2563eb,color:#fff`,
     },
     {
       title: "为什么工作流比工具更重要？",
@@ -79,10 +84,21 @@ export const article: Article = {
       title: "AI 内容创作工作流的五层架构",
       body: `一个完整的端到端 AI 内容创作工作流可以分解为五个层次，从底层的数据到顶层的应用。理解这个架构，你就有能力评估任何内容创作工具的价值，也能自己搭建工作流。`,
       mermaid: `graph TD
-    A["🔴 数据层\n数据采集/清洗/标注\n知识库/语料库"] --> B["🟠 模型层\nLLM / 多模态模型\n领域微调模型"]
-    B --> C["🟡 能力层\n文本生成/图像生成\n代码生成/语音合成"]
-    C --> D["🟢 编排层\n工作流引擎/Agent 编排\n工具调用/条件判断"]
-    D --> E["🔵 应用层\nSEO 内容工厂\n设计自动化\n多平台发布"]
+    A["🔴 数据层
+数据采集/清洗/标注
+知识库/语料库"] --> B["🟠 模型层
+LLM / 多模态模型
+领域微调模型"]
+    B --> C["🟡 能力层
+文本生成/图像生成
+代码生成/语音合成"]
+    C --> D["🟢 编排层
+工作流引擎/Agent 编排
+工具调用/条件判断"]
+    D --> E["🔵 应用层
+SEO 内容工厂
+设计自动化
+多平台发布"]
     
     classDef layer fill:#1d4ed8,stroke:\#2563eb,color:#fff
     class A,B,C,D,E layer`,

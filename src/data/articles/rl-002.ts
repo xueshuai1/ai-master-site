@@ -89,9 +89,12 @@ print(f"最优值函数: {V_example}")  # [2.3 0.8 3.1]`
     D --> E["选择 argmax Q(s,a)"]
     B --> F["只知道状态价值"]
     E --> G["直接得到最优动作"]
-    style E fill:#14532d
-    style F fill:#7f1d1d
-    style G fill:#14532d`,
+    class G s2
+    class F s1
+    class E s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#14532d`,
             tip: "学习 Q 函数时，先想象一个简单的网格世界，在每个格子标出上下左右四个方向的 Q 值，直观理解为什么 Q 比 V 更适合做决策。",
             warning: "Q 表的空间复杂度是 |S| x |A|，当状态或动作空间很大时，表格法会遭遇维度灾难。这也是后续需要深度 Q 网络（DQN）的原因。"
         },
@@ -173,8 +176,10 @@ def value_iteration_q(P: dict, R: dict, n_states: int, n_actions: int,
     D --> F["Q*"]
     E --> F
     C -.->|递归| A
-    style A fill:#0c4a6e
-    style F fill:#14532d`,
+    class F s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d`,
             tip: "理解 Bellman 方程的最好方式是手动算一个小例子：画 2x2 格子，给每个格子标 Q 值，然后用方程更新一次，观察值的变化方向。",
             warning: "Bellman 最优方程中的 max 操作假设模型已知（P 和 R 已知）。Q-Learning 的伟大之处在于：它不需要知道 P 和 R，仅通过采样就能逼近最优 Q 值。"
         },
@@ -277,8 +282,10 @@ def q_learning(env, episodes: int = 1000, alpha: float = 0.1,
     I --> J{"更多 Episode?"}
     J -->|"是"| A
     J -->|"否"| K["输出 Q 表"]
-    style E fill:#7c2d12
-    style G fill:#14532d`,
+    class G s1
+    class E s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
             tip: "Q-Learning 的离线策略特性意味着你可以用任意策略收集数据（甚至人类演示），然后用 Q-Learning 更新 Q 表，最终学到最优策略。",
             warning: "Q-Learning 容易高估 Q 值，因为 max 操作倾向于选择被高估计的动作。在复杂环境中，这种高估会累积。Double Q-Learning 通过解耦选择和评估来缓解这个问题。"
         },
@@ -375,8 +382,10 @@ def compare_exploration_strategies(Q: np.ndarray, state: int,
     D --> F["利用：使用已有知识"]
     E --> G["epsilon 衰减"]
     G --> A
-    style C fill:#7c2d12
-    style D fill:#14532d`,
+    class D s1
+    class C s0
+    classDef s0 fill:#7c2d12
+    classDef s1 fill:#14532d`,
             tip: "对于 FrozenLake 这种小环境，epsilon 从 0.3 衰减到 0.01、衰减率 0.999 是一个不错的起点。大环境需要更长的探索时间。",
             warning: "epsilon 衰减过快会导致智能体还没充分探索就锁定在次优策略上。如果发现训练奖励停滞不前，尝试减缓衰减或增大初始 epsilon。"
         },
@@ -470,8 +479,10 @@ def analyze_gamma_impact(P: dict, R: dict, n_states: int,
     B --> H["alpha 小: 慢但稳定"]
     E --> I["gamma 大: 目光长远"]
     E --> J["gamma 小: 只顾眼前"]
-    style B fill:#0c4a6e
-    style E fill:#7c2d12`,
+    class E s1
+    class B s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#7c2d12`,
             tip: "FrozenLake 环境中，alpha=0.1、gamma=0.99 是比较稳健的选择。alpha 不宜过大，因为环境有随机性，需要平滑噪声。",
             warning: "gamma 非常接近 1 时（如 0.999），Q 值可能变得很大，导致数值不稳定。在长 episode 环境中，考虑使用 gamma=0.99 或 0.95。"
         },
@@ -596,9 +607,10 @@ print(f"满足 RM 条件: {r2}")`
     F --> I
     G --> I
     H --> I
-
-    style I fill:#14532d
-    style A fill:#0c4a6e`,
+    class A s1
+    class I s0
+    classDef s0 fill:#14532d
+    classDef s1 fill:#0c4a6e`,
             tip: "实践中固定学习率（如 0.1）虽然不满足 Robbins-Monro 条件，但在小环境中效果很好。如果 Q 值震荡，可以尝试衰减学习率。",
             warning: "在随机环境（如 FrozenLake with slippery=True）中，即使 Q 表已收敛，策略的成功率也不是 100%，因为环境本身有随机性。这是正常的，不代表算法有问题。"
         },
@@ -737,10 +749,12 @@ def train_and_evaluate(env, agent: QLearningAgent,
 
     J["每 100 集监控"] -.-> C
     K["TD 误差下降"] -.-> E
-
-    style A fill:#0c4a6e
-    style E fill:#14532d
-    style G fill:#14532d`,
+    class G s2
+    class E s1
+    class A s0
+    classDef s0 fill:#0c4a6e
+    classDef s1 fill:#14532d
+    classDef s2 fill:#14532d`,
             tip: "FrozenLake 4x4 滑冰面环境下，Q-Learning 的成功率通常在 60%-80% 之间，这是理论上限（因为环境随机性）。如果想达到 100%，可以切换到 4x4 非滑冰面版本。",
             warning: "训练结果每次运行可能不同，因为环境有随机性且 Q-Learning 的探索也是随机的。设置随机种子 env.reset(seed=42) 和 np.random.seed(42) 可以保证可复现性。"
         },

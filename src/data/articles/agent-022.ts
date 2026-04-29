@@ -32,19 +32,26 @@ export const article: Article = {
 
 这三个项目的共同点是：**不再把 Agent 当「程序」，而是当「有机体」——它会成长、会学习、会进化。**`,
       mermaid: `graph TD
-    A["传统 Agent\n静态能力"] -->|"每次任务\n从零开始"| B["任务执行"]
+    A["传统 Agent
+静态能力"] -->|"每次任务
+从零开始"| B["任务执行"]
     B -->|"能力不变"| A
     
-    C["Self-Evolving Agent\n动态能力"] -->|"执行任务"| D["任务执行"]
+    C["Self-Evolving Agent
+动态能力"] -->|"执行任务"| D["任务执行"]
     D -->|"经验捕获"| E["经验存储"]
     E -->|"知识压缩"| F["能力更新"]
     F -->|"更强能力"| C
-    
-    style A fill:#7f1d1d,color:#f1f5f9
-    style C fill:#064e3b,color:#f1f5f9
-    style D fill:#1e3a5f,color:#f1f5f9
-    style E fill:#78350f,color:#f1f5f9,color:#1e293b
-    style F fill:#7c3aed,color:#f1f5f9`,
+    class F s4
+    class E s3
+    class D s2
+    class C s1
+    class A s0
+    classDef s0 fill:#7f1d1d,color:#f1f5f9
+    classDef s1 fill:#064e3b,color:#f1f5f9
+    classDef s2 fill:#1e3a5f,color:#f1f5f9
+    classDef s3 fill:#78350f,color:#f1f5f9,color:#1e293b
+    classDef s4 fill:#7c3aed,color:#f1f5f9`,
     },
     {
       title: "2. 技术路线一：NousResearch Hermes Agent —— 经验压缩与知识注入",
@@ -492,7 +499,8 @@ if __name__ == "__main__":
 **第四步：持续迭代**
 让 Agent 在运行中不断积累经验和优化能力。关键指标包括：任务成功率、平均执行时间、token 消耗量。`,
       mermaid: `graph TD
-    A["最小可用 Agent\n种子代码"] --> B["任务执行"]
+    A["最小可用 Agent
+种子代码"] --> B["任务执行"]
     B --> C{执行结果}
     
     C -->|"成功"| D["经验捕获"]
@@ -512,13 +520,18 @@ if __name__ == "__main__":
     
     K --> B
     L --> B
-    
-    style A fill:#78350f,color:#f1f5f9,color:#1e293b
-    style B fill:#1e3a5f,color:#f1f5f9
-    style C fill:#7f1d1d,color:#f1f5f9
-    style J fill:#7c3aed,color:#f1f5f9
-    style K fill:#064e3b,color:#f1f5f9
-    style L fill:#7f1d1d,color:#f1f5f9`,
+    class L s5
+    class K s4
+    class J s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#78350f,color:#f1f5f9,color:#1e293b
+    classDef s1 fill:#1e3a5f,color:#f1f5f9
+    classDef s2 fill:#7f1d1d,color:#f1f5f9
+    classDef s3 fill:#7c3aed,color:#f1f5f9
+    classDef s4 fill:#064e3b,color:#f1f5f9
+    classDef s5 fill:#7f1d1d,color:#f1f5f9`,
     },
     {
       title: "7. Python 实战：混合式 Self-Evolving Agent 完整实现",

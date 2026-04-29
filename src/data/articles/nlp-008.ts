@@ -144,16 +144,30 @@ class CausalTransformerLM(nn.Module):
                 ],
             },
             mermaid: `graph TD
-    A["N-gram\n计数频率"] -->|"马尔可夫假设\n局部上下文"| B["NNLM\n词嵌入 + MLP"]
-    B -->|"词向量表示\n窗口扩展"| C["RNN/LSTM\n循环隐藏状态"]
-    C -->|"长程依赖\n但训练慢"| D["Transformer\n自注意力"]
-    D -->|"因果掩码\n并行训练"| E["GPT 系列\n仅解码器"]
-    E -->|"规模化定律\n175B+ 参数"| F["大语言模型\n涌现能力"]
-    
-    style A fill:#7f1d1d
-    style C fill:#713f12
-    style E fill:#14532d
-    style F fill:#581c87`,
+    A["N-gram
+计数频率"] -->|"马尔可夫假设
+局部上下文"| B["NNLM
+词嵌入 + MLP"]
+    B -->|"词向量表示
+窗口扩展"| C["RNN/LSTM
+循环隐藏状态"]
+    C -->|"长程依赖
+但训练慢"| D["Transformer
+自注意力"]
+    D -->|"因果掩码
+并行训练"| E["GPT 系列
+仅解码器"]
+    E -->|"规模化定律
+175B+ 参数"| F["大语言模型
+涌现能力"]
+    class F s3
+    class E s2
+    class C s1
+    class A s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#713f12
+    classDef s2 fill:#14532d
+    classDef s3 fill:#581c87`,
             tip: "语言模型的演进遵循一个核心趋势：从离散计数 → 连续表示 → 注意力全局建模。理解这个脉络，就能理解为什么 Transformer 能够「涌现」出 N-gram 和 RNN 无法实现的能力（如思维链推理）。",
             warning: "N-gram 模型虽然古老，但它仍然是评估神经语言模型的重要基线。不要跳过 N-gram 直接学 Transformer——理解平滑（Smoothing）、回退（Backoff）和困惑度（Perplexity）这些概念，是理解现代语言模型的基础。",
         },
@@ -301,18 +315,23 @@ print("  相比贪心搜索，Beam Search 探索了 4^N 倍的路径空间")`,
     B -->|"Beam Search"| D["维护 k 个候选序列"]
     B -->|"采样"| E["从概率分布随机采样"]
     
-    C --> F["单一路径\n局部最优"]
-    D --> G["多路径并行\n长度归一化"]
+    C --> F["单一路径
+局部最优"]
+    D --> G["多路径并行
+长度归一化"]
     G --> H["选得分最高序列"]
-    E --> I["多样性输出\n可能产生低概率词"]
+    E --> I["多样性输出
+可能产生低概率词"]
     
     F --> J["生成文本"]
     H --> J
     I --> J
-    
-    style C fill:#7f1d1d
-    style G fill:#14532d
-    style I fill:#1e3a5f`,
+    class I s2
+    class G s1
+    class C s0
+    classDef s0 fill:#7f1d1d
+    classDef s1 fill:#14532d
+    classDef s2 fill:#1e3a5f`,
             tip: "翻译任务中 Beam Search 的默认 beam_size=4 是一个经验值。beam_size 从 1 增加到 4 通常显著提升 BLEU 分数，但超过 10 后收益递减甚至下降——因为过大的 beam 倾向于选择短而安全的翻译。",
             warning: "Beam Search 生成的文本往往比采样更「保守」——它倾向于选择高概率但乏味的表达。在需要创意或多样性的任务（如故事生成、对话）中，纯 Beam Search 可能导致重复、无聊的输出。此时应切换到采样策略。",
         },
@@ -435,18 +454,23 @@ print("    → 模糊上下文可能保留 100 个词")`,
     A["模型输出 logits"] --> B["除以温度 T"]
     B --> C["Softmax → 概率分布"]
     C --> D{"采样策略?"}
-    D -->|"Top-k"| E["保留 top-k 个词\n归一化后采样"]
-    D -->|"Top-p"| F["累积概率 ≥ p 的词\n归一化后采样"]
-    D -->|"两者结合"| G["先 top-k 过滤\n再 top-p 截断"]
+    D -->|"Top-k"| E["保留 top-k 个词
+归一化后采样"]
+    D -->|"Top-p"| F["累积概率 ≥ p 的词
+归一化后采样"]
+    D -->|"两者结合"| G["先 top-k 过滤
+再 top-p 截断"]
     E --> H["随机采样一个词"]
     F --> H
     G --> H
     H --> I["追加到生成序列"]
     I --> A
-    
-    style A fill:#1e3a5f
-    style C fill:#713f12
-    style H fill:#14532d`,
+    class H s2
+    class C s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#713f12
+    classDef s2 fill:#14532d`,
             tip: "实际应用中，top-k 和 top-p 经常结合使用：先 top-k=50 过滤掉尾部噪声词，再 top-p=0.9 自适应调整候选集大小。这比单独使用任何一种策略都更稳健。",
             warning: "温度参数对生成质量的影响是非线性的。T 从 0.7 增加到 0.8 的影响，可能比从 1.0 增加到 1.1 大得多。调参时建议以 0.1 为步长进行精细搜索，而不是粗调。",
         },
@@ -566,19 +590,23 @@ print("翻译任务: beam_size=4-6 (确定性最佳) 或 top_p=0.95 (多样性) 
                 ],
             },
             mermaid: `graph TD
-    A["模型 logits"] --> B["温度缩放\nlogits / T"]
+    A["模型 logits"] --> B["温度缩放
+logits / T"]
     B --> C["Softmax → 概率"]
     C --> D["按概率降序排序"]
     D --> E["计算累积概率"]
-    E --> F["找到最小 k\n使 ΣP ≥ p"]
+    E --> F["找到最小 k
+使 ΣP ≥ p"]
     F --> G["截断: 只保留 top-k 个词"]
     G --> H["重新归一化"]
     H --> I["多项式采样"]
     I --> J["生成的词"]
-    
-    style A fill:#1e3a5f
-    style F fill:#713f12
-    style J fill:#14532d`,
+    class J s2
+    class F s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#713f12
+    classDef s2 fill:#14532d`,
             tip: "Holtzman 等人的实验发现，top-p=0.9 在大多数任务上都能取得接近最优的人类评分。如果你不确定该用什么参数，从 temperature=1.0 + top_p=0.9 开始，然后根据生成效果微调。",
             warning: "top-p 设置过低（如 p<0.7）会过度限制候选集，导致生成文本缺乏多样性——这与 Beam Search 的「保守乏味」问题类似。top-p 设置过高（如 p>0.98）则几乎等同于无截断的随机采样，可能产生无意义的内容。",
         },
@@ -723,18 +751,22 @@ for name, info in strategies.items():
             },
             mermaid: `graph TD
     A["生成文本"] --> B{"检测重复?"}
-    B -->|"词重复"| C["重复惩罚\nlogits / γ"]
-    B -->|"n-gram 重复"| D["N-gram 阻塞\nlogits = -∞"]
+    B -->|"词重复"| C["重复惩罚
+logits / γ"]
+    B -->|"n-gram 重复"| D["N-gram 阻塞
+logits = -∞"]
     B -->|"无重复"| E["正常采样"]
     C --> F["修正后的 logits"]
     D --> F
     E --> G["采样下一个词"]
     F --> G
     G --> A
-    
-    style A fill:#1e3a5f
-    style B fill:#713f12
-    style G fill:#14532d`,
+    class G s2
+    class B s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#713f12
+    classDef s2 fill:#14532d`,
             tip: "重复惩罚的 γ 参数对不同类型的文本影响不同。技术文档（如 API 文档）中重复是合理的（如反复提及函数名），建议 γ=1.0-1.1；创意写作中重复应该避免，建议 γ=1.2-1.5。",
             warning: `N-gram 阻塞过于强硬可能导致生成不自然的文本。例如，如果阻塞 3-gram，模型可能无法生成 "I think that I..." 这样的合理结构（因为 "I think that" 已经出现过）。建议从 no_repeat_ngram_size=4 开始，根据效果调整。`,
         },
@@ -887,10 +919,12 @@ llm_judge_evaluation()`,
     J --> M
     K --> M
     L --> M
-    
-    style A fill:#1e3a5f
-    style G fill:#7f1d1d
-    style M fill:#14532d`,
+    class M s2
+    class G s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#7f1d1d
+    classDef s2 fill:#14532d`,
             tip: "在论文或项目报告中，建议同时报告自动指标（BLEU、BERTScore）和人工评估结果。自动指标用于快速迭代，人工评估用于最终验证。如果两者结果一致，结论更可靠；如果两者冲突，需要深入分析原因。",
             warning: "不要过度优化 BLEU 分数。一个 BLEU 分数很高的模型，生成文本可能枯燥乏味——因为它学会了迎合 BLEU 的偏好（n-gram 精确匹配），而不是真正提高文本质量。BLEU 是评估工具，不是优化目标。",
         },
@@ -1061,7 +1095,8 @@ for name, params in strategies.items():
     
     D -->|"贪心"| E["do_sample=False"]
     D -->|"Beam"| F["num_beams=5"]
-    D -->|"采样"| G["do_sample=True\n+ temperature/top_p"]
+    D -->|"采样"| G["do_sample=True
++ temperature/top_p"]
     
     E --> H["LogitsProcessor 链"]
     F --> H
@@ -1079,10 +1114,12 @@ for name, params in strategies.items():
     M -->|"是"| N["输出序列"]
     N --> O["Tokenizer 解码"]
     O --> P["生成文本"]
-    
-    style A fill:#1e3a5f
-    style D fill:#713f12
-    style P fill:#14532d`,
+    class P s2
+    class D s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#713f12
+    classDef s2 fill:#14532d`,
             tip: "在交互式应用（如聊天机器人）中，使用 streamer 参数实现流式输出：`generate(..., streamer=TextStreamer(tokenizer))`。这样用户可以在生成过程中实时看到文本输出，而不是等待全部生成完成。这对于长文本生成（如文章、故事）的用户体验提升极大。",
             warning: "使用 generate() 时最常见的错误是：忘记设置 pad_token（GPT 系列模型的 pad_token 默认是 None），导致 batch 生成时报错。解决方法：`tokenizer.pad_token = tokenizer.eos_token`。另一个常见错误是混合使用互斥参数（如同时设置 do_sample=False 和 temperature=0.7），这会导致不可预期的行为。",
         },

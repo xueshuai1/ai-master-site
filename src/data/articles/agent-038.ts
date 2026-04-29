@@ -751,12 +751,15 @@ async function callSearchAgent(
     C --> C3[一致性难保证]
     D --> D1[顶层编排]
     D --> D2[组内协调]
-    D --> D3[结果聚合]
-    
-    style A fill:#1e3a5f,stroke:#4a90d9,color:#fff
-    style B fill:#2d4a3e,stroke:#4caf50,color:#fff
-    style C fill:#3e2d4a,stroke:#9c27b0,color:#fff
-    style D fill:#4a3e2d,stroke:#ff9800,color:#fff`,
+    classDef s0 fill:#1e3a5f,stroke:#4a90d9,color:#fff
+    classDef s1 fill:#2d4a3e,stroke:#14532d,color:#fff
+    classDef s2 fill:#3e2d4a,stroke:#9c27b0,color:#fff
+    classDef s3 fill:#4a3e2d,stroke:#ff9800,color:#fff
+    class A s0
+    class B s1
+    class C s2
+    class D s3
+    D --> D3[结果聚合]`,
         },
         {
             title: "架构图示 2：编排系统状态转换",
@@ -767,13 +770,17 @@ async function callSearchAgent(
     B -->|timeout| E[Retrying]
     E -->|retry| B
     E -->|escalate| D
-    D -->|restart| A
-    
-    style A fill:#1e3a5f,stroke:#4a90d9,color:#fff
-    style B fill:#2d4a3e,stroke:#4caf50,color:#fff
-    style C fill:#1e3a5f,stroke:#4a90d9,color:#fff
-    style D fill:#4a3e2d,stroke:#ff9800,color:#fff
-    style E fill:#3e2d4a,stroke:#9c27b0,color:#fff`,
+    classDef s0 fill:#1e3a5f,stroke:#4a90d9,color:#fff
+    classDef s1 fill:#2d4a3e,stroke:#14532d,color:#fff
+    classDef s2 fill:#1e3a5f,stroke:#4a90d9,color:#fff
+    classDef s3 fill:#4a3e2d,stroke:#ff9800,color:#fff
+    classDef s4 fill:#3e2d4a,stroke:#9c27b0,color:#fff
+    class A s0
+    class B s1
+    class C s2
+    class D s3
+    class E s4
+    D -->|restart| A`,
         },
         {
             title: "9. 扩展阅读与学习路线",

@@ -53,9 +53,10 @@ export const article: Article = {
     D --> E["结构模块"]
     E --> F["3D 原子坐标"]
     F --> G["置信度评分"]
-    
-    style A fill:#14532d,stroke:#15803d
-    style G fill:#14532d,stroke:#15803d`,
+    class G s1
+    class A s0
+    classDef s0 fill:#14532d,stroke:#15803d
+    classDef s1 fill:#14532d,stroke:#15803d`,
       },
       {
         title: "3. 应用场景",

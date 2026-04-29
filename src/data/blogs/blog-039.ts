@@ -32,19 +32,28 @@ const content: ArticleSection[] = [
         A --> D[多 Agent 群体进化路线]
         
         B --> B1[GenericAgent]
-        B1 --> B2["从 3.3K 行种子代码\n自主生长技能树\n6x 更省 Token"]
+        B1 --> B2["从 3.3K 行种子代码
+自主生长技能树
+6x 更省 Token"]
         
         C --> C1[Evolver]
-        C1 --> C2["基因组编码 Agent 能力\n变异 + 交叉繁殖\n群体竞争选择"]
+        C1 --> C2["基因组编码 Agent 能力
+变异 + 交叉繁殖
+群体竞争选择"]
         
         D --> D1[Hermes Agent]
-        D1 --> D2["多角色 Agent 协作\n经验积累与反思\n持续自我改进"]
+        D1 --> D2["多角色 Agent 协作
+经验积累与反思
+持续自我改进"]
     end
-    
-    style A fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
-    style B fill:#047857,stroke:#34d399,color:#fff
-    style C fill:#b45309,stroke:#fbbf24,color:#fff
-    style D fill:#b91c1c,stroke:#f87171,color:#fff`,
+    class D s3
+    class C s2
+    class B s1
+    class A s0
+    classDef s0 fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
+    classDef s1 fill:#047857,stroke:#34d399,color:#fff
+    classDef s2 fill:#b45309,stroke:#fbbf24,color:#fff
+    classDef s3 fill:#b91c1c,stroke:#f87171,color:#fff`,
   },
   {
     title: "二、Hermes Agent：107K 星背后的多 Agent 群体进化",
@@ -299,20 +308,26 @@ Evolver（EvoMap/evolver）采用了最接近生物进化论的方案。它将 A
     end
     
     subgraph "基因组结构"
-        G1["行为策略基因\\n(决策规则)"] 
-        G2["工具使用基因\\n(工具选择偏好)"]
-        G3["记忆策略基因\\n(信息压缩方式)"]
-        G4["通信协议基因\\n(Agent 间交互)"]
+        G1["行为策略基因\
+(决策规则)"] 
+        G2["工具使用基因\
+(工具选择偏好)"]
+        G3["记忆策略基因\
+(信息压缩方式)"]
+        G4["通信协议基因\
+(Agent 间交互)"]
     end
     
     C --> G1
     C --> G2
     C --> G3
     C --> G4
-    
-    style A fill:#b45309,stroke:#fbbf24,color:#fff
-    style C fill:#b91c1c,stroke:#f87171,color:#fff
-    style D fill:#047857,stroke:#34d399,color:#fff`,
+    class D s2
+    class C s1
+    class A s0
+    classDef s0 fill:#b45309,stroke:#fbbf24,color:#fff
+    classDef s1 fill:#b91c1c,stroke:#f87171,color:#fff
+    classDef s2 fill:#047857,stroke:#34d399,color:#fff`,
     code: [{ lang: "python", filename: "evolver_gep.py", code: `"""
 Evolver GEP (Genome Evolution Protocol) 最小实现
 展示基因组编码 + 进化循环的核心逻辑
@@ -610,10 +625,12 @@ if __name__ == "__main__":
         N --> O[定期群体进化]
         O --> B
     end
-    
-    style A fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
-    style I fill:#047857,stroke:#34d399,color:#fff
-    style O fill:#b45309,stroke:#fbbf24,color:#fff`,
+    class O s2
+    class I s1
+    class A s0
+    classDef s0 fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
+    classDef s1 fill:#047857,stroke:#34d399,color:#fff
+    classDef s2 fill:#b45309,stroke:#fbbf24,color:#fff`,
   },
   {
     title: "七、自进化 Agent 的风险与伦理考量",

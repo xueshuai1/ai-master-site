@@ -123,7 +123,7 @@ Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/Jav
 **阶段 4：漏洞验证与报告**
 - 为每个发现的漏洞生成 PoC（概念验证代码）
 - 生成详细的技术报告，包括影响分析和建议修复方案`,
-    mermaid: `graph TD TB
+    mermaid: `graph TD
     A[Firefox 代码库<br/>1500万行代码] --> B[阶段1: 代码理解]
     B --> B1[调用图构建]
     B --> B2[数据流图构建]
@@ -149,13 +149,18 @@ Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/Jav
     E1 --> F[(271 个已验证漏洞)]
     E2 --> F
     E3 --> F
-    
-    style A fill:#1e3a5f
-    style F fill:#064e3b
-    style B fill:#92400e
-    style C fill:#92400e
-    style D fill:#92400e
-    style E fill:#92400e`,
+    class E s5
+    class D s4
+    class C s3
+    class B s2
+    class F s1
+    class A s0
+    classDef s0 fill:#1e3a5f
+    classDef s1 fill:#064e3b
+    classDef s2 fill:#92400e
+    classDef s3 fill:#92400e
+    classDef s4 fill:#92400e
+    classDef s5 fill:#92400e`,
   },
   {
     title: "四、实战：构建你的 AI 辅助安全审计工具",
@@ -470,9 +475,10 @@ Claude Mythos 在 Firefox 上的成功意味着：
     C2 --> C3[生成报告 + 修复建议]
     C3 --> C4[修复后 AI 复验]
     end
-    
-    style B2 fill:#064e3b
-    style C4 fill:#92400e`,
+    class C4 s1
+    class B2 s0
+    classDef s0 fill:#064e3b
+    classDef s1 fill:#92400e`,
   },
   {
     title: "六、开发者行动指南：如何应对 AI 安全时代",

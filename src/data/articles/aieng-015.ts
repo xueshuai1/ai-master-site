@@ -45,13 +45,18 @@ Anthropic 确认，Claude Code 的模型本身没有问题，而是 Claude Code 
     E --> I[工具执行]
     I --> J[结果组装]
     J --> K[输出给用户]
-    
-    style B fill:#7f1d1d,stroke:#991b1b
-    style C fill:#7f1d1d,stroke:#991b1b
-    style D fill:#7f1d1d,stroke:#991b1b
-    style E fill:#7f1d1d,stroke:#991b1b
-    style F fill:#7f1d1d,stroke:#991b1b
-    style G fill:#14532d,stroke:#166534`,
+    class G s5
+    class F s4
+    class E s3
+    class D s2
+    class C s1
+    class B s0
+    classDef s0 fill:#7f1d1d,stroke:#991b1b
+    classDef s1 fill:#7f1d1d,stroke:#991b1b
+    classDef s2 fill:#7f1d1d,stroke:#991b1b
+    classDef s3 fill:#7f1d1d,stroke:#991b1b
+    classDef s4 fill:#7f1d1d,stroke:#991b1b
+    classDef s5 fill:#14532d,stroke:#166534`,
       tip: "Anthropic 的复盘报告原文链接：https://www.anthropic.com/engineering/april-23-postmortem"
     },
     {
@@ -561,9 +566,10 @@ def analyze_degradation(traces: list) -> dict:
     F --> L[趋势分析]
     L --> M[退化检测]
     M --> E
-    
-    style E fill:#92400e,stroke:#b45309
-    style M fill:#1e3a8a,stroke:#1e40af`,
+    class M s1
+    class E s0
+    classDef s0 fill:#92400e,stroke:#b45309
+    classDef s1 fill:#1e3a8a,stroke:#1e40af`,
     },
     {
       title: "六、最佳实践总结",

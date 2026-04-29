@@ -18,15 +18,22 @@ const post: BlogPost = {
     {
       title: "一、GPT-5.5 模型架构：从分离到统一",
       body: `理解 GPT-5.5 的架构变化，是有效使用它的前提。让我们从 GPT-5 的架构演进说起。`,
-      mermaid: `graph TD\n    subgraph "GPT-5.2 时代（分离架构）"
-        A["GPT-5.2 主模型\\n对话/分析/创作"] 
-        B["GPT-5.2-Codex\\n专用编码模型"]
+      mermaid: `graph TD
+    subgraph "GPT-5.2 时代（分离架构）"
+        A["GPT-5.2 主模型\
+对话/分析/创作"] 
+        B["GPT-5.2-Codex\
+专用编码模型"]
     end
     subgraph "GPT-5.4 过渡期（初步统一）"
-        C["GPT-5.4 统一模型\\nCodex能力并入主模型"]
+        C["GPT-5.4 统一模型\
+Codex能力并入主模型"]
     end
     subgraph "GPT-5.5（完全统一）"
-        D["GPT-5.5 全能模型\\n+ Agentic Coding\\n+ Computer Use\\n+ 统一推理"]
+        D["GPT-5.5 全能模型\
++ Agentic Coding\
++ Computer Use\
++ 统一推理"]
     end
     A -->|"5.4 合并"| C
     B -->|"5.4 合并"| C
@@ -420,8 +427,12 @@ print(analysis)
       title: "六、Simon Willison 的观察与深度解读",
       body: `知名 AI 观察者 Simon Willison 在 GPT-5.5 发布后迅速更新了 [LLM 工具](https://llm.datasette.io/) 并分享了使用体验。以下是他的核心观察：\n\n### 1. Prompt 策略的根本变化\n\nSimon 注意到 OpenAI 的建议——**不要复用之前的 Prompt**——在实际测试中得到了验证。他从 GPT-5.2/5.4 迁移到 GPT-5.5 时发现：\n- 之前精心调优的长系统提示词在 GPT-5.5 上表现反而不如简短提示词\n- GPT-5.5 对「暗示性」指令的理解更强，不需要详细解释「为什么」\n- 工具描述需要精简，否则模型会过度关注工具描述中的细节而忽略核心任务`,
       mermaid: `graph LR
-    A["旧策略: 长系统提示词\\n500+ 词详细指令"] -->|在 GPT-5.5 上| B["效果下降\\n过度约束模型"]
-    C["新策略: 最小有效提示词\\n50-100 词核心指令"] -->|在 GPT-5.5 上| D["效果更好\\n模型自主推理更强"]
+    A["旧策略: 长系统提示词\
+500+ 词详细指令"] -->|在 GPT-5.5 上| B["效果下降\
+过度约束模型"]
+    C["新策略: 最小有效提示词\
+50-100 词核心指令"] -->|在 GPT-5.5 上| D["效果更好\
+模型自主推理更强"]
     B -.->|建议改为| C
     D --> E["逐步增量调优\\而非全量迁移"]`,
     },

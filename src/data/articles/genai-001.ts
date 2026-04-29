@@ -34,7 +34,13 @@ export const article: Article = {
                     ["似然估计", "下界", "不可行", "可行"]
                 ]
             },
-            mermaid: `graph LR\n    A["数据分布 p_data"] --> B["VAE: 隐变量编码"]\n    A --> C["GAN: 对抗训练"]\n    A --> D["Diffusion: 渐进加噪"]\n    B --> E["模糊但稳定"]\n    C --> F["锐利但不稳定"]\n    D --> G["高质量且稳定"]`,
+            mermaid: `graph LR
+    A["数据分布 p_data"] --> B["VAE: 隐变量编码"]
+    A --> C["GAN: 对抗训练"]
+    A --> D["Diffusion: 渐进加噪"]
+    B --> E["模糊但稳定"]
+    C --> F["锐利但不稳定"]
+    D --> G["高质量且稳定"]`,
             tip: "选择模型时，追求极致生成质量选 Diffusion，追求实时推理速度选 VAE 或 GAN。",
             warning: "扩散模型采样慢是硬伤，后续章节会介绍加速方法。"
         },
@@ -61,7 +67,16 @@ export const article: Article = {
                     ["1000", "0.000", "~0%", "~100%", "纯高斯噪声"]
                 ]
             },
-            mermaid: `graph LR\n    A["x_0 清晰图像"] -->|q(x_1|x_0)| B["x_1 轻微噪声"]\n    B -->|q(x_2|x_1)| C["x_2 更多噪声"]\n    C -->|"..."| D["x_t 高度噪声"]\n    D -->|"..."| E["x_T 纯噪声"]\n    style A fill:#064e3b,color:#f1f5f9\n    style E fill:#7f1d1d,color:#f1f5f9`,
+            mermaid: `graph LR
+    A["x_0 清晰图像"] -->|q(x_1|x_0)| B["x_1 轻微噪声"]
+    B -->|q(x_2|x_1)| C["x_2 更多噪声"]
+    C -->|"..."| D["x_t 高度噪声"]
+    D -->|"..."| E["x_T 纯噪声"]
+
+    class A s0
+    classDef s0 fill:#064e3b,color:#f1f5f9
+
+    class E s1`,
             tip: "实际训练中 alpha_bar 可以预先计算并缓存，避免每一步重复计算 cumprod。",
             warning: "beta_t 调度不当会导致训练发散或信息过早丢失，建议从线性调度开始调参。"
         },
@@ -88,7 +103,20 @@ export const article: Article = {
                     ["解码器", "上采样恢复分辨率", "H/4 x W/4 x 4C", "H x W x C", "转置卷积"]
                 ]
             },
-            mermaid: `graph TD\n    A["x_t 噪声图像"] --> B["编码器"]\n    B --> C["瓶颈层 + Attention"]\n    C --> D["解码器"]\n    T["时间步 t"] --> E["时间嵌入"]\n    E --> B\n    E --> C\n    E --> D\n    D --> F["epsilon 预测噪声"]\n    subgraph U-Net\n    B\n    C\n    D\n    end`,
+            mermaid: `graph TD
+    A["x_t 噪声图像"] --> B["编码器"]
+    B --> C["瓶颈层 + Attention"]
+    C --> D["解码器"]
+    T["时间步 t"] --> E["时间嵌入"]
+    E --> B
+    E --> C
+    E --> D
+    D --> F["epsilon 预测噪声"]
+    subgraph U-Net
+    B
+    C
+    D
+    end`,
             tip: "使用 GroupNorm 替代 BatchNorm 可以在小 batch size 下稳定训练扩散模型。",
             warning: "U-Net 输出必须与输入分辨率一致，注意 padding 和 stride 的匹配。"
         },
@@ -114,7 +142,15 @@ export const article: Article = {
                     ["x_0-prediction", "||x_0 - x_0_hat||^2", "alpha_bar_t", "特殊需求", "重构更准确"]
                 ]
             },
-            mermaid: `graph LR\n    A["随机采样 t"] --> B["前向加噪 x_t"]\n    B --> C["U-Net 预测噪声\"]\n    C --> D["MSE 计算损失"]\n    D --> E["反向传播更新权重"]\n    E --> F["重复直到收敛"]\n    style D fill:#78350f,color:#f1f5f9`,
+            mermaid: `graph LR
+    A["随机采样 t"] --> B["前向加噪 x_t"]
+    B --> C["U-Net 预测噪声\"]
+    C --> D["MSE 计算损失"]
+    D --> E["反向传播更新权重"]
+    E --> F["重复直到收敛"]
+
+    class D s0
+    classDef s0 fill:#78350f,color:#f1f5f9`,
             tip: "使用 EMA（指数移动平均）权重进行推理可以显著提升生成质量，训练时保存 EMA 模型。",
             warning: "DDPM 需要 1000 步采样，训练时间较长，建议先用小 T 值调试代码。"
         },
@@ -141,7 +177,14 @@ export const article: Article = {
                     ["DPM-Solver", "20", "~0.3", "3.1", "是（确定）", "支持"]
                 ]
             },
-            mermaid: `graph LR\n    A["DDPM: 1000步"] -->|20x 加速| B["DDIM: 50步"]\n    B -->|质量相当| C["FID ~3.8\"]\n    B -->|确定性| D["支持插值"]\n    B -->|ODE 视角| E["DPM-Solver"]\n    style B fill:#1e3a5f,color:#f1f5f9`,
+            mermaid: `graph LR
+    A["DDPM: 1000步"] -->|20x 加速| B["DDIM: 50步"]
+    B -->|质量相当| C["FID ~3.8\"]
+    B -->|确定性| D["支持插值"]
+    B -->|ODE 视角| E["DPM-Solver"]
+
+    class B s0
+    classDef s0 fill:#1e3a5f,color:#f1f5f9`,
             tip: "eta=0 得到确定性 DDIM，eta=1 回到随机 DDPM，可以调节 eta 在质量和多样性间权衡。",
             warning: "DDIM 步数过少（<10）时质量会明显下降，需根据具体任务选择合适的步数。"
         },
@@ -169,7 +212,17 @@ export const article: Article = {
                     ["引导强度控制", "分类器权重", "guidance_scale"]
                 ]
             },
-            mermaid: `graph TD\n    A["条件 c (文本/类别)"] --> B["条件编码器\"]\n    B --> C["Conditional U-Net"]\n    N["x_t 噪声图像"] --> C\n    T["时间步 t"] --> C\n    C --> D["eps_cond\"]\n    E["空条件"] --> C\n    C --> F["eps_uncond\"]\n    D --> G["CFG 组合\"]\n    F --> G\n    G --> H["guidance_scale 控制强度"]`,
+            mermaid: `graph TD
+    A["条件 c (文本/类别)"] --> B["条件编码器\"]
+    B --> C["Conditional U-Net"]
+    N["x_t 噪声图像"] --> C
+    T["时间步 t"] --> C
+    C --> D["eps_cond\"]
+    E["空条件"] --> C
+    C --> F["eps_uncond\"]
+    D --> G["CFG 组合\"]
+    F --> G
+    G --> H["guidance_scale 控制强度"]`,
             tip: "guidance_scale 在 7.5 左右通常效果最好，过高会导致过饱和，过低则条件控制不足。",
             warning: "训练时 dropout_rate 设为 0.1-0.2，推理时必须关闭 dropout 并使用 CFG。"
         },
@@ -197,7 +250,21 @@ export const article: Article = {
                     ["dropout_rate", "0.1", "条件控制减弱", "容易过拟合"]
                 ]
             },
-            mermaid: `graph TD\n    A["CIFAR-10 数据\"] --> B["数据增强 + 归一化\"]\n    B --> C["前向加噪 x_t"]\n    C --> D["U-Net 预测噪声\"]\n    D --> E["MSE 损失"]\n    E --> F["AdamW 更新\"]\n    F --> G{"100 epoch?"}\n    G -->|否| C\n    G -->|是| H["DDIM 采样生成"]\n    H --> I["保存图像"]\n    style G fill:#78350f,color:#f1f5f9\n    style H fill:#064e3b,color:#f1f5f9`,
+            mermaid: `graph TD
+    A["CIFAR-10 数据\"] --> B["数据增强 + 归一化\"]
+    B --> C["前向加噪 x_t"]
+    C --> D["U-Net 预测噪声\"]
+    D --> E["MSE 损失"]
+    E --> F["AdamW 更新\"]
+    F --> G{"100 epoch?"}
+    G -->|否| C
+    G -->|是| H["DDIM 采样生成"]
+    H --> I["保存图像"]
+
+    class G s0
+    classDef s0 fill:#78350f,color:#f1f5f9
+
+    class H s1`,
             tip: "使用 torch.amp.autocast 混合精度训练可以节省约 50% 显存，加速 1.5-2 倍。",
             warning: "CIFAR-10 虽然小但足以验证管线正确性，不要跳过这一步直接上大模型。"
         },
