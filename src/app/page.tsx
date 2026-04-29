@@ -51,8 +51,12 @@ const features = [
 ];
 
 // 首页展示：6 条动态卡片 + 6 条动态滚动 + 6 篇博客预览
-const sortedByDate = <T extends { date: string }>(items: T[]): T[] =>
-  [...items].sort((a, b) => (b.date > a.date ? 1 : b.date < a.date ? -1 : 0));
+const sortedByDate = <T extends { date: string; id: string }>(items: T[]): T[] =>
+  [...items].sort((a, b) => {
+    if (b.date !== a.date) return b.date > a.date ? 1 : -1;
+    // 同日期：id 倒序（编号越大越新）
+    return b.id.localeCompare(a.id);
+  });
 
 const sortedNews = sortedByDate(news); // 时间倒序：最新在前
 const homeNews = sortedNews.slice(0, 6);

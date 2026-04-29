@@ -19,7 +19,11 @@ const blogPosts = blogs
     category: b.tags.length > 0 ? b.tags[0] : "行业洞察",
     tags: b.tags,
   }))
-  .sort((a, b) => (b.date > a.date ? 1 : b.date < a.date ? -1 : 0));
+  .sort((a, b) => {
+    if (b.date !== a.date) return b.date > a.date ? 1 : -1;
+    // 同日文章：id 倒序（编号越大越新）
+    return b.id.localeCompare(a.id);
+  });
 
 const categoryIcons: Record<string, string> = {
   "行业洞察": "💡",

@@ -113,9 +113,19 @@ export default function KnowledgePage() {
     } else if (sortBy === "level-desc") {
       result = [...result].sort((a, b) => levelOrder[b.level] - levelOrder[a.level]);
     } else if (sortBy === "date-desc") {
-      result = [...result].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      result = [...result].sort((a, b) => {
+        const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+        if (dateDiff !== 0) return dateDiff;
+        // 同日文章：id 倒序（编号越大越新）
+        return b.id.localeCompare(a.id);
+      });
     } else if (sortBy === "date-asc") {
-      result = [...result].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      result = [...result].sort((a, b) => {
+        const dateDiff = new Date(a.date).getTime() - new Date(b.date).getTime();
+        if (dateDiff !== 0) return dateDiff;
+        // 同日文章：id 正序
+        return a.id.localeCompare(b.id);
+      });
     }
     return result;
   }, [activeCategory, searchQuery, sortBy]);

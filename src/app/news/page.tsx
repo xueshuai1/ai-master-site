@@ -90,7 +90,12 @@ export default function NewsPage() {
   }, [recentNews, activeTag]);
 
   const sortedNews = useMemo(
-    () => [...filteredNews].sort((a, b) => b.date.localeCompare(a.date)),
+    () => [...filteredNews].sort((a, b) => {
+      const dateDiff = b.date.localeCompare(a.date);
+      if (dateDiff !== 0) return dateDiff;
+      // 同日期新闻：id 倒序（编号越大越新）
+      return b.id.localeCompare(a.id);
+    }),
     [filteredNews]
   );
 
