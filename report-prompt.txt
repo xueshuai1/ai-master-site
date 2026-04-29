@@ -1,3 +1,6 @@
+## 🔴 语言铁律
+**所有回复必须使用中文。** 日报内容、分析总结一律用中文撰写。
+
 读取以下两个文件，总结今天 ai-master.cc 网站的工作成果：
 
 1. 进度日志：/Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md
