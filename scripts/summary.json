@@ -1,0 +1,41 @@
+{
+  "reposScanned": 182,
+  "starsUpdated": 175,
+  "forksUpdated": 150,
+  "langUpdated": 0,
+  "starsChanges": [
+    {
+      "id": "andrej-karpathy-skills",
+      "old": 98136,
+      "new": 99420,
+      "delta": 1284
+    },
+    {
+      "id": "tradingagents",
+      "old": 54547,
+      "new": 55648,
+      "delta": 1101
+    },
+    {
+      "id": "hermes-agent",
+      "old": 124003,
+      "new": 124891,
+      "delta": 888
+    },
+    {
+      "id": "superpowers",
+      "old": 172313,
+      "new": 173018,
+      "delta": 705
+    },
+    {
+      "id": "caveman",
+      "old": 49752,
+      "new": 50389,
+      "delta": 637
+    }
+  ],
+  "newTopics": [],
+  "totalTopics": 400,
+  "anyChanges": true
+}
