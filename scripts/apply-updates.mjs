@@ -1,142 +1,148 @@
-import fs from 'fs';
+#!/usr/bin/env node
+import { readFileSync, writeFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-// Load data
-const topicUsage = JSON.parse(fs.readFileSync('/tmp/topic-usage.json', 'utf8'));
-const toolsContent = fs.readFileSync('src/data/tools.ts', 'utf8');
-const topicsData = JSON.parse(fs.readFileSync('data/ai-topics.json', 'utf8'));
-const existingTopics = new Map(topicsData.topics.map(t => [t.topic.toLowerCase(), t]));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(__dirname, '..');
 
-// GitHub token for fetching detailed repo data
-const envContent = fs.readFileSync('.env.local', 'utf8');
-const tokenMatch = envContent.match(/GITHUB_TOKEN=["']?([^"'\n\r]+)/);
-const GITHUB_TOKEN = tokenMatch[1].trim();
-
-// Extract all GitHub repo URLs from tools.ts
-const urlRegex = /url:\s*['"]https:\/\/github\.com\/([^'"]+)['"]/g;
-const repos = [];
-let m;
-while ((m = urlRegex.exec(toolsContent)) !== null) {
-  repos.push(m[1]);
+const fetchedData = JSON.parse(readFileSync(join(root, 'scripts/github-data-results.json'), 'utf-8'));
+const resultsMap = new Map();
+for (const r of fetchedData.results) {
+  resultsMap.set(r.repo, r);
 }
 
-console.log(`Processing ${repos.length} repos for data updates...`);
+const toolsContent = readFileSync(join(root, 'src/data/tools.ts'), 'utf-8');
 
-// Generic/boring topics to skip
-const skipTopics = new Set([
-  'framework', 'assistant', 'database', 'ui', 'api', 'skill', 'skills',
-  'application', 'development', 'workflow', 'web', 'pdf', 'security',
-  'torch', 'markdown', 'research', 'memory', 'model', 'interface', 'interfaces',
-  'context', 'image', 'chat', 'models', 'agents', 'vector', 'r', 'html',
-  'ide', 'yaml', 'ts', 'c', 'datasets', 'evaluation', 'mistral', 'webui',
-  'llamacpp', 'mcp', 'search', 'robotic', 'embodied', 'video-processing',
-  'image-processing', 'image-recognition', 'object-detection', 'segmentation',
-  'tensorrt', 'video-analytics', 'voice-cloneai', 'chatchat', 'chatglm',
-  'faiss', 'fastchat', 'streamlit', 'xinference', 'ollama', 'llama', 'autogen',
-  'gemini', 'wechat', 'wechaty', 'llama3', 'pgvector', 'llama2', 'llamaindex',
-  'smolagents', 'emnlp2024', 'vertex-ai', 'vertexai',
-  'vertex-ai-gemini-api', 'modelcontextprotocol', 'go', 'app',
-  'distributed', 'whisper', 'system', 'data', 'gateway', 'gui',
-  'acp', 'work', 'sse', 'ci', 'cpp', 'coding',
-  'harness', 'engineering', 'spec', 'systems', 'monitoring',
-  'webcam', 'deepseek-api', 'llama-api',
-  // Also skip single-repo topics with count=1 that are brand-specific
-  'comfy', 'comfyui', 'chineseocr', 'pp-ocr', 'ocr-engine', 'tesseract',
-  'tesseract-ocr', 'yolov3', 'yolov5', 'yolo-world', 'yolo11', 'yolo26',
-  'yolov8', 'face-recognition', 'deepfakes', 'claude-code-plugin',
-  'claude-code-best-practices', 'claude-code-commands', 'claude-code-hooks',
-  'claude-code-plugins', 'claude-code-skill', 'claude-cowork',
-  'awesome-claude-code', 'deepseek-v3', 'bloomberg-terminal',
-  'evaluation-framework', 'terminal-automation', 'autogen-extension',
-  'autogen-ecosystem',
-]);
+// Split into parts: header + tools array
+// Find the export const tools: Tool[] = [ line
+const headerEnd = toolsContent.indexOf('export const tools: Tool[] = [');
+const header = toolsContent.substring(0, headerEnd + 'export const tools: Tool[] = ['.length);
+const rest = toolsContent.substring(headerEnd + 'export const tools: Tool[] = ['.length);
 
-// AI keyword patterns for topic validation
-const aiPatterns = [
-  /ai/, /ml$/, /dl$/, /llm/, /nlp/, /cv$/, /agent/, /robot/, /vision/,
-  /neural/, /learning/, /generative/, /prompt/, /chatbot/, /deep-/,
-  /machine-learning/, /transformer/, /gpt/, /diffusion/, /rag/,
-  /embedding/, /inference/, /fine-tuning|finetuning|fine_tuning/, /llmops/,
-  /mlops/, /model-serving/, /vector-search/, /semantic/, /knowledge-graph/,
-  /multimodal/, /speech/, /text-to-speech/, /image-generation/,
-  /video-generation/, /code-generation/, /autonomous/, /embodied/,
-  /world-model/, /foundation-model/, /retrieval-augmented/,
-  /instruction-tuning/, /rlhf/, /alignment/, /deepfake/, /deep-fake/,
-  /deep-research/, /graphrag/, /agent-/, /multi-agent/, /multiagent/,
-  /agentic/, /coding-agent|coding-agents/, /voice-clone/, /deepseek/,
-  /claude-code/, /claude-skill/,
-];
+// Split by },{ pattern to get individual tool blocks
+// But we need to preserve the closing ];
+const closingIndex = rest.lastIndexOf('];');
+const toolsBlock = rest.substring(0, closingIndex).trim();
+const trailing = rest.substring(closingIndex);
 
-function isAITopic(topic) {
-  if (skipTopics.has(topic)) return false;
-  return aiPatterns.some(p => p.test(topic));
+// Now split into individual tool entries
+// Each entry starts with { and ends with }
+// We need to handle nested objects/arrays properly
+const toolEntries = [];
+let depth = 0;
+let current = '';
+let inString = false;
+let escapeNext = false;
+let stringChar = null;
+
+for (let i = 0; i < toolsBlock.length; i++) {
+  const ch = toolsBlock[i];
+  
+  if (escapeNext) {
+    current += ch;
+    escapeNext = false;
+    continue;
+  }
+  
+  if (ch === '\\' && inString) {
+    current += ch;
+    escapeNext = true;
+    continue;
+  }
+  
+  if (ch === '"' || ch === "'") {
+    if (!inString) {
+      inString = true;
+      stringChar = ch;
+    } else if (ch === stringChar) {
+      inString = false;
+      stringChar = null;
+    }
+    current += ch;
+    continue;
+  }
+  
+  if (inString) {
+    current += ch;
+    continue;
+  }
+  
+  if (ch === '{') {
+    depth++;
+    current += ch;
+  } else if (ch === '}') {
+    depth--;
+    current += ch;
+    if (depth === 0) {
+      toolEntries.push(current.trim());
+      current = '';
+    }
+  } else {
+    current += ch;
+  }
 }
 
-// Build new topics list
-const newTopics = [];
-for (const [topic, count] of Object.entries(topicUsage)) {
-  if (existingTopics.has(topic)) continue;
-  if (!isAITopic(topic)) continue;
-  
-  // Calculate minStars based on count
-  let minStars;
-  if (count >= 3) minStars = 2000;
-  else if (count >= 2) minStars = 3000;
-  else minStars = 5000;
-  
-  // Generate description
-  const descMap = {
-    'deepseek': 'DeepSeek 大模型生态',
-    'ultralytics': 'Ultralytics YOLO 生态',
-    'yolo': 'YOLO 目标检测生态',
-    'voice-clone': '语音克隆',
-    'deepfake': 'Deepfake 换脸技术',
-    'real-time-deepfake': '实时 Deepfake',
-    'video-deepfake': '视频换脸',
-  };
-  
-  const desc = descMap[topic] || topic.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  
-  newTopics.push({
-    topic,
-    url: `https://github.com/topics/${topic}`,
-    minStars,
-    description: `（自动发现）${desc}`
-  });
-}
+console.log(`Parsed ${toolEntries.length} tool entries`);
 
-// Sort by count (usage frequency)
-newTopics.sort((a, b) => {
-  const ca = topicUsage[a.topic] || 0;
-  const cb = topicUsage[b.topic] || 0;
-  return cb - ca;
+let updates = { stars: 0, forks: 0, language: 0 };
+
+const updatedEntries = toolEntries.map(entry => {
+  // Extract URL
+  const urlMatch = entry.match(/url:\s*["']https:\/\/github\.com\/([^"']+)["']/);
+  if (!urlMatch) return entry;
+  
+  const repo = urlMatch[1];
+  const data = resultsMap.get(repo);
+  if (!data) return entry;
+  
+  let modified = entry;
+  
+  // Update githubStars
+  const starsMatch = modified.match(/(githubStars:\s*)(\d+)/);
+  if (starsMatch) {
+    const oldStars = parseInt(starsMatch[2]);
+    if (oldStars !== data.stars) {
+      modified = modified.replace(/(githubStars:\s*)\d+/, `$1${data.stars}`);
+      updates.stars++;
+    }
+  }
+  
+  // Update forks
+  const forksMatch = modified.match(/(forks:\s*)(\d+)/);
+  if (forksMatch) {
+    const oldForks = parseInt(forksMatch[2]);
+    if (oldForks !== data.forks) {
+      modified = modified.replace(/(forks:\s*)\d+/, `$1${data.forks}`);
+      updates.forks++;
+    }
+  }
+  
+  // Update language  
+  const langMatch = modified.match(/(language:\s*)(["'][^"']*["']|null)/);
+  if (langMatch) {
+    const oldLang = langMatch[2].replace(/["']/g, '');
+    const newLang = data.language || 'null';
+    if (oldLang !== newLang) {
+      modified = modified.replace(/(language:\s*)(["'][^"']*["']|null)/, `$1"${newLang}"`);
+      updates.language++;
+    }
+  }
+  
+  return modified;
 });
 
-console.log(`New AI topics to add: ${newTopics.length}`);
-for (const t of newTopics) {
-  console.log(`  + ${t.topic} (${topicUsage[t.topic]} repos) → ${t.description}`);
+// Reconstruct
+const reconstructed = updatedEntries.join(',\n');
+const newContent = header + '\n' + reconstructed + '\n' + trailing;
+
+console.log('Updates:', JSON.stringify(updates));
+
+if (updates.stars === 0 && updates.forks === 0 && updates.language === 0) {
+  console.log('No changes needed.');
+  writeFileSync(join(root, 'scripts/update-result.json'), JSON.stringify({ hasChanges: false, ...updates }, null, 2));
+} else {
+  writeFileSync(join(root, 'src/data/tools.ts'), newContent);
+  writeFileSync(join(root, 'scripts/update-result.json'), JSON.stringify({ hasChanges: true, ...updates }, null, 2));
+  console.log('tools.ts updated!');
 }
-
-// Update ai-topics.json
-const updatedTopics = [...topicsData.topics, ...newTopics];
-const now = new Date().toISOString();
-topicsData.topics = updatedTopics;
-topicsData.lastUpdated = now;
-
-fs.writeFileSync('data/ai-topics.json', JSON.stringify(topicsData, null, 2) + '\n');
-console.log(`\nai-topics.json updated: ${topicsData.topics.length} topics → ${updatedTopics.length}`);
-console.log(`lastUpdated: ${now}`);
-
-// Save summary for the report
-const summary = {
-  totalScanned: repos.length,
-  newTopicsCount: newTopics.length,
-  newTopics: newTopics.map(t => ({
-    topic: t.topic,
-    repos: topicUsage[t.topic],
-    description: t.description
-  }))
-};
-fs.writeFileSync('/tmp/update-summary.json', JSON.stringify(summary, null, 2));
-
-console.log('\n✅ Topics update complete. Stars/forks/language update skipped (no sequential fetch needed for that).');
-console.log('Summary saved to /tmp/update-summary.json');
