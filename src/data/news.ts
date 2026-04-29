@@ -3409,4 +3409,429 @@ Ghostty 的迁移不是孤例，
     sourceUrl: "https://tech.ifeng.com/c/8siXhEEkgB8",
     href: "/news/news-531",
   },
+  {
+    id: "news-532",
+    tag: "AI 军事",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Scout AI 获 1 亿美元 A 轮融资：用 AI 训练自主军事车辆，前 Palantir 高管创立",
+    summary: 'Coby Adcock（前 Palantir 高管）创立的 Scout AI 完成 1 亿美元 A 轮融资，由 Align Ventures 和 Draper Associates 领投。公司正在训练名为 "Fury" 的 AI 模型，用于指挥军事资产，首批应用于后勤支援，未来将扩展到自主武器系统。',
+    content: `## Scout AI：当 AI 进军战场
+
+**2026 年 4 月 29 日**，TechCrunch 独家报道了 Scout AI 的融资消息。
+
+### 公司概况
+- **创始人**：Coby Adcock（前 Palantir 高管）和 Collin Otis（CTO）
+- **成立时间**：2024 年
+- **A 轮融资**：1 亿美元，Align Ventures 和 Draper Associates 领投
+- **种子轮**：2025 年 1 月完成 1500 万美元
+
+### Fury AI 模型
+Scout AI 正在构建名为 "Fury" 的 AI 模型，基于现有 LLM 训练，用于操作和指挥军事资产。
+CTO Collin Otis 将其比作训练士兵——从已有的基础智能出发，
+教授其成为"卓越的军事 AGI"。
+
+### 军事部署
+- 已获得 DARPA、陆军应用实验室等国防部机构 1100 万美元的技术开发合同
+- 其技术已被陆军第 1 骑兵师用于常规训练
+- 在加州中部军事基地进行实地训练测试，使用四轮全地形车
+
+### 行业争议
+军事 AI 的伦理问题再次引发关注——当 AI 能够自主指挥武器系统时，
+人类监督的边界在哪里？
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/29/coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp/`,
+    date: "2026-04-29 20:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/29/coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp/",
+    href: "/news/news-532",
+  },
+  {
+    id: "news-533",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Anthropic 拒绝五角大楼无限制使用 AI 后，Google 扩大对美军的 AI 访问权限",
+    summary: '在 Anthropic 拒绝允许美国国防部无限制使用其 AI（包括国内大规模监控和自主武器）后，Google 签署了新协议，向五角大楼开放其 AI 用于机密网络。此前 950 名 Google 员工联名要求 CEO 拒绝出售 AI 给国防部。',
+    content: `## AI 军事化：Google 填补 Anthropic 留下的空白
+
+**2026 年 4 月 28 日**，TechCrunch 报道了 Google 与美国国防部的新协议。
+
+### 事件背景
+Anthropic 此前拒绝给予国防部无限制使用 AI 的权限，
+特别是禁止将 AI 用于国内大规模监控和自主武器。
+因此，五角大楼将 Anthropic 列为"供应链风险"——
+这一标签通常只用于外国对手。
+
+### Google 的新协议
+- 允许国防部在机密网络上使用 Google AI，涵盖"所有合法用途"
+- 协议包含不用于国内大规模监控和自主武器的语言，
+但《华尔街日报》指出这些条款是否具有法律约束力尚不明确
+- OpenAI 和 xAI 此前已与国防部签署类似协议
+
+### 员工反对
+950 名 Google 员工签署公开信，要求 CEO Sundar Pichai
+效仿 Anthropic，拒绝向国防部出售无限制的 AI 服务。
+
+### 行业格局
+| 公司 | 对 DoD 态度 | 状态 |
+|------|:----------:|------|
+| Anthropic | 拒绝无限制使用 | 被标记为供应链风险，正在诉讼 |
+| Google | 签署新协议 | 已开放 AI 给机密网络 |
+| OpenAI | 已签约 | 2026 年 3 月签署协议 |
+| xAI | 已签约 | 2026 年 3 月获得访问权限 |
+
+**来源：** TechCrunch + WSJ
+**链接：** https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/`,
+    date: "2026-04-29 20:00",
+    source: "TechCrunch + WSJ",
+    sourceUrl: "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+    href: "/news/news-533",
+  },
+  {
+    id: "news-534",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Lovable 发布 iOS 和 Android 版 Vibe Coding 应用：手机也能用 AI 写代码",
+    summary: 'Vibe Coding 明星公司 Lovable 正式推出移动端应用，支持 iOS 和 Android。用户可通过语音或文本 AI 提示词随时随地构建 Web 应用。该应用在 Apple 加强对 Vibe Coding 应用审核的背景下，合规地将应用预览移至浏览器中运行。',
+    content: `## Lovable 移动端：把 AI 编程装进口袋
+
+**2026 年 4 月 28 日**，TechCrunch 报道了 Lovable 的移动端发布。
+
+### 产品功能
+- **语音/文本提示**：随时随地用自然语言描述应用创意
+- **跨设备同步**：手机和电脑之间无缝切换项目
+- **构建通知**：Agent 完成构建后推送通知
+- **预览在浏览器**：符合 Apple 审核规则，不在应用内运行生成的代码
+
+### Apple 审核风波
+此前 Apple 加强了对 Vibe Coding 应用的审核：
+- 不允许应用下载新代码或改变功能（安全风险）
+- Anything 应用曾被暂时下架，后整改回归
+- Replit 和 Vibecode 等应用的更新被暂时阻止
+
+Lovable 通过将应用预览移至浏览器中运行来遵守规则。
+
+### 行业意义
+Vibe Coding 正从桌面走向移动，
+让非技术用户也能随时随地构建应用。
+这标志着 AI 编程工具的进一步民主化。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/`,
+    date: "2026-04-29 20:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/",
+    href: "/news/news-534",
+  },
+  {
+    id: "news-535",
+    tag: "AI 硬件",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "脑机接口公司 Neurable 计划将「读心」技术授权给消费级可穿戴设备",
+    summary: 'Neurable 是一家专注于非侵入式脑机接口（BCI）的创业公司，计划将其神经数据读取技术授权给消费级可穿戴设备厂商。其 CEO 希望这项技术能在消费领域获得广泛应用。',
+    content: `## 脑机接口走向消费级：从实验室到腕带
+
+**2026 年 4 月 28 日**，TechCrunch 报道了 Neurable 的最新计划。
+
+### 核心技术
+- **非侵入式 BCI**：无需植入电极，通过外部设备读取神经信号
+- **意图识别**：能够识别用户的操作意图，实现"意念控制"
+- **消费级定位**：计划授权给可穿戴设备厂商
+
+### 应用场景
+- 智能手表/腕带的新型交互
+- AR/VR 头显的手势替代方案
+- 残障人士的辅助技术
+
+### 行业竞争
+BCI 赛道正在升温：
+- Neuralink（Elon Musk）专注于侵入式方案
+- Meta 也在研发腕带式 BCI 设备
+- Synchron 已获得人体试验批准
+
+Neurable 选择非侵入式 + 授权模式，
+避免了硬件制造的重资产投入，
+更专注于核心算法的开发。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/28/bci-startup-neurable-looks-to-license-its-mind-reading-tech-for-consumer-wearables/`,
+    date: "2026-04-29 20:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/28/bci-startup-neurable-looks-to-license-its-mind-reading-tech-for-consumer-wearables/",
+    href: "/news/news-535",
+  },
+  {
+    id: "news-536",
+    tag: "AI Agent",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    title: "OpenAI 开源 Symphony：首个 AI Agent 编排开放标准，定义多 Agent 协作协议",
+    summary: 'OpenAI 于 4 月 27 日发布 Symphony——一个用于 AI Agent 编排的开源规范，旨在标准化多 Agent 协作的接口和协议。这被视为 AI Agent 领域的"HTTP 协议"时刻。',
+    content: `## Symphony：AI Agent 时代的 HTTP 协议
+
+**2026 年 4 月 27 日**，OpenAI 发布 Symphony 开源编排规范。
+
+### 核心功能
+- **标准化接口**：定义多 Agent 协作的统一接口和协议
+- **开源开放**：任何开发者和公司都可以使用和扩展
+- **解决碎片化**：当前 AI Agent 生态互操作性极差
+
+### 行业意义
+当前 AI Agent 领域面临的核心问题：
+- 不同厂商的 Agent 无法互相协作
+- 没有统一的调用和通信标准
+- 开发者需要为每个平台单独适配
+
+Symphony 的发布可能为 AI Agent 生态建立统一标准，
+就像 HTTP 协议为 Web 建立了统一标准一样。
+
+### 与 ChatGPT Workspace Agents 的关系
+OpenAI 此前推出了 Workspace Agents 功能，
+Symphony 可能是其背后的编排标准。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/open-source-codex-orchestration-symphony/`,
+    date: "2026-04-29 20:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/open-source-codex-orchestration-symphony/",
+    href: "/news/news-536",
+  },
+  {
+    id: "news-537",
+    tag: "行业",
+    tagColor: "bg-gray-500/10 text-gray-300",
+    title: "Musk 在 OpenAI 庭审首日表现不佳：证词缺乏重点，被律师多次纠正",
+    summary: 'Elon Musk 起诉 Sam Altman 一案进入庭审阶段。Musk 在首日证词中表现散漫、缺乏重点，其律师甚至多次需要纠正他的证词方向。Musk 声称自己只是想"拯救人类"，但陪审团对他的公众形象评价成为案件焦点。',
+    content: `## Musk v. Altman 庭审：AI 行业最大法律战的开场
+
+**2026 年 4 月 28 日**，TechCrunch 和 The Verge 报道了庭审首日情况。
+
+### Musk 的证词要点
+- **声称动机**："我只是想拯救人类"
+- **所有权争议**：展示与黄仁勋的邮件往来，证明自己对 OpenAI 早期硬件获取的贡献
+- **ICO 计划**：曾反对发行加密币，认为"听起来像骗局"
+- **非营利立场**：声称非营利结构是"不可谈判的"
+
+### 庭审焦点
+- **Musk 公众形象**：其律师试图排除对他有负面看法的陪审员，被法官驳回
+- **法官警告**：指出 OpenAI 在其名称起源上采取不一致立场
+- **邮件证据**：展示创始团队关于股权分配的邮件往来
+
+### 行业影响
+此案不仅关乎两位科技巨头的私人纠纷，
+更将决定 OpenAI 的治理结构和 AI 行业的未来走向。
+
+**来源：** TechCrunch + The Verge
+**链接：** https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/`,
+    date: "2026-04-29 20:00",
+    source: "TechCrunch + The Verge",
+    sourceUrl: "https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/",
+    href: "/news/news-537",
+  },
+  {
+    id: "news-538",
+    tag: "AI 安全",
+    tagColor: "bg-rose-500/10 text-rose-300",
+    title: "GitHub 6 小时内修复关键 RCE 漏洞：AI 模型发现了这个高危安全问题",
+    summary: 'GitHub 在不到 6 小时内修复了一个关键的远程代码执行（RCE）漏洞。该漏洞由 AI 模型在代码审计中发现，再次证明 AI 在安全审计领域的实用价值。',
+    content: `## AI 发现 GitHub 高危漏洞：6 小时紧急修复
+
+**2026 年 4 月 29 日**，The Verge 报道了 GitHub 的紧急安全修复。
+
+### 漏洞概况
+- **类型**：远程代码执行（RCE）
+- **严重级别**：Critical（关键）
+- **发现方式**：AI 模型在代码审计中自动发现
+- **修复时间**：不到 6 小时
+
+### AI 在安全审计中的价值
+这是 AI 辅助安全审计的又一个成功案例。
+此前 AI 已在多个项目中发现人类审计忽略的安全漏洞：
+- 自动代码审查
+- 依赖链分析
+- 模糊测试增强
+
+### 行业趋势
+越来越多的公司开始将 AI 纳入安全审计流程。
+AI 能够：
+- 7×24 小时持续扫描
+- 处理海量代码库
+- 识别人类不易察觉的模式
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/news/920295/github-remote-code-execution-vulnerability-fix`,
+    date: "2026-04-29 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/news/920295/github-remote-code-execution-vulnerability-fix",
+    href: "/news/news-538",
+  },
+  {
+    id: "news-539",
+    tag: "AI 出行",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "百度 Apollo Go 数十辆 Robotaxi 在交通中集体冻结，中国暂停新的无人驾驶出租车牌照",
+    summary: '据 Bloomberg 报道，百度 Apollo Go 的数十辆无人驾驶出租车上月在北京交通中集体冻结，引发安全担忧。作为回应，北京已暂停新的 Robotaxi 运营牌照发放。',
+    content: `## Robotaxi 安全警钟：百度车队集体冻结
+
+**2026 年 4 月 29 日**，The Verge 引用 Bloomberg 报道了百度 Apollo Go 的安全事件。
+
+### 事件概况
+- **发生时间**：2026 年 4 月
+- **涉及车辆**：数十辆 Apollo Go Robotaxi
+- **事件**：车辆在交通中集体冻结（无法移动）
+- **后果**：北京暂停新的 Robotaxi 牌照
+
+### 行业影响
+这是 Robotaxi 行业面临的一次重大安全挑战：
+- 多辆车同时故障可能暗示系统性问题
+- 大规模部署前的安全验证仍然不足
+- 监管可能收紧整个行业的审批流程
+
+### 中国 Robotaxi 市场
+百度 Apollo Go 是中国最大的 Robotaxi 运营商之一。
+此次事件和牌照冻结可能影响：
+- 百度在自动驾驶领域的扩张计划
+- 其他 Robotaxi 公司（如小马智行）的审批
+- 整个行业的安全标准升级
+
+**来源：** The Verge / Bloomberg
+**链接：** https://www.theverge.com/ai-artificial-intelligence/920312/china-suspends-autonomous-vehicle-permits-baidu-chaos`,
+    date: "2026-04-29 20:00",
+    source: "The Verge / Bloomberg",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/920312/china-suspends-autonomous-vehicle-permits-baidu-chaos",
+    href: "/news/news-539",
+  },
+  {
+    id: "news-540",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 与微软进入合作新阶段：独家协议结束后深化战略关系",
+    summary: 'OpenAI 于 4 月 27 日宣布与 Microsoft 进入合作新阶段。在结束微软对 OpenAI 产品的独家代理权后，双方将继续深化战略合作，但 OpenAI 现在可以同时与其他云平台（如 AWS）合作。',
+    content: `## OpenAI × 微软：独家时代结束，新阶段开启
+
+**2026 年 4 月 27 日**，OpenAI 官方宣布与 Microsoft 进入合作新阶段。
+
+### 关键变化
+- **独家代理权结束**：微软不再拥有 OpenAI 产品的独家代理权
+- **战略合作深化**：双方关系从"独家绑定"转向"战略伙伴"
+- **多云时代**：OpenAI 可以同时与 AWS、Oracle 等云平台合作
+
+### 背景
+这一变化解决了 OpenAI 与 AWS 签署 500 亿美元协议的法律障碍。
+此前微软的独家条款限制了 OpenAI 与其他云平台的合作。
+
+### 微软的应对
+据报道，微软正在转向 Anthropic：
+- 与 Anthropic 扩大合作
+- 正在构建基于 Claude 的新型 Agent 产品
+- 可能成为 Anthropic 最大的企业客户
+
+**来源：** OpenAI Blog + TechCrunch
+**链接：** https://openai.com/index/next-phase-of-microsoft-partnership/`,
+    date: "2026-04-29 20:00",
+    source: "OpenAI Blog + TechCrunch",
+    sourceUrl: "https://openai.com/index/next-phase-of-microsoft-partnership/",
+    href: "/news/news-540",
+  },
+  {
+    id: "news-541",
+    tag: "AI 投资",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "马桶巨头 Toto 凭借 AI 陶瓷技术实现利润翻身，半导体精密陶瓷业务占营业利润过半",
+    summary: '日本知名马桶制造商 Toto 的高端精密陶瓷业务首次占公司营业利润过半。其高精度陶瓷技术被用于半导体制造设备，在 AI 芯片需求暴涨的推动下成为新的利润引擎。',
+    content: `## 从马桶到 AI 芯片：Toto 的跨界逆袭
+
+**2026 年 4 月 29 日**，Nikkei Asia 报道了 Toto 的业务转型。
+
+### 核心数据
+- **精密陶瓷业务**：首次占营业利润 50% 以上
+- **应用领域**：半导体制造设备的关键部件
+- **驱动力**：AI 芯片需求暴涨带动半导体设备需求
+
+### 技术原理
+Toto 的高端精密陶瓷具有：
+- 极高的精度和纯度
+- 优异的耐热性能
+- 适用于半导体制造中的极端环境
+
+### 行业启示
+这是 AI 产业链外溢效应的典型案例——
+AI 芯片需求的爆发不仅在推动 NVIDIA、台积电等直接参与者，
+还在重塑整个供应链的利润格局。
+
+一个做马桶的公司，因为 AI 芯片需求而实现利润结构转型，
+这就是 AI 时代产业联动的缩影。
+
+**来源：** Nikkei Asia
+**链接：** https://asia.nikkei.com/business/tech/semiconductors/how-toilet-maker-toto-turned-its-ceramics-know-how-into-an-ai-play`,
+    date: "2026-04-29 20:00",
+    source: "Nikkei Asia",
+    sourceUrl: "https://asia.nikkei.com/business/tech/semiconductors/how-toilet-maker-toto-turned-its-ceramics-know-how-into-an-ai-play",
+    href: "/news/news-541",
+  },
+  {
+    id: "news-542",
+    tag: "AI 行业",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Claude Code 修复 3 年烂尾代码：开发者用 AI 编码助手复活 abandoned 项目",
+    summary: '一位曾与 Anthropic CEO 共同发表 Nature 论文的开发者，使用 Claude Code 成功复活了一个停滞三年的烂尾代码项目。他将 Claude Code 当作实习生来带，效果优于招聘人类开发者。',
+    content: `## Claude Code 复活 3 年烂尾项目：比招人还好使
+
+**2026 年 4 月 29 日**，新智元报道了一个 Claude Code 的实际应用案例。
+
+### 案例概况
+- **项目状态**：3 年未维护的代码库
+- **工具**：Claude Code
+- **方法**：将 Claude 当作实习生，逐步指导其理解和修复代码
+- **结果**：成功复活并继续开发
+
+### 经验总结
+- **当实习生带**：不要期望 Claude 一次性理解整个项目
+- **渐进式引导**：从理解架构开始，逐步修复具体问题
+- **比招人好使**：成本更低、响应更快、不知疲倦
+
+### 行业意义
+这是 AI 编码助手从"辅助写代码"走向"独立维护项目"
+的标志性案例。
+对于大量 abandoned 的开源项目来说，
+AI 可能成为它们重获新生的关键。
+
+**来源：** 新智元
+**链接：** https://36kr.com/p/3787353669721351`,
+    date: "2026-04-29 20:00",
+    source: "新智元",
+    sourceUrl: "https://36kr.com/p/3787353669721351",
+    href: "/news/news-542",
+  },
+  {
+    id: "news-543",
+    tag: "AI 应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "第一批押注 AI 的酒店和民宿已不再依赖 OTA，AI 分销拐点到来",
+    summary: '环球旅讯报道，第一批通过 AI 获客的酒店和民宿已经开始摆脱对 OTA（在线旅游平台）的依赖。通过向 AI 投喂内容直接获客，酒店业迎来 AI 分销拐点。',
+    content: `## AI 分销拐点：酒店业不再看 OTA 脸色
+
+**2026 年 4 月 29 日**，36 氪和环球旅讯报道了 AI 在酒店分销中的新应用。
+
+### 核心变化
+- **AI 直接获客**：酒店通过内容投喂 AI 系统，直接触达消费者
+- **降低 OTA 依赖**：减少 Booking、携程等平台的佣金支出
+- **拐点已到**：AI 分销从实验走向规模化
+
+### 运作模式
+- 酒店将房型、价格、设施等信息结构化
+- AI 系统根据用户需求智能推荐
+- 用户通过 AI 助手直接预订，绕过传统 OTA
+
+### 行业影响
+OTA 平台的佣金通常在 15-25%，
+如果 AI 分销能大规模替代传统 OTA 模式，
+将重塑整个酒店业的利润分配格局。
+
+**来源：** 环球旅讯 + 36 氪
+**链接：** https://36kr.com/p/3787724328295427`,
+    date: "2026-04-29 20:00",
+    source: "环球旅讯 + 36 氪",
+    sourceUrl: "https://36kr.com/p/3787724328295427",
+    href: "/news/news-543",
+  },
 ];
