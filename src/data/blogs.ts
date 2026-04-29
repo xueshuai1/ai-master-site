@@ -76,6 +76,7 @@ import { blog as aiDisruptsOutsourcing } from './blogs/blog-084';
 import { blog as openaiOnAWS } from './blogs/blog-085';
 import { blog as openaiEndsMicrosoftExclusivity } from './blogs/blog-086';
 import { blog as metaManusGeopolitics } from './blogs/blog-087';
+import { blog as anthropicSurpassesOpenai } from './blogs/blog-088';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -146,4 +147,5 @@ export const blogs: BlogPost[] = [
   openaiOnAWS,
   openaiEndsMicrosoftExclusivity,
   metaManusGeopolitics,
+  anthropicSurpassesOpenai,
 ];
