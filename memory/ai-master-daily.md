@@ -32,3 +32,4 @@
 - 修复 P1: blog-084.ts mermaid 半角 % → 全角％（4处，上轮漏修）
 - QA 扫描 1320/0/0, Build+TS 全通过, HTTP 7页面全200
 - commit: 6f8afdcc
+- [17:19] 6ee21f7c — PM阶段2: 知识库agent-036(知识Agent架构)+博客blog-088(Anthropic超越OpenAI), Build+TS+深度校验全通过
