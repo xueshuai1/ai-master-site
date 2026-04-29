@@ -3834,4 +3834,406 @@ OTA 平台的佣金通常在 15-25%，
     sourceUrl: "https://36kr.com/p/3787724328295427",
     href: "/news/news-543",
   },
+  {
+    id: "news-544",
+    tag: "融资",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Firestorm Labs 融资 8200 万美元，用 AI 驱动无人机工厂走向战场前线",
+    summary: "Firestorm Labs 完成 8200 万美元融资，致力于将 AI 驱动的无人机制造工厂部署到前线，实现战地快速生产能力。",
+    content: `## Firestorm Labs 融资 8200 万美元：AI 无人机工厂走向战场
+
+**2026 年 4 月 29 日**，TechCrunch 报道，Firestorm Labs 完成了 8200 万美元融资。
+
+### 核心信息
+- **用途**：将 AI 驱动的无人机制造工厂部署到前线
+- **目标**：实现战地快速无人机生产和部署
+- **技术**：AI 辅助设计、自动化制造、快速迭代
+
+### 行业背景
+现代冲突中，无人机的需求量呈指数级增长。
+Firestorm Labs 的方案是将制造能力"前移"到战场附近，
+大幅缩短从需求到交付的周期。
+
+### 意义
+这标志着 AI 制造正在从工业场景走向军事应用，
+"分布式制造"可能成为未来冲突中的关键能力。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/29/firestorm-labs-raises-82m-to-take-drone-factories-into-the-field/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/29/firestorm-labs-raises-82m-to-take-drone-factories-into-the-field/",
+    href: "/news/news-544",
+  },
+  {
+    id: "news-545",
+    tag: "AI 应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Shapes 应用将 AI 助手带入人类群聊，人机混合社交时代来临",
+    summary: "Shapes 是一款全新社交应用，允许用户将 AI 助手加入人类群聊，实现人机混合的群体互动。",
+    content: `## Shapes：AI 加入人类群聊
+
+**2026 年 4 月 29 日**，TechCrunch 报道了 Shapes 应用。
+
+### 核心功能
+- **AI 入群**：将 AI 助手加入人类群聊
+- **智能参与**：AI 根据上下文主动参与讨论
+- **混合互动**：人类和 AI 在同一个聊天空间协作
+
+### 应用场景
+- 群聊中获得即时信息和建议
+- AI 帮助协调群体决策
+- 作为"智能群友"提供专业视角
+
+### 讨论
+这引发了关于 AI 社交角色的讨论：
+AI 是工具、伙伴还是参与者？
+Shapes 正在模糊这些界限。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/29/meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/29/meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats/",
+    href: "/news/news-545",
+  },
+  {
+    id: "news-546",
+    tag: "军事 AI",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Scout AI 融资 1 亿美元训练军事 AI 模型，TechCrunch 实地探访训练营",
+    summary: "Colby Adcock 创办的 Scout AI 完成 1 亿美元融资，专注于训练面向战场的 AI 模型。TechCrunch 记者实地探访了其训练营。",
+    content: `## Scout AI：融资 1 亿美元的军事 AI 公司
+
+**2026 年 4 月 29 日**，TechCrunch 详细报道了 Scout AI。
+
+### 关键信息
+- **融资金额**：1 亿美元
+- **创始人**：Colby Adcock
+- **方向**：训练面向军事用途的 AI 模型
+- **实地报道**：TechCrunch 记者 Tim Fernholz 亲赴训练营
+
+### 背景
+Scout AI 专注于将 AI 技术应用于国防领域，
+包括目标识别、态势感知和决策辅助。
+该公司的训练设施模拟真实战场环境，
+用于测试和迭代 AI 系统。
+
+### 争议
+军事 AI 的应用一直存在伦理争议。
+支持者认为这能减少人员伤亡，
+反对者担忧 AI 自主决策的风险。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/29/coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/29/coby-adcocks-scout-ai-raises-100-million-to-train-models-for-war-we-visited-its-bootcamp/",
+    href: "/news/news-546",
+  },
+  {
+    id: "news-547",
+    tag: "行业",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 正式登陆 AWS，Musk 与 Altman 法庭对峙持续",
+    summary: "OpenAI 宣布其模型、Codex 和托管代理正式登陆 AWS，同日 Amazon 已上线相关产品。与此同时，Musk 与 Altman 的 OpenAI 诉讼庭审进入第二天。",
+    content: `## OpenAI 登陆 AWS + Musk 庭审更新
+
+**2026 年 4 月 28-29 日**，多条重磅消息同时爆出。
+
+### OpenAI × AWS
+- OpenAI 正式宣布其模型、Codex 和 Managed Agents 登陆 AWS
+- Amazon 已经在其平台上架 OpenAI 新产品
+- 这标志着 OpenAI 摆脱微软独占后多云战略的加速
+
+### Musk vs OpenAI 庭审
+- Elon Musk 出庭第二天，继续作证
+- Musk 声称自己本可以拥有 OpenAI 大部分股权但选择了非营利
+- 展示了早期与 Ilya Sutskever、Greg Brockman 的邮件往来
+- Musk 称"我没有发脾气"，并强调自己在 OpenAI 的互动都是"极好的"
+- Ilya 曾发邮件称赞 Musk 是"世界上最有能力的人"
+
+### 影响
+OpenAI 多云化意味着企业客户不再受限于 Azure，
+而 Musk 诉讼的结果将影响 OpenAI 的治理结构。
+
+**来源：** TechCrunch + The Verge + OpenAI Blog
+**链接：** https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch + The Verge + OpenAI",
+    sourceUrl: "https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/",
+    href: "/news/news-547",
+  },
+  {
+    id: "news-548",
+    tag: "开源项目",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 发布 Symphony 开源编排规范，定义 Agent 协作标准",
+    summary: "OpenAI 发布 Symphony，一个用于 Codex Agent 编排的开源规范，旨在建立多 Agent 协作的开放标准。",
+    content: `## OpenAI Symphony：开源 Agent 编排规范
+
+**2026 年 4 月 27 日**，OpenAI Engineering 博客发布 Symphony。
+
+### 什么是 Symphony
+- 一个开源的 Agent 编排规范（orchestration spec）
+- 用于定义多个 Codex Agent 之间如何协作
+- 提供标准化的通信协议和任务分配机制
+
+### 关键特性
+- **开放标准**：任何 AI 编码代理都可以采用
+- **多 Agent 协作**：定义 Agent 间的任务分配和通信
+- **与 Codex 深度集成**：OpenAI 自身的 Codex 原生支持
+
+### 行业意义
+Symphony 的发布可能成为多 Agent 系统的"HTTP 协议"，
+推动行业从单 Agent 走向多 Agent 协作范式。
+这与 Anthropic 此前发布的 Claude 生态形成竞争。
+
+**来源：** OpenAI Engineering Blog
+**链接：** https://openai.com/index/open-source-codex-orchestration-symphony/`,
+    date: "2026-04-30 00:00",
+    source: "OpenAI",
+    sourceUrl: "https://openai.com/index/open-source-codex-orchestration-symphony/",
+    href: "/news/news-548",
+  },
+  {
+    id: "news-549",
+    tag: "行业",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Google 扩大五角大楼 AI 访问权限，此前 Anthropic 拒绝了军方合作请求",
+    summary: "Google 扩大了对五角大楼的 AI 服务访问，此前 Anthropic 因伦理考量拒绝了美国军方的合作请求。",
+    content: `## Google 接手军方 AI 业务
+
+**2026 年 4 月 28 日**，TechCrunch 报道了 AI 巨头在军事合作上的分野。
+
+### 事件经过
+- Anthropic 此前拒绝了美国军方的合作请求
+- Google 随后扩大了对五角大楼的 AI 服务访问权限
+- 这标志着 AI 公司在军事应用上的立场分化
+
+### 背景
+Project Maven 以来，科技公司与军方的关系一直敏感。
+Google 员工曾强烈反对与军方的 AI 合作。
+但 Anthropic 的拒绝为 Google 提供了市场机会。
+
+### 分析
+这反映了 AI 行业的一个核心张力：
+商业机会 vs 伦理责任。
+随着 AI 能力增强，这个选择会越来越难做。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+    href: "/news/news-549",
+  },
+  {
+    id: "news-550",
+    tag: "大语言模型",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Anthropic 发布 Claude for Creative Work，强化创意设计能力",
+    summary: "Anthropic 宣布推出 Claude for Creative Work，结合此前的 Claude Design 产品，全面进军创意设计领域。",
+    content: `## Anthropic 推出 Claude for Creative Work
+
+**2026 年 4 月 28 日**，Anthropic 宣布 Claude for Creative Work。
+
+### 产品组合
+- **Claude Design**（4 月 17 日发布）：与 Claude 协作创建视觉设计、原型、幻灯片
+- **Claude for Creative Work**（4 月 28 日发布）：扩展创意工作流支持
+- **Claude Opus 4.7**（4 月 16 日发布）：最强 Opus 模型，编码和 Agent 能力显著提升
+
+### Anthropic 近期动态
+- 与 Amazon 扩展合作至 5 吉瓦算力
+- 与 NEC 合作建设日本最大 AI 工程团队
+- 推出 Project Glasswing 安全计划（联合 AWS、Apple、Google 等）
+
+### 竞争格局
+Anthropic 正从"安全 AI"定位扩展到"创意 AI"，
+与 OpenAI 的 ChatGPT 在设计/创意领域直接竞争。
+
+**来源：** Anthropic News
+**链接：** https://www.anthropic.com/news/claude-for-creative-work`,
+    date: "2026-04-30 00:00",
+    source: "Anthropic",
+    sourceUrl: "https://www.anthropic.com/news/claude-for-creative-work",
+    href: "/news/news-550",
+  },
+  {
+    id: "news-551",
+    tag: "AI 应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "YouTube 测试 AI 搜索功能，提供引导式答案而非传统搜索结果",
+    summary: "YouTube 正在测试一项 AI 驱动的搜索功能，用户搜索时会获得引导式答案，而非传统的视频列表。",
+    content: `## YouTube AI 搜索：从"找视频"到"给答案"
+
+**2026 年 4 月 28 日**，TechCrunch 报道 YouTube 正在测试 AI 搜索。
+
+### 新搜索体验
+- **引导式答案**：AI 理解问题后给出结构化的引导回答
+- **视频内容理解**：AI 分析视频内容来回答用户问题
+- **从搜索到发现**：不再只是列出视频，而是直接解决问题
+
+### 行业趋势
+- YouTube 的 AI 搜索与 Google Search 的 AI Overview 形成协同
+- 视频平台正从"内容库"转变为"知识引擎"
+- 这可能重塑视频创作者的内容策略
+
+### 影响
+如果 AI 搜索成为主流，
+创作者可能需要优化内容让 AI 更容易理解和引用，
+类似 SEO 但面向 AI（AIO）。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/28/youtube-is-testing-an-ai-powered-search-feature-that-shows-guided-answers/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/28/youtube-is-testing-an-ai-powered-search-feature-that-shows-guided-answers/",
+    href: "/news/news-551",
+  },
+  {
+    id: "news-552",
+    tag: "融资",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "DeepMind 联合创始人 David Silver 融资 11 亿美元，打造无需人类数据即可学习的 AI",
+    summary: "DeepMind 联合创始人、AlphaGo 创造者 David Silver 创立新公司，完成 11 亿美元融资，目标是构建不需要人类数据就能自主学习的 AI 系统。",
+    content: `## David Silver 的 11 亿美元豪赌：无人类数据学习
+
+**2026 年 4 月 27 日**，TechCrunch 报道了 AI 领域最大融资之一。
+
+### 核心信息
+- **创始人**：David Silver（DeepMind 联合创始，AlphaGo 创造者）
+- **融资金额**：11 亿美元
+- **目标**：构建无需人类数据即可自主学习的 AI
+
+### 技术方向
+- **自监督学习**：从环境和交互中学习，而非人类标注数据
+- **强化学习演进**：基于 AlphaGo/AlphaZero 的技术路线
+- **通用性**：目标是通用学习系统，不限定于特定任务
+
+### 意义
+这可能是 AGI 路径上最激进的方向之一。
+当前几乎所有大模型都依赖大量人类数据训练，
+如果成功将打破数据瓶颈。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/",
+    href: "/news/news-552",
+  },
+  {
+    id: "news-553",
+    tag: "大语言模型",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "talkie-1930：使用 1930 年前历史文本训练的 13B 语言模型，Apache 2.0 开源",
+    summary: "由 GPT 和 Whisper 核心贡献者 Alec Radford 等人打造的 talkie-1930，使用 2600 亿 token 的 1930 年前历史英语文本训练，完全开源。",
+    content: `## talkie-1930：来自 1930 年代的语言模型
+
+**2026 年 4 月 28 日**，Simon Willison 报道了 talkie-1930 项目。
+
+### 技术细节
+- **模型规模**：13B 参数
+- **训练数据**：2600 亿 token 的 1930 年前历史英语文本
+- **版本**：base（53.1 GB）+ instruction-tuned（26.6 GB）
+- **许可**：Apache 2.0 完全开源
+
+### 创始团队
+- **Nick Levine**：研究员
+- **David Duvenaud**：多伦多大学教授
+- **Alec Radford**：GPT、GPT-2、Whisper 核心贡献者
+
+### 独特价值
+- **版权安全**：训练数据完全在版权保护期外
+- **历史语言研究**：捕捉了 1930 年前的英语表达方式
+- **开源可复现**：承诺未来公开训练数据或复现脚本
+
+### Simon Willison 评价
+他用 pip 26.1 的新锁文件功能测试了该项目，
+认为这是"有趣的实验，也展示了高质量开源模型的可能性"。
+
+**来源：** Simon Willison's Weblog + Hugging Face
+**链接：** https://talkie-lm.com/introducing-talkie`,
+    date: "2026-04-30 00:00",
+    source: "Simon Willison + Hugging Face",
+    sourceUrl: "https://talkie-lm.com/introducing-talkie",
+    href: "/news/news-553",
+  },
+  {
+    id: "news-554",
+    tag: "行业",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "BCI 初创 Neurable 计划授权其"读心"技术用于消费级可穿戴设备",
+    summary: "脑机接口公司 Neurable 计划将其脑电波解读技术授权给消费级可穿戴设备厂商，让"读心"技术走向大众市场。",
+    content: `## Neurable：让脑机接口走进可穿戴设备
+
+**2026 年 4 月 28 日**，TechCrunch 报道了 BCI 公司 Neurable 的新动向。
+
+### 核心信息
+- **技术**：通过脑电波解读用户意图（"读心"技术）
+- **新策略**：从自营硬件转向技术授权
+- **目标**：消费级可穿戴设备市场
+
+### 应用场景
+- 通过思维控制耳机、手表等设备
+- 专注力监测和认知增强
+- 无障碍交互（残障人士辅助）
+
+### 行业背景
+BCI 领域近期融资活跃：
+- Neuralink 持续推进人体试验
+- Synchron 获得 FDA 批准
+- 脑机接口正在从医疗走向消费
+
+### 趋势
+BCI 技术正在从"科幻"走向"产品"。
+Neurable 的授权模式可能加速技术普及。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/28/bci-startup-neurable-looks-to-license-its-mind-reading-tech-for-consumer-wearables/`,
+    date: "2026-04-30 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/28/bci-startup-neurable-looks-to-license-its-mind-reading-tech-for-consumer-wearables/",
+    href: "/news/news-554",
+  },
+  {
+    id: "news-555",
+    tag: "行业",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "AI 模型和 Agent 创新倒逼 AI Infra 创业机会爆发，半年内多家公司获超亿美元融资",
+    summary: "36 氪报道，AI 模型和 Agent 的创新速度正在倒逼 AI 基础设施层产生大量创业机会，半年内多家 AI Infra 公司获得单笔超亿美元融资。",
+    content: `## AI Infra 创业机会爆发：半年多起超亿美元融资
+
+**2026 年 4 月 30 日**，36 氪和阿尔法公社分析了 AI Infra 赛道。
+
+### 核心观点
+- **倒逼效应**：AI 模型和 Agent 的创新速度正在倒逼基础设施升级
+- **融资爆发**：半年内多家 AI Infra 公司获得单笔超亿美元融资
+- **机会窗口**：从推理加速、向量数据库到 Agent 编排，每个环节都有创业机会
+
+### 关键赛道
+1. **推理加速**：模型越来越大，推理成本成为瓶颈
+2. **向量数据库**：RAG 架构的核心组件
+3. **Agent 编排**：多 Agent 协作需要新的基础设施
+4. **评估与监控**：AI 系统的可观测性
+5. **数据管道**：高质量训练数据的获取和处理
+
+### 国内动态
+- DeepSeek 发布 V4-Pro 和 V4-Flash 双版本（机器之心报道）
+- AI 手机困境：36 氪分析为什么我们迟迟用不上 AI 手机
+- AI Infra 从"可有可无"变成"必选项"
+
+### 趋势判断
+AI 的竞争正在从"模型层"下沉到"基础设施层"。
+谁能降低 AI 的使用成本、提高可靠性，
+谁就能在下一轮竞争中胜出。
+
+**来源：** 36 氪 + 机器之心
+**链接：** https://36kr.com/p/3787679275441413`,
+    date: "2026-04-30 00:00",
+    source: "36 氪 + 机器之心",
+    sourceUrl: "https://36kr.com/p/3787679275441413",
+    href: "/news/news-555",
+  },
 ];
