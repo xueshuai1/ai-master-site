@@ -330,9 +330,15 @@ export function parseMarkdown(text: string): string {
     return `<div class="mermaid-container my-6 p-6 rounded-xl bg-white/5 border border-white/10" data-mermaid="${safeChart}" id="${containerId}"><div class="flex justify-center items-center min-h-[60px]"><div class="mermaid-chart"></div><span class="text-xs text-slate-500 ml-2">图表渲染中...</span></div></div>`;
   });
 
-  // Step 5: Wrap <table> in overflow-x-auto container for mobile responsiveness
-  result = result.replace(/<table/g, '<div class="overflow-x-auto"><table')
-    .replace(/<\/table>/g, '</table></div>');
+  // Step 5: Wrap <table> in scrollable container
+  // Use table-layout:auto so columns auto-size, but cap table width at 100%
+  // Cells get min-width:0 + word-break so long content wraps instead of overflowing
+  result = result.replace(/<table/g,
+    '<div class="overflow-x-auto my-4"><table class="w-full" style="table-layout:auto;border-collapse:collapse">'
+  ).replace(/<\/table>/g, '</table></div>');
+
+  result = result.replace(/<th/g, '<th style="min-width:0;word-break:break-word;overflow-wrap:break-word;padding:0.5rem 0.75rem"')
+    .replace(/<td/g, '<td style="min-width:0;word-break:break-word;overflow-wrap:break-word;padding:0.5rem 0.75rem"');
 
   return result;
 }

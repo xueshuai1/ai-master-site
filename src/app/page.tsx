@@ -40,7 +40,7 @@ const features = [
     icon: "🎯",
     title: "学习路径",
     desc: "为你量身定制的学习路线，从入门到进阶不走弯路",
-    href: "/roadmap",
+    href: "/knowledge",
   },
   {
     icon: "🤝",

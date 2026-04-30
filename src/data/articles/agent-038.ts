@@ -12,40 +12,40 @@ export const article: Article = {
     content: [
         {
             title: "1. 什么是 Agent 编排——多智能体协作的基础设施",
-            body: `**Agent 编排（Agent Orchestration）**是指在**多智能体系统**中，对多个 **Agent 的任务分配、执行顺序、信息传递、冲突解决**进行**统一管理和调度**的技术体系。它是**多 Agent 协作**的基础设施，类似于操作系统中的**进程调度器**。
+            body: `<strong>Agent 编排（Agent Orchestration）</strong>是指在<strong>多智能体系统</strong>中，对多个 <strong>Agent 的任务分配、执行顺序、信息传递、冲突解决</strong>进行<strong>统一管理和调度</strong>的技术体系。它是<strong>多 Agent 协作</strong>的基础设施，类似于操作系统中的<strong>进程调度器</strong>。
 
 ### 为什么需要编排？
 
-单个 **Agent** 可以独立完成简单任务，但在面对**复杂业务场景**时，需要将工作**分解为多个子任务**，由**不同的 Agent** 分别执行。如果没有**统一的编排机制**，会出现以下问题：
+单个 <strong>Agent</strong> 可以独立完成简单任务，但在面对<strong>复杂业务场景</strong>时，需要将工作<strong>分解为多个子任务</strong>，由<strong>不同的 Agent</strong> 分别执行。如果没有<strong>统一的编排机制</strong>，会出现以下问题：
 
-- **任务分配混乱**：多个 Agent 同时执行相同任务，或者关键任务无人执行
-- **信息孤岛**：Agent 之间无法**共享上下文和中间结果**
-- **状态不一致**：无法追踪**全局执行状态**，导致任务遗漏或重复
-- **无法容错**：某个 Agent 失败时，没有**降级和重试机制**
+- <strong>任务分配混乱</strong>：多个 Agent 同时执行相同任务，或者关键任务无人执行
+- <strong>信息孤岛</strong>：Agent 之间无法<strong>共享上下文和中间结果</strong>
+- <strong>状态不一致</strong>：无法追踪<strong>全局执行状态</strong>，导致任务遗漏或重复
+- <strong>无法容错</strong>：某个 Agent 失败时，没有<strong>降级和重试机制</strong>
 
 ### 编排 vs 协调
 
-**编排（Orchestration）** 和 **协调（Coordination）**是两个容易混淆的概念：
+<strong>编排（Orchestration）</strong> 和 <strong>协调（Coordination）</strong>是两个容易混淆的概念：
 
 | 维度 | 编排 | 协调 |
 |------|------|------|
-| 控制方式 | **中心化调度**，有明确的编排器 | **去中心化协商**，Agent 自主决定 |
-| 复杂度 | 编排器负责**全局逻辑** | 每个 Agent 负责**局部逻辑** |
+| 控制方式 | <strong>中心化调度</strong>，有明确的编排器 | <strong>去中心化协商</strong>，Agent 自主决定 |
+| 复杂度 | 编排器负责<strong>全局逻辑</strong> | 每个 Agent 负责<strong>局部逻辑</strong> |
 | 适用场景 | 工作流明确、步骤清晰的场景 | 动态环境、需要灵活响应的场景 |
-| 容错性 | 编排器是**单点故障** | 无单点故障，但**一致性难以保证** |
+| 容错性 | 编排器是<strong>单点故障</strong> | 无单点故障，但<strong>一致性难以保证</strong> |
 
-在实际系统中，通常采用**混合模式**：核心流程由**编排器调度**，局部交互由 **Agent 自主协调**。
+在实际系统中，通常采用<strong>混合模式</strong>：核心流程由<strong>编排器调度</strong>，局部交互由 <strong>Agent 自主协调</strong>。
 
 ### 编排的核心要素
 
-一个完整的 Agent 编排系统包含以下**核心要素**：
+一个完整的 Agent 编排系统包含以下<strong>核心要素</strong>：
 
-- **任务分解**：将复杂任务拆分为**可执行的子任务**
-- **Agent 注册与发现**：管理可用 Agent 的**能力清单**
-- **调度策略**：决定**哪个 Agent 执行哪个任务**
-- **状态管理**：追踪**全局和局部的执行状态**
-- **通信机制**：Agent 之间**传递消息和共享数据**
-- **异常处理**：处理 Agent 失败、超时、冲突等**异常情况**`,
+- <strong>任务分解</strong>：将复杂任务拆分为<strong>可执行的子任务</strong>
+- <strong>Agent 注册与发现</strong>：管理可用 Agent 的<strong>能力清单</strong>
+- <strong>调度策略</strong>：决定<strong>哪个 Agent 执行哪个任务</strong>
+- <strong>状态管理</strong>：追踪<strong>全局和局部的执行状态</strong>
+- <strong>通信机制</strong>：Agent 之间<strong>传递消息和共享数据</strong>
+- <strong>异常处理</strong>：处理 Agent 失败、超时、冲突等<strong>异常情况</strong>`,
             code: [{
                 lang: "typescript",
                 title: "Agent 编排核心接口定义",
@@ -83,58 +83,58 @@ interface AgentAssignment {
         },
         {
             title: "2. Agent 编排的架构模式——中心化、去中心化与混合",
-            body: `**Agent 编排的架构模式**决定了系统的**可扩展性、容错性和灵活性**。主流架构模式有三种：**中心化编排**、**去中心化编排** 和 **混合编排**。
+            body: `<strong>Agent 编排的架构模式</strong>决定了系统的<strong>可扩展性、容错性和灵活性</strong>。主流架构模式有三种：<strong>中心化编排</strong>、<strong>去中心化编排</strong> 和 <strong>混合编排</strong>。
 
 ### 中心化编排（Centralized Orchestration）
 
-**中心化编排**由一个**编排器（Orchestrator）**统一管理所有 Agent 的任务分配和执行流程。编排器是系统的**大脑**，负责接收输入、分解任务、调度 Agent、收集结果。
+<strong>中心化编排</strong>由一个<strong>编排器（Orchestrator）</strong>统一管理所有 Agent 的任务分配和执行流程。编排器是系统的<strong>大脑</strong>，负责接收输入、分解任务、调度 Agent、收集结果。
 
-**中心化编排的优点**：
+<strong>中心化编排的优点</strong>：
 
-- **全局视图**：编排器掌握**完整的任务状态**，可以做出最优调度决策
-- **易于调试**：所有流程**经过编排器**，日志集中、问题定位容易
-- **确定性高**：执行顺序和结果**可预测**，适合对**一致性要求高**的场景
+- <strong>全局视图</strong>：编排器掌握<strong>完整的任务状态</strong>，可以做出最优调度决策
+- <strong>易于调试</strong>：所有流程<strong>经过编排器</strong>，日志集中、问题定位容易
+- <strong>确定性高</strong>：执行顺序和结果<strong>可预测</strong>，适合对<strong>一致性要求高</strong>的场景
 
-**中心化编排的缺点**：
+<strong>中心化编排的缺点</strong>：
 
-- **单点故障**：编排器一旦失败，整个系统**瘫痪**
-- **扩展性受限**：编排器可能成为**性能瓶颈**，难以水平扩展
-- **灵活性差**：新增 Agent 类型或修改流程需要**修改编排器逻辑**
+- <strong>单点故障</strong>：编排器一旦失败，整个系统<strong>瘫痪</strong>
+- <strong>扩展性受限</strong>：编排器可能成为<strong>性能瓶颈</strong>，难以水平扩展
+- <strong>灵活性差</strong>：新增 Agent 类型或修改流程需要<strong>修改编排器逻辑</strong>
 
 ### 去中心化编排（Decentralized Orchestration）
 
-**去中心化编排**中，没有统一的编排器，每个 Agent **自主决策**何时执行任务、与谁协作。Agent 通过**消息传递** 或 **共享环境**进行通信。
+<strong>去中心化编排</strong>中，没有统一的编排器，每个 Agent <strong>自主决策</strong>何时执行任务、与谁协作。Agent 通过<strong>消息传递</strong> 或 <strong>共享环境</strong>进行通信。
 
-**去中心化编排的优点**：
+<strong>去中心化编排的优点</strong>：
 
-- **无单点故障**：任意 Agent 失败不影响**整体系统运行**
-- **高度可扩展**：新 Agent 可以随时**加入系统**，无需修改现有逻辑
-- **灵活性强**：Agent 可以**动态调整**策略，适应变化的环境
+- <strong>无单点故障</strong>：任意 Agent 失败不影响<strong>整体系统运行</strong>
+- <strong>高度可扩展</strong>：新 Agent 可以随时<strong>加入系统</strong>，无需修改现有逻辑
+- <strong>灵活性强</strong>：Agent 可以<strong>动态调整</strong>策略，适应变化的环境
 
-**去中心化编排的缺点**：
+<strong>去中心化编排的缺点</strong>：
 
-- **全局一致性难保证**：没有全局视图，可能出现**任务重复执行或遗漏**
-- **调试困难**：问题分散在多个 Agent 中，**日志不集中**
-- **死锁风险**：Agent 之间的**循环依赖**可能导致死锁
+- <strong>全局一致性难保证</strong>：没有全局视图，可能出现<strong>任务重复执行或遗漏</strong>
+- <strong>调试困难</strong>：问题分散在多个 Agent 中，<strong>日志不集中</strong>
+- <strong>死锁风险</strong>：Agent 之间的<strong>循环依赖</strong>可能导致死锁
 
 ### 混合编排（Hybrid Orchestration）
 
-**混合编排**结合了中心化和去中心化的优点：核心流程由**编排器统一管理**，局部交互由 **Agent 自主协调**。这是目前**工业实践中最常用的模式**。
+<strong>混合编排</strong>结合了中心化和去中心化的优点：核心流程由<strong>编排器统一管理</strong>，局部交互由 <strong>Agent 自主协调</strong>。这是目前<strong>工业实践中最常用的模式</strong>。
 
 混合编排的典型结构：
 
-- **顶层编排**：编排器负责**任务分解** 和 **Agent 分组**
-- **组内协调**：每组内的 Agent **自主协商**执行顺序
-- **结果聚合**：编排器收集各组结果，进行**最终整合**
+- <strong>顶层编排</strong>：编排器负责<strong>任务分解</strong> 和 <strong>Agent 分组</strong>
+- <strong>组内协调</strong>：每组内的 Agent <strong>自主协商</strong>执行顺序
+- <strong>结果聚合</strong>：编排器收集各组结果，进行<strong>最终整合</strong>
 
 ### 架构模式选择矩阵
 
 | 场景 | 推荐模式 | 理由 |
 |------|---------|------|
-| 数据流水线 | **中心化** | 流程固定，需要严格顺序执行 |
-| 实时监控系统 | **去中心化** | 需要快速响应，容错要求高 |
-| 客户服务系统 | **混合** | 核心流程集中，对话交互分散 |
-| 代码审查系统 | **混合** | 检查规则集中，审查逻辑分散 |`,
+| 数据流水线 | <strong>中心化</strong> | 流程固定，需要严格顺序执行 |
+| 实时监控系统 | <strong>去中心化</strong> | 需要快速响应，容错要求高 |
+| 客户服务系统 | <strong>混合</strong> | 核心流程集中，对话交互分散 |
+| 代码审查系统 | <strong>混合</strong> | 检查规则集中，审查逻辑分散 |`,
             code: [{
                 lang: "typescript",
                 title: "混合编排器实现示例",
@@ -175,43 +175,43 @@ class HybridOrchestrator {
         },
         {
             title: "3. OpenAI Symphony 开源规范——Agent 编排的新标准",
-            body: `**OpenAI Symphony** 是 OpenAI 于 2026 年 4 月发布的**开源 Agent 编排规范**，旨在为多智能体协作提供**统一的标准协议**。Symphony 的核心目标是解决当前 Agent 生态中**协议碎片化**的问题，让不同框架和平台的 Agent 能够**无缝协作**。
+            body: `<strong>OpenAI Symphony</strong> 是 OpenAI 于 2026 年 4 月发布的<strong>开源 Agent 编排规范</strong>，旨在为多智能体协作提供<strong>统一的标准协议</strong>。Symphony 的核心目标是解决当前 Agent 生态中<strong>协议碎片化</strong>的问题，让不同框架和平台的 Agent 能够<strong>无缝协作</strong>。
 
 ### Symphony 的设计理念
 
 Symphony 的设计遵循三个核心原则：
 
-- **开放性**：规范完全开源，任何框架和平台都可以**自由实现**
-- **最小化**：只定义**必要的协议接口**，不强制要求特定的实现方式
-- **可扩展**：通过**插件机制**支持自定义功能，不影响核心协议
+- <strong>开放性</strong>：规范完全开源，任何框架和平台都可以<strong>自由实现</strong>
+- <strong>最小化</strong>：只定义<strong>必要的协议接口</strong>，不强制要求特定的实现方式
+- <strong>可扩展</strong>：通过<strong>插件机制</strong>支持自定义功能，不影响核心协议
 
 ### Symphony 的核心概念
 
-**Symphony 定义了以下核心概念**：
+<strong>Symphony 定义了以下核心概念</strong>：
 
-- **Score（乐谱）**：描述整个任务的**执行计划**，包含任务分解、Agent 分配、执行顺序和依赖关系
-- **Conductor（指挥家）**：负责**解析 Score** 并调度 Agent 执行的**编排器**
-- **Player（演奏者）**：执行具体任务的 **Agent**，接收指令、执行任务、返回结果
-- **Movement（乐章）**：Score 中的**一个执行阶段**，包含一组并行或串行的任务
+- <strong>Score（乐谱）</strong>：描述整个任务的<strong>执行计划</strong>，包含任务分解、Agent 分配、执行顺序和依赖关系
+- <strong>Conductor（指挥家）</strong>：负责<strong>解析 Score</strong> 并调度 Agent 执行的<strong>编排器</strong>
+- <strong>Player（演奏者）</strong>：执行具体任务的 <strong>Agent</strong>，接收指令、执行任务、返回结果
+- <strong>Movement（乐章）</strong>：Score 中的<strong>一个执行阶段</strong>，包含一组并行或串行的任务
 
 ### Symphony 的通信协议
 
-**Symphony 定义了三种通信模式**：
+<strong>Symphony 定义了三种通信模式</strong>：
 
-- **Request-Response**：Conductor 向 Player 发送请求，等待**同步响应**
-- **Publish-Subscribe**：Conductor 发布事件，多个 Player **订阅并响应**
-- **Event Stream**：Player 在执行过程中**持续推送事件**，Conductor 实时监听
+- <strong>Request-Response</strong>：Conductor 向 Player 发送请求，等待<strong>同步响应</strong>
+- <strong>Publish-Subscribe</strong>：Conductor 发布事件，多个 Player <strong>订阅并响应</strong>
+- <strong>Event Stream</strong>：Player 在执行过程中<strong>持续推送事件</strong>，Conductor 实时监听
 
 ### Symphony 与其他规范的对比
 
 | 特性 | Symphony | A2A (Agent-to-Agent) | MCP (Model Context Protocol) |
 |------|---------|---------------------|------------------------------|
-| 定位 | **多 Agent 编排标准** | Agent 间通信协议 | 工具调用标准 |
+| 定位 | <strong>多 Agent 编排标准</strong> | Agent 间通信协议 | 工具调用标准 |
 | 开源 | ✅ 完全开源 | ✅ 开源 | ✅ 开源 |
-| 编排能力 | ✅ **内置编排逻辑** | ❌ 仅通信 | ❌ 仅工具调用 |
-| 多 Agent 支持 | ✅ **原生支持** | ✅ 原生支持 | ⚠️ 间接支持 |
-| 状态管理 | ✅ **内置状态追踪** | ❌ 无 | ❌ 无 |
-| 错误处理 | ✅ **重试+降级** | ⚠️ 基础 | ⚠️ 基础 |`,
+| 编排能力 | ✅ <strong>内置编排逻辑</strong> | ❌ 仅通信 | ❌ 仅工具调用 |
+| 多 Agent 支持 | ✅ <strong>原生支持</strong> | ✅ 原生支持 | ⚠️ 间接支持 |
+| 状态管理 | ✅ <strong>内置状态追踪</strong> | ❌ 无 | ❌ 无 |
+| 错误处理 | ✅ <strong>重试+降级</strong> | ⚠️ 基础 | ⚠️ 基础 |`,
             code: [{
                 lang: "json",
                 title: "Symphony Score 格式示例",
@@ -260,38 +260,38 @@ Symphony 的设计遵循三个核心原则：
         },
         {
             title: "4. 状态机建模——编排系统的核心抽象",
-            body: `**有限状态机（Finite State Machine, FSM）**是 Agent 编排系统的**核心抽象**。通过将任务建模为状态机的状态转换，可以清晰地描述任务的**生命周期** 和 **执行流程**。
+            body: `<strong>有限状态机（Finite State Machine, FSM）</strong>是 Agent 编排系统的<strong>核心抽象</strong>。通过将任务建模为状态机的状态转换，可以清晰地描述任务的<strong>生命周期</strong> 和 <strong>执行流程</strong>。
 
 ### 状态机的基本元素
 
 一个用于 Agent 编排的状态机包含以下元素：
 
-- **状态（State）**：任务所处的**阶段**，如 Pending、Running、Completed、Failed
-- **转换（Transition）**：从一个状态到另一个状态的**变化条件**
-- **事件（Event）**：触发状态转换的**外部信号**
-- **动作（Action）**：状态转换时执行的**操作**
+- <strong>状态（State）</strong>：任务所处的<strong>阶段</strong>，如 Pending、Running、Completed、Failed
+- <strong>转换（Transition）</strong>：从一个状态到另一个状态的<strong>变化条件</strong>
+- <strong>事件（Event）</strong>：触发状态转换的<strong>外部信号</strong>
+- <strong>动作（Action）</strong>：状态转换时执行的<strong>操作</strong>
 
 ### Agent 编排的典型状态机
 
-典型的 Agent 编排状态转换流程为：**Pending（待调度）→ Running（执行中）→ Completed（完成）** 或 **Failed（失败）**。失败后可以进入 **Retrying（重试中）**，重试成功回到 Running，超过最大重试次数后 **Escalate（升级处理）**。
+典型的 Agent 编排状态转换流程为：<strong>Pending（待调度）→ Running（执行中）→ Completed（完成）</strong> 或 <strong>Failed（失败）</strong>。失败后可以进入 <strong>Retrying（重试中）</strong>，重试成功回到 Running，超过最大重试次数后 <strong>Escalate（升级处理）</strong>。
 
 ### 状态机的实现策略
 
-**实现 Agent 编排状态机有三种主要策略**：
+<strong>实现 Agent 编排状态机有三种主要策略</strong>：
 
-**策略一：硬编码状态机**——将状态转换逻辑**直接写入代码**，使用 switch-case 或 if-else 实现。优点是简单直接，缺点是**状态变更需要修改代码**。
+<strong>策略一：硬编码状态机</strong>——将状态转换逻辑<strong>直接写入代码</strong>，使用 switch-case 或 if-else 实现。优点是简单直接，缺点是<strong>状态变更需要修改代码</strong>。
 
-**策略二：声明式状态机**——使用**配置文件**定义状态转换规则，运行时动态解析。优点是**规则变更无需改代码**，缺点是需要额外的**规则引擎**。
+<strong>策略二：声明式状态机</strong>——使用<strong>配置文件</strong>定义状态转换规则，运行时动态解析。优点是<strong>规则变更无需改代码</strong>，缺点是需要额外的<strong>规则引擎</strong>。
 
-**策略三：图状态机**——将状态机建模为**有向图**，使用图遍历算法执行状态转换。这是 **LangGraph** 采用的方式，支持**循环、分支和并行**等复杂模式。
+<strong>策略三：图状态机</strong>——将状态机建模为<strong>有向图</strong>，使用图遍历算法执行状态转换。这是 <strong>LangGraph</strong> 采用的方式，支持<strong>循环、分支和并行</strong>等复杂模式。
 
 ### 状态管理的持久化
 
-在分布式环境中，状态需要**持久化存储**以保证系统重启后能恢复：
+在分布式环境中，状态需要<strong>持久化存储</strong>以保证系统重启后能恢复：
 
-- **内存存储**：适合**单进程、短生命周期**的编排任务
-- **Redis**：适合**分布式、高并发**场景，支持原子操作
-- **数据库**：适合**需要长期审计**的场景，支持复杂查询`,
+- <strong>内存存储</strong>：适合<strong>单进程、短生命周期</strong>的编排任务
+- <strong>Redis</strong>：适合<strong>分布式、高并发</strong>场景，支持原子操作
+- <strong>数据库</strong>：适合<strong>需要长期审计</strong>的场景，支持复杂查询`,
             code: [{
                 lang: "typescript",
                 title: "声明式状态机实现",
@@ -342,28 +342,28 @@ const agentFSM = new DeclarativeStateMachine({
         },
         {
             title: "5. 实战实现：使用 LangGraph 构建 Agent 编排系统",
-            body: `**LangGraph** 是目前最成熟的 **Agent 编排框架**之一。它基于**图计算模型**，将 Agent 编排建模为**有向图的遍历**，支持循环、分支、并行等复杂模式。本节通过一个**代码审查 Agent 系统**的实战案例，演示 LangGraph 的完整用法。
+            body: `<strong>LangGraph</strong> 是目前最成熟的 <strong>Agent 编排框架</strong>之一。它基于<strong>图计算模型</strong>，将 Agent 编排建模为<strong>有向图的遍历</strong>，支持循环、分支、并行等复杂模式。本节通过一个<strong>代码审查 Agent 系统</strong>的实战案例，演示 LangGraph 的完整用法。
 
 ### 系统架构
 
 我们要构建的代码审查系统包含以下 Agent：
 
-- **Parser Agent**：解析代码变更，提取修改的文件和行
-- **Lint Agent**：执行静态分析，检查代码规范
-- **Security Agent**：检测安全漏洞和潜在风险
-- **Reviewer Agent**：综合所有分析结果，生成审查报告
+- <strong>Parser Agent</strong>：解析代码变更，提取修改的文件和行
+- <strong>Lint Agent</strong>：执行静态分析，检查代码规范
+- <strong>Security Agent</strong>：检测安全漏洞和潜在风险
+- <strong>Reviewer Agent</strong>：综合所有分析结果，生成审查报告
 
 ### 执行流程
 
-整个代码审查流程分为四个阶段：**解析阶段** → **Lint 检查和安全扫描并行执行** → **生成审查报告** → **输出结果**。如果解析后发现没有代码变更，直接跳过检查阶段。
+整个代码审查流程分为四个阶段：<strong>解析阶段</strong> → <strong>Lint 检查和安全扫描并行执行</strong> → <strong>生成审查报告</strong> → <strong>输出结果</strong>。如果解析后发现没有代码变更，直接跳过检查阶段。
 
 ### 关键实现要点
 
-**状态定义**：使用 Annotation 定义编排状态，包括代码变更列表、Lint 结果、安全扫描结果、审查报告和当前步骤。
+<strong>状态定义</strong>：使用 Annotation 定义编排状态，包括代码变更列表、Lint 结果、安全扫描结果、审查报告和当前步骤。
 
-**节点函数**：每个 Agent 实现为一个节点函数，接收当前状态，返回更新后的状态。
+<strong>节点函数</strong>：每个 Agent 实现为一个节点函数，接收当前状态，返回更新后的状态。
 
-**条件边**：使用 addConditionalEdges 实现动态路由，根据解析结果决定是进入检查阶段还是直接生成报告。`,
+<strong>条件边</strong>：使用 addConditionalEdges 实现动态路由，根据解析结果决定是进入检查阶段还是直接生成报告。`,
             code: [{
                 lang: "typescript",
                 title: "LangGraph 代码审查编排系统",
@@ -442,70 +442,70 @@ const app = workflow.compile();`,
         },
         {
             title: "6. 主流编排框架对比——LangGraph、CrewAI、AutoGen",
-            body: `当前主流的 **Agent 编排框架**有三个：**LangGraph**、**CrewAI** 和 **AutoGen**。它们各有特点，适用于不同的场景。本节从多个维度进行**深度对比分析**。
+            body: `当前主流的 <strong>Agent 编排框架</strong>有三个：<strong>LangGraph</strong>、<strong>CrewAI</strong> 和 <strong>AutoGen</strong>。它们各有特点，适用于不同的场景。本节从多个维度进行<strong>深度对比分析</strong>。
 
 ### LangGraph
 
-**LangGraph** 由 LangChain 团队开发，基于**图计算模型**的 Agent 编排框架。
+<strong>LangGraph</strong> 由 LangChain 团队开发，基于<strong>图计算模型</strong>的 Agent 编排框架。
 
-**核心特点**：
+<strong>核心特点</strong>：
 
-- **图模型**：将编排逻辑建模为**有向图**，节点是 Agent 或函数，边是控制流
-- **状态管理**：内置**状态对象**，节点之间通过状态共享数据
-- **循环支持**：原生支持**循环和条件分支**，适合迭代式任务
-- **人工介入**：支持**Human-in-the-loop**，可以在关键步骤暂停等待人工确认
+- <strong>图模型</strong>：将编排逻辑建模为<strong>有向图</strong>，节点是 Agent 或函数，边是控制流
+- <strong>状态管理</strong>：内置<strong>状态对象</strong>，节点之间通过状态共享数据
+- <strong>循环支持</strong>：原生支持<strong>循环和条件分支</strong>，适合迭代式任务
+- <strong>人工介入</strong>：支持<strong>Human-in-the-loop</strong>，可以在关键步骤暂停等待人工确认
 
-**适用场景**：需要**复杂控制流**的编排任务，如代码生成-审查-修复的迭代流程。
+<strong>适用场景</strong>：需要<strong>复杂控制流</strong>的编排任务，如代码生成-审查-修复的迭代流程。
 
 ### CrewAI
 
-**CrewAI** 是一个**角色驱动**的 Agent 编排框架，强调 Agent 的**角色定义** 和 **任务分配**。
+<strong>CrewAI</strong> 是一个<strong>角色驱动</strong>的 Agent 编排框架，强调 Agent 的<strong>角色定义</strong> 和 <strong>任务分配</strong>。
 
-**核心特点**：
+<strong>核心特点</strong>：
 
-- **角色系统**：每个 Agent 有明确的**角色（Role）**、**目标（Goal）** 和 **背景（Backstory）**
-- **任务分配**：通过 **Process** 对象定义任务分配策略（Sequential 或 Hierarchical）
-- **易用性**：API 设计简洁，适合**快速原型开发**
-- **工具集成**：内置丰富的**工具集**，减少外部依赖
+- <strong>角色系统</strong>：每个 Agent 有明确的<strong>角色（Role）</strong>、<strong>目标（Goal）</strong> 和 <strong>背景（Backstory）</strong>
+- <strong>任务分配</strong>：通过 <strong>Process</strong> 对象定义任务分配策略（Sequential 或 Hierarchical）
+- <strong>易用性</strong>：API 设计简洁，适合<strong>快速原型开发</strong>
+- <strong>工具集成</strong>：内置丰富的<strong>工具集</strong>，减少外部依赖
 
-**适用场景**：需要**明确角色分工**的协作任务，如内容创作团队、调研分析团队。
+<strong>适用场景</strong>：需要<strong>明确角色分工</strong>的协作任务，如内容创作团队、调研分析团队。
 
 ### AutoGen
 
-**AutoGen** 由微软开发，强调**多 Agent 对话**的编排模式。
+<strong>AutoGen</strong> 由微软开发，强调<strong>多 Agent 对话</strong>的编排模式。
 
-**核心特点**：
+<strong>核心特点</strong>：
 
-- **对话驱动**：Agent 之间通过**多轮对话**协作，模拟人类团队的讨论过程
-- **用户代理**：支持**UserProxyAgent**，让人类参与 Agent 对话
-- **代码执行**：内置**代码执行器**，Agent 可以编写并执行代码
-- **灵活拓扑**：支持**任意对话拓扑**，不限于线性或层级结构
+- <strong>对话驱动</strong>：Agent 之间通过<strong>多轮对话</strong>协作，模拟人类团队的讨论过程
+- <strong>用户代理</strong>：支持<strong>UserProxyAgent</strong>，让人类参与 Agent 对话
+- <strong>代码执行</strong>：内置<strong>代码执行器</strong>，Agent 可以编写并执行代码
+- <strong>灵活拓扑</strong>：支持<strong>任意对话拓扑</strong>，不限于线性或层级结构
 
-**适用场景**：需要**多轮讨论和协商**的任务，如方案设计、问题诊断。
+<strong>适用场景</strong>：需要<strong>多轮讨论和协商</strong>的任务，如方案设计、问题诊断。
 
 ### 三维度对比
 
 | 维度 | LangGraph | CrewAI | AutoGen |
 |------|-----------|--------|---------|
-| **编程模型** | 有向图 | 角色+任务 | 多轮对话 |
-| **学习曲线** | 中等 | 低 | 中等 |
-| **控制精度** | **高** | 中 | 低 |
-| **状态管理** | 内置状态对象 | 任务结果传递 | 对话历史 |
-| **循环支持** | ✅ 原生 | ⚠️ 有限 | ✅ 通过对话 |
-| **人工介入** | ✅ 内置 | ❌ 需自行实现 | ✅ UserProxyAgent |
-| **调试体验** | 好（图可视化） | 中 | 中（对话日志） |
-| **社区生态** | **大**（LangChain 生态） | 中 | 大（微软支持） |
-| **生产就绪** | ✅ | ⚠️ | ⚠️ |
+| <strong>编程模型</strong> | 有向图 | 角色+任务 | 多轮对话 |
+| <strong>学习曲线</strong> | 中等 | 低 | 中等 |
+| <strong>控制精度</strong> | <strong>高</strong> | 中 | 低 |
+| <strong>状态管理</strong> | 内置状态对象 | 任务结果传递 | 对话历史 |
+| <strong>循环支持</strong> | ✅ 原生 | ⚠️ 有限 | ✅ 通过对话 |
+| <strong>人工介入</strong> | ✅ 内置 | ❌ 需自行实现 | ✅ UserProxyAgent |
+| <strong>调试体验</strong> | 好（图可视化） | 中 | 中（对话日志） |
+| <strong>社区生态</strong> | <strong>大</strong>（LangChain 生态） | 中 | 大（微软支持） |
+| <strong>生产就绪</strong> | ✅ | ⚠️ | ⚠️ |
 
 ### 选型建议
 
 | 需求 | 推荐框架 |
 |------|---------|
-| 精确控制执行流程 | **LangGraph** |
-| 快速原型 + 角色分工 | **CrewAI** |
-| 多轮讨论 + 代码执行 | **AutoGen** |
-| 生产级稳定性 | **LangGraph** |
-| 与 LangChain 集成 | **LangGraph** |`,
+| 精确控制执行流程 | <strong>LangGraph</strong> |
+| 快速原型 + 角色分工 | <strong>CrewAI</strong> |
+| 多轮讨论 + 代码执行 | <strong>AutoGen</strong> |
+| 生产级稳定性 | <strong>LangGraph</strong> |
+| 与 LangChain 集成 | <strong>LangGraph</strong> |`,
             code: [{
                 lang: "python",
                 title: "CrewAI 角色驱动编排示例",
@@ -556,40 +556,40 @@ result = crew.kickoff()`,
         },
         {
             title: "7. 编排系统的错误处理与容错机制",
-            body: `**Agent 编排系统的容错能力**是生产环境中最重要的非功能性指标。Agent 可能因为各种原因失败：**网络超时**、**模型幻觉**、**资源不足**、**输入异常**。一个健壮的编排系统必须能够**优雅地处理这些失败**。
+            body: `<strong>Agent 编排系统的容错能力</strong>是生产环境中最重要的非功能性指标。Agent 可能因为各种原因失败：<strong>网络超时</strong>、<strong>模型幻觉</strong>、<strong>资源不足</strong>、<strong>输入异常</strong>。一个健壮的编排系统必须能够<strong>优雅地处理这些失败</strong>。
 
 ### 错误类型分类
 
-**Agent 编排中的错误可以分为四类**：
+<strong>Agent 编排中的错误可以分为四类</strong>：
 
-- **瞬时错误（Transient Error）**：网络超时、API 限流、临时资源不足。这类错误通常**短暂存在**，重试即可恢复。
-- **持久错误（Persistent Error）**：配置错误、权限不足、输入格式错误。这类错误**不会因重试而消失**，需要人工干预。
-- **Agent 错误（Agent Error）**：模型返回无效结果、Agent 陷入循环、Agent 超时。这类错误需要**特定的恢复策略**。
-- **系统错误（System Error）**：编排器崩溃、数据库连接断开、消息队列积压。这类错误影响**整个编排系统**。
+- <strong>瞬时错误（Transient Error）</strong>：网络超时、API 限流、临时资源不足。这类错误通常<strong>短暂存在</strong>，重试即可恢复。
+- <strong>持久错误（Persistent Error）</strong>：配置错误、权限不足、输入格式错误。这类错误<strong>不会因重试而消失</strong>，需要人工干预。
+- <strong>Agent 错误（Agent Error）</strong>：模型返回无效结果、Agent 陷入循环、Agent 超时。这类错误需要<strong>特定的恢复策略</strong>。
+- <strong>系统错误（System Error）</strong>：编排器崩溃、数据库连接断开、消息队列积压。这类错误影响<strong>整个编排系统</strong>。
 
 ### 重试策略
 
-**重试是处理瞬时错误的主要手段**。但重试不是简单的"再试一次"，需要考虑以下因素：
+<strong>重试是处理瞬时错误的主要手段</strong>。但重试不是简单的"再试一次"，需要考虑以下因素：
 
-- **最大重试次数**：不宜过多，对于 LLM 调用建议最多 **3 次**
-- **退避策略**：使用**指数退避**（1s → 2s → 4s），避免**重复冲击**下游服务
-- **可重试错误白名单**：只重试**确实可能恢复**的错误类型
+- <strong>最大重试次数</strong>：不宜过多，对于 LLM 调用建议最多 <strong>3 次</strong>
+- <strong>退避策略</strong>：使用<strong>指数退避</strong>（1s → 2s → 4s），避免<strong>重复冲击</strong>下游服务
+- <strong>可重试错误白名单</strong>：只重试<strong>确实可能恢复</strong>的错误类型
 
 ### 降级策略
 
-当 Agent 持续失败时，编排系统需要启动**降级策略**：
+当 Agent 持续失败时，编排系统需要启动<strong>降级策略</strong>：
 
-- **功能降级**：使用**简化版功能**替代完整功能（如使用规则引擎替代 AI 模型）
-- **结果降级**：返回**部分结果** 而 非完整结果
-- **超时降级**：超过最大等待时间后，**跳过该 Agent**，继续执行后续步骤
+- <strong>功能降级</strong>：使用<strong>简化版功能</strong>替代完整功能（如使用规则引擎替代 AI 模型）
+- <strong>结果降级</strong>：返回<strong>部分结果</strong> 而 非完整结果
+- <strong>超时降级</strong>：超过最大等待时间后，<strong>跳过该 Agent</strong>，继续执行后续步骤
 
 ### 熔断器模式
 
-**熔断器（Circuit Breaker）** 是防止**级联失败**的重要模式：
+<strong>熔断器（Circuit Breaker）</strong> 是防止<strong>级联失败</strong>的重要模式：
 
-- **关闭状态（Closed）**：正常执行，统计失败次数
-- **打开状态（Open）**：失败次数超过阈值，**直接拒绝请求**，快速失败
-- **半开状态（Half-Open）**：等待一段时间后，**允许少量请求通过**，测试是否恢复`,
+- <strong>关闭状态（Closed）</strong>：正常执行，统计失败次数
+- <strong>打开状态（Open）</strong>：失败次数超过阈值，<strong>直接拒绝请求</strong>，快速失败
+- <strong>半开状态（Half-Open）</strong>：等待一段时间后，<strong>允许少量请求通过</strong>，测试是否恢复`,
             code: [{
                 lang: "typescript",
                 title: "熔断器模式实现",
@@ -648,39 +648,39 @@ const agentCircuitBreaker = new CircuitBreaker(
         },
         {
             title: "8. Agent 编排的最佳实践与反模式",
-            body: `基于大量的**工业实践经验**，本节总结了 Agent 编排中的**最佳实践** 和 **常见反模式**，帮助你在设计和实现编排系统时**少走弯路**。
+            body: `基于大量的<strong>工业实践经验</strong>，本节总结了 Agent 编排中的<strong>最佳实践</strong> 和 <strong>常见反模式</strong>，帮助你在设计和实现编排系统时<strong>少走弯路</strong>。
 
 ### 最佳实践
 
-**实践一：从简单开始，渐进式复杂化**
+<strong>实践一：从简单开始，渐进式复杂化</strong>
 
-不要一开始就设计**多 Agent、多阶段、多分支**的复杂编排流程。从**线性流程**开始，逐步增加**并行节点** 和 **条件分支**。每一步都验证**正确性和性能**后再进入下一步。
+不要一开始就设计<strong>多 Agent、多阶段、多分支</strong>的复杂编排流程。从<strong>线性流程</strong>开始，逐步增加<strong>并行节点</strong> 和 <strong>条件分支</strong>。每一步都验证<strong>正确性和性能</strong>后再进入下一步。
 
-**实践二：为每个 Agent 定义清晰的契约**
+<strong>实践二：为每个 Agent 定义清晰的契约</strong>
 
-每个 Agent 应该有明确的**输入格式**、**输出格式** 和 **错误码**。契约文档化，并在代码中通过**类型系统**强制执行。这样可以减少 Agent 之间的**集成问题**。
+每个 Agent 应该有明确的<strong>输入格式</strong>、<strong>输出格式</strong> 和 <strong>错误码</strong>。契约文档化，并在代码中通过<strong>类型系统</strong>强制执行。这样可以减少 Agent 之间的<strong>集成问题</strong>。
 
-**实践三：编排逻辑与业务逻辑分离**
+<strong>实践三：编排逻辑与业务逻辑分离</strong>
 
-**编排逻辑**（任务分解、调度、容错）和**业务逻辑**（Agent 的具体实现）应该**严格分离**。这样可以在不影响业务逻辑的情况下，**独立优化编排策略**。
+<strong>编排逻辑</strong>（任务分解、调度、容错）和<strong>业务逻辑</strong>（Agent 的具体实现）应该<strong>严格分离</strong>。这样可以在不影响业务逻辑的情况下，<strong>独立优化编排策略</strong>。
 
-**实践四：全面的可观测性**
+<strong>实践四：全面的可观测性</strong>
 
-编排系统需要以下**可观测性指标**：
+编排系统需要以下<strong>可观测性指标</strong>：
 
-- **指标（Metrics）**：任务成功率、平均执行时间、Agent 调用次数
-- **追踪（Tracing）**：每个任务的**完整调用链**，包括耗时和状态
-- **日志（Logging）**：结构化的**事件日志**，支持按任务 ID 查询
+- <strong>指标（Metrics）</strong>：任务成功率、平均执行时间、Agent 调用次数
+- <strong>追踪（Tracing）</strong>：每个任务的<strong>完整调用链</strong>，包括耗时和状态
+- <strong>日志（Logging）</strong>：结构化的<strong>事件日志</strong>，支持按任务 ID 查询
 
 ### 反模式
 
-**反模式一：上帝编排器（God Orchestrator）**——将所有逻辑都塞进**编排器**中，Agent 只是**被动的执行器**。正确做法是编排器只负责**调度和协调**，具体业务逻辑放在 **Agent 内部**。
+<strong>反模式一：上帝编排器（God Orchestrator）</strong>——将所有逻辑都塞进<strong>编排器</strong>中，Agent 只是<strong>被动的执行器</strong>。正确做法是编排器只负责<strong>调度和协调</strong>，具体业务逻辑放在 <strong>Agent 内部</strong>。
 
-**反模式二：隐式状态传递**——通过**全局变量** 或 **隐式上下文**在 Agent 之间传递状态。正确做法是使用**显式的状态对象**。
+<strong>反模式二：隐式状态传递</strong>——通过<strong>全局变量</strong> 或 <strong>隐式上下文</strong>在 Agent 之间传递状态。正确做法是使用<strong>显式的状态对象</strong>。
 
-**反模式三：忽略超时设置**——不为 Agent 调用设置**超时时间**，导致一个慢 Agent **阻塞整个编排流程**。正确做法是为每个 Agent 调用设置**合理的超时时间**。
+<strong>反模式三：忽略超时设置</strong>——不为 Agent 调用设置<strong>超时时间</strong>，导致一个慢 Agent <strong>阻塞整个编排流程</strong>。正确做法是为每个 Agent 调用设置<strong>合理的超时时间</strong>。
 
-**反模式四：过度并行**——将**所有任务都并行化**，认为"并行一定比串行快"。实际上，如果任务之间有**隐含依赖**，过度并行会导致**结果不一致** 和 **资源浪费**。`,
+<strong>反模式四：过度并行</strong>——将<strong>所有任务都并行化</strong>，认为"并行一定比串行快"。实际上，如果任务之间有<strong>隐含依赖</strong>，过度并行会导致<strong>结果不一致</strong> 和 <strong>资源浪费</strong>。`,
             code: [{
                 lang: "typescript",
                 title: "Agent 契约定义与契约驱动调用",
@@ -784,42 +784,42 @@ async function callSearchAgent(
         },
         {
             title: "9. 扩展阅读与学习路线",
-            body: `**Agent 编排**是一个快速发展的领域，以下是一些**推荐的学习资源** 和 **延伸阅读方向**，帮助你持续深入这个领域。
+            body: `<strong>Agent 编排</strong>是一个快速发展的领域，以下是一些<strong>推荐的学习资源</strong> 和 <strong>延伸阅读方向</strong>，帮助你持续深入这个领域。
 
 ### 推荐阅读
 
-**论文与规范**：
+<strong>论文与规范</strong>：
 
-- **OpenAI Symphony Specification**（2026）：开源 Agent 编排规范的官方文档，定义了 Score、Conductor、Player 等核心概念
-- **A2A Protocol**（2026）：Agent-to-Agent 通信协议，关注 Agent 之间的**直接通信** 而 非编排
-- **MCP Specification**（2025）：Model Context Protocol，定义了 AI 模型与外部工具的**标准化接口**
+- <strong>OpenAI Symphony Specification</strong>（2026）：开源 Agent 编排规范的官方文档，定义了 Score、Conductor、Player 等核心概念
+- <strong>A2A Protocol</strong>（2026）：Agent-to-Agent 通信协议，关注 Agent 之间的<strong>直接通信</strong> 而 非编排
+- <strong>MCP Specification</strong>（2025）：Model Context Protocol，定义了 AI 模型与外部工具的<strong>标准化接口</strong>
 
-**开源项目**：
+<strong>开源项目</strong>：
 
-- **LangGraph**：基于图模型的 Agent 编排框架，支持循环、分支、并行
-- **CrewAI**：角色驱动的 Agent 编排框架，API 简洁易用
-- **AutoGen**：微软开发的多 Agent 对话框架，支持代码执行和人工介入
-- **Temporal**：分布式工作流引擎，虽然不是专为 Agent 设计，但编排理念高度相关
+- <strong>LangGraph</strong>：基于图模型的 Agent 编排框架，支持循环、分支、并行
+- <strong>CrewAI</strong>：角色驱动的 Agent 编排框架，API 简洁易用
+- <strong>AutoGen</strong>：微软开发的多 Agent 对话框架，支持代码执行和人工介入
+- <strong>Temporal</strong>：分布式工作流引擎，虽然不是专为 Agent 设计，但编排理念高度相关
 
 ### 学习路线建议
 
-**第一步：理解基础**——学习有限状态机（FSM）和工作流引擎概念
+<strong>第一步：理解基础</strong>——学习有限状态机（FSM）和工作流引擎概念
 
-**第二步：实践 LangGraph**——用 LangGraph 实现一个简单的多 Agent 编排流程
+<strong>第二步：实践 LangGraph</strong>——用 LangGraph 实现一个简单的多 Agent 编排流程
 
-**第三步：对比其他框架**——用同样的任务在 CrewAI 和 AutoGen 上实现，对比差异
+<strong>第三步：对比其他框架</strong>——用同样的任务在 CrewAI 和 AutoGen 上实现，对比差异
 
-**第四步：研究 OpenAI Symphony**——阅读 Symphony 规范，理解 Score 格式和通信协议
+<strong>第四步：研究 OpenAI Symphony</strong>——阅读 Symphony 规范，理解 Score 格式和通信协议
 
-**第五步：生产实践**——为你的实际业务场景设计编排方案，加入容错和可观测性
+<strong>第五步：生产实践</strong>——为你的实际业务场景设计编排方案，加入容错和可观测性
 
 ### 未来趋势
 
-**Agent 编排领域的三个重要趋势**：
+<strong>Agent 编排领域的三个重要趋势</strong>：
 
-- **标准化**：随着 Symphony、A2A 等规范的推广，Agent 编排将逐步走向**标准化**，不同框架之间的互操作性会越来越好
-- **智能化**：编排器本身将引入 **AI 能力**，能够根据任务特征**自动选择最优编排策略**，而不仅仅是执行预设流程
-- **可观测性驱动**：随着生产环境中 Agent 编排规模的扩大，**可观测性**将成为编排系统的**核心能力**，而不仅仅是附加功能`,
+- <strong>标准化</strong>：随着 Symphony、A2A 等规范的推广，Agent 编排将逐步走向<strong>标准化</strong>，不同框架之间的互操作性会越来越好
+- <strong>智能化</strong>：编排器本身将引入 <strong>AI 能力</strong>，能够根据任务特征<strong>自动选择最优编排策略</strong>，而不仅仅是执行预设流程
+- <strong>可观测性驱动</strong>：随着生产环境中 Agent 编排规模的扩大，<strong>可观测性</strong>将成为编排系统的<strong>核心能力</strong>，而不仅仅是附加功能`,
             code: [],
             tip: "关注 Symphony 和 A2A 协议发展，有望成为行业标准。学习核心概念而非具体 API。",
             warning: "框架和规范 API 变化频繁，关注核心概念而非具体实现细节。"
