@@ -1,0 +1,226 @@
+[
+  {
+    "topic": "deepseek",
+    "url": "https://github.com/topics/deepseek",
+    "minStars": 2000,
+    "description": "DeepSeek 模型生态",
+    "count": 10,
+    "maxStars": 170380
+  },
+  {
+    "topic": "codex",
+    "url": "https://github.com/topics/codex",
+    "minStars": 2000,
+    "description": "OpenAI Codex 生态",
+    "count": 6,
+    "maxStars": 125979
+  },
+  {
+    "topic": "opencode",
+    "url": "https://github.com/topics/opencode",
+    "minStars": 2000,
+    "description": "OpenCode 开源项目",
+    "count": 5,
+    "maxStars": 56229
+  },
+  {
+    "topic": "browser-automation",
+    "url": "https://github.com/topics/browser-automation",
+    "minStars": 2000,
+    "description": "浏览器自动化（AI 驱动）",
+    "count": 3,
+    "maxStars": 91333
+  },
+  {
+    "topic": "deepresearch",
+    "url": "https://github.com/topics/deepresearch",
+    "minStars": 3000,
+    "description": "深度研究（AI 自动研究）",
+    "count": 2,
+    "maxStars": 26797
+  },
+  {
+    "topic": "task-automation",
+    "url": "https://github.com/topics/task-automation",
+    "minStars": 3000,
+    "description": "任务自动化（AI Agent）",
+    "count": 2,
+    "maxStars": 19720
+  },
+  {
+    "topic": "model-parallelism",
+    "url": "https://github.com/topics/model-parallelism",
+    "minStars": 3000,
+    "description": "模型并行训练",
+    "count": 2,
+    "maxStars": 42224
+  },
+  {
+    "topic": "cli-tool",
+    "url": "https://github.com/topics/cli-tool",
+    "minStars": 5000,
+    "description": "CLI 工具（AI 驱动）",
+    "count": 1,
+    "maxStars": 22656
+  },
+  {
+    "topic": "desktop-automation",
+    "url": "https://github.com/topics/desktop-automation",
+    "minStars": 5000,
+    "description": "桌面自动化",
+    "count": 1,
+    "maxStars": 8384
+  },
+  {
+    "topic": "chat-ui",
+    "url": "https://github.com/topics/chat-ui",
+    "minStars": 5000,
+    "description": "AI 对话界面",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "multi-model",
+    "url": "https://github.com/topics/multi-model",
+    "minStars": 5000,
+    "description": "多模型统一接入",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "multi-platform",
+    "url": "https://github.com/topics/multi-platform",
+    "minStars": 5000,
+    "description": "跨平台支持",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "deepseek-v3",
+    "url": "https://github.com/topics/deepseek-v3",
+    "minStars": 5000,
+    "description": "DeepSeek V3 模型",
+    "count": 1,
+    "maxStars": 78663
+  },
+  {
+    "topic": "autogen-ecosystem",
+    "url": "https://github.com/topics/autogen-ecosystem",
+    "minStars": 5000,
+    "description": "AutoGen 生态扩展",
+    "count": 1,
+    "maxStars": 57602
+  },
+  {
+    "topic": "copilot-chat",
+    "url": "https://github.com/topics/copilot-chat",
+    "minStars": 5000,
+    "description": "copilot chat",
+    "count": 1,
+    "maxStars": 30519
+  },
+  {
+    "topic": "codebase-generation",
+    "url": "https://github.com/topics/codebase-generation",
+    "minStars": 5000,
+    "description": "代码库生成",
+    "count": 1,
+    "maxStars": 55229
+  },
+  {
+    "topic": "codegen",
+    "url": "https://github.com/topics/codegen",
+    "minStars": 5000,
+    "description": "代码生成",
+    "count": 1,
+    "maxStars": 55229
+  },
+  {
+    "topic": "claude-code-hooks",
+    "url": "https://github.com/topics/claude-code-hooks",
+    "minStars": 5000,
+    "description": "Claude Code 钩子",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "claude-code-plugins",
+    "url": "https://github.com/topics/claude-code-plugins",
+    "minStars": 5000,
+    "description": "Claude Code 插件",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "claude-code-skill",
+    "url": "https://github.com/topics/claude-code-skill",
+    "minStars": 5000,
+    "description": "Claude Code 技能",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "context-mode",
+    "url": "https://github.com/topics/context-mode",
+    "minStars": 5000,
+    "description": "上下文模式优化",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "claude-code-plugin",
+    "url": "https://github.com/topics/claude-code-plugin",
+    "minStars": 5000,
+    "description": "Claude Code 插件",
+    "count": 1,
+    "maxStars": 70008
+  },
+  {
+    "topic": "tokens",
+    "url": "https://github.com/topics/tokens",
+    "minStars": 5000,
+    "description": "Token 优化",
+    "count": 1,
+    "maxStars": 50853
+  },
+  {
+    "topic": "awesome-claude-code",
+    "url": "https://github.com/topics/awesome-claude-code",
+    "minStars": 5000,
+    "description": "Awesome Claude Code 合集",
+    "count": 1,
+    "maxStars": 41970
+  },
+  {
+    "topic": "codex-skills",
+    "url": "https://github.com/topics/codex-skills",
+    "minStars": 5000,
+    "description": "Codex 技能",
+    "count": 1,
+    "maxStars": 35784
+  },
+  {
+    "topic": "context-database",
+    "url": "https://github.com/topics/context-database",
+    "minStars": 5000,
+    "description": "上下文数据库",
+    "count": 1,
+    "maxStars": 23281
+  },
+  {
+    "topic": "code-search",
+    "url": "https://github.com/topics/code-search",
+    "minStars": 5000,
+    "description": "语义代码搜索",
+    "count": 1,
+    "maxStars": 10359
+  },
+  {
+    "topic": "terminal-automation",
+    "url": "https://github.com/topics/terminal-automation",
+    "minStars": 5000,
+    "description": "终端自动化",
+    "count": 1,
+    "maxStars": 5978
+  }
+]

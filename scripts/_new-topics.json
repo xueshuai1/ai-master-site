@@ -1,0 +1,922 @@
+[
+  {
+    "topic": "deepseek",
+    "url": "https://github.com/topics/deepseek",
+    "minStars": 2000,
+    "description": "（自动发现）deepseek",
+    "count": 10,
+    "maxStars": 170380
+  },
+  {
+    "topic": "automation",
+    "url": "https://github.com/topics/automation",
+    "minStars": 2000,
+    "description": "（自动发现）automation",
+    "count": 9,
+    "maxStars": 186198
+  },
+  {
+    "topic": "codex",
+    "url": "https://github.com/topics/codex",
+    "minStars": 2000,
+    "description": "（自动发现）codex",
+    "count": 6,
+    "maxStars": 125979
+  },
+  {
+    "topic": "developer-tools",
+    "url": "https://github.com/topics/developer-tools",
+    "minStars": 2000,
+    "description": "（自动发现）developer tools",
+    "count": 5,
+    "maxStars": 170580
+  },
+  {
+    "topic": "opencode",
+    "url": "https://github.com/topics/opencode",
+    "minStars": 2000,
+    "description": "（自动发现）opencode",
+    "count": 5,
+    "maxStars": 56229
+  },
+  {
+    "topic": "no-code",
+    "url": "https://github.com/topics/no-code",
+    "minStars": 2000,
+    "description": "（自动发现）no code",
+    "count": 4,
+    "maxStars": 186198
+  },
+  {
+    "topic": "low-code",
+    "url": "https://github.com/topics/low-code",
+    "minStars": 2000,
+    "description": "（自动发现）low code",
+    "count": 4,
+    "maxStars": 186198
+  },
+  {
+    "topic": "desktop-app",
+    "url": "https://github.com/topics/desktop-app",
+    "minStars": 2000,
+    "description": "（自动发现）desktop app",
+    "count": 3,
+    "maxStars": 56229
+  },
+  {
+    "topic": "browser-automation",
+    "url": "https://github.com/topics/browser-automation",
+    "minStars": 2000,
+    "description": "（自动发现）browser automation",
+    "count": 3,
+    "maxStars": 91333
+  },
+  {
+    "topic": "langgraph",
+    "url": "https://github.com/topics/langgraph",
+    "minStars": 2000,
+    "description": "（自动发现）langgraph",
+    "count": 3,
+    "maxStars": 135464
+  },
+  {
+    "topic": "research",
+    "url": "https://github.com/topics/research",
+    "minStars": 2000,
+    "description": "（自动发现）research",
+    "count": 3,
+    "maxStars": 41543
+  },
+  {
+    "topic": "hacktoberfest",
+    "url": "https://github.com/topics/hacktoberfest",
+    "minStars": 2000,
+    "description": "（自动发现）hacktoberfest",
+    "count": 3,
+    "maxStars": 160113
+  },
+  {
+    "topic": "deepresearch",
+    "url": "https://github.com/topics/deepresearch",
+    "minStars": 3000,
+    "description": "（自动发现）deepresearch",
+    "count": 2,
+    "maxStars": 26797
+  },
+  {
+    "topic": "task-automation",
+    "url": "https://github.com/topics/task-automation",
+    "minStars": 3000,
+    "description": "（自动发现）task automation",
+    "count": 2,
+    "maxStars": 19720
+  },
+  {
+    "topic": "model-parallelism",
+    "url": "https://github.com/topics/model-parallelism",
+    "minStars": 3000,
+    "description": "（自动发现）model parallelism",
+    "count": 2,
+    "maxStars": 42224
+  },
+  {
+    "topic": "codex-cli",
+    "url": "https://github.com/topics/codex-cli",
+    "minStars": 3000,
+    "description": "（自动发现）codex cli",
+    "count": 2,
+    "maxStars": 35784
+  },
+  {
+    "topic": "torch",
+    "url": "https://github.com/topics/torch",
+    "minStars": 3000,
+    "description": "（自动发现）torch",
+    "count": 2,
+    "maxStars": 162669
+  },
+  {
+    "topic": "tts-model",
+    "url": "https://github.com/topics/tts-model",
+    "minStars": 3000,
+    "description": "（自动发现）tts model",
+    "count": 2,
+    "maxStars": 45194
+  },
+  {
+    "topic": "microsoft-for-beginners",
+    "url": "https://github.com/topics/microsoft-for-beginners",
+    "minStars": 3000,
+    "description": "（自动发现）microsoft for beginners",
+    "count": 2,
+    "maxStars": 110032
+  },
+  {
+    "topic": "trae-ide",
+    "url": "https://github.com/topics/trae-ide",
+    "minStars": 5000,
+    "description": "（自动发现）trae ide",
+    "count": 1,
+    "maxStars": 136423
+  },
+  {
+    "topic": "vscode",
+    "url": "https://github.com/topics/vscode",
+    "minStars": 5000,
+    "description": "（自动发现）vscode",
+    "count": 1,
+    "maxStars": 136423
+  },
+  {
+    "topic": "audio-generation",
+    "url": "https://github.com/topics/audio-generation",
+    "minStars": 5000,
+    "description": "（自动发现）audio generation",
+    "count": 1,
+    "maxStars": 45940
+  },
+  {
+    "topic": "text-generation",
+    "url": "https://github.com/topics/text-generation",
+    "minStars": 5000,
+    "description": "（自动发现）text generation",
+    "count": 1,
+    "maxStars": 45940
+  },
+  {
+    "topic": "low-code-platform",
+    "url": "https://github.com/topics/low-code-platform",
+    "minStars": 5000,
+    "description": "（自动发现）low code platform",
+    "count": 1,
+    "maxStars": 186198
+  },
+  {
+    "topic": "nous-research",
+    "url": "https://github.com/topics/nous-research",
+    "minStars": 5000,
+    "description": "（自动发现）nous research",
+    "count": 1,
+    "maxStars": 125979
+  },
+  {
+    "topic": "deepseek-api",
+    "url": "https://github.com/topics/deepseek-api",
+    "minStars": 5000,
+    "description": "（自动发现）deepseek api",
+    "count": 1,
+    "maxStars": 66144
+  },
+  {
+    "topic": "feishu-bot",
+    "url": "https://github.com/topics/feishu-bot",
+    "minStars": 5000,
+    "description": "（自动发现）feishu bot",
+    "count": 1,
+    "maxStars": 43899
+  },
+  {
+    "topic": "job-search",
+    "url": "https://github.com/topics/job-search",
+    "minStars": 5000,
+    "description": "（自动发现）job search",
+    "count": 1,
+    "maxStars": 41071
+  },
+  {
+    "topic": "cli-tool",
+    "url": "https://github.com/topics/cli-tool",
+    "minStars": 5000,
+    "description": "（自动发现）cli tool",
+    "count": 1,
+    "maxStars": 22656
+  },
+  {
+    "topic": "desktop-automation",
+    "url": "https://github.com/topics/desktop-automation",
+    "minStars": 5000,
+    "description": "（自动发现）desktop automation",
+    "count": 1,
+    "maxStars": 8384
+  },
+  {
+    "topic": "chat-ui",
+    "url": "https://github.com/topics/chat-ui",
+    "minStars": 5000,
+    "description": "（自动发现）chat ui",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "discord-bot",
+    "url": "https://github.com/topics/discord-bot",
+    "minStars": 5000,
+    "description": "（自动发现）discord bot",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "multi-model",
+    "url": "https://github.com/topics/multi-model",
+    "minStars": 5000,
+    "description": "（自动发现）multi model",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "multi-platform",
+    "url": "https://github.com/topics/multi-platform",
+    "minStars": 5000,
+    "description": "（自动发现）multi platform",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "slack-bot",
+    "url": "https://github.com/topics/slack-bot",
+    "minStars": 5000,
+    "description": "（自动发现）slack bot",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "telegram-bot",
+    "url": "https://github.com/topics/telegram-bot",
+    "minStars": 5000,
+    "description": "（自动发现）telegram bot",
+    "count": 1,
+    "maxStars": 3057
+  },
+  {
+    "topic": "model-hub",
+    "url": "https://github.com/topics/model-hub",
+    "minStars": 5000,
+    "description": "（自动发现）model hub",
+    "count": 1,
+    "maxStars": 160113
+  },
+  {
+    "topic": "deepseek-v3",
+    "url": "https://github.com/topics/deepseek-v3",
+    "minStars": 5000,
+    "description": "（自动发现）deepseek v3",
+    "count": 1,
+    "maxStars": 78663
+  },
+  {
+    "topic": "autogen-ecosystem",
+    "url": "https://github.com/topics/autogen-ecosystem",
+    "minStars": 5000,
+    "description": "（自动发现）autogen ecosystem",
+    "count": 1,
+    "maxStars": 57602
+  },
+  {
+    "topic": "codegenerator",
+    "url": "https://github.com/topics/codegenerator",
+    "minStars": 5000,
+    "description": "（自动发现）codegenerator",
+    "count": 1,
+    "maxStars": 46039
+  },
+  {
+    "topic": "big-model",
+    "url": "https://github.com/topics/big-model",
+    "minStars": 5000,
+    "description": "（自动发现）big model",
+    "count": 1,
+    "maxStars": 41372
+  },
+  {
+    "topic": "large-scale",
+    "url": "https://github.com/topics/large-scale",
+    "minStars": 5000,
+    "description": "（自动发现）large scale",
+    "count": 1,
+    "maxStars": 41372
+  },
+  {
+    "topic": "assistant-chat-bots",
+    "url": "https://github.com/topics/assistant-chat-bots",
+    "minStars": 5000,
+    "description": "（自动发现）assistant chat bots",
+    "count": 1,
+    "maxStars": 30519
+  },
+  {
+    "topic": "copilot-chat",
+    "url": "https://github.com/topics/copilot-chat",
+    "minStars": 5000,
+    "description": "（自动发现）copilot chat",
+    "count": 1,
+    "maxStars": 30519
+  },
+  {
+    "topic": "codebase-generation",
+    "url": "https://github.com/topics/codebase-generation",
+    "minStars": 5000,
+    "description": "（自动发现）codebase generation",
+    "count": 1,
+    "maxStars": 55229
+  },
+  {
+    "topic": "codegen",
+    "url": "https://github.com/topics/codegen",
+    "minStars": 5000,
+    "description": "（自动发现）codegen",
+    "count": 1,
+    "maxStars": 55229
+  },
+  {
+    "topic": "claude-code-hooks",
+    "url": "https://github.com/topics/claude-code-hooks",
+    "minStars": 5000,
+    "description": "（自动发现）claude code hooks",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "claude-code-plugins",
+    "url": "https://github.com/topics/claude-code-plugins",
+    "minStars": 5000,
+    "description": "（自动发现）claude code plugins",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "claude-code-skill",
+    "url": "https://github.com/topics/claude-code-skill",
+    "minStars": 5000,
+    "description": "（自动发现）claude code skill",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "context-mode",
+    "url": "https://github.com/topics/context-mode",
+    "minStars": 5000,
+    "description": "（自动发现）context mode",
+    "count": 1,
+    "maxStars": 11358
+  },
+  {
+    "topic": "claude-code-plugin",
+    "url": "https://github.com/topics/claude-code-plugin",
+    "minStars": 5000,
+    "description": "（自动发现）claude code plugin",
+    "count": 1,
+    "maxStars": 70008
+  },
+  {
+    "topic": "tokens",
+    "url": "https://github.com/topics/tokens",
+    "minStars": 5000,
+    "description": "（自动发现）tokens",
+    "count": 1,
+    "maxStars": 50853
+  },
+  {
+    "topic": "awesome-claude-code",
+    "url": "https://github.com/topics/awesome-claude-code",
+    "minStars": 5000,
+    "description": "（自动发现）awesome claude code",
+    "count": 1,
+    "maxStars": 41970
+  },
+  {
+    "topic": "codex-skills",
+    "url": "https://github.com/topics/codex-skills",
+    "minStars": 5000,
+    "description": "（自动发现）codex skills",
+    "count": 1,
+    "maxStars": 35784
+  },
+  {
+    "topic": "antigravity-ide",
+    "url": "https://github.com/topics/antigravity-ide",
+    "minStars": 5000,
+    "description": "（自动发现）antigravity ide",
+    "count": 1,
+    "maxStars": 26449
+  },
+  {
+    "topic": "context-database",
+    "url": "https://github.com/topics/context-database",
+    "minStars": 5000,
+    "description": "（自动发现）context database",
+    "count": 1,
+    "maxStars": 23281
+  },
+  {
+    "topic": "code-search",
+    "url": "https://github.com/topics/code-search",
+    "minStars": 5000,
+    "description": "（自动发现）code search",
+    "count": 1,
+    "maxStars": 10359
+  },
+  {
+    "topic": "vscode-extension",
+    "url": "https://github.com/topics/vscode-extension",
+    "minStars": 5000,
+    "description": "（自动发现）vscode extension",
+    "count": 1,
+    "maxStars": 10359
+  },
+  {
+    "topic": "code-analysis",
+    "url": "https://github.com/topics/code-analysis",
+    "minStars": 5000,
+    "description": "（自动发现）code analysis",
+    "count": 1,
+    "maxStars": 5978
+  },
+  {
+    "topic": "terminal-automation",
+    "url": "https://github.com/topics/terminal-automation",
+    "minStars": 5000,
+    "description": "（自动发现）terminal automation",
+    "count": 1,
+    "maxStars": 5978
+  },
+  {
+    "topic": "emulator",
+    "url": "https://github.com/topics/emulator",
+    "minStars": 5000,
+    "description": "（自动发现）emulator",
+    "count": 1,
+    "maxStars": 4755
+  },
+  {
+    "topic": "simulator",
+    "url": "https://github.com/topics/simulator",
+    "minStars": 5000,
+    "description": "（自动发现）simulator",
+    "count": 1,
+    "maxStars": 4755
+  },
+  {
+    "topic": "autogen-extension",
+    "url": "https://github.com/topics/autogen-extension",
+    "minStars": 5000,
+    "description": "（自动发现）autogen extension",
+    "count": 1,
+    "maxStars": 118856
+  },
+  {
+    "topic": "web-search",
+    "url": "https://github.com/topics/web-search",
+    "minStars": 5000,
+    "description": "（自动发现）web search",
+    "count": 1,
+    "maxStars": 113209
+  },
+  {
+    "topic": "crypto",
+    "url": "https://github.com/topics/crypto",
+    "minStars": 5000,
+    "description": "（自动发现）crypto",
+    "count": 1,
+    "maxStars": 66771
+  },
+  {
+    "topic": "stocks",
+    "url": "https://github.com/topics/stocks",
+    "minStars": 5000,
+    "description": "（自动发现）stocks",
+    "count": 1,
+    "maxStars": 66771
+  },
+  {
+    "topic": "pdf-to-json",
+    "url": "https://github.com/topics/pdf-to-json",
+    "minStars": 5000,
+    "description": "（自动发现）pdf to json",
+    "count": 1,
+    "maxStars": 58827
+  },
+  {
+    "topic": "image-search",
+    "url": "https://github.com/topics/image-search",
+    "minStars": 5000,
+    "description": "（自动发现）image search",
+    "count": 1,
+    "maxStars": 44060
+  },
+  {
+    "topic": "nearest-neighbor-search",
+    "url": "https://github.com/topics/nearest-neighbor-search",
+    "minStars": 5000,
+    "description": "（自动发现）nearest neighbor search",
+    "count": 1,
+    "maxStars": 44060
+  },
+  {
+    "topic": "vector-similarity",
+    "url": "https://github.com/topics/vector-similarity",
+    "minStars": 5000,
+    "description": "（自动发现）vector similarity",
+    "count": 1,
+    "maxStars": 44060
+  },
+  {
+    "topic": "vector-store",
+    "url": "https://github.com/topics/vector-store",
+    "minStars": 5000,
+    "description": "（自动发现）vector store",
+    "count": 1,
+    "maxStars": 44060
+  },
+  {
+    "topic": "code-free",
+    "url": "https://github.com/topics/code-free",
+    "minStars": 5000,
+    "description": "（自动发现）code free",
+    "count": 1,
+    "maxStars": 43739
+  },
+  {
+    "topic": "auto-quant",
+    "url": "https://github.com/topics/auto-quant",
+    "minStars": 5000,
+    "description": "（自动发现）auto quant",
+    "count": 1,
+    "maxStars": 41543
+  },
+  {
+    "topic": "quant-models",
+    "url": "https://github.com/topics/quant-models",
+    "minStars": 5000,
+    "description": "（自动发现）quant models",
+    "count": 1,
+    "maxStars": 41543
+  },
+  {
+    "topic": "research-paper",
+    "url": "https://github.com/topics/research-paper",
+    "minStars": 5000,
+    "description": "（自动发现）research paper",
+    "count": 1,
+    "maxStars": 41543
+  },
+  {
+    "topic": "stock-data",
+    "url": "https://github.com/topics/stock-data",
+    "minStars": 5000,
+    "description": "（自动发现）stock data",
+    "count": 1,
+    "maxStars": 41543
+  },
+  {
+    "topic": "anti-bot",
+    "url": "https://github.com/topics/anti-bot",
+    "minStars": 5000,
+    "description": "（自动发现）anti bot",
+    "count": 1,
+    "maxStars": 3518
+  },
+  {
+    "topic": "bot-detection",
+    "url": "https://github.com/topics/bot-detection",
+    "minStars": 5000,
+    "description": "（自动发现）bot detection",
+    "count": 1,
+    "maxStars": 3518
+  },
+  {
+    "topic": "image2image",
+    "url": "https://github.com/topics/image2image",
+    "minStars": 5000,
+    "description": "（自动发现）image2image",
+    "count": 1,
+    "maxStars": 162669
+  },
+  {
+    "topic": "text2image",
+    "url": "https://github.com/topics/text2image",
+    "minStars": 5000,
+    "description": "（自动发现）text2image",
+    "count": 1,
+    "maxStars": 162669
+  },
+  {
+    "topic": "image-classification",
+    "url": "https://github.com/topics/image-classification",
+    "minStars": 5000,
+    "description": "（自动发现）image classification",
+    "count": 1,
+    "maxStars": 56616
+  },
+  {
+    "topic": "yolo-world",
+    "url": "https://github.com/topics/yolo-world",
+    "minStars": 5000,
+    "description": "（自动发现）yolo world",
+    "count": 1,
+    "maxStars": 56616
+  },
+  {
+    "topic": "shortvideo",
+    "url": "https://github.com/topics/shortvideo",
+    "minStars": 5000,
+    "description": "（自动发现）shortvideo",
+    "count": 1,
+    "maxStars": 56584
+  },
+  {
+    "topic": "tiktok",
+    "url": "https://github.com/topics/tiktok",
+    "minStars": 5000,
+    "description": "（自动发现）tiktok",
+    "count": 1,
+    "maxStars": 56584
+  },
+  {
+    "topic": "deepface",
+    "url": "https://github.com/topics/deepface",
+    "minStars": 5000,
+    "description": "（自动发现）deepface",
+    "count": 1,
+    "maxStars": 55196
+  },
+  {
+    "topic": "deepfakes",
+    "url": "https://github.com/topics/deepfakes",
+    "minStars": 5000,
+    "description": "（自动发现）deepfakes",
+    "count": 1,
+    "maxStars": 55196
+  },
+  {
+    "topic": "multi-speaker-tts",
+    "url": "https://github.com/topics/multi-speaker-tts",
+    "minStars": 5000,
+    "description": "（自动发现）multi speaker tts",
+    "count": 1,
+    "maxStars": 45194
+  },
+  {
+    "topic": "speaker-encoder",
+    "url": "https://github.com/topics/speaker-encoder",
+    "minStars": 5000,
+    "description": "（自动发现）speaker encoder",
+    "count": 1,
+    "maxStars": 45194
+  },
+  {
+    "topic": "vocoder",
+    "url": "https://github.com/topics/vocoder",
+    "minStars": 5000,
+    "description": "（自动发现）vocoder",
+    "count": 1,
+    "maxStars": 45194
+  },
+  {
+    "topic": "gigapixel-images",
+    "url": "https://github.com/topics/gigapixel-images",
+    "minStars": 5000,
+    "description": "（自动发现）gigapixel images",
+    "count": 1,
+    "maxStars": 44976
+  },
+  {
+    "topic": "image-upscaling",
+    "url": "https://github.com/topics/image-upscaling",
+    "minStars": 5000,
+    "description": "（自动发现）image upscaling",
+    "count": 1,
+    "maxStars": 44976
+  },
+  {
+    "topic": "topaz",
+    "url": "https://github.com/topics/topaz",
+    "minStars": 5000,
+    "description": "（自动发现）topaz",
+    "count": 1,
+    "maxStars": 44976
+  },
+  {
+    "topic": "upscalerimage",
+    "url": "https://github.com/topics/upscalerimage",
+    "minStars": 5000,
+    "description": "（自动发现）upscalerimage",
+    "count": 1,
+    "maxStars": 44976
+  },
+  {
+    "topic": "torchaudio",
+    "url": "https://github.com/topics/torchaudio",
+    "minStars": 5000,
+    "description": "（自动发现）torchaudio",
+    "count": 1,
+    "maxStars": 39172
+  },
+  {
+    "topic": "creative-tools",
+    "url": "https://github.com/topics/creative-tools",
+    "minStars": 5000,
+    "description": "（自动发现）creative tools",
+    "count": 1,
+    "maxStars": 10261
+  },
+  {
+    "topic": "image-to-video",
+    "url": "https://github.com/topics/image-to-video",
+    "minStars": 5000,
+    "description": "（自动发现）image to video",
+    "count": 1,
+    "maxStars": 10261
+  },
+  {
+    "topic": "wan-video",
+    "url": "https://github.com/topics/wan-video",
+    "minStars": 5000,
+    "description": "（自动发现）wan video",
+    "count": 1,
+    "maxStars": 10261
+  },
+  {
+    "topic": "vector-index",
+    "url": "https://github.com/topics/vector-index",
+    "minStars": 5000,
+    "description": "（自动发现）vector index",
+    "count": 1,
+    "maxStars": 59876
+  },
+  {
+    "topic": "app-search",
+    "url": "https://github.com/topics/app-search",
+    "minStars": 5000,
+    "description": "（自动发现）app search",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "enterprise-search",
+    "url": "https://github.com/topics/enterprise-search",
+    "minStars": 5000,
+    "description": "（自动发现）enterprise search",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "full-text-search",
+    "url": "https://github.com/topics/full-text-search",
+    "minStars": 5000,
+    "description": "（自动发现）full text search",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "fuzzy-search",
+    "url": "https://github.com/topics/fuzzy-search",
+    "minStars": 5000,
+    "description": "（自动发现）fuzzy search",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "geosearch",
+    "url": "https://github.com/topics/geosearch",
+    "minStars": 5000,
+    "description": "（自动发现）geosearch",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "hybrid-search",
+    "url": "https://github.com/topics/hybrid-search",
+    "minStars": 5000,
+    "description": "（自动发现）hybrid search",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "instantsearch",
+    "url": "https://github.com/topics/instantsearch",
+    "minStars": 5000,
+    "description": "（自动发现）instantsearch",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "search-as-you-type",
+    "url": "https://github.com/topics/search-as-you-type",
+    "minStars": 5000,
+    "description": "（自动发现）search as you type",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "site-search",
+    "url": "https://github.com/topics/site-search",
+    "minStars": 5000,
+    "description": "（自动发现）site search",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "typo-tolerance",
+    "url": "https://github.com/topics/typo-tolerance",
+    "minStars": 5000,
+    "description": "（自动发现）typo tolerance",
+    "count": 1,
+    "maxStars": 57366
+  },
+  {
+    "topic": "dall-e",
+    "url": "https://github.com/topics/dall-e",
+    "minStars": 5000,
+    "description": "（自动发现）dall e",
+    "count": 1,
+    "maxStars": 110032
+  },
+  {
+    "topic": "scikit-learn",
+    "url": "https://github.com/topics/scikit-learn",
+    "minStars": 5000,
+    "description": "（自动发现）scikit learn",
+    "count": 1,
+    "maxStars": 85555
+  },
+  {
+    "topic": "scikit-learn-python",
+    "url": "https://github.com/topics/scikit-learn-python",
+    "minStars": 5000,
+    "description": "（自动发现）scikit learn python",
+    "count": 1,
+    "maxStars": 85555
+  },
+  {
+    "topic": "tutorial",
+    "url": "https://github.com/topics/tutorial",
+    "minStars": 5000,
+    "description": "（自动发现）tutorial",
+    "count": 1,
+    "maxStars": 57556
+  },
+  {
+    "topic": "claude-code-best-practices",
+    "url": "https://github.com/topics/claude-code-best-practices",
+    "minStars": 5000,
+    "description": "（自动发现）claude code best practices",
+    "count": 1,
+    "maxStars": 49656
+  },
+  {
+    "topic": "claude-code-commands",
+    "url": "https://github.com/topics/claude-code-commands",
+    "minStars": 5000,
+    "description": "（自动发现）claude code commands",
+    "count": 1,
+    "maxStars": 49656
+  },
+  {
+    "topic": "c-plus-plus",
+    "url": "https://github.com/topics/c-plus-plus",
+    "minStars": 5000,
+    "description": "（自动发现）c plus plus",
+    "count": 1,
+    "maxStars": 87297
+  }
+]
