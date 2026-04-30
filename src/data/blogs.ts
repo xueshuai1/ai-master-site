@@ -82,6 +82,7 @@ import { blog as aiInfraStartupBoom } from './blogs/blog-090';
 import { blog as blog091 } from './blogs/blog-091';
 import { blog as blog092 } from './blogs/blog-092';
 import { blog as blog093 } from './blogs/blog-093';
+import { blog as blog094 } from './blogs/blog-094';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -158,4 +159,5 @@ export const blogs: BlogPost[] = [
   blog091,
   blog092,
   blog093,
+  blog094,
 ];
