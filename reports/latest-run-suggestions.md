@@ -1,20 +1,18 @@
-⏰ 写入时间：2026-04-28 08:42 (Asia/Shanghai)
+⏰ 写入时间：2026-04-30 20:00 (Asia/Shanghai)
 
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 批量修复 blog-027~blog-046 等历史文章中的 HTML 标签（约 15 处 P2 问题）
-2. 修复 blog-030.ts、blog-039.ts、blog-075.ts Mermaid 浅色配色（改为 800-900 色阶）
+1. 基于本轮发现写博客：AI Agent 与数据库基础设施的关系（图灵奖得主观点延伸）
+2. 基于本轮发现写知识库：自监督学习/强化学习范式（David Silver 新项目方向）
 
 ## 可延后执行（其余建议）
-1. 新增知识库文章：Agent 经济/Agent 间协作模式（基于 blog-080 话题）
-2. 更新已有 LLM 分类文章（llm-020 GPT-5.5 文章需要补充最新 System Card 数据）
-3. 修复 agent-015.ts 的 body 验证问题（body 使用双引号需改为反引号以通过 validator）
+1. 写知识库文章：中国 AI 芯片生态全景（寒武纪/摩尔线程/沐曦 + 昇腾）
+2. 写博客：开源社区与 AI 伦理之争（Zig 反 LLM 政策行业影响）
+3. 修复历史文章中可能存在的 HTML 标签残留问题（持续 P2）
 
 ## 已完成的建议（上轮建议本轮已执行）
-- ✅ 清理 news.ts 全部 15 条站内 source（P1 QA 问题）
-- ✅ 修复 agent-015.ts 代码块格式（``` → Markdown 表格）
-- ✅ 修复 llm-006.ts 代码块格式
-- ✅ 新增 11 条新闻（news-431~news-441）
-- ✅ 新增博客 blog-080「Agent-on-Agent 商务市场」
+- ✅ 扫描 12 来源（国外 7 个 + 国内 5 个）
+- ✅ 新增 12 条新闻（news-592~news-603）
 - ✅ Build 通过 + TypeScript 检查通过 + 推送成功
+- ✅ 覆盖 Anthropic 融资/Zig 反 LLM/微软 Copilot/David Silver/DeepSeek V4 等重大新闻
