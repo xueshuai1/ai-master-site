@@ -80,6 +80,7 @@ import { blog as anthropicSurpassesOpenai } from './blogs/blog-088';
 import { blog as scoutAiMilitaryAutonomous } from './blogs/blog-089';
 import { blog as aiInfraStartupBoom } from './blogs/blog-090';
 import { blog as blog091 } from './blogs/blog-091';
+import { blog as blog092 } from './blogs/blog-092';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -154,4 +155,5 @@ export const blogs: BlogPost[] = [
   scoutAiMilitaryAutonomous,
   aiInfraStartupBoom,
   blog091,
+  blog092,
 ];
