@@ -406,7 +406,7 @@ def train_step_musa(model, data, labels):
 
     style C1 fill:#8B0000,stroke:#FF4444
     style E3 fill:#8B0000,stroke:#FF4444
-    style F3 fill:#1E3A5F,stroke:#F0C040`
+    style F3 fill:#1E3A5F,stroke:#F0C040`,
             tip: "在评估中国 AI 芯片供应商时，务必关注其「供应链安全性」。了解芯片的制造产线、封装工厂和 EDA 工具来源，评估其在出口管制升级情况下的持续供货能力。选择有多条供应链备份的厂商可以显著降低断供风险。",
             warning: "不要仅看芯片设计公司宣传的性能数据，要了解其制造和封装环节的真实能力。设计能力与量产能力之间存在巨大差距——许多芯片在实验室表现优异，但在量产时因为良率问题而无法稳定供货。"
         },
