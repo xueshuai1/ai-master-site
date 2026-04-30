@@ -132,14 +132,14 @@ fn processBufferCorrect(data: []u8, allocator: std.mem.Allocator) ![]u8 {
     H -->|高风险| A
     H -->|中风险| C
     H -->|低风险| E
-    style A fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style B fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style C fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style D fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style E fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style F fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style G fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#f8fafc
-    style H fill:#581c87,stroke:#8b5cf6,stroke-width:2px,color:#f8fafc`
+    style A fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style B fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style C fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style D fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style E fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style F fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style G fill:#1e3a8a,stroke:#2563eb,stroke-width:2px,color:#f8fafc
+    style H fill:#581c87,stroke:#7c3aed,stroke-width:2px,color:#f8fafc`
     },
     {
         title: "5. AI 代码检测——技术可行性和局限性",
@@ -308,22 +308,22 @@ flowchart TD
     L --> O[Web 框架 披露要求]
     L --> P[工具库 质量优先]
     
-    style A fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style B fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style C fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style D fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style E fill:#065f46,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style F fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style G fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style H fill:#065f46,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style I fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style J fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style K fill:#065f46,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style L fill:#1e293b,stroke:#6366f1,stroke-width:2px,color:#f8fafc
-    style M fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style N fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style O fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style P fill:#065f46,stroke:#10b981,stroke-width:2px,color:#f8fafc
+    style A fill:#1e293b,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style B fill:#1e293b,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style C fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style D fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style E fill:#065f46,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style F fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style G fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style H fill:#065f46,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style I fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style J fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style K fill:#065f46,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style L fill:#1e293b,stroke:#4f46e5,stroke-width:2px,color:#f8fafc
+    style M fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style N fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style O fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style P fill:#065f46,stroke:#047857,stroke-width:2px,color:#f8fafc
 `
     },
     {

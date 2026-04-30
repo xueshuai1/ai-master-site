@@ -132,13 +132,13 @@ echo "GPU 在线数: $(nvidia-smi -L | wc -l)/8"`
     D --> E[InfiniBand 核心交换机]
     E --> F[InfiniBand 核心交换机]
     F --> G[其他机架]
-    style A fill:#1e3a8a,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style B fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style C fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style D fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style E fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style F fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style G fill:#1e3a8a,stroke:#f59e0b,stroke-width:2px,color:#f8fafc`
+    style A fill:#1e3a8a,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style B fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style C fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style D fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style E fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style F fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style G fill:#1e3a8a,stroke:#b45309,stroke-width:2px,color:#f8fafc`
         },
         {
             title: "3. AI 网络架构——InfiniBand vs 以太网的路线之争",
@@ -348,15 +348,15 @@ calc.对比方案(120)`
     F --> G[冷板液冷系统]
     G --> H[冷却塔/CDU]
     H --> I[室外散热]
-    style A fill:#7f1d1d,stroke:#dc2626,stroke-width:2px,color:#f8fafc
-    style B fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
-    style C fill:#713f12,stroke:#eab308,stroke-width:2px,color:#f8fafc
-    style D fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style E fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc
-    style F fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#f8fafc
-    style G fill:#164e63,stroke:#06b6d4,stroke-width:2px,color:#f8fafc
-    style H fill:#164e63,stroke:#06b6d4,stroke-width:2px,color:#f8fafc
-    style I fill:#14532d,stroke:#10b981,stroke-width:2px,color:#f8fafc`
+    style A fill:#7f1d1d,stroke:#b91c1c,stroke-width:2px,color:#f8fafc
+    style B fill:#78350f,stroke:#b45309,stroke-width:2px,color:#f8fafc
+    style C fill:#713f12,stroke:#a16207,stroke-width:2px,color:#f8fafc
+    style D fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style E fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc
+    style F fill:#1e3a8a,stroke:#2563eb,stroke-width:2px,color:#f8fafc
+    style G fill:#164e63,stroke:#0891b2,stroke-width:2px,color:#f8fafc
+    style H fill:#164e63,stroke:#0891b2,stroke-width:2px,color:#f8fafc
+    style I fill:#14532d,stroke:#047857,stroke-width:2px,color:#f8fafc`
         },
         {
             title: "9. 注意事项与常见陷阱",
