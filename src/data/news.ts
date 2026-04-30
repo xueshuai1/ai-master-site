@@ -4672,4 +4672,348 @@ Simon Willison 同日报道了 pip 26.1 的重要更新：
     sourceUrl: "https://arxiv.org/abs/2604.25917",
     href: "/news/news-567",
   },
+  {
+    id: "news-568",
+    tag: "融资",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Anthropic 据传将融资 500 亿美元，估值高达 9000 亿美元",
+    summary: "据 TechCrunch 报道，Anthropic 正在洽谈一轮高达 500 亿美元的新融资，投后估值可能达到 9000 亿美元。这将使其成为全球最有价值的 AI 公司之一，进一步拉大与竞争对手的差距。",
+    content: `## Anthropic 9000 亿美元估值：AI 资本竞赛白热化
+
+**2026 年 4 月 29 日**，据 TechCrunch 独家报道，Anthropic 正在洽谈新一轮融资，规模高达 500 亿美元，估值可能达到 9000 亿美元。
+
+### 融资规模
+
+- **$500 亿**：若成行，将是科技史上最大规模的单轮融资之一
+- **$9000 亿估值**：接近 Alphabet 市值的三分之一
+- **Claude 生态**：Claude Opus 4.7、Claude Design 等新产品线持续扩展
+
+### 行业背景
+
+Anthropic 近期动作频频：
+1. **Claude Opus 4.7** 发布（4 月 16 日）：更强编码、Agent、视觉能力
+2. **Claude Design** 上线（4 月 17 日）：与 Claude 协作创建视觉作品
+3. **与亚马逊扩展合作**：高达 5GW 新算力基础设施
+4. **与 NEC 合作**：打造日本最大 AI 工程团队
+
+### 资本逻辑
+
+AI 基础设施竞赛正在加速——投资者看好 Anthropic 的原因包括 Claude 在企业市场的快速增长、负责任的 AI 定位带来的品牌溢价，以及与 AWS、Google 等巨头的深度绑定。
+
+**来源：** TechCrunch + 36 氪
+**链接：** https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/`,
+    date: "2026-04-30 12:00",
+    source: "TechCrunch + 36 氪",
+    sourceUrl: "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/",
+    href: "/news/news-568",
+  },
+  {
+    id: "news-569",
+    tag: "行业",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "软银成立机器人公司同时建造数据中心，目标 1000 亿美元 IPO",
+    summary: "软银集团正在创建一家将机器人制造与数据中心建设结合的新公司，并已瞄准 1000 亿美元的 IPO 目标。这标志着 AI 基础设施从纯算力向「算力+物理智能」的融合演进。",
+    content: `## 软银的野心：机器人 + 数据中心，千亿美元 IPO
+
+**2026 年 4 月 29 日**，TechCrunch 报道软银正在成立一家新型公司。
+
+### 商业模式创新
+
+- **机器人制造 + 数据中心**：将两种业务深度整合
+- **$1000 亿 IPO 目标**：已经规划中的上市计划
+- **孙正义愿景**：AI 物理基础设施的全面布局
+
+### 行业意义
+
+这一模式不同于单纯的 AI 模型公司或云服务商——软银正在构建从算力基础设施到物理智能体的完整闭环。随着具身智能（Embodied AI）的发展，机器人和数据中心的需求正在同步爆发。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/29/softbank-is-creating-a-robotics-company-that-builds-data-centers-and-already-eyeing-a-100b-ipo/`,
+    date: "2026-04-30 12:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/29/softbank-is-creating-a-robotics-company-that-builds-data-centers-and-already-eyeing-a-100b-ipo/",
+    href: "/news/news-569",
+  },
+  {
+    id: "news-570",
+    tag: "行业",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "微软宣布付费 Copilot 用户突破 2000 万，且实际使用率持续攀升",
+    summary: "微软在最新财报中表示，付费 Copilot 用户已超过 2000 万，且用户活跃度「非常高」。这标志着 AI 助手正在从实验性产品转变为企业刚需。",
+    content: `## 微软 Copilot：2000 万付费用户的里程碑
+
+**2026 年 4 月 29 日**，微软公布最新数据。
+
+### 关键数字
+
+- **2000 万+** 付费 Copilot 用户
+- **实际使用率高**：不仅仅是购买，而是持续使用
+- **企业市场渗透**：从科技巨头到传统企业全面铺开
+
+### 行业影响
+
+Copilot 的成功验证了 AI 助手在企业场景的商业可行性。与 OpenAI 的新 deal 结合，微软正在构建从底层模型（GPT-5.5）到终端应用（Copilot）的最完整 AI 产品链。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/`,
+    date: "2026-04-30 12:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/",
+    href: "/news/news-570",
+  },
+  {
+    id: "news-571",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Google Cloud 季度营收突破 200 亿美元，但坦言增长受限于算力产能",
+    summary: "Google Cloud 在最新季度营收突破 200 亿美元大关，但公司明确表示增长受到了算力产能的制约。这反映了 AI 时代云计算的核心瓶颈正在从需求转向供给侧。",
+    content: `## Google Cloud：200 亿营收与算力瓶颈
+
+**2026 年 4 月 29 日**，Google 公布季度业绩。
+
+### 关键数据
+
+- **$200 亿+** 季度营收：首次突破这一里程碑
+- **产能受限**：增长受到算力供给的制约
+- **消费 AI 订阅创纪录**：Google 称本季度为「最强季度」
+- **搜索查询量创新高**：Sundar Pichai 表示搜索查询达历史最高水平
+
+### 行业背景
+
+Google 同时宣布扩大五角大楼对其 AI 的访问权限，在内部员工反对声中坚持与政府的 AI 合作。这反映了科技巨头在商业利益与员工伦理之间的持续博弈。
+
+**来源：** TechCrunch + The Verge
+**链接：** https://techcrunch.com/2026/04/29/google-cloud-surpasses-20b-but-says-growth-was-capacity-constrained/`,
+    date: "2026-04-30 12:00",
+    source: "TechCrunch + The Verge",
+    sourceUrl: "https://techcrunch.com/2026/04/29/google-cloud-surpasses-20b-but-says-growth-was-capacity-constrained/",
+    href: "/news/news-571",
+  },
+  {
+    id: "news-572",
+    tag: "开源项目",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "NVIDIA 发布全模态大模型：几秒内处理文本、视觉、语音，吞吐量达同类 9 倍",
+    summary: "NVIDIA 发布了全模态大模型，能够在一个模型中同时处理文本、视觉和语音输入，吞吐量达到同类模型的 9 倍。这标志着多模态 AI 正在从概念走向工程化落地。",
+    content: `## NVIDIA 全模态大模型：一个模型搞定所有输入
+
+**2026 年 4 月 29 日**，据智东西和 36 氪报道。
+
+### 技术亮点
+
+- **全模态处理**：文本、视觉、语音统一处理
+- **9 倍吞吐量**：远超同类模型
+- **实时推理**：几秒内完成多模态输入处理
+
+### 行业意义
+
+NVIDIA 不仅在 GPU 硬件上占据主导，现在正在通过全模态模型向 AI 软件层延伸。这与银河通用（Galbot）联合英伟达拆穿人形机器人「谎言」的报道形成了呼应——硬件和软件的全栈整合正在加速。
+
+**来源：** 智东西 + 36 氪
+**链接：** https://36kr.com/p/3787677070417161`,
+    date: "2026-04-30 12:00",
+    source: "智东西 + 36 氪",
+    sourceUrl: "https://36kr.com/p/3787677070417161",
+    href: "/news/news-572",
+  },
+  {
+    id: "news-573",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "DeepSeek 大更新：V4-Pro 和 V4-Flash 双版本齐发，终于「开眼」支持视觉能力",
+    summary: "DeepSeek 发布 V4-Pro 和 V4-Flash 双版本模型，并新增视觉理解能力。这是 DeepSeek 补齐多模态能力的重要一步，被业界称为「补齐了最后一块拼图」。",
+    content: `## DeepSeek 视觉能力上线：鲸鱼终于「开眼」
+
+**2026 年 4 月 29 日**，DeepSeek 发布重大更新。
+
+### 双版本发布
+
+- **V4-Pro**：高性能版本，适合复杂推理和深度分析
+- **V4-Flash**：快速版本，适合高频、低延迟场景
+- **视觉能力**：新增图像理解，补齐多模态拼图
+
+### 社区反响
+
+36 氪爱范儿报道称「那个看不见世界的鲸鱼，现在终于睁开眼了」。DeepSeek 通过开源策略持续扩大影响力，同时通过双版本策略满足不同场景需求。
+
+机器之心也报道了 DeepSeek 双版本发布，将其与 OpenAI GPT-5.5 一起视为本周最重要的模型动态。
+
+**来源：** 爱范儿 + 机器之心 + 36 氪
+**链接：** https://36kr.com/p/3788474106715144`,
+    date: "2026-04-30 12:00",
+    source: "爱范儿 + 机器之心 + 36 氪",
+    sourceUrl: "https://36kr.com/p/3788474106715144",
+    href: "/news/news-573",
+  },
+  {
+    id: "news-574",
+    tag: "行业",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "红杉 AI 大会 2026：工作方式正在发生根本性改变，AI 不只是效率工具",
+    summary: "红杉资本 AI 大会 2026 传递出一个明确信号：大多数人对 AI 的理解仍停留在「它是一个更快的工具」层面，但实际变革正在改写整个工作规则。",
+    content: `## 红杉 AI 大会 2026：规则改写，而非效率提升
+
+**2026 年 4 月 29 日**，红杉资本 AI 大会释放重要信号。
+
+### 核心观点
+
+- **不是效率提升，而是规则改写**：AI 正在重新定义工作方式
+- **多数人的认知仍滞后**：大部分人仍将 AI 视为「更快的工具」
+- **系统化战争打响**：模型和 AI 应用的竞争正在升级
+
+### 行业启示
+
+从 RedSequ 峰会到 36 氪的「别急着 All-in DeepSeek V4」分析，行业共识正在形成：AI 竞争已经从单点模型转向系统性能力——包括 Agent 编排、工具链、安全治理和规模化部署。
+
+**来源：** 36 氪
+**链接：** https://36kr.com/p/3788572819463172`,
+    date: "2026-04-30 12:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/p/3788572819463172",
+    href: "/news/news-574",
+  },
+  {
+    id: "news-575",
+    tag: "AI 论文",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "哈萨比斯最新访谈：通往 AGI 需要突破上下文窗口，建立持续学习与记忆机制",
+    summary: "DeepMind 创始人 Demis Hassabis 在最新访谈中指出，通往 AGI 不能仅靠扩大上下文窗口，必须建立持续学习与记忆机制。强化学习将重塑大模型的内省与推理能力。",
+    content: `## 哈萨比斯谈 AGI 路线：超越上下文窗口
+
+**2026 年 4 月 29 日**，36 氪报道了 Demis Hassabis 最新访谈。
+
+### 核心观点
+
+- **上下文窗口扩容不够**：单纯的 context window 扩大无法通向 AGI
+- **持续学习机制**：模型需要在学习后持续积累和更新知识
+- **记忆机制**：建立长期记忆是 AGI 的关键瓶颈
+- **强化学习**：将重塑大模型的内省与推理能力
+
+### 行业影响
+
+Hassabis 的观点与 arXiv 最新发布的 FutureWorld 论文（训练预测性 Agent）形成了呼应——业界正在从「一次性推理」转向「持续学习和记忆」的范式。
+
+**来源：** 36 氪
+**链接：** https://36kr.com/p/3788662855425033`,
+    date: "2026-04-30 12:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/p/3788662855425033",
+    href: "/news/news-575",
+  },
+  {
+    id: "news-576",
+    tag: "行业",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "Anthropic 与 NEC 合作打造日本最大 AI 工程团队，加速亚太市场布局",
+    summary: "Anthropic 宣布与日本 NEC 合作，共同建设日本最大的 AI 工程团队。这是 Anthropic 继澳洲办公室之后的又一重要国际化布局，标志着 Claude 生态向亚太市场的深度扩展。",
+    content: `## Anthropic × NEC：日本最大 AI 工程团队
+
+**2026 年 4 月 24 日**，Anthropic 官方宣布与 NEC 合作。
+
+### 合作要点
+
+- **日本最大 AI 工程团队**：由 NEC 和 Anthropic 共同建设
+- **Claude 生态扩展**：将 Claude 能力深度整合到 NEC 的业务线
+- **亚太战略**：继悉尼办公室后的又一重要国际化布局
+
+### 行业背景
+
+Anthropic 近期国际化步伐明显加快——悉尼办公室（4 月 27 日正式开放）、澳洲政府 MOU（3 月 31 日签署）、Google+Broadcom 算力合作（4 月 6 日），以及与 NEC 的合作共同构成了其全球扩张战略。
+
+**来源：** Anthropic Newsroom
+**链接：** https://www.anthropic.com/news/anthropic-nec`,
+    date: "2026-04-30 12:00",
+    source: "Anthropic Newsroom",
+    sourceUrl: "https://www.anthropic.com/news/anthropic-nec",
+    href: "/news/news-576",
+  },
+  {
+    id: "news-577",
+    tag: "开源项目",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Zig 编程语言实施最严格的 AI 禁令：禁止 LLM 参与 issue、PR 和评论",
+    summary: "Zig 成为主流开源项目中对 LLM 限制最严格的项目之一——禁止在 issue、PR、评论中使用 LLM，连翻译都不允许。Zig 基金会 VP 解释：开源项目赌的是贡献者而非贡献本身。",
+    content: `## Zig 的 AI 禁令：开源社区的新范式
+
+**2026 年 4 月 30 日**，Simon Willison 详细报道了 Zig 的 AI 禁令。
+
+### 禁令内容
+
+- **禁止 LLM 参与 issue**：不能用 AI 生成 issue
+- **禁止 LLM 参与 PR**：不能用 AI 生成 pull request
+- **禁止 LLM 参与评论**：包括翻译，鼓励用母语交流
+
+### 核心理念
+
+Zig 基金会 VP Loris Cro 在「Contributor Poker」一文中解释了原因：
+> 「在成功的开源项目中，你最终会收到比你能够处理的更多的 PR。我们不是追求最大化代码产出，而是帮助新贡献者成长为值得信任的多产贡献者。」
+
+他将此称为「贡献者扑克」——你赌的是贡献者，而不是他们第一个 PR 的内容。LLM 辅助完全打破了这一逻辑。
+
+### 有趣对比
+
+用 Zig 编写的 Bun JavaScript 运行时被 Anthropic 收购后，实现了 4 倍编译性能提升，但 Bun 不计划将这些改进上游合并——因为 Zig 禁止 LLM 贡献。这一讽刺性对比引发了社区广泛讨论。
+
+**来源：** Simon Willison's Weblog
+**链接：** https://simonwillison.net/2026/Apr/30/zig-anti-ai/`,
+    date: "2026-04-30 12:00",
+    source: "Simon Willison's Weblog",
+    sourceUrl: "https://simonwillison.net/2026/Apr/30/zig-anti-ai/",
+    href: "/news/news-577",
+  },
+  {
+    id: "news-578",
+    tag: "应用",
+    tagColor: "bg-pink-500/10 text-pink-300",
+    title: "豆包盯上淘宝京东大本营：AI 助手们都想「帮你花钱」",
+    summary: "字节跳动的豆包正在向电商领域扩展，瞄准淘宝和京东的核心市场。AI 助手们从信息查询走向交易决策，「帮你花钱」正成为 AI 应用的新战场。",
+    content: `## 豆包入局电商：AI 助手的新战场
+
+**2026 年 4 月 29 日**，36 氪报道了豆包的电商野心。
+
+### 趋势分析
+
+- **从查询到交易**：AI 助手不再只是回答问题，而是直接参与消费决策
+- **电商入口争夺**：豆包瞄准淘宝京东的核心市场
+- **AI 助手的商业化**：「帮你花钱」意味着更深的商业整合
+
+### 行业背景
+
+同期，Google Photos 使用 AI 实现「Clueless 衣柜」功能（AI 帮你搭配服装），Amazon 在产品页面推出 AI 音频问答体验。AI 助手正在从「信息层」向「交易层」渗透。
+
+**来源：** 智东西 + 36 氪
+**链接：** https://36kr.com/p/3787900447677449`,
+    date: "2026-04-30 12:00",
+    source: "智东西 + 36 氪",
+    sourceUrl: "https://36kr.com/p/3787900447677449",
+    href: "/news/news-578",
+  },
+  {
+    id: "news-579",
+    tag: "行业",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "Sam Altman 与 AWS CEO 罕见同框：聊智能体、harness 和云的下一仗",
+    summary: "OpenAI CEO Sam Altman 与 AWS CEO 进行了长达一小时的深度对话，讨论了智能体（Agent）、AI harness 架构以及云计算的下一步竞争格局。值得注意的是，两人全程没有提及 AGI。",
+    content: `## Sam Altman × AWS CEO：云与 AI 的深度融合
+
+**2026 年 4 月 29 日**，36 氪品玩报道了这场罕见对话。
+
+### 讨论要点
+
+- **智能体（Agent）**：AI Agent 的架构和部署模式
+- **Harness 架构**：如何管理和编排多个 AI Agent
+- **云的下一仗**：AWS 与 OpenAI 的深层合作方向
+- **不谈 AGI**：一小时内完全没有提及 AGI，务实风格
+
+### 行业意义
+
+在 Elon Musk 与 OpenAI 的法庭大战持续进行的同时，OpenAI 与 AWS 的务实合作表明——行业正在从「AGI 叙事」转向「工程化落地」。Sam Altman 和 AWS CEO 的对话聚焦于具体的技术架构和商业场景。
+
+**来源：** 品玩 + 36 氪
+**链接：** https://36kr.com/p/3788478874754307`,
+    date: "2026-04-30 12:00",
+    source: "品玩 + 36 氪",
+    sourceUrl: "https://36kr.com/p/3788478874754307",
+    href: "/news/news-579",
+  },
 ];
