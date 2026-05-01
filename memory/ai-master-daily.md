@@ -136,3 +136,4 @@
 - [06:00] 50b7e35f — 开发阶段: 验证ai-agent-payment-001+blog-097集成,QA 1749/0/0,bug-hash清零,Build+TS全通过,无需代码变更
 - [07:00] 8c4b392f — QA 验证 1749/0/0, 修复 ai-000.ts 中 /roadmap 死链→/knowledge, 11路由全200, Build+TS全通过
 - [08:02] d7060898 — 研究员: 扫描12来源(国外7+国内5), 更新新闻11条(news-628~639), 缺口4项, 已推送
+- [09:00] d34f6eca — PM阶段: 知识库[china-llm-scale-001 中国大模型训练规模对比: DeepSeek V4/LongCat/百度/阿里]+博客[blog-098 Stripe Link AI Agent数字钱包自主消费]，深度校验通过，Build+TS全通过，已推送
