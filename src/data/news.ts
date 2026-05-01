@@ -6195,17 +6195,6 @@ LLM 工具的持续进化反映了 AI 开发者工具市场的成熟。从简单
     href: "/news/news-633",
   },
   {
-    id: "news-634",
-    tag: "开源项目",
-    title: "OpenAI 发布 Symphony：开源多代理编排规范",
-    summary: "OpenAI 发布 Symphony 开源编排规范，为多代理协调和任务编排提供标准化方案。",
-    content: "多代理编排有了开放标准。\n\n## Symphony 规范\n\nOpenAI 正式发布了 Symphony 开源编排规范，旨在为多 AI 代理之间的协调、任务分配和工作流管理提供标准化方案。\n\n## 技术定位\n\nSymphony 与 Codex 编排深度集成，为开发者和企业构建复杂 AI 代理系统提供了可复用的基础设施。\n\n## 开源生态\n\n这一规范的开放发布，有望推动多代理编排领域的标准化，减少重复造轮子的成本。\n\n**来源：** OpenAI Blog\n**链接：** https://openai.com/index/open-source-codex-orchestration-symphony/",
-    date: "2026-05-01 08:00",
-    source: "OpenAI Blog",
-    sourceUrl: "https://openai.com/index/open-source-codex-orchestration-symphony/",
-    href: "/news/news-634",
-  },
-  {
     id: "news-635",
     tag: "大语言模型",
     title: "DeepSeek V4 与美团 LongCat 同时突破万亿 Token 训练里程碑",
