@@ -88,7 +88,7 @@ const content: ArticleSection[] = [
     G --> I["AI 角色：主力编码者"]
     G --> J["新挑战：质量治理"]
     
-    style E fill:#f59e0b,stroke:#d97706,color:#000
+    style E fill:#92400e,stroke:#d97706,color:#fff
     style F fill:#991b1b,stroke:#7f1d1d,color:#fff
     style G fill:#064e3b,stroke:#064e3b,color:#fff`,
         tip: "评估你的团队是否准备好进入 AI 编码新时代的三个信号：① AI 生成代码的编译通过率超过 85%；② 团队成员平均每天使用 AI 编码工具超过 2 小时；③ CI/CD 流水线已经可以处理 AI 生成的代码（自动测试、自动审查）。如果三个信号都满足，你的团队已经准备好了。",
@@ -283,12 +283,12 @@ const content: ArticleSection[] = [
     H --> J
     I --> J
     
-    style A fill:#fef3c7,stroke:#d97706,color:#000
-    style B fill:#dbeafe,stroke:#2563eb,color:#000
-    style C fill:#fee2e2,stroke:#dc2626,color:#000
-    style E fill:#d1fae5,stroke:#059669,color:#000
-    style F fill:#e0e7ff,stroke:#4f46e5,color:#000
-    style J fill:#fef3c7,stroke:#d97706,color:#000`,
+    style A fill:#92400e,stroke:#d97706,color:#fff
+    style B fill:#1e3a8a,stroke:#2563eb,color:#fff
+    style C fill:#991b1b,stroke:#dc2626,color:#fff
+    style E fill:#064e3b,stroke:#059669,color:#fff
+    style F fill:#312e81,stroke:#4f46e5,color:#fff
+    style J fill:#92400e,stroke:#d97706,color:#fff`,
         tip: "混合模式是目前大多数成熟团队的最佳选择。关键是要明确定义「什么功能由 AI 自主完成，什么功能需要人工编写」。建议制定一份「AI 编码权限矩阵」——根据功能的安全等级、复杂度、业务重要性，规定 AI 的参与程度。",
         warning: "从方案一过渡到方案二或三时，最大的风险是团队能力的断层。习惯了逐行写代码的开发者，突然转变为审查 AI 生成代码，需要至少 2-3 个月的适应期。在这个适应期内，代码质量可能会出现短暂下降。提前准备好过渡计划和培训。"
     },
