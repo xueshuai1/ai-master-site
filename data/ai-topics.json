@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-01T16:18:12.238Z",
+  "lastUpdated": "2026-05-02T10:27:24.456Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -2606,6 +2606,288 @@
       "url": "https://github.com/topics/microsoft-for-beginners",
       "minStars": 3000,
       "description": "（自动发现）microsoft for beginners"
+    },
+    {
+      "topic": "audio-generation",
+      "url": "https://github.com/topics/audio-generation",
+      "minStars": 5000,
+      "description": "（自动发现）audio-generation"
+    },
+    {
+      "topic": "text-generation",
+      "url": "https://github.com/topics/text-generation",
+      "minStars": 5000,
+      "description": "（自动发现）text-generation"
+    },
+    {
+      "topic": "low-code-platform",
+      "url": "https://github.com/topics/low-code-platform",
+      "minStars": 5000,
+      "description": "（自动发现）low-code-platform"
+    },
+    {
+      "topic": "developer-tools",
+      "url": "https://github.com/topics/developer-tools",
+      "minStars": 2000,
+      "description": "（自动发现）developer-tools"
+    },
+    {
+      "topic": "deepseek-api",
+      "url": "https://github.com/topics/deepseek-api",
+      "minStars": 5000,
+      "description": "（自动发现）deepseek-api"
+    },
+    {
+      "topic": "job-search",
+      "url": "https://github.com/topics/job-search",
+      "minStars": 5000,
+      "description": "（自动发现）job-search"
+    },
+    {
+      "topic": "model-hub",
+      "url": "https://github.com/topics/model-hub",
+      "minStars": 5000,
+      "description": "（自动发现）model-hub"
+    },
+    {
+      "topic": "codegenerator",
+      "url": "https://github.com/topics/codegenerator",
+      "minStars": 5000,
+      "description": "（自动发现）codegenerator"
+    },
+    {
+      "topic": "big-model",
+      "url": "https://github.com/topics/big-model",
+      "minStars": 5000,
+      "description": "（自动发现）big-model"
+    },
+    {
+      "topic": "large-scale",
+      "url": "https://github.com/topics/large-scale",
+      "minStars": 5000,
+      "description": "（自动发现）large-scale"
+    },
+    {
+      "topic": "codex-cli",
+      "url": "https://github.com/topics/codex-cli",
+      "minStars": 3000,
+      "description": "（自动发现）codex-cli"
+    },
+    {
+      "topic": "code-analysis",
+      "url": "https://github.com/topics/code-analysis",
+      "minStars": 5000,
+      "description": "（自动发现）code-analysis"
+    },
+    {
+      "topic": "web-search",
+      "url": "https://github.com/topics/web-search",
+      "minStars": 5000,
+      "description": "（自动发现）web-search"
+    },
+    {
+      "topic": "pdf-to-json",
+      "url": "https://github.com/topics/pdf-to-json",
+      "minStars": 5000,
+      "description": "（自动发现）pdf-to-json"
+    },
+    {
+      "topic": "image-search",
+      "url": "https://github.com/topics/image-search",
+      "minStars": 5000,
+      "description": "（自动发现）image-search"
+    },
+    {
+      "topic": "nearest-neighbor-search",
+      "url": "https://github.com/topics/nearest-neighbor-search",
+      "minStars": 5000,
+      "description": "（自动发现）nearest-neighbor-search"
+    },
+    {
+      "topic": "vector-similarity",
+      "url": "https://github.com/topics/vector-similarity",
+      "minStars": 5000,
+      "description": "（自动发现）vector-similarity"
+    },
+    {
+      "topic": "vector-store",
+      "url": "https://github.com/topics/vector-store",
+      "minStars": 5000,
+      "description": "（自动发现）vector-store"
+    },
+    {
+      "topic": "code-free",
+      "url": "https://github.com/topics/code-free",
+      "minStars": 5000,
+      "description": "（自动发现）code-free"
+    },
+    {
+      "topic": "quant-models",
+      "url": "https://github.com/topics/quant-models",
+      "minStars": 5000,
+      "description": "（自动发现）quant-models"
+    },
+    {
+      "topic": "image2image",
+      "url": "https://github.com/topics/image2image",
+      "minStars": 5000,
+      "description": "（自动发现）image2image"
+    },
+    {
+      "topic": "text2image",
+      "url": "https://github.com/topics/text2image",
+      "minStars": 5000,
+      "description": "（自动发现）text2image"
+    },
+    {
+      "topic": "torch",
+      "url": "https://github.com/topics/torch",
+      "minStars": 3000,
+      "description": "（自动发现）torch"
+    },
+    {
+      "topic": "image-classification",
+      "url": "https://github.com/topics/image-classification",
+      "minStars": 5000,
+      "description": "（自动发现）image-classification"
+    },
+    {
+      "topic": "yolo-world",
+      "url": "https://github.com/topics/yolo-world",
+      "minStars": 5000,
+      "description": "（自动发现）yolo-world"
+    },
+    {
+      "topic": "deepface",
+      "url": "https://github.com/topics/deepface",
+      "minStars": 5000,
+      "description": "（自动发现）deepface"
+    },
+    {
+      "topic": "deepfakes",
+      "url": "https://github.com/topics/deepfakes",
+      "minStars": 5000,
+      "description": "（自动发现）deepfakes"
+    },
+    {
+      "topic": "gigapixel-images",
+      "url": "https://github.com/topics/gigapixel-images",
+      "minStars": 5000,
+      "description": "（自动发现）gigapixel-images"
+    },
+    {
+      "topic": "image-upscaling",
+      "url": "https://github.com/topics/image-upscaling",
+      "minStars": 5000,
+      "description": "（自动发现）image-upscaling"
+    },
+    {
+      "topic": "topaz",
+      "url": "https://github.com/topics/topaz",
+      "minStars": 5000,
+      "description": "（自动发现）topaz"
+    },
+    {
+      "topic": "torchaudio",
+      "url": "https://github.com/topics/torchaudio",
+      "minStars": 5000,
+      "description": "（自动发现）torchaudio"
+    },
+    {
+      "topic": "creative-tools",
+      "url": "https://github.com/topics/creative-tools",
+      "minStars": 5000,
+      "description": "（自动发现）creative-tools"
+    },
+    {
+      "topic": "image-to-video",
+      "url": "https://github.com/topics/image-to-video",
+      "minStars": 5000,
+      "description": "（自动发现）image-to-video"
+    },
+    {
+      "topic": "wan-video",
+      "url": "https://github.com/topics/wan-video",
+      "minStars": 5000,
+      "description": "（自动发现）wan-video"
+    },
+    {
+      "topic": "vector-index",
+      "url": "https://github.com/topics/vector-index",
+      "minStars": 5000,
+      "description": "（自动发现）vector-index"
+    },
+    {
+      "topic": "app-search",
+      "url": "https://github.com/topics/app-search",
+      "minStars": 5000,
+      "description": "（自动发现）app-search"
+    },
+    {
+      "topic": "enterprise-search",
+      "url": "https://github.com/topics/enterprise-search",
+      "minStars": 5000,
+      "description": "（自动发现）enterprise-search"
+    },
+    {
+      "topic": "full-text-search",
+      "url": "https://github.com/topics/full-text-search",
+      "minStars": 5000,
+      "description": "（自动发现）full-text-search"
+    },
+    {
+      "topic": "fuzzy-search",
+      "url": "https://github.com/topics/fuzzy-search",
+      "minStars": 5000,
+      "description": "（自动发现）fuzzy-search"
+    },
+    {
+      "topic": "hybrid-search",
+      "url": "https://github.com/topics/hybrid-search",
+      "minStars": 5000,
+      "description": "（自动发现）hybrid-search"
+    },
+    {
+      "topic": "search-as-you-type",
+      "url": "https://github.com/topics/search-as-you-type",
+      "minStars": 5000,
+      "description": "（自动发现）search-as-you-type"
+    },
+    {
+      "topic": "site-search",
+      "url": "https://github.com/topics/site-search",
+      "minStars": 5000,
+      "description": "（自动发现）site-search"
+    },
+    {
+      "topic": "typo-tolerance",
+      "url": "https://github.com/topics/typo-tolerance",
+      "minStars": 5000,
+      "description": "（自动发现）typo-tolerance"
+    },
+    {
+      "topic": "claude-code-best-practices",
+      "url": "https://github.com/topics/claude-code-best-practices",
+      "minStars": 5000,
+      "description": "（自动发现）claude-code-best-practices"
+    },
+    {
+      "topic": "claude-code-commands",
+      "url": "https://github.com/topics/claude-code-commands",
+      "minStars": 5000,
+      "description": "（自动发现）claude-code-commands"
+    },
+    {
+      "topic": "code-execution",
+      "url": "https://github.com/topics/code-execution",
+      "minStars": 5000,
+      "description": "（自动发现）code-execution"
+    },
+    {
+      "topic": "code-interpreter",
+      "url": "https://github.com/topics/code-interpreter",
+      "minStars": 5000,
+      "description": "（自动发现）code-interpreter"
     }
   ]
 }
