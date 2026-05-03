@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-02T10:27:24.456Z",
+  "lastUpdated": "2026-05-03T20:24:41.527Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -2888,6 +2888,24 @@
       "url": "https://github.com/topics/code-interpreter",
       "minStars": 5000,
       "description": "（自动发现）code-interpreter"
+    },
+    {
+      "topic": "harness",
+      "url": "https://github.com/topics/harness",
+      "minStars": 5000,
+      "description": "（自动发现）harness"
+    },
+    {
+      "topic": "remote-mcp-server",
+      "url": "https://github.com/topics/remote-mcp-server",
+      "minStars": 5000,
+      "description": "（自动发现）remote-mcp-server"
+    },
+    {
+      "topic": "self-evolution",
+      "url": "https://github.com/topics/self-evolution",
+      "minStars": 5000,
+      "description": "（自动发现）self-evolution"
     }
   ]
 }
