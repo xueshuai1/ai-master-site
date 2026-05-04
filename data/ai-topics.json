@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-03T20:24:41.527Z",
+  "lastUpdated": "2026-05-04T04:23:16.905Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -2906,6 +2906,12 @@
       "url": "https://github.com/topics/self-evolution",
       "minStars": 5000,
       "description": "（自动发现）self-evolution"
+    },
+    {
+      "topic": "openai-codex",
+      "url": "https://github.com/topics/openai-codex",
+      "minStars": 5000,
+      "description": "（自动发现）openai-codex（AI 相关）"
     }
   ]
 }
