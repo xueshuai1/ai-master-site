@@ -367,8 +367,8 @@ AI 编码工具将**彻底改变**人们学习编程的方式：
     
     style A fill:#1e293b,stroke:#94a3b8,color:#e2e8f0
     style B fill:#1e293b,stroke:#94a3b8,color:#e2e8f0
-    style C fill:#f59e0b,stroke:#fbbf24,color:#1e293b
-    style D fill:#f59e0b,stroke:#fbbf24,color:#1e293b
+    style C fill:#92400e,stroke:#d97706,color:#fde68a
+    style D fill:#92400e,stroke:#d97706,color:#fde68a
     style E fill:#1e293b,stroke:#94a3b8,color:#e2e8f0
     style F fill:#1e293b,stroke:#94a3b8,color:#e2e8f0
     style G fill:#1e293b,stroke:#94a3b8,color:#e2e8f0
