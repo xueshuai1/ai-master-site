@@ -10600,5 +10600,353 @@ IBM 持续深耕小模型路线，为企业端侧 AI 部署提供更多选择。
     source: "OpenAI Engineering",
     sourceUrl: "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
     href: "/news/news-845",
+  },
+  {
+    id: "news-846",
+    tag: "AI 应用",
+    tagColor: "bg-teal-500/10 text-teal-300",
+    title: "豆包推出三档付费订阅：68 元/月起步，最高 500 元/月，中国 AI 商业化进入深水区",
+    summary: "字节跳动旗下 AI 助手豆包将在免费版基础上新增三档付费订阅：标准版 68 元/月、加强版 200 元/月、专业版 500 元/月。付费功能聚焦 PPT 生成、数据分析、影视制作等复杂场景，免费版继续面向日常使用。这是中国 AI 产品从「免费获客」向「商业变现」转型的标志性事件。",
+    content: `## 豆包付费订阅：中国 AI 的商业化试金石
+
+**2026 年 5 月 4 日**，36 氪报道。
+
+### 三档定价
+- **标准版**：连续包月 68 元，连续包年 688 元
+- **加强版**：连续包月 200 元，连续包年 2048 元
+- **专业版**：连续包月 500 元，连续包年 5088 元
+
+### 付费功能定位
+付费功能将主要聚焦复杂任务和高价值场景：
+- PPT 生成
+- 数据分析
+- 影视制作
+
+这类任务需要更多算力与推理时间，免费版本继续面向用户的日常使用。
+
+### 行业意义
+豆包此前一直以免费策略快速获客，如今推出付费订阅，标志着中国 AI 产品从「跑马圈地」进入「精耕细作」阶段。定价策略对标 ChatGPT Plus（约 140 元/月），但在专业版上定得更高。
+
+**来源：** 36 氪
+**链接：** https://36kr.com/p/3794799114476809`,
+    date: "2026-05-05 16:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/p/3794799114476809",
+    href: "/news/news-846",
+  },
+  {
+    id: "news-847",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "BuzzFeed 濒临破产：AI 曾被视为救命稻草，最终成为致命一击",
+    summary: "曾被称为「今日头条鼻祖」的 BuzzFeed 在创立 20 年后走向破产边缘，市值从 17 亿美元跌至不足 3000 万美元。这家公司曾首创算法推荐席卷全球，后试图用 AI 自救却反而被 AI 加速推向死亡——AI 生成的内容成本更低、速度更快，让 BuzzFeed 的内容优势荡然无存。这是 AI 时代最生动的警示。",
+    content: `## BuzzFeed 之死：AI 如何摧毁算法推荐鼻祖
+
+**2026 年 5 月 4 日**，36 氪/投资界报道。
+
+### 20 年兴衰史
+- 2006 年创立，创始人乔纳·佩雷蒂（也是赫芬顿邮报联合创始人）
+- 首创算法推荐，被称为「今日头条鼻祖」
+- 曾创下 17 亿美元市值
+- 如今收到退市警告，濒临破产
+
+### AI 的双刃剑
+BuzzFeed 曾寄希望于 AI 来降低内容成本、提高产出效率。但结果是：AI 让内容生产的门槛归零，任何人（包括竞争对手）都能用 AI 以极低成本生成病毒式内容。BuzzFeed 的核心竞争力——内容创意和传播能力——在 AI 面前不再稀缺。
+
+### 启示
+这一案例是 AI 时代最生动的商业警示：当你试图用颠覆性技术来挽救被该技术颠覆的商业模式时，你可能在加速自己的死亡。
+
+**来源：** 36 氪 / 投资界
+**链接：** https://36kr.com/p/3794644097424645`,
+    date: "2026-05-05 16:00",
+    source: "36 氪 / 投资界",
+    sourceUrl: "https://36kr.com/p/3794644097424645",
+    href: "/news/news-847",
+  },
+  {
+    id: "news-848",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "字节腾讯扎堆入局 AI 恋爱陪伴：女性向游戏赛道 2024 年规模达 80 亿，AI 成为新引擎",
+    summary: "字节跳动（猫箱/豆包）和腾讯等大厂加速布局 AI 恋爱陪伴赛道。2024 年中国女性向游戏市场规模达 80 亿元，同比增长 124%。AI 的长期记忆和精准输出完美适配女性向游戏需求，3D AI 乙游成为创业公司新选择。大厂基于各自大模型优势推出差异化产品。",
+    content: `## AI 恋爱陪伴：大厂扎堆的女性向游戏新赛道
+
+**2026 年 5 月 5 日**，36 氪/Tech 星球报道。
+
+### 市场数据
+- 2024 年中国女性向游戏市场规模：**80 亿元**
+- 同比增长：**124.1%**
+- 增速远超行业平均水平
+
+### 大厂布局
+- **字节跳动**：「猫箱」（原「话炉」），基于豆包大模型，支持自定义创建 AI 角色
+- **腾讯**：基于自有大模型优势，推出 AI 驱动的互动产品
+- **米哈游、网易**：均在 AI 游戏领域加大投入
+
+### 为什么是 AI？
+女性向游戏的核心是用户体验和个性化定制。AI 的长期记忆能力和精准输出完美契合这一需求——NPC 能记住你的喜好、性格和故事线，提供千人千面的互动体验。
+
+**来源：** 36 氪 / Tech 星球
+**链接：** https://36kr.com/p/3795122931817730`,
+    date: "2026-05-05 16:00",
+    source: "36 氪 / Tech 星球",
+    sourceUrl: "https://36kr.com/p/3795122931817730",
+    href: "/news/news-848",
+  },
+  {
+    id: "news-849",
+    tag: "行业",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "硅谷奇观：百亿公司 CTO 集体离职，纷纷去 Anthropic 当普通工程师",
+    summary: "硅谷正在发生一场「反常」的人才大迁徙——Workday CTO Peter Bailis、You.com CTO Bryan McCann 等曾管理数十亿美元业务的科技高管，纷纷离职加入 Anthropic 担任个人贡献者（IC）。Instagram 联合创始人 Mike Krieger 也早已加入。背后的核心逻辑是：谁距离一线模型更近，谁就拥有更大的权力和影响力。",
+    content: `## 从 CTO 到 IC：AI 时代的人才权力重构
+
+**2026 年 5 月 3 日**，36 氪/机器之心报道。
+
+### 时间线
+- **2026 年 4 月**：Workday CTO Peter Bailis 离职 → 加入 Anthropic 担任技术团队成员
+- **2026 年 3 月**：You.com 联合创始人 CTO Bryan McCann 离职 → 加入 Anthropic
+- **2026 年 1 月**：Instagram 联合创始人 Mike Krieger（2024 年 5 月加入 Anthropic 任 CPO）转入内部技术岗位
+
+### 深层原因
+1. **权力版图变迁**：在 AI 时代，距离一线模型更近意味着更大的影响力
+2. **技术引力**：Anthropic 站在 AI 研究最前沿，对技术人才有极强吸引力
+3. **身份转变**：从「管理者」到「建造者」——顶尖人才更愿意亲手打造改变世界的产品
+
+**来源：** 36 氪 / 机器之心
+**链接：** https://36kr.com/p/3793138446179585`,
+    date: "2026-05-05 16:00",
+    source: "36 氪 / 机器之心",
+    sourceUrl: "https://36kr.com/p/3793138446179585",
+    href: "/news/news-849",
+  },
+  {
+    id: "news-850",
+    tag: "医疗健康",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "哈佛研究：AI 在急诊诊断准确率上超越人类医生，医疗 AI 实证突破",
+    summary: "哈佛医学院最新研究显示，AI 系统在急诊室诊断中的准确率超过了两位人类医生。这是 AI 医疗诊断领域最具说服力的实证研究之一，为 AI 在临床决策中的应用提供了强有力的证据支持。",
+    content: `## AI 超越人类医生：哈佛急诊诊断研究
+
+**2026 年 5 月 3 日**，TechCrunch 报道。
+
+### 研究概要
+哈佛大学主导的研究对比了 AI 系统与人类医生在急诊场景下的诊断准确率。结果显示：
+- AI 的诊断准确率**超过了两位人类医生**
+- 在复杂病例和罕见病识别上表现尤为突出
+- 减少了误诊和漏诊的可能性
+
+### 行业意义
+这是 AI 医疗诊断从「实验室」走向「临床实证」的重要里程碑。尽管 AI 不会取代医生，但作为辅助诊断工具，它已经展现出超越个体医生的能力。
+
+### 争议与挑战
+- AI 诊断的透明度和可解释性仍需提升
+- 医疗责任归属问题尚未解决
+- 患者对 AI 诊断的接受度存在差异
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/`,
+    date: "2026-05-05 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/",
+    href: "/news/news-850",
+  },
+  {
+    id: "news-851",
+    tag: "政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "奥斯卡新规：AI 生成的演员和剧本不再有资格参评，好莱坞划定 AI 红线",
+    summary: "美国电影艺术与科学学院宣布新规：由 AI 生成的演员表演和剧本将不再有资格获得奥斯卡奖评选。这是好莱坞对 AI 介入创意内容的正式划界，与 SAG-AFTRA 协议、美欧版权法律战线形成多重呼应。",
+    content: `## 奥斯卡对 AI 说「不」：创意内容的底线
+
+**2026 年 5 月 2 日**，TechCrunch 报道。
+
+### 新规内容
+- **AI 生成的演员**： ineligible for Oscar consideration
+- **AI 生成的剧本**：同样失去参评资格
+- **核心原则**：人类创意是奥斯卡奖的基础
+
+### 行业背景
+这一决定与多条 AI 版权/创意战线同步推进：
+- SAG-AFTRA 演员协议对 AI 使用的限制
+- 「This is fine」漫画创作者起诉 AI 公司盗用作品
+- Taylor Swift 等艺人的 AI 商标争议
+- 美/欧/中 AI 版权法律的多线推进
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/`,
+    date: "2026-05-05 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
+    href: "/news/news-851",
+  },
+  {
+    id: "news-852",
+    tag: "芯片",
+    tagColor: "bg-sky-500/10 text-sky-300",
+    title: "高通「失速」后重新定义自己：从手机芯片到 AI 计算平台的全方位转型",
+    summary: "36 氪报道指出，高通正在经历战略转型——从传统的手机 SoC 供应商重新定位为 AI 计算平台搭建者。在 AI 时代，高通需要在端侧 AI 推理、边缘计算和下一代计算平台中重新证明自己的价值。",
+    content: `## 高通转型：不只是手机芯片公司
+
+**2026 年 5 月 4 日**，36 氪/半导体产业纵横报道。
+
+### 转型方向
+高通正在从「手机芯片供应商」向「AI 计算平台」转型：
+- **端侧 AI 推理**：在移动设备本地运行 AI 模型
+- **边缘计算**：为物联网和边缘 AI 提供算力
+- **下一代计算平台**：参与 AR/VR、智能汽车等新兴领域
+
+### 挑战
+- NVIDIA 在数据中心 AI 芯片的绝对主导地位
+- 联发科在手机 SoC 市场的激烈竞争
+- 苹果自研芯片替代高通基带
+
+### 机遇
+端侧 AI 是高通的独特优势——如果 AI 推理从云端向端侧迁移，高通的 Snapdragon 平台将成为关键基础设施。
+
+**来源：** 36 氪 / 半导体产业纵横
+**链接：** https://36kr.com/p/3794426866605056`,
+    date: "2026-05-05 16:00",
+    source: "36 氪 / 半导体产业纵横",
+    sourceUrl: "https://36kr.com/p/3794426866605056",
+    href: "/news/news-852",
+  },
+  {
+    id: "news-853",
+    tag: "行业",
+    tagColor: "bg-violet-500/10 text-violet-300",
+    title: "苹果悄悄砍掉丐版 Mac mini：人人都要交「AI 税」的时代来了",
+    summary: "苹果悄悄取消了最低配 Mac mini 的供应，分析认为这标志着「AI 税」时代的到来——未来的苹果设备将内置更多 AI 功能，用户无论是否需要，都将为 AI 算力买单。你的下一台电脑可能必须给 AI 交税了。",
+    content: `## 「AI 税」来了：苹果取消丐版 Mac mini 的背后
+
+**2026 年 5 月 3 日**，36 氪/爱范儿报道。
+
+### 发生了什么
+苹果悄悄取消了最低配置 Mac mini 的供应，这意味着：
+- 用户无法再买到「不含 AI 算力」的便宜 Mac
+- 新一代 Apple Silicon 芯片将集成更多 NPU（神经网络处理单元）
+- AI 功能将成为所有苹果设备的标配
+
+### 深层含义
+这是 AI 硬件化的一个标志性事件：
+- 过去：用户可以选择「要不要 AI」
+- 现在：AI 是所有设备的默认配置
+- 未来：AI 算力将成为衡量设备性能的核心指标
+
+「AI 税」不仅仅是价格问题——它意味着 AI 能力正在成为基础设施，像电力和网络一样不可或缺。
+
+**来源：** 36 氪 / 爱范儿
+**链接：** https://36kr.com/p/3792125638352134`,
+    date: "2026-05-05 16:00",
+    source: "36 氪 / 爱范儿",
+    sourceUrl: "https://36kr.com/p/3792125638352134",
+    href: "/news/news-853",
+  },
+  {
+    id: "news-854",
+    tag: "AI 应用",
+    tagColor: "bg-indigo-500/10 text-indigo-300",
+    title: "Google Gemini iOS 大改版：渐变色背景 + 极简 UI，全面对标 ChatGPT 体验",
+    summary: "Google 对 iOS 版 Gemini 应用进行了全面重新设计，采用渐变色背景、药丸形输入框和极简 UI，将额外选项统一收纳到「+」按钮中。这一设计与已上线的 macOS 版 Gemini 一致，标志着 Google 在 AI 助手体验上全面对标 ChatGPT。",
+    content: `## Gemini 大改版：Google 的 AI 助手「面子工程」
+
+**2026 年 5 月 4 日**，The Verge / 9to5Google 报道。
+
+### 新设计特点
+- **渐变色背景**：视觉风格全面更新
+- **药丸形输入框**：更现代的输入体验
+- **极简 UI**：添加图片、切换到 Canvas 等选项统一收纳到「+」按钮
+- **跨平台一致**：iOS 设计与已上线的 macOS 版保持一致
+
+### 竞争格局
+Google 的 Gemini 在设计语言上正在向 ChatGPT 看齐——简洁、直观、专注对话。这反映了 AI 助手 UI 设计的趋同趋势：当产品功能差异缩小，体验一致性成为核心竞争力。
+
+**来源：** The Verge / 9to5Google
+**链接：** https://www.theverge.com/tech/923473/googles-latest-gemini-app-redesign-is-popping-up-on-iphones`,
+    date: "2026-05-05 16:00",
+    source: "The Verge / 9to5Google",
+    sourceUrl: "https://www.theverge.com/tech/923473/googles-latest-gemini-app-redesign-is-popping-up-on-iphones",
+    href: "/news/news-854",
+  },
+  {
+    id: "news-855",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Y Combinator 持有 OpenAI 约 0.6% 股份，按当前估值价值超 50 亿美元",
+    summary: "据 John Gruber 透露，Y Combinator 持有 OpenAI 约 0.6% 的股份。按 OpenAI 当前 8520 亿美元的估值计算，这笔股份价值超过 50 亿美元。这是 YC 早期投资 OpenAI 的丰厚回报，也是硅谷创投史上最成功的案例之一。",
+    content: `## YC 的 OpenAI 赌注：0.6% = 50 亿美元
+
+**2026 年 5 月 5 日**，Simon Willison / John Gruber 报道。
+
+### 核心数据
+- **YC 持股比例**：约 0.6%
+- **OpenAI 当前估值**：8520 亿美元
+- **YC 持股价值**：超过 **50 亿美元**
+
+### 为什么难查
+YC 对 OpenAI 的持股比例一直高度保密。John Gruber 通过多方打听（包括联系多位 OpenAI 投资者）才获得这一数据。
+
+### 意义
+这是硅谷创投史上最成功的早期投资案例之一。YC 作为 OpenAI 的孵化器和早期投资者，获得了数百倍的投资回报。这也解释了为什么 Sam Altman 能够从 YC 总裁转型为 OpenAI CEO。
+
+**来源：** Simon Willison Blog / John Gruber
+**链接：** https://simonwillison.net/2026/May/5/john-gruber/`,
+    date: "2026-05-05 16:00",
+    source: "Simon Willison Blog / John Gruber",
+    sourceUrl: "https://simonwillison.net/2026/May/5/john-gruber/",
+    href: "/news/news-855",
+  },
+  {
+    id: "news-856",
+    tag: "行业",
+    tagColor: "bg-amber-500/10 text-amber-300",
+    title: "Musk 诉 OpenAI 庭审：Musk 唯一 AI 专家证人坦言担忧 AGI 军备竞赛",
+    summary: "在 Musk 诉 OpenAI 案的庭审中，Musk 唯一的 AI 专家证人表达了对 AGI 军备竞赛的担忧。这一证词引发了业界对 AI 安全与竞争之间张力的关注。与此同时，Brockman 的财务披露显示其持有 Cerebras、Stripe、CoreWeave 等与 OpenAI 有交易的公司的股份。",
+    content: `## Musk 诉 OpenAI：AGI 军备竞赛的阴影
+
+**2026 年 5 月 4 日**，TechCrunch 报道。
+
+### 庭审焦点
+- **Musk 的 AI 专家证人**：唯一一位代表 Musk 出庭的 AI 领域专家，表达了对 AGI 军备竞赛的担忧
+- **Brockman 的财务披露**：持有 Cerebras、Stripe、CoreWeave 和 Helion 的股份——四家公司均与 OpenAI 有商业交易
+
+### 庭审背景
+Musk 的诉讼要求撤销 OpenAI 的营利性结构、要求技术向公众开放、取消微软的许可协议。但观察人士认为，Musk 的真实动机可能是为 xAI 消除竞争对手。
+
+### 行业影响
+这场诉讼已经超越了法律范畴，成为 AI 行业话语权之争的缩影。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/04/elon-musks-only-expert-witness-at-the-openai-trial-fears-an-agi-arms-race/`,
+    date: "2026-05-05 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/04/elon-musks-only-expert-witness-at-the-openai-trial-fears-an-agi-arms-race/",
+    href: "/news/news-856",
+  },
+  {
+    id: "news-857",
+    tag: "开源项目",
+    tagColor: "bg-lime-500/10 text-lime-300",
+    title: "n8n 工作流自动化平台持续霸榜 GitHub，AI 原生集成能力成核心竞争力",
+    summary: "n8n 作为 fair-code 工作流自动化平台，在 GitHub AI/LLM/Agent 仓库排行中名列前茅。平台原生集成 400+ 应用，支持可视化编排与自定义代码结合，自部署或云端均可使用。AI 原生能力使其在自动化领域持续领跑。",
+    content: `## n8n：AI 时代的自动化中枢
+
+**2026 年 5 月 5 日**，GitHub Trending 数据。
+
+### 平台亮点
+- **400+ 集成**：原生支持主流 SaaS 和服务
+- **AI 原生**：将 LLM、Agent 能力融入工作流编排
+- **Fair-code**：开源可自部署，也提供云端服务
+- **可视化 + 代码**：非技术用户和专业开发者都能用
+
+### 为什么重要
+在 AI Agent 爆发的时代，n8n 提供了一个关键能力：将 AI 能力与传统业务流程无缝连接。它不是单纯的 AI 工具，而是 AI 与业务系统之间的「胶水层」。
+
+**来源：** GitHub API
+**链接：** https://github.com/n8n-io/n8n`,
+    date: "2026-05-05 16:00",
+    source: "GitHub API",
+    sourceUrl: "https://github.com/n8n-io/n8n",
+    href: "/news/news-857",
   }
 ];
