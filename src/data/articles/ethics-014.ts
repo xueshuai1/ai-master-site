@@ -55,7 +55,8 @@ export const article: Article = {
     classDef sub fill:#475569,color:#f1f5f9
     class A main
     class B,C,D,E,F,G step
-    class B1,B2,B3,C1,C2,C3,D1,D2 sub`
+    class B1,B2,B3,C1,C2,C3,D1,D2 sub`,
+        },
         {
             title: "2. 法律基础：训练数据的版权与授权体系",
             body: `理解训练数据治理，首先要理解支撑它的**法律基础**。训练数据的版权问题涉及**三个核心法律概念**：**著作权**、**合理使用**和**授权许可**。
@@ -436,7 +437,7 @@ print(f"检测到: {len(pii_list)} 处 PII")`
     classDef detail fill:#475569,color:#f1f5f9
     class A main
     class B,C,D audit
-    class B1,B2,B3,C1,C2,C3,D1,D2,D3 detail`
+    class B1,B2,B3,C1,C2,C3,D1,D2,D3 detail`,
             code: [
                 {
                     lang: "python",
