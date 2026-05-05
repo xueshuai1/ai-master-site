@@ -1236,10 +1236,10 @@ LLM 安全是一个**快速发展的领域**——新的攻击方法和防御技
     L --> M["第四层: 事后审计与学习"]
     M --> N["更新检测规则"]
     N --> B
-    style D fill:#991b1b,stroke:#dc2626,color:#fff
-    style I fill:#b45309,stroke:#f59e0b,color:#fff
-    style L fill:#065f46,stroke:#059669,color:#fff
-    style N fill:#1e40af,stroke:#3b82f6,color:#fff`,
+    style D fill:#991b1b,stroke:#991b1b,color:#fff
+    style I fill:#b45309,stroke:#b45309,color:#fff
+    style L fill:#065f46,stroke:#065f46,color:#fff
+    style N fill:#1e40af,stroke:#1e40af,color:#fff`,
         },
         {
             title: "Mermaid 图表：安全阈值动态变化模型",
@@ -1254,10 +1254,10 @@ LLM 安全是一个**快速发展的领域**——新的攻击方法和防御技
     F --> I{"T < 20?"}
     I -->|否| J["继续监控\n风险等级: 高"]
     I -->|是| K["终止对话\nTERMINATE"]
-    style A fill:#065f46,stroke:#059669,color:#fff
-    style K fill:#991b1b,stroke:#dc2626,color:#fff
-    style G fill:#b45309,stroke:#f59e0b,color:#fff
-    style H fill:#065f46,stroke:#059669,color:#fff`,
+    style A fill:#065f46,stroke:#065f46,color:#fff
+    style K fill:#991b1b,stroke:#991b1b,color:#fff
+    style G fill:#b45309,stroke:#b45309,color:#fff
+    style H fill:#065f46,stroke:#065f46,color:#fff`,
         }
     ]
 };
