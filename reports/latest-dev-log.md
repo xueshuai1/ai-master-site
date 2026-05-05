@@ -1,5 +1,7 @@
-⏰ 写入时间：2026-05-05 22:00 (Asia/Shanghai)
-🐛 修复：1 个 bug（.next 缓存残留导致 build 失败 ENOENT rename 500.html → rm -rf .next 清理后重跑通过）
-✨ 新增：0 个功能（验证 PM 新写的 aieng-025 + blog-119 集成正常，875 页全部生成）
-🔧 优化：清理 4 个旧脚本文件（add-content.js, add-content2.js, fix-content.js, fix-mermaid.js）
+⏰ 写入时间：2026-05-06 02:05 (Asia/Shanghai)
+🐛 修复：2 个 bug
+  - b1: ai-security-012(ethics-014) 未注册到 knowledge.ts → 文章文件存在但网站不可访问
+  - b2: blog-120 未注册到 blogs.ts → 文章文件存在但网站不可访问
+✨ 新增：0 个功能
+🔧 优化：1 项 — PM 阶段产出文章正确注册到数据索引
 已知问题：无
