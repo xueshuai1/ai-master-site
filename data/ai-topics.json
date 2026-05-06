@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-06T16:18:39.000Z",
+  "lastUpdated": "2026-05-06T22:30:47.362Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -3152,6 +3152,36 @@
       "url": "https://github.com/topics/llm-apps",
       "minStars": 5000,
       "description": "（自动发现）llm-apps"
+    },
+    {
+      "topic": "desktop-app",
+      "url": "https://github.com/topics/desktop-app",
+      "minStars": 2000,
+      "description": "（自动发现）desktop-app"
+    },
+    {
+      "topic": "langgraph",
+      "url": "https://github.com/topics/langgraph",
+      "minStars": 2000,
+      "description": "（自动发现）langgraph"
+    },
+    {
+      "topic": "autogen-extension",
+      "url": "https://github.com/topics/autogen-extension",
+      "minStars": 5000,
+      "description": "（自动发现）autogen-extension"
+    },
+    {
+      "topic": "context-engine",
+      "url": "https://github.com/topics/context-engine",
+      "minStars": 5000,
+      "description": "（自动发现）context-engine"
+    },
+    {
+      "topic": "context-management",
+      "url": "https://github.com/topics/context-management",
+      "minStars": 5000,
+      "description": "（自动发现）context-management"
     }
   ]
 }
