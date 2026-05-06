@@ -1,33 +1,26 @@
-⏰ 写入时间：2026-05-06 20:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-07 00:00 (Asia/Shanghai)
+## 本轮发现
+🔥 热点（14 条，已选 14 条写入 news.ts news-939~news-952）：
+1. [Google AI 搜索引入 Reddit 专家建议] AI Overviews 直接引用论坛第一手经验 → 适合：博客/知识库
+2. [苹果 2.5 亿美元和解 Siri AI 延迟诉讼] AI 产品宣传合规风险升级 → 适合：博客
+3. [Genesis AI 全栈机器人] Khosla 支持，从感知到行动完整闭环 → 适合：知识库
+4. [Anthropic AI 员工手册：失控率 54%→7%] Agent 安全新方法 → 适合：知识库
+5. [13 人团队 SSA 架构挑战 Transformer] 算力降千倍，成本仅 Opus 5% → 适合：博客+知识库
+6. [Adobe PDF AI Agent] 文档处理进入对话时代 → 适合：博客
+7. [AI 热潮推三星破 1 万亿美元] HBM 芯片需求驱动 → 适合：博客
+8. [Anthropic x 亚马逊 250 亿刀算力大单] 5GW 能耗 → 适合：知识库
+9. [美军部署超 10 万 AI Agent] 算法铁幕 → 适合：博客
+10. [Anthropic 联创预测：2028 年 AI 自己造 AI 概率 60%] → 适合：博客+知识库
+11. [OpenAI B2B Signals] 企业 AI 竞争优势路径 → 适合：知识库
+12. [白宫考虑 AI 模型审查机制] 网络安全风险 → 适合：博客
+13. [微软 OpenAI 2019 合同曝光：AGI 正式定义] → 适合：知识库
+14. [Match Group 缩减招聘投 AI] AI 替代人力真实案例 → 适合：博客
 
-# 本轮发现
+🆕 新工具（0 个）：
+（本轮未发现值得收录的新开源工具）
 
-## 🔥 热点（14 条，已写入 news-925~938）：
-1. [GPT-5.5 Instant 系统卡发布] OpenAI 发布系统卡，详述安全对齐措施 → 适合：博客
-2. [Claude 金融服务 AI Agent] Anthropic 推出垂直行业 Claude Agent → 适合：知识库
-3. [QuTwo 天使轮 3.8 亿美元] 量子计算 AI 赛道升温 → 适合：行业分析博客
-4. [SAP 11.6 亿美元投资德国 AI 实验室] 企业 AI 投资进入疯狂模式 → 适合：行业分析
-5. [苹果 iOS 27 自选 AI 模型] 打破封闭 AI 生态 → 适合：博客
-6. [ElevenLabs 引入 BlackRock 等新投资者] AI 语音从 B2B 走向 B2C → 适合：行业分析
-7. [宾夕法尼亚州起诉 Character.AI] 聊天机器人冒充医生 → 适合：知识库(AI 合规)
-8. [Meta 用 AI 分析骨骼识别未成年人] 隐私争议 → 适合：博客
-9. [CopilotKit 融资 2700 万美元] 应用内 AI Agent 趋势 → 适合：知识库
-10. [字节+Kimi+文心同时付费] 中国 AI 应用进入付费时代 → 适合：深度博客
-11. [李飞飞创立 AI 游戏公司] 融资 4 亿元 → 适合：行业分析
-12. [AI 自主炒二手] AI 绕过人类直接做生意 → 适合：博客(AI Agent 趋势)
-13. [波士顿动力高管集体出走] IPO 前夕人才危机 → 适合：行业分析
-14. [Simon Willison 批评 AI 咖啡馆实验] AI 伦理边界讨论 → 适合：知识库(AI 伦理)
-
-## 🆕 新工具（0 个）：
-- 本轮未发现值得关注的新开源工具
-
-## 💡 知识缺口（4 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 金融合规（宾州诉 Character.AI 事件引发）
-2. KNOWLEDGE-BASE-PLAN.md 待补：量子计算与 AI 训练结合（QuTwo 融资热度高）
-3. KNOWLEDGE-BASE-PLAN.md 待补：AI 年龄验证技术（Meta 方案引发争议）
-4. KNOWLEDGE-BASE-PLAN.md 待补：应用内 AI Agent 架构（CopilotKit 方向）
-
-## 📊 来源覆盖：
-- 国外：arXiv、Simon Willison、OpenAI、Anthropic、TechCrunch（5 个）
-- 国内：36 氪、机器之心、新浪科技（3 个）
-- 不可用：GitHub Trending（超时）、Google AI Blog（失败）
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：SSA 状态空间架构深度解读（对比 Transformer 的技术优势）
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 安全治理框架（Anthropic 员工手册方法延伸）
+3. KNOWLEDGE-BASE-PLAN.md 待补：具身智能全景（Genesis AI + 波士顿动力 + 人形机器人赛道）
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI 算力与能源（Anthropic 5GW + 核电站 + AI 能耗问题）
