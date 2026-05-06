@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-05T23:25:05.131Z",
+  "lastUpdated": "2026-05-06T10:29:40.925Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -3134,6 +3134,24 @@
       "url": "https://github.com/topics/speaker-encodings",
       "minStars": 5000,
       "description": "（自动发现）speaker-encodings"
+    },
+    {
+      "topic": "agentic-retrieval",
+      "url": "https://github.com/topics/agentic-retrieval",
+      "minStars": 5000,
+      "description": "（自动发现）agentic-retrieval"
+    },
+    {
+      "topic": "agentic-search",
+      "url": "https://github.com/topics/agentic-search",
+      "minStars": 5000,
+      "description": "（自动发现）agentic-search"
+    },
+    {
+      "topic": "llm-apps",
+      "url": "https://github.com/topics/llm-apps",
+      "minStars": 5000,
+      "description": "（自动发现）llm-apps"
     }
   ]
 }
