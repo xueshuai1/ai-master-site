@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-07T15:06:57.489Z",
+  "lastUpdated": "2026-05-07T22:15:08.003Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -7826,6 +7826,474 @@
       "url": "https://github.com/topics/stable-diffusion-webui-plugin",
       "minStars": 2000,
       "description": "（自动发现）stable-diffusion-webui-plugin"
+    },
+    {
+      "topic": "gemma",
+      "url": "https://github.com/topics/gemma",
+      "minStars": 2000,
+      "description": "（自动发现）gemma"
+    },
+    {
+      "topic": "gemma3",
+      "url": "https://github.com/topics/gemma3",
+      "minStars": 3000,
+      "description": "（自动发现）gemma3"
+    },
+    {
+      "topic": "go",
+      "url": "https://github.com/topics/go",
+      "minStars": 3000,
+      "description": "（自动发现）go"
+    },
+    {
+      "topic": "open-webui",
+      "url": "https://github.com/topics/open-webui",
+      "minStars": 5000,
+      "description": "（自动发现）open-webui"
+    },
+    {
+      "topic": "ui",
+      "url": "https://github.com/topics/ui",
+      "minStars": 2000,
+      "description": "（自动发现）ui"
+    },
+    {
+      "topic": "app",
+      "url": "https://github.com/topics/app",
+      "minStars": 3000,
+      "description": "（自动发现）app"
+    },
+    {
+      "topic": "application",
+      "url": "https://github.com/topics/application",
+      "minStars": 2000,
+      "description": "（自动发现）application"
+    },
+    {
+      "topic": "api",
+      "url": "https://github.com/topics/api",
+      "minStars": 2000,
+      "description": "（自动发现）api"
+    },
+    {
+      "topic": "distributed",
+      "url": "https://github.com/topics/distributed",
+      "minStars": 3000,
+      "description": "（自动发现）distributed"
+    },
+    {
+      "topic": "work",
+      "url": "https://github.com/topics/work",
+      "minStars": 5000,
+      "description": "（自动发现）work"
+    },
+    {
+      "topic": "assistant",
+      "url": "https://github.com/topics/assistant",
+      "minStars": 2000,
+      "description": "（自动发现）assistant"
+    },
+    {
+      "topic": "openclaw",
+      "url": "https://github.com/topics/openclaw",
+      "minStars": 2000,
+      "description": "（自动发现）openclaw"
+    },
+    {
+      "topic": "automation",
+      "url": "https://github.com/topics/automation",
+      "minStars": 2000,
+      "description": "（自动发现）automation"
+    },
+    {
+      "topic": "development",
+      "url": "https://github.com/topics/development",
+      "minStars": 3000,
+      "description": "（自动发现）development"
+    },
+    {
+      "topic": "workflow",
+      "url": "https://github.com/topics/workflow",
+      "minStars": 2000,
+      "description": "（自动发现）workflow"
+    },
+    {
+      "topic": "hermes",
+      "url": "https://github.com/topics/hermes",
+      "minStars": 2000,
+      "description": "（自动发现）hermes"
+    },
+    {
+      "topic": "browser-use",
+      "url": "https://github.com/topics/browser-use",
+      "minStars": 5000,
+      "description": "（自动发现）browser-use"
+    },
+    {
+      "topic": "skills",
+      "url": "https://github.com/topics/skills",
+      "minStars": 2000,
+      "description": "（自动发现）skills"
+    },
+    {
+      "topic": "enterprise",
+      "url": "https://github.com/topics/enterprise",
+      "minStars": 3000,
+      "description": "（自动发现）enterprise"
+    },
+    {
+      "topic": "framework",
+      "url": "https://github.com/topics/framework",
+      "minStars": 2000,
+      "description": "（自动发现）framework"
+    },
+    {
+      "topic": "database",
+      "url": "https://github.com/topics/database",
+      "minStars": 2000,
+      "description": "（自动发现）database"
+    },
+    {
+      "topic": "realtime",
+      "url": "https://github.com/topics/realtime",
+      "minStars": 3000,
+      "description": "（自动发现）realtime"
+    },
+    {
+      "topic": "gateway",
+      "url": "https://github.com/topics/gateway",
+      "minStars": 3000,
+      "description": "（自动发现）gateway"
+    },
+    {
+      "topic": "openclaw-ui",
+      "url": "https://github.com/topics/openclaw-ui",
+      "minStars": 5000,
+      "description": "（自动发现）openclaw-ui"
+    },
+    {
+      "topic": "mem0",
+      "url": "https://github.com/topics/mem0",
+      "minStars": 5000,
+      "description": "（自动发现）mem0"
+    },
+    {
+      "topic": "skill",
+      "url": "https://github.com/topics/skill",
+      "minStars": 2000,
+      "description": "（自动发现）skill"
+    },
+    {
+      "topic": "awesome",
+      "url": "https://github.com/topics/awesome",
+      "minStars": 2000,
+      "description": "（自动发现）awesome"
+    },
+    {
+      "topic": "gemini-skills",
+      "url": "https://github.com/topics/gemini-skills",
+      "minStars": 5000,
+      "description": "（自动发现）gemini-skills"
+    },
+    {
+      "topic": "real",
+      "url": "https://github.com/topics/real",
+      "minStars": 5000,
+      "description": "（自动发现）real"
+    },
+    {
+      "topic": "gui",
+      "url": "https://github.com/topics/gui",
+      "minStars": 3000,
+      "description": "（自动发现）gui"
+    },
+    {
+      "topic": "rpa",
+      "url": "https://github.com/topics/rpa",
+      "minStars": 5000,
+      "description": "（自动发现）rpa"
+    },
+    {
+      "topic": "web",
+      "url": "https://github.com/topics/web",
+      "minStars": 3000,
+      "description": "（自动发现）web"
+    },
+    {
+      "topic": "quant",
+      "url": "https://github.com/topics/quant",
+      "minStars": 5000,
+      "description": "（自动发现）quant"
+    },
+    {
+      "topic": "analytics",
+      "url": "https://github.com/topics/analytics",
+      "minStars": 3000,
+      "description": "（自动发现）analytics"
+    },
+    {
+      "topic": "upscaling",
+      "url": "https://github.com/topics/upscaling",
+      "minStars": 5000,
+      "description": "（自动发现）upscaling"
+    },
+    {
+      "topic": "fake-webcam",
+      "url": "https://github.com/topics/fake-webcam",
+      "minStars": 5000,
+      "description": "（自动发现）fake-webcam"
+    },
+    {
+      "topic": "webcam",
+      "url": "https://github.com/topics/webcam",
+      "minStars": 5000,
+      "description": "（自动发现）webcam"
+    },
+    {
+      "topic": "chineseocr",
+      "url": "https://github.com/topics/chineseocr",
+      "minStars": 5000,
+      "description": "（自动发现）chineseocr"
+    },
+    {
+      "topic": "pp-ocr",
+      "url": "https://github.com/topics/pp-ocr",
+      "minStars": 5000,
+      "description": "（自动发现）pp-ocr"
+    },
+    {
+      "topic": "yolo",
+      "url": "https://github.com/topics/yolo",
+      "minStars": 3000,
+      "description": "（自动发现）yolo"
+    },
+    {
+      "topic": "yolov3",
+      "url": "https://github.com/topics/yolov3",
+      "minStars": 5000,
+      "description": "（自动发现）yolov3"
+    },
+    {
+      "topic": "yolov5",
+      "url": "https://github.com/topics/yolov5",
+      "minStars": 5000,
+      "description": "（自动发现）yolov5"
+    },
+    {
+      "topic": "hub",
+      "url": "https://github.com/topics/hub",
+      "minStars": 5000,
+      "description": "（自动发现）hub"
+    },
+    {
+      "topic": "yolo11",
+      "url": "https://github.com/topics/yolo11",
+      "minStars": 5000,
+      "description": "（自动发现）yolo11"
+    },
+    {
+      "topic": "yolo26",
+      "url": "https://github.com/topics/yolo26",
+      "minStars": 5000,
+      "description": "（自动发现）yolo26"
+    },
+    {
+      "topic": "yolov8",
+      "url": "https://github.com/topics/yolov8",
+      "minStars": 5000,
+      "description": "（自动发现）yolov8"
+    },
+    {
+      "topic": "face-swap",
+      "url": "https://github.com/topics/face-swap",
+      "minStars": 5000,
+      "description": "（自动发现）face-swap"
+    },
+    {
+      "topic": "hifigan",
+      "url": "https://github.com/topics/hifigan",
+      "minStars": 5000,
+      "description": "（自动发现）hifigan"
+    },
+    {
+      "topic": "chattts",
+      "url": "https://github.com/topics/chattts",
+      "minStars": 5000,
+      "description": "（自动发现）chattts"
+    },
+    {
+      "topic": "qwen3-tts-ui",
+      "url": "https://github.com/topics/qwen3-tts-ui",
+      "minStars": 5000,
+      "description": "（自动发现）qwen3-tts-ui"
+    },
+    {
+      "topic": "real-time",
+      "url": "https://github.com/topics/real-time",
+      "minStars": 5000,
+      "description": "（自动发现）real-time"
+    },
+    {
+      "topic": "data",
+      "url": "https://github.com/topics/data",
+      "minStars": 5000,
+      "description": "（自动发现）data"
+    },
+    {
+      "topic": "security",
+      "url": "https://github.com/topics/security",
+      "minStars": 3000,
+      "description": "（自动发现）security"
+    },
+    {
+      "topic": "ci",
+      "url": "https://github.com/topics/ci",
+      "minStars": 5000,
+      "description": "（自动发现）ci"
+    },
+    {
+      "topic": "testing",
+      "url": "https://github.com/topics/testing",
+      "minStars": 5000,
+      "description": "（自动发现）testing"
+    },
+    {
+      "topic": "observability",
+      "url": "https://github.com/topics/observability",
+      "minStars": 2000,
+      "description": "（自动发现）observability"
+    },
+    {
+      "topic": "sre",
+      "url": "https://github.com/topics/sre",
+      "minStars": 5000,
+      "description": "（自动发现）sre"
+    },
+    {
+      "topic": "system",
+      "url": "https://github.com/topics/system",
+      "minStars": 5000,
+      "description": "（自动发现）system"
+    },
+    {
+      "topic": "systems",
+      "url": "https://github.com/topics/systems",
+      "minStars": 5000,
+      "description": "（自动发现）systems"
+    },
+    {
+      "topic": "course",
+      "url": "https://github.com/topics/course",
+      "minStars": 2000,
+      "description": "（自动发现）course"
+    },
+    {
+      "topic": "ocr-engine",
+      "url": "https://github.com/topics/ocr-engine",
+      "minStars": 5000,
+      "description": "（自动发现）ocr-engine"
+    },
+    {
+      "topic": "tesseract-ocr",
+      "url": "https://github.com/topics/tesseract-ocr",
+      "minStars": 5000,
+      "description": "（自动发现）tesseract-ocr"
+    },
+    {
+      "topic": "engineering",
+      "url": "https://github.com/topics/engineering",
+      "minStars": 5000,
+      "description": "（自动发现）engineering"
+    },
+    {
+      "topic": "spec",
+      "url": "https://github.com/topics/spec",
+      "minStars": 5000,
+      "description": "（自动发现）spec"
+    },
+    {
+      "topic": "monitoring",
+      "url": "https://github.com/topics/monitoring",
+      "minStars": 3000,
+      "description": "（自动发现）monitoring"
+    },
+    {
+      "topic": "cpp",
+      "url": "https://github.com/topics/cpp",
+      "minStars": 3000,
+      "description": "（自动发现）cpp"
+    },
+    {
+      "topic": "milvus",
+      "url": "https://github.com/topics/milvus",
+      "minStars": 3000,
+      "description": "（自动发现）milvus"
+    },
+    {
+      "topic": "cvxpy",
+      "url": "https://github.com/topics/cvxpy",
+      "minStars": 5000,
+      "description": "（自动发现）cvxpy"
+    },
+    {
+      "topic": "bot",
+      "url": "https://github.com/topics/bot",
+      "minStars": 5000,
+      "description": "（自动发现）bot"
+    },
+    {
+      "topic": "google",
+      "url": "https://github.com/topics/google",
+      "minStars": 5000,
+      "description": "（自动发现）google"
+    },
+    {
+      "topic": "parsing",
+      "url": "https://github.com/topics/parsing",
+      "minStars": 5000,
+      "description": "（自动发现）parsing"
+    },
+    {
+      "topic": "chip",
+      "url": "https://github.com/topics/chip",
+      "minStars": 5000,
+      "description": "（自动发现）chip"
+    },
+    {
+      "topic": "tools",
+      "url": "https://github.com/topics/tools",
+      "minStars": 3000,
+      "description": "（自动发现）tools"
+    },
+    {
+      "topic": "computer-automation",
+      "url": "https://github.com/topics/computer-automation",
+      "minStars": 5000,
+      "description": "（自动发现）computer-automation"
+    },
+    {
+      "topic": "computer-use",
+      "url": "https://github.com/topics/computer-use",
+      "minStars": 3000,
+      "description": "（自动发现）computer-use"
+    },
+    {
+      "topic": "representation-learning",
+      "url": "https://github.com/topics/representation-learning",
+      "minStars": 5000,
+      "description": "（自动发现）representation-learning"
+    },
+    {
+      "topic": "self-supervised",
+      "url": "https://github.com/topics/self-supervised",
+      "minStars": 5000,
+      "description": "（自动发现）self-supervised"
+    },
+    {
+      "topic": "sdk",
+      "url": "https://github.com/topics/sdk",
+      "minStars": 5000,
+      "description": "（自动发现）sdk"
     }
   ]
 }
