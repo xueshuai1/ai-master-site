@@ -127,7 +127,8 @@ console.log(`\nFetched ${Object.keys(repoData).length}/${repos.length} repos`);
 const updates = { stars: [], forks: [], language: [], date: [] };
 
 for (const [repo, data] of Object.entries(repoData)) {
-  for (const tool of repoMap.get(repo)) {
+  const toolList = repoMap.get(repo);
+  for (const tool of toolList) {
     // Stars
     if (data.stargazers_count !== tool.starsVal && tool.starsLine >= 0) {
       const indent = lines[tool.starsLine].match(/^(\s*)/)?.[1] || '';
@@ -175,14 +176,14 @@ const topicsData = JSON.parse(readFileSync(TOPICS_PATH, 'utf8'));
 const existingTopics = new Set(topicsData.topics.map(t => t.topic.toLowerCase()));
 
 const AI_KEYWORDS = [
-  'ai', 'ml', 'dl', 'llm', 'nlp', 'cv', 'agent', 'robot', 'robots', 'robotics',
-  'vision', 'language', 'neural', 'learning', 'generative', 'prompt', 'chatbot',
-  'deep-learning', 'machine-learning', 'transformer', 'gpt', 'diffusion', 'rag',
-  'embedding', 'inference', 'fine-tuning', 'llmops', 'mlops', 'model-serving',
-  'vector-search', 'semantic-search', 'knowledge-graph', 'multimodal', 'speech',
-  'text-to-speech', 'image-generation', 'video-generation', 'code-generation',
-  'autonomous', 'embodied-ai', 'world-models', 'foundation-models',
-  'large-language-models', 'retrieval-augmented', 'instruction-tuning', 'rlhf', 'alignment'
+  'ai','ml','dl','llm','nlp','cv','agent','robot','robots','robotics',
+  'vision','language','neural','learning','generative','prompt','chatbot',
+  'deep-learning','machine-learning','transformer','gpt','diffusion','rag',
+  'embedding','inference','fine-tuning','llmops','mlops','model-serving',
+  'vector-search','semantic-search','knowledge-graph','multimodal','speech',
+  'text-to-speech','image-generation','video-generation','code-generation',
+  'autonomous','embodied-ai','world-models','foundation-models',
+  'large-language-models','retrieval-augmented','instruction-tuning','rlhf','alignment'
 ];
 
 function isAiRelated(t) {
