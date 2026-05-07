@@ -176,14 +176,14 @@ const topicsData = JSON.parse(readFileSync(TOPICS_PATH, 'utf8'));
 const existingTopics = new Set(topicsData.topics.map(t => t.topic.toLowerCase()));
 
 const AI_KEYWORDS = [
-  'ai','ml','dl','llm','nlp','cv','agent','robot','robots','robotics',
-  'vision','language','neural','learning','generative','prompt','chatbot',
-  'deep-learning','machine-learning','transformer','gpt','diffusion','rag',
-  'embedding','inference','fine-tuning','llmops','mlops','model-serving',
-  'vector-search','semantic-search','knowledge-graph','multimodal','speech',
-  'text-to-speech','image-generation','video-generation','code-generation',
-  'autonomous','embodied-ai','world-models','foundation-models',
-  'large-language-models','retrieval-augmented','instruction-tuning','rlhf','alignment'
+  'ai', 'ml', 'dl', 'llm', 'nlp', 'cv', 'agent', 'robot', 'robots', 'robotics',
+  'vision', 'language', 'neural', 'learning', 'generative', 'prompt', 'chatbot',
+  'deep-learning', 'machine-learning', 'transformer', 'gpt', 'diffusion', 'rag',
+  'embedding', 'inference', 'fine-tuning', 'llmops', 'mlops', 'model-serving',
+  'vector-search', 'semantic-search', 'knowledge-graph', 'multimodal', 'speech',
+  'text-to-speech', 'image-generation', 'video-generation', 'code-generation',
+  'autonomous', 'embodied-ai', 'world-models', 'foundation-models',
+  'large-language-models', 'retrieval-augmented', 'instruction-tuning', 'rlhf', 'alignment'
 ];
 
 function isAiRelated(t) {
