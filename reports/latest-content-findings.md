@@ -1,35 +1,27 @@
-⏰ 写入时间：2026-05-08 08:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-08 12:00 (Asia/Shanghai)
 
 ## 本轮发现
-🔥 热点（15 条，已选 15 条写入 news.ts，news-1039 ~ news-1053）：
-1. [Mozilla 用 Claude Mythos 修复 423 个 Firefox 漏洞] AI 辅助安全审计里程碑，4 月发现量为平常 14 倍 → 适合：知识库(AI安全)
-2. [Anthropic × SpaceX/xAI Colossus 数据中心合作] 竞对之间算力联盟新模式 → 适合：博客(AI基础设施)
-3. [OpenAI ChatGPT 测试广告] vs Anthropic 无广告立场，两条商业化路径 → 适合：博客(AI商业化)
-4. [OpenAI Codex Chrome 扩展] AI Agent 新入口，可直接操作已登录网站 → 适合：知识库(AI Agent)
-5. [Moonshot AI 融资 20B/估值 200B] 中国开源 AI 资本加速 → 适合：知识库(中国AI格局)
-6. [AI 四龙估值破万亿] 旷视/商汤/云从/依图集体暴涨 → 适合：博客(中国AI产业)
-7. [Cloudflare 裁员 1100 人] AI 使用量增长 600%，人力重构 → 适合：博客(AI替代人力)
-8. [Perplexity Personal Computer for Mac] AI 个人电脑重新定义 → 适合：知识库(AI工具)
-9. [OpenAI Trusted Contact 安全功能] 自害风险防护，AI 安全新防线 → 适合：知识库(AI安全)
-10. [Gemini 3.1 Flash-Lite 正式 GA] 轻量级模型进入生产阶段 → 适合：知识库(LLM对比)
-11. [Apple AirPods 摄像头版接近量产] AI 可穿戴新形态 → 适合：博客(AI硬件)
-12. [Gmail AI 写作个性化] 根据用户语调风格生成邮件 → 适合：知识库(AI写作)
-13. [Spotify AI 生成个人音频] 从音乐平台到个性化音频生态 → 适合：博客(AI音乐)
-14. [卧底 GEO 公司：每天 1000 篇 AI 发稿] AI 内容农场污染互联网 → 适合：知识库(AI内容生态)
-15. [DeepSeek 大基金拟领投/450B 估值] 中国开源 AI 资本新高 → 适合：知识库(中国AI格局)
 
-🆕 新工具（2 个）：
-1. [llm-gemini 0.31] Simon Willison 的 Gemini CLI 工具更新，支持 Gemini 3.1 Flash-Lite GA
-2. [GitHub Repo Stats] Simon Willison 新工具，显示 GitHub 仓库 commit 数等统计信息
+🔥 热点（14 条，已选 12 条写入 news-1054~news-1065）：
+1. [OpenAI GPT-5.5 Instant] 更智能、更清晰、更个性化的轻量级模型 → 适合：博客
+2. [OpenAI 语音智能 API] 实时语音理解 + 情感识别 + 多语言交互 → 适合：知识库
+3. [Anthropic+SpaceX 计算合作] 提高 Claude 使用限制 + 算力合作 → 适合：博客
+4. [Anthropic 金融 AI 服务公司] 联合 Blackstone/Goldman Sachs 打造企业级服务 → 适合：深度博客
+5. [Anthropic 金融服务 Agent] 交易分析、风险评估、合规审查专属 Agent → 适合：知识库
+6. [阶跃星辰 25 亿美元融资] 拆除红筹架构冲刺港股 IPO → 适合：博客
+7. [Plaud 估值 20 亿美元] AI 办公硬件进入大厂博弈时代 → 适合：博客
+8. [AI 联合数学家] Google DeepMind Agentic AI 加速数学研究（arXiv）→ 适合：知识库
+9. [MASPO 多智能体 Prompt 优化] ICML 2026 论文，联合优化提升协作效率 → 适合：知识库
+10. [SkillOS 自我进化 Agent] Google 研究，Agent 自动学习策展技能 → 适合：知识库
+11. [Match Group 减缓招聘] 预算转向 AI 工具，反映 AI 替代人力趋势 → 适合：博客
+12. [昆仑芯港股 IPO] 百度 AI 芯片分拆上市正常推进 → 适合：博客
+13. [Bumble 取消滑动匹配] CEO 宣布用 AI 替代传统匹配方式 → 待观察
+14. [OpenAI ChatGPT Futures 2026] 培养"未来之星"AI 原生本科生 → 适合：博客
 
-💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全评估 — Claude Mythos Firefox 安全审计方法论
-2. KNOWLEDGE-BASE-PLAN.md 待补：AI 基础设施竞争 — Colossus/Amazon/Google 超算格局
-3. KNOWLEDGE-BASE-PLAN.md 待补：AI 商业化路径对比 — OpenAI 广告 vs Anthropic 订阅
-4. KNOWLEDGE-BASE-PLAN.md 待补：GEO/AI 内容农场 — 生成引擎优化与反欺骗
-5. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 浏览器 — Codex Chrome 扩展的技术分析
+🆕 新工具（0 个）：本轮未发现值得关注的新开源工具
 
-## 扫描来源统计
-- **国外来源（8 个）**：GitHub Trending、Simon Willison、TechCrunch AI、The Verge AI、Anthropic News、OpenAI Blog、arXiv cs.AI、Hacker News(失败)
-- **国内来源（3 个）**：36 氪、新浪科技、机器之心
-- **共扫描 11 个来源**
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 在金融行业的应用（交易分析、风险评估、合规）
+2. KNOWLEDGE-BASE-PLAN.md 待补：多智能体 Prompt 优化（MASPO 方法论）
+3. KNOWLEDGE-BASE-PLAN.md 待补：AI 自我进化 Agent 框架（SkillOS 解读）
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI for Science —— Agentic AI 辅助数学研究
