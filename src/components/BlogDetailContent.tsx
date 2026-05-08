@@ -138,14 +138,14 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
         <div className="my-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm prose prose-invert max-w-none
           prose-strong:text-amber-400 prose-strong:font-bold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-          [&_p]:my-0 [&_p]:text-emerald-300" dangerouslySetInnerHTML={{ __html: `💡 ${marked.parse(section.tip) as string}` }} />
+          [&_p]:my-0 [&_p]:text-emerald-300" dangerouslySetInnerHTML={{ __html: marked.parse(section.tip) as string }} />
       )}
 
       {section.warning && (
         <div className="my-4 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-sm prose prose-invert max-w-none
           prose-strong:text-amber-400 prose-strong:font-bold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-          [&_p]:my-0 [&_p]:text-amber-300" dangerouslySetInnerHTML={{ __html: `⚠️ ${marked.parse(section.warning) as string}` }} />
+          [&_p]:my-0 [&_p]:text-amber-300" dangerouslySetInnerHTML={{ __html: marked.parse(section.warning) as string }} />
       )}
     </div>
   );
