@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "dl-006",
-    title: "CNN：卷积神经网络架构详解",
+    title: "CNN：卷积神经网络架构详解（基础篇）",
     category: "dl",
     tags: ["CNN", "卷积", "计算机视觉"],
     summary: "从全连接层的缺陷到 ResNet，系统梳理 CNN 的核心组件、经典架构演进与 PyTorch 实战",
     date: "2026-04-12",
     readTime: "18 min",
     level: "入门",
+  learningPath: {
+    routeId: "cnn-series",
+    phase: 1,
+    order: 1,
+    nextStep: "dl-020",
+    prevStep: null,
+  },
     content: [
         {
             title: "1. 为什么需要 CNN：全连接层的根本缺陷",

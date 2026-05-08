@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "infer-002",
-  title: "LLM 推理加速新范式：从 Speculative Decoding 到 DFlash Block Diffusion，2026 年推理优化技术全景",
+  title: "LLM 推理加速（四）：新范式从 Speculative Decoding 到 DFlash",
   category: "llm",
   tags: ["推测解码", "Speculative Decoding", "DFlash", "Block Diffusion", "推理加速", "Token 生成", "草稿模型", "Medusa", "Eagle", "Lookahead Decoding", "LLM 部署优化"],
   summary: "2026 年 4 月，z-lab 开源的 DFlash（Block Diffusion for Flash Speculative Decoding）一周内突破 2,000 星，将推测解码技术推向了新的高度。从 2023 年的 SpecInfer 到 2024 年的 Medusa、Eagle，再到 2025 年的 Lookahead Decoding 和 2026 年的 DFlash，LLM 推理加速经历了从「验证单 Token」到「预测 Token 块」再到「扩散式生成」的范式跃迁。本文深度解析推测解码的完整技术演进路线，对比 5 种主流方法的原理与性能，提供完整的 Python 实现代码，并给出生产部署的实战指南。",
   date: "2026-04-21",
   readTime: "35 min",
   level: "高级",
+  learningPath: {
+    routeId: "inference-optimization",
+    phase: 4,
+    order: 4,
+    nextStep: "llm-021",
+    prevStep: "infer-001",
+  },
   content: [
     {
       title: "1. 为什么 LLM 推理需要加速？",

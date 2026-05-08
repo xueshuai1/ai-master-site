@@ -9,6 +9,13 @@ export const article: Article = {
     date: "2026-04-07",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-series",
+    phase: 1,
+    order: 1,
+    nextStep: "agent-005",
+    prevStep: null,
+  },
     content: [
       {
         title: "1. 为什么需要 Multi-Agent？从单兵到团队的范式跃迁",

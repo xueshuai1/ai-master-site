@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "ethics-012",
-  title: "AI 安全评估方法论：从红队测试到对齐评估的完整框架",
+  title: "AI 安全（三）：对齐技术与伦理实践",
   category: "ethics",
   tags: ["AI安全评估", "红队测试", "对齐评估", "RLHF", "UK AISI", "安全基准测试", "对抗测试", "模型安全", "AI治理", "Cyber安全", "GPT-5.5评估"],
   summary: "随着 **AI 模型能力**的指数级增长，**安全评估**已成为模型部署前**不可或缺的环节**。从 **OpenAI 限制 Cyber 能力访问**的「回旋镖」事件，到 **UK AISI 对 GPT-5.5** 的系统性安全评估，再到各组织自建的**红队测试框架**，AI 安全评估正在形成**一套系统化的方法论**。本文全面解析 AI 安全评估的**核心概念、技术方法、实施流程**与**最佳实践**，涵盖**红队测试、对抗基准测试、对齐评估、能力边界测量**四大支柱，为**AI 研究者、工程团队、监管机构**提供可操作的安全评估指南。",
   date: "2026-05-04",
   readTime: "35 min",
   level: "高级",
+  learningPath: {
+    routeId: "rlhf-series",
+    phase: 3,
+    order: 3,
+    nextStep: null,
+    prevStep: "ethics-005",
+  },
   content: [
     {
       title: "1. 为什么 AI 安全评估是 2026 年的核心挑战",

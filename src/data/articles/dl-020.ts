@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "dl-020",
-    title: "CNN 卷积神经网络：从 LeNet 到 ResNet",
+    title: "CNN 卷积神经网络（进阶）：从 LeNet 到 ResNet",
     category: "dl",
     tags: ["CNN", "卷积", "池化", "LeNet", "VGG", "ResNet", "计算机视觉"],
     summary: "卷积神经网络完整指南。从卷积操作的数学原理出发，系统讲解 LeNet、AlexNet、VGG、GoogLeNet、ResNet 等经典架构的演进，包含 Python 从零实现 CNN 和迁移学习实战。",
     date: "2026-04-22",
     readTime: "22 min",
     level: "进阶",
+  learningPath: {
+    routeId: "cnn-series",
+    phase: 2,
+    order: 2,
+    nextStep: "cv-004",
+    prevStep: "dl-006",
+  },
     content: [
         {
             title: "1. 为什么需要 CNN：全连接层的局限性",

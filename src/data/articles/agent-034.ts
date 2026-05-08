@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-034",
-    title: "AI Agent 编排标准：OpenAI Symphony 与多智能体协作规范全景",
+    title: "Agent 编排标准（一）：OpenAI Symphony 与多智能体协作",
     category: "agent",
     tags: ["Agent 编排", "Symphony", "多 Agent 协作", "开放标准", "API 规范", "Agent 注册表", "通信协议", "互操作性"],
     summary: "OpenAI 开源的 Symphony 规范正在成为多 Agent 协作的行业标准。本文从规范架构、角色定义、通信协议、注册表机制到实战集成，系统讲解如何理解和实现多智能体编排标准，帮助你在碎片化的 Agent 框架生态中找到统一的协作语言。",
     date: "2026-04-29",
     readTime: "28 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-orchestration",
+    phase: 1,
+    order: 1,
+    nextStep: "agent-038",
+    prevStep: null,
+  },
     content: [
         {
             title: "1. 为什么需要 Agent 编排标准",

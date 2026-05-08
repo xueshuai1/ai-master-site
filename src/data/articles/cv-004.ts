@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "cv-004",
-    title: "卷积操作详解：卷积核、步长、填充",
+    title: "卷积操作详解（实战）：卷积核、步长、填充",
     category: "cv",
     tags: ["卷积", "CNN基础", "计算机视觉"],
     summary: "深入理解卷积运算的每一个细节，掌握 CNN 的基石",
     date: "2026-04-12",
     readTime: "16 min",
     level: "入门",
+  learningPath: {
+    routeId: "cnn-series",
+    phase: 3,
+    order: 3,
+    nextStep: null,
+    prevStep: "dl-020",
+  },
     content: [
         {
             title: "1. 什么是卷积（1D → 2D）",

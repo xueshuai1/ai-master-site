@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "mm-002",
-    title: "视觉问答 VQA",
+    title: "多模态学习（二）：视觉问答与图文生成",
     category: "multimodal",
     tags: ["VQA", "视觉问答", "多模态"],
     summary: "从图像和文本到答案，理解视觉问答的核心技术",
     date: "2026-04-12",
     readTime: "18 min",
     level: "进阶",
+  learningPath: {
+    routeId: "multimodal-series",
+    phase: 2,
+    order: 2,
+    nextStep: "mm-003",
+    prevStep: "mm-001",
+  },
     content: [
         {
             title: "1. VQA 任务定义与核心数据集",

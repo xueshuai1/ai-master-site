@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "mm-003",
-    title: "图文生成：图像描述与文本到图像",
+    title: "多模态学习（三）：多模态大模型与统一架构",
     category: "multimodal",
     tags: ["图文生成", "图像描述", "多模态"],
     summary: "从图像到文本再到图像，理解跨模态生成的核心技术",
     date: "2026-04-12",
     readTime: "18 min",
     level: "高级",
+  learningPath: {
+    routeId: "multimodal-series",
+    phase: 3,
+    order: 3,
+    nextStep: null,
+    prevStep: "mm-002",
+  },
     content: [
         {
             title: "1. 图像描述（Image Captioning）任务概述",

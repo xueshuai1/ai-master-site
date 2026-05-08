@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "infer-001",
-  title: "LLM 推理加速技术全景：从推测解码到块扩散的系统性突破",
+  title: "LLM 推理加速技术全景（三）：从推测解码到块扩散",
   category: "llm",
   tags: ["推理加速", "推测解码", "块扩散", "KV Cache", "量化", "端侧部署", "DFlash", "SpecGuard"],
   summary: "2026 年 4 月，LLM 推理加速领域迎来密集突破：DFlash 提出块扩散推测解码、DDTree 构建草稿树实现单次验证多路径、SpecGuard 引入验证感知步骤级校验、Parcae 用循环架构减半参数量。本文系统梳理 LLM 推理加速的技术栈，从算法层到架构层，帮你建立完整的知识框架。",
   date: "2026-04-17",
   readTime: "25 min",
   level: "进阶",
+  learningPath: {
+    routeId: "inference-optimization",
+    phase: 3,
+    order: 3,
+    nextStep: "infer-002",
+    prevStep: "aieng-025",
+  },
   content: [
     {
       title: "为什么 LLM 推理加速如此重要？",

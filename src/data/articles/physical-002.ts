@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "physical-002",
-  title: "具身智能全景指南：世界模型、人形机器人与 Sim-to-Real 迁移",
+  title: "具身智能（二）：机器人大脑与行为控制",
   category: "practice",
   tags: ["具身智能", "人形机器人", "世界模型", "Sim-to-Real", "Figure 02", "Gemini Robotics", "机器人学习", "VLA"],
   summary: "2026 年具身智能（Embodied AI）迎来爆发元年：Figure 02 人形机器人进入汽车工厂流水线，Google Gemini Robotics-ER 1.6 实现工业巡检，Tesla Optimus 开始在仓库部署。本文系统梳理具身智能的技术全景——从世界模型建模、视觉-语言-动作（VLA）模型，到 Sim-to-Real 迁移和真实机器人部署，帮你建立完整的具身智能知识体系。",
   date: "2026-04-18",
   readTime: "22 min",
   level: "进阶",
+  learningPath: {
+    routeId: "embodied-ai",
+    phase: 2,
+    order: 2,
+    nextStep: "agent-040",
+    prevStep: "physical-001",
+  },
   content: [
     {
       title: "为什么 2026 年是具身智能元年",

@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "agent-022",
-  title: "Self-Evolving AI Agents 深度解析：从 NousResearch Hermes 到 GenericAgent，AI Agent 如何实现自我进化",
+  title: "Self-Evolving AI Agent（一）：从固定指令到自主进化",
   category: "agent",
   tags: ["自我进化", "Hermes Agent", "GenericAgent", "Evolver", "GEP", "技能树", "经验压缩", "持续学习", "2026 趋势", "NousResearch"],
   summary: "2026 年 4 月，AI Agent 领域出现了一个激动人心的新范式：Self-Evolving（自我进化）AI Agent。NousResearch 的 Hermes Agent 单周暴涨 38,000 星突破 103K，lsdefine 的 GenericAgent 仅用 3,300 行种子代码就实现了完整系统控制且 token 消耗降低 6 倍，EvoMap 的 Evolver 则提出 GEP（基因组进化协议）驱动的自我进化引擎。这三大项目代表了三种不同的自我进化技术路线。本文深度解析自我进化 Agent 的架构原理、三种路线的对比分析，以及如何用 Python 构建一个简单的自进化 Agent 原型。",
   date: "2026-04-20",
   readTime: "28 min",
   level: "进阶",
+  learningPath: {
+    routeId: "self-evolving",
+    phase: 1,
+    order: 1,
+    nextStep: "agent-024",
+    prevStep: null,
+  },
   content: [
     {
       title: "1. 为什么「自我进化」是 AI Agent 的下一个圣杯？",

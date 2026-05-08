@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "aieng-025",
-  title: "AI 推理优化（二）：量化、剪枝与蒸馏系统指南（含代码实战）",
+  title: "AI 推理优化（二）：量化、剪枝与蒸馏系统指南",
   category: "aieng",
   tags: ["模型优化", "量化", "剪枝", "知识蒸馏", "推理加速", "模型压缩", "ONNX", "TensorRT", "边缘部署", "INT8", "FP16"],
   summary: "系统讲解 AI 模型推理优化的三大核心技术：量化（Quantization）、剪枝（Pruning）和知识蒸馏（Knowledge Distillation）。从原理到实战代码，覆盖 PyTorch/TensorRT/ONNX Runtime 全流程，帮助开发者将模型体积缩小 4-16 倍、推理速度提升 2-10 倍，同时保持可接受的精度损失。",
   date: "2026-05-05",
   readTime: "25 min",
   level: "高级",
+  learningPath: {
+    routeId: "inference-optimization",
+    phase: 2,
+    order: 2,
+    nextStep: "infer-001",
+    prevStep: "llm-024",
+  },
   content: [
     {
       title: "1. 引言：为什么推理优化是 AI 工程化的核心难题",

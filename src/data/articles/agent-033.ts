@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-033",
-    title: "AI Agent 安全最佳实践：从威胁建模到生产级防护体系",
+    title: "Agent 安全（二）：最佳实践与生产级防护",
     category: "agent",
     tags: ["Agent 安全", "威胁建模", "沙盒", "Prompt 注入", "权限管理", "工具安全", "多 Agent 安全", "事件响应"],
     summary: "AI Agent 拥有自主规划和工具调用能力，也带来了前所未有的安全风险。本文系统讲解 Agent 安全的完整防御体系：从威胁建模到沙盒隔离，从权限最小化到 Prompt 注入防御，从多 Agent 系统安全到事件响应，帮助你在生产环境中构建可信赖的 Agent 系统。",
     date: "2026-04-29",
     readTime: "30 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-security",
+    phase: 2,
+    order: 2,
+    nextStep: "agent-049",
+    prevStep: "agent-018",
+  },
     content: [
         {
             title: "1. Agent 安全的特殊性——为什么传统安全不够用",

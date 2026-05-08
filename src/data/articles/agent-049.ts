@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "agent-049",
-  title: "AI Agent 安全框架全景：从 AgentTrust 到运行时治理的完整知识体系",
+  title: "Agent 安全框架（三）：从 AgentTrust 到运行时治理",
   category: "agent",
   tags: ["AI Agent", "安全框架", "AgentTrust", "运行时安全", "DTap", "安全评估", "Agent 治理", "风险评估"],
   summary: "AI Agent 正在从实验环境走向生产系统，安全评估成为刚需。本文系统梳理 AI Agent 安全框架的完整知识体系：从 AgentTrust 运行时安全评估框架的原理与实践，到 DTap 等新兴框架的对比分析，再到企业级 Agent 安全架构的设计方法论。涵盖安全评估维度、自动化测试策略、风险分类体系与治理最佳实践。",
   date: "2026-05-07",
   readTime: "28 min",
   level: "高级",
+  learningPath: {
+    routeId: "agent-security",
+    phase: 3,
+    order: 3,
+    nextStep: null,
+    prevStep: "agent-033",
+  },
   content: [
     {
       title: "1. 为什么 AI Agent 需要专门的安全框架？",

@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "dl-015",
-    title: "迁移学习：预训练 + 微调范式",
+    title: "迁移学习（二）：预训练 + 微调范式",
     category: "dl",
     tags: ["迁移学习", "预训练", "微调"],
     summary: "站在巨人的肩膀上，掌握迁移学习的策略与最佳实践",
     date: "2026-04-12",
     readTime: "16 min",
     level: "进阶",
+  learningPath: {
+    routeId: "pretraining-series",
+    phase: 2,
+    order: 2,
+    nextStep: null,
+    prevStep: "llm-022",
+  },
     content: [
         {
             title: "1. 为什么需要迁移学习",

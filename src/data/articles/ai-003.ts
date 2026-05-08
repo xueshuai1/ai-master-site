@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "ai-003",
-    title: "MoE 混合专家架构：大模型效率革命的核心引擎",
+    title: "MoE 混合专家架构（一）：大模型效率革命的核心引擎",
     category: "llm",
     tags: ["MoE", "混合专家", "稀疏激活", "路由机制", "模型效率", "DeepSeek", "GPT-4", "规模化扩展"],
     summary: "深入解析 MoE 架构如何以稀疏激活实现超大参数规模下的计算效率——从路由算法到负载均衡，从 DeepSeek-V3 到 GPT-4 的工业实践",
     date: "2026-04-13",
     readTime: "18 min",
     level: "高级",
+  learningPath: {
+    routeId: "moe-series",
+    phase: 1,
+    order: 1,
+    nextStep: "llm-013",
+    prevStep: null,
+  },
     content: [
         {
             title: "1. 为什么大模型需要 MoE 架构？",

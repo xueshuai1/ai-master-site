@@ -27,16 +27,18 @@ export interface Article {
   content?: ArticleSection[];
   // 学习路径元数据（2026-05-08 新增）
   learningPath?: {
-    /** 所属学习路线 ID（如 "foundation", "ai-dev", "algo" 等） */
+    /** 所属学习路线 ID */
     routeId?: string;
-    /** 在路线中的阶段序号（1=第一阶段，2=第二阶段...） */
+    /** 在路线中的阶段序号 */
     phase?: number;
     /** 在同阶段内的阅读顺序 */
     order?: number;
     /** 建议先读的文章 ID 列表 */
     prerequisites?: string[];
     /** 读完本文后推荐下一篇 */
-    nextStep?: string;
+    nextStep?: string | null;
+    /** 系列上一篇 */
+    prevStep?: string | null;
   };
 }
 

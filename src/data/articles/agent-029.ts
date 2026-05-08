@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-029",
-    title: "AI Agent 记忆系统：向量数据库、知识图谱与分层记忆架构",
+    title: "Agent 记忆系统（三）：向量数据库、知识图谱与分层记忆架构",
     category: "agent",
     tags: ["AI Memory", "向量数据库", "知识图谱", "记忆管理", "RAG", "Agent 架构"],
     summary: "从工作记忆到长期记忆，理解 AI Agent 如何实现知识的存储、检索、遗忘与更新。涵盖向量数据库、知识图谱、分层记忆架构的设计原则与实战实现。",
     date: "2026-04-28",
     readTime: "24 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-memory",
+    phase: 3,
+    order: 3,
+    nextStep: "agent-032",
+    prevStep: "agent-025",
+  },
     content: [
         {
             title: "1. 为什么 AI Agent 需要记忆系统",

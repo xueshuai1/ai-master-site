@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "genai-001",
-    title: "扩散模型 Diffusion 详解",
+    title: "Diffusion 模型（一）：原理与数学基础",
     category: "genai",
     tags: ["扩散模型", "DDPM", "生成模型"],
     summary: "从加噪到去噪，理解扩散模型如何一步步生成高质量图像",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "diffusion-series",
+    phase: 1,
+    order: 1,
+    nextStep: "genai-002",
+    prevStep: null,
+  },
     content: [
         {
             title: "1. 生成模型家族对比",

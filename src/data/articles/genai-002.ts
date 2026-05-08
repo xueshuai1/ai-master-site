@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "genai-002",
-    title: "Stable Diffusion 原理与应用",
+    title: "Stable Diffusion（二）：从原理到实战",
     category: "genai",
     tags: ["Stable Diffusion", "图像生成", "潜在扩散"],
     summary: "从文本到图像，理解 Stable Diffusion 如何实现高质量图像生成",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "diffusion-series",
+    phase: 2,
+    order: 2,
+    nextStep: "genai-007",
+    prevStep: "genai-001",
+  },
     content: [
         {
             title: "1. 从 Diffusion 到 Stable Diffusion",

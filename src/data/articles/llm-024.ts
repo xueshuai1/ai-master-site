@@ -9,6 +9,13 @@ export const article: Article = {
   date: "2026-05-08",
   readTime: "25 min",
   level: "高级",
+  learningPath: {
+    routeId: "inference-optimization",
+    phase: 1,
+    order: 1,
+    nextStep: "aieng-025",
+    prevStep: null,
+  },
   content: [
     {
       title: "1. 为什么需要推理优化：LLM 部署的成本困境",

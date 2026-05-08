@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "ml-024",
-    title: "联邦学习：隐私保护的分布式机器学习",
+    title: "联邦学习（二）：隐私保护的分布式机器学习",
     category: "ml",
     tags: ["联邦学习", "隐私保护", "FedAvg", "差分隐私", "分布式训练"],
     summary: "从 FedAvg 到 FedProx，从差分隐私到安全聚合，掌握联邦学习的核心算法、通信优化、异构数据处理和工业级部署实践",
     date: "2026-04-13",
     readTime: "22 min",
     level: "进阶",
+  learningPath: {
+    routeId: "privacy-series",
+    phase: 2,
+    order: 2,
+    nextStep: null,
+    prevStep: "ethics-003",
+  },
     content: [
         {
             title: "1. 为什么需要联邦学习？数据隐私与 AI 的矛盾",

@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-038",
-    title: "AI Agent 编排标准：从 OpenAI Symphony 到多智能体协作范式",
+    title: "Agent 编排模式（二）：从 OpenAI Symphony 到多智能体协作范式",
     category: "agent",
     tags: ["Agent 编排", "多智能体系统", "OpenAI Symphony", "协作协议", "Agent 架构", "工作流引擎", "状态机", "Agent 通信"],
     summary: "Agent 编排是多智能体系统的核心基础设施，决定了多个 Agent 如何协同工作、共享信息、处理冲突。本文系统讲解 Agent 编排的完整知识体系：从编排的概念定义到主流架构模式（中心化/去中心化/混合），从 OpenAI Symphony 开源规范到 LangGraph、CrewAI 等框架对比，从状态机建模到实战代码实现，帮助你建立完整的 Agent 编排知识框架。",
     date: "2026-04-30",
     readTime: "30 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-orchestration",
+    phase: 2,
+    order: 2,
+    nextStep: null,
+    prevStep: "agent-034",
+  },
     content: [
         {
             title: "1. 什么是 Agent 编排——多智能体协作的基础设施",

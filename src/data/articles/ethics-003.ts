@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "ethics-003",
-    title: "隐私保护 ML",
+    title: "联邦学习（一）：隐私保护的分布式训练",
     category: "ethics",
     tags: ["隐私保护", "联邦学习", "差分隐私"],
     summary: "从差分隐私到联邦学习，掌握机器学习中的隐私保护技术",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "privacy-series",
+    phase: 1,
+    order: 1,
+    nextStep: "ml-024",
+    prevStep: null,
+  },
     content: [
         {
             title: "1. 机器学习中的隐私风险",

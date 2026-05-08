@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "llm-005",
-    title: "RLHF：基于人类反馈的强化学习",
+    title: "RLHF（一）：基于人类反馈的强化学习",
     category: "llm",
     tags: ["RLHF", "对齐", "强化学习"],
     summary: "从奖励模型到 PPO 优化，理解大模型对齐的核心技术",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "rlhf-series",
+    phase: 1,
+    order: 1,
+    nextStep: "ethics-005",
+    prevStep: null,
+  },
     content: [
       {
         title: "1. 为什么需要对齐：从「能说话」到「说对话」",

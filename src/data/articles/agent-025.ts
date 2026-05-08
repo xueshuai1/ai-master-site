@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "agent-025",
-  title: "AI Agent 记忆系统架构：从短期缓存到长期记忆宫殿，2026 年 Agent 记忆技术全景与实战",
+  title: "Agent 记忆系统（二）：从短期缓存到长期记忆宫殿",
   category: "agent",
   tags: ["Agent 记忆", "向量数据库", "知识图谱", "RAG", "记忆压缩", "Claude-Mem", "MemPalace", "混合记忆架构", "Episodic Memory", "Semantic Memory"],
   summary: "2026 年 4 月，AI Agent 记忆系统从实验性功能爆发为开发者刚需基础设施。Claude-Mem 两周狂揽 64K 星，MemPalace 发布 48 小时即获 22K 星，记忆正在成为 Agent 的核心竞争力。本文深度解析 AI Agent 记忆系统的完整技术栈——从短期工作记忆到长期语义记忆，从向量检索到知识图谱，从记忆压缩到遗忘机制，附带完整的 Python 混合型记忆系统实现代码。",
   date: "2026-04-21",
   readTime: "32 min",
   level: "进阶",
+  learningPath: {
+    routeId: "agent-memory",
+    phase: 2,
+    order: 2,
+    nextStep: "agent-029",
+    prevStep: "agent-005",
+  },
   content: [
     {
       title: "1. 为什么记忆是 AI Agent 的下一个必争之地？",

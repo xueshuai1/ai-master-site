@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "llm-021",
-  title: "FP8 推理基础设施全景：从 DeepGEMM 到 vLLM，2026 年 LLM 高性能推理的基石技术",
+  title: "FP8 推理基础设施（五）：从 DeepGEMM 到 vLLM",
   category: "llm",
   tags: ["FP8", "DeepGEMM", "推理加速", "GEMM", "vLLM", "TensorRT-LLM", "量化推理", "GPU 优化", "2026 前沿"],
   summary: "2026 年 4 月，DeepSeek 开源 DeepGEMM——专为 FP8 精度设计的高性能 GEMM 内核库。FP8 推理正在从「实验性优化」变为「行业标准」。本文从 FP8 的数学原理、硬件支持、主流推理框架集成到 DeepGEMM 源码级解析，全面梳理 FP8 推理基础设施的技术全景，并附 Python 实战代码。",
   date: "2026-04-26",
   readTime: "35 min",
   level: "高级",
+  learningPath: {
+    routeId: "inference-optimization",
+    phase: 5,
+    order: 5,
+    nextStep: null,
+    prevStep: "infer-002",
+  },
   content: [
     {
       title: "一、FP8 为什么成为 2026 年推理的事实标准？",

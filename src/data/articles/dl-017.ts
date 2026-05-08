@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "dl-017",
-  title: "Mixture of Experts MoE：稀疏大模型架构",
+  title: "Mixture of Experts MoE（三）：稀疏大模型架构实战",
   category: "dl",
   tags: ["MoE", "稀疏激活", "专家路由", "混合专家", "缩放定律"],
   summary: "深入理解 Mixture of Experts 架构的原理、路由机制、训练挑战，以及它如何成为 GPT-4、Mixtral、Qwen 等前沿模型的核心技术",
   date: "2026-04-13",
   readTime: "24 min",
   level: "高级",
+  learningPath: {
+    routeId: "moe-series",
+    phase: 3,
+    order: 3,
+    nextStep: "llm-023",
+    prevStep: "llm-013",
+  },
   content: [
     {
       title: "1. 从稠密模型到稀疏模型：为什么要用 MoE",

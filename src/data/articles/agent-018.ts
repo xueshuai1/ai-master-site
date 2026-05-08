@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "agent-018",
-  title: "AI Agent 安全评估标准化：从理论框架到生产实践",
+  title: "Agent 安全（一）：安全评估标准化",
   category: "agent",
   tags: ["Agent 安全", "安全评估", "红队测试", "AI 对齐", "工具滥用", "Prompt 注入", "数据泄漏", "权限控制", "AISafetyBench", "Glasswing", "安全基准"],
   summary: "2026 年，AI Agent 从实验环境走向生产部署，但安全评估仍然是行业最大的痛点。AISafetyBenchExplorer 论文指出基准碎片化严重，Anthropic 的 Glasswing 计划联合 40+ 科技巨头构建防御联盟。本文系统梳理 AI Agent 安全评估的完整体系：从威胁建模到红队测试，从自动化扫描到持续监控，帮你建立 Agent 安全的工程化框架。",
   date: "2026-04-19",
   readTime: "30 min",
   level: "高级",
+  learningPath: {
+    routeId: "agent-security",
+    phase: 1,
+    order: 1,
+    nextStep: "agent-033",
+    prevStep: null,
+  },
   content: [
     {
       title: "为什么 AI Agent 安全评估是 2026 年最紧迫的问题？",

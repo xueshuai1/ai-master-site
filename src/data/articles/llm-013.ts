@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "llm-013",
-    title: "Mixture of Experts（MoE）：大模型的稀疏化架构",
+    title: "Mixture of Experts（MoE）（二）：大模型的稀疏化架构",
     category: "llm",
     tags: ["MoE", "模型架构", "稀疏激活", "扩展性"],
     summary: "深入解析 Mixture of Experts 架构的设计原理、路由机制、训练挑战，以及 Mixtral、GPT-4 等前沿模型中的工程实践",
     date: "2026-04-13",
     readTime: "22 min",
     level: "高级",
+  learningPath: {
+    routeId: "moe-series",
+    phase: 2,
+    order: 2,
+    nextStep: "dl-017",
+    prevStep: "ai-003",
+  },
     content: [
         {
             title: "1. 为什么需要 MoE？——稠密模型的扩展瓶颈",

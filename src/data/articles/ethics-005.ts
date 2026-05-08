@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "ethics-005",
-    title: "AI 对齐（Alignment）：让 AI 符合人类意图",
+    title: "AI 对齐（二）：RLHF 与伦理框架",
     category: "ethics",
     tags: ["AI对齐", "RLHF", "安全"],
     summary: "从目标规范到奖励黑客，理解 AI 对齐问题的本质、挑战与主流解决方案",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "rlhf-series",
+    phase: 2,
+    order: 2,
+    nextStep: "ethics-012",
+    prevStep: "llm-005",
+  },
     content: [
         {
             title: "1. 什么是对齐问题——当 AI 太擅长完成目标时",

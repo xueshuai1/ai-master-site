@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "llm-023",
-  title: "MoE 混合专家架构：从原理到实战的全面指南",
+  title: "MoE 混合专家架构（四）：从原理到实战的全面指南",
   category: "llm",
   tags: ["MoE", "混合专家", "稀疏模型", "路由机制", "负载均衡", "DeepSeek", "Mixtral", "训练优化"],
   summary: "系统讲解 Mixture of Experts（MoE）混合专家架构的原理、训练策略和工程实践。从 Dense 模型的瓶颈出发，深入分析门控网络、Top-K 路由、负载均衡等核心机制，并通过 PyTorch 实战代码演示 MoE 层的完整实现。",
   date: "2026-05-07",
   readTime: "30 min",
   level: "高级",
+  learningPath: {
+    routeId: "moe-series",
+    phase: 4,
+    order: 4,
+    nextStep: null,
+    prevStep: "dl-017",
+  },
   content: [
     {
       title: "1. 为什么需要 MoE？Dense 模型的根本性瓶颈",

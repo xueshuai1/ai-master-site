@@ -3,7 +3,7 @@ import type { Article } from '../knowledge';
 
 export const article: Article = {
   id: 'agent-024',
-  title: 'Self-Evolving AI Agent 深度解析：从固定指令到自主进化的范式跃迁',
+  title: "Self-Evolving AI Agent（二）：自主进化的范式跃迁",
   category: 'agent',
   tags: ['Self-Evolving', 'Hermes Agent', 'GenericAgent', 'Evolver', '技能进化', '记忆系统', '元学习'],
   summary: '2025-2026 年 AI 领域最激动人心的前沿方向之一：让 Agent 不再依赖人类预设的固定能力，而是通过与环境交互、经验积累、技能树自主扩展，实现"越用越强"的自进化能力。本文从技术路线、代表项目、底层原理到实现方案进行全面拆解。',

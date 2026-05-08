@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "llm-022",
-    title: "LLM 预训练：数据准备与训练策略",
+    title: "LLM 预训练（一）：数据准备与训练策略",
     category: "llm",
     tags: ["预训练", "数据工程", "训练策略", "数据清洗", "混合精度", "分布式训练", "学习率调度", "损失曲线"],
     summary: "从零开始构建大语言模型预训练全流程。深入解析数据收集、清洗、去重、分词的完整数据工程管线，以及学习率调度、混合精度训练、分布式策略、梯度累积等核心训练技术，包含完整的 PyTorch 实战代码实现和训练监控方案。",
     date: "2026-05-05",
     readTime: "28 min",
     level: "高级",
+  learningPath: {
+    routeId: "pretraining-series",
+    phase: 1,
+    order: 1,
+    nextStep: "dl-015",
+    prevStep: null,
+  },
     content: [
         {
             title: "1. 什么是 LLM 预训练：从随机权重到语言理解",

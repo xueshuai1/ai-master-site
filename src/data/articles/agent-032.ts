@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-032",
-    title: "AI Agent 记忆系统：向量数据库、知识图谱与记忆检索全景指南",
+    title: "Agent 记忆系统（四）：向量数据库、知识图谱与记忆检索全景指南",
     category: "agent",
     tags: ["Agent 记忆", "向量数据库", "知识图谱", "RAG", "记忆检索", "语义搜索", "Agent 架构", "长期记忆"],
     summary: "AI Agent 的记忆系统是决定其智能水平的核心组件。本文系统讲解 Agent 记忆体系的完整架构：从短期工作记忆到长期语义记忆，从向量数据库的嵌入检索到知识图谱的关系推理，从记忆压缩策略到遗忘机制，帮助你在构建 Agent 时设计正确的记忆方案。",
     date: "2026-04-29",
     readTime: "28 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-memory",
+    phase: 4,
+    order: 4,
+    nextStep: null,
+    prevStep: "agent-029",
+  },
     content: [
         {
             title: "1. 为什么 Agent 需要记忆——记忆系统的核心地位",

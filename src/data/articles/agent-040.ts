@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-040",
-    title: "具身智能评估体系:如何衡量 AI 在物理世界中的能力",
+    title: "具身智能评估（三）：如何衡量 AI 在物理世界中的能力",
     category: "agent",
     tags: ["具身智能", "评估体系", "Embodied AI", "基准测试", "机器人评估", "物理交互", "Sim-to-Real", "AI评测"],
     summary: "具身智能(Embodied AI)正在从实验室走向现实应用,但「如何衡量一个 AI 在物理世界中的真实能力」仍是一个开放问题。本文系统梳理具身智能评估的完整体系:从评估维度的设计原则,到主流基准测试框架,从仿真环境到真实世界的迁移评估,从单任务到开放世界的泛化评测,帮助你建立科学的具身智能能力评估方法。",
     date: "2026-04-30",
     readTime: "32 min",
     level: "高级",
+  learningPath: {
+    routeId: "embodied-ai",
+    phase: 3,
+    order: 3,
+    nextStep: null,
+    prevStep: "physical-002",
+  },
     content: [
         {
             title: "1. 什么是具身智能评估——为什么传统 AI 评测不再适用",

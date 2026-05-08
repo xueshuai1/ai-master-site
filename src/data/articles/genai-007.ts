@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "genai-007",
-    title: "生成模型对比：VAE vs GAN vs Diffusion vs Flow",
+    title: "图像生成（三）：Diffusion 与 GAN 对比",
     category: "genai",
     tags: ["生成模型", "对比", "VAE"],
     summary: "全面对比四大生成模型家族的原理、优劣与适用场景",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "diffusion-series",
+    phase: 3,
+    order: 3,
+    nextStep: null,
+    prevStep: "genai-002",
+  },
     content: [
         {
             title: "1. 生成模型家族概览",

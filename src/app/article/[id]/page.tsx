@@ -461,8 +461,41 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                 </div>
               </div>
 
-              {/* Prev/Next Navigation */}
-              <div className="mt-8 pt-8 border-t border-white/5">
+              {/* Series Navigation */}
+              {article.learningPath && (article.learningPath.prevStep || article.learningPath.nextStep) && (
+                <div className="mt-8 pt-8 border-t border-white/5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-sm font-semibold text-brand-300">📖 系列文章</span>
+                    <span className="text-xs text-slate-500">{article.learningPath.routeId}</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    {(() => {
+                      const prev = article.learningPath?.prevStep ? articles.find(a => a.id === article.learningPath!.prevStep) : null;
+                      const next = article.learningPath?.nextStep ? articles.find(a => a.id === article.learningPath!.nextStep) : null;
+                      if (!prev && !next) return null;
+                      return (
+                        <>
+                          {prev ? (
+                            <Link href={`/article/${prev.id}`} className="flex-1 group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-500/30 transition-all">
+                              <p className="text-xs text-brand-400 mb-1">← 系列上一篇</p>
+                              <p className="text-sm font-medium group-hover:text-brand-300 transition-colors line-clamp-1">{prev.title}</p>
+                            </Link>
+                          ) : <div className="flex-1" />}
+                          {next ? (
+                            <Link href={`/article/${next.id}`} className="flex-1 group p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-500/30 transition-all text-right">
+                              <p className="text-xs text-brand-400 mb-1">系列下一篇 →</p>
+                              <p className="text-sm font-medium group-hover:text-brand-300 transition-colors line-clamp-1">{next.title}</p>
+                            </Link>
+                          ) : <div className="flex-1" />}
+                        </>
+                      );
+                    })()}
+                  </div>
+                </div>
+              )}
+
+              {/* Date-based Prev/Next Navigation */}
+              <div className="mt-6 pt-6 border-t border-white/5">
                 <div className="flex flex-col sm:flex-row gap-4">
                   {(() => {
                     const sorted = [...articles].sort((a, b) => b.date.localeCompare(a.date));

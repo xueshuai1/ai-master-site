@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "agent-005",
-    title: "记忆系统：向量数据库与知识图谱",
+    title: "Agent 记忆系统（一）：向量数据库与知识图谱",
     category: "agent",
     tags: ["记忆", "向量数据库", "知识图谱"],
     summary: "构建 Agent 的长期记忆，理解检索增强与知识管理",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "agent-memory",
+    phase: 1,
+    order: 1,
+    nextStep: "agent-025",
+    prevStep: "agent-002",
+  },
     content: [
         {
             title: "1. Agent 记忆的类型：短期、长期与工作记忆",

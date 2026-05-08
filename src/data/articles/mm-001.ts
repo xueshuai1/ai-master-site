@@ -2,13 +2,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "mm-001",
-    title: "CLIP：视觉-语言预训练",
+    title: "多模态学习（一）：CLIP 视觉-语言预训练",
     category: "multimodal",
     tags: ["CLIP", "多模态", "对比学习"],
     summary: "从对比学习到零样本分类，理解 CLIP 如何连接视觉与语言",
     date: "2026-04-12",
     readTime: "20 min",
     level: "高级",
+  learningPath: {
+    routeId: "multimodal-series",
+    phase: 1,
+    order: 1,
+    nextStep: "mm-002",
+    prevStep: null,
+  },
     content: [
       {
         title: "1. 多模态学习的动机",

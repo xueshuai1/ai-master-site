@@ -4,13 +4,20 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "physical-001",
-  title: "物理 AI 工业落地全景：从实验室演示到工厂巡检的跨越",
+  title: "具身智能（一）：从模拟到现实的 Sim-to-Real",
   category: "practice",
   tags: ["物理 AI", "机器人", "工业巡检", "Gemini Robotics", "具身智能", "空间推理", "Boston Dynamics"],
   summary: "2026 年 4 月，Google DeepMind 发布 Gemini Robotics-ER 1.6，与 Boston Dynamics Spot 合作演示工业巡检能力，标志着物理 AI 从「移动+操作」正式进化到「感知+理解物理状态」。本文系统梳理物理 AI 的技术架构、工业落地场景、实际部署案例和未来趋势。",
   date: "2026-04-17",
   readTime: "22 min",
   level: "进阶",
+  learningPath: {
+    routeId: "embodied-ai",
+    phase: 1,
+    order: 1,
+    nextStep: "physical-002",
+    prevStep: null,
+  },
   content: [
     {
       title: "什么是物理 AI？为什么 2026 年是关键转折点？",
