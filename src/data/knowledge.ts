@@ -56,8 +56,7 @@ export const categories = [
   { key: "practice", label: "实践应用", icon: "🌍" },
   { key: "mlops", label: "MLOps 与部署", icon: "🚀" },
   { key: "ethics", label: "AI 伦理与安全", icon: "⚖️" },
-  { key: "math", label: "数学基础", icon: "📐" },
-];
+  { key: "math", label: "数学基础", icon: "📐" }];
 
 import { article as agent001 } from './articles/agent-001';
 import { article as agent002 } from './articles/agent-002';
@@ -70,7 +69,6 @@ import { article as agent008 } from './articles/agent-008';
 import { article as aieng001 } from './articles/aieng-001';
 import { article as aieng002 } from './articles/aieng-002';
 import { article as aieng003 } from './articles/aieng-003';
-import { article as aieng004 } from './articles/aieng-004';
 import { article as aieng005 } from './articles/aieng-005';
 import { article as aieng006 } from './articles/aieng-006';
 import { article as aieng007 } from './articles/aieng-007';
@@ -100,7 +98,6 @@ import { article as dl007 } from './articles/dl-007';
 import { article as dl008 } from './articles/dl-008';
 import { article as dl009 } from './articles/dl-009';
 import { article as dl010 } from './articles/dl-010';
-import { article as dl011 } from './articles/dl-011';
 import { article as dl012 } from './articles/dl-012';
 import { article as dl013 } from './articles/dl-013';
 import { article as dl014 } from './articles/dl-014';
@@ -128,10 +125,8 @@ import { article as genai009 } from './articles/genai-009';
 import { article as llm001 } from './articles/llm-001';
 import { article as llm002 } from './articles/llm-002';
 import { article as llm003 } from './articles/llm-003';
-import { article as llm004 } from './articles/llm-004';
 import { article as llm005 } from './articles/llm-005';
 import { article as llm006 } from './articles/llm-006';
-import { article as llm007 } from './articles/llm-007';
 import { article as llm008 } from './articles/llm-008';
 import { article as llm009 } from './articles/llm-009';
 import { article as llm010 } from './articles/llm-010';
@@ -361,4 +356,4 @@ import { article as agent049 } from './articles/agent-049';
 import { article as securityAudit001 } from './articles/security-audit-001';
 import { article as geo001 } from './articles/geo-001';
 import { article as agent050 } from './articles/agent-050';
-export const articles: Article[] = [headlessAi001,ai000,promptGuide,prompt001,llmAppGuide,agentGuide,aiengGuide,mathMlGuide,dlGuide,rlGuide,nlpGuide,cvGuide,mmGuide,genaiGuide,securityGuide,infer001,physical001,physical002,anthropicClaude,ai4science001,anthropic002,infra001,multiAgent001,finance001,mcp001,aieng014,aiobs001,agent001,agent002,agent003,agent004,agent005,agent006,agent007,agent008,agent009,agent010,agent011,agent012,agent013,agent014,agent015,agent016,agent017,aieng001,aieng002,aieng003,aieng004,aieng005,aieng006,aieng007,aieng008,aieng009,aieng010,aieng011,aieng012,aieng013,cv001,cv002,cv003,cv004,cv005,cv006,cv007,cv008,cv009,cv010,cv011,cv012,dl001,dl002,dl003,dl004,dl005,dl006,dl007,dl008,dl009,dl010,dl011,dl012,dl013,dl014,dl015,dl016,dl017,dl018,dl019,dl020,ethics001,ethics002,ethics003,ethics004,ethics005,ethics006,ethics007,ethics008,ethics009,genai001,genai002,genai003,genai004,genai005,genai006,genai007,genai008,genai009,llm001,llm002,llm003,llm004,llm005,llm006,llm007,llm008,llm009,llm010,llm011,llm012,llm013,llm014,llm015,llm016,llm017,llm018,math001,math002,math003,math004,math005,math006,math007,math008,ml001,ml002,ml003,ml004,ml005,ml006,ml007,ml008,ml009,ml010,ml011,ml012,ml013,ml014,ml015,ml016,ml017,ml018,ml019,ml020,ml021,ml022,ml023,ml024,mlops001,mlops002,mlops003,mlops004,mlops005,mlops006,mlops007,mlops008,mm001,mm002,mm003,mm004,mm005,mm006,mm007,mm008,mm009,nlp001,nlp002,nlp003,nlp004,nlp005,nlp006,nlp007,nlp008,nlp009,nlp010,practice001,practice002,practice003,practice004,practice005,practice006,practice007,practice008,practice009,practice010,practice011,practice012,rl001,rl002,rl003,rl004,rl005,rl006,rl007,rl008,rl009,rl010,rl011,synthdata001,ai001,ai002,ai003,ai004,aiSecurity001,aiSecurity002,aiSecurity003,aiSecurity004,aiSecurity005,aiSecurity006,aiSecurity007,edge001,voice001,voice002,voice003,voice004,agent018,aiSecurity008,codex001,agent019,agent020,agent021,agent022,agent023,aiSecurity009,aiSecurity010,aiSecurity011,aiSecurity012,aiSecurity013,agent024,agent025,agent026,agent027,agent028,agent029,agent030,agent031,agent032,agent033,agent034,llm019,llm020,infer002,tokenEconomics,prompt002,prompt003,practice013,aieng015,llm021,aieng017,aieng019,aieng021,agent035,agent036,agent037,agent038,agent039,ethics010,ethics011,ethics012,agent040,aieng016,agent041, agent042, agent043, agent044, agent045, aiChipChina001, aiAgentPayment001, appleAi001, chinaLlmScale001, aiDistillation001, mm010, mm011, legalAi001, aieng022, entertainmentAi001, aiInfra001, ethics013, llm022, llm023, llm024, aieng023, aieng024, aieng025, agent046, agent047, infra002, prac001, agent048, agent049, securityAudit001, geo001, agent050];
+export const articles: Article[] = [headlessAi001,ai000,promptGuide,prompt001,llmAppGuide,agentGuide,aiengGuide,mathMlGuide,dlGuide,rlGuide,nlpGuide,cvGuide,mmGuide,genaiGuide,securityGuide,infer001,physical001,physical002,anthropicClaude,ai4science001,anthropic002,infra001,multiAgent001,finance001,mcp001,aieng014,aiobs001,agent001,agent002,agent003,agent004,agent005,agent006,agent007,agent008,agent009,agent010,agent011,agent012,agent013,agent014,agent015,agent016,agent017,aieng001,aieng002,aieng003,aieng005,aieng006,aieng007,aieng008,aieng009,aieng010,aieng011,aieng012,aieng013,cv001,cv002,cv003,cv004,cv005,cv006,cv007,cv008,cv009,cv010,cv011,cv012,dl001,dl002,dl003,dl004,dl005,dl006,dl007,dl008,dl009,dl010,dl012,dl013,dl014,dl015,dl016,dl017,dl018,dl019,dl020,ethics001,ethics002,ethics003,ethics004,ethics005,ethics006,ethics007,ethics008,ethics009,genai001,genai002,genai003,genai004,genai005,genai006,genai007,genai008,genai009,llm001,llm002,llm003,llm005,llm006,llm008,llm009,llm010,llm011,llm012,llm013,llm014,llm015,llm016,llm017,llm018,math001,math002,math003,math004,math005,math006,math007,math008,ml001,ml002,ml003,ml004,ml005,ml006,ml007,ml008,ml009,ml010,ml011,ml012,ml013,ml014,ml015,ml016,ml017,ml018,ml019,ml020,ml021,ml022,ml023,ml024,mlops001,mlops002,mlops003,mlops004,mlops005,mlops006,mlops007,mlops008,mm001,mm002,mm003,mm004,mm005,mm006,mm007,mm008,mm009,nlp001,nlp002,nlp003,nlp004,nlp005,nlp006,nlp007,nlp008,nlp009,nlp010,practice001,practice002,practice003,practice004,practice005,practice006,practice007,practice008,practice009,practice010,practice011,practice012,rl001,rl002,rl003,rl004,rl005,rl006,rl007,rl008,rl009,rl010,rl011,synthdata001,ai001,ai002,ai003,ai004,aiSecurity001,aiSecurity002,aiSecurity003,aiSecurity004,aiSecurity005,aiSecurity006,aiSecurity007,edge001,voice001,voice002,voice003,voice004,agent018,aiSecurity008,codex001,agent019,agent020,agent021,agent022,agent023,aiSecurity009,aiSecurity010,aiSecurity011,aiSecurity012,aiSecurity013,agent024,agent025,agent026,agent027,agent028,agent029,agent030,agent031,agent032,agent033,agent034,llm019,llm020,infer002,tokenEconomics,prompt002,prompt003,practice013,aieng015,llm021,aieng017,aieng019,aieng021,agent035,agent036,agent037,agent038,agent039,ethics010,ethics011,ethics012,agent040,aieng016,agent041, agent042, agent043, agent044, agent045, aiChipChina001, aiAgentPayment001, appleAi001, chinaLlmScale001, aiDistillation001, mm010, mm011, legalAi001, aieng022, entertainmentAi001, aiInfra001, ethics013, llm022, llm023, llm024, aieng023, aieng024, aieng025, agent046, agent047, infra002, prac001, agent048, agent049, securityAudit001, geo001, agent050];

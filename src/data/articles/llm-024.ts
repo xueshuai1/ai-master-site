@@ -2,7 +2,7 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
   id: "llm-024",
-  title: "LLM 推理优化：量化、剪枝与蒸馏全面指南",
+  title: "LLM 推理优化（一）：量化、剪枝与蒸馏全面指南",
   category: "llm",
   tags: ["模型优化", "量化", "剪枝", "知识蒸馏", "推理加速", "边缘部署", "vLLM", "TensorRT"],
   summary: "从 FP16 到 INT4 量化，从结构化剪枝到知识蒸馏，系统讲解大语言模型推理优化的三大核心技术路线，帮助你在成本与性能之间找到最优平衡点",
