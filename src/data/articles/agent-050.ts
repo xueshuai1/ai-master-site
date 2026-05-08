@@ -80,11 +80,11 @@ export const article: Article = {
     D -->|否| B
     D -->|是| E[输出最优 Prompt 组合]
     
-    style A fill:#1e3a5f,stroke:#3b82f6,stroke-width:2px
-    style B fill:#7c3aed,stroke:#a78bfa,stroke-width:2px
-    style C fill:#065f46,stroke:#10b981,stroke-width:2px
-    style D fill:#92400e,stroke:#d97706,stroke-width:2px
-    style E fill:#7f1d1d,stroke:#ef4444,stroke-width:2px`,
+    style A fill:#1e3a5f,color:#fff
+    style B fill:#7c3aed,color:#fff
+    style C fill:#065f46,color:#fff
+    style D fill:#b45309,color:#fff
+    style E fill:#7f1d1d,color:#fff`,
       tip: "💡 理解 MASPO 的数学框架不需要深厚的数学背景。核心思路很简单：先让每个 Agent 各自表现不错（独立初始化），然后观察它们互相配合时的表现变化（协作信号估计），最后根据这些变化一起调整（联合梯度上升）。类比乐队排练——先各自练好曲子，然后一起合奏找出配合问题，最后一起调整节奏。",
       warning: "⚠️ MASPO 的协作信号估计阶段需要多次评估多 Agent 系统的整体性能，这意味着**计算成本随 Agent 数量增加而增长**。对于超过 10 个 Agent 的大型系统，建议先进行**Agent 分组**——将系统划分为若干个小规模的子组（每组 3-5 个 Agent），先在组内进行 MASPO 优化，再进行组间的联合优化。"
     },
@@ -471,14 +471,14 @@ MASPO 的核心优势在于**效率和质量的平衡**：
     E[演化群体优化] -->|全局搜索强| F[收敛速度慢]
     G[MASPO 联合梯度上升] -->|效率质量平衡| H[最佳综合方案]
     
-    style A fill:#7f1d1d,stroke:#ef4444,stroke-width:2px
-    style B fill:#991b1b,stroke:#fca5a5,stroke-width:1px
-    style C fill:#581c87,stroke:#a855f7,stroke-width:2px
-    style D fill:#7c3aed,stroke:#d8b4fe,stroke-width:1px
-    style E fill:#1e3a5f,stroke:#3b82f6,stroke-width:2px
-    style F fill:#2563eb,stroke:#93c5fd,stroke-width:1px
-    style G fill:#065f46,stroke:#10b981,stroke-width:3px
-    style H fill:#047857,stroke:#34d399,stroke-width:2px`,
+    style A fill:#7f1d1d,color:#fff
+    style B fill:#991b1b,color:#fff
+    style C fill:#581c87,color:#fff
+    style D fill:#7c3aed,color:#fff
+    style E fill:#1e3a5f,color:#fff
+    style F fill:#2563eb,color:#fff
+    style G fill:#065f46,color:#fff
+    style H fill:#047857,color:#fff`,
       tip: "💡 选择优化方法时，用一个简单的决策树：（1）Agent 间是否有强耦合？如果没有→ 独立优化即可。（2）计算资源是否充足？如果不充足→ MASPO 是最佳选择。（3）是否需要全局最优？如果是且有充足资源→ 强化学习或演化方法。（4）Agent 数量是否很多？如果超过 15 个→ MASPO 分组优化。",
       warning: "⚠️ 不要盲目追求「最优方法」。在实际工程中，独立优化 + 简单协调在 70% 的场景下已经足够好。只有当你明确感受到独立优化的性能瓶颈时，才值得投入额外成本使用 MASPO 或其他联合优化方法。记住：好的工程决策是在性能和成本之间找到平衡点。"
     },
