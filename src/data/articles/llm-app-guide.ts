@@ -57,20 +57,79 @@ export const article: Article = {
             tip: "💡 推荐先用 OpenAI 或 Anthropic 的 API 跑通第一个应用，再深入 RAG 和微调。"
         },
         {
-            title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            title: "4. 📍 推荐学习路径",
+            body: `本分类共 **31 篇文章**，以下是推荐的**系统性学习路径**：
+
+**第一阶段：LLM 应用基础（选读 5 篇）**
+
+1. [LLM Token 经济学](/article/token-economics-001) → 理解 Token、上下文窗口、成本
+2. [RAG 检索增强生成架构指南](/article/llm-003) → 搭建私有知识问答系统
+3. [LangChain：LLM 应用开发框架](/article/llm-011) → 快速原型开发
+4. [LLM 部署实践：vLLM, TGI, Ollama](/article/llm-012) → 生产环境部署
+5. [LLM 微调技术全景](/article/llm-017) → LoRA、QLoRA 参数高效微调
+
+**第二阶段：深入理解（选读核心）**
+
+- [LLM 推理加速实战](/article/llm-015) → KV Cache 优化、推测解码
+- [LLM 评测体系](/article/llm-014) → 从 MMLU 到 LMSYS Arena
+- [LLM 生产环境可观测性](/article/llm-020) → 监控与调试
+- [Anthropic Claude 生态系统](/article/anthropic-claude) → Claude 全家桶
+
+**第三阶段：高级专题（按需选读）**
+
+- [大语言模型训练全流程](/article/llm-001)、[RLHF](/article/llm-005)、[MoE 架构](/article/llm-013)
+
+> **⚡ 速成建议：** 第一阶段 5 篇 = LLM 应用开发核心知识。学完即可独立搭建 AI 应用。`,
+            table: {
+                headers: ["阶段", "文章数", "预计时间", "目标"],
+                rows: [
+                    ["第一阶段：应用基础", "5 篇", "1-2 周", "能用 API + RAG 搭建完整 AI 应用"],
+                    ["第二阶段：深入理解", "选读 4-6 篇", "1-2 周", "掌握推理优化、评测、部署"],
+                    ["第三阶段：高级专题", "按需选读", "按需", "理解训练、RLHF、MoE 等底层原理"],
+                ]
+            }
         },
         {
-            title: "架构图示 2",
+            title: "学习路线图",
+            mermaid: `graph LR
+    A["llm-app-guide
+学习导览"] --> B["token-economics
+Token 经济学"]
+    B --> C["llm-003
+RAG 架构"]
+    C --> D["llm-011
+LangChain"]
+    D --> E["llm-012
+部署实践"]
+    E --> F["llm-017
+微调技术"]
+    F --> G["进阶阶段
+选读核心"]
+    
+    style A fill:#991b1b,color:#fff
+    style B fill:#1e3a5f,color:#fff
+    style C fill:#1e3a5f,color:#fff
+    style D fill:#1e3a5f,color:#fff
+    style E fill:#1e3a5f,color:#fff
+    style F fill:#1e3a5f,color:#fff
+    style G fill:#7c3aed,color:#fff`,
+        },
+        {
+            title: "LLM 应用架构",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    A["用户请求"] --> B["API 调用层"]
+    B --> C["Prompt 工程"]
+    B --> D["RAG 检索层"]
+    D --> D1["向量数据库"]
+    D --> D2["Embedding 模型"]
+    B --> E["微调模型层"]
+    E --> E1["LoRA / QLoRA"]
+    
+    style A fill:#991b1b,color:#fff
+    style B fill:#1e3a5f,color:#fff
+    style C fill:#1d4ed8,color:#fff
+    style D fill:#7c3aed,color:#fff
+    style E fill:#b45309,color:#fff`,
         },
     ]
 };
