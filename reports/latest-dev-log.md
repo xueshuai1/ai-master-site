@@ -1,7 +1,12 @@
-⏰ 写入时间：2026-05-08 10:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-08 14:00 (Asia/Shanghai)
 🐛 修复：2 个 bug
-  - b1: geo-001 未接入知识库 → 添加 import + articles 数组
-  - b2: blog-134 未接入博客列表 → 添加 import + blogs 数组
 ✨ 新增：0 个功能
 🔧 优化：0 项
 已知问题：无
+
+## 详情
+- b1: agent-050 Mermaid 浅色配色 → stroke 全部替换为纯深色 fill + color:#fff
+- b2: blog-135 Mermaid 浅色配色 → 同上修复
+- QA 扫描：通过 2124 / 失败 0 / 警告 0
+- Build + TS：全通过
+- Commit: 6484c920
