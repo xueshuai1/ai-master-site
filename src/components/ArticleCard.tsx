@@ -32,6 +32,11 @@ export default function ArticleCard({ article }: { article: Article }) {
               NEW
             </span>
           )}
+          {article.learningPath?.routeId && (
+            <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-brand-500/20 text-brand-300 border border-brand-500/30">
+              📖 系列
+            </span>
+          )}
           <span
             className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${levelColors[article.level]}`}
           >

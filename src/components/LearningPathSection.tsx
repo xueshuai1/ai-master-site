@@ -192,7 +192,13 @@ export default function LearningPathSection() {
         phase.categoryKeys.includes(a.category)
       );
       const levelOrder: Record<string, number> = { 入门: 0, 进阶: 1, 高级: 2 };
-      filtered.sort((a, b) => levelOrder[a.level] - levelOrder[b.level] || b.date.localeCompare(a.date));
+      // Sort by learningPath.order first (series articles in order), then by level, then by date
+      filtered.sort((a, b) => {
+        const aOrder = a.learningPath?.order ?? 999;
+        const bOrder = b.learningPath?.order ?? 999;
+        if (aOrder !== bOrder) return aOrder - bOrder;
+        return levelOrder[a.level] - levelOrder[b.level] || b.date.localeCompare(a.date);
+      });
       return { phase, articles: filtered };
     });
   }, [route]);
