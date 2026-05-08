@@ -65,11 +65,11 @@ Anthropic x Amazon"]
     J --> K["需要 2 座核电站
 或数万公顷太阳能"]
     
-    class A style fill:#b91c1c,color:#fff
-    class C style fill:#b45309,color:#fff
-    class E style fill:#7c3aed,color:#fff
-    class J style fill:#1d4ed8,color:#fff
-    class K style fill:#1e3a5f,color:#fff`,
+    style A fill:#b91c1c,color:#fff
+    style C fill:#b45309,color:#fff
+    style E fill:#7c3aed,color:#fff
+    style J fill:#1d4ed8,color:#fff
+    style K fill:#1e3a5f,color:#fff`,
       tip: `**理解关键：** AI 能源问题不是一个「技术问题」，而是一个「系统工程问题」。它涉及芯片设计、数据中心架构、电网容量、冷却技术、可再生能源供应链等多个领域。解决 AI 能源危机需要跨学科协作，而不是单纯依赖算法优化。`,
       warning: `**常见误区：** 很多人认为「AI 训练能耗高 = AI 不环保」。这种简单归因忽略了两个事实：第一，AI 正在被用于优化电网、提高可再生能源效率、减少工业浪费——这些「AI 赋能减排」的效果可能远超 AI 自身的碳排放；第二，推理能耗才是大头，而推理正在向端侧迁移，能效比正在快速提升。`
     },
