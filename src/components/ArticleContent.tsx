@@ -175,7 +175,6 @@ function TipBox({ text, type }: { text: string; type: "tip" | "warning" }) {
           : "bg-amber-500/5 border-amber-500/20"
       }`}
     >
-      <span className="text-xl shrink-0">{isTip ? "💡" : "⚠️"}</span>
       <div className="text-sm text-slate-300 leading-relaxed prose prose-invert max-w-none
         prose-strong:text-amber-400 prose-strong:font-bold
         prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
