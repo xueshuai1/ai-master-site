@@ -73,17 +73,38 @@
 - 🔴 图表类型推荐：`graph TD` / `graph LR`（流程图）最稳定，`sequenceDiagram`（时序图）、`mindmap`（思维导图）、`quadrantChart`（象限图）也可以
 - 完整配色和语法规范见下方「Mermaid 图表配色和类型」
 
-### 1. Mermaid 图表配色和类型（2026-04-28 事故后增强）
-- ❌ **禁止使用 `style X fill:#颜色` 语法** — 这是历史事故根因！`style fill` 会覆盖 mermaid 默认样式，导致节点文字不可见、图表变黑块/空白块（aieng-021 事故）
-- ✅ **必须使用 `classDef` + `class` 语法** — 如下方示例，这是唯一合法的节点着色方式（2026-04-28 事故后增强）
+### 1. Mermaid 图表配色和类型（2026-05-08 更新）
 
-**🔴 语法铁律：**
-- ❌ **禁止使用 `style X fill:...` 语法** — 会导致渲染为空白块/黑块（aieng-021 事故）
-- ✅ **必须使用 `classDef` + `class` 语法** — 详见下方示例
+**🔴 样式语法铁律（2026-05-08 infra-002 事故新增）：**
+- ❌ **禁止使用 `class X style fill:#颜色` 语法** — 这是非法语法！mermaid 中 `class` 指令不能和 `style` 混用，会导致整个图表渲染失败（💥 崩溃图标）
+- ✅ **使用 `style X fill:#颜色,color:#fff`** — 直接给节点着色，简洁有效
+- ✅ **或使用 `classDef` + `class`** — 先定义样式类，再批量应用
 - ❌ **禁止使用浅色**（400-500 色阶）和 Material Design 浅色：`#ef4444` `#f59e0b` `#10b981` `#6366f1` `#8b5cf6` `#ec4899` `#f3e5f5` `#e1f5fe` `#c8e6c9` `#fff3e0` `#8AB4F8` `#E8EAED` `#F28B82`
 - ✅ **必须使用深色**（800-900 色阶）+ 白字 `color:#fff`：`#991b1b` `#92400e` `#064e3b` `#3730a3` `#581c87` `#1e3a5f`
-- ✅ **classDef 填充色亮度不得超过 0.4**（亮度 = 0.2126*R + 0.7152*G + 0.0722*B），否则文字不可读
 - 完整配色表：`docs/MERMAID-COLORS.md`
+
+**✅ 正确示例 1（style 直接着色）：**
+```
+graph TB
+    A[节点1] --> B[节点2]
+    style A fill:#991b1b,color:#fff
+    style B fill:#1e3a5f,color:#fff
+```
+
+**✅ 正确示例 2（classDef 批量着色）：**
+```
+graph TB
+    A[节点1] --> B[节点2]
+    classDef important fill:#991b1b,stroke:#b91c1c,color:#fff;
+    class A important;
+```
+
+**❌ 错误示例（全部禁止！）：**
+```
+graph TB
+    A[节点1] --> B[节点2]
+    class A style fill:#991b1b  ← 禁止！非法语法，渲染崩溃（infra-002 事故）
+```
 
 **🔴 连线语法铁律（2026-04-29 blog-084 事故新增）：**
 - ❌ **禁止使用 `.- >`（中间带空格）** — 会导致连线断裂、节点渲染为空白块
@@ -95,21 +116,6 @@
 - ❌ **禁止在 mermaid 块中使用 `%` 字符** — mermaid 中 `%` 是注释标记，会导致整行解析错误
 - ✅ **必须使用全角 `％`** 代替半角 `%`，如 `15-25％` 而非 `15-25%`
 - ❌ **`\%` 转义无效** — JS 模板字面量不识别 `\%`，会静默丢掉反斜杠，mermaid 仍然看到 `%`
-
-**✅ 正确示例（必须用 classDef）：**
-```
-graph TB
-    A[节点1] --> B[节点2]
-    classDef important fill:#991b1b,stroke:#b91c1c,color:#fff;
-    class A important;
-```
-
-**❌ 错误示例（禁止！）：**
-```
-graph TB
-    A[节点1] --> B[节点2]
-    style A fill:#991b1b  ← 禁止！必须用 classDef
-    style B fill:#1e3a5f  ← 禁止！这是 aieng-021 事故根因
 
 **✅ 合法的 Mermaid 图表类型（只能用以下类型）：**
 - `graph TD` / `graph LR` / `graph BT` / `graph RL`（流程图/架构图）— **最推荐**

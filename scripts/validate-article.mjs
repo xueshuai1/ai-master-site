@@ -226,6 +226,32 @@ function checkMermaidArrowSyntax(content, filePath) {
   return errors;
 }
 
+// ===== Mermaid 样式语法检查（2026-05-08 新增）=====
+// infra-002 事故：class X style fill: 是非法语法，导致渲染崩溃
+function checkMermaidClassStyleSyntax(content, filePath) {
+  const errors = [];
+  const mermaidBlocks = content.matchAll(/mermaid:\s*`([\s\S]*?)`/g);
+  for (const block of mermaidBlocks) {
+    const mermaidContent = block[1];
+    const lineStartIdx = block.index + content.substring(0, block.index).split('\n').length;
+    const lines = mermaidContent.split('\n');
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      // 匹配 class X style fill: 这种非法语法
+      // 正确用法: style X fill:  或  classDef xxx fill:; class X xxx;
+      if (line.match(/^class\s+\w+\s+style\s+/)) {
+        errors.push({
+          file: filePath,
+          type: 'mermaid_class_style_syntax',
+          line: lineStartIdx + i,
+          message: `Mermaid 样式语法错误：发现「class X style fill:」非法语法！应改为「style X fill:」或使用 classDef + class 语法。`,
+        });
+      }
+    }
+  }
+  return errors;
+}
+
 // ===== Mermaid 类型检查 =====
 const VALID_MERMAID_TYPES = new Set([
   'graph TD', 'graph LR', 'graph BT', 'graph RL',
@@ -388,6 +414,10 @@ for (const filePath of filesToCheck) {
   // 2. Mermaid 连线语法检查（.- > 空格问题）
   const arrowErrors = checkMermaidArrowSyntax(content, relPath);
   allErrors.push(...arrowErrors.map(e => ({ ...e, severity: 'error' })));
+
+  // 2.5. Mermaid class style 非法语法检查（2026-05-08 infra-002 事故新增）
+  const classStyleErrors = checkMermaidClassStyleSyntax(content, relPath);
+  allErrors.push(...classStyleErrors.map(e => ({ ...e, severity: 'error' })));
   
   // 3. Mermaid 类型检查
   const mermaidTypeResults = checkMermaidTypes(content, relPath);

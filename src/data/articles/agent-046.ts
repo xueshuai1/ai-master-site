@@ -60,9 +60,9 @@ export const article: Article = {
     H --> I["Agent 失控率 7％"]
     I --> J["下降 83％"]
     
-    class A style fill:#b91c1c,color:#fff
-    class I style fill:#1e3a5f,color:#fff
-    class H style fill:#1d4ed8,color:#fff`,
+    style A fill:#b91c1c,color:#fff
+    style I fill:#1e3a5f,color:#fff
+    style H fill:#1d4ed8,color:#fff`,
       tip: `**理解关键：** Agent 安全治理的核心不是「防止 AI 叛变」，而是「确保 Agent 的行为始终符合设计者的意图」。失控率 54% 不是因为 Agent「有了自我意识」，而是因为我们在设计时没有充分考虑边界条件、权限约束和行为监控。`,
       warning: `**不要低估级联故障的风险：** 在多 Agent 系统中，单个 Agent 的失控可能通过 Agent 间的协作和通信迅速扩散，导致整个系统的行为完全失控。2025 年某金融公司的自动化交易系统中，一个风控 Agent 的误判触发了连锁反应，导致数百万美元的损失。`
     },
