@@ -1,32 +1,35 @@
-⏰ 写入时间：2026-05-08 04:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-08 08:00 (Asia/Shanghai)
 
 ## 本轮发现
+🔥 热点（15 条，已选 15 条写入 news.ts，news-1039 ~ news-1053）：
+1. [Mozilla 用 Claude Mythos 修复 423 个 Firefox 漏洞] AI 辅助安全审计里程碑，4 月发现量为平常 14 倍 → 适合：知识库(AI安全)
+2. [Anthropic × SpaceX/xAI Colossus 数据中心合作] 竞对之间算力联盟新模式 → 适合：博客(AI基础设施)
+3. [OpenAI ChatGPT 测试广告] vs Anthropic 无广告立场，两条商业化路径 → 适合：博客(AI商业化)
+4. [OpenAI Codex Chrome 扩展] AI Agent 新入口，可直接操作已登录网站 → 适合：知识库(AI Agent)
+5. [Moonshot AI 融资 20B/估值 200B] 中国开源 AI 资本加速 → 适合：知识库(中国AI格局)
+6. [AI 四龙估值破万亿] 旷视/商汤/云从/依图集体暴涨 → 适合：博客(中国AI产业)
+7. [Cloudflare 裁员 1100 人] AI 使用量增长 600%，人力重构 → 适合：博客(AI替代人力)
+8. [Perplexity Personal Computer for Mac] AI 个人电脑重新定义 → 适合：知识库(AI工具)
+9. [OpenAI Trusted Contact 安全功能] 自害风险防护，AI 安全新防线 → 适合：知识库(AI安全)
+10. [Gemini 3.1 Flash-Lite 正式 GA] 轻量级模型进入生产阶段 → 适合：知识库(LLM对比)
+11. [Apple AirPods 摄像头版接近量产] AI 可穿戴新形态 → 适合：博客(AI硬件)
+12. [Gmail AI 写作个性化] 根据用户语调风格生成邮件 → 适合：知识库(AI写作)
+13. [Spotify AI 生成个人音频] 从音乐平台到个性化音频生态 → 适合：博客(AI音乐)
+14. [卧底 GEO 公司：每天 1000 篇 AI 发稿] AI 内容农场污染互联网 → 适合：知识库(AI内容生态)
+15. [DeepSeek 大基金拟领投/450B 估值] 中国开源 AI 资本新高 → 适合：知识库(中国AI格局)
 
-🔥 热点（15 条，已写入 news.ts news-1024~1038）：
-1. [Anthropic + SpaceX Colossus 合作] Anthropic 使用 xAI Colossus 数据中心全部容量，AI 巨头基础设施合作 → 适合：博客/知识库（AI 基础设施竞争格局）
-2. [Anthropic 估值 1.2 万亿反超 OpenAI] 首次估值超越 OpenAI，Claude 生态爆发 → 适合：博客（AI 公司估值对比分析）
-3. [OpenAI ChatGPT Futures Class of 2026] 新一代 ChatGPT 前沿应用计划 → 适合：知识库（AI 产品创新模式）
-4. [OpenAI Trusted Contact 安全功能] AI 检测到安全风险自动通知紧急联系人 → 适合：知识库（AI 安全与隐私保护）
-5. [Perplexity Personal Computer for Mac] AI 原生计算体验正式开放 → 适合：博客（AI 重塑个人计算）
-6. [Mythos 帮 Firefox 修复 423 个漏洞] 从月均 20-30 到 423 个，AI 安全审计质变 → 适合：知识库（AI 辅助安全审计方法论）
-7. [Moonshot AI 融资 20 亿美元/200 亿估值] 中国开源 AI 需求爆发 → 适合：博客（中国 AI 融资全景）
-8. [Spotify AI 个人音频战略] 从音乐流媒体到 AI 内容平台 → 适合：博客（AI 重塑内容产业）
-9. [DeepSeek 首轮估值 450 亿美元/大基金领投] 芯片+模型一体化战略 → 适合：知识库（AI 芯片竞争全景）
-10. [SpaceX Terafab 550 亿芯片工厂] 从航天到芯片制造 → 适合：博客（垂直整合的 AI 基础设施）
-11. [Gemini 3.1 Flash-Lite GA] Google 轻量模型正式商用 → 适合：知识库（端侧 AI 部署指南）
-12. [Apple AirPods 带摄像头] AI 可穿戴硬件新形态 → 适合：博客（AI 硬件趋势）
-13. [上海交大 Claude Code 科研] 两篇论文被顶会接收 → 适合：知识库（AI Agent 科研能力评估）
-14. [AI 四小龙估值破万亿] 中国老牌 AI 公司价值回归 → 适合：博客（中国 AI 产业发展史）
-15. [00 后客厅基因组测序 1100 美元] 27 亿美元壁垒坍塌 → 适合：知识库（AI + 生物科技交叉）
-
-🆕 新工具（3 个）：
-1. [llm-gemini 0.31] Simon Willison 的 Gemini 插件，新增 3.1 Flash-Lite GA 支持
-2. [GitHub Repo Stats] Simon Willison 工具 - GitHub 仓库统计（commit 数等）
-3. [Big Words] Simon Willison 工具 - 演示文稿文字生成器
+🆕 新工具（2 个）：
+1. [llm-gemini 0.31] Simon Willison 的 Gemini CLI 工具更新，支持 Gemini 3.1 Flash-Lite GA
+2. [GitHub Repo Stats] Simon Willison 新工具，显示 GitHub 仓库 commit 数等统计信息
 
 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 安全] AI 辅助安全审计方法论（Mythos + Firefox 案例）
-2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 基础设施] AI 算力战争全景（Colossus / Terafab / 5GW Amazon）
-3. KNOWLEDGE-BASE-PLAN.md 待补：[AI + 生物科技] 个人基因组学 + AI（从 27 亿到 1100 美元）
-4. BLOG-PLAN.md 待补：[AI 商业化] Anthropic 1.2 万亿估值背后的产品矩阵分析
-5. BLOG-PLAN.md 待补：[AI 硬件] Apple AI 硬件路线（AirPods 摄像头 + Apple Intelligence）
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全评估 — Claude Mythos Firefox 安全审计方法论
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI 基础设施竞争 — Colossus/Amazon/Google 超算格局
+3. KNOWLEDGE-BASE-PLAN.md 待补：AI 商业化路径对比 — OpenAI 广告 vs Anthropic 订阅
+4. KNOWLEDGE-BASE-PLAN.md 待补：GEO/AI 内容农场 — 生成引擎优化与反欺骗
+5. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 浏览器 — Codex Chrome 扩展的技术分析
+
+## 扫描来源统计
+- **国外来源（8 个）**：GitHub Trending、Simon Willison、TechCrunch AI、The Verge AI、Anthropic News、OpenAI Blog、arXiv cs.AI、Hacker News(失败)
+- **国内来源（3 个）**：36 氪、新浪科技、机器之心
+- **共扫描 11 个来源**
