@@ -291,14 +291,14 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
         <div className="my-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm prose prose-invert max-w-none
           prose-strong:text-white prose-strong:font-semibold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-          [&_p]:my-0 [&_p]:text-emerald-300" dangerouslySetInnerHTML={{ __html: `💡 ${parseMarkdown(section.tip)}` }} />
+          [&_p]:my-0 [&_p]:text-emerald-300" dangerouslySetInnerHTML={{ __html: parseMarkdown(section.tip) }} />
       )}
 
       {section.warning && (
         <div className="my-4 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-sm prose prose-invert max-w-none
           prose-strong:text-white prose-strong:font-semibold
           prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-          [&_p]:my-0 [&_p]:text-amber-300" dangerouslySetInnerHTML={{ __html: `⚠️ ${parseMarkdown(section.warning)}` }} />
+          [&_p]:my-0 [&_p]:text-amber-300" dangerouslySetInnerHTML={{ __html: parseMarkdown(section.warning) }} />
       )}
     </div>
   );
