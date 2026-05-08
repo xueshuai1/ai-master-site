@@ -359,7 +359,7 @@ print(f"建议: {report.recommendation}")`
     style B fill:#dc2626,color:#fff
     style C fill:#dc2626,color:#fff
     style D fill:#b91c1c,color:#fff
-    style E fill:#f59e0b,color:#000
+    style E fill:#b45309,color:#fff
     style F fill:#dc2626,color:#fff`,
         },
         {
