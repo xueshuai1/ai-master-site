@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-05-09T04:49:12.770Z",
+  "source": "/Users/xueshuai/.openclaw/workspace/ai-master-site/reports/latest-content-findings.md",
+  "totalDiscovered": 8,
+  "alreadyExist": [
+    {
+      "name": "ruflo",
+      "repo": "ruvnet/ruflo"
+    },
+    {
+      "name": "TradingAgents",
+      "repo": "tauricresearch/tradingagents"
+    }
+  ],
+  "toAdd": [
+    {
+      "name": "OpenAI Symphony",
+      "description": "项目级自主 Agent 实现框架，22.7K 星",
+      "url": "https://github.com/openai/symphony",
+      "stars": 0,
+      "repo": "openai/symphony",
+      "highlight": "",
+      "tags": [
+        "AI Agent"
+      ],
+      "category": "agent",
+      "entryCode": "  {\n    id: \"openai-symphony\",\n    name: \"OpenAI Symphony\",\n    category: \"agent\",\n    description: \"项目级自主 Agent 实现框架，22.7K 星\",\n    url: \"https://github.com/openai/symphony\",\n    tags: [\"AI Agent\"],\n    price: \"开源\",\n    icon: \"🔧\",\n    pros: [],\n    cons: [],\n    useCase: \"\",\n    learnMore: \"https://github.com/openai/symphony\",\n    githubStars: 0,\n    updatedAt: \"2026-05-09\",\n    forks: 0,\n    createdAt: \"\",\n    language: \"\"\n  },"
+    },
+    {
+      "name": "Dexter",
+      "description": "自主深度金融研究 Agent，24.9K 星",
+      "url": "https://github.com/virattt/dexter",
+      "stars": 0,
+      "repo": "virattt/dexter",
+      "highlight": "",
+      "tags": [
+        "AI Agent",
+        "金融科技"
+      ],
+      "category": "agent",
+      "entryCode": "  {\n    id: \"virattt-dexter\",\n    name: \"Dexter\",\n    category: \"agent\",\n    description: \"自主深度金融研究 Agent，24.9K 星\",\n    url: \"https://github.com/virattt/dexter\",\n    tags: [\"AI Agent\", \"金融科技\"],\n    price: \"开源\",\n    icon: \"🔧\",\n    pros: [],\n    cons: [],\n    useCase: \"\",\n    learnMore: \"https://github.com/virattt/dexter\",\n    githubStars: 0,\n    updatedAt: \"2026-05-09\",\n    forks: 0,\n    createdAt: \"\",\n    language: \"\"\n  },"
+    },
+    {
+      "name": "cocoindex",
+      "description": "长程 Agent 增量引擎，9.1K 星",
+      "url": "https://github.com/cocoindex-io/cocoindex",
+      "stars": 0,
+      "repo": "cocoindex-io/cocoindex",
+      "highlight": "",
+      "tags": [
+        "AI Agent"
+      ],
+      "category": "agent",
+      "entryCode": "  {\n    id: \"cocoindex-io-cocoindex\",\n    name: \"cocoindex\",\n    category: \"agent\",\n    description: \"长程 Agent 增量引擎，9.1K 星\",\n    url: \"https://github.com/cocoindex-io/cocoindex\",\n    tags: [\"AI Agent\"],\n    price: \"开源\",\n    icon: \"🔧\",\n    pros: [],\n    cons: [],\n    useCase: \"\",\n    learnMore: \"https://github.com/cocoindex-io/cocoindex\",\n    githubStars: 0,\n    updatedAt: \"2026-05-09\",\n    forks: 0,\n    createdAt: \"\",\n    language: \"\"\n  },"
+    },
+    {
+      "name": "JCode",
+      "description": "Coding Agent 工具链（Rust），5.1K 星",
+      "url": "https://github.com/1jehuang/jcode",
+      "stars": 0,
+      "repo": "1jehuang/jcode",
+      "highlight": "",
+      "tags": [
+        "AI Agent",
+        "AI 编程"
+      ],
+      "category": "agent",
+      "entryCode": "  {\n    id: \"1jehuang-jcode\",\n    name: \"JCode\",\n    category: \"agent\",\n    description: \"Coding Agent 工具链（Rust），5.1K 星\",\n    url: \"https://github.com/1jehuang/jcode\",\n    tags: [\"AI Agent\", \"AI 编程\"],\n    price: \"开源\",\n    icon: \"🔧\",\n    pros: [],\n    cons: [],\n    useCase: \"\",\n    learnMore: \"https://github.com/1jehuang/jcode\",\n    githubStars: 0,\n    updatedAt: \"2026-05-09\",\n    forks: 0,\n    createdAt: \"\",\n    language: \"\"\n  },"
+    },
+    {
+      "name": "browserbase/skills",
+      "description": "Claude Agent SDK + 网页浏览工具，2.7K 星",
+      "url": "https://github.com/browserbase/skills",
+      "stars": 0,
+      "repo": "browserbase/skills",
+      "highlight": "",
+      "tags": [
+        "Claude",
+        "AI Agent"
+      ],
+      "category": "plugin",
+      "entryCode": "  {\n    id: \"browserbase-skills\",\n    name: \"browserbase/skills\",\n    category: \"plugin\",\n    description: \"Claude Agent SDK + 网页浏览工具，2.7K 星\",\n    url: \"https://github.com/browserbase/skills\",\n    tags: [\"Claude\", \"AI Agent\"],\n    price: \"开源\",\n    icon: \"🔧\",\n    pros: [],\n    cons: [],\n    useCase: \"\",\n    learnMore: \"https://github.com/browserbase/skills\",\n    githubStars: 0,\n    updatedAt: \"2026-05-09\",\n    forks: 0,\n    createdAt: \"\",\n    language: \"\"\n  },"
+    },
+    {
+      "name": "9router",
+      "description": "多 AI 编码工具免费路由，5.7K 星",
+      "url": "https://github.com/decolua/9router",
+      "stars": 0,
+      "repo": "decolua/9router",
+      "highlight": "",
+      "tags": [
+        "AI 工具"
+      ],
+      "category": "framework",
+      "entryCode": "  {\n    id: \"decolua-9router\",\n    name: \"9router\",\n    category: \"framework\",\n    description: \"多 AI 编码工具免费路由，5.7K 星\",\n    url: \"https://github.com/decolua/9router\",\n    tags: [\"AI 工具\"],\n    price: \"开源\",\n    icon: \"🔧\",\n    pros: [],\n    cons: [],\n    useCase: \"\",\n    learnMore: \"https://github.com/decolua/9router\",\n    githubStars: 0,\n    updatedAt: \"2026-05-09\",\n    forks: 0,\n    createdAt: \"\",\n    language: \"\"\n  },"
+    }
+  ]
+}
