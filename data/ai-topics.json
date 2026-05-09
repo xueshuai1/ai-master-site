@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-07T22:15:08.003Z",
+  "lastUpdated": "2026-05-09T16:21:48.638Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -8312,6 +8312,174 @@
       "url": "https://github.com/topics/ai-workflow",
       "minStars": 2000,
       "description": "AI 工作流"
+    },
+    {
+      "topic": "github-copilot",
+      "url": "https://github.com/topics/github-copilot",
+      "minStars": 5000,
+      "description": "（自动发现）github copilot"
+    },
+    {
+      "topic": "acp",
+      "url": "https://github.com/topics/acp",
+      "minStars": 5000,
+      "description": "（自动发现）acp"
+    },
+    {
+      "topic": "discord",
+      "url": "https://github.com/topics/discord",
+      "minStars": 5000,
+      "description": "（自动发现）discord"
+    },
+    {
+      "topic": "telegram",
+      "url": "https://github.com/topics/telegram",
+      "minStars": 5000,
+      "description": "（自动发现）telegram"
+    },
+    {
+      "topic": "unsloth",
+      "url": "https://github.com/topics/unsloth",
+      "minStars": 5000,
+      "description": "（自动发现）unsloth"
+    },
+    {
+      "topic": "gradio-interface",
+      "url": "https://github.com/topics/gradio-interface",
+      "minStars": 5000,
+      "description": "（自动发现）gradio interface"
+    },
+    {
+      "topic": "zero",
+      "url": "https://github.com/topics/zero",
+      "minStars": 5000,
+      "description": "（自动发现）zero"
+    },
+    {
+      "topic": "gep",
+      "url": "https://github.com/topics/gep",
+      "minStars": 5000,
+      "description": "（自动发现）gep"
+    },
+    {
+      "topic": "terminal",
+      "url": "https://github.com/topics/terminal",
+      "minStars": 5000,
+      "description": "（自动发现）terminal"
+    },
+    {
+      "topic": "platform",
+      "url": "https://github.com/topics/platform",
+      "minStars": 5000,
+      "description": "（自动发现）platform"
+    },
+    {
+      "topic": "comfy",
+      "url": "https://github.com/topics/comfy",
+      "minStars": 5000,
+      "description": "（自动发现）comfy"
+    },
+    {
+      "topic": "hugging-face",
+      "url": "https://github.com/topics/hugging-face",
+      "minStars": 5000,
+      "description": "（自动发现）hugging face"
+    },
+    {
+      "topic": "benchmark",
+      "url": "https://github.com/topics/benchmark",
+      "minStars": 5000,
+      "description": "（自动发现）benchmark"
+    },
+    {
+      "topic": "slack",
+      "url": "https://github.com/topics/slack",
+      "minStars": 5000,
+      "description": "（自动发现）slack"
+    },
+    {
+      "topic": "finetuning",
+      "url": "https://github.com/topics/finetuning",
+      "minStars": 5000,
+      "description": "（自动发现）finetuning"
+    },
+    {
+      "topic": "simulation",
+      "url": "https://github.com/topics/simulation",
+      "minStars": 5000,
+      "description": "（自动发现）simulation"
+    },
+    {
+      "topic": "evals",
+      "url": "https://github.com/topics/evals",
+      "minStars": 5000,
+      "description": "（自动发现）evals"
+    },
+    {
+      "topic": "integration",
+      "url": "https://github.com/topics/integration",
+      "minStars": 5000,
+      "description": "（自动发现）integration"
+    },
+    {
+      "topic": "tui",
+      "url": "https://github.com/topics/tui",
+      "minStars": 3000,
+      "description": "（自动发现）tui"
+    },
+    {
+      "topic": "js",
+      "url": "https://github.com/topics/js",
+      "minStars": 3000,
+      "description": "（自动发现）js"
+    },
+    {
+      "topic": "crawler",
+      "url": "https://github.com/topics/crawler",
+      "minStars": 3000,
+      "description": "（自动发现）crawler"
+    },
+    {
+      "topic": "scraping",
+      "url": "https://github.com/topics/scraping",
+      "minStars": 3000,
+      "description": "（自动发现）scraping"
+    },
+    {
+      "topic": "book",
+      "url": "https://github.com/topics/book",
+      "minStars": 3000,
+      "description": "（自动发现）book"
+    },
+    {
+      "topic": "tutorial",
+      "url": "https://github.com/topics/tutorial",
+      "minStars": 3000,
+      "description": "（自动发现）tutorial"
+    },
+    {
+      "topic": "ros",
+      "url": "https://github.com/topics/ros",
+      "minStars": 3000,
+      "description": "（自动发现）ros"
+    },
+    {
+      "topic": "glm",
+      "url": "https://github.com/topics/glm",
+      "minStars": 2000,
+      "description": "（自动发现）glm"
+    },
+    {
+      "topic": "copilot",
+      "url": "https://github.com/topics/copilot",
+      "minStars": 2000,
+      "description": "（自动发现）copilot"
+    },
+    {
+      "topic": "pdf",
+      "url": "https://github.com/topics/pdf",
+      "minStars": 2000,
+      "description": "（自动发现）pdf"
     }
   ]
 }

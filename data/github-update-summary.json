@@ -1,0 +1,93 @@
+{
+  "totalRepos": 257,
+  "fetchErrors": 4,
+  "starsUpdated": 208,
+  "forksUpdated": 134,
+  "languageUpdated": 0,
+  "updatedAtUpdated": 106,
+  "starsChanges": [
+    {
+      "name": "Hermes Agent",
+      "old": 140134,
+      "new": 140566,
+      "diff": 432
+    },
+    {
+      "name": "CC Switch",
+      "old": 64438,
+      "new": 64815,
+      "diff": 377
+    },
+    {
+      "name": "DeepSeek-TUI",
+      "old": 22726,
+      "new": 23083,
+      "diff": 357
+    },
+    {
+      "name": "Andrej Karpathy Skills",
+      "old": 121616,
+      "new": 121964,
+      "diff": 348
+    },
+    {
+      "name": "Agent Skills",
+      "old": 36746,
+      "new": 37083,
+      "diff": 337
+    },
+    {
+      "name": "Superpowers",
+      "old": 183876,
+      "new": 184140,
+      "diff": 264
+    },
+    {
+      "name": "ruflo",
+      "old": 47299,
+      "new": 47551,
+      "diff": 252
+    },
+    {
+      "name": "Everything Claude Code",
+      "old": 176252,
+      "new": 176479,
+      "diff": 227
+    },
+    {
+      "name": "GStack",
+      "old": 92010,
+      "new": 92209,
+      "diff": 199
+    },
+    {
+      "name": "GitHub Spec-Driven Development Kit",
+      "old": 93949,
+      "new": 94135,
+      "diff": 186
+    }
+  ],
+  "newTopics": 28,
+  "newTopicsList": [
+    "github-copilot (5000⭐)",
+    "acp (5000⭐)",
+    "discord (5000⭐)",
+    "telegram (5000⭐)",
+    "unsloth (5000⭐)",
+    "gradio-interface (5000⭐)",
+    "zero (5000⭐)",
+    "gep (5000⭐)",
+    "terminal (5000⭐)",
+    "platform (5000⭐)",
+    "comfy (5000⭐)",
+    "hugging-face (5000⭐)",
+    "benchmark (5000⭐)",
+    "slack (5000⭐)",
+    "finetuning (5000⭐)",
+    "simulation (5000⭐)",
+    "evals (5000⭐)",
+    "integration (5000⭐)",
+    "tui (3000⭐)",
+    "js (3000⭐)"
+  ]
+}
