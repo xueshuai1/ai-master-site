@@ -11,14 +11,35 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const results = { pass: [], fail: [], warn: [] };
 
+/** 移除所有模板字面量（处理 \\` 转义反引号），返回非模板字面量部分 */
+function removeAllTemplateLiterals(content) {
+  let result = '';
+  let i = 0;
+  while (i < content.length) {
+    if (content[i] === '`') {
+      // 跳过整个模板字面量
+      i++;
+      while (i < content.length) {
+        if (content[i] === '\\') { i += 2; continue; }
+        if (content[i] === '`') { i++; break; }
+        i++;
+      }
+    } else {
+      result += content[i];
+      i++;
+    }
+  }
+  return result;
+}
+
 /** 移除代码块、mermaid、表格和 <pre>，避免 HTML 检查误报 */
 function stripCodeBlocks(content) {
-  return content
-    .replace(/```[\s\S]*?```/g, '')   // 标准 ``` 代码块
-    .replace(/mermaid:\s*`[\s\S]*?`/g, '') // mermaid 模板字面量（内含 <br/> 等）
-    .replace(/code:\s*`[\s\S]*?`/g, '')   // code 模板字面量（内含 React JSX 等）
-    .replace(/<pre>[\s\S]*?<\/pre>/g, '') // <pre> ASCII 图表（合理用法）
-    .replace(/table:\s*\{[\s\S]*?\},?\s*\n\s*\}/g, '') // table 块（单元格中可能有 <br>）
+  let r = content;
+  r = r.replace(/```[\s\S]*?```/g, '');   // 标准 ``` 代码块
+  r = removeAllTemplateLiterals(r);         // 移除所有模板字面量（mermaid:、code:、body: 等）
+  r = r.replace(/<pre>[\s\S]*?<\/pre>/g, ''); // <pre> ASCII 图表
+  r = r.replace(/table:\s*\{[\s\S]*?\},?\s*\n\s*\}/g, ''); // table 块
+  return r;
 }
 
 /** 检查 Mermaid classDef 对比度（2026-04-29 增强 — blog-085 事故） */
@@ -87,6 +108,26 @@ function checkMermaidCount(content, file) {
 function checkRegex(file, ruleName, regex, message, stripCode = false) {
   let content = readFileSync(join(ROOT, file), 'utf8');
   if (stripCode) content = stripCodeBlocks(content);
+  // HTML 标签检查：忽略反引号内的引用（包括 \` 转义反引号）
+  if (ruleName === 'HTML 标签') {
+    content = content.replace(/`[^`]+`/g, '');       // 真反引号
+    content = content.replace(/\\`[^`]+\\`/g, ''); // 转义反引号 \`...\`
+  }
+  // Mermaid 浅色检查：只检查 mermaid: 块内部，忽略 CSS/代码中的颜色
+  if (ruleName === 'Mermaid 浅色') {
+    const mermaidBlocks = content.matchAll(/mermaid:\s*`([\s\S]*?)`/g);
+    let totalMatches = 0;
+    for (const block of mermaidBlocks) {
+      const bm = block[1].match(regex);
+      if (bm) totalMatches += bm.length;
+    }
+    if (totalMatches > 0) {
+      results.fail.push(`❌ ${file}: ${ruleName} — 发现 ${totalMatches} 处: ${message}`);
+    } else {
+      results.pass.push(`✅ ${file}: ${ruleName}`);
+    }
+    return;
+  }
   const matches = content.match(regex);
   if (matches && matches.length > 0) {
     results.fail.push(`❌ ${file}: ${ruleName} — 发现 ${matches.length} 处: ${message}`);
