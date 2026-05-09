@@ -17634,5 +17634,183 @@ Agent 编排、金融 AI 和编码工具链是本周最热门的三大方向。O
     source: "The Verge",
     sourceUrl: "https://www.theverge.com/tech/920123/digg-relaunch-di-gg-ai-sentiment-tracker",
     href: "/news/news-1178",
+  },
+{
+    id: "news-1179",
+    tag: "语音AI",
+    title: "OpenAI 发布三款语音 API 新模型：GPT-Realtime-2 支持 GPT-5 级推理，128K 上下文窗口",
+    summary: "OpenAI 发布 GPT-Realtime-2、GPT-Realtime-Translate 和 GPT-Realtime-Whisper 三款语音 API 模型。GPT-Realtime-2 是首款支持 GPT-5 级推理的实时语音模型，上下文窗口从 32K 扩展到 128K，支持并行工具调用、前导语和可控推理级别。Zillow 测试显示通话成功率提升 26 个百分点。",
+    content: "## OpenAI 语音 API 三重升级\n\n**2026 年 5 月 7 日**，OpenAI 发布三款音频模型。\n\n### GPT-Realtime-2：语音推理新时代\n\n- **GPT-5 级推理能力**：首款在实时语音交互中支持 GPT-5 级 reasoning 的模型\n- **上下文窗口扩展**：从 32K 提升至 128K，支持更长的 agentic 工作流\n- **并行工具调用**：可同时调用多个工具，并通过语音告知用户「正在查看日历」\n- **前导语（Preambles）**：在正式回复前说「让我查一下」，让用户知道系统在工作\n- **可调推理级别**：minimal/low/medium/high/xhigh 五档，默认 low 平衡延迟和深度\n- **更强领域理解**：保留专业术语、医疗词汇等生产级词汇表\n- **可控语气**：根据场景自动调整语气（冷静处理问题、同情安抚、欢快确认）\n\n### 实测数据\n\n| 指标 | 提升幅度 |\n|------|---------|\n| Big Bench Audio（high） | +15.2% |\n| Audio MultiChallenge（xhigh） | +13.8% |\n| Zillow 通话成功率 | +26 个百分点（69% → 95%） |\n\n### GPT-Realtime-Translate\n- 支持 70+ 输入语言 → 13 种输出语言\n- 实时翻译，保持与说话者同步\n- Deutsche Telekom 正在测试跨语言客服体验\n\n### GPT-Realtime-Whisper\n- 实时流式语音转文字\n- 低延迟，适合会议记录和实时字幕\n\n**来源：** OpenAI Blog\n**链接：** https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/",
+    date: "2026-05-10 04:00",
+    source: "OpenAI",
+    sourceUrl: "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/",
+    href: "/news/news-1179",
+  },
+{
+    id: "news-1180",
+    tag: "行业",
+    title: "OpenAI ChatGPT 广告试点扩展到英日巴韩墨五国：免费和 Go 订阅层可见，付费用户无广告",
+    summary: "OpenAI 宣布将 ChatGPT 广告试点从美国扩展到英国、墨西哥、巴西、日本和韩国。广告仅面向 Free 和 Go 订阅用户，Plus/Pro/Business 等付费层无广告。广告不影响 ChatGPT 回答的独立性， advertiser 无法获取用户聊天数据。",
+    content: "## ChatGPT 广告全球化：AI 商业化的里程碑\n\n**2026 年 5 月 7 日**，OpenAI 更新 ChatGPT 广告试点计划。\n\n### 扩展市场\n\n从美国扩展到 **英国、墨西哥、巴西、日本、韩国** 五个新市场。\n\n### 核心规则\n\n- **谁看到广告**：Free 和 Go 订阅层的登录成年用户\n- **谁看不到**：Plus、Pro、Business、Enterprise、Education 用户\n- **隐私保护**：广告商无法获取聊天内容、历史记录或个人信息\n- **回答独立性**：广告不影响 ChatGPT 的回答内容\n- **敏感话题过滤**：健康、心理、政治等话题附近不显示广告\n- **用户控制**：可一键删除广告数据、关闭个性化推荐\n\n### 早期数据\n\n- 消费者信任指标无影响\n- 广告关闭率低\n- 广告相关度随反馈持续改善\n\n### 行业意义\n\nChatGPT 作为全球最大 AI 产品之一，其广告模式将成为 AI 应用商业化的重要参考。OpenAI 的「广告+订阅」双轨模式可能成为行业标准。\n\n**来源：** OpenAI Blog\n**链接：** https://openai.com/index/testing-ads-in-chatgpt/",
+    date: "2026-05-10 04:00",
+    source: "OpenAI",
+    sourceUrl: "https://openai.com/index/testing-ads-in-chatgpt/",
+    href: "/news/news-1180",
+  },
+{
+    id: "news-1181",
+    tag: "AI Agent",
+    title: "OpenAI 发布 Codex Chrome 扩展：AI 编码助手可以直接操作用户已登录的网站和应用",
+    summary: "OpenAI 发布 Codex Chrome 扩展，让 Codex 能够在用户的浏览器中完成工作——在已登录的网站和应用中执行操作。采用任务专用标签页组模式，用户在使用其他标签页时 Codex 独立工作。这是 AI Agent 从代码生成走向自主操作的重要一步。",
+    content: "## Codex 走进浏览器：AI Agent 的下一步\n\n**2026 年 5 月 7 日**，OpenAI 在 Chrome Web Store 发布 Codex 扩展。\n\n### 核心能力\n\n- **控制已登录网站**：Codex 可以访问用户已经登录的网站和应用\n- **任务专用标签页组**：Codex 在独立标签页组中工作，不干扰用户的日常浏览\n- **自动化操作**：填写表单、提取数据、执行工作流\n\n### 行业意义\n\n这标志着 AI Agent 从「生成代码」走向「自主操作」：Codex 不仅能写代码，还能直接在浏览器中执行任务。结合 Codex 的编程能力和浏览器的操作能力，AI Agent 正在成为真正的「数字员工」。\n\n**来源：** Chrome Web Store + The Verge\n**链接：** https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg",
+    date: "2026-05-10 04:00",
+    source: "OpenAI + The Verge",
+    sourceUrl: "https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg",
+    href: "/news/news-1181",
+  },
+{
+    id: "news-1182",
+    tag: "AI Agent",
+    title: "Anthropic 开源 Anthropics/financial-services：5,848 星/周的官方金融 AI 研究框架",
+    summary: "Anthropic 官方开源金融研究项目 anthropics/financial-services 本周增长 5,848 星，总星 17,158。这是 Anthropic 在金融服务领域的官方示例项目，展示如何用 Claude 构建高级金融分析和投资研究工具。",
+    content: "## Anthropic 官方金融 AI 框架\n\n**2026 年 5 月 9 日**，anthropics/financial-services 在 GitHub Trending 周榜第六位，本周增长 5,848 星。\n\n### 项目信息\n\n- **总星数**：17,158\n- **Forks**：2,167\n- **语言**：Python\n\n### 核心能力\n\n作为 Anthropic 官方项目，展示了 Claude 在金融服务中的最佳实践：\n- 高级市场分析和投资研究\n- 经济数据交互式探索\n- 基于大语言模型的金融洞察\n\n### 行业意义\n\nAnthropic 官方下场做金融 AI 示例项目，说明金融服务是 Claude Agent 最重要的落地场景之一。与 TradingAgents 等社区项目形成互补——官方框架更注重安全和合规。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/anthropics/financial-services",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/anthropics/financial-services",
+    href: "/news/news-1182",
+  },
+{
+    id: "news-1183",
+    tag: "AI Agent",
+    title: "Dexter：25K stars 的自主深度金融研究 Agent，替代人类分析师的 AI 尝试",
+    summary: "virattt/dexter 本周增长 3,278 星，总星 25,012。这是一个自主深度金融研究的 AI Agent，能够独立完成复杂的金融研究任务——从数据收集、分析到生成报告，目标是部分替代人类金融分析师的工作。TypeScript 实现，3,045 forks。",
+    content: "## Dexter：AI 金融分析师\n\n**2026 年 5 月 9 日**，virattt/dexter 在 GitHub Trending 持续增长，总星 25,012。\n\n### 核心能力\n\n- **自主研究**：Agent 独立完成从数据收集到报告生成的全流程\n- **深度分析**：超越简单数据汇总，提供深度金融洞察\n- **TypeScript 实现**：3,045 forks\n\n### 行业意义\n\n与 TradingAgents（多 Agent 交易框架）和 Anthropic 金融框架一起，Dexter 代表了 AI 进入金融研究领域的三个不同路径：多 Agent 协作交易、官方合规框架和自主深度研究。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/virattt/dexter",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/virattt/dexter",
+    href: "/news/news-1183",
+  },
+{
+    id: "news-1184",
+    tag: "开源项目",
+    title: "cocoindex 周增 1,909 星：面向长周期 Agent 的增量计算引擎",
+    summary: "cocoindex-io/cocoindex 本周增长 1,909 星，总星 9,309。这是一个面向长周期自主 Agent 的增量计算引擎——当 Agent 需要长时间运行复杂任务时，cocoindex 提供状态管理和增量计算支持，避免 Agent 因上下文丢失而中断。Python 实现。",
+    content: "## cocoindex：长周期 Agent 的基础设施\n\n**2026 年 5 月 9 日**，cocoindex-io/cocoindex 在 GitHub Trending 周榜上榜。\n\n### 核心能力\n\n- **增量引擎**：支持长周期 Agent 的状态管理和增量计算\n- **持续运行**：Agent 可以在任务中断后恢复，不丢失上下文\n- **Python 实现**：9,309 stars\n\n### 行业信号\n
+
+随着 AI Agent 从「单次交互」走向「长期自主运行」，增量计算和状态管理成为关键基础设施。cocoindex 填补了这一空白。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/cocoindex-io/cocoindex",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/cocoindex-io/cocoindex",
+    href: "/news/news-1184",
+  },
+{
+    id: "news-1185",
+    tag: "AI 工具",
+    title: "jcode：Coding Agent 编排框架，Rust 实现的 AI 编码 Agent 调度中心",
+    summary: "1jehuang/jcode 本周增长 2,925 星，总星 5,300。这是一个 Coding Agent 编排框架（Coding Agent Harness），用 Rust 实现，支持连接多个 AI 编码 Agent（Claude Code、Codex、Cursor 等）并协调它们的任务分配和输出整合。",
+    content: "## jcode：AI 编码 Agent 的调度中心\n\n**2026 年 5 月 9 日**，1jehuang/jcode 本周增长 2,925 星。\n\n### 核心能力\n\n- **多 Agent 编排**：连接 Claude Code、Codex、Cursor、Cline、Copilot 等多个 AI 编码工具\n- **Rust 实现**：高性能，5,300 stars\n- **任务协调**：自动分配任务给最合适的 Agent，整合输出\n\n### 行业信号\n
+
+与 Symphony、ruflo 一起，jcode 代表了 AI 编码从「单 Agent」走向「多 Agent 协作」的趋势。开发者不再只依赖一个编码助手，而是让多个 Agent 分工合作。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/1jehuang/jcode",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/1jehuang/jcode",
+    href: "/news/news-1185",
+  },
+{
+    id: "news-1186",
+    tag: "AI 工具",
+    title: "9router：连接 40+ AI 提供商的免费编码路由器，自动切换永不超限",
+    summary: "decolua/9router 本周增长 1,781 星，总星 6,394。这是一个 AI 编码路由器，可以连接 Claude Code、Codex、Cursor、Cline、Copilot、Antigravity 到 40+ 免费 AI 提供商（Claude/GPT/Gemini）。自动降级切换，RTK 节省 40% tokens，永远不会碰到使用限制。",
+    content: "## 9router：永不超限的 AI 编码路由器\n\n**2026 年 5 月 9 日**，decolua/9router 本周增长 1,781 星。\n\n### 核心能力\n\n- **40+ 提供商**：支持 Claude、GPT、Gemini 等 40 多个免费 AI 服务\n- **自动降级**：一个服务超限时自动切换到备用\n- **RTK 优化**：节省约 40% token 消耗\n- **多工具兼容**：Claude Code、Codex、Cursor、Cline、Copilot 等\n\n### 行业信号\n
+
+反映了开发者对「免费/低成本 AI 编码」的强烈需求。40+ 提供商的整合说明 AI 编码工具的碎片化程度正在加剧，路由方案应运而生。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/decolua/9router",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/decolua/9router",
+    href: "/news/news-1186",
+  },
+{
+    id: "news-1187",
+    tag: "开源项目",
+    title: "InsForge：开源全栈后端平台，专为 Agentic Coding 打造",
+    summary: "InsForge/InsForge 本周增长 1,201 星，总星 9,218。这是一个开源全栈后端平台，专为 agentic coding 设计——给 AI 编码 Agent 提供数据库、认证、存储、计算、托管和 AI 网关，让 Agent 能端到端地构建完整应用。TypeScript 实现。",
+    content: "## InsForge：AI Agent 的后端即服务\n\n**2026 年 5 月 9 日**，InsForge/InsForge 在 GitHub Trending 周榜上榜。\n\n### 核心能力\n\n- **数据库**：为 Agent 提供即时数据库\n- **认证**：内置用户认证\n- **存储**：文件存储和管理\n- **计算**：后端计算能力\n- **AI 网关**：AI 请求路由和速率管理\n- **TypeScript 实现**：9,218 stars\n\n### 行业信号\n
+
+Agentic Coding 正在催生全新的基础设施层。InsForge 让 AI 编码 Agent 能「一键获得」完整后端能力，不再需要开发者先搭建后端框架再让 Agent 填充代码。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/InsForge/InsForge",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/InsForge/InsForge",
+    href: "/news/news-1187",
+  },
+{
+    id: "news-1188",
+    tag: "AI 应用",
+    title: "ace-step-ui：开源 Suno 替代方案，免费无限制的本地 AI 音乐生成 UI",
+    summary: "fspecii/ace-step-ui 本周增长 1,122 星，总星 3,501。这是一个基于 ACE-Step 1.5 AI 音乐生成模型的专业 UI 界面，提供免费、本地、无限制的音乐生成能力，是 Suno AI 的开源替代方案。",
+    content: "## ace-step-ui：免费 AI 音乐生成\n\n**2026 年 5 月 9 日**，fspecii/ace-step-ui 本周增长 1,122 星。\n\n### 核心能力\n\n- **ACE-Step 1.5**：基于开源 AI 音乐生成模型\n- **完全免费**：本地运行，无限制\n- **专业 UI**：友好的操作界面\n\n### 行业信号\n
+
+与 ComfyUI（AI 图像生成）类似，ACE-Step UI 的兴起说明用户正在从闭源付费 AI 创作工具转向开源本地方案。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/fspecii/ace-step-ui",
+    date: "2026-05-10 04:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/fspecii/ace-step-ui",
+    href: "/news/news-1188",
+  },
+{
+    id: "news-1189",
+    tag: "行业",
+    title: "Meta 员工苦不堪言：追踪电脑活动 + 裁员 10% + AI Agent 泛滥成灾",
+    summary: "据纽约时报报道，Meta 员工在 AI 转型中苦不堪言——公司追踪员工电脑活动以训练 AI 模型、计划裁减 10% 员工、强制推行 AI Agent 导致内部出现「用 Agent 找 Agent、用 Agent 评价 Agent」的荒诞局面。部分员工已不再将 Meta 视为长期职业。",
+    content: "## Meta 的 AI 转型阵痛\n\n**2026 年 5 月 8 日**，纽约时报报道 Meta 员工的 AI 转型困境。\n\n### 三重压力\n\n1. **追踪电脑活动**：Meta 开始追踪员工的电脑活动，用于训练 AI 模型\n2. **裁员 10%**：计划在本月裁减 10% 的员工\n3. **Agent 泛滥**：强制推行 AI Agent，导致「员工不得不引入 Agent 来找到其他 Agent，再用 Agent 评价 Agent」\n\n### 员工反应\n\n- 部分员工不再将 Meta 视为长期职业选择\n- 一些员工在寻找新工作或试图被裁员以获得遣散费\n- 内部「愤怒和焦虑」蔓延\n\n### 行业启示\n
+
+Meta 的困境揭示了大科技公司 AI 转型中的人性问题——当 AI 替代人类工作的速度超过了组织重新定位的速度，员工的抵触是不可避免的。\n\n**来源：** 纽约时报 + The Verge + 凤凰网\n**链接：** https://www.nytimes.com/2026/05/08/technology/meta-ai-employees-miserable.html",
+    date: "2026-05-10 04:00",
+    source: "纽约时报 + The Verge + 凤凰网",
+    sourceUrl: "https://tech.ifeng.com/c/8szYA2KxjMW",
+    href: "/news/news-1189",
+  },
+{
+    id: "news-1190",
+    tag: "行业",
+    title: "马斯克痛失华人 AI 大将：多位 xAI 核心成员同日离职，Colossus 合作或受影响",
+    summary: "据凤凰网科技报道，xAI 多位核心成员同日离职，其中包括重要的华人 AI 研究员。这一人事动荡发生在 Anthropic-xAI Colossus 数据中心合作的背景下，可能影响 xAI 的技术路线和 Colossus 产能分配。马斯克此前表示保留在 Anthropic AI「伤害人类」时收回算力的权利。",
+    content: "## xAI 人才流失：内部动荡\n\n**2026 年 5 月 9 日**，xAI 多位核心成员同日离职。\n\n### 事件背景\n\n- **多位核心成员**：同时离职，非正常流动\n- **华人 AI 大将**：其中包括重要的华人研究员\n- **敏感时期**：正值 Anthropic-xAI Colossus 合作刚宣布\n\n### 潜在影响\n
+
+xAI 人才流失可能影响：\n1. Colossus 数据中心的运营和维护\n2. Grok 模型的研发进度\n3. 与 Anthropic 合作中的技术交接\n\n结合 Simon Willison 此前的分析——Elon 单方面保留「收回算力」权利——xAI 内部人才流失进一步增加了 Anthropic 算力供应的不确定性。\n\n**来源：** 凤凰网科技\n**链接：** https://tech.ifeng.com/c/8szYA2KxjMW",
+    date: "2026-05-10 04:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8szYA2KxjMW",
+    href: "/news/news-1190",
+  },
+{
+    id: "news-1191",
+    tag: "AI 应用",
+    title: "Amazon Rufus 新实验：AI 对话与搜索栏合二为一，重塑电商商品发现机制",
+    summary: "亚马逊正在测试 Rufus AI 购物助手的新功能——将 AI 对话与搜索栏融合。用户不再输入关键词搜索，而是用自然语言描述需求，Rufus 理解后直接推荐商品。这一实验如果成功，将彻底改变电商平台的商品发现机制，从「搜索→浏览」转向「对话→推荐」。",
+    content: "## Amazon Rufus：AI 对话式购物\n\n**2026 年 5 月 9 日**，亚马逊正在测试 Rufus 的新功能。\n\n### 核心理念\n
+
+**AI 对话将与搜索栏「合二为一」**——用户不再输入关键词搜索，而是用自然语言描述需求：\n- 「我想找一双适合徒步旅行的防水登山鞋，预算 200 美元以内」\n- Rufus 理解需求后直接推荐，而非返回搜索结果列表\n\n### 潜在影响\n
+
+如果成功，这将是电商搜索的根本性变革：\n- **从「搜索」到「对话」**：用户不再需要精确的搜索关键词\n- **从「浏览」到「推荐」**：AI 理解意图后直接推荐\n- **从「用户找商品」到「商品找用户」**\n\n**来源：** 新浪科技\n**链接：** https://finance.sina.com.cn/tech/roll/2026-05-09/doc-inhxfxrp1674943.shtml",
+    date: "2026-05-10 04:00",
+    source: "新浪科技",
+    sourceUrl: "https://finance.sina.com.cn/tech/roll/2026-05-09/doc-inhxfxrp1674943.shtml",
+    href: "/news/news-1191",
+  },
+{
+    id: "news-1192",
+    tag: "行业",
+    title: "Claude Code 之父：「我们公司已没有真人写代码了」——AI 编码全面替代的里程碑",
+    summary: "据凤凰网科技报道，Claude Code 的核心开发者公开表示公司已没有真人写代码，全部由 AI 编码工具完成。这是 AI 编码工具从「辅助」走向「完全替代」的标志性声明，引发关于 AI 编码能力边界的广泛讨论。",
+    content: "## 「没有真人写代码了」：AI 编码的里程碑\n\n**2026 年 5 月 9 日**，Claude Code 核心开发者做出惊人表态。\n\n### 核心声明\n
+
+**公司已没有真人写代码**——所有代码生成和修改工作都由 AI 编码工具完成。\n\n### 行业影响\n
+
+这是 AI 编码工具从「辅助开发者」走向「替代开发者」的关键信号。Claude Code 作为 Anthropic 的旗舰编码产品，其团队的真实体验具有极高的参考价值。\n
+
+结合本轮收集到的其他信号——\n- OpenAI Symphony 让团队「管理工作」而非「监督 Agent」\n- mattpocock/skills 让 AI 直接继承工程师经验\n- jcode 编排多个编码 Agent 协同工作\n\nAI 编码正在从「工具」进化为「同事」。\n\n**来源：** 凤凰网科技\n**链接：** https://tech.ifeng.com/c/8szfAFd8qcd",
+    date: "2026-05-10 04:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8szfAFd8qcd",
+    href: "/news/news-1192",
   }
 ];

@@ -8480,6 +8480,61 @@
       "url": "https://github.com/topics/pdf",
       "minStars": 2000,
       "description": "（自动发现）pdf"
+    },
+    {
+      "topic": "financial-services",
+      "url": "https://github.com/topics/financial-services",
+      "minStars": 2000,
+      "description": "（本轮发现）AI 金融服务"
+    },
+    {
+      "topic": "agent-orchestration",
+      "url": "https://github.com/topics/agent-orchestration",
+      "minStars": 2000,
+      "description": "（本轮发现）Agent 编排"
+    },
+    {
+      "topic": "financial-research",
+      "url": "https://github.com/topics/financial-research",
+      "minStars": 2000,
+      "description": "（本轮发现）金融研究 AI"
+    },
+    {
+      "topic": "incremental-computation",
+      "url": "https://github.com/topics/incremental-computation",
+      "minStars": 2000,
+      "description": "（本轮发现）增量计算/长周期 Agent"
+    },
+    {
+      "topic": "video-generation",
+      "url": "https://github.com/topics/video-generation",
+      "minStars": 2000,
+      "description": "（本轮发现）AI 视频生成"
+    },
+    {
+      "topic": "music-generation",
+      "url": "https://github.com/topics/music-generation",
+      "minStars": 2000,
+      "description": "（本轮发现）AI 音乐生成"
+    },
+    {
+      "topic": "agentic-coding",
+      "url": "https://github.com/topics/agentic-coding",
+      "minStars": 2000,
+      "description": "（本轮发现）Agentic 编码"
+    },
+    {
+      "topic": "web-browsing",
+      "url": "https://github.com/topics/web-browsing",
+      "minStars": 2000,
+      "description": "（本轮发现）AI 网页浏览"
+    },
+    {
+      "topic": "agent-sdk",
+      "url": "https://github.com/topics/agent-sdk",
+      "minStars": 2000,
+      "description": "（本轮发现）Agent SDK"
     }
-  ]
+  ],
+  "lastUpdated": "2026-05-09T20:00:00.000Z"
 }
