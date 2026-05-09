@@ -1,25 +1,32 @@
-⏰ 写入时间：2026-05-09 16:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-09 20:00 (Asia/Shanghai)
+
 ## 本轮发现
-🔥 热点（13 条，已选 13 条写入 news.ts）：
-1. [Claude Code HTML 输出] Anthropic 工程师论证 HTML 相比 Markdown 的「不合理有效性」→ 适合：博客/知识库
-2. [WebRTC 音频降级] 低延迟语音 AI 的 Web 基础设施矛盾 → 适合：技术博客
-3. [小红书 AI 一级部门 Dots] 从克制到激进的 180 度转向 → 适合：行业分析博客
-4. [Airbnb AI 编写 60% 新代码] AI 辅助编程进入大规模生产应用 → 适合：博客/知识库
-5. [Chrome 强制安装 4GB AI 模型] 用户无法选择或卸载，HN 1700+ 热度 → 适合：隐私/行业博客
-6. [Plaud 估值 20 亿美元] 腾讯投资 AI 录音硬件出海 → 适合：融资追踪
-7. [奥斯卡 AI 红线] AI 生成演员和剧本不得参评 → 适合：政策/版权博客
-8. [IBM Granite 4.1 开源] 3B/8B/30B 三档 Apache 2.0 许可 → 适合：开源追踪
-9. [Claude 心理操控攻击] gaslighting 绕过安全护栏输出危险品指导 → 适合：AI 安全博客
-10. [Thiel 海上浮动数据中心] 1.4 亿美元融资解决 AI 能源问题 → 适合：基础设施博客
-11. [DeepMind 员工工会] 军事 AI 合同引发伦理觉醒 → 适合：AI 伦理博客
-12. [OpenAI IPO 收缩战线] 搁置硬件和机器人业务分拆 → 适合：行业分析
-13. [GitHub 周榜] Agent 编排与金融 Agent 赛道爆发 → 适合：开源项目追踪
 
-🆕 新工具（2 个）：
-1. [Panthalassa] 海上浮动数据中心公司，Peter Thiel 领投 1.4 亿美元
-2. [Mindgard gaslighting attack] 安全研究工具，通过心理操控测试 LLM 安全护栏
+🔥 热点（13 条，已选 13 条写入 news.ts news-1154~news-1166）：
+1. [OpenAI 解除微软独家授权] GPT 系列正式向所有云厂商开放 → 适合：博客/知识库
+2. [谷歌 400 亿美元加注 Anthropic] 3800 亿美元估值入股，Claude 成 TPU 最大买家 → 适合：博客
+3. [DeepSeek 首轮融资 500 亿] 国家大基金领投，V4.1 下月见 → 适合：知识库
+4. [Meta 全员监控训练 AI] 数千员工联名抗议 → 适合：博客
+5. [苹果 iOS 27 开放第三方 AI 模型] Claude/Gemini/DeepSeek 首批支持 → 适合：知识库
+6. [ChatGPT 广告主平台上线] 6 周 1 亿美元年化收入 → 适合：博客
+7. [四部门发文 AI+能源双向赋能] 29 项重点任务，2030 年世界领先 → 适合：知识库
+8. [AI 终端迎国标 7 品类分级] L1-L4 衔接以旧换新 → 适合：博客
+9. [百度文心大模型 5.1] 搜索国内首位，预训练成本仅业界 6% → 适合：博客
+10. [苹果×英特尔芯片代工] 英特尔股价暴涨 14% → 适合：博客
+11. [IMF 警告 AI 加剧金融网络风险] 网络攻击演变为"关联性故障" → 适合：知识库
+12. [美光市值破 8400 亿] 内存芯片超级周期 → 适合：博客
+13. [《时代》全球十大 AI 公司] 字节/智谱/阿里入选 → 适合：博客
 
-💡 知识缺口（3 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI 编码输出格式演进（Markdown → HTML → 富媒体）
-2. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 安全护栏新攻击面（心理操控/越狱/gaslighting）
-3. KNOWLEDGE-BASE-PLAN.md 待补：AI 基础设施能源方案对比（太空/海上/陆地数据中心）
+🆕 新工具（0 个）：
+- 本轮未收录新开源工具（GitHub Trending 项目已在上轮收录）
+
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：OpenAI-微软关系解体的深层影响（反垄断/云计算格局/多模型共存）
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI+能源双向赋能的政策解读与技术路径
+3. KNOWLEDGE-BASE-PLAN.md 待补：AI 终端国标 L1-L4 分级的产业影响
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络攻击加速（4 月翻倍）的防御策略
+
+## 上轮建议执行情况
+- ✅ 上轮建议"AI Agent 企业治理" → 已由 PM 阶段处理（security-audit-002）
+- ✅ 上轮建议"Mozilla Claude Mythos 修复 Firefox 271 漏洞" → 已由 PM 阶段处理（blog-139）
+- 🔄 "豆包分层付费 + 美图涨 25%" → 已在 earlier news.ts 中收录，本轮不再重复
