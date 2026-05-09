@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { blogs } from "@/data/blogs";
 import BlogDetailContent from "@/components/BlogDetailContent";
 
+// Only allow routes that exist in the blogs data; unknown slugs → 404
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return blogs.map((blog) => ({ id: blog.id }));
 }
@@ -10,7 +13,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { id: string } }): Metadata {
   const post = blogs.find((b) => b.id === params.id);
   if (!post) {
-    return { title: "博客 - AI Master" };
+    return { title: "页面未找到 - AI Master", robots: "noindex" };
   }
   return {
     title: `${post.title}`,
