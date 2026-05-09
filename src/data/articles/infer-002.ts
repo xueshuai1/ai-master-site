@@ -834,14 +834,12 @@ class SpeculativeMonitoring:
 | 多草稿并行 | 4.0-5.0x | 原型 | 2026 Q4 |
 | 硬件协同优化 | 2.0-3.0x + 软件加速 | 预研 | 2027 H1 |`,
       mermaid: `graph TD
-    title 推测解码技术演进路线
-    2023 Q1 : SpecInfer<br/>n-gram 草稿
-    2023 Q4 : Speculative Sampling<br/>基础框架
-    2024 Q2 : Medusa<br/>多解码头
-    2024 Q4 : Eagle<br/>特征层草稿
-    2025 Q2 : Lookahead<br/>并行多路径
-    2026 Q1 : DFlash<br/>Block Diffusion
-    2026 Q4 : ? 多草稿并行`,
+    A[2023 Q1: SpecInfer] --> B[2023 Q4: Speculative Sampling]
+    B --> C[2024 Q2: Medusa]
+    C --> D[2024 Q4: Eagle]
+    D --> E[2025 Q2: Lookahead]
+    E --> F[2026 Q1: DFlash]
+    F --> G[2026 Q4: 多草稿并行?]`,
     },
     {
       title: "9. 总结与实践建议",
