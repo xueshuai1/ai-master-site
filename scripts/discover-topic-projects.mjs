@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * 按 GitHub Topics 发现优秀 AI 项目
+ * 按 GitHub Topics + 关键词 + 知名账号 发现优秀 AI 项目
  * 
  * 策略：
- * 1. 读取 data/ai-topics.json 中的 topics 列表
- * 2. 对每个 topic，用 GitHub API 搜索 stars > minStars 的项目
- * 3. 对比 src/data/tools.ts 已有项目，发现遗漏
- * 4. 输出遗漏项目列表，按 stars 排序
+ * 1. 读取 data/ai-topics.json 中的 topics 列表，按 topic 搜索高星项目
+ * 2. 关键词兜底搜索：用 "ai coding" "claude code" "ai agent tool" 等关键词搜索（覆盖无 topics 的项目）
+ * 3. 知名开发者/机构账号监控：扫描 garrytan, simonw, anthropic, etc. 的新项目
+ * 4. 对比 src/data/tools.ts 已有项目，发现遗漏
+ * 5. 输出遗漏项目列表，按 stars 排序
  * 
  * 运行：node scripts/discover-topic-projects.mjs
  */
@@ -103,7 +104,7 @@ function searchGitHub(query, minStars, perPage = 30) {
 }
 
 async function main() {
-  console.error('🔍 开始按 Topics 发现优秀 AI 项目...\n');
+  console.error('🔍 开始发现优秀 AI 项目...\n');
   
   // 读取 topics 库
   const topicsData = JSON.parse(fs.readFileSync(TOPICS_FILE, 'utf8'));
@@ -117,6 +118,11 @@ async function main() {
   const missingProjects = [];
   const topicStats = [];
   let rateLimited = false;
+  
+  // ══════════════════════════════════════════════
+  // 渠道 1：按 Topics 搜索
+  // ══════════════════════════════════════════════
+  console.error(`━━━ 渠道 1：Topics 搜索 (${topics.length} 个 topics) ━━━\n`);
   
   for (let i = 0; i < topics.length; i++) {
     if (rateLimited) {
@@ -140,7 +146,8 @@ async function main() {
           missingProjects.push({
             ...item,
             topic: topic.topic,
-            topicDescription: topic.description
+            topicDescription: topic.description,
+            channel: 'topic'
           });
           foundMissing++;
         }
@@ -156,13 +163,132 @@ async function main() {
     } else {
       console.error(`   ❌ ${result.error}`);
       if (result.error === 'rate_limited') {
-        rateLimited = true;
+        rateLimited = false; // don't break, try other channels
       }
     }
     
-    if (i < topics.length - 1 && !rateLimited) {
+    if (i < topics.length - 1) {
       await new Promise(r => setTimeout(r, REQUEST_DELAY));
     }
+  }
+  
+  // ══════════════════════════════════════════════
+  // 渠道 2：关键词兜底搜索（覆盖无 topics 的项目）
+  // ══════════════════════════════════════════════
+  console.error(`\n━━━ 渠道 2：关键词兜底搜索 ━━━\n`);
+  
+  const keywordQueries = [
+    { query: '"ai coding"', minStars: 5000, description: 'AI 编程' },
+    { query: '"claude code"', minStars: 3000, description: 'Claude Code' },
+    { query: '"ai agent tool"', minStars: 3000, description: 'AI Agent 工具' },
+    { query: '"ai developer tool"', minStars: 5000, description: 'AI 开发者工具' },
+    { query: '"llm tool"', minStars: 5000, description: 'LLM 工具' },
+    { query: '"slash command"', minStars: 1000, description: 'Slash 命令扩展' },
+    { query: '"code review" ai', minStars: 5000, description: 'AI 代码审查' },
+    { query: 'ai workflow automation', minStars: 5000, description: 'AI 工作流自动化' },
+  ];
+  
+  for (const kw of keywordQueries) {
+    console.error(`🔎 "${kw.query}" (minStars: ${kw.minStars.toLocaleString()})`);
+    
+    const result = await searchGitHub(kw.query, kw.minStars, 20);
+    
+    if (result.success) {
+      console.error(`   ✅ 找到 ${result.totalCount} 个项目，扫描前 20 个`);
+      
+      let foundMissing = 0;
+      for (const item of result.items) {
+        if (!existingRepos.has(item.fullName)) {
+          const alreadyFound = missingProjects.some(p => p.fullName === item.fullName);
+          if (!alreadyFound) {
+            missingProjects.push({
+              ...item,
+              topic: kw.query,
+              topicDescription: kw.description,
+              channel: 'keyword'
+            });
+            foundMissing++;
+          }
+        }
+      }
+      console.error(`   🆕 遗漏项目：${foundMissing} 个`);
+      
+      topicStats.push({
+        topic: `keyword:${kw.query}`,
+        total: result.totalCount,
+        scanned: result.items.length,
+        missing: foundMissing
+      });
+    } else {
+      console.error(`   ❌ ${result.error}`);
+    }
+    
+    await new Promise(r => setTimeout(r, REQUEST_DELAY));
+  }
+  
+  // ══════════════════════════════════════════════
+  // 渠道 3：知名开发者/机构账号监控
+  // ══════════════════════════════════════════════
+  console.error(`\n━━━ 渠道 3：知名账号扫描 ━━━\n`);
+  
+  const notableAccounts = [
+    { user: 'garrytan', desc: 'YC CEO' },
+    { user: 'anthropics', desc: 'Anthropic 官方' },
+    { user: 'openai', desc: 'OpenAI 官方' },
+    { user: 'google-deepmind', desc: 'Google DeepMind' },
+    { user: 'simonw', desc: 'Simon Willison' },
+    { user: 'karpathy', desc: 'Andrej Karpathy' },
+    { user: 'langchain-ai', desc: 'LangChain 官方' },
+    { user: 'composable-models', desc: 'Composable' },
+    { user: 'run-llama', desc: 'LlamaIndex' },
+    { user: 'huggingface', desc: 'HuggingFace 官方' },
+    { user: 'microsoft', desc: 'Microsoft AI' },
+  ];
+  
+  for (const account of notableAccounts) {
+    console.error(`🔎 @${account.user} (${account.desc})`);
+    
+    const result = await searchGitHub(`user:${account.user}`, 1000, 30);
+    
+    if (result.success) {
+      console.error(`   ✅ 找到 ${result.totalCount} 个项目`);
+      
+      let foundMissing = 0;
+      for (const item of result.items) {
+        // 只看 AI 相关项目（描述或名字包含关键词）
+        const aiKeywords = ['ai', 'llm', 'agent', 'claude', 'gpt', 'model', 'ml', 'nlp', 'chat', 'bot', 'skill', 'skillz'];
+        const isAiRelated = aiKeywords.some(kw =>
+          (item.description || '').toLowerCase().includes(kw) ||
+          item.name.toLowerCase().includes(kw) ||
+          (item.topics || []).some(t => t.includes(kw))
+        );
+        
+        if (isAiRelated && !existingRepos.has(item.fullName)) {
+          const alreadyFound = missingProjects.some(p => p.fullName === item.fullName);
+          if (!alreadyFound) {
+            missingProjects.push({
+              ...item,
+              topic: `user:${account.user}`,
+              topicDescription: `${account.desc} 的项目`,
+              channel: 'notable-account'
+            });
+            foundMissing++;
+          }
+        }
+      }
+      console.error(`   🆕 AI 相关遗漏项目：${foundMissing} 个`);
+      
+      topicStats.push({
+        topic: `user:${account.user}`,
+        total: result.totalCount,
+        scanned: result.items.length,
+        missing: foundMissing
+      });
+    } else {
+      console.error(`   ❌ ${result.error}`);
+    }
+    
+    await new Promise(r => setTimeout(r, REQUEST_DELAY));
   }
   
   // 去重（同一个项目可能出现在多个 topic）

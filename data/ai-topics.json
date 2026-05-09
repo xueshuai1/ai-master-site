@@ -8294,6 +8294,24 @@
       "url": "https://github.com/topics/sdk",
       "minStars": 5000,
       "description": "（自动发现）sdk"
+    },
+    {
+      "topic": "code-review",
+      "url": "https://github.com/topics/code-review",
+      "minStars": 2000,
+      "description": "代码审查工具"
+    },
+    {
+      "topic": "slash-commands",
+      "url": "https://github.com/topics/slash-commands",
+      "minStars": 500,
+      "description": "Slash 命令/扩展"
+    },
+    {
+      "topic": "ai-workflow",
+      "url": "https://github.com/topics/ai-workflow",
+      "minStars": 2000,
+      "description": "AI 工作流"
     }
   ]
 }
