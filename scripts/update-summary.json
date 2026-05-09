@@ -1,74 +1,43 @@
 {
-  "reposScanned": 181,
-  "reposFetched": 178,
-  "starsUpdated": 167,
-  "forksUpdated": 131,
+  "reposScanned": 239,
+  "starsUpdated": 193,
+  "forksUpdated": 140,
   "languageUpdated": 0,
-  "topicsCollected": 882,
-  "newTopicsCount": 0,
-  "toolsModified": true,
-  "starChanges": [
+  "starsChanges": [
+    {
+      "repo": "nousresearch/hermes-agent",
+      "old": 140566,
+      "new": 140884,
+      "diff": 318
+    },
     {
       "repo": "forrestchang/andrej-karpathy-skills",
-      "old": 112555,
-      "new": 113319,
-      "delta": 764
-    },
-    {
-      "repo": "TauricResearch/TradingAgents",
-      "old": 68481,
-      "new": 68949,
-      "delta": 468
-    },
-    {
-      "repo": "NousResearch/hermes-agent",
-      "old": 133332,
-      "new": 133799,
-      "delta": 467
-    },
-    {
-      "repo": "obra/superpowers",
-      "old": 178718,
-      "new": 179084,
-      "delta": 366
-    },
-    {
-      "repo": "farion1231/cc-switch",
-      "old": 59443,
-      "new": 59709,
-      "delta": 266
+      "old": 121964,
+      "new": 122223,
+      "diff": 259
     },
     {
       "repo": "addyosmani/agent-skills",
-      "old": 28319,
-      "new": 28578,
-      "delta": 259
-    },
-    {
-      "repo": "juliusbrussee/caveman",
-      "old": 54050,
-      "new": 54304,
-      "delta": 254
+      "old": 37083,
+      "new": 37321,
+      "diff": 238
     },
     {
       "repo": "affaan-m/everything-claude-code",
-      "old": 173555,
-      "new": 173746,
-      "delta": 191
+      "old": 176479,
+      "new": 176711,
+      "diff": 232
     },
     {
-      "repo": "mksglu/context-mode",
-      "old": 12668,
-      "new": 12834,
-      "delta": 166
-    },
-    {
-      "repo": "thedotmack/claude-mem",
-      "old": 72199,
-      "new": 72352,
-      "delta": 153
+      "repo": "ruvnet/ruflo",
+      "old": 47551,
+      "new": 47744,
+      "diff": 193
     }
   ],
+  "oldestRepo": "rwaldron/johnny-five",
+  "oldestDays": 928,
+  "newTopicsCount": 0,
   "newTopics": [],
-  "lastUpdated": "2026-05-05T16:20:16.226Z"
+  "totalTopics": 1422
 }
