@@ -1,32 +1,38 @@
-⏰ 写入时间：2026-05-09 20:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-10 00:00 (Asia/Shanghai)
 
-## 本轮发现
+# 本轮发现
 
-🔥 热点（13 条，已选 13 条写入 news.ts news-1154~news-1166）：
-1. [OpenAI 解除微软独家授权] GPT 系列正式向所有云厂商开放 → 适合：博客/知识库
-2. [谷歌 400 亿美元加注 Anthropic] 3800 亿美元估值入股，Claude 成 TPU 最大买家 → 适合：博客
-3. [DeepSeek 首轮融资 500 亿] 国家大基金领投，V4.1 下月见 → 适合：知识库
-4. [Meta 全员监控训练 AI] 数千员工联名抗议 → 适合：博客
-5. [苹果 iOS 27 开放第三方 AI 模型] Claude/Gemini/DeepSeek 首批支持 → 适合：知识库
-6. [ChatGPT 广告主平台上线] 6 周 1 亿美元年化收入 → 适合：博客
-7. [四部门发文 AI+能源双向赋能] 29 项重点任务，2030 年世界领先 → 适合：知识库
-8. [AI 终端迎国标 7 品类分级] L1-L4 衔接以旧换新 → 适合：博客
-9. [百度文心大模型 5.1] 搜索国内首位，预训练成本仅业界 6% → 适合：博客
-10. [苹果×英特尔芯片代工] 英特尔股价暴涨 14% → 适合：博客
-11. [IMF 警告 AI 加剧金融网络风险] 网络攻击演变为"关联性故障" → 适合：知识库
-12. [美光市值破 8400 亿] 内存芯片超级周期 → 适合：博客
-13. [《时代》全球十大 AI 公司] 字节/智谱/阿里入选 → 适合：博客
+## 🔥 热点（12 条，已选 12 条写入 news.ts news-1167~1178）：
 
-🆕 新工具（0 个）：
-- 本轮未收录新开源工具（GitHub Trending 项目已在上轮收录）
+1. [Anthropic × xAI Colossus 合作] Anthropic 获得 Colossus 1 全部算力，Elon 保留「收回权」 → 适合：博客（供应链风险分析）+ 知识库（AI 算力竞争格局）
+2. [Mozilla 423 个 Firefox 漏洞] Claude Mythos Preview 将 Firefox 月修复漏洞从 20-30 个提升到 423 个 → 适合：博客（AI 安全审计范式转变）
+3. [Cloudflare 裁员 1100 人] AI 使用量增长 600% 却裁员，定义 agentic AI 时代运营方式 → 适合：博客（AI 对就业的冲击）
+4. [Meta Hatch AI Agent] Instagram AI 自动购物，AI 从顾问到交易代理人 → 适合：知识库（AI Agent 电商应用）
+5. [DeepSeek 500 亿融资] 梁文锋自掏 200 亿，V4.1 6 月发布多模态 → 适合：博客（中国 AI 融资全景）
+6. [TradingAgents 72K stars] 多 Agent LLM 金融交易框架，周增 12,981 星 → 适合：知识库（AI 金融应用）
+7. [mattpocock/skills 67K stars] 真实工程师 .claude 技能库，周增 14,928 星 → 适合：博客（AI 编码最佳实践）
+8. [OpenAI Symphony 22K stars] 自主编码编排框架，管理工作而非监督 Agent → 适合：知识库（Agent 编排标准）
+9. [HTML 输出范式转变] Simon Willison 解读 HTML 作为 AI 输出的「不合理有效性」 → 适合：博客（AI 辅助工作输出格式进化）← 上轮建议已列
+10. [ruflo 47K stars] Claude Agent 编排平台，企业级多 Agent 集群 → 适合：知识库
+11. [OpenAI WebRTC 语音问题] 网络差时主动丢弃 prompt，用户无法选择等待 → 适合：博客
+12. [Digg 再次重启] 聚焦 AI 新闻情感追踪 → 适合：知识库（AI 新闻聚合工具）
 
-💡 知识缺口（4 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：OpenAI-微软关系解体的深层影响（反垄断/云计算格局/多模型共存）
-2. KNOWLEDGE-BASE-PLAN.md 待补：AI+能源双向赋能的政策解读与技术路径
-3. KNOWLEDGE-BASE-PLAN.md 待补：AI 终端国标 L1-L4 分级的产业影响
-4. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络攻击加速（4 月翻倍）的防御策略
+## 🆕 新工具/项目（4 个）：
 
-## 上轮建议执行情况
-- ✅ 上轮建议"AI Agent 企业治理" → 已由 PM 阶段处理（security-audit-002）
-- ✅ 上轮建议"Mozilla Claude Mythos 修复 Firefox 271 漏洞" → 已由 PM 阶段处理（blog-139）
-- 🔄 "豆包分层付费 + 美图涨 25%" → 已在 earlier news.ts 中收录，本轮不再重复
+1. [TradingAgents] 多 Agent LLM 金融交易框架 + https://github.com/TauricResearch/TradingAgents
+2. [mattpocock/skills] Claude Code 真实工程师技能库 + https://github.com/mattpocock/skills
+3. [ruflo] Claude Agent 编排平台 + https://github.com/ruvnet/ruflo
+4. [OpenAI Symphony] 自主编码编排框架 + https://github.com/openai/symphony
+
+## 💡 知识缺口（4 项）：
+
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 企业治理最佳实践（OpenAI Codex 安全部署 + Meta 员工 AI 转型教训 + Anthropic-xAI 供应链风险）
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI 算力竞争与供应链风险（Anthropic-xAI Colossus + Intel 代工崛起 + SK 海力士产能争夺）
+3. KNOWLEDGE-BASE-PLAN.md 待补：AI 金融应用全景（TradingAgents + IMF 网络风险警告 + AI 交易伦理）
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 编排标准（OpenAI Symphony + ruflo + 多 Agent 协作模式）
+
+## 📊 本轮扫描来源统计：
+
+- 国外：GitHub Trending、Simon Willison Blog、The Verge、arXiv cs.AI（355 篇/日）
+- 国内：新浪科技、36 氪（JS 渲染无法提取）、机器之心（JS 渲染）
+- 有效来源：6 个（GitHub Trending、Simon Willison、The Verge、arXiv、新浪科技、AI 信息 Gap）
