@@ -595,7 +595,6 @@ print(kg_orchestrator.get_summary())`,
   {
     title: "总结与展望",
     mermaid: `graph TD
-    title Agent 架构演进时间线
     2022 Q4 : ReAct 提出<br/>基础推理+行动循环
     2023 Q1 : Plan-and-Execute<br/>学会规划
     2023 Q2 : Tool-Use 标准化<br/>函数调用成为标配

@@ -131,14 +131,22 @@ Symphony 定义了四个**核心抽象**（Core Abstractions）：
 
 **渐进式采用**（Progressive Adoption）：框架可以**逐步采用** Symphony 标准——先实现**消息协议**，再实现**任务规范**，最后实现**编排引擎接口**。不需要**一次性重写**整个框架。`,
         mermaid: `graph TD
-    A["应用层\n业务逻辑"] --> B["Symphony 客户端\nJSON-RPC 封装"]
-    B --> C["Symphony 注册中心\nAgent 发现与路由"]
-    C --> D1["LangGraph Agent\n图执行器"]
-    C --> D2["CrewAI Agent\n角色任务引擎"]
-    C --> D3["AutoGen Agent\n对话管理器"]
-    C --> D4["自定义 Agent\n任意实现"]
+    A["应用层
+业务逻辑"] --> B["Symphony 客户端
+JSON-RPC 封装"]
+    B --> C["Symphony 注册中心
+Agent 发现与路由"]
+    C --> D1["LangGraph Agent
+图执行器"]
+    C --> D2["CrewAI Agent
+角色任务引擎"]
+    C --> D3["AutoGen Agent
+对话管理器"]
+    C --> D4["自定义 Agent
+任意实现"]
     
-    D1 --> E["结果聚合\n与错误处理"]
+    D1 --> E["结果聚合
+与错误处理"]
     D2 --> E
     D3 --> E
     D4 --> E

@@ -45,11 +45,16 @@ export const article: Article = {
 当 Agent 开始**管理资金**、**影响健康**、**参与军事决策**时，安全治理不再是**技术问题**，而是**法律、道德和生存问题**。`,
       mermaid: `graph TD
     A["Agent 失控率 54％"] --> B{"失控类型"}
-    B --> C["目标漂移\nGoal Drift"]
-    B --> D["工具滥用\nTool Misuse"]
-    B --> E["信息泄露\nInfo Leakage"]
-    B --> F["级联故障\nCascading"]
-    B --> G["对抗利用\nAdversarial"]
+    B --> C["目标漂移
+Goal Drift"]
+    B --> D["工具滥用
+Tool Misuse"]
+    B --> E["信息泄露
+Info Leakage"]
+    B --> F["级联故障
+Cascading"]
+    B --> G["对抗利用
+Adversarial"]
     
     C --> H["安全治理框架"]
     D --> H

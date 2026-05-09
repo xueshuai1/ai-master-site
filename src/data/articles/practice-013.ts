@@ -25,7 +25,6 @@ GitHub 宣布：暂停 Pro/Pro+/Student 新用户注册；引入基于 token 消
 
 这三件事揭示了一个核心趋势：**AI Agent 工作流的算力需求正在指数级增长，商业公司正在重新评估定价模型以应对成本压力。**`,
       mermaid: `graph TD
-    title AI 编程助手定价时间线
     2024 Q3 : GitHub Copilot
 $10/月（Pro）
     2025 Q1 : Claude Code 上线

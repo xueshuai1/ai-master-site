@@ -243,10 +243,14 @@ class CerebrasLLMTrainer:
 
 **但技术对比只是一个维度**。**生态、价格、可用性**往往比**纯技术性能**更重要。这就是 NVIDIA 能够**统治 AI 芯片市场**的根本原因。`,
             mermaid: `graph LR
-    A["AI 芯片竞争格局 2026"] --> B["NVIDIA H100/B200\n生态霸主, 全场景覆盖"]
-    A --> C["Cerebras WSE-3\n晶圆级芯片, 训练专精"]
-    A --> D["Groq LPU\n极致推理延迟"]
-    A --> E["Google TPU v5p\nCloud 生态内最优"]
+    A["AI 芯片竞争格局 2026"] --> B["NVIDIA H100/B200
+生态霸主, 全场景覆盖"]
+    A --> C["Cerebras WSE-3
+晶圆级芯片, 训练专精"]
+    A --> D["Groq LPU
+极致推理延迟"]
+    A --> E["Google TPU v5p
+Cloud 生态内最优"]
 
     B --> F["优势: CUDA 生态, 全场景, 规模化"]
     B --> G["劣势: 通信延迟, 价格昂贵"]

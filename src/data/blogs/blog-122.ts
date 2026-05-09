@@ -543,9 +543,14 @@ class LoanApprovalAgent:
       mermaid: `graph LR
     A["2026"] --> B["2027"]
     B --> C["2028"]
-    A --> A1["API 价格战\n开源追赶"]
-    B --> B1["安全溢价扩大\nMCP 成标准\n金融 Agent 标配"]
-    C --> C1["多模型路由普及\nAI 治理强制化\nAI 集成层成熟"]
+    A --> A1["API 价格战
+开源追赶"]
+    B --> B1["安全溢价扩大
+MCP 成标准
+金融 Agent 标配"]
+    C --> C1["多模型路由普及
+AI 治理强制化
+AI 集成层成熟"]
     style A fill:#2d3748,stroke:#f6ad55
     style B fill:#2d3748,stroke:#68d391
     style C fill:#2d3748,stroke:#63b3ed`,

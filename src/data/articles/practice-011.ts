@@ -285,13 +285,21 @@ def evaluate_diagnostic_model(model, dataloader, device='cpu'):
         ]
       },
       mermaid: `graph TD
-    A["临床数据\n生命体征+化验"] --> C["临床特征编码器\nMLP"]
-    B["X 光影像\nChest X-ray"] --> D["影像特征提取器\nEfficientNet-B0"]
-    C --> E["交叉注意力融合\nCross-Attention"]
+    A["临床数据
+生命体征+化验"] --> C["临床特征编码器
+MLP"]
+    B["X 光影像
+Chest X-ray"] --> D["影像特征提取器
+EfficientNet-B0"]
+    C --> E["交叉注意力融合
+Cross-Attention"]
     D --> E
-    E --> F["分类器\n3 分类"]
-    F --> G["诊断结果\n正常/细菌性/病毒性"]
-    F --> H["置信度\nMC Dropout"]
+    E --> F["分类器
+3 分类"]
+    F --> G["诊断结果
+正常/细菌性/病毒性"]
+    F --> H["置信度
+MC Dropout"]
     G --> I["医生审核"]
     H --> I`,
       tip: "在多模态模型中，交叉注意力（Cross-Attention）是让影像特征和临床特征「对话」的关键机制。与简单的特征拼接（Concatenation）相比，交叉注意力能让模型根据输入内容动态决定哪种模态的信息更重要——例如在影像清晰的病例中更依赖影像，在影像模糊的病例中更依赖临床数据。",
@@ -565,12 +573,15 @@ class ModelDriftMonitor:
         ]
       },
       mermaid: `graph TD
-    A["每月性能评估\nAUC/Sensitivity/Specificity"] --> B{"与基线对比"}
+    A["每月性能评估
+AUC/Sensitivity/Specificity"] --> B{"与基线对比"}
     B -->|"差异 < 阈值"| C["✅ 正常运行"]
     B -->|"差异 > 告警阈值"| D["⚠️ 发出告警"]
     B -->|"差异 > 严重阈值"| E["🚨 紧急响应"]
-    D --> F["调查根因\n数据漂移? 设备变更?"]
-    E --> G["暂停自动诊断\n切换人工审核"]
+    D --> F["调查根因
+数据漂移? 设备变更?"]
+    E --> G["暂停自动诊断
+切换人工审核"]
     F --> H["制定修复方案"]
     G --> H
     H --> I["重新验证模型"]

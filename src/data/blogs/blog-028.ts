@@ -445,7 +445,6 @@ for issue in result.issues:
     title: "未来展望：从 Chrome AI Skills 到操作系统级 AI 代理",
     body: "Chrome AI Skills 的发布只是开始。从技术演进路径来看，我们可以预测以下几个方向：\n\n**短期（2026 下半年）：**\n- Skills 市场（Skill Store）正式上线，第三方开发者可以发布和 monetize 自己的 Skills\n- Skills 支持条件触发（「当检测到价格变化时自动运行比价 Skill」）\n- Skills 支持链式组合（「先运行研究 Skill，再运行摘要 Skill」）\n\n**中期（2027）：**\n- Skills 跨应用工作：Chrome Skills 可以与桌面应用、移动 App 的 AI 能力互通\n- 操作系统级别的 Skill 运行时：Windows、macOS 可能推出系统级的 AI 工作流标准\n- Skills 与企业系统集成：Salesforce、SAP 等企业软件的原生 Skill 支持\n\n**长期（2028+）：**\n- **AI 代理操作系统（AI-OS）**：浏览器 AI 能力与操作系统融合，形成统一的 AI 代理运行时\n- **自主执行 Skills**：从「用户触发」到「系统自动触发」，AI 自主决定何时运行哪些 Skills\n- **Skill 协议标准化**：跨浏览器、跨平台的 Skill 互操作标准（类似今天的 Web 标准）",
     mermaid: `graph TD
-    title Chrome AI Skills 演进路线图
     2026 Q2 : Skills 正式发布
              : 50+ 预设 Skills
              : 跨标签页执行
@@ -469,6 +468,7 @@ for issue in result.issues:
 export const blog: BlogPost = {
   id: "blog-028",
   title: "Chrome AI Skills 深度解读：浏览器如何成为 AI Agent 的操作系统",
+  category: "ai-analysis",
   summary: "2026 年 4 月，Google Chrome 发布 AI Skills 功能，将可复用的 AI 提示词模板化，支持跨标签页一键调用。这不是一个小功能更新，而是浏览器从「信息展示平台」向「AI 代理操作系统」的范式转变。本文深度解读 Chrome AI Skills 的三层技术架构、与 Claude Projects / ChatGPT GPTs 的全面对比、Skill 开发的完整流程，以及它如何预示操作系统级 AI 代理的早期形态。",
   content,
   date: "2026-04-18",

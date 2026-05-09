@@ -102,16 +102,24 @@ export const article: Article = {
     A --> C["行业自发组织"]
     A --> D["学术研究机构"]
     
-    B --> B1["英国 AISI\n前沿模型独立评估"]
-    B --> B2["美国 NIST\nAI 风险管理框架"]
-    B --> B3["欧盟 AI Act\n合规评估体系"]
+    B --> B1["英国 AISI
+前沿模型独立评估"]
+    B --> B2["美国 NIST
+AI 风险管理框架"]
+    B --> B3["欧盟 AI Act
+合规评估体系"]
     
-    C --> C1["MLCommons\n安全基准测试"]
-    C --> C2["Partnership on AI\n伦理协作"]
-    C --> C3["厂商内部团队\nOpenAI / Anthropic"]
+    C --> C1["MLCommons
+安全基准测试"]
+    C --> C2["Partnership on AI
+伦理协作"]
+    C --> C3["厂商内部团队
+OpenAI / Anthropic"]
     
-    D --> D1["Stanford HAI\nAI 指数报告"]
-    D --> D2["Oxford Future of Humanity\n存在性风险研究"]
+    D --> D1["Stanford HAI
+AI 指数报告"]
+    D --> D2["Oxford Future of Humanity
+存在性风险研究"]
     
     style A fill:#92400e,stroke:#d97706,color:#fff
     style B fill:#1e3a8a,stroke:#2563eb,color:#fff

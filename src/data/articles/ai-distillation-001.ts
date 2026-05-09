@@ -139,9 +139,15 @@ export const article: Article = {
 - **追求最高精度** → **关系蒸馏**（如果计算资源允许）
 - **工业部署场景** → **响应蒸馏 + 轻量特征蒸馏**的组合`,
             mermaid: `graph LR
-    A["响应蒸馏\nResponse-based"] --> D["实现简单\n跨架构兼容"]
-    B["特征蒸馏\nFeature-based"] --> E["信息更丰富\n精度更高"]
-    C["关系蒸馏\nRelation-based"] --> F["精度最高\n实现复杂"]
+    A["响应蒸馏
+Response-based"] --> D["实现简单
+跨架构兼容"]
+    B["特征蒸馏
+Feature-based"] --> E["信息更丰富
+精度更高"]
+    C["关系蒸馏
+Relation-based"] --> F["精度最高
+实现复杂"]
     D --> G["适合闭源API"]
     E --> H["需要开源权重"]
     F --> I["研究场景"]
@@ -431,10 +437,13 @@ class FeatureDistillationLoss(nn.Module):
             mermaid: `graph TD
     A["大模型教师"] --> B["蒸馏策略选择"]
     B --> C["闭源 API?"]
-    C -->|是| D["数据蒸馏\nOpenAI 方案"]
+    C -->|是| D["数据蒸馏
+OpenAI 方案"]
     C -->|否| E["有中间层访问?"]
-    E -->|是| F["特征蒸馏\nGoogle 方案"]
-    E -->|否| G["响应蒸馏\n经典方案"]
+    E -->|是| F["特征蒸馏
+Google 方案"]
+    E -->|否| G["响应蒸馏
+经典方案"]
     D --> H["生成训练数据"]
     F --> I["中间层特征对齐"]
     G --> J["温度 Softmax 输出"]

@@ -111,31 +111,47 @@ HBM 市场规模增长:
 **美光：稳扎稳打** — **专注高端**，重点发展 HBM3e 和 **HBM4**，**控制产能节奏**保持供需平衡。`,
     mermaid: `graph TD
     subgraph "晶圆制造"
-        Fab1["三星晶圆厂\n平泽/华城"]
-        Fab2["SK 海力士晶圆厂\n利川/清州"]
-        Fab3["美光晶圆厂\n广岛/新加坡"]
+        Fab1["三星晶圆厂
+平泽/华城"]
+        Fab2["SK 海力士晶圆厂
+利川/清州"]
+        Fab3["美光晶圆厂
+广岛/新加坡"]
     end
     
     subgraph "封装测试"
-        Pack1["三星封装\nHBM 堆叠"]
-        Pack2["SK 海力士封装\nMR-MUF 技术"]
-        Pack3["美光封装\n混合键合"]
+        Pack1["三星封装
+HBM 堆叠"]
+        Pack2["SK 海力士封装
+MR-MUF 技术"]
+        Pack3["美光封装
+混合键合"]
     end
     
     subgraph "产品分流"
-        AI_HBM["HBM（AI 专用）\n占比 35-40％"]
-        Server["服务器 DRAM\n占比 15％"]
-        Mobile["手机 LPDDR\n占比 25-28％"]
-        PC["PC DRAM\n占比 18-20％"]
-        Other["其他应用\n占比 7-10％"]
+        AI_HBM["HBM（AI 专用）
+占比 35-40％"]
+        Server["服务器 DRAM
+占比 15％"]
+        Mobile["手机 LPDDR
+占比 25-28％"]
+        PC["PC DRAM
+占比 18-20％"]
+        Other["其他应用
+占比 7-10％"]
     end
     
     subgraph "终端市场"
-        NVIDIA["NVIDIA GPU\nH200/B200/Rubin"]
-        AMD["AMD 加速卡\nMI350/MI400"]
-        Google["Google TPU\nv6/v7"]
-        Phone["智能手机\niPhone/三星/小米"]
-        Laptop["笔记本/PC\nMacBook/ThinkPad"]
+        NVIDIA["NVIDIA GPU
+H200/B200/Rubin"]
+        AMD["AMD 加速卡
+MI350/MI400"]
+        Google["Google TPU
+v6/v7"]
+        Phone["智能手机
+iPhone/三星/小米"]
+        Laptop["笔记本/PC
+MacBook/ThinkPad"]
     end
     
     Fab1 --> Pack1
@@ -235,20 +251,28 @@ HBM 市场规模增长:
 **开源社区**：大型 GPU 集群的**获取成本**越来越高，**云服务价格**随硬件成本上涨，开源模型训练的**算力门槛**正在成为**新的「数字鸿沟」**。`,
     mermaid: `graph TD
     subgraph "第一梯队：定价权掌控者"
-        NVIDIA["NVIDIA\nGPU 架构 + 采购定价"]
-        TSMC["台积电\nCoWoS 封装垄断"]
+        NVIDIA["NVIDIA
+GPU 架构 + 采购定价"]
+        TSMC["台积电
+CoWoS 封装垄断"]
     end
     
     subgraph "第二梯队：技术领导者"
-        SKH["SK 海力士\nHBM 技术领先"]
-        Samsung["三星\n最大产能规模"]
-        Micron["美光\n差异化高端定位"]
+        SKH["SK 海力士
+HBM 技术领先"]
+        Samsung["三星
+最大产能规模"]
+        Micron["美光
+差异化高端定位"]
     end
     
     subgraph "第三梯队：被动适应者"
-        Apple["苹果\n消费电子巨头"]
-        Google_AI["Google/Meta/MSFT\nAI 云服务巨头"]
-        Xiaomi["小米/OV\n手机厂商"]
+        Apple["苹果
+消费电子巨头"]
+        Google_AI["Google/Meta/MSFT
+AI 云服务巨头"]
+        Xiaomi["小米/OV
+手机厂商"]
     end
     
     subgraph "第四梯队：资源挤压层"

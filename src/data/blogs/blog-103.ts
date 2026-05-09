@@ -69,11 +69,13 @@ const content: ArticleSection[] = [
 **Musk 的反应**：公开批评这一转型，认为 OpenAI **背离了创立初衷**。这也是他后来发起诉讼的**核心论据**之一。`,
         mermaid: `graph TD
     A["2015 OpenAI 成立"] --> B["2018 Musk 退出董事会"]
-    B --> C["2019 创建 OpenAI LP\ncapped-profit 模式"]
+    B --> C["2019 创建 OpenAI LP
+capped-profit 模式"]
     C --> D["2023 利润上限降至 20 倍"]
     D --> E["2023 Altman 被解雇后回归"]
     E --> F["2024 Musk 正式提起诉讼"]
-    F --> G["2026 xAI 承认使用\nOpenAI 模型训练 Grok"]
+    F --> G["2026 xAI 承认使用
+OpenAI 模型训练 Grok"]
     
     classDef phase1 fill:#1e3a5f
     classDef phase2 fill:#2d1b69

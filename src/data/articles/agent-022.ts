@@ -822,7 +822,6 @@ if __name__ == "__main__":
 
 自我进化不是终点，而是起点。当 Agent 学会了自我进化，它就不再是一个被动的工具，而是一个持续成长的伙伴。这才是 AI Agent 真正的未来。`,
       mermaid: `graph TD
-    title AI Agent 进化路线图
     2023 : ChatGPT 发布
          : 人类对话式 AI
     2024 : AutoGPT / BabyAGI

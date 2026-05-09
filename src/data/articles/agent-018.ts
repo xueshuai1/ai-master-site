@@ -1033,7 +1033,6 @@ Anthropic 的 Glasswing 计划（40+ 企业联合防御）和 AISafetyBenchExplo
 
 建立你的 Agent 安全评估体系，从今天开始。`,
       mermaid: `graph TD
-    title AI Agent 安全评估演进路线
     2024 Q1-Q4 : LLM 内容安全为主
                : OWASP LLM Top 10 发布
                : HARM-Bench 等学术基准出现
