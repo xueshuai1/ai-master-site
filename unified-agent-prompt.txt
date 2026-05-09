@@ -333,12 +333,25 @@ node scripts/check-knowledge-integrity.py
 - 检查是否有重复条目
 
 **E. 🔍 工具集遗漏检查（必做！）**
+
+**第一步：解析研究员报告中的工具推荐**
+```bash
+node scripts/auto-add-discovered-tools.mjs
+```
+- 自动读取 `reports/latest-content-findings.md` 中研究员发现的新工具
+- 对比 tools.ts 已有项目，过滤已收录的
+- 输出待收录工具列表到 `reports/tool-auto-insert-suggestions.json`
+- **将 `toAdd` 数组中的每个工具插入到 tools.ts 的合适分类下**
+
+**第二步：GitHub 搜索补充发现**
 ```bash
 node scripts/check-tool-completeness.js <GITHUB_TOKEN>
+node scripts/discover-topic-projects.mjs
 ```
 - 用 GitHub API 搜索高星 AI 项目，对比 tools.ts 已有数据
 - **发现 >50K⭐ 但不在工具集的 → P0 立即收录**
 - 发现 >30K⭐ 但不在工具集的 → P1 评估收录
+- **研究员推荐的项目即使星数不够也应优先收录**
 
 **F. 快速浏览网站（用 browser）**
 - 打开首页，截图看第一印象

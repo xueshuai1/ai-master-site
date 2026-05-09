@@ -101,6 +101,10 @@ cat src/data/update-time.ts  # 最后更新时间
 2. 📚 知识库体系化（2026-05-09 用户指示） → 补全系列、写入门文章、新文章归入系列
 3. 📰 新闻过期（超过 24 小时没有新新闻） → 更新新闻
 4. 🛠️ 工具集需要更新 → 收录新工具
+   **先运行** `node scripts/auto-add-discovered-tools.mjs`
+   读取 `reports/tool-auto-insert-suggestions.json` 中的待收录工具
+   将 `toAdd` 数组中的每个工具的 `entryCode` 插入到 tools.ts 的合适分类下
+   然后运行 `node scripts/discover-topic-projects.mjs` 检查是否有其他遗漏
 5. 📝 博客内容不够 → 写深度技术文章
 6. 🎨 用户体验优化 → 改善页面效果、交互
 7. 🧹 代码清理 → 技术债、性能优化
