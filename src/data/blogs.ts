@@ -69,6 +69,10 @@ import { blog as screenAi001 } from './blogs/blog-072';
 import { blog as agent028 } from './blogs/blog-074';
 import { blog as practice014 } from './blogs/blog-075';
 import { blog as worldModel001 } from './blogs/blog-079';
+import { blog as blog076 } from './blogs/blog-076';
+import { blog as blog077 } from './blogs/blog-077';
+import { blog as blog078 } from './blogs/blog-078';
+import { blog as blog080 } from './blogs/blog-080';
 import { blog as cohereMergeAA } from './blogs/blog-081';
 import { blog as claudeDeleteIncident } from './blogs/blog-082';
 import { blog as zhinet001 } from './blogs/blog-083';
@@ -97,6 +101,7 @@ import { blog as blog105 } from './blogs/blog-105';
 import { default as blog106 } from './blogs/blog-106';
 import { blog107 } from './blogs/blog-107';
 import { blog108 } from './blogs/blog-108';
+import { default as blog109 } from './blogs/blog-109';
 import { blog110 } from './blogs/blog-110';
 import { blog as blog111 } from './blogs/blog-111';
 import { blog as blog112 } from './blogs/blog-112';
@@ -190,6 +195,10 @@ export const blogs: BlogPost[] = [
   agent028,
   practice014,
   worldModel001,
+  blog076,
+  blog077,
+  blog078,
+  blog080,
   cohereMergeAA,
   claudeDeleteIncident,
   zhinet001,
@@ -218,6 +227,7 @@ export const blogs: BlogPost[] = [
   blog106,
   blog107,
   blog108,
+  blog109,
   blog110,
   blog111,
   blog112,

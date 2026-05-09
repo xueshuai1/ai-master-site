@@ -1,0 +1,288 @@
+{
+  "timestamp": "2026-05-09T01:44:14.249Z",
+  "dryRun": false,
+  "fixedFiles": 37,
+  "totalFixes": 46,
+  "byType": {
+    "INVALID_GRAPH_TITLE": 14,
+    "LITERAL_NEWLINE_ESCAPE": 32
+  },
+  "bugs": [
+    {
+      "file": "src/data/articles/agent-016.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "9f99d8fa",
+      "snippet": "graph TD\\n    title Agent 评估体系演进路线图\\n    2024-2025 : 静态基准测试\\n             : SWE-bench / WebArena / Agen"
+    },
+    {
+      "file": "src/data/articles/agent-018.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "adbbbae6",
+      "snippet": "graph TD\\n    title AI Agent 安全评估演进路线\\n    2024 Q1-Q4 : LLM 内容安全为主\\n               : OWASP LLM Top 10 发"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "4807f10c",
+      "snippet": "graph TD\\n    title 自进化 Agent 发展路线图\\n    2024 Q4 : 概念萌芽\\nAutoGPT 尝试自我改进\\n    2025 Q2 : 经验记忆\\nClaude-Mem 等"
+    },
+    {
+      "file": "src/data/articles/agent-022.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "8bb2ace8",
+      "snippet": "graph TD\\n    title AI Agent 进化路线图\\n    2023 : ChatGPT 发布\\n         : 人类对话式 AI\\n    2024 : AutoGPT / Bab"
+    },
+    {
+      "file": "src/data/articles/agent-046.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "07bce67d",
+      "snippet": "graph TD\\n    A[\"Agent 失控率 54％\"] --> B{\"失控类型\"}\\n    B --> C[\"目标漂移\\nGoal Drift\"]\\n    B --> D[\"工具滥用\\nToo"
+    },
+    {
+      "file": "src/data/articles/ai-distillation-001.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "4a097bfc",
+      "snippet": "graph TD\\n    A[\"大模型教师\"] --> B[\"蒸馏策略选择\"]\\n    B --> C[\"闭源 API?\"]\\n    C -->|是| D[\"数据蒸馏\\nOpenAI 方案\"]\\n   "
+    },
+    {
+      "file": "src/data/articles/ai-distillation-001.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "867e615f",
+      "snippet": "graph LR\\n    A[\"响应蒸馏\\nResponse-based\"] --> D[\"实现简单\\n跨架构兼容\"]\\n    B[\"特征蒸馏\\nFeature-based\"] --> E[\"信息更丰"
+    },
+    {
+      "file": "src/data/articles/ai-security-005.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "c483f40a",
+      "snippet": "graph TD\\n    A[\"AI 安全评估机构\"] --> B[\"政府级机构\"]\\n    A --> C[\"行业自发组织\"]\\n    A --> D[\"学术研究机构\"]\\n    \\n    B --"
+    },
+    {
+      "file": "src/data/articles/ai-security-012.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "5b210607",
+      "snippet": "graph LR\\n    A[\"T(0) = 80\\n初始安全阈值\"] --> B[\"轮次 1-5\\n正常对话\\nT = 78-80\"]\\n    B --> C[\"轮次 6-10\\n边界推移开始\\nT"
+    },
+    {
+      "file": "src/data/articles/aieng-014.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "0b62c164",
+      "snippet": "graph TD\\n    title AI 编程工具发展时间线\\n    2021 Q4 : GitHub Copilot 发布<br/>AI 补全时代开启\\n    2023 Q1 : ChatGPT "
+    },
+    {
+      "file": "src/data/articles/finance-001.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "400c2f1d",
+      "snippet": "graph TD\\n    title 金融信息处理的 AI 进化史\\n    1970s : 电话 + 纸笔\\n           : 人工分析，延迟分钟级\\n    1990s : 电子交易系统\\n   "
+    },
+    {
+      "file": "src/data/articles/guard-act-001.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "7da192e8",
+      "snippet": "graph LR\\n    A[全球 AI 情感陪伴监管] --> B[美国 GUARD 法案]\\n    A --> C[欧盟 AI 法案]\\n    A --> D[中国管理办法]\\n    A --> "
+    },
+    {
+      "file": "src/data/articles/infra-001.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "aa8b2d26",
+      "snippet": "graph TD\\n    title AI 内存技术路线图\\n    2013 : HBM1 发布\\n         : AMD Fury X 首发\\n    2016 : HBM2 发布\\n       "
+    },
+    {
+      "file": "src/data/articles/mm-010.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "f83aee65",
+      "snippet": "graph TD\\n    A[\"当前范式\\n多模态理解\"] --> B[\"世界模型\\n预测+推理+规划\"]\\n    A --> C[\"全模态\\n视觉+听觉+触觉\"]\\n    A --> D[\"边缘多模"
+    },
+    {
+      "file": "src/data/articles/mm-010.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "d771f5c1",
+      "snippet": "graph LR\\n    A[\"2021 CLIP\\n视觉对齐\"] --> B[\"2022 Flamingo\\n交叉注意力融合\"]\\n    B --> C[\"2023 LLaVA\\n视觉指令微调\"]\\n"
+    },
+    {
+      "file": "src/data/articles/mm-011.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "f80e6c7c",
+      "snippet": "graph LR\\n    A[\"音频原始信号\"] --> B[\"信号预处理\\n降噪+分帧+加窗\"]\\n    B --> C[\"特征提取\\n梅尔频谱图/MFCC\"]\\n    C --> D[\"音频编码器"
+    },
+    {
+      "file": "src/data/articles/mm-011.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "7e40bc9a",
+      "snippet": "graph TD\\n    A[\"视觉模态\\n图像/视频\"] --> C[\"多模态融合层\"]\\n    B[\"语言模态\\n文本\"] --> C\\n    D[\"音频模态\\n语音/音乐\"] --> C\\n   "
+    },
+    {
+      "file": "src/data/articles/prac-001.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "d6cb52b8",
+      "snippet": "\\ngraph TD\\n    A[\"用户-物品交互矩阵\"] --> B[\"计算相似度\\n余弦/皮尔逊/Jaccard\"]\\n    B --> C[\"K-NN 最近邻\"]\\n    C --> D[\"加权评"
+    },
+    {
+      "file": "src/data/articles/prac-001.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "6b9682c6",
+      "snippet": "\\ngraph TD\\n    A[\"百万级候选物品\"] --> B[\"召回层\\nTop-1000\"]\\n    B --> C[\"粗排层\\nTop-500\"]\\n    C --> D[\"精排层\\nTop-"
+    },
+    {
+      "file": "src/data/articles/practice-011.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "920ffc28",
+      "snippet": "graph TD\\n    A[\"每月性能评估\\nAUC/Sensitivity/Specificity\"] --> B{\"与基线对比\"}\\n    B -->|\"差异 < 阈值\"| C[\"✅ 正常运行\""
+    },
+    {
+      "file": "src/data/articles/practice-011.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "9f667e6f",
+      "snippet": "graph TD\\n    A[\"临床数据\\n生命体征+化验\"] --> C[\"临床特征编码器\\nMLP\"]\\n    B[\"X 光影像\\nChest X-ray\"] --> D[\"影像特征提取器\\nEf"
+    },
+    {
+      "file": "src/data/articles/practice-012.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "6dedb882",
+      "snippet": "graph TD\\n    title AI Agent 项目成本管理路线图\\n    \\n    阶段一 PoC\\n      直接 API 调用\\n      日调用 < 1,000 次\\n      月成本"
+    },
+    {
+      "file": "src/data/articles/practice-013.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "34c74d5b",
+      "snippet": "graph TD\\n    title AI 编程助手定价时间线\\n    2024 Q3 : GitHub Copilot\\n$10/月（Pro）\\n    2025 Q1 : Claude Code 上线"
+    },
+    {
+      "file": "src/data/articles/practice-014.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "8c17854f",
+      "snippet": "graph LR\\n    A[\"第一代\\\\n规则引擎\"] --> B[\"第二代\\\\n传统 ML\"]\\n    B --> C[\"第三代\\\\n深度学习\"]\\n    C --> D[\"第四代\\\\n多模态 L"
+    },
+    {
+      "file": "src/data/blogs/blog-027.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "b6d39d98",
+      "snippet": "graph TD\\n    title Agent 架构演进时间线\\n    2022 Q4 : ReAct 提出<br/>基础推理+行动循环\\n    2023 Q1 : Plan-and-Execute"
+    },
+    {
+      "file": "src/data/blogs/blog-028.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "7db35b01",
+      "snippet": "graph TD\\n    title Chrome AI Skills 演进路线图\\n    2026 Q2 : Skills 正式发布\\n             : 50+ 预设 Skills\\n   "
+    },
+    {
+      "file": "src/data/blogs/blog-038.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "ddb83e6c",
+      "snippet": "graph TD\\n    title Multi-Agent 技术演进路线\\n    2023 : 链式调用\\n      : LangChain Chain\\n      : 线性管道\\n      : 固"
+    },
+    {
+      "file": "src/data/blogs/blog-046.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "523b31ca",
+      "snippet": "graph TD\\n    title 开源模型参数效率演进\\n    2023 : Llama-2-70B<br/>需要多卡部署\\n    2024 : Llama-3.1-8B<br/>单卡可用，能力有"
+    },
+    {
+      "file": "src/data/blogs/blog-046.ts",
+      "type": "INVALID_GRAPH_TITLE",
+      "hash": "d21a8f85",
+      "snippet": "graph TD\\n    title \"编程基准测试对比（分数越高越好）\"\\n    x-axis [\"HumanEval\", \"MBPP\", \"SWE-bench\", \"Aider-Poly\", \"B"
+    },
+    {
+      "file": "src/data/blogs/blog-100.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "44f9d473",
+      "snippet": "graph TD\\n    A[\"开发任务\"] --> B{\"安全等级 ≥ 4?\"}\\n    B -->|是| C[\"纯人工编写\\n方案一: 辅助编码\"]\\n    B -->|否| D{\"复杂度 ≤ 2"
+    },
+    {
+      "file": "src/data/blogs/blog-101.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "a97edf74",
+      "snippet": "graph TD\\n    A[\"用户输入目标\"] --> B[\"目标解析\\nGoal Parsing\"]\\n    B --> C[\"现状分析\\nState Analysis\"]\\n    C --> D"
+    },
+    {
+      "file": "src/data/blogs/blog-102.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "4b404808",
+      "snippet": "graph TD\\n    A[\"应用层\\n业务逻辑\"] --> B[\"Symphony 客户端\\nJSON-RPC 封装\"]\\n    B --> C[\"Symphony 注册中心\\nAgent 发现与"
+    },
+    {
+      "file": "src/data/blogs/blog-103.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "c56671cb",
+      "snippet": "graph TD\\n    A[\"2015 OpenAI 成立\"] --> B[\"2018 Musk 退出董事会\"]\\n    B --> C[\"2019 创建 OpenAI LP\\ncapped-pro"
+    },
+    {
+      "file": "src/data/blogs/blog-106.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "cf448ec9",
+      "snippet": "graph TD\\n    subgraph \"第一梯队：定价权掌控者\"\\n        NVIDIA[\"NVIDIA\\nGPU 架构 + 采购定价\"]\\n        TSMC[\"台积电\\nCoWoS"
+    },
+    {
+      "file": "src/data/blogs/blog-106.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "4124b327",
+      "snippet": "graph TD\\n    subgraph \"晶圆制造\"\\n        Fab1[\"三星晶圆厂\\n平泽/华城\"]\\n        Fab2[\"SK 海力士晶圆厂\\n利川/清州\"]\\n        F"
+    },
+    {
+      "file": "src/data/blogs/blog-107.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "f547c4e1",
+      "snippet": "graph LR\\n    A[\"全量数据训练\\n13T tokens / $$$$$\"] -->|边际效益递减| B[\"范式转移\"]\\n    C[\"逻辑密集型训练\\n50B tokens / $\"] "
+    },
+    {
+      "file": "src/data/blogs/blog-118.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "b9b2a527",
+      "snippet": "graph LR\\n    A[\"免费用户\\n1000 万+\"] --> B{\"付费转化率\\n6.2％\"}\\n    B --> C[\"标准版\\n68元/月\\n80％\"]\\n    B --> D[\"专业版"
+    },
+    {
+      "file": "src/data/blogs/blog-119.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "a3a5a291",
+      "snippet": "graph LR\\n    A[\"AI 芯片竞争格局 2026\"] --> B[\"NVIDIA H100/B200\\n生态霸主, 全场景覆盖\"]\\n    A --> C[\"Cerebras WSE-3\\"
+    },
+    {
+      "file": "src/data/blogs/blog-120.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "9aa63914",
+      "snippet": "graph TD\\n    A[\"AI 能源危机\"] --> B[\"电力瓶颈\"]\\n    A --> C[\"冷却瓶颈\"]\\n    A --> D[\"土地瓶颈\"]\\n    A --> E[\"环保瓶颈\"]\\n"
+    },
+    {
+      "file": "src/data/blogs/blog-120.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "6b097896",
+      "snippet": "graph TD\\n    A[\"AI 算力基础设施 2035\"] --> B[\"陆地传统 70％\\n液冷+微电网+分布式\"]\\n    A --> C[\"海上浮动 10％\\n推理+小规模训练\"]\\n   "
+    },
+    {
+      "file": "src/data/blogs/blog-122.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "9bbb6b74",
+      "snippet": "graph LR\\n    A[\"2026\"] --> B[\"2027\"]\\n    B --> C[\"2028\"]\\n    A --> A1[\"API 价格战\\n开源追赶\"]\\n    B --> B1["
+    },
+    {
+      "file": "src/data/blogs/blog-126.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "4bd19f6c",
+      "snippet": "graph TD\\n    A[\"Scaling Law\\n性能 ∝ 参数^α × 数据^β × 算力^γ\"] --> B{\"架构创新出现\"}\\n    B --> C[\"Transformer\\nSca"
+    },
+    {
+      "file": "src/data/blogs/blog-126.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "a1255058",
+      "snippet": "graph LR\\n    A[\"输入序列 x_1...x_N\"] --> B[\"SSA 层\"]\\n    B --> C[\"状态更新\\nh_t = A·h_{t-1} + B·x_t\"]\\n    C -"
+    },
+    {
+      "file": "src/data/blogs/blog-128.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "723df358",
+      "snippet": "graph TD\\n    A[\"RLHF\\n人类标注\\n成本高\"] --> D[\"改进幅度大\\n一次性\\n更新慢\"]\\n    B[\"微调\\n训练数据\\n成本中\"] --> D\\n    C[\"Dream"
+    },
+    {
+      "file": "src/data/blogs/blog-132.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "474d3ff1",
+      "snippet": "graph LR\\n    A[第一代\\n统计套利+因子模型] --> B[第二代\\n机器学习+深度学习]\\n    B --> C[第三代\\n多智能体协作系统]\\n    C --> D[角色分工]\\n  "
+    },
+    {
+      "file": "src/data/blogs/blog-136.ts",
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "hash": "8b9f00de",
+      "snippet": "graph TD\\n    A[用户按下 Cmd+Space] --> B{输入类型判断}\\n    B -->|文件名/应用名| C[本地索引搜索\\n传统 Spotlight]\\n    B -->|自然"
+    }
+  ]
+}

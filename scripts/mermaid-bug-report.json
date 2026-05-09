@@ -1,0 +1,5643 @@
+{
+  "timestamp": "2026-05-09T01:42:53.066Z",
+  "total": 626,
+  "errors": 556,
+  "warnings": 70,
+  "affectedFiles": 386,
+  "bugs": [
+    {
+      "file": "src/data/articles/agent-001.ts",
+      "line": 26,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 26 行开始）",
+      "hash": "271faf91",
+      "snippet": "26-403"
+    },
+    {
+      "file": "src/data/articles/agent-002.ts",
+      "line": 31,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 31 行开始）",
+      "hash": "b6988099",
+      "snippet": "31-1391"
+    },
+    {
+      "file": "src/data/articles/agent-003.ts",
+      "line": 148,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 5 个字面量 \\n 字符",
+      "hash": "b8fd51c3",
+      "snippet": "sequenceDiagram\n    participant U as 用户\n    participant M as LLM\n    participant"
+    },
+    {
+      "file": "src/data/articles/agent-003.ts",
+      "line": 321,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "3466b630",
+      "snippet": "graph TD\n    subgraph \"推理方法谱系\"\n        A[\"纯推理\"] --> B[\"CoT 思维链\"]\n        B --> C"
+    },
+    {
+      "file": "src/data/articles/agent-003.ts",
+      "line": 650,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 650 行开始）",
+      "hash": "60afbb7e",
+      "snippet": "650-669"
+    },
+    {
+      "file": "src/data/articles/agent-005.ts",
+      "line": 101,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 101 行开始）",
+      "hash": "3e6aacd2",
+      "snippet": "101-915"
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 149,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "73dc454f",
+      "snippet": "sequenceDiagram\n    participant T as Task\n    participant A as Agent\n    partici"
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 381,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "3185f9f1",
+      "snippet": "graph TD\n    A[根节点：原始问题] --> B[分支 1：方案 A]\n    A --> C[分支 2：方案 B]\n    A --> D[分支 "
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 592,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "a99a2e52",
+      "snippet": "graph LR\n    A[原始输出] --> B[事实核查]\n    B --> C[逻辑检查]\n    C --> D[完整性评估]\n    D --> "
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 727,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 727 行开始）",
+      "hash": "00e0022f",
+      "snippet": "727-748"
+    },
+    {
+      "file": "src/data/articles/agent-007.ts",
+      "line": 97,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 97 行开始）",
+      "hash": "5f08314b",
+      "snippet": "97-859"
+    },
+    {
+      "file": "src/data/articles/agent-008.ts",
+      "line": 729,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 729 行开始）",
+      "hash": "4f9c4539",
+      "snippet": "729-745"
+    },
+    {
+      "file": "src/data/articles/agent-009.ts",
+      "line": 1080,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1080 行开始）",
+      "hash": "67f173d1",
+      "snippet": "1080-1099"
+    },
+    {
+      "file": "src/data/articles/agent-010.ts",
+      "line": 815,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 815 行开始）",
+      "hash": "744b8175",
+      "snippet": "815-832"
+    },
+    {
+      "file": "src/data/articles/agent-011.ts",
+      "line": 995,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 995 行开始）",
+      "hash": "145debcc",
+      "snippet": "995-1021"
+    },
+    {
+      "file": "src/data/articles/agent-012.ts",
+      "line": 133,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 133 行开始）",
+      "hash": "f04d376c",
+      "snippet": "133-147"
+    },
+    {
+      "file": "src/data/articles/agent-013.ts",
+      "line": 30,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 30 行开始）",
+      "hash": "0acbcabd",
+      "snippet": "30-140"
+    },
+    {
+      "file": "src/data/articles/agent-014.ts",
+      "line": 32,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 32 行开始）",
+      "hash": "6f527eda",
+      "snippet": "32-322"
+    },
+    {
+      "file": "src/data/articles/agent-015.ts",
+      "line": 16,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 12 个字面量 \\n 字符",
+      "hash": "c89ab025",
+      "snippet": "graph TD\n    A[通用 AI Agent] -->|2025| B[编程助手]\n    A -->|2026+| C[垂直化工作空间]\n    C "
+    },
+    {
+      "file": "src/data/articles/agent-015.ts",
+      "line": 75,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 9 个字面量 \\n 字符",
+      "hash": "b6b701ae",
+      "snippet": "graph LR\n    A[市场数据] --> B[信号生成 Agent]\n    B --> C[策略评估 Agent]\n    C --> D[风控 Ag"
+    },
+    {
+      "file": "src/data/articles/agent-015.ts",
+      "line": 229,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 28 个字面量 \\n 字符",
+      "hash": "63eb915c",
+      "snippet": "graph TD\n    A[2025: 通用 Agent] -->|范式转变| B[2026: 垂直化 Agent]\n    B --> C[SEO Agen"
+    },
+    {
+      "file": "src/data/articles/agent-016.ts",
+      "line": 60,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 60 行开始）",
+      "hash": "09efc4ae",
+      "snippet": "60-1032"
+    },
+    {
+      "file": "src/data/articles/agent-017.ts",
+      "line": 18,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "729e6338",
+      "snippet": "graph TD\n    A[\"2024-2025\n通用 Agent 时代\"] --> B[\"什么都能做\n但什么都不精\"]\n    A --> C[\"ChatG"
+    },
+    {
+      "file": "src/data/articles/agent-017.ts",
+      "line": 456,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 11 个字面量 \\n 字符",
+      "hash": "5508bb68",
+      "snippet": "graph TD\n    A[\"领域知识层\n专业知识库/规则/最佳实践\"] --> B[\"工作流引擎层\n标准化流程编排\"]\n    B --> C[\"工具集成层"
+    },
+    {
+      "file": "src/data/articles/agent-018.ts",
+      "line": 1035,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1035 行开始）",
+      "hash": "17c296b0",
+      "snippet": "1035-1056"
+    },
+    {
+      "file": "src/data/articles/agent-019.ts",
+      "line": 23,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 23 行开始）",
+      "hash": "1874c977",
+      "snippet": "23-249"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "line": 18,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 11 个字面量 \\n 字符",
+      "hash": "a1343f2a",
+      "snippet": "graph TD\n    A[\"静态 Agent\n预定义工具 + 固定 Prompt\"] -->|\"无法从经验中学习\"| B[\"能力天花板低\n无法适应新场景\"]"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "line": 553,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 7 个字面量 \\n 字符",
+      "hash": "1a4050dd",
+      "snippet": "graph LR\n    A[\"自进化 Agent\"] --> B[\"灾难性遗忘\"]\n    A --> C[\"错误传播\"]\n    A --> D[\"安全边界"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "line": 754,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "31e78205",
+      "snippet": "graph TD\n    title 自进化 Agent 发展路线图\n    2024 Q4 : 概念萌芽\nAutoGPT 尝试自我改进\n    2025 Q2"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "line": 754,
+      "type": "INVALID_GRAPH_TITLE",
+      "severity": "error",
+      "message": "graph/flowchart 中使用了 title 声明（应使用 subgraph 或注释）",
+      "hash": "2c1a9b50",
+      "snippet": "title 自进化 Agent 发展路线图"
+    },
+    {
+      "file": "src/data/articles/agent-021.ts",
+      "line": 18,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 20 个字面量 \\n 字符",
+      "hash": "e36ced38",
+      "snippet": "graph LR\n    A[\"2025: 单 Agent 时代\"] -->|\"能力天花板\n单个 Agent 无法突破\"| B[\"2026: AI 团队时代\"]"
+    },
+    {
+      "file": "src/data/articles/agent-021.ts",
+      "line": 741,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 10 个字面量 \\n 字符",
+      "hash": "c6d45436",
+      "snippet": "graph TD\n    subgraph 2026: 当前\n    A1[\"Managed Agent 平台\nMultica / n8n\"]\n    A2[\""
+    },
+    {
+      "file": "src/data/articles/agent-022.ts",
+      "line": 41,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "b6369bb6",
+      "snippet": "graph TD\n    A[\"传统 Agent\n静态能力\"] -->|\"每次任务\n从零开始\"| B[\"任务执行\"]\n    B -->|\"能力不变\"| A\n "
+    },
+    {
+      "file": "src/data/articles/agent-022.ts",
+      "line": 508,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "3bb96de7",
+      "snippet": "graph TD\n    A[\"最小可用 Agent\n种子代码\"] --> B[\"任务执行\"]\n    B --> C{执行结果}\n    \n    C -->"
+    },
+    {
+      "file": "src/data/articles/agent-022.ts",
+      "line": 824,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 824 行开始）",
+      "hash": "f6624f4f",
+      "snippet": "824-840"
+    },
+    {
+      "file": "src/data/articles/agent-023.ts",
+      "line": 310,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 310 行开始）",
+      "hash": "af07f5cb",
+      "snippet": "310-348"
+    },
+    {
+      "file": "src/data/articles/agent-025.ts",
+      "line": 43,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 43 行开始）",
+      "hash": "53511190",
+      "snippet": "43-936"
+    },
+    {
+      "file": "src/data/articles/agent-026.ts",
+      "line": 30,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 30 行开始）",
+      "hash": "7cc220fe",
+      "snippet": "30-944"
+    },
+    {
+      "file": "src/data/articles/agent-027.ts",
+      "line": 67,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 67 行开始）",
+      "hash": "ca788a9b",
+      "snippet": "67-630"
+    },
+    {
+      "file": "src/data/articles/agent-028.ts",
+      "line": 24,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 24 行开始）",
+      "hash": "4b752586",
+      "snippet": "24-488"
+    },
+    {
+      "file": "src/data/articles/agent-029.ts",
+      "line": 478,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 478 行开始）",
+      "hash": "b8bdb85c",
+      "snippet": "478-659"
+    },
+    {
+      "file": "src/data/articles/agent-030.ts",
+      "line": 540,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 540 行开始）",
+      "hash": "5440e309",
+      "snippet": "540-648"
+    },
+    {
+      "file": "src/data/articles/agent-031.ts",
+      "line": 407,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 407 行开始）",
+      "hash": "c1fd7ff8",
+      "snippet": "407-424"
+    },
+    {
+      "file": "src/data/articles/agent-032.ts",
+      "line": 943,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 943 行开始）",
+      "hash": "d8dd6478",
+      "snippet": "943-960"
+    },
+    {
+      "file": "src/data/articles/agent-034.ts",
+      "line": 412,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 412 行开始）",
+      "hash": "c83db54b",
+      "snippet": "412-429"
+    },
+    {
+      "file": "src/data/articles/agent-035.ts",
+      "line": 623,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 623 行开始）",
+      "hash": "6b76727b",
+      "snippet": "623-640"
+    },
+    {
+      "file": "src/data/articles/agent-037.ts",
+      "line": 625,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 625 行开始）",
+      "hash": "5a9a0aa4",
+      "snippet": "625-640"
+    },
+    {
+      "file": "src/data/articles/agent-038.ts",
+      "line": 749,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 749 行开始）",
+      "hash": "8efe6ed2",
+      "snippet": "749-837"
+    },
+    {
+      "file": "src/data/articles/agent-039.ts",
+      "line": 182,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "4d5ff864",
+      "snippet": "graph TD\n    A[\"用户请求\"] --> B[\"编排层 Orchestrator\"]\n    B --> C[\"检索层 Retriever\"]\n  "
+    },
+    {
+      "file": "src/data/articles/agent-041.ts",
+      "line": 901,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "ef2fcc09",
+      "snippet": "graph TD\n    A[\"用户请求\"] --> B[\"负载均衡器\"]\n    B --> C1[\"Agent 实例 1\"]\n    B --> C2[\"A"
+    },
+    {
+      "file": "src/data/articles/agent-046.ts",
+      "line": 46,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 5 个字面量 \\n 字符",
+      "hash": "3d7cede4",
+      "snippet": "graph TD\n    A[\"Agent 失控率 54％\"] --> B{\"失控类型\"}\n    B --> C[\"目标漂移\\nGoal Drift\"]\n  "
+    },
+    {
+      "file": "src/data/articles/agent-047.ts",
+      "line": 768,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 768 行开始）",
+      "hash": "3ab0eb3d",
+      "snippet": "768-838"
+    },
+    {
+      "file": "src/data/articles/agent-049.ts",
+      "line": 406,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 406 行开始）",
+      "hash": "da530ae5",
+      "snippet": "406-599"
+    },
+    {
+      "file": "src/data/articles/agent-050.ts",
+      "line": 468,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 468 行开始）",
+      "hash": "3af48fdd",
+      "snippet": "468-672"
+    },
+    {
+      "file": "src/data/articles/agent-051.ts",
+      "line": 776,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 776 行开始）",
+      "hash": "607a0e2d",
+      "snippet": "776-870"
+    },
+    {
+      "file": "src/data/articles/agent-guide.ts",
+      "line": 63,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 63 行开始）",
+      "hash": "2043df5f",
+      "snippet": "63-80"
+    },
+    {
+      "file": "src/data/articles/ai-000.ts",
+      "line": 366,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 366 行开始）",
+      "hash": "a56f298f",
+      "snippet": "366-375"
+    },
+    {
+      "file": "src/data/articles/ai-002.ts",
+      "line": 34,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 34 行开始）",
+      "hash": "f1043703",
+      "snippet": "34-477"
+    },
+    {
+      "file": "src/data/articles/ai-003.ts",
+      "line": 29,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 29 行开始）",
+      "hash": "aef3da48",
+      "snippet": "29-282"
+    },
+    {
+      "file": "src/data/articles/ai-004.ts",
+      "line": 24,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 24 行开始）",
+      "hash": "a65c43d4",
+      "snippet": "24-320"
+    },
+    {
+      "file": "src/data/articles/ai-agent-payment-001.ts",
+      "line": 24,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 24 行开始）",
+      "hash": "d01cf5bc",
+      "snippet": "24-432"
+    },
+    {
+      "file": "src/data/articles/ai-chip-china-001.ts",
+      "line": 125,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 125 行开始）",
+      "hash": "3045874f",
+      "snippet": "125-567"
+    },
+    {
+      "file": "src/data/articles/ai-distillation-001.ts",
+      "line": 141,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 6 个字面量 \\n 字符",
+      "hash": "14600d97",
+      "snippet": "graph LR\n    A[\"响应蒸馏\\nResponse-based\"] --> D[\"实现简单\\n跨架构兼容\"]\n    B[\"特征蒸馏\\nFeature"
+    },
+    {
+      "file": "src/data/articles/ai-distillation-001.ts",
+      "line": 431,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 431 行开始）",
+      "hash": "18a078b5",
+      "snippet": "431-609"
+    },
+    {
+      "file": "src/data/articles/ai-infra-001.ts",
+      "line": 43,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 43 行开始）",
+      "hash": "b810a6b3",
+      "snippet": "43-658"
+    },
+    {
+      "file": "src/data/articles/ai-security-001.ts",
+      "line": 29,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 29 行开始）",
+      "hash": "db01941d",
+      "snippet": "29-383"
+    },
+    {
+      "file": "src/data/articles/ai-security-002.ts",
+      "line": 27,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 27 行开始）",
+      "hash": "b71a4b14",
+      "snippet": "27-549"
+    },
+    {
+      "file": "src/data/articles/ai-security-003.ts",
+      "line": 328,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 328 行开始）",
+      "hash": "56cf95a9",
+      "snippet": "328-345"
+    },
+    {
+      "file": "src/data/articles/ai-security-004.ts",
+      "line": 71,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 71 行开始）",
+      "hash": "e454edf8",
+      "snippet": "71-177"
+    },
+    {
+      "file": "src/data/articles/ai-security-005.ts",
+      "line": 100,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "37111ab4",
+      "snippet": "graph TD\n    A[\"AI 安全评估机构\"] --> B[\"政府级机构\"]\n    A --> C[\"行业自发组织\"]\n    A --> D[\"学术"
+    },
+    {
+      "file": "src/data/articles/ai-security-006.ts",
+      "line": 326,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 326 行开始）",
+      "hash": "12bad93d",
+      "snippet": "326-343"
+    },
+    {
+      "file": "src/data/articles/ai-security-007.ts",
+      "line": 52,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 52 行开始）",
+      "hash": "db385d9f",
+      "snippet": "52-459"
+    },
+    {
+      "file": "src/data/articles/ai-security-008.ts",
+      "line": 55,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 55 行开始）",
+      "hash": "a2d88508",
+      "snippet": "55-561"
+    },
+    {
+      "file": "src/data/articles/ai-security-009.ts",
+      "line": 43,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "0c7ab68a",
+      "snippet": "graph TD\n    A[Claude Mythos Preview] --> B[Firefox 代码库分析]\n    B --> C[静态分析引擎]\n "
+    },
+    {
+      "file": "src/data/articles/ai-security-010.ts",
+      "line": 48,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 48 行开始）",
+      "hash": "06cbf06d",
+      "snippet": "48-490"
+    },
+    {
+      "file": "src/data/articles/ai-security-011.ts",
+      "line": 34,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "087ba01d",
+      "snippet": "graph TD\n    A[\"AI 国防基础设施\"] --> B[\"机密计算环境\"]\n    A --> C[\"数据管道与安全分级\"]\n    A --> D"
+    },
+    {
+      "file": "src/data/articles/ai-security-012.ts",
+      "line": 1223,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1223 行开始）",
+      "hash": "fcd61ce8",
+      "snippet": "1223-1265"
+    },
+    {
+      "file": "src/data/articles/ai4science-001.ts",
+      "line": 40,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 40 行开始）",
+      "hash": "35ffdebb",
+      "snippet": "40-631"
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 37,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "d6c8ae7c",
+      "snippet": "graph LR\n    A[数据源] --> B[数据收集]\n    B --> C[数据验证]\n    C --> D[特征工程]\n    D --> E["
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 73,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "0b44f0c7",
+      "snippet": "graph TD\n    A[原始数据源] --> B[数据抽取]\n    B --> C[Schema 验证]\n    C --> D{验证通过?}\n    "
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 110,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 21 个字面量 \\n 字符",
+      "hash": "636458dc",
+      "snippet": "graph LR\n    A[原始数据] --> B[特征提取]\n    B --> C[特征变换]\n    C --> D[特征选择]\n    D --> E"
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 146,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 27 个字面量 \\n 字符",
+      "hash": "94a94223",
+      "snippet": "graph TD\n    A[训练数据] --> B[数据划分]\n    B --> C[K 折交叉验证]\n    C --> D[超参数搜索]\n    D -"
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 183,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 39 个字面量 \\n 字符",
+      "hash": "309abf31",
+      "snippet": "graph LR\n    A[候选模型集] --> B[离线评估]\n    B --> C[多指标对比]\n    C --> D{指标达标?}\n    D --"
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 220,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 40 个字面量 \\n 字符",
+      "hash": "6c42696d",
+      "snippet": "graph TD\n    A[代码提交] --> B[代码测试]\n    B --> C{通过?}\n    C -->|\"No\"| D[修复代码]\n    C "
+    },
+    {
+      "file": "src/data/articles/aieng-001.ts",
+      "line": 260,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 260 行开始）",
+      "hash": "bbfb6399",
+      "snippet": "260-277"
+    },
+    {
+      "file": "src/data/articles/aieng-002.ts",
+      "line": 67,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 67 行开始）",
+      "hash": "735fc1ab",
+      "snippet": "67-610"
+    },
+    {
+      "file": "src/data/articles/aieng-003.ts",
+      "line": 632,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 632 行开始）",
+      "hash": "6db62e98",
+      "snippet": "632-652"
+    },
+    {
+      "file": "src/data/articles/aieng-005.ts",
+      "line": 407,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 407 行开始）",
+      "hash": "d753efb0",
+      "snippet": "407-984"
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 37,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 24 个字面量 \\n 字符",
+      "hash": "c4277afe",
+      "snippet": "graph TD\n    A[特征痛点] --> B[特征重复计算]\n    A --> C[线上线下不一致]\n    A --> D[特征发现困难]\n    "
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 77,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 30 个字面量 \\n 字符",
+      "hash": "4732846c",
+      "snippet": "graph LR\n    A[数据源] --> B[离线存储]\n    B -->|Parquet/BigQuery| C[批量训练]\n    B -->|ma"
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 111,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 20 个字面量 \\n 字符",
+      "hash": "620c2e6b",
+      "snippet": "graph TD\n    A[DataSource] --> B[Feature View]\n    B --> C[Feature Service]\n    "
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 146,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 28 个字面量 \\n 字符",
+      "hash": "2c4f01f3",
+      "snippet": "graph TD\n    A[特征定义文件] -->|feast apply| B[注册表]\n    B -->|快照| C[S3/GCS 存储]\n    B "
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 181,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 31 个字面量 \\n 字符",
+      "hash": "8264e464",
+      "snippet": "graph TD\n    A[训练请求] --> B[point-in-time join]\n    B --> C[离线存储]\n    C -->|历史快照|"
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 218,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 36 个字面量 \\n 字符",
+      "hash": "21f5a8cd",
+      "snippet": "graph TD\n    A[Feature View] --> B[新鲜度检查]\n    A --> C[缺失率检查]\n    A --> D[值范围检查]\n"
+    },
+    {
+      "file": "src/data/articles/aieng-006.ts",
+      "line": 259,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 259 行开始）",
+      "hash": "3f8df1f4",
+      "snippet": "259-277"
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 36,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "7351d610",
+      "snippet": "graph TD\n    A[模型改进想法] --> B[离线评估]\n    B --> C{离线指标达标?}\n    C -->|\"No\"| A\n    C "
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 74,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 39 个字面量 \\n 字符",
+      "hash": "e5a0ad24",
+      "snippet": "graph LR\n    A[假设定义] --> B[指标选择]\n    B --> C[样本量计算]\n    C --> D[随机化策略]\n    D -->"
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 110,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 37 个字面量 \\n 字符",
+      "hash": "719f2917",
+      "snippet": "graph TD\n    A[收集数据] --> B[计算 p 值]\n    B --> C{p < 0.05?}\n    C -->|\"Yes\"| D[检查效"
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 148,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 40 个字面量 \\n 字符",
+      "hash": "4129101c",
+      "snippet": "graph LR\n    A[用户到达] --> B[算法选择版本]\n    B --> C[用户交互]\n    C --> D[收集反馈]\n    D -->"
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 184,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 53 个字面量 \\n 字符",
+      "hash": "c0b5ec1f",
+      "snippet": "graph LR\n    A[新模型通过 A/B] --> B[Canary 1％]\n    B --> C{监控 24h}\n    C -->|\"OK\"| D"
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 224,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 41 个字面量 \\n 字符",
+      "hash": "d0115855",
+      "snippet": "graph TD\n    A[监控指标异常] --> B{超过阈值?}\n    B -->|\"No\"| C[继续观察]\n    B -->|\"Yes\"| D[触"
+    },
+    {
+      "file": "src/data/articles/aieng-007.ts",
+      "line": 264,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 264 行开始）",
+      "hash": "7f0289db",
+      "snippet": "264-288"
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 36,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 43 个字面量 \\n 字符",
+      "hash": "733dcfb2",
+      "snippet": "graph TD\n    A[数据收集] --> B[数据预处理]\n    B --> C[特征工程]\n    C --> D[实验与训练]\n    D -->"
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 75,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 46 个字面量 \\n 字符",
+      "hash": "eca2148d",
+      "snippet": "graph TD\n    A[原始数据源] --> B[数据摄取]\n    B --> C[数据质量检查]\n    C --> D{质量达标?}\n    D -"
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 113,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 71 个字面量 \\n 字符",
+      "hash": "b087c3f1",
+      "snippet": "graph LR\n    A[定义实验假设] --> B[设计实验参数]\n    B --> C[运行训练]\n    C --> D[记录参数和指标]\n    "
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 150,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 66 个字面量 \\n 字符",
+      "hash": "8770e19d",
+      "snippet": "graph TD\n    A[训练配置锁定] --> B[数据加载]\n    B --> C[模型训练]\n    C --> D[交叉验证]\n    D -->"
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 190,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 78 个字面量 \\n 字符",
+      "hash": "a8e38e7e",
+      "snippet": "graph TD\n    A[模型注册为 Production] --> B[构建服务镜像]\n    B --> C[部署到 Kubernetes]\n    C"
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 231,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 68 个字面量 \\n 字符",
+      "hash": "f7caac97",
+      "snippet": "graph TD\n    A[生产推理请求] --> B[记录输入输出]\n    B --> C[实时指标聚合]\n    C --> D[漂移检测]\n    C"
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 276,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 276 行开始）",
+      "hash": "134d9a1c",
+      "snippet": "276-304"
+    },
+    {
+      "file": "src/data/articles/aieng-009.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "545ecc74",
+      "snippet": "22-275"
+    },
+    {
+      "file": "src/data/articles/aieng-010.ts",
+      "line": 32,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 32 行开始）",
+      "hash": "15b7d798",
+      "snippet": "32-281"
+    },
+    {
+      "file": "src/data/articles/aieng-011.ts",
+      "line": 49,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 49 行开始）",
+      "hash": "dfef105b",
+      "snippet": "49-105"
+    },
+    {
+      "file": "src/data/articles/aieng-012.ts",
+      "line": 37,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 37 行开始）",
+      "hash": "b68459a1",
+      "snippet": "37-395"
+    },
+    {
+      "file": "src/data/articles/aieng-013.ts",
+      "line": 30,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 30 行开始）",
+      "hash": "d4101a6a",
+      "snippet": "30-387"
+    },
+    {
+      "file": "src/data/articles/aieng-014.ts",
+      "line": 18,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 18 行开始）",
+      "hash": "aeb8d8fb",
+      "snippet": "18-467"
+    },
+    {
+      "file": "src/data/articles/aieng-015.ts",
+      "line": 555,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 555 行开始）",
+      "hash": "62d1828c",
+      "snippet": "555-611"
+    },
+    {
+      "file": "src/data/articles/aieng-017.ts",
+      "line": 44,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 44 行开始）",
+      "hash": "cbef2f5c",
+      "snippet": "44-460"
+    },
+    {
+      "file": "src/data/articles/aieng-021.ts",
+      "line": 1480,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1480 行开始）",
+      "hash": "9b239d14",
+      "snippet": "1480-1497"
+    },
+    {
+      "file": "src/data/articles/aieng-022.ts",
+      "line": 519,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 519 行开始）",
+      "hash": "c3005180",
+      "snippet": "519-680"
+    },
+    {
+      "file": "src/data/articles/aieng-023.ts",
+      "line": 575,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 575 行开始）",
+      "hash": "60035cd0",
+      "snippet": "575-635"
+    },
+    {
+      "file": "src/data/articles/aieng-024.ts",
+      "line": 16,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "ad8ffe50",
+      "snippet": "graph TD\n    A[用户自然语言指令] --> B[感知层 Perception]\n    B --> C[理解层 Understanding]\n  "
+    },
+    {
+      "file": "src/data/articles/aieng-024.ts",
+      "line": 297,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 14 个字面量 \\n 字符",
+      "hash": "e2512a79",
+      "snippet": "graph LR\n    A[用户指令] --> B{风险分级}\n    B -->|低风险 C0| C[自动执行]\n    B -->|中风险 C1| D[后"
+    },
+    {
+      "file": "src/data/articles/aieng-025.ts",
+      "line": 562,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 562 行开始）",
+      "hash": "7edf63d4",
+      "snippet": "562-616"
+    },
+    {
+      "file": "src/data/articles/aieng-guide.ts",
+      "line": 58,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 58 行开始）",
+      "hash": "16ca5676",
+      "snippet": "58-75"
+    },
+    {
+      "file": "src/data/articles/aieng019.ts",
+      "line": 28,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "9cad4c17",
+      "snippet": "sequenceDiagram\n    participant Dev as 开发者/Coding Agent\n    participant MCP as M"
+    },
+    {
+      "file": "src/data/articles/aieng019.ts",
+      "line": 335,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "327ba379",
+      "snippet": "graph TD\n    A[Coding Agent 需要理解代码库] --> B{MCP Client}\n    B -->|tools/list| C[M"
+    },
+    {
+      "file": "src/data/articles/aieng019.ts",
+      "line": 536,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 536 行开始）",
+      "hash": "2896dcef",
+      "snippet": "536-581"
+    },
+    {
+      "file": "src/data/articles/aiobs-001.ts",
+      "line": 188,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 30 个字面量 \\n 字符",
+      "hash": "b3ccb34b",
+      "snippet": "graph TD\n    subgraph \"AI 可观测性架构\"\n        A[LLM 推理服务] --> B[Observation SDK]\n   "
+    },
+    {
+      "file": "src/data/articles/aiobs-001.ts",
+      "line": 528,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 30 个字面量 \\n 字符",
+      "hash": "36ce268b",
+      "snippet": "sequenceDiagram\n    participant M as 监控系统\n    participant D as 故障检测\n    particip"
+    },
+    {
+      "file": "src/data/articles/aiobs-001.ts",
+      "line": 808,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 808 行开始）",
+      "hash": "f608d792",
+      "snippet": "808-852"
+    },
+    {
+      "file": "src/data/articles/anthropic-002.ts",
+      "line": 510,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 510 行开始）",
+      "hash": "b7664cb0",
+      "snippet": "510-677"
+    },
+    {
+      "file": "src/data/articles/anthropic-claude.ts",
+      "line": 297,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 297 行开始）",
+      "hash": "a9d8ed0b",
+      "snippet": "297-314"
+    },
+    {
+      "file": "src/data/articles/apple-ai-001.ts",
+      "line": 515,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 515 行开始）",
+      "hash": "050ead0c",
+      "snippet": "515-632"
+    },
+    {
+      "file": "src/data/articles/codex-001.ts",
+      "line": 32,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 32 行开始）",
+      "hash": "4611660f",
+      "snippet": "32-582"
+    },
+    {
+      "file": "src/data/articles/cv-001.ts",
+      "line": 73,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 73 行开始）",
+      "hash": "a739ae1f",
+      "snippet": "73-649"
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 618,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 618 行开始）",
+      "hash": "fe77189b",
+      "snippet": "618-633"
+    },
+    {
+      "file": "src/data/articles/cv-003.ts",
+      "line": 619,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 619 行开始）",
+      "hash": "06b8c80c",
+      "snippet": "619-643"
+    },
+    {
+      "file": "src/data/articles/cv-004.ts",
+      "line": 106,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 106 行开始）",
+      "hash": "e1609c78",
+      "snippet": "106-757"
+    },
+    {
+      "file": "src/data/articles/cv-005.ts",
+      "line": 827,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 827 行开始）",
+      "hash": "36d2b52d",
+      "snippet": "827-855"
+    },
+    {
+      "file": "src/data/articles/cv-006.ts",
+      "line": 1134,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1134 行开始）",
+      "hash": "7fb783fe",
+      "snippet": "1134-1173"
+    },
+    {
+      "file": "src/data/articles/cv-007.ts",
+      "line": 949,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 949 行开始）",
+      "hash": "635316b3",
+      "snippet": "949-977"
+    },
+    {
+      "file": "src/data/articles/cv-008.ts",
+      "line": 1024,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1024 行开始）",
+      "hash": "c61268ab",
+      "snippet": "1024-1051"
+    },
+    {
+      "file": "src/data/articles/cv-009.ts",
+      "line": 87,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 87 行开始）",
+      "hash": "0a48e603",
+      "snippet": "87-701"
+    },
+    {
+      "file": "src/data/articles/cv-010.ts",
+      "line": 93,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 93 行开始）",
+      "hash": "baf3e0f7",
+      "snippet": "93-868"
+    },
+    {
+      "file": "src/data/articles/cv-011.ts",
+      "line": 851,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "9c0b56ae",
+      "snippet": "graph LR\n    A[\"LiDAR 点云\n(N, 4)\"] --> B[\"Pillar 编码\n体素化到 BEV\"]\n    B --> C[\"2D 骨干"
+    },
+    {
+      "file": "src/data/articles/cv-011.ts",
+      "line": 998,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 998 行开始）",
+      "hash": "6c399bf2",
+      "snippet": "998-1029"
+    },
+    {
+      "file": "src/data/articles/cv-012.ts",
+      "line": 83,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 83 行开始）",
+      "hash": "06d7e910",
+      "snippet": "83-828"
+    },
+    {
+      "file": "src/data/articles/cv-guide.ts",
+      "line": 44,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 44 行开始）",
+      "hash": "a2b585d2",
+      "snippet": "44-61"
+    },
+    {
+      "file": "src/data/articles/dl-001.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "7572b4b7",
+      "snippet": "20-410"
+    },
+    {
+      "file": "src/data/articles/dl-002.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "d393a28c",
+      "snippet": "22-1060"
+    },
+    {
+      "file": "src/data/articles/dl-003.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "aa1e9a27",
+      "snippet": "22-470"
+    },
+    {
+      "file": "src/data/articles/dl-004.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "7cc2b1ba",
+      "snippet": "22-469"
+    },
+    {
+      "file": "src/data/articles/dl-005.ts",
+      "line": 68,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 68 行开始）",
+      "hash": "dd39467a",
+      "snippet": "68-581"
+    },
+    {
+      "file": "src/data/articles/dl-006.ts",
+      "line": 64,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 64 行开始）",
+      "hash": "39435ad4",
+      "snippet": "64-603"
+    },
+    {
+      "file": "src/data/articles/dl-007.ts",
+      "line": 100,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 100 行开始）",
+      "hash": "7dcec139",
+      "snippet": "100-729"
+    },
+    {
+      "file": "src/data/articles/dl-008.ts",
+      "line": 86,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 86 行开始）",
+      "hash": "5d9c520e",
+      "snippet": "86-774"
+    },
+    {
+      "file": "src/data/articles/dl-009.ts",
+      "line": 92,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 92 行开始）",
+      "hash": "2103d4ba",
+      "snippet": "92-941"
+    },
+    {
+      "file": "src/data/articles/dl-010.ts",
+      "line": 68,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 68 行开始）",
+      "hash": "63ba8f74",
+      "snippet": "68-673"
+    },
+    {
+      "file": "src/data/articles/dl-012.ts",
+      "line": 605,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 605 行开始）",
+      "hash": "0056f9bf",
+      "snippet": "605-621"
+    },
+    {
+      "file": "src/data/articles/dl-013.ts",
+      "line": 1263,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1263 行开始）",
+      "hash": "d16cce02",
+      "snippet": "1263-1295"
+    },
+    {
+      "file": "src/data/articles/dl-014.ts",
+      "line": 118,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 118 行开始）",
+      "hash": "3883dbca",
+      "snippet": "118-1200"
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 41,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 21 个字面量 \\n 字符",
+      "hash": "182a8196",
+      "snippet": "graph LR\n    A[\"大规模源域数据\"] --> B[\"预训练模型\"]\n    B --> C[\"通用特征表示\"]\n    C --> D[\"目标任务"
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 70,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "b5eec189",
+      "snippet": "graph TD\n    A[\"预训练模型\"] --> B[\"线性探测\"]\n    A --> C[\"特征提取\"]\n    A --> D[\"全量微调\"]\n  "
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 102,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 18 个字面量 \\n 字符",
+      "hash": "38257bbd",
+      "snippet": "graph LR\n    A[\"高学习率训练分类头\"] --> B[\"解冻深层\"]\n    B --> C[\"中等学习率微调\"]\n    C --> D[\"解冻"
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 133,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "9c372d6a",
+      "snippet": "graph TD\n    A[\"源域数据\"] --> B[\"领域差异检测\"]\n    B --> C[\"差异较小\"]\n    B --> D[\"差异较大\"]\n "
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 169,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 29 个字面量 \\n 字符",
+      "hash": "b6c900f3",
+      "snippet": "graph LR\n    A[\"明确任务需求\"] --> B[\"分类/检测/分割\"]\n    B --> C[\"评估数据量\"]\n    C --> D[\"评估算"
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 202,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 38 个字面量 \\n 字符",
+      "hash": "a8de306d",
+      "snippet": "graph TD\n    A[\"极少标注数据\"] --> B[\"冻结主干网络\"]\n    B --> C[\"强正则化\"]\n    C --> D[\"数据增强\"]"
+    },
+    {
+      "file": "src/data/articles/dl-015.ts",
+      "line": 234,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 234 行开始）",
+      "hash": "170079d5",
+      "snippet": "234-252"
+    },
+    {
+      "file": "src/data/articles/dl-016.ts",
+      "line": 847,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 847 行开始）",
+      "hash": "5426905a",
+      "snippet": "847-868"
+    },
+    {
+      "file": "src/data/articles/dl-017.ts",
+      "line": 29,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 29 行开始）",
+      "hash": "13aaac83",
+      "snippet": "29-568"
+    },
+    {
+      "file": "src/data/articles/dl-018.ts",
+      "line": 24,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 24 行开始）",
+      "hash": "435e6657",
+      "snippet": "24-633"
+    },
+    {
+      "file": "src/data/articles/dl-019.ts",
+      "line": 24,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 24 行开始）",
+      "hash": "dd9bbb0b",
+      "snippet": "24-424"
+    },
+    {
+      "file": "src/data/articles/dl-020.ts",
+      "line": 29,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 29 行开始）",
+      "hash": "cbfea113",
+      "snippet": "29-776"
+    },
+    {
+      "file": "src/data/articles/dl-guide.ts",
+      "line": 78,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 78 行开始）",
+      "hash": "f52a7b93",
+      "snippet": "78-139"
+    },
+    {
+      "file": "src/data/articles/edge-001.ts",
+      "line": 28,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 28 行开始）",
+      "hash": "066fbe5a",
+      "snippet": "28-232"
+    },
+    {
+      "file": "src/data/articles/entertainment-ai-001.ts",
+      "line": 52,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 7 个字面量 \\n 字符",
+      "hash": "65aeb6e6",
+      "snippet": "graph LR\n    A[\"NLP 剧本分析\"] --> B[\"创意辅助\"]\n    C[\"计算机视觉\"] --> D[\"拍摄与后期\"]\n    E[\"生成"
+    },
+    {
+      "file": "src/data/articles/ethics-001.ts",
+      "line": 558,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 558 行开始）",
+      "hash": "4725bdb0",
+      "snippet": "558-578"
+    },
+    {
+      "file": "src/data/articles/ethics-002.ts",
+      "line": 600,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 600 行开始）",
+      "hash": "a326f102",
+      "snippet": "600-623"
+    },
+    {
+      "file": "src/data/articles/ethics-003.ts",
+      "line": 672,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 672 行开始）",
+      "hash": "fbb4491c",
+      "snippet": "672-696"
+    },
+    {
+      "file": "src/data/articles/ethics-004.ts",
+      "line": 313,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "210f114c",
+      "snippet": "graph LR\n    A[\"输入扰动区域\"] --> B[\"区间传播\n逐层 bound\"]\n    B --> C[\"输出 bounds\"]\n    C -"
+    },
+    {
+      "file": "src/data/articles/ethics-004.ts",
+      "line": 463,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 463 行开始）",
+      "hash": "8bf1322a",
+      "snippet": "463-483"
+    },
+    {
+      "file": "src/data/articles/ethics-005.ts",
+      "line": 719,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 719 行开始）",
+      "hash": "42462aa7",
+      "snippet": "719-737"
+    },
+    {
+      "file": "src/data/articles/ethics-006.ts",
+      "line": 928,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 928 行开始）",
+      "hash": "7d565e21",
+      "snippet": "928-947"
+    },
+    {
+      "file": "src/data/articles/ethics-007.ts",
+      "line": 674,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 674 行开始）",
+      "hash": "051d1977",
+      "snippet": "674-683"
+    },
+    {
+      "file": "src/data/articles/ethics-008.ts",
+      "line": 883,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 883 行开始）",
+      "hash": "5148d4f6",
+      "snippet": "883-892"
+    },
+    {
+      "file": "src/data/articles/ethics-009.ts",
+      "line": 38,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 38 行开始）",
+      "hash": "9e94f24c",
+      "snippet": "38-590"
+    },
+    {
+      "file": "src/data/articles/ethics-010.ts",
+      "line": 400,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 400 行开始）",
+      "hash": "6c0cfc68",
+      "snippet": "400-544"
+    },
+    {
+      "file": "src/data/articles/ethics-011.ts",
+      "line": 670,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 670 行开始）",
+      "hash": "8e60a392",
+      "snippet": "670-839"
+    },
+    {
+      "file": "src/data/articles/ethics-013.ts",
+      "line": 966,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 966 行开始）",
+      "hash": "e64cf586",
+      "snippet": "966-997"
+    },
+    {
+      "file": "src/data/articles/ethics-014.ts",
+      "line": 422,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "efcb5c00",
+      "snippet": "flowchart TD\n    A[\"训练数据审计体系\"] --> B[\"内部审计\"]\n    A --> C[\"外部审计\"]\n    A --> D[\"事件"
+    },
+    {
+      "file": "src/data/articles/finance-001.ts",
+      "line": 18,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 18 行开始）",
+      "hash": "f5f4c73c",
+      "snippet": "18-635"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 44,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "65c0d63a",
+      "snippet": "graph LR\n    A[\"数据分布 p_data\"] --> B[\"VAE: 隐变量编码\"]\n    A --> C[\"GAN: 对抗训练\"]\n    A"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 77,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 19 个字面量 \\n 字符",
+      "hash": "9701f97f",
+      "snippet": "graph LR\n    A[\"x_0 清晰图像\"] -->|q(x_1|x_0)| B[\"x_1 轻微噪声\"]\n    B -->|q(x_2|x_1)| C"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 113,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "eee5d99d",
+      "snippet": "graph TD\n    A[\"x_t 噪声图像\"] --> B[\"编码器\"]\n    B --> C[\"瓶颈层 + Attention\"]\n    C -->"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 152,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 27 个字面量 \\n 字符",
+      "hash": "5855a42e",
+      "snippet": "graph LR\n    A[\"随机采样 t\"] --> B[\"前向加噪 x_t\"]\n    B --> C[\"U-Net 预测噪声\\\"]\n    C --> "
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 187,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 35 个字面量 \\n 字符",
+      "hash": "c46c089b",
+      "snippet": "graph LR\n    A[\"DDPM: 1000步\"] -->|20x 加速| B[\"DDIM: 50步\"]\n    B -->|质量相当| C[\"FID "
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 222,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 36 个字面量 \\n 字符",
+      "hash": "825ef919",
+      "snippet": "graph TD\n    A[\"条件 c (文本/类别)\"] --> B[\"条件编码器\\\"]\n    B --> C[\"Conditional U-Net\"]\n"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 260,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 260 行开始）",
+      "hash": "2d0e0f0d",
+      "snippet": "260-281"
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 43,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "fd3d92cc",
+      "snippet": "graph TD\n    A[\"文本提示词\"] --> B[\"CLIP 文本编码器\"]\n    B --> C[\"文本嵌入向量\"]\n    D[\"随机噪声\"] "
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 82,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 21 个字面量 \\n 字符",
+      "hash": "e9c4047a",
+      "snippet": "graph LR\n    A[\"像素图像 3x512x512\"] --> B[\"Encoder 卷积网络\"]\n    B --> C[\"均值 mu + 方差 l"
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 121,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 25 个字面量 \\n 字符",
+      "hash": "2dbb8c79",
+      "snippet": "graph TD\n    A[\"文本提示词\"] --> B[\"BPE Tokenizer\"]\n    B --> C[\"Token IDs [77]\"]\n   "
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 162,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 26 个字面量 \\n 字符",
+      "hash": "a891a70c",
+      "snippet": "graph TD\n    A[\"Latent 4x64x64\"] --> D0[\"Down 0: 320ch\"]\n    D0 --> D1[\"Down 1: "
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 207,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 25 个字面量 \\n 字符",
+      "hash": "8e2d398d",
+      "snippet": "graph LR\n    A[\"随机噪声 z_T\"] --> B[\"采样器选择\"]\n    B --> C[\"DDIM: 确定性 ODE\\\"]\n    B --"
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 247,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 30 个字面量 \\n 字符",
+      "hash": "361b8617",
+      "snippet": "graph TD\n    A[\"预训练 SD 模型\"] --> B[\"ControlNet 结构控制\"]\n    A --> C[\"LoRA 风格控制\"]\n  "
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 288,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 288 行开始）",
+      "hash": "bf67430f",
+      "snippet": "288-312"
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 37,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 20 个字面量 \\n 字符",
+      "hash": "7fe47fdb",
+      "snippet": "graph LR\n    A[\"输入 x\"] --> B[\"经典编码器\"]\n    B --> C[\"确定向量 z\"]\n    C --> D[\"解码器\"]\n "
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 79,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 31 个字面量 \\n 字符",
+      "hash": "b38c0d4c",
+      "snippet": "graph TD\n    A[\"先验 p(z) ~ N(0,I)\"] -->|采样 z| B[\"解码器 p(x|z)\"]\n    B -->|生成| C[\"数据"
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 116,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 16 个字面量 \\n 字符",
+      "hash": "45319e0b",
+      "snippet": "graph LR\n    A[\"编码器\"] --> B[\"mu, logvar\"]\n    B --> C[\"std = exp(logvar/2)\"]\n   "
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 155,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 32 个字面量 \\n 字符",
+      "hash": "b04d1b2e",
+      "snippet": "graph TD\n    A[\"log p(x)\"] -->|公式| B[\"ELBO + KL[q||p(z|x)]\"]\n    B --> C[\"ELBO ="
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 193,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 29 个字面量 \\n 字符",
+      "hash": "f06d4b4a",
+      "snippet": "graph LR\n    A[\"输入 x\"] --> B[\"beta-VAE 编码器\"]\n    B --> C[\"mu, logvar\"]\n    C -->"
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 238,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 46 个字面量 \\n 字符",
+      "hash": "1206626b",
+      "snippet": "graph TD\n    A[\"生成模型\"] --> B[\"VAE\"]\n    A --> C[\"GAN\"]\n    A --> D[\"Diffusion\"]\n"
+    },
+    {
+      "file": "src/data/articles/genai-003.ts",
+      "line": 281,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 281 行开始）",
+      "hash": "a147ab2c",
+      "snippet": "281-301"
+    },
+    {
+      "file": "src/data/articles/genai-004.ts",
+      "line": 36,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 36 行开始）",
+      "hash": "b9c680b7",
+      "snippet": "36-285"
+    },
+    {
+      "file": "src/data/articles/genai-005.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "65658869",
+      "snippet": "20-959"
+    },
+    {
+      "file": "src/data/articles/genai-006.ts",
+      "line": 35,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 35 行开始）",
+      "hash": "2b546d38",
+      "snippet": "35-240"
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 42,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 35 个字面量 \\n 字符",
+      "hash": "6ae48260",
+      "snippet": "graph TD\n    A[\"学习目标: p_data(x)\"] --> B[\"VAE\"]\n    A --> C[\"GAN\"]\n    A --> D[\"D"
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 77,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 32 个字面量 \\n 字符",
+      "hash": "1a037542",
+      "snippet": "graph LR\n    A[\"输入 x\"] --> B[\"编码器 q(z|x)\"]\n    B --> C[\"mu, logvar\"]\n    C --> D"
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 110,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 36 个字面量 \\n 字符",
+      "hash": "58edb507",
+      "snippet": "graph TD\n    A[\"随机噪声 z\"] --> B[\"生成器 G\"]\n    B --> C[\"假样本 G(z)\"]\n    D[\"真实数据 x\"] "
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 146,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 34 个字面量 \\n 字符",
+      "hash": "78ed7033",
+      "snippet": "graph LR\n    A[\"纯噪声 x_T\"] -->|\"去噪 t\"| B[\"x_{T-1}\"]\n    B -->|\"去噪 t-1\"| C[\"x_{T-2"
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 181,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 22 个字面量 \\n 字符",
+      "hash": "cf9eaae2",
+      "snippet": "graph LR\n    A[\"简单分布 p(z)\"] -->|\"f_1 可逆变换\"| B[\"z_1\"]\n    B -->|\"f_2 可逆变换\"| C[\"z_"
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 215,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 35 个字面量 \\n 字符",
+      "hash": "4e48d71d",
+      "snippet": "graph TD\n    A[\"任务需求分析\"] --> B{需要精确似然?}\n    B -->|\"是\"| C[\"Flow\"]\n    B -->|\"否\"| "
+    },
+    {
+      "file": "src/data/articles/genai-007.ts",
+      "line": 255,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 255 行开始）",
+      "hash": "bd0068ee",
+      "snippet": "255-273"
+    },
+    {
+      "file": "src/data/articles/genai-009.ts",
+      "line": 29,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 29 行开始）",
+      "hash": "ad71639a",
+      "snippet": "29-621"
+    },
+    {
+      "file": "src/data/articles/genai-guide.ts",
+      "line": 41,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 41 行开始）",
+      "hash": "b68cd4e3",
+      "snippet": "41-58"
+    },
+    {
+      "file": "src/data/articles/geo-001.ts",
+      "line": 59,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 7 个字面量 \\n 字符",
+      "hash": "188b86ff",
+      "snippet": "graph TD\n    A[GEO 技术体系] --> B[语义覆盖优化]\n    A --> C[结构化数据嵌入]\n    A --> D[权威性信号强化]"
+    },
+    {
+      "file": "src/data/articles/geo-001.ts",
+      "line": 339,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 339 行开始）",
+      "hash": "b5a0554c",
+      "snippet": "339-456"
+    },
+    {
+      "file": "src/data/articles/guard-act-001.ts",
+      "line": 30,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 30 行开始）",
+      "hash": "4db26569",
+      "snippet": "30-669"
+    },
+    {
+      "file": "src/data/articles/headless-ai-001.ts",
+      "line": 26,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 26 行开始）",
+      "hash": "b0ecf7c4",
+      "snippet": "26-543"
+    },
+    {
+      "file": "src/data/articles/infer-001.ts",
+      "line": 39,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 39 行开始）",
+      "hash": "eb1321b7",
+      "snippet": "39-444"
+    },
+    {
+      "file": "src/data/articles/infer-002.ts",
+      "line": 836,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 836 行开始）",
+      "hash": "58bdb7ff",
+      "snippet": "836-868"
+    },
+    {
+      "file": "src/data/articles/infra-001.ts",
+      "line": 34,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 34 行开始）",
+      "hash": "a8c2a8c9",
+      "snippet": "34-640"
+    },
+    {
+      "file": "src/data/articles/legal-ai-001.ts",
+      "line": 371,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "551cdc28",
+      "snippet": "graph TD\n    A[\"法律 AI 四层架构\"] --> B[\"数据层: 法律知识图谱\"]\n    A --> C[\"模型层: 法律大语言模型\"]\n  "
+    },
+    {
+      "file": "src/data/articles/legal-ai-001.ts",
+      "line": 1127,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1127 行开始）",
+      "hash": "ed98e9d7",
+      "snippet": "1127-1193"
+    },
+    {
+      "file": "src/data/articles/llm-001.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "af60d647",
+      "snippet": "20-294"
+    },
+    {
+      "file": "src/data/articles/llm-002.ts",
+      "line": 380,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 380 行开始）",
+      "hash": "22d56905",
+      "snippet": "380-411"
+    },
+    {
+      "file": "src/data/articles/llm-003.ts",
+      "line": 20,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 10 个字面量 \\n 字符",
+      "hash": "681797ab",
+      "snippet": "graph LR\n    A[\"用户问题\"] --> B[\"向量检索\"]\n    C[\"知识库文档\"] --> D[\"分块+向量化\"]\n    D --> E["
+    },
+    {
+      "file": "src/data/articles/llm-003.ts",
+      "line": 244,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "31ee252f",
+      "snippet": "graph TD\n    A[\"用户查询\"] --> B[\"向量化 Query\"]\n    C[\"向量数据库\"] --> D[\"相似度计算\"]\n    B --"
+    },
+    {
+      "file": "src/data/articles/llm-003.ts",
+      "line": 463,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 463 行开始）",
+      "hash": "e2520980",
+      "snippet": "463-494"
+    },
+    {
+      "file": "src/data/articles/llm-005.ts",
+      "line": 429,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "456284b9",
+      "snippet": "graph LR\n    A[\"偏好数据集\"] --> B[\"PPO 管线\"]\n    A --> C[\"DPO 管线\"]\n    B --> D[\"训练奖励模"
+    },
+    {
+      "file": "src/data/articles/llm-005.ts",
+      "line": 811,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 811 行开始）",
+      "hash": "d7dd7c0b",
+      "snippet": "811-828"
+    },
+    {
+      "file": "src/data/articles/llm-006.ts",
+      "line": 650,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 650 行开始）",
+      "hash": "c2dde47e",
+      "snippet": "650-667"
+    },
+    {
+      "file": "src/data/articles/llm-008.ts",
+      "line": 669,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 669 行开始）",
+      "hash": "904332e1",
+      "snippet": "669-690"
+    },
+    {
+      "file": "src/data/articles/llm-009.ts",
+      "line": 81,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 81 行开始）",
+      "hash": "19092ddf",
+      "snippet": "81-650"
+    },
+    {
+      "file": "src/data/articles/llm-010.ts",
+      "line": 844,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 844 行开始）",
+      "hash": "e1b5b89f",
+      "snippet": "844-866"
+    },
+    {
+      "file": "src/data/articles/llm-011.ts",
+      "line": 485,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "b8a4f0e7",
+      "snippet": "graph TD\n    A[用户输入] --> B[Agent 思考 Thought]\n    B --> C{需要工具？}\n    C -->|\"是\"| D"
+    },
+    {
+      "file": "src/data/articles/llm-011.ts",
+      "line": 579,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 579 行开始）",
+      "hash": "3617e7bd",
+      "snippet": "579-596"
+    },
+    {
+      "file": "src/data/articles/llm-012.ts",
+      "line": 564,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 564 行开始）",
+      "hash": "d1e0a79f",
+      "snippet": "564-586"
+    },
+    {
+      "file": "src/data/articles/llm-013.ts",
+      "line": 29,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 29 行开始）",
+      "hash": "63b66ad3",
+      "snippet": "29-417"
+    },
+    {
+      "file": "src/data/articles/llm-014.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "520b0a7d",
+      "snippet": "22-483"
+    },
+    {
+      "file": "src/data/articles/llm-015.ts",
+      "line": 31,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 31 行开始）",
+      "hash": "0d3fbed2",
+      "snippet": "31-595"
+    },
+    {
+      "file": "src/data/articles/llm-016.ts",
+      "line": 26,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 26 行开始）",
+      "hash": "1f2f0a48",
+      "snippet": "26-329"
+    },
+    {
+      "file": "src/data/articles/llm-017.ts",
+      "line": 58,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 58 行开始）",
+      "hash": "49ad3186",
+      "snippet": "58-1131"
+    },
+    {
+      "file": "src/data/articles/llm-019.ts",
+      "line": 470,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "6a44f0ad",
+      "snippet": "graph TD\n    A[用户输入编程需求] --> B{Qwen3.6-27B Agentic Coding}\n    B --> C[需求理解与分析]\n"
+    },
+    {
+      "file": "src/data/articles/llm-020.ts",
+      "line": 33,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 33 行开始）",
+      "hash": "83ef8bf9",
+      "snippet": "33-840"
+    },
+    {
+      "file": "src/data/articles/llm-021.ts",
+      "line": 486,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 486 行开始）",
+      "hash": "15540284",
+      "snippet": "486-539"
+    },
+    {
+      "file": "src/data/articles/llm-022.ts",
+      "line": 51,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 51 行开始）",
+      "hash": "ac07bd6b",
+      "snippet": "51-827"
+    },
+    {
+      "file": "src/data/articles/llm-app-guide.ts",
+      "line": 94,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 94 行开始）",
+      "hash": "d7031506",
+      "snippet": "94-137"
+    },
+    {
+      "file": "src/data/articles/math-001.ts",
+      "line": 109,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "dd6ce1dc",
+      "snippet": "graph LR\n    A[\"向量 a\"] --> B[\"点积 a·b\"]\n    C[\"向量 b\"] --> B\n    B --> D[\"标量 32\"]\n"
+    },
+    {
+      "file": "src/data/articles/math-001.ts",
+      "line": 167,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "3b64a628",
+      "snippet": "graph TD\n    A[\"矩阵 A (2×2)\"] --> B[\"转置 A^T (2×2)\"]\n    A --> C[\"A + B (2×2)\"]\n  "
+    },
+    {
+      "file": "src/data/articles/math-001.ts",
+      "line": 223,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "ddacd1ad",
+      "snippet": "graph LR\n    A[\"输入向量 v\"] --> B[\"权重矩阵 W\"]\n    B --> C[\"输出向量 Wv\"]\n    C --> D[\"激活函"
+    },
+    {
+      "file": "src/data/articles/math-001.ts",
+      "line": 282,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "c7cff396",
+      "snippet": "graph TD\n    A[\"方阵 A\"] --> B{\"det(A) = 0?\"}\n    B -->|\"是\"| C[\"不可逆（奇异）\"]\n    B --"
+    },
+    {
+      "file": "src/data/articles/math-001.ts",
+      "line": 342,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "d28ed1b2",
+      "snippet": "graph TD\n    A[\"矩阵 A\"] --> B[\"特征方程 det(A-λI)=0\"]\n    B --> C[\"求解 λ\"]\n    C --> D"
+    },
+    {
+      "file": "src/data/articles/math-001.ts",
+      "line": 408,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 408 行开始）",
+      "hash": "c7405f95",
+      "snippet": "408-420"
+    },
+    {
+      "file": "src/data/articles/math-002.ts",
+      "line": 516,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 516 行开始）",
+      "hash": "89a1a432",
+      "snippet": "516-530"
+    },
+    {
+      "file": "src/data/articles/math-003.ts",
+      "line": 60,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 60 行开始）",
+      "hash": "257d19e6",
+      "snippet": "60-573"
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 35,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 10 个字面量 \\n 字符",
+      "hash": "defef8a1",
+      "snippet": "graph LR\n    A[\"不确定事件\"] --> B[\"概率分布\"]\n    B --> C[\"自信息 I(x) = -log P(x)\"]\n    C "
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 64,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 12 个字面量 \\n 字符",
+      "hash": "1b09bba9",
+      "snippet": "graph TD\n    A[\"随机变量 X\"] --> B[\"概率分布 P(x)\"]\n    B --> C[\"自信息 -log P(x)\"]\n    C -"
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 94,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 11 个字面量 \\n 字符",
+      "hash": "260f686e",
+      "snippet": "graph LR\n    A[\"真实分布 P\"] --> C[\"交叉熵 H(P,Q)\"]\n    B[\"预测分布 Q\"] --> C\n    C --> D[\""
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 125,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 14 个字面量 \\n 字符",
+      "hash": "30b963c3",
+      "snippet": "graph TD\n    A[\"KL 散度 D_KL(P||Q)\"] --> B[\"非负: D_KL ≥ 0\"]\n    A --> C[\"非对称: D_KL("
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 156,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 12 个字面量 \\n 字符",
+      "hash": "1244f177",
+      "snippet": "graph LR\n    A[\"联合分布 P(X,Y)\"] --> B[\"互信息 I(X;Y)\"]\n    C[\"独立假设 P(X)P(Y)\"] --> B\n "
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 187,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "681ccbbe",
+      "snippet": "graph TD\n    A[\"Logits\"] --> B[\"Softmax\"]\n    B --> C[\"预测概率 P\"]\n    D[\"真实标签 Y\"] "
+    },
+    {
+      "file": "src/data/articles/math-004.ts",
+      "line": 218,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 218 行开始）",
+      "hash": "3e42d91b",
+      "snippet": "218-231"
+    },
+    {
+      "file": "src/data/articles/math-005.ts",
+      "line": 501,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 501 行开始）",
+      "hash": "3b75595c",
+      "snippet": "501-517"
+    },
+    {
+      "file": "src/data/articles/math-006.ts",
+      "line": 564,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 564 行开始）",
+      "hash": "9f6a2752",
+      "snippet": "564-584"
+    },
+    {
+      "file": "src/data/articles/math-007.ts",
+      "line": 480,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 480 行开始）",
+      "hash": "250f7ebe",
+      "snippet": "480-497"
+    },
+    {
+      "file": "src/data/articles/math-008.ts",
+      "line": 623,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 623 行开始）",
+      "hash": "2b4fe477",
+      "snippet": "623-640"
+    },
+    {
+      "file": "src/data/articles/math-ml-guide.ts",
+      "line": 94,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 94 行开始）",
+      "hash": "55640711",
+      "snippet": "94-148"
+    },
+    {
+      "file": "src/data/articles/mcp-001.ts",
+      "line": 705,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 705 行开始）",
+      "hash": "f9cbe6f9",
+      "snippet": "705-714"
+    },
+    {
+      "file": "src/data/articles/ml-001.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "6145a24b",
+      "snippet": "22-411"
+    },
+    {
+      "file": "src/data/articles/ml-002.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "c28e0842",
+      "snippet": "20-329"
+    },
+    {
+      "file": "src/data/articles/ml-003.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "6e616691",
+      "snippet": "20-409"
+    },
+    {
+      "file": "src/data/articles/ml-004.ts",
+      "line": 84,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 84 行开始）",
+      "hash": "00d6e022",
+      "snippet": "84-603"
+    },
+    {
+      "file": "src/data/articles/ml-005.ts",
+      "line": 58,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 58 行开始）",
+      "hash": "a57e5aba",
+      "snippet": "58-524"
+    },
+    {
+      "file": "src/data/articles/ml-006.ts",
+      "line": 85,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 85 行开始）",
+      "hash": "85b2388f",
+      "snippet": "85-500"
+    },
+    {
+      "file": "src/data/articles/ml-007.ts",
+      "line": 98,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 98 行开始）",
+      "hash": "0f465e03",
+      "snippet": "98-833"
+    },
+    {
+      "file": "src/data/articles/ml-008.ts",
+      "line": 241,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "f13df50c",
+      "snippet": "graph TD\n    A[\"尝试 K=2,3,4,...\"] --> B[\"计算每个 K 的惯性\"]\n    B --> C[\"绘制惯性曲线\"]\n    C"
+    },
+    {
+      "file": "src/data/articles/ml-008.ts",
+      "line": 675,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 675 行开始）",
+      "hash": "b7dca83f",
+      "snippet": "675-694"
+    },
+    {
+      "file": "src/data/articles/ml-009.ts",
+      "line": 401,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "ddf55bd6",
+      "snippet": "graph TD\n    A[\"核心点 p\"] -->|\"密度直达\"| B[\"邻居 q1\"]\n    B -->|\"密度直达\"| C[\"邻居 q2\"]\n    "
+    },
+    {
+      "file": "src/data/articles/ml-009.ts",
+      "line": 716,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 716 行开始）",
+      "hash": "fde0a9b4",
+      "snippet": "716-734"
+    },
+    {
+      "file": "src/data/articles/ml-010.ts",
+      "line": 74,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "eb81565f",
+      "snippet": "graph LR\n    A[\"高维数据\"] --> B[\"维度灾难\"]\n    B --> C[\"距离失效\"]\n    B --> D[\"计算昂贵\"]\n   "
+    },
+    {
+      "file": "src/data/articles/ml-010.ts",
+      "line": 238,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "f417a874",
+      "snippet": "graph LR\n    A[\"最大化方差\"] -->|\"拉格朗日乘子\"| B[\"C w = λ w\"]\n    C[\"最小化重构误差\"] -->|\"正交投影定"
+    },
+    {
+      "file": "src/data/articles/ml-010.ts",
+      "line": 612,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 612 行开始）",
+      "hash": "bfef1332",
+      "snippet": "612-629"
+    },
+    {
+      "file": "src/data/articles/ml-011.ts",
+      "line": 545,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 545 行开始）",
+      "hash": "9a396abc",
+      "snippet": "545-560"
+    },
+    {
+      "file": "src/data/articles/ml-012.ts",
+      "line": 94,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 94 行开始）",
+      "hash": "2c08e2c3",
+      "snippet": "94-718"
+    },
+    {
+      "file": "src/data/articles/ml-013.ts",
+      "line": 121,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 121 行开始）",
+      "hash": "d1877b66",
+      "snippet": "121-892"
+    },
+    {
+      "file": "src/data/articles/ml-014.ts",
+      "line": 647,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 647 行开始）",
+      "hash": "799f0527",
+      "snippet": "647-671"
+    },
+    {
+      "file": "src/data/articles/ml-015.ts",
+      "line": 305,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "f6377011",
+      "snippet": "graph TD\n    A[\"训练开始\"] --> B{\"选择 Boosting 模式\"}\n    B -->|\"Ordered\"| C[\"排列数据\"]\n  "
+    },
+    {
+      "file": "src/data/articles/ml-015.ts",
+      "line": 826,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 826 行开始）",
+      "hash": "b793b057",
+      "snippet": "826-849"
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 38,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "c7d82f33",
+      "snippet": "graph LR\n    A[\"原始数据\"] --> B[\"数据清洗\"]\n    B --> C[\"缺失值处理\"]\n    C --> D[\"编码与缩放\"]\n "
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 73,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 20 个字面量 \\n 字符",
+      "hash": "d3372f44",
+      "snippet": "graph TD\n    A[\"发现缺失值\"] --> B{\"缺失比例?\"}\n    B -->|< 5％| C[\"删除缺失行\"]\n    B -->|5％ -"
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 108,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 21 个字面量 \\n 字符",
+      "hash": "92a0d2ea",
+      "snippet": "graph LR\n    A[\"类别特征\"] --> B{\"基数大小?\"}\n    B -->|低| C[\"独热编码\"]\n    B -->|中| D[\"目标编"
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 144,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 20 个字面量 \\n 字符",
+      "hash": "82bc5130",
+      "snippet": "graph TD\n    A[\"需要特征缩放?\"] --> B{\"算法类型?\"}\n    B -->|基于距离| C[\"StandardScaler\"]\n   "
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 184,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 22 个字面量 \\n 字符",
+      "hash": "17d10270",
+      "snippet": "graph LR\n    A[\"所有特征\"] --> B{\"选择策略?\"}\n    B -->|快速筛选| C[\"过滤法\"]\n    B -->|追求精度| D"
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 221,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 29 个字面量 \\n 字符",
+      "hash": "8a2f4265",
+      "snippet": "graph TD\n    A[\"原始特征\"] --> B[\"交互特征\"]\n    A --> C[\"多项式特征\"]\n    A --> D[\"比率特征\"]\n  "
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 265,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 265 行开始）",
+      "hash": "435ed460",
+      "snippet": "265-280"
+    },
+    {
+      "file": "src/data/articles/ml-017.ts",
+      "line": 77,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 77 行开始）",
+      "hash": "0537a134",
+      "snippet": "77-749"
+    },
+    {
+      "file": "src/data/articles/ml-018.ts",
+      "line": 103,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 103 行开始）",
+      "hash": "26a5ec56",
+      "snippet": "103-826"
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 37,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 19 个字面量 \\n 字符",
+      "hash": "bd724c79",
+      "snippet": "graph TD\n    A[\"高偏差(欠拟合)\"] --> B[\"增加模型复杂度\"]\n    B --> C[\"偏差-方差权衡区\"]\n    C --> D["
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 71,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 20 个字面量 \\n 字符",
+      "hash": "9ab636f6",
+      "snippet": "graph LR\n    A[\"损失函数 MSE\"] --> B[\"加入 L2 惩罚\"]\n    B --> C[\"alpha * sum(w^2)\"]\n   "
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 106,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "74ce4b5c",
+      "snippet": "graph TD\n    A[\"L1 惩罚: alpha * sum(|w|)\"] --> B[\"约束区域为菱形\"]\n    B --> C[\"等高线接触坐标轴"
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 139,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "c1047996",
+      "snippet": "graph LR\n    A[\"Elastic Net\"] --> B[\"L1 成分 (l1_ratio)\"]\n    A --> C[\"L2 成分 (1-l1"
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 173,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 25 个字面量 \\n 字符",
+      "hash": "bc18d607",
+      "snippet": "graph TD\n    A[\"定义 alpha 候选范围\"] --> B[\"对每个 alpha 执行 K 折 CV\"]\n    B --> C[\"计算平均验证"
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 207,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 37 个字面量 \\n 字符",
+      "hash": "3e3cb4e1",
+      "snippet": "graph TD\n    A[\"神经网络训练\"] --> B[\"Dropout: 随机失活\"]\n    A --> C[\"权重衰减: L2惩罚\"]\n    A "
+    },
+    {
+      "file": "src/data/articles/ml-019.ts",
+      "line": 247,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 247 行开始）",
+      "hash": "7d339001",
+      "snippet": "247-262"
+    },
+    {
+      "file": "src/data/articles/ml-020.ts",
+      "line": 84,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 84 行开始）",
+      "hash": "5dba9a20",
+      "snippet": "84-834"
+    },
+    {
+      "file": "src/data/articles/ml-021.ts",
+      "line": 34,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 34 行开始）",
+      "hash": "95db58e4",
+      "snippet": "34-252"
+    },
+    {
+      "file": "src/data/articles/ml-022.ts",
+      "line": 481,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 481 行开始）",
+      "hash": "b591c4fe",
+      "snippet": "481-500"
+    },
+    {
+      "file": "src/data/articles/ml-023.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "52909e09",
+      "snippet": "20-338"
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 35,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 17 个字面量 \\n 字符",
+      "hash": "ec0bb5b4",
+      "snippet": "graph TD\n    A[Level 0 手动流程] --> B[Level 1 ML流水线]\n    B --> C[Level 2 CICD流水线]\n "
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 68,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 24 个字面量 \\n 字符",
+      "hash": "bd292364",
+      "snippet": "graph LR\n    A[原始数据] -->|dvc add| B[.dvc 元数据文件]\n    B -->|git commit| C[Git 仓库]\n"
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 102,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 24 个字面量 \\n 字符",
+      "hash": "c48b17ba",
+      "snippet": "graph TD\n    A[训练脚本] -->|log_params| B[实验追踪系统]\n    A -->|log_metrics| B\n    A --"
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 139,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 40 个字面量 \\n 字符",
+      "hash": "3232c65f",
+      "snippet": "graph LR\n    A[实验模型] -->|register| B[Model Registry]\n    B --> C{版本阶段}\n    C -->"
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 173,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 22 个字面量 \\n 字符",
+      "hash": "efbfd7ff",
+      "snippet": "graph TD\n    A[代码 Push] --> B[代码测试]\n    B -->|通过| C[数据验证]\n    C -->|通过| D[训练 + 评"
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 208,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 45 个字面量 \\n 字符",
+      "hash": "0c7cd47c",
+      "snippet": "graph TD\n    A[生产环境] -->|收集数据| B[数据监控]\n    B --> C{漂移检测}\n    C -->|漂移超标| D[触发训练]"
+    },
+    {
+      "file": "src/data/articles/mlops-001.ts",
+      "line": 246,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 246 行开始）",
+      "hash": "c5e1ace9",
+      "snippet": "246-262"
+    },
+    {
+      "file": "src/data/articles/mlops-002.ts",
+      "line": 76,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 76 行开始）",
+      "hash": "40216663",
+      "snippet": "76-601"
+    },
+    {
+      "file": "src/data/articles/mlops-003.ts",
+      "line": 781,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 781 行开始）",
+      "hash": "1dbb4ec2",
+      "snippet": "781-805"
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 35,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 29 个字面量 \\n 字符",
+      "hash": "9b4e8209",
+      "snippet": "graph TD\n    A[传感器/摄像头] --> B[边缘设备]\n    B -->|本地推理| C[实时响应]\n    B -->|仅结果上报| D[云"
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 68,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 32 个字面量 \\n 字符",
+      "hash": "054610bb",
+      "snippet": "graph LR\n    A[FP32 训练模型] --> B{量化策略}\n    B -->|简单快速| C[动态量化]\n    B -->|推荐方案| D["
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 104,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 33 个字面量 \\n 字符",
+      "hash": "a66bbbc8",
+      "snippet": "graph LR\n    A[PyTorch] -->|torch.onnx| B[ONNX 模型]\n    C[TensorFlow] -->|tf2onnx"
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 140,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 30 个字面量 \\n 字符",
+      "hash": "6b998fca",
+      "snippet": "graph TD\n    A[ONNX 模型] --> B{目标平台}\n    B -->|iOS/macOS| C[coremltools]\n    B --"
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 175,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 26 个字面量 \\n 字符",
+      "hash": "35972f32",
+      "snippet": "graph LR\n    A[ONNX 模型] -->|trtexec / Python API| B[TensorRT Builder]\n    B -->|"
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 208,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 63 个字面量 \\n 字符",
+      "hash": "f5f0f7b5",
+      "snippet": "graph TD\n    A[大模型 Teacher] -->|蒸馏| B[小模型 Student]\n    A -->|剪枝| C[稀疏 Teacher]\n "
+    },
+    {
+      "file": "src/data/articles/mlops-004.ts",
+      "line": 241,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 241 行开始）",
+      "hash": "1721b8c2",
+      "snippet": "241-257"
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 35,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 26 个字面量 \\n 字符",
+      "hash": "cfbae9b4",
+      "snippet": "graph TD\n    A[新模型开发完成] --> B{离线评估达标?}\n    B -->|否| C[继续优化模型]\n    B -->|是| D[Sha"
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 74,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 32 个字面量 \\n 字符",
+      "hash": "051f3cb0",
+      "snippet": "graph LR\n    A[提出假设] --> B[确定 Alpha 和 Power]\n    B --> C[估算 MDE]\n    C --> D[计算样"
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 110,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 28 个字面量 \\n 字符",
+      "hash": "36f87d0c",
+      "snippet": "graph TD\n    A[收集实验数据] --> B[计算检验统计量]\n    B --> C{p 值 < Alpha?}\n    C -->|是| D[拒"
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 147,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 49 个字面量 \\n 字符",
+      "hash": "ebe3019e",
+      "snippet": "graph TD\n    A[多个候选模型] --> B{选择算法}\n    B -->|固定分配| C[标准 A/B 测试]\n    B -->|动态分配| "
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 184,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 39 个字面量 \\n 字符",
+      "hash": "b07c0bde",
+      "snippet": "graph LR\n    A[新模型 v1.3 构建完成] --> B[部署到 1％ 流量]\n    B --> C{健康检查通过?}\n    C -->|否|"
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 225,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 37 个字面量 \\n 字符",
+      "hash": "2c39b249",
+      "snippet": "graph TD\n    A[实时监控系统] --> B{检测到异常?}\n    B -->|否| C[继续监控]\n    B -->|是| D{严重程度?}\n"
+    },
+    {
+      "file": "src/data/articles/mlops-005.ts",
+      "line": 267,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 267 行开始）",
+      "hash": "10c3d860",
+      "snippet": "267-293"
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 37,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 36 个字面量 \\n 字符",
+      "hash": "08a6df9e",
+      "snippet": "graph TD\n    A[外部数据源] -->|数据投毒风险| B[数据摄入层]\n    B -->|信任边界 1| C[训练管道]\n    C --> D"
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 72,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 40 个字面量 \\n 字符",
+      "hash": "d542aea4",
+      "snippet": "graph LR\n    A[原始输入] --> B{对抗攻击?}\n    B -->|FGSM| C[梯度符号扰动]\n    B -->|PGD| D[迭代投"
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 110,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 59 个字面量 \\n 字符",
+      "hash": "c2c883f2",
+      "snippet": "graph TD\n    A[客户端 1 数据] -->|本地训练| B[梯度 1]\n    C[客户端 2 数据] -->|本地训练| D[梯度 2]\n   "
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 150,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 49 个字面量 \\n 字符",
+      "hash": "83136be6",
+      "snippet": "graph TD\n    A[数据采集] -->|记录来源| B[数据谱系]\n    C[代码开发] -->|Git commit| D[代码版本]\n    B"
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 192,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 57 个字面量 \\n 字符",
+      "hash": "c196252b",
+      "snippet": "graph TD\n    A[ML 系统上线前] --> B{数据类型判定}\n    B -->|个人数据| C[GDPR 合规检查]\n    B -->|医疗"
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 235,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 90 个字面量 \\n 字符",
+      "hash": "c51a115d",
+      "snippet": "graph TD\n    A[外部模型仓库] -->|完整性校验| B[模型扫描器]\n    C[第三方数据集] -->|数据签名| B\n    D[开源依赖]"
+    },
+    {
+      "file": "src/data/articles/mlops-006.ts",
+      "line": 274,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 274 行开始）",
+      "hash": "7958b00a",
+      "snippet": "274-297"
+    },
+    {
+      "file": "src/data/articles/mlops-007.ts",
+      "line": 777,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 777 行开始）",
+      "hash": "08b74fd3",
+      "snippet": "777-786"
+    },
+    {
+      "file": "src/data/articles/mm-001.ts",
+      "line": 799,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 799 行开始）",
+      "hash": "59667a38",
+      "snippet": "799-818"
+    },
+    {
+      "file": "src/data/articles/mm-002.ts",
+      "line": 811,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 811 行开始）",
+      "hash": "9caf43b3",
+      "snippet": "811-834"
+    },
+    {
+      "file": "src/data/articles/mm-003.ts",
+      "line": 580,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 580 行开始）",
+      "hash": "e7fc1cef",
+      "snippet": "580-595"
+    },
+    {
+      "file": "src/data/articles/mm-004.ts",
+      "line": 597,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 597 行开始）",
+      "hash": "b1fb2d01",
+      "snippet": "597-611"
+    },
+    {
+      "file": "src/data/articles/mm-005.ts",
+      "line": 1127,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1127 行开始）",
+      "hash": "32619860",
+      "snippet": "1127-1149"
+    },
+    {
+      "file": "src/data/articles/mm-006.ts",
+      "line": 1024,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1024 行开始）",
+      "hash": "6793e1f6",
+      "snippet": "1024-1051"
+    },
+    {
+      "file": "src/data/articles/mm-007.ts",
+      "line": 599,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 599 行开始）",
+      "hash": "575d38b4",
+      "snippet": "599-608"
+    },
+    {
+      "file": "src/data/articles/mm-008.ts",
+      "line": 382,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 382 行开始）",
+      "hash": "e87f3d8f",
+      "snippet": "382-399"
+    },
+    {
+      "file": "src/data/articles/mm-009.ts",
+      "line": 39,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 39 行开始）",
+      "hash": "4f5275bb",
+      "snippet": "39-108"
+    },
+    {
+      "file": "src/data/articles/mm-010.ts",
+      "line": 28,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 39 个字面量 \\n 字符",
+      "hash": "309aaf83",
+      "snippet": "graph LR\n    A[\"2021 CLIP\\n视觉对齐\"] --> B[\"2022 Flamingo\\n交叉注意力融合\"]\n    B --> C[\"2"
+    },
+    {
+      "file": "src/data/articles/mm-010.ts",
+      "line": 598,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 598 行开始）",
+      "hash": "f641d21b",
+      "snippet": "598-624"
+    },
+    {
+      "file": "src/data/articles/mm-011.ts",
+      "line": 40,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 10 个字面量 \\n 字符",
+      "hash": "dddb9373",
+      "snippet": "graph TD\n    A[\"视觉模态\\n图像/视频\"] --> C[\"多模态融合层\"]\n    B[\"语言模态\\n文本\"] --> C\n    D[\"音频模"
+    },
+    {
+      "file": "src/data/articles/mm-guide.ts",
+      "line": 40,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 40 行开始）",
+      "hash": "85e51711",
+      "snippet": "40-57"
+    },
+    {
+      "file": "src/data/articles/multi-agent-001.ts",
+      "line": 31,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "006d1c89",
+      "snippet": "graph TD\n    A[\"单一 Agent 瓶颈\"] --> B[\"能力边界\n一个模型无法精通所有领域\"]\n    A --> C[\"自我纠错不足\n同样的"
+    },
+    {
+      "file": "src/data/articles/multi-agent-001.ts",
+      "line": 619,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 619 行开始）",
+      "hash": "c3c8182c",
+      "snippet": "619-655"
+    },
+    {
+      "file": "src/data/articles/nlp-001.ts",
+      "line": 24,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 24 行开始）",
+      "hash": "52c57134",
+      "snippet": "24-485"
+    },
+    {
+      "file": "src/data/articles/nlp-002.ts",
+      "line": 116,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 116 行开始）",
+      "hash": "720d473b",
+      "snippet": "116-1313"
+    },
+    {
+      "file": "src/data/articles/nlp-003.ts",
+      "line": 571,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "2bd0e80e",
+      "snippet": "graph TD\n    A[\"不平衡数据\"] --> B{\"不平衡比 > 10:1?\"}\n    B -->|是| C[\"Focal Loss + 类别权重\""
+    },
+    {
+      "file": "src/data/articles/nlp-003.ts",
+      "line": 869,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 869 行开始）",
+      "hash": "f5f2b19a",
+      "snippet": "869-889"
+    },
+    {
+      "file": "src/data/articles/nlp-004.ts",
+      "line": 134,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 134 行开始）",
+      "hash": "f26770cc",
+      "snippet": "134-1320"
+    },
+    {
+      "file": "src/data/articles/nlp-005.ts",
+      "line": 93,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 93 行开始）",
+      "hash": "fe06ab6b",
+      "snippet": "93-1125"
+    },
+    {
+      "file": "src/data/articles/nlp-006.ts",
+      "line": 128,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 128 行开始）",
+      "hash": "9d03d874",
+      "snippet": "128-1036"
+    },
+    {
+      "file": "src/data/articles/nlp-007.ts",
+      "line": 146,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 146 行开始）",
+      "hash": "fff23775",
+      "snippet": "146-1228"
+    },
+    {
+      "file": "src/data/articles/nlp-008.ts",
+      "line": 146,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 146 行开始）",
+      "hash": "e809ce42",
+      "snippet": "146-1129"
+    },
+    {
+      "file": "src/data/articles/nlp-009.ts",
+      "line": 95,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 95 行开始）",
+      "hash": "ff310cc9",
+      "snippet": "95-933"
+    },
+    {
+      "file": "src/data/articles/nlp-010.ts",
+      "line": 116,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 116 行开始）",
+      "hash": "1c7dd2c7",
+      "snippet": "116-951"
+    },
+    {
+      "file": "src/data/articles/nlp-guide.ts",
+      "line": 47,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 47 行开始）",
+      "hash": "004c3c4c",
+      "snippet": "47-64"
+    },
+    {
+      "file": "src/data/articles/physical-001.ts",
+      "line": 539,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 539 行开始）",
+      "hash": "3750690d",
+      "snippet": "539-643"
+    },
+    {
+      "file": "src/data/articles/physical-002.ts",
+      "line": 46,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 46 行开始）",
+      "hash": "c6be70a6",
+      "snippet": "46-837"
+    },
+    {
+      "file": "src/data/articles/prac-001.ts",
+      "line": 45,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "cde2afb5",
+      "snippet": "graph TD\n    A[\"百万级候选物品\"] --> B[\"召回层\\nTop-1000\"]\n    B --> C[\"粗排层\\nTop-500\"]\n   "
+    },
+    {
+      "file": "src/data/articles/practice-001.ts",
+      "line": 736,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 736 行开始）",
+      "hash": "28760c05",
+      "snippet": "736-754"
+    },
+    {
+      "file": "src/data/articles/practice-002.ts",
+      "line": 335,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "043a6aca",
+      "snippet": "graph LR\n    A[\"用户查询\"] --> B[\"BM25 关键词检索\"]\n    A --> C[\"向量语义检索\"]\n    B --> D[\"BM"
+    },
+    {
+      "file": "src/data/articles/practice-002.ts",
+      "line": 525,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 525 行开始）",
+      "hash": "c6b012ca",
+      "snippet": "525-543"
+    },
+    {
+      "file": "src/data/articles/practice-003.ts",
+      "line": 838,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "b4043f4e",
+      "snippet": "graph TD\n    A[\"用户消息\"] --> B{\"缓存命中?\"}\n    B -->|\"是\"| C[\"返回缓存回复\"]\n    B -->|\"否\"| "
+    },
+    {
+      "file": "src/data/articles/practice-003.ts",
+      "line": 1045,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 1045 行开始）",
+      "hash": "e7520876",
+      "snippet": "1045-1067"
+    },
+    {
+      "file": "src/data/articles/practice-004.ts",
+      "line": 209,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "0cf95cf6",
+      "snippet": "graph TD\n    A[\"原始长文\"] --> B{\"摘要策略\"}\n    B -->|\"快速\"| C[\"TextRank 抽取\"]\n    B -->|"
+    },
+    {
+      "file": "src/data/articles/practice-004.ts",
+      "line": 342,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 6 个字面量 \\n 字符",
+      "hash": "8c3dcfbc",
+      "snippet": "graph LR\n    A[\"产品信息\"] --> B[\"品牌知识库\"]\n    B --> C[\"AIDA 提示词\"]\n    C --> D[\"批量生成 "
+    },
+    {
+      "file": "src/data/articles/practice-004.ts",
+      "line": 476,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 5 个字面量 \\n 字符",
+      "hash": "1e0f809c",
+      "snippet": "graph LR\n    A[\"开发需求\"] --> B[\"AI 生成代码\"]\n    B --> C[\"静态分析 Lint\"]\n    C --> D{\"通过"
+    },
+    {
+      "file": "src/data/articles/practice-004.ts",
+      "line": 627,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 5 个字面量 \\n 字符",
+      "hash": "aa3c3225",
+      "snippet": "graph LR\n    A[\"源内容\"] --> B[\"语言检测\"]\n    B --> C[\"术语提取\"]\n    C --> D[\"神经翻译\"]\n    "
+    },
+    {
+      "file": "src/data/articles/practice-004.ts",
+      "line": 980,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 980 行开始）",
+      "hash": "8e0d1668",
+      "snippet": "980-1000"
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 35,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 29 个字面量 \\n 字符",
+      "hash": "98a5fc76",
+      "snippet": "graph TD\n    A[工业数据源] --> B[数据采集层]\n    B --> C[特征提取]\n    C --> D[异常检测模型]\n    D -"
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 70,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 25 个字面量 \\n 字符",
+      "hash": "6a02490c",
+      "snippet": "graph LR\n    A[原始图像] --> B[数据增强]\n    B --> C[特征提取网络]\n    C --> D[多层特征拼接]\n    D -"
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 104,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 34 个字面量 \\n 字符",
+      "hash": "644cf287",
+      "snippet": "graph TD\n    A[多变量传感器] --> B[滑动窗口切分]\n    B --> C[编码为隐变量]\n    C --> D[VAE 重构]\n   "
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 138,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 26 个字面量 \\n 字符",
+      "hash": "ca451e31",
+      "snippet": "graph TD\n    A[传感器数据] --> B[特征工程]\n    B --> C[退化状态识别]\n    C --> D[RUL 预测]\n    D "
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 172,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 23 个字面量 \\n 字符",
+      "hash": "fe55aecc",
+      "snippet": "graph TD\n    A[视觉传感器] --> D[特征编码器 V]\n    B[振动传感器] --> E[特征编码器 T]\n    C[声学传感器] --"
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 207,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 47 个字面量 \\n 字符",
+      "hash": "79448681",
+      "snippet": "graph TD\n    A[云端训练] --> B[模型压缩]\n    B --> C{压缩策略}\n    C -->|量化| D[INT8 量化]\n    "
+    },
+    {
+      "file": "src/data/articles/practice-005.ts",
+      "line": 245,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 245 行开始）",
+      "hash": "8269376b",
+      "snippet": "245-262"
+    },
+    {
+      "file": "src/data/articles/practice-006.ts",
+      "line": 830,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 830 行开始）",
+      "hash": "3cbb6fc2",
+      "snippet": "830-857"
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 35,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 32 个字面量 \\n 字符",
+      "hash": "7d1d5e93",
+      "snippet": "graph TD\n    A[传感器输入] --> B[感知模块]\n    A --> C[定位模块]\n    B --> D[目标列表]\n    C --> "
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 74,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 37 个字面量 \\n 字符",
+      "hash": "7e81f369",
+      "snippet": "graph TD\n    A[多传感器输入] --> B[图像特征提取]\n    A --> C[点云体素化]\n    B --> D[LSS 深度估计]\n  "
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 111,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 47 个字面量 \\n 字符",
+      "hash": "bc99aef8",
+      "snippet": "graph TD\n    A[摄像头] --> D[图像特征]\n    B[激光雷达] --> E[点云特征]\n    C[毫米波雷达] --> F[雷达特征]"
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 146,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 49 个字面量 \\n 字符",
+      "hash": "1987cc95",
+      "snippet": "graph TD\n    A[历史轨迹观测] --> B[特征编码]\n    C[高精地图] --> D[场景理解]\n    B --> E[交互关系建模]\n "
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 185,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 51 个字面量 \\n 字符",
+      "hash": "20d50705",
+      "snippet": "graph TD\n    A[感知结果] --> B[场景理解]\n    B --> C{场景分类}\n    C -->|简单直行| D[规则规划]\n    C"
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 222,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 57 个字面量 \\n 字符",
+      "hash": "a8623fa0",
+      "snippet": "graph TD\n    A[真实驾驶数据] --> B[场景提取]\n    B --> C[场景数据库]\n    C --> D[场景增强/变异]\n    D"
+    },
+    {
+      "file": "src/data/articles/practice-007.ts",
+      "line": 259,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 259 行开始）",
+      "hash": "177afa23",
+      "snippet": "259-276"
+    },
+    {
+      "file": "src/data/articles/practice-008.ts",
+      "line": 909,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 909 行开始）",
+      "hash": "0cb45ebe",
+      "snippet": "909-936"
+    },
+    {
+      "file": "src/data/articles/practice-009.ts",
+      "line": 83,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 83 行开始）",
+      "hash": "a4d1acdd",
+      "snippet": "83-146"
+    },
+    {
+      "file": "src/data/articles/practice-010.ts",
+      "line": 31,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 31 行开始）",
+      "hash": "62887876",
+      "snippet": "31-524"
+    },
+    {
+      "file": "src/data/articles/practice-011.ts",
+      "line": 287,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "e2921c98",
+      "snippet": "graph TD\n    A[\"临床数据\\n生命体征+化验\"] --> C[\"临床特征编码器\\nMLP\"]\n    B[\"X 光影像\\nChest X-ray\""
+    },
+    {
+      "file": "src/data/articles/practice-011.ts",
+      "line": 567,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 567 行开始）",
+      "hash": "fe1dd05d",
+      "snippet": "567-619"
+    },
+    {
+      "file": "src/data/articles/practice-012.ts",
+      "line": 18,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 18 行开始）",
+      "hash": "2bf6ec33",
+      "snippet": "18-501"
+    },
+    {
+      "file": "src/data/articles/practice-013.ts",
+      "line": 27,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 27 行开始）",
+      "hash": "697b4536",
+      "snippet": "27-548"
+    },
+    {
+      "file": "src/data/articles/practice-014.ts",
+      "line": 582,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 582 行开始）",
+      "hash": "2f462ae7",
+      "snippet": "582-608"
+    },
+    {
+      "file": "src/data/articles/prompt-001.ts",
+      "line": 51,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 51 行开始）",
+      "hash": "ee1800b1",
+      "snippet": "51-833"
+    },
+    {
+      "file": "src/data/articles/prompt-002.ts",
+      "line": 248,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 248 行开始）",
+      "hash": "5b395ea4",
+      "snippet": "248-547"
+    },
+    {
+      "file": "src/data/articles/prompt-003.ts",
+      "line": 309,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 10 个字面量 \\n 字符",
+      "hash": "4cefbe94",
+      "snippet": "sequenceDiagram\n    participant User as 用户\n    participant Agent as Agent\n    pa"
+    },
+    {
+      "file": "src/data/articles/prompt-003.ts",
+      "line": 744,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 744 行开始）",
+      "hash": "6e29e9a2",
+      "snippet": "744-773"
+    },
+    {
+      "file": "src/data/articles/prompt-guide.ts",
+      "line": 83,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 83 行开始）",
+      "hash": "927b9c60",
+      "snippet": "83-100"
+    },
+    {
+      "file": "src/data/articles/rl-001.ts",
+      "line": 77,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 77 行开始）",
+      "hash": "8d02059d",
+      "snippet": "77-697"
+    },
+    {
+      "file": "src/data/articles/rl-002.ts",
+      "line": 740,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 740 行开始）",
+      "hash": "e8ca307a",
+      "snippet": "740-764"
+    },
+    {
+      "file": "src/data/articles/rl-003.ts",
+      "line": 759,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 759 行开始）",
+      "hash": "3e185d1a",
+      "snippet": "759-779"
+    },
+    {
+      "file": "src/data/articles/rl-004.ts",
+      "line": 814,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 814 行开始）",
+      "hash": "41de32dd",
+      "snippet": "814-839"
+    },
+    {
+      "file": "src/data/articles/rl-005.ts",
+      "line": 835,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 835 行开始）",
+      "hash": "4d6551ad",
+      "snippet": "835-857"
+    },
+    {
+      "file": "src/data/articles/rl-006.ts",
+      "line": 703,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 703 行开始）",
+      "hash": "82613371",
+      "snippet": "703-729"
+    },
+    {
+      "file": "src/data/articles/rl-007.ts",
+      "line": 791,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 791 行开始）",
+      "hash": "f12cb052",
+      "snippet": "791-812"
+    },
+    {
+      "file": "src/data/articles/rl-008.ts",
+      "line": 594,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 594 行开始）",
+      "hash": "85a33b64",
+      "snippet": "594-615"
+    },
+    {
+      "file": "src/data/articles/rl-009.ts",
+      "line": 868,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 868 行开始）",
+      "hash": "f7fdd789",
+      "snippet": "868-888"
+    },
+    {
+      "file": "src/data/articles/rl-010.ts",
+      "line": 22,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 22 行开始）",
+      "hash": "30b9b58a",
+      "snippet": "22-1054"
+    },
+    {
+      "file": "src/data/articles/rl-011.ts",
+      "line": 98,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 98 行开始）",
+      "hash": "4a0924ef",
+      "snippet": "98-309"
+    },
+    {
+      "file": "src/data/articles/rl-guide.ts",
+      "line": 43,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 43 行开始）",
+      "hash": "d7a8bdb4",
+      "snippet": "43-60"
+    },
+    {
+      "file": "src/data/articles/security-audit-001.ts",
+      "line": 210,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 210 行开始）",
+      "hash": "de9ab068",
+      "snippet": "210-339"
+    },
+    {
+      "file": "src/data/articles/security-audit-002.ts",
+      "line": 493,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 493 行开始）",
+      "hash": "f258b3b8",
+      "snippet": "493-515"
+    },
+    {
+      "file": "src/data/articles/security-guide.ts",
+      "line": 44,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 44 行开始）",
+      "hash": "22410f95",
+      "snippet": "44-61"
+    },
+    {
+      "file": "src/data/articles/synthdata-001.ts",
+      "line": 50,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 50 行开始）",
+      "hash": "c7e61994",
+      "snippet": "50-309"
+    },
+    {
+      "file": "src/data/articles/token-economics.ts",
+      "line": 48,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 48 行开始）",
+      "hash": "bd22375c",
+      "snippet": "48-706"
+    },
+    {
+      "file": "src/data/articles/voice-001.ts",
+      "line": 20,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 20 行开始）",
+      "hash": "27607907",
+      "snippet": "20-403"
+    },
+    {
+      "file": "src/data/articles/voice-002.ts",
+      "line": 435,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 435 行开始）",
+      "hash": "7a61a0cf",
+      "snippet": "435-444"
+    },
+    {
+      "file": "src/data/articles/voice-003.ts",
+      "line": 33,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 33 行开始）",
+      "hash": "a1bd884c",
+      "snippet": "33-658"
+    },
+    {
+      "file": "src/data/articles/voice-004.ts",
+      "line": 75,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 75 行开始）",
+      "hash": "98ad8ba2",
+      "snippet": "75-428"
+    },
+    {
+      "file": "src/data/blogs/blog-011.ts",
+      "line": 30,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 30 行开始）",
+      "hash": "b94afed5",
+      "snippet": "30-121"
+    },
+    {
+      "file": "src/data/blogs/blog-013.ts",
+      "line": 176,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 176 行开始）",
+      "hash": "18f73dd4",
+      "snippet": "176-193"
+    },
+    {
+      "file": "src/data/blogs/blog-014.ts",
+      "line": 72,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 72 行开始）",
+      "hash": "b1fac5b8",
+      "snippet": "72-228"
+    },
+    {
+      "file": "src/data/blogs/blog-015.ts",
+      "line": 54,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 54 行开始）",
+      "hash": "8ca4420e",
+      "snippet": "54-81"
+    },
+    {
+      "file": "src/data/blogs/blog-016.ts",
+      "line": 172,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 172 行开始）",
+      "hash": "1f89c0f1",
+      "snippet": "172-189"
+    },
+    {
+      "file": "src/data/blogs/blog-017.ts",
+      "line": 27,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 27 行开始）",
+      "hash": "3e1f711d",
+      "snippet": "27-133"
+    },
+    {
+      "file": "src/data/blogs/blog-018.ts",
+      "line": 71,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 71 行开始）",
+      "hash": "2addfd59",
+      "snippet": "71-88"
+    },
+    {
+      "file": "src/data/blogs/blog-019.ts",
+      "line": 38,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 38 行开始）",
+      "hash": "cab63889",
+      "snippet": "38-75"
+    },
+    {
+      "file": "src/data/blogs/blog-020.ts",
+      "line": 16,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 16 行开始）",
+      "hash": "d8e81d17",
+      "snippet": "16-110"
+    },
+    {
+      "file": "src/data/blogs/blog-021.ts",
+      "line": 189,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 189 行开始）",
+      "hash": "de27232a",
+      "snippet": "189-206"
+    },
+    {
+      "file": "src/data/blogs/blog-022.ts",
+      "line": 155,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 155 行开始）",
+      "hash": "f5648d20",
+      "snippet": "155-191"
+    },
+    {
+      "file": "src/data/blogs/blog-023.ts",
+      "line": 50,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 50 行开始）",
+      "hash": "1173eacc",
+      "snippet": "50-413"
+    },
+    {
+      "file": "src/data/blogs/blog-024.ts",
+      "line": 41,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 41 行开始）",
+      "hash": "8c68a33c",
+      "snippet": "41-471"
+    },
+    {
+      "file": "src/data/blogs/blog-025.ts",
+      "line": 35,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 35 行开始）",
+      "hash": "bd30fbb1",
+      "snippet": "35-390"
+    },
+    {
+      "file": "src/data/blogs/blog-026.ts",
+      "line": 39,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 39 行开始）",
+      "hash": "3f6b8b50",
+      "snippet": "39-514"
+    },
+    {
+      "file": "src/data/blogs/blog-027.ts",
+      "line": 17,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 17 行开始）",
+      "hash": "fada0fb5",
+      "snippet": "17-641"
+    },
+    {
+      "file": "src/data/blogs/blog-028.ts",
+      "line": 19,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 19 行开始）",
+      "hash": "522b5861",
+      "snippet": "19-480"
+    },
+    {
+      "file": "src/data/blogs/blog-029.ts",
+      "line": 19,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "3a521eb8",
+      "snippet": "graph TD\n    A[\"用户自然语言指令<br/>'把海报背景换成日落风格'\"] --> B[\"Firefly AI 助手\"]\n    B --> C["
+    },
+    {
+      "file": "src/data/blogs/blog-029.ts",
+      "line": 209,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 13 个字面量 \\n 字符",
+      "hash": "32f0d30a",
+      "snippet": "sequenceDiagram\n    participant U as 用户\n    participant NLU as 自然语言理解\n    partic"
+    },
+    {
+      "file": "src/data/blogs/blog-029.ts",
+      "line": 484,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 484 行开始）",
+      "hash": "c176960e",
+      "snippet": "484-538"
+    },
+    {
+      "file": "src/data/blogs/blog-030.ts",
+      "line": 21,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 21 行开始）",
+      "hash": "da56588c",
+      "snippet": "21-427"
+    },
+    {
+      "file": "src/data/blogs/blog-031.ts",
+      "line": 12,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 12 行开始）",
+      "hash": "fcec41e0",
+      "snippet": "12-491"
+    },
+    {
+      "file": "src/data/blogs/blog-032.ts",
+      "line": 12,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 12 行开始）",
+      "hash": "a86868be",
+      "snippet": "12-488"
+    },
+    {
+      "file": "src/data/blogs/blog-033.ts",
+      "line": 34,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 34 行开始）",
+      "hash": "01dc0d54",
+      "snippet": "34-442"
+    },
+    {
+      "file": "src/data/blogs/blog-034.ts",
+      "line": 28,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 28 行开始）",
+      "hash": "b989171c",
+      "snippet": "28-491"
+    },
+    {
+      "file": "src/data/blogs/blog-035.ts",
+      "line": 26,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 26 行开始）",
+      "hash": "450e3fb3",
+      "snippet": "26-734"
+    },
+    {
+      "file": "src/data/blogs/blog-036.ts",
+      "line": 45,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 45 行开始）",
+      "hash": "ff3f22b6",
+      "snippet": "45-794"
+    },
+    {
+      "file": "src/data/blogs/blog-037.ts",
+      "line": 36,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 36 行开始）",
+      "hash": "45a3f425",
+      "snippet": "36-665"
+    },
+    {
+      "file": "src/data/blogs/blog-038.ts",
+      "line": 52,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 52 行开始）",
+      "hash": "e3f128f7",
+      "snippet": "52-752"
+    },
+    {
+      "file": "src/data/blogs/blog-039.ts",
+      "line": 28,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 12 个字面量 \\n 字符",
+      "hash": "cfd3e1da",
+      "snippet": "graph TD\n    subgraph \"自进化 AI Agent 技术路线\"\n        A[自进化 Agent] --> B[技能树生长路线]\n  "
+    },
+    {
+      "file": "src/data/blogs/blog-040.ts",
+      "line": 124,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 124 行开始）",
+      "hash": "b6e5efed",
+      "snippet": "124-877"
+    },
+    {
+      "file": "src/data/blogs/blog-041.ts",
+      "line": 60,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 60 行开始）",
+      "hash": "ef7fd727",
+      "snippet": "60-566"
+    },
+    {
+      "file": "src/data/blogs/blog-042.ts",
+      "line": 315,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 315 行开始）",
+      "hash": "24123948",
+      "snippet": "315-362"
+    },
+    {
+      "file": "src/data/blogs/blog-043.ts",
+      "line": 405,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 405 行开始）",
+      "hash": "94491218",
+      "snippet": "405-457"
+    },
+    {
+      "file": "src/data/blogs/blog-044.ts",
+      "line": 76,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 76 行开始）",
+      "hash": "d1086805",
+      "snippet": "76-476"
+    },
+    {
+      "file": "src/data/blogs/blog-045.ts",
+      "line": 88,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 88 行开始）",
+      "hash": "19093af1",
+      "snippet": "88-537"
+    },
+    {
+      "file": "src/data/blogs/blog-046.ts",
+      "line": 58,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 58 行开始）",
+      "hash": "6e0875d0",
+      "snippet": "58-819"
+    },
+    {
+      "file": "src/data/blogs/blog-047.ts",
+      "line": 57,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 57 行开始）",
+      "hash": "08f0156e",
+      "snippet": "57-875"
+    },
+    {
+      "file": "src/data/blogs/blog-048.ts",
+      "line": 45,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 45 行开始）",
+      "hash": "778388c0",
+      "snippet": "45-1021"
+    },
+    {
+      "file": "src/data/blogs/blog-049.ts",
+      "line": 591,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 591 行开始）",
+      "hash": "fac59b4e",
+      "snippet": "591-620"
+    },
+    {
+      "file": "src/data/blogs/blog-055.ts",
+      "line": 21,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 21 行开始）",
+      "hash": "67157412",
+      "snippet": "21-449"
+    },
+    {
+      "file": "src/data/blogs/blog-056.ts",
+      "line": 21,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 21 行开始）",
+      "hash": "ace0a832",
+      "snippet": "21-459"
+    },
+    {
+      "file": "src/data/blogs/blog-059.ts",
+      "line": 130,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "ebf67726",
+      "snippet": "graph TD\n  A[用户需求] --> B{选择 verbosity}\n  B -->|low| C[简洁模式]\n  B -->|medium| D[平衡"
+    },
+    {
+      "file": "src/data/blogs/blog-059.ts",
+      "line": 208,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "1b6c7451",
+      "snippet": "sequenceDiagram\n    participant U as 用户\n    participant A as AI 应用\n    participa"
+    },
+    {
+      "file": "src/data/blogs/blog-059.ts",
+      "line": 392,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "9279804c",
+      "snippet": "graph TD\n  A[长系统提示词] --> B[GPT-5.5 处理]\n  B --> C[注意力分散]\n  B --> D[忽略关键指令]\n  B --"
+    },
+    {
+      "file": "src/data/blogs/blog-060.ts",
+      "line": 892,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 892 行开始）",
+      "hash": "e20e390f",
+      "snippet": "892-909"
+    },
+    {
+      "file": "src/data/blogs/blog-061.ts",
+      "line": 48,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 48 行开始）",
+      "hash": "250ff16c",
+      "snippet": "48-481"
+    },
+    {
+      "file": "src/data/blogs/blog-062.ts",
+      "line": 32,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 32 行开始）",
+      "hash": "ae25198b",
+      "snippet": "32-667"
+    },
+    {
+      "file": "src/data/blogs/blog-063.ts",
+      "line": 211,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 211 行开始）",
+      "hash": "40bd544b",
+      "snippet": "211-713"
+    },
+    {
+      "file": "src/data/blogs/blog-064.ts",
+      "line": 68,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 68 行开始）",
+      "hash": "a6c5b5f4",
+      "snippet": "68-691"
+    },
+    {
+      "file": "src/data/blogs/blog-066.ts",
+      "line": 51,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 51 行开始）",
+      "hash": "fdfc4d8c",
+      "snippet": "51-734"
+    },
+    {
+      "file": "src/data/blogs/blog-067.ts",
+      "line": 62,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 62 行开始）",
+      "hash": "879f9e3b",
+      "snippet": "62-504"
+    },
+    {
+      "file": "src/data/blogs/blog-068.ts",
+      "line": 27,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "de28371f",
+      "snippet": "graph TD\n    A[Claude Code 核心] --> B[记忆系统]\n    A --> C[上下文管理]\n    A --> D[质量保障]\n"
+    },
+    {
+      "file": "src/data/blogs/blog-068.ts",
+      "line": 362,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "6b60cf0b",
+      "snippet": "sequenceDiagram\n    participant Dev as 开发者\n    participant CC as Claude Code\n   "
+    },
+    {
+      "file": "src/data/blogs/blog-068.ts",
+      "line": 635,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 635 行开始）",
+      "hash": "47fcb648",
+      "snippet": "635-686"
+    },
+    {
+      "file": "src/data/blogs/blog-069.ts",
+      "line": 31,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 31 行开始）",
+      "hash": "6f50d31c",
+      "snippet": "31-334"
+    },
+    {
+      "file": "src/data/blogs/blog-070.ts",
+      "line": 295,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 7 个字面量 \\n 字符",
+      "hash": "1f719a21",
+      "snippet": "graph TD\n    subgraph Lightweight[\"轻量级框架\"]\n        OAI[\"OpenAI Agents SDK\"]\n    "
+    },
+    {
+      "file": "src/data/blogs/blog-071.ts",
+      "line": 41,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 41 行开始）",
+      "hash": "21046ff9",
+      "snippet": "41-346"
+    },
+    {
+      "file": "src/data/blogs/blog-075.ts",
+      "line": 27,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 27 行开始）",
+      "hash": "e02811fc",
+      "snippet": "27-615"
+    },
+    {
+      "file": "src/data/blogs/blog-076.ts",
+      "line": 64,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 7 个字面量 \\n 字符",
+      "hash": "a18ee150",
+      "snippet": "graph TD\n    subgraph \"MCP Registry 出现前：碎片化的工具生态\"\n        A1[Agent A] --> T1[工具格"
+    },
+    {
+      "file": "src/data/blogs/blog-076.ts",
+      "line": 402,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "78b7ab66",
+      "snippet": "graph LR\n    subgraph \"Phase 1: 协议标准化 2024-2025\"\n        A1[MCP 规范发布] --> A2[社区适"
+    },
+    {
+      "file": "src/data/blogs/blog-077.ts",
+      "line": 64,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 64 行开始）",
+      "hash": "f311b6f6",
+      "snippet": "64-638"
+    },
+    {
+      "file": "src/data/blogs/blog-078.ts",
+      "line": 93,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 93 行开始）",
+      "hash": "1e6e7e10",
+      "snippet": "93-508"
+    },
+    {
+      "file": "src/data/blogs/blog-079.ts",
+      "line": 26,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 26 行开始）",
+      "hash": "08236e33",
+      "snippet": "26-289"
+    },
+    {
+      "file": "src/data/blogs/blog-080.ts",
+      "line": 153,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 153 行开始）",
+      "hash": "89b5bdfa",
+      "snippet": "153-234"
+    },
+    {
+      "file": "src/data/blogs/blog-081.ts",
+      "line": 107,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 107 行开始）",
+      "hash": "7342c35a",
+      "snippet": "107-618"
+    },
+    {
+      "file": "src/data/blogs/blog-082.ts",
+      "line": 35,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 35 行开始）",
+      "hash": "3442ec83",
+      "snippet": "35-507"
+    },
+    {
+      "file": "src/data/blogs/blog-084.ts",
+      "line": 167,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 167 行开始）",
+      "hash": "781be052",
+      "snippet": "167-629"
+    },
+    {
+      "file": "src/data/blogs/blog-085.ts",
+      "line": 207,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 6 个字面量 \\n 字符",
+      "hash": "807b7221",
+      "snippet": "graph TD\n    A[\"企业应用\"] --> B[\"API Gateway\"]\n    B --> C[\"Lambda 函数\n业务逻辑\"]\n    C "
+    },
+    {
+      "file": "src/data/blogs/blog-085.ts",
+      "line": 665,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 665 行开始）",
+      "hash": "70c16213",
+      "snippet": "665-715"
+    },
+    {
+      "file": "src/data/blogs/blog-086.ts",
+      "line": 435,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 435 行开始）",
+      "hash": "8568e568",
+      "snippet": "435-549"
+    },
+    {
+      "file": "src/data/blogs/blog-087.ts",
+      "line": 474,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 474 行开始）",
+      "hash": "7f125e62",
+      "snippet": "474-620"
+    },
+    {
+      "file": "src/data/blogs/blog-088.ts",
+      "line": 522,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 522 行开始）",
+      "hash": "b12796a2",
+      "snippet": "522-545"
+    },
+    {
+      "file": "src/data/blogs/blog-089.ts",
+      "line": 538,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 538 行开始）",
+      "hash": "159545a1",
+      "snippet": "538-613"
+    },
+    {
+      "file": "src/data/blogs/blog-093.ts",
+      "line": 447,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 447 行开始）",
+      "hash": "8f37dc0f",
+      "snippet": "447-524"
+    },
+    {
+      "file": "src/data/blogs/blog-095.ts",
+      "line": 58,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 58 行开始）",
+      "hash": "67f39842",
+      "snippet": "58-664"
+    },
+    {
+      "file": "src/data/blogs/blog-096.ts",
+      "line": 185,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 185 行开始）",
+      "hash": "9ffb3914",
+      "snippet": "185-415"
+    },
+    {
+      "file": "src/data/blogs/blog-097.ts",
+      "line": 39,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 39 行开始）",
+      "hash": "703891c5",
+      "snippet": "39-336"
+    },
+    {
+      "file": "src/data/blogs/blog-098.ts",
+      "line": 665,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 665 行开始）",
+      "hash": "32495eb4",
+      "snippet": "665-840"
+    },
+    {
+      "file": "src/data/blogs/blog-099.ts",
+      "line": 49,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "bdf208f3",
+      "snippet": "graph TD\n    A[\"印度市场独特条件\"] --> B[\"节日文化驱动\n30+ 主要节日/年\"]\n    A --> C[\"中小企业数字化\n6300 "
+    },
+    {
+      "file": "src/data/blogs/blog-100.ts",
+      "line": 80,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 6 个字面量 \\n 字符",
+      "hash": "c09721bb",
+      "snippet": "graph TD\n    A[\"上下文窗口扩大\"] --> E[\"AI 编码能力跃迁\"]\n    B[\"Agentic 模式\"] --> E\n    C[\"训练"
+    },
+    {
+      "file": "src/data/blogs/blog-101.ts",
+      "line": 112,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 6 个字面量 \\n 字符",
+      "hash": "bb14fe46",
+      "snippet": "graph TD\n    A[\"用户输入目标\"] --> B[\"目标解析\\nGoal Parsing\"]\n    B --> C[\"现状分析\\nState An"
+    },
+    {
+      "file": "src/data/blogs/blog-101.ts",
+      "line": 645,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 645 行开始）",
+      "hash": "9a2041b1",
+      "snippet": "645-836"
+    },
+    {
+      "file": "src/data/blogs/blog-102.ts",
+      "line": 133,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 28 个字面量 \\n 字符",
+      "hash": "5dbd38d1",
+      "snippet": "graph TD\n    A[\"应用层\\n业务逻辑\"] --> B[\"Symphony 客户端\\nJSON-RPC 封装\"]\n    B --> C[\"Symp"
+    },
+    {
+      "file": "src/data/blogs/blog-102.ts",
+      "line": 275,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 27 个字面量 \\n 字符",
+      "hash": "287dbc08",
+      "snippet": "graph LR\n    A[\"OpenAI 动机\"] --> B[\"抢占标准制定权\"]\n    A --> C[\"扩大 OpenAI 生态\"]\n    A -"
+    },
+    {
+      "file": "src/data/blogs/blog-103.ts",
+      "line": 70,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 70 行开始）",
+      "hash": "ce4650ad",
+      "snippet": "70-473"
+    },
+    {
+      "file": "src/data/blogs/blog-104.ts",
+      "line": 678,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 678 行开始）",
+      "hash": "e830b77c",
+      "snippet": "678-731"
+    },
+    {
+      "file": "src/data/blogs/blog-105.ts",
+      "line": 729,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 729 行开始）",
+      "hash": "bff93f0c",
+      "snippet": "729-790"
+    },
+    {
+      "file": "src/data/blogs/blog-106.ts",
+      "line": 112,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 24 个字面量 \\n 字符",
+      "hash": "47ad8301",
+      "snippet": "graph TD\n    subgraph \"晶圆制造\"\n        Fab1[\"三星晶圆厂\\n平泽/华城\"]\n        Fab2[\"SK 海力士晶圆"
+    },
+    {
+      "file": "src/data/blogs/blog-107.ts",
+      "line": 278,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 278 行开始）",
+      "hash": "5d98afa0",
+      "snippet": "278-572"
+    },
+    {
+      "file": "src/data/blogs/blog-108.ts",
+      "line": 302,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 302 行开始）",
+      "hash": "b3764ac1",
+      "snippet": "302-438"
+    },
+    {
+      "file": "src/data/blogs/blog-110.ts",
+      "line": 67,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 67 行开始）",
+      "hash": "1109b662",
+      "snippet": "67-585"
+    },
+    {
+      "file": "src/data/blogs/blog-111.ts",
+      "line": 63,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 63 行开始）",
+      "hash": "82c54dec",
+      "snippet": "63-525"
+    },
+    {
+      "file": "src/data/blogs/blog-113.ts",
+      "line": 318,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 318 行开始）",
+      "hash": "34c78573",
+      "snippet": "318-398"
+    },
+    {
+      "file": "src/data/blogs/blog-114.ts",
+      "line": 414,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 414 行开始）",
+      "hash": "6969cbc4",
+      "snippet": "414-584"
+    },
+    {
+      "file": "src/data/blogs/blog-115.ts",
+      "line": 34,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 34 行开始）",
+      "hash": "13b8ee04",
+      "snippet": "34-729"
+    },
+    {
+      "file": "src/data/blogs/blog-116.ts",
+      "line": 492,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 492 行开始）",
+      "hash": "efe8d69d",
+      "snippet": "492-512"
+    },
+    {
+      "file": "src/data/blogs/blog-117.ts",
+      "line": 318,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 318 行开始）",
+      "hash": "ec6b34d8",
+      "snippet": "318-367"
+    },
+    {
+      "file": "src/data/blogs/blog-118.ts",
+      "line": 206,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "4438d5d1",
+      "snippet": "graph LR\n    A[\"免费用户\\n1000 万+\"] --> B{\"付费转化率\\n6.2％\"}\n    B --> C[\"标准版\\n68元/月\\n80"
+    },
+    {
+      "file": "src/data/blogs/blog-118.ts",
+      "line": 443,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 443 行开始）",
+      "hash": "9b021510",
+      "snippet": "443-532"
+    },
+    {
+      "file": "src/data/blogs/blog-119.ts",
+      "line": 245,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 4 个字面量 \\n 字符",
+      "hash": "6c8fc9da",
+      "snippet": "graph LR\n    A[\"AI 芯片竞争格局 2026\"] --> B[\"NVIDIA H100/B200\\n生态霸主, 全场景覆盖\"]\n    A --"
+    },
+    {
+      "file": "src/data/blogs/blog-119.ts",
+      "line": 519,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 519 行开始）",
+      "hash": "5dfa7597",
+      "snippet": "519-560"
+    },
+    {
+      "file": "src/data/blogs/blog-120.ts",
+      "line": 367,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 9 个字面量 \\n 字符",
+      "hash": "4d8feb4a",
+      "snippet": "graph TD\n    A[\"AI 算力基础设施 2035\"] --> B[\"陆地传统 70％\\n液冷+微电网+分布式\"]\n    A --> C[\"海上浮动"
+    },
+    {
+      "file": "src/data/blogs/blog-120.ts",
+      "line": 625,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 625 行开始）",
+      "hash": "2d086ae4",
+      "snippet": "625-681"
+    },
+    {
+      "file": "src/data/blogs/blog-122.ts",
+      "line": 38,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 5 个字面量 \\n 字符",
+      "hash": "5b424bf6",
+      "snippet": "graph TD\n    A[\"2026 AI 企业市场\"] --> B[\"OpenAI 阵营\"]\n    A --> C[\"Anthropic 阵营\"]\n  "
+    },
+    {
+      "file": "src/data/blogs/blog-126.ts",
+      "line": 80,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 2 个字面量 \\n 字符",
+      "hash": "6bb47f02",
+      "snippet": "graph LR\n    A[\"输入序列 x_1...x_N\"] --> B[\"SSA 层\"]\n    B --> C[\"状态更新\\nh_t = A·h_{t-"
+    },
+    {
+      "file": "src/data/blogs/blog-126.ts",
+      "line": 177,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 8 个字面量 \\n 字符",
+      "hash": "42990f64",
+      "snippet": "graph TD\n    A[\"Scaling Law\\n性能 ∝ 参数^α × 数据^β × 算力^γ\"] --> B{\"架构创新出现\"}\n    B -->"
+    },
+    {
+      "file": "src/data/blogs/blog-127.ts",
+      "line": 135,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 1 个字面量 \\n 字符",
+      "hash": "81939f59",
+      "snippet": "graph TD\n    A[用户输入复杂任务] --> B{模型选择}\n    B -->|GPT-5.5 Instant| C[个性化分析<br/>匹配用户"
+    },
+    {
+      "file": "src/data/blogs/blog-128.ts",
+      "line": 168,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 10 个字面量 \\n 字符",
+      "hash": "46294551",
+      "snippet": "graph TD\n    A[\"RLHF\\n人类标注\\n成本高\"] --> D[\"改进幅度大\\n一次性\\n更新慢\"]\n    B[\"微调\\n训练数据\\n成本中\""
+    },
+    {
+      "file": "src/data/blogs/blog-129.ts",
+      "line": 420,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 420 行开始）",
+      "hash": "355a6f8f",
+      "snippet": "420-497"
+    },
+    {
+      "file": "src/data/blogs/blog-131.ts",
+      "line": 484,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 484 行开始）",
+      "hash": "c22faedf",
+      "snippet": "484-622"
+    },
+    {
+      "file": "src/data/blogs/blog-132.ts",
+      "line": 43,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "ec91cba3",
+      "snippet": "graph LR\n    A[第一代\\n统计套利+因子模型] --> B[第二代\\n机器学习+深度学习]\n    B --> C[第三代\\n多智能体协作系统]\n"
+    },
+    {
+      "file": "src/data/blogs/blog-133.ts",
+      "line": 45,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 3 个字面量 \\n 字符",
+      "hash": "e4918bf1",
+      "snippet": "graph TD\n    A[芯片设计与制造] --> B[数据中心与算力集群]\n    B --> C[网络互联与分布式训练]\n    C --> D[能源与"
+    },
+    {
+      "file": "src/data/blogs/blog-134.ts",
+      "line": 422,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 422 行开始）",
+      "hash": "78870928",
+      "snippet": "422-486"
+    },
+    {
+      "file": "src/data/blogs/blog-135.ts",
+      "line": 591,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 591 行开始）",
+      "hash": "4de2337f",
+      "snippet": "591-755"
+    },
+    {
+      "file": "src/data/blogs/blog-136.ts",
+      "line": 15,
+      "type": "LITERAL_NEWLINE_ESCAPE",
+      "severity": "error",
+      "message": "Mermaid 内容中包含 19 个字面量 \\n 字符",
+      "hash": "6d9381ab",
+      "snippet": "graph TD\n    A[用户按下 Cmd+Space] --> B{输入类型判断}\n    B -->|文件名/应用名| C[本地索引搜索\\n传统 Spo"
+    },
+    {
+      "file": "src/data/blogs/blog-137.ts",
+      "line": 80,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 80 行开始）",
+      "hash": "bae15de9",
+      "snippet": "80-646"
+    },
+    {
+      "file": "src/data/blogs/blog-138.ts",
+      "line": 324,
+      "type": "UNCLOSED_BACKTICK",
+      "severity": "error",
+      "message": "Mermaid 块缺少闭合反引号（从第 324 行开始）",
+      "hash": "09ede6fd",
+      "snippet": "324-497"
+    },
+    {
+      "file": "src/data/articles/agent-003.ts",
+      "line": 148,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "e791b0b9",
+      "snippet": "sequenceDiagram\n    participant U as 用户\n    participant M as LLM\n    participant"
+    },
+    {
+      "file": "src/data/articles/agent-003.ts",
+      "line": 321,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "2b34c555",
+      "snippet": "graph TD\n    subgraph \"推理方法谱系\"\n        A[\"纯推理\"] --> B[\"CoT 思维链\"]\n        B --> C"
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 149,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "4fe73518",
+      "snippet": "sequenceDiagram\n    participant T as Task\n    participant A as Agent\n    partici"
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 381,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "543b9778",
+      "snippet": "graph TD\n    A[根节点：原始问题] --> B[分支 1：方案 A]\n    A --> C[分支 2：方案 B]\n    A --> D[分支 "
+    },
+    {
+      "file": "src/data/articles/agent-006.ts",
+      "line": 592,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "e40032fb",
+      "snippet": "graph LR\n    A[原始输出] --> B[事实核查]\n    B --> C[逻辑检查]\n    C --> D[完整性评估]\n    D --> "
+    },
+    {
+      "file": "src/data/articles/agent-008.ts",
+      "line": 170,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "cb6802a8",
+      "snippet": "graph LR\n    A[\"原始运行数据\"] --> B[\"计算成功率\"]\n    A --> C[\"计算效率指标\"]\n    B --> D[\"一致性分析"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "line": 18,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "aafe7955",
+      "snippet": "graph TD\n    A[\"静态 Agent\n预定义工具 + 固定 Prompt\"] -->|\"无法从经验中学习\"| B[\"能力天花板低\n无法适应新场景\"]"
+    },
+    {
+      "file": "src/data/articles/agent-020.ts",
+      "line": 553,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "da46c87d",
+      "snippet": "graph LR\n    A[\"自进化 Agent\"] --> B[\"灾难性遗忘\"]\n    A --> C[\"错误传播\"]\n    A --> D[\"安全边界"
+    },
+    {
+      "file": "src/data/articles/agent-021.ts",
+      "line": 18,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "22c47c8b",
+      "snippet": "graph LR\n    A[\"2025: 单 Agent 时代\"] -->|\"能力天花板\n单个 Agent 无法突破\"| B[\"2026: AI 团队时代\"]"
+    },
+    {
+      "file": "src/data/articles/agent-039.ts",
+      "line": 182,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "45b04d6c",
+      "snippet": "graph TD\n    A[\"用户请求\"] --> B[\"编排层 Orchestrator\"]\n    B --> C[\"检索层 Retriever\"]\n  "
+    },
+    {
+      "file": "src/data/articles/agent-041.ts",
+      "line": 901,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "2765d883",
+      "snippet": "graph TD\n    A[\"用户请求\"] --> B[\"负载均衡器\"]\n    B --> C1[\"Agent 实例 1\"]\n    B --> C2[\"A"
+    },
+    {
+      "file": "src/data/articles/ai-security-009.ts",
+      "line": 43,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "16864b8d",
+      "snippet": "graph TD\n    A[Claude Mythos Preview] --> B[Firefox 代码库分析]\n    B --> C[静态分析引擎]\n "
+    },
+    {
+      "file": "src/data/articles/ai-security-011.ts",
+      "line": 34,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "ef828547",
+      "snippet": "graph TD\n    A[\"AI 国防基础设施\"] --> B[\"机密计算环境\"]\n    A --> C[\"数据管道与安全分级\"]\n    A --> D"
+    },
+    {
+      "file": "src/data/articles/aieng-003.ts",
+      "line": 232,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "a039703f",
+      "snippet": "graph LR\n    A[\"客户端请求\"] --> B[\"FastAPI Gateway\"]\n    B --> C[\"Pydantic 验证\"]\n    "
+    },
+    {
+      "file": "src/data/articles/aieng-008.ts",
+      "line": 231,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "a8fd8643",
+      "snippet": "graph TD\n    A[生产推理请求] --> B[记录输入输出]\n    B --> C[实时指标聚合]\n    C --> D[漂移检测]\n    C"
+    },
+    {
+      "file": "src/data/articles/aieng019.ts",
+      "line": 28,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "61acf620",
+      "snippet": "sequenceDiagram\n    participant Dev as 开发者/Coding Agent\n    participant MCP as M"
+    },
+    {
+      "file": "src/data/articles/aieng019.ts",
+      "line": 335,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "b45e6e7d",
+      "snippet": "graph TD\n    A[Coding Agent 需要理解代码库] --> B{MCP Client}\n    B -->|tools/list| C[M"
+    },
+    {
+      "file": "src/data/articles/apple-ai-001.ts",
+      "line": 293,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "9784a07e",
+      "snippet": "graph TD\n    A[\"用户请求\"] --> B{\"端侧能否处理？\"}\n    B -->|\"能 - 简单任务\"| C[\"端侧模型\nNeural Eng"
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 52,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "03c2ea74",
+      "snippet": "graph TD\n  A[图像分割] --> B[语义分割]\n  A --> C[实例分割]\n  A --> D[全景分割]\n  B --> E[FCN / U"
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 122,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "fb3be495",
+      "snippet": "graph LR\n  A[输入图像] --> B[Conv + Pool 堆叠]\n  B --> C[1x1 Conv 分类]\n  C --> D[转置卷积上采"
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 206,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "9d164822",
+      "snippet": "graph TD\n  A[输入 572x572] --> E1[Conv 64]\n  E1 --> E2[Conv 128]\n  E2 --> E3[Conv "
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 290,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "ba30d00f",
+      "snippet": "graph TD\n  A[输入特征] --> B[1x1 Conv]\n  A --> C[Atrous Conv r=6]\n  A --> D[Atrous C"
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 371,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "777f6aae",
+      "snippet": "graph TD\n  A[输入图像] --> B[ResNet-FPN 特征金字塔]\n  B --> C[RPN 区域建议]\n  C --> D[RoI Ali"
+    },
+    {
+      "file": "src/data/articles/cv-002.ts",
+      "line": 459,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "e1ec713a",
+      "snippet": "graph LR\n  A[预测掩码] --> B{逐像素对比}\n  B --> C[TP 真正例]\n  B --> D[FP 假正例]\n  B --> E[FN"
+    },
+    {
+      "file": "src/data/articles/cv-005.ts",
+      "line": 441,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "ea40b9fd",
+      "snippet": "graph TD\n    A[\"当前帧检测\"] --> B[\"提取 Re-ID 特征\n128 维向量\"]\n    A --> C[\"卡尔曼预测\n轨迹位置\"]\n "
+    },
+    {
+      "file": "src/data/articles/cv-007.ts",
+      "line": 527,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "b0cc98a1",
+      "snippet": "graph LR\n    A[\"文字图像\n32×W\"] --> B[\"CNN 卷积\n5 层卷积 + 池化\"]\n    B --> C[\"特征序列\nW/16 × "
+    },
+    {
+      "file": "src/data/articles/entertainment-ai-001.ts",
+      "line": 52,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "4fc313ab",
+      "snippet": "graph LR\n    A[\"NLP 剧本分析\"] --> B[\"创意辅助\"]\n    C[\"计算机视觉\"] --> D[\"拍摄与后期\"]\n    E[\"生成"
+    },
+    {
+      "file": "src/data/articles/ethics-004.ts",
+      "line": 313,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "53edce16",
+      "snippet": "graph LR\n    A[\"输入扰动区域\"] --> B[\"区间传播\n逐层 bound\"]\n    B --> C[\"输出 bounds\"]\n    C -"
+    },
+    {
+      "file": "src/data/articles/ethics-014.ts",
+      "line": 38,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "03673972",
+      "snippet": "flowchart LR\n    A[\"训练数据治理全流程\"] --> B[\"数据采集\"]\n    A --> C[\"数据清洗\"]\n    A --> D[\"标"
+    },
+    {
+      "file": "src/data/articles/ethics-014.ts",
+      "line": 422,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "bd671420",
+      "snippet": "flowchart TD\n    A[\"训练数据审计体系\"] --> B[\"内部审计\"]\n    A --> C[\"外部审计\"]\n    A --> D[\"事件"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 77,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "cd40a3eb",
+      "snippet": "graph LR\n    A[\"x_0 清晰图像\"] -->|q(x_1|x_0)| B[\"x_1 轻微噪声\"]\n    B -->|q(x_2|x_1)| C"
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 152,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "5347cbd4",
+      "snippet": "graph LR\n    A[\"随机采样 t\"] --> B[\"前向加噪 x_t\"]\n    B --> C[\"U-Net 预测噪声\\\"]\n    C --> "
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 187,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "cd8a6cda",
+      "snippet": "graph LR\n    A[\"DDPM: 1000步\"] -->|20x 加速| B[\"DDIM: 50步\"]\n    B -->|质量相当| C[\"FID "
+    },
+    {
+      "file": "src/data/articles/genai-001.ts",
+      "line": 222,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "7badadc1",
+      "snippet": "graph TD\n    A[\"条件 c (文本/类别)\"] --> B[\"条件编码器\\\"]\n    B --> C[\"Conditional U-Net\"]\n"
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 162,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "15c9bf4b",
+      "snippet": "graph TD\n    A[\"Latent 4x64x64\"] --> D0[\"Down 0: 320ch\"]\n    D0 --> D1[\"Down 1: "
+    },
+    {
+      "file": "src/data/articles/genai-002.ts",
+      "line": 207,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "23555c0e",
+      "snippet": "graph LR\n    A[\"随机噪声 z_T\"] --> B[\"采样器选择\"]\n    B --> C[\"DDIM: 确定性 ODE\\\"]\n    B --"
+    },
+    {
+      "file": "src/data/articles/geo-001.ts",
+      "line": 59,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "53117706",
+      "snippet": "graph TD\n    A[GEO 技术体系] --> B[语义覆盖优化]\n    A --> C[结构化数据嵌入]\n    A --> D[权威性信号强化]"
+    },
+    {
+      "file": "src/data/articles/llm-003.ts",
+      "line": 244,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "3e2930c3",
+      "snippet": "graph TD\n    A[\"用户查询\"] --> B[\"向量化 Query\"]\n    C[\"向量数据库\"] --> D[\"相似度计算\"]\n    B --"
+    },
+    {
+      "file": "src/data/articles/llm-005.ts",
+      "line": 429,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "77e1119e",
+      "snippet": "graph LR\n    A[\"偏好数据集\"] --> B[\"PPO 管线\"]\n    A --> C[\"DPO 管线\"]\n    B --> D[\"训练奖励模"
+    },
+    {
+      "file": "src/data/articles/llm-008.ts",
+      "line": 169,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "12ddd0f5",
+      "snippet": "graph LR\n    A[\"Token 序列\"] --> B[\"Q K V 投影\"]\n    B --> C[\"RoPE 旋转 Q\"]\n    B --> "
+    },
+    {
+      "file": "src/data/articles/llm-010.ts",
+      "line": 721,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "d538fc35",
+      "snippet": "graph LR\n    A[\"LLM-as-a-Judge\"] --> B[\"单模型裁判\"]\n    A --> C[\"交叉评估\"]\n    A --> D["
+    },
+    {
+      "file": "src/data/articles/llm-011.ts",
+      "line": 485,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "d28967e4",
+      "snippet": "graph TD\n    A[用户输入] --> B[Agent 思考 Thought]\n    B --> C{需要工具？}\n    C -->|\"是\"| D"
+    },
+    {
+      "file": "src/data/articles/llm-012.ts",
+      "line": 53,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "f5b7f834",
+      "snippet": "graph LR\n    A[\"部署需求\"] --> B[\"延迟敏感\"]\n    A --> C[\"吞吐敏感\"]\n    A --> D[\"成本敏感\"]\n   "
+    },
+    {
+      "file": "src/data/articles/llm-012.ts",
+      "line": 118,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "3c37c16a",
+      "snippet": "graph TD\n    A[\"请求到达\"] --> B[\"进入等待队列\"]\n    B --> C[\"Continuous Batching 调度器\"]\n  "
+    },
+    {
+      "file": "src/data/articles/llm-012.ts",
+      "line": 358,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "2c81b7ae",
+      "snippet": "graph LR\n    A[\"客户端\"] --> B[\"Nginx / Envoy\"]\n    B --> C[\"LiteLLM 网关\"]\n    C -->"
+    },
+    {
+      "file": "src/data/articles/llm-019.ts",
+      "line": 470,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "5b9c704c",
+      "snippet": "graph TD\n    A[用户输入编程需求] --> B{Qwen3.6-27B Agentic Coding}\n    B --> C[需求理解与分析]\n"
+    },
+    {
+      "file": "src/data/articles/llm-024.ts",
+      "line": 555,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "f822bec2",
+      "snippet": "flowchart TD\n    subgraph 压缩阶段\n        A[70B Teacher] -->|蒸馏数据| B[7B Student]\n  "
+    },
+    {
+      "file": "src/data/articles/ml-008.ts",
+      "line": 241,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "da0306a0",
+      "snippet": "graph TD\n    A[\"尝试 K=2,3,4,...\"] --> B[\"计算每个 K 的惯性\"]\n    B --> C[\"绘制惯性曲线\"]\n    C"
+    },
+    {
+      "file": "src/data/articles/ml-010.ts",
+      "line": 74,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "6a1f5a1a",
+      "snippet": "graph LR\n    A[\"高维数据\"] --> B[\"维度灾难\"]\n    B --> C[\"距离失效\"]\n    B --> D[\"计算昂贵\"]\n   "
+    },
+    {
+      "file": "src/data/articles/ml-010.ts",
+      "line": 238,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "cf7b59e4",
+      "snippet": "graph LR\n    A[\"最大化方差\"] -->|\"拉格朗日乘子\"| B[\"C w = λ w\"]\n    C[\"最小化重构误差\"] -->|\"正交投影定"
+    },
+    {
+      "file": "src/data/articles/ml-015.ts",
+      "line": 305,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "7f8d6540",
+      "snippet": "graph TD\n    A[\"训练开始\"] --> B{\"选择 Boosting 模式\"}\n    B -->|\"Ordered\"| C[\"排列数据\"]\n  "
+    },
+    {
+      "file": "src/data/articles/ml-016.ts",
+      "line": 184,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "545e390e",
+      "snippet": "graph LR\n    A[\"所有特征\"] --> B{\"选择策略?\"}\n    B -->|快速筛选| C[\"过滤法\"]\n    B -->|追求精度| D"
+    },
+    {
+      "file": "src/data/articles/nlp-003.ts",
+      "line": 571,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "4eb3cdf7",
+      "snippet": "graph TD\n    A[\"不平衡数据\"] --> B{\"不平衡比 > 10:1?\"}\n    B -->|是| C[\"Focal Loss + 类别权重\""
+    },
+    {
+      "file": "src/data/articles/practice-002.ts",
+      "line": 335,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "259169ea",
+      "snippet": "graph LR\n    A[\"用户查询\"] --> B[\"BM25 关键词检索\"]\n    A --> C[\"向量语义检索\"]\n    B --> D[\"BM"
+    },
+    {
+      "file": "src/data/articles/practice-003.ts",
+      "line": 110,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "c9e9a506",
+      "snippet": "graph LR\n    A[\"用户输入\"] --> B[\"NLU 自然语言理解\"]\n    B --> C[\"对话管理 DM\"]\n    C --> D[\"N"
+    },
+    {
+      "file": "src/data/articles/practice-003.ts",
+      "line": 838,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "2639b9e5",
+      "snippet": "graph TD\n    A[\"用户消息\"] --> B{\"缓存命中?\"}\n    B -->|\"是\"| C[\"返回缓存回复\"]\n    B -->|\"否\"| "
+    },
+    {
+      "file": "src/data/articles/prompt-003.ts",
+      "line": 309,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "d1070299",
+      "snippet": "sequenceDiagram\n    participant User as 用户\n    participant Agent as Agent\n    pa"
+    },
+    {
+      "file": "src/data/blogs/blog-029.ts",
+      "line": 209,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "8ec91880",
+      "snippet": "sequenceDiagram\n    participant U as 用户\n    participant NLU as 自然语言理解\n    partic"
+    },
+    {
+      "file": "src/data/blogs/blog-039.ts",
+      "line": 28,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "08bf6d28",
+      "snippet": "graph TD\n    subgraph \"自进化 AI Agent 技术路线\"\n        A[自进化 Agent] --> B[技能树生长路线]\n  "
+    },
+    {
+      "file": "src/data/blogs/blog-059.ts",
+      "line": 130,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "a36636f3",
+      "snippet": "graph TD\n  A[用户需求] --> B{选择 verbosity}\n  B -->|low| C[简洁模式]\n  B -->|medium| D[平衡"
+    },
+    {
+      "file": "src/data/blogs/blog-059.ts",
+      "line": 208,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "c9c76b0e",
+      "snippet": "sequenceDiagram\n    participant U as 用户\n    participant A as AI 应用\n    participa"
+    },
+    {
+      "file": "src/data/blogs/blog-059.ts",
+      "line": 392,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "4d120d7f",
+      "snippet": "graph TD\n  A[长系统提示词] --> B[GPT-5.5 处理]\n  B --> C[注意力分散]\n  B --> D[忽略关键指令]\n  B --"
+    },
+    {
+      "file": "src/data/blogs/blog-068.ts",
+      "line": 27,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "a5d7105d",
+      "snippet": "graph TD\n    A[Claude Code 核心] --> B[记忆系统]\n    A --> C[上下文管理]\n    A --> D[质量保障]\n"
+    },
+    {
+      "file": "src/data/blogs/blog-068.ts",
+      "line": 362,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "9c2fcb30",
+      "snippet": "sequenceDiagram\n    participant Dev as 开发者\n    participant CC as Claude Code\n   "
+    },
+    {
+      "file": "src/data/blogs/blog-070.ts",
+      "line": 295,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "bf675114",
+      "snippet": "graph TD\n    subgraph Lightweight[\"轻量级框架\"]\n        OAI[\"OpenAI Agents SDK\"]\n    "
+    },
+    {
+      "file": "src/data/blogs/blog-076.ts",
+      "line": 64,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "2d6eaaaa",
+      "snippet": "graph TD\n    subgraph \"MCP Registry 出现前：碎片化的工具生态\"\n        A1[Agent A] --> T1[工具格"
+    },
+    {
+      "file": "src/data/blogs/blog-076.ts",
+      "line": 402,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "ec1e56e9",
+      "snippet": "graph LR\n    subgraph \"Phase 1: 协议标准化 2024-2025\"\n        A1[MCP 规范发布] --> A2[社区适"
+    },
+    {
+      "file": "src/data/blogs/blog-085.ts",
+      "line": 207,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "63560305",
+      "snippet": "graph TD\n    A[\"企业应用\"] --> B[\"API Gateway\"]\n    B --> C[\"Lambda 函数\n业务逻辑\"]\n    C "
+    },
+    {
+      "file": "src/data/blogs/blog-099.ts",
+      "line": 49,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "bd6c7b37",
+      "snippet": "graph TD\n    A[\"印度市场独特条件\"] --> B[\"节日文化驱动\n30+ 主要节日/年\"]\n    A --> C[\"中小企业数字化\n6300 "
+    },
+    {
+      "file": "src/data/blogs/blog-105.ts",
+      "line": 507,
+      "type": "DOUBLE_BACKSLASH",
+      "severity": "warning",
+      "message": "Mermaid 内容中包含 \\\\（双反斜杠），可能是转义错误",
+      "hash": "affc8c73",
+      "snippet": "graph TD\n    A[\"自主编程安全成熟度\"] --> L0[\"Level 0: 完全手动\"]\n    A --> L1[\"Level 1: 自动化审查"
+    }
+  ]
+}
