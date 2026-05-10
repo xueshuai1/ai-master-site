@@ -10,7 +10,6 @@ interface MermaidChartProps {
 export default function MermaidChart({ chart, onSvgReady }: MermaidChartProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [svg, setSvg] = useState<string>('');
-  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     let mounted = true;
@@ -23,14 +22,12 @@ export default function MermaidChart({ chart, onSvgReady }: MermaidChartProps) {
           theme: 'dark',
           securityLevel: 'loose',
           fontFamily: 'system-ui, -apple-system, sans-serif',
-          suppressErrorRendering: false,
+          suppressErrorRendering: true,  // 禁止 mermaid 在 DOM 中注入错误图示
           themeVariables: {
             fontSize: '16px',
-            // 统一亮色文字，确保深色背景下清晰可读
             primaryTextColor: '#f1f5f9',
             secondaryTextColor: '#f1f5f9',
             tertiaryTextColor: '#f1f5f9',
-            // 节点背景加亮，与文字形成足够对比
             primaryColor: '#1e3a5f',
             primaryBorderColor: '#60a5fa',
             mainBkg: '#1e3a5f',
@@ -67,21 +64,21 @@ export default function MermaidChart({ chart, onSvgReady }: MermaidChartProps) {
           },
         });
 
-        // Generate truly unique ID (timestamp + random) to avoid SPA navigation collision
         const id = `mermaid-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
         const { svg } = await mermaid.render(id, chart);
+
+        // 清理 mermaid 渲染后遗留的 DOM 元素（包括错误图示）
+        const errorEl = document.getElementById(id);
+        if (errorEl) errorEl.remove();
+
         if (mounted) {
           setSvg(svg);
           onSvgReady?.(svg);
         }
       } catch (err: any) {
-        // Show error message so QA can catch syntax issues
-        console.error('MermaidChart render failed:', err);
+        // 静默失败：不向用户展示任何错误
+        console.error('MermaidChart render failed:', err?.message || err);
         if (mounted) {
-          const msg = err?.message || String(err);
-          // Truncate long messages for display
-          const shortMsg = msg.length > 200 ? msg.substring(0, 200) + '...' : msg;
-          setError(`图表渲染失败: ${shortMsg}`);
           setSvg('');
         }
       }
@@ -91,8 +88,8 @@ export default function MermaidChart({ chart, onSvgReady }: MermaidChartProps) {
     return () => { mounted = false; };
   }, [chart]);
 
-  if (error) {
-    return <div className="text-slate-500 text-sm italic">{error}</div>;
+  if (!svg) {
+    return null; // 渲染失败或等待中，不展示任何内容
   }
 
   return (
