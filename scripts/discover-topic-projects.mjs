@@ -3,7 +3,7 @@
  * 按 GitHub Topics + 关键词 + 知名账号 发现优秀 AI 项目
  * 
  * 策略：
- * 1. 读取 data/ai-topics.json 中的 topics 列表，按 topic 搜索高星项目
+ * 1. 读取 data/ai-topics.json 中的 topics 列表，每次随机选取 50 个 topic 搜索（覆盖范围更广）
  * 2. 关键词兜底搜索：用 "ai coding" "claude code" "ai agent tool" 等关键词搜索（覆盖无 topics 的项目）
  * 3. 知名开发者/机构账号监控：扫描 garrytan, simonw, anthropic, etc. 的新项目
  * 4. 对比 src/data/tools.ts 已有项目，发现遗漏
@@ -29,7 +29,11 @@ try {
   if (match) GITHUB_TOKEN = match[1].trim();
 } catch {}
 const HAS_TOKEN = GITHUB_TOKEN.startsWith('ghp_') || GITHUB_TOKEN.startsWith('gho_');
-const REQUEST_DELAY = HAS_TOKEN ? 200 : 1500;
+// Search API 限额 30 次/小时，Topic 搜索用 Search API
+// 50 个 topic 需要 50 × 120s = ~100 分钟，但实际会被限流中断
+// 缩短到 2 秒间隔，优先在前 15 个 topic 内完成搜索
+const REQUEST_DELAY = HAS_TOKEN ? 2000 : 3000;
+const TOPIC_SEARCH_LIMIT = 15; // 每轮最多搜索 15 个 topic，避免触发 search API 限流
 
 const TOOLS_FILE = path.join(ROOT, 'src/data/tools.ts');
 const TOPICS_FILE = path.join(ROOT, 'data/ai-topics.json');
@@ -103,13 +107,27 @@ function searchGitHub(query, minStars, perPage = 30) {
   });
 }
 
+// Fisher-Yates 洗牌
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 async function main() {
   console.error('🔍 开始发现优秀 AI 项目...\n');
   
   // 读取 topics 库
   const topicsData = JSON.parse(fs.readFileSync(TOPICS_FILE, 'utf8'));
-  const topics = topicsData.topics;
+  const allTopics = topicsData.topics;
   const globalMinStars = topicsData.minStarsThreshold || 5000;
+  
+  // 每次运行随机选取 50 个 topic，避免每次都扫相同的一批
+  const MAX_TOPICS_PER_RUN = 50;
+  const topics = shuffleArray([...allTopics]).slice(0, MAX_TOPICS_PER_RUN);
+  console.error(`📋 从 ${allTopics.length} 个 topics 中随机选取 ${topics.length} 个（本轮）\n`);
   
   // 读取已有项目
   const existingRepos = extractExistingRepos();
@@ -122,9 +140,13 @@ async function main() {
   // ══════════════════════════════════════════════
   // 渠道 1：按 Topics 搜索
   // ══════════════════════════════════════════════
-  console.error(`━━━ 渠道 1：Topics 搜索 (${topics.length} 个 topics) ━━━\n`);
+  console.error(`━━━ 渠道 1：Topics 搜索（本轮 ${topics.length}/${allTopics.length} 个 topic，最多搜索 ${TOPIC_SEARCH_LIMIT} 个）━━━\n`);
   
   for (let i = 0; i < topics.length; i++) {
+    if (i >= TOPIC_SEARCH_LIMIT) {
+      console.error(`\n⏸️  已搜索 ${TOPIC_SEARCH_LIMIT} 个 topic，剩余 ${topics.length - i} 个跳过（Search API 限流保护）`);
+      break;
+    }
     if (rateLimited) {
       console.error(`\n⏸️  触发限流，跳过剩余 ${topics.length - i} 个 topics`);
       break;
@@ -133,7 +155,7 @@ async function main() {
     const topic = topics[i];
     const minStars = Math.max(topic.minStars || globalMinStars, globalMinStars);
     
-    console.error(`[${i + 1}/${topics.length}] 🔎 ${topic.topic} (minStars: ${minStars.toLocaleString()})`);
+    console.error(`  [${i + 1}/${topics.length}] 🔎 ${topic.topic} (minStars: ${minStars.toLocaleString()})`);
     
     const result = await searchGitHub(`topic:${topic.topic}`, minStars, 30);
     
