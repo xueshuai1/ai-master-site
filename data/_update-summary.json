@@ -1,0 +1,2231 @@
+{
+  "updates": {
+    "starsChanged": [
+      {
+        "urlPath": "nousresearch/hermes-agent",
+        "old": 140884,
+        "new": 141160,
+        "delta": 276
+      },
+      {
+        "urlPath": "forrestchang/andrej-karpathy-skills",
+        "old": 122223,
+        "new": 122488,
+        "delta": 265
+      },
+      {
+        "urlPath": "github/spec-kit",
+        "old": 94326,
+        "new": 94560,
+        "delta": 234
+      },
+      {
+        "urlPath": "addyosmani/agent-skills",
+        "old": 37321,
+        "new": 37542,
+        "delta": 221
+      },
+      {
+        "urlPath": "farion1231/cc-switch",
+        "old": 64933,
+        "new": 65150,
+        "delta": 217
+      },
+      {
+        "urlPath": "affaan-m/everything-claude-code",
+        "old": 176711,
+        "new": 176913,
+        "delta": 202
+      },
+      {
+        "urlPath": "ruvnet/ruflo",
+        "old": 47744,
+        "new": 47926,
+        "delta": 182
+      },
+      {
+        "urlPath": "hmbown/deepseek-tui",
+        "old": 23253,
+        "new": 23413,
+        "delta": 160
+      },
+      {
+        "urlPath": "obra/superpowers",
+        "old": 184312,
+        "new": 184464,
+        "delta": 152
+      },
+      {
+        "urlPath": "garrytan/gstack",
+        "old": 92321,
+        "new": 92452,
+        "delta": 131
+      },
+      {
+        "urlPath": "tauricresearch/tradingagents",
+        "old": 72469,
+        "new": 72584,
+        "delta": 115
+      },
+      {
+        "urlPath": "lordog/dive-into-llms",
+        "old": 36465,
+        "new": 36571,
+        "delta": 106
+      },
+      {
+        "urlPath": "comfyanonymous/comfyui",
+        "old": 112080,
+        "new": 112175,
+        "delta": 95
+      },
+      {
+        "urlPath": "rowboatlabs/rowboat",
+        "old": 13747,
+        "new": 13841,
+        "delta": 94
+      },
+      {
+        "urlPath": "firecrawl/firecrawl",
+        "old": 117472,
+        "new": 117555,
+        "delta": 83
+      },
+      {
+        "urlPath": "block/goose",
+        "old": 44797,
+        "new": 44876,
+        "delta": 79
+      },
+      {
+        "urlPath": "thedotmack/claude-mem",
+        "old": 74114,
+        "new": 74182,
+        "delta": 68
+      },
+      {
+        "urlPath": "openclaw/openclaw",
+        "old": 370216,
+        "new": 370281,
+        "delta": 65
+      },
+      {
+        "urlPath": "fincept-corporation/finceptterminal",
+        "old": 20472,
+        "new": 20533,
+        "delta": 61
+      },
+      {
+        "urlPath": "anil-matcha/open-generative-ai",
+        "old": 12381,
+        "new": 12441,
+        "delta": 60
+      },
+      {
+        "urlPath": "alishahryar1/free-claude-code",
+        "old": 23233,
+        "new": 23290,
+        "delta": 57
+      },
+      {
+        "urlPath": "lobehub/lobe-chat",
+        "old": 76717,
+        "new": 76773,
+        "delta": 56
+      },
+      {
+        "urlPath": "openai/codex",
+        "old": 81373,
+        "new": 81428,
+        "delta": 55
+      },
+      {
+        "urlPath": "juliusbrussee/caveman",
+        "old": 57077,
+        "new": 57131,
+        "delta": 54
+      },
+      {
+        "urlPath": "multica-ai/multica",
+        "old": 26600,
+        "new": 26652,
+        "delta": 52
+      },
+      {
+        "urlPath": "microsoft/markitdown",
+        "old": 122232,
+        "new": 122280,
+        "delta": 48
+      },
+      {
+        "urlPath": "anthropics/claude-code",
+        "old": 122019,
+        "new": 122066,
+        "delta": 47
+      },
+      {
+        "urlPath": "karpathy/autoresearch",
+        "old": 80012,
+        "new": 80055,
+        "delta": 43
+      },
+      {
+        "urlPath": "lsdefine/genericagent",
+        "old": 10295,
+        "new": 10338,
+        "delta": 43
+      },
+      {
+        "urlPath": "shubhamsaboo/awesome-llm-apps",
+        "old": 109455,
+        "new": 109494,
+        "delta": 39
+      },
+      {
+        "urlPath": "composiohq/awesome-claude-skills",
+        "old": 58946,
+        "new": 58983,
+        "delta": 37
+      },
+      {
+        "urlPath": "code-yeongyu/oh-my-openagent",
+        "old": 56837,
+        "new": 56872,
+        "delta": 35
+      },
+      {
+        "urlPath": "hesreallyhim/awesome-claude-code",
+        "old": 43148,
+        "new": 43182,
+        "delta": 34
+      },
+      {
+        "urlPath": "vercel-labs/agent-browser",
+        "old": 32413,
+        "new": 32445,
+        "delta": 32
+      },
+      {
+        "urlPath": "ekkolearnai/hermes-web-ui",
+        "old": 4169,
+        "new": 4197,
+        "delta": 28
+      },
+      {
+        "urlPath": "microsoft/qlib",
+        "old": 42372,
+        "new": 42400,
+        "delta": 28
+      },
+      {
+        "urlPath": "browser-use/browser-use",
+        "old": 93110,
+        "new": 93137,
+        "delta": 27
+      },
+      {
+        "urlPath": "zhayujie/chatgpt-on-wechat",
+        "old": 44230,
+        "new": 44257,
+        "delta": 27
+      },
+      {
+        "urlPath": "z-lab/dflash",
+        "old": 4047,
+        "new": 4073,
+        "delta": 26
+      },
+      {
+        "urlPath": "shanraisshan/claude-code-best-practice",
+        "old": 52005,
+        "new": 52031,
+        "delta": 26
+      },
+      {
+        "urlPath": "open-webui/open-webui",
+        "old": 136320,
+        "new": 136345,
+        "delta": 25
+      },
+      {
+        "urlPath": "santifer/career-ops",
+        "old": 43768,
+        "new": 43793,
+        "delta": 25
+      },
+      {
+        "urlPath": "bytedance/deer-flow",
+        "old": 66253,
+        "new": 66277,
+        "delta": 24
+      },
+      {
+        "urlPath": "berriai/litellm",
+        "old": 46330,
+        "new": 46352,
+        "delta": 22
+      },
+      {
+        "urlPath": "microsoft/ai-agents-for-beginners",
+        "old": 61035,
+        "new": 61057,
+        "delta": 22
+      },
+      {
+        "urlPath": "ollama/ollama",
+        "old": 171070,
+        "new": 171091,
+        "delta": 21
+      },
+      {
+        "urlPath": "shiyu-coder/kronos",
+        "old": 23785,
+        "new": 23806,
+        "delta": 21
+      },
+      {
+        "urlPath": "coleam00/archon",
+        "old": 21156,
+        "new": 21176,
+        "delta": 20
+      },
+      {
+        "urlPath": "astrbotdevs/astrbot",
+        "old": 31723,
+        "new": 31742,
+        "delta": 19
+      },
+      {
+        "urlPath": "punkpeye/awesome-mcp-servers",
+        "old": 86558,
+        "new": 86577,
+        "delta": 19
+      },
+      {
+        "urlPath": "shareai-lab/learn-claude-code",
+        "old": 59384,
+        "new": 59403,
+        "delta": 19
+      },
+      {
+        "urlPath": "n8n-io/n8n",
+        "old": 187242,
+        "new": 187260,
+        "delta": 18
+      },
+      {
+        "urlPath": "mksglu/context-mode",
+        "old": 14165,
+        "new": 14183,
+        "delta": 18
+      },
+      {
+        "urlPath": "infiniflow/ragflow",
+        "old": 80102,
+        "new": 80120,
+        "delta": 18
+      },
+      {
+        "urlPath": "jingyaogong/minimind",
+        "old": 49377,
+        "new": 49394,
+        "delta": 17
+      },
+      {
+        "urlPath": "jo-inc/camofox-browser",
+        "old": 4374,
+        "new": 4391,
+        "delta": 17
+      },
+      {
+        "urlPath": "hiyouga/llama-factory",
+        "old": 71080,
+        "new": 71096,
+        "delta": 16
+      },
+      {
+        "urlPath": "google-gemini/gemini-cli",
+        "old": 103539,
+        "new": 103555,
+        "delta": 16
+      },
+      {
+        "urlPath": "jamiepine/voicebox",
+        "old": 24931,
+        "new": 24946,
+        "delta": 15
+      },
+      {
+        "urlPath": "virattt/ai-hedge-fund",
+        "old": 58439,
+        "new": 58453,
+        "delta": 14
+      },
+      {
+        "urlPath": "hkuds/deeptutor",
+        "old": 23731,
+        "new": 23745,
+        "delta": 14
+      },
+      {
+        "urlPath": "agentscope-ai/copaw",
+        "old": 16471,
+        "new": 16485,
+        "delta": 14
+      },
+      {
+        "urlPath": "openbb-finance/openbb",
+        "old": 67289,
+        "new": 67303,
+        "delta": 14
+      },
+      {
+        "urlPath": "openbmb/voxcpm",
+        "old": 18054,
+        "new": 18068,
+        "delta": 14
+      },
+      {
+        "urlPath": "langfuse/langfuse",
+        "old": 26893,
+        "new": 26907,
+        "delta": 14
+      },
+      {
+        "urlPath": "bin-huang/chatbox",
+        "old": 39866,
+        "new": 39879,
+        "delta": 13
+      },
+      {
+        "urlPath": "langgenius/dify",
+        "old": 140734,
+        "new": 140747,
+        "delta": 13
+      },
+      {
+        "urlPath": "jeecgboot/jeecg-boot",
+        "old": 46134,
+        "new": 46147,
+        "delta": 13
+      },
+      {
+        "urlPath": "vectifyai/pageindex",
+        "old": 30272,
+        "new": 30285,
+        "delta": 13
+      },
+      {
+        "urlPath": "upstash/context7",
+        "old": 54883,
+        "new": 54895,
+        "delta": 12
+      },
+      {
+        "urlPath": "vllm-project/vllm",
+        "old": 79507,
+        "new": 79519,
+        "delta": 12
+      },
+      {
+        "urlPath": "unclecode/crawl4ai",
+        "old": 65282,
+        "new": 65294,
+        "delta": 12
+      },
+      {
+        "urlPath": "rasbt/llms-from-scratch",
+        "old": 92263,
+        "new": 92275,
+        "delta": 12
+      },
+      {
+        "urlPath": "mempalace/mempalace",
+        "old": 51773,
+        "new": 51784,
+        "delta": 11
+      },
+      {
+        "urlPath": "hkuds/openharness",
+        "old": 12253,
+        "new": 12264,
+        "delta": 11
+      },
+      {
+        "urlPath": "hacksider/deep-live-cam",
+        "old": 92809,
+        "new": 92820,
+        "delta": 11
+      },
+      {
+        "urlPath": "openai/openai-cookbook",
+        "old": 73373,
+        "new": 73384,
+        "delta": 11
+      },
+      {
+        "urlPath": "crewaiinc/crewai",
+        "old": 51024,
+        "new": 51034,
+        "delta": 10
+      },
+      {
+        "urlPath": "unslothai/unsloth",
+        "old": 63884,
+        "new": 63894,
+        "delta": 10
+      },
+      {
+        "urlPath": "aider-ai/aider",
+        "old": 44583,
+        "new": 44593,
+        "delta": 10
+      },
+      {
+        "urlPath": "larksuite/cli",
+        "old": 9553,
+        "new": 9563,
+        "delta": 10
+      },
+      {
+        "urlPath": "sickn33/antigravity-awesome-skills",
+        "old": 36968,
+        "new": 36978,
+        "delta": 10
+      },
+      {
+        "urlPath": "paddlepaddle/paddleocr",
+        "old": 77499,
+        "new": 77509,
+        "delta": 10
+      },
+      {
+        "urlPath": "promptfoo/promptfoo",
+        "old": 21064,
+        "new": 21074,
+        "delta": 10
+      },
+      {
+        "urlPath": "openhands/openhands",
+        "old": 72995,
+        "new": 73004,
+        "delta": 9
+      },
+      {
+        "urlPath": "langchain-ai/langgraph",
+        "old": 31623,
+        "new": 31632,
+        "delta": 9
+      },
+      {
+        "urlPath": "langchain-ai/langchain",
+        "old": 136257,
+        "new": 136266,
+        "delta": 9
+      },
+      {
+        "urlPath": "rvc-boss/gpt-sovits",
+        "old": 57323,
+        "new": 57332,
+        "delta": 9
+      },
+      {
+        "urlPath": "tracer-cloud/opensre",
+        "old": 4747,
+        "new": 4756,
+        "delta": 9
+      },
+      {
+        "urlPath": "dair-ai/prompt-engineering-guide",
+        "old": 74377,
+        "new": 74386,
+        "delta": 9
+      },
+      {
+        "urlPath": "langchain-ai/deepagents",
+        "old": 22547,
+        "new": 22556,
+        "delta": 9
+      },
+      {
+        "urlPath": "x1xhlol/system-prompts-and-models-of-ai-tools",
+        "old": 136978,
+        "new": 136986,
+        "delta": 8
+      },
+      {
+        "urlPath": "langflow-ai/langflow",
+        "old": 147897,
+        "new": 147905,
+        "delta": 8
+      },
+      {
+        "urlPath": "ultralytics/ultralytics",
+        "old": 56925,
+        "new": 56933,
+        "delta": 8
+      },
+      {
+        "urlPath": "harry0703/moneyprinterturbo",
+        "old": 56978,
+        "new": 56986,
+        "delta": 8
+      },
+      {
+        "urlPath": "microsoft/generative-ai-for-beginners",
+        "old": 110527,
+        "new": 110535,
+        "delta": 8
+      },
+      {
+        "urlPath": "hkuds/lightrag",
+        "old": 34965,
+        "new": 34973,
+        "delta": 8
+      },
+      {
+        "urlPath": "coplaydev/unity-mcp",
+        "old": 9418,
+        "new": 9426,
+        "delta": 8
+      },
+      {
+        "urlPath": "cherryhq/cherry-studio",
+        "old": 45327,
+        "new": 45334,
+        "delta": 7
+      },
+      {
+        "urlPath": "copilotkit/copilotkit",
+        "old": 31177,
+        "new": 31184,
+        "delta": 7
+      },
+      {
+        "urlPath": "evomap/evolver",
+        "old": 7335,
+        "new": 7342,
+        "delta": 7
+      },
+      {
+        "urlPath": "gpt-engineer-org/gpt-engineer",
+        "old": 55224,
+        "new": 55217,
+        "delta": -7
+      },
+      {
+        "urlPath": "volcengine/openviking",
+        "old": 23703,
+        "new": 23710,
+        "delta": 7
+      },
+      {
+        "urlPath": "nirdiamant/genai_agents",
+        "old": 21877,
+        "new": 21884,
+        "delta": 7
+      },
+      {
+        "urlPath": "mudler/localai",
+        "old": 46164,
+        "new": 46170,
+        "delta": 6
+      },
+      {
+        "urlPath": "mem0ai/mem0",
+        "old": 55239,
+        "new": 55245,
+        "delta": 6
+      },
+      {
+        "urlPath": "openai/openai-agents-python",
+        "old": 26110,
+        "new": 26116,
+        "delta": 6
+      },
+      {
+        "urlPath": "docling-project/docling",
+        "old": 59462,
+        "new": 59468,
+        "delta": 6
+      },
+      {
+        "urlPath": "openai/whisper",
+        "old": 99206,
+        "new": 99212,
+        "delta": 6
+      },
+      {
+        "urlPath": "f/prompts.chat",
+        "old": 161907,
+        "new": 161913,
+        "delta": 6
+      },
+      {
+        "urlPath": "microsoft/ml-for-beginners",
+        "old": 85694,
+        "new": 85700,
+        "delta": 6
+      },
+      {
+        "urlPath": "flowiseai/flowise",
+        "old": 52683,
+        "new": 52688,
+        "delta": 5
+      },
+      {
+        "urlPath": "vercel-labs/open-agents",
+        "old": 5285,
+        "new": 5290,
+        "delta": 5
+      },
+      {
+        "urlPath": "tapxworld/chinatextbook",
+        "old": 70884,
+        "new": 70889,
+        "delta": 5
+      },
+      {
+        "urlPath": "milvus-io/milvus",
+        "old": 44200,
+        "new": 44205,
+        "delta": 5
+      },
+      {
+        "urlPath": "upscayl/upscayl",
+        "old": 45165,
+        "new": 45170,
+        "delta": 5
+      },
+      {
+        "urlPath": "developer-y/cs-video-courses",
+        "old": 81093,
+        "new": 81098,
+        "delta": 5
+      },
+      {
+        "urlPath": "tianxingchen/embodied-ai-guide",
+        "old": 13518,
+        "new": 13523,
+        "delta": 5
+      },
+      {
+        "urlPath": "simular-ai/agent-s",
+        "old": 11198,
+        "new": 11203,
+        "delta": 5
+      },
+      {
+        "urlPath": "mintplex-labs/anything-llm",
+        "old": 59782,
+        "new": 59786,
+        "delta": 4
+      },
+      {
+        "urlPath": "significant-gravitas/autogpt",
+        "old": 184119,
+        "new": 184123,
+        "delta": 4
+      },
+      {
+        "urlPath": "foundationagents/metagpt",
+        "old": 67832,
+        "new": 67836,
+        "delta": 4
+      },
+      {
+        "urlPath": "xtekky/gpt4free",
+        "old": 66198,
+        "new": 66202,
+        "delta": 4
+      },
+      {
+        "urlPath": "huggingface/smolagents",
+        "old": 27185,
+        "new": 27189,
+        "delta": 4
+      },
+      {
+        "urlPath": "assafelovic/gpt-researcher",
+        "old": 26958,
+        "new": 26962,
+        "delta": 4
+      },
+      {
+        "urlPath": "huggingface/transformers",
+        "old": 160423,
+        "new": 160427,
+        "delta": 4
+      },
+      {
+        "urlPath": "supabase/supabase",
+        "old": 102103,
+        "new": 102107,
+        "delta": 4
+      },
+      {
+        "urlPath": "iamzhihuix/skills-manage",
+        "old": 1775,
+        "new": 1779,
+        "delta": 4
+      },
+      {
+        "urlPath": "open-llm-vtuber/open-llm-vtuber",
+        "old": 7577,
+        "new": 7581,
+        "delta": 4
+      },
+      {
+        "urlPath": "hkuds/rag-anything",
+        "old": 19995,
+        "new": 19999,
+        "delta": 4
+      },
+      {
+        "urlPath": "google-deepmind/mujoco",
+        "old": 13409,
+        "new": 13413,
+        "delta": 4
+      },
+      {
+        "urlPath": "commaai/openpilot",
+        "old": 60872,
+        "new": 60875,
+        "delta": 3
+      },
+      {
+        "urlPath": "scikit-learn/scikit-learn",
+        "old": 66015,
+        "new": 66018,
+        "delta": 3
+      },
+      {
+        "urlPath": "gradio-app/gradio",
+        "old": 42533,
+        "new": 42536,
+        "delta": 3
+      },
+      {
+        "urlPath": "composiohq/composio",
+        "old": 28132,
+        "new": 28135,
+        "delta": 3
+      },
+      {
+        "urlPath": "hangwin/mcp-chrome",
+        "old": 11570,
+        "new": 11573,
+        "delta": 3
+      },
+      {
+        "urlPath": "zilliztech/claude-context",
+        "old": 10899,
+        "new": 10902,
+        "delta": 3
+      },
+      {
+        "urlPath": "simoneavogadro/android-reverse-engineering-skill",
+        "old": 5603,
+        "new": 5606,
+        "delta": 3
+      },
+      {
+        "urlPath": "meilisearch/meilisearch",
+        "old": 57476,
+        "new": 57479,
+        "delta": 3
+      },
+      {
+        "urlPath": "d2l-ai/d2l-zh",
+        "old": 77750,
+        "new": 77753,
+        "delta": 3
+      },
+      {
+        "urlPath": "opencv/opencv",
+        "old": 87400,
+        "new": 87403,
+        "delta": 3
+      },
+      {
+        "urlPath": "tesseract-ocr/tesseract",
+        "old": 73993,
+        "new": 73996,
+        "delta": 3
+      },
+      {
+        "urlPath": "simonw/llm",
+        "old": 11823,
+        "new": 11826,
+        "delta": 3
+      },
+      {
+        "urlPath": "nirdiamant/rag_techniques",
+        "old": 27205,
+        "new": 27208,
+        "delta": 3
+      },
+      {
+        "urlPath": "deepset-ai/haystack",
+        "old": 25137,
+        "new": 25140,
+        "delta": 3
+      },
+      {
+        "urlPath": "modsetter/surfsense",
+        "old": 14165,
+        "new": 14168,
+        "delta": 3
+      },
+      {
+        "urlPath": "memtensor/memos",
+        "old": 8995,
+        "new": 8998,
+        "delta": 3
+      },
+      {
+        "urlPath": "binary-husky/gpt_academic",
+        "old": 70595,
+        "new": 70597,
+        "delta": 2
+      },
+      {
+        "urlPath": "danielmiessler/fabric",
+        "old": 41615,
+        "new": 41617,
+        "delta": 2
+      },
+      {
+        "urlPath": "khoj-ai/khoj",
+        "old": 34473,
+        "new": 34471,
+        "delta": -2
+      },
+      {
+        "urlPath": "keras-team/keras",
+        "old": 64057,
+        "new": 64059,
+        "delta": 2
+      },
+      {
+        "urlPath": "microsoft/autogen",
+        "old": 57864,
+        "new": 57866,
+        "delta": 2
+      },
+      {
+        "urlPath": "microsoft/deepspeed",
+        "old": 42295,
+        "new": 42297,
+        "delta": 2
+      },
+      {
+        "urlPath": "deepseek-ai/deepgemm",
+        "old": 7227,
+        "new": 7229,
+        "delta": 2
+      },
+      {
+        "urlPath": "modelcontextprotocol/registry",
+        "old": 6790,
+        "new": 6792,
+        "delta": 2
+      },
+      {
+        "urlPath": "pimzino/spec-workflow-mcp",
+        "old": 4162,
+        "new": 4164,
+        "delta": 2
+      },
+      {
+        "urlPath": "automatic1111/stable-diffusion-webui",
+        "old": 162782,
+        "new": 162784,
+        "delta": 2
+      },
+      {
+        "urlPath": "ggml-org/whisper.cpp",
+        "old": 49530,
+        "new": 49532,
+        "delta": 2
+      },
+      {
+        "urlPath": "snailclimb/javaguide",
+        "old": 155520,
+        "new": 155522,
+        "delta": 2
+      },
+      {
+        "urlPath": "mlabonne/llm-course",
+        "old": 79120,
+        "new": 79122,
+        "delta": 2
+      },
+      {
+        "urlPath": "gokumohandas/made-with-ml",
+        "old": 47537,
+        "new": 47539,
+        "delta": 2
+      },
+      {
+        "urlPath": "huggingface/agents-course",
+        "old": 28497,
+        "new": 28499,
+        "delta": 2
+      },
+      {
+        "urlPath": "stanford-oval/storm",
+        "old": 28180,
+        "new": 28182,
+        "delta": 2
+      },
+      {
+        "urlPath": "prefecthq/fastmcp",
+        "old": 25091,
+        "new": 25093,
+        "delta": 2
+      },
+      {
+        "urlPath": "comet-ml/opik",
+        "old": 19257,
+        "new": 19259,
+        "delta": 2
+      },
+      {
+        "urlPath": "zauberzeug/nicegui",
+        "old": 15780,
+        "new": 15782,
+        "delta": 2
+      },
+      {
+        "urlPath": "ardupilot/ardupilot",
+        "old": 15038,
+        "new": 15040,
+        "delta": 2
+      },
+      {
+        "urlPath": "langchain4j/langchain4j",
+        "old": 11916,
+        "new": 11918,
+        "delta": 2
+      },
+      {
+        "urlPath": "embraceagi/awesome-chatgpt-zh",
+        "old": 11528,
+        "new": 11530,
+        "delta": 2
+      },
+      {
+        "urlPath": "arize-ai/phoenix",
+        "old": 9582,
+        "new": 9584,
+        "delta": 2
+      },
+      {
+        "urlPath": "firecrawl/firecrawl-mcp-server",
+        "old": 6257,
+        "new": 6259,
+        "delta": 2
+      },
+      {
+        "urlPath": "thunderbird/thunderbolt",
+        "old": 4537,
+        "new": 4538,
+        "delta": 1
+      },
+      {
+        "urlPath": "zai-org/glm-5",
+        "old": 3214,
+        "new": 3215,
+        "delta": 1
+      },
+      {
+        "urlPath": "camel-ai/owl",
+        "old": 19761,
+        "new": 19762,
+        "delta": 1
+      },
+      {
+        "urlPath": "russellromney/honker",
+        "old": 1099,
+        "new": 1100,
+        "delta": 1
+      },
+      {
+        "urlPath": "hpcaitech/colossalai",
+        "old": 41378,
+        "new": 41379,
+        "delta": 1
+      },
+      {
+        "urlPath": "google/adk-python",
+        "old": 19550,
+        "new": 19551,
+        "delta": 1
+      },
+      {
+        "urlPath": "nvidia/personaplex",
+        "old": 9799,
+        "new": 9800,
+        "delta": 1
+      },
+      {
+        "urlPath": "meta-llama/llama-stack",
+        "old": 8365,
+        "new": 8366,
+        "delta": 1
+      },
+      {
+        "urlPath": "sigoden/aichat",
+        "old": 9958,
+        "new": 9959,
+        "delta": 1
+      },
+      {
+        "urlPath": "thecraighewitt/seomachine",
+        "old": 6913,
+        "new": 6914,
+        "delta": 1
+      },
+      {
+        "urlPath": "mobile-next/mobile-mcp",
+        "old": 4840,
+        "new": 4841,
+        "delta": 1
+      },
+      {
+        "urlPath": "naibowang/easyspider",
+        "old": 43772,
+        "new": 43773,
+        "delta": 1
+      },
+      {
+        "urlPath": "mindsdb/mindsdb",
+        "old": 39141,
+        "new": 39142,
+        "delta": 1
+      },
+      {
+        "urlPath": "corentinj/real-time-voice-cloning",
+        "old": 59724,
+        "new": 59725,
+        "delta": 1
+      },
+      {
+        "urlPath": "ultralytics/yolov5",
+        "old": 57346,
+        "new": 57345,
+        "delta": -1
+      },
+      {
+        "urlPath": "coqui-ai/tts",
+        "old": 45249,
+        "new": 45250,
+        "delta": 1
+      },
+      {
+        "urlPath": "2noise/chattts",
+        "old": 39231,
+        "new": 39232,
+        "delta": 1
+      },
+      {
+        "urlPath": "basedhardware/omi",
+        "old": 12459,
+        "new": 12460,
+        "delta": 1
+      },
+      {
+        "urlPath": "leondz/garak",
+        "old": 7767,
+        "new": 7766,
+        "delta": -1
+      },
+      {
+        "urlPath": "daytonaio/daytona",
+        "old": 72341,
+        "new": 72340,
+        "delta": -1
+      },
+      {
+        "urlPath": "chatchat-space/langchain-chatchat",
+        "old": 37983,
+        "new": 37984,
+        "delta": 1
+      },
+      {
+        "urlPath": "reworkd/agentgpt",
+        "old": 36063,
+        "new": 36064,
+        "delta": 1
+      },
+      {
+        "urlPath": "atsushisakai/pythonrobotics",
+        "old": 29442,
+        "new": 29443,
+        "delta": 1
+      },
+      {
+        "urlPath": "mlflow/mlflow",
+        "old": 25841,
+        "new": 25842,
+        "delta": 1
+      },
+      {
+        "urlPath": "googlecloudplatform/generative-ai",
+        "old": 16807,
+        "new": 16808,
+        "delta": 1
+      },
+      {
+        "urlPath": "microsoft/mcp-for-beginners",
+        "old": 16056,
+        "new": 16057,
+        "delta": 1
+      },
+      {
+        "urlPath": "botpress/botpress",
+        "old": 14682,
+        "new": 14683,
+        "delta": 1
+      },
+      {
+        "urlPath": "unstructured-io/unstructured",
+        "old": 14662,
+        "new": 14663,
+        "delta": 1
+      },
+      {
+        "urlPath": "flagopen/flagembedding",
+        "old": 11657,
+        "new": 11656,
+        "delta": -1
+      },
+      {
+        "urlPath": "portkey-ai/gateway",
+        "old": 11655,
+        "new": 11656,
+        "delta": 1
+      },
+      {
+        "urlPath": "kornia/kornia",
+        "old": 11198,
+        "new": 11199,
+        "delta": 1
+      },
+      {
+        "urlPath": "mcp-use/mcp-use",
+        "old": 9917,
+        "new": 9918,
+        "delta": 1
+      },
+      {
+        "urlPath": "dusty-nv/jetson-inference",
+        "old": 8840,
+        "new": 8841,
+        "delta": 1
+      },
+      {
+        "urlPath": "wangrongsheng/awesome-llm-resources",
+        "old": 8250,
+        "new": 8251,
+        "delta": 1
+      },
+      {
+        "urlPath": "clemenselflein/openmower",
+        "old": 6489,
+        "new": 6490,
+        "delta": 1
+      },
+      {
+        "urlPath": "airweave-ai/airweave",
+        "old": 6306,
+        "new": 6307,
+        "delta": 1
+      },
+      {
+        "urlPath": "taskingai/taskingai",
+        "old": 5377,
+        "new": 5378,
+        "delta": 1
+      },
+      {
+        "urlPath": "getsentry/xcodebuildmcp",
+        "old": 5464,
+        "new": 5465,
+        "delta": 1
+      }
+    ],
+    "forksChanged": [
+      {
+        "urlPath": "x1xhlol/system-prompts-and-models-of-ai-tools",
+        "old": 34174,
+        "new": 34176
+      },
+      {
+        "urlPath": "open-webui/open-webui",
+        "old": 19412,
+        "new": 19414
+      },
+      {
+        "urlPath": "hiyouga/llama-factory",
+        "old": 8687,
+        "new": 8690
+      },
+      {
+        "urlPath": "mintplex-labs/anything-llm",
+        "old": 6460,
+        "new": 6464
+      },
+      {
+        "urlPath": "jingyaogong/minimind",
+        "old": 6272,
+        "new": 6275
+      },
+      {
+        "urlPath": "mudler/localai",
+        "old": 4065,
+        "new": 4067
+      },
+      {
+        "urlPath": "danielmiessler/fabric",
+        "old": 4131,
+        "new": 4133
+      },
+      {
+        "urlPath": "bin-huang/chatbox",
+        "old": 4047,
+        "new": 4046
+      },
+      {
+        "urlPath": "shiyu-coder/kronos",
+        "old": 4159,
+        "new": 4161
+      },
+      {
+        "urlPath": "openclaw/openclaw",
+        "old": 76463,
+        "new": 76484
+      },
+      {
+        "urlPath": "n8n-io/n8n",
+        "old": 57497,
+        "new": 57500
+      },
+      {
+        "urlPath": "significant-gravitas/autogpt",
+        "old": 46242,
+        "new": 46241
+      },
+      {
+        "urlPath": "langgenius/dify",
+        "old": 22088,
+        "new": 22094
+      },
+      {
+        "urlPath": "nousresearch/hermes-agent",
+        "old": 21856,
+        "new": 21927
+      },
+      {
+        "urlPath": "browser-use/browser-use",
+        "old": 10539,
+        "new": 10542
+      },
+      {
+        "urlPath": "karpathy/autoresearch",
+        "old": 11660,
+        "new": 11663
+      },
+      {
+        "urlPath": "lobehub/lobe-chat",
+        "old": 15120,
+        "new": 15136
+      },
+      {
+        "urlPath": "openhands/openhands",
+        "old": 9243,
+        "new": 9245
+      },
+      {
+        "urlPath": "foundationagents/metagpt",
+        "old": 8631,
+        "new": 8635
+      },
+      {
+        "urlPath": "xtekky/gpt4free",
+        "old": 13592,
+        "new": 13591
+      },
+      {
+        "urlPath": "bytedance/deer-flow",
+        "old": 8780,
+        "new": 8789
+      },
+      {
+        "urlPath": "commaai/openpilot",
+        "old": 10896,
+        "new": 10895
+      },
+      {
+        "urlPath": "virattt/ai-hedge-fund",
+        "old": 10259,
+        "new": 10264
+      },
+      {
+        "urlPath": "code-yeongyu/oh-my-openagent",
+        "old": 4629,
+        "new": 4631
+      },
+      {
+        "urlPath": "mem0ai/mem0",
+        "old": 6258,
+        "new": 6260
+      },
+      {
+        "urlPath": "mempalace/mempalace",
+        "old": 6825,
+        "new": 6828
+      },
+      {
+        "urlPath": "crewaiinc/crewai",
+        "old": 7052,
+        "new": 7053
+      },
+      {
+        "urlPath": "cherryhq/cherry-studio",
+        "old": 4302,
+        "new": 4304
+      },
+      {
+        "urlPath": "zhayujie/chatgpt-on-wechat",
+        "old": 10068,
+        "new": 10070
+      },
+      {
+        "urlPath": "block/goose",
+        "old": 4576,
+        "new": 4587
+      },
+      {
+        "urlPath": "santifer/career-ops",
+        "old": 9173,
+        "new": 9180
+      },
+      {
+        "urlPath": "khoj-ai/khoj",
+        "old": 2191,
+        "new": 2190
+      },
+      {
+        "urlPath": "vercel-labs/agent-browser",
+        "old": 2001,
+        "new": 2002
+      },
+      {
+        "urlPath": "astrbotdevs/astrbot",
+        "old": 2190,
+        "new": 2191
+      },
+      {
+        "urlPath": "langchain-ai/langgraph",
+        "old": 5372,
+        "new": 5375
+      },
+      {
+        "urlPath": "huggingface/smolagents",
+        "old": 2565,
+        "new": 2567
+      },
+      {
+        "urlPath": "assafelovic/gpt-researcher",
+        "old": 3621,
+        "new": 3620
+      },
+      {
+        "urlPath": "multica-ai/multica",
+        "old": 3203,
+        "new": 3211
+      },
+      {
+        "urlPath": "hkuds/deeptutor",
+        "old": 3151,
+        "new": 3155
+      },
+      {
+        "urlPath": "agentscope-ai/copaw",
+        "old": 2331,
+        "new": 2339
+      },
+      {
+        "urlPath": "rowboatlabs/rowboat",
+        "old": 1364,
+        "new": 1371
+      },
+      {
+        "urlPath": "lsdefine/genericagent",
+        "old": 1168,
+        "new": 1173
+      },
+      {
+        "urlPath": "ekkolearnai/hermes-web-ui",
+        "old": 507,
+        "new": 506
+      },
+      {
+        "urlPath": "mannaandpoem/openmanus",
+        "old": 115,
+        "new": 117
+      },
+      {
+        "urlPath": "langflow-ai/langflow",
+        "old": 8937,
+        "new": 8939
+      },
+      {
+        "urlPath": "langchain-ai/langchain",
+        "old": 22523,
+        "new": 22524
+      },
+      {
+        "urlPath": "supabase/supabase",
+        "old": 12343,
+        "new": 12342
+      },
+      {
+        "urlPath": "vllm-project/vllm",
+        "old": 16596,
+        "new": 16605
+      },
+      {
+        "urlPath": "scikit-learn/scikit-learn",
+        "old": 26995,
+        "new": 26996
+      },
+      {
+        "urlPath": "unclecode/crawl4ai",
+        "old": 6674,
+        "new": 6675
+      },
+      {
+        "urlPath": "microsoft/autogen",
+        "old": 8729,
+        "new": 8732
+      },
+      {
+        "urlPath": "flowiseai/flowise",
+        "old": 24300,
+        "new": 24302
+      },
+      {
+        "urlPath": "jeecgboot/jeecg-boot",
+        "old": 15970,
+        "new": 15972
+      },
+      {
+        "urlPath": "berriai/litellm",
+        "old": 7892,
+        "new": 7896
+      },
+      {
+        "urlPath": "gradio-app/gradio",
+        "old": 3441,
+        "new": 3440
+      },
+      {
+        "urlPath": "microsoft/deepspeed",
+        "old": 4825,
+        "new": 4824
+      },
+      {
+        "urlPath": "hpcaitech/colossalai",
+        "old": 4514,
+        "new": 4515
+      },
+      {
+        "urlPath": "copilotkit/copilotkit",
+        "old": 4034,
+        "new": 4035
+      },
+      {
+        "urlPath": "composiohq/composio",
+        "old": 4550,
+        "new": 4551
+      },
+      {
+        "urlPath": "coleam00/archon",
+        "old": 3223,
+        "new": 3227
+      },
+      {
+        "urlPath": "hkuds/openharness",
+        "old": 2053,
+        "new": 2056
+      },
+      {
+        "urlPath": "evomap/evolver",
+        "old": 745,
+        "new": 746
+      },
+      {
+        "urlPath": "vercel-labs/open-agents",
+        "old": 658,
+        "new": 659
+      },
+      {
+        "urlPath": "z-lab/dflash",
+        "old": 277,
+        "new": 278
+      },
+      {
+        "urlPath": "anthropics/claude-code",
+        "old": 20165,
+        "new": 20182
+      },
+      {
+        "urlPath": "forrestchang/andrej-karpathy-skills",
+        "old": 12366,
+        "new": 12403
+      },
+      {
+        "urlPath": "google-gemini/gemini-cli",
+        "old": 13549,
+        "new": 13557
+      },
+      {
+        "urlPath": "openai/codex",
+        "old": 11748,
+        "new": 11759
+      },
+      {
+        "urlPath": "farion1231/cc-switch",
+        "old": 4183,
+        "new": 4196
+      },
+      {
+        "urlPath": "gpt-engineer-org/gpt-engineer",
+        "old": 7327,
+        "new": 7329
+      },
+      {
+        "urlPath": "aider-ai/aider",
+        "old": 4380,
+        "new": 4382
+      },
+      {
+        "urlPath": "hmbown/deepseek-tui",
+        "old": 1863,
+        "new": 1890
+      },
+      {
+        "urlPath": "alishahryar1/free-claude-code",
+        "old": 3391,
+        "new": 3400
+      },
+      {
+        "urlPath": "mksglu/context-mode",
+        "old": 987,
+        "new": 990
+      },
+      {
+        "urlPath": "larksuite/cli",
+        "old": 643,
+        "new": 644
+      },
+      {
+        "urlPath": "iamzhihuix/skills-manage",
+        "old": 157,
+        "new": 159
+      },
+      {
+        "urlPath": "obra/superpowers",
+        "old": 16367,
+        "new": 16392
+      },
+      {
+        "urlPath": "punkpeye/awesome-mcp-servers",
+        "old": 10000,
+        "new": 10010
+      },
+      {
+        "urlPath": "thedotmack/claude-mem",
+        "old": 6360,
+        "new": 6362
+      },
+      {
+        "urlPath": "composiohq/awesome-claude-skills",
+        "old": 6383,
+        "new": 6387
+      },
+      {
+        "urlPath": "garrytan/gstack",
+        "old": 13653,
+        "new": 13671
+      },
+      {
+        "urlPath": "juliusbrussee/caveman",
+        "old": 3133,
+        "new": 3134
+      },
+      {
+        "urlPath": "hesreallyhim/awesome-claude-code",
+        "old": 3666,
+        "new": 3667
+      },
+      {
+        "urlPath": "sickn33/antigravity-awesome-skills",
+        "old": 6046,
+        "new": 6051
+      },
+      {
+        "urlPath": "addyosmani/agent-skills",
+        "old": 4169,
+        "new": 4191
+      },
+      {
+        "urlPath": "volcengine/openviking",
+        "old": 1760,
+        "new": 1762
+      },
+      {
+        "urlPath": "hangwin/mcp-chrome",
+        "old": 1037,
+        "new": 1038
+      },
+      {
+        "urlPath": "zilliztech/claude-context",
+        "old": 810,
+        "new": 811
+      },
+      {
+        "urlPath": "modelcontextprotocol/registry",
+        "old": 804,
+        "new": 805
+      },
+      {
+        "urlPath": "simoneavogadro/android-reverse-engineering-skill",
+        "old": 634,
+        "new": 635
+      },
+      {
+        "urlPath": "microsoft/markitdown",
+        "old": 8233,
+        "new": 8234
+      },
+      {
+        "urlPath": "firecrawl/firecrawl",
+        "old": 7323,
+        "new": 7324
+      },
+      {
+        "urlPath": "openbb-finance/openbb",
+        "old": 6749,
+        "new": 6750
+      },
+      {
+        "urlPath": "tauricresearch/tradingagents",
+        "old": 14082,
+        "new": 14112
+      },
+      {
+        "urlPath": "docling-project/docling",
+        "old": 4114,
+        "new": 4113
+      },
+      {
+        "urlPath": "naibowang/easyspider",
+        "old": 5332,
+        "new": 5333
+      },
+      {
+        "urlPath": "microsoft/qlib",
+        "old": 6665,
+        "new": 6669
+      },
+      {
+        "urlPath": "jo-inc/camofox-browser",
+        "old": 454,
+        "new": 455
+      },
+      {
+        "urlPath": "comfyanonymous/comfyui",
+        "old": 13094,
+        "new": 13103
+      },
+      {
+        "urlPath": "openai/whisper",
+        "old": 12170,
+        "new": 12172
+      },
+      {
+        "urlPath": "hacksider/deep-live-cam",
+        "old": 13506,
+        "new": 13510
+      },
+      {
+        "urlPath": "corentinj/real-time-voice-cloning",
+        "old": 9402,
+        "new": 9401
+      },
+      {
+        "urlPath": "ultralytics/ultralytics",
+        "old": 10939,
+        "new": 10940
+      },
+      {
+        "urlPath": "harry0703/moneyprinterturbo",
+        "old": 8212,
+        "new": 8215
+      },
+      {
+        "urlPath": "2noise/chattts",
+        "old": 4249,
+        "new": 4248
+      },
+      {
+        "urlPath": "jamiepine/voicebox",
+        "old": 3020,
+        "new": 3024
+      },
+      {
+        "urlPath": "anil-matcha/open-generative-ai",
+        "old": 2206,
+        "new": 2218
+      },
+      {
+        "urlPath": "infiniflow/ragflow",
+        "old": 9130,
+        "new": 9131
+      },
+      {
+        "urlPath": "run-llama/llama_index",
+        "old": 7377,
+        "new": 7378
+      },
+      {
+        "urlPath": "leondz/garak",
+        "old": 928,
+        "new": 930
+      },
+      {
+        "urlPath": "tracer-cloud/opensre",
+        "old": 597,
+        "new": 599
+      },
+      {
+        "urlPath": "affaan-m/everything-claude-code",
+        "old": 27320,
+        "new": 27356
+      },
+      {
+        "urlPath": "f/prompts.chat",
+        "old": 21099,
+        "new": 21098
+      },
+      {
+        "urlPath": "snailclimb/javaguide",
+        "old": 46139,
+        "new": 46140
+      },
+      {
+        "urlPath": "microsoft/generative-ai-for-beginners",
+        "old": 59303,
+        "new": 59307
+      },
+      {
+        "urlPath": "shubhamsaboo/awesome-llm-apps",
+        "old": 16187,
+        "new": 16190
+      },
+      {
+        "urlPath": "rasbt/llms-from-scratch",
+        "old": 14257,
+        "new": 14259
+      },
+      {
+        "urlPath": "developer-y/cs-video-courses",
+        "old": 11213,
+        "new": 11211
+      },
+      {
+        "urlPath": "d2l-ai/d2l-zh",
+        "old": 12278,
+        "new": 12279
+      },
+      {
+        "urlPath": "openai/openai-cookbook",
+        "old": 12395,
+        "new": 12396
+      },
+      {
+        "urlPath": "microsoft/ai-agents-for-beginners",
+        "old": 20658,
+        "new": 20662
+      },
+      {
+        "urlPath": "shareai-lab/learn-claude-code",
+        "old": 9745,
+        "new": 9751
+      },
+      {
+        "urlPath": "shanraisshan/claude-code-best-practice",
+        "old": 5181,
+        "new": 5185
+      },
+      {
+        "urlPath": "gokumohandas/made-with-ml",
+        "old": 7482,
+        "new": 7481
+      },
+      {
+        "urlPath": "lordog/dive-into-llms",
+        "old": 4483,
+        "new": 4496
+      },
+      {
+        "urlPath": "opencv/opencv",
+        "old": 56559,
+        "new": 56560
+      },
+      {
+        "urlPath": "github/spec-kit",
+        "old": 8200,
+        "new": 8219
+      },
+      {
+        "urlPath": "fincept-corporation/finceptterminal",
+        "old": 2748,
+        "new": 2757
+      },
+      {
+        "urlPath": "chatchat-space/langchain-chatchat",
+        "old": 6199,
+        "new": 6200
+      },
+      {
+        "urlPath": "reworkd/agentgpt",
+        "old": 9359,
+        "new": 9358
+      },
+      {
+        "urlPath": "hkuds/lightrag",
+        "old": 4958,
+        "new": 4957
+      },
+      {
+        "urlPath": "ruvnet/ruflo",
+        "old": 5294,
+        "new": 5315
+      },
+      {
+        "urlPath": "langfuse/langfuse",
+        "old": 2724,
+        "new": 2727
+      },
+      {
+        "urlPath": "vectifyai/pageindex",
+        "old": 2591,
+        "new": 2592
+      },
+      {
+        "urlPath": "deepset-ai/haystack",
+        "old": 2774,
+        "new": 2775
+      },
+      {
+        "urlPath": "nirdiamant/genai_agents",
+        "old": 3663,
+        "new": 3664
+      },
+      {
+        "urlPath": "comet-ml/opik",
+        "old": 1469,
+        "new": 1468
+      },
+      {
+        "urlPath": "memvid/memvid",
+        "old": 1319,
+        "new": 1320
+      },
+      {
+        "urlPath": "modsetter/surfsense",
+        "old": 1338,
+        "new": 1339
+      },
+      {
+        "urlPath": "google-deepmind/mujoco",
+        "old": 1498,
+        "new": 1499
+      },
+      {
+        "urlPath": "portkey-ai/gateway",
+        "old": 1048,
+        "new": 1049
+      },
+      {
+        "urlPath": "simular-ai/agent-s",
+        "old": 1310,
+        "new": 1311
+      },
+      {
+        "urlPath": "hybridgroup/gobot",
+        "old": 1061,
+        "new": 1062
+      },
+      {
+        "urlPath": "coplaydev/unity-mcp",
+        "old": 1068,
+        "new": 1070
+      },
+      {
+        "urlPath": "wangrongsheng/awesome-llm-resources",
+        "old": 847,
+        "new": 849
+      },
+      {
+        "urlPath": "isaac-sim/isaaclab",
+        "old": 3488,
+        "new": 3489
+      },
+      {
+        "urlPath": "grab/cursor-talk-to-figma-mcp",
+        "old": 730,
+        "new": 731
+      },
+      {
+        "urlPath": "appcypher/awesome-mcp-servers",
+        "old": 1403,
+        "new": 1408
+      },
+      {
+        "urlPath": "nanbingxyz/5ire",
+        "old": 404,
+        "new": 405
+      }
+    ],
+    "languageChanged": [],
+    "updatedAtChanged": [
+      {
+        "urlPath": "openclaw/openclaw",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "langgenius/dify",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "nousresearch/hermes-agent",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "lobehub/lobe-chat",
+        "old": "2026-05-08",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "commaai/openpilot",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "code-yeongyu/oh-my-openagent",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "mempalace/mempalace",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "cherryhq/cherry-studio",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "block/goose",
+        "old": "2026-05-08",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "santifer/career-ops",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "langchain-ai/langgraph",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "openai/openai-agents-python",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "agentscope-ai/copaw",
+        "old": "2026-05-08",
+        "new": "2026-05-09"
+      },
+      {
+        "urlPath": "ekkolearnai/hermes-web-ui",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "nanobot-ai/nanobot",
+        "old": "2026-05-08",
+        "new": "2026-05-07"
+      },
+      {
+        "urlPath": "langflow-ai/langflow",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "langchain-ai/langchain",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "supabase/supabase",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "vllm-project/vllm",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "scikit-learn/scikit-learn",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "berriai/litellm",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "microsoft/deepspeed",
+        "old": "2026-05-08",
+        "new": "2026-05-07"
+      },
+      {
+        "urlPath": "meta-llama/llama-stack",
+        "old": "2026-05-08",
+        "new": "2026-05-09"
+      },
+      {
+        "urlPath": "google-gemini/gemini-cli",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "openai/codex",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "hmbown/deepseek-tui",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "alishahryar1/free-claude-code",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "thedotmack/claude-mem",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "garrytan/gstack",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "firecrawl/firecrawl",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "milvus-io/milvus",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "comfyanonymous/comfyui",
+        "old": "2026-05-08",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "infiniflow/ragflow",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "promptfoo/promptfoo",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "leondz/garak",
+        "old": "2026-05-07",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "tracer-cloud/opensre",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "netdata/netdata",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "hkuds/lightrag",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "ruvnet/ruflo",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "langchain-ai/deepagents",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "ardupilot/ardupilot",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "neuml/txtai",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "mcp-use/mcp-use",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      },
+      {
+        "urlPath": "arize-ai/phoenix",
+        "old": "2026-05-09",
+        "new": "2026-05-10"
+      }
+    ]
+  },
+  "newTopics": []
+}
