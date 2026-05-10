@@ -52,7 +52,7 @@ export const article: Article = {
     classDef s1 fill:#1E3A5F,color:#FFFFFF
     classDef s2 fill:#1D4ED8,color:#FFFFFF
     classDef s3 fill:#15803D,color:#FFFFFF
-    classDef s4 fill:#A16207,color:#FFFFFF
+    classDef s4 fill:#78350F,color:#FFFFFF
     classDef s5 fill:#991B1B,color:#FFFFFF
     class A s1
     class B s2
