@@ -1,36 +1,28 @@
-⏰ 写入时间：2026-05-10 04:00 (Asia/Shanghai)
-
+⏰ 写入时间：2026-05-10 08:00 (Asia/Shanghai)
 ## 本轮发现
-🔥 热点（16 条，已选 14 条写入 news.ts news-1179~news-1192）：
-1. [OpenAI 三款语音 API 新模型] GPT-Realtime-2/Translate/Whisper → 适合：博客（语音 AI 全景）、知识库（语音 Agent 技术）
-2. [ChatGPT 广告扩展到五国] 英美巴日墨 → 适合：博客（AI 商业模式探讨）
-3. [Codex Chrome 扩展] AI 直接操作浏览器 → 适合：知识库（Agentic Coding 生态）
-4. [Anthropic financial-services] 官方金融框架 17K 星 → 适合：知识库（金融 AI 应用）
-5. [Dexter 自主金融 Agent] 25K 星 → 适合：博客（AI 金融研究对比）
-6. [cocoindex 长周期 Agent] 增量计算引擎 → 适合：知识库（Agent 基础设施）
-7. [jcode 编码 Agent 框架] Rust 多 Agent 编排 → 适合：知识库（AI 编码工具对比）
-8. [9router 免费 AI 路由器] 40+ 提供商切换 → 适合：博客（低成本 AI 编码方案）
-9. [InsForge Agentic Coding] 全栈后端平台 → 适合：知识库（AI 编码基础设施）
-10. [ace-step-ui 音乐生成] 开源 Suno 替代 → 适合：博客（AI 创作工具开源化）
-11. [Meta 员工苦不堪言] 追踪+裁员+Agent泛滥 → 适合：博客（AI 转型人文视角）
-12. [xAI 华人AI大将离职] 多人同日离职 → 适合：知识库（AI 人才流动分析）
-13. [Amazon Rufus 对话购物] AI 对话取代搜索 → 适合：博客（AI 电商变革）
-14. [Claude Code 之父:无真人编码] AI 编码全面替代 → 适合：博客（AI 编码范式转变）
+🔥 热点（13 条，已选 13 条写入 news.ts，news-1193~news-1205）：
+1. [OpenAI Symphony 发布] 将项目工作转为隔离式自主运行，团队从「监督」转向「管理」 → 适合：博客/知识库
+2. [Mozilla 用 Claude Mythos 修复 423 个 Firefox 漏洞] AI 安全审计的时代来了，月修复量从 20-30 飙升至 423 → 适合：博客/知识库
+3. [OpenAI GPT-5.5 Instant + 语音智能新模型] 低延迟 API 全面升级，密集发布多款产品 → 适合：知识库
+4. [AI 网络攻击能力每 4 个月翻倍] 英国 AISI 报告，Claude Mythos 和 GPT-5.5 均通过企业网络测试 → 适合：知识库
+5. [Meta 员工在 AI 转型中「苦不堪言」] 追踪电脑活动 + 裁员 10% + Agent 泛滥 → 适合：博客
+6. [Cloudflare 裁员 1,100 人] AI 使用量增长 600% 但选择削减人力 → 适合：博客
+7. [TradingAgents 突破 72,000 星] 多 Agent LLM 金融交易框架 → 适合：知识库
+8. [mattpocock/skills 突破 68,000 星] 让 AI 直接继承工程师经验的开源技能库 → 适合：知识库
+9. [ruflo 突破 47,000 星] Claude Agent 编排平台 → 适合：知识库
+10. [中国四大实验室 12 天发布 4 款开源编程模型] GLM-5.1/M2.7/K2.6/DeepSeek V4 → 适合：知识库
+11. [IMF 警告 AI 加剧金融系统网络安全风险] 防守方面临系统性压力 → 适合：博客
+12. [新石器「来电岛」无人车运营中心] 目标 3 年落地 100+ 城市 → 适合：知识库
+13. [彩讯股份语音智能体规模化落地] 多行业部署，与 OpenAI 语音 API 形成呼应 → 适合：知识库
 
-🆕 新工具（9 个）：
-1. [anthropics/financial-services] Anthropic 官方金融 AI 框架 + GitHub URL
-2. [virattt/dexter] 自主深度金融研究 Agent + GitHub URL
-3. [cocoindex-io/cocoindex] 长周期 Agent 增量引擎 + GitHub URL
-4. [1jehuang/jcode] Coding Agent 编排框架 + GitHub URL
-5. [decolua/9router] 40+ AI 提供商路由器 + GitHub URL
-6. [InsForge/InsForge] Agentic Coding 全栈后端 + GitHub URL
-7. [fspecii/ace-step-ui] AI 音乐生成 UI + GitHub URL
-8. [browserbase/skills] Claude Agent 网页浏览 SDK + GitHub URL
-9. [Q00/ouroboros] Agent OS + GitHub URL
+🆕 新工具（3 个，已在 GitHub Trending 中跟踪）：
+1. [jcode] Coding Agent Harness (Rust, 5,329 ⭐) - https://github.com/1jehuang/jcode
+2. [cocoindex] 增量计算引擎 for long horizon agents (9,327 ⭐) - https://github.com/cocoindex-io/cocoindex
+3. [browserbase/skills] Browserbase 官方 Agent 技能库 (2,964 ⭐) - https://github.com/browserbase/skills
 
 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：语音 AI 技术全景（GPT-Realtime-2/Translate/Whisper 对比 + 低延迟语音架构）
-2. KNOWLEDGE-BASE-PLAN.md 待补：AI 编码基础设施全景（Symphony/InsForge/9router/jcode 对比）
-3. KNOWLEDGE-BASE-PLAN.md 待补：Agentic Coding 生态地图（从编码到部署的全链路）
-4. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 长周期运行基础设施（cocoindex/状态管理/增量计算）
-5. KNOWLEDGE-BASE-PLAN.md 待补：金融 AI 应用全景（TradingAgents/Dexter/financial-services 对比）
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全攻防全景（Claude Mythos/GPT-5.5 网络能力对比 + AISI 评估方法）
+2. KNOWLEDGE-BASE-PLAN.md 待补：Agentic Engineering 工具链完整地图（Symphony + Ruflo + Skills + jcode + InsForge + 9router）
+3. KNOWLEDGE-BASE-PLAN.md 待补：开源编程模型横评（GLM-5.1 vs M2.7 vs K2.6 vs DeepSeek V4 vs Claude Opus 4.7）
+4. KNOWLEDGE-BASE-PLAN.md 待补：语音 AI 商业化落地分析（OpenAI API + 彩讯 Voice Agent + WebRTC 困境）
+5. 博客选题：Claude Mythos 修复 Firefox 423 个漏洞——AI 安全审计的范式转变
