@@ -1,30 +1,33 @@
-⏰ 写入时间：2026-05-10 20:07 (Asia/Shanghai)
+⏰ 写入时间：2026-05-11 00:00 (Asia/Shanghai)
 
 ## 本轮发现
 
-🔥 热点（15 条，已选 15 条写入 news.ts，news-1246~1260）：
-1. [GPT-5.5 Instant 发布] OpenAI 推出更快的 GPT-5.5 Instant 模型 + System Card → 适合：博客/知识库
-2. [ChatGPT 测试广告] OpenAI 首次在 ChatGPT 中测试广告，Anthropic 对比宣称保持无广告 → 适合：博客
-3. [Codex Chrome 扩展] OpenAI 推出 Codex 浏览器扩展，可在已登录网站中执行任务 → 适合：工具页
-4. [Mozilla 423 个 Firefox 漏洞] Claude Mythos 发现并修复 423 个 Firefox 安全漏洞 → 适合：博客/知识库
-5. [Anthropic-xAI Colossus 合作] Anthropic 获得 xAI/SpaceX Colossus 数据中心全部容量 → 适合：博客
-6. [Meta 员工困境] 裁员 10% + Agent 泛滥 + 电脑追踪，员工"痛苦不堪" → 适合：博客
-7. [Cloudflare 裁员 1,100 人] AI 使用量增长 600%，重新定义 Agentic AI 时代运营 → 适合：博客
-8. [Gmail AI 写作升级] Help me write 可根据用户语气和风格生成邮件 → 适合：工具页
-9. [Sony-TSMC 图像传感器] 合资企业开发下一代传感器，探索物理 AI 应用 → 适合：知识库
-10. [OpenAI 语音新模型] 语音 API 新模型 + WebRTC 低延迟争议 → 适合：知识库
-11. [Grok Build 泄露] 马斯克 Grok Build 编程智能体信息泄露，对标 Claude Code → 适合：博客
-12. [美国科技失业率 3.8%] AI 驱动裁员，Oracle/Meta/Cloudflare 大规模裁员 → 适合：博客
-13. [Digg 重生 di.gg] 从类 Reddit 平台转型为 AI 新闻情绪追踪器 → 适合：博客
-14. [DeepSeek-阿里谈判传闻] 市场人士澄清双方未进行谈判 → 适合：新闻
-15. [国家数据集平台发布] 算力银行 + 算力超市惠及中小企业 → 适合：知识库
+🔥 热点（15 条来源，已选 12 条写入 news.ts）：
+1. [xAI 并入 SpaceX] 马斯克宣布 xAI 解散并入 SpaceX，Grok 整合星链 → 适合：知识库
+2. [波士顿动力量产 Atlas] 全电动人形机器人量产发布，AI 运动控制升级 → 适合：博客
+3. [GPT-5.5 Instant] OpenAI 发布更快速度+个性化的 GPT-5.5 → 适合：知识库
+4. [Codex Chrome 扩展] AI 编码助手可直接操作浏览器 → 适合：博客
+5. [Meta 员工 AI 困境] 追踪+裁员+Agent 泛滥三重打击 → 适合：博客
+6. [Gmail AI 写作升级] 学习个人风格+Drive 上下文拉取 → 适合：知识库
+7. [DeepSeek-TUI 爆火] 一周 2.1 万星，终端编码 Agent → 适合：博客
+8. [Mozilla 423 个 Firefox 漏洞] Claude Mythos 安全审计惊人效果 → 适合：知识库
+9. [索尼-TSMC 图像传感器] 合资公司+物理 AI 应用 → 适合：知识库
+10. [Project Glasswing] Anthropic 联合 12 巨头保护关键软件安全 → 适合：博客
+11. [GPT-5.5-CyberSecurity] 网络安全专用模型+Codex 安全运行 → 适合：知识库
+12. [AI 财富涌入旧金山楼市] AI 新贵推动豪宅价格上涨 → 适合：博客
 
-🆕 新工具（0 个）：
-- discover-topic-projects.mjs 脚本因超时被 kill，未能完成。当前 tools.ts 已覆盖大部分高星项目。
+🆕 新工具（7 个）：
+1. [UI-TARS Desktop] bytedance/UI-TARS-desktop 31,907⭐ — 字节跳动多模态 AI Agent 桌面框架
+2. [OpenAI Symphony] openai/symphony 23,091⭐ — 项目级自主实现框架
+3. [Cocoindex] cocoindex-io/cocoindex 9,417⭐ — 长周期 Agent 增量计算引擎
+4. [InsForge] InsForge/InsForge 9,310⭐ — Agentic Coding 全栈后端平台
+5. [9router] decolua/9router 7,052⭐ — 无限免费 AI 编码路由器
+6. [Local Deep Research] LearningCircuit/local-deep-research 7,028⭐ — 本地深度研究引擎
+7. [jcode] 1jehuang/jcode 5,480⭐ — Rust 编码 Agent 调度器
 
 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：语音 AI 技术全景（GPT-5.5 Instant + WebRTC 低延迟架构）
-2. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全审计（Claude Mythos + Firefox 423 漏洞案例深度分析）
-3. KNOWLEDGE-BASE-PLAN.md 待补：AI 转型人文视角（Meta 裁员+员工追踪案例分析）
-4. KNOWLEDGE-BASE-PLAN.md 待补：算力基础设施（国家数据集平台 + 算力银行 + 算力超市）
-5. KNOWLEDGE-BASE-PLAN.md 待补：AI 编码工具竞争格局（Grok Build vs Claude Code vs Codex）
+1. KNOWLEDGE-BASE-PLAN.md 待补：xAI 并入 SpaceX 的战略分析
+2. KNOWLEDGE-BASE-PLAN.md 待补：物理 AI 基础设施全景（波士顿动力+索尼-TSMC）
+3. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全审计最佳实践（Mozilla+Project Glasswing）
+4. KNOWLEDGE-BASE-PLAN.md 待补：Agentic Coding 工具链全地图（新增 7 个工具后的完整版）
+5. KNOWLEDGE-BASE-PLAN.md 待补：GPT-5.5 系列完整能力对比（Instant/CyberSecurity/常规版）
