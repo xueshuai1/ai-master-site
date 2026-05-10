@@ -254,20 +254,12 @@ export const article: Article = {
       title: "七 B. 个人职业发展路线图",
       body: `基于前文的分析框架，以下是一套可视化的**行动路线图**：`,
       mermaid: `flowchart LR
-  A[个人] --> B[自我评估]
-  B --> C[趋势分析]
-  C --> D[学习平台]
-  D --> E[人脉网络]
-  E --> F[目标岗位]
-  F -.每3-6个月复盘.-. A
-  classDef blue fill:#1e3a5f,stroke:#2563EB,color:#fff
-  classDef orange fill:#92400e,stroke:#D97706,color:#fff
-  classDef green fill:#064e3b,stroke:#059669,color:#fff
-  classDef red fill:#7f1d1d,stroke:#DC2626,color:#fff
-  class A blue
-  class B,C orange
-  class D,E green
-  class F red`,
+    A[个人] --> B[自我评估]
+    B --> C[趋势分析]
+    C --> D[学习平台]
+    D --> E[人脉网络]
+    E --> F[目标岗位]
+    F -.每3-6个月复盘.-. A`,
       tip: `**行动建议：** 把这个路线图作为你的**职业发展仪表盘**，每完成一个阶段就标记进度。`,
       warning: `**避免完美主义：** 不要等到「完全准备好」才开始。行动中的学习比准备好再行动更有效。`
     },
