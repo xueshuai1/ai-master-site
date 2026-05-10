@@ -1,30 +1,30 @@
-⏰ 写入时间：2026-05-10 16:14 (Asia/Shanghai)
+⏰ 写入时间：2026-05-10 20:07 (Asia/Shanghai)
 
 ## 本轮发现
 
-🔥 热点（13 条，已写入 news-1233~1245）：
-1. [美科技 IT 岗位失业率升至 3.8%] Meta 裁员 10%、Nike/Snap 大规模裁员，AI 驱动科技人才市场重构 → 适合：博客/知识库
-2. [IMF 警告 AI 加剧金融系统网络风险] Claude Mythos 自动漏洞利用能力降低攻击门槛，防守方被动 → 适合：知识库[ai-security]
-3. [Anthropic 购买古籍扫描后销毁] 训练数据获取新方式引发伦理讨论 → 适合：博客
-4. [奥特曼暗示 OpenAI 手机] AI Agent 取代 App 构想进入实施阶段 → 适合：博客
-5. [索尼×台积电合资图像传感器] 探索机器人和汽车物理 AI 应用 → 适合：知识库[ai-chip]
-6. [Golden Globes AI 表演规则] 允许 AI 技术增强但表演须来自真人 → 适合：知识库[ai-ethics]
-7. [mattpocock/skills 68K+ 星周增 13,770] 来自 .claude 目录的实战工程技能集 → 适合：工具收录
-8. [甲骨文邮件解聘数万人] 2026 年迄今最大规模单次裁员 → 适合：博客
-9. [全球 AI 灰产深度调查] 数据标注/API 倒卖/AI 内容农场地下产业链 → 适合：知识库
-10. [Simon Willison: HTML 替代 Markdown] Claude Code 团队倡导 HTML 输出格式 → 适合：博客
-11. [Pixelle-Video 全自动短视频引擎] 周增 5,181 星 → 适合：工具/博客
-12. [Manus 交易失败创始人谈成功学] 收购被否后的创业叙事讨论 → 适合：博客
-13. [字节 AI 收费策略：买即梦送豆包] 大模型商业化定价逻辑拆解 → 适合：博客
+🔥 热点（15 条，已选 15 条写入 news.ts，news-1246~1260）：
+1. [GPT-5.5 Instant 发布] OpenAI 推出更快的 GPT-5.5 Instant 模型 + System Card → 适合：博客/知识库
+2. [ChatGPT 测试广告] OpenAI 首次在 ChatGPT 中测试广告，Anthropic 对比宣称保持无广告 → 适合：博客
+3. [Codex Chrome 扩展] OpenAI 推出 Codex 浏览器扩展，可在已登录网站中执行任务 → 适合：工具页
+4. [Mozilla 423 个 Firefox 漏洞] Claude Mythos 发现并修复 423 个 Firefox 安全漏洞 → 适合：博客/知识库
+5. [Anthropic-xAI Colossus 合作] Anthropic 获得 xAI/SpaceX Colossus 数据中心全部容量 → 适合：博客
+6. [Meta 员工困境] 裁员 10% + Agent 泛滥 + 电脑追踪，员工"痛苦不堪" → 适合：博客
+7. [Cloudflare 裁员 1,100 人] AI 使用量增长 600%，重新定义 Agentic AI 时代运营 → 适合：博客
+8. [Gmail AI 写作升级] Help me write 可根据用户语气和风格生成邮件 → 适合：工具页
+9. [Sony-TSMC 图像传感器] 合资企业开发下一代传感器，探索物理 AI 应用 → 适合：知识库
+10. [OpenAI 语音新模型] 语音 API 新模型 + WebRTC 低延迟争议 → 适合：知识库
+11. [Grok Build 泄露] 马斯克 Grok Build 编程智能体信息泄露，对标 Claude Code → 适合：博客
+12. [美国科技失业率 3.8%] AI 驱动裁员，Oracle/Meta/Cloudflare 大规模裁员 → 适合：博客
+13. [Digg 重生 di.gg] 从类 Reddit 平台转型为 AI 新闻情绪追踪器 → 适合：博客
+14. [DeepSeek-阿里谈判传闻] 市场人士澄清双方未进行谈判 → 适合：新闻
+15. [国家数据集平台发布] 算力银行 + 算力超市惠及中小企业 → 适合：知识库
 
-🆕 新工具（3 个，已写入 tools.ts）：
-1. [Skills for Real Engineers] 68,359⭐, mattpocock/skills, 实战 Claude Code 技能集
-2. [Dexter] 25,087⭐, virattt/dexter, 自主金融研究 Agent
-3. [Anthropic Financial Services] 17,841⭐, anthropics/financial-services, 金融服务 AI 参考实现
+🆕 新工具（0 个）：
+- discover-topic-projects.mjs 脚本因超时被 kill，未能完成。当前 tools.ts 已覆盖大部分高星项目。
 
 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 裁员与劳动力市场重构] — 科技行业失业率、技能迁移、AI 替代效应
-2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 网络安全攻防] — Claude Mythos 漏洞利用、IMF 金融系统风险
-3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 训练数据伦理] — 古籍扫描、版权争议、公共领域语料
-4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 影视行业治理] — Golden Globes AI 规则、奥斯卡禁令、行业边界
-5. KNOWLEDGE-BASE-PLAN.md 待补：[物理 AI 与图像传感器] — 索尼×TSMC 合资、机器人视觉、车载 AI
+1. KNOWLEDGE-BASE-PLAN.md 待补：语音 AI 技术全景（GPT-5.5 Instant + WebRTC 低延迟架构）
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全审计（Claude Mythos + Firefox 423 漏洞案例深度分析）
+3. KNOWLEDGE-BASE-PLAN.md 待补：AI 转型人文视角（Meta 裁员+员工追踪案例分析）
+4. KNOWLEDGE-BASE-PLAN.md 待补：算力基础设施（国家数据集平台 + 算力银行 + 算力超市）
+5. KNOWLEDGE-BASE-PLAN.md 待补：AI 编码工具竞争格局（Grok Build vs Claude Code vs Codex）
