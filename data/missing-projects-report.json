@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-10T12:08:00.609Z",
+  "generatedAt": "2026-05-10T14:03:55.025Z",
   "existingCount": 259,
   "scannedTopics": 34,
-  "missingCount": 223,
+  "missingCount": 218,
   "minStarsThreshold": 5000,
   "missingProjects": [
     {
       "fullName": "anthropics/skills",
       "name": "skills",
-      "stars": 131385,
-      "forks": 15461,
+      "stars": 131451,
+      "forks": 15472,
       "language": "Python",
       "description": "Public repository for Agent Skills",
       "topics": [
@@ -17,37 +17,6 @@
       ],
       "url": "https://github.com/anthropics/skills",
       "createdAt": "2025-09-22T15:53:31Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "goldbergyoni/nodebestpractices",
-      "name": "nodebestpractices",
-      "stars": 105259,
-      "forks": 10734,
-      "language": "Dockerfile",
-      "description": ":white_check_mark:  The Node.js best practices list (July 2024)",
-      "topics": [
-        "best-practices",
-        "es6",
-        "eslint",
-        "express",
-        "expressjs",
-        "javascript",
-        "jest",
-        "microservices",
-        "mocha",
-        "node-js",
-        "nodejs",
-        "nodejs-development",
-        "npm",
-        "rest",
-        "style-guide",
-        "styleguide",
-        "testing",
-        "types"
-      ],
-      "url": "https://github.com/goldbergyoni/nodebestpractices",
-      "createdAt": "2017-09-15T08:33:19Z",
       "suggestedCategory": "llm"
     },
     {
@@ -72,144 +41,10 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "puppeteer/puppeteer",
-      "name": "puppeteer",
-      "stars": 94285,
-      "forks": 9416,
-      "language": "TypeScript",
-      "description": "JavaScript API for Chrome and Firefox",
-      "topics": [
-        "automation",
-        "chrome",
-        "chromium",
-        "developer-tools",
-        "firefox",
-        "headless-chrome",
-        "node-module",
-        "testing",
-        "web"
-      ],
-      "url": "https://github.com/puppeteer/puppeteer",
-      "createdAt": "2017-05-09T22:16:13Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "storybookjs/storybook",
-      "name": "storybook",
-      "stars": 89876,
-      "forks": 10045,
-      "language": "TypeScript",
-      "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
-      "topics": [
-        "angular",
-        "components",
-        "design-systems",
-        "documentation",
-        "html",
-        "javascript",
-        "react",
-        "react-native",
-        "stories",
-        "storybook",
-        "styleguide",
-        "svelte",
-        "testing",
-        "typescript",
-        "ui",
-        "vite",
-        "vue",
-        "web-components",
-        "webpack",
-        "workshop"
-      ],
-      "url": "https://github.com/storybookjs/storybook",
-      "createdAt": "2016-03-18T04:23:44Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "microsoft/playwright",
-      "name": "playwright",
-      "stars": 88365,
-      "forks": 5660,
-      "language": "TypeScript",
-      "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
-      "topics": [
-        "automation",
-        "chrome",
-        "chromium",
-        "e2e-testing",
-        "electron",
-        "end-to-end-testing",
-        "firefox",
-        "javascript",
-        "playwright",
-        "test",
-        "test-automation",
-        "testing",
-        "testing-tools",
-        "web",
-        "webkit"
-      ],
-      "url": "https://github.com/microsoft/playwright",
-      "createdAt": "2019-11-15T18:32:42Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "hoppscotch/hoppscotch",
-      "name": "hoppscotch",
-      "stars": 79149,
-      "forks": 5865,
-      "language": "TypeScript",
-      "description": "Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia",
-      "topics": [
-        "api",
-        "api-client",
-        "api-rest",
-        "api-testing",
-        "developer-tools",
-        "graphql",
-        "http",
-        "http-client",
-        "pwa",
-        "rest",
-        "rest-api",
-        "spa",
-        "testing",
-        "testing-tools",
-        "tools",
-        "vue",
-        "vuejs",
-        "websocket"
-      ],
-      "url": "https://github.com/hoppscotch/hoppscotch",
-      "createdAt": "2019-08-21T13:15:24Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "localstack/localstack",
-      "name": "localstack",
-      "stars": 64904,
-      "forks": 4712,
-      "language": "Python",
-      "description": "💻 A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline",
-      "topics": [
-        "aws",
-        "cloud",
-        "continuous-integration",
-        "developer-tools",
-        "localstack",
-        "python",
-        "testing"
-      ],
-      "url": "https://github.com/localstack/localstack",
-      "createdAt": "2016-10-25T23:48:03Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "gsd-build/get-shit-done",
       "name": "get-shit-done",
-      "stars": 61234,
-      "forks": 5198,
+      "stars": 61254,
+      "forks": 5200,
       "language": "JavaScript",
       "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
       "topics": [
@@ -225,8 +60,8 @@
     {
       "fullName": "karpathy/nanogpt",
       "name": "nanoGPT",
-      "stars": 57808,
-      "forks": 9911,
+      "stars": 57813,
+      "forks": 9912,
       "language": "Python",
       "description": "The simplest, fastest repository for training/finetuning medium-sized GPTs.",
       "topics": [],
@@ -237,8 +72,8 @@
     {
       "fullName": "karpathy/nanochat",
       "name": "nanochat",
-      "stars": 53189,
-      "forks": 7131,
+      "stars": 53194,
+      "forks": 7135,
       "language": "Python",
       "description": "The best ChatGPT that $100 can buy.",
       "topics": [],
@@ -247,10 +82,33 @@
       "suggestedCategory": "other"
     },
     {
+      "fullName": "sickcodes/docker-osx",
+      "name": "Docker-OSX",
+      "stars": 52480,
+      "forks": 2887,
+      "language": "Shell",
+      "description": "Run macOS VM in a Docker! Run near native OSX-KVM in Docker! X11 Forwarding! CI/CD for OS X Security Research! Docker mac Containers.",
+      "topics": [
+        "container",
+        "docker",
+        "docker-osx",
+        "kvm",
+        "macos",
+        "os",
+        "osx",
+        "osx-kvm",
+        "x",
+        "x11"
+      ],
+      "url": "https://github.com/sickcodes/Docker-OSX",
+      "createdAt": "2020-06-04T11:01:37Z",
+      "suggestedCategory": "llm"
+    },
+    {
       "fullName": "microsoft/ai-for-beginners",
       "name": "AI-For-Beginners",
-      "stars": 47315,
-      "forks": 9753,
+      "stars": 47317,
+      "forks": 9755,
       "language": "Jupyter Notebook",
       "description": "12 Weeks, 24 Lessons, AI for All!",
       "topics": [
@@ -272,7 +130,7 @@
     {
       "fullName": "microsoft/vibevoice",
       "name": "VibeVoice",
-      "stars": 46913,
+      "stars": 46918,
       "forks": 5205,
       "language": "Python",
       "description": "Open-Source Frontier Voice AI",
@@ -284,7 +142,7 @@
     {
       "fullName": "fission-ai/openspec",
       "name": "OpenSpec",
-      "stars": 46643,
+      "stars": 46661,
       "forks": 3275,
       "language": "TypeScript",
       "description": "Spec-driven development (SDD) for AI coding assistants.",
@@ -307,8 +165,8 @@
     {
       "fullName": "safishamsi/graphify",
       "name": "graphify",
-      "stars": 45814,
-      "forks": 4964,
+      "stars": 45878,
+      "forks": 4970,
       "language": "Python",
       "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
       "topics": [
@@ -329,31 +187,9 @@
       "suggestedCategory": "data"
     },
     {
-      "fullName": "jestjs/jest",
-      "name": "jest",
-      "stars": 45348,
-      "forks": 6649,
-      "language": "TypeScript",
-      "description": "Delightful JavaScript Testing.",
-      "topics": [
-        "easy",
-        "expectation",
-        "facebook",
-        "immersive",
-        "javascript",
-        "painless",
-        "painless-javascript-testing",
-        "snapshot",
-        "testing"
-      ],
-      "url": "https://github.com/jestjs/jest",
-      "createdAt": "2013-12-10T00:18:04Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "apache/airflow",
       "name": "airflow",
-      "stars": 45342,
+      "stars": 45343,
       "forks": 17013,
       "language": "Python",
       "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
@@ -384,37 +220,10 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "usebruno/bruno",
-      "name": "bruno",
-      "stars": 43633,
-      "forks": 2392,
-      "language": "JavaScript",
-      "description": "Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)",
-      "topics": [
-        "api-client",
-        "api-testing",
-        "automation",
-        "developer-tools",
-        "git",
-        "graphql-client",
-        "http-client",
-        "javascript",
-        "openapi",
-        "openapi3",
-        "opensource",
-        "rest-api",
-        "testing",
-        "testing-tools"
-      ],
-      "url": "https://github.com/usebruno/bruno",
-      "createdAt": "2022-09-27T20:51:45Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "anthropics/claude-cookbooks",
       "name": "claude-cookbooks",
-      "stars": 42614,
-      "forks": 4788,
+      "stars": 42619,
+      "forks": 4790,
       "language": "Jupyter Notebook",
       "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
       "topics": [],
@@ -425,8 +234,8 @@
     {
       "fullName": "asgeirtj/system_prompts_leaks",
       "name": "system_prompts_leaks",
-      "stars": 39968,
-      "forks": 6630,
+      "stars": 39975,
+      "forks": 6632,
       "language": null,
       "description": "Extracted system prompts from ChatGPT (GPT-5.5 Thinking), Claude (Opus 4.7, Opus 4.6, Sonnet 4.6, Claude Code), Gemini (3.1 Pro, 3 Flash, Gemini CLI), Grok (4.3 beta), Perplexity, and more. Updated regularly.",
       "topics": [
@@ -456,7 +265,7 @@
     {
       "fullName": "microsoft/bitnet",
       "name": "BitNet",
-      "stars": 38921,
+      "stars": 38922,
       "forks": 3540,
       "language": "Python",
       "description": "Official inference framework for 1-bit LLMs",
@@ -468,7 +277,7 @@
     {
       "fullName": "karpathy/llm101n",
       "name": "LLM101n",
-      "stars": 36904,
+      "stars": 36903,
       "forks": 2019,
       "language": null,
       "description": "LLM101n: Let's build a Storyteller",
@@ -480,7 +289,7 @@
     {
       "fullName": "huggingface/pytorch-image-models",
       "name": "pytorch-image-models",
-      "stars": 36766,
+      "stars": 36765,
       "forks": 5153,
       "language": "Python",
       "description": "The largest collection of PyTorch image encoders / backbones. Including train, eval, inference, export scripts, and pretrained weights -- ResNet, ResNeXT, EfficientNet, NFNet, Vision Transformer (ViT), MobileNetV4, MobileNet-V3 & V2, RegNet, DPN, CSPNet, Swin Transformer, MaxViT, CoAtNet, ConvNeXt, and more",
@@ -511,10 +320,41 @@
       "suggestedCategory": "llm"
     },
     {
+      "fullName": "veggiemonk/awesome-docker",
+      "name": "awesome-docker",
+      "stars": 35955,
+      "forks": 3298,
+      "language": null,
+      "description": ":whale: A curated list of Docker resources and projects",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "container",
+        "docker",
+        "docker-api",
+        "docker-container",
+        "docker-deployment",
+        "docker-environment",
+        "docker-image",
+        "docker-machine",
+        "docker-monitoring",
+        "docker-registry",
+        "docker-security",
+        "docker-swarm",
+        "dockerfile",
+        "list",
+        "moby",
+        "tools"
+      ],
+      "url": "https://github.com/veggiemonk/awesome-docker",
+      "createdAt": "2014-09-21T17:01:48Z",
+      "suggestedCategory": "llm"
+    },
+    {
       "fullName": "nexu-io/open-design",
       "name": "open-design",
-      "stars": 35709,
-      "forks": 4016,
+      "stars": 35807,
+      "forks": 4026,
       "language": "TypeScript",
       "description": "🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade Design Systems 🖼 Generate web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Runs on Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen / Copilot / Hermes / Kimi CLI.",
       "topics": [
@@ -546,8 +386,8 @@
     {
       "fullName": "wshobson/agents",
       "name": "agents",
-      "stars": 35109,
-      "forks": 3818,
+      "stars": 35113,
+      "forks": 3819,
       "language": "Python",
       "description": "Intelligent automation and multi-agent orchestration for Claude Code",
       "topics": [
@@ -579,7 +419,7 @@
     {
       "fullName": "musistudio/claude-code-router",
       "name": "claude-code-router",
-      "stars": 33755,
+      "stars": 33757,
       "forks": 2737,
       "language": "TypeScript",
       "description": "Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.",
@@ -591,8 +431,8 @@
     {
       "fullName": "huggingface/diffusers",
       "name": "diffusers",
-      "stars": 33585,
-      "forks": 6973,
+      "stars": 33584,
+      "forks": 6974,
       "language": "Python",
       "description": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch.",
       "topics": [
@@ -619,7 +459,7 @@
     {
       "fullName": "tabbyml/tabby",
       "name": "tabby",
-      "stars": 33493,
+      "stars": 33492,
       "forks": 1745,
       "language": "Rust",
       "description": "Self-hosted AI coding assistant",
@@ -641,7 +481,7 @@
     {
       "fullName": "openai/clip",
       "name": "CLIP",
-      "stars": 33448,
+      "stars": 33449,
       "forks": 4000,
       "language": "Jupyter Notebook",
       "description": "CLIP (Contrastive Language-Image Pretraining),  Predict the most relevant text snippet given an image",
@@ -656,7 +496,7 @@
     {
       "fullName": "microsoft/graphrag",
       "name": "graphrag",
-      "stars": 32880,
+      "stars": 32881,
       "forks": 3486,
       "language": "Python",
       "description": "A modular graph-based Retrieval-Augmented Generation (RAG) system",
@@ -709,29 +549,9 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "fishaudio/fish-speech",
-      "name": "fish-speech",
-      "stars": 30178,
-      "forks": 2553,
-      "language": "Python",
-      "description": "SOTA Open Source TTS",
-      "topics": [
-        "llama",
-        "transformer",
-        "tts",
-        "valle",
-        "vits",
-        "vqgan",
-        "vqvae"
-      ],
-      "url": "https://github.com/fishaudio/fish-speech",
-      "createdAt": "2023-10-10T03:16:51Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "karpathy/llm.c",
       "name": "llm.c",
-      "stars": 29845,
+      "stars": 29844,
       "forks": 3580,
       "language": "Cuda",
       "description": "LLM training in simple, raw C/CUDA",
@@ -741,9 +561,67 @@
       "suggestedCategory": "other"
     },
     {
+      "fullName": "goharbor/harbor",
+      "name": "harbor",
+      "stars": 28456,
+      "forks": 5223,
+      "language": "Go",
+      "description": "An open source trusted cloud native registry project that stores, signs, and scans content.",
+      "topics": [
+        "cloud-native",
+        "cncf",
+        "cncf-project",
+        "container",
+        "container-management",
+        "container-registry",
+        "containers",
+        "docker",
+        "hacktoberfest",
+        "helm",
+        "kubernetes",
+        "registry"
+      ],
+      "url": "https://github.com/goharbor/harbor",
+      "createdAt": "2016-01-28T21:10:28Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "community-scripts/proxmoxve",
+      "name": "ProxmoxVE",
+      "stars": 27965,
+      "forks": 2675,
+      "language": "Shell",
+      "description": "Proxmox VE Helper-Scripts (Community Edition) ",
+      "topics": [
+        "alpine",
+        "authentification",
+        "container",
+        "debian",
+        "docker",
+        "home-assistant",
+        "home-automation",
+        "homelab",
+        "homelab-setup",
+        "lxc",
+        "network",
+        "proxmox",
+        "proxmox-ve",
+        "scripts",
+        "security",
+        "self-hosted",
+        "self-hosting",
+        "smarthome",
+        "ubuntu",
+        "vm"
+      ],
+      "url": "https://github.com/community-scripts/ProxmoxVE",
+      "createdAt": "2024-11-01T14:06:43Z",
+      "suggestedCategory": "llm"
+    },
+    {
       "fullName": "microsoft/semantic-kernel",
       "name": "semantic-kernel",
-      "stars": 27878,
+      "stars": 27877,
       "forks": 4593,
       "language": "C#",
       "description": "Integrate cutting-edge LLM technology quickly and easily into your apps",
@@ -759,29 +637,33 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "stretchr/testify",
-      "name": "testify",
-      "stars": 25982,
-      "forks": 1709,
+      "fullName": "yeasy/docker_practice",
+      "name": "docker_practice",
+      "stars": 26018,
+      "forks": 5784,
       "language": "Go",
-      "description": "A toolkit with common assertions and mocks that plays nicely with the standard library",
+      "description": "最新Docker容器技术，从真实案例中学习最佳实践！| Learn and understand Docker&Container technologies, with real DevOps practice!",
       "topics": [
-        "assertions",
-        "go",
-        "golang",
-        "mocking",
-        "testify",
-        "testing",
-        "toolkit"
+        "book",
+        "cloud-computing",
+        "container",
+        "devops",
+        "docker",
+        "kubernetes",
+        "linux",
+        "mesos",
+        "spark",
+        "swarm",
+        "virtualization"
       ],
-      "url": "https://github.com/stretchr/testify",
-      "createdAt": "2012-10-16T16:43:17Z",
+      "url": "https://github.com/yeasy/docker_practice",
+      "createdAt": "2014-09-05T04:06:39Z",
       "suggestedCategory": "llm"
     },
     {
       "fullName": "microsoft/winget-cli",
       "name": "winget-cli",
-      "stars": 25829,
+      "stars": 25831,
       "forks": 1731,
       "language": "C++",
       "description": "WinGet is the Windows Package Manager. This project includes a CLI (Command Line Interface), PowerShell modules, and a COM (Component Object Model) API (Application Programming Interface).",
@@ -808,6 +690,32 @@
       "url": "https://github.com/openai/gpt-2",
       "createdAt": "2019-02-11T04:21:59Z",
       "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "haotian-liu/llava",
+      "name": "LLaVA",
+      "stars": 24769,
+      "forks": 2760,
+      "language": "Python",
+      "description": "[NeurIPS'23 Oral] Visual Instruction Tuning (LLaVA) built towards GPT-4V level capabilities and beyond.",
+      "topics": [
+        "chatbot",
+        "chatgpt",
+        "foundation-models",
+        "gpt-4",
+        "instruction-tuning",
+        "llama",
+        "llama-2",
+        "llama2",
+        "llava",
+        "multi-modality",
+        "multimodal",
+        "vision-language-model",
+        "visual-language-learning"
+      ],
+      "url": "https://github.com/haotian-liu/LLaVA",
+      "createdAt": "2023-04-17T16:13:11Z",
+      "suggestedCategory": "agent"
     },
     {
       "fullName": "microsoft/omniparser",
@@ -838,41 +746,9 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "goldbergyoni/javascript-testing-best-practices",
-      "name": "javascript-testing-best-practices",
-      "stars": 24601,
-      "forks": 2100,
-      "language": "JavaScript",
-      "description": "📗🌐 🚢 Comprehensive and exhaustive JavaScript & Node.js testing best practices (August 2025)",
-      "topics": [
-        "angular",
-        "chai",
-        "ci",
-        "cicd",
-        "contract-testing",
-        "e2e",
-        "e2e-tests",
-        "express",
-        "integration-testing",
-        "javascript",
-        "jest",
-        "mocha",
-        "mutation",
-        "mutation-testing",
-        "nodejs",
-        "react",
-        "test",
-        "testing",
-        "unittest"
-      ],
-      "url": "https://github.com/goldbergyoni/javascript-testing-best-practices",
-      "createdAt": "2019-07-04T11:08:12Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "karpathy/mingpt",
       "name": "minGPT",
-      "stars": 24341,
+      "stars": 24342,
       "forks": 3239,
       "language": "Python",
       "description": "A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training",
@@ -884,8 +760,8 @@
     {
       "fullName": "huggingface/lerobot",
       "name": "lerobot",
-      "stars": 23893,
-      "forks": 4486,
+      "stars": 23894,
+      "forks": 4487,
       "language": "Python",
       "description": "🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning",
       "topics": [],
@@ -894,28 +770,10 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "quii/learn-go-with-tests",
-      "name": "learn-go-with-tests",
-      "stars": 23635,
-      "forks": 2939,
-      "language": "Go",
-      "description": "Learn Go with test-driven development",
-      "topics": [
-        "go",
-        "golang",
-        "tdd",
-        "test-driven-development",
-        "testing"
-      ],
-      "url": "https://github.com/quii/learn-go-with-tests",
-      "createdAt": "2018-03-02T11:41:14Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "openai/symphony",
       "name": "symphony",
-      "stars": 23045,
-      "forks": 2167,
+      "stars": 23070,
+      "forks": 2168,
       "language": "Elixir",
       "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
       "topics": [],
@@ -924,35 +782,10 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "mochajs/mocha",
-      "name": "mocha",
-      "stars": 22884,
-      "forks": 3067,
-      "language": "JavaScript",
-      "description": "☕️ Classic, reliable, trusted test framework for Node.js and the browser",
-      "topics": [
-        "bdd",
-        "browser",
-        "javascript",
-        "mocha",
-        "mochajs",
-        "node",
-        "nodejs",
-        "tdd",
-        "test",
-        "test-framework",
-        "testing",
-        "testing-tools"
-      ],
-      "url": "https://github.com/mochajs/mocha",
-      "createdAt": "2011-03-07T18:44:25Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "activepieces/activepieces",
       "name": "activepieces",
-      "stars": 22129,
-      "forks": 3634,
+      "stars": 22131,
+      "forks": 3635,
       "language": "TypeScript",
       "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
       "topics": [
@@ -977,7 +810,7 @@
     {
       "fullName": "enescingoz/awesome-n8n-templates",
       "name": "awesome-n8n-templates",
-      "stars": 22043,
+      "stars": 22045,
       "forks": 5983,
       "language": null,
       "description": "280+ free n8n automation templates — ready-to-use workflows for Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, OpenAI, and more. AI agents, RAG   chatbots, email automation, social media, DevOps, and document processing. The largest open-source n8n template collection.",
@@ -1006,7 +839,7 @@
     {
       "fullName": "skyvern-ai/skyvern",
       "name": "skyvern",
-      "stars": 21556,
+      "stars": 21557,
       "forks": 1988,
       "language": "Python",
       "description": "Automate browser based workflows with AI",
@@ -1064,7 +897,7 @@
     {
       "fullName": "openai/swarm",
       "name": "swarm",
-      "stars": 21466,
+      "stars": 21468,
       "forks": 2282,
       "language": "Python",
       "description": "Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team.",
@@ -1091,7 +924,7 @@
     {
       "fullName": "huggingface/peft",
       "name": "peft",
-      "stars": 21087,
+      "stars": 21088,
       "forks": 2282,
       "language": "Python",
       "description": "🤗 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning.",
@@ -1112,73 +945,10 @@
       "suggestedCategory": "education"
     },
     {
-      "fullName": "funaudiollm/cosyvoice",
-      "name": "CosyVoice",
-      "stars": 20966,
-      "forks": 2417,
-      "language": "Python",
-      "description": "Multi-lingual large voice generation model, providing inference, training and deployment full-stack ability.",
-      "topics": [
-        "audio-generation",
-        "cantonese",
-        "chatbot",
-        "chatgpt",
-        "chinese",
-        "cosyvoice",
-        "cross-lingual",
-        "english",
-        "fine-grained",
-        "fine-tuning",
-        "gpt-4o",
-        "japanese",
-        "korean",
-        "multi-lingual",
-        "natural-language-generation",
-        "python",
-        "text-to-speech",
-        "tts",
-        "voice-cloning"
-      ],
-      "url": "https://github.com/FunAudioLLM/CosyVoice",
-      "createdAt": "2024-07-03T02:59:22Z",
-      "suggestedCategory": "agent"
-    },
-    {
-      "fullName": "avajs/ava",
-      "name": "ava",
-      "stars": 20845,
-      "forks": 1406,
-      "language": "JavaScript",
-      "description": "Node.js test runner that lets you develop with confidence 🚀",
-      "topics": [
-        "assert",
-        "async",
-        "async-functions",
-        "ava",
-        "cli",
-        "cli-app",
-        "concurrency",
-        "javascript",
-        "node",
-        "nodejs",
-        "performance",
-        "tap",
-        "tdd",
-        "test-framework",
-        "test-runner",
-        "testing",
-        "unicorns",
-        "unit-testing"
-      ],
-      "url": "https://github.com/avajs/ava",
-      "createdAt": "2014-11-18T17:20:26Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "coze-dev/coze-studio",
       "name": "coze-studio",
-      "stars": 20723,
-      "forks": 3005,
+      "stars": 20725,
+      "forks": 3004,
       "language": "TypeScript",
       "description": "An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.",
       "topics": [
@@ -1205,30 +975,9 @@
       "suggestedCategory": "agent"
     },
     {
-      "fullName": "catchorg/catch2",
-      "name": "Catch2",
-      "stars": 20373,
-      "forks": 3229,
-      "language": "C++",
-      "description": "A modern, C++-native, test framework for unit-tests, TDD and BDD - using C++14, C++17 and later (C++11 support is in v2.x branch, and C++03 on the Catch1.x branch)",
-      "topics": [
-        "bdd",
-        "cpp",
-        "cpp14",
-        "framework",
-        "no-dependencies",
-        "tdd",
-        "test-framework",
-        "testing"
-      ],
-      "url": "https://github.com/catchorg/Catch2",
-      "createdAt": "2010-11-08T18:22:56Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "huggingface/candle",
       "name": "candle",
-      "stars": 20216,
+      "stars": 20217,
       "forks": 1560,
       "language": "Rust",
       "description": "Minimalist ML framework for Rust",
@@ -1240,7 +989,7 @@
     {
       "fullName": "openai/gpt-oss",
       "name": "gpt-oss",
-      "stars": 20086,
+      "stars": 20087,
       "forks": 2073,
       "language": "Python",
       "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
@@ -1248,89 +997,6 @@
       "url": "https://github.com/openai/gpt-oss",
       "createdAt": "2025-06-23T16:43:33Z",
       "suggestedCategory": "other"
-    },
-    {
-      "fullName": "enzymejs/enzyme",
-      "name": "enzyme",
-      "stars": 19840,
-      "forks": 1978,
-      "language": "JavaScript",
-      "description": "JavaScript Testing utilities for React",
-      "topics": [
-        "assertion-library",
-        "assertions",
-        "ava",
-        "chai",
-        "enzyme",
-        "jest",
-        "mocha",
-        "react",
-        "react-components",
-        "test",
-        "test-runner",
-        "test-runners",
-        "testing",
-        "traversal"
-      ],
-      "url": "https://github.com/enzymejs/enzyme",
-      "createdAt": "2015-11-10T21:45:38Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "testing-library/react-testing-library",
-      "name": "react-testing-library",
-      "stars": 19579,
-      "forks": 1157,
-      "language": "JavaScript",
-      "description": "🐐 Simple and complete React DOM testing utilities that encourage good testing practices.",
-      "topics": [
-        "javascript",
-        "reactjs",
-        "testing"
-      ],
-      "url": "https://github.com/testing-library/react-testing-library",
-      "createdAt": "2018-03-19T13:39:49Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "probelabs/goreplay",
-      "name": "goreplay",
-      "stars": 19289,
-      "forks": 87,
-      "language": "Go",
-      "description": "GoReplay is an open-source tool for capturing and replaying live HTTP traffic into a test environment in order to continuously test your system with real data. It can be used to increase confidence in code deployments, configuration changes and infrastructure changes.",
-      "topics": [
-        "devops",
-        "go",
-        "qa",
-        "testing",
-        "testing-tools"
-      ],
-      "url": "https://github.com/probelabs/goreplay",
-      "createdAt": "2013-05-30T09:29:07Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "joke2k/faker",
-      "name": "faker",
-      "stars": 19240,
-      "forks": 2068,
-      "language": "Python",
-      "description": "Faker is a Python package that generates fake data for you.",
-      "topics": [
-        "dataset",
-        "fake",
-        "fake-data",
-        "faker",
-        "faker-generator",
-        "python",
-        "test-data",
-        "test-data-generator",
-        "testing"
-      ],
-      "url": "https://github.com/joke2k/faker",
-      "createdAt": "2012-11-12T23:00:09Z",
-      "suggestedCategory": "llm"
     },
     {
       "fullName": "avaiga/taipy",
@@ -1366,10 +1032,31 @@
       "suggestedCategory": "llm"
     },
     {
+      "fullName": "tc39/proposals",
+      "name": "proposals",
+      "stars": 19101,
+      "forks": 744,
+      "language": null,
+      "description": "Tracking ECMAScript Proposals",
+      "topics": [
+        "committee",
+        "ecmascript",
+        "javascript",
+        "language",
+        "language-design",
+        "proposal",
+        "spec",
+        "specification"
+      ],
+      "url": "https://github.com/tc39/proposals",
+      "createdAt": "2016-05-11T23:41:28Z",
+      "suggestedCategory": "llm"
+    },
+    {
       "fullName": "anthropics/claude-plugins-official",
       "name": "claude-plugins-official",
-      "stars": 19005,
-      "forks": 2341,
+      "stars": 19009,
+      "forks": 2342,
       "language": "Python",
       "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "topics": [
@@ -1382,31 +1069,10 @@
       "suggestedCategory": "plugin"
     },
     {
-      "fullName": "orange-opensource/hurl",
-      "name": "hurl",
-      "stars": 18894,
-      "forks": 722,
-      "language": "Rust",
-      "description": "Hurl, run and test HTTP requests with plain text.",
-      "topics": [
-        "api-testing",
-        "cli",
-        "curl",
-        "http",
-        "http-client",
-        "integration-testing",
-        "testing",
-        "testing-tools"
-      ],
-      "url": "https://github.com/Orange-OpenSource/hurl",
-      "createdAt": "2020-08-25T14:50:56Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "openai/skills",
       "name": "skills",
-      "stars": 18737,
-      "forks": 1241,
+      "stars": 18738,
+      "forks": 1242,
       "language": "Python",
       "description": "Skills Catalog for Codex",
       "topics": [],
@@ -1417,8 +1083,8 @@
     {
       "fullName": "karpathy/llm-council",
       "name": "llm-council",
-      "stars": 18552,
-      "forks": 3593,
+      "stars": 18554,
+      "forks": 3596,
       "language": "Python",
       "description": "LLM Council works together to answer your hardest questions",
       "topics": [],
@@ -1451,6 +1117,33 @@
       "suggestedCategory": "other"
     },
     {
+      "fullName": "docker-mailserver/docker-mailserver",
+      "name": "docker-mailserver",
+      "stars": 18222,
+      "forks": 2005,
+      "language": "Shell",
+      "description": "Production-ready fullstack but simple mail server (SMTP, IMAP, LDAP, Antispam, Antivirus, etc.) running inside a container.",
+      "topics": [
+        "antispam",
+        "antivirus",
+        "container",
+        "docker",
+        "dovecot",
+        "fail2ban",
+        "imap",
+        "kubernetes",
+        "ldap",
+        "mail",
+        "mailserver",
+        "postfix",
+        "rspamd",
+        "smtp"
+      ],
+      "url": "https://github.com/docker-mailserver/docker-mailserver",
+      "createdAt": "2015-03-28T14:56:28Z",
+      "suggestedCategory": "llm"
+    },
+    {
       "fullName": "openai/tiktoken",
       "name": "tiktoken",
       "stars": 18155,
@@ -1465,7 +1158,7 @@
     {
       "fullName": "openai/codex-plugin-cc",
       "name": "codex-plugin-cc",
-      "stars": 18080,
+      "stars": 18086,
       "forks": 1058,
       "language": "JavaScript",
       "description": "Use Codex from Claude Code to review code or delegate tasks.",
@@ -1475,30 +1168,34 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "sczhou/codeformer",
-      "name": "CodeFormer",
-      "stars": 17957,
-      "forks": 3707,
-      "language": "Python",
-      "description": "[NeurIPS 2022] Towards Robust Blind Face Restoration with Codebook Lookup Transformer",
+      "fullName": "donchitos/claude-code-game-studios",
+      "name": "Claude-Code-Game-Studios",
+      "stars": 17966,
+      "forks": 2618,
+      "language": "Shell",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
       "topics": [
-        "codebook",
-        "codeformer",
-        "face-enhancement",
-        "face-restoration",
-        "pytorch",
-        "restoration",
-        "super-resolution",
-        "vqgan"
+        "ai-agents",
+        "ai-assisted-development",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "game-design",
+        "game-development",
+        "gamedev",
+        "godot",
+        "indie-game-dev",
+        "unity",
+        "unreal-engine"
       ],
-      "url": "https://github.com/sczhou/CodeFormer",
-      "createdAt": "2022-06-21T02:48:14Z",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "createdAt": "2026-02-12T05:21:38Z",
       "suggestedCategory": "llm"
     },
     {
       "fullName": "langchain-ai/langchainjs",
       "name": "langchainjs",
-      "stars": 17642,
+      "stars": 17644,
       "forks": 3159,
       "language": "TypeScript",
       "description": "The agent engineering platform",
@@ -1508,30 +1205,53 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "keploy/keploy",
-      "name": "keploy",
-      "stars": 17215,
-      "forks": 2229,
-      "language": "Go",
-      "description": "Open-source platform for creating safe, isolated production sandboxes for API, integration, and E2E testing.",
+      "fullName": "labring/sealos",
+      "name": "sealos",
+      "stars": 17572,
+      "forks": 2409,
+      "language": "TypeScript",
+      "description": "Sealos is an AI-native Cloud Operating System built on Kubernetes that unifies the entire application lifecycle, from development in cloud IDEs to production deployment and management. It is perfect for building and scaling modern AI applications, managed databases (MySQL, PostgreSQL, Redis, MongoDB) and complex microservice architectures.",
       "topics": [
-        "agentic-ai",
-        "ai-testing-tool",
-        "api-testing",
-        "code-quality",
-        "mock",
-        "mock-data-generator",
-        "mock-framework",
-        "test-automation",
-        "test-automation-framework",
-        "test-generation",
-        "testing",
-        "testing-library",
-        "testing-tool",
-        "testing-tools"
+        "cloudos",
+        "container",
+        "docker",
+        "golang",
+        "install",
+        "ipvs",
+        "kubeadm",
+        "kubernetes",
+        "kubernetes-ha"
       ],
-      "url": "https://github.com/keploy/keploy",
-      "createdAt": "2022-01-19T10:40:31Z",
+      "url": "https://github.com/labring/sealos",
+      "createdAt": "2018-08-15T12:22:50Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "transformeroptimus/superagi",
+      "name": "SuperAGI",
+      "stars": 17511,
+      "forks": 2208,
+      "language": "Python",
+      "description": "<⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.",
+      "topics": [
+        "agents",
+        "agi",
+        "ai",
+        "artificial-general-intelligence",
+        "artificial-intelligence",
+        "autonomous-agents",
+        "gpt-4",
+        "hacktoberfest",
+        "llm",
+        "llmops",
+        "nextjs",
+        "openai",
+        "pinecone",
+        "python",
+        "superagi"
+      ],
+      "url": "https://github.com/TransformerOptimus/SuperAGI",
+      "createdAt": "2023-05-13T08:55:24Z",
       "suggestedCategory": "llm"
     },
     {
@@ -1549,7 +1269,7 @@
     {
       "fullName": "manaflow-ai/cmux",
       "name": "cmux",
-      "stars": 16626,
+      "stars": 16629,
       "forks": 1273,
       "language": "Swift",
       "description": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents",
@@ -1570,7 +1290,7 @@
     {
       "fullName": "anthropics/claude-quickstarts",
       "name": "claude-quickstarts",
-      "stars": 16543,
+      "stars": 16544,
       "forks": 2819,
       "language": "Python",
       "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
@@ -1597,23 +1317,6 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "jasmine/jasmine",
-      "name": "jasmine",
-      "stars": 15829,
-      "forks": 2242,
-      "language": "JavaScript",
-      "description": "Simple JavaScript testing framework for browsers and node.js",
-      "topics": [
-        "jasmine",
-        "javascript",
-        "tdd",
-        "testing"
-      ],
-      "url": "https://github.com/jasmine/jasmine",
-      "createdAt": "2008-12-02T23:46:37Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "openai/gpt-3",
       "name": "gpt-3",
       "stars": 15745,
@@ -1626,34 +1329,9 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "mockito/mockito",
-      "name": "mockito",
-      "stars": 15431,
-      "forks": 2653,
-      "language": "Java",
-      "description": "Most popular Mocking framework for unit tests written in Java",
-      "topics": [
-        "java",
-        "java-library",
-        "mock",
-        "mock-library",
-        "mocking",
-        "mocking-framework",
-        "mockito",
-        "mocks",
-        "test-automation",
-        "test-driven-development",
-        "testing",
-        "testing-tools"
-      ],
-      "url": "https://github.com/mockito/mockito",
-      "createdAt": "2012-10-13T20:27:12Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "plandex-ai/plandex",
       "name": "plandex",
-      "stars": 15346,
+      "stars": 15348,
       "forks": 1130,
       "language": "Go",
       "description": "Open source AI coding agent. Designed for large projects and real world tasks.",
@@ -1695,7 +1373,7 @@
       "fullName": "triggerdotdev/trigger.dev",
       "name": "trigger.dev",
       "stars": 14846,
-      "forks": 1201,
+      "forks": 1202,
       "language": "TypeScript",
       "description": "Trigger.dev – build and deploy fully‑managed AI agents and workflows",
       "topics": [
@@ -1736,10 +1414,22 @@
       "suggestedCategory": "plugin"
     },
     {
+      "fullName": "garrytan/gbrain",
+      "name": "gbrain",
+      "stars": 14361,
+      "forks": 1854,
+      "language": "TypeScript",
+      "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+      "topics": [],
+      "url": "https://github.com/garrytan/gbrain",
+      "createdAt": "2026-04-05T14:40:56Z",
+      "suggestedCategory": "other"
+    },
+    {
       "fullName": "jcodesmore/ai-website-cloner-template",
       "name": "ai-website-cloner-template",
-      "stars": 14346,
-      "forks": 2178,
+      "stars": 14350,
+      "forks": 2179,
       "language": "TypeScript",
       "description": "Clone any website with one command using AI coding agents",
       "topics": [
@@ -1768,18 +1458,6 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "garrytan/gbrain",
-      "name": "gbrain",
-      "stars": 14315,
-      "forks": 1847,
-      "language": "TypeScript",
-      "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
-      "topics": [],
-      "url": "https://github.com/garrytan/gbrain",
-      "createdAt": "2026-04-05T14:40:56Z",
-      "suggestedCategory": "other"
-    },
-    {
       "fullName": "andymik90/aperant",
       "name": "Aperant",
       "stars": 14183,
@@ -1792,68 +1470,31 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "phpstan/phpstan",
-      "name": "phpstan",
-      "stars": 13932,
-      "forks": 949,
-      "language": "PHP",
-      "description": "PHP Static Analysis Tool - discover bugs in your code without running it!",
+      "fullName": "vercel/satori",
+      "name": "satori",
+      "stars": 13400,
+      "forks": 346,
+      "language": "TypeScript",
+      "description": "Enlightened library to convert HTML and CSS to SVG",
       "topics": [
-        "php",
-        "php7",
-        "phpstan",
-        "static-analysis",
-        "static-analyzer",
-        "static-code-analysis",
-        "testing"
+        "css",
+        "image",
+        "image-generation",
+        "image-generator",
+        "jsx",
+        "opengraph-images",
+        "satori",
+        "svg",
+        "vercel"
       ],
-      "url": "https://github.com/phpstan/phpstan",
-      "createdAt": "2016-01-04T18:22:16Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "pytest-dev/pytest",
-      "name": "pytest",
-      "stars": 13836,
-      "forks": 3123,
-      "language": "Python",
-      "description": "The pytest framework makes it easy to write small tests, yet scales to support complex functional testing",
-      "topics": [
-        "hacktoberfest",
-        "python",
-        "test",
-        "testing",
-        "unit-testing"
-      ],
-      "url": "https://github.com/pytest-dev/pytest",
-      "createdAt": "2015-06-15T20:28:27Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "postmanlabs/httpbin",
-      "name": "httpbin",
-      "stars": 13559,
-      "forks": 1912,
-      "language": "Python",
-      "description": "HTTP Request & Response Service, written in Python + Flask.",
-      "topics": [
-        "api",
-        "http",
-        "http-server",
-        "httpbin",
-        "json",
-        "python",
-        "service",
-        "testing"
-      ],
-      "url": "https://github.com/postmanlabs/httpbin",
-      "createdAt": "2011-05-20T21:14:01Z",
+      "url": "https://github.com/vercel/satori",
+      "createdAt": "2022-01-27T17:01:04Z",
       "suggestedCategory": "llm"
     },
     {
       "fullName": "coleam00/context-engineering-intro",
       "name": "context-engineering-intro",
-      "stars": 13295,
+      "stars": 13294,
       "forks": 2709,
       "language": "Python",
       "description": "Context engineering is the new vibe coding - it's the way to actually make AI coding assistants work. Claude Code is the best for this so that's what this repo is centered around, but you can apply this strategy with any AI coding assistant!",
@@ -1863,53 +1504,9 @@
       "suggestedCategory": "other"
     },
     {
-      "fullName": "metersphere/metersphere",
-      "name": "metersphere",
-      "stars": 13172,
-      "forks": 2807,
-      "language": "Java",
-      "description": "MeterSphere 是新一代的开源持续测试工具，内置 AI 助手，让软件测试工作更简单、更高效，不再成为持续交付的瓶颈。",
-      "topics": [
-        "api-testing",
-        "continuous-testing",
-        "jmeter",
-        "metersphere",
-        "postman",
-        "swagger",
-        "test-automation",
-        "testcase",
-        "testing",
-        "testlink",
-        "testlink-alternative"
-      ],
-      "url": "https://github.com/metersphere/metersphere",
-      "createdAt": "2020-02-03T02:06:12Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "chromedp/chromedp",
-      "name": "chromedp",
-      "stars": 13023,
-      "forks": 871,
-      "language": "Go",
-      "description": "A faster, simpler way to drive browsers supporting the Chrome DevTools Protocol.",
-      "topics": [
-        "chrome",
-        "chrome-debugging-protocol",
-        "chrome-devtools",
-        "golang",
-        "headless",
-        "testing",
-        "unit-testing"
-      ],
-      "url": "https://github.com/chromedp/chromedp",
-      "createdAt": "2017-01-24T14:54:30Z",
-      "suggestedCategory": "llm"
-    },
-    {
       "fullName": "nanobrowser/nanobrowser",
       "name": "nanobrowser",
-      "stars": 12959,
+      "stars": 12960,
       "forks": 1362,
       "language": "TypeScript",
       "description": "Open-Source Chrome extension for AI-powered web automation. Run multi-agent workflows using your own LLM API key. Alternative to OpenAI Operator.",
@@ -1940,61 +1537,25 @@
       "suggestedCategory": "llm"
     },
     {
-      "fullName": "web-infra-dev/midscene",
-      "name": "midscene",
-      "stars": 12956,
-      "forks": 966,
-      "language": "TypeScript",
-      "description": "AI-powered, vision-driven UI automation for every platform.",
+      "fullName": "dotnet/csharplang",
+      "name": "csharplang",
+      "stars": 12594,
+      "forks": 1068,
+      "language": "C#",
+      "description": "The official repo for the design of the C# programming language",
       "topics": [
-        "ai",
-        "ai-test",
-        "browser-use",
-        "computer-use",
-        "gpt-operator",
-        "javascript",
-        "phone-use",
-        "testing"
+        "csharp",
+        "language-design"
       ],
-      "url": "https://github.com/web-infra-dev/midscene",
-      "createdAt": "2024-07-23T04:03:50Z",
-      "suggestedCategory": "llm"
-    },
-    {
-      "fullName": "ultrafunkamsterdam/undetected-chromedriver",
-      "name": "undetected-chromedriver",
-      "stars": 12614,
-      "forks": 1336,
-      "language": "Python",
-      "description": "Custom Selenium Chromedriver | Zero-Config | Passes ALL bot mitigation systems (like Distil / Imperva/ Datadadome / CloudFlare IUAM)",
-      "topics": [
-        "anti-bot",
-        "anti-detection",
-        "automation",
-        "bot-detection",
-        "browser",
-        "captcha",
-        "chrome",
-        "chromedriver",
-        "cloudflare",
-        "cloudflare-bypass",
-        "distil",
-        "navigator",
-        "python3",
-        "scraping",
-        "selenium",
-        "testing",
-        "webdriver"
-      ],
-      "url": "https://github.com/ultrafunkamsterdam/undetected-chromedriver",
-      "createdAt": "2019-12-22T12:44:17Z",
+      "url": "https://github.com/dotnet/csharplang",
+      "createdAt": "2016-12-09T01:45:27Z",
       "suggestedCategory": "llm"
     },
     {
       "fullName": "opencode-ai/opencode",
       "name": "opencode",
       "stars": 12455,
-      "forks": 1344,
+      "forks": 1345,
       "language": "Go",
       "description": "A powerful AI coding agent. Built for the terminal.",
       "topics": [
@@ -2038,63 +1599,422 @@
       "url": "https://github.com/bentoml/OpenLLM",
       "createdAt": "2023-04-19T00:27:52Z",
       "suggestedCategory": "education"
+    },
+    {
+      "fullName": "waooai/waoowaoo",
+      "name": "waoowaoo",
+      "stars": 12088,
+      "forks": 2739,
+      "language": "TypeScript",
+      "description": "首家工业级全流程 AI 影视生产平台。Industry-first professional AI Agent platform for controllable film & video production. From shorts to live-action with Hollywood-standard workflows.",
+      "topics": [
+        "ai-agent",
+        "ai-agents",
+        "automation",
+        "film-production",
+        "generative-ai",
+        "short-drama",
+        "storyboard",
+        "video-generation"
+      ],
+      "url": "https://github.com/waooAI/waoowaoo",
+      "createdAt": "2026-01-22T12:09:36Z",
+      "suggestedCategory": "agent"
+    },
+    {
+      "fullName": "karpathy/char-rnn",
+      "name": "char-rnn",
+      "stars": 12037,
+      "forks": 2627,
+      "language": "Lua",
+      "description": "Multi-layer Recurrent Neural Networks (LSTM, GRU, RNN) for character-level language models in Torch",
+      "topics": [],
+      "url": "https://github.com/karpathy/char-rnn",
+      "createdAt": "2015-05-21T17:25:24Z",
+      "suggestedCategory": "other"
+    },
+    {
+      "fullName": "anthropics/knowledge-work-plugins",
+      "name": "knowledge-work-plugins",
+      "stars": 12004,
+      "forks": 1432,
+      "language": "Python",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "topics": [],
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "createdAt": "2026-01-23T20:11:54Z",
+      "suggestedCategory": "other"
+    },
+    {
+      "fullName": "h2oai/h2ogpt",
+      "name": "h2ogpt",
+      "stars": 11988,
+      "forks": 1313,
+      "language": "Python",
+      "description": "Private chat with local GPT with document, images, video, etc. 100% private, Apache 2.0. Supports oLLaMa, Mixtral, llama.cpp, and more. Demo: https://gpt.h2o.ai/ https://gpt-docs.h2o.ai/",
+      "topics": [
+        "ai",
+        "chatgpt",
+        "embeddings",
+        "fedramp",
+        "generative",
+        "gpt",
+        "gpt4all",
+        "llama2",
+        "llm",
+        "mixtral",
+        "pdf",
+        "private",
+        "privategpt",
+        "vectorstore"
+      ],
+      "url": "https://github.com/h2oai/h2ogpt",
+      "createdAt": "2023-03-24T21:31:25Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "datahub-project/datahub",
+      "name": "datahub",
+      "stars": 11889,
+      "forks": 3477,
+      "language": "Python",
+      "description": "The Context Platform for your Data and AI Stack",
+      "topics": [
+        "agent-platform",
+        "context-management",
+        "data-catalog",
+        "data-discovery",
+        "data-governance",
+        "data-observability",
+        "datahub",
+        "metadata"
+      ],
+      "url": "https://github.com/datahub-project/datahub",
+      "createdAt": "2015-11-18T05:47:40Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "ludwig-ai/ludwig",
+      "name": "ludwig",
+      "stars": 11692,
+      "forks": 1217,
+      "language": "Python",
+      "description": "Low-code framework for building custom LLMs, neural networks, and other AI models",
+      "topics": [
+        "computer-vision",
+        "data-centric",
+        "data-science",
+        "deep",
+        "deep-learning",
+        "deeplearning",
+        "fine-tuning",
+        "learning",
+        "llama",
+        "llama2",
+        "llm",
+        "llm-training",
+        "machine-learning",
+        "machinelearning",
+        "mistral",
+        "ml",
+        "natural-language",
+        "natural-language-processing",
+        "neural-network",
+        "pytorch"
+      ],
+      "url": "https://github.com/ludwig-ai/ludwig",
+      "createdAt": "2018-12-27T23:58:12Z",
+      "suggestedCategory": "multimodal"
+    },
+    {
+      "fullName": "pwxcoo/chinese-xinhua",
+      "name": "chinese-xinhua",
+      "stars": 11542,
+      "forks": 2674,
+      "language": "Python",
+      "description": ":orange_book: 中华新华字典数据库。包括歇后语，成语，词语，汉字。",
+      "topics": [
+        "chinese",
+        "chinese-characters",
+        "chinese-language",
+        "chinese-nlp",
+        "chinese-simplified",
+        "chinese-traditional",
+        "data",
+        "json",
+        "json-data",
+        "json-dataset",
+        "python3",
+        "scraper"
+      ],
+      "url": "https://github.com/pwxcoo/chinese-xinhua",
+      "createdAt": "2018-02-05T02:51:53Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "karpathy/convnetjs",
+      "name": "convnetjs",
+      "stars": 11157,
+      "forks": 2074,
+      "language": "JavaScript",
+      "description": "Deep Learning in Javascript. Train Convolutional Neural Networks (or ordinary ones) in your browser.",
+      "topics": [],
+      "url": "https://github.com/karpathy/convnetjs",
+      "createdAt": "2014-01-05T00:12:15Z",
+      "suggestedCategory": "other"
+    },
+    {
+      "fullName": "getumbrel/llama-gpt",
+      "name": "llama-gpt",
+      "stars": 10967,
+      "forks": 714,
+      "language": "TypeScript",
+      "description": "A self-hosted, offline, ChatGPT-like chatbot. Powered by Llama 2. 100% private, with no data leaving your device. New: Code Llama support!",
+      "topics": [
+        "ai",
+        "chatgpt",
+        "code-llama",
+        "codellama",
+        "gpt",
+        "gpt-4",
+        "gpt4all",
+        "llama",
+        "llama-2",
+        "llama-cpp",
+        "llama2",
+        "llamacpp",
+        "llm",
+        "localai",
+        "openai",
+        "self-hosted"
+      ],
+      "url": "https://github.com/getumbrel/llama-gpt",
+      "createdAt": "2023-07-22T20:12:54Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "openai/openai-node",
+      "name": "openai-node",
+      "stars": 10889,
+      "forks": 1480,
+      "language": "TypeScript",
+      "description": "Official JavaScript / TypeScript library for the OpenAI API",
+      "topics": [
+        "nodejs",
+        "openai",
+        "typescript"
+      ],
+      "url": "https://github.com/openai/openai-node",
+      "createdAt": "2021-12-14T22:32:58Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "twin/gatus",
+      "name": "gatus",
+      "stars": 10885,
+      "forks": 729,
+      "language": "Go",
+      "description": "Automated developer-oriented status page with alerting and incident support",
+      "topics": [
+        "alerting",
+        "container",
+        "dashboard",
+        "devops",
+        "docker",
+        "go",
+        "golang",
+        "health",
+        "monitor",
+        "monitoring",
+        "monitoring-tool",
+        "notifications",
+        "self-hosted",
+        "selfhosted",
+        "slack",
+        "status",
+        "status-page",
+        "statuspage",
+        "uptime",
+        "uptime-monitoring"
+      ],
+      "url": "https://github.com/TwiN/gatus",
+      "createdAt": "2019-09-04T02:35:40Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "huggingface/text-generation-inference",
+      "name": "text-generation-inference",
+      "stars": 10856,
+      "forks": 1266,
+      "language": "Python",
+      "description": "Large Language Model Text Generation Inference",
+      "topics": [
+        "bloom",
+        "deep-learning",
+        "falcon",
+        "gpt",
+        "inference",
+        "nlp",
+        "pytorch",
+        "starcoder",
+        "transformer"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference",
+      "createdAt": "2022-10-08T10:26:28Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "codota/tabnine",
+      "name": "TabNine",
+      "stars": 10794,
+      "forks": 539,
+      "language": "Shell",
+      "description": "AI Code Completions",
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "atom-package",
+        "bash",
+        "cpp",
+        "golang",
+        "gpt-2",
+        "java",
+        "javascript",
+        "jetbrains-plugin",
+        "lua",
+        "php",
+        "python",
+        "ruby",
+        "rust",
+        "sublime-package",
+        "swift",
+        "typescript",
+        "vim-plugin",
+        "vscode-extension"
+      ],
+      "url": "https://github.com/codota/TabNine",
+      "createdAt": "2018-11-06T05:49:28Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "humanlayer/humanlayer",
+      "name": "humanlayer",
+      "stars": 10745,
+      "forks": 912,
+      "language": "TypeScript",
+      "description": "The best way to get AI coding agents to solve hard problems in complex codebases.",
+      "topics": [
+        "agents",
+        "ai",
+        "amp",
+        "claude-code",
+        "codex",
+        "human-in-the-loop",
+        "humanlayer",
+        "llm",
+        "llms",
+        "opencode"
+      ],
+      "url": "https://github.com/humanlayer/humanlayer",
+      "createdAt": "2024-08-05T21:26:44Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "huggingface/tokenizers",
+      "name": "tokenizers",
+      "stars": 10707,
+      "forks": 1088,
+      "language": "Rust",
+      "description": "💥 Fast State-of-the-Art Tokenizers optimized for Research and Production",
+      "topics": [
+        "bert",
+        "gpt",
+        "language-model",
+        "natural-language-processing",
+        "natural-language-understanding",
+        "nlp",
+        "transformers"
+      ],
+      "url": "https://github.com/huggingface/tokenizers",
+      "createdAt": "2019-11-01T17:52:20Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "huggingface/chat-ui",
+      "name": "chat-ui",
+      "stars": 10703,
+      "forks": 1637,
+      "language": "TypeScript",
+      "description": "The open source codebase powering HuggingChat",
+      "topics": [
+        "chatgpt",
+        "hacktoberfest",
+        "huggingface",
+        "llm",
+        "svelte",
+        "svelte-kit",
+        "sveltekit",
+        "tailwindcss",
+        "typescript"
+      ],
+      "url": "https://github.com/huggingface/chat-ui",
+      "createdAt": "2023-02-17T15:31:50Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "wasmedge/wasmedge",
+      "name": "WasmEdge",
+      "stars": 10584,
+      "forks": 1048,
+      "language": "C++",
+      "description": "WasmEdge is a lightweight, high-performance, and extensible WebAssembly runtime for cloud native, edge, and decentralized applications. It powers serverless apps, embedded functions, microservices, smart contracts, and IoT devices.",
+      "topics": [
+        "artificial-intelligence",
+        "cloud",
+        "cloud-native",
+        "cncf",
+        "container",
+        "docker",
+        "edge-computing",
+        "ewasm",
+        "hacktoberfest",
+        "hacktoberfest2023",
+        "kubernetes",
+        "rust-lang",
+        "serverless",
+        "wasm",
+        "webassembly"
+      ],
+      "url": "https://github.com/WasmEdge/WasmEdge",
+      "createdAt": "2019-11-29T19:00:17Z",
+      "suggestedCategory": "llm"
+    },
+    {
+      "fullName": "karpathy/minbpe",
+      "name": "minbpe",
+      "stars": 10476,
+      "forks": 1043,
+      "language": "Python",
+      "description": "Minimal, clean code for the Byte Pair Encoding (BPE) algorithm commonly used in LLM tokenization.",
+      "topics": [],
+      "url": "https://github.com/karpathy/minbpe",
+      "createdAt": "2024-02-16T16:18:15Z",
+      "suggestedCategory": "other"
+    },
+    {
+      "fullName": "huggingface/skills",
+      "name": "skills",
+      "stars": 10420,
+      "forks": 658,
+      "language": "Python",
+      "description": "Give your agents the power of the Hugging Face ecosystem",
+      "topics": [],
+      "url": "https://github.com/huggingface/skills",
+      "createdAt": "2025-11-24T07:31:48Z",
+      "suggestedCategory": "other"
     }
   ],
   "topicStats": [
-    {
-      "topic": "vqgan",
-      "total": 2,
-      "scanned": 2,
-      "missing": 2
-    },
-    {
-      "topic": "microsoft-tts",
-      "total": 1,
-      "scanned": 1,
-      "missing": 1
-    },
-    {
-      "topic": "gpt4",
-      "total": 9,
-      "scanned": 9,
-      "missing": 8
-    },
-    {
-      "topic": "testing",
-      "total": 72,
-      "scanned": 30,
-      "missing": 29
-    },
-    {
-      "topic": "openllm",
-      "total": 1,
-      "scanned": 1,
-      "missing": 1
-    },
-    {
-      "topic": "chineseocr",
-      "total": 2,
-      "scanned": 2,
-      "missing": 1
-    },
-    {
-      "topic": "multimodel-ai",
-      "total": 1,
-      "scanned": 1,
-      "missing": 1
-    },
-    {
-      "topic": "genai-chatbot",
-      "total": 1,
-      "scanned": 1,
-      "missing": 0
-    },
-    {
-      "topic": "pytorch-lightning",
-      "total": 4,
-      "scanned": 4,
-      "missing": 4
-    },
     {
       "topic": "bing-search",
       "total": 1,
@@ -2102,34 +2022,88 @@
       "missing": 1
     },
     {
-      "topic": "mistral",
-      "total": 12,
-      "scanned": 12,
-      "missing": 9
+      "topic": "ai-assisted-development",
+      "total": 2,
+      "scanned": 2,
+      "missing": 2
     },
     {
-      "topic": "financial-services",
-      "total": 0,
-      "scanned": 0,
-      "missing": 0
-    },
-    {
-      "topic": "natural-language-generation",
+      "topic": "superagi",
       "total": 1,
       "scanned": 1,
       "missing": 1
     },
     {
-      "topic": "ttskit",
+      "topic": "image-generator",
       "total": 1,
       "scanned": 1,
       "missing": 1
     },
     {
-      "topic": "search-as-you-type",
+      "topic": "chinese-language",
+      "total": 2,
+      "scanned": 2,
+      "missing": 1
+    },
+    {
+      "topic": "google-site-search",
+      "total": 1,
+      "scanned": 1,
+      "missing": 1
+    },
+    {
+      "topic": "llama2",
+      "total": 11,
+      "scanned": 11,
+      "missing": 10
+    },
+    {
+      "topic": "context-mode",
       "total": 1,
       "scanned": 1,
       "missing": 0
+    },
+    {
+      "topic": "gpt3-turbo",
+      "total": 2,
+      "scanned": 2,
+      "missing": 2
+    },
+    {
+      "topic": "container",
+      "total": 26,
+      "scanned": 26,
+      "missing": 26
+    },
+    {
+      "topic": "image-upscaling",
+      "total": 3,
+      "scanned": 3,
+      "missing": 2
+    },
+    {
+      "topic": "language-design",
+      "total": 2,
+      "scanned": 2,
+      "missing": 2
+    },
+    {
+      "topic": "claude-design-alternative",
+      "total": 1,
+      "scanned": 1,
+      "missing": 1
+    },
+    {
+      "topic": "langchain",
+      "total": 42,
+      "scanned": 30,
+      "missing": 0
+    },
+    {
+      "topic": "agent-platform",
+      "total": 2,
+      "scanned": 2,
+      "missing": 2
     },
     {
       "topic": "keyword:\"ai coding\"",
@@ -2243,7 +2217,7 @@
       "topic": "user:microsoft",
       "total": 410,
       "scanned": 30,
-      "missing": 9
+      "missing": 10
     }
   ]
 }
