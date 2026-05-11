@@ -160,6 +160,87 @@ for (let i = 0; i < blogTitles.length; i++) {
   }
 }
 
+// 🔴 学习路径完整性校验（防呆：拼写、引用失效、路线内重复、未上路径文章）
+console.log('🔍 验证学习路径...');
+const PATHS_FILE = './src/data/learning-paths.ts';
+const pathsContent = readFileSync(PATHS_FILE, 'utf-8');
+
+// 收集所有文章 id（每篇文章文件第一个 `id: "..."` 即为文章主 ID）
+const articleIdSet = new Set();
+for (const file of articleFiles) {
+  const content = readFileSync(join(ARTICLES_DIR, file), 'utf-8');
+  const idMatch = content.match(/^\s*id:\s*["']([^"']+)["']/m);
+  if (idMatch) articleIdSet.add(idMatch[1]);
+}
+
+// 按 "const xxxRoute: LearningRoute = { ... };" 切片路线块
+const routeBlocks = [];
+{
+  const routeRegex = /const\s+(\w+Route):\s*LearningRoute\s*=\s*\{([\s\S]*?)\n\};/g;
+  let m;
+  while ((m = routeRegex.exec(pathsContent)) !== null) {
+    routeBlocks.push({ varName: m[1], body: m[2] });
+  }
+}
+
+if (routeBlocks.length === 0) {
+  errors.push('  ❌ learning-paths.ts 未解析到任何 LearningRoute，疑似文件被改坏');
+}
+
+// 路径引用过的所有文章 ID（用于检测 orphan）
+const pathReferencedIds = new Set();
+
+for (const { varName, body } of routeBlocks) {
+  // 提取 route id（第一个 `id: "..."`）
+  const routeIdMatch = body.match(/^\s*id:\s*["']([^"']+)["']/m);
+  const routeId = routeIdMatch ? routeIdMatch[1] : varName;
+
+  // 收集所有 articleIds: [...] 数组（保持阶段顺序）
+  const perPhase = [];
+  const articleIdsRegex = /articleIds:\s*\[([\s\S]*?)\]/g;
+  let am;
+  while ((am = articleIdsRegex.exec(body)) !== null) {
+    const ids = [...am[1].matchAll(/["']([^"']+)["']/g)].map(x => x[1]);
+    perPhase.push(ids);
+  }
+
+  if (perPhase.length === 0) {
+    warnings.push(`  ⚠️ 路线 "${routeId}" 未定义任何 articleIds`);
+    continue;
+  }
+
+  const flat = perPhase.flat();
+  flat.forEach((id) => pathReferencedIds.add(id));
+
+  // 1) 路线内重复检测
+  const seen = new Set();
+  const dupes = new Set();
+  for (const id of flat) {
+    if (seen.has(id)) dupes.add(id);
+    seen.add(id);
+  }
+  for (const id of dupes) {
+    errors.push(`  ❌ 路线 "${routeId}" 内文章 ID 重复出现: "${id}"（同一路线只允许出现一次）`);
+  }
+
+  // 2) 引用失效检测（拼写错误 / 文章被删）
+  for (const id of seen) {
+    if (!articleIdSet.has(id)) {
+      errors.push(`  ❌ 路线 "${routeId}" 引用了不存在的文章 ID: "${id}"（拼写错误 或 文章已删除）`);
+    }
+  }
+}
+
+// 3) 未上路径文章警告（不阻断 build，提醒人工/AI 决策是否纳入路径）
+const unrouted = [...articleIdSet].filter((id) => !pathReferencedIds.has(id));
+if (unrouted.length > 0) {
+  const preview = unrouted.slice(0, 15).join(', ');
+  const more = unrouted.length > 15 ? `, ...还有 ${unrouted.length - 15} 篇` : '';
+  warnings.push(
+    `  ⚠️ ${unrouted.length} 篇文章未归入任何学习路径，请决定是否加入 learning-paths.ts：\n     ${preview}${more}`
+  );
+}
+
 // 输出结果
 if (errors.length > 0) {
   console.error('\n❌ 数据验证失败：\n');
@@ -167,7 +248,7 @@ if (errors.length > 0) {
   console.error(`\n共 ${errors.length} 个错误，请修复后再构建。\n`);
   process.exit(1);
 } else {
-  console.log(`✅ 数据验证通过（检查了 ${articleFiles.length} 篇文章、分类定义、工具数据、新闻链接）`);
+  console.log(`✅ 数据验证通过（检查了 ${articleFiles.length} 篇文章、分类定义、工具数据、新闻链接、${routeBlocks.length} 条学习路线）`);
 }
 
 if (warnings.length > 0) {

@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { blogs } from "@/data/blogs";
 import BlogDetailContent from "@/components/BlogDetailContent";
+import JsonLd from "@/components/JsonLd";
+import { articleSchema, breadcrumbSchema, SITE_URL } from "@/lib/structured-data";
 
 // Only allow routes that exist in the blogs data; unknown slugs → 404
 export const dynamicParams = false;
@@ -56,5 +58,30 @@ export default function BlogDetailPage({
     )
     .slice(0, 2);
 
-  return <BlogDetailContent post={post} relatedPosts={relatedPosts} />;
+  const blogUrl = `${SITE_URL}/blog/${post.id}`;
+  const structured = [
+    articleSchema({
+      type: "BlogPosting",
+      url: blogUrl,
+      title: post.title,
+      summary: post.summary,
+      datePublished: post.date,
+      dateModified: post.updatedAt,
+      keywords: post.tags,
+      author: post.author,
+      section: post.category,
+    }),
+    breadcrumbSchema([
+      { name: "首页", url: SITE_URL },
+      { name: "技术博客", url: `${SITE_URL}/blog` },
+      { name: post.title, url: blogUrl },
+    ]),
+  ];
+
+  return (
+    <>
+      <JsonLd data={structured} />
+      <BlogDetailContent post={post} relatedPosts={relatedPosts} />
+    </>
+  );
 }

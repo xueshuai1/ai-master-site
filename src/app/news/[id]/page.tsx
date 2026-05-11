@@ -5,6 +5,8 @@ import { marked } from "marked";
 import { news } from "@/data/news";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import JsonLd from "@/components/JsonLd";
+import { articleSchema, breadcrumbSchema, SITE_URL } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return news.map((n) => ({ id: n.id }));
@@ -69,8 +71,28 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
 
   const relatedNews = news.filter((n) => n.id !== item.id).slice(0, 3);
 
+  const newsUrl = `${SITE_URL}/news/${item.id}`;
+  const structured = [
+    articleSchema({
+      type: "NewsArticle",
+      url: newsUrl,
+      title: item.title,
+      summary: item.summary,
+      datePublished: item.date,
+      keywords: [item.tag],
+      author: item.source,
+      section: item.tag,
+    }),
+    breadcrumbSchema([
+      { name: "首页", url: SITE_URL },
+      { name: "AI 资讯", url: `${SITE_URL}/news` },
+      { name: item.title, url: newsUrl },
+    ]),
+  ];
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
+      <JsonLd data={structured} />
       <Navbar activePath="/news" />
 
       {/* Hero */}

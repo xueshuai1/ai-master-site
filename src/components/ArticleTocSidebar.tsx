@@ -34,7 +34,12 @@ export default function ArticleTocSidebar({ toc, contentSelector = "article" }: 
 
   const scrollToHeading = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!el) return;
+    // 手动计算偏移：navbar 64px + 32px 呼吸距离，与博客 TOC 保持一致
+    // 这里不用 scrollIntoView 是因为它会同时叠加 html 的 scroll-padding-top
+    // (5rem) 和 h2 的 scroll-mt-24 (6rem)，标题会被推到 navbar 下方过远。
+    const top = el.getBoundingClientRect().top + window.scrollY - 96;
+    window.scrollTo({ top, behavior: "smooth" });
   };
 
   if (toc.length < 2) return null;

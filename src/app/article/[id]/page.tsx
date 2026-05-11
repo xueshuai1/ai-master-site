@@ -9,6 +9,8 @@ import MermaidChartWithActions from "@/components/MermaidChartWithActions";
 import CopyButton from "@/components/CopyButton";
 import PythonCodeBlock from "@/components/PythonCodeBlock";
 import ArticleTocSidebar from "@/components/ArticleTocSidebar";
+import JsonLd from "@/components/JsonLd";
+import { articleSchema, breadcrumbSchema, SITE_URL } from "@/lib/structured-data";
 import { marked } from "marked";
 import { parseMarkdown } from "@/components/MarkdownBody";
 import dynamic from "next/dynamic";
@@ -366,8 +368,28 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
     title: item.title,
   }));
 
+  const articleUrl = `${SITE_URL}/article/${article.id}`;
+  const structured = [
+    articleSchema({
+      type: "Article",
+      url: articleUrl,
+      title: article.title,
+      summary: article.summary,
+      datePublished: article.date,
+      dateModified: article.updatedAt,
+      keywords: article.tags,
+      section: categoryName,
+    }),
+    breadcrumbSchema([
+      { name: "首页", url: SITE_URL },
+      { name: "知识库", url: `${SITE_URL}/knowledge` },
+      { name: article.title, url: articleUrl },
+    ]),
+  ];
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
+      <JsonLd data={structured} />
       <ReadingProgressBar />
       <Navbar />
 

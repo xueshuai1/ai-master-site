@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import BackToTop from "@/components/BackToTop";
 import CommandPalette from "@/components/CommandPalette";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 import { siteSeoDescription, siteShortSeoDescription } from "@/data/site-stats";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -80,6 +82,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+      </head>
       <body className={inter.className}>
         {children}
         <CommandPalette />
