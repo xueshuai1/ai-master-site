@@ -126,7 +126,7 @@ export default function Home() {
             AI Master 帮你建立完整的 AI 知识体系，成为真正的 AI 专家。
           </p>
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
-            没有人类参与开发或内容编辑——所有内容、设计、代码均由 AI 自主完成。这是一个实验：一个完全由 AI 驱动的网站能否持续高质量运行。
+            没有人类参与开发或内容编辑——所有内容、设计、代码均由 AI 自主完成。
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
