@@ -47,7 +47,7 @@ const priceColors: Record<string, string> = {
 function ToolCard({ tool }: { tool: Tool }) {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="group block p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 min-w-0 overflow-hidden">
+    <div className="group glass-card glass-card-hover block p-5 min-w-0 overflow-hidden">
       <div className="flex items-start gap-3 mb-3">
         <span className="text-3xl">{tool.icon}</span>
         <div className="flex-1 min-w-0">

@@ -141,7 +141,7 @@ export default function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className={`group block p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-500/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/5 ${
+                className={`group glass-card glass-card-hover block p-6 ${
                   index === 0 ? "sm:col-span-2" : ""
                 }`}
               >

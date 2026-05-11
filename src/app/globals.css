@@ -148,4 +148,69 @@ div.code-block pre code {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
+
+  /* ───── 统一玻璃卡片样式（用于知识库 / 博客 / 工具 / 新闻 等列表卡片）─────
+     用法：<div class="glass-card glass-card-hover"> 内容 </div>
+     - .glass-card：磨砂玻璃底 + 细边框（静态）
+     - .glass-card-hover：悬浮上浮、边框点亮、底部投影、渐变光晕
+  */
+  .glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition:
+      transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 300ms ease,
+      box-shadow 300ms ease,
+      background-color 300ms ease;
+  }
+  .glass-card-hover:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(53, 127, 255, 0.40);
+    box-shadow:
+      0 18px 40px -16px rgba(53, 127, 255, 0.30),
+      0 4px 16px -4px rgba(139, 92, 246, 0.18);
+  }
+  /* 悬浮时浮现的渐变描边光晕（不影响布局） */
+  .glass-card-hover::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(53, 127, 255, 0) 0%,
+      rgba(53, 127, 255, 0.5) 50%,
+      rgba(139, 92, 246, 0.5) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+  }
+  .glass-card-hover:hover::before {
+    opacity: 1;
+  }
+
+  /* ───── 命令面板（Cmd+K）入场动画 ───── */
+  @keyframes cmdk-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes cmdk-pop {
+    from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-cmdk-fade { animation: cmdk-fade 180ms ease-out both; }
+  .animate-cmdk-pop  { animation: cmdk-pop  220ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 }

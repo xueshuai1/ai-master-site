@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import BackToTop from "@/components/BackToTop";
+import CommandPalette from "@/components/CommandPalette";
 import { siteSeoDescription, siteShortSeoDescription } from "@/data/site-stats";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -81,6 +82,7 @@ export default function RootLayout({
     <html lang="zh-CN">
       <body className={inter.className}>
         {children}
+        <CommandPalette />
         <BackToTop />
         <Analytics />
         <SpeedInsights />

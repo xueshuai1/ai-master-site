@@ -158,7 +158,7 @@ export default function NewsPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/20 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/5"
+                  className="group glass-card glass-card-hover flex flex-col sm:flex-row gap-5 p-5"
                 >
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-2 flex-wrap">

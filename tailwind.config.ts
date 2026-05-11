@@ -5,6 +5,8 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    // 学习路线等数据文件里也写了 Tailwind 类名（动态拼接），必须纳入扫描，否则会被 purge
+    "./src/data/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
