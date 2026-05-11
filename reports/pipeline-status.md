@@ -1,4 +1,3 @@
-| 2026-05-11 00:00 | 🔍 研究员 | 扫描15来源(国外8+国内7), 新闻12条(news-1261~1272), 工具7个(cocoindex+InsForge+9router+local-deep-research+jcode+symphony+UI-TARS), 缺口5项, commit c1b421f2 | ✅ |
 | 2026-05-10 23:00 | 🧪 QA | 通过2224/失败0/警告0,Build+TS全通过,5路由200,0 bug,commit 25ef4a33 | ✅ |
 | 2026-05-10 22:00 | 🛠️ 开发 | 修1 bug(coding-output-001遗漏→注册到knowledge.ts),bug-hash 1/1清零,Build+TS全通过,commit 421a7d90 | ✅ |
 | 2026-05-10 15:00 | 🧪 QA | 通过2204/失败0/警告0,Build+TS全通过,0 bug,commit f21c4930 | ✅ |

@@ -99,7 +99,8 @@ export default function ToolCard({ tool, forceNew }: ToolCardProps) {
         )}
       </div>
 
-      {(tool.language || (tool.forks != null && tool.forks > 0) || tool.createdAt || tool.license) && (
+      {/* 卡片只显示 4 个高价值字段，其他都搬到详情页（避免视觉过载） */}
+      {(tool.language || (tool.forks != null && tool.forks > 0) || tool.createdAt || tool.updatedAt) && (
         <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 mb-3 px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/5">
           {tool.language && (
             <div className="flex items-center gap-1.5 text-xs">
@@ -112,18 +113,6 @@ export default function ToolCard({ tool, forceNew }: ToolCardProps) {
             <div className="flex items-center gap-1.5 text-xs">
               <span className="text-slate-500">🍴 Forks</span>
               <span className="text-slate-300">{tool.forks.toLocaleString()}</span>
-            </div>
-          )}
-          {tool.watchers != null && tool.watchers > 0 && (
-            <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-slate-500">👀 Watch</span>
-              <span className="text-slate-300">{tool.watchers.toLocaleString()}</span>
-            </div>
-          )}
-          {tool.openIssues != null && tool.openIssues > 0 && (
-            <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-slate-500">🔧 Issues</span>
-              <span className="text-slate-300">{tool.openIssues.toLocaleString()}</span>
             </div>
           )}
           {tool.createdAt && (
@@ -139,22 +128,6 @@ export default function ToolCard({ tool, forceNew }: ToolCardProps) {
               <span className="text-slate-500">🔄 更新</span>
               <span className="text-slate-300">
                 {new Date(tool.updatedAt).toLocaleDateString("zh-CN")}
-              </span>
-            </div>
-          )}
-          {tool.license && tool.license !== "null" && (
-            <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-slate-500">📄 协议</span>
-              <span className="text-slate-300">{tool.license}</span>
-            </div>
-          )}
-          {delta !== 0 && (
-            <div className="col-span-2 flex items-center gap-1.5 text-xs">
-              <span className="text-slate-500">📈 增长</span>
-              <span className={delta > 0 ? "text-green-400" : "text-red-400"}>
-                {delta > 0 ? "↑+" : "↓"}
-                {delta.toLocaleString()} ⭐
-                <span className="text-slate-500 ml-1">（对比上次检查）</span>
               </span>
             </div>
           )}
