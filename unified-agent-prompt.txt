@@ -271,6 +271,7 @@ graph LR
 | 2026-04-29 | blog-084 mermaid 连线语法错误 | 连线 `.- >` 带空格导致渲染为空白块 | 改为 `->` | validate-article 拦截连线语法 + qa-scan 拦截 |
 | 2026-04-29 | blog-085 classDef 对比度不足 | classDef 使用 `#8AB4F8`/`#E8EAED` 等浅色填充 + 白字对比度不足 | 改用 `#4285F4`/`#D2E3FC` 深色 | validate-article 拦截 classDef 对比度 + qa-scan 拦截 |
 | 2026-04-29 | blog-084 mermaid % 注释符报错 | mermaid 中 `%` 是注释标记，导致箭头行解析失败 | 改用全角 `％` | validate-article 拦截 % 字符 + qa-scan 拦截 |
+| 2026-05-11 | 知识库 17 篇文章标题高度相似/重复 | 靠自觉 grep 查重，Agent 经常跳过 | 新增 check-topic-dup.js 代码级拦截 | 写文章前必须运行，≥70% 相似度禁止另写 |
 
 ---
 

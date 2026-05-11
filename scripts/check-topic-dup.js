@@ -35,7 +35,6 @@ function similarity(a, b) {
   const lenB = b.length;
   if (lenA === 0 || lenB === 0) return 0;
   
-  // 使用更简单的重叠率 + 编辑距离混合算法
   const matrix = Array(lenB + 1).fill(null).map(() => Array(lenA + 1).fill(0));
   for (let i = 0; i <= lenA; i++) matrix[0][i] = i;
   for (let j = 0; j <= lenB; j++) matrix[j][0] = j;
@@ -54,12 +53,20 @@ function similarity(a, b) {
 
 // 提取标题的「核心关键词」用于匹配
 function extractKeywords(title) {
-  // 移除括号内容、副标题、序号等
   return title
-    .replace(/[（(【\d]+[)）】]/g, '')  // 移除括号
-    .replace(/：.*/, '')                  // 移除副标题
-    .replace(/[vsVS].*$/, '')            // 移除 vs 对比
+    .replace(/[（(【\d]+[)）】]/g, '')
+    .replace(/：.*/, '')
+    .replace(/[vsVS].*$/, '')
     .trim();
+}
+
+// 检查是否属于同一系列的不同编号文章（如 MoE（一）vs MoE（二）不算重复）
+function isSameSeries(titleA, titleB) {
+  const matchA = titleA.match(/^(.+?)[（(]([一二三四五六七八九十\d]+)[)）]/);
+  const matchB = titleB.match(/^(.+?)[（(]([一二三四五六七八九十\d]+)[)）]/);
+  if (!matchA || !matchB) return false;
+  // 同系列名 + 不同编号 = 不重复
+  return matchA[1].trim() === matchB[1].trim() && matchA[2] !== matchB[2];
 }
 
 const newTitle = process.argv[2];
@@ -76,14 +83,9 @@ const results = [];
 const newKeywords = extractKeywords(newTitle);
 
 for (const [file, title] of Object.entries(allTitles)) {
-  // 方法 1：完整标题相似度
   const simFull = similarity(newTitle, title);
-  
-  // 方法 2：核心关键词相似度
   const oldKeywords = extractKeywords(title);
   const simKey = similarity(newKeywords, oldKeywords);
-  
-  // 取最大值
   const sim = Math.max(simFull, simKey);
   
   if (sim >= 0.5) {
@@ -91,12 +93,11 @@ for (const [file, title] of Object.entries(allTitles)) {
   }
 }
 
-// 按相似度降序
 results.sort((a, b) => b.sim - a.sim);
 
-// 输出结果
-const highDups = results.filter(r => r.sim >= 0.7);
-const midDups = results.filter(r => r.sim >= 0.5 && r.sim < 0.7);
+// 过滤掉同一系列不同编号的文章
+const highDups = results.filter(r => r.sim >= 0.7 && !isSameSeries(newTitle, r.title));
+const midDups = results.filter(r => r.sim >= 0.5 && r.sim < 0.7 && !isSameSeries(newTitle, r.title));
 
 if (highDups.length > 0) {
   console.log(`\n🔴 选题查重拦截！发现 ${highDups.length} 篇高度相似文章：\n`);
