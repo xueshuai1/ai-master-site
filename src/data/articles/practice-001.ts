@@ -3,7 +3,7 @@ import { Article } from '../knowledge';
 export const article: Article = {
   id: "practice-001",
   title: "推荐系统实战",
-  category: "practice",
+  category: "ml",
   tags: ["推荐系统", "协同过滤", "深度学习"],
   summary: "从协同过滤到深度学习推荐，掌握推荐系统的核心技术",
   date: "2026-04-12",

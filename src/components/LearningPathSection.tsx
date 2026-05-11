@@ -225,33 +225,32 @@ export default function LearningPathSection() {
   };
 
   const phaseData = useMemo(() => {
+    const assignedIds = new Set<string>();
     return route.phases.map(phase => {
       if (phase.subPaths && phase.subPaths.length > 0) {
         // 有子路径：按子路径分组
         const subPathData = phase.subPaths.map(sp => {
           const filtered = articles.filter(a =>
-            sp.categoryKeys.includes(a.category)
+            sp.categoryKeys.includes(a.category) && !assignedIds.has(a.id)
           );
           // 排序：导览 → 入门 → 进阶 → 高级
           filtered.sort((a, b) => {
-            // 导览文章排最前
             if (sp.guideId && a.id === sp.guideId) return -1;
             if (sp.guideId && b.id === sp.guideId) return 1;
-            // 同 ID 的学习路径文章按 order 排
             const aOrder = a.learningPath?.order ?? 999;
             const bOrder = b.learningPath?.order ?? 999;
             if (aOrder !== bOrder) return aOrder - bOrder;
-            // 按难度排
             return levelOrder[a.level] - levelOrder[b.level] || b.date.localeCompare(a.date);
           });
+          filtered.forEach(a => assignedIds.add(a.id));
           return { subPath: sp, articles: filtered };
         });
 
         return { phase, subPathData, articles: [] };
       } else {
-        // 无子路径：直接按 categoryKeys 筛选
+        // 无子路径：直接按 categoryKeys 筛选，排除已分配文章
         const filtered = articles.filter(a =>
-          phase.categoryKeys.includes(a.category)
+          phase.categoryKeys.includes(a.category) && !assignedIds.has(a.id)
         );
         // 排序：导览 → 学习路径 order → 难度 → 日期
         filtered.sort((a, b) => {
@@ -262,6 +261,7 @@ export default function LearningPathSection() {
           if (aOrder !== bOrder) return aOrder - bOrder;
           return levelOrder[a.level] - levelOrder[b.level] || b.date.localeCompare(a.date);
         });
+        filtered.forEach(a => assignedIds.add(a.id));
         return { phase, articles: filtered, subPathData: [] };
       }
     });
