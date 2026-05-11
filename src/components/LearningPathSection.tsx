@@ -22,6 +22,7 @@ interface PhaseDef {
   bgGradient: string;
   dotColor: string;
   subPaths?: SubPathDef[];
+  guideId?: string;
 }
 
 interface RouteDef {
