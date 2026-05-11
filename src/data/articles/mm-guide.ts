@@ -2,7 +2,7 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "mm-guide",
-    title: "多模态学习学习导览",
+    title: "多模态学习导览",
     category: "multimodal",
     tags: ["多模态", "学习导览", "CLIP", "视觉语言"],
     summary: "让 AI 同时理解文本、图像、音频、视频。从 CLIP 图文对齐到视觉语言模型，掌握跨模态 AI 的核心技术。",

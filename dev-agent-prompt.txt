@@ -170,6 +170,19 @@ git add . && git commit -m 'auto: 一句话描述做了什么' && git push origi
 - **自测没通过不能推送**
 - **每次改动都要经过：深度分析 → 决策 → 执行 → build → 自测 → 推送**
 
+## 🔴🔴🔴 选题查重强制拦截（2026-05-11 新增·代码级拦截）
+
+**写任何新文章（知识库/博客）前，必须先运行：**
+```bash
+node scripts/check-topic-dup.js "拟写的新文章标题"
+```
+
+- ✅ 通过（exit 0）→ 无重复，可以写
+- 🟡 警告（exit 2）→ 有中度相似，确认角度完全不同才写
+- 🔴 拦截（exit 1）→ 有高度相似（≥70%），**禁止另写，必须更新旧文**
+
+**以前靠自觉（grep），结果 316 篇文章里 17 篇是重复的。现在用代码强制。**
+
 ## 🔴🔴🔴 系列化写作检查清单（每次写知识库文章前必查）
 
 1. 查系列：`grep 'routeId:' src/data/articles/*.ts | grep -i "关键词"`
@@ -178,6 +191,15 @@ git add . && git commit -m 'auto: 一句话描述做了什么' && git push origi
 4. 加 learningPath 字段（routeId, phase, order, nextStep, prevStep）
 5. 在文章内容开头或结尾注明上下篇链接
 6. 确保文章有 learningPath 中提到的上下篇关联
+
+## 🔴🔴🔴 选题查重（写文章前必做）
+
+```bash
+node scripts/check-topic-dup.js "拟写的新文章标题"
+```
+- 🔴 拦截（exit 1）→ **禁止另写**，更新旧文
+- 🟡 警告（exit 2）→ 确认角度完全不同才可以写
+- ✅ 通过（exit 0）→ 可以写
 
 ## 🛡️ 数据质量规则（防止脏数据进入生产环境）
 

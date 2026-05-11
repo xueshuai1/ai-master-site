@@ -2,7 +2,7 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "rl-guide",
-    title: "强化学习学习导览",
+    title: "强化学习导览",
     category: "rl",
     tags: ["强化学习", "学习导览", "Q-Learning", "DQN"],
     summary: "学习 AI 如何通过与环境交互来学习。从 MDP、Q-Learning 到策略梯度和 DQN，理解 AlphaGo、机器人控制、游戏 AI 的核心技术。",
