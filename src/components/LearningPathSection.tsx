@@ -366,6 +366,12 @@ export default function LearningPathSection() {
 
                       return (
                         <div key={sp.subPath.label} className="mb-4 last:mb-0">
+                          {/* 子阶段标题 */}
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-lg">{sp.subPath.emoji}</span>
+                            <span className="text-base font-bold text-white">{sp.subPath.label}</span>
+                            <span className="text-xs text-slate-500">({sp.articles.length} 篇)</span>
+                          </div>
                           {hasGuide && (
                             <div className="mb-3">
                               <div className="flex items-center gap-2 mb-2">
