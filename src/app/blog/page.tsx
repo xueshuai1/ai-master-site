@@ -150,37 +150,54 @@ export default function BlogPage() {
           </div>
 
           {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="mt-12 flex items-center justify-center gap-2">
-              <button
-                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                disabled={safePage === 1}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-              >
-                ← 上一页
-              </button>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          {totalPages > 1 && (() => {
+            // 智能分页：显示 1、末页附近、当前页附近，中间用省略号
+            const pages: (number | "...")[] = [];
+            for (let i = 1; i <= totalPages; i++) {
+              if (i === 1 || i === totalPages || (i >= safePage - 1 && i <= safePage + 1)) {
+                pages.push(i);
+              } else if (pages[pages.length - 1] !== "...") {
+                pages.push("...");
+              }
+            }
+            return (
+              <div className="mt-12 flex items-center justify-center gap-2 flex-wrap">
                 <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    page === safePage
-                      ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                      : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                  }`}
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={safePage === 1}
+                  className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
                 >
-                  {page}
+                  ← 上一页
                 </button>
-              ))}
-              <button
-                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                disabled={safePage === totalPages}
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-              >
-                下一页 →
-              </button>
-            </div>
-          )}
+                {pages.map((page, idx) =>
+                  page === "..." ? (
+                    <span key={`ellipsis-${idx}`} className="px-2 text-slate-500 select-none">
+                      …
+                    </span>
+                  ) : (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page as number)}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                        page === safePage
+                          ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                          : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  )
+                )}
+                <button
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={safePage === totalPages}
+                  className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                >
+                  下一页 →
+                </button>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
