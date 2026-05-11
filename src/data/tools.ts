@@ -5344,4 +5344,46 @@ createdAt: "2025-01-01T00:00:00Z",
     createdAt: "2026-04-03",
   },
 
+  // 自动收录（2026-05-11）
+  {
+    id: "posthog_posthog",
+    name: "Posthog",
+    category: "data",
+    description: "🦔 PostHog is an all-in-one developer platform for building successful products....",
+    url: "https://github.com/posthog/posthog",
+    tags: ["ab-testing", "ai-analytics", "analytics", "cdp", "data-warehouse"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 34421,
+    createdAt: "2020-01-23",
+  },
+
+  // 自动收录（2026-05-11）
+  {
+    id: "zai_org_open_autoglm",
+    name: "Open AutoGLM",
+    category: "agent",
+    description: "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
+    url: "https://github.com/zai-org/open-autoglm",
+    tags: ["agent", "phone-use-agent"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 25243,
+    createdAt: "2025-12-08",
+  },
+
+  // 自动收录（2026-05-11）
+  {
+    id: "iofficeai_aionui",
+    name: "AionUi",
+    category: "llm",
+    description: "Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code...",
+    url: "https://github.com/iofficeai/aionui",
+    tags: ["acp", "agent-team", "ai", "ai-agent", "chat"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 24602,
+    createdAt: "2025-08-07",
+  },
+
 ];

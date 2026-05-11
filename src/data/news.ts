@@ -20561,5 +20561,357 @@ Digg 此前在重启开放测试不到两个月后关停并裁员，
     source: "OpenAI Blog",
     sourceUrl: "https://openai.com/index/introducing-trusted-contact-in-chatgpt/",
     href: "/news/news-1336",
+  },
+{
+    id: "news-1337",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 向欧盟开放 GPT-5.5-Cyber 网络安全模型，Anthropic 仍拒绝提供 Mythos 访问",
+    summary: "OpenAI 宣布向欧盟提供 GPT-5.5-Cyber 模型，供经审核的网络安全研究人员使用；与此同时 Anthropic 仍未向监管机构开放其最强大的 Mythos 模型。",
+    content: `## OpenAI 主动开放 vs Anthropic 坚持不开放
+
+**2026 年 5 月 11 日**，CNBC 报道，OpenAI 宣布向欧盟提供 GPT-5.5-Cyber 模型的访问权限，这是其最新 AI 模型的网络安全专用变体。
+
+### 核心事件
+- **GPT-5.5-Cyber 开放**：OpenAI 将以有限预览容量向经审核的网络安全研究人员开放该模型
+- **UK AISI 评估**：此前英国 AI 安全研究所评估显示 GPT-5.5 的网络能力与 Claude Mythos 相当
+- **Anthropic 拒绝开放**：Anthropic 至今未向监管机构开放其最强大的 Mythos 模型
+- **监管分歧加剧**：两大 AI 实验室在模型安全透明度上采取截然不同的策略
+
+### 影响分析
+这一对比凸显了 AI 行业在模型安全监管问题上的分歧。OpenAI 选择主动合作以换取监管信任，而 Anthropic 则坚持模型不开放，引发了关于 AI 安全透明度的更广泛讨论。欧盟正在考虑是否需要建立统一的 AI 模型审查机制。
+
+**来源：** CNBC + Hacker News
+**链接：** https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html`,
+    date: "2026-05-12 04:00",
+    source: "CNBC + Hacker News",
+    sourceUrl: "https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html",
+    href: "/news/news-1337",
+  },
+{
+    id: "news-1338",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Google 和 Meta 竞相开发个人 AI 助手，代号「Remy」和「Hatch」",
+    summary: "Google 和 Meta 都在内部测试个人 AI 代理，旨在处理日常任务，直接回应 Anthropic 和 OpenAI 在该领域的领先优势。Google 已关闭其浏览器代理项目 Mariner 以集中资源。",
+    content: `## 个人 AI 助手赛道加速竞争
+
+**2026 年 5 月**，The Decoder 报道，Google 和 Meta 都在内部开发个人 AI 代理，代号分别为「Remy」（Google）和「Hatch」（Meta）。
+
+### 核心动向
+- **Google Remy**：设计用于自主处理日常任务，整合在 Gmail、日历等 Google 服务中
+- **Meta Hatch**：类似定位，聚焦日常任务自动化
+- **Mariner 项目关闭**：Google 已关闭其浏览器代理项目 Mariner，将资源集中到 Remy
+- **市场趋势转变**：从浏览器代理转向集成式助手，嵌入邮件、日历等日常工具
+
+### 行业背景
+Anthropic 和 OpenAI 在个人 AI 助手领域建立了领先优势——Anthropic 的 Claude Code 和 Cowork、OpenAI 的 Codex 都在企业和个人用户中获得了广泛采用。Google 和 Meta 的快速跟进表明，这一赛道正在成为 AI 竞争的下一个核心战场。
+
+**来源：** The Decoder + SiliconANGLE
+**链接：** https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/`,
+    date: "2026-05-12 04:00",
+    source: "The Decoder + SiliconANGLE",
+    sourceUrl: "https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/",
+    href: "/news/news-1338",
+  },
+{
+    id: "news-1339",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI 与微软重组合作伙伴关系，向 AWS 和 Google Cloud 开放",
+    summary: "OpenAI 和微软重构了双方合作伙伴关系，允许 OpenAI 与 AWS、Google Cloud 等其他云服务提供商合作，打破了此前仅绑定 Azure 的独家限制。",
+    content: `## OpenAI-Microsoft 关系重构，多云时代来临
+
+**2026 年 5 月**，The New Stack 报道，OpenAI 和微软重新架构了双方合作伙伴关系。
+
+### 核心变化
+- **解除 Azure 独家绑定**：OpenAI 现在可以与 AWS、Google Cloud 等其他云服务提供商合作
+- **Microsoft 角色调整**：微软仍为重要合作伙伴，但不再是唯一的云服务选择
+- **Anthropic 和 Google 受益**：这一变化为 Anthropic 和 Google 等竞争对手打开了新的合作空间
+- **行业影响**：标志着 AI 基础设施从单一云向多云架构的战略转变
+
+### 深层原因
+随着 Anthropic 与 Google 达成 400 亿美元合作、AI 公司对算力需求的指数级增长，OpenAI 需要更多云资源来支撑其扩张。微软也意识到，维持独家绑定的成本可能超过收益。
+
+**来源：** The New Stack + CIO
+**链接：** https://thenewstack.io/openai-microsoft-partnership-restructured/`,
+    date: "2026-05-12 04:00",
+    source: "The New Stack + CIO",
+    sourceUrl: "https://thenewstack.io/openai-microsoft-partnership-restructured/",
+    href: "/news/news-1339",
+  },
+{
+    id: "news-1340",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Anthropic  reportedly 与 Google 达成 2000 亿美元芯片和云计算交易",
+    summary: "据 Engadget 报道，Anthropic 同意向 Google 支付 2000 亿美元用于芯片和云计算服务，这是 AI 行业历史上规模最大的单笔交易之一。",
+    content: `## 2000 亿美元 AI 基础设施交易
+
+**2026 年 5 月 5 日**，Engadget 报道，Anthropic 据报同意向 Google 支付 2000 亿美元用于芯片和云计算服务。
+
+### 交易要点
+- **2000 亿美元规模**：AI 行业史上最大单笔基础设施交易之一
+- **芯片 + 云计算**：涵盖 Google TPU 芯片和 GCP 云计算服务
+- **算力保障**：为 Anthropic 的 Claude 模型系列提供充足的训练和推理算力
+- **战略绑定**：进一步加深 Anthropic 与 Google 的战略合作关系
+
+### 背景
+此前 Google 已宣布向 Anthropic 投资最高 400 亿美元（100 亿现金 + 300 亿有条件），估值 3500 亿美元。此次 2000 亿美元交易是双方在算力层面的进一步深化合作。Anthropic 还与 SpaceX 达成协议，获得超过 300 兆瓦的新增算力。
+
+**来源：** Engadget + Tech Insider
+**链接：** https://www.engadget.com/2165585/anthropic-reportedly-Agreed-to-pay-google-200-billion-for-chips-and-cloud-access/`,
+    date: "2026-05-12 04:00",
+    source: "Engadget + Tech Insider",
+    sourceUrl: "https://www.engadget.com/2165585/anthropic-reportedly-agrees-to-pay-google-200-billion-for-chips-and-cloud-access/",
+    href: "/news/news-1340",
+  },
+{
+    id: "news-1341",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Anthropic 提高 Claude Code 使用限制，归功于 SpaceX 算力协议",
+    summary: "Anthropic 于 5 月 6 日提升了 Claude Code 的 Opus 模型使用上限，称其与 SpaceX 的新协议为公司带来了超过 300 兆瓦的新增算力。",
+    content: `## Claude Code 扩容，SpaceX 协议赋能
+
+**2026 年 5 月 6 日**，Ars Technica 报道，Anthropic 提高了 Claude Code 的使用限制。
+
+### 核心变化
+- **Opus 使用限制提升**：Claude Code 用户的 Opus 模型调用上限显著增加
+- **SpaceX 算力协议**：Anthropic 表示与 SpaceX 的交易带来了超过 300 兆瓦的新增计算能力
+- **企业需求增长**：Claude Code 在企业开发团队中的采用率持续攀升
+
+### 上下文
+Anthropic 的 Claude Code 已成为 AI 编程工具市场的领先产品之一。此前 Claude Code 已从 20 美元的 Pro 计划中剥离，改为独立定价。使用限制的提升表明 Anthropic 正在解决扩容问题，以应对不断增长的企业需求。
+
+**来源：** Ars Technica
+**链接：** https://arstechnica.com/ai/2026/05/anthropic-raises-claude-code-usage-limits-credits-new-deal-with-spacex/`,
+    date: "2026-05-12 04:00",
+    source: "Ars Technica",
+    sourceUrl: "https://arstechnica.com/ai/2026/05/anthropic-raises-claude-code-usage-limits-credits-new-deal-with-spacex/",
+    href: "/news/news-1341",
+  },
+{
+    id: "news-1342",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "AI 编程工具集体涨价：Claude Code、Copilot、Codex 三周内四次调整",
+    summary: "2026 年 4 月至 5 月，AI 编程工具市场经历了一轮密集的涨价潮——Anthropic 将 Claude Code 从 Pro 计划剥离，GitHub 冻结 Copilot Pro 新注册，OpenAI 推出 100 美元 Pro 套餐。",
+    content: `## AI 编程工具告别免费午餐
+
+**2026 年 4-5 月**，AI 编程工具市场在三周内发生了四次重大定价调整。
+
+### 涨价时间线
+- **4 月 9 日**：OpenAI 推出 100 美元/月的 Pro 套餐
+- **4 月 21 日**：Anthropic 将 Claude Code 从 20 美元 Pro 计划中剥离
+- **4 月 22 日**：GitHub 冻结 Copilot Pro 新用户注册
+- **5 月**：Google 将 Gemini CLI 整合到 19.99 美元 AI Pro 订阅中
+
+### 市场分析
+这一轮密集的定价调整标志着 AI 编程工具市场从「获客增长」阶段转向「盈利优先」阶段。随着 Claude Code、Copilot 和 Codex 的用户基数不断扩大， providers 正在重新评估其商业模式。对于开发者来说，AI 编程工具的免费/低价时代正在结束。
+
+**来源：** Pasquale Pillitteri + TechCrunch
+**链接：** https://pasqualepillitteri.it/en/news/1241/ai-coding-tools-2026-price-hike-claude-copilot-codex-gemini`,
+    date: "2026-05-12 04:00",
+    source: "Pasquale Pillitteri + TechCrunch",
+    sourceUrl: "https://pasqualepillitteri.it/en/news/1241/ai-coding-tools-2026-price-hike-claude-copilot-codex-gemini",
+    href: "/news/news-1342",
+  },
+{
+    id: "news-1343",
+    tag: "政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "五角大楼签署 AI 合作协议，OpenAI、Google、Microsoft、Nvidia 入选，Anthropic 被排除",
+    summary: "美国国防部与八家科技公司签署 AI 合作协议，包括 OpenAI、Google、Microsoft 和 Nvidia 等，但 Anthropic 未被列入合作名单。",
+    content: `## 五角大楼 AI 合作名单公布
+
+**2026 年 5 月 4 日**，gHacks 报道，美国五角大楼与八家科技公司签署了 AI 合作协议。
+
+### 合作公司
+- **入选**：OpenAI、Google、Microsoft、Nvidia 等八家公司
+- **排除**：Anthropic 未出现在合作名单中
+
+### 原因分析
+Anthropic 被排除可能与其对模型安全监管的立场有关——该公司拒绝向监管机构开放其最强大的 Mythos 模型。此外，Anthropic 将主要资源集中在与 Google 和 SpaceX 的合作上，可能在国防领域的优先级较低。
+
+### 影响
+五角大楼的 AI 合作涉及国家安全层面的 AI 应用，入选公司将在国防 AI 领域获得重要合同和数据访问权限。Anthropic 的缺席可能影响其在美国政府市场的竞争力。
+
+**来源：** gHacks + Reuters
+**链接：** https://www.ghacks.net/2026/05/04/pentagon-signs-ai-deals-with-openai-google-microsoft-nvidia-and-others-cutting-out-anthropic/`,
+    date: "2026-05-12 04:00",
+    source: "gHacks + Reuters",
+    sourceUrl: "https://www.ghacks.net/2026/05/04/pentagon-signs-ai-deals-with-openai-google-microsoft-nvidia-and-others-cutting-out-anthropic/",
+    href: "/news/news-1343",
+  },
+{
+    id: "news-1344",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "月之暗面 Kimi 完成 136 亿元 D 轮融资，创中国大模型单笔融资最高纪录",
+    summary: "月之暗面（Kimi）完成约 136.22 亿元人民币 D 轮融资，由美团龙珠领投，投后估值突破 200 亿美元，创中国大模型领域单笔融资最高纪录。",
+    content: `## Kimi 融资创纪录，中国 AI 资本热潮
+
+**2026 年 5 月 7 日**，澎湃新闻、36 氪等多家媒体报道，月之暗面（Kimi）完成约 136.22 亿元人民币（约 20 亿美元）D 轮融资。
+
+### 融资详情
+- **领投方**：美团龙珠（出手超 2 亿美元）
+- **参投方**：中国移动、CPE 源峰（中信产业基金）等
+- **估值**：投后估值突破 200 亿美元（约 1400 亿人民币）
+- **累计融资**：已超 376 亿元人民币，成为中国大模型领域融资最多的创业公司
+
+### 商业化进展
+- **ARR 突破 2 亿美元**：2026 年 4 月年度经常性收入已超 2 亿美元
+- **API 按量计费 + 企业订阅**：持续推进 B 端变现
+- **K2.6 模型发布**：新模型持续迭代
+
+### 行业意义
+Kimi 的融资标志着中国 AI 大模型从「技术竞赛」进入「资本 + 生态」双轮驱动阶段。与 DeepSeek 的技术派路线不同，Kimi 走的是商业化路线，双方代表了两种不同的发展路径。
+
+**来源：** 澎湃新闻 + 36 氪 + 新浪财经
+**链接：** https://www.thepaper.cn/newsDetail_forward_33102424`,
+    date: "2026-05-12 04:00",
+    source: "澎湃新闻 + 36 氪 + 新浪财经",
+    sourceUrl: "https://www.thepaper.cn/newsDetail_forward_33102424",
+    href: "/news/news-1344",
+  },
+{
+    id: "news-1345",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "DeepSeek 估值飙升至 450-515 亿美元，国家大基金洽谈领投",
+    summary: "DeepSeek（深度求索）投后估值据报已达 450-515 亿美元，国家集成电路产业投资基金（大基金）正在洽谈领投，标志着国家级资本对中国 AI 开源技术的高度认可。",
+    content: `## DeepSeek 估值暴涨，国家队入场
+
+**2026 年 5 月**，多家媒体报道，DeepSeek 估值已从 100 亿美元飙升至 450-515 亿美元。
+
+### 估值变化
+- **最新估值**：450-515 亿美元（约 3000-3700 亿人民币）
+- **领投方**：国家集成电路产业投资基金（大基金）正在洽谈领投
+- **V4 模型发布**：DeepSeek V4 近期发布，持续推动技术迭代
+
+### 与 Kimi 的路线差异
+- **DeepSeek**：技术派 + 开源路线，估值最高的中国 AI 公司
+- **Kimi**：商业派 + 融资最多，ARR 已超 2 亿美元
+- **共同点**：都在拓展 B 端变现，DeepSeek 聚焦金融和政务领域私有化部署
+
+### 行业影响
+国家大基金的入场表明中国 AI 已从民间资本驱动转向国家战略层面支持。DeepSeek 作为开源代表，其估值飙升也反映了全球市场对开源 AI 基础设施的认可。
+
+**来源：** 36 氪 + 东方财富 + 钛媒体
+**链接：** https://www.36kr.com/p/3801988019036422`,
+    date: "2026-05-12 04:00",
+    source: "36 氪 + 东方财富 + 钛媒体",
+    sourceUrl: "https://www.36kr.com/p/3801988019036422",
+    href: "/news/news-1345",
+  },
+{
+    id: "news-1346",
+    tag: "政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "中国发布《人工智能终端智能化分级》国家标准，AI 终端进入「有标可依」时代",
+    summary: "工信部、市场监管总局等部门于 5 月 8 日联合发布《人工智能终端智能化分级》（GB/Z 177—2026）系列国家标准，涵盖总体要求、参考框架和移动终端等分类。",
+    content: `## AI 终端国家标准正式发布
+
+**2026 年 5 月 8 日**，央视网、人民网等多家官方媒体报道，工业和信息化部、国家市场监督管理总局、商务部等部门联合发布《人工智能终端智能化分级》（GB/Z 177—2026）系列国家标准。
+
+### 标准内容
+- **GB/Z 177—2026 第 1 部分**：参考框架
+- **GB/Z 177—2026 第 2 部分**：总体要求
+- **GB/Z 177—2026 第 3 部分**：移动终端
+- **起草单位**：中国信息通信研究院、中国电子技术标准化研究院等
+- **实施日期**：发布即实施
+
+### AI 终端定义
+中国信通院总工程师魏然介绍，AI 终端是以大模型为核心驱动的新一代智能终端，能够主动感知场景、精准理解用户意图，并具备文本、语音、音视频等多模态交互能力。
+
+### 行业意义
+这是中国在 AI 终端领域的首个国家标准体系，涉及眼镜、电视、耳机等消费电子产品。标志着 AI 终端产业从「野蛮生长」进入「有标可依」的规范化发展阶段。
+
+**来源：** 央视网 + 人民网 + 工信部
+**链接：** https://business.cctv.com/2026/05/09/ARTI4bSr3fxoaPKUmjz9xSz9260509.shtml`,
+    date: "2026-05-12 04:00",
+    source: "央视网 + 人民网 + 工信部",
+    sourceUrl: "https://business.cctv.com/2026/05/09/ARTI4bSr3fxoaPKUmjz9xSz9260509.shtml",
+    href: "/news/news-1346",
+  },
+{
+    id: "news-1347",
+    tag: "政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "国内首起 AI 搜索版权侵权案终审落槌，平台责任边界引发行业关注",
+    summary: "2026 年 5 月，国内第一起 AI 搜索版权侵权案终审判决出炉，原告传媒公司要求 AI 搜索平台对盗版内容链接承担责任的案件引发行业对 AI 搜索法律边界的讨论。",
+    content: `## AI 搜索版权第一案
+
+**2026 年 5 月**，新浪 AI 热点报道，国内第一起 AI 搜索版权侵权案终审落槌。
+
+### 案件要点
+- **原告**：一家传媒公司
+- **被告**：AI 搜索平台
+- **争议焦点**：AI 搜索返回盗版内容链接，平台是否应承担侵权责任
+- **判决结果**：法院作出终审判决，确立了 AI 搜索在版权保护中的责任边界
+
+### 行业影响
+这起案件是中国 AI 搜索版权领域的首个司法判例，对 AI 搜索平台的内容审核义务、版权责任界定具有重要指导意义。随着 AI 搜索服务的普及，此类法律争议预计将持续增多。
+
+**来源：** 新浪 AI 热点 + AI 前沿早知道
+**链接：** https://k.sina.com.cn/article_7857201856_1d45362c0019058f6c.html`,
+    date: "2026-05-12 04:00",
+    source: "新浪 AI 热点 + AI 前沿早知道",
+    sourceUrl: "https://k.sina.com.cn/article_7857201856_1d45362c0019058f6c.html",
+    href: "/news/news-1347",
+  },
+{
+    id: "news-1348",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Google 将向 Anthropic 投资最高 400 亿美元，估值 3500 亿美元，含 5GW 算力承诺",
+    summary: "Google 承诺向 Anthropic 投资 100 亿美元现金加 300 亿美元有条件投资，估值 3500 亿美元，并锁定 5 吉瓦的 TPU 算力，为期五年。Claude 年化营收已达 300 亿美元，超越 Google Gemini。",
+    content: `## Google 400 亿美元押注 Anthropic
+
+**2026 年 4 月 24 日**，The Next Web 和 Tech Insider 报道，Google 将向 Anthropic 投资最高 400 亿美元。
+
+### 交易结构
+- **100 亿美元现金** + **300 亿美元有条件投资**
+- **估值**：投后 3500 亿美元
+- **算力承诺**：5 吉瓦 Google TPU 基础设施，为期五年
+- **背景**：Claude 年化营收（ARR）已达 300 亿美元，在企业市场超越 Google Gemini
+
+### 战略意义
+这笔交易是 AI 行业历史上最大的非微软-OpenAI 式投资。Google 选择通过投资 Anthropic 而非仅靠自研 Gemini 来保持 AI 竞争力，反映出 Claude 在企业市场的强劲表现。同时，5 吉瓦的算力承诺也锁定了 Anthropic 未来五年的基础设施需求。
+
+**来源：** The Next Web + Tech Insider
+**链接：** https://thenextweb.com/news/google-40-billion-anthropic-investment-gemini`,
+    date: "2026-05-12 04:00",
+    source: "The Next Web + Tech Insider",
+    sourceUrl: "https://thenextweb.com/news/google-40-billion-anthropic-investment-gemini",
+    href: "/news/news-1348",
+  },
+{
+    id: "news-1349",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Anthropic 和 OpenAI 分别与私募基金成立华尔街合资企业，加速企业 AI 服务落地",
+    summary: "Anthropic 和 OpenAI 各自与资产管理公司成立合资企业，更积极地推广其企业级 AI 产品。据 Reuters 报道，这些合资企业正在洽谈收购帮助企业部署 AI 的服务公司。",
+    content: `## AI 巨头的华尔街战略
+
+**2026 年 5 月 4-5 日**，TechCrunch 和 Reuters 报道，Anthropic 和 OpenAI 分别与资产管理公司成立合资企业。
+
+### 合资企业详情
+- **OpenAI 合资企业**：与私募基金合作，面向企业市场推广 OpenAI 产品
+- **Anthropic 合资企业**：类似模式，利用华尔街资源加速企业 AI 采用
+- **收购洽谈**：两家合资企业正在洽谈收购 AI 服务部署公司
+
+### 行业趋势
+- **从产品到服务**：AI 公司不再只提供 API 和模型，而是深入企业部署环节
+- **Anthropic 略占优势**：凭借 Claude Code 和 Cowork 等产品，Anthropic 在企业 AI 采用方面处于领先地位
+- **华尔街资本注入**：私募基金的参与为 AI 企业市场拓展提供了强大的资本和渠道支持
+
+**来源：** TechCrunch + Reuters + SiliconANGLE
+**链接：** https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/`,
+    date: "2026-05-12 04:00",
+    source: "TechCrunch + Reuters + SiliconANGLE",
+    sourceUrl: "https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/",
+    href: "/news/news-1349",
   }
 ];
