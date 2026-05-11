@@ -63,7 +63,7 @@ export const article: Article = {
     H --> I[正确事实+错误来源]
     style E fill:#b91c1c,stroke:#991b1b,color:#fef2f2
     style G fill:#b91c1c,stroke:#991b1b,color:#fef2f2
-    style I fill:#b91c1c,stroke:#991b1b,color:#fef2f2`,,
+    style I fill:#b91c1c,stroke:#991b1b,color:#fef2f2`,
       tip: `**技术要点**：要降低 AI 幻觉的风险，可以采用 **RAG（检索增强生成）** 架构——让模型在生成内容之前先**检索最新的、可信的信息源**，然后基于检索到的事实进行生成。这种方法可以显著减少纯生成式模型的幻觉率，但无法完全消除。`,
       warning: `**常见误区**：很多人认为「更强大的模型 = 更少的幻觉」。实际上，**更大的模型可能产生更逼真的幻觉**——因为它们能生成更流畅、更合理的文本，使得虚假内容更难被识别。模型规模与幻觉频率之间的关系**并非简单的线性递减**。`
     },
