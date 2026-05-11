@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-11T16:04:38.283Z",
+  "lastUpdated": "2026-05-11T16:23:29.418Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -33302,6 +33302,12 @@
       "url": "https://github.com/topics/deepagents",
       "minStars": 2000,
       "description": "（自动发现）deepagents"
+    },
+    {
+      "topic": "sdlc",
+      "url": "https://github.com/topics/sdlc",
+      "minStars": 5000,
+      "description": "（自动发现）sdlc"
     }
   ]
 }
