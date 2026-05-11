@@ -49,7 +49,7 @@ const fastRoute: RouteDef = {
   badgeColor: "bg-cyan-500/20 text-cyan-300", borderColor: "border-cyan-500/20",
   phases: [
     { id: "f1", title: "认识 AI", emoji: "🌍", duration: "30 分钟", description: "了解 AI 全景和应用场景", categoryKeys: ["practice"], borderColor: "border-l-white", bgGradient: "from-white/5 to-transparent", dotColor: "bg-white", guideId: "ai-000" },
-    { id: "f2", title: "Prompt Engineering", emoji: "✏️", duration: "1-2 天", description: "学会和 AI 高效沟通", categoryKeys: ["prompt"], borderColor: "border-l-cyan-500", bgGradient: "from-cyan-500/5 to-transparent", dotColor: "bg-cyan-500" },
+    { id: "f2", title: "提示词工程", emoji: "✏️", duration: "1-2 天", description: "学会和 AI 高效沟通", categoryKeys: ["prompt"], borderColor: "border-l-cyan-500", bgGradient: "from-cyan-500/5 to-transparent", dotColor: "bg-cyan-500" },
     { id: "f3", title: "大语言模型", emoji: "🤖", duration: "3-5 天", description: "LLM 原理、RAG 架构、微调技术", categoryKeys: ["llm"], borderColor: "border-l-blue-500", bgGradient: "from-blue-500/5 to-transparent", dotColor: "bg-blue-500", guideId: "llm-guide" },
     { id: "f4", title: "AI Agent", emoji: "🦾", duration: "1 周", description: "搭建 AI Agent、工具调用、Multi-Agent", categoryKeys: ["agent"], borderColor: "border-l-purple-500", bgGradient: "from-purple-500/5 to-transparent", dotColor: "bg-purple-500", guideId: "agent-guide" },
     { id: "f5", title: "AI 工程化", emoji: "🚀", duration: "1-2 周", description: "部署、MLOps、实战项目", categoryKeys: ["aieng", "mlops"], borderColor: "border-l-emerald-500", bgGradient: "from-emerald-500/5 to-transparent", dotColor: "bg-emerald-500", guideId: "aieng-guide" },
