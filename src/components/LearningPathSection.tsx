@@ -200,18 +200,28 @@ export default function LearningPathSection() {
 
   const levelOrder: Record<string, number> = { 入门: 0, 进阶: 1, 高级: 2 };
 
-  // 计算文章列表的总阅读时间
-  const calcDuration = (arts: typeof articles): string => {
+  // 计算文章列表的总阅读时间（分钟）
+  const calcReadMinutes = (arts: typeof articles): number => {
     let total = 0;
     for (const a of arts) {
       const m = a.readTime.match(/(\d+)/);
       if (m) total += parseInt(m[1], 10);
     }
-    if (total === 0) return '暂无文章';
-    if (total < 60) return `约 ${total} 分钟`;
-    const h = Math.floor(total / 60);
-    const m = total % 60;
-    return m > 0 ? `约 ${h} 小时 ${m} 分钟` : `约 ${h} 小时`;
+    return total;
+  };
+
+  // 将总阅读分钟数转换为学习周期（假设每天学习 1-2 小时）
+  const formatStudyTime = (totalMin: number): string => {
+    if (totalMin === 0) return '暂无文章';
+    // 每天学习 1.5 小时（90 分钟），计算需要多少天
+    const days = Math.ceil(totalMin / 90);
+    if (days < 3) return '1-2 天';
+    if (days < 7) return `${Math.ceil(days / 7 * 2) - 1}-${Math.ceil(days / 7 * 2)} 天`;
+    const weeks = Math.ceil(days / 7);
+    if (weeks <= 2) return `${weeks} 周`;
+    if (weeks <= 4) return `${weeks - 1}-${weeks} 周`;
+    const months = Math.ceil(weeks / 4);
+    return months <= 2 ? `${months} 个月` : `${months - 1}-${months} 个月`;
   };
 
   const phaseData = useMemo(() => {

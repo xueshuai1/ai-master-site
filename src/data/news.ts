@@ -20984,5 +20984,323 @@ GPT-5.5-Cyber 的推出意味着 OpenAI 正在将大语言模型的能力
     source: "OpenAI Blog",
     sourceUrl: "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/",
     href: "/news/news-1310",
+  },
+{
+    id: "news-1311",
+    tag: "AI 伦理",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "纽约时报发布 AI 虚假引语更正：AI 生成的政治人物「名言」被当作真实引语发表",
+    summary: "《纽约时报》发布编辑更正，承认其一篇关于加拿大选举的报道中引用的保守党领袖 Pierre Poilievre 的「名言」实际上是 AI 对其政治观点的摘要，被 AI 渲染为引语格式后直接当作真实引语发表。记者未核实 AI 工具返回内容的准确性。",
+    content: `## AI 生成「引语」登上大报版面\n\n**2026 年 5 月 10 日**，Simon Willison 在其博客中引用了《纽约时报》发布的一则编辑更正。\n\n### 事件经过\n\n- **AI 生成引语**：NYT 记者使用 AI 工具分析加拿大保守党领袖 Pierre Poilievre 的政治观点，AI 将其摘要渲染为「引语」格式\n- **当作真实引语发表**：记者直接将 AI 生成的引语当作 Poilievre 的原话发表\n- **内容不准确**：Poilievre 实际上并未在其演讲中称改变政治立场的政客为「叛徒」（turncoats）\n- **更正后**：NYT 修改文章，准确引用了 Poilievre 在 4 月发表的真实演讲内容\n\n### Simon Willison 的评论\n\nWillison 将此事件标记为 AI 伦理和新闻诚信的典型案例，归类于 ai-ethics、hallucinations、generative-ai、journalism 等多个标签。\n\n### 行业警示\n\n1. **AI 生成的引语不是引语**——AI 可以生成听起来合理的「引用」，但并非真实发言\n2. **记者必须核实**——使用 AI 辅助报道时，记者有责任验证所有引用的准确性\n3. **新闻诚信**——这是 AI 时代新闻业面临的新型诚信挑战\n\n**来源：** Simon Willison Blog / New York Times\n**链接：** https://simonwillison.net/2026/May/10/new-york-times-editors-note/`,
+    date: "2026-05-11 20:00",
+    source: "Simon Willison Blog / New York Times",
+    sourceUrl: "https://simonwillison.net/2026/May/10/new-york-times-editors-note/",
+    href: "/news/news-1311",
+  },
+{
+    id: "news-1312",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "GitHub 周榜：ruflo 多智能体编排平台冲上 4.8 万星，agent-skills 突破 3.9 万星",
+    summary: "本周 GitHub 趋势项目中，ruflo（多智能体编排平台）以 48,778 星位居前列，本周增长 10,779 星。addyosmani/agent-skills 以 39,155 星、本周 +10,738 星紧随其后，由 Google Chrome 工程师 Addy Osmani 维护的生产级 AI 编程技能库。",
+    content: `## GitHub Trending Weekly：AI 编排与技能库持续霸榜\n\n**2026 年 5 月 11 日**，GitHub 本周趋势项目榜单。\n\n### 热门项目\n\n| 项目 | 总星数 | 本周增长 | 简介 |\n|------|--------|---------|------|\n| ruflo | 48,778 | +10,779 | Claude 多智能体编排平台，企业级架构 |\n| agent-skills | 39,155 | +10,738 | AI 编程 Agent 生产级技能库，Addy Osmani 维护 |\n| UI-TARS-desktop | 32,673 | +2,191 | 字节跳动开源多模态 AI Agent 栈 |\n| PageIndex | 30,561 | +4,328 | 无向量推理式 RAG 文档索引 |\n| DeepSeek-TUI | 24,788 | +22,034 | DeepSeek 模型终端编码 Agent |\n| dexter | 25,235 | +2,741 | 自主深度金融研究 Agent |\n| anthropics/financial-services | 19,785 | +10,272 | Anthropic 金融服务参考实现 |\n\n### 趋势观察\n\n- **多智能体编排**持续占据 GitHub 趋势前列，ruflo 和 agent-skills 本周合计增长超过 2.1 万星\n- **DeepSeek-TUI** 本周爆发增长 2.2 万星，反映终端编码 Agent 需求的快速增长\n- **金融 AI Agent** 方向受到关注，dexter 和 anthropics/financial-services 均上榜\n\n**来源：** GitHub Trending\n**链接：** https://github.com/trending?since=weekly`,
+    date: "2026-05-11 20:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-1312",
+  },
+{
+    id: "news-1313",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Google Gmail「帮我写」功能升级：AI 能模仿你的个人写作风格，还能从 Drive 中提取上下文",
+    summary: "Google 宣布 Gmail 的「Help me write」AI 工具获得重大升级，新增个人风格模仿功能，AI 可以根据你的历史邮件学习并生成与你语气一致的回复。此外还能根据提示从 Google Drive 和 Gmail 中提取相关上下文信息。",
+    content: `## Gmail AI 写作助手：更懂你的风格\n\n**2026 年 5 月 7 日**，Google Workspace 官方博客宣布。\n\n### 新功能\n\n- **个性化语气模仿**：AI 学习用户历史邮件的写作风格，生成语气一致的邮件回复\n- **上下文提取**：根据提示从 Google Drive 和 Gmail 中自动提取相关信息\n- **灵活控制**：用户可根据不同场景调整 AI 的语气和正式程度\n\n### 行业趋势\n\n个性化 AI 写作助手正在成为办公软件的标准配置。Google 此举将 Gmail 的 AI 能力提升到与 Microsoft Copilot 相当的水平。
+
+**来源：** Google Workspace Blog / The Verge
+**链接：** https://workspaceupdates.googleblog.com/2026/05/improvements-to-help-me-write-in-gmail.html`,
+    date: "2026-05-11 20:00",
+    source: "Google Workspace Blog / The Verge",
+    sourceUrl: "https://workspaceupdates.googleblog.com/2026/05/improvements-to-help-me-write-in-gmail.html",
+    href: "/news/news-1313",
+  },
+{
+    id: "news-1314",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Mozilla 公开 Claude Mythos 发现的 271 个 Firefox 漏洞详情：呼吁整个软件生态立即行动",
+    summary: "Mozilla 宣布公开一部分由 Claude Mythos Preview AI 系统发现的 Firefox 安全漏洞的详细报告。通常情况下这些报告会在修复发布后保密数月以保护未及时更新的用户，但鉴于此次 AI 审计引发的广泛关注程度，Mozilla 决定提前公开样本报告以推动整个行业行动。",
+    content: `## Claude Mythos Firefox 审计：Mozilla 公开漏洞详情\n\n**2026 年 5 月 7 日**，Mozilla 官方博客宣布。\n\n### 核心决策\n\nMozilla 做出了一个不寻常的决定：提前公开 Claude Mythos 发现的 Firefox 漏洞报告样本。
+
+通常情况下：
+- 详细漏洞报告会在修复发布后保密数月
+- 目的是保护未及时更新的用户
+
+但 Mozilla 认为：
+- 「鉴于此次 AI 审计引发的 extraordinary level of interest」
+- 「以及整个软件生态系统中亟需的行动紧迫性」
+- 决定公开部分报告
+
+### 行业意义
+
+这是首次由 AI 系统大规模审计浏览器安全漏洞并公开披露，可能成为 AI 辅助安全审计的里程碑事件。
+
+**来源：** Mozilla Blog / The Verge
+**链接：** https://blog.mozilla.org/`,
+    date: "2026-05-11 20:00",
+    source: "Mozilla Blog / The Verge",
+    sourceUrl: "https://blog.mozilla.org/",
+    href: "/news/news-1314",
+  },
+{
+    id: "news-1315",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Digg 二次重启：从 Reddit 式社区转型为 AI 新闻情绪追踪平台",
+    summary: "Digg 在关闭开放测试版并裁员不到两个月后，以 di.gg 新域名重新上线。这次不再是传统的社区聚合平台，而是专注于追踪 AI 新闻的在线情绪指标。创始人 Kevin Rose 表示：「它将成为所有事物的聚合器」。",
+    content: `## Digg 的第三次尝试：AI 新闻的情绪晴雨表
+
+**2026 年 5 月 8 日**，据 The Verge 报道。
+
+### 转型路线
+
+- **第一次**：传统社交新闻聚合（类 Reddit）
+- **第二次**：2026 年 3 月关闭测试版，裁员
+- **第三次（现在）**：AI 新闻情绪追踪平台 di.gg
+
+### 定位
+
+目前专注于追踪 AI 新闻的公众情绪和网络热度，创始人 Kevin Rose 表示未来将扩展到「所有事物」。
+
+### 行业背景
+
+AI 新闻的爆炸式增长催生了对信息聚合和情绪分析的需求。Digg 的转型反映了老牌互联网品牌在 AI 时代寻找新定位的努力。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/tech/894803/digg-is-back-again-again`,
+    date: "2026-05-11 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/tech/894803/digg-is-back-again-again",
+    href: "/news/news-1315",
+  },
+{
+    id: "news-1316",
+    tag: "AI 行业",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "360 向全体员工发放 1 亿 Token：国内企业 AI 普惠化新尝试",
+    summary: "360 公司在内部发出全员信，宣布向全体员工每人发放 1 亿 Token，用于内部 AI 工具的测试和使用。这是国内大型企业推动 AI 普惠化的重要举措。",
+    content: `## 360：每个员工都有 1 亿 Token
+
+**2026 年 5 月 11 日**，据凤凰网科技报道。
+
+### 核心信息
+
+- **发放规模**：向全体员工每人发放 1 亿 Token
+- **用途**：用于内部 AI 工具的测试和使用
+- **意义**：国内企业 AI 普惠化的重要实践
+
+### 行业背景
+
+随着大模型 API 成本的持续下降（DeepSeek 20 万字不到 1 分钱），企业大规模部署 AI 工具的经济门槛大幅降低。360 此举旨在让全员都能体验和使用 AI 工具，推动内部 AI 文化。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2iMz4ehIy`,
+    date: "2026-05-11 20:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2iMz4ehIy",
+    href: "/news/news-1316",
+  },
+{
+    id: "news-1317",
+    tag: "AI 应用",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "支付宝推出 AI 付功能：指令自动下单，淘宝代买三步完成低价抢购",
+    summary: "支付宝上线 AI 付功能，用户通过自然语言指令即可完成自动下单。结合淘宝代买功能，用户只需三步操作即可实现低价帮抢，将 AI 能力深度整合到支付场景中。",
+    content: `## AI 付：说话就能买东西
+
+**2026 年 5 月 11 日**，据凤凰网科技报道。
+
+### 核心功能
+
+- **自然语言下单**：用文字指令代替传统点击下单
+- **淘宝代买**：整合淘宝代买功能，自动寻找低价
+- **三步完成**：简化流程，降低使用门槛
+
+### 行业意义
+
+这是 AI Agent 从「聊天助手」向「交易执行」迈出的重要一步。支付宝将 AI 能力嵌入支付流程，代表了金融科技与 AI 融合的新方向。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2me8P3Ga0`,
+    date: "2026-05-11 20:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2me8P3Ga0",
+    href: "/news/news-1317",
+  },
+{
+    id: "news-1318",
+    tag: "AI 应用",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "阿里巴巴宣布千问与淘宝全面打通：开启 AI 购物新体验",
+    summary: "阿里巴巴宣布将通义千问 AI 助手与淘宝全面整合，用户可在千问中直接搜索商品、比价和下单，标志着 AI 助手正式成为电商入口。",
+    content: `## 千问 × 淘宝：AI 购物的新入口
+
+**2026 年 5 月 11 日**，据凤凰网科技报道。
+
+### 整合内容
+
+- **千问直接搜索淘宝商品**：AI 助手成为新的电商搜索入口
+- **比价与推荐**：基于用户意图的智能比价和个性化推荐
+- **无缝下单**：在千问对话中完成购买流程
+
+### 行业趋势
+
+这标志着 AI 助手从「信息问答」向「交易执行」的延伸。与支付宝 AI 付类似，千问×淘宝的整合体现了中国科技公司将 AI 深度嵌入消费场景的战略。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2IpXMbmjn`,
+    date: "2026-05-11 20:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2IpXMbmjn",
+    href: "/news/news-1318",
+  },
+{
+    id: "news-1319",
+    tag: "AI 行业",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 员工套现狂欢：75 名打工人一夜成为亿元富翁，最高套现 3000 万美元",
+    summary: "据凤凰网科技报道，OpenAI 近期允许员工在二级市场出售股份，75 名员工通过套现获得巨额收益，最高个人套现达 3000 万美元。这标志着 AI 热潮中最早获得巨额回报的一批人已经出现。",
+    content: `## AI 造富运动：OpenAI 员工集体暴富
+
+**2026 年 5 月 11 日**，据凤凰网科技报道。
+
+### 核心数据
+
+- **套现人数**：75 名 OpenAI 员工
+- **最高金额**：单人最高套现 3000 万美元
+- **背景**：OpenAI 估值持续攀升，员工持股价值暴涨
+
+### 行业信号
+
+这是 AI 行业造富效应的最新例证。随着 Anthropic 估值突破 1200 亿美元、OpenAI 持续扩张，AI 行业人才的股权价值正在以前所未有的速度增长。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2mBD0WefX`,
+    date: "2026-05-11 20:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2mBD0WefX",
+    href: "/news/news-1319",
+  },
+{
+    id: "news-1320",
+    tag: "AI 行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "黄仁勋 CMU 毕业演讲：AI 把所有人拉回同一起跑线，别慌",
+    summary: "NVIDIA CEO 黄仁勋在卡耐基梅隆大学 2026 年毕业典礼上发表演讲，鼓励毕业生不要对 AI 感到恐慌——AI 正在将所有技能拉回同一起跑线，这是机会而非威胁。",
+    content: `## 黄仁勋寄语 2026 届毕业生：别慌
+
+**2026 年 5 月 11 日**，据凤凰网科技报道。
+
+### 核心观点
+
+- **同一起跑线**：AI 的出现正在重塑所有技能领域，所有人都站在新的起跑线上
+- **别慌**：面对 AI 的变革速度，保持冷静和适应力
+- **替代你的不是 AI**：真正的问题不是被 AI 替代，而是如何与 AI 协作
+
+### 行业意义
+
+黄仁勋作为 AI 芯片领域的领军人物，其对 AI 与人才关系的判断具有重要的行业指导意义。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2DJtkPUqC`,
+    date: "2026-05-11 20:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2DJtkPUqC",
+    href: "/news/news-1320",
+  },
+{
+    id: "news-1321",
+    tag: "AI 行业",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "34 万 IT 岗位被砍：AI 重创美国科技业，人力替代加速",
+    summary: "据凤凰网科技报道，美国 IT 行业已有 34 万个岗位因 AI 技术替代而被削减，标志着 AI 对传统 IT 人力的影响已经从理论预测变为现实数据。",
+    content: `## AI 正在吞噬 IT 岗位
+
+**2026 年 5 月 11 日**，据凤凰网科技报道。
+
+### 核心数据
+
+- **岗位削减**：34 万个 IT 岗位被 AI 替代
+- **影响范围**：覆盖编程、运维、测试等多个 IT 细分领域
+- **趋势**：AI 编码工具的成熟加速了人力替代进程
+
+### 行业背景
+
+此前 36 氪已报道「3 万亿外包生意正被 AI 编程瓦解」（news-470），如今 34 万岗位的削减数据进一步验证了这一趋势。从外包到正式员工，AI 对 IT 人力的影响正在全面展开。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2kZmzeNXC`,
+    date: "2026-05-11 20:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2kZmzeNXC",
+    href: "/news/news-1321",
+  },
+{
+    id: "news-1322",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Claude Code 团队建议：用 HTML 替代 Markdown 作为 AI 输出格式，效果更好",
+    summary: "Anthropic Claude Code 团队成员 Thariq Shihipar 发文论证 HTML 优于 Markdown 作为 AI 代码助手的输出格式。HTML 支持 SVG 图表、交互组件、页内导航等丰富表达，而 Markdown 的 token 效率优势在现代 LLM 中已不再关键。Simon Willison 表示这篇文章让他重新考虑默认输出格式的选择。",
+    content: `## HTML vs Markdown：AI 输出的格式之争
+
+**2026 年 5 月 8 日**，Simon Willison 在其博客中引用了 Claude Code 团队成员的观点。
+
+### Thariq Shihipar 的核心论点
+
+- **HTML 表达力更强**：可以嵌入 SVG 图表、交互组件、页内导航
+- **Markdown 的 token 优势已过时**：GPT-4 时代的 8K token 限制已不存在
+- **实际效果**：HTML 输出让信息更易于浏览和理解
+
+### Simon Willison 的反应
+
+Willison 表示：「自 GPT-4 时代以来我一直默认使用 Markdown，因为 8,192 token 限制让 Markdown 的 token 效率非常有价值。Thariq 的文章让我重新考虑这一点。」
+
+### 行业讨论
+
+大模型首选格式 Markdown 是否正在被 30 年前的工具 HTML 取代？这引发了开发者社区关于 AI 输出格式的广泛讨论。
+
+**来源：** Simon Willison Blog / 凤凰网科技
+**链接：** https://simonwillison.net/2026/May/8/thariq-shihipar/`,
+    date: "2026-05-11 20:00",
+    source: "Simon Willison Blog / 凤凰网科技",
+    sourceUrl: "https://simonwillison.net/2026/May/8/thariq-shihipar/",
+    href: "/news/news-1322",
+  },
+{
+    id: "news-1323",
+    tag: "AI 应用",
+    tagColor: "bg-pink-500/10 text-pink-300",
+    title: "OpenAI 发布 ChatGPT Futures 2026 级：培养下一代 AI 创业领袖",
+    summary: "OpenAI 于 5 月 6 日宣布 ChatGPT Futures Class of 2026 入选名单，这是一个面向 AI 领域新兴创业者的项目，旨在培养下一代 AI 应用开发的领军人物。",
+    content: `## ChatGPT Futures：AI 创业领袖孵化器
+
+**2026 年 5 月 6 日**，OpenAI 官方博客发布。
+
+### 项目定位
+
+- **面向 AI 创业者**：为新兴 AI 创业者提供资源和指导
+- **2026 级**：本届入选者将在未来一年内获得 OpenAI 的技术支持和生态资源
+- **战略意义**：OpenAI 通过培养生态来巩固其平台和模型的领导地位
+
+### 行业信号
+
+OpenAI 正在从「产品公司」向「生态平台」转型，通过 Futures 项目培育基于 OpenAI 技术构建应用的创业生态。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/introducing-chatgpt-futures-class-of-2026/`,
+    date: "2026-05-11 20:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/introducing-chatgpt-futures-class-of-2026/",
+    href: "/news/news-1323",
   }
 ];
