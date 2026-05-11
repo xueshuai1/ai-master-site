@@ -4,21 +4,13 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import BackToTop from "@/components/BackToTop";
-import { articles } from "@/data/knowledge";
-import { blogs } from "@/data/blogs";
-import { tools } from "@/data/tools";
-import { news } from "@/data/news";
+import { siteSeoDescription, siteShortSeoDescription } from "@/data/site-stats";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ─── 构建时动态统计（每次构建自动反映最新数据） ───
-const articleCount = articles.length;
-const blogCount = blogs.length;
-const toolCount = tools.length;
-const newsCount = news.length;
-
-const seoDescription = `AI Master 是专业的人工智能学习与实践平台。提供 ${articleCount}+ 篇 AI 知识库文章、${blogCount}+ 篇深度技术博客、${toolCount}+ AI 工具推荐、${newsCount}+ 条 AI 前沿动态。从入门到精通，探索大语言模型、AI Agent、RAG、机器学习等热门技术。`;
-const shortSeoDescription = `专业的人工智能学习与实践平台。${articleCount}+ 知识库文章，${blogCount}+ 深度博客，${toolCount}+ AI 工具推荐，每日 AI 前沿动态。`;
+// ─── 构建时统计：见 src/data/site-stats.ts（与各子站 layout 共用） ───
+const seoDescription = siteSeoDescription;
+const shortSeoDescription = siteShortSeoDescription;
 
 export const metadata: Metadata = {
   title: {
