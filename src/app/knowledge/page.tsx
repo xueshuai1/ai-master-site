@@ -23,7 +23,7 @@ export default function KnowledgePage() {
 
   // Primary source of truth: sessionStorage (survives browser back/forward)
   const savedMode = typeof window !== 'undefined' ? sessionStorage.getItem('knowledge-mode') : null;
-  const spMode = (searchParams.get("mode") as "all" | "path") || savedMode || "all";
+  const spMode = (searchParams.get("mode") as "all" | "path") || savedMode || "path";
   const spCat = searchParams.get("cat") || "all";
   const spQ = searchParams.get("q") || "";
   const spSort = (searchParams.get("sort") as SortKey) || "date-desc";
@@ -172,16 +172,6 @@ export default function KnowledgePage() {
           <div className="flex justify-center">
             <div className="inline-flex rounded-xl bg-white/5 border border-white/10 p-1">
               <button
-                onClick={() => syncModeToUrl("all")}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
-                  mode === "all"
-                    ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                    : "text-slate-400 hover:text-white"
-                }`}
-              >
-                📋 全部文章
-              </button>
-              <button
                 onClick={() => syncModeToUrl("path")}
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
                   mode === "path"
@@ -190,6 +180,16 @@ export default function KnowledgePage() {
                 }`}
               >
                 📖 学习路线
+              </button>
+              <button
+                onClick={() => syncModeToUrl("all")}
+                className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
+                  mode === "all"
+                    ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                📋 全部文章
               </button>
             </div>
           </div>
