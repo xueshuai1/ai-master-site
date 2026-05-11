@@ -121,6 +121,7 @@ import { article as genai007 } from './articles/genai-007';
 import { article as genai008 } from './articles/genai-008';
 import { article as genai009 } from './articles/genai-009';
 import { article as llm001 } from './articles/llm-001';
+import { article as llmGuide } from './articles/llm-guide';
 import { article as llm002 } from './articles/llm-002';
 import { article as llm003 } from './articles/llm-003';
 import { article as llm005 } from './articles/llm-005';
@@ -457,6 +458,7 @@ export const articles: Article[] = [
   genai008,
   genai009,
   llm001,
+  llmGuide,
   llm002,
   llm003,
   llm005,
