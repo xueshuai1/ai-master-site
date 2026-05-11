@@ -200,6 +200,20 @@ export default function LearningPathSection() {
 
   const levelOrder: Record<string, number> = { 入门: 0, 进阶: 1, 高级: 2 };
 
+  // 计算文章列表的总阅读时间
+  const calcDuration = (arts: typeof articles): string => {
+    let total = 0;
+    for (const a of arts) {
+      const m = a.readTime.match(/(\d+)/);
+      if (m) total += parseInt(m[1], 10);
+    }
+    if (total === 0) return '暂无文章';
+    if (total < 60) return `约 ${total} 分钟`;
+    const h = Math.floor(total / 60);
+    const m = total % 60;
+    return m > 0 ? `约 ${h} 小时 ${m} 分钟` : `约 ${h} 小时`;
+  };
+
   const phaseData = useMemo(() => {
     return route.phases.map(phase => {
       if (phase.subPaths && phase.subPaths.length > 0) {
@@ -337,7 +351,7 @@ export default function LearningPathSection() {
                         </div>
                         <p className="text-slate-400 text-sm">{phase.description}</p>
                       </div>
-                      <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {phase.duration}</span>
+                      <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {calcDuration(phaseArts)}</span>
                     </div>
 
                     {/* Sub-path pills */}
@@ -366,11 +380,14 @@ export default function LearningPathSection() {
 
                       return (
                         <div key={sp.subPath.label} className="mb-4 last:mb-0">
-                          {/* 子阶段标题 */}
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-lg">{sp.subPath.emoji}</span>
-                            <span className="text-base font-bold text-white">{sp.subPath.label}</span>
-                            <span className="text-xs text-slate-500">({sp.articles.length} 篇)</span>
+                          {/* 子阶段标题 + 动态时长 */}
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg">{sp.subPath.emoji}</span>
+                              <span className="text-base font-bold text-white">{sp.subPath.label}</span>
+                              <span className="text-xs text-slate-500">({sp.articles.length} 篇)</span>
+                            </div>
+                            <span className="px-2.5 py-0.5 rounded-full bg-white/5 text-xs text-slate-400">⏱ {calcDuration(sp.articles)}</span>
                           </div>
                           {hasGuide && (
                             <div className="mb-3">
@@ -428,7 +445,7 @@ export default function LearningPathSection() {
                       </div>
                       <p className="text-slate-400 text-sm">{phase.description}</p>
                     </div>
-                    <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {phase.duration}</span>
+                    <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {calcDuration(phaseArts)}</span>
                   </div>
 
                   {/* Guide article */}
