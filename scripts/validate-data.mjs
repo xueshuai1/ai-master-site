@@ -78,6 +78,54 @@ if (toolCategoriesMatch) {
   }
 }
 
+// 🔴 选题查重：检查所有文章标题是否有高度重复
+console.log('🔍 选题查重验证...');
+const titles = [];
+for (const file of articleFiles) {
+  const content = readFileSync(join(ARTICLES_DIR, file), 'utf-8');
+  const titleMatch = content.match(/title:\s*["']([^"']+)["']/);
+  if (titleMatch) {
+    titles.push({ file, title: titleMatch[1] });
+  }
+}
+
+// 计算两两相似度（简化版：核心关键词匹配）
+function similarity(a, b) {
+  const lenA = a.length;
+  const lenB = b.length;
+  if (lenA === 0 || lenB === 0) return 0;
+  const matrix = Array(lenB + 1).fill(null).map(() => Array(lenA + 1).fill(0));
+  for (let i = 0; i <= lenA; i++) matrix[0][i] = i;
+  for (let j = 0; j <= lenB; j++) matrix[j][0] = j;
+  for (let j = 1; j <= lenB; j++) {
+    for (let i = 1; i <= lenA; i++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[j][i] = Math.min(matrix[j][i - 1] + 1, matrix[j - 1][i] + 1, matrix[j - 1][i - 1] + cost);
+    }
+  }
+  return 1 - matrix[lenB][lenA] / Math.max(lenA, lenB);
+}
+
+function isSameSeries(a, b) {
+  const matchA = a.match(/^(.+?)[（(]([一二三四五六七八九十\d]+)[)）]/);
+  const matchB = b.match(/^(.+?)[（(]([一二三四五六七八九十\d]+)[)）]/);
+  if (!matchA || !matchB) return false;
+  // 提取核心关键词（去掉修饰词如 "标准"/"模式"/"AI"/"LLM"）
+  const cleanA = matchA[1].trim().replace(/^(AI|LLM)\s*/, '').replace(/标准|模式|全面|深度|全景|实战|指南|详解|体系|全景解析|深度解读/g, '').trim();
+  const cleanB = matchB[1].trim().replace(/^(AI|LLM)\s*/, '').replace(/标准|模式|全面|深度|全景|实战|指南|详解|体系|全景解析|深度解读/g, '').trim();
+  return cleanA === cleanB && matchA[2] !== matchB[2];
+}
+
+for (let i = 0; i < titles.length; i++) {
+  for (let j = i + 1; j < titles.length; j++) {
+    if (isSameSeries(titles[i].title, titles[j].title)) continue;
+    const sim = similarity(titles[i].title, titles[j].title);
+    if (sim >= 0.7) {
+      errors.push(`  ❌ 标题高度相似（${Math.round(sim * 100)}%）: [${titles[i].file}]「${titles[i].title}」 vs [${titles[j].file}]「${titles[j].title}」`);
+    }
+  }
+}
+
 // 输出结果
 if (errors.length > 0) {
   console.error('\n❌ 数据验证失败：\n');
