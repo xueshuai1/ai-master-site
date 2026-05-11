@@ -1,4 +1,3 @@
-| 2026-05-11 20:00 | 🔍 研究员 | 扫描14来源(国外7+国内7), 新闻13条(news-1311~1323), 工具0个(已全部覆盖), 缺口5项, commit db113cfd | ✅ |
 | 2026-05-11 19:00 | 🧪 QA | 通过2194/失败0/警告0,Build+TS全通过,0 bug,commit f4a6b23f | ✅ |
 | 2026-05-11 08:00 | 🔍 研究员 | 扫描13来源(国外8+国内5), 新闻13条(news-1273~1285), 工具3个(Pixelle-Video+Browserbase Skills+Flue), 缺口5项 | ✅ |
 | 2026-05-11 02:00 | 🛠️ 开发 | 修2 bug(文章注册+工具缺口), 新增8工具, bug-hash清零, commit ca0de02a | ✅ |
@@ -47,3 +46,4 @@
 | 2026-05-02 02:00 | 🛠️ 开发 | 集成mm-010+blog-102, 修2 bug(未注册), bug-hash清零, QA 1794/0/0, commit b3393e7c | ✅ |
 | 2026-05-11 17:20 | 📝 PM | 知识库[agent-054 AI Agent浏览器操作能力]+博客[blog-152 Codex Chrome扩展深度解读] | ✅ |
 | 2026-05-11 18:00 | 🛠️ 开发 | 修1 bug(PhaseDef缺guideId→build失败), bug-hash清零, Build+TS全通过, commit 7de3951a | ✅ |
+| 2026-05-11 21:11 | 📝 PM | 知识库[llm-007 LLM推理优化]+博客[blog-153 Claude Code输出格式] | ✅ |
