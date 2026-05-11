@@ -1108,7 +1108,7 @@ def check_catastrophic_forgetting(
 
 **📖 推荐阅读：**
 - [RLHF 深度解析](/knowledge/llm-005) — 理解传统的对齐方法
-- [LLM 推理优化](/knowledge/llm-007) — 让微调后的模型高效运行
+- [LLM 推理优化](/knowledge/llm-024) — 量化、剪枝与蒸馏全面指南
 - [LLM 部署实践](/knowledge/llm-012) — 将模型部署到生产环境
 - [Agent 学习导览](/knowledge/agent-guide) — 微调后的模型如何用于 Agent
 
