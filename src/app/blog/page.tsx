@@ -49,6 +49,7 @@ export default function BlogPage() {
   const searchParams = useSearchParams();
 
   const [activeCategory, setActiveCategory] = useState(searchParams.get("cat") || "全部");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1") || 1);
 
   const isInitialMount = useRef(true);
@@ -57,18 +58,28 @@ export default function BlogPage() {
     if (isInitialMount.current) { isInitialMount.current = false; return; }
     const params = new URLSearchParams();
     if (activeCategory !== "全部") params.set("cat", activeCategory);
+    if (searchQuery) params.set("q", searchQuery);
     if (currentPage > 1) params.set("page", String(currentPage));
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
-  }, [activeCategory, currentPage, pathname, router]);
+  }, [activeCategory, searchQuery, currentPage, pathname, router]);
 
   const filteredPosts = useMemo(() => {
-    if (activeCategory === "全部") return blogPosts;
-    return blogPosts.filter((p) => p.category === activeCategory);
-  }, [activeCategory]);
+    let result = activeCategory === "全部" ? blogPosts : blogPosts.filter((p) => p.category === activeCategory);
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(p =>
+        p.title.toLowerCase().includes(q) ||
+        p.summary.toLowerCase().includes(q) ||
+        p.tags.some(t => t.toLowerCase().includes(q))
+      );
+    }
+    return result;
+  }, [activeCategory, searchQuery]);
 
   const handleCategoryChange = (cat: string) => {
     setActiveCategory(cat);
+    setSearchQuery("");
     setCurrentPage(1);
     if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
   };
@@ -97,10 +108,26 @@ export default function BlogPage() {
       {/* Blog Posts */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
+          {/* Search */}
+          <section className="mb-6">
+            <div className="relative">
+              <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="搜索博客标题、标签..."
+                value={searchQuery}
+                onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
+                className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+              />
+            </div>
+          </section>
+
           {/* Filter Bar */}
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-slate-500">
-              找到 <span className="text-brand-400 font-medium">{filteredPosts.length}</span> 篇文章
+              {searchQuery ? "搜索到" : "找到"} <span className="text-brand-400 font-medium">{filteredPosts.length}</span> 篇文章
             </p>
             <CategoryFilter
               categories={blogCategoryData}

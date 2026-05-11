@@ -6,11 +6,9 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { news } from "@/data/news";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import CategoryFilter from "@/components/CategoryFilter";
 
 const NEWS_PER_PAGE = 9;
 
-// 统一取最近 2 周新闻的逻辑
 function getLast2WeeksNews() {
   const now = new Date();
   const twoWeeksAgo = new Date(now);
@@ -43,78 +41,54 @@ function formatNewsTime(dateStr: string): string {
   return dateStr;
 }
 
-const tagIcons: Record<string, string> = {
-  "行业动态": "📡",
-  "AI 安全": "🔒",
-  "GitHub AI 项目": "🛠️",
-  "学术研究": "🔬",
-  "公司动态": "🏢",
-  "产品动态": "📦",
-  "模型发布": "🧠",
-  "AI 硬件": "🤖",
-  "融资": "💰",
-  "AI 框架": "🏗️",
-  "军事科技": "🎖️",
-};
-
 export default function NewsPage() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // 统一使用最近 2 周的数据，和首页统计保持一致
   const recentNews = useMemo(() => getLast2WeeksNews(), []);
 
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1") || 1);
-  const [activeTag, setActiveTag] = useState(searchParams.get("tag") || "全部");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
 
   const isInitialMount = useRef(true);
 
   useEffect(() => {
     if (isInitialMount.current) { isInitialMount.current = false; return; }
     const params = new URLSearchParams();
-    if (activeTag !== "全部") params.set("tag", activeTag);
+    if (searchQuery) params.set("q", searchQuery);
     if (currentPage > 1) params.set("page", String(currentPage));
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
-  }, [activeTag, currentPage, pathname, router]);
-
-  const allTags = useMemo(() => {
-    const tags = Array.from(new Set(recentNews.map(n => n.tag)));
-    return ["全部", ...tags.sort()];
-  }, [recentNews]);
+  }, [searchQuery, currentPage, pathname, router]);
 
   const filteredNews = useMemo(() => {
-    if (activeTag === "全部") return recentNews;
-    return recentNews.filter(n => n.tag === activeTag);
-  }, [recentNews, activeTag]);
+    let result = recentNews;
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(n =>
+        n.title.toLowerCase().includes(q) ||
+        n.summary.toLowerCase().includes(q) ||
+        n.source.toLowerCase().includes(q) ||
+        n.tag.toLowerCase().includes(q)
+      );
+    }
+    return result;
+  }, [recentNews, searchQuery]);
 
   const sortedNews = useMemo(
     () => [...filteredNews].sort((a, b) => {
       const dateDiff = b.date.localeCompare(a.date);
       if (dateDiff !== 0) return dateDiff;
-      // 同日期新闻：id 倒序（编号越大越新）
       return b.id.localeCompare(a.id);
     }),
     [filteredNews]
   );
 
-  const handleTagChange = (tag: string) => {
-    setActiveTag(tag);
-    setCurrentPage(1);
-  };
-
   const totalPages = Math.max(1, Math.ceil(sortedNews.length / NEWS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
   const startIndex = (safePage - 1) * NEWS_PER_PAGE;
   const paginatedNews = sortedNews.slice(startIndex, startIndex + NEWS_PER_PAGE);
-
-  const tagCategoryData = allTags.map((tag) => ({
-    key: tag,
-    icon: tag === "全部" ? "🏷️" : (tagIcons[tag] || "📌"),
-    label: tag,
-    count: tag === "全部" ? recentNews.length : recentNews.filter((n) => n.tag === tag).length,
-  }));
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white">
@@ -137,32 +111,50 @@ export default function NewsPage() {
         </div>
       </section>
 
+      {/* Search */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="搜索新闻标题、来源、标签..."
+              value={searchQuery}
+              onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
+              className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* News List */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
-          {/* Filter Bar */}
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-slate-500">
-              筛选结果 <span className="text-brand-400 font-medium">{filteredNews.length}</span> 条
+          {searchQuery && (
+            <p className="text-sm text-slate-500 mb-6">
+              搜索到 <span className="text-brand-400 font-medium">{filteredNews.length}</span> 条结果
             </p>
-            {allTags.length > 1 && (
-              <CategoryFilter
-                categories={tagCategoryData}
-                activeCategory={activeTag}
-                onChange={handleTagChange}
-              />
-            )}
-          </div>
+          )}
 
           {paginatedNews.length === 0 ? (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">📭</div>
-              <h2 className="text-xl font-semibold text-slate-400 mb-2">暂无最新动态</h2>
-              <p className="text-slate-500">请稍后再来查看</p>
+              <h2 className="text-xl font-semibold text-slate-400 mb-2">{searchQuery ? "没有匹配的新闻" : "暂无最新动态"}</h2>
+              <p className="text-slate-500">{searchQuery ? "试试其他关键词" : "请稍后再来查看"}</p>
+              {searchQuery && (
+                <button
+                  onClick={() => { setSearchQuery(""); setCurrentPage(1); }}
+                  className="mt-4 px-6 py-2 bg-brand-600 hover:bg-brand-500 rounded-lg font-medium transition-all"
+                >
+                  清除搜索
+                </button>
+              )}
             </div>
           ) : (
             <div className="space-y-6">
-              {paginatedNews.map((item, index) => (
+              {paginatedNews.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

@@ -361,7 +361,7 @@ export default function LearningPathSection() {
                         </div>
                         <p className="text-slate-400 text-sm">{phase.description}</p>
                       </div>
-                      <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {calcDuration(phaseArts)}</span>
+                      <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {formatStudyTime(subPathData.reduce((sum, sp) => sum + calcReadMinutes(sp.articles), 0))}</span>
                     </div>
 
                     {/* Sub-path pills */}
@@ -397,7 +397,7 @@ export default function LearningPathSection() {
                               <span className="text-base font-bold text-white">{sp.subPath.label}</span>
                               <span className="text-xs text-slate-500">({sp.articles.length} 篇)</span>
                             </div>
-                            <span className="px-2.5 py-0.5 rounded-full bg-white/5 text-xs text-slate-400">⏱ {calcDuration(sp.articles)}</span>
+                            <span className="px-2.5 py-0.5 rounded-full bg-white/5 text-xs text-slate-400">⏱ {formatStudyTime(calcReadMinutes(sp.articles))}</span>
                           </div>
                           {hasGuide && (
                             <div className="mb-3">
@@ -455,7 +455,7 @@ export default function LearningPathSection() {
                       </div>
                       <p className="text-slate-400 text-sm">{phase.description}</p>
                     </div>
-                    <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {calcDuration(phaseArts)}</span>
+                    <span className="shrink-0 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-slate-300">⏱ {formatStudyTime(calcReadMinutes(phaseArts))}</span>
                   </div>
 
                   {/* Guide article */}
