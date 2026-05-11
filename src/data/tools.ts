@@ -5329,5 +5329,19 @@ createdAt: "2025-01-01T00:00:00Z",
     forks: 166,
     language: "TypeScript",
     updatedAt: "2026-05-11",
-  }
+  },
+  // 自动收录（2026-05-11）
+  {
+    id: "safishamsi_graphify",
+    name: "Graphify",
+    category: "cli",
+    description: "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and...",
+    url: "https://github.com/safishamsi/graphify",
+    tags: ["antigravity", "claude-code", "codex", "gemini", "graphrag"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 46604,
+    createdAt: "2026-04-03",
+  },
+
 ];

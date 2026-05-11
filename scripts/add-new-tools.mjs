@@ -17,7 +17,6 @@ import https from 'https';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -74,7 +73,7 @@ function guessCategory(repo) {
 }
 
 // ─── GitHub API ───
-function githubGet(path) {
+function githubGet(apiPath) {
   return new Promise((resolve) => {
     const envPath = path.join(ROOT, '.env.local');
     let GITHUB_TOKEN = '';
@@ -94,7 +93,7 @@ function githubGet(path) {
     
     const options = {
       hostname: 'api.github.com',
-      path,
+      path: apiPath,
       headers,
       timeout: 10000
     };
@@ -197,26 +196,7 @@ function checkExisting(fullName) {
 async function main() {
   console.error('🔧 开始自动收录新工具...\n');
   
-  // 运行 discover-topic-projects.mjs 获取遗漏项目列表
-  console.error('📡 运行 discover-topic-projects.mjs...');
-  try {
-    const result = execSync('node scripts/discover-topic-projects.mjs 2>&1', {
-      cwd: ROOT,
-      timeout: 300000, // 5 分钟超时
-      maxBuffer: 10 * 1024 * 1024,
-      encoding: 'utf8'
-    });
-    
-    // 解析输出中的遗漏项目
-    // 输出格式：🆕 遗漏项目：X 个（每行一个）
-    const missingLines = result.match(/🆕 遗漏项目：\d+ 个/g);
-    console.error(`\n📊 发现统计: ${missingLines ? missingLines.length : 0} 个 topic 有遗漏项目`);
-  } catch (err) {
-    console.error(`⚠️ discover-topic-projects.mjs 执行超时或失败: ${err.message.substring(0, 200)}`);
-    console.error('🔄 使用已有的遗漏项目列表...');
-  }
-  
-  // 策略：用 GitHub Search API 搜索最新高星 AI 项目
+  // 用 GitHub Search API 搜索最新高星 AI 项目
   // 多个关键词覆盖不同方向
   
   const searchQueries = [
