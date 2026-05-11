@@ -87,6 +87,7 @@ export default function KnowledgePage() {
   }, [mode, activeCategory, searchQuery, sortBy, currentPage, pathname]);
 
   const syncModeToUrl = (newMode: "all" | "path") => {
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
     // Update sessionStorage FIRST so it's available before navigation
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('knowledge-mode', newMode);
@@ -133,6 +134,7 @@ export default function KnowledgePage() {
   const handleFilterChange = (setter: (v: string) => void, value: string) => {
     setter(value);
     setCurrentPage(1);
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
   };
 
   const totalPages = Math.max(1, Math.ceil(filteredArticles.length / PAGE_SIZE));
@@ -268,7 +270,7 @@ export default function KnowledgePage() {
               <div className="hidden lg:block">
               <select
                 value={sortBy}
-                onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
+                onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                 className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
                 <option value="default">排序</option>
@@ -280,7 +282,7 @@ export default function KnowledgePage() {
               </div>
               <select
                 value={sortBy}
-                onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); }}
+                onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                 className="lg:hidden px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
                 <option value="default">排序</option>
@@ -304,7 +306,7 @@ export default function KnowledgePage() {
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 mt-10">
                   <button
-                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    onClick={() => { setCurrentPage((p) => Math.max(1, p - 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                     disabled={safePage === 1}
                     className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
                   >
@@ -325,7 +327,7 @@ export default function KnowledgePage() {
                       return (
                         <button
                           key={page}
-                          onClick={() => setCurrentPage(page)}
+                          onClick={() => { setCurrentPage(page); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                           className={`w-9 h-9 rounded-lg text-sm font-medium transition-all ${
                             isActive
                               ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
@@ -338,7 +340,7 @@ export default function KnowledgePage() {
                     })}
                   </div>
                   <button
-                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                    onClick={() => { setCurrentPage((p) => Math.min(totalPages, p + 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                     disabled={safePage === totalPages}
                     className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10"
                   >

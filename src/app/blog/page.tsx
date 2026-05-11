@@ -70,6 +70,7 @@ export default function BlogPage() {
   const handleCategoryChange = (cat: string) => {
     setActiveCategory(cat);
     setCurrentPage(1);
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
   };
 
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
@@ -163,7 +164,7 @@ export default function BlogPage() {
             return (
               <div className="mt-12 flex items-center justify-center gap-2 flex-wrap">
                 <button
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  onClick={() => { setCurrentPage((p) => Math.max(1, p - 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                   disabled={safePage === 1}
                   className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
                 >
@@ -177,7 +178,7 @@ export default function BlogPage() {
                   ) : (
                     <button
                       key={page}
-                      onClick={() => setCurrentPage(page as number)}
+                      onClick={() => { setCurrentPage(page as number); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                         page === safePage
                           ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
@@ -189,7 +190,7 @@ export default function BlogPage() {
                   )
                 )}
                 <button
-                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  onClick={() => { setCurrentPage((p) => Math.min(totalPages, p + 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                   disabled={safePage === totalPages}
                   className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
                 >

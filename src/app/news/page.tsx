@@ -195,7 +195,7 @@ export default function NewsPage() {
           {totalPages > 1 && (
             <div className="mt-12 flex items-center justify-center gap-2">
               <button
-                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                onClick={() => { setCurrentPage((p) => Math.max(1, p - 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                 disabled={safePage === 1}
                 className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
               >
@@ -216,7 +216,7 @@ export default function NewsPage() {
                   return (
                     <button
                       key={page}
-                      onClick={() => setCurrentPage(page)}
+                      onClick={() => { setCurrentPage(page); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                       className={`w-9 h-9 rounded-lg text-sm font-medium transition-all ${
                         isActive
                           ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
@@ -229,7 +229,7 @@ export default function NewsPage() {
                 })}
               </div>
               <button
-                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                onClick={() => { setCurrentPage((p) => Math.min(totalPages, p + 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                 disabled={safePage === totalPages}
                 className="px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
               >

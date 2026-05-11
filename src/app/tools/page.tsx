@@ -341,11 +341,11 @@ export default function ToolsPage() {
               </div>
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 mt-10">
-                  <button onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={safePage === 1} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all">← 上一页</button>
+                  <button onClick={() => { setCurrentPage((p) => Math.max(1, p - 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }} disabled={safePage === 1} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all">← 上一页</button>
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <button key={page} onClick={() => setCurrentPage(page)} className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${page === safePage ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25" : "bg-white/5 border border-white/10 text-slate-400 hover:bg-white/10 hover:text-white"}`}>{page}</button>
+                    <button key={page} onClick={() => { setCurrentPage(page); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }} className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${page === safePage ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25" : "bg-white/5 border border-white/10 text-slate-400 hover:bg-white/10 hover:text-white"}`}>{page}</button>
                   ))}
-                  <button onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={safePage === totalPages} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all">下一页 →</button>
+                  <button onClick={() => { setCurrentPage((p) => Math.min(totalPages, p + 1)); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }} disabled={safePage === totalPages} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-slate-400 hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all">下一页 →</button>
                 </div>
               )}
             </>
