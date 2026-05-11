@@ -14,7 +14,7 @@ const SITE_URL = "https://www.ai-master.cc";
  *   - 所有 article 详情页
  *   - 所有 blog 详情页
  *   - 所有 news 详情页
- *   - tools 是外链，不纳入 sitemap
+ *   - 所有 tool 详情页（/tools/[id]，含 SoftwareApplication JSON-LD）
  *
  * lastModified 优先用 updatedAt，回退到 date；按发布时间倒序。
  * priority / changeFrequency 按内容生命周期设置，避免被搜索引擎当成低质站点。
@@ -86,7 +86,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...coreRoutes, ...articleRoutes, ...blogRoutes, ...newsRoutes];
+  // ── 工具详情页 ────────────────────────────────────────────
+  const toolRoutes: MetadataRoute.Sitemap = tools.map((t) => ({
+    url: `${SITE_URL}/tools/${t.id}`,
+    lastModified: t.updatedAt ? parseDate(t.updatedAt) : now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  return [...coreRoutes, ...articleRoutes, ...blogRoutes, ...newsRoutes, ...toolRoutes];
 }
 
 /** 解析 "YYYY-MM-DD" / "YYYY-MM-DD HH:mm" → Date */

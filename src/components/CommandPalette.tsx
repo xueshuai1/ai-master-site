@@ -72,7 +72,7 @@ async function buildIndex(): Promise<SearchItem[]> {
       title: t.name,
       subtitle: t.description,
       haystack: `${t.name} ${tagsStr} ${t.description}`.toLowerCase(),
-      external: t.url,
+      href: `/tools/${t.id}`,
     });
   }
   for (const n of news) {

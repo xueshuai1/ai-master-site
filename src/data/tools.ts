@@ -10,10 +10,11 @@ export interface Tool {
   tags: string[];
   price: "免费" | "开源" | "付费" | "免费+付费";
   icon: string;
+  /** 仓库最近更新时间（来自 github-stars.json，或手工维护） */
   updatedAt?: string;
-  /** GitHub stars (auto-populated from github-stars.json) */
+  /** GitHub stars（来自 github-stars.json） */
   githubStars?: number;
-  /** GitHub repository creation date */
+  /** 仓库创建时间 */
   createdAt?: string;
   /** 优点列表 */
   pros?: string[];
@@ -27,6 +28,53 @@ export interface Tool {
   forks?: number;
   /** 主要编程语言 */
   language?: string;
+  /** GitHub watchers 数（可选，github-stars.json 未来字段） */
+  watchers?: number;
+  /** 开源协议（如 MIT、Apache-2.0） */
+  license?: string;
+  /** 官网 URL（与 url 不同时填） */
+  homepage?: string;
+  /** 未解决 issue 数 */
+  openIssues?: number;
+  /** GitHub topics 标签 */
+  topics?: string[];
+  /** AlternativeTo.net 点赞数（可选） */
+  altToLikes?: number;
+  /** 上次抓取以来的 stars 增量 */
+  delta?: number;
+  /** 上次抓取时的 stars 数 */
+  previousStars?: number;
+}
+
+/**
+ * src/data/github-stars.json 的运行时形态。
+ * 注意：watchers / license / openIssues / topics / alternativeTo
+ * 当前未被脚本写入，但为未来扩展保留位置。
+ */
+export interface GitHubStarsData {
+  fetchedAt: string;
+  totalRepos: number;
+  successCount: number;
+  errors: Record<string, string>;
+  stars: Record<string, GitHubRepoStats | undefined>;
+  alternativeTo?: Record<string, { likes: number } | undefined>;
+}
+
+export interface GitHubRepoStats {
+  stars: number;
+  forks: number;
+  fetchedAt: string;
+  /** 抓取脚本会把缺失字段写入 null，这里全部声明为 nullable */
+  language?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+  previousStars?: number | null;
+  delta?: number | null;
+  watchers?: number | null;
+  license?: string | null;
+  homepage?: string | null;
+  openIssues?: number | null;
+  topics?: string[] | null;
 }
 
 export const toolCategories = [
