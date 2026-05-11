@@ -126,6 +126,40 @@ for (let i = 0; i < titles.length; i++) {
   }
 }
 
+// 🔴 博客选题查重：检查所有博客标题是否有高度重复
+console.log('🔍 博客选题查重验证...');
+const BLOGS_DIR = './src/data/blogs';
+const blogFiles = readdirSync(BLOGS_DIR).filter(f => f.endsWith('.ts') && !f.includes('blog-types'));
+const blogTitles = [];
+for (const file of blogFiles) {
+  const content = readFileSync(join(BLOGS_DIR, file), 'utf-8');
+  // 博客的 title 在 blog 对象里: title: "..."
+  // 需要匹配 export const blog 之后的 title
+  const blogMatch = content.match(/export const blog[\s\S]*?title:\s*["']([^"']+)["']/);
+  if (blogMatch) {
+    blogTitles.push({ file, title: blogMatch[1] });
+  }
+}
+
+function isSameBlogSeries(a, b) {
+  const matchA = a.match(/^(.+?)[（(]([一二三四五六七八九十\d]+)[)）]/);
+  const matchB = b.match(/^(.+?)[（(]([一二三四五六七八九十\d]+)[)）]/);
+  if (!matchA || !matchB) return false;
+  const cleanA = matchA[1].trim().replace(/全面|深度|全景|实战|指南|详解|全面指南|深度解析|全面解析/g, '').trim();
+  const cleanB = matchB[1].trim().replace(/全面|深度|全景|实战|指南|详解|全面指南|深度解析|全面解析/g, '').trim();
+  return cleanA === cleanB && matchA[2] !== matchB[2];
+}
+
+for (let i = 0; i < blogTitles.length; i++) {
+  for (let j = i + 1; j < blogTitles.length; j++) {
+    if (isSameBlogSeries(blogTitles[i].title, blogTitles[j].title)) continue;
+    const sim = similarity(blogTitles[i].title, blogTitles[j].title);
+    if (sim >= 0.7) {
+      errors.push(`  ❌ 博客标题高度相似（${Math.round(sim * 100)}%）: [${blogTitles[i].file}]「${blogTitles[i].title}」 vs [${blogTitles[j].file}]「${blogTitles[j].title}」`);
+    }
+  }
+}
+
 // 输出结果
 if (errors.length > 0) {
   console.error('\n❌ 数据验证失败：\n');
