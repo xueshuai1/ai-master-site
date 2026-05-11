@@ -20274,4 +20274,372 @@ Simon Willison 指出，AI 生成引文的核心问题是：
     sourceUrl: "https://simonwillison.net/2026/May/10/new-york-times-editors-note/",
     href: "/news/news-1285",
   }
+],
+  {
+    id: "news-1286",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 发布 GPT-5.5 Instant：更快、更智能、更个性化的轻量级模型",
+    summary: 'OpenAI 于 5 月 5 日发布 GPT-5.5 Instant，作为 GPT-5.5 的轻量级版本，在保持智能水平的同时显著提升响应速度，并支持更个性化的用户体验。',
+    content: `## GPT-5.5 Instant：速度与智能的平衡
+
+**2026 年 5 月 5 日**，OpenAI 正式发布 GPT-5.5 Instant。
+
+### 核心特性
+- **更快响应**：相比 GPT-5.5 标准版，响应速度显著提升
+- **更智能**：在轻量级模型中保持高水准的推理和理解能力
+- **个性化支持**：支持更细粒度的个性化配置，适应不同用户偏好
+- **同步安全系统卡**：发布 GPT-5.5 Instant System Card，详细说明安全对齐方法
+
+### 产品定位
+GPT-5.5 Instant 定位于日常交互场景，为用户提供快速且高质量的 AI 体验。
+对于需要深度推理的复杂任务，GPT-5.5 标准版仍然是首选。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/gpt-5-5-instant/`,
+    date: "2026-05-11 12:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/gpt-5-5-instant/",
+    href: "/news/news-1286",
+  },
+  {
+    id: "news-1287",
+    tag: "Agent",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "OpenAI 发布 Codex Chrome 扩展：AI 编程助手可直接操作浏览器完成任务",
+    summary: 'OpenAI 在 Chrome Web Store 上线 Codex 浏览器扩展，使 Codex 能够直接在用户已登录的网站和应用中完成工作，通过任务特定的标签页组实现与日常浏览的隔离。',
+    content: `## Codex 浏览器扩展：AI 走进你的浏览器
+
+**2026 年 5 月 7 日**，OpenAI 在 Chrome Web Store 发布 Codex 扩展。
+
+### 核心功能
+- **直接操作浏览器**：Codex 可以在用户已登录的网站和应用中执行任务
+- **任务隔离**：使用"任务特定"标签页组，不影响用户正在使用的活动标签
+- **身份继承**：利用用户已有的登录状态，无需重复认证
+- **Chrome 插件依赖**：需要安装 Codex Chrome 插件才能正常工作
+
+### 应用场景
+- 自动填写表单、处理网页数据
+- 在已登录的管理后台执行批量操作
+- 跨网站的自动化工作流
+
+### 行业意义
+这是 AI Agent 从"代码生成"走向"浏览器操作"的重要一步，
+标志着 AI 助手正在从开发者工具进化为通用自动化工具。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/news/654392/openai-codex-chrome-extension`,
+    date: "2026-05-11 12:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/news/654392/openai-codex-chrome-extension",
+    href: "/news/news-1287",
+  },
+  {
+    id: "news-1288",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "OpenAI 安全团队分享：如何在内部安全运行 Codex 自主编程 Agent",
+    summary: 'OpenAI 安全团队于 5 月 8 日发布文章，分享了在 OpenAI 内部安全运行 Codex 自主编程 Agent 的实践经验和安全框架。',
+    content: `## 安全运行 Codex：OpenAI 的内部实践
+
+**2026 年 5 月 8 日**，OpenAI 安全团队发布经验分享文章。
+
+### 核心安全框架
+- **沙箱隔离**：Codex 在隔离环境中运行，无法访问生产系统
+- **权限最小化**：Agent 仅获得完成特定任务所需的最小权限
+- **人工审核**：关键操作需要经过人工审核才能执行
+- **审计日志**：所有 Agent 操作都有完整的审计追踪
+
+### 实践意义
+随着 AI 编程 Agent 越来越多地被部署到生产环境中，
+如何平衡"自主性"和"安全性"成为每个企业必须解决的问题。
+OpenAI 的实践经验为行业提供了重要参考。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/running-codex-safely/`,
+    date: "2026-05-11 12:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/running-codex-safely/",
+    href: "/news/news-1288",
+  },
+  {
+    id: "news-1289",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "OpenAI 推出 GPT-5.5 网络安全版：与可信访问结合的 AI 安全新范式",
+    summary: 'OpenAI 于 5 月 7 日发布 GPT-5.5-CyberSecurity，将 GPT-5.5 的强大能力与可信访问机制结合，为网络安全领域提供专用的 AI 模型。',
+    content: `## GPT-5.5 网络安全版：AI 安全的新高度
+
+**2026 年 5 月 7 日**，OpenAI 发布 GPT-5.5-CyberSecurity 专用模型。
+
+### 核心能力
+- **可信访问**：结合 GPT-5.5 和可信访问机制，确保 AI 操作的安全性和可追溯性
+- **威胁检测**：增强对网络安全威胁的识别和响应能力
+- **漏洞分析**：利用 GPT-5.5 的深度推理能力进行复杂的漏洞分析
+- **自动化防御**：支持自动化的安全策略制定和执行
+
+### 行业应用
+网络安全是 AI Agent 落地的重要场景之一。
+GPT-5.5-CyberSecurity 的发布表明 OpenAI 正在向垂直行业深度渗透。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/`,
+    date: "2026-05-11 12:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/",
+    href: "/news/news-1289",
+  },
+  {
+    id: "news-1290",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "OpenAI 推出 ChatGPT Futures 2026 首届毕业生，追踪 AI 人才生态",
+    summary: 'OpenAI 于 5 月 6 日发布 ChatGPT Futures: Class of 2026，标志着 OpenAI 开始系统性地追踪和培养 AI 人才生态。',
+    content: `## ChatGPT Futures 2026：AI 人才孵化器
+
+**2026 年 5 月 6 日**，OpenAI 发布 ChatGPT Futures 首届毕业生计划。
+
+### 计划内容
+- **人才追踪**：系统性地识别和培养 AI 领域的优秀人才
+- **生态建设**：构建从学习到实践的 AI 人才发展通道
+- **首届毕业**：Class of 2026 是 ChatGPT Futures 的首届毕业生
+
+### 行业意义
+这反映了 AI 行业从"技术竞争"向"人才竞争"的转向。
+OpenAI 通过 Futures 计划，不仅是在培养用户，
+更是在构建长期的 AI 生态和人才储备。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/introducing-chatgpt-futures-class-of-2026/`,
+    date: "2026-05-11 12:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/introducing-chatgpt-futures-class-of-2026/",
+    href: "/news/news-1290",
+  },
+  {
+    id: "news-1291",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "OpenAI 开始在 ChatGPT 中测试广告，商业化加速推进",
+    summary: 'OpenAI 于 5 月 7 日宣布在 ChatGPT 中测试广告功能，这是 ChatGPT 首次引入广告，标志着 OpenAI 在免费用户变现方面迈出关键一步。',
+    content: `## ChatGPT 广告测试：免费用户的变现之路
+
+**2026 年 5 月 7 日**，OpenAI 官方博客宣布在 ChatGPT 中测试广告。
+
+### 广告策略
+- **测试阶段**：目前处于小范围测试，面向部分免费用户
+- **广告形式**：在 ChatGPT 对话界面中插入相关广告
+- **目标用户**：主要针对免费用户群体，付费用户不受影响
+
+### 商业逻辑
+OpenAI 的算力成本持续攀升，免费用户的变现成为关键问题。
+广告模式的引入意味着 OpenAI 正在探索更广泛的收入来源。
+结合此前 OpenAI 被曝业绩未达标（news-506），
+广告变现可能是缓解收入压力的重要手段。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/testing-ads-in-chatgpt/`,
+    date: "2026-05-11 12:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/testing-ads-in-chatgpt/",
+    href: "/news/news-1291",
+  },
+  {
+    id: "news-1292",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 发布语音智能 API 新模型，低延迟语音能力持续升级",
+    summary: 'OpenAI 于 5 月 7 日宣布在 API 中推出新的语音智能模型，进一步提升语音交互的实时性和自然度，并分享了低延迟语音 AI 的大规模交付实践。',
+    content: `## 语音智能 API 升级
+
+**2026 年 5 月 7 日**，OpenAI 发布语音智能 API 新模型。
+
+### 技术亮点
+- **新语音模型**：API 中可用的最新语音智能模型
+- **低延迟**：持续优化语音交互的延迟表现
+- **大规模交付**：分享了如何大规模交付低延迟语音 AI 的工程实践
+
+### 争议与挑战
+Simon Willison 报道指出，OpenAI 使用 WebRTC 实现低延迟语音传输，
+但 WebRTC 在网络条件差时会 aggressively 丢弃音频包以保持低延迟，
+导致语音质量下降。用户宁愿等待 200ms 获取准确的语音，也不愿接受实时但失真的音频。
+
+**来源：** OpenAI Blog + Simon Willison Blog
+**链接：** https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/`,
+    date: "2026-05-11 12:00",
+    source: "OpenAI Blog + Simon Willison Blog",
+    sourceUrl: "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/",
+    href: "/news/news-1292",
+  },
+  {
+    id: "news-1293",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Meta 员工对 AI 转型苦不堪言：裁员逼近 + Agent 泛滥催生内部不满",
+    summary: '据纽约时报报道，Meta 员工在公司 AI 转型中感到"苦不堪言"——Meta 追踪员工电脑活动训练 AI 模型、计划裁减 10% 员工，并推动员工创建大量 AI Agent，导致内部"愤怒和焦虑"。',
+    content: `## Meta 的 AI 转型：员工的不安与焦虑
+
+**2026 年 5 月 8 日**，纽约时报深度报道了 Meta 内部员工的困境。
+
+### 核心问题
+- **电脑活动追踪**：Meta 开始追踪员工的电脑活动来训练 AI 模型
+- **大规模裁员**：计划在本月裁减 10% 的员工
+- **Agent 泛滥**：推动员工创建大量 AI Agent，以至于"其他人不得不引入 Agent 来查找 Agent，以及 Agent 来评价 Agent"
+- **员工心态**：部分员工不再将 Meta 视为长期职业发展的地方，一些人正在寻找新工作或试图被裁以获得遣散费
+
+### 行业反思
+Meta 的案例反映了 AI 转型中的"人文代价"——
+当企业全力推进 AI 化时，员工的焦虑和不满是不可避免的后果。
+如何在技术升级和员工关怀之间找到平衡，是每个企业必须面对的问题。
+
+**来源：** The Verge + 纽约时报
+**链接：** https://www.theverge.com/tech/916681/meta-ai-agents-employee-tracking`,
+    date: "2026-05-11 12:00",
+    source: "The Verge + 纽约时报",
+    sourceUrl: "https://www.theverge.com/tech/916681/meta-ai-agents-employee-tracking",
+    href: "/news/news-1293",
+  },
+  {
+    id: "news-1294",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Mozilla 公开 Claude Mythos 发现的 423 个 Firefox 漏洞详情，推动行业安全升级",
+    summary: 'Mozilla 分享了 Claude Mythos Preview 在 Firefox 中发现的 423 个安全漏洞的详细报告。Mozilla 决定提前公开部分漏洞详情，以推动整个软件生态系采取行动。',
+    content: `## AI 安全审计的典范：Claude 发现 423 个 Firefox 漏洞
+
+**2026 年 5 月 7 日**，Mozilla 公开了 Claude Mythos Preview 发现的 Firefox 安全漏洞详情。
+
+### 核心信息
+- **423 个漏洞**：Claude Mythos Preview 在 Firefox 代码库中发现 423 个安全漏洞
+- **提前公开**：Mozilla 通常会在修复后数月才公开详细报告，但鉴于此次的广泛关注，决定提前公开
+- **样本披露**：公开了部分漏洞报告样本，展示 AI 审计的深度和准确性
+
+### 行业意义
+这一事件标志着 AI 安全审计正在从"概念验证"走向"生产级应用"。
+Claude Mythos 的能力表明，AI 不仅能发现人类安全研究员可能遗漏的漏洞，
+还能在大规模代码库中进行系统性的安全审查。
+
+**来源：** The Verge + Mozilla Blog
+**链接：** https://www.theverge.com/news/653346/mozilla-firefox-bugs-claude-mythos`,
+    date: "2026-05-11 12:00",
+    source: "The Verge + Mozilla Blog",
+    sourceUrl: "https://www.theverge.com/news/653346/mozilla-firefox-bugs-claude-mythos",
+    href: "/news/news-1294",
+  },
+  {
+    id: "news-1295",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Cloudflare 裁员 1100 人：AI 使用量增长 600%，但人力需求锐减",
+    summary: 'Cloudflare 宣布裁减 1100 名员工，公司表示 AI 使用量增长了 600%，裁员不是成本削减，而是"在 Agent AI 时代重新定义世界一流高增长公司的运营方式"。',
+    content: `## Cloudflare 裁员：AI 时代的组织重构
+
+**2026 年 5 月**，Cloudflare 宣布裁员 1100 人。
+
+### 官方表态
+- **AI 使用量增长 600%**：AI 工具在公司内部的使用量大幅上升
+- **非成本削减**：公司强调这不是成本削减行动，而是运营模式的重构
+- **Agent AI 时代**：裁员是为了"在 Agent AI 时代定义世界一流高增长公司的运营方式"
+
+### 行业解读
+Cloudflare 的裁员是 AI 替代人力的最新典型案例。
+当一家公司的 AI 使用量增长 600% 的同时裁减大量员工，
+这传递出一个明确信号：AI 正在从"辅助工具"变为"人力替代者"。
+
+这也与此前 EA CEO 透露 85% 质检工作由 AI 完成（news-527）
+以及美国科技行业失业率升至 3.8% 的趋势一致。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/tech/916418/cloudflare-layoffs-ai`,
+    date: "2026-05-11 12:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/tech/916418/cloudflare-layoffs-ai",
+    href: "/news/news-1295",
+  },
+  {
+    id: "news-1296",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "索尼与 TSMC 合资开发下一代图像传感器：探索物理 AI 在机器人和汽车领域的应用",
+    summary: '索尼与台积电宣布成立合资企业，结合索尼的设计能力和 TSMC 的制造能力开发下一代图像传感器，并探索在物理 AI、机器人和汽车行业的应用机会。',
+    content: `## 索尼 × TSMC：图像传感器的 AI 革命
+
+**2026 年 5 月**，索尼与 TSMC 宣布成立合资企业。
+
+### 合作内容
+- **合资结构**：索尼控股，结合双方优势
+- **技术方向**：下一代图像传感器，融合索尼设计与 TSMC 制造工艺
+- **应用领域**：物理 AI 应用，特别是在机器人和汽车行业
+
+### 战略意义
+图像传感器是物理 AI（Physical AI）的关键基础设施。
+机器人需要"看到"世界，自动驾驶需要高精度的视觉感知，
+图像传感器的性能直接决定了 AI 系统的感知能力。
+
+索尼在图像传感器领域的领先地位加上 TSMC 的先进制程，
+这一合资企业可能成为物理 AI 时代的核心供应商。
+
+**来源：** The Verge + TSMC 官方新闻
+**链接：** https://pr.tsmc.com/english/news/3308`,
+    date: "2026-05-11 12:00",
+    source: "The Verge + TSMC",
+    sourceUrl: "https://pr.tsmc.com/english/news/3308",
+    href: "/news/news-1296",
+  },
+  {
+    id: "news-1297",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Google Gmail 推出个性化 AI 写作助手：根据你的语气和风格自动起草邮件",
+    summary: 'Google 宣布推出 Gmail "Help me write" 工具的新功能，可以学习用户的个人语气和风格，生成个性化的邮件草稿，还能从 Google Drive 和 Gmail 中提取相关上下文信息。',
+    content: `## Gmail AI 写作：更懂你的邮件助手
+
+**2026 年 5 月 7 日**，Google Workspace 博客宣布 Gmail AI 写作工具的重大升级。
+
+### 新功能
+- **个性化语气**：AI 学习用户的写作风格，生成符合个人特色的邮件
+- **上下文提取**：根据提示从 Google Drive 和 Gmail 中提取相关信息
+- **智能草稿**：自动起草邮件，减少用户的手动输入
+
+### 行业趋势
+AI 写作助手正在从"通用模板"向"个性化助手"转型。
+Google 的这一升级意味着 AI 不仅能"写得好"，还能"写得像你自己"。
+
+**来源：** Google Workspace Blog
+**链接：** https://workspaceupdates.googleblog.com/2026/05/improvements-to-help-me-write-in-gmail.html`,
+    date: "2026-05-11 12:00",
+    source: "Google Workspace Blog",
+    sourceUrl: "https://workspaceupdates.googleblog.com/2026/05/improvements-to-help-me-write-in-gmail.html",
+    href: "/news/news-1297",
+  },
+  {
+    id: "news-1298",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "DeepSeek 梁文锋出资 200 亿启动创纪录融资 500 亿，V4.1 定档 6 月发布",
+    summary: '据凤凰网报道，DeepSeek 创始人梁文锋个人出资 200 亿元，启动首轮创纪录融资 500 亿元，DeepSeek V4.1 版本定档 6 月发布。',
+    content: `## DeepSeek 500 亿融资：中国大模型持续加码
+
+**2026 年 5 月 11 日**，凤凰网科技报道 DeepSeek 的最新融资动态。
+
+### 核心信息
+- **梁文锋出资**：个人出资 200 亿元
+- **融资总额**：首轮创纪录融资 500 亿元
+- **V4.1 定档**：6 月发布
+
+### 行业背景
+DeepSeek 是中国大模型赛道的重要力量。
+此前 DeepSeek 已进行重大股权结构调整，梁文锋持股从 1% 升至 34%（news-484），
+此次大规模融资显示了创始团队对公司未来发展的信心。
+
+DeepSeek-TUI 也在 GitHub 本周趋势中排名第一（24,295⭐，本周 +22,034），
+说明其开源社区影响力正在快速扩大。
+
+**来源：** 凤凰网科技
+**链接：** https://tech.ifeng.com/c/8t2FkU1SHg7`,
+    date: "2026-05-11 12:00",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t2FkU1SHg7",
+    href: "/news/news-1298",
+  }
 ];
