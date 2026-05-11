@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-11T04:06:24.312Z",
+  "lastUpdated": "2026-05-11T08:02:32.047Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -27980,6 +27980,1776 @@
       "url": "https://github.com/topics/interpretability",
       "minStars": 2000,
       "description": "（自动发现）interpretability"
+    },
+    {
+      "topic": "benchmark",
+      "url": "https://github.com/topics/benchmark",
+      "minStars": 2000,
+      "description": "（自动发现）benchmark"
+    },
+    {
+      "topic": "multiagent-systems",
+      "url": "https://github.com/topics/multiagent-systems",
+      "minStars": 2000,
+      "description": "（自动发现）multiagent-systems"
+    },
+    {
+      "topic": "deepagents",
+      "url": "https://github.com/topics/deepagents",
+      "minStars": 2000,
+      "description": "（自动发现）deepagents"
+    },
+    {
+      "topic": "deep-neural-networks",
+      "url": "https://github.com/topics/deep-neural-networks",
+      "minStars": 2000,
+      "description": "（自动发现）deep-neural-networks"
+    },
+    {
+      "topic": "machine-learning",
+      "url": "https://github.com/topics/machine-learning",
+      "minStars": 2000,
+      "description": "（自动发现）machine-learning"
+    },
+    {
+      "topic": "ml",
+      "url": "https://github.com/topics/ml",
+      "minStars": 2000,
+      "description": "（自动发现）ml"
+    },
+    {
+      "topic": "neural-network",
+      "url": "https://github.com/topics/neural-network",
+      "minStars": 2000,
+      "description": "（自动发现）neural-network"
+    },
+    {
+      "topic": "tensorflow",
+      "url": "https://github.com/topics/tensorflow",
+      "minStars": 2000,
+      "description": "（自动发现）tensorflow"
+    },
+    {
+      "topic": "gpu",
+      "url": "https://github.com/topics/gpu",
+      "minStars": 2000,
+      "description": "（自动发现）gpu"
+    },
+    {
+      "topic": "tensor",
+      "url": "https://github.com/topics/tensor",
+      "minStars": 2000,
+      "description": "（自动发现）tensor"
+    },
+    {
+      "topic": "html",
+      "url": "https://github.com/topics/html",
+      "minStars": 2000,
+      "description": "（自动发现）html"
+    },
+    {
+      "topic": "agent",
+      "url": "https://github.com/topics/agent",
+      "minStars": 2000,
+      "description": "（自动发现）agent"
+    },
+    {
+      "topic": "agent-collaboration",
+      "url": "https://github.com/topics/agent-collaboration",
+      "minStars": 2000,
+      "description": "（自动发现）agent-collaboration"
+    },
+    {
+      "topic": "agent-harness",
+      "url": "https://github.com/topics/agent-harness",
+      "minStars": 2000,
+      "description": "（自动发现）agent-harness"
+    },
+    {
+      "topic": "ai",
+      "url": "https://github.com/topics/ai",
+      "minStars": 2000,
+      "description": "（自动发现）ai"
+    },
+    {
+      "topic": "chatgpt",
+      "url": "https://github.com/topics/chatgpt",
+      "minStars": 2000,
+      "description": "（自动发现）chatgpt"
+    },
+    {
+      "topic": "claude",
+      "url": "https://github.com/topics/claude",
+      "minStars": 2000,
+      "description": "（自动发现）claude"
+    },
+    {
+      "topic": "gemini",
+      "url": "https://github.com/topics/gemini",
+      "minStars": 2000,
+      "description": "（自动发现）gemini"
+    },
+    {
+      "topic": "gpt",
+      "url": "https://github.com/topics/gpt",
+      "minStars": 2000,
+      "description": "（自动发现）gpt"
+    },
+    {
+      "topic": "knowledge-base",
+      "url": "https://github.com/topics/knowledge-base",
+      "minStars": 2000,
+      "description": "（自动发现）knowledge-base"
+    },
+    {
+      "topic": "mcp",
+      "url": "https://github.com/topics/mcp",
+      "minStars": 2000,
+      "description": "（自动发现）mcp"
+    },
+    {
+      "topic": "openai",
+      "url": "https://github.com/topics/openai",
+      "minStars": 2000,
+      "description": "（自动发现）openai"
+    },
+    {
+      "topic": "video-recording",
+      "url": "https://github.com/topics/video-recording",
+      "minStars": 2000,
+      "description": "（自动发现）video-recording"
+    },
+    {
+      "topic": "llama",
+      "url": "https://github.com/topics/llama",
+      "minStars": 2000,
+      "description": "（自动发现）llama"
+    },
+    {
+      "topic": "llama3",
+      "url": "https://github.com/topics/llama3",
+      "minStars": 2000,
+      "description": "（自动发现）llama3"
+    },
+    {
+      "topic": "llm",
+      "url": "https://github.com/topics/llm",
+      "minStars": 2000,
+      "description": "（自动发现）llm"
+    },
+    {
+      "topic": "nlp",
+      "url": "https://github.com/topics/nlp",
+      "minStars": 2000,
+      "description": "（自动发现）nlp"
+    },
+    {
+      "topic": "quantization",
+      "url": "https://github.com/topics/quantization",
+      "minStars": 2000,
+      "description": "（自动发现）quantization"
+    },
+    {
+      "topic": "transformers",
+      "url": "https://github.com/topics/transformers",
+      "minStars": 2000,
+      "description": "（自动发现）transformers"
+    },
+    {
+      "topic": "gan",
+      "url": "https://github.com/topics/gan",
+      "minStars": 2000,
+      "description": "（自动发现）gan"
+    },
+    {
+      "topic": "neural-networks",
+      "url": "https://github.com/topics/neural-networks",
+      "minStars": 2000,
+      "description": "（自动发现）neural-networks"
+    },
+    {
+      "topic": "pytorch",
+      "url": "https://github.com/topics/pytorch",
+      "minStars": 2000,
+      "description": "（自动发现）pytorch"
+    },
+    {
+      "topic": "reinforcement-learning",
+      "url": "https://github.com/topics/reinforcement-learning",
+      "minStars": 2000,
+      "description": "（自动发现）reinforcement-learning"
+    },
+    {
+      "topic": "transformer",
+      "url": "https://github.com/topics/transformer",
+      "minStars": 2000,
+      "description": "（自动发现）transformer"
+    },
+    {
+      "topic": "context-engineering",
+      "url": "https://github.com/topics/context-engineering",
+      "minStars": 2000,
+      "description": "（自动发现）context-engineering"
+    },
+    {
+      "topic": "meta-prompting",
+      "url": "https://github.com/topics/meta-prompting",
+      "minStars": 2000,
+      "description": "（自动发现）meta-prompting"
+    },
+    {
+      "topic": "mail",
+      "url": "https://github.com/topics/mail",
+      "minStars": 2000,
+      "description": "（自动发现）mail"
+    },
+    {
+      "topic": "mcp-server",
+      "url": "https://github.com/topics/mcp-server",
+      "minStars": 2000,
+      "description": "（自动发现）mcp-server"
+    },
+    {
+      "topic": "wechat-weapp",
+      "url": "https://github.com/topics/wechat-weapp",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-weapp"
+    },
+    {
+      "topic": "wxml",
+      "url": "https://github.com/topics/wxml",
+      "minStars": 2000,
+      "description": "（自动发现）wxml"
+    },
+    {
+      "topic": "machine-learning-algorithms",
+      "url": "https://github.com/topics/machine-learning-algorithms",
+      "minStars": 2000,
+      "description": "（自动发现）machine-learning-algorithms"
+    },
+    {
+      "topic": "naive-bayes-classifier",
+      "url": "https://github.com/topics/naive-bayes-classifier",
+      "minStars": 2000,
+      "description": "（自动发现）naive-bayes-classifier"
+    },
+    {
+      "topic": "support-vector-machines",
+      "url": "https://github.com/topics/support-vector-machines",
+      "minStars": 2000,
+      "description": "（自动发现）support-vector-machines"
+    },
+    {
+      "topic": "knowledge-graph",
+      "url": "https://github.com/topics/knowledge-graph",
+      "minStars": 2000,
+      "description": "（自动发现）knowledge-graph"
+    },
+    {
+      "topic": "rag",
+      "url": "https://github.com/topics/rag",
+      "minStars": 2000,
+      "description": "（自动发现）rag"
+    },
+    {
+      "topic": "airflow",
+      "url": "https://github.com/topics/airflow",
+      "minStars": 2000,
+      "description": "（自动发现）airflow"
+    },
+    {
+      "topic": "apache-airflow",
+      "url": "https://github.com/topics/apache-airflow",
+      "minStars": 2000,
+      "description": "（自动发现）apache-airflow"
+    },
+    {
+      "topic": "data-orchestrator",
+      "url": "https://github.com/topics/data-orchestrator",
+      "minStars": 2000,
+      "description": "（自动发现）data-orchestrator"
+    },
+    {
+      "topic": "data-pipelines",
+      "url": "https://github.com/topics/data-pipelines",
+      "minStars": 2000,
+      "description": "（自动发现）data-pipelines"
+    },
+    {
+      "topic": "mlops",
+      "url": "https://github.com/topics/mlops",
+      "minStars": 2000,
+      "description": "（自动发现）mlops"
+    },
+    {
+      "topic": "orchestration",
+      "url": "https://github.com/topics/orchestration",
+      "minStars": 2000,
+      "description": "（自动发现）orchestration"
+    },
+    {
+      "topic": "workflow-orchestration",
+      "url": "https://github.com/topics/workflow-orchestration",
+      "minStars": 2000,
+      "description": "（自动发现）workflow-orchestration"
+    },
+    {
+      "topic": "chatgpt-on-wechat",
+      "url": "https://github.com/topics/chatgpt-on-wechat",
+      "minStars": 2000,
+      "description": "（自动发现）chatgpt-on-wechat"
+    },
+    {
+      "topic": "linkai",
+      "url": "https://github.com/topics/linkai",
+      "minStars": 2000,
+      "description": "（自动发现）linkai"
+    },
+    {
+      "topic": "multi-agent",
+      "url": "https://github.com/topics/multi-agent",
+      "minStars": 2000,
+      "description": "（自动发现）multi-agent"
+    },
+    {
+      "topic": "ocr",
+      "url": "https://github.com/topics/ocr",
+      "minStars": 2000,
+      "description": "（自动发现）ocr"
+    },
+    {
+      "topic": "ollama",
+      "url": "https://github.com/topics/ollama",
+      "minStars": 2000,
+      "description": "（自动发现）ollama"
+    },
+    {
+      "topic": "hyperparameter-search",
+      "url": "https://github.com/topics/hyperparameter-search",
+      "minStars": 2000,
+      "description": "（自动发现）hyperparameter-search"
+    },
+    {
+      "topic": "llm-inference",
+      "url": "https://github.com/topics/llm-inference",
+      "minStars": 2000,
+      "description": "（自动发现）llm-inference"
+    },
+    {
+      "topic": "llm-serving",
+      "url": "https://github.com/topics/llm-serving",
+      "minStars": 2000,
+      "description": "（自动发现）llm-serving"
+    },
+    {
+      "topic": "inference",
+      "url": "https://github.com/topics/inference",
+      "minStars": 2000,
+      "description": "（自动发现）inference"
+    },
+    {
+      "topic": "model-parallelism",
+      "url": "https://github.com/topics/model-parallelism",
+      "minStars": 2000,
+      "description": "（自动发现）model-parallelism"
+    },
+    {
+      "topic": "pipeline-parallelism",
+      "url": "https://github.com/topics/pipeline-parallelism",
+      "minStars": 2000,
+      "description": "（自动发现）pipeline-parallelism"
+    },
+    {
+      "topic": "llms",
+      "url": "https://github.com/topics/llms",
+      "minStars": 2000,
+      "description": "（自动发现）llms"
+    },
+    {
+      "topic": "generative-ai",
+      "url": "https://github.com/topics/generative-ai",
+      "minStars": 2000,
+      "description": "（自动发现）generative-ai"
+    },
+    {
+      "topic": "gpt-5",
+      "url": "https://github.com/topics/gpt-5",
+      "minStars": 2000,
+      "description": "（自动发现）gpt-5"
+    },
+    {
+      "topic": "prompt-engineering",
+      "url": "https://github.com/topics/prompt-engineering",
+      "minStars": 2000,
+      "description": "（自动发现）prompt-engineering"
+    },
+    {
+      "topic": "system-prompt",
+      "url": "https://github.com/topics/system-prompt",
+      "minStars": 2000,
+      "description": "（自动发现）system-prompt"
+    },
+    {
+      "topic": "xai",
+      "url": "https://github.com/topics/xai",
+      "minStars": 2000,
+      "description": "（自动发现）xai"
+    },
+    {
+      "topic": "image-processing",
+      "url": "https://github.com/topics/image-processing",
+      "minStars": 2000,
+      "description": "（自动发现）image-processing"
+    },
+    {
+      "topic": "instance-segmentation",
+      "url": "https://github.com/topics/instance-segmentation",
+      "minStars": 2000,
+      "description": "（自动发现）instance-segmentation"
+    },
+    {
+      "topic": "object-detection",
+      "url": "https://github.com/topics/object-detection",
+      "minStars": 2000,
+      "description": "（自动发现）object-detection"
+    },
+    {
+      "topic": "video-processing",
+      "url": "https://github.com/topics/video-processing",
+      "minStars": 2000,
+      "description": "（自动发现）video-processing"
+    },
+    {
+      "topic": "wechat-mini-program",
+      "url": "https://github.com/topics/wechat-mini-program",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-mini-program"
+    },
+    {
+      "topic": "face-restoration",
+      "url": "https://github.com/topics/face-restoration",
+      "minStars": 2000,
+      "description": "（自动发现）face-restoration"
+    },
+    {
+      "topic": "gfpgan",
+      "url": "https://github.com/topics/gfpgan",
+      "minStars": 2000,
+      "description": "（自动发现）gfpgan"
+    },
+    {
+      "topic": "image-restoration",
+      "url": "https://github.com/topics/image-restoration",
+      "minStars": 2000,
+      "description": "（自动发现）image-restoration"
+    },
+    {
+      "topic": "super-resolution",
+      "url": "https://github.com/topics/super-resolution",
+      "minStars": 2000,
+      "description": "（自动发现）super-resolution"
+    },
+    {
+      "topic": "image-classification",
+      "url": "https://github.com/topics/image-classification",
+      "minStars": 2000,
+      "description": "（自动发现）image-classification"
+    },
+    {
+      "topic": "imagenet",
+      "url": "https://github.com/topics/imagenet",
+      "minStars": 2000,
+      "description": "（自动发现）imagenet"
+    },
+    {
+      "topic": "mobile-deep-learning",
+      "url": "https://github.com/topics/mobile-deep-learning",
+      "minStars": 2000,
+      "description": "（自动发现）mobile-deep-learning"
+    },
+    {
+      "topic": "mobilenet-v2",
+      "url": "https://github.com/topics/mobilenet-v2",
+      "minStars": 2000,
+      "description": "（自动发现）mobilenet-v2"
+    },
+    {
+      "topic": "mobilenetv3",
+      "url": "https://github.com/topics/mobilenetv3",
+      "minStars": 2000,
+      "description": "（自动发现）mobilenetv3"
+    },
+    {
+      "topic": "normalization-free-training",
+      "url": "https://github.com/topics/normalization-free-training",
+      "minStars": 2000,
+      "description": "（自动发现）normalization-free-training"
+    },
+    {
+      "topic": "pretrained-models",
+      "url": "https://github.com/topics/pretrained-models",
+      "minStars": 2000,
+      "description": "（自动发现）pretrained-models"
+    },
+    {
+      "topic": "pretrained-weights",
+      "url": "https://github.com/topics/pretrained-weights",
+      "minStars": 2000,
+      "description": "（自动发现）pretrained-weights"
+    },
+    {
+      "topic": "diffusion",
+      "url": "https://github.com/topics/diffusion",
+      "minStars": 2000,
+      "description": "（自动发现）diffusion"
+    },
+    {
+      "topic": "image-generation",
+      "url": "https://github.com/topics/image-generation",
+      "minStars": 2000,
+      "description": "（自动发现）image-generation"
+    },
+    {
+      "topic": "image2image",
+      "url": "https://github.com/topics/image2image",
+      "minStars": 2000,
+      "description": "（自动发现）image2image"
+    },
+    {
+      "topic": "image2video",
+      "url": "https://github.com/topics/image2video",
+      "minStars": 2000,
+      "description": "（自动发现）image2video"
+    },
+    {
+      "topic": "latent-diffusion-models",
+      "url": "https://github.com/topics/latent-diffusion-models",
+      "minStars": 2000,
+      "description": "（自动发现）latent-diffusion-models"
+    },
+    {
+      "topic": "qwen-image",
+      "url": "https://github.com/topics/qwen-image",
+      "minStars": 2000,
+      "description": "（自动发现）qwen-image"
+    },
+    {
+      "topic": "score-based-generative-modeling",
+      "url": "https://github.com/topics/score-based-generative-modeling",
+      "minStars": 2000,
+      "description": "（自动发现）score-based-generative-modeling"
+    },
+    {
+      "topic": "stable-diffusion",
+      "url": "https://github.com/topics/stable-diffusion",
+      "minStars": 2000,
+      "description": "（自动发现）stable-diffusion"
+    },
+    {
+      "topic": "stable-diffusion-diffusers",
+      "url": "https://github.com/topics/stable-diffusion-diffusers",
+      "minStars": 2000,
+      "description": "（自动发现）stable-diffusion-diffusers"
+    },
+    {
+      "topic": "text2image",
+      "url": "https://github.com/topics/text2image",
+      "minStars": 2000,
+      "description": "（自动发现）text2image"
+    },
+    {
+      "topic": "text2video",
+      "url": "https://github.com/topics/text2video",
+      "minStars": 2000,
+      "description": "（自动发现）text2video"
+    },
+    {
+      "topic": "video2video",
+      "url": "https://github.com/topics/video2video",
+      "minStars": 2000,
+      "description": "（自动发现）video2video"
+    },
+    {
+      "topic": "wechat-sdk",
+      "url": "https://github.com/topics/wechat-sdk",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-sdk"
+    },
+    {
+      "topic": "ai-gateway",
+      "url": "https://github.com/topics/ai-gateway",
+      "minStars": 2000,
+      "description": "（自动发现）ai-gateway"
+    },
+    {
+      "topic": "xaml",
+      "url": "https://github.com/topics/xaml",
+      "minStars": 2000,
+      "description": "（自动发现）xaml"
+    },
+    {
+      "topic": "agent-workflow",
+      "url": "https://github.com/topics/agent-workflow",
+      "minStars": 2000,
+      "description": "（自动发现）agent-workflow"
+    },
+    {
+      "topic": "agentic-workflow",
+      "url": "https://github.com/topics/agentic-workflow",
+      "minStars": 2000,
+      "description": "（自动发现）agentic-workflow"
+    },
+    {
+      "topic": "agents",
+      "url": "https://github.com/topics/agents",
+      "minStars": 2000,
+      "description": "（自动发现）agents"
+    },
+    {
+      "topic": "aiagents",
+      "url": "https://github.com/topics/aiagents",
+      "minStars": 2000,
+      "description": "（自动发现）aiagents"
+    },
+    {
+      "topic": "gpt-oss",
+      "url": "https://github.com/topics/gpt-oss",
+      "minStars": 2000,
+      "description": "（自动发现）gpt-oss"
+    },
+    {
+      "topic": "mobile-web",
+      "url": "https://github.com/topics/mobile-web",
+      "minStars": 2000,
+      "description": "（自动发现）mobile-web"
+    },
+    {
+      "topic": "robot",
+      "url": "https://github.com/topics/robot",
+      "minStars": 2000,
+      "description": "（自动发现）robot"
+    },
+    {
+      "topic": "gpgpu",
+      "url": "https://github.com/topics/gpgpu",
+      "minStars": 2000,
+      "description": "（自动发现）gpgpu"
+    },
+    {
+      "topic": "language-model",
+      "url": "https://github.com/topics/language-model",
+      "minStars": 2000,
+      "description": "（自动发现）language-model"
+    },
+    {
+      "topic": "wechat-macos",
+      "url": "https://github.com/topics/wechat-macos",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-macos"
+    },
+    {
+      "topic": "wechat-plugin",
+      "url": "https://github.com/topics/wechat-plugin",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-plugin"
+    },
+    {
+      "topic": "ai-agent-tools",
+      "url": "https://github.com/topics/ai-agent-tools",
+      "minStars": 2000,
+      "description": "（自动发现）ai-agent-tools"
+    },
+    {
+      "topic": "ai-agents",
+      "url": "https://github.com/topics/ai-agents",
+      "minStars": 2000,
+      "description": "（自动发现）ai-agents"
+    },
+    {
+      "topic": "ai-agents-framework",
+      "url": "https://github.com/topics/ai-agents-framework",
+      "minStars": 2000,
+      "description": "（自动发现）ai-agents-framework"
+    },
+    {
+      "topic": "mcp-tools",
+      "url": "https://github.com/topics/mcp-tools",
+      "minStars": 2000,
+      "description": "（自动发现）mcp-tools"
+    },
+    {
+      "topic": "mcps",
+      "url": "https://github.com/topics/mcps",
+      "minStars": 2000,
+      "description": "（自动发现）mcps"
+    },
+    {
+      "topic": "ai-automation",
+      "url": "https://github.com/topics/ai-automation",
+      "minStars": 2000,
+      "description": "（自动发现）ai-automation"
+    },
+    {
+      "topic": "no-code-ai",
+      "url": "https://github.com/topics/no-code-ai",
+      "minStars": 2000,
+      "description": "（自动发现）no-code-ai"
+    },
+    {
+      "topic": "vision",
+      "url": "https://github.com/topics/vision",
+      "minStars": 2000,
+      "description": "（自动发现）vision"
+    },
+    {
+      "topic": "dataset-hub",
+      "url": "https://github.com/topics/dataset-hub",
+      "minStars": 2000,
+      "description": "（自动发现）dataset-hub"
+    },
+    {
+      "topic": "datasets",
+      "url": "https://github.com/topics/datasets",
+      "minStars": 2000,
+      "description": "（自动发现）datasets"
+    },
+    {
+      "topic": "huggingface",
+      "url": "https://github.com/topics/huggingface",
+      "minStars": 2000,
+      "description": "（自动发现）huggingface"
+    },
+    {
+      "topic": "natural-language-processing",
+      "url": "https://github.com/topics/natural-language-processing",
+      "minStars": 2000,
+      "description": "（自动发现）natural-language-processing"
+    },
+    {
+      "topic": "speech",
+      "url": "https://github.com/topics/speech",
+      "minStars": 2000,
+      "description": "（自动发现）speech"
+    },
+    {
+      "topic": "chatgpt-plugins",
+      "url": "https://github.com/topics/chatgpt-plugins",
+      "minStars": 2000,
+      "description": "（自动发现）chatgpt-plugins"
+    },
+    {
+      "topic": "chatbots",
+      "url": "https://github.com/topics/chatbots",
+      "minStars": 2000,
+      "description": "（自动发现）chatbots"
+    },
+    {
+      "topic": "conversational-agents",
+      "url": "https://github.com/topics/conversational-agents",
+      "minStars": 2000,
+      "description": "（自动发现）conversational-agents"
+    },
+    {
+      "topic": "conversational-ai",
+      "url": "https://github.com/topics/conversational-ai",
+      "minStars": 2000,
+      "description": "（自动发现）conversational-ai"
+    },
+    {
+      "topic": "machine-learning-library",
+      "url": "https://github.com/topics/machine-learning-library",
+      "minStars": 2000,
+      "description": "（自动发现）machine-learning-library"
+    },
+    {
+      "topic": "explainability",
+      "url": "https://github.com/topics/explainability",
+      "minStars": 2000,
+      "description": "（自动发现）explainability"
+    },
+    {
+      "topic": "interpretability",
+      "url": "https://github.com/topics/interpretability",
+      "minStars": 2000,
+      "description": "（自动发现）interpretability"
+    },
+    {
+      "topic": "large-scale-machine-learning",
+      "url": "https://github.com/topics/large-scale-machine-learning",
+      "minStars": 2000,
+      "description": "（自动发现）large-scale-machine-learning"
+    },
+    {
+      "topic": "large-scale-ml",
+      "url": "https://github.com/topics/large-scale-ml",
+      "minStars": 2000,
+      "description": "（自动发现）large-scale-ml"
+    },
+    {
+      "topic": "machine-learning-operations",
+      "url": "https://github.com/topics/machine-learning-operations",
+      "minStars": 2000,
+      "description": "（自动发现）machine-learning-operations"
+    },
+    {
+      "topic": "ml-ops",
+      "url": "https://github.com/topics/ml-ops",
+      "minStars": 2000,
+      "description": "（自动发现）ml-ops"
+    },
+    {
+      "topic": "privacy-preserving",
+      "url": "https://github.com/topics/privacy-preserving",
+      "minStars": 2000,
+      "description": "（自动发现）privacy-preserving"
+    },
+    {
+      "topic": "privacy-preserving-machine-learning",
+      "url": "https://github.com/topics/privacy-preserving-machine-learning",
+      "minStars": 2000,
+      "description": "（自动发现）privacy-preserving-machine-learning"
+    },
+    {
+      "topic": "privacy-preserving-ml",
+      "url": "https://github.com/topics/privacy-preserving-ml",
+      "minStars": 2000,
+      "description": "（自动发现）privacy-preserving-ml"
+    },
+    {
+      "topic": "production-machine-learning",
+      "url": "https://github.com/topics/production-machine-learning",
+      "minStars": 2000,
+      "description": "（自动发现）production-machine-learning"
+    },
+    {
+      "topic": "production-ml",
+      "url": "https://github.com/topics/production-ml",
+      "minStars": 2000,
+      "description": "（自动发现）production-ml"
+    },
+    {
+      "topic": "responsible-ai",
+      "url": "https://github.com/topics/responsible-ai",
+      "minStars": 2000,
+      "description": "（自动发现）responsible-ai"
+    },
+    {
+      "topic": "ai-app-builder",
+      "url": "https://github.com/topics/ai-app-builder",
+      "minStars": 2000,
+      "description": "（自动发现）ai-app-builder"
+    },
+    {
+      "topic": "pipeline",
+      "url": "https://github.com/topics/pipeline",
+      "minStars": 2000,
+      "description": "（自动发现）pipeline"
+    },
+    {
+      "topic": "pipelines",
+      "url": "https://github.com/topics/pipelines",
+      "minStars": 2000,
+      "description": "（自动发现）pipelines"
+    },
+    {
+      "topic": "taipy-core",
+      "url": "https://github.com/topics/taipy-core",
+      "minStars": 2000,
+      "description": "（自动发现）taipy-core"
+    },
+    {
+      "topic": "taipy-gui",
+      "url": "https://github.com/topics/taipy-gui",
+      "minStars": 2000,
+      "description": "（自动发现）taipy-gui"
+    },
+    {
+      "topic": "chatglm-6b",
+      "url": "https://github.com/topics/chatglm-6b",
+      "minStars": 2000,
+      "description": "（自动发现）chatglm-6b"
+    },
+    {
+      "topic": "mirai",
+      "url": "https://github.com/topics/mirai",
+      "minStars": 2000,
+      "description": "（自动发现）mirai"
+    },
+    {
+      "topic": "gpt-4",
+      "url": "https://github.com/topics/gpt-4",
+      "minStars": 2000,
+      "description": "（自动发现）gpt-4"
+    },
+    {
+      "topic": "visionos",
+      "url": "https://github.com/topics/visionos",
+      "minStars": 2000,
+      "description": "（自动发现）visionos"
+    },
+    {
+      "topic": "mobile",
+      "url": "https://github.com/topics/mobile",
+      "minStars": 2000,
+      "description": "（自动发现）mobile"
+    },
+    {
+      "topic": "kuaishou",
+      "url": "https://github.com/topics/kuaishou",
+      "minStars": 2000,
+      "description": "（自动发现）kuaishou"
+    },
+    {
+      "topic": "wechat-video",
+      "url": "https://github.com/topics/wechat-video",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-video"
+    },
+    {
+      "topic": "ai-societies",
+      "url": "https://github.com/topics/ai-societies",
+      "minStars": 2000,
+      "description": "（自动发现）ai-societies"
+    },
+    {
+      "topic": "communicative-ai",
+      "url": "https://github.com/topics/communicative-ai",
+      "minStars": 2000,
+      "description": "（自动发现）communicative-ai"
+    },
+    {
+      "topic": "multi-agent-systems",
+      "url": "https://github.com/topics/multi-agent-systems",
+      "minStars": 2000,
+      "description": "（自动发现）multi-agent-systems"
+    },
+    {
+      "topic": "ghostty",
+      "url": "https://github.com/topics/ghostty",
+      "minStars": 2000,
+      "description": "（自动发现）ghostty"
+    },
+    {
+      "topic": "webml",
+      "url": "https://github.com/topics/webml",
+      "minStars": 2000,
+      "description": "（自动发现）webml"
+    },
+    {
+      "topic": "speech-recognition",
+      "url": "https://github.com/topics/speech-recognition",
+      "minStars": 2000,
+      "description": "（自动发现）speech-recognition"
+    },
+    {
+      "topic": "speech-to-text",
+      "url": "https://github.com/topics/speech-to-text",
+      "minStars": 2000,
+      "description": "（自动发现）speech-to-text"
+    },
+    {
+      "topic": "ai-developer-tools",
+      "url": "https://github.com/topics/ai-developer-tools",
+      "minStars": 2000,
+      "description": "（自动发现）ai-developer-tools"
+    },
+    {
+      "topic": "ai-tools",
+      "url": "https://github.com/topics/ai-tools",
+      "minStars": 2000,
+      "description": "（自动发现）ai-tools"
+    },
+    {
+      "topic": "webgpu",
+      "url": "https://github.com/topics/webgpu",
+      "minStars": 2000,
+      "description": "（自动发现）webgpu"
+    },
+    {
+      "topic": "ai-agent-framework",
+      "url": "https://github.com/topics/ai-agent-framework",
+      "minStars": 2000,
+      "description": "（自动发现）ai-agent-framework"
+    },
+    {
+      "topic": "agent-pool",
+      "url": "https://github.com/topics/agent-pool",
+      "minStars": 2000,
+      "description": "（自动发现）agent-pool"
+    },
+    {
+      "topic": "wechat-report",
+      "url": "https://github.com/topics/wechat-report",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-report"
+    },
+    {
+      "topic": "agent-plugins",
+      "url": "https://github.com/topics/agent-plugins",
+      "minStars": 2000,
+      "description": "（自动发现）agent-plugins"
+    },
+    {
+      "topic": "agent-skills",
+      "url": "https://github.com/topics/agent-skills",
+      "minStars": 2000,
+      "description": "（自动发现）agent-skills"
+    },
+    {
+      "topic": "agentic-ai",
+      "url": "https://github.com/topics/agentic-ai",
+      "minStars": 2000,
+      "description": "（自动发现）agentic-ai"
+    },
+    {
+      "topic": "anthropic-claude",
+      "url": "https://github.com/topics/anthropic-claude",
+      "minStars": 2000,
+      "description": "（自动发现）anthropic-claude"
+    },
+    {
+      "topic": "claude-ai",
+      "url": "https://github.com/topics/claude-ai",
+      "minStars": 2000,
+      "description": "（自动发现）claude-ai"
+    },
+    {
+      "topic": "claude-code-plugins",
+      "url": "https://github.com/topics/claude-code-plugins",
+      "minStars": 2000,
+      "description": "（自动发现）claude-code-plugins"
+    },
+    {
+      "topic": "claude-code-skills",
+      "url": "https://github.com/topics/claude-code-skills",
+      "minStars": 2000,
+      "description": "（自动发现）claude-code-skills"
+    },
+    {
+      "topic": "claude-skills",
+      "url": "https://github.com/topics/claude-skills",
+      "minStars": 2000,
+      "description": "（自动发现）claude-skills"
+    },
+    {
+      "topic": "coding-agent-plugins",
+      "url": "https://github.com/topics/coding-agent-plugins",
+      "minStars": 2000,
+      "description": "（自动发现）coding-agent-plugins"
+    },
+    {
+      "topic": "gemini-cli-skills",
+      "url": "https://github.com/topics/gemini-cli-skills",
+      "minStars": 2000,
+      "description": "（自动发现）gemini-cli-skills"
+    },
+    {
+      "topic": "openai-codex",
+      "url": "https://github.com/topics/openai-codex",
+      "minStars": 2000,
+      "description": "（自动发现）openai-codex"
+    },
+    {
+      "topic": "web-wechat",
+      "url": "https://github.com/topics/web-wechat",
+      "minStars": 2000,
+      "description": "（自动发现）web-wechat"
+    },
+    {
+      "topic": "wechat-plugin-macos",
+      "url": "https://github.com/topics/wechat-plugin-macos",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-plugin-macos"
+    },
+    {
+      "topic": "wechat-raycast",
+      "url": "https://github.com/topics/wechat-raycast",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-raycast"
+    },
+    {
+      "topic": "wechat-tweak",
+      "url": "https://github.com/topics/wechat-tweak",
+      "minStars": 2000,
+      "description": "（自动发现）wechat-tweak"
+    },
+    {
+      "topic": "wechathook",
+      "url": "https://github.com/topics/wechathook",
+      "minStars": 2000,
+      "description": "（自动发现）wechathook"
+    },
+    {
+      "topic": "wechattweak",
+      "url": "https://github.com/topics/wechattweak",
+      "minStars": 2000,
+      "description": "（自动发现）wechattweak"
+    },
+    {
+      "topic": "wechattweak-macos",
+      "url": "https://github.com/topics/wechattweak-macos",
+      "minStars": 2000,
+      "description": "（自动发现）wechattweak-macos"
+    },
+    {
+      "topic": "ai-bot",
+      "url": "https://github.com/topics/ai-bot",
+      "minStars": 2000,
+      "description": "（自动发现）ai-bot"
+    },
+    {
+      "topic": "daily",
+      "url": "https://github.com/topics/daily",
+      "minStars": 2000,
+      "description": "（自动发现）daily"
+    },
+    {
+      "topic": "video-generation",
+      "url": "https://github.com/topics/video-generation",
+      "minStars": 2000,
+      "description": "（自动发现）video-generation"
+    },
+    {
+      "topic": "cutensor",
+      "url": "https://github.com/topics/cutensor",
+      "minStars": 2000,
+      "description": "（自动发现）cutensor"
+    },
+    {
+      "topic": "cuda-12",
+      "url": "https://github.com/topics/cuda-12",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-12"
+    },
+    {
+      "topic": "cuda-cpp",
+      "url": "https://github.com/topics/cuda-cpp",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-cpp"
+    },
+    {
+      "topic": "cuda-demo",
+      "url": "https://github.com/topics/cuda-demo",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-demo"
+    },
+    {
+      "topic": "cuda-kernel",
+      "url": "https://github.com/topics/cuda-kernel",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-kernel"
+    },
+    {
+      "topic": "cuda-kernels",
+      "url": "https://github.com/topics/cuda-kernels",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-kernels"
+    },
+    {
+      "topic": "cuda-library",
+      "url": "https://github.com/topics/cuda-library",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-library"
+    },
+    {
+      "topic": "cuda-toolkit",
+      "url": "https://github.com/topics/cuda-toolkit",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-toolkit"
+    },
+    {
+      "topic": "learn-cuda",
+      "url": "https://github.com/topics/learn-cuda",
+      "minStars": 2000,
+      "description": "（自动发现）learn-cuda"
+    },
+    {
+      "topic": "leet-cuda",
+      "url": "https://github.com/topics/leet-cuda",
+      "minStars": 2000,
+      "description": "（自动发现）leet-cuda"
+    },
+    {
+      "topic": "gpt-2",
+      "url": "https://github.com/topics/gpt-2",
+      "minStars": 2000,
+      "description": "（自动发现）gpt-2"
+    },
+    {
+      "topic": "jetbrains-plugin",
+      "url": "https://github.com/topics/jetbrains-plugin",
+      "minStars": 2000,
+      "description": "（自动发现）jetbrains-plugin"
+    },
+    {
+      "topic": "natural-language-understanding",
+      "url": "https://github.com/topics/natural-language-understanding",
+      "minStars": 2000,
+      "description": "（自动发现）natural-language-understanding"
+    },
+    {
+      "topic": "coding-agents",
+      "url": "https://github.com/topics/coding-agents",
+      "minStars": 2000,
+      "description": "（自动发现）coding-agents"
+    },
+    {
+      "topic": "cursor-agent",
+      "url": "https://github.com/topics/cursor-agent",
+      "minStars": 2000,
+      "description": "（自动发现）cursor-agent"
+    },
+    {
+      "topic": "agency-orchestrator",
+      "url": "https://github.com/topics/agency-orchestrator",
+      "minStars": 2000,
+      "description": "（自动发现）agency-orchestrator"
+    },
+    {
+      "topic": "agent-definitions",
+      "url": "https://github.com/topics/agent-definitions",
+      "minStars": 2000,
+      "description": "（自动发现）agent-definitions"
+    },
+    {
+      "topic": "ai-roles",
+      "url": "https://github.com/topics/ai-roles",
+      "minStars": 2000,
+      "description": "（自动发现）ai-roles"
+    },
+    {
+      "topic": "copilot-agent",
+      "url": "https://github.com/topics/copilot-agent",
+      "minStars": 2000,
+      "description": "（自动发现）copilot-agent"
+    },
+    {
+      "topic": "hermes-agent",
+      "url": "https://github.com/topics/hermes-agent",
+      "minStars": 2000,
+      "description": "（自动发现）hermes-agent"
+    },
+    {
+      "topic": "claudecode",
+      "url": "https://github.com/topics/claudecode",
+      "minStars": 2000,
+      "description": "（自动发现）claudecode"
+    },
+    {
+      "topic": "deep-learning-library",
+      "url": "https://github.com/topics/deep-learning-library",
+      "minStars": 2000,
+      "description": "（自动发现）deep-learning-library"
+    },
+    {
+      "topic": "zhipuai",
+      "url": "https://github.com/topics/zhipuai",
+      "minStars": 2000,
+      "description": "（自动发现）zhipuai"
+    },
+    {
+      "topic": "containers",
+      "url": "https://github.com/topics/containers",
+      "minStars": 2000,
+      "description": "（自动发现）containers"
+    },
+    {
+      "topic": "cuda-driver-api",
+      "url": "https://github.com/topics/cuda-driver-api",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-driver-api"
+    },
+    {
+      "topic": "cuda-opengl",
+      "url": "https://github.com/topics/cuda-opengl",
+      "minStars": 2000,
+      "description": "（自动发现）cuda-opengl"
+    },
+    {
+      "topic": "coreml",
+      "url": "https://github.com/topics/coreml",
+      "minStars": 2000,
+      "description": "（自动发现）coreml"
+    },
+    {
+      "topic": "gpu-computing",
+      "url": "https://github.com/topics/gpu-computing",
+      "minStars": 2000,
+      "description": "（自动发现）gpu-computing"
+    },
+    {
+      "topic": "vllm",
+      "url": "https://github.com/topics/vllm",
+      "minStars": 2000,
+      "description": "（自动发现）vllm"
+    },
+    {
+      "topic": "audio",
+      "url": "https://github.com/topics/audio",
+      "minStars": 2000,
+      "description": "（自动发现）audio"
+    },
+    {
+      "topic": "generative-model",
+      "url": "https://github.com/topics/generative-model",
+      "minStars": 2000,
+      "description": "（自动发现）generative-model"
+    },
+    {
+      "topic": "music",
+      "url": "https://github.com/topics/music",
+      "minStars": 2000,
+      "description": "（自动发现）music"
+    },
+    {
+      "topic": "vq-vae",
+      "url": "https://github.com/topics/vq-vae",
+      "minStars": 2000,
+      "description": "（自动发现）vq-vae"
+    },
+    {
+      "topic": "agentic-rag",
+      "url": "https://github.com/topics/agentic-rag",
+      "minStars": 2000,
+      "description": "（自动发现）agentic-rag"
+    },
+    {
+      "topic": "deep-research",
+      "url": "https://github.com/topics/deep-research",
+      "minStars": 2000,
+      "description": "（自动发现）deep-research"
+    },
+    {
+      "topic": "deepseek-r1",
+      "url": "https://github.com/topics/deepseek-r1",
+      "minStars": 2000,
+      "description": "（自动发现）deepseek-r1"
+    },
+    {
+      "topic": "llama4",
+      "url": "https://github.com/topics/llama4",
+      "minStars": 2000,
+      "description": "（自动发现）llama4"
+    },
+    {
+      "topic": "reasoning-models",
+      "url": "https://github.com/topics/reasoning-models",
+      "minStars": 2000,
+      "description": "（自动发现）reasoning-models"
+    },
+    {
+      "topic": "vector-database",
+      "url": "https://github.com/topics/vector-database",
+      "minStars": 2000,
+      "description": "（自动发现）vector-database"
+    },
+    {
+      "topic": "magisk",
+      "url": "https://github.com/topics/magisk",
+      "minStars": 2000,
+      "description": "（自动发现）magisk"
+    },
+    {
+      "topic": "mobile-security",
+      "url": "https://github.com/topics/mobile-security",
+      "minStars": 2000,
+      "description": "（自动发现）mobile-security"
+    },
+    {
+      "topic": "xposed",
+      "url": "https://github.com/topics/xposed",
+      "minStars": 2000,
+      "description": "（自动发现）xposed"
+    },
+    {
+      "topic": "blockchain",
+      "url": "https://github.com/topics/blockchain",
+      "minStars": 2000,
+      "description": "（自动发现）blockchain"
+    },
+    {
+      "topic": "zero-knowledge",
+      "url": "https://github.com/topics/zero-knowledge",
+      "minStars": 2000,
+      "description": "（自动发现）zero-knowledge"
+    },
+    {
+      "topic": "computervision",
+      "url": "https://github.com/topics/computervision",
+      "minStars": 2000,
+      "description": "（自动发现）computervision"
+    },
+    {
+      "topic": "face-tracking",
+      "url": "https://github.com/topics/face-tracking",
+      "minStars": 2000,
+      "description": "（自动发现）face-tracking"
+    },
+    {
+      "topic": "video",
+      "url": "https://github.com/topics/video",
+      "minStars": 2000,
+      "description": "（自动发现）video"
+    },
+    {
+      "topic": "video-capture",
+      "url": "https://github.com/topics/video-capture",
+      "minStars": 2000,
+      "description": "（自动发现）video-capture"
+    },
+    {
+      "topic": "ai-agent-sdk",
+      "url": "https://github.com/topics/ai-agent-sdk",
+      "minStars": 2000,
+      "description": "（自动发现）ai-agent-sdk"
+    },
+    {
+      "topic": "ai-agents-sdk",
+      "url": "https://github.com/topics/ai-agents-sdk",
+      "minStars": 2000,
+      "description": "（自动发现）ai-agents-sdk"
+    },
+    {
+      "topic": "ai-framwork",
+      "url": "https://github.com/topics/ai-framwork",
+      "minStars": 2000,
+      "description": "（自动发现）ai-framwork"
+    },
+    {
+      "topic": "aiagent",
+      "url": "https://github.com/topics/aiagent",
+      "minStars": 2000,
+      "description": "（自动发现）aiagent"
+    },
+    {
+      "topic": "aiagentframework",
+      "url": "https://github.com/topics/aiagentframework",
+      "minStars": 2000,
+      "description": "（自动发现）aiagentframework"
+    },
+    {
+      "topic": "aiagentsframework",
+      "url": "https://github.com/topics/aiagentsframework",
+      "minStars": 2000,
+      "description": "（自动发现）aiagentsframework"
+    },
+    {
+      "topic": "multi-agent-system",
+      "url": "https://github.com/topics/multi-agent-system",
+      "minStars": 2000,
+      "description": "（自动发现）multi-agent-system"
+    },
+    {
+      "topic": "multi-ai-agents",
+      "url": "https://github.com/topics/multi-ai-agents",
+      "minStars": 2000,
+      "description": "（自动发现）multi-ai-agents"
+    },
+    {
+      "topic": "agent-fleet",
+      "url": "https://github.com/topics/agent-fleet",
+      "minStars": 2000,
+      "description": "（自动发现）agent-fleet"
+    },
+    {
+      "topic": "agent-swarm",
+      "url": "https://github.com/topics/agent-swarm",
+      "minStars": 2000,
+      "description": "（自动发现）agent-swarm"
+    },
+    {
+      "topic": "orchestrator",
+      "url": "https://github.com/topics/orchestrator",
+      "minStars": 2000,
+      "description": "（自动发现）orchestrator"
+    },
+    {
+      "topic": "gpu-monitoring",
+      "url": "https://github.com/topics/gpu-monitoring",
+      "minStars": 2000,
+      "description": "（自动发现）gpu-monitoring"
+    },
+    {
+      "topic": "nvml",
+      "url": "https://github.com/topics/nvml",
+      "minStars": 2000,
+      "description": "（自动发现）nvml"
+    },
+    {
+      "topic": "gpu-acceleration",
+      "url": "https://github.com/topics/gpu-acceleration",
+      "minStars": 2000,
+      "description": "（自动发现）gpu-acceleration"
+    },
+    {
+      "topic": "gpts",
+      "url": "https://github.com/topics/gpts",
+      "minStars": 2000,
+      "description": "（自动发现）gpts"
+    },
+    {
+      "topic": "llamaindex",
+      "url": "https://github.com/topics/llamaindex",
+      "minStars": 2000,
+      "description": "（自动发现）llamaindex"
+    },
+    {
+      "topic": "agentgpt",
+      "url": "https://github.com/topics/agentgpt",
+      "minStars": 2000,
+      "description": "（自动发现）agentgpt"
+    },
+    {
+      "topic": "aigc",
+      "url": "https://github.com/topics/aigc",
+      "minStars": 2000,
+      "description": "（自动发现）aigc"
+    },
+    {
+      "topic": "autogpt",
+      "url": "https://github.com/topics/autogpt",
+      "minStars": 2000,
+      "description": "（自动发现）autogpt"
+    },
+    {
+      "topic": "chatbox",
+      "url": "https://github.com/topics/chatbox",
+      "minStars": 2000,
+      "description": "（自动发现）chatbox"
+    },
+    {
+      "topic": "chatgpt-api",
+      "url": "https://github.com/topics/chatgpt-api",
+      "minStars": 2000,
+      "description": "（自动发现）chatgpt-api"
+    },
+    {
+      "topic": "chatgpt-sdk",
+      "url": "https://github.com/topics/chatgpt-sdk",
+      "minStars": 2000,
+      "description": "（自动发现）chatgpt-sdk"
+    },
+    {
+      "topic": "gpt4",
+      "url": "https://github.com/topics/gpt4",
+      "minStars": 2000,
+      "description": "（自动发现）gpt4"
+    },
+    {
+      "topic": "gpt4free",
+      "url": "https://github.com/topics/gpt4free",
+      "minStars": 2000,
+      "description": "（自动发现）gpt4free"
+    },
+    {
+      "topic": "gpt4o",
+      "url": "https://github.com/topics/gpt4o",
+      "minStars": 2000,
+      "description": "（自动发现）gpt4o"
+    },
+    {
+      "topic": "gptstore",
+      "url": "https://github.com/topics/gptstore",
+      "minStars": 2000,
+      "description": "（自动发现）gptstore"
+    },
+    {
+      "topic": "chainer",
+      "url": "https://github.com/topics/chainer",
+      "minStars": 2000,
+      "description": "（自动发现）chainer"
+    },
+    {
+      "topic": "distributed-inference",
+      "url": "https://github.com/topics/distributed-inference",
+      "minStars": 2000,
+      "description": "（自动发现）distributed-inference"
+    },
+    {
+      "topic": "large-large-models",
+      "url": "https://github.com/topics/large-large-models",
+      "minStars": 2000,
+      "description": "（自动发现）large-large-models"
+    },
+    {
+      "topic": "embedding",
+      "url": "https://github.com/topics/embedding",
+      "minStars": 2000,
+      "description": "（自动发现）embedding"
+    },
+    {
+      "topic": "multimodal",
+      "url": "https://github.com/topics/multimodal",
+      "minStars": 2000,
+      "description": "（自动发现）multimodal"
+    },
+    {
+      "topic": "sentence-transformers",
+      "url": "https://github.com/topics/sentence-transformers",
+      "minStars": 2000,
+      "description": "（自动发现）sentence-transformers"
+    },
+    {
+      "topic": "agent-based-simulation",
+      "url": "https://github.com/topics/agent-based-simulation",
+      "minStars": 2000,
+      "description": "（自动发现）agent-based-simulation"
+    },
+    {
+      "topic": "foundation-models",
+      "url": "https://github.com/topics/foundation-models",
+      "minStars": 2000,
+      "description": "（自动发现）foundation-models"
+    },
+    {
+      "topic": "awesome-llm",
+      "url": "https://github.com/topics/awesome-llm",
+      "minStars": 2000,
+      "description": "（自动发现）awesome-llm"
+    },
+    {
+      "topic": "flash-mla",
+      "url": "https://github.com/topics/flash-mla",
+      "minStars": 2000,
+      "description": "（自动发现）flash-mla"
+    },
+    {
+      "topic": "mla",
+      "url": "https://github.com/topics/mla",
+      "minStars": 2000,
+      "description": "（自动发现）mla"
+    },
+    {
+      "topic": "tensorrt-llm",
+      "url": "https://github.com/topics/tensorrt-llm",
+      "minStars": 2000,
+      "description": "（自动发现）tensorrt-llm"
+    },
+    {
+      "topic": "multiagent",
+      "url": "https://github.com/topics/multiagent",
+      "minStars": 2000,
+      "description": "（自动发现）multiagent"
+    },
+    {
+      "topic": "nlp-machine-learning",
+      "url": "https://github.com/topics/nlp-machine-learning",
+      "minStars": 2000,
+      "description": "（自动发现）nlp-machine-learning"
+    },
+    {
+      "topic": "text-to-image-generation",
+      "url": "https://github.com/topics/text-to-image-generation",
+      "minStars": 2000,
+      "description": "（自动发现）text-to-image-generation"
+    },
+    {
+      "topic": "text-to-video",
+      "url": "https://github.com/topics/text-to-video",
+      "minStars": 2000,
+      "description": "（自动发现）text-to-video"
+    },
+    {
+      "topic": "comfyui",
+      "url": "https://github.com/topics/comfyui",
+      "minStars": 2000,
+      "description": "（自动发现）comfyui"
+    },
+    {
+      "topic": "llm-agent",
+      "url": "https://github.com/topics/llm-agent",
+      "minStars": 2000,
+      "description": "（自动发现）llm-agent"
+    },
+    {
+      "topic": "deep-reinforcement-learning",
+      "url": "https://github.com/topics/deep-reinforcement-learning",
+      "minStars": 2000,
+      "description": "（自动发现）deep-reinforcement-learning"
+    },
+    {
+      "topic": "reinforcement-learning-excercises",
+      "url": "https://github.com/topics/reinforcement-learning-excercises",
+      "minStars": 2000,
+      "description": "（自动发现）reinforcement-learning-excercises"
+    },
+    {
+      "topic": "embeddings",
+      "url": "https://github.com/topics/embeddings",
+      "minStars": 2000,
+      "description": "（自动发现）embeddings"
+    },
+    {
+      "topic": "speech-translation",
+      "url": "https://github.com/topics/speech-translation",
+      "minStars": 2000,
+      "description": "（自动发现）speech-translation"
+    },
+    {
+      "topic": "pdf-to-text",
+      "url": "https://github.com/topics/pdf-to-text",
+      "minStars": 2000,
+      "description": "（自动发现）pdf-to-text"
+    },
+    {
+      "topic": "research",
+      "url": "https://github.com/topics/research",
+      "minStars": 2000,
+      "description": "（自动发现）research"
+    },
+    {
+      "topic": "langchain",
+      "url": "https://github.com/topics/langchain",
+      "minStars": 2000,
+      "description": "（自动发现）langchain"
+    },
+    {
+      "topic": "robotics",
+      "url": "https://github.com/topics/robotics",
+      "minStars": 2000,
+      "description": "（自动发现）robotics"
+    },
+    {
+      "topic": "musicbot",
+      "url": "https://github.com/topics/musicbot",
+      "minStars": 2000,
+      "description": "（自动发现）musicbot"
+    },
+    {
+      "topic": "groq-ai",
+      "url": "https://github.com/topics/groq-ai",
+      "minStars": 2000,
+      "description": "（自动发现）groq-ai"
+    },
+    {
+      "topic": "llama-index",
+      "url": "https://github.com/topics/llama-index",
+      "minStars": 2000,
+      "description": "（自动发现）llama-index"
+    },
+    {
+      "topic": "chat",
+      "url": "https://github.com/topics/chat",
+      "minStars": 2000,
+      "description": "（自动发现）chat"
+    },
+    {
+      "topic": "claude-commands",
+      "url": "https://github.com/topics/claude-commands",
+      "minStars": 2000,
+      "description": "（自动发现）claude-commands"
+    },
+    {
+      "topic": "claudecode-config",
+      "url": "https://github.com/topics/claudecode-config",
+      "minStars": 2000,
+      "description": "（自动发现）claudecode-config"
+    },
+    {
+      "topic": "langchain-python",
+      "url": "https://github.com/topics/langchain-python",
+      "minStars": 2000,
+      "description": "（自动发现）langchain-python"
     },
     {
       "topic": "benchmark",

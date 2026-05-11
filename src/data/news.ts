@@ -20640,5 +20640,349 @@ DeepSeek-TUI 也在 GitHub 本周趋势中排名第一（24,295⭐，本周 +22,
     source: "凤凰网科技",
     sourceUrl: "https://tech.ifeng.com/c/8t2FkU1SHg7",
     href: "/news/news-1298",
+  },
+  {
+    id: "news-1299",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 推出 Codex Chrome 扩展：AI 助手可直接操作浏览器完成网站任务",
+    summary: "OpenAI 发布 Codex Chrome 扩展，允许 Codex 在用户已登录的网站和应用中完成工作任务。扩展采用任务专属标签组设计，不影响用户正常使用。",
+    content: `## Codex 走进浏览器：AI 助手的操作化升级
+
+**2026 年 5 月 7 日**，OpenAI 在 Chrome Web Store 上线了 Codex 扩展。
+
+### 核心功能
+- **浏览器操作**：Codex 可以直接使用 Chrome 浏览器完成网站和应用中的任务
+- **已登录态复用**：在用户已经登录的网站中操作，无需重新认证
+- **任务专属标签组**：在独立的标签组中工作，不影响用户的正常浏览
+
+### 行业意义
+这标志着 AI 助手从「纯文本交互」走向「实际操作」的重要一步。
+用户不再只是与 AI 对话，而是让 AI 代表自己去操作系统、完成实际任务。
+这与 OpenAI 此前推出的 Computer Use 能力一脉相承，但更加日常化和便捷化。
+
+**来源：** The Verge + Chrome Web Store
+**链接：** https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg`,
+    date: "2026-05-11 16:00",
+    source: "The Verge + OpenAI",
+    sourceUrl: "https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg",
+    href: "/news/news-1299",
+  },
+  {
+    id: "news-1300",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Digg 重新上线：从社交聚合平台转型为 AI 新闻情绪追踪器",
+    summary: "Digg 在关闭公测重启不到两个月后再次回归，新版本 di.gg 不再类似 Reddit，而是转型为在线情绪追踪平台，目前专注于追踪 AI 新闻。",
+    content: `## Digg 的 AI 转型：从内容聚合到情绪追踪
+
+**2026 年 5 月 8 日**，Digg 以全新形态 di.gg 重新上线。
+
+### 转型方向
+- **不再像 Reddit**：放弃了传统的社区讨论模式
+- **情绪追踪**：新平台更像是一个在线情绪/趋势追踪器
+- **AI 新闻专注**：目前专注于追踪 AI 领域的新闻动态
+- **未来扩展**：联合创始人 Kevin Rose 表示"未来将覆盖所有内容"
+
+### 行业背景
+Digg 的转型反映了 AI 正在从「技术话题」变为「全民关注的社会议题」。
+一个曾经以通用内容聚合起家的平台，现在选择以 AI 新闻为核心重新出发，
+说明 AI 新闻的市场需求和关注度正在快速扩大。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/tech/894803/digg-beta-shutdown-layoffs-ai`,
+    date: "2026-05-11 16:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/tech/894803/digg-beta-shutdown-layoffs-ai",
+    href: "/news/news-1300",
+  },
+  {
+    id: "news-1301",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "OpenAI 发布 Codex 安全运行指南：如何在企业中安全部署自主 AI 编码",
+    summary: "OpenAI 分享了在内部安全运行 Codex 的实践经验，包括沙箱隔离、权限控制、代码审查等最佳实践，为企业级 AI 编码代理的部署提供参考。",
+    content: `## OpenAI 的安全 Codex 实践
+
+**2026 年 5 月 8 日**，OpenAI 分享了内部安全运行 Codex 的经验。
+
+### 安全策略
+- **沙箱隔离**：Codex 在隔离环境中执行代码
+- **权限控制**：严格的文件系统和网络访问限制
+- **代码审查**：自动 + 人工双层代码审查机制
+- **审计日志**：完整的操作记录可追溯
+
+### 企业启示
+对于计划在企业中部署 AI 编码代理的组织来说，
+OpenAI 的这份指南提供了经过实战验证的安全框架。
+自主 AI 编码的价值巨大，但安全风险不容忽视。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/running-codex-safely/`,
+    date: "2026-05-11 16:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/running-codex-safely/",
+    href: "/news/news-1301",
+  },
+  {
+    id: "news-1302",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Anthropic Labs 推出 Claude Design：与 AI 协作创建专业级视觉作品",
+    summary: "Anthropic 发布 Claude Design，一款 Anthropic Labs 新产品，让用户与 Claude 协作创建 polished 的视觉作品，包括设计、原型、幻灯片、单页文档等。",
+    content: `## Claude Design：AI 协作设计新工具
+
+**2026 年 4 月 17 日**，Anthropic Labs 推出 Claude Design。
+
+### 核心能力
+- **设计协作**：与 Claude 协作创建专业级设计作品
+- **多样化输出**：支持设计稿、原型、幻灯片、单页文档等
+- **Anthropic Labs**：Anthropic 的实验性产品线
+
+### 行业趋势
+从「文本 AI」到「视觉 AI」的扩展正在加速。
+Claude Design 的发布意味着 Anthropic 正在拓展 Claude 的能力边界，
+从纯文本交互走向多模态协作创作。
+
+这与 ComfyUI 估值突破 5 亿美元（news-418）的趋势一致——
+创作者正在寻求对 AI 生成内容更精细的控制权。
+
+**来源：** Anthropic Blog
+**链接：** https://www.anthropic.com/news/introducing-claude-design`,
+    date: "2026-05-11 16:00",
+    source: "Anthropic Blog",
+    sourceUrl: "https://www.anthropic.com/news/introducing-claude-design",
+    href: "/news/news-1302",
+  },
+  {
+    id: "news-1303",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Anthropic 发起 Project Glasswing：12 家科技巨头联合保障关键软件安全",
+    summary: "Anthropic 发起 Project Glasswing 安全合作倡议，汇集 AWS、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、NVIDIA、Palo Alto Networks 共 12 家巨头，共同保护全球最关键软件的安全。",
+    content: `## Project Glasswing：AI 安全的联盟时代
+
+**2026 年 4 月 7 日**，Anthropic 发起 Project Glasswing 安全合作计划。
+
+### 参与企业（12 家）
+AWS、Anthropic、Apple、Broadcom、Cisco、CrowdStrike、
+Google、JPMorganChase、Linux Foundation、Microsoft、
+NVIDIA、Palo Alto Networks
+
+### 合作目标
+- **关键软件保护**：保护全球最关键的基础软件
+- **行业协作**：跨公司、跨平台的安全信息共享
+- **AI 辅助安全**：利用 AI 技术提升软件安全审查效率
+
+### 行业意义
+当 12 家平时竞争的科技巨头坐下来合作保障软件安全时，
+说明 AI 时代的安全威胁已经超越了单个企业的能力范围。
+Project Glasswing 代表了「集体防御」在 AI 安全领域的实践。
+
+此前 Mozilla 用 Claude Mythos 发现 423 个 Firefox 漏洞（news-1294），
+证明 AI 辅助安全审计的巨大潜力。
+
+**来源：** Anthropic Blog
+**链接：** https://www.anthropic.com/news/project-glasswing`,
+    date: "2026-05-11 16:00",
+    source: "Anthropic Blog",
+    sourceUrl: "https://www.anthropic.com/news/project-glasswing",
+    href: "/news/news-1303",
+  },
+  {
+    id: "news-1304",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 推出 ChatGPT Futures 2026 届计划：面向未来毕业生的 AI 教育项目",
+    summary: "OpenAI 发布 ChatGPT Futures: Class of 2026 计划，为即将毕业的学生提供 AI 相关的教育和资源支持。",
+    content: `## ChatGPT Futures：为新一代毕业生赋能
+
+**2026 年 5 月 6 日**，OpenAI 推出 ChatGPT Futures 计划。
+
+### 计划内容
+- **面向 2026 届毕业生**：为即将进入职场的学生提供 AI 工具和资源
+- **教育支持**：帮助学生理解和使用 AI 技术
+- **职业准备**：让新一代工作者在 AI 时代具备竞争力
+
+### 战略意义
+OpenAI 正在从「产品公司」向「生态公司」转型。
+通过教育项目培养未来的 AI 用户，
+这与 Google 和 Microsoft 的教育策略类似。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/introducing-chatgpt-futures-class-of-2026/`,
+    date: "2026-05-11 16:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/introducing-chatgpt-futures-class-of-2026/",
+    href: "/news/news-1304",
+  },
+  {
+    id: "news-1305",
+    tag: "AI 芯片",
+    tagColor: "bg-sky-500/10 text-sky-300",
+    title: "Cerebras 即将上市：将考验投资者对 AI 芯片初创企业的投资热情",
+    summary: "据新浪财经报道，AI 芯片公司 Cerebras 的 IPO 即将启动，这将考验投资者对 AI 芯片初创企业的投资意愿和估值预期。",
+    content: `## Cerebras IPO：AI 芯片赛道的又一次大考
+
+**2026 年 5 月 11 日**，Cerebras 的 IPO 进程引发关注。
+
+### 背景
+- **AI 芯片竞争白热化**：NVIDIA 主导，但多家初创公司寻求突破
+- **投资者信心考验**：市场对 AI 芯片初创企业的估值是否合理
+- **行业格局**：去 NVIDIA 化趋势加速，但替代者能否获得认可
+
+### 行业影响
+Cerebras 的上市表现将直接影响后续 AI 芯片公司的融资环境。
+如果市场给予积极回应，将激励更多 AI 芯片创新；
+反之则可能导致整个赛道的融资降温。
+
+**来源：** 新浪财经
+**链接：** https://finance.sina.com.cn/stock/usstock/c/2026-05-11/doc-inhxpatr0572626.shtml`,
+    date: "2026-05-11 16:00",
+    source: "新浪财经",
+    sourceUrl: "https://finance.sina.com.cn/stock/usstock/c/2026-05-11/doc-inhxpatr0572626.shtml",
+    href: "/news/news-1305",
+  },
+  {
+    id: "news-1306",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "字节跳动豆包试水收费：中国 AI 应用商业化探索加速",
+    summary: "据新浪财经报道，字节跳动旗下 AI 产品豆包开始尝试收费模式，标志着中国 AI 应用从「烧钱获客」向「商业化变现」的战略转变。",
+    content: `## 豆包收费：中国 AI 的商业化拐点
+
+**2026 年 5 月 11 日**，新浪财经报道豆包开始试水收费。
+
+### 背景分析
+- **从免费到收费**：中国 AI 应用经历了长期的免费获客阶段
+- **商业化压力**：模型训练和运营成本持续攀升
+- **用户价值验证**：收费是验证产品真实用户价值的最终标准
+
+### 行业趋势
+豆包的收费尝试与中国 AI 行业整体的商业化进程相关。
+当 DeepSeek 启动 500 亿融资（news-1298）、
+OpenAI 在 ChatGPT 中测试广告（news-1291）时，
+整个行业都在寻找可持续的盈利模式。
+
+**来源：** 新浪财经
+**链接：** https://finance.sina.com.cn/roll/2026-05-11/doc-inhxpatn2354253.shtml`,
+    date: "2026-05-11 16:00",
+    source: "新浪财经",
+    sourceUrl: "https://finance.sina.com.cn/roll/2026-05-11/doc-inhxpatn2354253.shtml",
+    href: "/news/news-1306",
+  },
+  {
+    id: "news-1307",
+    tag: "AI 伦理",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "纽约时报就 AI 生成虚假引语发布更正：记者应核实 AI 工具返回内容",
+    summary: "纽约时报发布编辑说明，更正了一篇报道中由 AI 生成的虚假引语——该引语被错误地归因于加拿大保守党领袖 Pierre Poilievre。事件引发对 AI 在新闻报道中使用的伦理讨论。",
+    content: `## AI 生成引语丑闻：新闻诚信的新挑战
+
+**2026 年 5 月 10 日**，纽约时报发布更正声明。
+
+### 事件经过
+- **AI 生成引语**：某记者使用 AI 工具生成了一段据称是 Pierre Poilievre 的引语
+- **内容不实**：AI 生成的内容是对 Poilievre 观点的总结，而非真实引语
+- **更正措施**：纽约时报修正了引语，确认 Poilievre 在 4 月的演讲中并未使用该措辞
+
+### 行业警示
+这一事件揭示了 AI 在新闻报道中的核心风险：
+**AI 可以生成看似合理但不真实的内容。**
+记者在使用 AI 工具时，必须对返回内容的真实性进行独立核实。
+
+Simon Willison 转载此事件，强调这是 AI 幻觉在新闻领域的典型案例。
+
+**来源：** Simon Willison Blog + 纽约时报
+**链接：** https://simonwillison.net/2026/May/10/new-york-times-editors-note/`,
+    date: "2026-05-11 16:00",
+    source: "Simon Willison Blog + 纽约时报",
+    sourceUrl: "https://simonwillison.net/2026/May/10/new-york-times-editors-note/",
+    href: "/news/news-1307",
+  },
+  {
+    id: "news-1308",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 在 ChatGPT 推出 Trusted Contact 功能：AI 安全的社交防护机制",
+    summary: "OpenAI 在 ChatGPT 中引入 Trusted Contact（可信联系人）功能，为用户提供额外的安全保障，是 AI 产品社交安全设计的新探索。",
+    content: `## ChatGPT 的可信联系人：AI 安全的社交层
+
+**2026 年 5 月 7 日**，OpenAI 推出 ChatGPT Trusted Contact 功能。
+
+### 功能说明
+- **可信联系人**：用户可以指定信任的联系人作为安全保障
+- **安全机制**：在特定情况下，系统可向可信联系人发送通知
+- **社交防护**：在 AI 与用户的交互中加入人为监督层
+
+### 行业意义
+随着 AI 助手在日常生活中的角色越来越重要，
+安全机制也从「技术层面」扩展到「社交层面」。
+Trusted Contact 是 AI 产品社交安全设计的创新尝试。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/introducing-trusted-contact-in-chatgpt/`,
+    date: "2026-05-11 16:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/introducing-trusted-contact-in-chatgpt/",
+    href: "/news/news-1308",
+  },
+  {
+    id: "news-1309",
+    tag: "开源项目",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Claude Code 输出格式革命：HTML 替代 Markdown 成为 AI 编码最佳输出格式",
+    summary: "Anthropic 团队成员 Thariq Shihipar 发表文章论证 HTML 是 Claude Code 的最佳输出格式，相比 Markdown 可嵌入 SVG 图表、交互式组件、页面内导航等丰富内容。Simon Willison 实测后表示认同并改变默认策略。",
+    content: `## HTML vs Markdown：AI 编码输出格式的新思考
+
+**2026 年 5 行 8 日**，Simon Willison 转载了 Anthropic Claude Code 团队成员的文章。
+
+### 核心观点
+- **HTML 更丰富**：可以嵌入 SVG 图表、交互式组件、页面内导航
+- **Markdown 更高效**：Token 效率更高，但表达能力有限
+- **适用场景**：对于解释性输出（explanation），HTML 优势明显
+
+### Simon Willison 的实践
+Simon 用 GPT-5.5 测试了 HTML 输出格式，
+将一个 Linux 安全漏洞的 Python 代码转换为交互式 HTML 解释页面，
+结果令人印象深刻。
+
+### 行业启示
+这一讨论反映了 AI 编码工具正在从「生成代码」走向「生成丰富的技术文档」。
+输出格式的选择直接影响 AI 助手的表达能力和用户体验。
+
+**来源：** Simon Willison Blog
+**链接：** https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/`,
+    date: "2026-05-11 16:00",
+    source: "Simon Willison Blog + Anthropic",
+    sourceUrl: "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/",
+    href: "/news/news-1309",
+  },
+  {
+    id: "news-1310",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "GPT-5.5 Cyber 增强可信访问网络：AI 网络安全防御能力大幅升级",
+    summary: "OpenAI 宣布将 GPT-5.5 和 GPT-5.5-Cyber 与可信访问网络集成，提升大规模网络安全防御能力。",
+    content: `## GPT-5.5-Cyber：AI 赋能网络安全
+
+**2026 年 5 月 7 日**，OpenAI 宣布扩展可信访问网络（Trusted Access for Cyber）。
+
+### 核心能力
+- **GPT-5.5-Cyber**：专为网络安全优化的模型变体
+- **可信访问**：确保 AI 系统只能访问授权的数据和系统
+- **大规模防御**：支持企业级网络安全防御场景
+
+### 行业趋势
+AI 在网络安全领域的应用正在加速。
+GPT-5.5-Cyber 的推出意味着 OpenAI 正在将大语言模型的能力
+从通用领域扩展到垂直的网络安全领域。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/`,
+    date: "2026-05-11 16:00",
+    source: "OpenAI Blog",
+    sourceUrl: "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/",
+    href: "/news/news-1310",
   }
 ];
