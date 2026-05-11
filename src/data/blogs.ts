@@ -143,6 +143,7 @@ import { blog as blog147 } from './blogs/blog-147';
 import { blog as blog148 } from './blogs/blog-148';
 import { default as blog149 } from './blogs/blog-149';
 import { blog as blog150 } from './blogs/blog-150';
+import { blog as blog151 } from './blogs/blog-151';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -280,4 +281,5 @@ export const blogs: BlogPost[] = [
   blog148,
   blog149,
   blog150,
+  blog151,
 ];

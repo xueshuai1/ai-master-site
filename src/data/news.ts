@@ -20273,8 +20273,7 @@ Simon Willison 指出，AI 生成引文的核心问题是：
     source: "Simon Willison's Weblog + 纽约时报",
     sourceUrl: "https://simonwillison.net/2026/May/10/new-york-times-editors-note/",
     href: "/news/news-1285",
-  }
-],
+  },
   {
     id: "news-1286",
     tag: "大语言模型",
