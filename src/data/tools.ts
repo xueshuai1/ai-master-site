@@ -5493,7 +5493,7 @@ language: "Python",
     icon: "🔧",
     githubStars: 8835,
     createdAt: "2026-02-28",
-  }
+  },
   // 自动收录（2026-05-12）
   {
     id: "hbai_ltd_toonflow_app",
