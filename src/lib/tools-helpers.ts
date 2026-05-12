@@ -114,9 +114,9 @@ export function starsBadgeClass(stars: number | null | undefined): string {
  * 落空则用 updatedAt（手工维护时间）。
  * 注：开源工具 createdAt 通常是仓库初始 commit 日期，远早于本站收录，
  * 因此「NEW」更倾向以「上次抓取到的 delta」是否处于活跃增长来判断。
- * 简化版：以 createdAt 距今 < 60 天作为「新工具」。
+ * 简化版：以 createdAt 距今 < 3 天作为「新工具」。
  */
-export function isNewTool(t: Tool, withinDays = 60): boolean {
+export function isNewTool(t: Tool, withinDays = 3): boolean {
   const dateStr = t.createdAt;
   if (!dateStr) return false;
   const created = new Date(dateStr).getTime();
