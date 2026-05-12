@@ -18,7 +18,7 @@ export const article: Article = {
 
 到 2026 年初，MCP 已经被所有主流 AI 平台采纳：OpenAI 在 Responses API 中支持远程 MCP 服务器，Google 将 MCP 集成到 Gemini 和 Google Workspace 生态，Microsoft 在 Windows Agentic 框架中原生支持 MCP，Amazon 在 Q Developer 中使用 MCP 连接 AWS 服务。据 IBM 研究，使用标准化协议的 AI 组织比自定义集成的组织减少了 60-70% 的集成时间。
 
-MCP 解决的核心问题是：**上下文交换的标准化**。AI 模型需要外部数据（文件、数据库、API）才能做出准确决策，但每个数据源的格式、认证方式、查询语言都不同。MCP 定义了一个统一的 JSON-RPC 协议层，将工具的能力（tools）、可用资源（resources）和交互提示（prompts）以标准方式暴露给 AI 模型。`,
+MCP 解决的核心问题是：上下文交换的标准化。AI 模型需要外部数据（文件、数据库、API）才能做出准确决策，但每个数据源的格式、认证方式、查询语言都不同。MCP 定义了一个统一的 JSON-RPC 协议层，将工具的能力（tools）、可用资源（resources）和交互提示（prompts）以标准方式暴露给 AI 模型。`,
             mermaid: `graph LR
     A["AI 模型 A"] -->|"定制集成"| B["工具 1"]
     A -->|"定制集成"| C["工具 2"]
@@ -31,15 +31,15 @@ MCP 解决的核心问题是：**上下文交换的标准化**。AI 模型需要
         },
         {
             title: "2. MCP 架构深度解析",
-            body: `MCP 的架构由三个核心角色组成：**Host**（宿主应用，如 Claude Desktop、Cursor）、**Client**（MCP 客户端，内嵌在 Host 中）和 **Server**（MCP 服务器，提供工具/资源/提示）。
+            body: `MCP 的架构由三个核心角色组成：Host（宿主应用，如 Claude Desktop、Cursor）、Client（MCP 客户端，内嵌在 Host 中）和 Server（MCP 服务器，提供工具/资源/提示）。
 
-通信基于 JSON-RPC 2.0 协议，传输层支持两种模式：**stdio**（标准输入/输出，用于本地进程）和 **HTTP+SSE**（Server-Sent Events，用于远程服务）。这种设计让同一个 MCP Server 既可以作为本地子进程运行（零网络开销），也可以部署为远程服务（跨机器、跨云）。
+通信基于 JSON-RPC 2.0 协议，传输层支持两种模式：stdio（标准输入/输出，用于本地进程）和 HTTP+SSE（Server-Sent Events，用于远程服务）。这种设计让同一个 MCP Server 既可以作为本地子进程运行（零网络开销），也可以部署为远程服务（跨机器、跨云）。
 
-MCP Server 暴露三种能力：**Tools**（可调用的函数，类似 Function Calling）、**Resources**（可读取的数据源，如文件、数据库记录）和 **Prompts**（预定义的交互模板，引导用户与模型交互）。
+MCP Server 暴露三种能力：Tools（可调用的函数，类似 Function Calling）、Resources（可读取的数据源，如文件、数据库记录）和 Prompts（预定义的交互模板，引导用户与模型交互）。
 
-协议交互分为几个阶段。**初始化阶段**：Host 发送 initialize 请求，声明协议版本和能力；Server 回应其支持的协议版本和可用能力。**能力协商阶段**：Host 发送 initialized 通知，确认连接建立。**运行时阶段**：Host 通过 tools/list、tools/call、resources/list、resources/read 等标准方法与 Server 交互。
+协议交互分为几个阶段。初始化阶段：Host 发送 initialize 请求，声明协议版本和能力；Server 回应其支持的协议版本和可用能力。能力协商阶段：Host 发送 initialized 通知，确认连接建立。运行时阶段：Host 通过 tools/list、tools/call、resources/list、resources/read 等标准方法与 Server 交互。
 
-2026 年 MCP 的重要扩展包括：**远程 MCP 服务器**（通过 HTTP 协议跨网络通信）、**OAuth 认证**（为远程服务器添加安全认证层）、**流式响应**（支持长时间运行工具的进度推送）、**MCP Apps**（在 Agent 界面中渲染交互式 UI，而非纯文本响应）。`,
+2026 年 MCP 的重要扩展包括：远程 MCP 服务器（通过 HTTP 协议跨网络通信）、OAuth 认证（为远程服务器添加安全认证层）、流式响应（支持长时间运行工具的进度推送）、MCP Apps（在 Agent 界面中渲染交互式 UI，而非纯文本响应）。`,
             code: [
                 {
                     lang: "json",
@@ -175,7 +175,7 @@ MCP Server 暴露三种能力：**Tools**（可调用的函数，类似 Function
 
 使用 TypeScript MCP SDK（官方 SDK），编写 MCP Server 的过程非常直观：首先创建 Server 实例并声明其能力，然后注册 Tools（定义输入 schema 和处理函数）、Resources（定义 URI 模板和读取方法）和 Prompts（定义交互模板）。
 
-MCP Server 可以是简单的本地脚本（如读取本地文件系统），也可以是复杂的企业级服务（如连接 Salesforce CRM、查询生产数据库、触发 CI/CD 流水线）。关键设计原则是：**最小权限**（只暴露必要的工具）、**防御性编程**（验证所有输入参数）和**错误处理**（返回有意义的错误信息，而不是静默失败）。
+MCP Server 可以是简单的本地脚本（如读取本地文件系统），也可以是复杂的企业级服务（如连接 Salesforce CRM、查询生产数据库、触发 CI/CD 流水线）。关键设计原则是：最小权限（只暴露必要的工具）、防御性编程（验证所有输入参数）和错误处理（返回有意义的错误信息，而不是静默失败）。
 
 2026 年的 MCP Server 生态已经非常丰富。官方和社区提供了数十个即用型 Server：GitHub（仓库管理）、PostgreSQL/MySQL（数据库查询）、Slack（消息发送）、Google Drive（文件访问）、Puppeteer（网页自动化）、Brave Search（网络搜索）等。这些 Server 可以组合使用，让一个 AI Agent 同时具备代码管理、数据查询、团队协作和外部搜索的能力。`,
             code: [
@@ -395,7 +395,7 @@ main().catch(console.error);`
             title: "4. MCP 在生产环境中的架构模式",
             body: `当 MCP 从开发工具走向生产环境时，架构需要考虑几个关键维度：可扩展性（支持大量并发请求）、安全性（认证、授权、审计）、可观测性（日志、指标、追踪）和可靠性（容错、重试、降级）。
 
-2026 年的主流生产架构有三种。**架构一：Sidecar 模式**——每个 AI Agent 实例旁边运行一个 MCP Client，通过 stdio 连接本地 MCP Server 进程。这种模式简单、隔离性好，适合低并发场景。**架构二：集中式 MCP Gateway**——部署一个 MCP Gateway 服务，所有 AI Agent 通过 HTTP 连接到 Gateway，Gateway 负责路由请求到后端 MCP Server 集群。这种模式适合大规模部署，支持负载均衡和流量控制。**架构三：混合模式**——本地开发用 stdio，生产环境用 HTTP+SSE，通过配置文件切换，开发体验和生产环境一致。
+2026 年的主流生产架构有三种。架构一：Sidecar 模式——每个 AI Agent 实例旁边运行一个 MCP Client，通过 stdio 连接本地 MCP Server 进程。这种模式简单、隔离性好，适合低并发场景。架构二：集中式 MCP Gateway——部署一个 MCP Gateway 服务，所有 AI Agent 通过 HTTP 连接到 Gateway，Gateway 负责路由请求到后端 MCP Server 集群。这种模式适合大规模部署，支持负载均衡和流量控制。架构三：混合模式——本地开发用 stdio，生产环境用 HTTP+SSE，通过配置文件切换，开发体验和生产环境一致。
 
 MCP 的安全架构也在 2026 年快速成熟。远程 MCP Server 支持 OAuth 2.0 / OIDC 认证，确保只有授权的 Agent 才能访问工具。工具级别的权限控制（RBAC）让不同角色的 Agent 拥有不同的工具访问权限。审计日志记录所有工具调用，满足合规要求。
 
@@ -587,9 +587,9 @@ volumes:
             title: "5. MCP 安全最佳实践",
             body: `MCP 让 AI Agent 获得了强大的工具调用能力，但这也带来了新的安全风险。2026 年，随着 MCP 在生产环境中的大规模部署，安全问题成为企业和开发者最关心的话题。
 
-MCP 的安全威胁主要包括四类。**注入攻击**：恶意用户通过构造输入参数，让 AI Agent 执行非预期的工具调用。例如，在自然语言中嵌入"顺便删除这个文件"的指令。**权限提升**：Agent 通过某个工具获取敏感信息后，利用该信息调用更高权限的工具。**数据泄露**：Agent 将敏感数据（数据库内容、内部文件）泄露到外部工具（如搜索 API、外部聊天服务）。**拒绝服务**：通过大量工具调用消耗 Agent 的计算资源或导致费用飙升。
+MCP 的安全威胁主要包括四类。注入攻击：恶意用户通过构造输入参数，让 AI Agent 执行非预期的工具调用。例如，在自然语言中嵌入"顺便删除这个文件"的指令。权限提升：Agent 通过某个工具获取敏感信息后，利用该信息调用更高权限的工具。数据泄露：Agent 将敏感数据（数据库内容、内部文件）泄露到外部工具（如搜索 API、外部聊天服务）。拒绝服务：通过大量工具调用消耗 Agent 的计算资源或导致费用飙升。
 
-防御策略需要多层叠加。**输入验证层**：对所有工具调用参数进行严格验证（类型、范围、格式），拒绝任何可疑输入。**权限控制层**：使用 RBAC 或 ABAC 控制不同 Agent/用户对不同工具的访问权限。**审计层**：记录所有工具调用的完整日志（谁、调用了什么、参数是什么、结果是什么），用于事后追溯和实时告警。**预算控制层**：设置工具调用的频率上限和费用上限，防止意外费用。
+防御策略需要多层叠加。输入验证层：对所有工具调用参数进行严格验证（类型、范围、格式），拒绝任何可疑输入。权限控制层：使用 RBAC 或 ABAC 控制不同 Agent/用户对不同工具的访问权限。审计层：记录所有工具调用的完整日志（谁、调用了什么、参数是什么、结果是什么），用于事后追溯和实时告警。预算控制层：设置工具调用的频率上限和费用上限，防止意外费用。
 
 OWASP 在 2026 年发布了《LLM Top 10》安全指南，其中专门针对 Agent 工具的章节提供了详细的安全检查清单。企业级的 MCP 部署还应该考虑 SOC 2、ISO 27001 等合规框架的要求。`,
             code: [
@@ -625,7 +625,7 @@ function sanitizeArgs(args: any): any {
   const sanitized = { ...args };
   for (const key of sensitive) {
     if (key in sanitized) {
-      sanitized[key] = "***REDACTED***";
+      sanitized[key] = "*REDACTED*";
     }
   }
   return sanitized;
@@ -768,11 +768,11 @@ class SecureToolWrapper {
             title: "6. MCP 生态与 2026 年发展路线图",
             body: `MCP 的发展速度在 2026 年令人瞩目。从 Anthropic 2024 年 11 月首次提出，到 2025 年 12 月捐赠给 Linux Foundation，再到 2026 年成为所有主流 AI 平台的标准集成方式——MCP 在不到 18 个月内完成了从概念到行业标准的全过程。
 
-2026 年 MCP 的关键里程碑包括：**W3C 标准化进程启动**——W3C AI Agent Protocol Community Group 正在制定 MCP 的 Web 标准规范，预计 2026-2027 年发布正式标准。**MCP Apps**——从纯文本/JSON 响应扩展到交互式 UI 渲染，Agent 可以在聊天界面中直接渲染表单、图表和仪表盘。**OAuth 认证支持**——远程 MCP Server 可以通过标准 OAuth 2.0 流程进行用户认证，解决了企业级部署的身份验证难题。**流式工具响应**——支持长时间运行工具（如代码编译、大数据分析）的进度推送，Agent 可以在工具执行过程中向用户展示进度。
+2026 年 MCP 的关键里程碑包括：W3C 标准化进程启动——W3C AI Agent Protocol Community Group 正在制定 MCP 的 Web 标准规范，预计 2026-2027 年发布正式标准。MCP Apps——从纯文本/JSON 响应扩展到交互式 UI 渲染，Agent 可以在聊天界面中直接渲染表单、图表和仪表盘。OAuth 认证支持——远程 MCP Server 可以通过标准 OAuth 2.0 流程进行用户认证，解决了企业级部署的身份验证难题。流式工具响应——支持长时间运行工具（如代码编译、大数据分析）的进度推送，Agent 可以在工具执行过程中向用户展示进度。
 
 MCP 的社区生态在 2026 年蓬勃发展。glama.ai 和 mcprun.com 等平台提供了 MCP Server 的发现、安装和分享机制。开发者可以像安装 npm 包一样安装 MCP Server，一键获得新的工具能力。截至 2026 年 3 月，社区已有超过 1000 个开源 MCP Server，覆盖了从数据库查询到社交媒体管理的各个场景。
 
-MCP 的未来方向包括：**Agent-to-Agent (A2A) 协议**——不仅是 Agent 与工具的通信，还包括 Agent 之间的标准化通信。**MCP 联邦学习**——多个 MCP Server 协作训练模型，数据不出本地。**MCP 与 Agent 编排框架的集成**——LangGraph、CrewAI 等框架原生支持 MCP，让多 Agent 系统可以动态发现和调用 MCP 工具。`,
+MCP 的未来方向包括：Agent-to-Agent (A2A) 协议——不仅是 Agent 与工具的通信，还包括 Agent 之间的标准化通信。MCP 联邦学习——多个 MCP Server 协作训练模型，数据不出本地。MCP 与 Agent 编排框架的集成——LangGraph、CrewAI 等框架原生支持 MCP，让多 Agent 系统可以动态发现和调用 MCP 工具。`,
             code: [
                 {
                     lang: "typescript",
@@ -905,7 +905,7 @@ server.tool(
         },
         {
             title: "7. MCP 实战指南：从入门到精通",
-            body: `掌握 MCP 需要理解三个层次：**使用者**（配置和使用现有 MCP Server）、**开发者**（编写自定义 MCP Server）和**架构师**（设计企业级 MCP 架构）。
+            body: `掌握 MCP 需要理解三个层次：使用者（配置和使用现有 MCP Server）、开发者（编写自定义 MCP Server）和架构师（设计企业级 MCP 架构）。
 
 作为使用者，你需要学会：如何配置 claude_desktop_config.json（或其他 Host 的配置）、如何排查 MCP Server 连接问题（查看日志、测试连接）、如何组合多个 MCP Server 实现复杂工作流。
 
@@ -913,9 +913,9 @@ server.tool(
 
 作为架构师，你需要设计：MCP Server 的部署拓扑（本地 vs 远程）、安全策略（认证、授权、审计）、可观测性方案（日志、指标、追踪）、成本控制（速率限制、预算告警）。
 
-2026 年的一个重要趋势是 **MCP 与 Agent 框架的深度集成**。LangGraph 0.2+ 版本原生支持 MCP 工具节点，CrewAI 允许 Agent 动态发现和调用 MCP Server，AutoGen 使用 MCP 作为 Agent 之间的通信协议。这意味着你不再需要为每个 Agent 框架编写适配代码——一个 MCP Server 可以在所有框架中即插即用。
+2026 年的一个重要趋势是 MCP 与 Agent 框架的深度集成。LangGraph 0.2+ 版本原生支持 MCP 工具节点，CrewAI 允许 Agent 动态发现和调用 MCP Server，AutoGen 使用 MCP 作为 Agent 之间的通信协议。这意味着你不再需要为每个 Agent 框架编写适配代码——一个 MCP Server 可以在所有框架中即插即用。
 
-另一个重要趋势是 **MCP 在企业合规中的应用**。MCP 的审计日志功能天然适合金融（SOC 2）、医疗（HIPAA）、政府（FedRAMP）等合规场景。每次工具调用都被完整记录，包括谁、什么时间、调用了什么工具、参数是什么、结果是什么——这恰好是合规审计需要的完整证据链。
+另一个重要趋势是 MCP 在企业合规中的应用。MCP 的审计日志功能天然适合金融（SOC 2）、医疗（HIPAA）、政府（FedRAMP）等合规场景。每次工具调用都被完整记录，包括谁、什么时间、调用了什么工具、参数是什么、结果是什么——这恰好是合规审计需要的完整证据链。
 
 MCP 不是万能的。它最适合的场景是：需要让 AI Agent 与外部系统（数据库、API、文件系统）交互的情况。如果你的需求只是纯文本对话，MCP 不是必要的。但一旦你的 Agent 需要"做事"——查询数据、调用 API、操作文件——MCP 就是最优的标准方案。`,
             code: [

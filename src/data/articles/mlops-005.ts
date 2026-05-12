@@ -54,7 +54,7 @@ export const article: Article = {
             code: [
                 {
                     lang: "python",
-                    code: `import math\nfrom scipy import stats\n\ndef calculate_sample_size(\n    baseline_rate: float,\n    minimum_detectable_effect: float,\n    alpha: float = 0.05,\n    power: float = 0.80\n) -> int:\n    beta = 1 - power\n    z_alpha = stats.norm.ppf(1 - alpha / 2)\n    z_beta = stats.norm.ppf(power)\n    p1 = baseline_rate\n    p2 = baseline_rate + minimum_detectable_effect\n    p_bar = (p1 + p2) / 2\n    n = ((z_alpha * math.sqrt(2 * p_bar * (1 - p_bar)) +\n          z_beta * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 /\n         (p2 - p1) ** 2)\n    return math.ceil(n)\n\nn = calculate_sample_size(\n    baseline_rate=0.05,\n    minimum_detectable_effect=0.005,\n    alpha=0.05,\n    power=0.80\n)\nprint(f"Required sample size per group: {n:,}")`
+                    code: `import math\nfrom scipy import stats\n\ndef calculate_sample_size(\n    baseline_rate: float,\n    minimum_detectable_effect: float,\n    alpha: float = 0.05,\n    power: float = 0.80\n) -> int:\n    beta = 1 - power\n    z_alpha = stats.norm.ppf(1 - alpha / 2)\n    z_beta = stats.norm.ppf(power)\n    p1 = baseline_rate\n    p2 = baseline_rate + minimum_detectable_effect\n    p_bar = (p1 + p2) / 2\n    n = ((z_alpha * math.sqrt(2 * p_bar * (1 - p_bar)) +\n          z_beta * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2)))  2 /\n         (p2 - p1)  2)\n    return math.ceil(n)\n\nn = calculate_sample_size(\n    baseline_rate=0.05,\n    minimum_detectable_effect=0.005,\n    alpha=0.05,\n    power=0.80\n)\nprint(f"Required sample size per group: {n:,}")`
                 },
                 {
                     lang: "python",

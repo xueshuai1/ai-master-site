@@ -12,7 +12,7 @@ const post: BlogPost = {
   content: [
     {
       title: "引言：GPT-5.5 为什么值得关注",
-      body: `2026 年 4 月，OpenAI 正式发布 GPT-5.5 模型（API 标识符：\`gpt-5.5\`），这是自 GPT-5 系列以来的最重要升级。\n\n**三个关键变化：**\n1. **Codex 与主模型统一**：从 GPT-5.4 开始，OpenAI 将 Codex 编码专用模型与主模型合并为单一系统，GPT-5.5 进一步强化了这一方向，不再有单独的 "GPT-5.5-Codex" 产品线。\n2. **Agentic Coding 质变**：在自主编程、多步代码任务上的能力显著提升，接近「给你一个 repo，它自己跑」的愿景。\n3. **Computer Use 原生支持**：模型可以直接操控计算机界面，完成任何基于 GUI 的任务，这是从「语言模型」到「行动模型」的关键跃迁。\n\nOpenAI 官方明确警告：**「To get the most out of GPT-5.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」**\n\n这意味着：直接切换模型字符串是不够的，你需要重新调优 Prompt 栈、工具描述和输出格式。本文就是为你做这件事的。`,
+      body: `2026 年 4 月，OpenAI 正式发布 GPT-5.5 模型（API 标识符：\`gpt-5.5\`），这是自 GPT-5 系列以来的最重要升级。\n\n三个关键变化：\n1. Codex 与主模型统一：从 GPT-5.4 开始，OpenAI 将 Codex 编码专用模型与主模型合并为单一系统，GPT-5.5 进一步强化了这一方向，不再有单独的 "GPT-5.5-Codex" 产品线。\n2. Agentic Coding 质变：在自主编程、多步代码任务上的能力显著提升，接近「给你一个 repo，它自己跑」的愿景。\n3. Computer Use 原生支持：模型可以直接操控计算机界面，完成任何基于 GUI 的任务，这是从「语言模型」到「行动模型」的关键跃迁。\n\nOpenAI 官方明确警告：「To get the most out of GPT-5.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」\n\n这意味着：直接切换模型字符串是不够的，你需要重新调优 Prompt 栈、工具描述和输出格式。本文就是为你做这件事的。`,
       tip: "本文包含 2 个 Mermaid 架构图、2 个 Python 可运行代码示例、3 个对比表格，建议收藏后逐步实践。",
     },
     {
@@ -41,7 +41,7 @@ Codex能力并入主模型"]
     },
     {
       title: "",
-      body: `**架构统一带来的三个直接收益：**\n\n1. **上下文一致性**：不再需要在「编码任务用 Codex」和「非编码任务用主模型」之间切换。同一个模型，统一处理。\n2. **跨模态推理**：编码能力与通用推理能力融合，模型可以在写代码的同时进行战略思考和上下文理解。\n3. **工具调用增强**：统一的模型意味着统一的工具调用协议，Agentic Coding 和 Computer Use 共享同一套工具框架。\n\n### 关键参数变化`,
+      body: `架构统一带来的三个直接收益：\n\n1. 上下文一致性：不再需要在「编码任务用 Codex」和「非编码任务用主模型」之间切换。同一个模型，统一处理。\n2. 跨模态推理：编码能力与通用推理能力融合，模型可以在写代码的同时进行战略思考和上下文理解。\n3. 工具调用增强：统一的模型意味着统一的工具调用协议，Agentic Coding 和 Computer Use 共享同一套工具框架。\n\n### 关键参数变化`,
       table: {
         headers: ["参数", "GPT-5.2", "GPT-5.4", "GPT-5.5"],
         rows: [
@@ -425,7 +425,7 @@ print(analysis)
     },
     {
       title: "六、Simon Willison 的观察与深度解读",
-      body: `知名 AI 观察者 Simon Willison 在 GPT-5.5 发布后迅速更新了 [LLM 工具](https://llm.datasette.io/) 并分享了使用体验。以下是他的核心观察：\n\n### 1. Prompt 策略的根本变化\n\nSimon 注意到 OpenAI 的建议——**不要复用之前的 Prompt**——在实际测试中得到了验证。他从 GPT-5.2/5.4 迁移到 GPT-5.5 时发现：\n- 之前精心调优的长系统提示词在 GPT-5.5 上表现反而不如简短提示词\n- GPT-5.5 对「暗示性」指令的理解更强，不需要详细解释「为什么」\n- 工具描述需要精简，否则模型会过度关注工具描述中的细节而忽略核心任务`,
+      body: `知名 AI 观察者 Simon Willison 在 GPT-5.5 发布后迅速更新了 [LLM 工具](https://llm.datasette.io/) 并分享了使用体验。以下是他的核心观察：\n\n### 1. Prompt 策略的根本变化\n\nSimon 注意到 OpenAI 的建议——不要复用之前的 Prompt——在实际测试中得到了验证。他从 GPT-5.2/5.4 迁移到 GPT-5.5 时发现：\n- 之前精心调优的长系统提示词在 GPT-5.5 上表现反而不如简短提示词\n- GPT-5.5 对「暗示性」指令的理解更强，不需要详细解释「为什么」\n- 工具描述需要精简，否则模型会过度关注工具描述中的细节而忽略核心任务`,
       mermaid: `graph LR
     A["旧策略: 长系统提示词\
 500+ 词详细指令"] -->|在 GPT-5.5 上| B["效果下降\
@@ -440,14 +440,14 @@ print(analysis)
       title: "七、总结与行动建议",
       body: `### 立即行动清单`,
       list: [
-        "✅ **安装最新 SDK**：\`pip install openai --upgrade\`，确保支持 gpt-5.5 模型标识符",
-        "✅ **建立基线测试集**：收集 50-100 条当前 GPT-5.2/5.4 的输入-输出对",
-        "✅ **从最小 Prompt 开始**：不要直接复用旧 Prompt，用最小的任务描述测试",
-        "✅ **调整 verbosity**：生产环境建议 verbosity=low，调试时用 medium",
-        "✅ **升级推理级别**：需要高质量输出时使用 reasoning: xhigh",
-        "✅ **精简工具描述**：每个工具描述控制在 50 词以内",
-        "✅ **利用 Computer Use**：如果有 GUI 自动化需求，测试 GPT-5.5 的 Computer Use 能力",
-        "✅ **监控 token 用量**：xhigh reasoning + high verbosity 可能显著增加成本",
+        "✅ 安装最新 SDK：\`pip install openai --upgrade\`，确保支持 gpt-5.5 模型标识符",
+        "✅ 建立基线测试集：收集 50-100 条当前 GPT-5.2/5.4 的输入-输出对",
+        "✅ 从最小 Prompt 开始：不要直接复用旧 Prompt，用最小的任务描述测试",
+        "✅ 调整 verbosity：生产环境建议 verbosity=low，调试时用 medium",
+        "✅ 升级推理级别：需要高质量输出时使用 reasoning: xhigh",
+        "✅ 精简工具描述：每个工具描述控制在 50 词以内",
+        "✅ 利用 Computer Use：如果有 GUI 自动化需求，测试 GPT-5.5 的 Computer Use 能力",
+        "✅ 监控 token 用量：xhigh reasoning + high verbosity 可能显著增加成本",
       ],
       tip: "GPT-5.5 不是简单的升级，而是一个新的模型家族。用对待新模型的态度来调优它，而不是当作旧模型的 patch。",
     },

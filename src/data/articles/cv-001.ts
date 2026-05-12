@@ -14,17 +14,17 @@ export const article: Article = {
         title: "1. 目标检测概述",
         body: `目标检测（Object Detection）是计算机视觉的核心任务之一，与图像分类不同，它不仅要回答「图像中有什么」，还要回答「在哪里」。
 
-**核心定义：** 给定输入图像 I ∈ R^(H×W×3)，输出 N 个检测结果，每个结果包含类别标签 c_i ∈ {1,...,C} 和边界框 B_i = (x_i, y_i, w_i, h_i)，其中 (x, y) 为中心坐标，(w, h) 为宽高。
+核心定义： 给定输入图像 I ∈ R^(H×W×3)，输出 N 个检测结果，每个结果包含类别标签 c_i ∈ {1,...,C} 和边界框 B_i = (x_i, y_i, w_i, h_i)，其中 (x, y) 为中心坐标，(w, h) 为宽高。
 
-**边界框回归：** 模型通常不直接预测绝对坐标，而是预测相对于预设锚框（Anchor）的偏移量 (Δx, Δy, Δw, Δh)。
+边界框回归： 模型通常不直接预测绝对坐标，而是预测相对于预设锚框（Anchor）的偏移量 (Δx, Δy, Δw, Δh)。
 
-**IoU（交并比，Intersection over Union）：** 衡量两个边界框重叠程度的核心指标：
+IoU（交并比，Intersection over Union）： 衡量两个边界框重叠程度的核心指标：
 
 IoU = |A ∩ B| / |A ∪ B|
 
 其中 A 为预测框，B 为真实框（Ground Truth）。IoU ∈ [0, 1]，值越大表示重叠度越高。通常 IoU ≥ 0.5 被认为是正确检测（COCO 数据集还采用 mAP@[0.5:0.95] 的多阈值平均精度）。
 
-**mAP（Mean Average Precision）：** 在多个 IoU 阈值下计算 AP（Precision-Rec曲线下面积）后取平均，是目标检测最常用的评价指标。`,
+mAP（Mean Average Precision）： 在多个 IoU 阈值下计算 AP（Precision-Rec曲线下面积）后取平均，是目标检测最常用的评价指标。`,
         code: [
           {
             lang: "python",
@@ -81,17 +81,17 @@ def compute_iou(box1: torch.Tensor, box2: torch.Tensor) -> float:
       },
       {
         title: "2. 两阶段检测器：R-CNN 系列演进",
-        body: `两阶段检测器（Two-Stage Detectors）将检测分为两步：**区域提议（Region Proposal）→ 分类与回归**。这条路线从 R-CNN 开始，经过 Fast R-CNN，最终到 Faster R-CNN。
+        body: `两阶段检测器（Two-Stage Detectors）将检测分为两步：区域提议（Region Proposal）→ 分类与回归。这条路线从 R-CNN 开始，经过 Fast R-CNN，最终到 Faster R-CNN。
 
-**R-CNN（2014）：** 使用选择性搜索（Selective Search）生成约 2000 个候选区域，每个区域裁剪缩放到 227×227 后独立通过 CNN（AlexNet）提取 4096 维特征，最后用 SVM 分类、线性回归框修正。缺点：重复计算量极大，一张图要跑 2000 次 CNN。
+R-CNN（2014）： 使用选择性搜索（Selective Search）生成约 2000 个候选区域，每个区域裁剪缩放到 227×227 后独立通过 CNN（AlexNet）提取 4096 维特征，最后用 SVM 分类、线性回归框修正。缺点：重复计算量极大，一张图要跑 2000 次 CNN。
 
-**Fast R-CNN（2015）：** 核心改进是整张图只过一次 CNN 得到特征图，然后用 **RoI Pooling** 将不同大小的候选区域统一池化为固定尺寸（如 7×7），共享特征提取。训练改为多任务损失：
+Fast R-CNN（2015）： 核心改进是整张图只过一次 CNN 得到特征图，然后用 RoI Pooling 将不同大小的候选区域统一池化为固定尺寸（如 7×7），共享特征提取。训练改为多任务损失：
 
 L(p, u, t, v) = L_cls(p, u) + λ[u ≥ 1] · L_loc(t, v)
 
 其中 p 为类别概率，u 为真实类别，t 为预测偏移，v 为真实偏移，L_loc 为 Smooth L1 Loss。
 
-**Faster R-CNN（2015）：** 进一步用 **Region Proposal Network（RPN）** 替代选择性搜索，RPN 在特征图上滑动窗口，为每个位置预测 k 个锚框的「前景/背景」得分和偏移量，实现端到端训练。RPN 与 Fast R-CNN 共享卷积特征，检测速度大幅提升。`,
+Faster R-CNN（2015）： 进一步用 Region Proposal Network（RPN） 替代选择性搜索，RPN 在特征图上滑动窗口，为每个位置预测 k 个锚框的「前景/背景」得分和偏移量，实现端到端训练。RPN 与 Fast R-CNN 共享卷积特征，检测速度大幅提升。`,
         code: [
           {
             lang: "python",
@@ -148,13 +148,13 @@ class FasterRCNNDemo(nn.Module):
       },
       {
         title: "3. 单阶段检测器 YOLO",
-        body: `YOLO（You Only Look Once，2016）将目标检测重构为**单一的回归问题**，只需一次前向传播即可完成检测，速度远超两阶段方法。
+        body: `YOLO（You Only Look Once，2016）将目标检测重构为单一的回归问题，只需一次前向传播即可完成检测，速度远超两阶段方法。
 
-**核心思想：** 将输入图像划分为 S×S 的网格（Grid Cell），每个网格负责预测 B 个边界框及其置信度和类别概率。
+核心思想： 将输入图像划分为 S×S 的网格（Grid Cell），每个网格负责预测 B 个边界框及其置信度和类别概率。
 
-**输出张量：** S × S × (B × 5 + C)，其中 5 = (x, y, w, h, confidence)，C 为类别数。
+输出张量： S × S × (B × 5 + C)，其中 5 = (x, y, w, h, confidence)，C 为类别数。
 
-**损失函数（YOLOv1）：**
+损失函数（YOLOv1）：
 L = λ_coord · Σ_i Σ_j 1^obj · [(x_i - x̂_i)² + (y_i - ŷ_i)²]
   + λ_coord · Σ_i Σ_j 1^obj · [(√w_i - √ŵ_i)² + (√h_i - √ĥ_i)²]
   + Σ_i Σ_j 1^obj · (C_i - Ĉ_i)²
@@ -163,7 +163,7 @@ L = λ_coord · Σ_i Σ_j 1^obj · [(x_i - x̂_i)² + (y_i - ŷ_i)²]
 
 其中 1^obj 表示有目标经过该网格，√w 的平方根变换使小框和大框的误差权重更均衡，λ_noobj ≈ 0.5 用于缓解类别不平衡。
 
-**锚框（Anchor Boxes）：** 从 YOLOv2 开始引入，通过 K-means 聚类在训练集的标注框上得到先验框尺寸，模型只需预测相对于 anchor 的偏移量，大大简化学习难度。`,
+锚框（Anchor Boxes）： 从 YOLOv2 开始引入，通过 K-means 聚类在训练集的标注框上得到先验框尺寸，模型只需预测相对于 anchor 的偏移量，大大简化学习难度。`,
         code: [
           {
             lang: "python",
@@ -227,15 +227,15 @@ class YOLOv1Head(nn.Module):
         title: "4. YOLO 系列演进：v3 → v8",
         body: `YOLO 系列从 2016 年至今经历了多次迭代，每一代都在速度和精度之间寻找更优的平衡点。
 
-**YOLOv3（2018）：** 引入 Darknet-53（残差结构）、FPN 特征金字塔（3 个尺度 13×13、26×26、52×52）、多尺度预测，每个尺度 3 个 anchor，总计 9 个先验框。首次在小目标检测上接近 SSD。
+YOLOv3（2018）： 引入 Darknet-53（残差结构）、FPN 特征金字塔（3 个尺度 13×13、26×26、52×52）、多尺度预测，每个尺度 3 个 anchor，总计 9 个先验框。首次在小目标检测上接近 SSD。
 
-**YOLOv4（2020）：** BoF（Bag of Freebies）和 BoS（Bag of Specials）策略汇总。关键创新：Mosaic 数据增强、CmBN 跨小批归一化、SAT 自对抗训练、CIoU 损失函数（考虑重叠面积、中心点距离、长宽比一致性）。
+YOLOv4（2020）： BoF（Bag of Freebies）和 BoS（Bag of Specials）策略汇总。关键创新：Mosaic 数据增强、CmBN 跨小批归一化、SAT 自对抗训练、CIoU 损失函数（考虑重叠面积、中心点距离、长宽比一致性）。
 
-**YOLOv5（2020）：** Ultralytics 实现，非 Darknet 官方版本。引入 Focus 结构（空间到通道变换）、自适应锚框计算、自动超参数优化，工程化程度极高。
+YOLOv5（2020）： Ultralytics 实现，非 Darknet 官方版本。引入 Focus 结构（空间到通道变换）、自适应锚框计算、自动超参数优化，工程化程度极高。
 
-**YOLOv7（2022）：** 提出 E-ELAN 高效聚合网络架构、模型缩放策略（复合缩放）、辅助头训练策略，在 5-160 FPS 范围内达到 SOTA。
+YOLOv7（2022）： 提出 E-ELAN 高效聚合网络架构、模型缩放策略（复合缩放）、辅助头训练策略，在 5-160 FPS 范围内达到 SOTA。
 
-**YOLOv8（2023）：** Anchor-Free 设计（直接预测中心点，不再依赖 anchor）、C2f 模块（增强梯度流）、解耦头（分类和回归分离）、支持检测/分割/姿态估计多任务。`,
+YOLOv8（2023）： Anchor-Free 设计（直接预测中心点，不再依赖 anchor）、C2f 模块（增强梯度流）、解耦头（分类和回归分离）、支持检测/分割/姿态估计多任务。`,
         code: [
           {
             lang: "python",
@@ -293,18 +293,18 @@ class YOLOv8_Detect(nn.Module):
       },
       {
         title: "5. SSD 单阶段多尺度检测器",
-        body: `SSD（Single Shot MultiBox Detector，2016）是另一个经典的单阶段检测器，核心思想是**在多层特征图上做检测**，天然具备多尺度检测能力。
+        body: `SSD（Single Shot MultiBox Detector，2016）是另一个经典的单阶段检测器，核心思想是在多层特征图上做检测，天然具备多尺度检测能力。
 
-**多尺度特征图：** SSD 不依赖 FPN，而是直接在 backbone 的不同阶段提取不同分辨率的特征图：
+多尺度特征图： SSD 不依赖 FPN，而是直接在 backbone 的不同阶段提取不同分辨率的特征图：
 - 浅层特征图（38×38）：感受野小，适合检测小目标
 - 中层特征图（19×19）：中等尺度目标
 - 深层特征图（10×10、5×5、3×3、1×1）：感受野大，适合检测大目标
 
-**默认框（Default Boxes）：** 每个特征图位置预设多个不同尺度和宽高比的框（类似 anchor）。对于 m×n 的特征图，每个位置设置 k 个默认框，每个框预测 4 个偏移量 + c 个类别得分，输出维度为 m × n × (4k + ck)。
+默认框（Default Boxes）： 每个特征图位置预设多个不同尺度和宽高比的框（类似 anchor）。对于 m×n 的特征图，每个位置设置 k 个默认框，每个框预测 4 个偏移量 + c 个类别得分，输出维度为 m × n × (4k + ck)。
 
-**匹配策略：** 每个真实框与 IoU > 0.5 的默认框匹配为正样本，同时每个真实框还与 IoU 最大的默认框匹配（确保至少一个正样本）。其余为负样本。正负样本比例约为 1:3（通过难例挖掘 Hard Negative Mining 控制）。
+匹配策略： 每个真实框与 IoU > 0.5 的默认框匹配为正样本，同时每个真实框还与 IoU 最大的默认框匹配（确保至少一个正样本）。其余为负样本。正负样本比例约为 1:3（通过难例挖掘 Hard Negative Mining 控制）。
 
-**损失函数：**
+损失函数：
 L(x, c, l, g) = [L_conf(x, c) + α · L_loc(x, l, g)] / N
 
 其中 L_conf 为交叉熵损失，L_loc 为 Smooth L1 损失，α 默认取 1。`,
@@ -394,21 +394,21 @@ class SSD300(nn.Module):
         title: "6. NMS 非极大值抑制",
         body: `NMS（Non-Maximum Suppression）是目标检测后处理的核心步骤，用于去除对同一目标的重复检测。
 
-**标准 NMS 算法：**
+标准 NMS 算法：
 1. 将所有检测框按置信度降序排序
 2. 选择置信度最高的框加入最终结果
 3. 计算该框与剩余所有框的 IoU
 4. 若 IoU > 阈值（通常 0.5），则抑制（删除）该框
 5. 重复步骤 2-4，直到所有框处理完毕
 
-**Soft-NMS（2017）：** 标准 NMS 的问题是当两个真实目标靠得很近时，会将其中一个错误抑制。Soft-NMS 改为**降低**相邻框的置信度，而非直接删除：
+Soft-NMS（2017）： 标准 NMS 的问题是当两个真实目标靠得很近时，会将其中一个错误抑制。Soft-NMS 改为降低相邻框的置信度，而非直接删除：
 
 - 线性衰减：s_i = s_i · (1 - IoU(M, b_i))  if IoU ≥ N_t, else s_i
 - 高斯衰减：s_i = s_i · exp(-IoU(M, b_i)² / σ)
 
 其中 M 为当前最高分框，b_i 为待处理框，σ 控制衰减速率。
 
-**DIoU-NMS（2020）：** 在 NMS 中使用 DIoU（Distance-IoU）替代 IoU：
+DIoU-NMS（2020）： 在 NMS 中使用 DIoU（Distance-IoU）替代 IoU：
 
 DIoU = IoU - ρ²(b, b^gt) / c²
 
@@ -497,16 +497,16 @@ def soft_nms(boxes, scores, sigma=0.5, Nt=0.3, threshold=0.001):
         title: "7. 代码实战：PyTorch + YOLO 目标检测项目",
         body: `本节从零开始，使用 PyTorch + OpenCV 实现一个完整的 YOLO 目标检测推理管线，涵盖模型加载、图像预处理、推理、后处理到可视化全流程。
 
-**项目结构：**
+项目结构：
 1. 加载预训练 YOLO 模型（这里以 YOLOv5 的 PyTorch Hub 模型为例）
 2. 图像预处理：Letterbox 缩放 + 归一化
 3. 模型推理：获取原始预测
 4. 后处理：置信度过滤 + NMS
 5. 可视化：绘制边界框和类别标签
 
-**Letterbox 预处理：** 保持图像宽高比进行缩放，短边缩放到目标尺寸，长边按比例缩放后用灰色填充（padding）。这种方式不会导致目标变形，是 YOLO 系列的标准预处理方式。
+Letterbox 预处理： 保持图像宽高比进行缩放，短边缩放到目标尺寸，长边按比例缩放后用灰色填充（padding）。这种方式不会导致目标变形，是 YOLO 系列的标准预处理方式。
 
-**非极大值抑制（NMS）：** 使用 torchvision.ops.nms 高效实现，按类别分别进行 NMS。`,
+非极大值抑制（NMS）： 使用 torchvision.ops.nms 高效实现，按类别分别进行 NMS。`,
         code: [
           {
             lang: "python",

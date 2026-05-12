@@ -16,9 +16,9 @@ export const article: Article = {
       title: "一、为什么你需要从零构建一个 Agent？",
       body: `2026 年是 AI Agent 的爆发年。GitHub Trending 上自进化 Agent 占据半壁江山：NousResearch Hermes Agent 突破 109K 星、claude-mem 达 65K 星、GenericAgent 和 Evolver 分别代表技能树生长和基因组进化路线。这些项目的底层架构其实共享同一套核心模式。
 
-但大多数教程只停留在「概念介绍」层面：讲 ReAct、讲 Tool Calling、讲 Memory，却从不给出**可以运行的完整代码**。
+但大多数教程只停留在「概念介绍」层面：讲 ReAct、讲 Tool Calling、讲 Memory，却从不给出可以运行的完整代码。
 
-本文的不同之处在于：**你会从头构建一个真正能工作的 AI Agent**。不是伪代码，不是框架调用，而是完整的 Python 实现——包括工具定义、记忆存储、推理循环、错误恢复，全部手写。
+本文的不同之处在于：你会从头构建一个真正能工作的 AI Agent。不是伪代码，不是框架调用，而是完整的 Python 实现——包括工具定义、记忆存储、推理循环、错误恢复，全部手写。
 
 通过本文，你将理解：
 - Hermes Agent、GenericAgent 等热门项目的底层架构模式
@@ -78,11 +78,11 @@ Tool Dispatcher"]
 
 | 组件 | 职责 | 类比人类能力 | 典型实现 |
 |------|------|-------------|---------|
-| **推理引擎** | 理解任务、制定计划、做决策 | 大脑思考 | LLM API + Prompt 模板 |
-| **短期记忆** | 保持当前会话的上下文 | 工作记忆（几秒~几分钟） | 对话历史列表 |
-| **长期记忆** | 跨会话存储和检索经验 | 长期记忆（知识积累） | 向量数据库 + 语义检索 |
-| **工具系统** | 执行外部操作（搜索、代码、文件） | 使用工具和技能 | 函数注册 + 动态调用 |
-| **执行循环** | 驱动 ReAct 循环、处理错误 | 行动 + 反思的循环 | 状态机 / 循环控制 |
+| 推理引擎 | 理解任务、制定计划、做决策 | 大脑思考 | LLM API + Prompt 模板 |
+| 短期记忆 | 保持当前会话的上下文 | 工作记忆（几秒~几分钟） | 对话历史列表 |
+| 长期记忆 | 跨会话存储和检索经验 | 长期记忆（知识积累） | 向量数据库 + 语义检索 |
+| 工具系统 | 执行外部操作（搜索、代码、文件） | 使用工具和技能 | 函数注册 + 动态调用 |
+| 执行循环 | 驱动 ReAct 循环、处理错误 | 行动 + 反思的循环 | 状态机 / 循环控制 |
 
 ### 2.2 架构选择：为什么选 ReAct？
 
@@ -90,12 +90,12 @@ Tool Dispatcher"]
 
 | 模式 | 原理 | 优势 | 劣势 | 代表项目 |
 |------|------|------|------|---------|
-| **ReAct** | 推理 → 行动 → 观察 → 推理循环 | 简单、可控、可调试 | 多步推理可能发散 | Claude Code、GenericAgent |
-| **Plan-and-Execute** | 先制定完整计划，再逐步执行 | 目标明确、不易跑偏 | 计划可能不完整 | LangGraph、CrewAI |
-| **Reflexion** | 执行后自我反思、修正策略 | 能从错误中学习 | 需要额外的 LLM 调用 | Reflexion 论文 |
-| **Self-Evolving** | 动态生长技能树、优化自身代码 | 持续进化、无需人工干预 | 实现复杂、安全性存疑 | Hermes、Evolver |
+| ReAct | 推理 → 行动 → 观察 → 推理循环 | 简单、可控、可调试 | 多步推理可能发散 | Claude Code、GenericAgent |
+| Plan-and-Execute | 先制定完整计划，再逐步执行 | 目标明确、不易跑偏 | 计划可能不完整 | LangGraph、CrewAI |
+| Reflexion | 执行后自我反思、修正策略 | 能从错误中学习 | 需要额外的 LLM 调用 | Reflexion 论文 |
+| Self-Evolving | 动态生长技能树、优化自身代码 | 持续进化、无需人工干预 | 实现复杂、安全性存疑 | Hermes、Evolver |
 
-本文选择 **ReAct 模式**作为基础，因为它是理解所有其他模式的基石。Hermes Agent 的「自进化」本质上也是 ReAct 循环的扩展——在观察阶段增加自我评估，在推理阶段增加技能选择。
+本文选择 ReAct 模式作为基础，因为它是理解所有其他模式的基石。Hermes Agent 的「自进化」本质上也是 ReAct 循环的扩展——在观察阶段增加自我评估，在推理阶段增加技能选择。
 
 ### 2.3 数据流图
 
@@ -136,7 +136,7 @@ Tool Dispatcher"]
 
 工具是 Agent 的「手脚」。每个工具必须定义清晰的接口，这样 LLM 才知道何时调用、如何调用。
 
-**设计要点：**
+设计要点：
 - 工具名称要语义化，LLM 才能准确选择
 - 参数描述要详细，包含类型、约束和示例
 - 返回值要有明确格式约定`,
@@ -304,9 +304,9 @@ BUILTIN_TOOLS = [
 ### 4.2 长期记忆（经验记忆）
 
 长期记忆是 Agent 区别于简单对话系统的关键。它让 Agent 能够：
-- **记住上次任务的解决方案**（加速类似任务）
-- **记住工具的优缺点**（避免重复踩坑）
-- **记住用户的偏好**（个性化响应）
+- 记住上次任务的解决方案（加速类似任务）
+- 记住工具的优缺点（避免重复踩坑）
+- 记住用户的偏好（个性化响应）
 
 本文实现一个轻量级长期记忆——基于关键词的经验存储和检索。生产环境应使用向量数据库（如 ChromaDB、Qdrant）。`,
       code: [
@@ -464,18 +464,18 @@ class AgentMemory:
 
 ### 5.1 ReAct 模式的工作原理
 
-ReAct（Reasoning + Acting）的核心思想是：**LLM 不应该一次性生成答案，而是交替进行「思考」和「行动」**。
+ReAct（Reasoning + Acting）的核心思想是：LLM 不应该一次性生成答案，而是交替进行「思考」和「行动」。
 
 每一步循环：
-1. **Thought（思考）**：LLM 分析当前状态，决定下一步
-2. **Action（行动）**：调用一个工具
-3. **Observation（观察）**：查看工具返回的结果
+1. Thought（思考）：LLM 分析当前状态，决定下一步
+2. Action（行动）：调用一个工具
+3. Observation（观察）：查看工具返回的结果
 4. 回到步骤 1，直到得出最终答案
 
 这个模式的好处是：
-- **可控**：每步行动都可以被审计
-- **可调试**：出问题时可以看到哪一步出错
-- **可终止**：设置最大步数防止无限循环
+- 可控：每步行动都可以被审计
+- 可调试：出问题时可以看到哪一步出错
+- 可终止：设置最大步数防止无限循环
 
 ### 5.2 完整实现`,
       code: [
@@ -726,7 +726,7 @@ if __name__ == "__main__":
           filename: "agent_core.py",
         },
       ],
-      tip: "**关键理解**：Agent 的「智能」不在于 LLM 有多强，而在于**循环架构**。ReAct 循环让 LLM 可以分步思考、分步行动、从工具反馈中学习。Claude Code、Hermes Agent、GenericAgent 的核心逻辑都是这个模式的变体。",
+      tip: "关键理解：Agent 的「智能」不在于 LLM 有多强，而在于循环架构。ReAct 循环让 LLM 可以分步思考、分步行动、从工具反馈中学习。Claude Code、Hermes Agent、GenericAgent 的核心逻辑都是这个模式的变体。",
     },
     {
       title: "六、错误处理与自我恢复",
@@ -736,11 +736,11 @@ if __name__ == "__main__":
 
 | 错误类型 | 示例 | 应对策略 |
 |---------|------|---------|
-| **工具执行失败** | 文件不存在、代码报错 | 将错误信息反馈给 LLM，让它尝试修复 |
-| **LLM 输出格式错误** | 没有按格式输出 Action | 重新解析或请求重试 |
-| **超过最大步数** | Agent 陷入死循环 | 强制终止，给出最佳答案 |
-| **工具选择不当** | 用了错误的工具 | 在 Observation 中提示错误，让 LLM 重新选择 |
-| **网络超时** | API 调用超时 | 重试机制 + 退避策略 |
+| 工具执行失败 | 文件不存在、代码报错 | 将错误信息反馈给 LLM，让它尝试修复 |
+| LLM 输出格式错误 | 没有按格式输出 Action | 重新解析或请求重试 |
+| 超过最大步数 | Agent 陷入死循环 | 强制终止，给出最佳答案 |
+| 工具选择不当 | 用了错误的工具 | 在 Observation 中提示错误，让 LLM 重新选择 |
+| 网络超时 | API 调用超时 | 重试机制 + 退避策略 |
 
 ### 6.2 增强版错误处理实现`,
       code: [
@@ -858,7 +858,7 @@ if __name__ == "__main__":
           filename: "agent_robust.py",
         },
       ],
-      warning: "**安全提醒**：上面的 execute_python 工具在生产环境中极其危险！永远不要在公开服务中直接执行用户提供的代码。生产环境必须使用沙箱（Docker 容器、E2B Sandbox、Firecracker VM）来隔离代码执行。本文的简化实现仅用于教学目的。",
+      warning: "安全提醒：上面的 execute_python 工具在生产环境中极其危险！永远不要在公开服务中直接执行用户提供的代码。生产环境必须使用沙箱（Docker 容器、E2B Sandbox、Firecracker VM）来隔离代码执行。本文的简化实现仅用于教学目的。",
     },
     {
       title: "七、从玩具到生产：关键改进清单",
@@ -868,38 +868,38 @@ if __name__ == "__main__":
 
 | 阶段 | 改进项 | 优先级 | 参考项目 |
 |------|--------|--------|---------|
-| **P0 必须** | 接入真实 LLM API（OpenAI/Anthropic） | 🔴 | 所有 Agent 项目 |
-| **P0 必须** | 代码执行沙箱（Docker/E2B） | 🔴 | Claude Code, OpenClaw |
-| **P0 必须** | 输入验证和权限控制 | 🔴 | 所有 Agent 项目 |
-| **P1 重要** | 向量数据库长期记忆 | 🟠 | claude-mem, MemPalace |
-| **P1 重要** | 工具自动发现（MCP 协议） | 🟠 | OpenAI Agents, Claude Code |
-| **P1 重要** | 并发工具执行 | 🟠 | LangGraph |
-| **P2 增强** | 自反思（Reflexion）机制 | 🟡 | Reflexion, Hermes |
-| **P2 增强** | 技能自动生长 | 🟡 | GenericAgent, Evolver |
-| **P2 增强** | 多 Agent 协作 | 🟡 | CrewAI, AutoGen |
-| **P3 优化** | 缓存和成本优化 | 🟢 | 所有 Agent 项目 |
-| **P3 优化** | 监控和可观测性 | 🟢 | LangSmith, Langfuse |
+| P0 必须 | 接入真实 LLM API（OpenAI/Anthropic） | 🔴 | 所有 Agent 项目 |
+| P0 必须 | 代码执行沙箱（Docker/E2B） | 🔴 | Claude Code, OpenClaw |
+| P0 必须 | 输入验证和权限控制 | 🔴 | 所有 Agent 项目 |
+| P1 重要 | 向量数据库长期记忆 | 🟠 | claude-mem, MemPalace |
+| P1 重要 | 工具自动发现（MCP 协议） | 🟠 | OpenAI Agents, Claude Code |
+| P1 重要 | 并发工具执行 | 🟠 | LangGraph |
+| P2 增强 | 自反思（Reflexion）机制 | 🟡 | Reflexion, Hermes |
+| P2 增强 | 技能自动生长 | 🟡 | GenericAgent, Evolver |
+| P2 增强 | 多 Agent 协作 | 🟡 | CrewAI, AutoGen |
+| P3 优化 | 缓存和成本优化 | 🟢 | 所有 Agent 项目 |
+| P3 优化 | 监控和可观测性 | 🟢 | LangSmith, Langfuse |
 
 ### 7.2 与热门 Agent 项目的架构对比
 
 | 特性 | 本文实现 | Claude Code | Hermes Agent | GenericAgent |
 |------|---------|-------------|-------------|-------------|
-| **推理模式** | ReAct | ReAct + Plan | ReAct + 自进化 | 技能树 + 元认知 |
-| **工具系统** | 静态注册 | MCP + 内置 | 动态生长 | 自主发现 |
-| **记忆** | 关键词匹配 | 文件系统 + AI 压缩 | 经验累积 | 技能固化 |
-| **错误恢复** | 重试 + 反馈 | 自主修复 | 自我反思 | 变异选择 |
-| **沙箱** | 无 | 有 | 有 | 有 |
-| **自进化** | ❌ | ❌ | ✅ | ✅ |
-| **开源** | 本文代码 | ❌ | ✅ | ✅ |
+| 推理模式 | ReAct | ReAct + Plan | ReAct + 自进化 | 技能树 + 元认知 |
+| 工具系统 | 静态注册 | MCP + 内置 | 动态生长 | 自主发现 |
+| 记忆 | 关键词匹配 | 文件系统 + AI 压缩 | 经验累积 | 技能固化 |
+| 错误恢复 | 重试 + 反馈 | 自主修复 | 自我反思 | 变异选择 |
+| 沙箱 | 无 | 有 | 有 | 有 |
+| 自进化 | ❌ | ❌ | ✅ | ✅ |
+| 开源 | 本文代码 | ❌ | ✅ | ✅ |
 
 ### 7.3 扩展阅读
 
 理解本文架构后，建议深入学习以下项目，看它们如何在本文基础上做增强：
 
-- **claude-mem**（65K stars）：学习如何用 AI 压缩 Agent 经验
-- **GenericAgent**（5.8K stars）：学习如何从种子代码自动生长技能树
-- **Evolver**（6.4K stars）：学习如何用 GEP 协议做群体进化
-- **Hermes Agent**（109K stars）：学习如何结合以上所有模式`,
+- claude-mem（65K stars）：学习如何用 AI 压缩 Agent 经验
+- GenericAgent（5.8K stars）：学习如何从种子代码自动生长技能树
+- Evolver（6.4K stars）：学习如何用 GEP 协议做群体进化
+- Hermes Agent（109K stars）：学习如何结合以上所有模式`,
       table: {
         headers: ["改进项", "实现难度", "价值", "推荐优先级"],
         rows: [
@@ -920,23 +920,23 @@ if __name__ == "__main__":
 
 ### 核心要点回顾
 
-1. **Agent 的核心是循环，不是模型**：ReAct 循环让 LLM 从「一次性生成」变成「分步思考+行动」
-2. **工具是 Agent 的能力边界**：定义清晰的工具接口，Agent 才能做有用的事
-3. **记忆是 Agent 的经验**：没有记忆的 Agent 每次都是新手，无法积累能力
-4. **错误处理决定生产可用性**：重试、回退、日志，缺一不可
+1. Agent 的核心是循环，不是模型：ReAct 循环让 LLM 从「一次性生成」变成「分步思考+行动」
+2. 工具是 Agent 的能力边界：定义清晰的工具接口，Agent 才能做有用的事
+3. 记忆是 Agent 的经验：没有记忆的 Agent 每次都是新手，无法积累能力
+4. 错误处理决定生产可用性：重试、回退、日志，缺一不可
 
 ### 实战练习
 
 尝试以下练习来巩固所学：
 
-1. **接入真实 API**：将 _mock_llm_call 替换为 OpenAI 或 Anthropic 的真实 API 调用
-2. **添加新工具**：实现一个「网页抓取」工具（用 requests + BeautifulSoup）
-3. **实现向量记忆**：用 ChromaDB 替换关键词匹配的记忆检索
-4. **添加计划模式**：在执行任务前，先让 LLM 生成一个执行计划（Plan-and-Execute 模式）
-5. **实现并发执行**：让 Agent 可以同时调用多个独立工具（asyncio + 工具并行）
+1. 接入真实 API：将 _mock_llm_call 替换为 OpenAI 或 Anthropic 的真实 API 调用
+2. 添加新工具：实现一个「网页抓取」工具（用 requests + BeautifulSoup）
+3. 实现向量记忆：用 ChromaDB 替换关键词匹配的记忆检索
+4. 添加计划模式：在执行任务前，先让 LLM 生成一个执行计划（Plan-and-Execute 模式）
+5. 实现并发执行：让 Agent 可以同时调用多个独立工具（asyncio + 工具并行）
 
 完成这些练习后，你就拥有了一个生产级 Agent 的基础框架——这正是 Hermes Agent、GenericAgent 等热门项目的核心架构。`,
-      tip: "**下一步学习建议**：掌握本文内容后，建议阅读 Claude Code 的架构文档、Hermes Agent 的源码（GitHub: NousResearch/hermes-agent），以及 GenericAgent 的技能树实现（GitHub: lsdefine/GenericAgent），理解工业级 Agent 如何在此基础之上做增强。",
+      tip: "下一步学习建议：掌握本文内容后，建议阅读 Claude Code 的架构文档、Hermes Agent 的源码（GitHub: NousResearch/hermes-agent），以及 GenericAgent 的技能树实现（GitHub: lsdefine/GenericAgent），理解工业级 Agent 如何在此基础之上做增强。",
     },
   ],
 };

@@ -505,7 +505,7 @@ print(f"解密乘法: {he.decryptInt(c_mul)}")  # 714
 
 # CKKS 方案支持浮点数同态运算（适用于 ML）
 he_ckks = Pyfhel()
-he_ckks.contextGen(p=None, m=2**15, sec=128, scale=2**40)
+he_ckks.contextGen(p=None, m=215, sec=128, scale=240)
 he_ckks.keyGen()
 he_ckks.relinKeyGen()
 

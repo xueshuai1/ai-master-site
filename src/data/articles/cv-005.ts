@@ -647,7 +647,7 @@ def compute_hota(det_accuracy, assoc_accuracy, alpha=0.5):
     """
     if det_accuracy <= 0 or assoc_accuracy <= 0:
         return 0.0
-    return (det_accuracy ** alpha * assoc_accuracy ** (1 - alpha)) ** 0.5
+    return (det_accuracy  alpha * assoc_accuracy  (1 - alpha)) ** 0.5
 
 # 对比三个指标对同一跟踪器的评估
 results = {

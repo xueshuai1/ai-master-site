@@ -40,7 +40,7 @@ def estimate_pi(n: int = 100000) -> float:
     inside = 0
     for _ in range(n):
         x, y = random.random(), random.random()
-        if x**2 + y**2 <= 1:
+        if x2 + y2 <= 1:
             inside += 1
     return 4 * inside / n
 

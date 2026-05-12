@@ -337,7 +337,7 @@ reconstruction_error = np.linalg.norm(X - X_reconstructed)
 print("重构误差:", reconstruction_error)
 
 # 保留的方差比例
-retained_variance = sigma[:k]**2 / sigma.sum()**2
+retained_variance = sigma[:k]2 / sigma.sum()2
 print(f"前 {k} 个主成分保留的方差比例: {retained_variance:.4f}")`
         }
       ],
@@ -478,7 +478,7 @@ print("奇异值分布:")
 print(f"  最大奇异值: {sigma[0]:.4f}")
 print(f"  最小奇异值: {sigma[-1]:.6f}")
 print(f"  条件数: {sigma[0]/sigma[-1]:.2e}")
-print(f"  前10个奇异值占总能量: {np.sum(sigma[:10]**2)/np.sum(sigma**2)*100:.2f}%")
+print(f"  前10个奇异值占总能量: {np.sum(sigma[:10]2)/np.sum(sigma2)*100:.2f}%")
 
 # 不同 k 值的压缩效果
 print("\\n压缩效果对比:")

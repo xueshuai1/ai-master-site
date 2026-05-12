@@ -90,7 +90,7 @@ from scipy.optimize import minimize
 # 最小化 f(x) = (x1-3)^2 + (x2+1)^2
 # 满足 x1 + x2 <= 2, x1 >= 0
 def objective(x):
-    return (x[0] - 3)**2 + (x[1] + 1)**2
+    return (x[0] - 3)2 + (x[1] + 1)2
 
 constraints = [
     {"type": "ineq", "fun": lambda x: 2 - x[0] - x[1]},  # x1 + x2 <= 2
@@ -190,7 +190,7 @@ def check_slater(feasible_points, inequality_funcs):
 
 # f1(x) = x1^2 + x2^2 - 4 <= 0 (圆盘)
 # f2(x) = -x1 + 1 <= 0 (x1 >= 1)
-f1 = lambda x: x[0]**2 + x[1]**2 - 4
+f1 = lambda x: x[0]2 + x[1]2 - 4
 f2 = lambda x: -x[0] + 1
 
 candidates = [
@@ -327,7 +327,7 @@ x0 = np.array([5.0, 5.0])
 alpha = 0.04  # 1/L = 1/20 = 0.05，取稍小值保证稳定
 x_star, hist = gradient_descent(grad_f, x0, alpha)
 print(f"迭代 {len(hist)} 次, 解: {x_star}")
-print(f"f(x*) = {x_star[0]**2 + 10*x_star[1]**2:.8f}")`
+print(f"f(x*) = {x_star[0]2 + 10*x_star[1]2:.8f}")`
                 },
                 {
                     lang: "python",
@@ -343,7 +343,7 @@ print(f"f(x*) = {x_star[0]**2 + 10*x_star[1]**2:.8f}")`
     return alpha
 
 # 在梯度下降中使用回溯线搜索
-f = lambda x: (x[0]-3)**2 + 5*(x[1]+2)**2
+f = lambda x: (x[0]-3)2 + 5*(x[1]+2)2
 grad_f = lambda x: np.array([2*(x[0]-3), 10*(x[1]+2)])
 
 x = np.array([0.0, 0.0])
@@ -404,8 +404,8 @@ def newton_method(f, grad_f, hess_f, x0, tol=1e-10, max_iter=50):
     return x
 
 # Rosenbrock 函数 (banana 函数)
-f = lambda x: (1-x[0])**2 + 100*(x[1]-x[0]**2)**2
-grad_f = lambda x: np.array([-2*(1-x[0]) - 400*x[0]*(x[1]-x[0]**2), 200*(x[1]-x[0]**2)])
+f = lambda x: (1-x[0])2 + 100*(x[1]-x[0]2)**2
+grad_f = lambda x: np.array([-2*(1-x[0]) - 400*x[0]*(x[1]-x[0]2), 200*(x[1]-x[0]2)])
 hess_f = lambda x: np.array([
     [2 - 400*x[1] + 1200*x[0]**2, -400*x[0]],
     [-400*x[0], 200]
@@ -419,7 +419,7 @@ print(f"牛顿法解: x* = {x_star}")`
                     code: `from scipy.optimize import minimize
 
 # 比较多种优化算法
-f = lambda x: (1-x[0])**2 + 100*(x[1]-x[0]**2)**2
+f = lambda x: (1-x[0])2 + 100*(x[1]-x[0]2)**2
 x0 = np.array([0.0, 0.0])
 
 methods = ["BFGS", "L-BFGS-B", "Newton-CG", "Nelder-Mead"]
@@ -527,7 +527,7 @@ from scipy.optimize import NonlinearConstraint, LinearConstraint, Bounds
 # 示例: min (x1-1)^2 + (x2-2.5)^2
 # s.t. x1 - 2*x2 + 2 >= 0, -x1 - 2*x2 + 6 >= 0, -x1 + 2*x2 + 2 >= 0
 def obj(x):
-    return (x[0]-1)**2 + (x[1]-2.5)**2
+    return (x[0]-1)2 + (x[1]-2.5)2
 
 def grad_obj(x):
     return np.array([2*(x[0]-1), 2*(x[1]-2.5)])

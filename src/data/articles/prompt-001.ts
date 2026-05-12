@@ -18,22 +18,22 @@ export const article: Article = {
 
 当你面对以下场景时，基础 Prompt 就力不从心了：
 
-**场景 1：复杂数学推理**
+场景 1：复杂数学推理
 > 一个水箱有 3 根进水管，分别以每分钟 2L、3L、5L 的速度进水，同时有 1 根排水管以每分钟 4L 的速度排水。水箱初始有 20L 水，容量为 100L。问多少分钟后水箱满？
 
 基础 Prompt 往往让模型「心算」给出答案，错误率极高。而 Chain-of-Thought 能让模型一步步推理，准确率提升 3-5 倍。
 
-**场景 2：专业领域问答**
+场景 2：专业领域问答
 > 给定一段法律文本，判断某个行为是否违法。
 
 没有领域知识的 Few-Shot 示例，模型的回答往往是「大概可能也许」的模糊判断。
 
-**场景 3：多步骤任务规划**
+场景 3：多步骤任务规划
 > 分析一份销售数据，找出趋势，生成报告，并给出改进建议。
 
 这需要模型具备任务分解、多步推理和自我修正的能力。
 
-**高级 Prompt 技术的核心价值：**
+高级 Prompt 技术的核心价值：
 - 将模型的「直觉式回答」转变为「系统性推理」
 - 将回答准确率从 60-70% 提升到 90%+
 - 让模型在数学、逻辑、编程等推理密集型任务中接近人类专家水平
@@ -43,9 +43,9 @@ export const article: Article = {
       title: "二、Chain-of-Thought（思维链）：让模型「想清楚再说」",
       body: `Chain-of-Thought（CoT）是 Wei et al. (2022) 在论文「Chain-of-Thought Prompting Elicits Reasoning in Large Language Models」中提出的核心技术。
 
-**核心思想**：在 Prompt 中引导模型展示推理过程，而不是直接给出最终答案。
+核心思想：在 Prompt 中引导模型展示推理过程，而不是直接给出最终答案。
 
-**原理图解：**
+原理图解：
 
 模型在处理复杂问题时，内部其实经过了多层注意力计算。但直接输出答案时，中间推理步骤被「压缩」了，导致错误累积。CoT 通过强制模型输出中间步骤，相当于给推理过程一个「外部工作记忆」，显著减少错误。`,
       mermaid: `graph TD
@@ -68,7 +68,7 @@ export const article: Article = {
       title: "2.1 Zero-Shot CoT：最简单的思维链",
       body: `Zero-Shot CoT 不需要任何示例，只需在问题后加一句神奇的引导语：
 
-**"Let's think step by step"（让我们一步步思考）**
+"Let's think step by step"（让我们一步步思考）
 
 就这么简单，但效果显著。在 GSM8K 数学数据集上，仅加这一句话就能让 GPT-3 的准确率从 18% 提升到 40% 以上。`,
       code: [{ lang: "python", code: `import openai
@@ -110,7 +110,7 @@ print(result)`, filename: "zero_shot_cot.py" }],
       title: "2.2 Few-Shot CoT：用示例教模型推理",
       body: `Few-Shot CoT 在 Zero-Shot 的基础上更进一步：给模型几个「问题 → 推理过程 → 答案」的完整示例，让模型学习推理的模式。
 
-**关键区别：**
+关键区别：
 
 Zero-Shot CoT 只给引导语，让模型自己想。
 Few-Shot CoT 给示范，让模型照着学。
@@ -209,13 +209,13 @@ print(f"答案：{result['answer']}")`, filename: "few_shot_cot.py" }],
       title: "三、Self-Consistency（自一致性）：投票选出最佳答案",
       body: `Self-Consistency 是 Wang et al. (2022) 提出的增强 CoT 的方法。
 
-**核心思想：**
+核心思想：
 不要只让模型推理一次。让模型从同一条 Prompt 出发，用不同的随机种子推理 N 次（通常 N=5-40），然后对最终答案进行投票，选出现次数最多的那个。
 
-**为什么有效？**
+为什么有效？
 模型的推理过程有随机性。单次推理可能「走错路」，但多次推理中，正确的推理路径会收敛到相同的答案。投票机制过滤掉了偶然的错误。
 
-**效果对比：**
+效果对比：
 
 | 方法 | GSM8K 准确率 | SVAMP 准确率 | 成本倍数 |
 |------|-------------|-------------|---------|
@@ -344,11 +344,11 @@ print(result['best_reasoning'])`, filename: "self_consistency_cot.py" }],
       title: "四、ReAct 框架：推理与行动的交织",
       body: `ReAct（Reasoning + Acting）是 Yao et al. (2022) 提出的框架，将推理（Reasoning）和行动（Acting）交替进行。
 
-**核心流程：**
+核心流程：
 
-1. **Thought（思考）**：分析当前状态，决定下一步做什么
-2. **Action（行动）**：执行具体操作（搜索、计算、调用工具）
-3. **Observation（观察）**：获取行动的结果
+1. Thought（思考）：分析当前状态，决定下一步做什么
+2. Action（行动）：执行具体操作（搜索、计算、调用工具）
+3. Observation（观察）：获取行动的结果
 4. 回到 Thought，重复直到得出结论
 
 这个模式本质上就是 Agent 的工作方式！OpenClaw、AutoGPT、LangChain Agent 等系统都在使用 ReAct 模式。`,
@@ -481,16 +481,16 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
       title: "五、Tree of Thoughts（思维树）：多路径探索",
       body: `Tree of Thoughts（ToT）是 Yao et al. (2023) 提出的更高级的推理框架。
 
-**核心思想：**
+核心思想：
 不是只沿着一条推理路径走到底，而是生成多个可能的推理步骤，评估每个步骤的质量，选择最有希望的路径继续深入。
 
 这就像下棋：高手不会只考虑一步棋，而是同时推演多条可能的走法，然后选择最优的那条。
 
-**ToT 的三个关键操作：**
+ToT 的三个关键操作：
 
-1. **Thought Decomposition（思维分解）**：把大问题分解为多个思维步骤
-2. **Thought Generation（思维生成）**：对每个步骤，生成 k 个候选思维
-3. **State Evaluation（状态评估）**：评估每个候选思维的质量，选择最好的继续`,
+1. Thought Decomposition（思维分解）：把大问题分解为多个思维步骤
+2. Thought Generation（思维生成）：对每个步骤，生成 k 个候选思维
+3. State Evaluation（状态评估）：评估每个候选思维的质量，选择最好的继续`,
       mermaid: `graph TD
     A[初始问题] --> B[生成候选思维]
     B --> C1[候选 1: 路径 A]
@@ -546,25 +546,25 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
       title: "六、高级 Prompt 策略组合：生产级 Prompt 系统",
       body: `在实际生产环境中，单一技术往往不够。我们需要根据任务类型组合不同的策略。
 
-**策略选择决策树：**
+策略选择决策树：
 
-1. **任务是否需要外部信息？**
+1. 任务是否需要外部信息？
    - 是 → ReAct（推理+工具调用）
    - 否 → 继续判断
 
-2. **任务是否需要多步推理？**
+2. 任务是否需要多步推理？
    - 是 → CoT / Self-Consistency
    - 否 → 继续判断
 
-3. **任务是否有明确的输出格式？**
+3. 任务是否有明确的输出格式？
    - 是 → Structured Output Prompt（JSON Schema）
    - 否 → 直接回答
 
-4. **任务是否可以并行多个答案？**
+4. 任务是否可以并行多个答案？
    - 是 → Self-Consistency 投票
    - 否 → 单次推理
 
-**一个完整的生产级 Prompt 系统应该包含以下组件：**`,
+一个完整的生产级 Prompt 系统应该包含以下组件：`,
       mermaid: `graph TD
     A[用户输入] --> B{任务分类器}
     
@@ -775,25 +775,25 @@ print(f"\\n提取结果：{r2.answer}")`, filename: "prompt_router.py" }],
       title: "七、2026 年 Prompt 工程最佳实践总结",
       body: `经过几年的发展，Prompt Engineering 已经从「艺术」逐渐走向「工程」。以下是 2026 年业界总结的最佳实践：
 
-**1. 推理任务必用 CoT**
+1. 推理任务必用 CoT
 任何涉及数学、逻辑、推理的问题，都应该使用 Chain-of-Thought。Zero-Shot CoT（加一句"让我们一步步思考"）是最低成本高回报的优化。
 
-**2. 高准确度需求用 Self-Consistency**
+2. 高准确度需求用 Self-Consistency
 当需要 90%+ 的准确率时，Self-Consistency（k=5）是性价比最高的选择。
 
-**3. 需要外部能力用 ReAct**
+3. 需要外部能力用 ReAct
 搜索、计算、API 调用等场景，ReAct 框架是标准模式。
 
-**4. 复杂规划用 Tree of Thoughts**
+4. 复杂规划用 Tree of Thoughts
 创意写作、多步规划、策略制定等需要多路径探索的场景。
 
-**5. 结构化输出用 JSON Schema**
+5. 结构化输出用 JSON Schema
 数据提取、API 响应、格式转换等场景，强制 JSON Schema 约束。
 
-**6. Prompt 需要版本管理和 A/B 测试**
+6. Prompt 需要版本管理和 A/B 测试
 把 Prompt 当代码管理：版本控制、测试用例、性能监控。
 
-**7. 持续评估和优化**
+7. 持续评估和优化
 建立评估集（Evaluation Suite），每次 Prompt 变更后自动回归测试。`,
       table: {
         headers: ["技术", "最佳场景", "推荐参数", "成本", "准确率提升"],
@@ -811,18 +811,18 @@ print(f"\\n提取结果：{r2.answer}")`, filename: "prompt_router.py" }],
       title: "八、下一步学习路径",
       body: `掌握高级 Prompt 技术后，你可以继续深入以下方向：
 
-**📖 推荐阅读：**
+📖 推荐阅读：
 - [Agent 学习导览](/knowledge/agent-guide) — 从 Prompt 到 Agent 的进阶
 - [LLM 应用开发导览](/knowledge/llm-app-guide) — 构建完整的 LLM 应用
 - [AI 工程化导览](/knowledge/aieng-guide) — 生产级 AI 系统架构
 
-**🔧 实践建议：**
+🔧 实践建议：
 1. 从 Zero-Shot CoT 开始，在现有 Prompt 中加一句"请一步步思考"
 2. 为你的核心场景建立评估集（至少 20 条测试用例）
 3. 尝试 Self-Consistency，比较 k=1 和 k=5 的准确率差异
 4. 对于需要外部信息的场景，实现一个简单的 ReAct Agent
 
-**⚠️ 常见误区：**
+⚠️ 常见误区：
 - 过度追求复杂技术：简单的 Zero-Shot CoT 往往就能解决 80% 的问题
 - 忽略评估：没有测试的 Prompt 优化是盲目的
 - 忽视 Token 成本：Self-Consistency 和 ToT 的成本可能很高，需要权衡`,

@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "1. GAN 的核心思想：生成器 vs 判别器",
-            body: `GAN（Generative Adversarial Network）由 Ian Goodfellow 于 2014 年提出，其核心灵感来自博弈论中的二人零和博弈。网络由两个模块组成：**生成器 G** 和 **判别器 D**。
+            body: `GAN（Generative Adversarial Network）由 Ian Goodfellow 于 2014 年提出，其核心灵感来自博弈论中的二人零和博弈。网络由两个模块组成：生成器 G 和 判别器 D。
 
 生成器 G 接收随机噪声 z ~ p_z(z) 作为输入，输出生成样本 G(z)，目标是让生成样本尽可能接近真实数据分布 p_data。判别器 D 接收样本 x，输出 D(x) ∈ [0,1]，表示 x 来自真实数据的概率。
 
@@ -20,7 +20,7 @@ export const article: Article = {
 
 min_G max_D V(D, G) = E_{x~p_data}[log D(x)] + E_{z~p_z}[log(1 - D(G(z)))]
 
-当训练达到理想状态时，系统趋于**纳什均衡**（Nash Equilibrium）：G 完美复现了真实数据分布，D 对所有输入都输出 0.5（完全无法区分真假）。此时 G(z) ~ p_data，生成器可以产生任意逼真的样本。
+当训练达到理想状态时，系统趋于纳什均衡（Nash Equilibrium）：G 完美复现了真实数据分布，D 对所有输入都输出 0.5（完全无法区分真假）。此时 G(z) ~ p_data，生成器可以产生任意逼真的样本。
 
 这种"对抗学习"的范式跳出了传统生成模型（如 VAE）最大化似然的思路，通过隐式地建模数据分布，能够产生更锐利、更高质量的生成结果。`,
             code: [{ lang: "python", code: `import torch
@@ -84,12 +84,12 @@ V(D, G) = E_{x~p_data}[log D(x)] + E_{z~p_z}[log(1 - D(G(z)))]
 
 C(G) = max_D V(D,G) = -log(4) + 2 · JS(p_data || p_g)
 
-其中 **JS 散度**（Jensen-Shannon Divergence）定义为：
+其中 JS 散度（Jensen-Shannon Divergence）定义为：
 JS(P || Q) = ½ KL(P || M) + ½ KL(Q || M)，其中 M = ½(P + Q)
 
 这意味着优化生成器等价于最小化真实分布与生成分布之间的 JS 散度。
 
-**然而，JS 散度有一个致命缺陷**：当两个分布几乎没有重叠时（高维空间中常见），JS 散度恒为 log(2)，梯度为零。这导致生成器无法获得有效梯度信号，训练陷入停滞——这就是原始 GAN 训练不稳定的根本原因之一。
+然而，JS 散度有一个致命缺陷：当两个分布几乎没有重叠时（高维空间中常见），JS 散度恒为 log(2)，梯度为零。这导致生成器无法获得有效梯度信号，训练陷入停滞——这就是原始 GAN 训练不稳定的根本原因之一。
 
 此外，极小极大博弈本身也不容易优化。交替更新 D 和 G 时，如果 D 训练过度（太准确），梯度消失；如果 D 训练不足，G 收到的梯度无意义。这种微妙的平衡是 GAN 难以训练的核心挑战。`,
             code: [{ lang: "python", code: `def train_gan_step(G, D, real_data, latent_dim, device):
@@ -146,16 +146,16 @@ JS(P || Q) = ½ KL(P || M) + ½ KL(Q || M)，其中 M = ½(P + Q)
             body: `DCGAN（Deep Convolutional GAN，Radford et al., 2016）是 GAN 发展史上的第一个重要里程碑。它将卷积网络引入 GAN 架构，使 GAN 能够生成高质量的图像。
 
 DCGAN 的核心设计原则：
-- **判别器**：使用带步幅卷积（strided convolution）替代池化层，逐步降低特征图空间尺寸
-- **生成器**：使用**转置卷积**（transposed convolution / fractionally-strided convolution）逐步上采样，从低维噪声向量重构出完整图像
+- 判别器：使用带步幅卷积（strided convolution）替代池化层，逐步降低特征图空间尺寸
+- 生成器：使用转置卷积（transposed convolution / fractionally-strided convolution）逐步上采样，从低维噪声向量重构出完整图像
 - 移除全连接隐藏层，使用纯卷积架构
-- 生成器和判别器均使用**批量归一化**（BatchNorm）稳定训练
-- 生成器输出层使用 **Tanh** 激活，其余使用 **ReLU**
-- 判别器使用 **LeakyReLU**（α=0.2）避免梯度死亡
+- 生成器和判别器均使用批量归一化（BatchNorm）稳定训练
+- 生成器输出层使用 Tanh 激活，其余使用 ReLU
+- 判别器使用 LeakyReLU（α=0.2）避免梯度死亡
 
 DCGAN 的价值在于：它证明了 GAN 可以学习到有意义的层次化特征表示。判别器中间层的特征向量可以用于图像检索、特征可视化等下游任务，这为后续 GAN 的特征操控奠定了基础。
 
-数学上，转置卷积是卷积的逆操作：如果卷积的输出尺寸为 out = floor((in - k + 2p) / s) + 1，那么转置卷积将 out 映射回 in。转置卷积存在**棋盘效应**（checkerboard artifacts），这是后续模型（如 StyleGAN）需要解决的问题。`,
+数学上，转置卷积是卷积的逆操作：如果卷积的输出尺寸为 out = floor((in - k + 2p) / s) + 1，那么转置卷积将 out 映射回 in。转置卷积存在棋盘效应（checkerboard artifacts），这是后续模型（如 StyleGAN）需要解决的问题。`,
             code: [{ lang: "python", code: `import torch.nn as nn
 
 class DCGAN_Generator(nn.Module):
@@ -224,7 +224,7 @@ class DCGAN_Discriminator(nn.Module):
         },
         {
             title: "4. WGAN：Wasserstein 距离的革命",
-            body: `WGAN（Wasserstein GAN，Arjovsky et al., 2017）从根本上重新思考了 GAN 的训练目标。它用 **Wasserstein 距离**（又称 Earth Mover 距离）替代 JS 散度作为生成分布与真实分布的度量。
+            body: `WGAN（Wasserstein GAN，Arjovsky et al., 2017）从根本上重新思考了 GAN 的训练目标。它用 Wasserstein 距离（又称 Earth Mover 距离）替代 JS 散度作为生成分布与真实分布的度量。
 
 Wasserstein 距离的直观理解：将 p_g 的"土堆"搬到 p_data 的"土坑"，最小搬运成本就是 Wasserstein 距离。与 JS 散度不同，即使两个分布没有重叠，Wasserstein 距离也能提供有意义的梯度信号。
 
@@ -237,9 +237,9 @@ W(p_data, p_g) = (1/K) · sup_{||f||_L ≤ K} [E_{x~p_data}[f(x)] - E_{z~p_g}[f(
 
 其中 f 是 1-Lipschitz 函数。在 WGAN 中，判别器（称为 Critic）就是这个 f。
 
-**原始 WGAN 做法**：通过权重裁剪（weight clipping）强制 Critic 满足 Lipschitz 约束。但这会导致要么梯度爆炸（裁剪值太大）、要么梯度消失（裁剪值太小）。
+原始 WGAN 做法：通过权重裁剪（weight clipping）强制 Critic 满足 Lipschitz 约束。但这会导致要么梯度爆炸（裁剪值太大）、要么梯度消失（裁剪值太小）。
 
-**WGAN-GP 改进**（Gulrajani et al., 2017）：用梯度惩罚替代权重裁剪：
+WGAN-GP 改进（Gulrajani et al., 2017）：用梯度惩罚替代权重裁剪：
 GP = E_{x̂~P_x̂}[(||∇_x̂ D(x̂)||₂ - 1)²]
 
 其中 x̂ 是真实样本和生成样本之间的随机插值点。这比权重裁剪优雅得多，也是目前最常用的做法。`,
@@ -303,25 +303,25 @@ def generator_loss(critic, fake_data):
             title: "5. StyleGAN 系列：风格迁移与人脸合成",
             body: `StyleGAN（Karras et al., 2019）是 NVIDIA 提出的划时代生成模型，彻底改变了高质量人脸合成的格局。
 
-**核心创新**：StyleGAN 将生成过程分解为多个层次，每层控制不同"风格"的特征：
-- **粗粒度风格**（低层）：控制整体姿态、发型、脸型
-- **中粒度风格**（中层）：控制五官比例、面部表情
-- **细粒度风格**（高层）：控制肤色、眼睛颜色、细微纹理
+核心创新：StyleGAN 将生成过程分解为多个层次，每层控制不同"风格"的特征：
+- 粗粒度风格（低层）：控制整体姿态、发型、脸型
+- 中粒度风格（中层）：控制五官比例、面部表情
+- 细粒度风格（高层）：控制肤色、眼睛颜色、细微纹理
 
 StyleGAN 的关键技术包括：
 
-1. **映射网络**（Mapping Network）：一个 8 层 MLP 将初始潜码 z 映射到中间潜空间 w，解耦了原始噪声的不同维度，使各维度控制更独立的语义属性。
+1. 映射网络（Mapping Network）：一个 8 层 MLP 将初始潜码 z 映射到中间潜空间 w，解耦了原始噪声的不同维度，使各维度控制更独立的语义属性。
 
-2. **自适应实例归一化**（AdaIN）：
+2. 自适应实例归一化（AdaIN）：
 AdaIN(x_i, y) = y_{s,i} · (x_i - μ_i) / σ_i + y_{b,i}
 其中 y 是从 w 投影出的风格参数（缩放 y_s 和偏移 y_b），x_i 是第 i 层的特征。这取代了传统的 BatchNorm，使每个样本可以独立控制风格。
 
-3. **风格混合**（Style Mixing）：训练时随机交换两个潜码在不同层的风格，强制网络学习解耦的特征表示。
+3. 风格混合（Style Mixing）：训练时随机交换两个潜码在不同层的风格，强制网络学习解耦的特征表示。
 
-**StyleGAN2**（2020）的改进：
-- 移除 AdaIN 中的归一化操作，用**权重解卷积**（Weight Demodulation）替代
+StyleGAN2（2020）的改进：
+- 移除 AdaIN 中的归一化操作，用权重解卷积（Weight Demodulation）替代
 - 消除权重归一化导致的的水滴状伪影（water drop artifacts）
-- 引入**路径长度正则化**，使潜空间更平滑，便于插值和编辑
+- 引入路径长度正则化，使潜空间更平滑，便于插值和编辑
 
 StyleGAN 系列模型可以生成人眼无法分辨的 1024×1024 人脸图像，被广泛应用于数字人、游戏角色、影视特效等领域。`,
             code: [{ lang: "python", code: `import torch
@@ -378,11 +378,11 @@ class StyleGAN2Generator(nn.Module):
         },
         {
             title: "6. CycleGAN：无配对的图像到图像翻译",
-            body: `CycleGAN（Zhu et al., 2017）解决了一个根本性问题：**如何在没有配对数据的情况下，实现两个域之间的图像转换？**
+            body: `CycleGAN（Zhu et al., 2017）解决了一个根本性问题：如何在没有配对数据的情况下，实现两个域之间的图像转换？
 
 之前的 pix2pix 等方法需要严格配对的训练数据（如同一场景的白天/夜晚照片）。但很多场景无法获取配对数据：马↔斑马、照片↔油画、夏季↔冬季。
 
-CycleGAN 的核心思想是引入**循环一致性损失**（Cycle Consistency Loss）：
+CycleGAN 的核心思想是引入循环一致性损失（Cycle Consistency Loss）：
 - 正向循环：x → G(x) → F(G(x)) ≈ x
 - 反向循环：y → F(y) → G(F(y)) ≈ y
 
@@ -485,20 +485,20 @@ def cycle_consistency_loss(G, F, real_A, real_B):
             title: "7. GAN 的应用与挑战",
             body: `GAN 自 2014 年提出以来，已在多个领域取得突破性应用：
 
-**1. 超分辨率（SRGAN / ESRGAN）**：从低分辨率图像重建高分辨率版本。SRGAN 使用感知损失（Perceptual Loss）+ 对抗损失替代传统的 MSE 损失，生成的图像在视觉感知上更真实。ESRGAN 进一步引入 RRDB（残差密集块）和相对论判别器。
+1. 超分辨率（SRGAN / ESRGAN）：从低分辨率图像重建高分辨率版本。SRGAN 使用感知损失（Perceptual Loss）+ 对抗损失替代传统的 MSE 损失，生成的图像在视觉感知上更真实。ESRGAN 进一步引入 RRDB（残差密集块）和相对论判别器。
 
-**2. 数据增强**：GAN 可以生成逼真的训练数据，尤其适用于数据稀缺场景（医学图像、罕见事件）。生成的数据可以补充真实数据，提升下游分类器的泛化能力。
+2. 数据增强：GAN 可以生成逼真的训练数据，尤其适用于数据稀缺场景（医学图像、罕见事件）。生成的数据可以补充真实数据，提升下游分类器的泛化能力。
 
-**3. 图像修复（Inpainting）**：结合上下文编码器（Context Encoder），GAN 可以填充图像中的缺失区域，保持语义一致性。
+3. 图像修复（Inpainting）：结合上下文编码器（Context Encoder），GAN 可以填充图像中的缺失区域，保持语义一致性。
 
-**4. 文本到图像生成**：StackGAN、DALL·E（部分使用 GAN 思想）等模型可以从文本描述生成对应图像。
+4. 文本到图像生成：StackGAN、DALL·E（部分使用 GAN 思想）等模型可以从文本描述生成对应图像。
 
-**然而，GAN 仍面临严峻挑战：**
+然而，GAN 仍面临严峻挑战：
 
-- **模式崩溃**（Mode Collapse）：生成器只学会生成少数几种样本，覆盖不了真实数据的全部模式。这是 GAN 最著名的问题。
-- **评估困难**：缺乏统一的生成质量度量。**FID**（Fréchet Inception Distance）计算真实和生成特征分布之间的 Fréchet 距离，越低越好。**IS**（Inception Score）评估生成图像的多样性和质量，越高越好。
-- **训练不稳定**：即使有 WGAN-GP 等技术，GAN 训练仍然比 VAE、Diffusion 更敏感。
-- **伦理问题**：Deepfake 技术引发虚假信息、隐私侵犯等社会问题。
+- 模式崩溃（Mode Collapse）：生成器只学会生成少数几种样本，覆盖不了真实数据的全部模式。这是 GAN 最著名的问题。
+- 评估困难：缺乏统一的生成质量度量。FID（Fréchet Inception Distance）计算真实和生成特征分布之间的 Fréchet 距离，越低越好。IS（Inception Score）评估生成图像的多样性和质量，越高越好。
+- 训练不稳定：即使有 WGAN-GP 等技术，GAN 训练仍然比 VAE、Diffusion 更敏感。
+- 伦理问题：Deepfake 技术引发虚假信息、隐私侵犯等社会问题。
 
 近年来，Diffusion Model 在生成质量上超越了 GAN，但 GAN 在推理速度（单次前向传播 vs 多步迭代）和计算效率上仍有不可替代的优势。`,
             code: [{ lang: "python", code: `import torch

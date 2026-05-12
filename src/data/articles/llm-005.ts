@@ -523,7 +523,7 @@ results = {
 for task, (a, b, t) in results.items():
     wr, margin = compute_win_rate(a, b, t)
     p = statistical_significance(a, b, t)
-    sig = "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns"
+    sig = "*" if p < 0.001 else "" if p < 0.01 else "*" if p < 0.05 else "ns"
     print(f"{task}: WR={wr:.1%}, margin=+{margin}, p={p:.4f} {sig}")`
           }
         ],

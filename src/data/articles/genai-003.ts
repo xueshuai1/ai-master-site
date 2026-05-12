@@ -62,7 +62,7 @@ export const article: Article = {
                 },
                 {
                     lang: "python",
-                    code: `# 边缘似然不可计算性的演示\nimport numpy as np\nfrom scipy.integrate import nquad\n\ndef demonstrate_intractability():\n    # 在 1 维情况下演示为什么 p(x) 难以计算\n    # p(z) = N(0, 1)\n    # p(x|z) = N(f(z), 0.1) 其中 f 是神经网络\n\n    # 简单情况：f(z) = 2*z\n    def p_xz(z, x=1.0):\n        mean = 2 * z\n        var = 0.1\n        return (1/np.sqrt(2*np.pi*var)) * np.exp(-(x-mean)**2/(2*var))\n\n    def p_z(z):\n        return (1/np.sqrt(2*np.pi)) * np.exp(-z**2/2)\n\n    def integrand(z, x=1.0):\n        return p_xz(z, x) * p_z(z)\n\n    # 数值积分计算 p(x)\n    result, _ = nquad(integrand, [[-10, 10]])\n    print(f"p(x=1.0) = {result:.6f}")\n    print(f"维度灾难：32 维需要 20^32 次积分评估!")`
+                    code: `# 边缘似然不可计算性的演示\nimport numpy as np\nfrom scipy.integrate import nquad\n\ndef demonstrate_intractability():\n    # 在 1 维情况下演示为什么 p(x) 难以计算\n    # p(z) = N(0, 1)\n    # p(x|z) = N(f(z), 0.1) 其中 f 是神经网络\n\n    # 简单情况：f(z) = 2*z\n    def p_xz(z, x=1.0):\n        mean = 2 * z\n        var = 0.1\n        return (1/np.sqrt(2*np.pi*var)) * np.exp(-(x-mean)2/(2*var))\n\n    def p_z(z):\n        return (1/np.sqrt(2*np.pi)) * np.exp(-z2/2)\n\n    def integrand(z, x=1.0):\n        return p_xz(z, x) * p_z(z)\n\n    # 数值积分计算 p(x)\n    result, _ = nquad(integrand, [[-10, 10]])\n    print(f"p(x=1.0) = {result:.6f}")\n    print(f"维度灾难：32 维需要 20^32 次积分评估!")`
                 }
             ],
             table: {

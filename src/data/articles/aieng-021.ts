@@ -14,11 +14,11 @@ export const article: Article = {
   content: [
     {
       title: "一、Agentic Engineering 的定义与演进：从 Prompt 工程到 Agent 系统工程",
-      body: `如果说 2024 年是 Prompt Engineering 的元年，2025 年是 RAG（Retrieval-Augmented Generation）的爆发年，那么 **2026 年就是 Agentic Engineering 的生产落地年**。
+      body: `如果说 2024 年是 Prompt Engineering 的元年，2025 年是 RAG（Retrieval-Augmented Generation）的爆发年，那么 2026 年就是 Agentic Engineering 的生产落地年。
 
 ### 什么是 Agentic Engineering？
 
-Agentic Engineering 是一套系统化构建、管理和部署 AI Agent 的工程方法论。它超越了传统的 Prompt Engineering，将 AI Agent 视为一个完整的**软件工程系统**，涵盖以下核心维度：
+Agentic Engineering 是一套系统化构建、管理和部署 AI Agent 的工程方法论。它超越了传统的 Prompt Engineering，将 AI Agent 视为一个完整的软件工程系统，涵盖以下核心维度：
 
 | 维度 | Prompt Engineering | Agentic Engineering |
 |------|-------------------|---------------------|
@@ -67,17 +67,17 @@ graph TB
     Monitor --> Executor
 \`\`\`
 
-**交互层**处理用户输入和输出格式转换；**编排层**负责意图理解、任务分解和执行调度；**执行层**是 Agent 的核心能力层，包含 LLM 推理、工具调用、记忆管理和知识检索。
+交互层处理用户输入和输出格式转换；编排层负责意图理解、任务分解和执行调度；执行层是 Agent 的核心能力层，包含 LLM 推理、工具调用、记忆管理和知识检索。
 
 ### 为什么需要 Agentic Engineering？
 
-根据 Gartner 2026 年报告，**73% 的企业 AI 项目在生产环境中失败**，主要原因包括：
+根据 Gartner 2026 年报告，73% 的企业 AI 项目在生产环境中失败，主要原因包括：
 
-1. **缺乏系统设计**：仅靠 Prompt 无法保证复杂任务的可靠性
-2. **状态管理混乱**：上下文窗口爆炸导致 Agent "失忆"
-3. **工具编排缺失**：多个工具调用之间缺乏协调机制
-4. **评测体系空白**：无法量化 Agent 的能力边界和退化趋势
-5. **可观测性不足**：Agent 执行过程如同黑盒，故障难以排查
+1. 缺乏系统设计：仅靠 Prompt 无法保证复杂任务的可靠性
+2. 状态管理混乱：上下文窗口爆炸导致 Agent "失忆"
+3. 工具编排缺失：多个工具调用之间缺乏协调机制
+4. 评测体系空白：无法量化 Agent 的能力边界和退化趋势
+5. 可观测性不足：Agent 执行过程如同黑盒，故障难以排查
 
 Agentic Engineering 正是为解决这些问题而诞生的工程范式。`,
     },
@@ -100,7 +100,7 @@ stateDiagram-v2
     Observe --> Think: 结果不满意，调整策略
 \`\`\`
 
-**ReAct 的优势与局限：**
+ReAct 的优势与局限：
 
 | 特性 | 描述 |
 |------|------|
@@ -135,7 +135,7 @@ sequenceDiagram
     Router->>User: 返回最终答案
 \`\`\`
 
-**Plan-and-Solve 的核心组件：**
+Plan-and-Solve 的核心组件：
 
 | 组件 | 职责 | 实现要点 |
 |------|------|----------|
@@ -173,7 +173,7 @@ graph LR
     class Reviewer rev
 \`\`\`
 
-**Multi-Agent 的关键设计决策：**
+Multi-Agent 的关键设计决策：
 
 | 决策点 | 选项 A | 选项 B | 建议 |
 |--------|--------|--------|------|
@@ -236,9 +236,9 @@ graph TB
 
 ### 三层记忆详解
 
-**1. 短期记忆（Short-term Memory）**
+1. 短期记忆（Short-term Memory）
 
-短期记忆管理当前对话的上下文，核心挑战是**上下文窗口有限**。主要策略：
+短期记忆管理当前对话的上下文，核心挑战是上下文窗口有限。主要策略：
 
 | 策略 | 原理 | 适用场景 | 信息保留率 |
 |------|------|---------|-----------|
@@ -247,15 +247,15 @@ graph TB
 | 选择性保留 | 根据重要性评分保留关键信息 | 复杂任务 | 70-90% |
 | 分层摘要 | 多级摘要（细粒度→粗粒度） | 超长对话 | 80-95% |
 
-**2. 工作记忆（Working Memory）**
+2. 工作记忆（Working Memory）
 
 工作记忆存储当前任务的状态和中间结果。关键设计：
 
-- **任务状态跟踪**：记录任务进度、当前步骤、待完成事项
-- **草稿区**：存储临时计算结果，避免重复计算
-- **交互历史**：记录用户的反馈和修正，用于自我改进
+- 任务状态跟踪：记录任务进度、当前步骤、待完成事项
+- 草稿区：存储临时计算结果，避免重复计算
+- 交互历史：记录用户的反馈和修正，用于自我改进
 
-**3. 长期记忆（Long-term Memory）**
+3. 长期记忆（Long-term Memory）
 
 长期记忆是 Agent 持续学习和个性化的基础。三种记忆类型：
 
@@ -1458,10 +1458,10 @@ timeline
 
 ### 推荐学习路径
 
-1. **入门**：先掌握 ReAct 模式，理解 Agent 的基本工作原理
-2. **进阶**：学习 Plan-and-Solve 模式，掌握任务分解和工具调用
-3. **高级**：构建 Multi-Agent 系统，实现复杂任务的协作完成
-4. **生产**：建立完整的评测、监控、部署体系，确保系统可靠性
+1. 入门：先掌握 ReAct 模式，理解 Agent 的基本工作原理
+2. 进阶：学习 Plan-and-Solve 模式，掌握任务分解和工具调用
+3. 高级：构建 Multi-Agent 系统，实现复杂任务的协作完成
+4. 生产：建立完整的评测、监控、部署体系，确保系统可靠性
 
 ### 延伸阅读
 
@@ -1473,7 +1473,7 @@ timeline
 | 多 Agent 协作 | 多 Agent 协作模式与实践 | agent-018 |
 | DSPy 编程 | DSPy 深度解析：声明式语言模型编程 | aieng-021 |
 
-Agentic Engineering 的核心不在于使用哪个框架，而在于**系统化的工程思维**。无论是 ReAct、Plan-and-Solve 还是 Multi-Agent，都是为了解决同一个问题：**如何让 AI 系统可靠地完成复杂任务**。掌握本文介绍的原则和实践，你将能够构建出生产级的 AI Agent 系统。`,
+Agentic Engineering 的核心不在于使用哪个框架，而在于系统化的工程思维。无论是 ReAct、Plan-and-Solve 还是 Multi-Agent，都是为了解决同一个问题：如何让 AI 系统可靠地完成复杂任务。掌握本文介绍的原则和实践，你将能够构建出生产级的 AI Agent 系统。`,
     },
     {
         title: "架构图示 1",

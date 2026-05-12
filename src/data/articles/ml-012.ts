@@ -117,7 +117,7 @@ from scipy.spatial.distance import euclidean, cityblock, cosine
 
 def minkowski_distance(x1, x2, p=2):
     """闵可夫斯基距离：统一框架"""
-    return np.sum(np.abs(x1 - x2) ** p) ** (1/p)
+    return np.sum(np.abs(x1 - x2)  p)  (1/p)
 
 # 测试不同距离度量
 x = np.array([1.0, 2.0, 3.0])
@@ -311,7 +311,7 @@ class WeightedKNN:
             return 1.0 / (distances + epsilon)
         elif self.weight_type == 'gaussian':
             sigma = np.mean(distances)
-            return np.exp(-(distances ** 2) / (2 * sigma ** 2 + 1e-8))
+            return np.exp(-(distances  2) / (2 * sigma  2 + 1e-8))
 
     def predict(self, X):
         predictions = []

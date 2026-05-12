@@ -14,11 +14,11 @@ export const blog: BlogPost = {
 content: [
     {
       title: "0. 引言：OpenAI 为什么要发布自己的 Agent SDK？",
-      body: `**2026 年 4 月**，OpenAI 正式发布 Agents Python SDK（openai/openai-agents-python），两周内突破 **25,000 stars**，成为 GitHub AI 领域最受关注的新项目。
+      body: `2026 年 4 月，OpenAI 正式发布 Agents Python SDK（openai/openai-agents-python），两周内突破 25,000 stars，成为 GitHub AI 领域最受关注的新项目。
 
-这个时间点值得深思：在此之前，CrewAI、LangGraph、AutoGen 等第三方框架已经统治了多 Agent 编排领域。OpenAI 的入局不是为了重复造轮子，而是为了解决一个核心问题——**第三方框架与 OpenAI 模型能力之间存在能力断层**。
+这个时间点值得深思：在此之前，CrewAI、LangGraph、AutoGen 等第三方框架已经统治了多 Agent 编排领域。OpenAI 的入局不是为了重复造轮子，而是为了解决一个核心问题——第三方框架与 OpenAI 模型能力之间存在能力断层。
 
-OpenAI Agents SDK 的设计哲学可以用一句话概括：**"Lightweight yet powerful"**——轻量但强大。它不做厚重的编排层，而是把复杂能力下沉到 API 层，让开发者用最少的代码构建最复杂的 Agent 工作流。
+OpenAI Agents SDK 的设计哲学可以用一句话概括："Lightweight yet powerful"——轻量但强大。它不做厚重的编排层，而是把复杂能力下沉到 API 层，让开发者用最少的代码构建最复杂的 Agent 工作流。
 
 ### 核心差异化定位
 
@@ -78,11 +78,11 @@ OpenAI Agents SDK 的设计哲学可以用一句话概括：**"Lightweight yet p
     },
     {
       title: "1. Agent 定义与 Handoff 机制",
-      body: `OpenAI Agents SDK 的 Agent 定义极其简洁——只需要 \`name\`、\`instructions\` 和可选的 \`tools\`。但真正的威力在于 **Handoff 委托机制**。
+      body: `OpenAI Agents SDK 的 Agent 定义极其简洁——只需要 \`name\`、\`instructions\` 和可选的 \`tools\`。但真正的威力在于 Handoff 委托机制。
 
-Handoff 是 OpenAI Agents SDK 最核心的创新。它允许一个 Agent **在运行时动态决定**将任务委托给另一个更专业的 Agent，类似于人类工作中的 "转接给专家"。
+Handoff 是 OpenAI Agents SDK 最核心的创新。它允许一个 Agent 在运行时动态决定将任务委托给另一个更专业的 Agent，类似于人类工作中的 "转接给专家"。
 
-**与 CrewAI 角色分配的本质区别**：CrewAI 在任务定义时静态分配角色，而 Handoff 是 Agent 在理解用户需求后**自主决策**的委托行为。`,
+与 CrewAI 角色分配的本质区别：CrewAI 在任务定义时静态分配角色，而 Handoff 是 Agent 在理解用户需求后自主决策的委托行为。`,
       mermaid: `graph TD
     U["用户输入"] --> T["Triage Agent"]
     T --> D{"分析意图"}
@@ -152,7 +152,7 @@ if __name__ == "__main__":
     },
     {
       title: "2. Tools 工具系统与 Sandbox Agent",
-      body: `**Sandbox Agent**（v0.14.0 新增）是 SDK 中最具突破性的功能之一。它允许 Agent 在**隔离的容器环境**中执行真实操作——读写文件、运行命令、安装依赖，而不会危及宿主系统。
+      body: `Sandbox Agent（v0.14.0 新增）是 SDK 中最具突破性的功能之一。它允许 Agent 在隔离的容器环境中执行真实操作——读写文件、运行命令、安装依赖，而不会危及宿主系统。
 
 这在 AI 编程助手场景中至关重要：Claude Code、Codex 等工具之所以强大，正是因为它们能在安全环境中执行代码。Sandbox Agent 将这种能力标准化并开放给所有开发者。`,
       code: [
@@ -217,7 +217,7 @@ print(result.final_output)`
     },
     {
       title: "3. Guardrails 安全防护系统",
-      body: `Guardrails 是生产级 Agent 系统的必备能力。OpenAI Agents SDK 提供了**可配置的输入和输出验证层**，可以在消息到达 LLM 之前或之后进行安全检查。
+      body: `Guardrails 是生产级 Agent 系统的必备能力。OpenAI Agents SDK 提供了可配置的输入和输出验证层，可以在消息到达 LLM 之前或之后进行安全检查。
 
 输入护栏可以在用户消息到达 Agent 之前进行过滤，防止提示注入攻击。输出护栏可以确保 Agent 不会泄露敏感信息如密码、API Key 等。`,
       code: [
@@ -400,19 +400,19 @@ if __name__ == "__main__":
 
 ### 5.1 自进化 Agent 成为主流
 
-GenericAgent（6,798 星）和 Evolver（6,783 星）的爆发表明，**自进化能力正在从实验特性变为刚需**。下一代 Agent 框架将内置技能自动发现、参数持续优化和事件驱动进化。
+GenericAgent（6,798 星）和 Evolver（6,783 星）的爆发表明，自进化能力正在从实验特性变为刚需。下一代 Agent 框架将内置技能自动发现、参数持续优化和事件驱动进化。
 
 ### 5.2 记忆系统标准化
 
-Claude-Mem（66,866 星）的成功证明，**长期记忆是 Agent 的核心竞争力**。未来的框架将内置向量检索 + 知识图谱的混合记忆架构，支持记忆压缩和跨会话持久化。
+Claude-Mem（66,866 星）的成功证明，长期记忆是 Agent 的核心竞争力。未来的框架将内置向量检索 + 知识图谱的混合记忆架构，支持记忆压缩和跨会话持久化。
 
 ### 5.3 管理平台化
 
-multica（20,559 星）的崛起表明，企业和团队需要**统一的 Agent 管理平台**——不仅仅是开发框架，还包括任务分配、进度追踪、技能复用和团队协作。
+multica（20,559 星）的崛起表明，企业和团队需要统一的 Agent 管理平台——不仅仅是开发框架，还包括任务分配、进度追踪、技能复用和团队协作。
 
 ### 5.4 实时语音 Agent 爆发
 
-OpenAI Agents SDK 内置的 Realtime Agent 支持（基于 gpt-realtime-1.5）和 voicebox（23,064 星）的流行表明，**语音交互正在成为 Agent 的标准接口**。
+OpenAI Agents SDK 内置的 Realtime Agent 支持（基于 gpt-realtime-1.5）和 voicebox（23,064 星）的流行表明，语音交互正在成为 Agent 的标准接口。
 
 ### 如何选择适合你的框架？
 

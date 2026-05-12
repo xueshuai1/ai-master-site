@@ -646,7 +646,7 @@ class Optimizers:
 
 # 对比优化器在 Rosenbrock 函数上的表现
 def rosenbrock(x, y):
-    return (1 - x)**2 + 100 * (y - x**2)**2
+    return (1 - x)2 + 100 * (y - x2)**2
 
 def rosenbrock_grad(x, y):
     dx = -2*(1-x) - 400*x*(y-x**2)

@@ -811,7 +811,7 @@ class SphereFaceLoss(nn.Module):
         if m == 1: return x
         if m == 2: return 2*x**2 - 1
         if m == 3: return 4*x**3 - 3*x
-        if m == 4: return 8*x**4 - 8*x**2 + 1
+        if m == 4: return 8*x4 - 8*x2 + 1
         return x  # fallback
 
 class CosFaceLoss(nn.Module):

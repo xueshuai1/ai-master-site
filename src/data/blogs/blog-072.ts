@@ -14,18 +14,18 @@ export const blog: BlogPost = {
 content: [
     {
       title: "一、什么是 Screen AI？为什么它突然火了？",
-      body: `**Screen AI（屏幕 AI）** 是指能够直接「看」和理解计算机屏幕截图、GUI 界面，并据此执行操作的 AI 系统。
+      body: `Screen AI（屏幕 AI） 是指能够直接「看」和理解计算机屏幕截图、GUI 界面，并据此执行操作的 AI 系统。
 
-与传统 AI Agent 不同，Screen AI 不需要 API 接口、不需要结构化数据——它像人类一样，通过**视觉观察屏幕**来理解当前状态，然后通过**模拟鼠标键盘操作**来完成任务。
+与传统 AI Agent 不同，Screen AI 不需要 API 接口、不需要结构化数据——它像人类一样，通过视觉观察屏幕来理解当前状态，然后通过模拟鼠标键盘操作来完成任务。
 
 2026 年 4 月，Screen AI 迎来爆发式增长：
 
-- **Anthropic Computer Use**：Claude 模型获得直接操控计算机的能力
-- **Omi（BasedHardware/omi）**：12K+ stars 的开源项目，「AI that sees your screen, listens to your conversations」
-- **Desktop Control 工具链**：OpenClaw、Playwright Agent 等项目将 Screen AI 推向桌面
-- **GitHub Trending**：多个 Screen AI 相关项目进入周榜
+- Anthropic Computer Use：Claude 模型获得直接操控计算机的能力
+- Omi（BasedHardware/omi）：12K+ stars 的开源项目，「AI that sees your screen, listens to your conversations」
+- Desktop Control 工具链：OpenClaw、Playwright Agent 等项目将 Screen AI 推向桌面
+- GitHub Trending：多个 Screen AI 相关项目进入周榜
 
-这个范式之所以重要，是因为它**绕过了 API 依赖**——任何有 GUI 的软件，理论上都可以被 Screen AI 操控。`
+这个范式之所以重要，是因为它绕过了 API 依赖——任何有 GUI 的软件，理论上都可以被 Screen AI 操控。`
     },
     {
       title: "二、Screen AI 的技术架构",
@@ -62,10 +62,10 @@ content: [
 
 Screen AI 的第一步是获取屏幕信息。常见方式包括：
 
-1. **全屏幕截图**：最直接的方式，截取整个屏幕像素
-2. **区域截图**：只截取感兴趣的窗口区域，减少 token 消耗
-3. **Accessibility Tree**：利用 OS 无障碍 API 获取结构化的 UI 元素树
-4. **DOM 快照**：对于浏览器场景，直接获取 DOM 结构
+1. 全屏幕截图：最直接的方式，截取整个屏幕像素
+2. 区域截图：只截取感兴趣的窗口区域，减少 token 消耗
+3. Accessibility Tree：利用 OS 无障碍 API 获取结构化的 UI 元素树
+4. DOM 快照：对于浏览器场景，直接获取 DOM 结构
 
 其中，截图方式适合跨平台通用场景，而 Accessibility Tree 和 DOM 快照则提供更精准的结构化信息。
 
@@ -87,7 +87,7 @@ Screen AI 的第一步是获取屏幕信息。常见方式包括：
 
 ### 3.4 执行验证闭环
 
-Screen AI 最关键的创新是**闭环验证**：执行操作后，立即截图对比，确认操作是否成功。`,
+Screen AI 最关键的创新是闭环验证：执行操作后，立即截图对比，确认操作是否成功。`,
       mermaid: `sequenceDiagram
     participant U as 用户指令
     participant A as Screen Agent
@@ -256,7 +256,7 @@ print(result)`
     },
     {
       title: "五、实战二：带自我修正的 Screen AI Agent",
-      body: `更高级的 Screen AI Agent 应该具备**自我修正**能力——当操作没有达到预期时，能够自动调整策略。`,
+      body: `更高级的 Screen AI Agent 应该具备自我修正能力——当操作没有达到预期时，能够自动调整策略。`,
       code: [
         {
           lang: "python",
@@ -420,13 +420,13 @@ print(json.dumps(agent.get_failure_report(), indent=2))`
 
 | 项目 | Stars | 定位 | 核心特点 |
 |------|-------|------|----------|
-| **Omi** | 12K+ | 屏幕+语音 AI 助手 | 看到屏幕、听到对话、给出建议 |
-| **Anthropic Computer Use** | 内置功能 | Claude 操控计算机 | 官方支持、可靠性高 |
-| **OpenClaw Desktop Control** | 社区项目 | 桌面自动化 | 集成 OpenClaw Agent |
-| **Claude-Mem** | 66K+ | 记忆管理（配合 Screen AI） | 记住屏幕操作历史 |
-| **Playwright Agent** | 社区项目 | 浏览器自动化 | 精准 DOM 操作 + 视觉验证 |
+| Omi | 12K+ | 屏幕+语音 AI 助手 | 看到屏幕、听到对话、给出建议 |
+| Anthropic Computer Use | 内置功能 | Claude 操控计算机 | 官方支持、可靠性高 |
+| OpenClaw Desktop Control | 社区项目 | 桌面自动化 | 集成 OpenClaw Agent |
+| Claude-Mem | 66K+ | 记忆管理（配合 Screen AI） | 记住屏幕操作历史 |
+| Playwright Agent | 社区项目 | 浏览器自动化 | 精准 DOM 操作 + 视觉验证 |
 
-其中 **Omi** 是本周 GitHub Trending 的新星，它结合了屏幕视觉和语音对话两种输入方式，代表了 Screen AI 向「多模态感知」演进的方向。`
+其中 Omi 是本周 GitHub Trending 的新星，它结合了屏幕视觉和语音对话两种输入方式，代表了 Screen AI 向「多模态感知」演进的方向。`
     },
     {
       title: "八、Screen AI 的安全风险与防护",
@@ -434,10 +434,10 @@ print(json.dumps(agent.get_failure_report(), indent=2))`
 
 ### 8.1 主要风险
 
-1. **屏幕内容泄露**：截图可能包含密码、个人信息、机密数据
-2. **误操作风险**：AI 可能点击错误的按钮，导致不可逆操作
-3. **视觉对抗攻击**：恶意网页可能通过特殊图像误导视觉模型
-4. **权限提升**：Screen AI 通常拥有系统级输入权限
+1. 屏幕内容泄露：截图可能包含密码、个人信息、机密数据
+2. 误操作风险：AI 可能点击错误的按钮，导致不可逆操作
+3. 视觉对抗攻击：恶意网页可能通过特殊图像误导视觉模型
+4. 权限提升：Screen AI 通常拥有系统级输入权限
 
 ### 8.2 防护策略`,
       mermaid: `graph LR
@@ -466,9 +466,9 @@ print(json.dumps(agent.get_failure_report(), indent=2))`
 
 ### 9.1 多模态融合
 Screen AI 将不再局限于视觉，而是融合：
-- **听觉**：听取系统声音、语音指令
-- **触觉**：感知鼠标阻力、键盘反馈
-- **语义**：结合系统日志、进程信息
+- 听觉：听取系统声音、语音指令
+- 触觉：感知鼠标阻力、键盘反馈
+- 语义：结合系统日志、进程信息
 
 Omi 项目已经迈出了第一步：「AI that sees your screen, listens to your conversations」。
 
@@ -480,9 +480,9 @@ Omi 项目已经迈出了第一步：「AI that sees your screen, listens to you
 
 ### 9.3 标准化协议
 类似于 MCP 标准化了 Agent 与工具的交互，Screen AI 领域也需要标准化：
-- **屏幕描述语言**：统一描述 GUI 元素的方式
-- **操作协议**：标准化的点击、输入、滚动指令
-- **验证标准**：统一的操作成功/失败判定
+- 屏幕描述语言：统一描述 GUI 元素的方式
+- 操作协议：标准化的点击、输入、滚动指令
+- 验证标准：统一的操作成功/失败判定
 
 ### 9.4 与 LLM 的深度集成
 未来的 LLM 将内置 Screen AI 能力：
@@ -490,7 +490,7 @@ Omi 项目已经迈出了第一步：「AI that sees your screen, listens to you
 - 空间推理（理解 GUI 元素的层次关系）
 - 时间推理（理解动画、加载状态、过渡效果）
 
-**总结：Screen AI 正在从「实验性技术」快速走向「主流生产力工具」。2026 年将是 Screen AI 的爆发年，值得每个 AI 从业者关注。**`
+总结：Screen AI 正在从「实验性技术」快速走向「主流生产力工具」。2026 年将是 Screen AI 的爆发年，值得每个 AI 从业者关注。`
     }
   ]
 };

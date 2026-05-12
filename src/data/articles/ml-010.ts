@@ -349,7 +349,7 @@ X = X - X.mean(axis=0)
 U, S, Vt = np.linalg.svd(X, full_matrices=False)
 
 # 方差解释比例
-explained_variance_ratio = S**2 / np.sum(S**2)
+explained_variance_ratio = S2 / np.sum(S2)
 cumulative_variance = np.cumsum(explained_variance_ratio)
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 4))

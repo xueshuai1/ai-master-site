@@ -3,13 +3,13 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：为什么需要关注 Agent 架构？",
-    body: "2025 年初，大多数人还在用 ChatGPT 做问答。到了 2026 年，**AI Agent 已经能自主完成复杂任务链**——写代码、调试、部署、监控。\n\n但 Agent 不是魔法。它的核心是一个**架构模式**，决定了：",
+    body: "2025 年初，大多数人还在用 ChatGPT 做问答。到了 2026 年，AI Agent 已经能自主完成复杂任务链——写代码、调试、部署、监控。\n\n但 Agent 不是魔法。它的核心是一个架构模式，决定了：",
     list: [
       "Agent 能做什么（工具、知识、记忆）",
       "Agent 怎么思考（推理、规划、反思）",
       "Agent 之间怎么协作（分工、通信、协调）",
     ],
-    tip: "**选错架构 = Agent 能力上限被锁死。**\n\n本文从零开始，用代码和架构图，系统梳理 Agent 架构的完整演进路径。",
+    tip: "选错架构 = Agent 能力上限被锁死。\n\n本文从零开始，用代码和架构图，系统梳理 Agent 架构的完整演进路径。",
   },
   {
     title: "第一阶段：ReAct — Agent 的起点",
@@ -134,7 +134,7 @@ print(result)
   },
   {
     title: "第二阶段：Plan-and-Execute — 学会规划",
-    body: "ReAct 是\"边想边做\"，Plan-and-Execute 是**先想清楚整个计划，再一步步执行**：",
+    body: "ReAct 是\"边想边做\"，Plan-and-Execute 是先想清楚整个计划，再一步步执行：",
     mermaid: `graph TD
     A[用户请求] --> B[Planner: 生成执行计划]
     B --> C{计划是否完整?}
@@ -253,7 +253,7 @@ class PlanAndExecuteAgent:
   },
   {
     title: "第三阶段：Reflection — 自我纠错",
-    body: "LLM 会犯错（幻觉、逻辑错误、代码 bug）。Reflection 模式让 Agent **检查自己的工作，发现并修正错误**。",
+    body: "LLM 会犯错（幻觉、逻辑错误、代码 bug）。Reflection 模式让 Agent 检查自己的工作，发现并修正错误。",
     mermaid: `graph LR
     A[生成初稿] --> B[审查]
     B --> C{发现问题?}
@@ -343,7 +343,7 @@ Revised: [修正后的回答，如无修改则保持原样]"""
   },
   {
     title: "第四阶段：多 Agent 协作 — 团队作战",
-    body: "当任务复杂度超过单个 Agent 的能力时，就需要**多 Agent 协作**——每个 Agent 专注一个领域，像团队一样工作。",
+    body: "当任务复杂度超过单个 Agent 的能力时，就需要多 Agent 协作——每个 Agent 专注一个领域，像团队一样工作。",
     mermaid: `graph TD
     subgraph "多 Agent 架构"
         Orchestrator["🎯 编排器\
@@ -397,9 +397,9 @@ Revised: [修正后的回答，如无修改则保持原样]"""
     table: {
       headers: ["架构", "通信方式", "适合场景", "复杂度"],
       rows: [
-        ["**Swarm**", "Agent 之间直接通信", "开放式探索、头脑风暴", "高"],
-        ["**Hierarchical**", "编排器 → Worker → 编排器", "结构化任务、项目管理", "中"],
-        ["**Pipeline**", "单向传递结果", "流水线处理、数据清洗", "低"],
+        ["Swarm", "Agent 之间直接通信", "开放式探索、头脑风暴", "高"],
+        ["Hierarchical", "编排器 → Worker → 编排器", "结构化任务、项目管理", "中"],
+        ["Pipeline", "单向传递结果", "流水线处理、数据清洗", "低"],
       ],
     },
   },
@@ -546,7 +546,7 @@ print(team.get_summary())`,
   },
   {
     title: "实战案例：用多 Agent 构建知识图谱",
-    body: "**任务：** 从一篇技术文章中提取实体关系，构建知识图谱。",
+    body: "任务： 从一篇技术文章中提取实体关系，构建知识图谱。",
     mermaid: `sequenceDiagram
     participant User as 用户
     participant Orch as 编排器
@@ -607,19 +607,19 @@ print(kg_orchestrator.get_summary())`,
   {
     title: "关键要点",
     list: [
-      "**没有银弹** — 简单任务用 ReAct，复杂任务用多 Agent",
-      "**Reflection 是必选项** — 任何生产级 Agent 都应该有自我纠错",
-      "**工具决定能力上限** — Agent 再聪明，没有好工具也白搭",
-      "**多 Agent 不是银弹** — 多了通信开销、调试难度、成本",
+      "没有银弹 — 简单任务用 ReAct，复杂任务用多 Agent",
+      "Reflection 是必选项 — 任何生产级 Agent 都应该有自我纠错",
+      "工具决定能力上限 — Agent 再聪明，没有好工具也白搭",
+      "多 Agent 不是银弹 — 多了通信开销、调试难度、成本",
     ],
   },
   {
     title: "未来方向",
     list: [
-      "**Agent 互操作协议** — 不同框架的 Agent 能否互相协作？",
-      "**Agent 安全** — 如何防止 Agent 执行危险操作？",
-      "**Agent 成本优化** — 多 Agent 的 Token 消耗很高，如何优化？",
-      "**Agent 评估基准** — 怎么科学地评估一个 Agent 的能力？",
+      "Agent 互操作协议 — 不同框架的 Agent 能否互相协作？",
+      "Agent 安全 — 如何防止 Agent 执行危险操作？",
+      "Agent 成本优化 — 多 Agent 的 Token 消耗很高，如何优化？",
+      "Agent 评估基准 — 怎么科学地评估一个 Agent 的能力？",
     ],
     tip: "*本文所有代码均可在本地 Python 环境中运行，建议在浏览器中查看代码块并点击「▶ 运行」按钮体验。*",
   },

@@ -22,7 +22,7 @@ export const article: Article = {
         },
         {
             title: "1. 技术演进",
-            body: `**规则方法（1990s） → 统计方法（2000s） → 深度学习方法（2010s） → 预训练模型（2018至今）**
+            body: `规则方法（1990s） → 统计方法（2000s） → 深度学习方法（2010s） → 预训练模型（2018至今）
 
 | 时代 | 代表技术 | 特点 |
 |------|----------|------|
@@ -34,12 +34,12 @@ export const article: Article = {
         },
         {
             title: "2. 学习建议",
-            body: `**重点：**
+            body: `重点：
 - 词嵌入（Word2Vec → BERT 的演进）
 - Transformer 架构
 - BERT 微调实战
 
-**2026 年的 NLP ≈ 大语言模型应用。** 所以学完 NLP 基础后，直接跳到 LLM 章节。`,
+2026 年的 NLP ≈ 大语言模型应用。 所以学完 NLP 基础后，直接跳到 LLM 章节。`,
             tip: "💡 用 Hugging Face 的 pipeline 跑一个情感分析，5 行代码，感受一下 NLP 的力量。",
         },
         {

@@ -54,7 +54,7 @@ export const article: Article = {
             code: [
                 {
                     lang: "python",
-                    code: `import math\nfrom scipy.stats import norm\n\n\ndef calculate_sample_size(\n    baseline_rate: float,\n    min_detectable_effect: float,\n    alpha: float = 0.05,\n    power: float = 0.80\n) -> int:\n    """计算每组所需的最小样本量（比例检验）"""\n    z_alpha = norm.ppf(1 - alpha / 2)\n    z_beta = norm.ppf(power)\n    p1 = baseline_rate\n    p2 = baseline_rate * (1 + min_detectable_effect)\n    p_bar = (p1 + p2) / 2\n    numerator = (z_alpha * math.sqrt(2 * p_bar * (1 - p_bar)) +\n                 z_beta * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2\n    denominator = (p2 - p1) ** 2\n    return int(math.ceil(numerator / denominator))\n\n# 基线转化率 10%，期望检测 5% 相对提升\nn = calculate_sample_size(0.10, 0.05)\nprint(f"Each group needs: {n} samples")`
+                    code: `import math\nfrom scipy.stats import norm\n\n\ndef calculate_sample_size(\n    baseline_rate: float,\n    min_detectable_effect: float,\n    alpha: float = 0.05,\n    power: float = 0.80\n) -> int:\n    """计算每组所需的最小样本量（比例检验）"""\n    z_alpha = norm.ppf(1 - alpha / 2)\n    z_beta = norm.ppf(power)\n    p1 = baseline_rate\n    p2 = baseline_rate * (1 + min_detectable_effect)\n    p_bar = (p1 + p2) / 2\n    numerator = (z_alpha * math.sqrt(2 * p_bar * (1 - p_bar)) +\n                 z_beta * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2)))  2\n    denominator = (p2 - p1)  2\n    return int(math.ceil(numerator / denominator))\n\n# 基线转化率 10%，期望检测 5% 相对提升\nn = calculate_sample_size(0.10, 0.05)\nprint(f"Each group needs: {n} samples")`
                 },
                 {
                     lang: "python",

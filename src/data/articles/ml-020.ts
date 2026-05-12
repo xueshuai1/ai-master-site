@@ -157,7 +157,7 @@ def grubbs_test(data, alpha=0.05):
 
         # 临界值（基于 t 分布）
         t_crit = stats.t.ppf(1 - alpha / (2 * n), n - 2)
-        G_crit = ((n - 1) / np.sqrt(n)) * np.sqrt(t_crit ** 2 / (n - 2 + t_crit ** 2))
+        G_crit = ((n - 1) / np.sqrt(n)) * np.sqrt(t_crit  2 / (n - 2 + t_crit  2))
 
         if G > G_crit:
             results.append({

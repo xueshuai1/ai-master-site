@@ -3,16 +3,16 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：一场静悄悄的革命",
-    body: `2026 年 4 月 19 日，Interconnected 的 Matt Webb 发表了一篇引发广泛讨论的文章——**"Headless everything for personal AI"**。与此同时，Salesforce CEO Marc Benioff 在 Twitter 上宣布：
+    body: `2026 年 4 月 19 日，Interconnected 的 Matt Webb 发表了一篇引发广泛讨论的文章——"Headless everything for personal AI"。与此同时，Salesforce CEO Marc Benioff 在 Twitter 上宣布：
 
 > "Welcome Salesforce Headless 360: No Browser Required! Our API is the UI. Entire Salesforce & Agentforce & Slack platforms are now exposed as APIs, MCP, & CLI."
 
-这两位不同领域的领袖不约而同地指向了同一个结论：**个人 AI 正在改变人与软件的交互方式，而 "headless"（无头化）服务将成为基础设施。**
+这两位不同领域的领袖不约而同地指向了同一个结论：个人 AI 正在改变人与软件的交互方式，而 "headless"（无头化）服务将成为基础设施。
 
 什么是 "headless everything"？简单说：当 AI Agent 代替人类使用软件时，图形界面不再是必需的——API、MCP 和 CLI 才是 AI Agent 与软件交互的正确方式。
 
 这篇文章将深度解读这一趋势的技术背景、商业影响，以及为什么它可能重塑整个软件行业。`,
-    tip: "**阅读收获：**\n- 理解 'Headless Everything' 的核心概念和驱动力\n- 掌握 MCP 协议在 headless 服务中的关键作用\n- 分析 Salesforce Headless 360 等实际案例\n- 通过 Python 代码构建自己的 headless AI 服务",
+    tip: "阅读收获：\n- 理解 'Headless Everything' 的核心概念和驱动力\n- 掌握 MCP 协议在 headless 服务中的关键作用\n- 分析 Salesforce Headless 360 等实际案例\n- 通过 Python 代码构建自己的 headless AI 服务",
   },
   {
     title: "一、什么是 'Headless'？",
@@ -20,10 +20,10 @@ const content: ArticleSection[] = [
 
 在 AI Agent 语境下，"headless" 意味着：`,
     list: [
-      "**没有 GUI**——服务不提供网页或桌面界面，只通过 API/MCP/CLI 交互",
-      "**AI 优先设计**——从第一天就为 AI Agent 的消费模式而构建",
-      "**自动化友好**——支持批量操作、异步任务、无需人工确认",
-      "**标准化协议**——使用 MCP、REST、gRPC 等 AI Agent 原生理解的协议",
+      "没有 GUI——服务不提供网页或桌面界面，只通过 API/MCP/CLI 交互",
+      "AI 优先设计——从第一天就为 AI Agent 的消费模式而构建",
+      "自动化友好——支持批量操作、异步任务、无需人工确认",
+      "标准化协议——使用 MCP、REST、gRPC 等 AI Agent 原生理解的协议",
     ],
     mermaid: `graph TD
     A["传统 SaaS 服务"] --> B["Web GUI 界面"]
@@ -43,7 +43,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "二、为什么 'Headless Everything' 现在发生？",
-    body: `Matt Webb 的分析指出了核心驱动力：**"使用个人 AI 比直接使用服务体验更好"**。这意味着越来越多的用户会通过 AI Agent 来使用软件服务，而不是直接打开网页或 App。
+    body: `Matt Webb 的分析指出了核心驱动力："使用个人 AI 比直接使用服务体验更好"。这意味着越来越多的用户会通过 AI Agent 来使用软件服务，而不是直接打开网页或 App。
 
 让我们看看三个关键的推动因素：`,
     table: {
@@ -59,11 +59,11 @@ const content: ArticleSection[] = [
     title: "三、Salesforce Headless 360：企业级标杆",
     body: `Marc Benioff 宣布的 Salesforce Headless 360 是这一趋势的企业级标杆。它的核心主张是：
 
-> **"Our API is the UI"**
+> "Our API is the UI"
 
 这意味着 Salesforce 整个平台——包括 CRM、Agentforce 和 Slack——都被暴露为 API、MCP 和 CLI。AI Agent 可以直接访问数据、工作流和任务，无需通过浏览器界面。
 
-**这对 SaaS 行业意味着什么？**
+这对 SaaS 行业意味着什么？
 
 如果 Salesforce——全球最大的企业 SaaS 公司——都在转向 headless，那其他 SaaS 公司必须跟上。Brandur Leach（前 Stripe 工程师）在 \`The Second Wave of the API-first Economy\` 中预测：
 
@@ -71,17 +71,17 @@ const content: ArticleSection[] = [
 
 这意味着：`,
     list: [
-      "**API-first 不再是口号，而是生存必需**——没有好 API 的 SaaS 将被 AI Agent 时代淘汰",
-      "**MCP Server 将成为标配**——就像 2010 年代每个 SaaS 都需要 REST API 一样",
-      "**CLI 工具将回归**——AI Agent 通过 CLI 执行操作比 GUI 更高效",
-      "**SaaS 定价模式需要重构**——按人头收费不再适用 Agent 批量使用的场景",
+      "API-first 不再是口号，而是生存必需——没有好 API 的 SaaS 将被 AI Agent 时代淘汰",
+      "MCP Server 将成为标配——就像 2010 年代每个 SaaS 都需要 REST API 一样",
+      "CLI 工具将回归——AI Agent 通过 CLI 执行操作比 GUI 更高效",
+      "SaaS 定价模式需要重构——按人头收费不再适用 Agent 批量使用的场景",
     ],
   },
   {
     title: "四、MCP：Headless 服务的关键协议",
     body: `Model Context Protocol (MCP) 是 Anthropic 提出的开放标准，用于让 AI 模型连接到外部工具和数据源。在 headless 服务的语境下，MCP 扮演了至关重要的角色。
 
-**MCP 为什么重要？**
+MCP 为什么重要？
 
 MCP 让任何服务都能以标准化的方式向 AI Agent 暴露能力。一个 headless 服务只需要实现 MCP Server，就能被所有支持 MCP 的 AI Agent 发现和调用。`,
     mermaid: `sequenceDiagram
@@ -109,7 +109,7 @@ MCP 让任何服务都能以标准化的方式向 AI Agent 暴露能力。一个
     title: "五、Python 实战：构建一个 Headless AI 服务",
     body: `让我们用 Python 构建一个简单的 headless AI 服务，展示如何将一个传统功能转变为 AI Agent 友好的 headless 服务。
 
-**场景：** 一个 "内容摘要服务"，AI Agent 可以调用它来生成文本摘要。`,
+场景： 一个 "内容摘要服务"，AI Agent 可以调用它来生成文本摘要。`,
     code: [{
       lang: "python",
       filename: "headless_summarizer.py",
@@ -369,26 +369,26 @@ if __name__ == "__main__":
     title: "七、对 SaaS 行业的深远影响",
     body: `Headless 趋势不仅仅是技术变化，更是对整个软件商业模式的冲击。
 
-**1. 定价模式的重构**
+1. 定价模式的重构
 
 传统 SaaS 按人头（per-seat）收费。但当 AI Agent 代替人类使用服务时，这个模式面临根本挑战：
 - 一个用户可能有 10 个 AI Agent 同时调用 API
 - Agent 的调用量是人类的 100-1000 倍
 - 按人头收费不再反映真实的资源消耗
 
-**2. API 质量成为核心竞争力**
+2. API 质量成为核心竞争力
 
-Brandur Leach 的预测正在应验：在产品功能同质化的时代，**API 的质量将成为决定性的竞争因素**。好的 headless API 意味着：
+Brandur Leach 的预测正在应验：在产品功能同质化的时代，API 的质量将成为决定性的竞争因素。好的 headless API 意味着：
 - 文档清晰，AI Agent 能自动理解
 - 错误信息明确，Agent 能自动恢复
 - 权限模型支持 Agent 身份
 
-**3. 新的创业机会**
+3. 新的创业机会
 
 Headless 趋势催生了新的创业方向：
-- **MCP Server 市场**：为现有 SaaS 构建 MCP 适配器
-- **Headless-first 新产品**：从第一天就只为 AI Agent 设计
-- **Agent 编排平台**：连接多个 headless 服务的工作流引擎`,
+- MCP Server 市场：为现有 SaaS 构建 MCP 适配器
+- Headless-first 新产品：从第一天就只为 AI Agent 设计
+- Agent 编排平台：连接多个 headless 服务的工作流引擎`,
     mermaid: `graph LR
     A["SaaS 传统模式"] --> B["按人头收费"]
     B --> C["GUI 驱动"]
@@ -427,49 +427,49 @@ Headless 趋势催生了新的创业方向：
     title: "九、开发者行动指南",
     body: `面对 headless 趋势，开发者应该采取哪些行动？
 
-**立即行动（本周）：**
+立即行动（本周）：
 1. 为你的服务添加 MCP Server 支持——这是 AI Agent 发现和调用你服务的标准方式
 2. 审查 API 文档是否对 AI Agent 友好——结构化、机器可读的文档
 3. 考虑增加 CLI 接口——很多 AI Agent 通过 CLI 调用服务
 
-**短期规划（本月）：**
+短期规划（本月）：
 4. 设计支持 Agent 身份的权限模型——不只是 human auth
 5. 实现批量操作 API——Agent 的使用模式与人类不同
 6. 优化错误信息——让 AI Agent 能理解并自动恢复
 
-**长期策略（本季度）：**
+长期策略（本季度）：
 7. 探索按调用量的定价模式——准备迎接 Agent 用户
 8. 构建 headless-first 的新产品功能——不只是 wrapper
 9. 加入 MCP 生态——让服务可被所有 AI Agent 发现`,
-    warning: "**注意：** Headless 不代表完全去掉 GUI。最佳策略是 'headless-first'——先构建强大的 API/MCP 层，GUI 作为可选的展示层。这样既服务 AI Agent，也不放弃人类用户。",
+    warning: "注意： Headless 不代表完全去掉 GUI。最佳策略是 'headless-first'——先构建强大的 API/MCP 层，GUI 作为可选的展示层。这样既服务 AI Agent，也不放弃人类用户。",
   },
   {
     title: "十、未来展望：Headless 之后是什么？",
     body: `Headless 只是开始。展望未来 1-2 年，我们可以预见：
 
-**Agent-to-Agent 经济**
+Agent-to-Agent 经济
 当所有服务都是 headless 的，AI Agent 之间将形成直接的调用关系。你的 Agent 可能直接调用供应商的 Agent 来下订单、谈判价格、完成交易——全程无需人类介入。
 
-**自主编排的兴起**
+自主编排的兴起
 AI Agent 将自主发现、组合和编排多个 headless 服务来完成复杂任务。不需要人类编写工作流，Agent 会根据目标自动规划最优的服务调用链。
 
-**新的安全范式**
+新的安全范式
 当 AI Agent 代替人类操作一切时，安全模型必须根本性改变：Agent 身份认证、操作审计、权限委托、异常检测——这些将成为基础设施级别的需求。
 
-**开放标准的重要性**
+开放标准的重要性
 MCP 可能只是一个开始。未来可能出现更多 headless 服务的开放标准，就像 REST 和 GraphQL 定义了 API 时代一样。`,
   },
   {
     title: "总结",
     body: `"Headless Everything for Personal AI" 不是某个人的臆想，而是正在发生的技术范式转移。
 
-**核心要点回顾：**
+核心要点回顾：
 
-1. **个人 AI 体验优于直接使用服务**——这是 headless 趋势的根本驱动力
-2. **MCP 是关键协议**——它让 AI Agent 能以标准化方式连接任何服务
-3. **SaaS 定价模式需要重构**——per-seat 模式无法适应 Agent 经济
-4. **API 质量成为核心竞争力**——在产品同质化时代，好 API 决定胜负
-5. **新创业机会涌现**——MCP Server 市场、headless-first 产品、Agent 编排
+1. 个人 AI 体验优于直接使用服务——这是 headless 趋势的根本驱动力
+2. MCP 是关键协议——它让 AI Agent 能以标准化方式连接任何服务
+3. SaaS 定价模式需要重构——per-seat 模式无法适应 Agent 经济
+4. API 质量成为核心竞争力——在产品同质化时代，好 API 决定胜负
+5. 新创业机会涌现——MCP Server 市场、headless-first 产品、Agent 编排
 
 正如 Brandur Leach 所说："API 不再是负担，而是主要的可销售向量。" 在 2026 年，这句话比以往任何时候都更加真实。
 

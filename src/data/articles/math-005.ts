@@ -163,7 +163,7 @@ def neg_log_likelihood(params):
     if sigma <= 0:
         return 1e10
     n = len(data)
-    return n/2 * np.log(2*np.pi*sigma**2) + np.sum((data-mu)**2)/(2*sigma**2)
+    return n/2 * np.log(2*np.pi*sigma2) + np.sum((data-mu)2)/(2*sigma**2)
 
 result = minimize(neg_log_likelihood, x0=[0, 1], method="Nelder-Mead")
 print(f"数值解: μ={result.x[0]:.3f}, σ={result.x[1]:.3f}")`

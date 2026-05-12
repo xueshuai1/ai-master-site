@@ -517,8 +517,8 @@ import struct
 
 def float_info(name, exp_bits, mantissa_bits):
     """打印浮点数格式的精度信息"""
-    max_val = (2 - 2**(-mantissa_bits)) * 2**(2**(exp_bits-1) - 1)
-    min_normal = 2**(-(2**(exp_bits-1) - 2))
+    max_val = (2 - 2(-mantissa_bits)) * 2(2**(exp_bits-1) - 1)
+    min_normal = 2(-(2(exp_bits-1) - 2))
     print(f"{name}:")
     print(f"  最大可表示值: {max_val:.2e}")
     print(f"  最小正规数: {min_normal:.2e}")

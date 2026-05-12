@@ -91,7 +91,7 @@ def calc_timesformer_flops(num_frames, num_patches, dim, num_heads):
     temporal_flops = num_patches * (num_frames ** 2) * dim
     spatial_flops = num_frames * (num_patches ** 2) * dim
     total = temporal_flops + spatial_flops
-    full_attn_flops = (num_frames ** 2) * (num_patches ** 2) * dim
+    full_attn_flops = (num_frames  2) * (num_patches  2) * dim
     savings = (1 - total / full_attn_flops) * 100
     return total, full_attn_flops, savings
 

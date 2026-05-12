@@ -113,7 +113,7 @@ for rt in ["linear", "superlinear", "quadratic"]:
             code: `# 实际优化算法的收敛速率验证
 def rosenbrock(x):
     """Rosenbrock 函数，经典非凸测试函数"""
-    return (1 - x[0])**2 + 100 * (x[1] - x[0]**2)**2
+    return (1 - x[0])2 + 100 * (x[1] - x[0]2)**2
 
 def rosenbrock_grad(x):
     dx = -2*(1 - x[0]) - 400*x[0]*(x[1] - x[0]**2)
@@ -285,7 +285,7 @@ def check_pl_condition(f, f_grad, f_opt, xs, num_samples=500):
     return min_ratio
 
 # 简单凸函数测试
-f = lambda x: x[0]**2 + 2*x[1]**2
+f = lambda x: x[0]2 + 2*x[1]2
 f_grad = lambda x: np.array([2*x[0], 4*x[1]])
 xs = [np.random.randn(2) * 2 for _ in range(100)]
 mu_pl = check_pl_condition(f, f_grad, 0.0, xs)
@@ -335,7 +335,7 @@ def backtracking_line_search(f, f_grad, x, direction, alpha=1.0,
     return alpha
 
 # 测试
-f = lambda x: x[0]**2 + 10*x[1]**2
+f = lambda x: x[0]2 + 10*x[1]2
 f_grad = lambda x: np.array([2*x[0], 20*x[1]])
 x = np.array([3.0, 2.0])
 d = -f_grad(x)  # 最速下降方向
@@ -479,7 +479,7 @@ print(f"步长范数: {np.linalg.norm(p):.4f} <= Delta={Delta}")`
     return x, history
 
 # 测试
-f = lambda x: x[0]**2 + 10*x[1]**2
+f = lambda x: x[0]2 + 10*x[1]2
 f_grad = lambda x: np.array([2*x[0], 20*x[1]])
 f_hess = lambda x: np.array([[2.0, 0.0], [0.0, 20.0]])
 x_opt, hist = trust_region_method(f, f_grad, f_hess, np.array([5.0, 5.0]))

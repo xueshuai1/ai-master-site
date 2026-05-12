@@ -195,7 +195,7 @@ def get_alibi_slopes(n_heads: int) -> torch.Tensor:
     """计算每个头的 ALiBi 斜率"""
     # 斜率按几何级数分配: 1/2^(8/n) 的幂次
     def get_slopes_power_of_2(n):
-        start = 2 ** (-(2 ** -(
+        start = 2  (-(2  -(
             torch.log2(torch.tensor(n)) - 3)))
         ratio = start
         return start * ratio ** torch.arange(n)

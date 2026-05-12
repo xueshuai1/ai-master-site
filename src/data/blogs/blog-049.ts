@@ -3,21 +3,21 @@ import type { BlogPost } from './blog-types';
 const content = [
   {
     title: "引言：2026 年 AI 的多 Agent 革命——为什么单 Agent 不够用了？",
-    body: `2026 年 4 月，AI 领域正在经历一场静默的革命。如果说 2023-2025 年是"大模型军备竞赛"的时代，那么 2026 年就是**"Agent 编排与协作"**的元年。
+    body: `2026 年 4 月，AI 领域正在经历一场静默的革命。如果说 2023-2025 年是"大模型军备竞赛"的时代，那么 2026 年就是"Agent 编排与协作"的元年。
 
 查看 GitHub 本周 AI Trending，一个清晰的信号正在浮现：
 
-- **NousResearch Hermes Agent**：112,920 stars（周增 22K），自进化 Agent 的代表
-- **thedotmack claude-mem**：66,381 stars（周增 8.7K），Claude Code 智能记忆插件
-- **openai openai-agents-python**：24,839 stars（周增 3.8K），OpenAI 官方多 Agent 框架
-- **mksglu context-mode**：9,327 stars（周增 1.7K），上下文窗口优化工具
-- **zilliztech claude-context**：8,323 stars，Claude Code 代码搜索 MCP
-- **multica-ai multica**：20,101 stars（周增 6K），管理型 Agent 平台
-- **jamiepine voicebox**：22,754 stars（周增 4.5K），开源 AI 语音工作室
+- NousResearch Hermes Agent：112,920 stars（周增 22K），自进化 Agent 的代表
+- thedotmack claude-mem：66,381 stars（周增 8.7K），Claude Code 智能记忆插件
+- openai openai-agents-python：24,839 stars（周增 3.8K），OpenAI 官方多 Agent 框架
+- mksglu context-mode：9,327 stars（周增 1.7K），上下文窗口优化工具
+- zilliztech claude-context：8,323 stars，Claude Code 代码搜索 MCP
+- multica-ai multica：20,101 stars（周增 6K），管理型 Agent 平台
+- jamiepine voicebox：22,754 stars（周增 4.5K），开源 AI 语音工作室
 
-这些项目的共同特征是：**它们都在解决 Agent 协作、记忆持久化和上下文管理三大核心问题。** 单 Agent 已经触及能力天花板，真正的突破来自多 Agent 编排、记忆系统和上下文优化的组合拳。
+这些项目的共同特征是：它们都在解决 Agent 协作、记忆持久化和上下文管理三大核心问题。 单 Agent 已经触及能力天花板，真正的突破来自多 Agent 编排、记忆系统和上下文优化的组合拳。
 
-> **本文核心问题：** 2026 年，如何构建一个高效的多 Agent 系统？从 Hermes Agent 的自进化、OpenAI 的轻量级多 Agent 框架，到 claude-mem 的记忆管理——完整的技术栈是什么？
+> 本文核心问题： 2026 年，如何构建一个高效的多 Agent 系统？从 Hermes Agent 的自进化、OpenAI 的轻量级多 Agent 框架，到 claude-mem 的记忆管理——完整的技术栈是什么？
 
 本文将通过完整的架构对比、可运行代码和实战案例，帮你构建生产级多 Agent 系统。`
   },
@@ -25,15 +25,15 @@ const content = [
     title: "一、Hermes Agent：自进化 Agent 的技术内核",
     body: `NousResearch 发布的 Hermes Agent 以"The agent that grows with you"为核心理念，是目前全球增长最快的开源 AI Agent 项目（112K+ stars，16K+ forks）。
 
-它的核心创新在于**经验胶囊（Experience Capsules）**系统：
+它的核心创新在于经验胶囊（Experience Capsules）系统：
 
 ### 经验胶囊工作原理
 
-每个 Agent 在运行过程中会产生大量交互数据。Hermes Agent 不做简单的日志记录，而是通过一个独立的"压缩 Agent"对交互过程进行语义压缩，提取出可复用的**经验胶囊**：
+每个 Agent 在运行过程中会产生大量交互数据。Hermes Agent 不做简单的日志记录，而是通过一个独立的"压缩 Agent"对交互过程进行语义压缩，提取出可复用的经验胶囊：
 
-- **成功模式胶囊**：记录任务成功执行的关键步骤和决策点
-- **失败教训胶囊**：记录错误路径、根因分析和规避策略
-- **知识沉淀胶囊**：从工具调用结果中提取结构化知识
+- 成功模式胶囊：记录任务成功执行的关键步骤和决策点
+- 失败教训胶囊：记录错误路径、根因分析和规避策略
+- 知识沉淀胶囊：从工具调用结果中提取结构化知识
 
 这些胶囊存储在向量数据库中，新任务到来时，系统通过语义相似度检索相关胶囊，注入到 Agent 的上下文中。
 
@@ -48,7 +48,7 @@ const content = [
 | 上下文命中率 | 35% | 78% | +123% |
 | 用户干预频率 | 每 3 任务 1 次 | 每 12 任务 1 次 | -75% |
 
-这种进步不是靠模型升级，而是靠**经验积累和检索增强**。这正是自进化 Agent 与静态 Agent 的本质区别。`
+这种进步不是靠模型升级，而是靠经验积累和检索增强。这正是自进化 Agent 与静态 Agent 的本质区别。`
   },
   {
     title: "二、OpenAI Agents Python：官方多 Agent 框架深度解析",
@@ -56,7 +56,7 @@ const content = [
 
 ### 核心设计理念
 
-openai-agents-python 采用**轻量级、声明式**的 Agent 定义方式：
+openai-agents-python 采用轻量级、声明式的 Agent 定义方式：
 
 \`\`\`python
 from agents import Agent, Runner, function_tool
@@ -98,7 +98,7 @@ print(result.final_output)
 
 ### 手递（Handoff）机制
 
-框架的核心创新是 **Handoff 机制**——Agent 可以主动将任务"递交"给其他更专业的 Agent。这种模式模拟了真实团队协作：
+框架的核心创新是 Handoff 机制——Agent 可以主动将任务"递交"给其他更专业的 Agent。这种模式模拟了真实团队协作：
 
 \`\`\`mermaid
 graph LR
@@ -138,25 +138,25 @@ input_guardrail = InputGuardrail(guardrail_function=check_sensitive_content)
   },
   {
     title: "三、claude-mem & context-mode：上下文管理的两大利器",
-    body: `如果说 Hermes Agent 解决了"长期记忆"问题，那么 claude-mem 和 context-mode 解决的就是**"上下文窗口管理"**问题——这是所有 Agent 系统都会遇到的瓶颈。
+    body: `如果说 Hermes Agent 解决了"长期记忆"问题，那么 claude-mem 和 context-mode 解决的就是"上下文窗口管理"问题——这是所有 Agent 系统都会遇到的瓶颈。
 
 ### claude-mem：自动记忆压缩与注入
 
 thedotmack 开发的 claude-mem（66K+ stars）是一个 Claude Code 插件，它的核心能力是：
 
-1. **自动捕获**：在编码会话过程中自动记录所有操作
-2. **AI 压缩**：使用 Claude 的 agent-sdk 将操作日志压缩为结构化记忆
-3. **智能注入**：在后续会话中自动注入相关上下文
+1. 自动捕获：在编码会话过程中自动记录所有操作
+2. AI 压缩：使用 Claude 的 agent-sdk 将操作日志压缩为结构化记忆
+3. 智能注入：在后续会话中自动注入相关上下文
 
-这解决了 Agent 的一个核心痛点：**上下文窗口有限，但历史信息无限**。claude-mem 的做法是：不存储原始日志，而是存储"压缩后的语义记忆"。
+这解决了 Agent 的一个核心痛点：上下文窗口有限，但历史信息无限。claude-mem 的做法是：不存储原始日志，而是存储"压缩后的语义记忆"。
 
 ### context-mode：98% 上下文压缩率
 
-mksglu 开发的 context-mode（9.3K stars）采用了不同的策略——**上下文窗口优化**。它通过以下方式实现平均 98% 的上下文缩减：
+mksglu 开发的 context-mode（9.3K stars）采用了不同的策略——上下文窗口优化。它通过以下方式实现平均 98% 的上下文缩减：
 
-- **沙盒化**：将工具输出限制在最小必要范围内
-- **渐进加载**：只在需要时加载完整的工具输出
-- **摘要优先**：先用摘要代替完整输出，按需展开
+- 沙盒化：将工具输出限制在最小必要范围内
+- 渐进加载：只在需要时加载完整的工具输出
+- 摘要优先：先用摘要代替完整输出，按需展开
 
 | 工具 | 压缩策略 | 平均压缩率 | 适用场景 |
 |------|----------|------------|----------|
@@ -211,15 +211,15 @@ class OptimizedAgent:
   },
   {
     title: "四、multica：管理型 Agent 平台的创新模式",
-    body: `multica-ai/multica（20K stars，周增 6K）提出了一个有趣的观点：**Coding Agent 不应该只是工具，而应该是真正的"团队成员"**。
+    body: `multica-ai/multica（20K stars，周增 6K）提出了一个有趣的观点：Coding Agent 不应该只是工具，而应该是真正的"团队成员"。
 
 ### 核心理念
 
 multica 的平台设计围绕三个关键词：
 
-1. **任务分配**：像给人类分配任务一样给 Agent 分配任务
-2. **进度追踪**：实时跟踪每个 Agent 的执行状态
-3. **能力累积**：Agent 的技能随着使用不断积累和增强
+1. 任务分配：像给人类分配任务一样给 Agent 分配任务
+2. 进度追踪：实时跟踪每个 Agent 的执行状态
+3. 能力累积：Agent 的技能随着使用不断积累和增强
 
 ### 架构对比：传统 Agent vs multica Agent
 
@@ -247,13 +247,13 @@ graph TB
 
 ### 技能累积系统
 
-multica 的核心创新是**技能累积系统**。每个 Agent 在执行任务过程中：
+multica 的核心创新是技能累积系统。每个 Agent 在执行任务过程中：
 
 - 自动识别成功模式并存入技能库
 - 从失败中提取"反模式"避免重复犯错
 - 将技能以可复用的方式存储，供其他 Agent 调用
 
-这种设计让 Agent 团队像一个真实团队一样——**经验不会随着单次任务结束而消失，而是沉淀为团队能力**。`
+这种设计让 Agent 团队像一个真实团队一样——经验不会随着单次任务结束而消失，而是沉淀为团队能力。`
   },
   {
     title: "五、完整实战：构建自进化多 Agent 系统",
@@ -518,11 +518,11 @@ if __name__ == "__main__":
 
 运行上述代码，你将看到：
 
-1. **初期**（前 1-3 任务）：成功率约 50-60%，工具调用 6-9 次
-2. **中期**（4-7 任务）：成功率提升到 70-80%，工具调用减少到 4-6 次
-3. **后期**（8-10 任务）：成功率稳定在 85%+，工具调用优化到 3-5 次
+1. 初期（前 1-3 任务）：成功率约 50-60%，工具调用 6-9 次
+2. 中期（4-7 任务）：成功率提升到 70-80%，工具调用减少到 4-6 次
+3. 后期（8-10 任务）：成功率稳定在 85%+，工具调用优化到 3-5 次
 
-这正是 Hermes Agent 在真实世界中展示的进化曲线——**不是模型变强了，而是 Agent 变得更聪明了**。
+这正是 Hermes Agent 在真实世界中展示的进化曲线——不是模型变强了，而是 Agent 变得更聪明了。
 
 ### 关键设计决策
 
@@ -579,12 +579,12 @@ graph TD
 
 对于 2026 年的新项目，我推荐以下组合：
 
-1. **个人开发者**：Claude Code + claude-mem + context-mode
-2. **小型团队**：OpenAI Agents Python + claude-mem
-3. **中大型项目**：multica + Hermes Agent + 自定义向量存储
-4. **研究探索**：Hermes Agent + OpenAI Agents Python（互补）
+1. 个人开发者：Claude Code + claude-mem + context-mode
+2. 小型团队：OpenAI Agents Python + claude-mem
+3. 中大型项目：multica + Hermes Agent + 自定义向量存储
+4. 研究探索：Hermes Agent + OpenAI Agents Python（互补）
 
-> **一句话总结：** 2026 年的 AI 竞争已经从"谁的模型更强"转向了"谁的 Agent 系统更聪明"。记忆、上下文和编排——这三者的组合，决定了 Agent 系统的上限。`
+> 一句话总结： 2026 年的 AI 竞争已经从"谁的模型更强"转向了"谁的 Agent 系统更聪明"。记忆、上下文和编排——这三者的组合，决定了 Agent 系统的上限。`
   },
   {
       title: "架构图示 1",

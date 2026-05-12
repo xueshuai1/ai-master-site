@@ -21,23 +21,23 @@ export const article: Article = {
   content: [
     {
       title: "1. 为什么「自我进化」是 AI Agent 的下一个圣杯？",
-      body: `2025 年到 2026 年，AI Agent 经历了从「玩具」到「工具」的转变。AutoGPT、BabyAGI、LangChain Agent 等项目证明了 AI Agent 可以完成实际任务。但所有这些项目都有一个**根本性缺陷**：它们是**静态的**。
+      body: `2025 年到 2026 年，AI Agent 经历了从「玩具」到「工具」的转变。AutoGPT、BabyAGI、LangChain Agent 等项目证明了 AI Agent 可以完成实际任务。但所有这些项目都有一个根本性缺陷：它们是静态的。
 
 一个静态 Agent 无论运行多少次任务，它的核心能力不会增长。它不会从失败中学习，不会积累领域知识，不会自动扩展技能边界。每次执行任务，它都在「从零开始」。
 
-**自我进化 Agent 要解决的问题是：让 Agent 在运行过程中自动变得更强。**
+自我进化 Agent 要解决的问题是：让 Agent 在运行过程中自动变得更强。
 
-这不是简单的 fine-tuning 或 RAG。自我进化的核心思想是：Agent 在执行任务的过程中，会自动识别自己的能力不足、压缩成功经验为可复用知识、并据此调整自己的架构和行为策略——**无需人类干预**。
+这不是简单的 fine-tuning 或 RAG。自我进化的核心思想是：Agent 在执行任务的过程中，会自动识别自己的能力不足、压缩成功经验为可复用知识、并据此调整自己的架构和行为策略——无需人类干预。
 
 2026 年 4 月，三个重量级项目同时涌现，各自提出了不同的自我进化方案：
 
 | 项目 | Stars | 核心理念 | 进化方式 |
 |------|-------|---------|---------|
-| **NousResearch Hermes Agent** | 103K+ | "The agent that grows with you" | 经验压缩 + 知识注入 + 持续学习 |
-| **GenericAgent** | 4,700+ | 从 3.3K 行种子代码自生长技能树 | 技能树自生长 + token 优化 |
-| **EvoMap Evolver** | 5,700+ | GEP 基因组驱动的自我进化引擎 | 基因组进化协议 |
+| NousResearch Hermes Agent | 103K+ | "The agent that grows with you" | 经验压缩 + 知识注入 + 持续学习 |
+| GenericAgent | 4,700+ | 从 3.3K 行种子代码自生长技能树 | 技能树自生长 + token 优化 |
+| EvoMap Evolver | 5,700+ | GEP 基因组驱动的自我进化引擎 | 基因组进化协议 |
 
-这三个项目的共同点是：**不再把 Agent 当「程序」，而是当「有机体」——它会成长、会学习、会进化。**`,
+这三个项目的共同点是：不再把 Agent 当「程序」，而是当「有机体」——它会成长、会学习、会进化。`,
       mermaid: `graph TD
     A["传统 Agent
 静态能力"] -->|"每次任务
@@ -62,20 +62,20 @@ export const article: Article = {
     },
     {
       title: "2. 技术路线一：NousResearch Hermes Agent —— 经验压缩与知识注入",
-      body: `NousResearch 的 Hermes Agent 是 2026 年 4 月 GitHub 上增长最快的 AI 项目——单周暴涨 38,194 星，总计突破 103,444 星。它的 slogan 很简洁：**"The agent that grows with you"**。
+      body: `NousResearch 的 Hermes Agent 是 2026 年 4 月 GitHub 上增长最快的 AI 项目——单周暴涨 38,194 星，总计突破 103,444 星。它的 slogan 很简洁："The agent that grows with you"。
 
 Hermes Agent 的核心架构包含三个模块：
 
-**（1）Experience Capture（经验捕获）**
-Agent 在执行任务时，会自动记录关键决策点、成功路径和失败原因。不同于简单的日志记录，Hermes 使用一个**经验编码器**将原始执行轨迹压缩为结构化的经验单元。
+（1）Experience Capture（经验捕获）
+Agent 在执行任务时，会自动记录关键决策点、成功路径和失败原因。不同于简单的日志记录，Hermes 使用一个经验编码器将原始执行轨迹压缩为结构化的经验单元。
 
-**（2）Knowledge Compression（知识压缩）**
+（2）Knowledge Compression（知识压缩）
 捕获的经验经过压缩后存入经验库。压缩过程类似于人类的「复盘」——从具体的执行细节中提取通用模式。例如，多次成功的 API 调用会被压缩为"API 调用最佳实践"模板。
 
-**（3）Skill Injection（技能注入）**
+（3）Skill Injection（技能注入）
 当 Agent 遇到新任务时，它会从经验库中检索相关经验，并将其注入到当前上下文中。这使得 Agent 可以「站在自己的肩膀上」思考，而不是每次都从零开始。
 
-Hermes Agent 的突破在于它提出了一套**完整的经验生命周期**：捕获 → 压缩 → 检索 → 注入 → 再捕获，形成了一个自我强化的循环。`,
+Hermes Agent 的突破在于它提出了一套完整的经验生命周期：捕获 → 压缩 → 检索 → 注入 → 再捕获，形成了一个自我强化的循环。`,
       mermaid: `sequenceDiagram
     participant User as 用户
     participant Agent as Hermes Agent
@@ -100,21 +100,21 @@ Hermes Agent 的突破在于它提出了一套**完整的经验生命周期**：
     },
     {
       title: "3. 技术路线二：GenericAgent —— 从种子代码自生长技能树",
-      body: `lsdefine 的 GenericAgent 提出了一个截然不同的思路：**让 Agent 从极小的种子代码开始，自动生长出完整的技能树**。
+      body: `lsdefine 的 GenericAgent 提出了一个截然不同的思路：让 Agent 从极小的种子代码开始，自动生长出完整的技能树。
 
-根据项目描述，GenericAgent 仅用了 **3,300 行种子代码**就实现了完整系统控制，而且**token 消耗比传统 Agent 框架低 6 倍**。这是怎么做到的？
+根据项目描述，GenericAgent 仅用了 3,300 行种子代码就实现了完整系统控制，而且token 消耗比传统 Agent 框架低 6 倍。这是怎么做到的？
 
-核心思想是**技能树自生长（Skill Tree Self-Growth）**：
+核心思想是技能树自生长（Skill Tree Self-Growth）：
 
-1. **种子阶段**：Agent 从一个最小可用的种子代码开始，只有基本的执行能力和有限的几个初始技能。
+1. 种子阶段：Agent 从一个最小可用的种子代码开始，只有基本的执行能力和有限的几个初始技能。
 
-2. **探索阶段**：Agent 在尝试解决任务时，发现自己缺少某些能力（比如"需要解析 YAML 配置文件"），就会自动生成新的技能模块。
+2. 探索阶段：Agent 在尝试解决任务时，发现自己缺少某些能力（比如"需要解析 YAML 配置文件"），就会自动生成新的技能模块。
 
-3. **固化阶段**：新生成的技能经过验证后被固化到技能树中，下次遇到类似任务时直接调用，无需重新生成。
+3. 固化阶段：新生成的技能经过验证后被固化到技能树中，下次遇到类似任务时直接调用，无需重新生成。
 
-4. **优化阶段**：Agent 会定期评估技能树的效率，合并重复技能、删除冗余技能、优化高频技能的性能。
+4. 优化阶段：Agent 会定期评估技能树的效率，合并重复技能、删除冗余技能、优化高频技能的性能。
 
-这种方法的惊人之处在于**启动成本极低**——不需要预先定义所有技能，Agent 会根据实际需求自动发现并学习新能力。token 消耗降低 6 倍的原因也很直观：每次任务只需要加载相关的子技能，而不是加载整个巨大的 prompt 模板。`,
+这种方法的惊人之处在于启动成本极低——不需要预先定义所有技能，Agent 会根据实际需求自动发现并学习新能力。token 消耗降低 6 倍的原因也很直观：每次任务只需要加载相关的子技能，而不是加载整个巨大的 prompt 模板。`,
       code: [
         {
           lang: "python",
@@ -263,20 +263,20 @@ if __name__ == "__main__":
     },
     {
       title: "4. 技术路线三：EvoMap Evolver —— GEP 基因组进化协议",
-      body: `EvoMap 的 Evolver 项目提出了最「生物学」的自我进化方案——**GEP（Genome Evolution Protocol，基因组进化协议）**。
+      body: `EvoMap 的 Evolver 项目提出了最「生物学」的自我进化方案——GEP（Genome Evolution Protocol，基因组进化协议）。
 
 GEP 的核心思想是将 Agent 的能力编码为「基因组」，然后通过类似生物进化的机制（变异、选择、遗传）来优化 Agent 的能力：
 
-**（1）基因组编码（Genome Encoding）**
+（1）基因组编码（Genome Encoding）
 每个 Agent 的能力配置被编码为一组「基因」，包括：
-- **行为基因**：决定 Agent 的行为策略（如重试次数、超时策略）
-- **知识基因**：决定 Agent 的知识检索策略（如 RAG 的 chunk size、检索数量）
-- **技能基因**：决定 Agent 可用的工具集和调用顺序
+- 行为基因：决定 Agent 的行为策略（如重试次数、超时策略）
+- 知识基因：决定 Agent 的知识检索策略（如 RAG 的 chunk size、检索数量）
+- 技能基因：决定 Agent 可用的工具集和调用顺序
 
-**（2）适应度评估（Fitness Evaluation）**
+（2）适应度评估（Fitness Evaluation）
 Agent 执行任务后，系统会评估其表现，计算一个「适应度分数」。好的表现意味着对应的基因组更优秀。
 
-**（3）变异与遗传（Mutation & Inheritance）**
+（3）变异与遗传（Mutation & Inheritance）
 表现好的 Agent 的基因组会被「遗传」给后续任务。同时，基因组会发生随机「变异」，引入新的行为模式。如果变异后的表现更好，新基因就会被保留。
 
 这种方法的独特优势是：它不需要人类显式地定义「什么是好」——适应度函数自动从任务结果中学习。而且基因组进化可以持续进行，Agent 永远不会「到达天花板」。`,
@@ -494,16 +494,16 @@ if __name__ == "__main__":
       title: "6. 如何构建自己的 Self-Evolving Agent",
       body: `结合三大项目的思路，我们可以设计一个混合式的自我进化 Agent 架构：
 
-**第一步：定义能力基线**
+第一步：定义能力基线
 从一个最小可用的 Agent 开始，定义它可以执行的基本操作集（类似 GenericAgent 的种子技能）。
 
-**第二步：实现经验捕获**
+第二步：实现经验捕获
 在每次任务执行后，自动记录关键信息：使用了哪些工具？结果如何？遇到了什么错误？（类似 Hermes Agent 的经验捕获）
 
-**第三步：建立进化循环**
+第三步：建立进化循环
 定期评估 Agent 的表现，对表现不佳的部分进行「变异」（调整参数、更换工具、优化 prompt），对表现好的部分进行「固化」（存入经验库、加入技能树）。（类似 Evolver 的 GEP）
 
-**第四步：持续迭代**
+第四步：持续迭代
 让 Agent 在运行中不断积累经验和优化能力。关键指标包括：任务成功率、平均执行时间、token 消耗量。`,
       mermaid: `graph TD
     A["最小可用 Agent
@@ -807,18 +807,18 @@ if __name__ == "__main__":
     },
     {
       title: "8. 总结与展望",
-      body: `自我进化 AI Agent 代表了 2026 年 AI 领域最激动人心的趋势之一。从 NousResearch Hermes Agent 的 103K stars 到 GenericAgent 的 6 倍 token 优化，再到 Evolver 的基因组进化协议，这三种路线共同指向一个未来：**Agent 不再是静态工具，而是可以自主成长的智能体**。
+      body: `自我进化 AI Agent 代表了 2026 年 AI 领域最激动人心的趋势之一。从 NousResearch Hermes Agent 的 103K stars 到 GenericAgent 的 6 倍 token 优化，再到 Evolver 的基因组进化协议，这三种路线共同指向一个未来：Agent 不再是静态工具，而是可以自主成长的智能体。
 
-**核心要点回顾：**
+核心要点回顾：
 
-1. **Hermes Agent** 证明了经验压缩和知识注入的可行性——Agent 可以从自己的经历中学习，不需要人类标注数据
-2. **GenericAgent** 证明了技能树自生长的可行性——从极小的种子代码开始，Agent 可以按需自动发现和学习新能力
-3. **Evolver (GEP)** 证明了基因组进化的可行性——Agent 的配置参数可以通过变异和选择自动优化
+1. Hermes Agent 证明了经验压缩和知识注入的可行性——Agent 可以从自己的经历中学习，不需要人类标注数据
+2. GenericAgent 证明了技能树自生长的可行性——从极小的种子代码开始，Agent 可以按需自动发现和学习新能力
+3. Evolver (GEP) 证明了基因组进化的可行性——Agent 的配置参数可以通过变异和选择自动优化
 
-**下一步值得关注的项目：**
-- **claude-mem**（63K 星）：自动记忆捕获，为进化提供数据基础
-- **multica**（17K 星）：Managed Agent 平台，可以让多个进化 Agent 协作
-- **ai-hedge-fund**（56K 星）：金融领域的多 Agent 协作，是进化 Agent 的绝佳应用场景
+下一步值得关注的项目：
+- claude-mem（63K 星）：自动记忆捕获，为进化提供数据基础
+- multica（17K 星）：Managed Agent 平台，可以让多个进化 Agent 协作
+- ai-hedge-fund（56K 星）：金融领域的多 Agent 协作，是进化 Agent 的绝佳应用场景
 
 自我进化不是终点，而是起点。当 Agent 学会了自我进化，它就不再是一个被动的工具，而是一个持续成长的伙伴。这才是 AI Agent 真正的未来。`,
       mermaid: `graph TD

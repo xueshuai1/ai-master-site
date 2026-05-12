@@ -14,16 +14,16 @@ export const article: Article = {
       title: "一、2026年4月 AI 编程助手定价剧震全景",
       body: `2026 年 4 月 20-22 日，AI 编程助手领域在短短 48 小时内发生了三起重磅事件，彻底改变了开发者对 AI 编程工具成本的认知：
 
-**事件 1：Claude Code 定价风波（4月21-22日）**
+事件 1：Claude Code 定价风波（4月21-22日）
 Anthropic 在 claude.com/pricing 页面悄悄将 Claude Code 从 $20/月的 Pro 计划移至 $100/月的 Max 计划专属。这一改动引发 Reddit、Hacker News 和 Twitter 的强烈反弹。OpenAI Codex 工程师直接表态 Codex 将继续提供免费和 Plus 版本。数小时后 Anthropic 恢复原页面，称只是「约 2% 新用户的小型测试」。
 
-**事件 2：GitHub Copilot Individual 重大调整（4月20日）**
+事件 2：GitHub Copilot Individual 重大调整（4月20日）
 GitHub 宣布：暂停 Pro/Pro+/Student 新用户注册；引入基于 token 消耗和模型乘数的用量限制；Pro 计划不再提供 Opus 模型（仅限 $39/月的 Pro+）；5月20日前取消可获全额退款。
 
-**事件 3：OpenAI Codex 宣布永久免费（4月22日）**
+事件 3：OpenAI Codex 宣布永久免费（4月22日）
 在 Claude Code 定价风波的第二天，OpenAI Codex 团队明确宣布：Codex 将继续对免费用户和 ChatGPT Plus 用户开放，不会效仿 Anthropic 的涨价策略。
 
-这三件事揭示了一个核心趋势：**AI Agent 工作流的算力需求正在指数级增长，商业公司正在重新评估定价模型以应对成本压力。**`,
+这三件事揭示了一个核心趋势：AI Agent 工作流的算力需求正在指数级增长，商业公司正在重新评估定价模型以应对成本压力。`,
       mermaid: `graph TD
     2024 Q3 : GitHub Copilot
 $10/月（Pro）
@@ -43,19 +43,19 @@ $12/月
 撤回涨价
 OpenAI Codex
 宣布永久免费`,
-      tip: `**关键洞察：** GitHub 官方博客明确表示「Agent 工作流已根本性改变了 Copilot 的算力需求」——6 个月前重度 LLM 用户的 token 消耗量比现在低一个数量级。这意味着 AI 编程工具的边际成本远高于传统 SaaS 工具。`,
+      tip: `关键洞察： GitHub 官方博客明确表示「Agent 工作流已根本性改变了 Copilot 的算力需求」——6 个月前重度 LLM 用户的 token 消耗量比现在低一个数量级。这意味着 AI 编程工具的边际成本远高于传统 SaaS 工具。`,
     },
     {
       title: "二、各方案定价机制深度拆解",
       body: `让我们逐一拆解每个方案的定价逻辑，理解背后的经济模型。
 
-**GitHub Copilot：从 per-request 到 per-token 的转变**
+GitHub Copilot：从 per-request 到 per-token 的转变
 
 Copilot 之前采用「按请求收费」模式，即无论单次请求消耗多少 token 都算一次费用。但随着 agentic 工作流的普及，单次请求的 token 消耗量暴增，导致 GitHub 的利润率大幅压缩。
 
 新的用量限制机制引入了两个关键概念：
-- **Session 限制**：单次编辑会话的 token 消耗上限
-- **Weekly 限制**：7 天滚动窗口的 token 消耗总量
+- Session 限制：单次编辑会话的 token 消耗上限
+- Weekly 限制：7 天滚动窗口的 token 消耗总量
 
 模型乘数机制则对不同模型赋予不同的权重系数。Opus 4.7 由于使用了更新的 tokenizer，相同输入会映射到更多 token（约 1.0-1.35×），因此消耗速度更快。`,
       table: {
@@ -74,21 +74,21 @@ Copilot 之前采用「按请求收费」模式，即无论单次请求消耗多
       title: "三、真实 Token 成本核算",
       body: `要理解为什么 AI 编程助手会面临成本压力，我们需要从 token 级别进行核算。
 
-**Claude Opus 4.7 Token 膨胀效应**
+Claude Opus 4.7 Token 膨胀效应
 
 Anthropic 在 Opus 4.7 中引入了更新的 tokenizer，导致相同输入的 token 数增加约 1.0-1.35×。这意味着：
 - Opus 4.7 虽然定价与 Opus 4.6 相同（$5/百万 input tokens, $25/百万 output tokens）
-- 但实际 token 膨胀使得**有效成本增加了约 40%**
+- 但实际 token 膨胀使得有效成本增加了约 40%
 - 对于 30 页文本密集型 PDF，Opus 4.7 报告 60,934 tokens 而 4.6 报告 56,482 tokens（1.08×）
 
-**编码 Agent 的 Token 消耗特征**
+编码 Agent 的 Token 消耗特征
 
-编码 Agent 与传统 LLM 对话的关键区别在于 **Context Window 使用模式**：
+编码 Agent 与传统 LLM 对话的关键区别在于 Context Window 使用模式：
 
-1. **长 Context 保持**：Agent 需要持续跟踪整个项目文件结构、依赖关系和历史修改
-2. **多轮迭代**：一个编程任务可能需要 10-50 轮对话，每轮都消耗大量 context
-3. **并行执行**：Agent 经常并行执行多个子任务（如同时修改多个文件）
-4. **工具调用开销**：每次工具调用（read file, run command, search）都增加额外 token
+1. 长 Context 保持：Agent 需要持续跟踪整个项目文件结构、依赖关系和历史修改
+2. 多轮迭代：一个编程任务可能需要 10-50 轮对话，每轮都消耗大量 context
+3. 并行执行：Agent 经常并行执行多个子任务（如同时修改多个文件）
+4. 工具调用开销：每次工具调用（read file, run command, search）都增加额外 token
 
 据估算，一个典型的 1 小时编码 session，AI Agent 消耗的 tokens 约为：
 - 传统 LLM 对话：~50K tokens
@@ -342,16 +342,16 @@ print("   （相比全部使用 Opus 4.7）")`,
       title: "四、开源替代方案与自部署策略",
       body: `面对商业方案的涨价压力，开源替代方案成为越来越有吸引力的选择。以下是目前最值得关注的开源方案：
 
-**OpenClaw（360K+ stars）**
+OpenClaw（360K+ stars）
 个人 AI 助手框架，支持任何 LLM 后端。完全开源，可以本地部署任意模型。适合有一定技术基础的用户，将 AI 编程能力集成到个人工作流中。
 
-**Continue.dev（VS Code 插件）**
+Continue.dev（VS Code 插件）
 开源的 IDE AI 编程助手，支持连接任意 LLM API（包括本地模型）。与 VS Code 深度集成，提供代码补全、聊天、代码生成等功能。
 
-**Aider（CLI 工具）**
+Aider（CLI 工具）
 命令行驱动的 AI 编程工具，支持多模型后端。特别适合喜欢在终端工作的开发者，可以直接在 git 仓库中工作并自动提交修改。
 
-**自部署方案**
+自部署方案
 
 如果你有足够的 GPU 资源，可以考虑完全自部署：
 - 使用 Ollama 或 vLLM 部署开源模型（如 Llama 4、Qwen 等）
@@ -492,23 +492,23 @@ if __name__ == "__main__":
       title: "五、未来趋势预测与建议",
       body: `站在 2026 年 4 月的时间点上，AI 编程助手的定价模式正处于一个关键的转折点。以下是我们对未来 6-12 个月的预测：
 
-**短期预测（2026 Q2-Q3）：**
-1. **价格战加剧**：OpenAI Codex 的免费策略将迫使其他厂商跟进，Claude 和 GitHub 可能推出更多免费 tier
-2. **用量限制成为标配**：几乎所有方案都会引入类似 GitHub 的 token-based 用量限制
-3. **模型分层定价**：简单任务用廉价模型（Haiku/GPT-4o-mini），复杂任务用高端模型（Opus/o4）
+短期预测（2026 Q2-Q3）：
+1. 价格战加剧：OpenAI Codex 的免费策略将迫使其他厂商跟进，Claude 和 GitHub 可能推出更多免费 tier
+2. 用量限制成为标配：几乎所有方案都会引入类似 GitHub 的 token-based 用量限制
+3. 模型分层定价：简单任务用廉价模型（Haiku/GPT-4o-mini），复杂任务用高端模型（Opus/o4）
 
-**中期预测（2026 Q4-2027）：**
-1. **本地部署普及**：随着模型效率提升，14B-32B 编码模型在消费级 GPU 上的表现将接近商业 API
-2. **Agent 效率优化**：新的推理技术（如 DFlash 推测解码）将降低 Agent 的 token 消耗 50% 以上
-3. **开源方案崛起**：OpenClaw、Continue.dev 等开源工具将占据更大市场份额
+中期预测（2026 Q4-2027）：
+1. 本地部署普及：随着模型效率提升，14B-32B 编码模型在消费级 GPU 上的表现将接近商业 API
+2. Agent 效率优化：新的推理技术（如 DFlash 推测解码）将降低 Agent 的 token 消耗 50% 以上
+3. 开源方案崛起：OpenClaw、Continue.dev 等开源工具将占据更大市场份额
 
-**给开发者的建议：**
+给开发者的建议：
 
-1. **不要把所有鸡蛋放在一个篮子里**：同时使用 2-3 个不同方案，根据任务类型智能切换
-2. **优先考虑混合策略**：简单任务本地化 + 复杂任务云端化，可以节省 60%+ 成本
-3. **关注用量限制**：新的用量限制机制意味着「无限使用」时代已结束，需要主动管理 token 消耗
-4. **投资本地能力**：即使现在依赖商业 API，也应该开始搭建本地 AI 能力，为未来做准备
-5. **学会评估 ROI**：AI 编程助手的价值不在于「用不用」，而在于「怎么用」——正确的使用方式可以让 ROI 提升 10 倍`,
+1. 不要把所有鸡蛋放在一个篮子里：同时使用 2-3 个不同方案，根据任务类型智能切换
+2. 优先考虑混合策略：简单任务本地化 + 复杂任务云端化，可以节省 60%+ 成本
+3. 关注用量限制：新的用量限制机制意味着「无限使用」时代已结束，需要主动管理 token 消耗
+4. 投资本地能力：即使现在依赖商业 API，也应该开始搭建本地 AI 能力，为未来做准备
+5. 学会评估 ROI：AI 编程助手的价值不在于「用不用」，而在于「怎么用」——正确的使用方式可以让 ROI 提升 10 倍`,
       mermaid: `graph TD
     A[2026 Q2] --> B[价格战加剧
 免费 tier 增多]
@@ -534,12 +534,12 @@ if __name__ == "__main__":
     classDef s0 fill:#14532d
     classDef s1 fill:#92400e
     classDef s2 fill:#991b1b`,
-      tip: `**行动清单：**
+      tip: `行动清单：
 1. 今天：评估你目前的 AI 编程助手使用情况，计算月度 token 消耗
 2. 本周：搭建本地 Ollama + Qwen2.5-Coder 环境，测试日常开发场景
 3. 本月：实现智能模型路由，根据任务复杂度自动选择最优方案
 4. 本季度：将本地+云端混合策略集成到你的开发工作流中`,
-      warning: `**风险提示：** 商业方案的用量限制和定价变化可能随时发生。2026 年 4 月的定价风波表明，没有任何商业 AI 编程助手的定价是「稳定」的。保持灵活性和备选方案至关重要。`,
+      warning: `风险提示： 商业方案的用量限制和定价变化可能随时发生。2026 年 4 月的定价风波表明，没有任何商业 AI 编程助手的定价是「稳定」的。保持灵活性和备选方案至关重要。`,
     },
   ],
 };

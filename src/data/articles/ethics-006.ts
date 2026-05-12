@@ -843,19 +843,19 @@ def generate_model_card(
     card = f"""# {model_name}
 
 ## 模型详情
-- **类型**: {model_type}
-- **生成日期**: {datetime.now().strftime("%Y-%m-%d")}
+- 类型: {model_type}
+- 生成日期: {datetime.now().strftime("%Y-%m-%d")}
 
 ## 训练数据
-- **数据来源**: {training_data_summary.get('sources', '未披露')}
-- **数据规模**: {training_data_summary.get('volume', '未披露')}
-- **数据处理**: {training_data_summary.get('preprocessing', '未披露')}
-- **版权合规**: {training_data_summary.get('copyright', '未评估')}
+- 数据来源: {training_data_summary.get('sources', '未披露')}
+- 数据规模: {training_data_summary.get('volume', '未披露')}
+- 数据处理: {training_data_summary.get('preprocessing', '未披露')}
+- 版权合规: {training_data_summary.get('copyright', '未评估')}
 
 ## 性能指标
 """
     for metric, value in performance_metrics.items():
-        card += f"- **{metric}**: {value}\\n"
+        card += f"- {metric}: {value}\\n"
 
     card += f"""
 ## 预期用途

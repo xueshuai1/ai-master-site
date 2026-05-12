@@ -23,7 +23,7 @@ export const article: Article = {
 
 VQA 任务的输出空间通常分为两类：开放式（Open-ended），答案可以是任意词或短语，如 "two"、"yes"、"baseball"；封闭式（Closed），答案限定在预定义类别集合中。主流评测以封闭式为主，因为答案空间可控、指标可比。
 
-**核心数据集：** VQA v2 是最经典的基准，包含 82783 张训练图像和 443757 个问答对，每个问题配有两个人工标注的答案；GQA 数据集强调结构化推理，包含 2200 万个问答对和对应的场景图标注；VQA-X 进一步要求模型在给出答案的同时生成视觉解释（Visual Explanation），推动模型可解释性研究。
+核心数据集： VQA v2 是最经典的基准，包含 82783 张训练图像和 443757 个问答对，每个问题配有两个人工标注的答案；GQA 数据集强调结构化推理，包含 2200 万个问答对和对应的场景图标注；VQA-X 进一步要求模型在给出答案的同时生成视觉解释（Visual Explanation），推动模型可解释性研究。
 
 VQA 不仅是技术问题，更是检验多模态对齐能力的试金石——一个能准确回答 "图中有几个人" 的模型，必须同时理解 "人" 的视觉概念和 "计数" 这一逻辑操作。`,
             code: [
@@ -250,9 +250,9 @@ class MCBPool(nn.Module):
             title: "3. 注意力机制在 VQA 中的应用",
             body: `注意力机制的引入是 VQA 领域的一次范式转变。早期 CNN+RNN 方法对整张图像使用全局特征，但很多问题只需要关注图像的特定区域——例如 "椅子上有什么颜色的靠垫" 只需要关注椅子区域，而不是整张图。
 
-**堆叠注意力网络（SAN, Stacked Attention Networks）** 率先将注意力引入 VQA，通过多层注意力迭代地聚焦于图像中最相关的区域。每一层注意力都以问题特征为 query，图像区域特征为 key 和 value，计算注意力权重后加权求和得到注意力池化的视觉特征。
+堆叠注意力网络（SAN, Stacked Attention Networks） 率先将注意力引入 VQA，通过多层注意力迭代地聚焦于图像中最相关的区域。每一层注意力都以问题特征为 query，图像区域特征为 key 和 value，计算注意力权重后加权求和得到注意力池化的视觉特征。
 
-**自顶向下注意力（Top-Down Attention, 即 BUTD 模型）** 进一步使用 Faster R-CNN 提取目标检测区域作为视觉输入，而非均匀网格特征。这种方法的优势在于每个视觉单元都对应一个语义对象（人、车、狗等），使得模型能够以更精细的粒度理解视觉内容。配合 bottom-up（自底向上的检测特征）和 top-down（由问题引导的注意力）的双路径设计，该模型在 2017 年 VQA Challenge 中获得冠军。
+自顶向下注意力（Top-Down Attention, 即 BUTD 模型） 进一步使用 Faster R-CNN 提取目标检测区域作为视觉输入，而非均匀网格特征。这种方法的优势在于每个视觉单元都对应一个语义对象（人、车、狗等），使得模型能够以更精细的粒度理解视觉内容。配合 bottom-up（自底向上的检测特征）和 top-down（由问题引导的注意力）的双路径设计，该模型在 2017 年 VQA Challenge 中获得冠军。
 
 注意力的本质是在问题引导下进行视觉特征选择：问题中的关键词 "什么颜色" 会激活模型对颜色相关区域的注意力，而 "几个人" 则会关注所有可能被判定为人的区域。这种动态选择机制显著提升了需要细粒度理解的问题的准确率。`,
             code: [
@@ -358,9 +358,9 @@ class BottomUpTopDown(nn.Module):
             title: "4. Transformer-based VQA",
             body: `Transformer 架构凭借自注意力机制的强大表达能力，在 NLP 和 CV 领域都取得了突破性进展。在 VQA 领域，Transformer 的引入带来了两个维度的革新：一是用 Transformer 替代 LSTM 作为文本编码器，二是用 Vision Transformer（ViT）或 DETR 替代 CNN 作为视觉编码器。
 
-**ViLT（Vision-and-Language Transformer）** 是这一方向的代表性工作。它的核心思想极其简洁：将图像分割为固定大小的 patch，每个 patch 线性投影后加上位置嵌入，与文本 token 的嵌入拼接，然后直接送入标准的 Transformer 编码器。整个过程不需要 CNN 提取特征，也不需要目标检测器提取区域——是一种真正的端到端方案。
+ViLT（Vision-and-Language Transformer） 是这一方向的代表性工作。它的核心思想极其简洁：将图像分割为固定大小的 patch，每个 patch 线性投影后加上位置嵌入，与文本 token 的嵌入拼接，然后直接送入标准的 Transformer 编码器。整个过程不需要 CNN 提取特征，也不需要目标检测器提取区域——是一种真正的端到端方案。
 
-**Oscar（Object-Semantics Aligned Pretraining）** 则在 Transformer 架构中引入了对象标签（Object Tags）作为额外的视觉 token，通过预训练学习对象级别的语义对齐，在微调 VQA 任务时取得显著提升。
+Oscar（Object-Semantics Aligned Pretraining） 则在 Transformer 架构中引入了对象标签（Object Tags）作为额外的视觉 token，通过预训练学习对象级别的语义对齐，在微调 VQA 任务时取得显著提升。
 
 Transformer 在 VQA 中的关键优势在于跨模态自注意力（Cross-Modal Self-Attention）：图像 patch 和文本 token 在同一个 Transformer 中交互，每个 token 都可以直接关注到另一个模态中的任意 token。这种全连接的跨模态交互远强于早期方法中有限的融合操作。`,
             code: [
@@ -495,9 +495,9 @@ print(f"跨模态输出形状: {output.shape}")`
             title: "5. 多模态预训练：ViLBERT 与 LXMERT",
             body: `多模态预训练（Multimodal Pretraining）通过在海量的图文对数据上学习通用的跨模态表示，然后迁移到下游 VQA 等任务上微调，大幅提升了 VQA 模型的性能上限。这一范式类似于 BERT 在 NLP 领域的成功——先在大语料上预训练，再在下游任务上微调。
 
-**ViLBERT（Vision-and-Language BERT）** 采用双流架构：一个视觉 Transformer 处理图像区域特征，一个语言 Transformer 处理文本 token，两者通过 co-attentional transformer layer 定期交换信息。这种设计允许每个模态在独立的 Transformer 中充分建模自身特征，同时通过交叉注意力层实现模态间交互。
+ViLBERT（Vision-and-Language BERT） 采用双流架构：一个视觉 Transformer 处理图像区域特征，一个语言 Transformer 处理文本 token，两者通过 co-attentional transformer layer 定期交换信息。这种设计允许每个模态在独立的 Transformer 中充分建模自身特征，同时通过交叉注意力层实现模态间交互。
 
-**LXMERT（Cross-modal Encoder with Vision and Language）** 在 ViLBERT 基础上引入了三路架构：视觉编码器、语言编码器，以及专门的跨模态编码器。跨模态编码器将两个模态的特征同时输入，用全自注意力建模跨模态交互。LXMERT 的预训练目标包括掩码语言建模（MLM）、掩码区域建模（MRM）、视觉-语言匹配（VLM）等多任务学习。
+LXMERT（Cross-modal Encoder with Vision and Language） 在 ViLBERT 基础上引入了三路架构：视觉编码器、语言编码器，以及专门的跨模态编码器。跨模态编码器将两个模态的特征同时输入，用全自注意力建模跨模态交互。LXMERT 的预训练目标包括掩码语言建模（MLM）、掩码区域建模（MRM）、视觉-语言匹配（VLM）等多任务学习。
 
 这些预训练模型的核心价值在于学到了丰富的跨模态先验知识：什么物体通常出现在什么场景、什么属性属于什么对象、什么动作由什么主体执行——这些知识对回答 VQA 问题至关重要，尤其是那些需要常识推理的问题。`,
             code: [
@@ -606,9 +606,9 @@ class VILBERTForVQA(PreTrainedModel):
             title: "6. 评估指标与开放挑战",
             body: `VQA 的评估指标设计经历了一个从简单到精细的演进过程。早期直接使用精确匹配（Exact Match），即预测答案与标注答案完全一致才算正确，但这种方案过于严格——"two" 和 "2" 表达相同含义但会被判错。
 
-**VQA 评估分数**采用了一种折中方案：如果一个问题有 10 个标注答案，某个答案出现了 n 次，则该答案的分数为 min(n/3, 1)。这意味着只有当至少 3 个标注者给出相同答案时，该答案才被计为满分。这种设计平衡了主观性和客观性，同时避免了少数派答案被完全忽略。
+VQA 评估分数采用了一种折中方案：如果一个问题有 10 个标注答案，某个答案出现了 n 次，则该答案的分数为 min(n/3, 1)。这意味着只有当至少 3 个标注者给出相同答案时，该答案才被计为满分。这种设计平衡了主观性和客观性，同时避免了少数派答案被完全忽略。
 
-**Open-Ended 评估**在测试时不提供候选答案列表，模型需要从整个词表中生成答案。这更接近真实应用场景，但也更困难，因为答案空间几乎无限。近年来，生成式 VQA（Generative VQA）使用自回归语言模型（如 T5、OPT）直接生成答案，而不是分类，取得了令人瞩目的效果。
+Open-Ended 评估在测试时不提供候选答案列表，模型需要从整个词表中生成答案。这更接近真实应用场景，但也更困难，因为答案空间几乎无限。近年来，生成式 VQA（Generative VQA）使用自回归语言模型（如 T5、OPT）直接生成答案，而不是分类，取得了令人瞩目的效果。
 
 VQA 仍面临多项开放挑战：语言偏置（模型倾向于依赖问题中的统计规律而非真正理解图像）、幻觉（Hallucination，模型给出看似合理但与图像不符的答案）、常识推理（需要外部知识才能回答的问题）、以及可解释性（模型为什么给出这个答案）。`,
             code: [

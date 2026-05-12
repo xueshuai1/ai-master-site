@@ -14,9 +14,9 @@ export const article: Article = {
   content: [
     {
       title: "为什么 MCP 是 AI Agent 的「USB-C」",
-      body: `2026 年，AI Agent 正从「孤立模型」走向「生态系统」。但一个核心问题始终存在：**如何让不同 Agent 以标准化方式连接外部工具和数据？**
+      body: `2026 年，AI Agent 正从「孤立模型」走向「生态系统」。但一个核心问题始终存在：如何让不同 Agent 以标准化方式连接外部工具和数据？
 
-早期方案各显神通：LangChain 用 Tool 定义，AutoGPT 用 JSON Schema，各种 Agent 框架各自为战。直到 Anthropic 提出 **MCP（Model Context Protocol）**——一个统一的、开源的、标准化的 Agent 连接协议。
+早期方案各显神通：LangChain 用 Tool 定义，AutoGPT 用 JSON Schema，各种 Agent 框架各自为战。直到 Anthropic 提出 MCP（Model Context Protocol）——一个统一的、开源的、标准化的 Agent 连接协议。
 
 ### MCP 的核心愿景
 
@@ -24,59 +24,59 @@ MCP 的目标很简单但影响深远：
 
 > "让任何 AI 应用都能以统一方式连接任何数据源和工具，就像 USB-C 统一了物理接口一样。"
 
-**三大关键价值：**
+三大关键价值：
 
-1. **标准化连接**：一个 MCP Server 可以被 Claude Desktop、Cursor、任何支持 MCP 的 Agent 直接使用
-2. **安全隔离**：MCP 在 Agent 和工具之间提供安全层，控制权限、验证输入、限制访问范围
-3. **能力发现**：Agent 可以自动发现 MCP Server 提供了哪些工具和资源，无需硬编码
+1. 标准化连接：一个 MCP Server 可以被 Claude Desktop、Cursor、任何支持 MCP 的 Agent 直接使用
+2. 安全隔离：MCP 在 Agent 和工具之间提供安全层，控制权限、验证输入、限制访问范围
+3. 能力发现：Agent 可以自动发现 MCP Server 提供了哪些工具和资源，无需硬编码
 
 ### MCP 与传统 API 集成的本质区别
 
 | 维度 | 传统 API 集成 | MCP 协议 |
 |------|-------------|---------|
-| **集成方式** | 每个工具单独写适配器 | 统一协议，一次实现处处可用 |
-| **能力发现** | 需要查阅文档/API 文档 | 自动 discovery，Agent 自主探索 |
-| **上下文管理** | 手动管理 token 和上下文 | 协议层自动管理资源引用 |
-| **安全模型** | API Key 直接暴露给 Agent | MCP Server 作为安全代理层 |
-| **多 Agent 支持** | 每个 Agent 框架单独适配 | 一个 Server 服务所有 MCP 客户端 |
-| **协议标准化** | 各框架自定义格式 | 标准化 JSON-RPC 2.0 |
-| **部署复杂度** | N × M 个集成点 | N + M 个组件（Server + Client） |
+| 集成方式 | 每个工具单独写适配器 | 统一协议，一次实现处处可用 |
+| 能力发现 | 需要查阅文档/API 文档 | 自动 discovery，Agent 自主探索 |
+| 上下文管理 | 手动管理 token 和上下文 | 协议层自动管理资源引用 |
+| 安全模型 | API Key 直接暴露给 Agent | MCP Server 作为安全代理层 |
+| 多 Agent 支持 | 每个 Agent 框架单独适配 | 一个 Server 服务所有 MCP 客户端 |
+| 协议标准化 | 各框架自定义格式 | 标准化 JSON-RPC 2.0 |
+| 部署复杂度 | N × M 个集成点 | N + M 个组件（Server + Client） |
 
-**关键洞察**：MCP 不是替代 API，而是**在 API 之上加了一层 Agent 友好的抽象**。你的数据库仍然通过 REST API 暴露数据，但 MCP Server 将这些 REST API 转换为 Agent 可以理解的工具和资源。`
+关键洞察：MCP 不是替代 API，而是在 API 之上加了一层 Agent 友好的抽象。你的数据库仍然通过 REST API 暴露数据，但 MCP Server 将这些 REST API 转换为 Agent 可以理解的工具和资源。`
     },
     {
       title: "MCP 协议架构详解",
-      body: `MCP 采用**客户端-服务器-主机（Client-Server-Host）**三层架构：
+      body: `MCP 采用客户端-服务器-主机（Client-Server-Host）三层架构：
 
 ### 三层模型
 ### 三层职责
 
-**1. Host（宿主应用）**
+1. Host（宿主应用）
 - 运行 LLM 的应用程序（Claude Desktop、Cursor、VS Code 等）
 - 负责管理多个 MCP Client
 - 处理用户界面和交互流程
 
-**2. Client（客户端）**
+2. Client（客户端）
 - 实现 MCP 协议的客户端逻辑
 - 连接到多个 MCP Server
-- 负责**能力发现**（Discovery）：询问 Server 提供了什么
-- 负责**安全控制**：管理权限、过滤请求、限制访问
+- 负责能力发现（Discovery）：询问 Server 提供了什么
+- 负责安全控制：管理权限、过滤请求、限制访问
 
-**3. Server（服务端）**
+3. Server（服务端）
 - 暴露具体的工具（Tools）、资源（Resources）、提示词（Prompts）
 - 实现实际的业务逻辑
 - 可以是本地进程、远程 HTTP 服务、或 SSE 端点
 
 ### JSON-RPC 2.0 通信机制
 
-MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
+MCP 基于 JSON-RPC 2.0 协议，所有通信通过标准 JSON 格式：
 
-**请求格式：**
-**响应格式：**
-**传输层支持：**
-- **stdio**：标准输入输出（本地进程）
-- **SSE**（Server-Sent Events）：HTTP 长连接（远程服务）
-- **WebSocket**：双向通信（实时交互）`,
+请求格式：
+响应格式：
+传输层支持：
+- stdio：标准输入输出（本地进程）
+- SSE（Server-Sent Events）：HTTP 长连接（远程服务）
+- WebSocket：双向通信（实时交互）`,
     code: [
       {
         lang: "text",
@@ -131,9 +131,9 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
 
 ### 1. Tools（工具）—— Agent 的「双手」
 
-工具是 Agent 可以**主动调用**的功能。类比：Agent 说"我需要搜索 GitHub"，Client 就调用对应的 MCP Tool。
+工具是 Agent 可以主动调用的功能。类比：Agent 说"我需要搜索 GitHub"，Client 就调用对应的 MCP Tool。
 
-**典型用例：**
+典型用例：
 - 代码仓库操作（git clone、commit、push）
 - 文件读写
 - API 调用（数据库查询、HTTP 请求）
@@ -141,9 +141,9 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
 
 ### 2. Resources（资源）—— Agent 的「眼睛」
 
-资源是 Agent 可以**读取**的数据。类比：Agent 说"我想看看这个文件的内容"。
+资源是 Agent 可以读取的数据。类比：Agent 说"我想看看这个文件的内容"。
 
-**典型用例：**
+典型用例：
 - 文件系统内容
 - 数据库记录
 - API 响应数据
@@ -153,7 +153,7 @@ MCP 基于 **JSON-RPC 2.0** 协议，所有通信通过标准 JSON 格式：
 
 提示词是预定义的交互模板，帮助 Agent 更好地完成特定任务。
 
-**典型用例：**
+典型用例：
 - 代码审查模板
 - Bug 修复工作流
 - 文档生成模板`
@@ -412,34 +412,34 @@ if __name__ == "__main__":
 
 | 类别 | 项目 | 描述 | Stars |
 |------|------|------|-------|
-| **协议标准** | MCP Specification | Anthropic 官方协议规范 | 25K+ |
-| **Python SDK** | mcp (Python) | 官方 Python SDK | 15K+ |
-| **TypeScript SDK** | @modelcontextprotocol/sdk | 官方 TS SDK | 20K+ |
-| **Claude Desktop** | Claude Desktop MCP | Claude 原生 MCP 支持 | 内置 |
-| **Cursor** | Cursor MCP | Cursor IDE 集成 | 内置 |
-| **n8n** | n8n MCP | 工作流自动化 MCP | 184K |
+| 协议标准 | MCP Specification | Anthropic 官方协议规范 | 25K+ |
+| Python SDK | mcp (Python) | 官方 Python SDK | 15K+ |
+| TypeScript SDK | @modelcontextprotocol/sdk | 官方 TS SDK | 20K+ |
+| Claude Desktop | Claude Desktop MCP | Claude 原生 MCP 支持 | 内置 |
+| Cursor | Cursor MCP | Cursor IDE 集成 | 内置 |
+| n8n | n8n MCP | 工作流自动化 MCP | 184K |
 | **LangChain** | LangChain MCP | 框架级 MCP 支持 | 90K+ |
-| **社区 Server** | various | 数据库、Git、Slack 等 | 快速增长 |
+| 社区 Server | various | 数据库、Git、Slack 等 | 快速增长 |
 
 ### 热门 MCP Server 类型
 
-1. **文件系统**：读写本地文件、目录遍历
-2. **数据库**：PostgreSQL、MySQL、SQLite 查询
-3. **Git**：仓库操作、diff、commit 历史
-4. **Web 搜索**：Google、Bing、Perplexity 搜索
-5. **代码工具**：lint、format、test 运行
-6. **API 集成**：Slack、GitHub、Notion、Figma
-7. **系统工具**：终端命令、进程管理
+1. 文件系统：读写本地文件、目录遍历
+2. 数据库：PostgreSQL、MySQL、SQLite 查询
+3. Git：仓库操作、diff、commit 历史
+4. Web 搜索：Google、Bing、Perplexity 搜索
+5. 代码工具：lint、format、test 运行
+6. API 集成：Slack、GitHub、Notion、Figma
+7. 系统工具：终端命令、进程管理
 
 ### MCP 与其他协议的竞争/互补
 
 | 协议 | 定位 | 与 MCP 关系 |
 |------|------|------------|
-| **MCP** | Agent-工具连接 | 标准协议，专注 Agent 场景 |
-| **OpenAPI** | REST API 描述 | 互补：MCP 可消费 OpenAPI |
-| **gRPC** | 高性能 RPC | 互补：MCP 可用 gRPC 传输 |
-| **LangChain Tools** | 框架内工具 | 竞争/兼容：LangChain 已支持 MCP |
-| **Function Calling** | 模型原生工具 | 互补：MCP 可作为 Function 来源 |`
+| MCP | Agent-工具连接 | 标准协议，专注 Agent 场景 |
+| OpenAPI | REST API 描述 | 互补：MCP 可消费 OpenAPI |
+| gRPC | 高性能 RPC | 互补：MCP 可用 gRPC 传输 |
+| LangChain Tools | 框架内工具 | 竞争/兼容：LangChain 已支持 MCP |
+| Function Calling | 模型原生工具 | 互补：MCP 可作为 Function 来源 |`
     },
     {
       title: "MCP 安全模型与最佳实践",
@@ -448,10 +448,10 @@ if __name__ == "__main__":
 ### 安全架构
 ### 安全最佳实践
 
-**1. 最小权限原则**
-**2. 输入验证**
-**3. 敏感信息脱敏**
-**4. 审计日志**`,
+1. 最小权限原则
+2. 输入验证
+3. 敏感信息脱敏
+4. 审计日志`,
     code: [
       {
         lang: "text",
@@ -569,23 +569,23 @@ Simon Willison 在 2026 年 4 月引用的 Matt Webb 观点：
 
 > "Headless services are about to become much more common — because using personal AIs is a better experience for users than using services directly."
 
-**Headless AI 的核心思想：**
+Headless AI 的核心思想：
 - 服务不再提供 UI，而是暴露 API/MCP/CLI
 - AI Agent 直接通过 API 与服务交互
 - 用户通过个人 AI 助手（如 OpenClaw）间接使用服务
 
 ### MCP + Headless 架构
-**这个架构的优势：**
+这个架构的优势：
 
-1. **统一入口**：用户只需要一个 AI 助手，就能访问所有服务
-2. **自然语言交互**：用自然语言代替点击和表单
-3. **自动化工作流**：Agent 可以跨多个服务编排复杂流程
-4. **权限集中管理**：在 MCP Client 层统一控制所有工具的访问权限
+1. 统一入口：用户只需要一个 AI 助手，就能访问所有服务
+2. 自然语言交互：用自然语言代替点击和表单
+3. 自动化工作流：Agent 可以跨多个服务编排复杂流程
+4. 权限集中管理：在 MCP Client 层统一控制所有工具的访问权限
 
 ### 构建 Headless MCP 服务
 
 下面是一个将现有 REST API 转换为 MCP Server 的示例：
-**部署方式：**
+部署方式：
 - 本地：通过 stdio 连接
 - 远程：通过 SSE 或 WebSocket
 - 容器化：Docker + Kubernetes 部署`,
@@ -658,23 +658,23 @@ if __name__ == "__main__":
       title: "MCP vs 其他 Agent 工具方案的全面对比",
       body: `| 维度 | MCP | LangChain Tools | OpenAI Function Calling | AutoGPT Tools |
 |------|-----|-----------------|------------------------|---------------|
-| **标准化程度** | ⭐⭐⭐⭐⭐ 协议标准 | ⭐⭐⭐ 框架内标准 | ⭐⭐⭐⭐ OpenAI 生态 | ⭐⭐ 自定义格式 |
-| **跨框架兼容** | ✅ 所有 MCP 客户端 | ❌ 仅 LangChain | ❌ 仅 OpenAI 模型 | ❌ 仅 AutoGPT |
-| **安全模型** | ✅ 协议层安全 | ⚠️ 依赖框架实现 | ⚠️ 模型层有限控制 | ❌ 基本无安全层 |
-| **能力发现** | ✅ 自动 Discovery | ⚠️ 手动注册 | ✅ 自动发现 | ⚠️ 部分自动 |
-| **远程部署** | ✅ SSE/WebSocket | ⚠️ 需要额外配置 | ❌ 仅本地 | ❌ 仅本地 |
-| **社区生态** | 📈 快速增长 | ✅ 成熟 | ✅ 成熟 | 📉 减少 |
-| **学习曲线** | 中等 | 低（框架内） | 低 | 中等 |
-| **生产就绪** | ✅ 是 | ✅ 是 | ✅ 是 | ⚠️ 实验性 |
-| **多工具连接** | ✅ 一个 Client 连多个 Server | ⚠️ 需手动集成 | ❌ 每次定义 | ⚠️ 有限支持 |
-| **版本控制** | ✅ 协议版本化 | ⚠️ 框架版本绑定 | ✅ API 版本化 | ❌ 无 |
+| 标准化程度 | ⭐⭐⭐⭐⭐ 协议标准 | ⭐⭐⭐ 框架内标准 | ⭐⭐⭐⭐ OpenAI 生态 | ⭐⭐ 自定义格式 |
+| 跨框架兼容 | ✅ 所有 MCP 客户端 | ❌ 仅 LangChain | ❌ 仅 OpenAI 模型 | ❌ 仅 AutoGPT |
+| 安全模型 | ✅ 协议层安全 | ⚠️ 依赖框架实现 | ⚠️ 模型层有限控制 | ❌ 基本无安全层 |
+| 能力发现 | ✅ 自动 Discovery | ⚠️ 手动注册 | ✅ 自动发现 | ⚠️ 部分自动 |
+| 远程部署 | ✅ SSE/WebSocket | ⚠️ 需要额外配置 | ❌ 仅本地 | ❌ 仅本地 |
+| 社区生态 | 📈 快速增长 | ✅ 成熟 | ✅ 成熟 | 📉 减少 |
+| 学习曲线 | 中等 | 低（框架内） | 低 | 中等 |
+| 生产就绪 | ✅ 是 | ✅ 是 | ✅ 是 | ⚠️ 实验性 |
+| 多工具连接 | ✅ 一个 Client 连多个 Server | ⚠️ 需手动集成 | ❌ 每次定义 | ⚠️ 有限支持 |
+| 版本控制 | ✅ 协议版本化 | ⚠️ 框架版本绑定 | ✅ API 版本化 | ❌ 无 |
 
 ### 选择建议
 
-- **新项目**：优先选择 MCP，标准化 + 跨框架兼容是长期优势
-- **已有 LangChain 项目**：可以逐步迁移到 MCP（LangChain 已支持 MCP）
-- **仅用 OpenAI**：Function Calling 足够，但考虑 MCP 做未来准备
-- **多 Agent 协作**：MCP 是最佳选择（统一协议）`
+- 新项目：优先选择 MCP，标准化 + 跨框架兼容是长期优势
+- 已有 LangChain 项目：可以逐步迁移到 MCP（LangChain 已支持 MCP）
+- 仅用 OpenAI：Function Calling 足够，但考虑 MCP 做未来准备
+- 多 Agent 协作：MCP 是最佳选择（统一协议）`
     },
     {
       title: "总结与行动指南",
@@ -684,21 +684,21 @@ if __name__ == "__main__":
 
 ### 关键要点回顾
 
-1. **MCP 是什么**：标准化的 Agent-工具连接协议，基于 JSON-RPC 2.0
-2. **三层架构**：Host（应用）→ Client（协议）→ Server（工具）
-3. **三大能力**：Tools（调用）、Resources（读取）、Prompts（模板）
-4. **安全模型**：Client 层权限控制 + Server 层执行隔离
-5. **生态现状**：Claude Desktop、Cursor、n8n、LangChain 均已支持
-6. **未来趋势**：MCP + Headless AI = Agent 原生服务架构
+1. MCP 是什么：标准化的 Agent-工具连接协议，基于 JSON-RPC 2.0
+2. 三层架构：Host（应用）→ Client（协议）→ Server（工具）
+3. 三大能力：Tools（调用）、Resources（读取）、Prompts（模板）
+4. 安全模型：Client 层权限控制 + Server 层执行隔离
+5. 生态现状：Claude Desktop、Cursor、n8n、LangChain 均已支持
+6. 未来趋势：MCP + Headless AI = Agent 原生服务架构
 
 ### 下一步行动
 
-1. **体验 MCP**：在 Claude Desktop 中配置一个 MCP Server
-2. **构建第一个 Server**：用 Python 或 TypeScript 写一个简单工具
-3. **集成现有服务**：将你的 API/数据库包装为 MCP Server
-4. **关注生态**：关注 MCP 社区的最新 Server 实现
+1. 体验 MCP：在 Claude Desktop 中配置一个 MCP Server
+2. 构建第一个 Server：用 Python 或 TypeScript 写一个简单工具
+3. 集成现有服务：将你的 API/数据库包装为 MCP Server
+4. 关注生态：关注 MCP 社区的最新 Server 实现
 
-MCP 不是未来的技术——它**就是现在**。每个 AI 开发者都应该了解并使用它。`
+MCP 不是未来的技术——它就是现在。每个 AI 开发者都应该了解并使用它。`
     },
     {
         title: "架构图示",

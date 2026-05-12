@@ -27,7 +27,7 @@ def visualize_loss_landscape():
         return (w - 3) ** 2 + 2
 
     def rosenbrock(x, y):
-        return (1 - x) ** 2 + 100 * (y - x ** 2) ** 2
+        return (1 - x)  2 + 100 * (y - x  2) ** 2
 
     # 单变量损失函数（如 MSE 在单层线性模型中）
     w_range = np.linspace(-5, 10, 100)
@@ -100,11 +100,11 @@ loss.backward()  # 梯度可以反向传播` },
         },
         {
             title: "2. 回归损失：MSE、MAE、Huber 与 Smooth L1",
-            body: `回归任务的目标是预测连续值，回归损失衡量预测值与真实值之间的数值差距。**MSE（均方误差）**是最经典的回归损失：L = (1/n) Σ(y_i - ŷ_i)²。MSE 的梯度为 2(y - ŷ)，误差越大梯度越大——这既是优点也是缺点。优点在于它对大误差给予更大的惩罚，推动模型快速修正严重错误；缺点在于它对异常值极度敏感，一个极端离群点就能把模型拉偏。
+            body: `回归任务的目标是预测连续值，回归损失衡量预测值与真实值之间的数值差距。MSE（均方误差）是最经典的回归损失：L = (1/n) Σ(y_i - ŷ_i)²。MSE 的梯度为 2(y - ŷ)，误差越大梯度越大——这既是优点也是缺点。优点在于它对大误差给予更大的惩罚，推动模型快速修正严重错误；缺点在于它对异常值极度敏感，一个极端离群点就能把模型拉偏。
 
-**MAE（平均绝对误差）**：L = (1/n) Σ|y_i - ŷ_i|。MAE 的梯度恒为 ±1，不受误差大小影响。这使得 MAE 对异常值更加鲁棒——无论误差是 1 还是 1000，梯度都是 1。但恒定的梯度也意味着 MAE 在接近最优解时收敛较慢，且在零点不可微（实际实现中用次梯度处理）。
+MAE（平均绝对误差）：L = (1/n) Σ|y_i - ŷ_i|。MAE 的梯度恒为 ±1，不受误差大小影响。这使得 MAE 对异常值更加鲁棒——无论误差是 1 还是 1000，梯度都是 1。但恒定的梯度也意味着 MAE 在接近最优解时收敛较慢，且在零点不可微（实际实现中用次梯度处理）。
 
-**Huber Loss**和**Smooth L1**是 MSE 和 MAE 的折中方案。它们在误差小时使用 MSE（保证零点可微且收敛快），在误差大时使用 MAE（限制梯度上界，对异常值鲁棒）。两者的区别在于过渡点：Huber Loss 的过渡点是超参数 δ，而 Smooth L1 固定在 δ=1。Smooth L1 在 Faster R-CNN 等目标检测模型中被广泛使用。`,
+Huber Loss和Smooth L1是 MSE 和 MAE 的折中方案。它们在误差小时使用 MSE（保证零点可微且收敛快），在误差大时使用 MAE（限制梯度上界，对异常值鲁棒）。两者的区别在于过渡点：Huber Loss 的过渡点是超参数 δ，而 Smooth L1 固定在 δ=1。Smooth L1 在 Faster R-CNN 等目标检测模型中被广泛使用。`,
             code: [
                 { lang: "python", code: `import numpy as np
 
@@ -121,7 +121,7 @@ def huber_loss(y_true, y_pred, delta=1.0):
     error = y_true - y_pred
     is_small = np.abs(error) <= delta
     return np.mean(
-        np.where(is_small, 0.5 * error ** 2, delta * np.abs(error) - 0.5 * delta ** 2)
+        np.where(is_small, 0.5 * error  2, delta * np.abs(error) - 0.5 * delta  2)
     )
 
 def smooth_l1_loss(y_true, y_pred, beta=1.0):
@@ -197,11 +197,11 @@ print(f"none: {mse_none(y_pred, y_true)}")           # 每个样本独立损失`
         },
         {
             title: "3. 分类损失：交叉熵、多分类交叉熵与 BCE",
-            body: `分类任务的目标是预测离散类别，分类损失衡量预测概率分布与真实分布之间的差异。**交叉熵**（Cross Entropy）是分类任务的标准选择，它来自信息论——衡量用预测分布 q 编码真实分布 p 所需的额外比特数。在深度学习中，真实分布通常是 one-hot 编码，交叉熵简化为 -log(q_c)，其中 q_c 是模型对正确类别 c 的预测概率。
+            body: `分类任务的目标是预测离散类别，分类损失衡量预测概率分布与真实分布之间的差异。交叉熵（Cross Entropy）是分类任务的标准选择，它来自信息论——衡量用预测分布 q 编码真实分布 p 所需的额外比特数。在深度学习中，真实分布通常是 one-hot 编码，交叉熵简化为 -log(q_c)，其中 q_c 是模型对正确类别 c 的预测概率。
 
-**二分类交叉熵（BCE）**处理两个类别的情况。PyTorch 提供了 BCELoss 和 BCEWithLogitsLoss 两种实现。BCELoss 要求输入已经是概率值（经过 Sigmoid），而 BCEWithLogitsLoss 接受原始 logit 值，内部自动做 Sigmoid。**强烈建议使用 BCEWithLogitsLoss**——它将 Sigmoid 和 BCE 合并为一个操作，数值稳定性更好（通过 LogSumExp 技巧避免 log(sigmoid(x)) 在极端值下的数值溢出）。
+二分类交叉熵（BCE）处理两个类别的情况。PyTorch 提供了 BCELoss 和 BCEWithLogitsLoss 两种实现。BCELoss 要求输入已经是概率值（经过 Sigmoid），而 BCEWithLogitsLoss 接受原始 logit 值，内部自动做 Sigmoid。强烈建议使用 BCEWithLogitsLoss——它将 Sigmoid 和 BCE 合并为一个操作，数值稳定性更好（通过 LogSumExp 技巧避免 log(sigmoid(x)) 在极端值下的数值溢出）。
 
-**多分类交叉熵（CrossEntropyLoss）**处理 K 个互斥类别的情况。PyTorch 的 CrossEntropyLoss 内部自动做 Softmax + NLLLoss，因此输入是原始 logit 值（不需要手动 Softmax），标签是类别索引（不需要 one-hot 编码）。这个设计避免了手动 Softmax 可能带来的数值不稳定和效率损失。`,
+多分类交叉熵（CrossEntropyLoss）处理 K 个互斥类别的情况。PyTorch 的 CrossEntropyLoss 内部自动做 Softmax + NLLLoss，因此输入是原始 logit 值（不需要手动 Softmax），标签是类别索引（不需要 one-hot 编码）。这个设计避免了手动 Softmax 可能带来的数值不稳定和效率损失。`,
             code: [
                 { lang: "python", code: `import numpy as np
 
@@ -293,9 +293,9 @@ Softmax + NLL 合并"]
         },
         {
             title: "4. Focal Loss：解决类别不平衡",
-            body: `Focal Loss 由 Kaiming He 等人在 2017 年提出，专门针对**极度类别不平衡**的目标检测场景（如 RetinaNet 中前景:背景 ≈ 1:1000）。它的核心思想极其简洁但深刻：让模型专注于「难分样本」，而不是被大量「易分样本」淹没。
+            body: `Focal Loss 由 Kaiming He 等人在 2017 年提出，专门针对极度类别不平衡的目标检测场景（如 RetinaNet 中前景:背景 ≈ 1:1000）。它的核心思想极其简洁但深刻：让模型专注于「难分样本」，而不是被大量「易分样本」淹没。
 
-Focal Loss 在标准交叉熵基础上引入了一个**调制因子**（modulating factor）：FL(p_t) = -α_t · (1 - p_t)^γ · log(p_t)。其中 p_t 是模型对真实类别的预测概率（越大表示越确信）。当 p_t 接近 1（易分样本）时，(1 - p_t)^γ 趋近于 0，该样本的损失被大幅压缩；当 p_t 接近 0（难分样本）时，(1 - p_t)^γ 接近 1，损失几乎不受影响。超参数 γ 控制「聚焦程度」——γ=0 退化为标准交叉熵，γ=2 是论文推荐值。
+Focal Loss 在标准交叉熵基础上引入了一个调制因子（modulating factor）：FL(p_t) = -α_t · (1 - p_t)^γ · log(p_t)。其中 p_t 是模型对真实类别的预测概率（越大表示越确信）。当 p_t 接近 1（易分样本）时，(1 - p_t)^γ 趋近于 0，该样本的损失被大幅压缩；当 p_t 接近 0（难分样本）时，(1 - p_t)^γ 接近 1，损失几乎不受影响。超参数 γ 控制「聚焦程度」——γ=0 退化为标准交叉熵，γ=2 是论文推荐值。
 
 参数 α 是类别平衡因子，给少数类更大的权重。在实际应用中，α 和 γ 联合使用效果最佳：α 解决类别数量不平衡，γ 解决难易样本不平衡。Focal Loss 在目标检测、医学图像分割、欺诈检测等类别不平衡严重的任务中表现卓越。`,
             code: [
@@ -401,9 +401,9 @@ print(f"Focal Loss: {loss:.4f}")` },
             title: "5. 对比损失：Triplet Loss 与 Contrastive Loss",
             body: `对比学习（Contrastive Learning）的目标不是预测标签，而是学习「好的特征表示」——让相似的样本在特征空间中靠近，不相似的样本远离。这种学习范式在自监督学习、人脸识别、图像检索等领域取得了巨大成功。
 
-**Contrastive Loss**是最基础的对比损失，它成对地处理样本：给定一对样本 (x₁, x₂) 和标签 y（1 表示相似，0 表示不相似），损失函数鼓励相似样本的距离趋近于 0，不相似样本的距离大于边界 margin。损失公式为 L = y·d² + (1-y)·max(0, margin - d)²，其中 d 是两个样本特征之间的距离。这个损失的核心直觉是：相似样本要「拉到一起」，不相似样本只要「推开到 margin 以外」即可，不需要无限远。
+Contrastive Loss是最基础的对比损失，它成对地处理样本：给定一对样本 (x₁, x₂) 和标签 y（1 表示相似，0 表示不相似），损失函数鼓励相似样本的距离趋近于 0，不相似样本的距离大于边界 margin。损失公式为 L = y·d² + (1-y)·max(0, margin - d)²，其中 d 是两个样本特征之间的距离。这个损失的核心直觉是：相似样本要「拉到一起」，不相似样本只要「推开到 margin 以外」即可，不需要无限远。
 
-**Triplet Loss**是 Contrastive Loss 的升级版，它同时考虑三个样本：锚点（Anchor）、正样本（Positive，与锚点同类）、负样本（Negative，与锚点不同类）。损失函数要求：d(A, P) + margin < d(A, N)。也就是说，锚点到正样本的距离加上 margin 必须小于锚点到负样本的距离。如果这个条件已经满足（三元组已经是「好」的），损失为零；否则损失为两者之差。Triplet Mining（挖掘难三元组）是提升效果的关键策略。`,
+Triplet Loss是 Contrastive Loss 的升级版，它同时考虑三个样本：锚点（Anchor）、正样本（Positive，与锚点同类）、负样本（Negative，与锚点不同类）。损失函数要求：d(A, P) + margin < d(A, N)。也就是说，锚点到正样本的距离加上 margin 必须小于锚点到负样本的距离。如果这个条件已经满足（三元组已经是「好」的），损失为零；否则损失为两者之差。Triplet Mining（挖掘难三元组）是提升效果的关键策略。`,
             code: [
                 { lang: "python", code: `import numpy as np
 
@@ -412,7 +412,7 @@ def contrastive_loss(d, y, margin=1.0):
     # y=1: 相似样本，拉近
     # y=0: 不相似样本，推开到 margin 外
     return np.mean(
-        y * (d ** 2) + (1 - y) * (np.maximum(0, margin - d) ** 2)
+        y * (d  2) + (1 - y) * (np.maximum(0, margin - d)  2)
     )
 
 def triplet_loss(anchor, positive, negative, margin=1.0):
@@ -499,9 +499,9 @@ def hard_triplet_mining(anchor, positive, negative, margin=1.0):
         },
         {
             title: "6. 自定义损失函数：从理论到实现",
-            body: `当标准损失函数无法满足需求时，自定义损失函数是最直接的解决方案。PyTorch 的损失函数本质上就是一个接收预测值和标签、返回标量的函数——关键在于它必须是**可微的**，因为梯度需要反向传播。
+            body: `当标准损失函数无法满足需求时，自定义损失函数是最直接的解决方案。PyTorch 的损失函数本质上就是一个接收预测值和标签、返回标量的函数——关键在于它必须是可微的，因为梯度需要反向传播。
 
-自定义损失函数有两种实现方式：**函数式**和**类式**。函数式实现最简单，只需写一个普通函数，所有操作使用 PyTorch 的 tensor 运算（不能用 NumPy）。类式实现需要继承 nn.Module，实现 forward 方法，适合需要保存状态（如可学习参数）的复杂损失函数。
+自定义损失函数有两种实现方式：函数式和类式。函数式实现最简单，只需写一个普通函数，所有操作使用 PyTorch 的 tensor 运算（不能用 NumPy）。类式实现需要继承 nn.Module，实现 forward 方法，适合需要保存状态（如可学习参数）的复杂损失函数。
 
 自定义损失函数的设计原则：(1) 梯度必须有明确的物理或业务含义——你希望模型如何调整参数？(2) 损失值范围可控，避免梯度爆炸或消失。(3) 在极端情况下（如预测完全错误）不会返回 NaN。设计自定义损失时，建议先用简单的玩具数据验证梯度的方向和大小是否符合预期，再用到真实训练流程中。`,
             code: [
@@ -619,9 +619,9 @@ print(f"Composite Loss: {loss:.4f}")` },
             title: "7. PyTorch 实战：损失函数选择与调优",
             body: `理论最终要落地到实践。本节通过完整的 PyTorch 训练流程，展示如何在真实项目中选择和调优损失函数。关键原则是：从简单开始，逐步复杂化。
 
-**第一阶段：基线模型**。使用标准损失函数（回归用 MSE，分类用 CrossEntropyLoss），不添加任何自定义组件。目标是确认模型架构正确、数据管道通畅、模型能够正常学习。如果基线都无法收敛，说明问题不在损失函数，而在模型或数据。
+第一阶段：基线模型。使用标准损失函数（回归用 MSE，分类用 CrossEntropyLoss），不添加任何自定义组件。目标是确认模型架构正确、数据管道通畅、模型能够正常学习。如果基线都无法收敛，说明问题不在损失函数，而在模型或数据。
 
-**第二阶段：诊断与改进**。分析训练曲线——如果训练损失下降但验证损失上升，可能是过拟合，考虑添加正则化项；如果训练和验证损失都下降缓慢，可能是学习率或损失函数不合适；如果损失震荡，可能是学习率过大或存在梯度爆炸。根据诊断结果，选择合适的改进策略：回归中的异常值 → 改用 Huber/Smooth L1；类别不平衡 → 使用 Focal Loss 或类别权重；需要好的特征表示 → 引入对比损失。`,
+第二阶段：诊断与改进。分析训练曲线——如果训练损失下降但验证损失上升，可能是过拟合，考虑添加正则化项；如果训练和验证损失都下降缓慢，可能是学习率或损失函数不合适；如果损失震荡，可能是学习率过大或存在梯度爆炸。根据诊断结果，选择合适的改进策略：回归中的异常值 → 改用 Huber/Smooth L1；类别不平衡 → 使用 Focal Loss 或类别权重；需要好的特征表示 → 引入对比损失。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn

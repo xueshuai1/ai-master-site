@@ -850,7 +850,7 @@ class AgentConfig:
         try:
             with open(config_path, "r") as f:
                 user_config = yaml.safe_load(f)
-            return {**cls.DEFAULT_CONFIG, **user_config}
+            return {cls.DEFAULT_CONFIG, user_config}
         except FileNotFoundError:
             return cls.DEFAULT_CONFIG
 
