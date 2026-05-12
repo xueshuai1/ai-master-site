@@ -560,11 +560,11 @@ for ref, hyp, desc in test_cases:
         title: "5. Perplexity：语言模型的内在度量",
         body: `Perplexity（困惑度）是语言模型最经典的评估指标。与 BLEU 和 ROUGE 不同，Perplexity 不比较生成文本与参考文本的匹配程度，而是直接衡量模型对测试数据的惊讶程度——模型对测试文本预测得越好，Perplexity 越低。
 
-直觉理解：假设你的语言模型像一个猜词游戏玩家。给定上文 "Today is a beautiful"，模型需要预测下一个词。如果模型正确地给 "day" 分配了很高的概率（如 0.8），说明它不困惑；如果它给 "day" 的概率很低（如 0.001），说明它很困惑。Perplexity 就是对这种困惑程度的量化。
+**直觉理解**：假设你的语言模型像一个猜词游戏玩家。给定上文 "Today is a beautiful"，模型需要预测下一个词。如果模型正确地给 "day" 分配了很高的概率（如 0.8），说明它不困惑；如果它给 "day" 的概率很低（如 0.001），说明它很困惑。Perplexity 就是对这种困惑程度的量化。
 
-数学定义：Perplexity = exp(-(1/N) * Σ log P(w_i | context))，等价于 2 的交叉熵次方。可以理解为等效的随机选择数量——PP = 100 意味着模型在每个位置上相当于从 100 个词中等概率随机选择。
+**数学定义**：Perplexity = exp(-(1/N) * Σ log P(w_i | context))，等价于 2 的交叉熵次方。可以理解为等效的随机选择数量——PP = 100 意味着模型在每个位置上相当于从 100 个词中等概率随机选择。
 
-典型 Perplexity 值：在 Penn Treebank 上，n-gram 模型 PP 约 100-200，RNN 约 50-100，Transformer 约 10-30，GPT-4 等超大模型可降至 5 以下。PP 越低越好，但不同测试集上的 PP 不可比较。`,
+典型 Perplexity 值：在 Penn Treebank 上，n-gram 模型 PP 约 100-200，RNN 约 50-100，**Transformer** 约 10-30，**GPT-4** 等超大模型可降至 5 以下。PP 越低越好，但不同测试集上的 PP 不可比较。`,
         code: [
           {
             lang: "python",
@@ -678,9 +678,9 @@ print("5. Sensitive to vocabulary size")`,
         title: "6. BERTScore：基于语义的革命性评估",
         body: `BERTScore 由 Zhang 等人于 2020 年提出，代表了 NLP 评估指标的一次范式转变——从基于表面匹配到基于语义理解。
 
-核心思想：用预训练语言模型（如 BERT、RoBERTa）将候选文本和参考文本中的每个词映射为上下文感知的嵌入向量，然后计算两个文本之间嵌入向量的余弦相似度。与 BLEU 不同，BERTScore 不要求词完全相同——"feline" 和 "cat" 在 BERT 的嵌入空间中天然相近，因此能获得高相似度。
+**核心思想**：用预训练语言模型（如 BERT、RoBERTa）将候选文本和参考文本中的每个词映射为上下文感知的嵌入向量，然后计算两个文本之间嵌入向量的余弦相似度。与 BLEU 不同，BERTScore 不要求词完全相同——"feline" 和 "cat" 在 BERT 的嵌入空间中天然相近，因此能获得高相似度。
 
-计算流程：用 BERT 对候选和参考分别编码，得到每个 token 的上下文嵌入；对候选中的每个 token，在参考中找到余弦相似度最高的 token，反之亦然；候选到参考的匹配率是精度，参考到候选是召回率；调和平均得到最终 BERTScore。
+**计算流程**：用 BERT 对候选和参考分别编码，得到每个 token 的上下文嵌入；对候选中的每个 token，在参考中找到余弦相似度最高的 token，反之亦然；候选到参考的匹配率是精度，参考到候选是召回率；调和平均得到最终 BERTScore。
 
 研究表明，BERTScore 与人工评估的相关性显著高于 BLEU 和 METEOR。在 WMT 翻译评估任务中，BERTScore 与人工评估的 Kendall tau 相关系数约 0.45-0.55，而 BLEU 只有 0.3-0.4。这是因为 BERTScore 真正理解了语义。后续方法如 BLEURT 和 COMET 进一步提升了与人工评估的相关性。`,
         code: [

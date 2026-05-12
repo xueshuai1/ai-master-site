@@ -7,7 +7,7 @@ const content: ArticleSection[] = [
 
 但真正让这件事成为 AI 安全领域里程碑的，是这些漏洞的发现方式：
 
-> Mozilla 与 Anthropic 合作，使用 Claude Mythos Preview（早期预览版）对 Firefox 进行了首次 AI 辅助安全评估，单次评估就发现了 271 个漏洞。
+> Mozilla 与 **Anthropic** 合作，使用 **Claude** Mythos Preview（早期预览版）对 Firefox 进行了首次 AI 辅助安全评估，单次评估就发现了 271 个漏洞。
 
 Firefox CTO Bobby Holley 在官方博客中写道：
 
@@ -15,7 +15,7 @@ Firefox CTO Bobby Holley 在官方博客中写道：
 
 这不是简单的"AI 找到了一些 bug"。这是一次范式转移——从人工安全审计到 AI 辅助安全评估的转折点。
 
-> 本文核心贡献： 我们将深度解析 Claude Mythos 的技术原理、Firefox 271 个漏洞的分类分析、AI 安全评估与传统方法的对比，并提供完整的 Python 实战代码，帮助开发者在自己的项目中应用类似的 AI 安全审计策略。`,
+> 本文核心贡献： 我们将深度解析 **Claude** Mythos 的技术原理、Firefox 271 个漏洞的分类分析、AI 安全评估与传统方法的对比，并提供完整的 Python 实战代码，帮助开发者在自己的项目中应用类似的 AI 安全审计策略。`,
     tip: `快速结论：
 - AI 安全工具不再是"玩具"——Claude Mythos 在单个项目中发现了 271 个漏洞，远超人类团队数月的工作量
 - Firefox 150 是目前已知因 AI 安全评估而修复最多漏洞的软件版本
@@ -24,7 +24,7 @@ Firefox CTO Bobby Holley 在官方博客中写道：
   },
   {
     title: "一、什么是 Claude Mythos？AI 安全评估的新范式",
-    body: `Claude Mythos 是 Anthropic 开发的 AI 安全评估系统，专门用于对大型代码库进行深度的安全审计。虽然 Anthropic 尚未公开 Mythos 的全部技术细节，但从 Firefox 评估结果和业界信息中，我们可以还原其核心架构。
+    body: `**Claude** Mythos 是 **Anthropic** 开发的 AI 安全评估系统，专门用于对大型代码库进行深度的安全审计。虽然 **Anthropic** 尚未公开 Mythos 的全部技术细节，但从 Firefox 评估结果和业界信息中，我们可以还原其核心架构。
 
 与传统安全工具的本质区别：
 
@@ -42,7 +42,7 @@ Firefox CTO Bobby Holley 在官方博客中写道：
 - 需要大量的运行时间和计算资源
 - 无法理解"什么是有意义的测试输入"
 
-Claude Mythos（AI 安全评估）：
+**Claude** Mythos（AI 安全评估）：
 - 基于 LLM 的代码理解能力，可以理解整个代码库的架构和数据流
 - 能够发现"未知的未知"——从未见过的新类型漏洞
 - 结合静态分析和语义推理，能够追踪跨模块的复杂数据流
@@ -67,12 +67,12 @@ Claude Mythos（AI 安全评估）：
 
 按严重程度分布：
 
-Firefox 安全公告将漏洞分为三个级别：High（高危）、Moderate（中危）、Low（低危）。其中 Claude Mythos 团队（Evyatar Ben Asher, Keane Lucas, Nicholas Carlini 等 7 人）报告的 CVE 涵盖了多种高危类型。
+Firefox 安全公告将漏洞分为三个级别：High（高危）、Moderate（中危）、Low（低危）。其中 **Claude** Mythos 团队（Evyatar Ben Asher, Keane Lucas, Nicholas Carlini 等 7 人）报告的 CVE 涵盖了多种高危类型。
 
 按漏洞类型分类：
 
 1. Use-After-Free（释放后使用）— CVE-2026-6746, CVE-2026-6754, CVE-2026-6758
-   这是最危险的内存安全漏洞类型之一。在 C/C++ 代码中，当对象被释放后，如果仍有指针引用该对象，攻击者就可以利用这个指针执行任意代码。Claude Mythos 在 DOM、JavaScript Engine 和 WebAssembly 组件中均发现了此类漏洞。
+   这是最危险的内存安全漏洞类型之一。在 C/C++ 代码中，当对象被释放后，如果仍有指针引用该对象，攻击者就可以利用这个指针执行任意代码。**Claude** Mythos 在 DOM、JavaScript Engine 和 WebAssembly 组件中均发现了此类漏洞。
 
 2. Uninitialized Memory（未初始化内存）— CVE-2026-6748, CVE-2026-6749, CVE-2026-6751
    使用未初始化的内存会泄露敏感信息，攻击者可能借此获取栈上的密码、加密密钥或其他敏感数据。
@@ -96,31 +96,31 @@ Firefox 安全公告将漏洞分为三个级别：High（高危）、Moderate（
   },
   {
     title: "三、AI 安全评估的技术原理：Claude Mythos 如何工作？",
-    body: `虽然 Anthropic 尚未完全公开 Mythos 的技术细节，但结合 Bobby Holley 的描述和业界对 AI 代码审计的理解，我们可以推测其核心工作原理。
+    body: `虽然 **Anthropic** 尚未完全公开 Mythos 的技术细节，但结合 Bobby Holley 的描述和业界对 AI 代码审计的理解，我们可以推测其核心工作原理。
 
 AI 安全评估的多阶段架构：
 
-Claude Mythos 的安全评估不太可能是"把代码丢给 LLM 然后问有没有 bug"。更合理的架构是一个多阶段的 pipeline：
+**Claude** Mythos 的安全评估不太可能是"把代码丢给 LLM 然后问有没有 bug"。更合理的架构是一个多阶段的 pipeline：
 
-阶段 1：代码理解与知识图谱构建
+**阶段 1**：代码理解与知识图谱构建
 Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/JavaScript 代码）。这包括：
 - 构建调用图（Call Graph）：理解函数之间的调用关系
 - 构建数据流图（Data Flow Graph）：追踪数据在程序中的流动路径
 - 构建依赖图（Dependency Graph）：理解模块之间的依赖关系
 
-阶段 2：漏洞模式推理
+**阶段 2**：漏洞模式推理
 在理解代码结构的基础上，Mythos 运用其安全推理能力：
 - 识别潜在的危险操作（如指针解引用、内存分配、权限检查）
 - 追踪危险操作的完整生命周期
 - 推断是否存在违反安全不变量的路径
 
-阶段 3：边界条件探索
+**阶段 3**：边界条件探索
 这是 AI 相对于传统工具最大的优势：
 - 理解安全缓解措施的"意图"（而不仅仅是"实现"）
 - 探索缓解措施未覆盖的边界条件
 - 发现多个缓解措施之间的交互漏洞
 
-阶段 4：漏洞验证与报告
+**阶段 4**：漏洞验证与报告
 - 为每个发现的漏洞生成 PoC（概念验证代码）
 - 生成详细的技术报告，包括影响分析和建议修复方案`,
     mermaid: `graph TD
@@ -164,17 +164,17 @@ Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/Jav
   },
   {
     title: "四、实战：构建你的 AI 辅助安全审计工具",
-    body: `虽然我们没有 Claude Mythos 的源码，但我们可以基于开源工具构建一个简易版的 AI 辅助安全审计系统。以下方案结合了静态分析和LLM 代码推理，适用于中小型项目的安全审计。
+    body: `虽然我们没有 **Claude** Mythos 的源码，但我们可以基于开源工具构建一个简易版的 AI 辅助安全审计系统。以下方案结合了静态分析和LLM 代码推理，适用于中小型项目的安全审计。
 
-整体方案：
+**整体方案**：
 
 1. 使用 tree-sitter 解析代码为 AST（抽象语法树）
 2. 使用 CodeQL 进行基础静态分析
-3. 使用 LLM API（Claude/OpenAI）进行深度语义分析
+3. 使用 LLM API（**Claude**/**OpenAI**）进行深度语义分析
 4. 将分析结果聚合为审计报告
 
-步骤 1：环境准备
-步骤 2：代码解析与静态分析`,
+**步骤 1**：环境准备
+**步骤 2**：代码解析与静态分析`,
     code: [
       {
         lang: "python",
@@ -429,9 +429,9 @@ if __name__ == "__main__":
     title: "五、AI 安全评估 vs 传统方法：量化对比",
     body: `Firefox 150 的 271 个漏洞为我们提供了一个罕见的量化对比机会。让我们用数据说话。
 
-发现效率对比：
+**发现效率对比**：
 
-| 指标 | 传统人工审计 | Claude Mythos |
+| 指标 | 传统人工审计 | **Claude** Mythos |
 |------|------------|--------------|
 | Firefox 单版本漏洞发现数 | ~30-80 个 | 271 个 |
 | 评估时间 | 3-6 个月 | 数周（含修复） |
@@ -440,9 +440,9 @@ if __name__ == "__main__":
 | 发现新类型漏洞 | 偶发 | 系统性发现 |
 | 跨模块漏洞发现 | 有限 | 较强 |
 
-Claude Mythos 发现的漏洞类型分析：
+**Claude** Mythos 发现的漏洞类型分析：
 
-从已公开的 CVE 来看，Claude Mythos 团队发现的漏洞有几个显著特点：
+从已公开的 CVE 来看，**Claude** Mythos 团队发现的漏洞有几个显著特点：
 
 1. 集中在关键组件：DOM、JavaScript Engine、WebAssembly、WebRTC —— 这些是浏览器最核心也最复杂的组件
 2. 多种高危类型：Use-After-Free 是 RCE 的主要入口，信息泄露可能泄露用户隐私
@@ -450,13 +450,13 @@ Claude Mythos 发现的漏洞类型分析：
 
 对其他项目的启示：
 
-Claude Mythos 在 Firefox 上的成功意味着：
+**Claude** Mythos 在 Firefox 上的成功意味着：
 
 - 大型 C/C++ 项目：内存安全漏洞仍然普遍存在，AI 审计可以系统性地发现
 - 复杂数据流项目：AI 能够理解复杂的数据流，发现跨模块的边界条件漏洞
 - 已有安全机制的项目：AI 能够发现安全缓解措施的绕过方式
 
-> 核心洞察： Claude Mythos 的成功不在于"替代了人类"，而在于"放大了人类"。Mozilla 的安全团队（包括 Nicholas Carlini 等知名安全研究员）使用 AI 作为工具，将他们的安全专业知识扩展到了前所未有的规模。`,
+**> 核心洞察**： Claude Mythos 的成功不在于"替代了人类"，而在于"放大了人类"。Mozilla 的安全团队（包括 Nicholas Carlini 等知名安全研究员）使用 AI 作为工具，将他们的安全专业知识扩展到了前所未有的规模。`,
     mermaid: `graph LR
     subgraph 传统安全评估
     A1[人工代码审查] --> A2[发现 30-80 个漏洞]
@@ -482,7 +482,7 @@ Claude Mythos 在 Firefox 上的成功意味着：
   },
   {
     title: "六、开发者行动指南：如何应对 AI 安全时代",
-    body: `Claude Mythos 在 Firefox 上的成功是一个信号：AI 安全评估正在成为软件开发的标配。作为开发者，我们需要做好准备。
+    body: `**Claude** Mythos 在 Firefox 上的成功是一个信号：AI 安全评估正在成为软件开发的标配。作为开发者，我们需要做好准备。
 
 对于开源项目维护者：
 
@@ -498,15 +498,15 @@ Claude Mythos 在 Firefox 上的成功意味着：
 
 对于 AI 开发者：
 
-1. 安全是 AI 的核心能力：Claude Mythos 的成功证明了 AI 在安全领域的巨大潜力
+1. 安全是 AI 的核心能力：**Claude** Mythos 的成功证明了 AI 在安全领域的巨大潜力
 2. 关注可解释性：AI 发现的漏洞需要能够被人类理解和验证
 3. 持续改进：AI 安全工具本身也需要持续迭代和优化
 
 > Bobby Holley 的话值得每个安全团队深思： "Defenders finally have a chance to win, decisively." —— 防御者终于有了决定性胜利的机会。这不是终点，而是起点。
 
-总结：
+**总结**：
 
-Firefox 150 + Claude Mythos 的故事告诉我们：AI 不再只是写代码的工具，它正在成为保护代码安全的关键力量。从 271 个漏洞到 Bobby Holley 的"Defenders finally have a chance to win"，我们见证了 AI 安全从概念验证到实战部署的关键转折。
+Firefox 150 + **Claude** Mythos 的故事告诉我们：AI 不再只是写代码的工具，它正在成为保护代码安全的关键力量。从 271 个漏洞到 Bobby Holley 的"Defenders finally have a chance to win"，我们见证了 AI 安全从概念验证到实战部署的关键转折。
 
 对于每一个软件项目来说，问题不再是"是否需要 AI 安全审计"，而是"何时开始"和"如何开始"。`,
     table: {

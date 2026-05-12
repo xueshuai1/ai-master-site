@@ -18,7 +18,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "一、为什么 AI Agent 需要自我进化？",
-    body: `传统 AI Agent 的核心局限在于能力边界固定。无论是 LangChain 的 ReAct Agent、AutoGPT 的任务规划器，还是 Claude 的 Computer Use，它们的能力都受限于预定义的工具集和提示词模板。
+    body: `传统 AI Agent 的核心局限在于能力边界固定。无论是 **LangChain** 的 ReAct Agent、AutoGPT 的任务规划器，还是 **Claude** 的 Computer Use，它们的能力都受限于预定义的工具集和提示词模板。
 
 当遇到超出预设范围的任务时，传统 Agent 只能失败或求助人类。而自我进化 Agent 的核心思想是：Agent 应该能够像生物一样，通过与环境交互不断学习新技能、优化已有能力、适应新的任务域。
 
@@ -42,9 +42,9 @@ const content: ArticleSection[] = [
 
 它的技术架构可以概括为三个层次：
 
-1. 执行层：基础 Agent 循环（观察 → 思考 → 行动 → 观察）
-2. 记忆层：自动捕获所有交互历史，通过 AI 压缩为可检索的知识单元
-3. 成长层：根据任务模式识别，主动构建和索引新的技能模块
+**1. 执行层**：基础 Agent 循环（观察 → 思考 → 行动 → 观察）
+**2. 记忆层**：自动捕获所有交互历史，通过 AI 压缩为可检索的知识单元
+**3. 成长层**：根据任务模式识别，主动构建和索引新的技能模块
 
 Hermes 的关键创新在于它的经验压缩算法：不是简单地存储所有历史对话（那样会迅速超出上下文窗口），而是使用一个专用的压缩 Agent，将冗长的交互历史提炼为结构化的「经验卡片」。这些卡片包含：
 
@@ -664,24 +664,24 @@ if __name__ == "__main__":
     title: "六、实践：如何开始构建你的自进化 Agent",
     body: `基于以上三条路线，下面是从零构建自进化 Agent 的实践指南：
 
-第一步：选择技术路线
+**第一步**：选择技术路线
 - 如果你需要快速见效 → 从 Hermes 路线开始（经验压缩 + 检索）
 - 如果你追求长期能力增长 → GenericAgent 路线（技能树生长）
 - 如果你有计算资源且需要最优策略 → Evolver 路线（群体进化）
 
-第二步：搭建基础设施
-- LLM 后端：推荐使用 Claude Opus 4.7 或 GPT-4o，推理能力强
-- 沙箱环境：用于安全执行 Agent 生成的代码（推荐 Docker 容器）
-- 存储系统：经验卡片用向量数据库（Chroma/Milvus），技能树用关系型数据库
-- 评估框架：自动化任务集 + 评分标准
+**第二步**：搭建基础设施
+- LLM 后端：推荐使用 **Claude** Opus 4.7 或 **GPT-4**o，推理能力强
+**- 沙箱环境**：用于安全执行 Agent 生成的代码（推荐 Docker 容器）
+**- 存储系统**：经验卡片用向量数据库（Chroma/Milvus），技能树用关系型数据库
+**- 评估框架**：自动化任务集 + 评分标准
 
-第三步：迭代优化
+**第三步**：迭代优化
 - 先实现最小可行版本（MVP）
 - 在 10-20 个代表性任务上测试
 - 根据失败案例调整策略
 - 逐步增加任务复杂度
 
-关键陷阱提醒：
+**关键陷阱提醒**：
 - ⚠️ 避免"进化失控"：设置能力边界，防止 Agent 学习危险操作
 - ⚠️ 注意"灾难性遗忘"：新技能不应覆盖旧技能，需要版本管理
 - ⚠️ 控制计算成本：Evolver 的群体评估非常消耗 token，需要优化评估策略`,
@@ -703,13 +703,13 @@ if __name__ == "__main__":
   },
   {
     title: "总结与资源",
-    body: `核心要点回顾：
+    body: `**核心要点回顾**：
 - 自我进化 AI Agent 正在从概念走向实践，2026 年是关键一年
 - Hermes（经验驱动）、GenericAgent（技能驱动）、Evolver（进化驱动）代表三条主流技术路线
 - 每条路线都有独特的优势和适用场景，没有绝对的「最优解」
 - 从简单的经验压缩系统开始，逐步构建你的自进化 Agent
 
-延伸阅读：
+**延伸阅读**：
 - [NousResearch Hermes Agent](https://github.com/NousResearch/hermes-agent) — 103K+ stars
 - [lsdefine GenericAgent](https://github.com/lsdefine/GenericAgent) — 4.7K stars
 - [EvoMap Evolver](https://github.com/EvoMap/evolver) — 5.8K stars

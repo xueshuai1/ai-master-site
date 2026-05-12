@@ -25,21 +25,21 @@ export const article: Article = {
             title: "1. AI 工程化全景",
             body: `AI 工程化涵盖五个阶段：
 
-- 训练 — 数据准备、模型训练、实验管理
-- 优化 — 量化、剪枝、蒸馏
-- 部署 — FastAPI、Docker、Kubernetes
-- 监控 — 数据漂移检测、性能告警
-- 迭代 — 在线学习、A/B 测试、灰度发布`
+**- 训练** — 数据准备、模型训练、实验管理
+**- 优化** — 量化、剪枝、蒸馏
+**- 部署** — FastAPI、Docker、Kubernetes
+**- 监控** — 数据漂移检测、性能告警
+**- 迭代** — 在线学习、A/B 测试、灰度发布`
         },
         {
             title: "2. 学习路线",
-            body: `第 1 步：AI 应用部署（1 周）
+            body: `**第 1 步**：AI 应用部署（1 周）
 → FastAPI、Docker、API 服务化
 
-第 2 步：真实项目实战（1-2 周）
+**第 2 步**：真实项目实战（1-2 周）
 → 从需求到上线的完整 AI 项目
 
-前置要求： 已经学过 LLM 应用开发`
+**前置要求**： 已经学过 LLM 应用开发`
         },
         {
             title: "3. 核心工具链",
@@ -48,7 +48,7 @@ export const article: Article = {
 | API 服务 | FastAPI | Python 最流行的 API 框架 |
 | 容器化 | Docker | 打包和部署的标准方式 |
 | 编排 | Kubernetes | 大规模部署的管理平台 |
-| 推理引擎 | vLLM | 高性能 LLM 推理 |
+| 推理引擎 | **vLLM** | 高性能 LLM 推理 |
 | 实验管理 | MLflow / W&B | 追踪训练实验 |
 | 监控 | 自定义 | 数据漂移、性能监控 |`,
             tip: "💡 初学者从 FastAPI + Docker 开始就够了，不需要一上来就学 Kubernetes。"

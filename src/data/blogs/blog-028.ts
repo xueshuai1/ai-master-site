@@ -3,12 +3,12 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：浏览器正在成为 AI Agent 的操作系统",
-    body: "2026 年 4 月 14 日，Google 在官方博客宣布 Chrome AI Skills 正式 rollout —— 用户可以将常用 AI 提示词保存为命名的「Skills」，通过斜杠一键调用，支持跨多标签页同时执行。Google 同步发布了 50+ 预设 Skills 库，覆盖研究、购物、旅行规划等场景。\n\n这不是一个小功能更新，而是浏览器从「信息展示平台」向「AI 代理操作系统」的范式转变。当 Chrome 可以保存、复用、组合 AI 工作流时，它实际上在定义一套浏览器原生的 Agent 标准。\n\n> 「Chrome AI Skills 的本质，是把一次性的 AI 对话变成可复用的工作流原型。」\n\n本文将深度解读 Chrome AI Skills 的技术架构、与竞品方案的对比、对开发者生态的影响，以及它如何预示操作系统级 AI 代理的早期形态。",
+    body: "2026 年 4 月 14 日，Google 在官方博客宣布 **Chrome AI Skills** 正式 rollout —— 用户可以将常用 AI 提示词保存为命名的「Skills」，通过斜杠一键调用，支持跨多标签页同时执行。Google 同步发布了 50+ 预设 Skills 库，覆盖研究、购物、旅行规划等场景。\n\n这不是一个小功能更新，而是浏览器从「信息展示平台」向「AI 代理操作系统」的范式转变。当 Chrome 可以保存、复用、组合 AI 工作流时，它实际上在定义一套浏览器原生的 Agent 标准。\n\n> 「**Chrome AI Skills** 的本质，是把一次性的 AI 对话变成可复用的工作流原型。」\n\n本文将深度解读 **Chrome AI Skills** 的技术架构、与竞品方案的对比、对开发者生态的影响，以及它如何预示操作系统级 AI 代理的早期形态。",
     tip: "阅读收获：\n- 理解 Chrome AI Skills 的技术原理和工作机制\n- 掌握 Skills 与 Chrome AI Mode、AI Actions 的关系\n- 学会如何设计和构建自己的 AI Skill\n- 预判浏览器 AI 对开发者工具链的深远影响",
   },
   {
     title: "Chrome AI Skills 是什么：从一次性对话到可复用工作流",
-    body: "在 Chrome AI Skills 之前，浏览器的 AI 能力本质上是一次性对话——你问一个问题，AI 给你一个答案，然后对话结束。每次使用都需要重新输入提示词、重新设定上下文、重新指定输出格式。\n\nChrome AI Skills 的核心创新在于状态持久化和模板化：",
+    body: "在 **Chrome AI Skills** 之前，浏览器的 AI 能力本质上是一次性对话——你问一个问题，AI 给你一个答案，然后对话结束。每次使用都需要重新输入提示词、重新设定上下文、重新指定输出格式。\n\n**Chrome AI Skills** 的核心创新在于状态持久化和模板化：",
     list: [
       "Skill 定义：用户将一组提示词、上下文设定和输出格式保存为命名的 Skill（例如「竞品分析」、「旅行规划」、「论文摘要」）",
       "一键调用：通过斜杠命令（如 `/竞品分析`）在任何支持 AI 的页面中快速调用",
@@ -35,7 +35,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "技术架构深度解析：Skills 是如何工作的",
-    body: "Chrome AI Skills 的背后是一个三层架构：Skill 定义层、执行引擎层和结果聚合层。\n\n第一层：Skill 定义层\n\n每个 Skill 本质上是一个结构化的提示词模板，包含：",
+    body: "**Chrome AI Skills** 的背后是一个三层架构：Skill 定义层、执行引擎层和结果聚合层。\n\n第一层：Skill 定义层\n\n每个 Skill 本质上是一个结构化的提示词模板，包含：",
     list: [
       "系统提示词（System Prompt）：定义 AI 的角色和行为边界",
       "输入参数（Input Slots）：可配置的变量（如网站 URL、关键词、日期范围）",
@@ -45,7 +45,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "Python 模拟：Skill 定义结构",
-    body: "以下代码模拟了 Chrome AI Skills 的内部数据结构。实际实现中这些数据存储在浏览器本地的 IndexedDB 中，并通过 Chrome 的 AI 推理引擎执行。",
+    body: "以下代码模拟了 **Chrome AI Skills** 的内部数据结构。实际实现中这些数据存储在浏览器本地的 IndexedDB 中，并通过 Chrome 的 AI 推理引擎执行。",
     code: [{
       lang: "python",
       code: `from dataclasses import dataclass, field
@@ -124,7 +124,7 @@ competitor_skill = Skill(
   },
   {
     title: "第二层：执行引擎层 —— 跨标签页 AI 推理",
-    body: "Chrome AI Skills 最强大的能力在于跨标签页执行。当用户调用一个 Multi-Tab Skill 时，Chrome 的执行引擎会：",
+    body: "**Chrome AI Skills** 最强大的能力在于跨标签页执行。当用户调用一个 Multi-Tab Skill 时，Chrome 的执行引擎会：",
     list: [
       "1. 上下文收集：从所有目标标签页中提取页面内容（DOM 文本、meta 信息、结构化数据）",
       "2. 信息聚合：将多标签页的内容整合为一个统一的上下文窗口",
@@ -165,7 +165,7 @@ competitor_skill = Skill(
   },
   {
     title: "Chrome AI 三大组件的关系全景",
-    body: "要理解 Chrome AI Skills 的定位，需要把它放在 Chrome AI 的整体框架中来看。Chrome AI 目前有三个核心组件：",
+    body: "要理解 **Chrome AI Skills** 的定位，需要把它放在 Chrome AI 的整体框架中来看。Chrome AI 目前有三个核心组件：",
     list: [
       "**Chrome AI Mode**：通用 AI 对话界面，可以搜索当前打开的标签页内容，提供上下文感知的回答",
       "**Chrome AI Skills**：可复用的 AI 工作流模板，一键调用，跨标签页执行",
@@ -190,7 +190,7 @@ competitor_skill = Skill(
   },
   {
     title: "与主流竞品对比：Chrome AI Skills 的独特优势",
-    body: "Chrome AI Skills 不是孤立的创新。在它之前和之后，多个平台都推出了类似的 AI 工作流能力。但 Chrome 的独特优势在于浏览器原生的跨标签页上下文获取能力——这是任何其他平台无法复制的。",
+    body: "**Chrome AI Skills** 不是孤立的创新。在它之前和之后，多个平台都推出了类似的 AI 工作流能力。但 Chrome 的独特优势在于浏览器原生的跨标签页上下文获取能力——这是任何其他平台无法复制的。",
     table: {
       headers: ["维度", "Chrome AI Skills", "Claude Projects", "ChatGPT GPTs", "Perplexity Collections", "Notion AI"],
       rows: [
@@ -207,7 +207,7 @@ competitor_skill = Skill(
   },
   {
     title: "Python 实战：构建自己的 Skill 解析器",
-    body: "以下代码演示了如何模拟实现一个 Skill 解析器。这个实现可以作为理解 Chrome AI Skills 工作原理的参考，也可以用于开发独立的 AI 工作流工具。",
+    body: "以下代码演示了如何模拟实现一个 Skill 解析器。这个实现可以作为理解 **Chrome AI Skills** 工作原理的参考，也可以用于开发独立的 AI 工作流工具。",
     code: [{
       lang: "python",
       code: `import json
@@ -341,7 +341,7 @@ if skill:
   },
   {
     title: "对开发者生态的深远影响",
-    body: "Chrome AI Skills 不仅仅是一个用户功能，它对开发者生态的影响可能比表面看到的更深远：\n\n1. 网页开发的范式转变\n\n当浏览器可以自主理解页面内容并执行 AI 工作流时，网页的结构化程度变得前所未有的重要。开发者需要考虑：",
+    body: "**Chrome AI Skills** 不仅仅是一个用户功能，它对开发者生态的影响可能比表面看到的更深远：\n\n1. 网页开发的范式转变\n\n当浏览器可以自主理解页面内容并执行 AI 工作流时，网页的结构化程度变得前所未有的重要。开发者需要考虑：",
     list: [
       "页面的语义化结构（HTML5 语义标签）直接影响 AI 的理解准确度",
       "元数据（meta tags、structured data）成为 AI 提取信息的关键线索",
@@ -350,7 +350,7 @@ if skill:
   },
   {
     title: "Skill 开发者的新职业路径",
-    body: "Chrome AI Skills 的预设库和分享机制催生了一个新的职业方向：Skill 开发者。\n\nSkill 开发者的工作内容：",
+    body: "**Chrome AI Skills** 的预设库和分享机制催生了一个新的职业方向：Skill 开发者。\n\nSkill 开发者的工作内容：",
     list: [
       "提示词工程：设计高效、准确的系统提示词和输入参数",
       "输出优化：确保不同场景下的输出质量和一致性",
@@ -443,7 +443,7 @@ for issue in result.issues:
   },
   {
     title: "未来展望：从 Chrome AI Skills 到操作系统级 AI 代理",
-    body: "Chrome AI Skills 的发布只是开始。从技术演进路径来看，我们可以预测以下几个方向：\n\n短期（2026 下半年）：\n- Skills 市场（Skill Store）正式上线，第三方开发者可以发布和 monetize 自己的 Skills\n- Skills 支持条件触发（「当检测到价格变化时自动运行比价 Skill」）\n- Skills 支持链式组合（「先运行研究 Skill，再运行摘要 Skill」）\n\n中期（2027）：\n- Skills 跨应用工作：Chrome Skills 可以与桌面应用、移动 App 的 AI 能力互通\n- 操作系统级别的 Skill 运行时：Windows、macOS 可能推出系统级的 AI 工作流标准\n- Skills 与企业系统集成：Salesforce、SAP 等企业软件的原生 Skill 支持\n\n长期（2028+）：\n- AI 代理操作系统（AI-OS）：浏览器 AI 能力与操作系统融合，形成统一的 AI 代理运行时\n- 自主执行 Skills：从「用户触发」到「系统自动触发」，AI 自主决定何时运行哪些 Skills\n- Skill 协议标准化：跨浏览器、跨平台的 Skill 互操作标准（类似今天的 Web 标准）",
+    body: "**Chrome AI Skills** 的发布只是开始。从技术演进路径来看，我们可以预测以下几个方向：\n\n短期（2026 下半年）：\n- Skills 市场（Skill Store）正式上线，第三方开发者可以发布和 monetize 自己的 Skills\n- Skills 支持条件触发（「当检测到价格变化时自动运行比价 Skill」）\n- Skills 支持链式组合（「先运行研究 Skill，再运行摘要 Skill」）\n\n中期（2027）：\n- Skills 跨应用工作：Chrome Skills 可以与桌面应用、移动 App 的 AI 能力互通\n- 操作系统级别的 Skill 运行时：Windows、macOS 可能推出系统级的 AI 工作流标准\n- Skills 与企业系统集成：Salesforce、SAP 等企业软件的原生 Skill 支持\n\n长期（2028+）：\n- AI 代理操作系统（AI-OS）：浏览器 AI 能力与操作系统融合，形成统一的 AI 代理运行时\n- 自主执行 Skills：从「用户触发」到「系统自动触发」，AI 自主决定何时运行哪些 Skills\n- Skill 协议标准化：跨浏览器、跨平台的 Skill 互操作标准（类似今天的 Web 标准）",
     mermaid: `graph TD
     2026 Q2 : Skills 正式发布
              : 50+ 预设 Skills
@@ -460,7 +460,7 @@ for issue in result.issues:
   },
   {
     title: "总结：为什么每个 AI 从业者都应该关注 Chrome AI Skills",
-    body: "Chrome AI Skills 的意义远超一个浏览器功能更新。它代表了三个重要的行业趋势：\n\n趋势一：AI 从「对话工具」走向「工作流引擎」\n\n当 AI 能力被模板化、可复用、可组合时，它就从一个聊天工具变成了一个真正的工作流引擎。这与内容研究报告中提到的「AI Agent 垂直化工作空间」趋势高度一致——seomachine 将 Claude Code 改造为 SEO 内容创作平台，Chrome AI Skills 则将浏览器改造为通用 AI 工作流平台。\n\n趋势二：浏览器正在成为 AI Agent 的基础设施\n\nChrome 的跨标签页上下文获取能力是任何独立 AI 应用都无法复制的优势。当浏览器可以自主理解、分析和操作网页内容时，它实际上成为了 AI Agent 的操作系统。\n\n趋势三：AI 能力的民主化\n\n50+ 预设 Skills + Skill 分享机制 = 任何用户都可以创建和使用专业级的 AI 工作流，无需编程能力。这与 AI Agent 垂直化的「低门槛专业化工具」方向一致。\n\n> 一句话总结：Chrome AI Skills 不是在改进浏览器——它在重新定义浏览器是什么。当浏览器可以保存、复用、组合 AI 工作流时，它就不再是一个信息展示工具，而是一个 AI 代理的操作系统。",
+    body: "**Chrome AI Skills** 的意义远超一个浏览器功能更新。它代表了三个重要的行业趋势：\n\n趋势一：AI 从「对话工具」走向「工作流引擎」\n\n当 AI 能力被模板化、可复用、可组合时，它就从一个聊天工具变成了一个真正的工作流引擎。这与内容研究报告中提到的「AI Agent 垂直化工作空间」趋势高度一致——seomachine 将 **Claude** Code 改造为 SEO 内容创作平台，**Chrome AI Skills** 则将浏览器改造为通用 AI 工作流平台。\n\n趋势二：浏览器正在成为 AI Agent 的基础设施\n\nChrome 的跨标签页上下文获取能力是任何独立 AI 应用都无法复制的优势。当浏览器可以自主理解、分析和操作网页内容时，它实际上成为了 AI Agent 的操作系统。\n\n趋势三：AI 能力的民主化\n\n50+ 预设 Skills + Skill 分享机制 = 任何用户都可以创建和使用专业级的 AI 工作流，无需编程能力。这与 AI Agent 垂直化的「低门槛专业化工具」方向一致。\n\n> 一句话总结：**Chrome AI Skills** 不是在改进浏览器——它在重新定义浏览器是什么。当浏览器可以保存、复用、组合 AI 工作流时，它就不再是一个信息展示工具，而是一个 AI 代理的操作系统。",
     tip: "延伸阅读：\n- 知识库文章「AI Agent 垂直化工作空间」（agent-014）：理解 Agent 专业化的大趋势\n- 知识库文章「语音 AI 全景指南」（voice-001）：了解 AI 交互方式的另一种进化路径\n- 博客「Anthropic 2026 Agentic Coding 报告解读」（blog-018）：软件工程的 Agent 化转型",
   },
 ];

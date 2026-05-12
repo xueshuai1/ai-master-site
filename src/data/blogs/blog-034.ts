@@ -69,7 +69,7 @@ const content: ArticleSection[] = [
 
 > "突然间，API 不再是负担，而是一个主要的可销售向量。尤其是在产品差异不大的领域，API 的可用性可能成为决定性的竞争因素。"
 
-这意味着：`,
+**这意味着**：`,
     list: [
       "API-first 不再是口号，而是生存必需——没有好 API 的 SaaS 将被 AI Agent 时代淘汰",
       "MCP Server 将成为标配——就像 2010 年代每个 SaaS 都需要 REST API 一样",
@@ -79,7 +79,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "四、MCP：Headless 服务的关键协议",
-    body: `Model Context Protocol (MCP) 是 Anthropic 提出的开放标准，用于让 AI 模型连接到外部工具和数据源。在 headless 服务的语境下，MCP 扮演了至关重要的角色。
+    body: `Model Context Protocol (MCP) 是 **Anthropic** 提出的开放标准，用于让 AI 模型连接到外部工具和数据源。在 headless 服务的语境下，MCP 扮演了至关重要的角色。
 
 MCP 为什么重要？
 
@@ -109,7 +109,7 @@ MCP 让任何服务都能以标准化的方式向 AI Agent 暴露能力。一个
     title: "五、Python 实战：构建一个 Headless AI 服务",
     body: `让我们用 Python 构建一个简单的 headless AI 服务，展示如何将一个传统功能转变为 AI Agent 友好的 headless 服务。
 
-场景： 一个 "内容摘要服务"，AI Agent 可以调用它来生成文本摘要。`,
+**场景**： 一个 "内容摘要服务"，AI Agent 可以调用它来生成文本摘要。`,
     code: [{
       lang: "python",
       filename: "headless_summarizer.py",
@@ -282,7 +282,7 @@ if __name__ == "__main__":
   },
   {
     title: "六、AI Agent 如何消费 Headless 服务",
-    body: `Headless 服务构建完成后，AI Agent 可以通过多种方式消费它。以下是 Claude Code 通过 MCP 调用 headless 服务的完整示例：`,
+    body: `Headless 服务构建完成后，AI Agent 可以通过多种方式消费它。以下是 **Claude** Code 通过 MCP 调用 headless 服务的完整示例：`,
     code: [{
       lang: "python",
       filename: "agent_consuming_headless.py",
@@ -463,7 +463,7 @@ MCP 可能只是一个开始。未来可能出现更多 headless 服务的开放
     title: "总结",
     body: `"Headless Everything for Personal AI" 不是某个人的臆想，而是正在发生的技术范式转移。
 
-核心要点回顾：
+**核心要点回顾**：
 
 1. 个人 AI 体验优于直接使用服务——这是 headless 趋势的根本驱动力
 2. MCP 是关键协议——它让 AI Agent 能以标准化方式连接任何服务

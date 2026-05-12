@@ -17,6 +17,320 @@ export interface NewsItem {
 export const news = [
 
 {
+    id: "news-1374",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "多款 AI 虚拟伴侣 App 擦边严重：充值 13 元就可定制色情 AI 人设",
+    summary: "多款 AI 虚拟伴侣 App 被曝严重违规乱象，打着情感陪伴旗号却充斥低俗擦边、暴力剧情与色情诱导内容，最低充值 13 元即可定制色情 AI 人设。",
+    content: `## AI 虚拟伴侣 App 乱象丛生
+
+**2026 年 5 月 11 日**，快科技报道。
+
+### 违规乱象
+- **低俗擦边**：大量 App 充斥低俗、擦边内容
+- **色情诱导**：暴力剧情与色情诱导内容泛滥
+- **低门槛付费**：充值 13 元即可定制色情 AI 人设
+- **情感陪伴幌子**：打着情感陪伴旗号行违规之事
+
+### 监管警示
+
+AI 虚拟伴侣是 AI 应用的新兴赛道，但内容审核和合规管理的滞后导致乱象频发。随着 GUARD 法案等 AI 监管立法的推进，这类 App 可能面临更严格的审查。
+
+**来源：** 快科技
+**链接：** https://news.mydrivers.com/tag/ai.htm`,
+    date: "2026-05-12 12:00",
+    source: "快科技",
+    sourceUrl: "https://news.mydrivers.com/tag/ai.htm",
+    href: "/news/news-1374",
+  },
+{
+    id: "news-1373",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "阶跃语音模型位列全球评测前三，创下中国大模型听感新高",
+    summary: "阶跃星辰（StepFun）发布的语音模型在全球评测中位列前三，刷新了中国大模型在语音听感方面的最高记录。",
+    content: `## 阶跃语音模型：中国大模型听感新高度
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 评测结果
+- **全球排名**：位列前三
+- **听感表现**：创下中国大模型语音听感新高
+- **模型方**：阶跃星辰（StepFun）
+
+### 行业背景
+
+阶跃星辰是中国大模型领域的重要玩家，此前已接近完成近 25 亿美元融资并推进港股 IPO。语音模型的突破进一步增强了其产品竞争力。
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1373",
+  },
+{
+    id: "news-1372",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "微信 4 月功能大升级：AI 支付、贴图原图发送新体验",
+    summary: "微信在 4 月进行重大功能升级，新增 AI 支付功能和贴图原图发送体验，AI 正在深度融入中国最大的社交平台。",
+    content: `## 微信 AI 化：支付体验迎来智能升级
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 核心升级
+- **AI 支付**：引入 AI 辅助的支付体验，智能识别消费场景
+- **贴图原图发送**：支持贴图以原始分辨率发送，提升社交表达体验
+- **4 月集中升级**：多项功能在 4 月统一上线
+
+### 行业意义
+
+微信作为中国最大的社交平台（月活超 13 亿），其 AI 化进程对整个中国互联网生态具有风向标意义。
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1372",
+  },
+{
+    id: "news-1371",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "2.11 倍反超美国！中国 AI 大模型周调用量稳居全球首位",
+    summary: "最新数据显示，中国 AI 大模型周调用量以 2.11 倍的优势反超美国，稳居全球首位，反映出中国 AI 应用市场的爆发式增长。",
+    content: `## 中国 AI 大模型调用量全球第一
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 关键数据
+- **中国 vs 美国**：中国大模型周调用量是美国的 **2.11 倍**
+- **全球排名**：中国稳居首位
+
+### 驱动因素
+
+- 国产大模型密集发布（GLM-5.1、Kimi K2.6、MiniMax M2.7、DeepSeek V4）
+- AI 应用生态快速扩张（电商、办公、社交、教育）
+- 大模型 API 价格大幅下降，调用门槛降低
+
+### 行业解读
+
+调用量反超美国标志着中国 AI 从「技术追赶」进入「应用领先」阶段。
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1371",
+  },
+{
+    id: "news-1370",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Google 升级 Gemini API 文件搜索：多模态 RAG 能力实现全方位跨越",
+    summary: "Google 升级 Gemini API 的文件搜索能力，引入多模态 RAG 技术，支持在文档、图片、表格等多种格式中进行跨模态检索和推理。",
+    content: `## Gemini API 多模态 RAG：检索增强生成的新标杆
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 核心升级
+- **多模态 RAG**：支持文本、图片、表格等多格式联合检索
+- **文件搜索**：在大规模文档库中实现精准语义检索
+- **全方位跨越**：从单一文本检索升级为跨模态理解
+
+### 技术意义
+
+多模态 RAG 是企业级 AI 应用的核心能力之一。
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1370",
+  },
+{
+    id: "news-1369",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "贾跃亭重返法拉第未来：宣布公司转型为物理 AI 生态企业",
+    summary: "贾跃亭宣布重返法拉第未来，并宣布公司从电动汽车制造商转型为物理 AI 生态企业，将 AI 与物理世界交互作为核心战略方向。",
+    content: `## 法拉第未来：从造车到造 AI
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 战略转型
+- **贾跃亭回归**：重新掌舵法拉第未来
+- **转型方向**：从电动汽车 → 物理 AI 生态企业
+- **核心概念**：AI 与物理世界的深度交互
+
+### 行业解读
+
+「物理 AI」是 2026 年最热门的 AI 方向之一，涵盖机器人、自动驾驶、智能硬件等领域。
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1369",
+  },
+{
+    id: "news-1368",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "AMD AI 开发者日即将登陆上海：Lisa Su 博士将出席，5 月 19 日举办",
+    summary: "AMD 宣布 2026 年 AI 开发者日将于 5 月 19 日在上海举行，AMD CEO Lisa Su 博士将出席。",
+    content: `## AMD AI DevDay 2026：聚焦中国 AI 开发者
+
+**2026 年 5 月 12 日**，快科技报道。
+
+### 活动详情
+- **时间**：2026 年 5 月 19 日
+- **地点**：上海前滩香格里拉酒店
+- **出席嘉宾**：Lisa Su 博士（AMD CEO）
+- **主题**：面向 AI 开发者的年度技术盛会
+
+**来源：** 快科技
+**链接：** https://news.mydrivers.com/tag/ai.htm`,
+    date: "2026-05-12 12:00",
+    source: "快科技",
+    sourceUrl: "https://news.mydrivers.com/tag/ai.htm",
+    href: "/news/news-1368",
+  },
+{
+    id: "news-1367",
+    tag: "开源项目",
+    tagColor: "bg-emerald-500/10 text-emerald-300",
+    title: "当内核开发遇上 AI：Linus 吐槽补丁量激增，AI 已显著提升代码产出效率",
+    summary: "Linus Torvalds 发布 Linux 6.15-rc3，表示补丁量激增并非偶发波动，AI 已显著提升内核开发的代码产出效率。",
+    content: `## AI 进入 Linux 内核开发：Linus 的「甜蜜烦恼」
+
+**2026 年 5 月 11 日**，快科技报道。
+
+### Linus 的观察
+- **补丁量激增**：Linux 内核收到的补丁数量大幅增加
+- **AI 贡献**：AI 已显著提升代码产出效率
+- **非偶发波动**：Linus 表示这是持续趋势
+
+### 深层影响
+
+AI 编程工具正在降低内核开发的门槛，更多人能提交高质量补丁。维护者团队面临更大的审查工作量。
+
+**来源：** 快科技
+**链接：** https://news.mydrivers.com/tag/ai.htm`,
+    date: "2026-05-12 12:00",
+    source: "快科技",
+    sourceUrl: "https://news.mydrivers.com/tag/ai.htm",
+    href: "/news/news-1367",
+  },
+{
+    id: "news-1366",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "通用汽车大换血：裁掉约 600 名 IT 员工，只为给 AI 人才腾位置",
+    summary: "通用汽车对 IT 部门启动大规模人员调整，裁掉约 600 名员工占部门总人数超 10%，核心目的是为 AI 专业人才腾出编制。",
+    content: `## 通用汽车：用 AI 人才替换传统 IT
+
+**2026 年 5 月 12 日**，快科技报道。
+
+### 裁员详情
+- **裁员规模**：约 600 名 IT 部门员工
+- **占比**：超过 IT 部门总人数的 10%
+- **核心目的**：为 AI 专业人才腾出编制和预算
+
+### 行业信号
+
+传统汽车巨头的 IT 部门正在经历从「传统 IT 运维」向「AI 驱动」的结构性转型。
+
+**来源：** 快科技
+**链接：** https://news.mydrivers.com/tag/ai.htm`,
+    date: "2026-05-12 12:00",
+    source: "快科技",
+    sourceUrl: "https://news.mydrivers.com/tag/ai.htm",
+    href: "/news/news-1366",
+  },
+{
+    id: "news-1365",
+    tag: "政策",
+    tagColor: "bg-rose-500/10 text-rose-300",
+    title: "电商现大量 AI 买家秀！央视网评：构筑技术防火墙是当务之急",
+    summary: "电商平台评论区出现大量 AI 生成的精美买家秀，消费者收到实物后发现与图片相差甚远。央视网评论指出构筑技术防火墙已成当务之急。",
+    content: `## AI 买家秀泛滥：电商信任危机
+
+**2026 年 5 月 11 日**，快科技报道，央视网发表评论。
+
+### 事件概述
+- **现象**：电商评论区充斥 AI 生成的精美买家秀图片
+- **消费者受害**：实物与 AI 美化图片相差甚远
+- **央视网评**：构筑技术防火墙是当务之急
+
+### 治理方向
+
+- 平台需要部署 AI 生成内容检测技术
+- 建立用户举报和审核机制
+- 对违规商家实施处罚
+
+**来源：** 快科技 + 央视网
+**链接：** https://news.mydrivers.com/tag/ai.htm`,
+    date: "2026-05-12 12:00",
+    source: "快科技 + 央视网",
+    sourceUrl: "https://news.mydrivers.com/tag/ai.htm",
+    href: "/news/news-1365",
+  },
+{
+    id: "news-1364",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "腾讯云 QClaw 发布「文件空间」：深度打通腾讯文档与 ima 知识库",
+    summary: "腾讯云 QClaw 上线「文件空间」功能，实现腾讯文档与 ima 知识库的深度打通，构建统一的 AI 办公协作体验。",
+    content: `## 腾讯云 QClaw：AI 与办公文档深度整合
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 核心功能
+- **文件空间**：在 QClaw AI 助手中直接管理和调用腾讯文档
+- **知识库打通**：ima 知识库与腾讯文档无缝同步
+- **AI 编辑**：通过 AI 助手直接创建、编辑和搜索文档内容
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1364",
+  },
+{
+    id: "news-1363",
+    tag: "Agent",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "火山引擎发布业界首个 Agent 套餐包：整合多模态模型与联网工具",
+    summary: "火山引擎推出业界首个 AI Agent 套餐包，将多模态大模型、联网搜索、代码执行等能力整合为标准化产品。",
+    content: `## 火山引擎：Agent 标准化落地
+
+**2026 年 5 月 11 日**，AIBase AI 日报报道。
+
+### 核心内容
+- **业界首个 Agent 套餐包**：火山引擎将多模态模型与联网工具整合为标准套餐
+- **降低部署门槛**：企业无需自行组合多种 AI 能力，一键获取完整 Agent 方案
+- **多模态支持**：文本、图像、语音等多模态输入输出
+- **联网能力**：Agent 可实时搜索互联网获取最新信息
+
+### 行业意义
+
+Agent 标准化是 AI 从「实验室」走向「工业化生产」的关键一步。
+
+**来源：** AIBase
+**链接：** https://www.aibase.com/zh/daily`,
+    date: "2026-05-12 12:00",
+    source: "AIBase",
+    sourceUrl: "https://www.aibase.com/zh/daily",
+    href: "/news/news-1363",
+  },
+{
     id: "news-1350",
     tag: "行业",
     tagColor: "bg-yellow-500/10 text-yellow-300",

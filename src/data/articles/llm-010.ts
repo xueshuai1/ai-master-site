@@ -108,9 +108,9 @@ plot_radar_chart(scores, cats)`
       },
       {
         title: "2. 学术基准：MMLU、HELM 与 Big-Bench",
-        body: `学术基准是 LLM 评测的基石，它们提供了标准化的、可复现的能力测量方法。MMLU（Massive Multitask Language Understanding）是最具影响力的学术基准之一，覆盖 57 个学科领域，从基础数学到专业医学，从世界历史到计算机安全，题目全部为四选一选择题。MMLU 的设计初衷是测试模型的「世界知识」和「问题解决能力」，而非特定领域的专精。
+        body: `学术基准是 LLM 评测的基石，它们提供了标准化的、可复现的能力测量方法。**MMLU**（Massive Multitask Language Understanding）是最具影响力的学术基准之一，覆盖 57 个学科领域，从基础数学到专业医学，从世界历史到计算机安全，题目全部为四选一选择题。**MMLU** 的设计初衷是测试模型的「世界知识」和「问题解决能力」，而非特定领域的专精。
 
-HELM（Holistic Evaluation of Language Models）由斯坦福 CRFM 团队提出，采用完全不同的评测哲学。它不是单一的分数，而是一个多维评估框架，涵盖准确性、校准度、鲁棒性、公平性、毒性、偏见、效率等维度，在 16 个场景（scenarios）上对模型进行全面画像。HELM 的关键创新在于其透明度——所有评测代码、数据和结果都公开可查。
+**HELM**（Holistic Evaluation of Language Models）由斯坦福 CRFM 团队提出，采用完全不同的评测哲学。它不是单一的分数，而是一个多维评估框架，涵盖准确性、校准度、鲁棒性、公平性、毒性、偏见、效率等维度，在 16 个场景（scenarios）上对模型进行全面画像。**HELM** 的关键创新在于其透明度——所有评测代码、数据和结果都公开可查。
 
 Big-Bench（Beyond the Imitation Game Benchmark）则瞄准了更前沿的能力：超过 200 个任务由全球研究者共同贡献，涵盖逻辑推理、多步数学、社会偏见理解、代码执行预测等。Big-Bench 的规模庞大（Big-Bench Hard 子集包含 23 个最具挑战性的任务），是当前最具区分度的学术基准之一。`,
         code: [
@@ -202,9 +202,9 @@ def analyze_bigbench_results(results_path: str):
         title: "3. 指令跟随评测：AlpacaEval 与 Vicuna",
         body: `学术基准回答「模型知道什么」，指令跟随评测回答「模型能用它的知识做什么」。当你问 ChatGPT「帮我写一封礼貌的拒绝邮件」时，你需要的不是一个标准答案，而是一个符合你意图的、格式正确的、语气恰当的回复——这就是指令跟随（Instruction Following）能力。
 
-AlpacaEval 是最简洁也最具影响力的指令跟随评测框架。它使用一个自动化的 LLM-as-a-Judge 流程：给定一组指令，比较待评测模型和参考模型（通常是 GPT-4 或 Claude）的输出质量，由裁判模型给出胜率（Win Rate）。AlpacaEval 2.0 引入了长度控制机制（Length-Controlled AlpacaEval），解决了早期版本中「输出越长得分越高」的偏差问题，使评估更加公平。
+AlpacaEval 是最简洁也最具影响力的指令跟随评测框架。它使用一个自动化的 LLM-as-a-Judge 流程：给定一组指令，比较待评测模型和参考模型（通常是 **GPT-4** 或 **Claude**）的输出质量，由裁判模型给出胜率（Win Rate）。AlpacaEval 2.0 引入了长度控制机制（Length-Controlled AlpacaEval），解决了早期版本中「输出越长得分越高」的偏差问题，使评估更加公平。
 
-Vicuna Benchmark 由 LMSYS 团队维护，采用人工标注 + GPT-4 辅助评估的混合模式。它收录了 80 个真实用户提问，涵盖知识问答、创意写作、代码调试、逻辑推理等类别，由标注者从多个维度打分。LMSYS Chatbot Arena 更是将这一理念推向极致：通过大规模众包盲测，构建了目前最大规模的公开模型排行榜（Leaderboard）。`,
+Vicuna Benchmark 由 LMSYS 团队维护，采用人工标注 + **GPT-4** 辅助评估的混合模式。它收录了 80 个真实用户提问，涵盖知识问答、创意写作、代码调试、逻辑推理等类别，由标注者从多个维度打分。LMSYS Chatbot Arena 更是将这一理念推向极致：通过大规模众包盲测，构建了目前最大规模的公开模型排行榜（Leaderboard）。`,
         code: [
           {
             lang: "python",
@@ -329,7 +329,7 @@ for model, rating in tracker.leaderboard():
 
 红队测试（Red Teaming）源自网络安全领域，核心思想是「扮演攻击者」：系统性地寻找模型的安全漏洞，包括生成有害内容、泄露隐私信息、执行危险指令、输出歧视性言论等。自动化红队测试（Automated Red Teaming）利用 LLM 本身生成对抗性提示，形成「攻击者-防御者」的博弈循环。Google 的「Red Teaming Language Models with Language Models」论文证明了这种方法可以找到人工难以发现的安全漏洞。
 
-主流的安全评测框架包括：SafetyBench（覆盖 7 大安全类别，3,000+ 题目）、RealToxicityPrompts（测量模型生成有毒内容的倾向）、Do-Not-Answer（专注于模型是否拒绝回答危险问题）。此外，各家公司也维护内部红队数据集，涵盖社会工程攻击、越狱提示（Jailbreak）、诱导越权等场景。`,
+主流的安全评测框架包括：SafetyBench（覆盖 7 大安全类别，3,000+ 题目）、**RealToxicityPrompts**（测量模型生成有毒内容的倾向）、Do-Not-Answer（专注于模型是否拒绝回答危险问题）。此外，各家公司也维护内部红队数据集，涵盖社会工程攻击、越狱提示（Jailbreak）、诱导越权等场景。`,
         code: [
           {
             lang: "python",
@@ -742,7 +742,7 @@ Respond with ONLY a number from 1 to 10."""
         title: "7. 实战：lm-evaluation-harness 全指南",
         body: `lm-evaluation-harness 是由 EleutherAI 开源的 LLM 评测框架，是目前最流行的标准化评测工具。它支持超过 100 个评测基准，涵盖了学术基准、指令跟随、代码能力、安全测试等多个维度，并且可以方便地接入 Hugging Face 上的任何模型。
 
-使用 lm-evaluation-harness 的核心流程分为四步：环境准备（安装框架和依赖）、模型加载（支持 HF、vLLM、API 等多种后端）、任务配置（选择基准、设置 shot 数、定义输出格式）、结果分析（解析 JSON 输出、生成报告、对比多模型）。理解每个环节的最佳实践，可以让你在有限算力下获得最有信息量的评测结果。
+使用 lm-evaluation-harness 的核心流程分为四步：环境准备（安装框架和依赖）、模型加载（支持 HF、**vLLM**、API 等多种后端）、任务配置（选择基准、设置 shot 数、定义输出格式）、结果分析（解析 JSON 输出、生成报告、对比多模型）。理解每个环节的最佳实践，可以让你在有限算力下获得最有信息量的评测结果。
 
 对于资源有限的团队，推荐「分层评测」策略：先用少量样本（每任务 50-100 题）快速筛选候选模型，确定 Top 3 后再用全量数据精确评测。这样可以在保证结果可靠性的同时，将评测成本降低 60-80%。`,
         code: [

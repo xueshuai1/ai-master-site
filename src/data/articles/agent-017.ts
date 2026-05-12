@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "AI Agent 的十字路口：通用 vs 垂直",
-      body: `2024-2025 年，AI Agent 的主旋律是「通用性」：一个 Agent 能写代码、能聊天、能做分析、能搜索。人们相信，只要模型足够强大，一个 Agent 就能胜任所有任务。\n\n但 2026 年的现实给出了不同的答案：通用 Agent 什么都懂一点，但什么都不精。\n\n当开发者需要写生产级代码时，他们会用 Cursor 或 Claude Code；当营销人员需要 SEO 内容时，他们会用 seomachine；当交易员需要量化策略时，他们会用 AI-Trader。每个领域都在孕育自己的专业 Agent，而这些专业 Agent 的能力已经远超通用 Agent 在该领域的表现。`,
+      body: `2024-2025 年，AI Agent 的主旋律是「通用性」：一个 Agent 能写代码、能聊天、能做分析、能搜索。人们相信，只要模型足够强大，一个 Agent 就能胜任所有任务。\n\n但 2026 年的现实给出了不同的答案：通用 Agent 什么都懂一点，但什么都不精。\n\n当开发者需要写生产级代码时，他们会用 Cursor 或 **Claude** Code；当营销人员需要 SEO 内容时，他们会用 seomachine；当交易员需要量化策略时，他们会用 AI-Trader。每个领域都在孕育自己的专业 Agent，而这些专业 Agent 的能力已经远超通用 Agent 在该领域的表现。`,
       mermaid: `graph TD
     A["2024-2025
 通用 Agent 时代"] --> B["什么都能做
@@ -67,7 +67,7 @@ export const article: Article = {
     },
     {
       title: "案例一：seomachine — SEO 内容创作工作空间",
-      body: `seomachine 是一个专为 Claude Code 设计的 SEO 优化内容创作工作空间，由 TheCraigHewitt 开发，GitHub 星星数 6,272+（周增长 2,562）。\n\n核心架构：\n\nseomachine 不是一个简单的「AI 写作工具」，而是一个完整的 SEO 内容工厂：`,
+      body: `seomachine 是一个专为 **Claude** Code 设计的 SEO 优化内容创作工作空间，由 TheCraigHewitt 开发，GitHub 星星数 6,272+（周增长 2,562）。\n\n核心架构：\n\nseomachine 不是一个简单的「AI 写作工具」，而是一个完整的 SEO 内容工厂：`,
       mermaid: `graph LR
     A["/research"] --> B["关键词调研"]
     B --> C["竞争分析"]

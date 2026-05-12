@@ -92,7 +92,7 @@ class CaptionDataset(Dataset):
         },
         {
             title: "2. Encoder-Decoder 架构详解",
-            body: `Encoder-Decoder 架构是图像描述模型的骨干结构。Encoder 通常使用预训练的卷积神经网络（如 ResNet、EfficientNet）或视觉 Transformer（如 ViT）将图像编码为固定维度的特征表示。传统方法将整个图像压缩为一个全局特征向量，但这种方式会丢失空间细节信息。改进后的方法保留空间特征图，输出形状为 (H, W, C) 的张量，其中 H 和 W 是特征图的空间维度，C 是通道数。Decoder 通常基于 LSTM 或 Transformer，它接收 Encoder 输出的视觉特征，并结合上一时刻生成的词元，逐步产生描述文本。Show and Tell 模型是这一架构的奠基性工作，其 Encoder 使用 Inception-v3 提取图像特征，Decoder 使用单层 LSTM 生成文本序列，开创了端到端图像描述的先河。`,
+            body: `Encoder-Decoder 架构是图像描述模型的骨干结构。Encoder 通常使用预训练的卷积神经网络（如 ResNet、EfficientNet）或视觉 **Transformer**（如 ViT）将图像编码为固定维度的特征表示。传统方法将整个图像压缩为一个全局特征向量，但这种方式会丢失空间细节信息。改进后的方法保留空间特征图，输出形状为 (H, W, C) 的张量，其中 H 和 W 是特征图的空间维度，C 是通道数。Decoder 通常基于 LSTM 或 **Transformer**，它接收 Encoder 输出的视觉特征，并结合上一时刻生成的词元，逐步产生描述文本。Show and Tell 模型是这一架构的奠基性工作，其 Encoder 使用 Inception-v3 提取图像特征，Decoder 使用单层 LSTM 生成文本序列，开创了端到端图像描述的先河。`,
             code: [
                 {
                     lang: "python",
@@ -254,7 +254,7 @@ class TopDownAttention(nn.Module):
         },
         {
             title: "4. 文本到图像生成（DALL-E / Stable Diffusion）",
-            body: `文本到图像生成是图像描述的逆任务，也是近年来 AI 领域最引人注目的突破之一。DALL-E 由 OpenAI 提出，采用 Transformer 架构将文本和图像统一为离散的 token 序列。它首先使用 VQ-VAE 将图像压缩为离散的视觉 token，然后将文本 token 和视觉 token 拼接后送入 Transformer 进行自回归生成。这种方法概念简洁，但分辨率和质量受限于 VQ-VAE 的压缩能力。DALL-E 2 引入了 CLIP 和扩散模型，通过 CLIP 的文本编码器提取文本的语义嵌入，然后使用先验网络将文本嵌入转换为图像嵌入，最后通过扩散解码器从噪声中逐步生成图像。Stable Diffusion 则进一步降低了计算成本，它在潜空间（Latent Space）而非像素空间进行扩散过程，大幅减少了计算量和显存需求，使得在消费级 GPU 上运行高质量图像生成成为可能。`,
+            body: `文本到图像生成是图像描述的逆任务，也是近年来 AI 领域最引人注目的突破之一。DALL-E 由 **OpenAI** 提出，采用 **Transformer** 架构将文本和图像统一为离散的 token 序列。它首先使用 VQ-VAE 将图像压缩为离散的视觉 token，然后将文本 token 和视觉 token 拼接后送入 **Transformer** 进行自回归生成。这种方法概念简洁，但分辨率和质量受限于 VQ-VAE 的压缩能力。DALL-E 2 引入了 CLIP 和扩散模型，通过 CLIP 的文本编码器提取文本的语义嵌入，然后使用先验网络将文本嵌入转换为图像嵌入，最后通过扩散解码器从噪声中逐步生成图像。Stable Diffusion 则进一步降低了计算成本，它在潜空间（Latent Space）而非像素空间进行扩散过程，大幅减少了计算量和显存需求，使得在消费级 GPU 上运行高质量图像生成成为可能。`,
             code: [
                 {
                     lang: "python",
@@ -504,7 +504,7 @@ print(f"Negative: {neg}")`
         },
         {
             title: "7. Transformers + Diffusers 实战",
-            body: `Hugging Face 的 Transformers 和 Diffusers 库为多模态模型提供了统一的接口和丰富的预训练模型。Transformers 库包含了 CLIP、BLIP、Flamingo 等视觉语言模型的实现，而 Diffusers 库则提供了 Stable Diffusion、ControlNet、IP-Adapter 等生成模型的推理和训练接口。两个库共享相同的模型配置和权重管理方式，使得构建端到端的多模态流水线变得非常便捷。BLIP-2 是一个代表性的视觉语言模型，它通过 Q-Former 模块在冻结的图像编码器和语言模型之间建立桥梁，仅训练少量参数即可实现零样本的图像理解和生成能力。在实际工程中，合理使用梯度检查点（Gradient Checkpointing）、混合精度训练（Mixed Precision）和 LoRA 等优化技术，可以在有限的计算资源下训练高质量的多模态模型。`,
+            body: `Hugging Face 的 **Transformer**s 和 Diffusers 库为多模态模型提供了统一的接口和丰富的预训练模型。**Transformer**s 库包含了 CLIP、BLIP、Flamingo 等视觉语言模型的实现，而 Diffusers 库则提供了 Stable Diffusion、ControlNet、IP-Adapter 等生成模型的推理和训练接口。两个库共享相同的模型配置和权重管理方式，使得构建端到端的多模态流水线变得非常便捷。BLIP-2 是一个代表性的视觉语言模型，它通过 Q-Former 模块在冻结的图像编码器和语言模型之间建立桥梁，仅训练少量参数即可实现零样本的图像理解和生成能力。在实际工程中，合理使用梯度检查点（Gradient Checkpointing）、混合精度训练（Mixed Precision）和 LoRA 等优化技术，可以在有限的计算资源下训练高质量的多模态模型。`,
             code: [
                 {
                     lang: "python",

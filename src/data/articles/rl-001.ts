@@ -474,7 +474,7 @@ def value_iteration(P, R, gamma=0.9, theta=1e-6):
       },
       {
         title: "6. 实战：Frozen Lake 冻结湖环境",
-        body: `Frozen Lake 是 OpenAI Gymnasium 中最经典的强化学习环境之一。场景是一个 4x4 的网格，智能体需要从起点 S 走到终点 G，途中要避免掉进冰洞 H。格子 F 表示冻结的安全冰面。这是一个部分可观测的环境，因为冰面是滑的——智能体想往右走，但可能滑到上方或下方。
+        body: `Frozen Lake 是 **OpenAI** Gymnasium 中最经典的强化学习环境之一。场景是一个 4x4 的网格，智能体需要从起点 S 走到终点 G，途中要避免掉进冰洞 H。格子 F 表示冻结的安全冰面。这是一个部分可观测的环境，因为冰面是滑的——智能体想往右走，但可能滑到上方或下方。
 
 这个环境完美展示了强化学习的核心挑战：探索与利用的权衡。智能体必须尝试不同路径来发现安全路线（探索），同时也要利用已经学到的知识（利用）。更妙的是，环境的转移概率不完全由智能体控制，这种随机性正是真实世界的写照。`,
         code: [
@@ -585,7 +585,7 @@ print(f"最优策略 (起点): {pi_star[0]} (0=左,1=下,2=右,3=上)")`,
       },
       {
         title: "7. Gymnasium 环境交互：从理论到实践",
-        body: `Gymnasium（原 OpenAI Gym）是强化学习最流行的环境接口库。它定义了一套标准 API：reset() 初始化环境，step(action) 执行动作并返回 (observation, reward, terminated, truncated, info)。理解这套接口是与任何 RL 环境交互的第一步。
+        body: `Gymnasium（原 **OpenAI** Gym）是强化学习最流行的环境接口库。它定义了一套标准 API：reset() 初始化环境，step(action) 执行动作并返回 (observation, reward, terminated, truncated, info)。理解这套接口是与任何 RL 环境交互的第一步。
 
 terminated 表示环境到达终态（如游戏结束），truncated 表示环境因外部原因终止（如步数上限）。两者的区分很重要：terminated 时值函数应该学习最终奖励，truncated 时值函数应该继续估计未来可能的奖励。Gymnasium v0.26+ 将原来的 done 拆分为这两个布尔值，这是 RL 实践中一个重要的改进。`,
         code: [

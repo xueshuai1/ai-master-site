@@ -14,40 +14,40 @@ export const blog: BlogPost = {
 content: [
     {
       title: "一、GPT-5.5 发布背景与核心定位",
-      body: `2026 年 4 月 23 日，OpenAI 正式在 Codex 平台推出 GPT-5.5 模型，并逐步向付费 ChatGPT 订阅用户开放。这是自 GPT-5 系列发布以来最重要的模型更新。
+      body: `2026 年 4 月 23 日，**OpenAI** 正式在 Codex 平台推出 **GPT-5**.5 模型，并逐步向付费 ChatGPT 订阅用户开放。这是自 **GPT-5** 系列发布以来最重要的模型更新。
 
-### 为什么是 GPT-5.5 而不是 GPT-6？
+### 为什么是 **GPT-5**.5 而不是 GPT-6？
 
-OpenAI 采用了渐进式版本策略，而非跳跃式发布。GPT-5.5 的定位是：
+**OpenAI** 采用了渐进式版本策略，而非跳跃式发布。**GPT-5**.5 的定位是：
 
-- 不是全新架构，而是 GPT-5 系列的深度优化版
+- 不是全新架构，而是 **GPT-5** 系列的深度优化版
 - 核心改进集中在 Agentic Coding 和长链路推理
-- 保持向后兼容，模型名 "gpt-5.5" 可直接替换现有 GPT-5.x 调用
+- 保持向后兼容，模型名 "gpt-5.5" 可直接替换现有 **GPT-5**.x 调用
 
-OpenAI 官方对 GPT-5.5 的定性：「Treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」
+**OpenAI** 官方对 **GPT-5**.5 的定性：「Treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」
 
-> 核心建议： 不要直接沿用为 GPT-5.2/5.4 优化的 prompt，而是从最小化 prompt 开始重新调优。
+**> 核心建议**： 不要直接沿用为 GPT-5.2/5.4 优化的 prompt，而是从最小化 prompt 开始重新调优。
 
 ### 定价策略：加量不加价
 
 | 模型 | 输入定价 ($/M token) | 输出定价 ($/M token) |
 |------|---------------------|---------------------|
-| GPT-5.5 | $5.00 | $30.00 |
-| GPT-5.4 | $2.50 | $15.00 |
-| GPT-5.2 | $2.50 | $15.00 |
-| Claude Opus 4.7 | $5.00 | $30.00 |
+| **GPT-5**.5 | $5.00 | $30.00 |
+| **GPT-5**.4 | $2.50 | $15.00 |
+| **GPT-5**.2 | $2.50 | $15.00 |
+| **Claude** Opus 4.7 | $5.00 | $30.00 |
 | DeepSeek V4-Pro | $1.74 | $3.48 |
 
-GPT-5.5 的定价比 GPT-5.4 翻倍，但官方声称推理 token 效率提升使得实际运行成本持平或略低。这是因为 GPT-5.5 用更少的 thinking tokens 就能达到相同甚至更好的推理质量。
+**GPT-5**.5 的定价比 **GPT-5**.4 翻倍，但官方声称推理 token 效率提升使得实际运行成本持平或略低。这是因为 **GPT-5**.5 用更少的 thinking tokens 就能达到相同甚至更好的推理质量。
 
 ### 竞品格局
 
-Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在实际编程任务中：
+Simon Willison 在评测中称 **GPT-5**.5「快速、有效且高度胜任」。在实际编程任务中：
 
-- GPT-5.5 在 Agentic Coding（多步骤编程任务）上保持领先
+- **GPT-5**.5 在 Agentic Coding（多步骤编程任务）上保持领先
 - DeepSeek V4-Pro 以 1/14 的价格提供了接近的性能
 - Qwen3.6-27B 以 27B 参数量逼近了 MoE 大模型的表现
-- Claude Opus 4.7 在创意写作和文本生成方面仍然具有竞争力`,
+- **Claude** Opus 4.7 在创意写作和文本生成方面仍然具有竞争力`,
       mermaid: `graph TD
     A[OpenAI GPT-5 系列] --> B[GPT-5.2]
     A --> C[GPT-5.4]
@@ -68,11 +68,11 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
     },
     {
       title: "二、GPT-5.5 架构核心变化深度解析",
-      body: `虽然 OpenAI 没有公开 GPT-5.5 的详细架构信息，但通过官方文档、开发者实践和 Simon Willison 的评测，我们可以推断出以下关键变化：
+      body: `虽然 **OpenAI** 没有公开 **GPT-5**.5 的详细架构信息，但通过官方文档、开发者实践和 Simon Willison 的评测，我们可以推断出以下关键变化：
 
 ### 1. Agentic Coding 专项优化
 
-这是 GPT-5.5 最大的改进方向。相比 GPT-5.4，GPT-5.5 在以下方面显著提升：
+这是 **GPT-5**.5 最大的改进方向。相比 **GPT-5**.4，**GPT-5**.5 在以下方面显著提升：
 
 - 更长的规划链路：能够规划更复杂的多步骤编程任务，减少中途偏离目标的情况
 - 大代码库理解能力：对大型代码仓库的上下文理解更加准确，减少因信息缺失导致的错误
@@ -81,19 +81,19 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
 
 ### 2. 推理 Token 效率改进
 
-OpenAI 引入了一项重要变化：更少的 thinking tokens 达到相同质量。
+**OpenAI** 引入了一项重要变化：更少的 thinking tokens 达到相同质量。
 
-在 GPT-5.4 中，复杂推理任务可能需要数千个 thinking tokens。GPT-5.5 通过以下优化降低了 thinking token 消耗：
+在 **GPT-5**.4 中，复杂推理任务可能需要数千个 thinking tokens。**GPT-5**.5 通过以下优化降低了 thinking token 消耗：
 
 - 更精准的推理路径选择：减少不必要的推理分支探索
 - 中间状态的压缩与复用：对于重复出现的推理模式，直接复用已压缩的中间状态
 - 提前终止机制：当推理达到足够的确定性时，提前结束 thinking 阶段
 
-实际影响： 对于相同任务，GPT-5.5 的总 token 消耗可能比 GPT-5.4 降低 20-40%，部分抵消了单价上涨的影响。
+**实际影响**： 对于相同任务，GPT-5.5 的总 token 消耗可能比 GPT-5.4 降低 20-40%，部分抵消了单价上涨的影响。
 
 ### 3. 多模态融合深化
 
-GPT-5.5 在图片和文档理解方面有显著改进：
+**GPT-5**.5 在图片和文档理解方面有显著改进：
 
 - 图片理解精度提升：对复杂图表、代码截图、架构图的理解更准确
 - 文档结构解析：能够更好地理解 PDF、Markdown 等文档的层级结构
@@ -101,7 +101,7 @@ GPT-5.5 在图片和文档理解方面有显著改进：
 
 ### 4. 新参数：verbosity 和 image_detail
 
-GPT-5.5 引入了两个新的 API 参数：
+**GPT-5**.5 引入了两个新的 API 参数：
 
 | 参数 | 值 | 作用 |
 |------|-----|------|
@@ -132,28 +132,28 @@ GPT-5.5 引入了两个新的 API 参数：
     },
     {
       title: "三、GPT-5.5 Prompt 工程最佳实践",
-      body: `OpenAI 专门为 GPT-5.5 发布了 Prompt 指南。以下是经过验证的最佳实践：
+      body: `**OpenAI** 专门为 **GPT-5**.5 发布了 Prompt 指南。以下是经过验证的最佳实践：
 
 ### 1. 从零开始重新调优（最重要的建议）
 
-OpenAI 明确建议：不要直接复用 GPT-5.2/5.4 的 prompt 栈。
+**OpenAI** 明确建议：不要直接复用 **GPT-5**.2/5.4 的 prompt 栈。
 
 > "Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack. Start with the smallest prompt that preserves the product contract, then tune reasoning effort, verbosity, tool descriptions, and output format against representative examples."
 
-具体步骤：
+**具体步骤**：
 
 1. 最小化启动：从仅包含产品契约（核心任务定义）的最小 prompt 开始
 2. 逐步增加：根据输出质量，逐步添加推理指令、格式约束等
 3. 代表性测试：用一组代表性示例验证每个调优步骤的效果
-4. 避免过度约束：GPT-5.5 的理解能力更强，过度约束反而会限制其能力
+4. 避免过度约束：**GPT-5**.5 的理解能力更强，过度约束反而会限制其能力
 
 ### 2. 多步骤任务的渐进式反馈
 
-OpenAI 推荐了一个非常实用的 UX 模式：
+**OpenAI** 推荐了一个非常实用的 UX 模式：
 
 > "Before any tool calls for a multi-step task, send a short user-visible update that acknowledges the request and states the first step."
 
-这个模式已经被 OpenAI 的 Codex 应用采用——在执行长时间任务时，先输出一条简短的进度更新，让用户知道模型正在工作而非卡死。
+这个模式已经被 **OpenAI** 的 Codex 应用采用——在执行长时间任务时，先输出一条简短的进度更新，让用户知道模型正在工作而非卡死。
 
 ### 3. verbosity 参数的正确使用
 
@@ -163,15 +163,15 @@ OpenAI 推荐了一个非常实用的 UX 模式：
 | medium | 一般对话、文档生成 | 默认行为 |
 | high | 教学解释、详细分析 | 增加 30-50% token |
 
-反模式： 在需要精确输出的场景（如 JSON 解析、代码生成）使用 high verbosity 会导致输出中包含不必要的解释，增加解析难度和成本。
+**反模式**： 在需要精确输出的场景（如 JSON 解析、代码生成）使用 high verbosity 会导致输出中包含不必要的解释，增加解析难度和成本。
 
 ### 4. Tool Description 的调优
 
-GPT-5.5 对 tool description 的理解更加敏感。建议：
+**GPT-5**.5 对 tool description 的理解更加敏感。建议：
 
 - 具体而非抽象：明确描述工具做什么、接受什么参数、返回什么
-- 包含示例：在 description 中包含一个调用示例
-- 避免模糊描述：如"这个工具很有用"——GPT-5.5 需要精确的语义而非鼓励性语言`,
+**- 包含示例**：在 description 中包含一个调用示例
+- 避免模糊描述：如"这个工具很有用"——**GPT-5**.5 需要精确的语义而非鼓励性语言`,
       code: [
         {
           lang: "python",
@@ -267,17 +267,17 @@ asyncio.run(main())`,
     },
     {
       title: "四、Codex 平台实战：用 GPT-5.5 进行 Agentic Coding",
-      body: `GPT-5.5 的首发平台是 Codex——OpenAI 的 Agentic Coding 产品。以下是实战指南：
+      body: `**GPT-5**.5 的首发平台是 Codex——**OpenAI** 的 Agentic Coding 产品。以下是实战指南：
 
 ### 1. Codex 快速上手
 
-Codex 是一个命令行工具，可以直接与 GPT-5.5 交互进行编程任务：
+Codex 是一个命令行工具，可以直接与 **GPT-5**.5 交互进行编程任务：
 
 \`\`\`bash
 # 安装 Codex CLI
 npm install -g @openai/codex
 
-# 初始化（需要 OpenAI API Key）
+# 初始化（需要 **OpenAI** API Key）
 codex init
 
 # 运行编程任务
@@ -433,48 +433,48 @@ print(result["code"])`,
     },
     {
       title: "五、API 迁移指南：从 GPT-5.4 到 GPT-5.5",
-      body: `如果你正在使用 GPT-5.4 并希望迁移到 GPT-5.5，以下是具体的迁移步骤：
+      body: `如果你正在使用 **GPT-5**.4 并希望迁移到 **GPT-5**.5，以下是具体的迁移步骤：
 
 ### 1. 最小化迁移（推荐方式）
 
-按照 OpenAI 的建议，从最小化 prompt 开始：
+按照 **OpenAI** 的建议，从最小化 prompt 开始：
 
 | 步骤 | 操作 |
 |------|------|
 | 1 | 将模型名从 "gpt-5.4" 改为 "gpt-5.5" |
-| 2 | 移除所有 GPT-5.4 特有的 workaround |
+| 2 | 移除所有 **GPT-5**.4 特有的 workaround |
 | 3 | 从最小 prompt 开始测试 |
 | 4 | 逐步添加必要的约束 |
 | 5 | 用代表性示例验证效果 |
 
 ### 2. 关键 API 参数变化
 
-| 参数 | GPT-5.4 | GPT-5.5 | 说明 |
+| 参数 | **GPT-5**.4 | **GPT-5**.5 | 说明 |
 |------|---------|---------|------|
 | model | "gpt-5.4" | "gpt-5.5" | 模型名变更 |
-| reasoning_effort | 需要手动调优 | 自动优化 | GPT-5.5 内部优化了推理路径 |
+| reasoning_effort | 需要手动调优 | 自动优化 | **GPT-5**.5 内部优化了推理路径 |
 | verbosity | 不支持 | low/medium/high | 新参数 |
 | image_detail | 不支持 | low/high/auto/original | 新参数 |
 
 ### 3. 常见迁移问题
 
-问题一：原有 prompt 输出质量下降
+**问题一**：原有 prompt 输出质量下降
 
-原因：GPT-5.5 的理解方式与 GPT-5.4 不同，某些为 GPT-5.4 优化的 prompt 可能在 GPT-5.5 上产生次优结果。
+**原因**：GPT-5.5 的理解方式与 GPT-5.4 不同，某些为 GPT-5.4 优化的 prompt 可能在 GPT-5.5 上产生次优结果。
 
-解决：按照最小化迁移流程重新调优。
+**解决**：按照最小化迁移流程重新调优。
 
-问题二：输出格式不一致
+**问题二**：输出格式不一致
 
-原因：GPT-5.5 可能需要更明确的输出格式约束。
+**原因**：GPT-5.5 可能需要更明确的输出格式约束。
 
-解决：在 prompt 中添加明确的输出格式说明，或使用 \`response_format\` 参数。
+**解决**：在 prompt 中添加明确的输出格式说明，或使用 \`response_format\` 参数。
 
-问题三：成本超出预期
+**问题三**：成本超出预期
 
-原因：GPT-5.5 的单价比 GPT-5.4 高，但 token 效率提升可能抵消这一点。
+**原因**：GPT-5.5 的单价比 GPT-5.4 高，但 token 效率提升可能抵消这一点。
 
-解决：使用 \`verbosity: "low"\` 减少不必要的输出，关注实际 token 消耗而非单价。`,
+**解决**：使用 \`verbosity: "low"\` 减少不必要的输出，关注实际 token 消耗而非单价。`,
       code: [
         {
           lang: "python",
@@ -543,11 +543,11 @@ for old, new in zip(gpt54_results, gpt55_results):
     },
     {
       title: "六、GPT-5.5 与竞品的全面对比",
-      body: `在 2026 年 4 月的 AI 模型格局中，GPT-5.5 面临多个强劲竞争对手：
+      body: `在 2026 年 4 月的 AI 模型格局中，**GPT-5**.5 面临多个强劲竞争对手：
 
 ### 综合能力对比
 
-| 维度 | GPT-5.5 | Claude Opus 4.7 | DeepSeek V4-Pro | Qwen3.6-27B |
+| 维度 | **GPT-5**.5 | **Claude** Opus 4.7 | DeepSeek V4-Pro | Qwen3.6-27B |
 |------|---------|-----------------|-----------------|-------------|
 | 参数量 | ~2T+ | ~2T+ | 1.6T MoE | 27B Dense |
 | 定价 (输入) | $5.00 | $5.00 | $1.74 | ~$0.10 |
@@ -560,7 +560,7 @@ for old, new in zip(gpt54_results, gpt55_results):
 
 ### 选择建议
 
-选择 GPT-5.5 的场景：
+选择 **GPT-5**.5 的场景：
 - 需要最佳的 Agentic Coding 体验（Codex 平台）
 - 复杂的多步骤推理任务
 - 需要多模态理解（图片 + 文本联合推理）
@@ -584,11 +584,11 @@ for old, new in zip(gpt54_results, gpt55_results):
 
 | 任务类型 | 推荐模型 | 理由 |
 |---------|---------|------|
-| Agentic Coding 复杂任务 | GPT-5.5 | 最佳编程能力 |
+| Agentic Coding 复杂任务 | **GPT-5**.5 | 最佳编程能力 |
 | 日常代码生成 | DeepSeek V4-Pro | 性价比最高 |
 | 中文内容生成 | Qwen3.6-27B | 中文最优 |
 | 批量数据处理 | DeepSeek V4-Flash | 成本最低 |
-| 关键决策推理 | GPT-5.5 | 推理质量最高 |`,
+| 关键决策推理 | **GPT-5**.5 | 推理质量最高 |`,
       code: [
         {
           lang: "python",
@@ -672,13 +672,13 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
     },
     {
       title: "七、总结与展望",
-      body: `GPT-5.5 的发布标志着 OpenAI 在 Agentic Coding 领域的又一次重要升级。以下是本次更新的核心要点：
+      body: `**GPT-5**.5 的发布标志着 **OpenAI** 在 Agentic Coding 领域的又一次重要升级。以下是本次更新的核心要点：
 
 ### 关键结论
 
-1. GPT-5.5 是当前最强的 Agentic Coding 模型，在复杂编程任务上保持领先
+1. **GPT-5**.5 是当前最强的 Agentic Coding 模型，在复杂编程任务上保持领先
 2. 推理 Token 效率提升部分抵消了价格上涨，实际成本可能持平
-3. 必须从零开始调优 Prompt——不要直接复用 GPT-5.4 的配置
+3. 必须从零开始调优 Prompt——不要直接复用 **GPT-5**.4 的配置
 4. 新参数（verbosity、image_detail）让开发者能够更精细地控制输出和成本
 5. DeepSeek V4-Pro 是性价比最高的替代选择，以 1/14 的价格提供接近的能力
 
@@ -686,18 +686,18 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
 
 | 优先级 | 行动 | 时间线 |
 |--------|------|--------|
-| 🔴 立即 | 通过 OpenRouter 或 API 测试 GPT-5.5 | 本周 |
-| 🔴 立即 | 将 GPT-5.4 迁移到 GPT-5.5（最小化迁移） | 本周 |
+| 🔴 立即 | 通过 OpenRouter 或 API 测试 **GPT-5**.5 | 本周 |
+| 🔴 立即 | 将 **GPT-5**.4 迁移到 **GPT-5**.5（最小化迁移） | 本周 |
 | 🟠 本周 | 用代表性示例重新调优 prompt | 1-2 周 |
 | 🟠 本周 | 测试 DeepSeek V4-Pro 作为成本优化选项 | 1-2 周 |
 | 🟢 本月 | 实施多模型智能路由策略 | 1 个月 |
-| 🟢 本月 | 关注 GPT-5.5 后续更新和竞品动态 | 持续 |
+| 🟢 本月 | 关注 **GPT-5**.5 后续更新和竞品动态 | 持续 |
 
 ### 未来展望
 
-从 GPT-5.5 的更新方向可以看出 OpenAI 的战略重点：
+从 **GPT-5**.5 的更新方向可以看出 **OpenAI** 的战略重点：
 
-- Agentic Coding 是核心战场：OpenAI 正在将 Codex 打造成最佳的 AI 编程平台
+- Agentic Coding 是核心战场：**OpenAI** 正在将 Codex 打造成最佳的 AI 编程平台
 - 模型效率比规模更重要：用更少的 token 达到更好的效果是趋势
 - 渐进式升级是主流策略：5.5 → 5.6 → ... 的小步迭代取代了大版本跳跃
 - 多模态是必争之地：图片、文档、代码的联合理解能力将成为标配

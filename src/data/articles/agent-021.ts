@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "1. 为什么 2026 年是「AI 团队」元年？",
-      body: `回顾 2025 年，AI Agent 的核心叙事是「单个 Agent 能做什么」——能不能自主编码？能不能操作浏览器？能不能调用 API？这些问题的答案在 2025 年底已经基本明朗：单个 Agent 可以在限定场景下完成复杂任务。\n\n但进入 2026 年，问题变成了：「多个 Agent 如何协作？」\n\n这不是一个量变，而是一个质变。单个 Agent 无论多强，都有能力边界——上下文窗口有限、专业知识有限、无法同时处理多个独立任务。而 Agent 团队可以通过分工协作突破这些限制。\n\n2026 年 4 月，三个信号同时出现，标志着「AI 团队」元年的到来：\n\n- Multica（github.com/multica-ai/multica）：开源 Managed Agents 平台，单周暴涨 7,831 星，总计 16,826 星。核心理念是「把编程 Agent 变成真正的团队成员」——你可以给 Agent 分配任务、追踪它的进度、看它累积技能\n- OpenAI Agents SDK：标准化 Agent 构建工具链，原生支持 Agent 编排和 Handoff（任务交接）\n- n8n AI 工作流（184K 星）：从工作流自动化平台进化为 AI Agent 编排平台，支持多 Agent 协作管道\n\n这些项目的共同点是：不再把 Agent 当工具，而是当「同事」。`,
+      body: `回顾 2025 年，AI Agent 的核心叙事是「单个 Agent 能做什么」——能不能自主编码？能不能操作浏览器？能不能调用 API？这些问题的答案在 2025 年底已经基本明朗：单个 Agent 可以在限定场景下完成复杂任务。\n\n但进入 2026 年，问题变成了：「多个 Agent 如何协作？」\n\n这不是一个量变，而是一个质变。单个 Agent 无论多强，都有能力边界——上下文窗口有限、专业知识有限、无法同时处理多个独立任务。而 Agent 团队可以通过分工协作突破这些限制。\n\n2026 年 4 月，三个信号同时出现，标志着「AI 团队」元年的到来：\n\n- Multica（github.com/multica-ai/multica）：开源 Managed Agents 平台，单周暴涨 7,831 星，总计 16,826 星。核心理念是「把编程 Agent 变成真正的团队成员」——你可以给 Agent 分配任务、追踪它的进度、看它累积技能\n- **OpenAI** Agents SDK：标准化 Agent 构建工具链，原生支持 Agent 编排和 Handoff（任务交接）\n- n8n AI 工作流（184K 星）：从工作流自动化平台进化为 AI Agent 编排平台，支持多 Agent 协作管道\n\n这些项目的共同点是：不再把 Agent 当工具，而是当「同事」。`,
       mermaid: `graph LR
     A["2025: 单 Agent 时代"] -->|"能力天花板
 单个 Agent 无法突破"| B["2026: AI 团队时代"]
@@ -50,7 +50,7 @@ export const article: Article = {
     },
     {
       title: "2. Managed Agent vs Multi-Agent：本质区别",
-      body: `很多人会把 Managed Agent 和 Multi-Agent 混为一谈，但它们解决的是不同层次的问题。\n\n### Multi-Agent 框架：关注「对话与协作协议」\n\nMulti-Agent 框架（如 AutoGen、CrewAI、LangGraph 的早期版本）解决的核心问题是：多个 Agent 之间如何通信和协调。它们提供的是对话协议、消息传递机制和简单的协作模式（如顺序执行、并行执行、投票决策）。\n\n但 Multi-Agent 框架有一个根本局限：它们没有「管理」的概念。没有任务分配系统、没有进度追踪、没有绩效评估、没有技能积累。你手动编排 Agent 的执行顺序，就像手动管理一个团队——可行，但不可扩展。\n\n### Managed Agent 平台：关注「团队运营管理」\n\nManaged Agent 平台在 Multi-Agent 之上增加了一个管理层（Management Layer），解决了以下问题：\n\n1. 任务分配：根据 Agent 的技能和当前负载，自动或半自动地将任务分配给合适的 Agent\n2. 进度追踪：实时监控每个 Agent 的任务状态、完成度、遇到的阻塞\n3. 技能累积：Agent 完成任务后，将获得的经验和技能存入团队知识库\n4. 绩效评估：评估 Agent 的任务完成质量、速度、资源消耗\n5. 动态扩缩容：根据任务复杂度，动态增加或减少参与的 Agent 数量\n6. 上下文共享：Agent 之间的上下文不是简单的消息传递，而是结构化的知识共享\n\n这就好比从「微信群聊」（Multi-Agent）升级到「企业项目管理平台」（Managed Agent）。`,
+      body: `很多人会把 Managed Agent 和 Multi-Agent 混为一谈，但它们解决的是不同层次的问题。\n\n### Multi-Agent 框架：关注「对话与协作协议」\n\nMulti-Agent 框架（如 **AutoGen**、**CrewAI**、**LangGraph** 的早期版本）解决的核心问题是：多个 Agent 之间如何通信和协调。它们提供的是对话协议、消息传递机制和简单的协作模式（如顺序执行、并行执行、投票决策）。\n\n但 Multi-Agent 框架有一个根本局限：它们没有「管理」的概念。没有任务分配系统、没有进度追踪、没有绩效评估、没有技能积累。你手动编排 Agent 的执行顺序，就像手动管理一个团队——可行，但不可扩展。\n\n### Managed Agent 平台：关注「团队运营管理」\n\nManaged Agent 平台在 Multi-Agent 之上增加了一个管理层（Management Layer），解决了以下问题：\n\n1. 任务分配：根据 Agent 的技能和当前负载，自动或半自动地将任务分配给合适的 Agent\n2. 进度追踪：实时监控每个 Agent 的任务状态、完成度、遇到的阻塞\n3. 技能累积：Agent 完成任务后，将获得的经验和技能存入团队知识库\n4. 绩效评估：评估 Agent 的任务完成质量、速度、资源消耗\n5. 动态扩缩容：根据任务复杂度，动态增加或减少参与的 Agent 数量\n6. 上下文共享：Agent 之间的上下文不是简单的消息传递，而是结构化的知识共享\n\n这就好比从「微信群聊」（Multi-Agent）升级到「企业项目管理平台」（Managed Agent）。`,
       mermaid: `graph TD
     subgraph Multi-Agent 框架
     MA1["Agent A"] <-->|"消息传递"| MA2["Agent B"]
@@ -340,7 +340,7 @@ if __name__ == "__main__":
     },
     {
       title: "3. 2026 年主流 Managed Agent 平台对比",
-      body: `目前市面上有多个平台正在向 Managed Agent 方向演进，但它们的定位和成熟度差异很大。下面从六个维度进行对比：\n\n1. Multica（github.com/multica-ai/multica）\n\nMultica 是 2026 年最引人注目的 Managed Agent 新星。它的核心理念非常清晰：把编程 Agent 变成真正的团队成员。你可以在平台上给 Agent 分配任务、追踪进度、查看技能增长曲线。单周 7,831 星的增长说明市场对这种理念的极度认可。\n\n技术特点：\n- 支持多种编程 Agent 接入（Claude Code、Codex、Cursor 等）\n- 内置任务分解引擎，自动将大任务拆解为子任务分配给不同 Agent\n- 技能累积系统：Agent 完成任务后自动提取可复用技能\n- 团队看板：可视化展示每个 Agent 的状态、负载、技能树\n\n2. n8n（github.com/n8n-io/n8n，184K 星）\n\nn8n 从一个工作流自动化平台进化为 AI Agent 编排平台。它的优势是400+ 集成节点和可视化工作流构建，适合需要与非 AI 系统集成的场景。\n\n3. LangGraph（LangChain 生态）\n\nLangGraph 提供了强大的图式 Agent 编排能力，适合需要精细控制 Agent 执行流程的场景。但它更偏向「编排框架」而非「管理平台」，需要较多手动配置。\n\n4. CrewAI\n\nCrewAI 是最早提出「Agent 团队」概念的框架之一，支持角色定义、任务分配和顺序/层级协作。但它缺少运行时管理和技能累积能力。`,
+      body: `目前市面上有多个平台正在向 Managed Agent 方向演进，但它们的定位和成熟度差异很大。下面从六个维度进行对比：\n\n1. Multica（github.com/multica-ai/multica）\n\nMultica 是 2026 年最引人注目的 Managed Agent 新星。它的核心理念非常清晰：把编程 Agent 变成真正的团队成员。你可以在平台上给 Agent 分配任务、追踪进度、查看技能增长曲线。单周 7,831 星的增长说明市场对这种理念的极度认可。\n\n技术特点：\n- 支持多种编程 Agent 接入（**Claude** Code、Codex、Cursor 等）\n- 内置任务分解引擎，自动将大任务拆解为子任务分配给不同 Agent\n- 技能累积系统：Agent 完成任务后自动提取可复用技能\n- 团队看板：可视化展示每个 Agent 的状态、负载、技能树\n\n2. n8n（github.com/n8n-io/n8n，184K 星）\n\nn8n 从一个工作流自动化平台进化为 AI Agent 编排平台。它的优势是400+ 集成节点和可视化工作流构建，适合需要与非 AI 系统集成的场景。\n\n3. **LangGraph**（**LangChain** 生态）\n\n**LangGraph** 提供了强大的图式 Agent 编排能力，适合需要精细控制 Agent 执行流程的场景。但它更偏向「编排框架」而非「管理平台」，需要较多手动配置。\n\n4. **CrewAI**\n\n**CrewAI** 是最早提出「Agent 团队」概念的框架之一，支持角色定义、任务分配和顺序/层级协作。但它缺少运行时管理和技能累积能力。`,
       table: {
         headers: ["平台", "定位", "任务分配", "进度追踪", "技能累积", "Star 数"],
         rows: [

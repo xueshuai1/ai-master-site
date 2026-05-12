@@ -7,9 +7,9 @@ const content: ArticleSection[] = [
 
 过去六个月，AI 编码工具领域经历了爆炸式增长，形成了三足鼎立的格局：
 
-- Claude Code（Anthropic）：凭借 Claude Sonnet/Opus 4 的超强编码能力，迅速占领开发者心智
-- OpenAI Codex（OpenAI）：2025 年 4 月开源后快速崛起，Rust 构建、沙箱安全、模型选择丰富
-- GitHub Copilot（Microsoft/GitHub）：依托 IDE 集成优势和庞大用户基数，依然是最大玩家
+- **Claude** Code（**Anthropic**）：凭借 **Claude** Sonnet/Opus 4 的超强编码能力，迅速占领开发者心智
+- **OpenAI** Codex（**OpenAI**）：2025 年 4 月开源后快速崛起，Rust 构建、沙箱安全、模型选择丰富
+- GitHub Copilot（**Microsoft**/GitHub）：依托 IDE 集成优势和庞大用户基数，依然是最大玩家
 
 三者的选择不再是「谁更好用」那么简单——在 2026 年 4 月的定价大地震之后，「谁更划算」成为了决定性的因素。
 
@@ -24,10 +24,10 @@ const content: ArticleSection[] = [
     title: "一、三大工具全景对比",
     body: `在深入细节之前，让我们先用一张表格看清全貌：
 
-| 维度 | OpenAI Codex | Claude Code | GitHub Copilot |
+| 维度 | **OpenAI** Codex | **Claude** Code | GitHub Copilot |
 |------|-------------|-------------|----------------|
-| 开发商 | OpenAI | Anthropic | Microsoft/GitHub |
-| 核心模型 | GPT-4o / o3 / o4-mini | Claude Sonnet 4 / Opus 4.7 | GPT-4o / Claude 系列 / Opus |
+| 开发商 | **OpenAI** | **Anthropic** | **Microsoft**/GitHub |
+| 核心模型 | **GPT-4**o / o3 / o4-mini | **Claude** Sonnet 4 / Opus 4.7 | **GPT-4**o / **Claude** 系列 / Opus |
 | 实现语言 | Rust | TypeScript/Shell | TypeScript |
 | 运行方式 | 终端 CLI | 终端 CLI | IDE 插件 + CLI + Web |
 | 开源 | ✅ 完全开源 | ❌ 闭源 | ❌ 闭源（服务端） |
@@ -38,7 +38,7 @@ const content: ArticleSection[] = [
 | 自主 PR 提交 | ✅ 原生支持 | ✅ 通过 shell | ✅ IDE 内 |
 | Agent 自主循环 | ✅ 多步自主执行 | ✅ 多步自主执行 | ⚠️ 有限（Agent mode）|
 
-关键发现： OpenAI Codex 是唯一开源、唯一默认沙箱安全执行、唯一在 FREE 计划中可用的工具。这三点使其在 2026 年的定价竞争中占据了独特的「平民化」定位。`,
+**关键发现**： OpenAI Codex 是唯一开源、唯一默认沙箱安全执行、唯一在 FREE 计划中可用的工具。这三点使其在 2026 年的定价竞争中占据了独特的「平民化」定位。`,
     mermaid: `graph TD
     subgraph "开发者输入"
         A["📝 自然语言需求"]
@@ -79,27 +79,27 @@ const content: ArticleSection[] = [
   },
   {
     title: "二、架构深度对比：三种不同的 AI 编码哲学",
-    body: `### 2.1 OpenAI Codex：安全优先的轻量级 Agent
+    body: `### 2.1 **OpenAI** Codex：安全优先的轻量级 Agent
 
-OpenAI Codex 采用 Rust 构建，核心理念是「轻量 + 安全」。它的架构特点：
+**OpenAI** Codex 采用 Rust 构建，核心理念是「轻量 + 安全」。它的架构特点：
 
-- 沙箱隔离：代码在沙箱中执行，不会直接影响宿主机文件系统
-- 多模型策略：用户可根据任务复杂度选择模型——简单重构用 o4-mini（便宜快速），复杂架构设计用 o3 或 GPT-4o
+**- 沙箱隔离**：代码在沙箱中执行，不会直接影响宿主机文件系统
+- 多模型策略：用户可根据任务复杂度选择模型——简单重构用 o4-mini（便宜快速），复杂架构设计用 o3 或 **GPT-4**o
 - 会话式工作流：像和一位资深工程师对话一样，可以追问、修正、迭代
-### 2.2 Claude Code：能力优先的终端智能体
+### 2.2 **Claude** Code：能力优先的终端智能体
 
-Claude Code 的核心理念是「最强编码能力」。它直接利用 Claude 模型在代码理解和生成方面的领先优势：
+**Claude** Code 的核心理念是「最强编码能力」。它直接利用 **Claude** 模型在代码理解和生成方面的领先优势：
 
-- 直接执行：不经过沙箱，直接在项目环境中运行命令（强大的同时需要信任）
+**- 直接执行**：不经过沙箱，直接在项目环境中运行命令（强大的同时需要信任）
 - 深度项目理解：自动扫描整个项目结构，建立上下文索引
-- Opus 4.7 加持：Anthropic 最强模型在编码任务上的表现被广泛认可为行业第一
+- Opus 4.7 加持：**Anthropic** 最强模型在编码任务上的表现被广泛认可为行业第一
 ### 2.3 GitHub Copilot：集成优先的平台级方案
 
 GitHub Copilot 走的是一条完全不同的路——深度集成到开发工具链中：
 
 - IDE 原生：在 VS Code、JetBrains、Neovim 中直接可用，无需切换窗口
 - 云端 Agent：复杂任务由云端 Agent 执行，本地 IDE 只显示结果
-- 生态绑定：与 GitHub Issues、PR、Actions 深度集成`,
+**- 生态绑定**：与 GitHub Issues、PR、Actions 深度集成`,
     code: [
       {
         lang: "bash",
@@ -174,18 +174,18 @@ $ gh copilot explain "这段代码做了什么"
     title: "三、2026 年 4 月定价对比：你的钱包会怎样？",
     body: `这是本周最关键的维度。4 月 20 日前后，三大厂商的定价策略发生了剧烈变化。
 
-### 3.1 OpenAI Codex 定价
+### 3.1 **OpenAI** Codex 定价
 
 | 计划 | 价格 | 包含内容 |
 |------|------|----------|
 | FREE | $0 | Codex CLI 基础功能，有限用量 |
 | ChatGPT Plus | $20/月 | 完整 Codex 功能，o4-mini 为主 |
-| ChatGPT Pro | $200/月 | 优先访问 o3/GPT-4o，更高用量 |
+| ChatGPT Pro | $200/月 | 优先访问 o3/**GPT-4**o，更高用量 |
 | API 按量 | 按 token 计费 | 灵活但需自行管理 |
 
-优势：FREE 计划即可使用，Plus 计划（$20）已包含完整功能，是性价比最高的选择。
+**优势**：FREE 计划即可使用，Plus 计划（$20）已包含完整功能，是性价比最高的选择。
 
-### 3.2 Claude Code 定价
+### 3.2 **Claude** Code 定价
 
 | 计划 | 价格 | Codex Code 可用性 |
 |------|------|-------------------|
@@ -193,7 +193,7 @@ $ gh copilot explain "这段代码做了什么"
 | Pro | $20/月 | ✅ 可用（Sonnet 4），本周经历涨价风波 |
 | Max | $100/月 | ✅ 可用（全部模型）|
 
-本周事件：Anthropic 曾试探性地将 Claude Code 从 Pro 计划移除（仅限 Max），引发社区强烈反弹后迅速撤回。目前 Claude Code 仍在 Pro 计划中可用，但未来不排除再次调整。
+**本周事件**：Anthropic 曾试探性地将 Claude Code 从 Pro 计划移除（仅限 Max），引发社区强烈反弹后迅速撤回。目前 Claude Code 仍在 Pro 计划中可用，但未来不排除再次调整。
 
 ### 3.3 GitHub Copilot 定价
 
@@ -203,7 +203,7 @@ $ gh copilot explain "这段代码做了什么"
 | Pro+ | $39/月 | 5 倍于 Pro 的用量，包含 Opus 4.7 |
 | Business | $19/用户/月 | 企业用量，暂停新注册 |
 
-关键变化：Copilot Pro 不再提供 Opus 模型——这意味着如果你需要最强的 AI 编码能力，必须升级到 $39/月的 Pro+。`,
+**关键变化**：Copilot Pro 不再提供 Opus 模型——这意味着如果你需要最强的 AI 编码能力，必须升级到 $39/月的 Pro+。`,
   },
   {
     title: "四、Python 实战：AI 编码工具成本计算器",
@@ -212,12 +212,12 @@ $ gh copilot explain "这段代码做了什么"
 
 | 工具 | 月度基础费 | 超额费用 | 总计 |
 |------|-----------|---------|------|
-| OpenAI Codex Plus | $20 | $0 | $20 |
-| Claude Code Pro | $20 | $0 | $20 |
+| **OpenAI** Codex Plus | $20 | $0 | $20 |
+| **Claude** Code Pro | $20 | $0 | $20 |
 | GitHub Copilot Pro | $10 | $82.50 | $92.50 |
 | GitHub Copilot Pro+ | $39 | $0 | $39 |
 
-洞察：中度用户选择 GitHub Copilot Pro 反而最贵！因为 150K token 上限很容易被 Agent 工作流突破。而 OpenAI Codex Plus 的 500K 上限对大多数开发者来说完全够用。`,
+**洞察**：中度用户选择 GitHub Copilot Pro 反而最贵！因为 150K token 上限很容易被 Agent 工作流突破。而 OpenAI Codex Plus 的 500K 上限对大多数开发者来说完全够用。`,
     code: [
       {
         lang: "python",
@@ -340,7 +340,7 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 
 根据 SWE-bench Verified（2026 年 3 月数据）和社区实际反馈：
 
-| 能力维度 | Claude Opus 4.7 | GPT-4o (Codex) | o4-mini (Codex) |
+| 能力维度 | **Claude** Opus 4.7 | **GPT-4**o (Codex) | o4-mini (Codex) |
 |---------|----------------|----------------|-----------------|
 | 复杂重构 | ★★★★★ | ★★★★☆ | ★★★☆☆ |
 | Bug 修复 | ★★★★★ | ★★★★☆ | ★★★★☆ |
@@ -349,11 +349,11 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 | 代码审查 | ★★★★★ | ★★★★☆ | ★★★☆☆ |
 | 多文件协调 | ★★★★★ | ★★★★☆ | ★★★☆☆ |
 
-结论：Claude Opus 4.7 在几乎所有编码维度上仍是标杆，但 GPT-4o 和 o4-mini 在特定场景（如测试生成、Bug 修复）上已经非常接近。
+**结论**：Claude Opus 4.7 在几乎所有编码维度上仍是标杆，但 GPT-4o 和 o4-mini 在特定场景（如测试生成、Bug 修复）上已经非常接近。
 
 ### 5.2 Agent 自主执行能力
 
-| 能力 | Codex | Claude Code | Copilot |
+| 能力 | Codex | **Claude** Code | Copilot |
 |------|-------|-------------|---------|
 | 多步骤任务分解 | ✅ | ✅ | ⚠️ |
 | 自动运行测试 | ✅ | ✅ | ⚠️ |
@@ -362,7 +362,7 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 | 沙箱安全执行 | ✅ | ❌ | ❌ |
 | Git 操作（commit/PR）| ✅ | ✅ | ✅ |
 
-关键差异：OpenAI Codex 是唯一默认在沙箱中执行代码的工具，这意味着它可以更安全地运行自动生成的代码——这一点对企业用户尤为重要。`,
+**关键差异**：OpenAI Codex 是唯一默认在沙箱中执行代码的工具，这意味着它可以更安全地运行自动生成的代码——这一点对企业用户尤为重要。`,
     warning: `安全提醒： Claude Code 和 GitHub Copilot 直接在宿主环境执行代码，如果 AI 生成了恶意或有破坏性的命令（如 \`rm -rf\`），会直接生效。使用这些工具时务必 review 每一步执行的操作。OpenAI Codex 的沙箱模式可以避免这类风险。`,
   },
   {
@@ -372,11 +372,11 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 
 很多开发者其实不需要「三选一」。一个实用的组合策略：
 
-1. 日常开发：OpenAI Codex（性价比高，够用）
-2. 复杂任务：Claude Code（偶尔用，处理 Codex 搞不定的难题）
+1. 日常开发：**OpenAI** Codex（性价比高，够用）
+2. 复杂任务：**Claude** Code（偶尔用，处理 Codex 搞不定的难题）
 3. 团队协作：GitHub Copilot（企业采购，IDE 集成）
 
-这种组合的月度成本：$20（Codex Plus）+ $20（Claude Code Pro 偶尔用）+ $10（Copilot Pro 团队）= $50/月，比单独用 Copilot Pro+（$39）多 $11，但获得了三种不同模型的能力覆盖。`,
+这种组合的月度成本：$20（Codex Plus）+ $20（**Claude** Code Pro 偶尔用）+ $10（Copilot Pro 团队）= $50/月，比单独用 Copilot Pro+（$39）多 $11，但获得了三种不同模型的能力覆盖。`,
     code: [
       {
         lang: "text",
@@ -414,11 +414,11 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 
 1. 定价将继续波动：Agentic workflows 的 token 消耗远超预期，所有厂商都在重新设计定价模型。今天的「最优选择」可能下个月就不是了。
 
-2. 开源工具崛起：OpenAI Codex 的开源策略使其获得了社区的大力支持。预计更多开源编码工具将出现，挑战闭源方案。
+2. 开源工具崛起：**OpenAI** Codex 的开源策略使其获得了社区的大力支持。预计更多开源编码工具将出现，挑战闭源方案。
 
 3. 本地部署成为趋势：随着端侧模型能力提升，部分开发者会转向本地部署的开源编码模型（如 Qwen-Coder、DeepSeek-Coder），完全绕过云端定价。
 
-4. Agent 能力分化：Claude Code 和 Codex 都在向更自主的 Agent 方向演进——不仅仅是「写代码」，而是「操作整个开发环境」。2026 年底，我们可能会看到 AI 编码工具能独立完成从需求分析到上线部署的全流程。
+4. Agent 能力分化：**Claude** Code 和 Codex 都在向更自主的 Agent 方向演进——不仅仅是「写代码」，而是「操作整个开发环境」。2026 年底，我们可能会看到 AI 编码工具能独立完成从需求分析到上线部署的全流程。
 
 5. 监管介入：AI 编码工具的定价和透明度问题可能引起监管关注，特别是当它们成为开发者的「必需工具」后。`,
   },
@@ -426,13 +426,13 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
     title: "总结",
     body: `2026 年 4 月的 AI 编码工具格局可以用三个关键词概括：
 
-- 竞争：三足鼎立，各有优劣，没有绝对的赢家
-- 定价地震：Agentic workflows 颠覆了传统 SaaS 定价逻辑
+**- 竞争**：三足鼎立，各有优劣，没有绝对的赢家
+**- 定价地震**：Agentic workflows 颠覆了传统 SaaS 定价逻辑
 - 选择权在你：多工具组合、按需切换，才是最优策略
 
 无论你是个人开发者还是企业团队，最重要的是理解每个工具的核心优势和限制，根据自身需求做出选择——而不是盲目追随「最热门」的那个。
 
-行动建议： 花 30 分钟运行上面的成本计算器，输入你实际的使用数据，找出最适合你的方案。然后下载对应的工具开始试用——实践是检验真理的唯一标准。`,
+**行动建议**： 花 30 分钟运行上面的成本计算器，输入你实际的使用数据，找出最适合你的方案。然后下载对应的工具开始试用——实践是检验真理的唯一标准。`,
     tip: `资源链接：
 - [OpenAI Codex GitHub](https://github.com/openai/codex)
 - [Claude Code 文档](https://docs.anthropic.com/en/docs/claude-code/overview)

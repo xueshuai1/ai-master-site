@@ -463,7 +463,7 @@ scheduler = CosineAnnealingLR(optimizer, T_max=50, eta_min=1e-7)
 
 我们构建一个中等深度的 CNN：4 个卷积层 + 2 个全连接层。使用数据增强（随机裁剪、水平翻转、归一化）来提升泛化能力。训练流程包括：模型定义 → 数据加载 → 损失函数（交叉熵）和优化器（SGD + 动量）→ 训练循环 → 评估 → 学习率调度。
 
-关键实践要点：使用 nn.Sequential 组织卷积块使代码清晰；在卷积后紧跟 BatchNorm 和 ReLU（Conv-BN-ReLU 模式）；训练时开启 dropout 防止过拟合，推理时关闭；使用 DataLoader 的 num_workers 参数加速数据加载；每个 epoch 后验证以监控过拟合。`,
+**关键实践要点**：使用 nn.Sequential 组织卷积块使代码清晰；在卷积后紧跟 BatchNorm 和 ReLU（Conv-BN-ReLU 模式）；训练时开启 dropout 防止过拟合，推理时关闭；使用 DataLoader 的 num_workers 参数加速数据加载；每个 epoch 后验证以监控过拟合。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn

@@ -664,7 +664,7 @@ visualize_dueling_decomposition()`
         },
         {
             title: "7. Gymnasium 实战：从 CartPole 到 Atari",
-            body: `Gymnasium（原 OpenAI Gym 的社区维护分支）是强化学习的标准环境库。我们用它来实战训练 DQN 智能体。CartPole 是最简单的入门环境，Atari 系列则提供了完整的像素级视觉输入，是检验 DQN 能力的标准测试。
+            body: `Gymnasium（原 **OpenAI** Gym 的社区维护分支）是强化学习的标准环境库。我们用它来实战训练 DQN 智能体。CartPole 是最简单的入门环境，Atari 系列则提供了完整的像素级视觉输入，是检验 DQN 能力的标准测试。
 
 从 CartPole 到 Atari 的关键区别在于：CartPole 的 4 维状态可以直接输入全连接网络，而 Atari 的 210x160x3 像素帧需要先经过预处理（灰度化、缩放、帧差）再输入卷积网络。Atari 训练通常需要数百万步，需要 GPU 加速。本节提供两套代码：CartPole 快速验证和 Atari 完整训练框架。`,
             code: [

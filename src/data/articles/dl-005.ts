@@ -146,8 +146,8 @@ JS(P || Q) = ½ KL(P || M) + ½ KL(Q || M)，其中 M = ½(P + Q)
             body: `DCGAN（Deep Convolutional GAN，Radford et al., 2016）是 GAN 发展史上的第一个重要里程碑。它将卷积网络引入 GAN 架构，使 GAN 能够生成高质量的图像。
 
 DCGAN 的核心设计原则：
-- 判别器：使用带步幅卷积（strided convolution）替代池化层，逐步降低特征图空间尺寸
-- 生成器：使用转置卷积（transposed convolution / fractionally-strided convolution）逐步上采样，从低维噪声向量重构出完整图像
+**- 判别器**：使用带步幅卷积（strided convolution）替代池化层，逐步降低特征图空间尺寸
+**- 生成器**：使用转置卷积（transposed convolution / fractionally-strided convolution）逐步上采样，从低维噪声向量重构出完整图像
 - 移除全连接隐藏层，使用纯卷积架构
 - 生成器和判别器均使用批量归一化（BatchNorm）稳定训练
 - 生成器输出层使用 Tanh 激活，其余使用 ReLU
@@ -228,7 +228,7 @@ class DCGAN_Discriminator(nn.Module):
 
 Wasserstein 距离的直观理解：将 p_g 的"土堆"搬到 p_data 的"土坑"，最小搬运成本就是 Wasserstein 距离。与 JS 散度不同，即使两个分布没有重叠，Wasserstein 距离也能提供有意义的梯度信号。
 
-数学定义：W(p_data, p_g) = inf_{γ∈Π} E_{(x,y)~γ}[||x - y||]
+**数学定义**：W(p_data, p_g) = inf_{γ∈Π} E_{(x,y)~γ}[||x - y||]
 
 其中 Π 是所有联合分布的集合，边缘分布分别为 p_data 和 p_g。
 
@@ -301,9 +301,9 @@ def generator_loss(critic, fake_data):
         },
         {
             title: "5. StyleGAN 系列：风格迁移与人脸合成",
-            body: `StyleGAN（Karras et al., 2019）是 NVIDIA 提出的划时代生成模型，彻底改变了高质量人脸合成的格局。
+            body: `StyleGAN（Karras et al., 2019）是 **NVIDIA** 提出的划时代生成模型，彻底改变了高质量人脸合成的格局。
 
-核心创新：StyleGAN 将生成过程分解为多个层次，每层控制不同"风格"的特征：
+**核心创新**：StyleGAN 将生成过程分解为多个层次，每层控制不同"风格"的特征：
 - 粗粒度风格（低层）：控制整体姿态、发型、脸型
 - 中粒度风格（中层）：控制五官比例、面部表情
 - 细粒度风格（高层）：控制肤色、眼睛颜色、细微纹理
@@ -383,8 +383,8 @@ class StyleGAN2Generator(nn.Module):
 之前的 pix2pix 等方法需要严格配对的训练数据（如同一场景的白天/夜晚照片）。但很多场景无法获取配对数据：马↔斑马、照片↔油画、夏季↔冬季。
 
 CycleGAN 的核心思想是引入循环一致性损失（Cycle Consistency Loss）：
-- 正向循环：x → G(x) → F(G(x)) ≈ x
-- 反向循环：y → F(y) → G(F(y)) ≈ y
+**- 正向循环**：x → G(x) → F(G(x)) ≈ x
+**- 反向循环**：y → F(y) → G(F(y)) ≈ y
 
 完整的目标函数：
 L(G, F, D_X, D_Y) = L_GAN(G, D_Y, X, Y) + L_GAN(F, D_X, Y, X) + λ · L_cyc(G, F)
@@ -496,9 +496,9 @@ def cycle_consistency_loss(G, F, real_A, real_B):
 然而，GAN 仍面临严峻挑战：
 
 - 模式崩溃（Mode Collapse）：生成器只学会生成少数几种样本，覆盖不了真实数据的全部模式。这是 GAN 最著名的问题。
-- 评估困难：缺乏统一的生成质量度量。FID（Fréchet Inception Distance）计算真实和生成特征分布之间的 Fréchet 距离，越低越好。IS（Inception Score）评估生成图像的多样性和质量，越高越好。
+**- 评估困难**：缺乏统一的生成质量度量。FID（Fréchet Inception Distance）计算真实和生成特征分布之间的 Fréchet 距离，越低越好。IS（Inception Score）评估生成图像的多样性和质量，越高越好。
 - 训练不稳定：即使有 WGAN-GP 等技术，GAN 训练仍然比 VAE、Diffusion 更敏感。
-- 伦理问题：Deepfake 技术引发虚假信息、隐私侵犯等社会问题。
+**- 伦理问题**：Deepfake 技术引发虚假信息、隐私侵犯等社会问题。
 
 近年来，Diffusion Model 在生成质量上超越了 GAN，但 GAN 在推理速度（单次前向传播 vs 多步迭代）和计算效率上仍有不可替代的优势。`,
             code: [{ lang: "python", code: `import torch

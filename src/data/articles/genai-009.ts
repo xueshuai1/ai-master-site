@@ -14,7 +14,7 @@ export const article: Article = {
       title: "一、2026 AI 图像与视频生成全景图",
       body: `2026 年，AI 图像与视频生成已经从一个"有趣实验"变成了真正的生产力工具。无论是设计师、开发者还是内容创作者，都能利用这些工具快速生成高质量的视觉内容。
 
-技术栈全景：
+**技术栈全景**：
 
 整个 AI 视觉生成领域可以分为以下几个层次：
 
@@ -69,11 +69,11 @@ Flow Matching 的核心优势：
 - 数学上更优雅，训练更稳定
 - Flux 等新一代模型已全面采用 Flow Matching
 
-2.3 Diffusion Transformer（DiT）—— 架构革命
+2.3 Diffusion **Transformer**（DiT）—— 架构革命
 
-传统的扩散模型使用 U-Net 作为骨干网络，而 DiT 用 Transformer 替换了 U-Net。这一架构变革带来了质的飞跃：
+传统的扩散模型使用 U-Net 作为骨干网络，而 DiT 用 **Transformer** 替换了 U-Net。这一架构变革带来了质的飞跃：
 
-- 可扩展性：Transformer 的 scaling law 同样适用于生成模型
+**- 可扩展性**：Transformer 的 scaling law 同样适用于生成模型
 - 全局理解力：Self-attention 机制让模型能理解整个图像的语义关系
 - 多模态融合：天然支持文本、图像、音频等多模态输入
 - Sora、Flux、SD3 等顶级模型均采用 DiT 架构`,
@@ -127,14 +127,14 @@ Flow Matching 的核心优势：
 视频生成比图像生成复杂得多，主要体现在：
 
 - 时间一致性：每一帧都要与前后帧保持连贯，不能出现闪烁或突变
-- 计算成本：视频 = 图像 × 帧数，计算量呈线性增长
-- 运动建模：需要理解物理规律（重力、惯性、流体动力学等）
+**- 计算成本**：视频 = 图像 × 帧数，计算量呈线性增长
+**- 运动建模**：需要理解物理规律（重力、惯性、流体动力学等）
 - 长序列建模：5 秒视频 @ 24fps = 120 帧，需要模型能处理超长序列
 
 4.2 主流视频生成模型
 
-Sora 2（OpenAI）：
-- 基于 Diffusion Transformer 架构
+Sora 2（**OpenAI**）：
+- 基于 Diffusion **Transformer** 架构
 - 支持最长 60 秒视频生成
 - 物理模拟能力显著提升（流体、光影、碰撞）
 - 支持文生视频和图生视频
@@ -197,14 +197,14 @@ ComfyUI 是目前最流行的开源图像生成工具，采用节点式编程：
 - 支持 ControlNet、IP-Adapter、LoRA 等插件
 - 社区共享工作流市场
 
-5.2 Diffusers —— HuggingFace 官方 Python 库
+5.2 Diffusers —— **HuggingFace** 官方 Python 库
 
-Diffusers 是 HuggingFace 提供的官方扩散模型库：
+Diffusers 是 **HuggingFace** 提供的官方扩散模型库：
 
 - 统一的 API 接口，支持多种模型
 - 内置调度器（DDIM、DPM++、Euler 等）
 - 支持流水线（Pipeline）组合
-- 与 Transformers 库深度集成
+- 与 **Transformer**s 库深度集成
 - 是研究和开发的首选框架
 
 5.3 FLUX 开源生态
@@ -219,7 +219,7 @@ Flux 模型开源后，迅速形成了丰富的生态：
     },
     {
       title: "六、Python 实战：用 Diffusers 生成高质量图像",
-      body: `下面我们用 HuggingFace Diffusers 库来实现一个完整的图像生成 Pipeline，支持 Flux 模型、提示词优化和批量生成。`,
+      body: `下面我们用 **HuggingFace** Diffusers 库来实现一个完整的图像生成 Pipeline，支持 Flux 模型、提示词优化和批量生成。`,
       code: [
         {
           lang: "python",
@@ -531,30 +531,30 @@ if __name__ == "__main__":
       title: "八、技术选型建议与最佳实践",
       body: `面对众多的模型和工具，如何选择最适合的方案？以下是基于不同场景的建议：
 
-场景 1：个人创作者，追求最高质量
-- 首选：Midjourney v7 或 Flux.1 [dev]
-- 工具：Midjourney Discord 或 ComfyUI
-- 预算：$10-30/月
+**场景 1**：个人创作者，追求最高质量
+**- 首选**：Midjourney v7 或 Flux.1 [dev]
+**- 工具**：Midjourney Discord 或 ComfyUI
+**- 预算**：$10-30/月
 
-场景 2：开发者，需要 API 集成
-- 首选：Flux API 或 Replicate
-- 工具：Diffusers 库 + 自建服务
-- 预算：按调用计费，约 $0.002-0.01/张
+**场景 2**：开发者，需要 API 集成
+**- 首选**：Flux API 或 Replicate
+**- 工具**：Diffusers 库 + 自建服务
+**- 预算**：按调用计费，约 $0.002-0.01/张
 
-场景 3：设计师，需要精确控制
-- 首选：ComfyUI + ControlNet + IP-Adapter
-- 优势：可以精确控制构图、风格、角色一致性
-- 学习成本：中等（需要理解节点工作流）
+**场景 3**：设计师，需要精确控制
+**- 首选**：ComfyUI + ControlNet + IP-Adapter
+**- 优势**：可以精确控制构图、风格、角色一致性
+**- 学习成本**：中等（需要理解节点工作流）
 
-场景 4：日常使用，零门槛
-- 首选：ChatGPT Images 2.0
-- 优势：对话式交互，自然语言描述即可
-- 限制：不可精细控制，适合快速原型
+**场景 4**：日常使用，零门槛
+**- 首选**：ChatGPT Images 2.0
+**- 优势**：对话式交互，自然语言描述即可
+**- 限制**：不可精细控制，适合快速原型
 
-场景 5：视频生成
-- 首选：Sora 2（质量最佳）或 Runway Gen-4（功能最全）
-- 开源替代：CogVideoX 或 AnimateDiff
-- 注意：视频生成成本远高于图像生成
+**场景 5**：视频生成
+**- 首选**：Sora 2（质量最佳）或 Runway Gen-4（功能最全）
+**- 开源替代**：CogVideoX 或 AnimateDiff
+**- 注意**：视频生成成本远高于图像生成
 
 最佳实践 Checklist：
 1. 始终使用英文提示词，质量更高
@@ -598,11 +598,11 @@ if __name__ == "__main__":
       title: "十、总结",
       body: `2026 年的 AI 图像与视频生成已经形成了完整的技术栈和生态体系：
 
-- 技术上：从 Diffusion 到 Flow Matching 再到 DiT 架构，每一步都带来了质的飞跃
-- 模型上：Flux 引领开源，Midjourney 领跑商用，ChatGPT Images 2.0 降低门槛
-- 工具上：ComfyUI 成为开源工作流标准，Diffusers 是开发首选框架
-- 视频上：Sora 2、Runway Gen-4 推动视频生成进入实用阶段
-- 趋势上：实时化、多模态、Agent 驱动、合规化是四大方向
+**- 技术上**：从 Diffusion 到 Flow Matching 再到 DiT 架构，每一步都带来了质的飞跃
+**- 模型上**：Flux 引领开源，Midjourney 领跑商用，ChatGPT Images 2.0 降低门槛
+**- 工具上**：ComfyUI 成为开源工作流标准，Diffusers 是开发首选框架
+**- 视频上**：Sora 2、Runway Gen-4 推动视频生成进入实用阶段
+**- 趋势上**：实时化、多模态、Agent 驱动、合规化是四大方向
 
 无论你是创作者、开发者还是研究者，都能在这个生态中找到适合自己的工具和方法。关键是动手实践——从第一个 prompt 开始，逐步掌握这个强大的能力。`,
       mermaid: `pie showData

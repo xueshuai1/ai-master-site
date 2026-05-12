@@ -14,23 +14,23 @@ export const article: Article = {
             title: "0. 为什么学 CV？",
             body: `自动驾驶、人脸识别、医学影像分析、工业质检——这些都是 CV 的应用。
 
-2026 年，CV 和多模态（视觉+语言）正在融合。GPT-4V、Gemini Pro 都能"看懂"图片了。`
+2026 年，CV 和多模态（视觉+语言）正在融合。**GPT-4**V、**Gemini** Pro 都能"看懂"图片了。`
         },
         {
             title: "1. 学习路线",
             body: `计算机视觉的学习路线：
 
-图像分类 — LeNet → AlexNet → ResNet
+**图像分类**— LeNet → AlexNet → ResNet
 
-目标检测 — YOLO、Faster R-CNN
+**目标检测**— YOLO、Faster R-CNN
 
-图像分割 — 语义分割、实例分割
+**图像分割**— 语义分割、实例分割
 
-数据增强与优化 — AutoAugment、CutMix`
+数据增强与优化— AutoAugment、CutMix`
         },
         {
             title: "2. 学习建议",
-            body: `重点投入：
+            body: `**重点投入**：
 - CNN 核心思想（卷积、池化、感受野）
 - ResNet 架构演进
 - YOLO 目标检测

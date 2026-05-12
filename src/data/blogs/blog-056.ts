@@ -12,12 +12,12 @@ const post: BlogPost = {
   content: [
     {
       title: "引言：GPT-5.5 为什么值得关注",
-      body: `2026 年 4 月，OpenAI 正式发布 GPT-5.5 模型（API 标识符：\`gpt-5.5\`），这是自 GPT-5 系列以来的最重要升级。\n\n三个关键变化：\n1. Codex 与主模型统一：从 GPT-5.4 开始，OpenAI 将 Codex 编码专用模型与主模型合并为单一系统，GPT-5.5 进一步强化了这一方向，不再有单独的 "GPT-5.5-Codex" 产品线。\n2. Agentic Coding 质变：在自主编程、多步代码任务上的能力显著提升，接近「给你一个 repo，它自己跑」的愿景。\n3. Computer Use 原生支持：模型可以直接操控计算机界面，完成任何基于 GUI 的任务，这是从「语言模型」到「行动模型」的关键跃迁。\n\nOpenAI 官方明确警告：「To get the most out of GPT-5.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」\n\n这意味着：直接切换模型字符串是不够的，你需要重新调优 Prompt 栈、工具描述和输出格式。本文就是为你做这件事的。`,
+      body: `2026 年 4 月，**OpenAI** 正式发布 **GPT-5**.5 模型（API 标识符：\`gpt-5.5\`），这是自 **GPT-5** 系列以来的最重要升级。\n\n三个关键变化：\n1. Codex 与主模型统一：从 **GPT-5**.4 开始，**OpenAI** 将 Codex 编码专用模型与主模型合并为单一系统，**GPT-5**.5 进一步强化了这一方向，不再有单独的 "**GPT-5**.5-Codex" 产品线。\n2. Agentic Coding 质变：在自主编程、多步代码任务上的能力显著提升，接近「给你一个 repo，它自己跑」的愿景。\n3. Computer Use 原生支持：模型可以直接操控计算机界面，完成任何基于 GUI 的任务，这是从「语言模型」到「行动模型」的关键跃迁。\n\n**OpenAI** 官方明确警告：「To get the most out of **GPT-5**.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」\n\n这意味着：直接切换模型字符串是不够的，你需要重新调优 Prompt 栈、工具描述和输出格式。本文就是为你做这件事的。`,
       tip: "本文包含 2 个 Mermaid 架构图、2 个 Python 可运行代码示例、3 个对比表格，建议收藏后逐步实践。",
     },
     {
       title: "一、GPT-5.5 模型架构：从分离到统一",
-      body: `理解 GPT-5.5 的架构变化，是有效使用它的前提。让我们从 GPT-5 的架构演进说起。`,
+      body: `理解 **GPT-5**.5 的架构变化，是有效使用它的前提。让我们从 **GPT-5** 的架构演进说起。`,
       mermaid: `graph TD
     subgraph "GPT-5.2 时代（分离架构）"
         A["GPT-5.2 主模型\
@@ -58,7 +58,7 @@ Codex能力并入主模型"]
     },
     {
       title: "二、GPT-5.5 Prompt 策略：从零开始调优",
-      body: `OpenAI 官方建议「从最小的 Prompt 开始，逐步调优」，这与之前「累积式优化」的策略截然不同。以下是具体操作方法。\n\n### 核心原则：最小有效 Prompt`,
+      body: `**OpenAI** 官方建议「从最小的 Prompt 开始，逐步调优」，这与之前「累积式优化」的策略截然不同。以下是具体操作方法。\n\n### 核心原则：最小有效 Prompt`,
       code: [
         {
           lang: "python",
@@ -150,7 +150,7 @@ minimal_prompt_tuning("Extract name and email", examples)
     },
     {
       title: "",
-      body: `### GPT-5.5 独有的 Prompt 技巧`,
+      body: `### **GPT-5**.5 独有的 Prompt 技巧`,
       code: [
         {
           lang: "python",
@@ -251,7 +251,7 @@ agentic_task_with_updates(
     },
     {
       title: "三、GPT-5.5 迁移指南：从 GPT-5.2/5.4 安全升级",
-      body: `迁移到 GPT-5.5 不是简单的模型字符串替换。OpenAI 官方提供了专用技能和升级指南。以下是系统化的迁移流程。`,
+      body: `迁移到 **GPT-5**.5 不是简单的模型字符串替换。**OpenAI** 官方提供了专用技能和升级指南。以下是系统化的迁移流程。`,
       mermaid: `sequenceDiagram
     participant Dev as 开发者
     participant Old as GPT-5.2/5.4
@@ -293,7 +293,7 @@ agentic_task_with_updates(
     },
     {
       title: "四、GPT-5.5 实战：Agentic Coding 深度测试",
-      body: `GPT-5.5 的核心卖点是 Agentic Coding —— 让模型自主完成多步编码任务。我们来做一次完整的实战测试。`,
+      body: `**GPT-5**.5 的核心卖点是 Agentic Coding —— 让模型自主完成多步编码任务。我们来做一次完整的实战测试。`,
       code: [
         {
           lang: "python",
@@ -407,7 +407,7 @@ print(analysis)
     },
     {
       title: "五、GPT-5.5 vs 竞品对比",
-      body: `GPT-5.5 发布后，与 Claude、Gemini、Qwen 等主流模型的对比格局发生了哪些变化？`,
+      body: `**GPT-5**.5 发布后，与 **Claude**、**Gemini**、Qwen 等主流模型的对比格局发生了哪些变化？`,
       table: {
         headers: ["能力维度", "GPT-5.5", "Claude Opus 4.7", "Gemini 2.5 Pro", "Qwen 3.6 Plus"],
         rows: [
@@ -425,7 +425,7 @@ print(analysis)
     },
     {
       title: "六、Simon Willison 的观察与深度解读",
-      body: `知名 AI 观察者 Simon Willison 在 GPT-5.5 发布后迅速更新了 [LLM 工具](https://llm.datasette.io/) 并分享了使用体验。以下是他的核心观察：\n\n### 1. Prompt 策略的根本变化\n\nSimon 注意到 OpenAI 的建议——不要复用之前的 Prompt——在实际测试中得到了验证。他从 GPT-5.2/5.4 迁移到 GPT-5.5 时发现：\n- 之前精心调优的长系统提示词在 GPT-5.5 上表现反而不如简短提示词\n- GPT-5.5 对「暗示性」指令的理解更强，不需要详细解释「为什么」\n- 工具描述需要精简，否则模型会过度关注工具描述中的细节而忽略核心任务`,
+      body: `知名 AI 观察者 Simon Willison 在 **GPT-5**.5 发布后迅速更新了 [LLM 工具](https://llm.datasette.io/) 并分享了使用体验。以下是他的核心观察：\n\n### 1. Prompt 策略的根本变化\n\nSimon 注意到 **OpenAI** 的建议——不要复用之前的 Prompt——在实际测试中得到了验证。他从 **GPT-5**.2/5.4 迁移到 **GPT-5**.5 时发现：\n- 之前精心调优的长系统提示词在 **GPT-5**.5 上表现反而不如简短提示词\n- **GPT-5**.5 对「暗示性」指令的理解更强，不需要详细解释「为什么」\n- 工具描述需要精简，否则模型会过度关注工具描述中的细节而忽略核心任务`,
       mermaid: `graph LR
     A["旧策略: 长系统提示词\
 500+ 词详细指令"] -->|在 GPT-5.5 上| B["效果下降\

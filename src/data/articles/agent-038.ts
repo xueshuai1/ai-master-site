@@ -182,7 +182,7 @@ class HybridOrchestrator {
         },
         {
             title: "3. OpenAI Symphony 开源规范——Agent 编排的新标准",
-            body: `<strong>OpenAI Symphony</strong> 是 OpenAI 于 2026 年 4 月发布的<strong>开源 Agent 编排规范</strong>，旨在为多智能体协作提供<strong>统一的标准协议</strong>。Symphony 的核心目标是解决当前 Agent 生态中<strong>协议碎片化</strong>的问题，让不同框架和平台的 Agent 能够<strong>无缝协作</strong>。
+            body: `<strong>**OpenAI** Symphony</strong> 是 **OpenAI** 于 2026 年 4 月发布的<strong>开源 Agent 编排规范</strong>，旨在为多智能体协作提供<strong>统一的标准协议</strong>。Symphony 的核心目标是解决当前 Agent 生态中<strong>协议碎片化</strong>的问题，让不同框架和平台的 Agent 能够<strong>无缝协作</strong>。
 
 ### Symphony 的设计理念
 
@@ -290,7 +290,7 @@ Symphony 的设计遵循三个核心原则：
 
 <strong>策略二：声明式状态机</strong>——使用<strong>配置文件</strong>定义状态转换规则，运行时动态解析。优点是<strong>规则变更无需改代码</strong>，缺点是需要额外的<strong>规则引擎</strong>。
 
-<strong>策略三：图状态机</strong>——将状态机建模为<strong>有向图</strong>，使用图遍历算法执行状态转换。这是 <strong>LangGraph</strong> 采用的方式，支持<strong>循环、分支和并行</strong>等复杂模式。
+<strong>策略三：图状态机</strong>——将状态机建模为<strong>有向图</strong>，使用图遍历算法执行状态转换。这是 <strong>**LangGraph**</strong> 采用的方式，支持<strong>循环、分支和并行</strong>等复杂模式。
 
 ### 状态管理的持久化
 
@@ -349,7 +349,7 @@ const agentFSM = new DeclarativeStateMachine({
         },
         {
             title: "5. 实战实现：使用 LangGraph 构建 Agent 编排系统",
-            body: `<strong>LangGraph</strong> 是目前最成熟的 <strong>Agent 编排框架</strong>之一。它基于<strong>图计算模型</strong>，将 Agent 编排建模为<strong>有向图的遍历</strong>，支持循环、分支、并行等复杂模式。本节通过一个<strong>代码审查 Agent 系统</strong>的实战案例，演示 LangGraph 的完整用法。
+            body: `<strong>**LangGraph**</strong> 是目前最成熟的 <strong>Agent 编排框架</strong>之一。它基于<strong>图计算模型</strong>，将 Agent 编排建模为<strong>有向图的遍历</strong>，支持循环、分支、并行等复杂模式。本节通过一个<strong>代码审查 Agent 系统</strong>的实战案例，演示 **LangGraph** 的完整用法。
 
 ### 系统架构
 
@@ -449,11 +449,11 @@ const app = workflow.compile();`,
         },
         {
             title: "6. 主流编排框架对比——LangGraph、CrewAI、AutoGen",
-            body: `当前主流的 <strong>Agent 编排框架</strong>有三个：<strong>LangGraph</strong>、<strong>CrewAI</strong> 和 <strong>AutoGen</strong>。它们各有特点，适用于不同的场景。本节从多个维度进行<strong>深度对比分析</strong>。
+            body: `当前主流的 <strong>Agent 编排框架</strong>有三个：<strong>**LangGraph**</strong>、<strong>**CrewAI**</strong> 和 <strong>**AutoGen**</strong>。它们各有特点，适用于不同的场景。本节从多个维度进行<strong>深度对比分析</strong>。
 
-### LangGraph
+### **LangGraph**
 
-<strong>LangGraph</strong> 由 LangChain 团队开发，基于<strong>图计算模型</strong>的 Agent 编排框架。
+<strong>**LangGraph**</strong> 由 **LangChain** 团队开发，基于<strong>图计算模型</strong>的 Agent 编排框架。
 
 <strong>核心特点</strong>：
 
@@ -464,9 +464,9 @@ const app = workflow.compile();`,
 
 <strong>适用场景</strong>：需要<strong>复杂控制流</strong>的编排任务，如代码生成-审查-修复的迭代流程。
 
-### CrewAI
+### **CrewAI**
 
-<strong>CrewAI</strong> 是一个<strong>角色驱动</strong>的 Agent 编排框架，强调 Agent 的<strong>角色定义</strong> 和 <strong>任务分配</strong>。
+<strong>**CrewAI**</strong> 是一个<strong>角色驱动</strong>的 Agent 编排框架，强调 Agent 的<strong>角色定义</strong> 和 <strong>任务分配</strong>。
 
 <strong>核心特点</strong>：
 
@@ -477,9 +477,9 @@ const app = workflow.compile();`,
 
 <strong>适用场景</strong>：需要<strong>明确角色分工</strong>的协作任务，如内容创作团队、调研分析团队。
 
-### AutoGen
+### **AutoGen**
 
-<strong>AutoGen</strong> 由微软开发，强调<strong>多 Agent 对话</strong>的编排模式。
+<strong>**AutoGen**</strong> 由微软开发，强调<strong>多 Agent 对话</strong>的编排模式。
 
 <strong>核心特点</strong>：
 
@@ -492,7 +492,7 @@ const app = workflow.compile();`,
 
 ### 三维度对比
 
-| 维度 | LangGraph | CrewAI | AutoGen |
+| 维度 | **LangGraph** | **CrewAI** | **AutoGen** |
 |------|-----------|--------|---------|
 | <strong>编程模型</strong> | 有向图 | 角色+任务 | 多轮对话 |
 | <strong>学习曲线</strong> | 中等 | 低 | 中等 |
@@ -501,18 +501,18 @@ const app = workflow.compile();`,
 | <strong>循环支持</strong> | ✅ 原生 | ⚠️ 有限 | ✅ 通过对话 |
 | <strong>人工介入</strong> | ✅ 内置 | ❌ 需自行实现 | ✅ UserProxyAgent |
 | <strong>调试体验</strong> | 好（图可视化） | 中 | 中（对话日志） |
-| <strong>社区生态</strong> | <strong>大</strong>（LangChain 生态） | 中 | 大（微软支持） |
+| <strong>社区生态</strong> | <strong>大</strong>（**LangChain** 生态） | 中 | 大（微软支持） |
 | <strong>生产就绪</strong> | ✅ | ⚠️ | ⚠️ |
 
 ### 选型建议
 
 | 需求 | 推荐框架 |
 |------|---------|
-| 精确控制执行流程 | <strong>LangGraph</strong> |
-| 快速原型 + 角色分工 | <strong>CrewAI</strong> |
-| 多轮讨论 + 代码执行 | <strong>AutoGen</strong> |
-| 生产级稳定性 | <strong>LangGraph</strong> |
-| 与 LangChain 集成 | <strong>LangGraph</strong> |`,
+| 精确控制执行流程 | <strong>**LangGraph**</strong> |
+| 快速原型 + 角色分工 | <strong>**CrewAI**</strong> |
+| 多轮讨论 + 代码执行 | <strong>**AutoGen**</strong> |
+| 生产级稳定性 | <strong>**LangGraph**</strong> |
+| 与 **LangChain** 集成 | <strong>**LangGraph**</strong> |`,
             code: [{
                 lang: "python",
                 title: "CrewAI 角色驱动编排示例",
@@ -797,26 +797,26 @@ async function callSearchAgent(
 
 <strong>论文与规范</strong>：
 
-- <strong>OpenAI Symphony Specification</strong>（2026）：开源 Agent 编排规范的官方文档，定义了 Score、Conductor、Player 等核心概念
+- <strong>**OpenAI** Symphony Specification</strong>（2026）：开源 Agent 编排规范的官方文档，定义了 Score、Conductor、Player 等核心概念
 - <strong>A2A Protocol</strong>（2026）：Agent-to-Agent 通信协议，关注 Agent 之间的<strong>直接通信</strong> 而 非编排
 - <strong>MCP Specification</strong>（2025）：Model Context Protocol，定义了 AI 模型与外部工具的<strong>标准化接口</strong>
 
 <strong>开源项目</strong>：
 
-- <strong>LangGraph</strong>：基于图模型的 Agent 编排框架，支持循环、分支、并行
-- <strong>CrewAI</strong>：角色驱动的 Agent 编排框架，API 简洁易用
-- <strong>AutoGen</strong>：微软开发的多 Agent 对话框架，支持代码执行和人工介入
+- <strong>**LangGraph**</strong>：基于图模型的 Agent 编排框架，支持循环、分支、并行
+- <strong>**CrewAI**</strong>：角色驱动的 Agent 编排框架，API 简洁易用
+- <strong>**AutoGen**</strong>：微软开发的多 Agent 对话框架，支持代码执行和人工介入
 - <strong>Temporal</strong>：分布式工作流引擎，虽然不是专为 Agent 设计，但编排理念高度相关
 
 ### 学习路线建议
 
 <strong>第一步：理解基础</strong>——学习有限状态机（FSM）和工作流引擎概念
 
-<strong>第二步：实践 LangGraph</strong>——用 LangGraph 实现一个简单的多 Agent 编排流程
+<strong>第二步：实践 **LangGraph**</strong>——用 **LangGraph** 实现一个简单的多 Agent 编排流程
 
-<strong>第三步：对比其他框架</strong>——用同样的任务在 CrewAI 和 AutoGen 上实现，对比差异
+<strong>第三步：对比其他框架</strong>——用同样的任务在 **CrewAI** 和 **AutoGen** 上实现，对比差异
 
-<strong>第四步：研究 OpenAI Symphony</strong>——阅读 Symphony 规范，理解 Score 格式和通信协议
+<strong>第四步：研究 **OpenAI** Symphony</strong>——阅读 Symphony 规范，理解 Score 格式和通信协议
 
 <strong>第五步：生产实践</strong>——为你的实际业务场景设计编排方案，加入容错和可观测性
 

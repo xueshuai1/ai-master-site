@@ -14,9 +14,9 @@ export const article: Article = {
   content: [
     {
       title: "1. 事件背景：Claude Opus 4.7 发布与 Tokenizer 变更",
-      body: `2026 年 4 月，Anthropic 正式发布 Claude Opus 4.7。这次更新中，最值得关注但也最容易被忽视的变化是：Opus 4.7 使用了全新的 Tokenizer。
+      body: `2026 年 4 月，**Anthropic** 正式发布 **Claude** Opus 4.7。这次更新中，最值得关注但也最容易被忽视的变化是：Opus 4.7 使用了全新的 Tokenizer。
 
-Anthropic 在官方公告中明确写道：
+**Anthropic** 在官方公告中明确写道：
 
 > "Opus 4.7 uses an updated tokenizer that improves how the model processes text. The tradeoff is that the same input can map to more tokens—roughly 1.0–1.35× depending on the content type."
 
@@ -35,17 +35,17 @@ Tokenizer 是什么？
 
 大语言模型无法直接理解原始文本，需要将文本转换为模型能处理的离散单元——Token。Tokenizer 就是负责这个转换的组件。常见的 Tokenizer 算法包括 BPE（Byte-Pair Encoding）、WordPiece 和 Unigram。
 
-Claude 系列一直使用 BPE 算法。Opus 4.7 的新 Tokenizer 在以下几个方面做了改进：
+**Claude** 系列一直使用 BPE 算法。Opus 4.7 的新 Tokenizer 在以下几个方面做了改进：
 
-改进 1：更细粒度的词汇切分
+**改进 1**：更细粒度的词汇切分
 
 旧的 Tokenizer 倾向于将常用词组合合并为单个 Token，例如 "artificial intelligence" 可能被合并为一个 Token。新 Tokenizer 会将这类组合拆分为更小的语义单元，让模型能更灵活地组合理解。代价是 Token 数量增加。
 
-改进 2：更好的 Unicode 和特殊字符处理
+**改进 2**：更好的 Unicode 和特殊字符处理
 
 新 Tokenizer 对非 ASCII 字符（如中文、emoji、数学符号）的处理更加精细。这意味着多语言内容的 Token 计数会更准确，但也会略微增加 Token 数量。
 
-改进 3：上下文感知的切分策略
+**改进 3**：上下文感知的切分策略
 
 新 Tokenizer 会根据上下文调整切分边界。同一个词在不同语境下可能被切分为不同数量的 Token，以最大化语义保真度。`,
       mermaid: `graph LR
@@ -101,7 +101,7 @@ Baseline"]
 
 ### 不同内容类型的膨胀系数
 
-Anthropic 给出的范围是 1.0-1.35 倍，但实际测试显示：
+**Anthropic** 给出的范围是 1.0-1.35 倍，但实际测试显示：
 
 | 内容类型 | 膨胀系数 | 说明 |
 |----------|----------|------|
@@ -111,7 +111,7 @@ Anthropic 给出的范围是 1.0-1.35 倍，但实际测试显示：
 | 低分辨率图片 | 1.0x | 小图片 Token 消耗基本不变（314 vs 310） |
 | 高分辨率图片 | 3.01x | 大图片因分辨率提升导致 Token 大幅增加 |
 
-关键发现：系统提示词的膨胀最严重。如果你的应用使用长系统提示词（如详细的角色设定、任务规范），升级后成本会显著上升。建议优化系统提示词，移除冗余内容。`,
+**关键发现**：系统提示词的膨胀最严重。如果你的应用使用长系统提示词（如详细的角色设定、任务规范），升级后成本会显著上升。建议优化系统提示词，移除冗余内容。`,
       mermaid: `graph TD
     A["应用架构成本分析"] --> B["系统提示词
 1.46x 膨胀"]
@@ -156,7 +156,7 @@ Simon Willison 的实测数据揭示了有趣的模式：
 - 3456x2234 像素图片（大图，3.7MB PNG）：Opus 4.7 消耗的 Token 是 Opus 4.6 的 3.01 倍
 - 30 页文本密集型 PDF（15MB）：Opus 4.7 消耗 60,934 Token，Opus 4.6 消耗 56,482 Token —— 仅 1.08x 增长
 
-关键洞察：
+**关键洞察**：
 
 1. 小图片成本不变：如果你的应用主要处理缩略图或小图标，升级到 Opus 4.7 几乎没有额外的图像 Token 成本
 2. 大图片成本激增但能力提升：高分辨率图片的 Token 消耗增加 3 倍，但换来的是模型能「看到」更多细节。这对于需要精细视觉理解的任务（如图表分析、设计审核、医学影像）是巨大的价值提升
@@ -419,11 +419,11 @@ if __name__ == "__main__":
 
 优化前（约 150 Token → 219 Token）：
 优化后（约 90 Token → 131 Token）：
-节省：每次调用减少 88 Token，日调用 100 万次可节省约 $4,400/月。
+**节省**：每次调用减少 88 Token，日调用 100 万次可节省约 $4,400/月。
 
 ### 策略二：使用缓存减少重复计算
 
-对于重复的系统提示词和常见输入，使用缓存可以避免重复的 Token 消耗。Anthropic 的 Prompt Caching 可以将缓存命中部分的成本降低 90%。
+对于重复的系统提示词和常见输入，使用缓存可以避免重复的 Token 消耗。**Anthropic** 的 Prompt Caching 可以将缓存命中部分的成本降低 90%。
 
 ### 策略三：分级使用模型
 
@@ -478,20 +478,20 @@ def monitor_daily_usage(api_client, threshold_usd=1000):
     },
     {
       title: "7. 总结与展望",
-      body: `Claude Opus 4.7 的 Tokenizer 变更是一个典型的「权衡」案例：
+      body: `**Claude** Opus 4.7 的 Tokenizer 变更是一个典型的「权衡」案例：
 
-付出的代价：
+**付出的代价**：
 - 文本 Token 增加 1.0-1.46 倍，系统提示词最严重
 - 实际使用成本上升约 20-40%
 - 需要重新评估和优化提示词
 
-获得的收益：
+**获得的收益**：
 - 更精细的语义理解，推理质量提升
 - 图像分辨率支持从 682px 跃升至 2576px（3.7x）
 - 文档处理效率更高（PDF Token 仅增加 8%）
 - 小图片处理成本几乎不变
 
-核心建议：
+**核心建议**：
 
 1. 先测量，后决策：用 Token 计数工具实测你的应用的实际膨胀系数
 2. 优化先行：在升级前精简系统提示词和常见输入
@@ -501,7 +501,7 @@ def monitor_daily_usage(api_client, threshold_usd=1000):
 
 2026 年的 AI 生态正在快速演进，Tokenizer 的变革只是冰山一角。掌握 Token 计数的能力、理解模型定价的数学模型、建立成本监控体系——这些将成为每个 AI 开发者的基本功。
 
-Anthropic 通过公开系统提示词和 Token 计数 API，展示了透明化运营的典范。在 AI 工具链日益复杂的今天，能精确计算和控制成本的开发者和团队，将在竞争中占据显著优势。`
+**Anthropic** 通过公开系统提示词和 Token 计数 API，展示了透明化运营的典范。在 AI 工具链日益复杂的今天，能精确计算和控制成本的开发者和团队，将在竞争中占据显著优势。`
     }
   ]
 };

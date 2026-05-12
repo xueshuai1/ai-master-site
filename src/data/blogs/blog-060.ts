@@ -23,7 +23,7 @@ content: [
 3. 启动训练：运行训练脚本，等待结果（可能需要数小时甚至数天）
 4. 分析结果：查看 loss 曲线、验证集准确率等指标
 5. 记录实验：手动记录配置和结果
-6. 重复：回到第 1 步，尝试下一个假设
+**6. 重复**：回到第 1 步，尝试下一个假设
 
 这个循环的核心问题是：人类在等待。
 
@@ -38,7 +38,7 @@ Karpathy 在 Twitter/X 上多次表达过类似的观点：
 autoresearch 的核心思想极简却革命性：
 
 - 研究者写一个 \`program.md\` 描述研究方向和约束
-- AI Agent（如 Claude Code）读取 \`program.md\`
+- AI Agent（如 **Claude** Code）读取 \`program.md\`
 - Agent 自主修改代码、启动训练、评估结果、决定下一步
 - 整个过程完全自动化，研究者只需在早上查看结果
 
@@ -250,7 +250,7 @@ program.md 不是传统的实验计划书，而是一种人机协作协议。它
       title: "四、nanochat 框架：autoresearch 的训练引擎",
       body: `## 为什么选择 nanochat？
 
-Karpathy 选择 nanochat 而非 PyTorch Lightning 或 HuggingFace Transformers，原因很明确：
+Karpathy 选择 nanochat 而非 PyTorch Lightning 或 **HuggingFace** **Transformer**s，原因很明确：
 
 1. 代码量极小：约 300 行 Python 代码，Agent 可以完全理解每一行
 2. 无隐藏魔法：所有逻辑都是显式的，没有抽象层掩盖细节
@@ -267,7 +267,7 @@ graph LR
     end
     
     subgraph "模型层"
-        C[NanoGPT Transformer]
+        C[NanoGPT **Transformer**]
         D[Embedding]
         E[Multi-Head Attention]
         F[Feed Forward]
@@ -738,7 +738,7 @@ if __name__ == "__main__":
 
 5 分钟训练只能验证方向是否正确，不能验证幅度是否正确。某些修改可能在 5 分钟内看不出效果，但长期训练后会有显著提升。
 
-缓解策略：
+**缓解策略**：
 - 对 promising 的方向进行更长时间的验证训练
 - 使用 learning curve extrapolation 技术预测长期表现
 - 设置"二次验证"阶段：Agent 发现好方向后自动安排长训练
@@ -747,7 +747,7 @@ if __name__ == "__main__":
 
 当前的 AI Agent 擅长在已知方案空间内搜索，但很难提出真正创新的方法。Agent 的"创造力"受限于其训练数据中已有的知识。
 
-缓解策略：
+**缓解策略**：
 - 在 program.md 中鼓励"非常规"尝试
 - 结合多个 Agent 的交叉验证
 - 定期引入人类研究者的新想法
@@ -759,7 +759,7 @@ Agent 可能做出"看似合理但实际有害"的代码修改，比如：
 - 引入了数据泄露
 - 改变了评估指标的计算方式
 
-缓解策略：
+**缓解策略**：
 - 在 program.md 中明确禁止的修改类型
 - 添加自动代码审查步骤
 - 使用版本控制确保每次修改都可追溯
@@ -768,7 +768,7 @@ Agent 可能做出"看似合理但实际有害"的代码修改，比如：
 
 虽然单次训练只有 5 分钟，但一晚 96 次实验仍然需要可观的 GPU 时间。
 
-缓解策略：
+**缓解策略**：
 - 使用云 GPU 的竞价实例降低成本
 - 在 CPU 上预筛选明显不好的方向
 - 优先探索最有潜力的方向

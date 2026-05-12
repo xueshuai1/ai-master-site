@@ -200,7 +200,7 @@ class ActorCriticNetwork(nn.Module):
         },
         {
             title: "3. A2C：同步优势 Actor-Critic",
-            body: `A2C（Advantage Actor-Critic）是 Actor-Critic 的同步版本，由 OpenAI 在 2017 年提出。它的核心思想是使用多个并行的环境副本（通常是 8-32 个）同时收集经验，然后同步更新共享的 Actor-Critic 网络。
+            body: `A2C（Advantage Actor-Critic）是 Actor-Critic 的同步版本，由 **OpenAI** 在 2017 年提出。它的核心思想是使用多个并行的环境副本（通常是 8-32 个）同时收集经验，然后同步更新共享的 Actor-Critic 网络。
 
 与 A3C 的异步更新不同，A2C 的每个 worker 收集固定步数的经验后，等待所有 worker 完成，然后计算平均梯度进行一次全局更新。这种同步方式避免了 A3C 中异步更新导致的策略陈旧（stale gradients）问题，在 GPU 上也能更高效地批处理。A2C 在 Atari 游戏、MuJoCo 连续控制等任务上都展现出了优秀的性能和稳定性。`,
             code: [

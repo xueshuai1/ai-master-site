@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "一、Agentic Engineering 的定义与演进：从 Prompt 工程到 Agent 系统工程",
-      body: `如果说 2024 年是 Prompt Engineering 的元年，2025 年是 RAG（Retrieval-Augmented Generation）的爆发年，那么 2026 年就是 Agentic Engineering 的生产落地年。
+      body: `如果说 2024 年是 Prompt Engineering 的元年，2025 年是 **RAG**（Retrieval-Augmented Generation）的爆发年，那么 2026 年就是 Agentic Engineering 的生产落地年。
 
 ### 什么是 Agentic Engineering？
 
@@ -52,7 +52,7 @@ graph TB
         LLM[LLM 推理]
         Tools[工具集]
         Memory[记忆系统]
-        RAG[知识库检索]
+        **RAG**[知识库检索]
     end
     
     UI --> API --> Router
@@ -62,7 +62,7 @@ graph TB
     Executor --> LLM
     Executor --> Tools
     Executor --> Memory
-    Executor --> RAG
+    Executor --> **RAG**
     Monitor --> Planner
     Monitor --> Executor
 \`\`\`
@@ -1449,7 +1449,7 @@ timeline
     title Agentic Engineering 发展路线
     2024 Q1 : Prompt Engineering 爆发
     2024 Q3 : ReAct 模式普及
-    2025 Q1 : RAG + Agent 融合
+    2025 Q1 : **RAG** + Agent 融合
     2025 Q3 : Multi-Agent 协作
     2026 Q1 : 生产级 Agent 平台
     2026 Q2 : 自进化 Agent 兴起

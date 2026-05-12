@@ -12,7 +12,7 @@ export const article: Article = {
   content: [
     {
       title: "1. LangChain 架构概览",
-      body: `LangChain 是一个用于构建大语言模型应用的开源框架，由 Harrison Chase 于 2022 年创建。它的核心理念是将 LLM 的能力与外部数据源、工具和计算能力组合起来，形成完整的「应用管线」。LangChain 采用模块化设计，主要包含六大组件：模型 I/O（Models & Prompts）、数据连接（Data Connection）、链（Chains）、记忆（Memory）、回调（Callbacks）以及代理（Agents）。这种架构使得开发者可以像搭积木一样，将不同能力的模块灵活组合。LangChain 支持 Python 和 JavaScript 两种语言实现，底层对接了 OpenAI、Anthropic、Google 等数十家 LLM 提供商，通过统一的接口抽象屏蔽了底层差异。理解 LangChain 的架构是高效使用它的前提——它不是替代 LLM，而是让 LLM 从「聊天窗口」进化为「应用引擎」。`,
+      body: `**LangChain** 是一个用于构建大语言模型应用的开源框架，由 Harrison Chase 于 2022 年创建。它的核心理念是将 LLM 的能力与外部数据源、工具和计算能力组合起来，形成完整的「应用管线」。**LangChain** 采用模块化设计，主要包含六大组件：模型 I/O（Models & Prompts）、数据连接（Data Connection）、链（Chains）、记忆（Memory）、回调（Callbacks）以及代理（Agents）。这种架构使得开发者可以像搭积木一样，将不同能力的模块灵活组合。**LangChain** 支持 Python 和 JavaScript 两种语言实现，底层对接了 **OpenAI**、**Anthropic**、Google 等数十家 LLM 提供商，通过统一的接口抽象屏蔽了底层差异。理解 **LangChain** 的架构是高效使用它的前提——它不是替代 LLM，而是让 LLM 从「聊天窗口」进化为「应用引擎」。`,
       code: [
         {
           lang: "python",
@@ -75,7 +75,7 @@ console.log(result);`
     },
     {
       title: "2. Prompt Templates",
-      body: `Prompt Templates 是 LangChain 中管理提示词的核心机制。它允许你将提示词模板化，通过变量注入实现动态生成。ChatPromptTemplate 支持多角色消息（SystemMessage、HumanMessage、AIMessage），这是构建复杂对话逻辑的基础。进阶用法包括：FewShotPromptTemplate（通过示例引导模型输出）、MessagesPlaceholder（动态插入历史消息）以及 OutputFixingParser（自动修复格式错误的输出）。设计高质量的 Prompt 模板是一门工程学科——好的模板应该明确角色、定义输出格式、提供示例，并处理边界情况。LangChain 还提供了 Prompt Hub，可以共享和复用社区中的优质模板。在实际项目中，建议将 Prompt 模板与业务代码分离，通过配置文件或数据库管理，便于迭代和优化。`,
+      body: `Prompt Templates 是 **LangChain** 中管理提示词的核心机制。它允许你将提示词模板化，通过变量注入实现动态生成。ChatPromptTemplate 支持多角色消息（SystemMessage、HumanMessage、AIMessage），这是构建复杂对话逻辑的基础。进阶用法包括：FewShotPromptTemplate（通过示例引导模型输出）、MessagesPlaceholder（动态插入历史消息）以及 OutputFixingParser（自动修复格式错误的输出）。设计高质量的 Prompt 模板是一门工程学科——好的模板应该明确角色、定义输出格式、提供示例，并处理边界情况。**LangChain** 还提供了 Prompt Hub，可以共享和复用社区中的优质模板。在实际项目中，建议将 Prompt 模板与业务代码分离，通过配置文件或数据库管理，便于迭代和优化。`,
       code: [
         {
           lang: "python",
@@ -161,7 +161,7 @@ result = chain.invoke({"movie_name": "星际穿越"})`
     },
     {
       title: "3. Chains：构建执行管线",
-      body: `Chain 是 LangChain 中组合多个组件的核心抽象。在 LCEL（LangChain Expression Language）出现之前，Chain 主要基于 LLMChain、SimpleSequentialChain 等类实现。LCEL 革命性地引入了声明式管线语法：通过 | 操作符将 Runnable 对象连接起来，形成可执行的工作流。LCEL 的优势在于：天然支持异步执行、流式输出、并行分支（RunnableParallel）和重试机制。一个典型的 Chain 可以是简单的「模板→模型→解析器」三段式，也可以包含条件分支、循环和并行处理。LCEL 引入了 RunnablePassthrough（透传）、RunnableBranch（条件分支）和 RunnableParallel（并行执行）等高级原语，使得复杂业务逻辑可以用声明式方式表达。掌握 LCEL 是成为 LangChain 进阶使用者的必经之路。`,
+      body: `Chain 是 **LangChain** 中组合多个组件的核心抽象。在 LCEL（**LangChain** Expression Language）出现之前，Chain 主要基于 LLMChain、SimpleSequentialChain 等类实现。LCEL 革命性地引入了声明式管线语法：通过 | 操作符将 Runnable 对象连接起来，形成可执行的工作流。LCEL 的优势在于：天然支持异步执行、流式输出、并行分支（RunnableParallel）和重试机制。一个典型的 Chain 可以是简单的「模板→模型→解析器」三段式，也可以包含条件分支、循环和并行处理。LCEL 引入了 RunnablePassthrough（透传）、RunnableBranch（条件分支）和 RunnableParallel（并行执行）等高级原语，使得复杂业务逻辑可以用声明式方式表达。掌握 LCEL 是成为 **LangChain** 进阶使用者的必经之路。`,
       code: [
         {
           lang: "python",
@@ -229,7 +229,7 @@ result = router.invoke({"q": "计算 1+2+3"})`
     },
     {
       title: "4. Memory 管理",
-      body: `LLM 本身是无状态的——每次调用都是独立的请求。Memory 组件让 LangChain 应用具备「记忆能力」，能够维护对话历史和上下文状态。LangChain 提供了多种 Memory 实现：ConversationBufferMemory 保存完整对话历史，适合短对话；ConversationBufferWindowMemory 只保留最近 N 轮对话，控制上下文长度；ConversationSummaryMemory 将历史对话压缩为摘要，适合长对话场景；ConversationKnowledgeGraphMemory 利用知识图谱存储实体关系。在 RAG 应用中，通常还需要结合向量数据库实现「长期记忆」，将重要信息持久化存储。Memory 的设计需要考虑三个关键问题：存储容量（Token 限制）、检索效率（如何快速找到相关上下文）以及成本（存储和检索的 API 调用开销）。`,
+      body: `LLM 本身是无状态的——每次调用都是独立的请求。Memory 组件让 **LangChain** 应用具备「记忆能力」，能够维护对话历史和上下文状态。**LangChain** 提供了多种 Memory 实现：ConversationBufferMemory 保存完整对话历史，适合短对话；ConversationBufferWindowMemory 只保留最近 N 轮对话，控制上下文长度；ConversationSummaryMemory 将历史对话压缩为摘要，适合长对话场景；ConversationKnowledgeGraphMemory 利用知识图谱存储实体关系。在 **RAG** 应用中，通常还需要结合向量数据库实现「长期记忆」，将重要信息持久化存储。Memory 的设计需要考虑三个关键问题：存储容量（Token 限制）、检索效率（如何快速找到相关上下文）以及成本（存储和检索的 API 调用开销）。`,
       code: [
         {
           lang: "python",
@@ -326,7 +326,7 @@ retriever_memory.save_context(
     },
     {
       title: "5. Tools 与 Function Calling",
-      body: `Tools 是 LangChain 让 LLM 与外部世界交互的桥梁。通过 Tool 抽象，开发者可以将任意 Python 函数包装为 LLM 可调用的工具。OpenAI 的 Function Calling 机制进一步提升了工具调用的可靠性——模型不是自由生成文本，而是按照预定义的 JSON Schema 生成函数调用参数。LangChain 提供了丰富的内置工具：搜索引擎、代码执行器、数据库查询、网页抓取器等。同时，@tool 装饰器使得自定义工具的开发极其简洁。进阶用法包括：Tool 组合（多个工具串联）、异步工具（AsyncTool）、工具路由（选择最合适的工具）以及工具结果的后处理。设计高质量 Tool 的关键在于：清晰的描述（Description 直接影响模型选择）、精确的参数类型定义、以及完善的错误处理。`,
+      body: `Tools 是 **LangChain** 让 LLM 与外部世界交互的桥梁。通过 Tool 抽象，开发者可以将任意 Python 函数包装为 LLM 可调用的工具。**OpenAI** 的 Function Calling 机制进一步提升了工具调用的可靠性——模型不是自由生成文本，而是按照预定义的 JSON Schema 生成函数调用参数。**LangChain** 提供了丰富的内置工具：搜索引擎、代码执行器、数据库查询、网页抓取器等。同时，@tool 装饰器使得自定义工具的开发极其简洁。进阶用法包括：Tool 组合（多个工具串联）、异步工具（AsyncTool）、工具路由（选择最合适的工具）以及工具结果的后处理。设计高质量 Tool 的关键在于：清晰的描述（Description 直接影响模型选择）、精确的参数类型定义、以及完善的错误处理。`,
       code: [
         {
           lang: "python",
@@ -404,7 +404,7 @@ search_tool = StructuredTool.from_function(
     },
     {
       title: "6. Agent 模式",
-      body: `Agent 是 LangChain 中最强大的抽象——它让 LLM 从被动回答者变成主动决策者。与 Chain 的线性执行不同，Agent 采用「思考→行动→观察」的循环（ReAct 模式），根据环境反馈动态调整策略。LangChain 支持多种 Agent 类型：Zero-shot ReAct Agent（无需示例，直接推理）、OpenAI Functions Agent（利用 Function Calling）、Self-Ask-with-Search Agent（自动拆解子问题并搜索）、Plan-and-Execute Agent（先制定计划再逐步执行）。Agent 的核心组件包括：LLM（决策引擎）、Tools（行动能力）、Memory（状态维护）和 AgentExecutor（循环控制器）。构建 Agent 时，选择合适的 Agent 类型比调参更重要——简单任务用 Chain，复杂多步任务才用 Agent。`,
+      body: `Agent 是 **LangChain** 中最强大的抽象——它让 LLM 从被动回答者变成主动决策者。与 Chain 的线性执行不同，Agent 采用「思考→行动→观察」的循环（ReAct 模式），根据环境反馈动态调整策略。**LangChain** 支持多种 Agent 类型：Zero-shot ReAct Agent（无需示例，直接推理）、**OpenAI** Functions Agent（利用 Function Calling）、Self-Ask-with-Search Agent（自动拆解子问题并搜索）、Plan-and-Execute Agent（先制定计划再逐步执行）。Agent 的核心组件包括：LLM（决策引擎）、Tools（行动能力）、Memory（状态维护）和 AgentExecutor（循环控制器）。构建 Agent 时，选择合适的 Agent 类型比调参更重要——简单任务用 Chain，复杂多步任务才用 Agent。`,
       code: [
         {
           lang: "python",
@@ -496,7 +496,7 @@ class ReactOutputParser(AgentOutputParser):
     },
     {
       title: "7. 实战：构建 RAG 应用",
-      body: `RAG（Retrieval-Augmented Generation，检索增强生成）是 LangChain 最具代表性的应用场景。RAG 的核心思想是：先将外部知识注入向量数据库，查询时检索相关文档作为上下文，再让 LLM 基于上下文生成回答。这种方法解决了 LLM 的知识时效性和幻觉问题。一个完整的 RAG 管线包含五个阶段：文档加载（加载 PDF、网页、数据库等）、文档分块（将长文档切分为有意义的片段）、向量化（使用 Embedding 模型转换为向量）、检索（根据查询相似度匹配）和生成（LLM 结合检索结果生成回答）。LangChain 的 RAG 实现提供了灵活的配置选项：支持多种分块策略（固定长度、递归、语义）、多种向量数据库（FAISS、Pinecone、Chroma、Milvus）以及多种重排序策略。实战中，RAG 的效果很大程度上取决于文档分块策略和检索质量，而非 LLM 本身。`,
+      body: `**RAG**（Retrieval-Augmented Generation，检索增强生成）是 **LangChain** 最具代表性的应用场景。**RAG** 的核心思想是：先将外部知识注入向量数据库，查询时检索相关文档作为上下文，再让 LLM 基于上下文生成回答。这种方法解决了 LLM 的知识时效性和幻觉问题。一个完整的 **RAG** 管线包含五个阶段：文档加载（加载 PDF、网页、数据库等）、文档分块（将长文档切分为有意义的片段）、向量化（使用 Embedding 模型转换为向量）、检索（根据查询相似度匹配）和生成（LLM 结合检索结果生成回答）。**LangChain** 的 **RAG** 实现提供了灵活的配置选项：支持多种分块策略（固定长度、递归、语义）、多种向量数据库（FAISS、Pinecone、Chroma、Milvus）以及多种重排序策略。实战中，**RAG** 的效果很大程度上取决于文档分块策略和检索质量，而非 LLM 本身。`,
       code: [
         {
           lang: "python",

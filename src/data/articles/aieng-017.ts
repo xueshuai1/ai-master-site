@@ -16,7 +16,7 @@ export const article: Article = {
       title: "一、honker 是什么：为什么 SQLite 需要 NOTIFY/LISTEN 语义",
       body: `honker 是一个 Rust 编写的 SQLite 扩展，由 russellromney 开发。它的核心目标是将 PostgreSQL 的 NOTIFY/LISTEN 通知机制和事务型外盒（Transactionally Staged Job Drains）模式引入 SQLite 生态。
 
-### 背景：SQLite 的异步通信空白
+**### 背景**：SQLite 的异步通信空白
 
 SQLite 作为世界上最流行的嵌入式数据库，长期以来缺少跨进程异步通信能力：
 - PostgreSQL 有 \`NOTIFY/LISTEN\`，允许一个连接发送通知，其他连接接收
@@ -145,7 +145,7 @@ async for event in stream.subscribe(consumer="dashboard"):
       title: "三、事务型外盒模式（Transactionally Staged Job Drains）深度解析",
       body: `honker 实现了 Transactionally Staged Job Drains 模式（源自 Brandur Leach 的经典文章）。这是分布式系统中确保数据写入与消息发送一致性的关键模式。
 
-### 问题：为什么需要事务型外盒？
+**### 问题**：为什么需要事务型外盒？
 
 考虑一个典型的场景：用户注册时，你需要：
 1. 将用户信息写入数据库

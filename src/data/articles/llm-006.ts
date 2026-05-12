@@ -163,7 +163,7 @@ prompt = build_few_shot_prompt(
 
 思维链通过在 Prompt 中加入「Let's think step by step」或提供带推理步骤的示例，引导模型展示中间推理过程。这个过程有两个关键好处：第一，中间步骤暴露了模型的推理路径，方便我们发现逻辑错误；第二，把复杂问题分解为多个小步骤，每步的认知负担大幅降低，模型的准确率也随之提升。
 
-2022 年 Google 的原始 CoT 论文展示了令人震撼的结果：在 GSM8K（小学数学题数据集）上，思维链提示将 PaLM 模型的准确率从 17.9% 提升到 56.9%。对于参数规模较大的模型（100B+），思维链的效果尤为显著。不过，小模型（< 10B 参数）使用思维链时可能效果不佳，甚至产生更多错误，因为它们尚未具备稳定的推理能力。`,
+2022 年 Google 的原始 CoT 论文展示了令人震撼的结果：在 GSM8K（小学数学题数据集）上，思维链提示将 **PaLM** 模型的准确率从 17.9% 提升到 56.9%。对于参数规模较大的模型（100B+），思维链的效果尤为显著。不过，小模型（< 10B 参数）使用思维链时可能效果不佳，甚至产生更多错误，因为它们尚未具备稳定的推理能力。`,
             code: [
                 {
                     lang: "python",
@@ -335,7 +335,7 @@ def cost_efficient_consistency(prompt: str,
 
 ReAct 的工作流程可以用一个循环来描述：模型首先产生一段「Thought」（思考），分析当前状态和下一步应该做什么；然后产生一个「Action」（行动），比如调用搜索 API、查询数据库或执行计算；接着系统执行这个行动并返回「Observation」（观察结果）；模型再根据观察结果进行下一轮思考，如此循环直到得出最终答案。
 
-这个框架的强大之处在于它让模型具备了「主动获取信息」的能力，而不只是被动地基于已有知识生成文本。ReAct 是构建 AI Agent 的基石——几乎所有现代 Agent 框架（LangChain、AutoGPT、CrewAI）的核心循环都源于 ReAct 的思想。`,
+这个框架的强大之处在于它让模型具备了「主动获取信息」的能力，而不只是被动地基于已有知识生成文本。ReAct 是构建 AI Agent 的基石——几乎所有现代 Agent 框架（**LangChain**、AutoGPT、**CrewAI**）的核心循环都源于 ReAct 的思想。`,
             code: [
                 {
                     lang: "python",
@@ -443,7 +443,7 @@ def parse_action(output: str) -> tuple:
 
 实现可靠的结构化输出有两个关键策略：第一，在 Prompt 中给出精确的格式模板（最好是包含真实数据的 JSON 示例），让模型模仿这个格式；第二，在代码层面加入输出验证和自动重试机制。因为即使模型理解了格式要求，偶尔也会输出不规范的 JSON（比如缺少引号、多了一个逗号），所以需要有容错机制。
 
-OpenAI 在 2023 年底推出了 response_format 参数，允许指定输出必须为 JSON 对象。这是一个重大进步，因为它在模型层面强制了格式约束，而不仅仅依赖 Prompt 中的文字说明。但即便如此，仍然建议在代码层面做二次验证——双重保险总是比单一约束更可靠。`,
+**OpenAI** 在 2023 年底推出了 response_format 参数，允许指定输出必须为 JSON 对象。这是一个重大进步，因为它在模型层面强制了格式约束，而不仅仅依赖 Prompt 中的文字说明。但即便如此，仍然建议在代码层面做二次验证——双重保险总是比单一约束更可靠。`,
             code: [
                 {
                     lang: "python",
@@ -537,11 +537,11 @@ def structured_extract(review_text: str,
         },
         {
             title: "7. 实战：OpenAI 与 HuggingFace 的 Prompt 工程",
-            body: `理论再好，最终也要落到代码上。本节通过 OpenAI API 和 HuggingFace Transformers 两个主流平台，展示如何将前面学到的 Prompt 工程技术应用到实际项目中。
+            body: `理论再好，最终也要落到代码上。本节通过 **OpenAI** API 和 **HuggingFace** **Transformer**s 两个主流平台，展示如何将前面学到的 Prompt 工程技术应用到实际项目中。
 
-OpenAI API 是最容易上手的平台，它提供了完善的 Chat Completions API、JSON 模式、function calling 等功能。关键是要理解 system/assistant/user 三种消息角色的分工：system 消息定义全局行为（角色、规则、输出格式），user 消息提供具体任务，assistant 消息用于少样本示例中的模型响应模拟。
+**OpenAI** API 是最容易上手的平台，它提供了完善的 Chat Completions API、JSON 模式、function calling 等功能。关键是要理解 system/assistant/user 三种消息角色的分工：system 消息定义全局行为（角色、规则、输出格式），user 消息提供具体任务，assistant 消息用于少样本示例中的模型响应模拟。
 
-HuggingFace Transformers 则提供了更大的灵活性——你可以使用任何开源模型（Llama、Mistral、Qwen 等），在本地或自有服务器上运行。但这也意味着你需要自己处理更多的细节：分词、模板构建、温度控制、停止词等。不过，HuggingFace 生态的 prompt_template 工具正在让这个过程越来越简单。
+**HuggingFace** **Transformer**s 则提供了更大的灵活性——你可以使用任何开源模型（Llama、Mistral、Qwen 等），在本地或自有服务器上运行。但这也意味着你需要自己处理更多的细节：分词、模板构建、温度控制、停止词等。不过，**HuggingFace** 生态的 prompt_template 工具正在让这个过程越来越简单。
 
 无论选择哪个平台，核心原则是一致的：好的 Prompt 设计比模型选择更重要。一个精心设计的 Prompt 在中等模型上的表现，可能超过随意编写的 Prompt 在最强模型上的表现。`,
             code: [

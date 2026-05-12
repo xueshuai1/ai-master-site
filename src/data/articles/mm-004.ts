@@ -16,7 +16,7 @@ export const article: Article = {
 
 频谱图（Spectrogram）通过短时傅里叶变换将一维波形转换为二维时频图像，横轴为时间，纵轴为频率，颜色深浅表示能量强度。梅尔频谱（Mel Spectrogram）在此基础上引入人类听觉的非线性感知特性，低频区域分辨率更高。MFCC（梅尔频率倒谱系数）则进一步通过离散余弦变换提取最具判别性的低频分量，广泛用于传统语音识别系统。
 
-现代深度学习中，梅尔频谱图已成为主流的音频输入格式。它既保留了足够的频域信息，又具有图像般的二维结构，可以自然地输入到 CNN 或 Vision Transformer 中。理解这些表示方法之间的差异和联系，是深入音频-文本多模态研究的基础。`,
+现代深度学习中，梅尔频谱图已成为主流的音频输入格式。它既保留了足够的频域信息，又具有图像般的二维结构，可以自然地输入到 CNN 或 Vision **Transformer** 中。理解这些表示方法之间的差异和联系，是深入音频-文本多模态研究的基础。`,
             code: [
                 {
                     lang: "python",
@@ -81,7 +81,7 @@ def compute_mel_spectrogram(waveform: torch.Tensor, sr: int = 16000) -> torch.Te
 
 深度学习的引入彻底改变了 ASR 的格局。端到端模型如 Listen Attend and Spell（LAS）直接将声学特征映射为文本序列，省去了手工音素对齐的中间步骤。2020 年，Facebook AI 提出的 Wav2Vec2 进一步将自监督学习引入语音领域：通过对比预测编码在海量无标注音频上预训练，学习通用的语音表征，然后在少量标注数据上微调即可达到优异性能。
 
-OpenAI 的 Whisper 代表了另一条路线：弱监督学习。利用网络上 68 万小时的多语言语音-文本对训练一个标准的编码器-解码器 Transformer。Whisper 的零样本能力极强，无需针对特定领域微调即可处理多种口音、背景噪声和语言。Wav2Vec2 和 Whisper 分别代表了自监督预训练和弱监督大规模训练两条成功的技术路线。`,
+**OpenAI** 的 Whisper 代表了另一条路线：弱监督学习。利用网络上 68 万小时的多语言语音-文本对训练一个标准的编码器-解码器 **Transformer**。Whisper 的零样本能力极强，无需针对特定领域微调即可处理多种口音、背景噪声和语言。Wav2Vec2 和 Whisper 分别代表了自监督预训练和弱监督大规模训练两条成功的技术路线。`,
             code: [
                 {
                     lang: "python",
@@ -226,9 +226,9 @@ def classify_audio(audio_path: str, model_name: str = "MIT/ast-finetuned-audiose
             title: "4. 音乐生成：Jukebox 到 MusicLM",
             body: `音乐生成是生成式 AI 在音频领域最具挑战性的任务之一。音乐不仅是声学信号的排列，还包含旋律、和声、节奏、音色等多层次结构。成功的音乐生成模型必须在多个时间尺度上保持一致性：毫秒级的波形细节、秒级的音符序列、分钟级的曲式结构。
 
-OpenAI 的 Jukebox（2020）是第一个能够生成包含人声的完整歌曲的自回归模型。它采用三级 VQ-VAE 的层级结构：顶层建模粗粒度的和声和旋律，中层捕获节奏和音色，底层生成原始波形。这种分层设计是必要的，因为直接对 44.1kHz 的原始波形建模计算成本过高。
+**OpenAI** 的 Jukebox（2020）是第一个能够生成包含人声的完整歌曲的自回归模型。它采用三级 VQ-VAE 的层级结构：顶层建模粗粒度的和声和旋律，中层捕获节奏和音色，底层生成原始波形。这种分层设计是必要的，因为直接对 44.1kHz 的原始波形建模计算成本过高。
 
-Google 的 MusicLM（2023）采用不同的策略：先用音频语言模型 EnCodec 将音频压缩为离散 token 序列，然后训练基于文本条件的 Transformer 生成这些 token。通过语义 token（来自 MuLan 的文本-音频联合嵌入）和声学 token 的两阶段生成，MusicLM 能够根据文本描述生成高质量音乐。Suno 和 Udio 等商业化产品进一步推动了这个领域的发展。`,
+Google 的 MusicLM（2023）采用不同的策略：先用音频语言模型 EnCodec 将音频压缩为离散 token 序列，然后训练基于文本条件的 **Transformer** 生成这些 token。通过语义 token（来自 MuLan 的文本-音频联合嵌入）和声学 token 的两阶段生成，MusicLM 能够根据文本描述生成高质量音乐。Suno 和 Udio 等商业化产品进一步推动了这个领域的发展。`,
             code: [
                 {
                     lang: "python",
@@ -394,7 +394,7 @@ def contrastive_loss(audio_emb: torch.Tensor, text_emb: torch.Tensor,
 
 Qwen-Audio、SpeechGPT、Pengi 等模型代表了不同的融合策略。Qwen-Audio 使用音频编码器（类似 Whisper 的 Encoder）将音频编码为连续表征，然后通过一个可训练的投影层映射到 LLM 的嵌入空间。模型同时支持音频-文本的多种指令：转录、翻译、描述、问答。
 
-更前沿的工作如 Meta 的 AudioPaLM 和 Google 的 USM（Universal Speech Model）尝试用统一的 token 空间处理多种音频任务。AudioPaLM 将 WavLM 的音频 token 和 PaLM 的文本 token 统一到一个自回归模型中，实现了语音到语音的直接翻译。这种端到端的跨模态生成是未来的重要方向。`,
+更前沿的工作如 Meta 的 Audio**PaLM** 和 Google 的 USM（Universal Speech Model）尝试用统一的 token 空间处理多种音频任务。Audio**PaLM** 将 WavLM 的音频 token 和 **PaLM** 的文本 token 统一到一个自回归模型中，实现了语音到语音的直接翻译。这种端到端的跨模态生成是未来的重要方向。`,
             code: [
                 {
                     lang: "python",

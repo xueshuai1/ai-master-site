@@ -240,7 +240,7 @@ export const article: Article = {
             title: "7. sklearn Pipeline 实战",
             body: `sklearn 的 Pipeline 将数据预处理步骤和模型串联成一个可复用的对象，是特征工程的最佳实践。Pipeline 确保每个步骤都严格按照训练-测试分割执行，避免了数据泄露。
 
-Pipeline 的核心优势有三点：一是防止数据泄露，所有预处理步骤的 fit 只在训练数据上执行；二是简化代码，将复杂的预处理流程封装为单一对象；三是支持网格搜索，可以对 Pipeline 中任何步骤的超参数进行调优。配合 ColumnTransformer，可以对不同类型的特征应用不同的预处理策略，实现灵活而健壮的特征工程流程。`,
+Pipeline 的核心优势有三点：一是防止数据泄露，所有预处理步骤的 fit 只在训练数据上执行；二是简化代码，将复杂的预处理流程封装为单一对象；三是支持网格搜索，可以对 Pipeline 中任何步骤的超参数进行调优。配合 Column**Transformer**，可以对不同类型的特征应用不同的预处理策略，实现灵活而健壮的特征工程流程。`,
             code: [
                 {
                     lang: "python",

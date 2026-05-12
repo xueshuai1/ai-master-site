@@ -358,7 +358,7 @@ print(f"纠正回复: {r2['sycophancy_score']} ({r2['verdict']})")`
 
 Langfuse 提供 LLM 追踪、延迟监控和成本分析功能，适用于调用层和推理层可观测性，优势是开源、可自部署、社区活跃。
 
-LangSmith 提供 LLM 应用开发的全流程追踪，适用于推理链分析、测试和调试，优势是与 LangChain 生态深度集成。
+LangSmith 提供 LLM 应用开发的全流程追踪，适用于推理链分析、测试和调试，优势是与 **LangChain** 生态深度集成。
 
 Arize Phoenix 提供 LLM 评估、追踪和可观测性，适用于质量维度和数据维度监控，优势是开源且支持本地部署。
 
@@ -368,7 +368,7 @@ OpenLIT 提供 OpenTelemetry 标准的 LLM 可观测性，适用于与现有 APM
 
 AgentGuard 是一个研究原型的 Agent 行为约束和运行时监控框架，适用于多层约束引擎和紧急制动，目前处于学术研究阶段尚未生产就绪。
 
-Constitutional AI Runtime 是基于宪法的运行时约束框架，适用于将 AI 安全原则编码为运行时规则，是 Anthropic 研究框架的延伸实现。
+Constitutional AI Runtime 是基于宪法的运行时约束框架，适用于将 AI 安全原则编码为运行时规则，是 **Anthropic** 研究框架的延伸实现。
 
 ### 选择建议
 

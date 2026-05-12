@@ -263,7 +263,7 @@ def compare_against_baseline(
     },
     {
       title: "4. 调试方法论：日志/追踪/可视化",
-      body: `调试 Agent 系统远比调试传统程序复杂，因为 Agent 的执行路径是动态生成的，无法预先确定代码分支。有效的调试方法论必须从三个层面入手：首先是结构化日志，记录每一步的输入、输出、工具调用和 token 消耗；其次是分布式追踪，将多步骤的 Agent 执行串联成完整的调用链；最后是可视化工具，将复杂的执行过程转化为人类可理解的图形。LangChain 的 callback 系统和 OpenTelemetry 的 trace 协议是当前最流行的两种方案。结构化日志的关键在于统一格式——每条日志必须包含 trace_id、span_id、step_index、tool_name 等字段，确保可以按任务维度聚合查询。可视化方面，推荐使用执行图（Execution Graph）展示 Agent 的决策树，标注每个分支的成功率和耗时，帮助定位瓶颈。`,
+      body: `调试 Agent 系统远比调试传统程序复杂，因为 Agent 的执行路径是动态生成的，无法预先确定代码分支。有效的调试方法论必须从三个层面入手：首先是结构化日志，记录每一步的输入、输出、工具调用和 token 消耗；其次是分布式追踪，将多步骤的 Agent 执行串联成完整的调用链；最后是可视化工具，将复杂的执行过程转化为人类可理解的图形。**LangChain** 的 callback 系统和 OpenTelemetry 的 trace 协议是当前最流行的两种方案。结构化日志的关键在于统一格式——每条日志必须包含 trace_id、span_id、step_index、tool_name 等字段，确保可以按任务维度聚合查询。可视化方面，推荐使用执行图（Execution Graph）展示 Agent 的决策树，标注每个分支的成功率和耗时，帮助定位瓶颈。`,
       code: [
         {
           lang: "typescript",
@@ -617,7 +617,7 @@ function detectViolation(
     },
     {
       title: "7. LangSmith 实战：Agent 追踪与评估",
-      body: `LangSmith 是 LangChain 生态中用于 Agent 观测和评估的核心平台。它提供三大核心能力：首先是 Trace 可视化，自动捕获 Agent 的每一步执行，包括 LLM 调用、工具使用、token 消耗和延迟，并以树状结构展示完整的执行链。其次是 Dataset 管理，允许用户创建结构化的评测数据集，支持版本控制和批量运行。第三是 Evaluation Pipeline，可以自定义评分函数，对 Agent 的输出进行自动化评分，并生成趋势报告。实战中，我们通常先创建一个评测数据集，包含 50-100 个代表性任务；然后配置评估管道，定义评分标准（如答案正确性、工具调用合理性、回复质量）；最后运行批量评测，在 LangSmith 的仪表板中查看每个用例的详细执行 trace 和评分结果。LangSmith 还支持 A/B 测试，可以同时运行两个 Agent 配置并对比指标差异。`,
+      body: `LangSmith 是 **LangChain** 生态中用于 Agent 观测和评估的核心平台。它提供三大核心能力：首先是 Trace 可视化，自动捕获 Agent 的每一步执行，包括 LLM 调用、工具使用、token 消耗和延迟，并以树状结构展示完整的执行链。其次是 Dataset 管理，允许用户创建结构化的评测数据集，支持版本控制和批量运行。第三是 Evaluation Pipeline，可以自定义评分函数，对 Agent 的输出进行自动化评分，并生成趋势报告。实战中，我们通常先创建一个评测数据集，包含 50-100 个代表性任务；然后配置评估管道，定义评分标准（如答案正确性、工具调用合理性、回复质量）；最后运行批量评测，在 LangSmith 的仪表板中查看每个用例的详细执行 trace 和评分结果。LangSmith 还支持 A/B 测试，可以同时运行两个 Agent 配置并对比指标差异。`,
       code: [
         {
           lang: "python",

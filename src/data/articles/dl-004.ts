@@ -12,13 +12,13 @@ export const article: Article = {
     content: [
       {
         title: "1. 为什么需要注意力机制？",
-        body: `在 Transformer 出现之前，序列建模主要依赖 RNN 和 LSTM。这些模型按顺序处理序列，导致两个核心问题：一是无法并行计算，训练速度慢——每个时间步必须等前一步完成才能开始；二是长距离依赖问题——序列开头的信息经过数十步传递后已经严重衰减。
+        body: `在 **Transformer** 出现之前，序列建模主要依赖 RNN 和 LSTM。这些模型按顺序处理序列，导致两个核心问题：一是无法并行计算，训练速度慢——每个时间步必须等前一步完成才能开始；二是长距离依赖问题——序列开头的信息经过数十步传递后已经严重衰减。
 
 注意力机制（Attention Mechanism）的核心思想非常直观：让模型在处理每个位置时，都能"看到"序列中所有其他位置的信息，并根据语义相关性分配不同的权重。这就像人类阅读时的注意力分配——读到代词"他"时，你会自动回看前文找到对应的名词。
 
 注意力机制有三大优势：第一，全局视野——每个位置直接访问所有其他位置，不受距离影响；第二，完全并行——所有位置的注意力计算可以同时进行；第三，可解释性——注意力权重可以可视化为热力图，直观展示模型"关注"了什么。
 
-注意力机制最早在 Bahdanau 等人的神经机器翻译工作中提出（2014），用于替代 Seq2Seq 模型中的固定长度上下文向量。Transformer（Vaswani et al., 2017）将其推广为通用的序列建模架构，彻底改变了 NLP 乃至整个 AI 领域。`,
+注意力机制最早在 Bahdanau 等人的神经机器翻译工作中提出（2014），用于替代 Seq2Seq 模型中的固定长度上下文向量。**Transformer**（Vaswani et al., 2017）将其推广为通用的序列建模架构，彻底改变了 NLP 乃至整个 AI 领域。`,
         mermaid: `graph LR
     A["输入序列"] --> B["Query 查询"]
     A --> C["Key 键"]
@@ -33,7 +33,7 @@ export const article: Article = {
       },
       {
         title: "2. Scaled Dot-Product Attention 详解",
-        body: `Transformer 使用的核心注意力机制是 Scaled Dot-Product Attention。其计算公式为：
+        body: `**Transformer** 使用的核心注意力机制是 Scaled Dot-Product Attention。其计算公式为：
 
 Attention(Q, K, V) = softmax(QKᵀ / √dₖ) V
 
@@ -138,7 +138,7 @@ for d in [8, 32, 64, 128, 512]:
 
 多头注意力的直觉理解：想象你在分析一句话中的每个词。一个注意力头可能关注语法关系（主谓一致、修饰关系），另一个关注语义关联（同义词、反义词），第三个关注长距离依赖（代词指代）。每个头专精于一种"视角"，组合起来就能获得更丰富的表示。
 
-在原始 Transformer 中，h=8，d_model=512，因此每个头的维度 d_k = 512/8 = 64。多头注意力的总参数量与单头相同（因为 d_k 缩小了 h 倍），但表达能力显著增强。`,
+在原始 **Transformer** 中，h=8，d_model=512，因此每个头的维度 d_k = 512/8 = 64。多头注意力的总参数量与单头相同（因为 d_k 缩小了 h 倍），但表达能力显著增强。`,
         code: [
           {
             lang: "python",
@@ -214,13 +214,13 @@ print(f"多头参数量: {multi_head_params:,} (相同，但表达能力更强)"
       },
       {
         title: "4. Transformer 整体架构",
-        body: `完整的 Transformer 由编码器和解码器堆叠而成。原始论文使用 N=6 层，现代 LLM 使用 32-128 层。
+        body: `完整的 **Transformer** 由编码器和解码器堆叠而成。原始论文使用 N=6 层，现代 LLM 使用 32-128 层。
 
 编码器（Encoder）：由 N 个相同层堆叠。每层包含两个子层：(1) 多头自注意力（Self-Attention）——让每个位置关注序列中的所有位置；(2) 位置级前馈网络（Position-wise FFN）——一个两层 MLP，对每个位置独立处理。每个子层都使用残差连接（Residual Connection）和层归一化（LayerNorm），即 LayerNorm(x + Sublayer(x))。
 
 解码器（Decoder）：同样由 N 层堆叠，但每层包含三个子层：(1) 带掩码的多头自注意力——防止位置 i 关注到位置 i 之后的信息（因果掩码）；(2) 交叉注意力（Cross-Attention）——Query 来自解码器，Key 和 Value 来自编码器输出，让解码器"关注"输入序列的相关信息；(3) 位置级 FFN。
 
-残差连接是 Transformer 能训练很深网络的关键。它让梯度可以直接跨层传播，避免了深层网络中的梯度消失问题。层归一化则稳定了每层的输入分布，加速训练并允许更大的学习率。`,
+残差连接是 **Transformer** 能训练很深网络的关键。它让梯度可以直接跨层传播，避免了深层网络中的梯度消失问题。层归一化则稳定了每层的输入分布，加速训练并允许更大的学习率。`,
         code: [
           {
             lang: "python",
@@ -313,9 +313,9 @@ class TransformerDecoderLayer(nn.Module):
       },
       {
         title: "5. 位置编码：让模型感知顺序",
-        body: `由于 Transformer 完全基于注意力机制，没有任何时序概念——打乱输入序列的顺序，自注意力的输出只会相应地打乱，但值不变。因此需要显式地注入位置信息。
+        body: `由于 **Transformer** 完全基于注意力机制，没有任何时序概念——打乱输入序列的顺序，自注意力的输出只会相应地打乱，但值不变。因此需要显式地注入位置信息。
 
-原始 Transformer 使用正弦/余弦函数的位置编码：
+原始 **Transformer** 使用正弦/余弦函数的位置编码：
 
 PE(pos, 2i) = sin(pos / 10000^(2i/d_model))
 PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))
@@ -367,13 +367,13 @@ print(f"位置 10 的前8维: {positions[10, :8].round(3)}")`,
       },
       {
         title: "6. 前馈网络（FFN）与层归一化",
-        body: `Transformer 的前馈网络（Feed-Forward Network, FFN）是一个简单的两层 MLP，但有几个关键设计细节值得注意。
+        body: `**Transformer** 的前馈网络（Feed-Forward Network, FFN）是一个简单的两层 MLP，但有几个关键设计细节值得注意。
 
 FFN 的结构：FFN(x) = max(0, xW₁ + b₁)W₂ + b₂。第一层将维度从 d_model 扩展到 d_ff（通常是 d_model 的 4 倍），ReLU 激活后，第二层再压缩回 d_model。扩展-压缩的设计让模型有足够的容量在每个位置独立地进行非线性变换。
 
 FFN 是"position-wise"的——它对序列中的每个位置独立应用相同的变换。这意味着 FFN 不捕捉位置间的关系（这是注意力的工作），而是对每个位置的表示进行独立的非线性处理。
 
-层归一化（Layer Normalization）在 Transformer 中有两种放置方式：Post-LN（原始论文，LayerNorm 在残差连接之后）和 Pre-LN（LayerNorm 在子层之前）。Pre-LN 在训练中更稳定，是现代 Transformer 的标准选择。Post-LN 在理论上表达能力更强，但需要 warmup 学习率策略才能稳定训练。`,
+层归一化（Layer Normalization）在 **Transformer** 中有两种放置方式：Post-LN（原始论文，LayerNorm 在残差连接之后）和 Pre-LN（LayerNorm 在子层之前）。Pre-LN 在训练中更稳定，是现代 **Transformer** 的标准选择。Post-LN 在理论上表达能力更强，但需要 warmup 学习率策略才能稳定训练。`,
         code: [
           {
             lang: "python",
@@ -414,9 +414,9 @@ print(f"FFN 参数量: {sum(p.numel() for p in ffn.parameters()):,}")`,
       },
       {
         title: "7. Transformer 与 RNN/CNN 对比",
-        body: `Transformer 并非在所有场景下都优于 RNN 和 CNN。理解它们的优缺点对比，能帮助你在实际问题中做出正确的架构选择。
+        body: `**Transformer** 并非在所有场景下都优于 RNN 和 CNN。理解它们的优缺点对比，能帮助你在实际问题中做出正确的架构选择。
 
-计算复杂度是 Transformer 最大的瓶颈。自注意力的复杂度是 O(n²·d)，其中 n 是序列长度，d 是模型维度。当 n=4096 时，n²≈16M，这使得训练超长序列的内存和时间开销巨大。相比之下，RNN 的复杂度是 O(n·d²)，CNN 的复杂度是 O(k·n·d²)（k 是卷积核大小）。
+计算复杂度是 **Transformer** 最大的瓶颈。自注意力的复杂度是 O(n²·d)，其中 n 是序列长度，d 是模型维度。当 n=4096 时，n²≈16M，这使得训练超长序列的内存和时间开销巨大。相比之下，RNN 的复杂度是 O(n·d²)，CNN 的复杂度是 O(k·n·d²)（k 是卷积核大小）。
 
 内存瓶颈同样显著。训练时，自注意力需要存储 n×n 的注意力权重矩阵用于反向传播。对于 n=32768（32K 上下文），仅这一项就需要 32K²×4bytes ≈ 4GB 内存（单精度）。这就是为什么长上下文训练需要 Flash Attention 等优化技术。`,
         table: {
@@ -448,11 +448,11 @@ print(f"FFN 参数量: {sum(p.numel() for p in ffn.parameters()):,}")`,
       },
       {
         title: "8. 从 Transformer 到大语言模型",
-        body: `Transformer 架构是现代大语言模型的基石。理解从原始 Transformer 到现代 LLM 的演变路径，是理解整个 AI 发展脉络的关键。
+        body: `**Transformer** 架构是现代大语言模型的基石。理解从原始 **Transformer** 到现代 LLM 的演变路径，是理解整个 AI 发展脉络的关键。
 
 GPT 系列采用 Decoder-only 架构，去掉了编码器，只保留解码器部分。在训练时，GPT 使用因果语言模型目标（预测下一个 token），这使得它天然适合文本生成。BERT 则采用 Encoder-only 架构，使用掩码语言模型（MLM）目标，擅长理解任务。T5 使用完整的 Encoder-Decoder 架构，将所有 NLP 任务统一为"文本到文本"格式。
 
-从 GPT 到 GPT-4 的关键演进包括：更大的规模（从 1.17 亿参数到万亿级）、更好的数据质量、RLHF（基于人类反馈的强化学习）对齐、多模态能力。LLaMA 系列则证明了：精心设计的架构（RMSNorm + SwiGLU + RoPE）加上高质量数据，可以在更小规模下达到可比效果。`,
+从 GPT 到 **GPT-4** 的关键演进包括：更大的规模（从 1.17 亿参数到万亿级）、更好的数据质量、**RLHF**（基于人类反馈的强化学习）对齐、多模态能力。**LLaMA** 系列则证明了：精心设计的架构（RMSNorm + SwiGLU + RoPE）加上高质量数据，可以在更小规模下达到可比效果。`,
         list: [
           "GPT (2018): Decoder-only，自回归生成，开启了 LLM 时代",
           "BERT (2018): Encoder-only，掩码语言模型，NLP 预训练的里程碑",

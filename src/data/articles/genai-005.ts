@@ -14,7 +14,7 @@ export const article: Article = {
         title: "1. 文本到图像生成：任务定义与发展脉络",
         body: `文本到图像生成（Text-to-Image Generation）是生成式 AI 最具视觉冲击力的应用之一。任务的核心定义是：给定一段自然语言文本描述（prompt），模型生成一张与该描述语义一致、视觉逼真的图像。这个问题看似简单，但涉及计算机视觉、自然语言处理和生成模型三大领域的深度交叉。
 
-回顾发展脉络，2021 年 OpenAI 发布的 DALL-E 首次展示了用文字画画的可能性。它基于 VQ-VAE-2 的离散 token 化方案，将图像和文本统一到 Transformer 的序列建模框架中。同年，DALL-E mini（后更名为 Craiyon）开源，让更多人体验了文本到图像生成的能力。2022 年成为爆发之年：Google 发布 Imagen，OpenAI 发布 DALL-E 2，Stability AI 推出 Stable Diffusion——三条技术路线（离散 token + Transformer、级联扩散模型、潜在扩散模型）并行发展，推动了图像生成质量的飞跃。2023 年的 DALL-E 3 进一步引入了与 GPT-4 的深度集成，通过大语言模型扩展用户的简短 prompt，显著提升了生成质量。
+回顾发展脉络，2021 年 **OpenAI** 发布的 DALL-E 首次展示了用文字画画的可能性。它基于 VQ-VAE-2 的离散 token 化方案，将图像和文本统一到 **Transformer** 的序列建模框架中。同年，DALL-E mini（后更名为 Craiyon）开源，让更多人体验了文本到图像生成的能力。2022 年成为爆发之年：Google 发布 Imagen，**OpenAI** 发布 DALL-E 2，Stability AI 推出 Stable Diffusion——三条技术路线（离散 token + **Transformer**、级联扩散模型、潜在扩散模型）并行发展，推动了图像生成质量的飞跃。2023 年的 DALL-E 3 进一步引入了与 **GPT-4** 的深度集成，通过大语言模型扩展用户的简短 prompt，显著提升了生成质量。
 
 理解文本到图像生成，关键在于把握两个核心问题：一是如何让模型理解文本描述中的语义信息，二是如何将这种语义信息翻译为像素级别的视觉内容。前者依赖强大的文本编码器（如 CLIP），后者则需要精心设计的生成架构。`,
         mermaid: `graph LR
@@ -125,7 +125,7 @@ print(f"CLIP Score: {score:.4f}")  # 越接近 1 表示越匹配`,
       },
       {
         title: "2. CLIP：连接文本与图像的桥梁",
-        body: `CLIP（Contrastive Language-Image Pre-training）是 OpenAI 在 2021 年提出的革命性模型，它彻底改变了文本和图像之间的语义对齐方式。CLIP 的核心思想非常优雅：使用对比学习（Contrastive Learning）在大规模图像-文本对上训练一个联合嵌入空间，使得语义相关的图像和文本在这个空间中彼此靠近，无关的则彼此远离。
+        body: `CLIP（Contrastive Language-Image Pre-training）是 **OpenAI** 在 2021 年提出的革命性模型，它彻底改变了文本和图像之间的语义对齐方式。CLIP 的核心思想非常优雅：使用对比学习（Contrastive Learning）在大规模图像-文本对上训练一个联合嵌入空间，使得语义相关的图像和文本在这个空间中彼此靠近，无关的则彼此远离。
 
 CLIP 的训练数据极为庞大——4 亿对互联网抓取的图像-文本对。训练时，每个 batch 包含 N 对图像-文本，模型通过两个独立的编码器（图像编码器和文本编码器）分别将它们映射到相同维度的向量空间。然后计算 N x N 的相似度矩阵，使用交叉熵损失函数，让正确的图文对（对角线上的样本）获得更高的相似度得分。这种对比学习目标迫使模型学习到细粒度的语义对齐能力。
 
@@ -240,11 +240,11 @@ print(f"CLIP Loss: {loss.item():.4f}")`,
       },
       {
         title: "3. DALL-E：VQ-VAE 与 Transformer 的首次融合",
-        body: `DALL-E（2021）是第一个在大规模上展示文本到图像生成能力的模型，其名称致敬了超现实主义画家 Salvador Dali 和动画角色 WALL-E。DALL-E 的核心创新在于将图像生成问题转化为序列生成问题——这正是 Transformer 最擅长的领域。
+        body: `DALL-E（2021）是第一个在大规模上展示文本到图像生成能力的模型，其名称致敬了超现实主义画家 Salvador Dali 和动画角色 WALL-E。DALL-E 的核心创新在于将图像生成问题转化为序列生成问题——这正是 **Transformer** 最擅长的领域。
 
-DALL-E 的架构分为两个关键阶段。第一阶段是图像 tokenization：使用 dVAE（discrete VAE，类似于 VQ-VAE 的变体）将图像编码为离散的 token 序列。具体来说，dVAE 将 256 x 256 的图像压缩为 32 x 32 的网格，每个网格位置对应一个来自 8192 词汇表的离散 token。这样，一张图像就被表示为一个 1024 个 token 的序列。第二阶段是序列建模：将文本 token 和图像 token 拼接成一个完整的序列，输入到 Transformer 中进行自回归生成。文本部分使用 BPE（Byte Pair Encoding）编码，图像部分使用 dVAE 编码，两者共享同一个 Transformer 模型。
+DALL-E 的架构分为两个关键阶段。第一阶段是图像 tokenization：使用 dVAE（discrete VAE，类似于 VQ-VAE 的变体）将图像编码为离散的 token 序列。具体来说，dVAE 将 256 x 256 的图像压缩为 32 x 32 的网格，每个网格位置对应一个来自 8192 词汇表的离散 token。这样，一张图像就被表示为一个 1024 个 token 的序列。第二阶段是序列建模：将文本 token 和图像 token 拼接成一个完整的序列，输入到 **Transformer** 中进行自回归生成。文本部分使用 BPE（Byte Pair Encoding）编码，图像部分使用 dVAE 编码，两者共享同一个 **Transformer** 模型。
 
-训练时，DALL-E 最大化序列的条件似然：给定文本前缀，预测后续图像 token 的概率分布。推理时，模型从左到右逐个生成图像 token，最后通过 dVAE 解码器将 token 序列还原为像素图像。这种方法的优雅之处在于：它复用了 NLP 领域已经非常成熟的 Transformer 架构和训练范式。`,
+训练时，DALL-E 最大化序列的条件似然：给定文本前缀，预测后续图像 token 的概率分布。推理时，模型从左到右逐个生成图像 token，最后通过 dVAE 解码器将 token 序列还原为像素图像。这种方法的优雅之处在于：它复用了 NLP 领域已经非常成熟的 **Transformer** 架构和训练范式。`,
         mermaid: `graph LR
     A["文本 prompt"] --> B["BPE 编码\
 文本 tokens"]
@@ -482,11 +482,11 @@ print(f"阈值化后: [{cleaned.min():.2f}, {cleaned.max():.2f}]")`,
       },
       {
         title: "5. DALL-E 2 与 DALL-E 3：从先验网络到语言理解",
-        body: `DALL-E 2（2022 年 4 月）代表了 OpenAI 在文本到图像生成上的重大架构转变。与 DALL-E 1 的自回归方式不同，DALL-E 2 采用了两阶段扩散架构：第一阶段是先验网络（Prior），将 CLIP 文本嵌入转换为 CLIP 图像嵌入；第二阶段是扩散解码器（Decoder），从 CLIP 图像嵌入条件生成实际图像。这个设计的巧妙之处在于：CLIP 图像嵌入本身已经包含了丰富的视觉先验知识，先验网络的任务只是学习文本到这些嵌入的映射。
+        body: `DALL-E 2（2022 年 4 月）代表了 **OpenAI** 在文本到图像生成上的重大架构转变。与 DALL-E 1 的自回归方式不同，DALL-E 2 采用了两阶段扩散架构：第一阶段是先验网络（Prior），将 CLIP 文本嵌入转换为 CLIP 图像嵌入；第二阶段是扩散解码器（Decoder），从 CLIP 图像嵌入条件生成实际图像。这个设计的巧妙之处在于：CLIP 图像嵌入本身已经包含了丰富的视觉先验知识，先验网络的任务只是学习文本到这些嵌入的映射。
 
 DALL-E 2 还引入了一个创新的变体编辑功能——通过修改 CLIP 图像嵌入的一部分，可以保持图像的某些属性（如风格、构图）不变，同时改变其他属性（如颜色、物体）。这种语义插值能力使得用户可以精细控制生成结果的各个方面。
 
-DALL-E 3（2023 年 9 月）则采取了完全不同的策略。它不再依赖复杂的先验网络，而是直接将生成模型与 GPT-4 深度集成。当用户输入简短的 prompt 时，GPT-4 会自动将其扩展为详细的描述，包含构图、风格、色彩等丰富信息。这种语言先行的方法使得 DALL-E 3 在复杂 prompt 理解和指令遵循方面显著超越前代。同时，DALL-E 3 还引入了细粒度的安全过滤机制和内容水印（SynthID），以应对 AI 生成内容的滥用风险。`,
+DALL-E 3（2023 年 9 月）则采取了完全不同的策略。它不再依赖复杂的先验网络，而是直接将生成模型与 **GPT-4** 深度集成。当用户输入简短的 prompt 时，**GPT-4** 会自动将其扩展为详细的描述，包含构图、风格、色彩等丰富信息。这种语言先行的方法使得 DALL-E 3 在复杂 prompt 理解和指令遵循方面显著超越前代。同时，DALL-E 3 还引入了细粒度的安全过滤机制和内容水印（SynthID），以应对 AI 生成内容的滥用风险。`,
         mermaid: `graph TD
     subgraph "DALL-E 2 架构"
     A1["文本 prompt"] --> B1["CLIP Text Encoder"]

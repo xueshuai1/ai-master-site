@@ -386,11 +386,11 @@ train_with_and_without_bn()`,
         title: "4. LayerNorm vs BatchNorm：归一化的路线之争",
         body: `Layer Normalization（LN）由 Ba 等人在 2016 年提出，最初是为了解决 RNN 中 BatchNorm 不适用的问题。两者的根本区别在于统计量的计算维度不同：BN 在 batch 维度上统计（对同一个特征，跨样本计算均值和方差）；LN 在特征维度上统计（对同一个样本，跨特征计算均值和方差）。
 
-这个看似微小的差异带来了深远的影响。BN 的性能依赖于 batch size——batch 越大，统计量越准确；LN 完全不受 batch size 影响，因为它对每个样本单独归一化。这就是为什么 LN 成为了 Transformer 的标准配置：Transformer 训练时 batch size 经常变化，而且推理时 batch size = 1 也很常见。
+这个看似微小的差异带来了深远的影响。BN 的性能依赖于 batch size——batch 越大，统计量越准确；LN 完全不受 batch size 影响，因为它对每个样本单独归一化。这就是为什么 LN 成为了 **Transformer** 的标准配置：**Transformer** 训练时 batch size 经常变化，而且推理时 batch size = 1 也很常见。
 
 另一个关键差异：BN 有移动平均机制（训练和推理行为不同），LN 没有（训练和推理行为完全一致）。这使得 LN 的实现更简单，也不容易出现训练/推理不一致的 bug。
 
-在实践中，卷积网络首选 BN，Transformer/RNN 首选 LN，这是一个已经被广泛验证的经验法则。`,
+在实践中，卷积网络首选 BN，**Transformer**/RNN 首选 LN，这是一个已经被广泛验证的经验法则。`,
         code: [
           {
             lang: "python",
@@ -528,7 +528,7 @@ for mode in ["Pre-LN", "Post-LN"]:
 
 Instance Normalization（IN）由 Ulyanov 等人在 2016 年为风格迁移任务提出。它对每个样本的每个通道单独归一化，完全消除了 batch 维度和通道间的信息。在风格迁移中，这恰好是我们想要的——每张图像的风格应该是独立的。
 
-选择归一化方法的经验法则：大 batch 的图像分类 → BatchNorm；小 batch 或目标检测/分割 → GroupNorm；风格迁移 → InstanceNorm；序列模型/Transformer → LayerNorm；ResNeXt 等大通道网络 → GroupNorm。`,
+选择归一化方法的经验法则：大 batch 的图像分类 → BatchNorm；小 batch 或目标检测/分割 → GroupNorm；风格迁移 → InstanceNorm；序列模型/**Transformer** → LayerNorm；ResNeXt 等大通道网络 → GroupNorm。`,
         code: [
           {
             lang: "python",
@@ -776,7 +776,7 @@ Dropout + BatchNorm 是一个经典的争议话题。BN 本身已经有一定的
 
 对于现代 ResNet 架构，标准的正则化组合是：BN（内置）+ Weight Decay（0.0001-0.0005）+ 数据增强。Dropout 在全连接分类层之前使用（0.5），但卷积层中通常不用。
 
-对于 Transformer，标准组合是：LayerNorm（Pre-LN 结构）+ Weight Decay（0.01-0.1，通过 AdamW）+ Dropout（attention dropout + residual dropout，通常 0.1）+ 学习率 Warmup。`,
+对于 **Transformer**，标准组合是：LayerNorm（Pre-LN 结构）+ Weight Decay（0.01-0.1，通过 AdamW）+ Dropout（attention dropout + residual dropout，通常 0.1）+ 学习率 Warmup。`,
         code: [
           {
             lang: "python",

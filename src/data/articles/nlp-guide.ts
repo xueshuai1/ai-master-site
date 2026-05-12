@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "0. 为什么学 NLP？",
-            body: `ChatGPT、Claude、文心一言——这些产品的核心技术都来自 NLP。
+            body: `ChatGPT、**Claude**、文心一言——这些产品的核心技术都来自 NLP。
 
 但 NLP 不只是聊天机器人。它还包括：
 - 情感分析（这条评论是好评还是差评？）
@@ -27,16 +27,16 @@ export const article: Article = {
 | 时代 | 代表技术 | 特点 |
 |------|----------|------|
 | 2013 | Word2Vec | 词向量，第一次让机器"理解"词义 |
-| 2017 | Transformer | 注意力机制，NLP 范式转变 |
+| 2017 | **Transformer** | 注意力机制，NLP 范式转变 |
 | 2018 | BERT | 预训练+微调，11 项任务 SOTA |
 | 2020 | GPT-3 | 1750 亿参数，few-shot 学习 |
 | 2026 | LLM Agent | 对话、编程、工具调用一体化 |`,
         },
         {
             title: "2. 学习建议",
-            body: `重点：
+            body: `**重点**：
 - 词嵌入（Word2Vec → BERT 的演进）
-- Transformer 架构
+- **Transformer** 架构
 - BERT 微调实战
 
 2026 年的 NLP ≈ 大语言模型应用。 所以学完 NLP 基础后，直接跳到 LLM 章节。`,

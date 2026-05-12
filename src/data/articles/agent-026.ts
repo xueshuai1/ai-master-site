@@ -72,7 +72,7 @@ Tool Dispatcher"]
     },
     {
       title: "二、Agent 的核心架构设计",
-      body: `一个完整的自主 Agent 由五个核心组件构成。理解这个架构，你就能看懂 Hermes Agent、GenericAgent、OpenAI Agents 等任何 Agent 项目的内部结构。
+      body: `一个完整的自主 Agent 由五个核心组件构成。理解这个架构，你就能看懂 Hermes Agent、GenericAgent、**OpenAI** Agents 等任何 Agent 项目的内部结构。
 
 ### 2.1 五大核心组件
 
@@ -90,8 +90,8 @@ Tool Dispatcher"]
 
 | 模式 | 原理 | 优势 | 劣势 | 代表项目 |
 |------|------|------|------|---------|
-| ReAct | 推理 → 行动 → 观察 → 推理循环 | 简单、可控、可调试 | 多步推理可能发散 | Claude Code、GenericAgent |
-| Plan-and-Execute | 先制定完整计划，再逐步执行 | 目标明确、不易跑偏 | 计划可能不完整 | LangGraph、CrewAI |
+| ReAct | 推理 → 行动 → 观察 → 推理循环 | 简单、可控、可调试 | 多步推理可能发散 | **Claude** Code、GenericAgent |
+| Plan-and-Execute | 先制定完整计划，再逐步执行 | 目标明确、不易跑偏 | 计划可能不完整 | **LangGraph**、**CrewAI** |
 | Reflexion | 执行后自我反思、修正策略 | 能从错误中学习 | 需要额外的 LLM 调用 | Reflexion 论文 |
 | Self-Evolving | 动态生长技能树、优化自身代码 | 持续进化、无需人工干预 | 实现复杂、安全性存疑 | Hermes、Evolver |
 
@@ -136,7 +136,7 @@ Tool Dispatcher"]
 
 工具是 Agent 的「手脚」。每个工具必须定义清晰的接口，这样 LLM 才知道何时调用、如何调用。
 
-设计要点：
+**设计要点**：
 - 工具名称要语义化，LLM 才能准确选择
 - 参数描述要详细，包含类型、约束和示例
 - 返回值要有明确格式约定`,
@@ -466,16 +466,16 @@ class AgentMemory:
 
 ReAct（Reasoning + Acting）的核心思想是：LLM 不应该一次性生成答案，而是交替进行「思考」和「行动」。
 
-每一步循环：
+**每一步循环**：
 1. Thought（思考）：LLM 分析当前状态，决定下一步
 2. Action（行动）：调用一个工具
 3. Observation（观察）：查看工具返回的结果
 4. 回到步骤 1，直到得出最终答案
 
 这个模式的好处是：
-- 可控：每步行动都可以被审计
-- 可调试：出问题时可以看到哪一步出错
-- 可终止：设置最大步数防止无限循环
+**- 可控**：每步行动都可以被审计
+**- 可调试**：出问题时可以看到哪一步出错
+**- 可终止**：设置最大步数防止无限循环
 
 ### 5.2 完整实现`,
       code: [
@@ -868,21 +868,21 @@ if __name__ == "__main__":
 
 | 阶段 | 改进项 | 优先级 | 参考项目 |
 |------|--------|--------|---------|
-| P0 必须 | 接入真实 LLM API（OpenAI/Anthropic） | 🔴 | 所有 Agent 项目 |
-| P0 必须 | 代码执行沙箱（Docker/E2B） | 🔴 | Claude Code, OpenClaw |
+| P0 必须 | 接入真实 LLM API（**OpenAI**/**Anthropic**） | 🔴 | 所有 Agent 项目 |
+| P0 必须 | 代码执行沙箱（Docker/E2B） | 🔴 | **Claude** Code, OpenClaw |
 | P0 必须 | 输入验证和权限控制 | 🔴 | 所有 Agent 项目 |
 | P1 重要 | 向量数据库长期记忆 | 🟠 | claude-mem, MemPalace |
-| P1 重要 | 工具自动发现（MCP 协议） | 🟠 | OpenAI Agents, Claude Code |
-| P1 重要 | 并发工具执行 | 🟠 | LangGraph |
+| P1 重要 | 工具自动发现（MCP 协议） | 🟠 | **OpenAI** Agents, **Claude** Code |
+| P1 重要 | 并发工具执行 | 🟠 | **LangGraph** |
 | P2 增强 | 自反思（Reflexion）机制 | 🟡 | Reflexion, Hermes |
 | P2 增强 | 技能自动生长 | 🟡 | GenericAgent, Evolver |
-| P2 增强 | 多 Agent 协作 | 🟡 | CrewAI, AutoGen |
+| P2 增强 | 多 Agent 协作 | 🟡 | **CrewAI**, **AutoGen** |
 | P3 优化 | 缓存和成本优化 | 🟢 | 所有 Agent 项目 |
 | P3 优化 | 监控和可观测性 | 🟢 | LangSmith, Langfuse |
 
 ### 7.2 与热门 Agent 项目的架构对比
 
-| 特性 | 本文实现 | Claude Code | Hermes Agent | GenericAgent |
+| 特性 | 本文实现 | **Claude** Code | Hermes Agent | GenericAgent |
 |------|---------|-------------|-------------|-------------|
 | 推理模式 | ReAct | ReAct + Plan | ReAct + 自进化 | 技能树 + 元认知 |
 | 工具系统 | 静态注册 | MCP + 内置 | 动态生长 | 自主发现 |
@@ -929,7 +929,7 @@ if __name__ == "__main__":
 
 尝试以下练习来巩固所学：
 
-1. 接入真实 API：将 _mock_llm_call 替换为 OpenAI 或 Anthropic 的真实 API 调用
+1. 接入真实 API：将 _mock_llm_call 替换为 **OpenAI** 或 **Anthropic** 的真实 API 调用
 2. 添加新工具：实现一个「网页抓取」工具（用 requests + BeautifulSoup）
 3. 实现向量记忆：用 ChromaDB 替换关键词匹配的记忆检索
 4. 添加计划模式：在执行任务前，先让 LLM 生成一个执行计划（Plan-and-Execute 模式）

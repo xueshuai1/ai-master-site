@@ -15,12 +15,12 @@ export const article: Article = {
   content: [
     {
       title: "事件概述",
-      body: `2026 年 4 月 8 日，Anthropic 发布了一则改变 AI 安全格局的公告：Claude Mythos Preview 模型在软件漏洞发现和利用方面的能力超越了大多数人类安全研究人员。这一发现直接导致了：
+      body: `2026 年 4 月 8 日，**Anthropic** 发布了一则改变 AI 安全格局的公告：**Claude** Mythos Preview 模型在软件漏洞发现和利用方面的能力超越了大多数人类安全研究人员。这一发现直接导致了：
 
 - 华尔街紧急会议：美国财政部长贝森特和美联储主席鲍威尔紧急召见主要银行 CEO
 - IMF 警告：IMF 总裁警告全球金融系统缺乏防御 AI 驱动网络攻击的能力
-- Project Glasswing：Anthropic 联合 12 家科技巨头建立防御联盟
-- 发布延迟：Mythos 的公开发布被无限期推迟
+- Project Glasswing：**Anthropic** 联合 12 家科技巨头建立防御联盟
+**- 发布延迟**：Mythos 的公开发布被无限期推迟
 
 这标志着 AI 网络安全从技术讨论正式升级为国家安全和宏观经济议题。`,
       code: [
@@ -105,17 +105,17 @@ print(f"Critical 级别 (AI): {sum(1 for v in mythos_discoveries if v.severity =
     },
     {
       title: "Project Glasswing 防御联盟",
-      body: `作为应对，Anthropic 联合 12 家科技巨头成立了 Project Glasswing 防御联盟：
+      body: `作为应对，**Anthropic** 联合 12 家科技巨头成立了 Project Glasswing 防御联盟：
 
-创始成员：Amazon Web Services、Anthropic、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、Nvidia、Palo Alto Networks
+**创始成员**：Amazon Web Services、Anthropic、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorganChase、Linux Foundation、Microsoft、Nvidia、Palo Alto Networks
 
-运作机制：
-- 联盟成员获得 Claude Mythos Preview 的受限访问权限
+**运作机制**：
+- 联盟成员获得 **Claude** Mythos Preview 的受限访问权限
 - 专门用于发现和修复各自系统的安全漏洞
 - 发现结果在联盟内部共享，但不对公众公开
-- Anthropic 发布技术白皮书，分享防御方法和最佳实践
+- **Anthropic** 发布技术白皮书，分享防御方法和最佳实践
 
-战略意义：
+**战略意义**：
 这代表了 AI 安全治理的新范式——不通过限制技术来保障安全，而是通过受控的联盟式协作，让防御方获得与攻击方相同的技术能力。`,
       list: [
         "联盟成员获得受限的 Mythos Preview 访问权限",
@@ -256,10 +256,10 @@ AI 对抗 AI
 
 深度防御架构
 传统的边界防御已经不够。需要建立多层防御体系：
-- 网络层：零信任架构
-- 应用层：AI 驱动的异常检测
-- 数据层：加密与访问控制
-- 人员层：安全意识培训与响应演练
+**- 网络层**：零信任架构
+**- 应用层**：AI 驱动的异常检测
+**- 数据层**：加密与访问控制
+**- 人员层**：安全意识培训与响应演练
 
 持续监控
 AI 攻击的特点是速度快、隐蔽性强。需要建立 7x24 小时的自动化监控和响应系统，利用 AI 检测 AI 攻击模式。`,
@@ -297,7 +297,7 @@ while True:
 - 国防部重新评估 AI 模型的供应链风险
 
 欧盟
-- 欧盟委员会支持 Anthropic 的分阶段发布策略
+- 欧盟委员会支持 **Anthropic** 的分阶段发布策略
 - 加速 AI Act 中网络安全条款的实施
 - 考虑建立欧盟级别的 AI 安全评估机构
 

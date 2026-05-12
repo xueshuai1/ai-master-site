@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "0. 什么是多模态？",
-            body: `GPT 只能处理文字。CLIP 能同时理解文字和图片。GPT-4V 能看图说话。Gemini 能理解文本、图像、音频、视频。
+            body: `GPT 只能处理文字。CLIP 能同时理解文字和图片。**GPT-4**V 能看图说话。**Gemini** 能理解文本、图像、音频、视频。
 
 多模态 = AI 的"五感"。 单一的文本理解只是视觉的一个角落。`
         },
@@ -20,19 +20,19 @@ export const article: Article = {
             title: "1. 核心技术",
             body: `多模态学习的核心技术：
 
-CLIP（图文对齐） — 对比学习、零样本分类
+CLIP（图文对齐）— 对比学习、零样本分类
 
-视觉语言模型 — Flamingo、BLIP、Qwen-VL
+**视觉语言模型**— Flamingo、BLIP、Qwen-VL
 
-视频理解 — 时序建模、动作识别
+**视频理解**— 时序建模、动作识别
 
-多模态 Agent — 看图编程、视觉问答`
+多模态 Agent— 看图编程、视觉问答`
         },
         {
             title: "2. 学习建议",
-            body: `前置要求： 学过 CNN、NLP 基础
+            body: `**前置要求**： 学过 CNN、NLP 基础
 
-重点： CLIP 的对比学习思想——这是所有多模态模型的基础。`,
+**重点**： CLIP 的对比学习思想——这是所有多模态模型的基础。`,
             tip: "💡 用 CLIP 做一个零样本分类器：不训练任何模型，就能对新类别做分类。"
         },
         {

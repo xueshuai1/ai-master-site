@@ -5566,4 +5566,46 @@ createdAt: "2025-01-01T00:00:00Z",
     createdAt: "2024-07-09",
   },
 
+  // 自动收录（2026-05-12）
+  {
+    id: "agent0ai_agent_zero",
+    name: "Agent Zero",
+    category: "agent",
+    description: "Agent Zero AI framework",
+    url: "https://github.com/agent0ai/agent-zero",
+    tags: ["agent", "ai", "assistant", "autonomous", "linux"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 17638,
+    createdAt: "2024-06-10",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "transformeroptimus_superagi",
+    name: "SuperAGI",
+    category: "agent",
+    description: "<⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling ...",
+    url: "https://github.com/transformeroptimus/superagi",
+    tags: ["agents", "agi", "ai", "artificial-general-intelligence", "artificial-intelligence"],
+    price: "开源",
+    icon: "🔧",
+    githubStars: 17513,
+    createdAt: "2023-05-13",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "heygen_com_hyperframes",
+    name: "Hyperframes",
+    category: "agent",
+    description: "Write HTML. Render video. Built for agents.",
+    url: "https://github.com/heygen-com/hyperframes",
+    tags: ["ai", "animation", "ffmpeg", "framework", "gsap"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 17309,
+    createdAt: "2026-03-10",
+  },
+
 ];

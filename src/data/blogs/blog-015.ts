@@ -3,7 +3,7 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：Agent 评测的困境",
-    body: "如果说 2025 年是 AI Agent 的爆发之年，那么 2026 年就是 Agent 评测的觉醒之年。当 Agent 开始进入医疗诊断、法律分析、金融决策等高风险场景时，一个核心问题变得不容忽视：我们如何确定一个 Agent 真的懂，而不是在表演？\n\n传统 LLM 评测已经够复杂了——开放式输出、数据污染、Goodhart 定律。但 Agent 评测的难度呈指数级上升：Agent 不是被动生成文本，而是在环境中主动执行多步骤任务。这意味着评测不仅要关注最终答案对不对，还要关注得出答案的过程是否合理。\n\n2026 年 4 月，HuggingFace Daily Papers 涌现了大量 Agent 评测相关论文，其中 MiroEval、ViGoR-Bench 和 Act Wisely 三篇研究最具代表性。本文逐一解读。",
+    body: "如果说 2025 年是 AI Agent 的爆发之年，那么 2026 年就是 Agent 评测的觉醒之年。当 Agent 开始进入医疗诊断、法律分析、金融决策等高风险场景时，一个核心问题变得不容忽视：我们如何确定一个 Agent 真的懂，而不是在表演？\n\n传统 LLM 评测已经够复杂了——开放式输出、数据污染、Goodhart 定律。但 Agent 评测的难度呈指数级上升：Agent 不是被动生成文本，而是在环境中主动执行多步骤任务。这意味着评测不仅要关注最终答案对不对，还要关注得出答案的过程是否合理。\n\n2026 年 4 月，**HuggingFace** Daily Papers 涌现了大量 Agent 评测相关论文，其中 MiroEval、ViGoR-Bench 和 Act Wisely 三篇研究最具代表性。本文逐一解读。",
   },
   {
     title: "MiroEval：过程与结果并重的 Agent 评估",
