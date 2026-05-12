@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "引言：2026 年 4 月，AI Agent 的「垂直化时刻」",
-      body: `2026 年 4 月是 AI Agent 发展史上的一个分水岭。在短短两周内，三大 AI 实验室几乎同时发布了面向特定领域的专用 Agent：\n\n- **OpenAI** 发布 GPT-Rosalind——专为生命科学研究优化的 AI 模型，在基因组分析、蛋白质结构预测、药物发现等场景表现卓越\n- **Anthropic** 推出 **Claude** Design——自然语言生成设计稿，支持设计系统自动学习和精细化控制，直接挑战 Figma\n- Google 发布 **Chrome AI Skills**——将浏览器转变为 AI Agent 操作系统，支持跨标签页工作流\n- **Anthropic** 同步更新 **Claude** 系统提示词，新增 **Claude** in Excel（电子表格 Agent）和 **Claude** in PowerPoint（幻灯片 Agent）\n\n这些产品的共同特征是：不再追求「什么都能做」，而是追求「在特定领域做到极致」。\n\n这标志着 AI Agent 正在经历从「通用助手」到「领域专家」的范式转变。本文将深度解析这一趋势的技术原理、架构模式、代表产品和未来走向。`,
+      body: `2026 年 4 月是 AI Agent 发展史上的一个分水岭。在短短两周内，三大 AI 实验室几乎同时发布了面向特定领域的专用 Agent：\n\n- **OpenAI** 发布 GPT-Rosalind——专为生命科学研究优化的 AI 模型，在基因组分析、蛋白质结构预测、药物发现等场景表现卓越\n- **Anthropic** 推出 **Claude** Design——自然语言生成设计稿，支持设计系统自动学习和精细化控制，直接挑战 Figma\n- Google 发布 **Chrome AI Skills**——将浏览器转变为 AI Agent 操作系统，支持跨标签页工作流\n- **Anthropic** 同步更新 **Claude** 系统提示词，新增 Claude in Excel（电子表格 Agent）和 Claude in PowerPoint（幻灯片 Agent）\n\n这些产品的共同特征是：不再追求「什么都能做」，而是追求「在特定领域做到极致」。\n\n这标志着 AI Agent 正在经历从「通用助手」到「领域专家」的范式转变。本文将深度解析这一趋势的技术原理、架构模式、代表产品和未来走向。`,
       tip: "阅读收获：\n- 理解 AI Agent 垂直化的技术驱动力和市场逻辑\n- 掌握垂直 Agent 的三种典型架构模式\n- 学会评估和选择适合自己场景的垂直 Agent 方案\n- 预判垂直 Agent 对行业和个人工作流的影响",
     },
     {
@@ -44,7 +44,7 @@ export const article: Article = {
     },
     {
       title: "架构一：领域微调模型（Domain-Fine-Tuned Model）",
-      body: `****代表产品****：GPT-Rosalind（生命科学）\n\n这种架构的核心思路是在通用大模型基础上，使用领域专用数据进行二次训练（微调），使模型在该领域获得「专家级」知识密度。\n\n技术要点：\n- 领域预训练数据：使用领域专属的高质量数据进行继续预训练。例如 GPT-Rosalind 使用了基因组序列、蛋白质结构（PDB）、科学文献（PubMed）等多模态数据\n- 指令微调（Instruction Tuning）：用领域特定的任务格式进行微调，使模型理解领域术语和工作流\n- **RLHF**/**RLAIF**：使用领域专家的反馈进行强化学习对齐，确保输出符合专业标准\n- 不确定性量化：垂直 Agent 通常需要输出置信度评分，让使用者知道「模型有多确定」\n\n优势：\n- 推理速度快（单次模型调用即可完成）\n- 知识内化在模型权重中，不需要额外的检索步骤\n- 可以处理领域特有的数据结构（如 DNA 序列、蛋白质结构）\n\n局限：\n- 训练成本高（需要大量领域数据和算力）\n- 知识更新需要重新训练或微调\n- 领域外的能力可能退化（catastrophic forgetting）`,
+      body: `**代表产品**：GPT-Rosalind（生命科学）\n\n这种架构的核心思路是在通用大模型基础上，使用领域专用数据进行二次训练（微调），使模型在该领域获得「专家级」知识密度。\n\n技术要点：\n- 领域预训练数据：使用领域专属的高质量数据进行继续预训练。例如 GPT-Rosalind 使用了基因组序列、蛋白质结构（PDB）、科学文献（PubMed）等多模态数据\n- 指令微调（Instruction Tuning）：用领域特定的任务格式进行微调，使模型理解领域术语和工作流\n- RLHF/RLAIF：使用领域专家的反馈进行强化学习对齐，确保输出符合专业标准\n- 不确定性量化：垂直 Agent 通常需要输出置信度评分，让使用者知道「模型有多确定」\n\n优势：\n- 推理速度快（单次模型调用即可完成）\n- 知识内化在模型权重中，不需要额外的检索步骤\n- 可以处理领域特有的数据结构（如 DNA 序列、蛋白质结构）\n\n局限：\n- 训练成本高（需要大量领域数据和算力）\n- 知识更新需要重新训练或微调\n- 领域外的能力可能退化（catastrophic forgetting）`,
       code: [
         {
           lang: "python",
@@ -113,7 +113,7 @@ print(f"变异分析结果: {result}")
     },
     {
       title: "架构二：领域工具增强模型（Domain-Tool-Augmented Model）",
-      body: `****代表产品****：**Claude** Design（设计）、**Chrome AI Skills**（浏览器）\n\n这种架构保持通用模型不变，通过领域专用的工具链和上下文增强来实现垂直化。\n\n技术要点：\n- 领域工具注册：为特定领域注册专用工具。例如 **Claude** Design 注册了矢量图形引擎、色彩管理系统、设计系统解析器等工具\n- 上下文注入：在对话开始时注入领域上下文。例如 **Chrome AI Skills** 会注入当前网页的 DOM 结构和用户意图\n- 工作流编排：定义领域特定的工作流。例如设计工作流：需求理解 → 布局生成 → 视觉设计 → 代码导出\n- 领域约束：在系统提示词中加入领域特定的约束规则。例如 **Claude** in Excel 会约束输出必须符合电子表格格式\n\n优势：\n- 训练成本低（不需要重新训练模型）\n- 知识更新灵活（更新工具即可，不需要重新训练）\n- 可以快速扩展到多个垂直领域\n\n局限：\n- 推理速度较慢（需要多次工具调用）\n- 工具链的质量和稳定性直接影响 Agent 表现\n- 领域知识没有内化到模型中，依赖 prompt engineering`,
+      body: `**代表产品**：Claude Design（设计）、Chrome AI Skills（浏览器）\n\n这种架构保持通用模型不变，通过领域专用的工具链和上下文增强来实现垂直化。\n\n技术要点：\n- 领域工具注册：为特定领域注册专用工具。例如 Claude Design 注册了矢量图形引擎、色彩管理系统、设计系统解析器等工具\n- 上下文注入：在对话开始时注入领域上下文。例如 Chrome AI Skills 会注入当前网页的 DOM 结构和用户意图\n- 工作流编排：定义领域特定的工作流。例如设计工作流：需求理解 → 布局生成 → 视觉设计 → 代码导出\n- 领域约束：在系统提示词中加入领域特定的约束规则。例如 Claude in Excel 会约束输出必须符合电子表格格式\n\n优势：\n- 训练成本低（不需要重新训练模型）\n- 知识更新灵活（更新工具即可，不需要重新训练）\n- 可以快速扩展到多个垂直领域\n\n局限：\n- 推理速度较慢（需要多次工具调用）\n- 工具链的质量和稳定性直接影响 Agent 表现\n- 领域知识没有内化到模型中，依赖 prompt engineering`,
       code: [
         {
           lang: "python",
@@ -197,7 +197,7 @@ async def main():
     },
     {
       title: "架构三：多模型混合架构（Multi-Model Hybrid）",
-      body: `****代表产品****：**Anthropic** **Claude** 生态（Chat + Design + Code + Excel + PowerPoint）\n\n这种架构将多个专用模型组合成一个统一的 Agent 系统，不同子模型负责不同领域的任务，由一个「路由模型」负责协调。\n\n技术要点：\n- 模型路由（Model Routing）：根据用户意图选择最合适的子模型。例如「帮我设计一个 Logo」→ 路由到 **Claude** Design；「分析这个 DNA 序列」→ 路由到 GPT-Rosalind\n- 上下文传递：子模型之间可以共享上下文。例如 **Claude** Design 生成的设计稿可以直接传给 **Claude** Code 变成代码\n- 统一接口：用户面对的是一个统一的对话界面，不需要知道背后调用了哪些子模型\n- 工具搜索（Tool Search）：如 **Anthropic** Opus 4.7 系统提示词中新增的 tool_search 机制，Agent 会主动搜索可用的工具来解决当前任务\n\n优势：\n- 每个领域都能达到最优表现（专用模型 + 专用工具）\n- 可以跨领域协作（设计 → 代码 → 部署的完整链路）\n- 扩展性强（新增领域只需添加子模型）\n\n局限：\n- 系统复杂度高\n- 模型间通信有延迟\n- 路由准确性直接影响用户体验`,
+      body: `**代表产品**：Anthropic Claude 生态（Chat + Design + Code + Excel + PowerPoint）\n\n这种架构将多个专用模型组合成一个统一的 Agent 系统，不同子模型负责不同领域的任务，由一个「路由模型」负责协调。\n\n技术要点：\n- 模型路由（Model Routing）：根据用户意图选择最合适的子模型。例如「帮我设计一个 Logo」→ 路由到 Claude Design；「分析这个 DNA 序列」→ 路由到 GPT-Rosalind\n- 上下文传递：子模型之间可以共享上下文。例如 Claude Design 生成的设计稿可以直接传给 Claude Code 变成代码\n- 统一接口：用户面对的是一个统一的对话界面，不需要知道背后调用了哪些子模型\n- 工具搜索（Tool Search）：如 Anthropic Opus 4.7 系统提示词中新增的 tool_search 机制，Agent 会主动搜索可用的工具来解决当前任务\n\n优势：\n- 每个领域都能达到最优表现（专用模型 + 专用工具）\n- 可以跨领域协作（设计 → 代码 → 部署的完整链路）\n- 扩展性强（新增领域只需添加子模型）\n\n局限：\n- 系统复杂度高\n- 模型间通信有延迟\n- 路由准确性直接影响用户体验`,
       mermaid: `sequenceDiagram
     participant U as 用户
     participant R as 路由模型

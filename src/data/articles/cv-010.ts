@@ -324,7 +324,7 @@ print(f"Flow shape: {flow_stacked.shape}")  # (20, 224, 224)`,
 
 时间卷积网络（Temporal Convolutional Network, TCN） 使用 1D 因果卷积在时间维度上建模。它的优势是并行计算能力强于 RNN，且通过膨胀卷积可以捕获长程依赖。在视频理解中，TCN 通常接在每帧的空间特征提取器之后，对帧级特征序列进行时序建模。
 
-Video **Transformer** 将 **Transformer** 架构引入视频理解。核心思路是将视频分割为时空 Patch（spatiotemporal patches），然后通过自注意力机制建模全局的时空依赖。TimeSformer 提出了一种高效方案：先在空间维度做自注意力，再在时间维度做自注意力，将计算复杂度从 O((T×S)²) 降低到 O(T² + S²)，其中 T 是帧数、S 是每帧的 patch 数。Video Swin **Transformer** 则进一步引入了层次化特征和移位窗口机制，在多个视频理解基准上取得了 SOTA 结果。`,
+Video **Transformer** 将 Transformer 架构引入视频理解。核心思路是将视频分割为时空 Patch（spatiotemporal patches），然后通过自注意力机制建模全局的时空依赖。TimeSformer 提出了一种高效方案：先在空间维度做自注意力，再在时间维度做自注意力，将计算复杂度从 O((T×S)²) 降低到 O(T² + S²)，其中 T 是帧数、S 是每帧的 patch 数。Video Swin Transformer 则进一步引入了层次化特征和移位窗口机制，在多个视频理解基准上取得了 SOTA 结果。`,
       code: [
         {
           lang: "python",

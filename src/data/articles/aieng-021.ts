@@ -62,7 +62,7 @@ graph TB
     Executor --> LLM
     Executor --> Tools
     Executor --> Memory
-    Executor --> **RAG**
+    Executor --> RAG
     Monitor --> Planner
     Monitor --> Executor
 \`\`\`

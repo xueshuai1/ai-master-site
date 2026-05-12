@@ -96,7 +96,7 @@ class RelativeAttention(torch.nn.Module):
 
 具体来说，RoPE 将 d 维向量划分为 d/2 对二维子空间，在每个子空间中应用旋转操作。对于位置 m 和 n 的 token，其 query 和 key 经过旋转后，内积结果仅依赖于差值 m-n：(R_q * x_m)^T (R_k * x_n) = g(x_m, x_n, m-n)。这正是相对位置编码的理想性质。旋转角度的选择也至关重要——RoPE 使用几何级数 θ_i = base^(-2(i-1)/d)，其中 base 默认为 10000。这种设计使得不同维度捕获不同尺度的位置关系，低频维度关注远距离依赖，高频维度关注局部关系。
 
-**RoPE 的优势在于**：它不增加额外的参数，推理时只需在每层的 attention 前对 Q 和 K 应用旋转矩阵即可；同时它天然支持流式推理（streaming inference），因为新 token 只需要根据自身位置旋转，无需重新计算全局位置。这使得 RoPE 成为 **LLaMA**、**PaLM** 等主流模型的首选方案。`,
+**RoPE 的优势在于**：它不增加额外的参数，推理时只需在每层的 attention 前对 Q 和 K 应用旋转矩阵即可；同时它天然支持流式推理（streaming inference），因为新 token 只需要根据自身位置旋转，无需重新计算全局位置。这使得 RoPE 成为 LLaMA、PaLM 等主流模型的首选方案。`,
             code: [
                 {
                     lang: "python",

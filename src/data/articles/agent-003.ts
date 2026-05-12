@@ -443,9 +443,9 @@ math 模块"]
             title: "6. 用 LangChain 实现一个 ReAct Agent",
             body: `**LangChain** 是目前最流行的 LLM 应用开发框架之一，它内置了对 ReAct Agent 的一流支持。本节通过一个完整的示例，展示如何用 **LangChain** 构建一个 ReAct Agent，并深入理解其内部工作原理。
 
-**LangChain** 的 ReAct Agent 实现基于三个核心组件：LLM（作为推理引擎）、Tools（作为行动能力）和 AgentExecutor（作为循环控制器）。LLM 负责生成 Thought 和决定 Action，Tools 负责执行具体的操作并返回 Observation，AgentExecutor 负责管理 Thought-Action-Observation 循环——它接收 LLM 的输出，解析出 Action 部分，调用对应的工具，将结果追加到对话历史中，然后再次调用 LLM。
+LangChain 的 ReAct Agent 实现基于三个核心组件：LLM（作为推理引擎）、Tools（作为行动能力）和 AgentExecutor（作为循环控制器）。LLM 负责生成 Thought 和决定 Action，Tools 负责执行具体的操作并返回 Observation，AgentExecutor 负责管理 Thought-Action-Observation 循环——它接收 LLM 的输出，解析出 Action 部分，调用对应的工具，将结果追加到对话历史中，然后再次调用 LLM。
 
-构建一个实用的 ReAct Agent 需要关注几个关键设计决策。首先是工具选择：不是工具越多越好，过多的工具会增加模型的选择困难，导致选错工具的概率上升。建议从 3-5 个核心工具开始，根据实际需求逐步扩展。其次是提示词模板：**LangChain** 提供了默认的 ReAct 提示词模板，但针对特定领域任务，往往需要自定义模板以获得更好的效果。最后是错误处理：当工具执行失败或 LLM 输出了无法解析的格式时，Agent 应该如何应对？好的错误处理策略是将错误信息作为 Observation 返回给 LLM，让它自行决定是重试还是调整策略。`,
+构建一个实用的 ReAct Agent 需要关注几个关键设计决策。首先是工具选择：不是工具越多越好，过多的工具会增加模型的选择困难，导致选错工具的概率上升。建议从 3-5 个核心工具开始，根据实际需求逐步扩展。其次是提示词模板：LangChain 提供了默认的 ReAct 提示词模板，但针对特定领域任务，往往需要自定义模板以获得更好的效果。最后是错误处理：当工具执行失败或 LLM 输出了无法解析的格式时，Agent 应该如何应对？好的错误处理策略是将错误信息作为 Observation 返回给 LLM，让它自行决定是重试还是调整策略。`,
             code: [
                 {
                     lang: "python",

@@ -394,7 +394,7 @@ def contrastive_loss(audio_emb: torch.Tensor, text_emb: torch.Tensor,
 
 Qwen-Audio、SpeechGPT、Pengi 等模型代表了不同的融合策略。Qwen-Audio 使用音频编码器（类似 Whisper 的 Encoder）将音频编码为连续表征，然后通过一个可训练的投影层映射到 LLM 的嵌入空间。模型同时支持音频-文本的多种指令：转录、翻译、描述、问答。
 
-更前沿的工作如 Meta 的 Audio**PaLM** 和 Google 的 USM（Universal Speech Model）尝试用统一的 token 空间处理多种音频任务。Audio**PaLM** 将 WavLM 的音频 token 和 **PaLM** 的文本 token 统一到一个自回归模型中，实现了语音到语音的直接翻译。这种端到端的跨模态生成是未来的重要方向。`,
+更前沿的工作如 Meta 的 Audio**PaLM** 和 Google 的 USM（Universal Speech Model）尝试用统一的 token 空间处理多种音频任务。Audio**PaLM** 将 WavLM 的音频 token 和 PaLM 的文本 token 统一到一个自回归模型中，实现了语音到语音的直接翻译。这种端到端的跨模态生成是未来的重要方向。`,
             code: [
                 {
                     lang: "python",

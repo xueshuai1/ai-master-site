@@ -30,7 +30,7 @@ export const article: Article = {
         },
         {
             title: "2. 学习建议",
-            body: `****重点投入****：
+            body: `**重点投入**：
 - CNN 核心思想（卷积、池化、感受野）
 - ResNet 架构演进
 - YOLO 目标检测

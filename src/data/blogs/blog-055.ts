@@ -17,7 +17,7 @@ const post: BlogPost = {
     },
     {
       title: "一、事故时间线：两个月内的三次手术",
-      body: `让我们先建立完整的时间线，理解每个变更是什么时候发生的、影响了什么。\n\nBug #1：推理默认值降级（3月4日 - 4月7日）\n\n3 月 4 日，**Anthropic** 将 **Claude** Code 的默认推理级别从 high 降为 medium，目的是减少 Opus 4.6 在高推理模式下的超长延迟问题。这个决定本身有一定道理——用户反映 UI 看起来「卡死」了。\n\n4 月 7 日，在大量用户反馈后，**Anthropic** 回滚了这个变更，将 Opus 4.7 的默认推理级别设为 xhigh。\n\nBug #2：缓存清理 Bug（3月26日 - 4月10日）\n\n3 月 26 日，**Anthropic** 上线了一个「效率优化」：如果会话空闲超过 1 小时，清理该会话中的旧推理历史（thinking blocks），因为此时 prompt 缓存已经失效，保留这些旧消息只会增加 uncached token 的成本。\n\n但实现有 Bug：清理不是「一次性」的，而是每个后续请求都在清理。一旦会话跨过空闲阈值，之后所有的请求都只保留最近一个 reasoning block，丢弃之前的所有推理历史。\n\n4 月 10 日在 v2.1.101 版本中修复。\n\nBug #3：系统提示词过度优化（4月16日 - 4月20日）\n\n4 月 16 日，为配合即将发布的 Opus 4.7（该模型本身倾向于更冗长），**Anthropic** 在 **Claude** Code 的系统提示词中增加了一条指令：\n\n\`Length limits: keep text between tool calls to ≤25 words. Keep final responses to ≤100 words unless the task requires more detail.\`\n\n这条指令的初衷是好的——控制输出长度、减少 token 消耗。但在与其他提示词变更组合后，直接损害了编码质量。4 月 20 日回滚。`,
+      body: `让我们先建立完整的时间线，理解每个变更是什么时候发生的、影响了什么。\n\nBug #1：推理默认值降级（3月4日 - 4月7日）\n\n3 月 4 日，**Anthropic** 将 **Claude** Code 的默认推理级别从 high 降为 medium，目的是减少 Opus 4.6 在高推理模式下的超长延迟问题。这个决定本身有一定道理——用户反映 UI 看起来「卡死」了。\n\n4 月 7 日，在大量用户反馈后，**Anthropic** 回滚了这个变更，将 Opus 4.7 的默认推理级别设为 xhigh。\n\nBug #2：缓存清理 Bug（3月26日 - 4月10日）\n\n3 月 26 日，Anthropic 上线了一个「效率优化」：如果会话空闲超过 1 小时，清理该会话中的旧推理历史（thinking blocks），因为此时 prompt 缓存已经失效，保留这些旧消息只会增加 uncached token 的成本。\n\n但实现有 Bug：清理不是「一次性」的，而是每个后续请求都在清理。一旦会话跨过空闲阈值，之后所有的请求都只保留最近一个 reasoning block，丢弃之前的所有推理历史。\n\n4 月 10 日在 v2.1.101 版本中修复。\n\nBug #3：系统提示词过度优化（4月16日 - 4月20日）\n\n4 月 16 日，为配合即将发布的 Opus 4.7（该模型本身倾向于更冗长），Anthropic 在 **Claude** Code 的系统提示词中增加了一条指令：\n\n\`Length limits: keep text between tool calls to ≤25 words. Keep final responses to ≤100 words unless the task requires more detail.\`\n\n这条指令的初衷是好的——控制输出长度、减少 token 消耗。但在与其他提示词变更组合后，直接损害了编码质量。4 月 20 日回滚。`,
       mermaid: `graph LR
     A["3月4日\
 推理默认值降级\
@@ -79,7 +79,7 @@ function handleResume(sessionId: string, idleTime: number) {
     },
     {
       title: "",
-      body: `**### 复合效应**：问题如何自我放大`,
+      body: `### 复合效应：问题如何自我放大`,
       mermaid: `sequenceDiagram
     participant U as 用户
     participant CC as Claude Code

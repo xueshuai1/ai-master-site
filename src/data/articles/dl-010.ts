@@ -545,7 +545,7 @@ print("He 梯度范数:", analyze_gradients(model_h, x, target))` },
 
 **实验设计遵循以下原则**：固定所有超参数（学习率 0.01、SGD 动量 0.9、weight decay 5e-4、batch size 128），仅改变初始化方案；每种方案重复 3 次取平均值以减少随机性影响；记录训练 loss 曲线和测试精度，同时监控每层激活值的标准差变化。
 
-****预期结果****：在 ReLU 网络上，He 初始化应该明显优于 Xavier；在包含 Tanh 的网络上，Xavier 应该优于 He；正交初始化在极深网络中表现最佳但计算开销略大。通过实验数据，我们能用具体数字验证前面章节的理论分析。`,
+**预期结果**：在 ReLU 网络上，He 初始化应该明显优于 Xavier；在包含 Tanh 的网络上，Xavier 应该优于 He；正交初始化在极深网络中表现最佳但计算开销略大。通过实验数据，我们能用具体数字验证前面章节的理论分析。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn

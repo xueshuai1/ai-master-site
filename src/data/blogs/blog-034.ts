@@ -109,7 +109,7 @@ MCP 让任何服务都能以标准化的方式向 AI Agent 暴露能力。一个
     title: "五、Python 实战：构建一个 Headless AI 服务",
     body: `让我们用 Python 构建一个简单的 headless AI 服务，展示如何将一个传统功能转变为 AI Agent 友好的 headless 服务。
 
-******场景******： 一个 "内容摘要服务"，AI Agent 可以调用它来生成文本摘要。`,
+**场景**： 一个 "内容摘要服务"，AI Agent 可以调用它来生成文本摘要。`,
     code: [{
       lang: "python",
       filename: "headless_summarizer.py",
@@ -463,7 +463,7 @@ MCP 可能只是一个开始。未来可能出现更多 headless 服务的开放
     title: "总结",
     body: `"Headless Everything for Personal AI" 不是某个人的臆想，而是正在发生的技术范式转移。
 
-****核心要点回顾****：
+**核心要点回顾**：
 
 1. 个人 AI 体验优于直接使用服务——这是 headless 趋势的根本驱动力
 2. MCP 是关键协议——它让 AI Agent 能以标准化方式连接任何服务
@@ -486,4 +486,5 @@ export const blog: BlogPost = {
   tags: ["Headless AI", "MCP 协议", "AI Agent", "API 经济", "Salesforce", "SaaS 趋势"],
   content,
   readTime: 18,
+  category: "industry",
 };

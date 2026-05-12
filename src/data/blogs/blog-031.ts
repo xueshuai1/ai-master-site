@@ -125,7 +125,7 @@ class MacOSAgent:
   },
   {
     title: "Anthropic Claude Design：从创意到代码的一站式闭环",
-    body: `**Claude** Design 是 **Anthropic** 在 2026 年 4 月 17 日发布的重磅产品。它的核心理念是：设计不应该是一个孤立的环节，而应该直接连接到代码实现。\n\n传统的设计→开发流程是这样的：\n\n设计师在 Figma 里画好设计稿 → 导出标注文档 → 开发人员手动对照设计稿写代码 → 发现不一致 → 来回修改 → 最终上线。\n\n**Claude** Design 把整个过程压缩到一步：\n\n你描述需求 → **Claude** 生成设计稿 → 你微调确认 → 一键交给 **Claude** Code → 生产代码自动生成。\n\n关键在于「闭环」：\n\n**Claude** Design 不仅仅是一个设计工具。它的设计系统学习能力让它能自动学习你团队的规范——颜色、字体、组件、间距。这意味着生成的设计稿天然符合你的品牌标准，而生成出来的代码也天然符合你的代码规范。\n\n这种「设计即代码」的能力，正在模糊设计师和开发者之间的界限。`,
+    body: `**Claude** Design 是 **Anthropic** 在 2026 年 4 月 17 日发布的重磅产品。它的核心理念是：设计不应该是一个孤立的环节，而应该直接连接到代码实现。\n\n传统的设计→开发流程是这样的：\n\n设计师在 Figma 里画好设计稿 → 导出标注文档 → 开发人员手动对照设计稿写代码 → 发现不一致 → 来回修改 → 最终上线。\n\n**Claude** Design 把整个过程压缩到一步：\n\n你描述需求 → Claude 生成设计稿 → 你微调确认 → 一键交给 Claude Code → 生产代码自动生成。\n\n关键在于「闭环」：\n\nClaude Design 不仅仅是一个设计工具。它的设计系统学习能力让它能自动学习你团队的规范——颜色、字体、组件、间距。这意味着生成的设计稿天然符合你的品牌标准，而生成出来的代码也天然符合你的代码规范。\n\n这种「设计即代码」的能力，正在模糊设计师和开发者之间的界限。`,
     mermaid: `sequenceDiagram
     participant U as 用户
     participant D as Claude Design
@@ -486,4 +486,5 @@ export const blog: BlogPost = {
   author: "AI-Master",
   tags: ["AI Agent", "OpenAI Codex", "Claude Design", "自主执行", "Chrome Skills", "Android Skills", "范式转变"],
   readTime: 18,
+  category: "agent",
 };

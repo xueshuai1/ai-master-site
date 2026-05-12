@@ -271,11 +271,11 @@ plt.show()`,
 
 这里的 Q（Query）、K（Key）、V（Value）是通过将输入分别乘以三个可学习的权重矩阵 W^Q、W^K、W^V 得到的。QKᵀ 计算了所有位置对之间的相关性分数，除以 √dₖ 是为了防止点积过大导致 Softmax 梯度消失，最后的矩阵乘法 V 得到加权后的输出。
 
-**Transformer** 引入了多头注意力（Multi-Head Attention）：不是只计算一组 Q、K、V，而是计算多组（通常 8 或 12 组），每组学习不同的'关注模式'。比如，一个头可能关注语法关系（主谓一致），另一个头可能关注语义关系（代词指代），还有一个头可能关注位置关系。多个头的输出被拼接后再经过一个线性变换，得到最终的多头注意力输出。
+Transformer 引入了多头注意力（Multi-Head Attention）：不是只计算一组 Q、K、V，而是计算多组（通常 8 或 12 组），每组学习不同的'关注模式'。比如，一个头可能关注语法关系（主谓一致），另一个头可能关注语义关系（代词指代），还有一个头可能关注位置关系。多个头的输出被拼接后再经过一个线性变换，得到最终的多头注意力输出。
 
-位置编码（Positional Encoding）是 **Transformer** 的另一个关键组件。由于自注意力机制本身不包含位置信息（QKᵀ 的计算与位置无关），必须显式地注入位置信息。原始 **Transformer** 使用正弦/余弦函数生成位置编码：PE(pos, 2i) = sin(pos / 10000^(2i/d))，PE(pos, 2i+1) = cos(pos / 10000^(2i/d))。这种设计的优点是可以外推到未见过的序列长度。
+位置编码（Positional Encoding）是 Transformer 的另一个关键组件。由于自注意力机制本身不包含位置信息（QKᵀ 的计算与位置无关），必须显式地注入位置信息。原始 Transformer 使用正弦/余弦函数生成位置编码：PE(pos, 2i) = sin(pos / 10000^(2i/d))，PE(pos, 2i+1) = cos(pos / 10000^(2i/d))。这种设计的优点是可以外推到未见过的序列长度。
 
-完整的 **Transformer** 由 Encoder 和 Decoder 堆叠而成。Encoder 由 N 层（通常 6 或 12 层）组成，每层包含多头自注意力和前馈神经网络（FFN），两者之间都有残差连接和层归一化。Decoder 在 Encoder 的基础上增加了交叉注意力层（关注 Encoder 的输出），并且自注意力层使用了掩码（Mask）来防止看到未来的信息（因果性约束）。`,
+完整的 Transformer 由 Encoder 和 Decoder 堆叠而成。Encoder 由 N 层（通常 6 或 12 层）组成，每层包含多头自注意力和前馈神经网络（FFN），两者之间都有残差连接和层归一化。Decoder 在 Encoder 的基础上增加了交叉注意力层（关注 Encoder 的输出），并且自注意力层使用了掩码（Mask）来防止看到未来的信息（因果性约束）。`,
         mermaid: `graph TD
     A['输入序列
 x₁, x₂, ..., xₙ'] --> B['位置编码
@@ -310,9 +310,9 @@ h₁, h₂, ..., hₙ']
         title: '7. BERT 与 GPT：两条路线的巅峰',
         body: `**Transformer** 架构发表后，NLP 领域迎来了'预训练 + 微调'（Pre-train + Fine-tune）的范式转移。在大规模无标注文本上预训练一个 **Transformer** 模型，然后在具体任务上进行微调，这种方法几乎在所有 NLP 基准上都取得了 state-of-the-art 的结果。
 
-BERT（Bidirectional Encoder Representations from **Transformer**s, Devlin et al., 2019）基于 **Transformer** 的 Encoder 部分。它的预训练任务有两个：掩码语言模型（Masked Language Model, MLM）——随机掩码输入中 15% 的词，让模型预测被掩码的词；下一句预测（Next Sentence Prediction, NSP）——判断两个句子是否连续。BERT 的关键优势是'双向'——由于 MLM 任务可以关注左右两侧的上下文，BERT 对语言的理解比单向模型更深入。
+BERT（Bidirectional Encoder Representations from Transformers, Devlin et al., 2019）基于 Transformer 的 Encoder 部分。它的预训练任务有两个：掩码语言模型（Masked Language Model, MLM）——随机掩码输入中 15% 的词，让模型预测被掩码的词；下一句预测（Next Sentence Prediction, NSP）——判断两个句子是否连续。BERT 的关键优势是'双向'——由于 MLM 任务可以关注左右两侧的上下文，BERT 对语言的理解比单向模型更深入。
 
-GPT（Generative Pre-trained **Transformer**, Radford et al., 2018）基于 **Transformer** 的 Decoder 部分。它的预训练任务只有一个：自回归语言模型——根据前面的词预测下一个词。GPT 的优势在于'生成'能力——由于它天生就是按顺序生成下一个词的，所以非常适合文本生成、对话、代码生成等任务。
+GPT（Generative Pre-trained Transformer, Radford et al., 2018）基于 Transformer 的 Decoder 部分。它的预训练任务只有一个：自回归语言模型——根据前面的词预测下一个词。GPT 的优势在于'生成'能力——由于它天生就是按顺序生成下一个词的，所以非常适合文本生成、对话、代码生成等任务。
 
 这两种架构的对比反映了两种不同的'理解'语言的方式：BERT 通过双向上下文获得深度的语义理解，适合分类、NER、问答等理解型任务；GPT 通过从左到右的自回归训练获得了强大的生成能力，适合翻译、摘要、对话等生成型任务。从 GPT-3 开始，人们发现大规模的 GPT 模型还涌现出了少样本学习（Few-shot Learning）和思维链推理（Chain-of-Thought Reasoning）的能力，这进一步推动了大语言模型的发展。`,
         table: {
@@ -468,13 +468,13 @@ print(f'\n注意力权重行和 (应全为 1): min={row_sums.min():.6f}, max={ro
         title: '10. 从 Transformer 到大语言模型',
         body: `**Transformer** 的发表（2017）到 ChatGPT 的爆火（2022）仅仅用了 5 年时间，但 NLP 领域发生了翻天覆地的变化。理解这段演进历程，有助于把握当前技术的来龙去脉。
 
-****第一阶段****：预训练范式的确立（2018-2019）。BERT 和 GPT-2 证明了在大规模无标注文本上预训练 **Transformer** 的价值。这一阶段的核心发现是：预训练学到的语言表示可以迁移到各种下游任务，只需少量标注数据进行微调即可取得优异效果。
+**第一阶段**：预训练范式的确立（2018-2019）。BERT 和 GPT-2 证明了在大规模无标注文本上预训练 Transformer 的价值。这一阶段的核心发现是：预训练学到的语言表示可以迁移到各种下游任务，只需少量标注数据进行微调即可取得优异效果。
 
-****第二阶段****：规模法则的浮现（2020-2021）。GPT-3（175B 参数）的出现揭示了一个重要规律：语言模型的性能随模型规模、数据量和计算量的增加而呈现可预测的幂律增长（Kaplan et al., 2020; Hoffmann et al., 2022）。这意味着只要投入足够多的计算资源，模型的能力就会持续提升。
+**第二阶段**：规模法则的浮现（2020-2021）。GPT-3（175B 参数）的出现揭示了一个重要规律：语言模型的性能随模型规模、数据量和计算量的增加而呈现可预测的幂律增长（Kaplan et al., 2020; Hoffmann et al., 2022）。这意味着只要投入足够多的计算资源，模型的能力就会持续提升。
 
-****第三阶段****：指令微调与对齐（2022-2023）。人们发现，单纯的预训练得到的模型虽然'懂'很多知识，但不知道如何按人类的意图行事。指令微调（Instruction Tuning，如 FLAN-T5、Alpaca）让模型学会遵循指令；基于人类反馈的强化学习（**RLHF**，如 InstructGPT、ChatGPT）进一步让模型的输出与人类价值观对齐。
+**第三阶段**：指令微调与对齐（2022-2023）。人们发现，单纯的预训练得到的模型虽然'懂'很多知识，但不知道如何按人类的意图行事。指令微调（Instruction Tuning，如 FLAN-T5、Alpaca）让模型学会遵循指令；基于人类反馈的强化学习（RLHF，如 InstructGPT、ChatGPT）进一步让模型的输出与人类价值观对齐。
 
-****第四阶段****：开源与多模态（2023-至今）。**LLaMA**、Mistral 等开源模型的发布降低了大模型的使用门槛；多模态大模型（**GPT-4**V、**Gemini**）开始同时处理文本、图像、音频等多种模态；Agent 框架让大模型具备了使用工具、执行代码、规划任务的自主能力。
+**第四阶段**：开源与多模态（2023-至今）。LLaMA、Mistral 等开源模型的发布降低了大模型的使用门槛；多模态大模型（GPT-4V、Gemini）开始同时处理文本、图像、音频等多种模态；Agent 框架让大模型具备了使用工具、执行代码、规划任务的自主能力。
 
 **当前的前沿方向包括**：更高效的架构（如 MoE、状态空间模型 Mamba）、更长的上下文窗口（128K-1M token）、更强的推理能力（思维链、思维树）、以及更可靠的对齐机制。NLP 正在从'自然语言处理'走向'自然语言理解与生成'，最终可能实现机器与人类的无缝交流。`,
         tip: '入门大语言模型开发的最佳路径：1）先用 OpenAI API 或开源模型体验 Prompt Engineering；2）学习 LangChain/LlamaIndex 等框架构建 RAG 应用；3）尝试微调开源模型（如 LLaMA、Qwen）适应特定领域；4）深入理解 Transformer 架构，为创新打基础。不要跳过基础——理解 Self-Attention 和词嵌入，比盲目调 API 更有长远价值。',

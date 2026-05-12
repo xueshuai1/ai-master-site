@@ -34,7 +34,7 @@ export const article: Article = {
         },
         {
             title: "2. 学习建议",
-            body: `******重点******：
+            body: `**重点**：
 - 词嵌入（Word2Vec → BERT 的演进）
 - **Transformer** 架构
 - BERT 微调实战

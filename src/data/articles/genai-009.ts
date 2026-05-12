@@ -14,16 +14,16 @@ export const article: Article = {
       title: "一、2026 AI 图像与视频生成全景图",
       body: `2026 年，AI 图像与视频生成已经从一个"有趣实验"变成了真正的生产力工具。无论是设计师、开发者还是内容创作者，都能利用这些工具快速生成高质量的视觉内容。
 
-****技术栈全景****：
+**技术栈全景**：
 
 整个 AI 视觉生成领域可以分为以下几个层次：
 
-**1. 基础生成模型层**：Diffusion Models、Flow Matching、GANs、VAEs
-**2. 文生图模型层**：Flux、Midjourney v7、Stable Diffusion 3.5、DALL-E 3、Ideogram 2.0
-**3. 图生图/编辑层**：Inpainting、Outpainting、ControlNet、IP-Adapter
-**4. 视频生成层**：Sora 2、Runway Gen-4、Pika 2.0、Luma Dream Machine
-**5. 3D 生成层**：TripoSR、Meshy、CSM
-**6. 应用工具层**：ComfyUI、Diffusers、Automatic1111、Fooocus
+1. **基础生成模型层**：Diffusion Models、Flow Matching、GANs、VAEs
+2. **文生图模型层**：Flux、Midjourney v7、Stable Diffusion 3.5、DALL-E 3、Ideogram 2.0
+3. **图生图/编辑层**：Inpainting、Outpainting、ControlNet、IP-Adapter
+4. **视频生成层**：Sora 2、Runway Gen-4、Pika 2.0、Luma Dream Machine
+5. **3D 生成层**：TripoSR、Meshy、CSM
+6. **应用工具层**：ComfyUI、Diffusers、Automatic1111、Fooocus
 
 ChatGPT Images 2.0 的发布更是将图像生成能力直接集成到了对话式 AI 中，用户只需一句话描述就能获得高质量图片，无需任何技术门槛。`,
       mermaid: `graph TD
@@ -73,9 +73,9 @@ Flow Matching 的核心优势：
 
 传统的扩散模型使用 U-Net 作为骨干网络，而 DiT 用 **Transformer** 替换了 U-Net。这一架构变革带来了质的飞跃：
 
-****- 可扩展性****：**Transformer** 的 scaling law 同样适用于生成模型
-**- 全局理解力**：Self-attention 机制让模型能理解整个图像的语义关系
-**- 多模态融合**：天然支持文本、图像、音频等多模态输入
+- **可扩展性**：Transformer 的 scaling law 同样适用于生成模型
+- **全局理解力**：Self-attention 机制让模型能理解整个图像的语义关系
+- **多模态融合**：天然支持文本、图像、音频等多模态输入
 - Sora、Flux、SD3 等顶级模型均采用 DiT 架构`,
       mermaid: `graph LR
     A[2020 DDPM] --> B[2021 Latent Diffusion]
@@ -126,10 +126,10 @@ Flow Matching 的核心优势：
 
 视频生成比图像生成复杂得多，主要体现在：
 
-**- 时间一致性**：每一帧都要与前后帧保持连贯，不能出现闪烁或突变
-****- 计算成本****：视频 = 图像 × 帧数，计算量呈线性增长
-****- 运动建模****：需要理解物理规律（重力、惯性、流体动力学等）
-**- 长序列建模**：5 秒视频 @ 24fps = 120 帧，需要模型能处理超长序列
+- **时间一致性**：每一帧都要与前后帧保持连贯，不能出现闪烁或突变
+- **计算成本**：视频 = 图像 × 帧数，计算量呈线性增长
+- **运动建模**：需要理解物理规律（重力、惯性、流体动力学等）
+- **长序列建模**：5 秒视频 @ 24fps = 120 帧，需要模型能处理超长序列
 
 4.2 主流视频生成模型
 
@@ -531,30 +531,30 @@ if __name__ == "__main__":
       title: "八、技术选型建议与最佳实践",
       body: `面对众多的模型和工具，如何选择最适合的方案？以下是基于不同场景的建议：
 
-****场景 1****：个人创作者，追求最高质量
-****- 首选****：Midjourney v7 或 Flux.1 [dev]
-****- 工具****：Midjourney Discord 或 ComfyUI
-****- 预算****：$10-30/月
+**场景 1**：个人创作者，追求最高质量
+- **首选**：Midjourney v7 或 Flux.1 [dev]
+- **工具**：Midjourney Discord 或 ComfyUI
+- **预算**：$10-30/月
 
-****场景 2****：开发者，需要 API 集成
-****- 首选****：Flux API 或 Replicate
-****- 工具****：Diffusers 库 + 自建服务
-****- 预算****：按调用计费，约 $0.002-0.01/张
+**场景 2**：开发者，需要 API 集成
+- **首选**：Flux API 或 Replicate
+- **工具**：Diffusers 库 + 自建服务
+- **预算**：按调用计费，约 $0.002-0.01/张
 
-****场景 3****：设计师，需要精确控制
-****- 首选****：ComfyUI + ControlNet + IP-Adapter
-****- 优势****：可以精确控制构图、风格、角色一致性
-****- 学习成本****：中等（需要理解节点工作流）
+**场景 3**：设计师，需要精确控制
+- 首选：ComfyUI + ControlNet + IP-Adapter
+- **优势**：可以精确控制构图、风格、角色一致性
+- **学习成本**：中等（需要理解节点工作流）
 
-****场景 4****：日常使用，零门槛
-****- 首选****：ChatGPT Images 2.0
-****- 优势****：对话式交互，自然语言描述即可
-****- 限制****：不可精细控制，适合快速原型
+**场景 4**：日常使用，零门槛
+- 首选：ChatGPT Images 2.0
+- **优势**：对话式交互，自然语言描述即可
+- **限制**：不可精细控制，适合快速原型
 
-****场景 5****：视频生成
-****- 首选****：Sora 2（质量最佳）或 Runway Gen-4（功能最全）
-****- 开源替代****：CogVideoX 或 AnimateDiff
-****- 注意****：视频生成成本远高于图像生成
+**场景 5**：视频生成
+- 首选：Sora 2（质量最佳）或 Runway Gen-4（功能最全）
+- **开源替代**：CogVideoX 或 AnimateDiff
+- **注意**：视频生成成本远高于图像生成
 
 最佳实践 Checklist：
 1. 始终使用英文提示词，质量更高
@@ -580,17 +580,17 @@ if __name__ == "__main__":
       title: "九、未来趋势展望",
       body: `2026 年的 AI 图像与视频生成正处于一个激动人心的转折点。以下是几个关键趋势：
 
-**1. 实时生成**：Flux.1 [schnell] 已经实现 4 步出图，未来将进一步降低到 1-2 步，实现实时图像生成。
+1. **实时生成**：Flux.1 [schnell] 已经实现 4 步出图，未来将进一步降低到 1-2 步，实现实时图像生成。
 
 2. 视频质量追平图像：Sora 2 和 Runway Gen-4 正在缩小视频与图像之间的质量差距，预计 2026 年底视频生成将达到当前图像生成的质量水平。
 
 3. 3D 生成实用化：从单张图片生成高质量 3D 模型的技术正在快速成熟，游戏和 AR/VR 行业将率先受益。
 
-**4. 个性化模型微调**：LoRA 和 DreamBooth 等技术让个人用户可以训练自己的风格模型，无需从头训练。
+4. **个性化模型微调**：LoRA 和 DreamBooth 等技术让个人用户可以训练自己的风格模型，无需从头训练。
 
 5. Agent 驱动的多模态工作流：AI Agent 将自动编排图像生成、编辑、后处理的完整工作流，人类只需描述意图。
 
-**6. 版权与合规**：随着 AI 生成内容的普及，版权保护、内容溯源（如 C2PA 标准）将成为基础设施。
+6. **版权与合规**：随着 AI 生成内容的普及，版权保护、内容溯源（如 C2PA 标准）将成为基础设施。
 
 7. Headless AI 视觉服务：如 Salesforce Headless 360 所展示的，未来视觉生成服务将通过 API/MCP 直接暴露给 AI Agent，无需人类通过 GUI 操作。`,
     },
@@ -598,11 +598,11 @@ if __name__ == "__main__":
       title: "十、总结",
       body: `2026 年的 AI 图像与视频生成已经形成了完整的技术栈和生态体系：
 
-****- 技术上****：从 Diffusion 到 Flow Matching 再到 DiT 架构，每一步都带来了质的飞跃
-****- 模型上****：Flux 引领开源，Midjourney 领跑商用，ChatGPT Images 2.0 降低门槛
-****- 工具上****：ComfyUI 成为开源工作流标准，Diffusers 是开发首选框架
-****- 视频上****：Sora 2、Runway Gen-4 推动视频生成进入实用阶段
-****- 趋势上****：实时化、多模态、Agent 驱动、合规化是四大方向
+- **技术上**：从 Diffusion 到 Flow Matching 再到 DiT 架构，每一步都带来了质的飞跃
+- **模型上**：Flux 引领开源，Midjourney 领跑商用，ChatGPT Images 2.0 降低门槛
+- **工具上**：ComfyUI 成为开源工作流标准，Diffusers 是开发首选框架
+- **视频上**：Sora 2、Runway Gen-4 推动视频生成进入实用阶段
+- **趋势上**：实时化、多模态、Agent 驱动、合规化是四大方向
 
 无论你是创作者、开发者还是研究者，都能在这个生态中找到适合自己的工具和方法。关键是动手实践——从第一个 prompt 开始，逐步掌握这个强大的能力。`,
       mermaid: `pie showData

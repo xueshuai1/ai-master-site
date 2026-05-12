@@ -541,7 +541,7 @@ def structured_extract(review_text: str,
 
 **OpenAI** API 是最容易上手的平台，它提供了完善的 Chat Completions API、JSON 模式、function calling 等功能。关键是要理解 system/assistant/user 三种消息角色的分工：system 消息定义全局行为（角色、规则、输出格式），user 消息提供具体任务，assistant 消息用于少样本示例中的模型响应模拟。
 
-**HuggingFace** **Transformer**s 则提供了更大的灵活性——你可以使用任何开源模型（Llama、Mistral、Qwen 等），在本地或自有服务器上运行。但这也意味着你需要自己处理更多的细节：分词、模板构建、温度控制、停止词等。不过，**HuggingFace** 生态的 prompt_template 工具正在让这个过程越来越简单。
+**HuggingFace** **Transformer**s 则提供了更大的灵活性——你可以使用任何开源模型（Llama、Mistral、Qwen 等），在本地或自有服务器上运行。但这也意味着你需要自己处理更多的细节：分词、模板构建、温度控制、停止词等。不过，HuggingFace 生态的 prompt_template 工具正在让这个过程越来越简单。
 
 无论选择哪个平台，核心原则是一致的：好的 Prompt 设计比模型选择更重要。一个精心设计的 Prompt 在中等模型上的表现，可能超过随意编写的 Prompt 在最强模型上的表现。`,
             code: [

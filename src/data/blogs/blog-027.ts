@@ -546,7 +546,7 @@ print(team.get_summary())`,
   },
   {
     title: "实战案例：用多 Agent 构建知识图谱",
-    body: "******任务******： 从一篇技术文章中提取实体关系，构建知识图谱。",
+    body: "**任务**： 从一篇技术文章中提取实体关系，构建知识图谱。",
     mermaid: `sequenceDiagram
     participant User as 用户
     participant Orch as 编排器

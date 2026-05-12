@@ -7,15 +7,15 @@ const post: BlogPost = {
   content: [
     {
       title: "引言：GPT-5.5 为什么值得关注？",
-      body: `2026 年 4 月 23 日，**OpenAI** 正式发布了 **GPT-5**.5——这是继 **GPT-5** 之后的又一次重要模型更新。与以往的公开发布不同，**GPT-5**.5 采取了渐进式推送策略：
+      body: `2026 年 4 月 23 日，**OpenAI** 正式发布了 **GPT-5**.5——这是继 **GPT-5** 之后的又一次重要模型更新。与以往的公开发布不同，GPT-5.5 采取了渐进式推送策略：
 
-****- 第一批****：**OpenAI** Codex 编码助手（已全面上线）
-****- 第二批****：付费 ChatGPT 订阅者（逐步推送中）
-****- 第三批****：API 接入（尚未公布具体时间表）
+- **第一批**：OpenAI Codex 编码助手（已全面上线）
+- **第二批**：付费 ChatGPT 订阅者（逐步推送中）
+- **第三批**：API 接入（尚未公布具体时间表）
 
-AI 社区知名博主 Simon Willison 通过早期访问权限对 **GPT-5**.5 进行了体验测试，并给出了高度正面的评价："fast, effective and highly capable"（快速、高效、高度可靠）。更重要的是，Simon 发现 **GPT-5**.5 在构建复杂任务时的精准度令人印象深刻——"I ask it to build things and it builds exactly what I ask for!"
+AI 社区知名博主 Simon Willison 通过早期访问权限对 GPT-5.5 进行了体验测试，并给出了高度正面的评价："fast, effective and highly capable"（快速、高效、高度可靠）。更重要的是，Simon 发现 GPT-5.5 在构建复杂任务时的精准度令人印象深刻——"I ask it to build things and it builds exactly what I ask for!"
 
-****> 核心问题****： **GPT-5**.5 是真正的代际升级，还是 **GPT-5** 的"挤牙膏"式更新？在 Qwen3.6-27B 等开源模型强势崛起的 2026 年，**GPT-5**.5 的竞争力何在？
+**> 核心问题**： GPT-5.5 是真正的代际升级，还是 GPT-5 的"挤牙膏"式更新？在 Qwen3.6-27B 等开源模型强势崛起的 2026 年，GPT-5.5 的竞争力何在？
 
 本文将从技术架构、性能对比、API 接入和竞争格局四个维度进行全面解析。`,
       mermaid: `sequenceDiagram
@@ -43,17 +43,17 @@ AI 社区知名博主 Simon Willison 通过早期访问权限对 **GPT-5**.5 进
 
 1. **GPT-4**.1（2025 年初）：主打长上下文和成本优化，是 **GPT-4** 系列的收官之作
 2. **GPT-5**（2025 年底）：代际升级，引入更强大的推理能力和多模态理解
-3. **GPT-5**.5（2026 年 4 月）：针对编码和 Agentic 工作流进行了专项优化
+3. GPT-5.5（2026 年 4 月）：针对编码和 Agentic 工作流进行了专项优化
 
-**GPT-5**.5 的命名方式延续了 **OpenAI** 的".5"惯例（类似于 GPT-3.5 之于 GPT-3），意味着它是一次"半代升级"——不是全新的架构革命，而是在现有基础上的关键能力补强。
+GPT-5.5 的命名方式延续了 OpenAI 的".5"惯例（类似于 GPT-3.5 之于 GPT-3），意味着它是一次"半代升级"——不是全新的架构革命，而是在现有基础上的关键能力补强。
 
-### **GPT-5**.5 的核心改进方向
+### GPT-5.5 的核心改进方向
 
-根据 Simon Willison 的实测体验和 **OpenAI** 的发布模式，**GPT-5**.5 的改进主要集中在：
+根据 Simon Willison 的实测体验和 OpenAI 的发布模式，GPT-5.5 的改进主要集中在：
 
-**- 编码能力专项优化**：Codex 作为首发平台，说明 **GPT-5**.5 在代码生成、理解和调试方面有显著提升
-**- 指令遵循精度**："builds exactly what I ask for"——减少了模型偏离用户意图的情况
-****- 推理速度****：被明确评价为 "fast"，说明在延迟方面有明显优化
+- **编码能力专项优化**：Codex 作为首发平台，说明 GPT-5.5 在代码生成、理解和调试方面有显著提升
+- **指令遵循精度**："builds exactly what I ask for"——减少了模型偏离用户意图的情况
+- **推理速度**：被明确评价为 "fast"，说明在延迟方面有明显优化
 - Agent 工作流适配：更稳定的工具调用和多步推理能力`
     },
     {
@@ -69,9 +69,9 @@ AI 社区知名博主 Simon Willison 通过早期访问权限对 **GPT-5**.5 进
 | **Gemini** 2.5 Pro | Google | 未公开 | 多模态、超长上下文 | Google AI Studio |
 | Qwen3.6-27B | 阿里 | 27B Dense | 性价比、本地部署 | 开源社区/企业私有化 |
 
-**### 关键差异**：封闭 vs 开源路线
+### 关键差异：封闭 vs 开源路线
 
-**GPT-5**.5 代表了封闭模型的极致优化路线——通过海量数据和计算资源，在特定任务上做到最好。而 Qwen3.6-27B 则代表了开源模型的效率革命——用更少的参数和计算资源，达到接近旗舰模型的效果。
+GPT-5.5 代表了封闭模型的极致优化路线——通过海量数据和计算资源，在特定任务上做到最好。而 Qwen3.6-27B 则代表了开源模型的效率革命——用更少的参数和计算资源，达到接近旗舰模型的效果。
 
 **这两种路线各有优劣**：`,
       code: [
@@ -111,7 +111,7 @@ response = client.chat.completions.create(
 
 ### Codex API 接入方案
 
-虽然 **OpenAI** 尚未正式开放 **GPT-5**.5 的公共 API，但 Codex 已经提供了一套可编程的接口：`,
+虽然 **OpenAI** 尚未正式开放 GPT-5.5 的公共 API，但 Codex 已经提供了一套可编程的接口：`,
       code: [
         {
           lang: 'python',
@@ -166,7 +166,7 @@ print(result)`
       title: "四、GPT-5.5 的 Agentic 编码实战",
       body: `**GPT-5**.5 的核心亮点在于 Agentic 编码能力——不仅仅是补全代码，而是能够自主规划、执行和验证复杂的多步编码任务。
 
-**### 完整实战案例**：构建一个数据分析 Pipeline
+### 完整实战案例：构建一个数据分析 Pipeline
 
 以下是一个完整的 Python 脚本，演示如何用 **GPT-5**.5 的思维方式构建数据分析工作流：`,
       code: [
@@ -314,9 +314,9 @@ print(f"\\n🎉 Pipeline 完成，共 {len(results)} 个输出")`
 
 ### 市场信号
 
-1. **OpenAI** 趁势进攻：在 **Anthropic** 定价风波期间，**OpenAI** 工程师公开承诺 Codex 将继续在 FREE 和 PLUS（$20）计划中可用，直接向 **Anthropic** 的用户群发起进攻
+1. **OpenAI** 趁势进攻：在 **Anthropic** 定价风波期间，**OpenAI** 工程师公开承诺 Codex 将继续在 FREE 和 PLUS（$20）计划中可用，直接向 Anthropic 的用户群发起进攻
 2. Agent 算力成本焦虑：无论是 **Claude** Code 还是 GitHub Copilot，都在承认 Agent 工作流的算力消耗远超预期
-**3. 开源模型的压力**：Qwen3.6-27B 以 27B 参数在编程基准上超越 397B MoE 旗舰，对闭源模型形成了实质性竞争
+3. **开源模型的压力**：Qwen3.6-27B 以 27B 参数在编程基准上超越 397B MoE 旗舰，对闭源模型形成了实质性竞争
 
 ### **GPT-5**.5 面临的挑战`,
       mermaid: `mindmap
@@ -362,6 +362,7 @@ print(f"\\n🎉 Pipeline 完成，共 {len(results)} 个输出")`
   author: "AI Master",
   tags: ["GPT-5.5", "OpenAI", "Codex", "模型评测", "Agentic 编码", "竞品对比"],
   readTime: 20,
+  category: "llm",
 };
 
 export default post;

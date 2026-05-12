@@ -177,9 +177,9 @@ print(f"Predicted: {classes[similarity.argmax().item()]}")`,
         title: "3. LLaVA 架构：视觉编码器 + 投影 + LLM",
         body: `LLaVA（Large Language-and-Vision Assistant）是 2023 年最具影响力的开源多模态大模型之一，它将 CLIP 的视觉理解能力和 **LLaMA** 的语言能力巧妙结合，构建了一个能「看图说话」的视觉-语言助手。LLaVA 的架构设计堪称多模态 LLM 的教科书级范例。
 
-LLaVA 的架构由三个核心组件组成：视觉编码器（CLIP ViT-L/14）负责将输入图像编码为一系列视觉 token（通常是 576 个 2D patch 的 1024 维特征向量）；投影层（MLP projector）是一个两层的全连接网络，将视觉特征从 CLIP 的特征空间（1024 维）映射到 **LLaMA** 的词嵌入空间（4096 维），相当于搭建了一座视觉-语言桥梁；大语言模型（**LLaMA**/Vicuna）接收拼接后的 token 序列（视觉 token + 文本 token），像处理纯文本一样进行自回归生成。
+LLaVA 的架构由三个核心组件组成：视觉编码器（CLIP ViT-L/14）负责将输入图像编码为一系列视觉 token（通常是 576 个 2D patch 的 1024 维特征向量）；投影层（MLP projector）是一个两层的全连接网络，将视觉特征从 CLIP 的特征空间（1024 维）映射到 **LLaMA** 的词嵌入空间（4096 维），相当于搭建了一座视觉-语言桥梁；大语言模型（LLaMA/Vicuna）接收拼接后的 token 序列（视觉 token + 文本 token），像处理纯文本一样进行自回归生成。
 
-这种设计的美妙之处在于最小化修改——LLaVA 不需要对 **LLaMA** 做任何架构层面的改动，只需要在输入层注入视觉信息。这使得 LLaVA 可以复用 **LLaMA** 的全部训练基础设施（训练脚本、推理引擎、量化工具等），大大降低了开发和部署成本。LLaVA 证明了：一个足够强大的 LLM 加上合理的视觉注入方式，就能实现出色的多模态理解能力。`,
+这种设计的美妙之处在于最小化修改——LLaVA 不需要对 LLaMA 做任何架构层面的改动，只需要在输入层注入视觉信息。这使得 LLaVA 可以复用 LLaMA 的全部训练基础设施（训练脚本、推理引擎、量化工具等），大大降低了开发和部署成本。LLaVA 证明了：一个足够强大的 LLM 加上合理的视觉注入方式，就能实现出色的多模态理解能力。`,
         code: [
           {
             lang: "python",
@@ -548,9 +548,9 @@ class VideoUnderstandingPipeline:
         title: "7. HuggingFace 实战：使用多模态模型",
         body: `**HuggingFace** 生态系统为多模态 LLM 的使用提供了完整的工具链。从模型加载、推理到微调和部署，每个环节都有成熟的 API 支持。掌握 **HuggingFace** 的多模态工具，是将理论转化为实践的关键一步。
 
-**HuggingFace** 上目前有多种开源多模态模型可供选择：LLaVA-1.5 系列是最流行的开源视觉-语言模型，提供 7B 和 13B 两个版本，在多个视觉问答基准上达到开源 SOTA；Qwen2-VL 是阿里云推出的新一代多模态模型，原生支持图像和视频输入，上下文窗口达 128K，在 OCR 和细粒度理解上表现优异；Phi-3-Vision 是微软的轻量级多模态模型（4.2B 参数），在资源受限的设备上也能运行；InternVL2 是上海人工智能实验室推出的模型，在 ImageNet 等视觉基准上达到了接近闭源模型的水平。
+HuggingFace 上目前有多种开源多模态模型可供选择：LLaVA-1.5 系列是最流行的开源视觉-语言模型，提供 7B 和 13B 两个版本，在多个视觉问答基准上达到开源 SOTA；Qwen2-VL 是阿里云推出的新一代多模态模型，原生支持图像和视频输入，上下文窗口达 128K，在 OCR 和细粒度理解上表现优异；Phi-3-Vision 是微软的轻量级多模态模型（4.2B 参数），在资源受限的设备上也能运行；InternVL2 是上海人工智能实验室推出的模型，在 ImageNet 等视觉基准上达到了接近闭源模型的水平。
 
-在实际使用中，**HuggingFace** 的 transformers 库提供了统一的接口来处理不同类型的多模态模型。核心组件包括：AutoProcessor（负责图像预处理和文本 tokenization 的统一封装）、AutoModelForVision2Seq（视觉到序列生成的模型接口）、Pipeline（高层 API，一行代码完成多模态推理）。理解这些组件的工作方式，能让你快速上手任何新的多模态模型。`,
+在实际使用中，HuggingFace 的 transformers 库提供了统一的接口来处理不同类型的多模态模型。核心组件包括：AutoProcessor（负责图像预处理和文本 tokenization 的统一封装）、AutoModelForVision2Seq（视觉到序列生成的模型接口）、Pipeline（高层 API，一行代码完成多模态推理）。理解这些组件的工作方式，能让你快速上手任何新的多模态模型。`,
         code: [
           {
             lang: "python",

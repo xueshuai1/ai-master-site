@@ -390,7 +390,7 @@ train_with_and_without_bn()`,
 
 **另一个关键差异**：BN 有移动平均机制（训练和推理行为不同），LN 没有（训练和推理行为完全一致）。这使得 LN 的实现更简单，也不容易出现训练/推理不一致的 bug。
 
-在实践中，卷积网络首选 BN，**Transformer**/RNN 首选 LN，这是一个已经被广泛验证的经验法则。`,
+在实践中，卷积网络首选 BN，Transformer/RNN 首选 LN，这是一个已经被广泛验证的经验法则。`,
         code: [
           {
             lang: "python",

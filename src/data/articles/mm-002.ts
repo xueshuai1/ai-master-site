@@ -23,7 +23,7 @@ export const article: Article = {
 
 VQA 任务的输出空间通常分为两类：开放式（Open-ended），答案可以是任意词或短语，如 "two"、"yes"、"baseball"；封闭式（Closed），答案限定在预定义类别集合中。主流评测以封闭式为主，因为答案空间可控、指标可比。
 
-****核心数据集****： VQA v2 是最经典的基准，包含 82783 张训练图像和 443757 个问答对，每个问题配有两个人工标注的答案；GQA 数据集强调结构化推理，包含 2200 万个问答对和对应的场景图标注；VQA-X 进一步要求模型在给出答案的同时生成视觉解释（Visual Explanation），推动模型可解释性研究。
+**核心数据集**： VQA v2 是最经典的基准，包含 82783 张训练图像和 443757 个问答对，每个问题配有两个人工标注的答案；GQA 数据集强调结构化推理，包含 2200 万个问答对和对应的场景图标注；VQA-X 进一步要求模型在给出答案的同时生成视觉解释（Visual Explanation），推动模型可解释性研究。
 
 VQA 不仅是技术问题，更是检验多模态对齐能力的试金石——一个能准确回答 "图中有几个人" 的模型，必须同时理解 "人" 的视觉概念和 "计数" 这一逻辑操作。`,
             code: [
@@ -356,13 +356,13 @@ class BottomUpTopDown(nn.Module):
         },
         {
             title: "4. Transformer-based VQA",
-            body: `**Transformer** 架构凭借自注意力机制的强大表达能力，在 NLP 和 CV 领域都取得了突破性进展。在 VQA 领域，**Transformer** 的引入带来了两个维度的革新：一是用 **Transformer** 替代 LSTM 作为文本编码器，二是用 Vision **Transformer**（ViT）或 DETR 替代 CNN 作为视觉编码器。
+            body: `**Transformer** 架构凭借自注意力机制的强大表达能力，在 NLP 和 CV 领域都取得了突破性进展。在 VQA 领域，**Transformer** 的引入带来了两个维度的革新：一是用 Transformer 替代 LSTM 作为文本编码器，二是用 Vision Transformer（ViT）或 DETR 替代 CNN 作为视觉编码器。
 
-ViLT（Vision-and-Language **Transformer**） 是这一方向的代表性工作。它的核心思想极其简洁：将图像分割为固定大小的 patch，每个 patch 线性投影后加上位置嵌入，与文本 token 的嵌入拼接，然后直接送入标准的 **Transformer** 编码器。整个过程不需要 CNN 提取特征，也不需要目标检测器提取区域——是一种真正的端到端方案。
+ViLT（Vision-and-Language Transformer） 是这一方向的代表性工作。它的核心思想极其简洁：将图像分割为固定大小的 patch，每个 patch 线性投影后加上位置嵌入，与文本 token 的嵌入拼接，然后直接送入标准的 Transformer 编码器。整个过程不需要 CNN 提取特征，也不需要目标检测器提取区域——是一种真正的端到端方案。
 
-Oscar（Object-Semantics Aligned Pretraining） 则在 **Transformer** 架构中引入了对象标签（Object Tags）作为额外的视觉 token，通过预训练学习对象级别的语义对齐，在微调 VQA 任务时取得显著提升。
+Oscar（Object-Semantics Aligned Pretraining） 则在 Transformer 架构中引入了对象标签（Object Tags）作为额外的视觉 token，通过预训练学习对象级别的语义对齐，在微调 VQA 任务时取得显著提升。
 
-**Transformer** 在 VQA 中的关键优势在于跨模态自注意力（Cross-Modal Self-Attention）：图像 patch 和文本 token 在同一个 **Transformer** 中交互，每个 token 都可以直接关注到另一个模态中的任意 token。这种全连接的跨模态交互远强于早期方法中有限的融合操作。`,
+Transformer 在 VQA 中的关键优势在于跨模态自注意力（Cross-Modal Self-Attention）：图像 patch 和文本 token 在同一个 Transformer 中交互，每个 token 都可以直接关注到另一个模态中的任意 token。这种全连接的跨模态交互远强于早期方法中有限的融合操作。`,
             code: [
                 {
                     lang: "python",
@@ -495,7 +495,7 @@ print(f"跨模态输出形状: {output.shape}")`
             title: "5. 多模态预训练：ViLBERT 与 LXMERT",
             body: `多模态预训练（Multimodal Pretraining）通过在海量的图文对数据上学习通用的跨模态表示，然后迁移到下游 VQA 等任务上微调，大幅提升了 VQA 模型的性能上限。这一范式类似于 BERT 在 NLP 领域的成功——先在大语料上预训练，再在下游任务上微调。
 
-ViLBERT（Vision-and-Language BERT） 采用双流架构：一个视觉 **Transformer** 处理图像区域特征，一个语言 **Transformer** 处理文本 token，两者通过 co-attentional transformer layer 定期交换信息。这种设计允许每个模态在独立的 **Transformer** 中充分建模自身特征，同时通过交叉注意力层实现模态间交互。
+ViLBERT（Vision-and-Language BERT） 采用双流架构：一个视觉 **Transformer** 处理图像区域特征，一个语言 **Transformer** 处理文本 token，两者通过 co-attentional transformer layer 定期交换信息。这种设计允许每个模态在独立的 Transformer 中充分建模自身特征，同时通过交叉注意力层实现模态间交互。
 
 LXMERT（Cross-modal Encoder with Vision and Language） 在 ViLBERT 基础上引入了三路架构：视觉编码器、语言编码器，以及专门的跨模态编码器。跨模态编码器将两个模态的特征同时输入，用全自注意力建模跨模态交互。LXMERT 的预训练目标包括掩码语言建模（MLM）、掩码区域建模（MRM）、视觉-语言匹配（VLM）等多任务学习。
 
@@ -715,7 +715,7 @@ class VQAEvaluator:
 
 **推理流程包含四个步骤**：加载预训练模型和处理器、准备图像和问题输入、模型前向传播生成答案、后处理得到最终结果。整个过程只需要不到 20 行代码，但背后依赖的是在数亿图文对上预训练学到的跨模态理解能力。
 
-除了 OFA，我们还可以使用 BLIP-2 进行 VQA 推理。BLIP-2 的创新在于 Q-Former（Querying **Transformer**），它是一个轻量级的 **Transformer** 模块，负责从冻结的视觉编码器中提取与文本相关的特征，然后送入冻结的 LLM 生成答案。这种设计使得训练成本大幅降低，同时保留了 LLM 的强大生成能力。
+除了 OFA，我们还可以使用 BLIP-2 进行 VQA 推理。BLIP-2 的创新在于 Q-Former（Querying **Transformer**），它是一个轻量级的 Transformer 模块，负责从冻结的视觉编码器中提取与文本相关的特征，然后送入冻结的 LLM 生成答案。这种设计使得训练成本大幅降低，同时保留了 LLM 的强大生成能力。
 
 实际部署时，需要考虑模型大小与推理延迟的平衡：OFA-large 有 6.5 亿参数，在单张 V100 上推理耗时约 100ms/样本；而 BLIP-2 使用 OPT-2.7B 作为 LLM，参数量更大但可以通过量化和 distillation 压缩到可部署的规模。`,
             code: [

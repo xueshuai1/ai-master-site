@@ -16,7 +16,7 @@ export const article: Article = {
       title: "一、honker 是什么：为什么 SQLite 需要 NOTIFY/LISTEN 语义",
       body: `honker 是一个 Rust 编写的 SQLite 扩展，由 russellromney 开发。它的核心目标是将 PostgreSQL 的 NOTIFY/LISTEN 通知机制和事务型外盒（Transactionally Staged Job Drains）模式引入 SQLite 生态。
 
-****### 背景****：SQLite 的异步通信空白
+### 背景：SQLite 的异步通信空白
 
 SQLite 作为世界上最流行的嵌入式数据库，长期以来缺少跨进程异步通信能力：
 - PostgreSQL 有 \`NOTIFY/LISTEN\`，允许一个连接发送通知，其他连接接收
@@ -37,8 +37,8 @@ honker 填补了这个空白。它提供两种核心原语：
 
 1. 基于 WAL 的轮询机制：worker 每 1ms 轮询 \`.db-wal\` 文件的 stat 变化，实现接近实时的通知
 2. 事务型外盒模式：确保消息仅在事务成功提交后才进入队列，避免「数据写入成功但消息丢失」的不一致状态
-**3. 单文件架构**：无需额外服务进程，与 SQLite 应用共享同一数据库文件
-**4. 多语言绑定**：官方提供 Python 绑定，社区可扩展 Go/Node.js/Rust
+3. **单文件架构**：无需额外服务进程，与 SQLite 应用共享同一数据库文件
+4. **多语言绑定**：官方提供 Python 绑定，社区可扩展 Go/Node.js/Rust
 
 > 为什么叫 honker？ 名字来自「honk」—— 大鹅的叫声，暗示这是一个「通知/提醒」工具。`,
       mermaid: `graph TD
@@ -145,7 +145,7 @@ async for event in stream.subscribe(consumer="dashboard"):
       title: "三、事务型外盒模式（Transactionally Staged Job Drains）深度解析",
       body: `honker 实现了 Transactionally Staged Job Drains 模式（源自 Brandur Leach 的经典文章）。这是分布式系统中确保数据写入与消息发送一致性的关键模式。
 
-****### 问题****：为什么需要事务型外盒？
+### 问题：为什么需要事务型外盒？
 
 **考虑一个典型的场景**：用户注册时，你需要：
 1. 将用户信息写入数据库
@@ -224,7 +224,7 @@ with db.transaction() as tx:
 | \`honker_queue_nack(queue, message_id)\` | 拒绝消息（重新入队） | 受影响的行数 |
 | \`honker_queue_depth(queue)\` | 队列深度（未消费消息数） | INTEGER |
 
-**### 实战示例**：用 SQL 直接操作
+### 实战示例：用 SQL 直接操作
 
 \`\`\`sql
 -- 发送通知（类似 PostgreSQL 的 NOTIFY）
@@ -311,7 +311,7 @@ async for event in order_stream.subscribe(consumer="order-processor"):
       title: "五、honker 在 AI Agent 架构中的应用场景",
       body: `honker 特别适合 AI Agent 系统，原因如下：
 
-**### 场景一**：AI Agent 任务队列
+### 场景一：AI Agent 任务队列
 
 AI Agent 通常需要处理大量异步任务：
 - 生成内容后发送通知
@@ -320,11 +320,11 @@ AI Agent 通常需要处理大量异步任务：
 
 使用 honker Queue，你可以构建可靠的 Agent 任务管道。
 
-**### 场景二**：AI Agent 事件溯源
+### 场景二：AI Agent 事件溯源
 
 使用 honker Stream，你可以记录 Agent 的所有决策和操作。
 
-**### 场景三**：多 Agent 协作
+### 场景三：多 Agent 协作
 
 honker 的队列和流可以天然支持多 Agent 协作模式：
 

@@ -12,7 +12,7 @@ export const article: Article = {
   content: [
     {
       title: "1. LangChain 架构概览",
-      body: `**LangChain** 是一个用于构建大语言模型应用的开源框架，由 Harrison Chase 于 2022 年创建。它的核心理念是将 LLM 的能力与外部数据源、工具和计算能力组合起来，形成完整的「应用管线」。**LangChain** 采用模块化设计，主要包含六大组件：模型 I/O（Models & Prompts）、数据连接（Data Connection）、链（Chains）、记忆（Memory）、回调（Callbacks）以及代理（Agents）。这种架构使得开发者可以像搭积木一样，将不同能力的模块灵活组合。**LangChain** 支持 Python 和 JavaScript 两种语言实现，底层对接了 **OpenAI**、**Anthropic**、Google 等数十家 LLM 提供商，通过统一的接口抽象屏蔽了底层差异。理解 **LangChain** 的架构是高效使用它的前提——它不是替代 LLM，而是让 LLM 从「聊天窗口」进化为「应用引擎」。`,
+      body: `**LangChain** 是一个用于构建大语言模型应用的开源框架，由 Harrison Chase 于 2022 年创建。它的核心理念是将 LLM 的能力与外部数据源、工具和计算能力组合起来，形成完整的「应用管线」。**LangChain** 采用模块化设计，主要包含六大组件：模型 I/O（Models & Prompts）、数据连接（Data Connection）、链（Chains）、记忆（Memory）、回调（Callbacks）以及代理（Agents）。这种架构使得开发者可以像搭积木一样，将不同能力的模块灵活组合。LangChain 支持 Python 和 JavaScript 两种语言实现，底层对接了 **OpenAI**、**Anthropic**、Google 等数十家 LLM 提供商，通过统一的接口抽象屏蔽了底层差异。理解 LangChain 的架构是高效使用它的前提——它不是替代 LLM，而是让 LLM 从「聊天窗口」进化为「应用引擎」。`,
       code: [
         {
           lang: "python",
@@ -161,7 +161,7 @@ result = chain.invoke({"movie_name": "星际穿越"})`
     },
     {
       title: "3. Chains：构建执行管线",
-      body: `Chain 是 **LangChain** 中组合多个组件的核心抽象。在 LCEL（**LangChain** Expression Language）出现之前，Chain 主要基于 LLMChain、SimpleSequentialChain 等类实现。LCEL 革命性地引入了声明式管线语法：通过 | 操作符将 Runnable 对象连接起来，形成可执行的工作流。LCEL 的优势在于：天然支持异步执行、流式输出、并行分支（RunnableParallel）和重试机制。一个典型的 Chain 可以是简单的「模板→模型→解析器」三段式，也可以包含条件分支、循环和并行处理。LCEL 引入了 RunnablePassthrough（透传）、RunnableBranch（条件分支）和 RunnableParallel（并行执行）等高级原语，使得复杂业务逻辑可以用声明式方式表达。掌握 LCEL 是成为 **LangChain** 进阶使用者的必经之路。`,
+      body: `Chain 是 **LangChain** 中组合多个组件的核心抽象。在 LCEL（**LangChain** Expression Language）出现之前，Chain 主要基于 LLMChain、SimpleSequentialChain 等类实现。LCEL 革命性地引入了声明式管线语法：通过 | 操作符将 Runnable 对象连接起来，形成可执行的工作流。LCEL 的优势在于：天然支持异步执行、流式输出、并行分支（RunnableParallel）和重试机制。一个典型的 Chain 可以是简单的「模板→模型→解析器」三段式，也可以包含条件分支、循环和并行处理。LCEL 引入了 RunnablePassthrough（透传）、RunnableBranch（条件分支）和 RunnableParallel（并行执行）等高级原语，使得复杂业务逻辑可以用声明式方式表达。掌握 LCEL 是成为 LangChain 进阶使用者的必经之路。`,
       code: [
         {
           lang: "python",
@@ -496,7 +496,7 @@ class ReactOutputParser(AgentOutputParser):
     },
     {
       title: "7. 实战：构建 RAG 应用",
-      body: `**RAG**（Retrieval-Augmented Generation，检索增强生成）是 **LangChain** 最具代表性的应用场景。**RAG** 的核心思想是：先将外部知识注入向量数据库，查询时检索相关文档作为上下文，再让 LLM 基于上下文生成回答。这种方法解决了 LLM 的知识时效性和幻觉问题。一个完整的 **RAG** 管线包含五个阶段：文档加载（加载 PDF、网页、数据库等）、文档分块（将长文档切分为有意义的片段）、向量化（使用 Embedding 模型转换为向量）、检索（根据查询相似度匹配）和生成（LLM 结合检索结果生成回答）。**LangChain** 的 **RAG** 实现提供了灵活的配置选项：支持多种分块策略（固定长度、递归、语义）、多种向量数据库（FAISS、Pinecone、Chroma、Milvus）以及多种重排序策略。实战中，**RAG** 的效果很大程度上取决于文档分块策略和检索质量，而非 LLM 本身。`,
+      body: `**RAG**（Retrieval-Augmented Generation，检索增强生成）是 **LangChain** 最具代表性的应用场景。**RAG** 的核心思想是：先将外部知识注入向量数据库，查询时检索相关文档作为上下文，再让 LLM 基于上下文生成回答。这种方法解决了 LLM 的知识时效性和幻觉问题。一个完整的 RAG 管线包含五个阶段：文档加载（加载 PDF、网页、数据库等）、文档分块（将长文档切分为有意义的片段）、向量化（使用 Embedding 模型转换为向量）、检索（根据查询相似度匹配）和生成（LLM 结合检索结果生成回答）。**LangChain** 的 RAG 实现提供了灵活的配置选项：支持多种分块策略（固定长度、递归、语义）、多种向量数据库（FAISS、Pinecone、Chroma、Milvus）以及多种重排序策略。实战中，RAG 的效果很大程度上取决于文档分块策略和检索质量，而非 LLM 本身。`,
       code: [
         {
           lang: "python",

@@ -242,9 +242,9 @@ print(f"CLIP Loss: {loss.item():.4f}")`,
         title: "3. DALL-E：VQ-VAE 与 Transformer 的首次融合",
         body: `DALL-E（2021）是第一个在大规模上展示文本到图像生成能力的模型，其名称致敬了超现实主义画家 Salvador Dali 和动画角色 WALL-E。DALL-E 的核心创新在于将图像生成问题转化为序列生成问题——这正是 **Transformer** 最擅长的领域。
 
-DALL-E 的架构分为两个关键阶段。第一阶段是图像 tokenization：使用 dVAE（discrete VAE，类似于 VQ-VAE 的变体）将图像编码为离散的 token 序列。具体来说，dVAE 将 256 x 256 的图像压缩为 32 x 32 的网格，每个网格位置对应一个来自 8192 词汇表的离散 token。这样，一张图像就被表示为一个 1024 个 token 的序列。第二阶段是序列建模：将文本 token 和图像 token 拼接成一个完整的序列，输入到 **Transformer** 中进行自回归生成。文本部分使用 BPE（Byte Pair Encoding）编码，图像部分使用 dVAE 编码，两者共享同一个 **Transformer** 模型。
+DALL-E 的架构分为两个关键阶段。第一阶段是图像 tokenization：使用 dVAE（discrete VAE，类似于 VQ-VAE 的变体）将图像编码为离散的 token 序列。具体来说，dVAE 将 256 x 256 的图像压缩为 32 x 32 的网格，每个网格位置对应一个来自 8192 词汇表的离散 token。这样，一张图像就被表示为一个 1024 个 token 的序列。第二阶段是序列建模：将文本 token 和图像 token 拼接成一个完整的序列，输入到 **Transformer** 中进行自回归生成。文本部分使用 BPE（Byte Pair Encoding）编码，图像部分使用 dVAE 编码，两者共享同一个 Transformer 模型。
 
-训练时，DALL-E 最大化序列的条件似然：给定文本前缀，预测后续图像 token 的概率分布。推理时，模型从左到右逐个生成图像 token，最后通过 dVAE 解码器将 token 序列还原为像素图像。这种方法的优雅之处在于：它复用了 NLP 领域已经非常成熟的 **Transformer** 架构和训练范式。`,
+训练时，DALL-E 最大化序列的条件似然：给定文本前缀，预测后续图像 token 的概率分布。推理时，模型从左到右逐个生成图像 token，最后通过 dVAE 解码器将 token 序列还原为像素图像。这种方法的优雅之处在于：它复用了 NLP 领域已经非常成熟的 Transformer 架构和训练范式。`,
         mermaid: `graph LR
     A["文本 prompt"] --> B["BPE 编码\
 文本 tokens"]

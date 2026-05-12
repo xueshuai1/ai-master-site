@@ -373,7 +373,7 @@ print(f"位置 10 的前8维: {positions[10, :8].round(3)}")`,
 
 FFN 是"position-wise"的——它对序列中的每个位置独立应用相同的变换。这意味着 FFN 不捕捉位置间的关系（这是注意力的工作），而是对每个位置的表示进行独立的非线性处理。
 
-层归一化（Layer Normalization）在 **Transformer** 中有两种放置方式：Post-LN（原始论文，LayerNorm 在残差连接之后）和 Pre-LN（LayerNorm 在子层之前）。Pre-LN 在训练中更稳定，是现代 **Transformer** 的标准选择。Post-LN 在理论上表达能力更强，但需要 warmup 学习率策略才能稳定训练。`,
+层归一化（Layer Normalization）在 **Transformer** 中有两种放置方式：Post-LN（原始论文，LayerNorm 在残差连接之后）和 Pre-LN（LayerNorm 在子层之前）。Pre-LN 在训练中更稳定，是现代 Transformer 的标准选择。Post-LN 在理论上表达能力更强，但需要 warmup 学习率策略才能稳定训练。`,
         code: [
           {
             lang: "python",

@@ -269,11 +269,11 @@ for name, params in params_grid.items():
         title: "5. 实用调参技巧",
         body: `XGBoost 参数众多，但并非所有参数都同等重要。掌握调参的优先级和策略，比穷举所有组合更高效。
 
-****第一优先级****：learning_rate（eta）和 n_estimators。这两个参数紧密相关——学习率越小，需要的树越多，但模型通常更稳健。经验法则：从 learning_rate=0.1、n_estimators=100 开始，如果验证集还在改善，可以降低学习率到 0.05 或 0.01，同时增加树的数量。学习率和树数量的乘积大致决定了模型的总拟合能力。
+**第一优先级**：learning_rate（eta）和 n_estimators。这两个参数紧密相关——学习率越小，需要的树越多，但模型通常更稳健。经验法则：从 learning_rate=0.1、n_estimators=100 开始，如果验证集还在改善，可以降低学习率到 0.05 或 0.01，同时增加树的数量。学习率和树数量的乘积大致决定了模型的总拟合能力。
 
-****第二优先级****：max_depth 和 min_child_weight。max_depth 控制树的复杂度，典型值为 3-10。min_child_weight 与 min_child_weight 决定了叶子节点所需的最小样本权重和，防止过度分裂。这两个参数通常一起调整：较大的 max_depth 需要较大的 min_child_weight 来配合。
+**第二优先级**：max_depth 和 min_child_weight。max_depth 控制树的复杂度，典型值为 3-10。min_child_weight 与 min_child_weight 决定了叶子节点所需的最小样本权重和，防止过度分裂。这两个参数通常一起调整：较大的 max_depth 需要较大的 min_child_weight 来配合。
 
-****第三优先级****：subsample 和 colsample_bytree。subsample 控制每棵树使用的样本比例（0.5-1.0），colsample_bytree 控制每棵树使用的特征比例（0.5-1.0）。它们通过引入随机性来防止过拟合，同时也能加快训练速度。
+**第三优先级**：subsample 和 colsample_bytree。subsample 控制每棵树使用的样本比例（0.5-1.0），colsample_bytree 控制每棵树使用的特征比例（0.5-1.0）。它们通过引入随机性来防止过拟合，同时也能加快训练速度。
 
 调参策略推荐使用两阶段法：第一阶段用较大的学习率（0.1）和较少的树（100-200）快速探索参数空间；第二阶段固定树结构参数，用较小的学习率（0.01-0.05）和更多的树进行精细调优。`,
         code: [

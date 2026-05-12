@@ -350,7 +350,7 @@ class BiLSTMAttention(nn.Module):
 
 预训练阶段 使用两个自监督任务：掩码语言建模（MLM）——随机遮盖 15% 的词让模型预测，以及下一句预测（NSP）——判断两句话是否连续。这两个任务使模型同时学到了词级别和句子级别的理解能力。预训练语料包括 Wikipedia（25 亿词）和 BooksCorpus（8 亿词）。
 
-**微调阶段 极其简洁**：在 BERT 的 [CLS] token 输出后接一个线性分类层，用交叉熵损失端到端训练所有参数。对于序列长度为 L 的输入，BERT-base 有 12 层 **Transformer** 编码器，每层隐藏维度 768，总参数量约 1.1 亿。
+**微调阶段 极其简洁**：在 BERT 的 [CLS] token 输出后接一个线性分类层，用交叉熵损失端到端训练所有参数。对于序列长度为 L 的输入，BERT-base 有 12 层 Transformer 编码器，每层隐藏维度 768，总参数量约 1.1 亿。
 
 BERT 的变体家族非常丰富：RoBERTa 去掉了 NSP 任务并增加训练数据；ALBERT 通过参数共享和因式分解减少参数量；DistilBERT 通过知识蒸馏将模型压缩到原大小的 40%；DeBERTa 引入了解码位置信息，在多项 GLUE 基准上取得最优成绩。中文场景常用的有 bert-base-chinese、macbert、roberta-wwm-ext 等。`,
             code: [

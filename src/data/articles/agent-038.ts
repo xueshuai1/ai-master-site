@@ -453,7 +453,7 @@ const app = workflow.compile();`,
 
 ### **LangGraph**
 
-<strong>**LangGraph**</strong> 由 **LangChain** 团队开发，基于<strong>图计算模型</strong>的 Agent 编排框架。
+<strong>LangGraph</strong> 由 **LangChain** 团队开发，基于<strong>图计算模型</strong>的 Agent 编排框架。
 
 <strong>核心特点</strong>：
 
@@ -466,7 +466,7 @@ const app = workflow.compile();`,
 
 ### **CrewAI**
 
-<strong>**CrewAI**</strong> 是一个<strong>角色驱动</strong>的 Agent 编排框架，强调 Agent 的<strong>角色定义</strong> 和 <strong>任务分配</strong>。
+<strong>CrewAI</strong> 是一个<strong>角色驱动</strong>的 Agent 编排框架，强调 Agent 的<strong>角色定义</strong> 和 <strong>任务分配</strong>。
 
 <strong>核心特点</strong>：
 
@@ -479,7 +479,7 @@ const app = workflow.compile();`,
 
 ### **AutoGen**
 
-<strong>**AutoGen**</strong> 由微软开发，强调<strong>多 Agent 对话</strong>的编排模式。
+<strong>AutoGen</strong> 由微软开发，强调<strong>多 Agent 对话</strong>的编排模式。
 
 <strong>核心特点</strong>：
 
@@ -492,7 +492,7 @@ const app = workflow.compile();`,
 
 ### 三维度对比
 
-| 维度 | **LangGraph** | **CrewAI** | **AutoGen** |
+| 维度 | LangGraph | CrewAI | AutoGen |
 |------|-----------|--------|---------|
 | <strong>编程模型</strong> | 有向图 | 角色+任务 | 多轮对话 |
 | <strong>学习曲线</strong> | 中等 | 低 | 中等 |
@@ -508,11 +508,11 @@ const app = workflow.compile();`,
 
 | 需求 | 推荐框架 |
 |------|---------|
-| 精确控制执行流程 | <strong>**LangGraph**</strong> |
-| 快速原型 + 角色分工 | <strong>**CrewAI**</strong> |
-| 多轮讨论 + 代码执行 | <strong>**AutoGen**</strong> |
-| 生产级稳定性 | <strong>**LangGraph**</strong> |
-| 与 **LangChain** 集成 | <strong>**LangGraph**</strong> |`,
+| 精确控制执行流程 | <strong>LangGraph</strong> |
+| 快速原型 + 角色分工 | <strong>CrewAI</strong> |
+| 多轮讨论 + 代码执行 | <strong>AutoGen</strong> |
+| 生产级稳定性 | <strong>LangGraph</strong> |
+| 与 LangChain 集成 | <strong>LangGraph</strong> |`,
             code: [{
                 lang: "python",
                 title: "CrewAI 角色驱动编排示例",
@@ -812,7 +812,7 @@ async function callSearchAgent(
 
 <strong>第一步：理解基础</strong>——学习有限状态机（FSM）和工作流引擎概念
 
-<strong>第二步：实践 **LangGraph**</strong>——用 **LangGraph** 实现一个简单的多 Agent 编排流程
+<strong>第二步：实践 **LangGraph**</strong>——用 LangGraph 实现一个简单的多 Agent 编排流程
 
 <strong>第三步：对比其他框架</strong>——用同样的任务在 **CrewAI** 和 **AutoGen** 上实现，对比差异
 
