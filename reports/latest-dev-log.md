@@ -1,5 +1,5 @@
-⏰ 写入时间：2026-05-12 18:04 (Asia/Shanghai)
-🐛 修复：0 个 bug（无遗留问题）
+⏰ 写入时间：2026-05-12 22:04 (Asia/Shanghai)
+🐛 修复：1 个 bug（.next 缓存残留导致 build 报 500.html rename ENOENT）
 ✨ 新增：0 个功能
-🔧 优化：ethics-019 + blog-158 集成验证通过
+🔧 优化：0 项
 已知问题：无
