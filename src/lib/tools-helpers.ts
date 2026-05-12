@@ -62,23 +62,25 @@ export function getRelatedTools(tool: Tool, limit = 6): Tool[] {
     .map((entry) => entry.tool);
 }
 
-/** 把 category key 解码为中文 label */
+/**
+ * 把 category key 解码为中文 label。
+ * 与 src/data/tools.ts 的 toolCategories 严格对齐。
+ */
 export function categoryLabel(key: string): string {
   const map: Record<string, string> = {
-    llm: "大语言模型",
+    app: "AI 应用",
+    coding: "编程助手",
     agent: "AI Agent",
     framework: "开发框架",
-    cli: "CLI 工具",
-    plugin: "MCP & 插件",
+    workflow: "工作流自动化",
+    rag: "RAG & 检索",
+    multimodal: "多模态 & 视觉",
+    mcp: "MCP & 浏览器自动化",
+    training: "训练 & 微调",
     data: "数据处理",
-    multimodal: "多模态",
-    search: "AI 搜索",
-    security: "AI 安全",
-    devops: "DevOps",
-    education: "教育学习",
-    cv: "计算机视觉",
-    aieng: "AI 工程化",
-    finance: "金融 AI",
+    mlops: "推理 & 评测",
+    model: "LLM 运行时",
+    learn: "学习资源",
   };
   return map[key] ?? key;
 }
