@@ -19,31 +19,67 @@ function any(text: string, patterns: RegExp[]): boolean {
 
 /**
  * 边角 case 手动 override（regex 难以精准命中的）
+ * 优先级最高 —— 任何走到这里的 id 直接返回，跳过 regex
  */
 const MANUAL: Record<string, string> = {
-  // 实际上是 Agent 但 regex 误判
+  // —— Agent 误判 ——
   autoresearch: "agent",
-  "zai_org_open_autoglm": "agent",
-  "upsonic_upsonic": "agent",
-  "mayooear_ai_pdf_chatbot_langchain": "learn", // 是个 example/教程项目
-  // 部署栈不是训练
-  "llama-stack": "mlops",
-  // 实际上是部署/工程化工具，不是 LLM 模型
-  "llamafactory": "training",
-  "llama-factory": "training",
-  // OpenViking 看 desc 是上下文数据库 → RAG
+  zai_org_open_autoglm: "agent",
+  upsonic_upsonic: "agent",
+  composio: "agent",
+
+  // —— 通用 LLM 框架（不是 RAG 专用） ——
+  langchain: "framework",
+  langchain_ai_langchain: "framework",
+  transformers: "framework",
+  gradio: "framework",
+  streamlit: "framework",
+  copilotkit: "framework",
+  llmware: "framework",
+  llmware_ai_llmware: "framework",
+  dspy: "framework",
+  haystack: "framework",
+  deepset_ai_haystack: "framework",
+  supabase: "framework",
+  cloudwego_eino: "framework",
+  taskingai_taskingai: "framework",
+
+  // —— RAG 专用 ——
+  "llama-index": "rag",
+  llama_index: "rag",
+  "rag-anything": "rag",
+  hkuds_rag_anything: "rag",
+  vectifyai_pageindex: "rag",
+  neuml_txtai: "rag",
+  airweave_ai_airweave: "rag",
+  cocoindex_io_cocoindex: "rag",
+  "cocoindex-io-cocoindex": "rag",
   openviking: "rag",
-  // Wechaty 微信 SDK，agent 框架
-  wechaty_wechaty: "framework",
-  // OpenBB 是金融数据平台 → data
+  flagopen_flagembedding: "rag",
+
+  // —— 数据 ——
+  crawl4ai: "data",
   openbb: "data",
-  // PaperWithCode deadlines
-  "paperswithcode_ai_deadlines": "learn",
-  "wangrongsheng_awesome_llm_resources": "learn",
-  "kiloreux_awesome_robotics": "learn",
-  "pliang279_awesome_multimodal_ml": "learn",
-  "tianxingchen_embodied_ai_guide": "learn",
-  "humanlayer_12_factor_agents": "learn",
+
+  // —— Example / 教程项目 ——
+  mayooear_ai_pdf_chatbot_langchain: "learn",
+  paperswithcode_ai_deadlines: "learn",
+  wangrongsheng_awesome_llm_resources: "learn",
+  kiloreux_awesome_robotics: "learn",
+  pliang279_awesome_multimodal_ml: "learn",
+  tianxingchen_embodied_ai_guide: "learn",
+  humanlayer_12_factor_agents: "learn",
+
+  // —— Wechaty IM SDK ——
+  wechaty_wechaty: "framework",
+
+  // —— 部署/推理 ——
+  "llama-stack": "mlops",
+  llama_stack: "mlops",
+
+  // —— 实际是微调框架 ——
+  llamafactory: "training",
+  "llama-factory": "training",
 };
 
 function classify(t: Tool): string {
