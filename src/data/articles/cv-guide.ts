@@ -18,24 +18,24 @@ export const article: Article = {
         },
         {
             title: "1. 学习路线",
-            body: `计算机视觉的学习路线：
+            body: `**计算机视觉的学习路线**：
 
-**图像分类**— LeNet → AlexNet → ResNet
+图像分类— LeNet → AlexNet → ResNet
 
-**目标检测**— YOLO、Faster R-CNN
+目标检测— YOLO、Faster R-CNN
 
-**图像分割**— 语义分割、实例分割
+图像分割— 语义分割、实例分割
 
 数据增强与优化— AutoAugment、CutMix`
         },
         {
             title: "2. 学习建议",
-            body: `**重点投入**：
+            body: `****重点投入****：
 - CNN 核心思想（卷积、池化、感受野）
 - ResNet 架构演进
 - YOLO 目标检测
 
-可以用现成工具的：
+**可以用现成工具的**：
 - 不需要从头训练模型，用预训练模型微调即可`,
             tip: "💡 用 YOLO 跑一下实时目标检测，看着摄像头里的物体被实时标注，非常有成就感。"
         },

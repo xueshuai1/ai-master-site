@@ -16,7 +16,7 @@ content: [
       title: "0. 引言：OpenAI 为什么要发布自己的 Agent SDK？",
       body: `2026 年 4 月，**OpenAI** 正式发布 Agents Python SDK（openai/openai-agents-python），两周内突破 25,000 stars，成为 GitHub AI 领域最受关注的新项目。
 
-这个时间点值得深思：在此之前，**CrewAI**、**LangGraph**、**AutoGen** 等第三方框架已经统治了多 Agent 编排领域。**OpenAI** 的入局不是为了重复造轮子，而是为了解决一个核心问题——第三方框架与 **OpenAI** 模型能力之间存在能力断层。
+**这个时间点值得深思**：在此之前，**CrewAI**、**LangGraph**、**AutoGen** 等第三方框架已经统治了多 Agent 编排领域。**OpenAI** 的入局不是为了重复造轮子，而是为了解决一个核心问题——第三方框架与 **OpenAI** 模型能力之间存在能力断层。
 
 **OpenAI** Agents SDK 的设计哲学可以用一句话概括："Lightweight yet powerful"——轻量但强大。它不做厚重的编排层，而是把复杂能力下沉到 API 层，让开发者用最少的代码构建最复杂的 Agent 工作流。
 

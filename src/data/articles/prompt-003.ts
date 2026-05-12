@@ -481,12 +481,12 @@ print(f"Claude 系统提示长度: {len(claude_prompt['messages'][0]['content'])
 
 我们准备了 4 种 prompt 策略：
 
-1. 原始策略：2024 年风格的长系统提示（500+ 字）
-2. 最小策略：**OpenAI** 推荐的最小有效提示（50 字以内）
-3. 结构化策略：带明确 JSON Schema 和 Few-shot 示例
-4. 混合策略：根据目标模型自适应的 prompt（使用上面的 PromptAdapter）
+**1. 原始策略**：2024 年风格的长系统提示（500+ 字）
+**2. 最小策略**：**OpenAI** 推荐的最小有效提示（50 字以内）
+**3. 结构化策略**：带明确 JSON Schema 和 Few-shot 示例
+**4. 混合策略**：根据目标模型自适应的 prompt（使用上面的 PromptAdapter）
 
-**评测指标**：代码问题检出率、输出准确性、token 消耗、延迟。`,
+****评测指标****：代码问题检出率、输出准确性、token 消耗、延迟。`,
       code: [{
         lang: "python",
         title: "Prompt 策略对比实验框架",
@@ -726,7 +726,7 @@ DEEPSEEK_CODE_REVIEW = {
 ### 核心结论
 
 1. 最小有效提示原则：用最短的 prompt 达到目标，然后逐步调优。长 prompt 不是优势，而是负担。
-2. 参数胜过文字：**GPT-5**.5 的 \`verbosity\` 和 \`image_detail\` 比在 prompt 里写 "请简短/详细" 更有效。
+**2. 参数胜过文字**：**GPT-5**.5 的 \`verbosity\` 和 \`image_detail\` 比在 prompt 里写 "请简短/详细" 更有效。
 3. 每个模型单独调优：不要假设一套 prompt 能在所有模型上工作良好。
 4. 结构化输出提升可靠性：JSON Schema 或明确的格式要求，能显著提高输出的可用性和可解析性。
 5. 预更新模式改善 UX：对 Agent 类应用，在执行前先发送确认信息，大幅提升用户体验。

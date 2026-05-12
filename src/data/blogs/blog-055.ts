@@ -79,7 +79,7 @@ function handleResume(sessionId: string, idleTime: number) {
     },
     {
       title: "",
-      body: `### 复合效应：问题如何自我放大`,
+      body: `**### 复合效应**：问题如何自我放大`,
       mermaid: `sequenceDiagram
     participant U as 用户
     participant CC as Claude Code

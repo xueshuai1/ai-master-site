@@ -128,7 +128,7 @@ interface AgentAssignment {
 
 <strong>混合编排</strong>结合了中心化和去中心化的优点：核心流程由<strong>编排器统一管理</strong>，局部交互由 <strong>Agent 自主协调</strong>。这是目前<strong>工业实践中最常用的模式</strong>。
 
-混合编排的典型结构：
+**混合编排的典型结构**：
 
 - <strong>顶层编排</strong>：编排器负责<strong>任务分解</strong> 和 <strong>Agent 分组</strong>
 - <strong>组内协调</strong>：每组内的 Agent <strong>自主协商</strong>执行顺序

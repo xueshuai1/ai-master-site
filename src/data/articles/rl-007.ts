@@ -629,7 +629,7 @@ def evaluate_sac(policy: GaussianPolicy,
             title: "7. PyTorch 实战：从零实现 SAC",
             body: `本节提供一个完整的、可运行的 SAC 实现，涵盖 Pendulum-v1（经典入门环境）和 MuJoCo 环境的训练。我们将展示从环境搭建、智能体初始化、训练循环到性能评估的完整流程。代码设计遵循模块化原则，每个组件独立可测试。
 
-实现的关键要点包括：经验回放使用 deque 实现高效采样，支持固定大小循环覆盖；训练采用延迟启动策略（delayed start），先随机探索填充 buffer 再开始训练；目标网络使用 Polyak 平均软更新（tau=0.005），比硬更新更稳定；策略更新频率高于 Q 更新（q_update_interval=2）可以提升最终性能但增加训练时间。整个实现约 300 行核心代码，是一个教学级的 SAC 参考实现。`,
+**实现的关键要点包括**：经验回放使用 deque 实现高效采样，支持固定大小循环覆盖；训练采用延迟启动策略（delayed start），先随机探索填充 buffer 再开始训练；目标网络使用 Polyak 平均软更新（tau=0.005），比硬更新更稳定；策略更新频率高于 Q 更新（q_update_interval=2）可以提升最终性能但增加训练时间。整个实现约 300 行核心代码，是一个教学级的 SAC 参考实现。`,
             code: [
                 {
                     lang: "python",

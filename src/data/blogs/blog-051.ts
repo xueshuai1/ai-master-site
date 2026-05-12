@@ -13,7 +13,7 @@ const post: BlogPost = {
 - GenericAgent（lsdefine/GenericAgent）：从 3.3K 行种子代码开始，通过自主探索生长出一棵「技能树」，以 6 倍更低的 token 消耗实现全系统控制
 - Evolver（EvoMap/evolver）：基于 GEP（Gene Expression Programming）的自进化引擎，使用基因（Genes）、胶囊（Capsules）和事件（Events）实现可审计的进化过程
 
-**> 核心问题**： 如果你要构建一个能「越用越强」的 AI Agent，应该选择哪种进化范式？
+****> 核心问题****： 如果你要构建一个能「越用越强」的 AI Agent，应该选择哪种进化范式？
 
 与 NousResearch Hermes Agent（114K+ stars）的「经验累积式进化」不同，GenericAgent 和 Evolver 采用的是结构性进化——它们不是简单地积累对话历史，而是真正改变 Agent 自身的结构和能力。
 
@@ -41,7 +41,7 @@ const post: BlogPost = {
 
 然后，通过「试错-总结-注册」循环，Agent 会自主发现新的能力并将其注册到技能树中。
 
-技能树的数据结构：
+**技能树的数据结构**：
 - 每个技能是一个节点，包含：名称、描述、前置技能、执行函数
 - 技能之间有依赖关系，形成有向无环图（DAG）
 - Agent 可以通过组合已有技能来发现新技能
@@ -434,12 +434,12 @@ print(f"最佳适应度: {evolver.events[-1]['best_fitness']:.2f}" if evolver.ev
       title: "四、实验：两种方法在同一任务上的表现",
       body: `我们设计了一个标准化测试——让两种 Agent 完成「代码仓库分析」任务，该任务需要读取文件、理解代码结构、生成报告。
 
-**测试环境**：
-**- 任务**：分析一个 50 文件的 Python 项目，生成架构报告
+****测试环境****：
+****- 任务****：分析一个 50 文件的 Python 项目，生成架构报告
 - 基础技能/基因相同（读取、解析、生成、验证）
 - 每种方法运行 10 次取平均值
 
-**实验结果**：`,
+****实验结果****：`,
       table: {
         headers: ["指标", "GenericAgent", "Evolver", "基线（无进化）"],
         rows: [
@@ -473,7 +473,7 @@ print(f"最佳适应度: {evolver.events[-1]['best_fitness']:.2f}" if evolver.ev
 3. 你希望进化过程可复现、可回滚
 4. 你有能力设计好的适应度函数
 
-混合方案（推荐）：
+**混合方案（推荐）**：
 在生产环境中，最佳实践可能是先使用 GenericAgent 发现有用的技能组合，然后将高价值技能固化为「基因」，用 Evolver 进行参数级别的持续优化。这类似于人类学习——先广泛探索，然后刻意练习。`,
       mermaid: `flowchart TD
     Start[需要自进化 Agent?] --> A{任务类型?}
@@ -696,7 +696,7 @@ print(f"最终技能列表: {list(engine.capsule.skills.keys())}")`,
 
 GEP 基因组进化像是「刻意练习」——在固定的能力空间内持续优化参数，适合固定任务。
 
-**未来趋势预测**：
+****未来趋势预测****：
 1. 混合架构将成为主流——先用技能树发现能力，再用 GEP 优化参数
 2. 安全护栏会更加成熟——随着生产环境使用增加，沙箱和回滚机制会标准化
 3. 多 Agent 协同进化——不是单个 Agent 进化，而是一组 Agent 协同进化（Hermes Agent 已经在探索这个方向）

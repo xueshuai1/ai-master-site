@@ -394,7 +394,7 @@ for k in [1, 3, 5, 7, 9, 11, 15]:
 
 这不仅仅是「不太理想」——它会导致模型完全失效。未标准化的特征会使距离度量失去意义，KNN 实际上变成了只看最大尺度特征的「单特征分类器」。
 
-标准化有两种主流方法：Z-Score 标准化（StandardScaler）将特征缩放到均值 0、标准差 1；Min-Max 归一化（MinMaxScaler）将特征缩放到 [0, 1] 区间。对 KNN 而言，Z-Score 通常是更好的选择，因为它对异常值更鲁棒。`,
+**标准化有两种主流方法**：Z-Score 标准化（StandardScaler）将特征缩放到均值 0、标准差 1；Min-Max 归一化（MinMaxScaler）将特征缩放到 [0, 1] 区间。对 KNN 而言，Z-Score 通常是更好的选择，因为它对异常值更鲁棒。`,
             code: [
                 {
                     lang: "python",

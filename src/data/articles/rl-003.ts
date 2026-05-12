@@ -100,7 +100,7 @@ class NeuralPolicy:
             title: "2. 策略梯度定理：理论基础",
             body: `策略梯度定理是策略梯度方法的数学基石，由 Sutton 等人在 2000 年提出。它给出了期望累积奖励关于策略参数的梯度的精确表达式，而无需对环境转移概率求导——这是该定理最精妙之处。
 
-定理的核心结论是：gradient J(theta) = E[gradient log pi_theta(a|s) * Q_pi(s,a)]。这个公式的直觉非常清晰：如果某个动作在某个状态下带来了高 Q 值，我们就增大该动作在该状态下的选择概率。关键是不需要知道环境如何响应动作，因为 Q_pi 已经隐含了环境的动力学特性。`,
+**定理的核心结论是**：gradient J(theta) = E[gradient log pi_theta(a|s) * Q_pi(s,a)]。这个公式的直觉非常清晰：如果某个动作在某个状态下带来了高 Q 值，我们就增大该动作在该状态下的选择概率。关键是不需要知道环境如何响应动作，因为 Q_pi 已经隐含了环境的动力学特性。`,
             code: [
                 {
                     lang: "python",
@@ -202,7 +202,7 @@ verify_policy_gradient_theorem()`
             title: "3. REINFORCE 算法：蒙特卡洛策略梯度",
             body: `REINFORCE 是 Williams 在 1992 年提出的经典算法，是策略梯度定理最直接的应用。它使用蒙特卡洛方法估计回报 G_t，即从时刻 t 开始到 episode 结束的所有折扣奖励之和。由于使用了完整的 episode 回报，REINFORCE 是无偏的估计，但也因此具有较高的方差。
 
-算法流程很简洁：采样完整轨迹，计算每个时间步的回报 G_t，然后用 grad log pi(a_t|s_t) * G_t 更新策略参数。REINFORCE 只在 episode 结束后才更新，属于回合更新。这保证了回报的无偏性，但也意味着学习效率较低，特别是在长 episode 中。`,
+**算法流程很简洁**：采样完整轨迹，计算每个时间步的回报 G_t，然后用 grad log pi(a_t|s_t) * G_t 更新策略参数。REINFORCE 只在 episode 结束后才更新，属于回合更新。这保证了回报的无偏性，但也意味着学习效率较低，特别是在长 episode 中。`,
             code: [
                 {
                     lang: "python",

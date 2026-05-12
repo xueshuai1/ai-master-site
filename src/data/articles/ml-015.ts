@@ -325,7 +325,7 @@ for name, model in [("Ordered", model_ordered), ("Plain", model_plain)]:
 
 在 XGBoost 和 LightGBM 中，每棵树是普通的决策树：不同节点可以使用不同特征、不同阈值进行分裂，这种非对称结构表达能力更强，但也更容易过拟合，因为每个节点都可以独立地拟合局部噪声。
 
-**对称树的约束**——每层统一分裂规则——实际上起到了正则化的作用。假设树深度为 6，非对称树可能有 2^6-1=63 个独立的分裂规则，而对称树只需要 6 个。这大幅减少了模型自由度，天然抑制了过拟合。
+对称树的约束——每层统一分裂规则——实际上起到了正则化的作用。假设树深度为 6，非对称树可能有 2^6-1=63 个独立的分裂规则，而对称树只需要 6 个。这大幅减少了模型自由度，天然抑制了过拟合。
 
 从工程角度，对称树也有独特的优势：由于每层分裂规则统一，推断时可以用位运算替代条件判断——将样本在每个分裂条件上的结果（0 或 1）拼接成一个整数，直接作为叶子索引。这使得 CatBoost 的推理速度极快，比 XGBoost 快数倍。
 
@@ -576,11 +576,11 @@ plt.show()`
             title: "6. 超参数调优指南",
             body: `CatBoost 的超参数数量较多，但大部分有合理的默认值。掌握核心参数的调优策略，比盲目网格搜索更高效。
 
-第一梯队（必须调）：iterations（树数量）和 learning_rate（学习率）是最关键的参数对。两者的关系是：learning_rate 越小，需要的 iterations 越多，但模型更精确。经典策略是使用 early_stopping_rounds 自动确定最优 iterations。depth（树深度）控制模型复杂度，对称树模式下 4-10 是合理范围。
+**第一梯队（必须调）**：iterations（树数量）和 learning_rate（学习率）是最关键的参数对。两者的关系是：learning_rate 越小，需要的 iterations 越多，但模型更精确。经典策略是使用 early_stopping_rounds 自动确定最优 iterations。depth（树深度）控制模型复杂度，对称树模式下 4-10 是合理范围。
 
 第二梯队（强烈建议调）：l2_leaf_reg 控制 L2 正则化强度，值越大模型越简单；random_strength 控制分裂时随机性，增加它可以降低过拟合；bagging_temperature 控制采样温度，影响每棵树的训练数据多样性。
 
-第三梯队（按需调）：one_hot_max_size 决定低于多少基数的类别使用 One-Hot 编码（默认 2）；max_ctr_complexity 控制特征组合的最大复杂度；min_data_in_leaf 控制叶子最小样本数。
+**第三梯队（按需调）**：one_hot_max_size 决定低于多少基数的类别使用 One-Hot 编码（默认 2）；max_ctr_complexity 控制特征组合的最大复杂度；min_data_in_leaf 控制叶子最小样本数。
 
 CatBoost 的内置交叉验证和 early stopping 功能非常实用，推荐使用 CatBoost 原生的 CV 工具而非 sklearn 的 cross_val_score，因为前者可以利用 GPU 加速且与 CatBoost 的评估指标无缝集成。`,
             code: [

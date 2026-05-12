@@ -18,17 +18,17 @@ export const article: Article = {
 
 当你面对以下场景时，基础 Prompt 就力不从心了：
 
-**场景 1**：复杂数学推理
+****场景 1****：复杂数学推理
 > 一个水箱有 3 根进水管，分别以每分钟 2L、3L、5L 的速度进水，同时有 1 根排水管以每分钟 4L 的速度排水。水箱初始有 20L 水，容量为 100L。问多少分钟后水箱满？
 
 基础 Prompt 往往让模型「心算」给出答案，错误率极高。而 Chain-of-Thought 能让模型一步步推理，准确率提升 3-5 倍。
 
-**场景 2**：专业领域问答
+****场景 2****：专业领域问答
 > 给定一段法律文本，判断某个行为是否违法。
 
 没有领域知识的 Few-Shot 示例，模型的回答往往是「大概可能也许」的模糊判断。
 
-**场景 3**：多步骤任务规划
+****场景 3****：多步骤任务规划
 > 分析一份销售数据，找出趋势，生成报告，并给出改进建议。
 
 这需要模型具备任务分解、多步推理和自我修正的能力。
@@ -43,9 +43,9 @@ export const article: Article = {
       title: "二、Chain-of-Thought（思维链）：让模型「想清楚再说」",
       body: `Chain-of-Thought（CoT）是 Wei et al. (2022) 在论文「Chain-of-Thought Prompting Elicits Reasoning in Large Language Models」中提出的核心技术。
 
-**核心思想**：在 Prompt 中引导模型展示推理过程，而不是直接给出最终答案。
+****核心思想****：在 Prompt 中引导模型展示推理过程，而不是直接给出最终答案。
 
-**原理图解**：
+****原理图解****：
 
 模型在处理复杂问题时，内部其实经过了多层注意力计算。但直接输出答案时，中间推理步骤被「压缩」了，导致错误累积。CoT 通过强制模型输出中间步骤，相当于给推理过程一个「外部工作记忆」，显著减少错误。`,
       mermaid: `graph TD
@@ -110,7 +110,7 @@ print(result)`, filename: "zero_shot_cot.py" }],
       title: "2.2 Few-Shot CoT：用示例教模型推理",
       body: `Few-Shot CoT 在 Zero-Shot 的基础上更进一步：给模型几个「问题 → 推理过程 → 答案」的完整示例，让模型学习推理的模式。
 
-**关键区别**：
+****关键区别****：
 
 Zero-Shot CoT 只给引导语，让模型自己想。
 Few-Shot CoT 给示范，让模型照着学。
@@ -209,13 +209,13 @@ print(f"答案：{result['answer']}")`, filename: "few_shot_cot.py" }],
       title: "三、Self-Consistency（自一致性）：投票选出最佳答案",
       body: `Self-Consistency 是 Wang et al. (2022) 提出的增强 CoT 的方法。
 
-**核心思想**：
+****核心思想****：
 不要只让模型推理一次。让模型从同一条 Prompt 出发，用不同的随机种子推理 N 次（通常 N=5-40），然后对最终答案进行投票，选出现次数最多的那个。
 
 为什么有效？
 模型的推理过程有随机性。单次推理可能「走错路」，但多次推理中，正确的推理路径会收敛到相同的答案。投票机制过滤掉了偶然的错误。
 
-**效果对比**：
+****效果对比****：
 
 | 方法 | GSM8K 准确率 | SVAMP 准确率 | 成本倍数 |
 |------|-------------|-------------|---------|
@@ -344,7 +344,7 @@ print(result['best_reasoning'])`, filename: "self_consistency_cot.py" }],
       title: "四、ReAct 框架：推理与行动的交织",
       body: `ReAct（Reasoning + Acting）是 Yao et al. (2022) 提出的框架，将推理（Reasoning）和行动（Acting）交替进行。
 
-**核心流程**：
+****核心流程****：
 
 1. Thought（思考）：分析当前状态，决定下一步做什么
 2. Action（行动）：执行具体操作（搜索、计算、调用工具）
@@ -481,10 +481,10 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
       title: "五、Tree of Thoughts（思维树）：多路径探索",
       body: `Tree of Thoughts（ToT）是 Yao et al. (2023) 提出的更高级的推理框架。
 
-**核心思想**：
+****核心思想****：
 不是只沿着一条推理路径走到底，而是生成多个可能的推理步骤，评估每个步骤的质量，选择最有希望的路径继续深入。
 
-**这就像下棋**：高手不会只考虑一步棋，而是同时推演多条可能的走法，然后选择最优的那条。
+****这就像下棋****：高手不会只考虑一步棋，而是同时推演多条可能的走法，然后选择最优的那条。
 
 ToT 的三个关键操作：
 
@@ -546,7 +546,7 @@ ToT 的三个关键操作：
       title: "六、高级 Prompt 策略组合：生产级 Prompt 系统",
       body: `在实际生产环境中，单一技术往往不够。我们需要根据任务类型组合不同的策略。
 
-策略选择决策树：
+**策略选择决策树**：
 
 1. 任务是否需要外部信息？
    - 是 → ReAct（推理+工具调用）
@@ -811,20 +811,20 @@ print(f"\\n提取结果：{r2.answer}")`, filename: "prompt_router.py" }],
       title: "八、下一步学习路径",
       body: `掌握高级 Prompt 技术后，你可以继续深入以下方向：
 
-**📖 推荐阅读**：
+****📖 推荐阅读****：
 - [Agent 学习导览](/knowledge/agent-guide) — 从 Prompt 到 Agent 的进阶
 - [LLM 应用开发导览](/knowledge/llm-app-guide) — 构建完整的 LLM 应用
 - [AI 工程化导览](/knowledge/aieng-guide) — 生产级 AI 系统架构
 
-**🔧 实践建议**：
+****🔧 实践建议****：
 1. 从 Zero-Shot CoT 开始，在现有 Prompt 中加一句"请一步步思考"
 2. 为你的核心场景建立评估集（至少 20 条测试用例）
 3. 尝试 Self-Consistency，比较 k=1 和 k=5 的准确率差异
 4. 对于需要外部信息的场景，实现一个简单的 ReAct Agent
 
-⚠️ 常见误区：
-- 过度追求复杂技术：简单的 Zero-Shot CoT 往往就能解决 80% 的问题
-**- 忽略评估**：没有测试的 Prompt 优化是盲目的
+**⚠️ 常见误区**：
+**- 过度追求复杂技术**：简单的 Zero-Shot CoT 往往就能解决 80% 的问题
+****- 忽略评估****：没有测试的 Prompt 优化是盲目的
 - 忽视 Token 成本：Self-Consistency 和 ToT 的成本可能很高，需要权衡`,
     }
   ]

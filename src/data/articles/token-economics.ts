@@ -16,7 +16,7 @@ export const article: Article = {
       title: "一、为什么 2026 年你必须关心 Token 经济学",
       body: `2026 年 4 月 20 日，**Anthropic** 发布 **Claude** Opus 4.7，这是 **Claude** 系列首次更换 tokenizer。Simon Willison 第一时间实测发现：
 
-- 纯文本场景：token 增长 1.46×
+**- 纯文本场景**：token 增长 1.46×
 - 高分辨率图像（3456×2234）：token 增长 3.01×
 - 30 页 PDF 文档：token 增长 1.08×
 
@@ -330,7 +330,7 @@ def compare_image_token_costs(image_path: str) -> dict:
       title: "五、6 个实战级成本优化策略",
       body: `掌握了 token 经济学原理后，以下是经过实战验证的成本优化策略，可以将 LLM API 成本降低 30%-60%。
 
-### 策略 1：选择 token 效率最高的模型
+**### 策略 1**：选择 token 效率最高的模型
 
 不是最便宜的模型最省钱。如果模型 A 的 token 效率是模型 B 的 1.5 倍，即使单价稍高，总成本可能更低。`,
       code: [{
