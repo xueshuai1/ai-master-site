@@ -5668,4 +5668,46 @@ createdAt: "2025-01-01T00:00:00Z",
     createdAt: "2024-08-26",
   },
 
+  // 自动收录（2026-05-12）
+  {
+    id: "coleam00_context_engineering_intro",
+    name: "Context Engineering Intro",
+    category: "aieng",
+    description: "Context engineering is the new vibe coding - it's the way to actually make AI co...",
+    url: "https://github.com/coleam00/context-engineering-intro",
+    tags: ["aieng"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 13302,
+    createdAt: "2025-07-02",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "ten_framework_ten_framework",
+    name: "Ten Framework",
+    category: "agent",
+    description: " Open-source framework for conversational voice AI agents",
+    url: "https://github.com/ten-framework/ten-framework",
+    tags: ["ai", "multi-modal", "real-time", "video", "voice"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 10559,
+    createdAt: "2024-06-19",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "livekit_agents",
+    name: "Agents",
+    category: "agent",
+    description: "A framework for building realtime voice AI agents 🤖🎙️📹 ",
+    url: "https://github.com/livekit/agents",
+    tags: ["agents", "ai", "openai", "real-time", "video"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 10443,
+    createdAt: "2023-10-19",
+  },
+
 ];
