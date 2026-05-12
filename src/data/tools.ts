@@ -5710,4 +5710,46 @@ createdAt: "2025-01-01T00:00:00Z",
     createdAt: "2023-10-19",
   },
 
+  // 自动收录（2026-05-12）
+  {
+    id: "oramasearch_orama",
+    name: "Orama",
+    category: "rag",
+    description: "🌌  A complete search engine and RAG pipeline in your browser, server or edge ne...",
+    url: "https://github.com/oramasearch/orama",
+    tags: ["algiorithm", "data-structures", "full-text", "javascript", "node"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 10333,
+    createdAt: "2022-05-10",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "krillinai_krillinai",
+    name: "KrillinAI",
+    category: "model",
+    description: "Video translation and dubbing tool powered by LLMs. The video translator offers 100 language translations and one-click full-process deployment. The video translation output is optimized for platforms like YouTube，TikTok.   AI视频翻译配音工具，100种语言双向翻译，一键部署全流程，可以生抖音，小红书，哔哩哔哩，视频号，TikTok，Youtube等形态的内容成适配",
+    url: "https://github.com/krillinai/krillinai",
+    tags: ["dubbing", "localization", "tts", "video-transcription", "video-translation"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 10086,
+    createdAt: "2024-12-17",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "chenhg5_cc_connect",
+    name: "Cc Connect",
+    category: "agent",
+    description: "Bridge local AI coding agents (Claude Code, Cursor, Gemini CLI, Codex) to messag...",
+    url: "https://github.com/chenhg5/cc-connect",
+    tags: ["agent"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 8829,
+    createdAt: "2026-02-28",
+  },
+
 ];
