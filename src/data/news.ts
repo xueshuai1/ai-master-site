@@ -16,6 +16,170 @@ export interface NewsItem {
 
 export const news = [
 {
+    id: "news-1412",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "世界银行发布 2026 年世界发展报告：AI 正在重塑全球发展格局",
+    summary: "世界银行发布《2026 年世界发展报告：人工智能促进发展》，将 AI 定义为通用技术，深入探讨 AI 对全球发展中国家的机遇与挑战。",
+    content: `## 世界银行 2026 年度报告：AI 重塑全球发展格局
+
+**2026 年 5 月**，世界银行发布年度旗舰报告。
+
+### 核心内容
+- **AI 定义为通用技术**：与电力、互联网同等重要的技术革命
+- **发展中国家机遇**：AI 可加速医疗、教育、农业等领域的跨越式发展
+- **挑战与风险**：数字鸿沟、就业替代、数据主权
+
+### 关键建议
+- 建立国家级 AI 基础设施投资
+- 加强 AI 伦理与治理框架
+- 推动全球 AI 技术合作
+
+### 行业意义
+
+作为全球最具影响力的发展报告之一，这份报告将 AI 定位为 21 世纪最重要的发展驱动力。对发展中国家的政策制定者和投资者具有重要参考价值。
+
+**来源：** World Bank
+**链接：** https://www.worldbank.org/en/publication/wdr2026`,
+    date: "2026-05-13 04:00",
+    source: "World Bank",
+    sourceUrl: "https://www.worldbank.org/en/publication/wdr2026",
+    href: "/news/news-1412",
+  },
+{
+    id: "news-1411",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "OpenAI 和 Anthropic 主导 2026 AI 竞赛：模型、企业与算力全面领先",
+    summary: "行业分析显示，OpenAI 和 Anthropic 在模型能力、企业服务和算力交易方面全面领先，Google 和 Meta 作为挑战者奋力追赶。",
+    content: `## 2026 AI 双雄：OpenAI 和 Anthropic 的绝对主导
+
+**2026 年 5 月**，多位行业分析师对当前 AI 竞争格局进行了深度分析。
+
+### 双雄优势
+- **模型能力**：GPT-5.5 和 Claude Opus 4.7 稳居第一梯队
+- **企业服务**：两家均已推出企业级合资企业，加速 AI 落地
+- **算力交易**：Anthropic-Google 2000 亿美元协议，OpenAI-AWS 深度整合
+
+### 挑战者
+- **Google**：Gemini 系列和 TPU 算力，消费者订阅突破 3.5 亿
+- **Meta**：Llama 开源生态，WhatsApp/Messenger 海量用户基础
+- **xAI**：Grok 系列，与 SpaceX Colossus 算力合作
+
+### 行业趋势
+
+AI 行业正在经历快速整合，头部效应日益明显。OpenAI 和 Anthropic 在模型、企业服务和算力交易三个维度上形成了难以逾越的竞争优势。
+
+**来源：** Ethan Mollick + Jessica Lessin + Blockchain.news
+**链接：** https://blockchain.news/ainews/anthropic-and-openai-dominate-2026-ai-race`,
+    date: "2026-05-13 04:00",
+    source: "Ethan Mollick + Jessica Lessin + Blockchain.news",
+    sourceUrl: "https://blockchain.news/ainews/anthropic-and-openai-dominate-2026-ai-race",
+    href: "/news/news-1411",
+  },
+{
+    id: "news-1410",
+    tag: "安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Google Chrome 被曝静默下载 4GB AI 模型到用户设备：未经同意，涉嫌违法",
+    summary: "安全研究员发现 Google Chrome 在未经用户明确同意的情况下，自动下载 4GB 的 Gemini Nano AI 模型到用户设备，删除后还会自动重新下载。涉嫌违反欧盟隐私法。",
+    content: `## Chrome 静默下载 4GB AI 模型：隐私争议爆发
+
+**2026 年 5 月**，多名安全研究员发现 Chrome 的异常行为。
+
+### 事件详情
+- **4GB 文件**：Chrome 自动下载名为 weights.bin 的 Gemini Nano 模型文件
+- **无明确同意**：用户未收到任何提示或选择权
+- **自动重装**：删除后 Chrome 会自动重新下载
+- **能耗问题**：大规模数据传输浪费大量能源
+
+### 法律风险
+- **涉嫌违反欧盟 GDPR**：未经同意下载大型文件可能违反欧盟数据保护法规
+- **研究员批评**：Alexander Hanff 指出该行为模式与 Anthropic Claude Desktop 案例类似，但规模大两到三个数量级
+- **OECD 记录**：已被 OECD AI 事件数据库收录
+
+### 如何检查与关闭
+- 检查设备中是否存在约 4GB 的 weights.bin 文件
+- Chrome 设置 → 隐私与安全 → 关闭 AI 相关功能
+- 企业用户可使用组策略完全阻止
+
+### 行业反思
+
+AI 功能正在从云端走向端侧，但如何在功能创新和用户自主权之间找到平衡，是整个行业需要面对的课题。
+
+**来源：** Tom's Hardware + Malwarebytes + XDA Developers + Ars Technica
+**链接：** https://www.tomshardware.com/tech-industry/cyber-security/google-chrome-silently-downloads-4gb-ai-model-to-your-device-without-permission-report-claims`,
+    date: "2026-05-13 04:00",
+    source: "Tom's Hardware + Malwarebytes + XDA Developers + Ars Technica",
+    sourceUrl: "https://www.tomshardware.com/tech-industry/cyber-security/google-chrome-silently-downloads-4gb-ai-model-to-your-device-without-permission-report-claims",
+    href: "/news/news-1410",
+  },
+{
+    id: "news-1409",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "OpenAI AI 智能手机加速推进：联手联发科天玑 9600 芯片，2027 年量产",
+    summary: "据分析师郭明錤最新爆料，OpenAI 的 AI 智能手机项目正在加速推进，将采用联发科 2nm 天玑 9600 定制芯片，AI Agent 将替代传统 App，量产时间提前至 2027 年。",
+    content: `## OpenAI AI 手机：从概念到量产的加速冲刺
+
+**2026 年 5 月**，分析师郭明錤披露了 OpenAI 智能手机的最新进展。
+
+### 核心规格
+- **芯片**：联发科天玑 9600，台积电 2nm 工艺定制版
+- **交互模式**：AI Agent 替代传统 App，无应用商店
+- **代工厂**：立讯精密独家设计与组装
+- **量产时间**：2027 年（此前预期 2028 年）
+
+### 行业影响
+- **颠覆 App 生态**：如果 AI Agent 真的替代 App，将对 Apple App Store 和 Google Play 构成重大威胁
+- **芯片竞争**：联发科此前与高通共同竞争，目前倾向于联发科方案
+- **AI 手机定义**：这款设备可能重新定义什么是「AI 原生手机」
+
+### 背景
+
+OpenAI 此前已宣布与微软合作进入新阶段，并接入 AWS 平台，正在从纯软件公司向软硬一体方向迈进。
+
+**来源：** 9to5Mac + GizmoChina + Gadgets360 + TNW
+**链接：** https://9to5mac.com/2026/05/05/openais-new-phone-being-fast-tracked-to-launch-next-year-per-report/`,
+    date: "2026-05-13 04:00",
+    source: "9to5Mac + GizmoChina + Gadgets360 + TNW",
+    sourceUrl: "https://9to5mac.com/2026/05/05/openais-new-phone-being-fast-tracked-to-launch-next-year-per-report/",
+    href: "/news/news-1409",
+  },
+{
+    id: "news-1408",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "2026 年 5 月科技裁员潮加速：Cloudflare 裁员 20%、Coinbase、Upwork、xAI 均因 AI 重组",
+    summary: "2026 年 5 月，多家科技巨头宣布大规模裁员。Cloudflare 裁减约 1100 人（占总人数 20%），内部 AI 使用量三个月增长 600%。Coinbase、Upwork、xAI、PayPal 等也纷纷跟进，以 AI 驱动的组织转型是核心原因。",
+    content: `## 2026 年 5 月：AI 裁员潮席卷科技行业
+
+**2026 年 5 月 7-8 日**，多家科技公司集中宣布裁员计划。
+
+### 裁员详情
+- **Cloudflare**：裁员约 1100 人，占全球员工 20%，内部 AI 使用量三个月增长 **600%**
+- **Coinbase**：以 AI 驱动效率提升为由进行裁员
+- **Upwork**：作为自由职业平台却因 AI 替代而裁员，引发讽刺性讨论
+- **xAI**：Musk 旗下 AI 公司也在进行人员调整
+- **PayPal**：同样加入裁员行列
+
+### 转型方向
+- **Cloudflare**：转向「Agentic AI 优先运营模式」
+- **行业共识**：不是单纯的财务困难，而是围绕 AI 进行的系统性重组
+- **分析师观点**：这反映了 AI 从「辅助工具」向「核心生产力」的转变
+
+### 深层影响
+
+2026 年 5 月可能被视为 AI 重塑劳动力市场的关键转折点。当科技公司开始用 AI 替代自身员工时，这种模式会加速向全行业扩散。
+
+**来源：** FastCompany + Financial Express + Straits Times + Yahoo Finance
+**链接：** https://www.fastcompany.com/91538995/tech-layoffs-due-to-ai-this-week-cloudflare-paypal-coinbase-upwork`,
+    date: "2026-05-13 04:00",
+    source: "FastCompany + Financial Express + Straits Times + Yahoo Finance",
+    sourceUrl: "https://www.fastcompany.com/91538995/tech-layoffs-due-to-ai-this-week-cloudflare-paypal-coinbase-upwork",
+    href: "/news/news-1408",
+  },
+{
     id: "news-1407",
     tag: "开源项目",
     tagColor: "bg-purple-500/10 text-purple-300",

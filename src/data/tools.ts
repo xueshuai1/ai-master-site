@@ -5494,4 +5494,46 @@ language: "Python",
     githubStars: 8835,
     createdAt: "2026-02-28",
   }
+  // 自动收录（2026-05-12）
+  {
+    id: "hbai_ltd_toonflow_app",
+    name: "Toonflow App",
+    category: "model",
+    description: "Toonflow 是开源一站式 AI 短剧创作工具，将小说、剧本快速转化为动画短剧。集成 AI 编剧、智能分镜、角色与视频生成，跨平台桌面端轻量部署，助力创作者低成本批量产出视觉内容。Toonflow is an open-source AI tool that turns stories and scripts into animated short dramas. Features AI scriptwriting, storyboarding, character and video generation. A cross-platform desktop app for efficient content creation.",
+    url: "https://github.com/hbai-ltd/toonflow-app",
+    tags: ["ai", "ai-content-creation", "ai-tool", "ai-video-generation", "automation"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 7872,
+    createdAt: "2026-01-29",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "sweepai_sweep",
+    name: "Sweep",
+    category: "model",
+    description: "Sweep: AI coding assistant for JetBrains",
+    url: "https://github.com/sweepai/sweep",
+    tags: ["ai", "ai-developer", "ai-softwar", "ai-software", "code-assistant"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 7712,
+    createdAt: "2023-06-14",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "open_mmlab_mmagic",
+    name: "Mmagic",
+    category: "multimodal",
+    description: "OpenMMLab Multimodal Advanced, Generative, and Intelligent Creation Toolbox. Unl...",
+    url: "https://github.com/open-mmlab/mmagic",
+    tags: ["aigc", "computer-vision", "deep-learning", "diffusion", "diffusion-models"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 7426,
+    createdAt: "2019-08-23",
+  },
+
 ];
