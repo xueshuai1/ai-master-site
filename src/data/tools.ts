@@ -5608,4 +5608,46 @@ createdAt: "2025-01-01T00:00:00Z",
     createdAt: "2026-03-10",
   },
 
+  // 自动收录（2026-05-12）
+  {
+    id: "pydantic_pydantic_ai",
+    name: "Pydantic Ai",
+    category: "framework",
+    description: "AI Agent Framework, the Pydantic way",
+    url: "https://github.com/pydantic/pydantic-ai",
+    tags: ["agent-framework", "genai", "llm", "pydantic", "python"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 17014,
+    createdAt: "2024-06-21",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "camel_ai_camel",
+    name: "Camel",
+    category: "framework",
+    description: "🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law ...",
+    url: "https://github.com/camel-ai/camel",
+    tags: ["agent", "ai-societies", "artificial-intelligence", "communicative-ai", "cooperative-ai"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 16923,
+    createdAt: "2023-03-17",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "raga_ai_hub_ragaai_catalyst",
+    name: "RagaAI Catalyst",
+    category: "mlops",
+    description: "Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Incl...",
+    url: "https://github.com/raga-ai-hub/ragaai-catalyst",
+    tags: ["agentic-ai", "agentic-ai-development", "agentneo", "agents", "ai-agent-monitoring"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 16158,
+    createdAt: "2024-08-26",
+  },
+
 ];
