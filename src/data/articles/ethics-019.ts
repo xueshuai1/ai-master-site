@@ -255,27 +255,27 @@ export const article: Article = {
   };
 }` }
       ],
-      mermaid: `classDiagram
-    class China {
-      +6类全覆盖标签
-      +强制标识
-      +事前嵌入
-      +网信办监管
-    }
-    class EU {
-      +风险分级标识
-      +透明度义务
-      +C2PA标准
-      +AI Act法律
-    }
-    class USA {
-      +行政引导
-      +行业自律
-      +NIST指南
-      +侧重深度伪造
-    }
-    China -->|对比| EU
-    EU -->|对比| USA`
+      mermaid: `graph TD
+    subgraph 中国模式
+        C1["6 类全覆盖标签"]
+        C2["强制标识"]
+        C3["事前嵌入"]
+        C4["网信办监管"]
+    end
+    subgraph 欧盟模式
+        E1["风险分级标识"]
+        E2["透明度义务"]
+        E3["C2PA 标准"]
+        E4["AI Act 法律"]
+    end
+    subgraph 美国模式
+        U1["行政引导"]
+        U2["行业自律"]
+        U3["NIST 指南"]
+        U4["侧重深度伪造"]
+    end
+    中国模式 -->|更严格| 欧盟模式
+    欧盟模式 -->|更宽松| 美国模式`
     },
     {
       title: "六、注意事项：合规实践中的关键问题",
