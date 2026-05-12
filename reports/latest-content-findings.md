@@ -1,25 +1,26 @@
-⏰ 写入时间：2026-05-12 12:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-12 16:06 (Asia/Shanghai)
 ## 本轮发现
-🔥 热点（12 条，已选 12 条写入 news.ts）：
-1. [火山引擎 Agent 套餐包] 业界首个 AI Agent 标准化套餐 → 适合：博客/行业观察
-2. [腾讯云 QClaw 文件空间] 打通腾讯文档与 ima 知识库 → 适合：应用评测
-3. [电商 AI 买家秀泛滥] 央视网评筑技术防火墙 → 适合：博客/政策
-4. [通用汽车裁 600 IT 员工] 为 AI 人才腾位置 → 适合：博客/行业分析
-5. [Linus 吐槽 AI 补丁量激增] Linux 内核开发遇 AI → 适合：开源博客
-6. [AMD AI 开发者日上海] Lisa Su 出席 → 适合：行业动态
-7. [贾跃亭重返法拉第未来] 转型物理 AI 生态 → 适合：行业博客
-8. [Google Gemini 多模态 RAG] 文件搜索升级 → 适合：技术博客
-9. [中国 AI 调用量 2.11 倍反超美国] 全球第一 → 适合：行业分析
-10. [微信 AI 支付升级] AI 深度融入社交 → 适合：应用评测
-11. [阶跃语音模型全球前三] 中国大模型听感新高 → 适合：模型评测
-12. [AI 虚拟伴侣 App 乱象] 13 元定制色情人设 → 适合：政策博客
+🔥 热点（12 条，已写入 news-1375~1386）：
+1. [Anthropic 更新 RSP] 负责任扩展政策更新，明确 AI 安全护栏 → 适合：博客/知识库
+2. [Claude Code 调度台] 一个界面管理多个 AI 编码会话 → 适合：博客
+3. [OpenClaw 重磅更新] Agent 能力大幅扩展，"长手长脚" → 适合：知识库
+4. [Gemini Omni 首曝] 视频版"香蕉课堂"，多模态能力跃升 → 适合：博客
+5. [可灵 AI 独立融资] 估值 200 亿美元，剥离快手 → 适合：行业观察
+6. [网信办 AI 标签新规] 短视频 AI 内容必须标注 6 类标签 → 适合：知识库
+7. [Cerebras IPO] 350 亿美元估值挑战英伟达 → 适合：博客
+8. [OpenAI+微软合作] 到 2030 年节省 970 亿美元 → 适合：行业分析
+9. [千问重构淘宝] 阿里 AI 原生改造电商搜索 → 适合：博客/知识库
+10. [Thinking Machines] AI 会"边听边说"，实时对话范式转变 → 适合：博客
+11. [Mozilla Firefox + Claude Mythos] AI 编码进入安全关键领域 → 适合：知识库
+12. [OpenAI 语音智能 API] 低延迟语音 AI 大规模实践 → 适合：博客
+
 🆕 新工具（3 个）：
-1. [Agent Zero] Agent Zero AI framework — 17,638 星
-2. [SuperAGI] Dev-first open source autonomous AI agent — 17,513 星
-3. [HyperFrames] Write HTML. Render video. Built for agents — 17,309 星
-💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI 买家秀治理与平台责任
-2. KNOWLEDGE-BASE-PLAN.md 待补：物理 AI（机器人/自动驾驶/智能硬件）
-3. KNOWLEDGE-BASE-PLAN.md 待补：中国大模型调用量 vs 美国对比分析
-4. KNOWLEDGE-BASE-PLAN.md 待补：AI 内核开发对开源社区的影响
-5. KNOWLEDGE-BASE-PLAN.md 待补：AI 虚拟伴侣监管与 GUARD 法案
+1. [Pydantic AI] 17k⭐ — Pydantic 生态 AI Agent 框架 → GitHub: pydantic/pydantic-ai
+2. [Camel] 16.9k⭐ — 多智能体协作框架 → GitHub: camel-ai/camel
+3. [RagaAI Catalyst] 16.2k⭐ — Agent 可观测性与评估 SDK → GitHub: raga-ai-hub/ragaai-catalyst
+
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 安全] Anthropic RSP 政策深度分析
+2. KNOWLEDGE-BASE-PLAN.md 待补：[多模态] Gemini Omni 与 OpenAI GPT-4o 视频能力对比
+3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 芯片] Cerebras 晶圆级芯片技术详解
+4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 治理] 中国 AI 内容标识政策与全球对比
