@@ -33,7 +33,7 @@ graph LR
     A4[固定 prompt 栈] --> B4[自适应 prompt]
 
     classDef old fill:#c0392b,stroke:#333,stroke-width:1px,color:#fff
-    classDef new fill:#1e8449,stroke:#333,stroke-width:1px,color:#fff
+    classDef new fill:#145a2e,stroke:#333,stroke-width:1px,color:#fff
     class A,A1,A2,A3,A4 old
     class B,B1,B2,B3,B4 new
 \`\`\`
