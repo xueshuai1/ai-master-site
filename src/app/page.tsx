@@ -5,7 +5,6 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import BreathingBadge from "@/components/BreathingBadge";
-import CountUp from "@/components/CountUp";
 import { LAST_UPDATE_TIME } from "@/data/update-time";
 import { news } from "@/data/news";
 import { blogs } from "@/data/blogs";
@@ -142,10 +141,10 @@ export default function Home() {
           {/* Stats Cards */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {([
-              { value: articles.length, suffix: "+", label: "篇教程", icon: "📚", trend: "持续更新" },
-              { value: tools.length, suffix: "+", label: "个开源项目", icon: "🛠️", trend: "精选收录" },
-              { value: blogs.length, suffix: "+", label: "篇博客", icon: "✍️", trend: "持续更新" },
-              { value: 0, display: "100%", label: "免费", icon: "❤️", trend: "永远免费" },
+              { display: `${articles.length}+`, label: "篇教程", icon: "📚", trend: "持续更新" },
+              { display: `${tools.length}+`, label: "个开源项目", icon: "🛠️", trend: "精选收录" },
+              { display: `${blogs.length}+`, label: "篇博客", icon: "✍️", trend: "持续更新" },
+              { display: "100%", label: "免费", icon: "❤️", trend: "永远免费" },
             ] as const).map((stat) => (
               <div
                 key={stat.label}
@@ -154,12 +153,7 @@ export default function Home() {
                 {/* 悬浮时浮现的渐变光晕 */}
                 <span className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-brand-500/0 via-accent-500/0 to-brand-500/0 group-hover:from-brand-500/10 group-hover:via-accent-500/5 group-hover:to-brand-500/10 transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
                 <span className="text-2xl transition-transform group-hover:scale-110">{stat.icon}</span>
-                <CountUp
-                  value={stat.value}
-                  suffix={"suffix" in stat ? stat.suffix : ""}
-                  display={"display" in stat ? stat.display : undefined}
-                  className="text-2xl font-bold text-white tabular-nums"
-                />
+                <span className="text-2xl font-bold text-white tabular-nums">{stat.display}</span>
                 <span className="text-sm text-slate-400">{stat.label}</span>
                 <span className="text-xs text-emerald-400/70">{stat.trend}</span>
               </div>
