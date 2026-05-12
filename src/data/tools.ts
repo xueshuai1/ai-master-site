@@ -5536,4 +5536,46 @@ language: "Python",
     createdAt: "2019-08-23",
   },
 
+  // 自动收录（2026-05-12）
+  {
+    id: "vespa_engine_vespa",
+    name: "Vespa",
+    category: "rag",
+    description: "AI + Data, online. https://vespa.ai",
+    url: "https://github.com/vespa-engine/vespa",
+    tags: ["ai", "big-data", "java", "machine-learning", "rag"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 6912,
+    createdAt: "2016-06-03",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "github_copilotforxcode",
+    name: "CopilotForXcode",
+    category: "coding",
+    description: "AI coding assistant for Xcode",
+    url: "https://github.com/github/copilotforxcode",
+    tags: ["ai-assistant", "github-copilot", "intelligence", "ios", "macos"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 6075,
+    createdAt: "2024-09-19",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "klavis_ai_klavis",
+    name: "Klavis",
+    category: "model",
+    description: "Klavis AI:  MCP integration platforms that let AI agents use tools reliably at a...",
+    url: "https://github.com/klavis-ai/klavis",
+    tags: ["agents", "ai", "ai-agents", "api", "developer-tools"],
+    price: "开源",
+    icon: "🔧",
+    githubStars: 5734,
+    createdAt: "2025-04-14",
+  },
+
 ];
