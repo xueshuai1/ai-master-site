@@ -293,3 +293,5 @@ export const blog: BlogPost = {
   readTime: 30,
   content,
 };
+
+export default blog;
