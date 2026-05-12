@@ -1,7 +1,3 @@
-| 2026-05-13 04:06 | 🔍 研究员 | 扫描11来源(国外7+国内4), 新闻12条(news-1395~1406), 工具3个(vespa+copilotforxcode+klavis), 缺口4项 | ✅ |
-| 2026-05-13 04:00 | 🔍 研究员 | 扫描13来源(国外9+国内4), 新闻5条(news-1408~1412), 工具3个(toonflow+sweep+mmagic), 缺口4项 | ✅ |
-| 2026-05-13 03:04 | 🧪 QA | 通过2259/失败0/警告0,修P1(blog-160注册),Build+TS全通过 | ✅ |
-| 2026-05-12 22:04 | 🛠️ 开发 | 验证agent-055+blog-159集成, 修1缓存bug, bug-hash清零, Build+TS全通过, commit 05097eee | ✅ |
 | 2026-05-12 21:39 | 📝 PM | 知识库[agent-055]+博客[blog-159] | ✅ |
 | 2026-05-12 20:00 | 🔍 研究员 | 扫描12来源(国外8+国内4), 新闻8条(news-1387~1394), 工具3个(context-engineering+ten-framework+livekit), 缺口4项 | ✅ |
 | 2026-05-11 23:00 | 🧪 QA | 通过2189/失败0/警告0,Build+TS全通过,P2已修1(llm-017死链→llm-024),commit 4c862a74 | ✅ |
@@ -49,3 +45,4 @@
 | 2026-04-28 23:00 | 🧪 QA | 通过2129/失败0/P1已修复1(aieng-024 Mermaid classDef对比度), Build+TS全通过, Browser全页无错, commit 8970fc6a | ✅ |
 | 2026-05-13 01:14 | 📝 PM | 知识库[llm-004 预训练数据与训练策略]+博客[blog-160 MiniMax年报深度解读] | ✅ |
 | 2026-05-13 02:04 | 🛠️ 开发 | 修1 build缓存bug, 验证PM新内容llm-004+blog-160集成, Bug Hash 1✅1❌(P2占位符), Build+TS全通过 | ✅ |
+| 2026-05-13 05:21 | 📝 PM | 知识库[ai-chip-cerebras-001]+博客[blog-161 OpenAI-Microsoft 970亿协议] | ✅ |
