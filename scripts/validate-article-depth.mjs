@@ -57,12 +57,14 @@ function validateFile(filePath) {
   const titleMatches = content.match(/title:\s*"/g);
   const chapterCount = titleMatches ? titleMatches.length : 0;
 
-  // 统计代码块数量
-  const codeBlockMatches = content.match(/code:\s*\[/g);
+  // 统计代码块数量 — 匹配 code 数组中的 { lang: ..., code: ... } 对象
+  const codeBlockMatches = content.match(/\{\s*lang\s*:/g);
   const codeBlockCount = codeBlockMatches ? codeBlockMatches.length : 0;
 
-  // 统计图表（mermaid / table）
-  const mermaidCount = (content.match(/mermaid:\s*`/g) || []).length;
+  // 统计图表（mermaid / table）— 支持 mermaid 数组格式和反引号格式
+  const mermaidArrayMatches = content.match(/mermaid:\s*\[/g) || [];
+  const mermaidInlineMatches = content.match(/mermaid:\s*`/g) || [];
+  const mermaidCount = mermaidArrayMatches.length + mermaidInlineMatches.length;
   const tableCount = (content.match(/table:\s*\{/g) || []).length;
   const chartCount = mermaidCount + tableCount;
 

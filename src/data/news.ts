@@ -21601,8 +21601,7 @@ Kimi 的融资标志着中国 AI 大模型从「技术竞赛」进入「资本 +
     id: "news-1380",
     tag: "政策",
     title: "中央网信办新规：AI 生成短视频必须标注 6 类标签",
-    summary: "中央网信办发布最新规定，要求平台发布 AI 生成的短视频内容时必须明确标注 6 类标签，确保 AI 生成内容'一目了然'。\n\n这是中国在 AI 内容标识方面最明确的规定之一。", content: "中央网信办发布了关于 AI 生成内容标识的最新规定，要求所有平台在发布 AI 生成的短视频时，必须使用 6 类指定标签进行标注。\n\n规定要点：\n- **强制标识**：AI 生成的视频内容不可模糊处理，必须明确告知用户\n- **6 类标签**：覆盖文本生成、图像生成、视频生成、语音合成等场景\n- **平台责任**：平台方有义务对 AI 生成内容进行审核和标注\n\n这一规定的背景是近期 AI 生成内容的泛滥——从深度伪造视频到 AI 生成的虚假新闻，内容真实性问题日益突出。此前纽约时报曾报道过 AI 生成虚假引语的争议事件。\n\n新规的出台意味着中国对 AI 内容的监管进入了一个更精细化、更标准化的阶段。\n
-**来源：** 新浪科技\n**链接：** https://tech.sina.com.cn/",
+    summary: "中央网信办发布最新规定，要求平台发布 AI 生成的短视频内容时必须明确标注 6 类标签，确保 AI 生成内容'一目了然'。\n\n这是中国在 AI 内容标识方面最明确的规定之一。", content: "中央网信办发布了关于 AI 生成内容标识的最新规定，要求所有平台在发布 AI 生成的短视频时，必须使用 6 类指定标签进行标注。\n\n规定要点：\n- **强制标识**：AI 生成的视频内容不可模糊处理，必须明确告知用户\n- **6 类标签**：覆盖文本生成、图像生成、视频生成、语音合成等场景\n- **平台责任**：平台方有义务对 AI 生成内容进行审核和标注\n\n这一规定的背景是近期 AI 生成内容的泛滥——从深度伪造视频到 AI 生成的虚假新闻，内容真实性问题日益突出。此前纽约时报曾报道过 AI 生成虚假引语的争议事件。\n\n新规的出台意味着中国对 AI 内容的监管进入了一个更精细化、更标准化的阶段。\n\n**来源：** 新浪科技\n**链接：** https://tech.sina.com.cn/",
     date: "2026-05-12 16:00",
     source: "新浪科技",
     sourceUrl: "https://tech.sina.com.cn/",
@@ -21622,8 +21621,7 @@ Kimi 的融资标志着中国 AI 大模型从「技术竞赛」进入「资本 +
     id: "news-1382",
     tag: "行业",
     title: "OpenAI 与微软达成新合作：到 2030 年节省 970 亿美元",
-    summary: "OpenAI 通过与微软达成最新合作协议，预计到 2030 年将节省高达 970 亿美元的运营成本。\n\n合作涵盖云计算基础设施、AI 算力优化和技术共享等多个领域。", content: "OpenAI 和微软宣布了一项新的战略合作协议，目标是在 2030 年前节省 970 亿美元的运营成本。\n\n合作核心内容：\n- **Azure 云资源优化**：OpenAI 将获得更优惠的 Azure 云计算定价和优先资源分配\n- **技术共享**：双方将在 AI 基础设施和工具链方面深度协作\n- **规模效应**：随着 AI 推理需求的指数级增长，联合采购和优化将带来显著的规模效益\n\n这一消息与此前 OpenAI 员工出售股票、造就约 75 人成为亿万富翁的事件形成对比——一边是内部人员在变现，一边是公司在为长期发展省钱。\n\n970 亿美元的节省目标意味着 OpenAI 和微软相信 AI 基础设施的成本将在未来几年大幅下降，这得益于芯片效率提升和规模化运营。\n
-**来源：** 新浪科技\n**链接：** https://tech.sina.com.cn/",
+    summary: "OpenAI 通过与微软达成最新合作协议，预计到 2030 年将节省高达 970 亿美元的运营成本。\n\n合作涵盖云计算基础设施、AI 算力优化和技术共享等多个领域。", content: "OpenAI 和微软宣布了一项新的战略合作协议，目标是在 2030 年前节省 970 亿美元的运营成本。\n\n合作核心内容：\n- **Azure 云资源优化**：OpenAI 将获得更优惠的 Azure 云计算定价和优先资源分配\n- **技术共享**：双方将在 AI 基础设施和工具链方面深度协作\n- **规模效应**：随着 AI 推理需求的指数级增长，联合采购和优化将带来显著的规模效益\n\n这一消息与此前 OpenAI 员工出售股票、造就约 75 人成为亿万富翁的事件形成对比——一边是内部人员在变现，一边是公司在为长期发展省钱。\n\n970 亿美元的节省目标意味着 OpenAI 和微软相信 AI 基础设施的成本将在未来几年大幅下降，这得益于芯片效率提升和规模化运营。\n\n**来源：** 新浪科技\n**链接：** https://tech.sina.com.cn/",
     date: "2026-05-12 16:00",
     source: "新浪科技",
     sourceUrl: "https://tech.sina.com.cn/",
@@ -21633,8 +21631,7 @@ Kimi 的融资标志着中国 AI 大模型从「技术竞赛」进入「资本 +
     id: "news-1383",
     tag: "应用",
     title: "千问重构淘宝搜索，阿里'自己推翻自己'",
-    summary: "阿里巴巴利用通义千问大模型全面重构淘宝搜索系统，标志着 AI 正在深度渗透电商核心业务。\n\n这一举措被行业解读为阿里'推翻'原有技术架构的大胆尝试。", content: "阿里巴巴正在用通义千问大模型彻底重构淘宝的搜索系统。\n\n这一变化的意义：\n- **技术范式转换**：从传统的关键词匹配 + 协同过滤，升级为基于大模型的语义理解和意图推理\n- **用户体验升级**：搜索不再局限于'搜什么得什么'，而是理解用户的真实意图\n- **内部变革**：阿里'推翻'了运行多年的搜索架构，体现了 AI 原生改造的决心\n\n淘宝是中国最大的电商平台，搜索系统的重构直接影响数亿用户的购物体验。如果千问重构成功，将为 AI 在电商领域的应用提供一个标杆案例。\n
-**来源：** 36 氪\n**链接：** https://36kr.com/information/AI/",
+    summary: "阿里巴巴利用通义千问大模型全面重构淘宝搜索系统，标志着 AI 正在深度渗透电商核心业务。\n\n这一举措被行业解读为阿里'推翻'原有技术架构的大胆尝试。", content: "阿里巴巴正在用通义千问大模型彻底重构淘宝的搜索系统。\n\n这一变化的意义：\n- **技术范式转换**：从传统的关键词匹配 + 协同过滤，升级为基于大模型的语义理解和意图推理\n- **用户体验升级**：搜索不再局限于'搜什么得什么'，而是理解用户的真实意图\n- **内部变革**：阿里'推翻'了运行多年的搜索架构，体现了 AI 原生改造的决心\n\n淘宝是中国最大的电商平台，搜索系统的重构直接影响数亿用户的购物体验。如果千问重构成功，将为 AI 在电商领域的应用提供一个标杆案例。\n\n**来源：** 36 氪\n**链接：** https://36kr.com/information/AI/",
     date: "2026-05-12 16:00",
     source: "36 氪",
     sourceUrl: "https://36kr.com/information/AI/",
@@ -21644,10 +21641,7 @@ Kimi 的融资标志着中国 AI 大模型从「技术竞赛」进入「资本 +
     id: "news-1384",
     tag: "Agent",
     title: "Thinking Machines 打造'会倾听'的 AI：对话不再是轮流说话",
-    summary: "被苹果收购的 Thinking Machines 团队正在研发一种全新的对话式 AI——能够在你说话的同时进行回应，打破传统'你说完我再说'的对话模式。\n\n这代表了 AI 交互从'回合制'到'实时流'的范式转变。", content: "Thinking Machines（已被苹果收购）正在探索一种革命性的 AI 对话模式。\n
-传统 AI 对话是'回合制'的——用户说完，AI 再回应。但人类的真实对话是重叠的：我们会边听边回应、打断、补充。\n\nThinking Machines 的新方向：\n- **实时倾听**：AI 在用户说话的同时就开始处理和理解\n- **重叠回应**：像人类一样，AI 可以在你说话中途就插话回应\n- **自然对话流**：消除'等 AI 生成完'的延迟感\n
-这一方向如果被苹果整合到 Siri 或其他产品中，将彻底改变人机交互体验。\n
-**来源：** TechCrunch\n**链接：** https://techcrunch.com/2026/05/12/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks/",
+    summary: "被苹果收购的 Thinking Machines 团队正在研发一种全新的对话式 AI——能够在你说话的同时进行回应，打破传统'你说完我再说'的对话模式。\n\n这代表了 AI 交互从'回合制'到'实时流'的范式转变。", content: "Thinking Machines（已被苹果收购）正在探索一种革命性的 AI 对话模式。\n\n传统 AI 对话是'回合制'的——用户说完，AI 再回应。但人类的真实对话是重叠的：我们会边听边回应、打断、补充。\n\nThinking Machines 的新方向：\n- **实时倾听**：AI 在用户说话的同时就开始处理和理解\n- **重叠回应**：像人类一样，AI 可以在你说话中途就插话回应\n- **自然对话流**：消除'等 AI 生成完'的延迟感\n\n这一方向如果被苹果整合到 Siri 或其他产品中，将彻底改变人机交互体验。\n\n**来源：** TechCrunch\n**链接：** https://techcrunch.com/2026/05/12/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks/",
     date: "2026-05-12 16:00",
     source: "TechCrunch",
     sourceUrl: "https://techcrunch.com/2026/05/12/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks/",
@@ -21657,11 +21651,7 @@ Kimi 的融资标志着中国 AI 大模型从「技术竞赛」进入「资本 +
     id: "news-1385",
     tag: "行业",
     title: "Mozilla 用 Claude Mythos 加固 Firefox：AI 编码进入安全关键领域",
-    summary: "Mozilla 公开了使用 Claude Mythos 预览版加固 Firefox 浏览器的幕后故事，标志着 AI 编码工具开始进入安全敏感的关键基础设施领域。\n\n这被视为 AI 在软件安全领域的重要里程碑。", content: "Mozilla 在官方博客详细披露了使用 Claude Mythos 预览版来加固 Firefox 浏览器的全过程。\n
-Claude Mythos 是 Anthropic 针对代码安全场景优化的模型版本。Mozilla 选择用它来审查和加固 Firefox——全球数亿人使用的开源浏览器——这一决策本身就具有标志性意义。\n
-关键点：\n- **安全关键场景**：浏览器是安全敏感的基础设施，AI 编码工具的引入需要经过严格验证\n- **Mythos 预览版**：使用的是尚未正式发布的安全专用模型版本\n- **实际效果**：Claude Mythos 在发现潜在安全漏洞和代码缺陷方面表现出色\n
-Simon Willison 评论称，这一案例表明 AI 编码工具已经从'提效工具'进化到'安全工具'——不仅能写代码，还能发现人类可能忽略的安全问题。\n
-**来源：** Simon Willison + Mozilla Hacks\n**链接：** https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
+    summary: "Mozilla 公开了使用 Claude Mythos 预览版加固 Firefox 浏览器的幕后故事，标志着 AI 编码工具开始进入安全敏感的关键基础设施领域。\n\n这被视为 AI 在软件安全领域的重要里程碑。", content: "Mozilla 在官方博客详细披露了使用 Claude Mythos 预览版来加固 Firefox 浏览器的全过程。\n\nClaude Mythos 是 Anthropic 针对代码安全场景优化的模型版本。Mozilla 选择用它来审查和加固 Firefox——全球数亿人使用的开源浏览器——这一决策本身就具有标志性意义。\n\n关键点：\n- **安全关键场景**：浏览器是安全敏感的基础设施，AI 编码工具的引入需要经过严格验证\n- **Mythos 预览版**：使用的是尚未正式发布的安全专用模型版本\n- **实际效果**：Claude Mythos 在发现潜在安全漏洞和代码缺陷方面表现出色\n\nSimon Willison 评论称，这一案例表明 AI 编码工具已经从'提效工具'进化到'安全工具'——不仅能写代码，还能发现人类可能忽略的安全问题。\n\n**来源：** Simon Willison + Mozilla Hacks\n**链接：** https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
     date: "2026-05-12 16:00",
     source: "Simon Willison + Mozilla Hacks",
     sourceUrl: "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
@@ -21671,12 +21661,7 @@ Simon Willison 评论称，这一案例表明 AI 编码工具已经从'提效工
     id: "news-1386",
     tag: "应用",
     title: "OpenAI 推出新语音智能 API 功能：低延迟语音 AI 的大规模实践",
-    summary: "OpenAI 在 API 中新增了多项语音智能功能，同时公开了其如何实现大规模低延迟语音 AI 的技术细节。\n\n语音 AI 正在从'能用'走向'好用'。", content: "OpenAI 在两个层面推进了语音 AI 能力。\n
-一方面，在 ChatGPT API 中新增了语音智能功能，让开发者能够构建更自然的语音交互应用。\n
-另一方面，OpenAI 公开了其低延迟语音 AI 的大规模实践：\n- **端到端延迟**：优化到人类对话级别的延迟（<200ms）\n- **规模部署**：支持数百万并发用户的同时语音交互\n- **成本控制**：通过推理优化和模型压缩，降低语音交互的单位成本\n
-TechCrunch 同时报道了 Wispr Flow 在印度市场的语音 AI 尝试——印度语言多样性和口音差异使得语音 AI 落地格外困难，但也意味着巨大的市场空间。\n
-语音 AI 正在从演示级产品走向生产级基础设施。\n
-**来源：** OpenAI Blog + TechCrunch\n**链接：** https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
+    summary: "OpenAI 在 API 中新增了多项语音智能功能，同时公开了其如何实现大规模低延迟语音 AI 的技术细节。\n\n语音 AI 正在从'能用'走向'好用'。", content: "OpenAI 在两个层面推进了语音 AI 能力。\n\n一方面，在 ChatGPT API 中新增了语音智能功能，让开发者能够构建更自然的语音交互应用。\n\n另一方面，OpenAI 公开了其低延迟语音 AI 的大规模实践：\n- **端到端延迟**：优化到人类对话级别的延迟（<200ms）\n- **规模部署**：支持数百万并发用户的同时语音交互\n- **成本控制**：通过推理优化和模型压缩，降低语音交互的单位成本\n\nTechCrunch 同时报道了 Wispr Flow 在印度市场的语音 AI 尝试——印度语言多样性和口音差异使得语音 AI 落地格外困难，但也意味着巨大的市场空间。\n\n语音 AI 正在从演示级产品走向生产级基础设施。\n\n**来源：** OpenAI Blog + TechCrunch\n**链接：** https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
     date: "2026-05-12 16:00",
     source: "OpenAI Blog + TechCrunch",
     sourceUrl: "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",

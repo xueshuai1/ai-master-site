@@ -365,6 +365,7 @@ import { article as agent053 } from './articles/agent-053';
 import { article as agent054 } from './articles/agent-054';
 import { article as enterprise001 } from './articles/enterprise-001';
 import { article as ethics018 } from './articles/ethics-018';
+import { article as ethics019 } from './articles/ethics-019';
 export const articles: Article[] = [
   headlessAi001,
   ai000,
@@ -671,4 +672,5 @@ export const articles: Article[] = [
   ethics017,
   enterprise001,
   ethics018,
+  ethics019,
 ];
