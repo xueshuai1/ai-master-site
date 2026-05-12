@@ -1,21 +1,32 @@
-⏰ 写入时间：2026-05-13 04:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-13 04:06 (Asia/Shanghai)
 
-## 本轮发现
+# 本轮发现
 
-### 🔥 热点（5 条，已写入 news.ts）：
-1. [科技裁员潮加速] Cloudflare 裁员 20%/1100人 + Coinbase + Upwork + xAI + PayPal，AI 使用量增 600% → 适合：博客
-2. [OpenAI AI 手机] 联发科天玑 9600 定制芯片，AI Agent 替代 App，2027 量产 → 适合：博客/知识库
-3. [Chrome 静默下载 4GB AI 模型] Gemini Nano 未经同意下载，涉嫌违反欧盟法 → 适合：知识库
-4. [OpenAI+Anthropic 主导 2026 AI 竞赛] 模型/企业/算力全面领先，Google/Meta 为挑战者 → 适合：博客
-5. [世界银行 2026 发展报告] AI 定义为通用技术，重塑全球发展格局 → 适合：知识库
+🔥 热点（12 条，已选写入 news.ts news-1395~1406）：
+1. [Sam Altman 出庭作证] Musk v. OpenAI 世纪审判关键阶段 → 适合：博客/知识库
+2. [ChatGPT 非正常死亡诉讼] 首例 AI 聊天机器人法律责任案 → 适合：知识库（AI 安全/治理）
+3. [好莱坞「人类同意标准」] Clooney/Hanks/Streep 支持 AI 肖像许可框架 → 适合：知识库（AI 伦理）
+4. [OpenAI-Microsoft 新协议] 2030 年前节省 970 亿美元 → 适合：博客（行业分析）
+5. [OpenAI 员工套现] 75 人成亿万富翁 → 适合：博客
+6. [Android 17 AI 功能] Google I/O 发布 → 适合：知识库
+7. [Gemini 蒸馏 26M 模型] 端侧 AI Agent 新路径 → 适合：知识库（模型优化）
+8. [网信办 AI 标签新规] 短视频必选 6 类标识 → 适合：知识库（中国 AI 政策）
+9. [Voker AI Agent 分析] YC S24 项目 → 适合：博客
+10. [Statewright 可视化状态机] AI Agent 可靠性方案 → 适合：知识库
+11. [Rivian AI 语音助手] 车载 AI 新方向 → 适合：博客
+12. [Meta Connect 2026] 9 月 23-24 日，AI+VR+穿戴 → 适合：博客
 
-### 🆕 新工具（3 个）：
-1. [Toonflow] hbai-ltd/toonflow-app ⭐7,872 — 开源一站式 AI 短剧创作工具
-2. [Sweep] sweepai/sweep ⭐7,712 — AI 编码助手（JetBrains 插件）
-3. [OpenMMLab MMagic] open-mmlab/mmagic ⭐7,426 — 多模态 AI 生成工具
+🆕 新工具（3 个）：
+1. [Vespa] ⭐6912 - AI + Data 搜索引擎/向量数据库，支持 RAG。https://vespa.ai
+2. [Copilot for Xcode] ⭐6075 - Xcode AI 编程助手，由 GitHub 官方出品
+3. [Klavis AI] ⭐5734 - MCP 集成平台，让 AI Agent 使用工具和服务
 
-### 💡 知识缺口（4 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 裁员与劳动力转型] — 科技行业 AI 裁员潮的系统性分析
-2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 手机与硬件] — OpenAI 手机、Pixel 11 等 AI 原生硬件
-3. KNOWLEDGE-BASE-PLAN.md 待补：[端侧 AI 隐私与合规] — Chrome 静默下载引发的隐私法律问题
-4. AI 工具页：26 篇文章未归入学习路径，待补充
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 法律责任与治理 — ChatGPT 非正常死亡案的法律意义
+2. KNOWLEDGE-BASE-PLAN.md 待补：Cerebras 与 AI 芯片竞争格局 — WSE 晶圆级芯片技术路线
+3. KNOWLEDGE-BASE-PLAN.md 待补：Context Engineering 入门 — 2026 年 AI 开发新范式
+4. KNOWLEDGE-BASE-PLAN.md 待补：中国 AI 芯片从推理走向训练 — GLM-Image 基于国产芯片
+
+## 来源覆盖
+- 国外（7）：GitHub API, The Verge, Hacker News, Simon Willison, Anthropic News, TechCrunch AI, arXiv
+- 国内（4）：新浪科技, 36 氪, 机器之心, 量子位
