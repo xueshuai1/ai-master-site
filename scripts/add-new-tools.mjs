@@ -25,21 +25,21 @@ const MAX_TOOLS_TO_ADD = parseInt(process.argv.find(a => a === '--max') ?
   process.argv[process.argv.indexOf('--max') + 1] : 3, 10) || 3;
 
 // ─── 分类映射（根据 GitHub topics 和关键词自动分类） ───
+// ⚠️ 必须与 src/data/tools.ts 中 toolCategories 一致
 const CATEGORY_KEYWORDS = {
-  llm: ['llm', 'large-language', 'gpt', 'llama', 'chatglm', 'qwen', 'mistral', 'vicuna', 'alpaca'],
+  model: ['llm', 'large-language', 'gpt', 'llama', 'chatglm', 'qwen', 'mistral', 'vicuna', 'alpaca'],
   agent: ['agent', 'autonomous', 'multi-agent', 'agentic', 'crewai', 'autogen', 'langgraph'],
+  coding: ['cli', 'terminal', 'command-line', 'tui', 'shell', 'coding', 'copilot', 'code-gen'],
   framework: ['framework', 'sdk', 'library', 'langchain', 'llamaindex', 'haystack', 'semaphore'],
-  cli: ['cli', 'terminal', 'command-line', 'tui', 'shell'],
-  plugin: ['mcp', 'plugin', 'extension', 'copilot', 'vscode'],
-  data: ['data', 'etl', 'pipeline', 'vector', 'database', 'embedding', 'knowledge-graph'],
-  multimodal: ['multimodal', 'image', 'video', 'vision', 'diffusion', 'stable-diffusion', 'text-to-image', 'text-to-video'],
-  search: ['search', 'semantic-search', 'vector-search', 'rag', 'retrieval'],
-  security: ['security', 'adversarial', 'privacy', 'federated'],
-  devops: ['mlops', 'llmops', 'deploy', 'serving', 'inference', 'vllm', 'onnx', 'quantization'],
-  cv: ['computer-vision', 'cv', 'object-detection', 'image-segmentation', 'ocr'],
-  education: ['education', 'learning', 'tutorial'],
-  aieng: ['engineering', 'build', 'test', 'eval', 'monitor', 'observability'],
-  finance: ['finance', 'trading', 'stock', 'quantitative'],
+  mcp: ['mcp', 'extension', 'browser-automation', 'vscode'],
+  rag: ['search', 'semantic-search', 'vector-search', 'rag', 'retrieval', 'embedding', 'knowledge-graph'],
+  data: ['data', 'etl', 'pipeline', 'vector', 'database', 'crawling', 'scraping'],
+  multimodal: ['multimodal', 'image', 'video', 'vision', 'diffusion', 'stable-diffusion', 'text-to-image', 'text-to-video', 'computer-vision', 'cv', 'object-detection', 'image-segmentation', 'ocr'],
+  training: ['fine-tuning', 'training', 'rlhf', 'lora', 'sft'],
+  workflow: ['workflow', 'automation', 'n8n', 'dify', 'flowise', 'langflow'],
+  mlops: ['mlops', 'llmops', 'deploy', 'serving', 'inference', 'vllm', 'onnx', 'quantization', 'security', 'adversarial', 'privacy', 'federated', 'engineering', 'build', 'test', 'eval', 'monitor', 'observability'],
+  app: ['app', 'chat', 'assistant', 'productivity', 'finance', 'trading', 'stock', 'quantitative'],
+  learn: ['education', 'learning', 'tutorial', 'awesome', 'course'],
 };
 
 // ─── 价格判断 ───
@@ -69,7 +69,7 @@ function guessCategory(repo) {
       }
     }
   }
-  return 'llm'; // 默认分类
+  return 'model'; // 默认分类
 }
 
 // ─── GitHub API ───

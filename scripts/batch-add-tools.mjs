@@ -13,20 +13,20 @@ const ROOT = path.resolve(__dirname, '..');
 const TOOLS_FILE = path.join(ROOT, 'src/data/tools.ts');
 const REPORT_FILE = path.join(ROOT, 'data/missing-projects-report.json');
 
-// 分类映射
+// 分类映射 —— 必须与 src/data/tools.ts 中 toolCategories 一致
 const categoryMap = {
-  'llm': 'llm',
-  'large-language-models': 'llm',
+  'llm': 'model',
+  'large-language-models': 'model',
   'ai-agent': 'agent',
   'ai-chatbot': 'agent',
   'chatbot': 'agent',
   'langchain': 'framework',
   'llm-framework': 'framework',
   'ai-tooling': 'framework',
-  'mcp': 'plugin',
-  'model-context-protocol': 'plugin',
-  'vector-database': 'data',
-  'knowledge-graph': 'data',
+  'mcp': 'mcp',
+  'model-context-protocol': 'mcp',
+  'vector-database': 'rag',
+  'knowledge-graph': 'rag',
   'computer-vision': 'multimodal',
   'multimodal': 'multimodal',
   'text-to-image': 'multimodal',
@@ -36,13 +36,13 @@ const categoryMap = {
   'vision-language-model': 'multimodal',
   'speech-recognition': 'multimodal',
   'text-to-speech': 'multimodal',
-  'ai-search': 'search',
-  'ai-safety': 'security',
-  'alignment': 'security',
-  'edge-ai': 'devops',
-  'llmops': 'devops',
-  'fine-tuning': 'education',
-  'prompt-engineering': 'education'
+  'ai-search': 'rag',
+  'ai-safety': 'mlops',
+  'alignment': 'mlops',
+  'edge-ai': 'mlops',
+  'llmops': 'mlops',
+  'fine-tuning': 'training',
+  'prompt-engineering': 'learn'
 };
 
 function suggestCategory(topics) {
@@ -68,19 +68,25 @@ function extractExistingRepos(content) {
 function guessIcon(name, category) {
   const n = name.toLowerCase();
   if (n.includes('lang') || n.includes('chat')) return '💬';
-  if (n.includes('agent')) return '🤖';
+  if (n.includes('agent')) return '🦾';
   if (n.includes('rag') || n.includes('retrieval')) return '🔍';
-  if (n.includes('vector') || n.includes('db')) return '📊';
+  if (n.includes('vector') || n.includes('db')) return '🔍';
   if (n.includes('vision') || n.includes('image')) return '👁️';
   if (n.includes('speech') || n.includes('voice') || n.includes('tts')) return '🎤';
-  if (n.includes('mcp') || n.includes('plugin')) return '🔌';
+  if (n.includes('mcp') || n.includes('browser')) return '🔌';
+  if (category === 'app') return '💬';
+  if (category === 'coding') return '💻';
+  if (category === 'agent') return '🦾';
   if (category === 'framework') return '⚙️';
-  if (category === 'data') return '📊';
+  if (category === 'workflow') return '🔀';
+  if (category === 'rag') return '🔍';
   if (category === 'multimodal') return '🎨';
-  if (category === 'search') return '🔍';
-  if (category === 'security') return '🛡️';
-  if (category === 'devops') return '🚀';
-  if (category === 'education') return '📚';
+  if (category === 'mcp') return '🔌';
+  if (category === 'training') return '🎯';
+  if (category === 'data') return '📊';
+  if (category === 'mlops') return '🚀';
+  if (category === 'model') return '🤖';
+  if (category === 'learn') return '📚';
   return '🛠️';
 }
 
