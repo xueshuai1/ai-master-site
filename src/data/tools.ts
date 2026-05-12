@@ -5506,4 +5506,46 @@ createdAt: "2025-01-01T00:00:00Z",
     language: "JavaScript"
   },
 
+  // 自动收录（2026-05-12）
+  {
+    id: "mastra_ai_mastra",
+    name: "Mastra",
+    category: "llm",
+    description: "From the team behind Gatsby, Mastra is a framework for building AI-powered appli...",
+    url: "https://github.com/mastra-ai/mastra",
+    tags: ["agents", "ai", "chatbots", "evals", "javascript"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 23784,
+    createdAt: "2024-08-06",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "humanlayer_12_factor_agents",
+    name: "12 Factor Agents",
+    category: "llm",
+    description: "What are the principles we can use to build LLM-powered software that is actuall...",
+    url: "https://github.com/humanlayer/12-factor-agents",
+    tags: ["12-factor", "12-factor-agents", "agents", "ai", "context-window"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 19754,
+    createdAt: "2025-03-30",
+  },
+
+  // 自动收录（2026-05-12）
+  {
+    id: "elizaos_eliza",
+    name: "Eliza",
+    category: "agent",
+    description: "Autonomous agents for everyone",
+    url: "https://github.com/elizaos/eliza",
+    tags: ["agent", "agentic", "ai", "autonomous", "chatbot"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 18346,
+    createdAt: "2024-07-09",
+  },
+
 ];
