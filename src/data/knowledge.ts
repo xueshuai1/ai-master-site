@@ -48,7 +48,7 @@ export const categories = [
   { key: "dl", label: "深度学习", icon: "🧠" },
   { key: "nlp", label: "自然语言处理", icon: "💬" },
   { key: "cv", label: "计算机视觉", icon: "👁️" },
-  { key: "prompt", label: "Prompt Engineering", icon: "✏️" },
+  { key: "prompt", label: "提示词工程", icon: "✏️" },
   { key: "llm", label: "大语言模型", icon: "🤖" },
   { key: "agent", label: "AI Agent", icon: "🦾" },
   { key: "rl", label: "强化学习", icon: "🎮" },
