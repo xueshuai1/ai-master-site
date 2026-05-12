@@ -73,6 +73,7 @@ import { article as aieng005 } from './articles/aieng-005';
 import { article as aieng006 } from './articles/aieng-006';
 import { article as aieng007 } from './articles/aieng-007';
 import { article as aieng008 } from './articles/aieng-008';
+import { article as aieng009 } from './articles/aieng-009';
 import { article as aieng010 } from './articles/aieng-010';
 import { article as aieng017 } from './articles/aieng-017';
 import { article as cv001 } from './articles/cv-001';
@@ -409,6 +410,7 @@ export const articles: Article[] = [
   aieng006,
   aieng007,
   aieng008,
+  aieng009,
   aieng010,
   aieng012,
   aieng013,
