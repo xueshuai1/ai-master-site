@@ -1,6 +1,13 @@
 ## 🔴 语言铁律
 **所有回复必须使用中文。** 日报内容、分析总结一律用中文撰写。
 
+### 🔴 工具选择铁律（2026-05-13 用户指示）
+- **本地源码**（src/data/） → 用 `read` / `exec`，**绝对不要 web_fetch 访问自己部署的网站**
+- **外部公开网页** → `web_fetch`（轻量、快）
+- **有反爬 / 需要 JS 渲染** → `browser`（完整 Chromium 浏览器）
+- **搜索新信息** → `web_search`
+- ❌ 用 `web_fetch` 访问 `ai-master.cc` → SSRF 拦截（本地域名解析到内网 IP）
+
 读取以下两个文件，总结今天 ai-master.cc 网站的工作成果：
 
 1. 进度日志：/Users/xueshuai/.openclaw/workspace/memory/ai-master-daily.md

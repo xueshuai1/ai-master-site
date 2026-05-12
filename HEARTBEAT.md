@@ -65,10 +65,20 @@
 
 ## 🔧 数据收集渠道
 
+### 🔴 工具选择铁律（2026-05-13 用户指示）
+**先判断目标在哪，再选工具：**
+- **本地源码**（src/data/） → 用 `read` / `exec`，**绝对不要 web_fetch 访问自己部署的网站**
+- **外部公开网页** → `web_fetch`（轻量、快）
+- **有反爬 / 需要 JS 渲染** → `browser`（完整浏览器）
+- **搜索新信息** → `web_search`
+- **需要登录态** → `browser` (profile="user")
+- ❌ 用 `web_fetch` 访问 `ai-master.cc` → SSRF 拦截（本地域名解析到内网 IP）
+
 | 渠道 | 用法 |
 |------|------|
-| `web_fetch` 直接抓取 | 最可靠，不依赖 API key |
-| 浏览器 | 需要 JS 渲染的页面 |
+| `read` / `exec` | **本地源码**（最高优先级！查 bug、看数据文件、跑编译） |
+| `web_fetch` 直接抓取 | **外部公开网页**，最可靠的外部数据采集方式 |
+| 浏览器 | 需要 JS 渲染 / 有反爬的页面 |
 | GitHub API | trending 项目（需 token）+ **搜索高星项目** |
 | arXiv RSS | arxiv.org/rss/cs.AI |
 

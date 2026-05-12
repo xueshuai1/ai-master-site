@@ -131,11 +131,40 @@ node scripts/validate-article.mjs src/data/articles/你的文章.ts
 
 **不要把自己限制死在某一个 API 或工具上。** 以下是可用的所有渠道，按需选择：
 
+### 🔴 工具选择铁律（先判断目标在哪，再选工具）
+
+```
+目标在哪？
+├── 本地文件（src/data/ 下的 .ts/.tsx/.js）
+│   ✅ 用 read / exec 直接读源码、跑编译
+│   ❌ 绝对不要用 web_fetch 访问自己部署的网站
+│
+├── 外部公开网页（公开文章、文档、新闻）
+│   ✅ 优先 web_fetch（轻量、快、不依赖 API key）
+│   ❌ 遇到反爬/Cloudflare/WAF → 换 browser
+│
+├── 需要 JS 渲染的页面（SPA 应用、动态内容）
+│   ✅ 用 browser 打开，完整 Chromium 渲染
+│
+├── 需要登录态才能看到的内容
+│   ✅ 用 browser (profile="user")
+│
+└── 不知道去哪找 / 搜索最新信息
+    ✅ 用 web_search 搜索
+```
+
+**常见错误：**
+- ❌ 用 `web_fetch` 访问 `ai-master.cc` → SSRF 拦截（本地域名解析到内网 IP）
+- ❌ 用 `web_fetch` 访问有 Cloudflare 保护的网站 → 403 被拦
+- ❌ 默认先试 `web_fetch`，失败再换 → 浪费时间，应先判断场景
+
 | 渠道 | 适用场景 | 用法 |
 |------|---------|------|
-| `web_fetch` | 直接抓取网页内容 | 最可靠，不依赖 API key |
-| 浏览器 | 需要 JS 渲染的页面 | 备用，有时会超时 |
-| GitHub API | 获取 trending 项目 | 需要 token，否则限频 |
+| `read` / `exec` | **本地源码**（最高优先级！） | 查 bug、看数据文件、跑编译 |
+| `web_fetch` | **外部公开网页**内容采集 | 最可靠的外部数据采集方式 |
+| `browser` | 需要 JS 渲染 / 有反爬的页面 | 带完整浏览器指纹，能过 Cloudflare |
+| `web_search` | 搜索最新信息、发现新话题 | 不知道去哪找时先用 |
+| GitHub API | 获取 trending / 高星项目 | 需要 token，否则限频 |
 | arXiv RSS | 最新论文 | 直接访问 arxiv.org/rss |
 | 各博客 RSS | Simon Willison、OpenAI 等 | 直接抓取 |
 
