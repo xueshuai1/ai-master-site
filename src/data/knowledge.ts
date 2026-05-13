@@ -125,6 +125,7 @@ import { article as llm001 } from './articles/llm-001';
 import { article as llmGuide } from './articles/llm-guide';
 import { article as llm002 } from './articles/llm-002';
 import { article as llm003 } from './articles/llm-003';
+import { article as llm004 } from './articles/llm-004';
 import { article as llm005 } from './articles/llm-005';
 import { article as llm006 } from './articles/llm-006';
 import { article as llm008 } from './articles/llm-008';
@@ -474,6 +475,7 @@ export const articles: Article[] = [
   llmGuide,
   llm002,
   llm003,
+  llm004,
   llm005,
   llm006,
   llm008,
