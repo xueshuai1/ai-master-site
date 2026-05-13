@@ -1,26 +1,29 @@
-⏰ 写入时间：2026-05-13 08:07 (Asia/Shanghai)
+⏰ 写入时间：2026-05-13 12:00 (Asia/Shanghai)
 
 ## 本轮发现
 
-🔥 热点（10 条，已选 10 条写入 news.ts news-1414~1423）：
-1. [Googlebook 发布] Google I/O 发布 Chromebook 继任者，Aluminium OS + 铝合金设计 → 适合：博客/知识库
-2. [Anthropic 崛起] 或成全球第二大 AI 实验室，企业市场强势突破 → 适合：博客
-3. [$440 亿 AI 能源热潮] 从委内瑞拉到阿拉斯加的 AI 基础设施投资 → 适合：知识库
-4. [AI 搜索版权案] 国内首例 AI 搜索平台盗版链接责任终审判决 → 适合：知识库
-5. [AI Workforce 概念] PraisonAI 等平台打造 24/7 自主 AI 员工队伍 → 适合：博客
-6. [Kimi vs Claude] 创业者选择 AI 模型的 7 个残酷真相 → 适合：博客
-7. [Cody 开源] Sourcegraph AI 编程助手全民化，少写代码多写逻辑 → 适合：知识库
-8. [OpenMontage] 全球首个开源 Agent 驱动 AI 视频制作系统 → 适合：知识库
-9. [斯坦福 AI 指数报告] 全球企业 AI 投资 5817 亿美元 → 适合：知识库
-10. [AI 伦理审查办法] 工信部等十部门发布制度化硬约束 → 适合：知识库
+🔥 热点（12 条，已选 12 条写入 news.ts，news-1424~1435）：
+1. [OpenAI + Anthropic 进军企业服务] 合计 115 亿美元挑战咨询行业 → 适合：博客/知识库
+2. [OpenAI-微软合作重构] 打破 Azure 独占，开放 AWS/Google Cloud → 适合：博客
+3. [OpenAI 向欧盟开放网络安全模型] Anthropic 拒绝发布 Mythos → 适合：知识库
+4. [Moltis 发布] Rust 编写的持久化个人 AI Agent 服务器 → 适合：工具推荐
+5. [FireRed OpenStoryline] AI 视频编辑 Agent 自动化工作流 → 适合：工具推荐
+6. [腾讯混元图像 3.0] 原生多模态图像生成模型开源 → 适合：知识库/工具
+7. [Vearch 向量搜索引擎] AI 原生分布式向量搜索 → 适合：工具推荐
+8. [Mercury Agent] 基于权限硬化的多通道 AI Agent → 适合：知识库
+9. [世界银行 2026 年度报告] AI 定义为通用技术 → 适合：知识库
+10. [中国 AI 终端分级国标] L1-L4 四级体系覆盖 7 大品类 → 适合：政策分析
+11. [LangChain 13.6 万星] Agent 工程平台持续领跑 → 适合：行业分析
+12. [AI 搜索版权侵权案终审] 国内首例 → 适合：知识库/政策
 
-🆕 新工具（3 个，add-new-tools.mjs 自动收录）：
-1. [Nexent] ModelEngine Group - ⭐4451 - 零代码 AI Agent 自动生成平台
-2. [Cody] Sourcegraph - ⭐3793 - AI 代码助手，少写代码多写逻辑
-3. [OpenMontage] calesthio - ⭐3660 - 全球首个开源 AI 视频制作系统
+🆕 新工具（3 个）：
+1. [CodeGraphContext] ⭐3233 | MCP server + CLI tool，本地代码索引到图数据库 | coding 分类
+2. [HunyuanImage 3.0] ⭐3065 | 腾讯混元原生多模态图像生成模型 | multimodal 分类
+3. [Vearch] ⭐2305 | AI 原生分布式向量搜索引擎 | rag 分类
 
-💡 知识缺口（4 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 能源基础设施] - $440 亿投资背后的数据中心选址与能源竞争
-2. KNOWLEDGE-BASE-PLAN.md 待补：[中国 AI 伦理治理] - 从原则到制度的演进路径
-3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 搜索版权法律] - 首例判决对行业的深远影响
-4. KNOWLEDGE-BASE-PLAN.md 待补：[AI Agent Workforce] - 从工具到员工的范式转变
+💡 知识缺口（5 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：[企业服务] OpenAI/Anthropic 合资企业的商业模式分析
+2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 监管] 中国 AI 伦理审查办法与全球治理对比
+3. KNOWLEDGE-BASE-PLAN.md 待补：[向量搜索] 分布式向量搜索引擎技术对比（Vearch vs Milvus vs Pinecone）
+4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 版权] AI 搜索版权责任认定的法律框架
+5. KNOWLEDGE-BASE-PLAN.md 待补：[AI 终端] 中国 AI 终端分级标准解读与行业影响
