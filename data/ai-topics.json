@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-11T22:18:48.096Z",
+  "lastUpdated": "2026-05-13T04:24:12.336Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -34970,6 +34970,24 @@
       "url": "https://github.com/topics/phone-use-agent",
       "minStars": 5000,
       "description": "（自动发现）Phone Use Agent"
+    },
+    {
+      "topic": "openagent",
+      "url": "https://github.com/topics/openagent",
+      "minStars": 5000,
+      "description": "（自动发现）openagent"
+    },
+    {
+      "topic": "native-multimodal-model",
+      "url": "https://github.com/topics/native-multimodal-model",
+      "minStars": 5000,
+      "description": "（自动发现）native-multimodal-model"
+    },
+    {
+      "topic": "ai-native-database",
+      "url": "https://github.com/topics/ai-native-database",
+      "minStars": 5000,
+      "description": "（自动发现）ai-native-database"
     }
   ]
 }
