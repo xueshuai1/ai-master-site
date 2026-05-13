@@ -20780,5 +20780,363 @@ AI Agent 框架赛道已从「百花齐放」进入「头部集中」阶段，La
     source: "新浪新闻",
     sourceUrl: "https://k.sina.com.cn/article_7857201856_1d45362c0019058f6c.html",
     href: "/news/news-1435",
+  },
+  {
+    id: "news-1436",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "AlphaGRPO：多模态大模型的自我反思式生成新框架",
+    summary: "ICML 2026 收录的 AlphaGRPO 框架将 GRPO 强化学习应用于自回归扩散统一多模态模型，实现推理驱动的文本到图像生成和自我反思式优化，无需额外冷启动阶段。",
+    content: `## AlphaGRPO：解锁多模态大模型的自我反思能力
+
+2026 年 5 月，ICML 2026 收录了一项重要的多模态 AI 研究成果。
+
+### 核心技术
+- **GRPO + AR-Diffusion UMM**：将 Group Relative Policy Optimization 应用于自回归扩散统一多模态模型
+- **推理文本到图像生成**：模型能主动推断用户的隐含意图
+- **自我反思式优化**：自动诊断和纠正生成输出中的偏差
+- **DVReward 机制**：LLM 将复杂请求分解为可验证的语义和质量问题，由 MLLM 提供可靠反馈
+
+### 实验结果
+- 在 GenEval、TIIF-Bench、DPG-Bench、WISE 等多模态生成基准上取得显著提升
+- 在 GEdit 编辑任务上无需训练即可获得改进
+
+### 行业意义
+这标志着多模态 AI 从被动生成向主动推理和自我纠错的重要转变，为 AI 辅助创意工作开辟了新方向。
+
+**来源：** arXiv + ICML 2026
+**链接：** https://arxiv.org/abs/2605.12495v1`,
+    date: "2026-05-13 12:06",
+    source: "arXiv + ICML 2026",
+    sourceUrl: "https://arxiv.org/abs/2605.12495v1",
+    href: "/news/news-1436",
+  },
+  {
+    id: "news-1437",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Fast-Slow Training：LLM 快速适应与持续学习的新范式",
+    summary: "UC Berkeley 等研究团队提出 Fast-Slow Training 框架，将模型参数作为慢速权重、优化上下文作为快速权重，实现比纯 RL 高达 3 倍的样本效率提升，同时减少灾难性遗忘。",
+    content: `## Fast-Slow Training：LLM 学习方式的革新
+
+2026 年 5 月，UC Berkeley、Matei Zaharia 团队发表了 Fast-Slow Training (FST) 框架。
+
+### 核心理念
+- **慢速学习（Slow Weights）**：模型参数保持通用推理能力
+- **快速学习（Fast Weights）**：优化的上下文吸收特定任务信息
+- **人类类比**：类似人类的双系统学习（System 1 快思考 + System 2 慢思考）
+
+### 关键成果
+- 样本效率比纯慢速 RL 提升高达 3 倍
+- KL 散度降低 70%，大幅减少灾难性遗忘
+- 在持续学习场景中能有效获取每个新任务
+
+### 行业意义
+FST 为 LLM 的持续学习和任务适应提供了一种更接近人类学习方式的新范式，对于需要频繁切换任务场景的企业应用尤为重要。
+
+**来源：** arXiv
+**链接：** https://arxiv.org/abs/2605.12484v1`,
+    date: "2026-05-13 12:06",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org/abs/2605.12484v1",
+    href: "/news/news-1437",
+  },
+  {
+    id: "news-1438",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Anthropic 与 SpaceX 深化 Colossus 算力合作，AI 基础设施竞争升级",
+    summary: "Anthropic 与 SpaceX 的 Colossus 超级计算合作项目持续推进，结合 SpaceX 的卫星通信基础设施与 Anthropic 的 AI 模型训练需求，打造下一代分布式 AI 算力网络。",
+    content: `## Anthropic × SpaceX：Colossus 算力合作再升级
+
+**2026 年 5 月**，Anthropic 与 SpaceX 在 AI 基础设施领域的合作进一步深化。
+
+### 合作要点
+- **Colossus 超级计算**：结合 SpaceX 的计算基础设施与 Anthropic 的模型训练需求
+- **分布式算力网络**：利用 SpaceX 的全球基础设施布局扩展 AI 训练能力
+- **ARR 增长**：Anthropic 年化收入增长 80 倍，算力需求持续爆发
+
+### 行业背景
+AI 算力竞争已从芯片扩展到整个基础设施生态。OpenAI 与微软的 970 亿美元协议、Google 与 Anthropic 的 2000 亿 TPU 协议，都显示出算力正在成为 AI 竞争的核心壁垒。
+
+**来源：** TechCrunch + 行业分析
+**链接：** https://techcrunch.com/category/artificial-intelligence/`,
+    date: "2026-05-13 12:06",
+    source: "TechCrunch + 行业分析",
+    sourceUrl: "https://techcrunch.com/category/artificial-intelligence/",
+    href: "/news/news-1438",
+  },
+  {
+    id: "news-1439",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "稀疏到稠密奖励原则：语言模型后训练的新方法论",
+    summary: "arXiv 新论文提出稀疏奖励与稠密奖励的统一框架：稀疏序列级奖励用于探索发现，稠密 token 级教师监督用于行为压缩，为 LLM 后训练提供了更高效的资源配置策略。",
+    content: `## 稀疏到稠密奖励：LLM 后训练的新原则
+
+2026 年 5 月，arXiv 发布了一项关于语言模型后训练的重要研究。
+
+### 核心发现
+- **奖励密度原则**：稀疏序列级奖励适合训练探索能力强的模型，稠密 token 级教师监督适合将行为压缩到更小模型
+- **上游发现 + 下游压缩**：在最强模型上使用稀缺标注数据进行发现，然后将行为作为稠密监督转移到部署模型
+- **桥接机制**：前向 KL 热身 + OPD 学生 rollouts 是最强策略
+
+### 实验验证
+- 在 Qwen3 和 Llama 模型上验证数学推理任务
+- 桥接后 GRPO 从 75.4% 提升至 78.5%（MATH 基准）
+- 比直接 GRPO 在部署学生上表现更优
+
+### 实践价值
+对于有限标注资源的团队，这一原则可以显著提升后训练效率，避免将稀缺数据浪费在未准备好的策略上。
+
+**来源：** arXiv
+**链接：** https://arxiv.org/abs/2605.12483v1`,
+    date: "2026-05-13 12:06",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org/abs/2605.12483v1",
+    href: "/news/news-1439",
+  },
+  {
+    id: "news-1440",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "GitHub AI Agent 生态爆发：Agent 工具周下载量激增，开源社区主导",
+    summary: "GitHub 周趋势榜显示 AI Agent 相关项目持续霸榜，NousResearch Hermes Agent 超 14.7 万星、Langflow 14.8 万星、Dify 14.1 万星，开源 AI Agent 工具正在成为开发者首选。",
+    content: `## GitHub AI Agent 生态爆发：开源项目全面领先
+
+**2026 年 5 月**，GitHub 周趋势数据揭示了 AI Agent 生态的爆发式增长。
+
+### 高星项目排行
+| 项目 | Stars | 描述 |
+|------|-------|------|
+| Hermes Agent | 147K+ | 与你共同成长的 AI 代理 |
+| Langflow | 148K+ | 构建和部署 AI Agent 的强大工具 |
+| Dify | 141K+ | 生产级 Agent 工作流开发平台 |
+| Langchain | 136K+ | Agent 工程平台 |
+| Gemini CLI | 103K+ | Google Gemini 终端 AI Agent |
+| Browser Use | 93K+ | 让网站对 AI Agent 可访问 |
+| OpenHands | 73K+ | AI 驱动开发 |
+
+### 趋势解读
+- **开源主导**：高星项目几乎全部为开源
+- **工具化**：从框架向实用工具演进
+- **多平台**：覆盖终端、浏览器、云端等多种场景
+
+**来源：** GitHub Trending + GitHub API
+**链接：** https://github.com/trending`,
+    date: "2026-05-13 12:06",
+    source: "GitHub Trending + GitHub API",
+    sourceUrl: "https://github.com/trending?since=weekly",
+    href: "/news/news-1440",
+  },
+  {
+    id: "news-1441",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "工信部等十部门印发《人工智能科技伦理审查与服务办法》，中国 AI 治理进入制度化阶段",
+    summary: "2026 年 5 月 3 日，工信部等十部门联合发布《人工智能科技伦理审查与服务办法（试行）》，标志着中国 AI 伦理治理从原则倡导转向制度化、可操作的硬约束，涵盖人类福祉、公平公正等六大审查维度。",
+    content: `## 中国 AI 伦理治理：从原则到制度
+
+**2026 年 5 月 3 日**，工信部等十部门联合发布《人工智能科技伦理审查与服务办法（试行）》。
+
+### 六大审查维度
+1. **人类福祉**：确保积极社会价值，风险收益合理
+2. **公平公正**：训练数据和算法的公平性审查
+3. **透明度**：AI 决策过程可解释可追溯
+4. **隐私保护**：数据采集和使用合规
+5. **安全可控**：AI 系统运行风险可控
+6. **责任追溯**：明确 AI 应用的责任主体
+
+### 政策意义
+这是中国 AI 治理从原则倡导到制度化操作的重要转折点，为 AI 企业的合规运营提供了明确指引，也为全球 AI 治理贡献了中国方案。
+
+**来源：** CSDN + 政策公告
+**链接：** https://blog.csdn.net/2401_84289488/article/details/160737064`,
+    date: "2026-05-13 12:06",
+    source: "CSDN + 政策公告",
+    sourceUrl: "https://blog.csdn.net/2401_84289488/article/details/160737064",
+    href: "/news/news-1441",
+  },
+  {
+    id: "news-1442",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "AI 终端智能化分级国标发布：L1~L4 四等级覆盖手机、汽车等七大品类",
+    summary: "工信部等部门联合发布《人工智能终端智能化分级》系列国家标准，将智能化水平从低到高分为 L1 响应级、L2 工具级、L3 辅助级和 L4 协同级四个等级，首批覆盖手机、电脑、电视、眼镜、汽车座舱、音箱、耳机共 7 个品类。",
+    content: `## AI 终端智能化分级国家标准发布
+
+**2026 年 5 月**，工信部等部门联合发布《人工智能终端智能化分级》系列国家标准。
+
+### 四级分类
+- **L1 响应级**：基础语音/触控响应
+- **L2 工具级**：能完成特定任务操作
+- **L3 辅助级**：理解上下文，提供智能建议
+- **L4 协同级**：主动学习用户习惯，深度协同
+
+### 首批覆盖品类
+手机、电脑、电视、智能眼镜、汽车座舱、智能音箱、耳机
+
+### 行业影响
+这一标准为 AI 终端产品提供了统一的智能化水平评价体系，消费者可以更直观地比较不同产品的 AI 能力，厂商也有了明确的升级方向。
+
+**来源：** OnlineTool AI 日报
+**链接：** https://onlinestool.com/zh/blog/ai-daily-2026-05-09`,
+    date: "2026-05-13 12:06",
+    source: "OnlineTool AI 日报",
+    sourceUrl: "https://onlinestool.com/zh/blog/ai-daily-2026-05-09",
+    href: "/news/news-1442",
+  },
+  {
+    id: "news-1443",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Hermes Agent 登顶全球 Token 消耗榜：日均 3000 亿 token，超越 OpenClaw",
+    summary: "NousResearch 开源的 Hermes Agent 日均 token 消耗量突破 3000 亿，超越 OpenClaw 成为全球 Token 消耗量最大的 AI Agent，标志着开源 Agent 在生产环境中的大规模采用。",
+    content: `## Hermes Agent：开源 AI Agent 的里程碑
+
+**2026 年 5 月**，NousResearch 的 Hermes Agent 在全球 Token 消耗榜上登顶。
+
+### 关键数据
+- **日均 Token 消耗**：3000 亿+
+- **超越对手**：超过 OpenClaw 等商业化 Agent 平台
+- **GitHub 星标**：147K+，持续快速增长
+
+### 成功因素
+1. **完全开源**：社区驱动，透明度极高
+2. **自成长架构**：Agent 能随使用不断进化
+3. **多场景适配**：支持编码、研究、创意等多种任务
+
+### 行业信号
+Hermes Agent 的成功证明了开源 Agent 模式在商业上的可行性，也为 AI Agent 的民主化使用提供了重要参考。
+
+**来源：** 行业数据 + GitHub
+**链接：** https://github.com/NousResearch/hermes-agent`,
+    date: "2026-05-13 12:06",
+    source: "行业数据 + GitHub",
+    sourceUrl: "https://github.com/NousResearch/hermes-agent",
+    href: "/news/news-1443",
+  },
+  {
+    id: "news-1444",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "中国 AI 大模型调用量首次超越美国：单月占比过半，DeepSeek 和通义千问引领",
+    summary: "2026 年全球 AI 发展数据显示，中国 AI 大模型调用量首次超越美国，实现单月占比过半的里程碑，DeepSeek 和通义千问等大模型的快速迭代是关键驱动力。",
+    content: `## 中国 AI 大模型调用量首超美国
+
+**2026 年 5 月**，全球 AI 领域迎来历史性突破。
+
+### 核心数据
+- **中国单月占比**：首次超过 50%
+- **主要贡献者**：DeepSeek、通义千问等大模型
+- **驱动因素**：本土生态完善、成本优势、应用场景丰富
+
+### 技术背景
+- **DeepSeek**：开源模型持续迭代，性价比优势明显
+- **通义千问**：阿里云生态加持，企业服务能力强
+- **国产芯片**：国产 AI 芯片生态从推理走向训练
+
+### 全球格局变化
+中国 AI 大模型的崛起不仅是数量上的超越，更是生态系统和技术自主性的全面提升。Gartner 预测到 2030 年 80% 的中国 AI 基础设施将使用本土芯片。
+
+**来源：** 知乎 + 行业分析
+**链接：** https://zhuanlan.zhihu.com/p/2025194512343942646`,
+    date: "2026-05-13 12:06",
+    source: "知乎 + 行业分析",
+    sourceUrl: "https://zhuanlan.zhihu.com/p/2025194512343942646",
+    href: "/news/news-1444",
+  },
+  {
+    id: "news-1445",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "巨头战略合作：2026 年 5 月 AI 行业迎来多起重磅合作",
+    summary: "2026 年 5 月 3 日，AI 行业迎来多起巨头战略合作，涵盖 AI 芯片、算力、模型训练等多个领域，显示出 AI 竞争正在从单体实力转向生态协同。",
+    content: `## 2026 年 5 月：AI 巨头战略合作密集期
+
+**2026 年 5 月 3 日**，AI 行业迎来一波重磅战略合作。
+
+### 主要合作事件
+1. **OpenAI × Microsoft**：970 亿美元协议，重构云+AI 合作关系
+2. **Anthropic × SpaceX**：Colossus 算力合作，扩展训练基础设施
+3. **NVIDIA × Intel**：50 亿美元合作，AI 芯片与制造协同
+4. **Anthropic × Google**：2000 亿 TPU 协议，算力资源共享
+
+### 趋势分析
+- **算力成为核心资产**：所有合作都围绕算力展开
+- **竞合关系深化**：竞争对手也在特定领域合作
+- **生态壁垒加高**：合作形成的生态壁垒正在成为新的竞争维度
+
+### 对行业的影响
+这些合作标志着 AI 行业进入"超级联盟"时代，小型独立玩家面临的竞争压力进一步加大。
+
+**来源：** CSDN + 行业分析
+**链接：** https://blog.csdn.net/2401_84289488/article/details/160737064`,
+    date: "2026-05-13 12:06",
+    source: "CSDN + 行业分析",
+    sourceUrl: "https://blog.csdn.net/2401_84289488/article/details/160737064",
+    href: "/news/news-1445",
+  },
+  {
+    id: "news-1446",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI GPT-5.4 发布：实现原生电脑操控能力，AI 从聊天走向操作",
+    summary: "OpenAI 发布 GPT-5.4 版本，实现了原生电脑操控能力，AI 可以直接操控电脑完成复杂任务，标志着 AI 从对话式交互向操作式交互的重要转变。",
+    content: `## GPT-5.4：AI 的原生电脑操控时代
+
+**2026 年 5 月**，OpenAI 发布 GPT-5.4 版本。
+
+### 核心能力
+- **原生电脑操控**：AI 可直接操控电脑完成任务
+- **多模态理解**：屏幕内容理解 + 操作执行
+- **复杂任务处理**：跨应用、多步骤的自动化工作流
+
+### 行业意义
+这标志着 AI 从「聊天助手」向「操作代理」的重要转变。AI 不再只是回答问题，而是直接帮你完成任务——从文件整理、数据录入到软件开发。
+
+### 竞争格局
+- **OpenAI**：GPT-5.4 原生操控
+- **Google**：Gemini CLI 终端 Agent
+- **Anthropic**：Claude Code 编码代理
+- **开源**：OpenHands、Browser Use 等
+
+**来源：** 知乎 + 行业分析
+**链接：** https://zhuanlan.zhihu.com/p/2025194512343942646`,
+    date: "2026-05-13 12:06",
+    source: "知乎 + 行业分析",
+    sourceUrl: "https://zhuanlan.zhihu.com/p/2025194512343942646",
+    href: "/news/news-1446",
+  },
+  {
+    id: "news-1447",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "NVIDIA GTC 2026 机器人军团集体亮相：具身智能从实验室走向工厂",
+    summary: "NVIDIA GTC 2026 大会上，多款机器人产品集体亮相，涵盖工业制造、物流、医疗等多个领域，标志着具身智能正从研究阶段走向实际产业应用。",
+    content: `## GTC 2026：具身智能产业化元年
+
+**2026 年 5 月**，NVIDIA GTC 2026 大会展示了具身智能的最新进展。
+
+### 亮点产品
+- **工业机器人**：AI 驱动的柔性制造系统
+- **物流机器人**：自主导航 + 多模态感知
+- **医疗机器人**：精准手术辅助系统
+- **人形机器人**：多模态交互 + 自主学习
+
+### 技术趋势
+- **多模态融合**：视觉 + 触觉 + 语音的综合感知
+- **仿真训练**：Isaac Lab 等仿真平台加速训练
+- **端到端控制**：从感知到决策到执行的完整链路
+
+### 产业意义
+GTC 2026 展示了具身智能从实验室到工厂的完整路径，2026 年被视为具身智能产业化的关键年份。
+
+**来源：** 知乎 + NVIDIA GTC 2026
+**链接：** https://zhuanlan.zhihu.com/p/2025194512343942646`,
+    date: "2026-05-13 12:06",
+    source: "知乎 + NVIDIA GTC 2026",
+    sourceUrl: "https://zhuanlan.zhihu.com/p/2025194512343942646",
+    href: "/news/news-1447",
   }
 ];
