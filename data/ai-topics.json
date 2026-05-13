@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-13T04:24:12.336Z",
+  "lastUpdated": "2026-05-13T16:32:12.106Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -34988,6 +34988,78 @@
       "url": "https://github.com/topics/ai-native-database",
       "minStars": 5000,
       "description": "（自动发现）ai-native-database"
+    },
+    {
+      "topic": "feishu-bot",
+      "url": "https://github.com/topics/feishu-bot",
+      "minStars": 5000,
+      "description": "（自动发现）feishu bot"
+    },
+    {
+      "topic": "report-generation",
+      "url": "https://github.com/topics/report-generation",
+      "minStars": 5000,
+      "description": "（自动发现）report generation"
+    },
+    {
+      "topic": "bluetooth-le",
+      "url": "https://github.com/topics/bluetooth-le",
+      "minStars": 5000,
+      "description": "（自动发现）bluetooth le"
+    },
+    {
+      "topic": "multi-modal",
+      "url": "https://github.com/topics/multi-modal",
+      "minStars": 5000,
+      "description": "（自动发现）multi modal"
+    },
+    {
+      "topic": "content-generation",
+      "url": "https://github.com/topics/content-generation",
+      "minStars": 5000,
+      "description": "（自动发现）content generation"
+    },
+    {
+      "topic": "code-assistant",
+      "url": "https://github.com/topics/code-assistant",
+      "minStars": 5000,
+      "description": "（自动发现）code assistant"
+    },
+    {
+      "topic": "serving-recommendation",
+      "url": "https://github.com/topics/serving-recommendation",
+      "minStars": 5000,
+      "description": "（自动发现）serving recommendation"
+    },
+    {
+      "topic": "objective-c",
+      "url": "https://github.com/topics/objective-c",
+      "minStars": 5000,
+      "description": "（自动发现）objective c"
+    },
+    {
+      "topic": "multi-vector",
+      "url": "https://github.com/topics/multi-vector",
+      "minStars": 5000,
+      "description": "（自动发现）multi vector"
+    },
+    {
+      "topic": "video-production",
+      "url": "https://github.com/topics/video-production",
+      "minStars": 5000,
+      "description": "（自动发现）video production"
+    },
+    {
+      "topic": "social-winter-of-code",
+      "url": "https://github.com/topics/social-winter-of-code",
+      "minStars": 5000,
+      "description": "（自动发现）social winter of code"
+    },
+    {
+      "topic": "document-retrieval",
+      "url": "https://github.com/topics/document-retrieval",
+      "minStars": 5000,
+      "description": "（自动发现）document retrieval"
     }
   ]
 }
