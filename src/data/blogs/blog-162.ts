@@ -324,3 +324,5 @@ export const blog: BlogPost = {
   summary: "AI 正在从被动的工具转变为自主的员工。PraisonAI 编排 24/7 AI 员工队伍，Nexent 实现零代码 Agent 自动生成，OpenMontage 将 Agent 协作扩展到视频制作——三大平台正在引领 AI Workforce 的范式革命。本文深度解读多 Agent 协作的技术架构、平台对比分析、安全治理框架，以及 2026-2028 年的三大行业拐点预判。",
   content: content,
 };
+
+export default blog;
