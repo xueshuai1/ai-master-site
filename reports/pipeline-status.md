@@ -1,7 +1,4 @@
-| 2026-05-13 08:07 | 🔍 研究员 | 扫描11来源(国外6+国内5), 新闻10条(news-1414~1423), 工具3个(nexent+cody+openmontage), 缺口4项, commit e5c46df8 | ✅ |
-| 2026-05-11 22:00 | 🛠️ 开发 | QA验证llm-007+blog-153集成,QA 2204/0/0,bug-hash清零,Build+TS全通过,commit d3841ac6 | ✅ |
-| 2026-05-11 21:11 | 📝 PM | 知识库[llm-007 LLM推理优化]+博客[blog-153 Claude Code输出格式] | ✅ |
-| 2026-05-11 18:00 | 🛠️ 开发 | 修1 bug(PhaseDef缺guideId→build失败), bug-hash清零, Build+TS全通过, commit 7de3951a | ✅ |
+
 | 2026-05-11 17:20 | 📝 PM | 知识库[agent-054 AI Agent浏览器操作能力]+博客[blog-152 Codex Chrome扩展深度解读] | ✅ |
 | 2026-05-10 15:00 | 🧪 QA | 通过2204/失败0/警告0,Build+TS全通过,0 bug,commit f21c4930 | ✅ |
 | 2026-05-10 14:00 | 🛠️ 开发 | 验证voice-007+blog-145集成,QA 2204/0/0,bug-hash 3/3清零,Build+TS全通过,commit cb0493a4 | ✅ |
@@ -48,3 +45,5 @@
 | 2026-05-13 07:00 | 🧪 QA | 通过2269/失败0/警告0,Build+TS全通过,5路由全200,压力测试通过,P2已知1(google-site-verification占位符),commit cf2d4eb2 | ✅ |
 
 | 2026-05-13 09:18 | 📝 PM | 知识库[aieng-028 AI能源基础设施]+博客[blog-162 AI Agent Workforce范式革命] | ✅ |
+| 2026-05-13 10:10 | 🛠️ 开发 | 修3 bug(aieng-028未注册+blog-162缺export+blog-162未注册), bug-hash清零, Build+TS全通过, commit 028a604b | ✅ |
+| 2026-05-13 11:06 | 🧪 QA | 通过2279/失败0/警告0,Build+TS全通过,5路由全200,P2已知1(/roadmap 404),commit TBD | ✅ |
