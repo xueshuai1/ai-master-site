@@ -1,0 +1,72 @@
+{
+  "totalRepos": 311,
+  "successCount": 308,
+  "starsUpdated": 287,
+  "forksUpdated": 199,
+  "languageUpdated": 1,
+  "starChanges": [
+    {
+      "id": "mattpocock_skills",
+      "old": 75811,
+      "new": 77587,
+      "delta": 1776
+    },
+    {
+      "id": "hermes-agent",
+      "old": 146779,
+      "new": 147792,
+      "delta": 1013
+    },
+    {
+      "id": "andrej-karpathy-skills",
+      "old": 126883,
+      "new": 127743,
+      "delta": 860
+    },
+    {
+      "id": "deepseek-tui",
+      "old": 26398,
+      "new": 27199,
+      "delta": 801
+    },
+    {
+      "id": "superpowers",
+      "old": 187913,
+      "new": 188690,
+      "delta": 777
+    },
+    {
+      "id": "cc-switch",
+      "old": 68593,
+      "new": 69326,
+      "delta": 733
+    },
+    {
+      "id": "gstack",
+      "old": 94707,
+      "new": 95245,
+      "delta": 538
+    },
+    {
+      "id": "nexuio_open_design",
+      "old": 38360,
+      "new": 38867,
+      "delta": 507
+    },
+    {
+      "id": "everything-claude-code",
+      "old": 180447,
+      "new": 180943,
+      "delta": 496
+    },
+    {
+      "id": "spec-kit",
+      "old": 97197,
+      "new": 97678,
+      "delta": 481
+    }
+  ],
+  "newAITopicsCount": 0,
+  "newAITopics": [],
+  "totalTopics": 5831
+}
