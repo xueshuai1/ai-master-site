@@ -739,6 +739,34 @@ export const tools: Tool[] = [
     language: "TypeScript"
   },
   {
+    id: "eliza",
+    name: "Eliza",
+    category: "agent",
+    description: "面向所有人的自主 Agent 框架，18,361+ stars。支持创建个性化的 AI Agent，具备自主决策、多平台交互和角色扮演能力。广泛应用于社交媒体机器人、虚拟助手和创意 Agent 场景，是开源 Agent 生态中的重要成员。",
+    url: "https://github.com/elizaOS/eliza",
+    tags: ["自主 Agent", "社交媒体", "角色扮演", "开源生态"],
+    price: "开源",
+    icon: "🤖",
+    pros: [
+      "支持多平台部署（Twitter/Discord/Telegram 等）",
+      "丰富的插件生态和角色系统",
+      "社区活跃，贡献者众多",
+      "适合构建个性化 AI 角色"
+    ],
+    cons: [
+      "配置复杂度较高，需要一定的开发经验",
+      "部分功能依赖外部 API 密钥",
+      "资源消耗较大"
+    ],
+    useCase: "社交媒体 AI 机器人、虚拟助手、创意 Agent、多平台交互",
+    learnMore: "https://github.com/elizaOS/eliza",
+    githubStars: 18361,
+    updatedAt: "2026-05-13",
+    forks: 5200,
+    createdAt: "2024-10-15T08:00:00Z",
+    language: "TypeScript"
+  },
+  {
     id: "mem0",
     name: "Mem0",
     category: "rag",
@@ -5542,6 +5570,34 @@ language: "Python",
     forks: 460,
     language: "Jupyter Notebook",
     createdAt: "2023-06-14",
+  },
+  {
+    id: "needle",
+    name: "Needle",
+    category: "model",
+    description: "将 Gemini 工具调用能力蒸馏到 26M 参数微型模型的开源项目，Hacker News 572 票热评。仅需约 50MB 即可在边缘设备运行工具调用，展示了知识蒸馏在 Agent 领域的可行性，适合端侧部署和低带宽场景。",
+    url: "https://github.com/cactus-compute/needle",
+    tags: ["知识蒸馏", "工具调用", "小模型", "边缘计算", "Gemini"],
+    price: "开源",
+    icon: "📌",
+    pros: [
+      "仅 26M 参数，模型约 50MB",
+      "可在边缘设备运行",
+      "支持标准工具调用协议",
+      "HN 社区高度认可（572 票）"
+    ],
+    cons: [
+      "仅蒸馏工具调用能力，非通用对话模型",
+      "新项目，生态和文档仍在建设中",
+      "性能与原始 Gemini 有差距"
+    ],
+    useCase: "端侧 Agent 工具调用、低带宽 AI 应用、嵌入式设备 AI 集成",
+    learnMore: "https://github.com/cactus-compute/needle",
+    githubStars: 2000,
+    updatedAt: "2026-05-13",
+    forks: 150,
+    createdAt: "2026-05-12T10:00:00Z",
+    language: "Python"
   },
 
   // 自动收录（2026-05-12）
