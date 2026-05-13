@@ -1,5 +1,4 @@
-| 2026-05-13 08:00 | 🔍 研究员 | 扫描12来源(国外7+国内5), 新闻7条(news-1407~1413), 工具3个(aci+openagent+infinity), 缺口4项, commit 0ab2828a | ✅ |
-| 2026-05-11 23:00 | 🧪 QA | 通过2189/失败0/警告0,Build+TS全通过,P2已修1(llm-017死链→llm-024),commit 4c862a74 | ✅ |
+| 2026-05-13 08:07 | 🔍 研究员 | 扫描11来源(国外6+国内5), 新闻10条(news-1414~1423), 工具3个(nexent+cody+openmontage), 缺口4项, commit e5c46df8 | ✅ |
 | 2026-05-11 22:00 | 🛠️ 开发 | QA验证llm-007+blog-153集成,QA 2204/0/0,bug-hash清零,Build+TS全通过,commit d3841ac6 | ✅ |
 | 2026-05-11 21:11 | 📝 PM | 知识库[llm-007 LLM推理优化]+博客[blog-153 Claude Code输出格式] | ✅ |
 | 2026-05-11 18:00 | 🛠️ 开发 | 修1 bug(PhaseDef缺guideId→build失败), bug-hash清零, Build+TS全通过, commit 7de3951a | ✅ |

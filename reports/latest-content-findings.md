@@ -1,23 +1,26 @@
-⏰ 写入时间：2026-05-13 08:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-13 08:07 (Asia/Shanghai)
 
 ## 本轮发现
 
-🔥 热点（7条，已选7条写入 news.ts）：
-1. [DeepMind AI Pointer] 重新定义 AI 时代的鼠标交互方式 → 适合：博客/知识库
-2. [科技裁员潮] Cloudflare/Upwork/Coinbase 因 AI 重组裁员数千人 → 适合：博客
-3. [HyperCubic Hopper] 为主机和 COBOL 系统打造 AI 代理接口 → 适合：知识库
-4. [Gigacatalyst] 为 SaaS 嵌入 AI 构建器，零代码扩展功能 → 适合：知识库
-5. [Beyond Semantic Similarity] arXiv 新论文质疑向量检索局限性 → 适合：知识库
-6. [GPT-5.5 + DeepSeek v4] 大模型密集发布，竞赛白热化 → 适合：博客/知识库
-7. [Bambu Lab 开源争议] 1047 票 HN 热帖质疑滥用开源社区 → 适合：博客
+🔥 热点（10 条，已选 10 条写入 news.ts news-1414~1423）：
+1. [Googlebook 发布] Google I/O 发布 Chromebook 继任者，Aluminium OS + 铝合金设计 → 适合：博客/知识库
+2. [Anthropic 崛起] 或成全球第二大 AI 实验室，企业市场强势突破 → 适合：博客
+3. [$440 亿 AI 能源热潮] 从委内瑞拉到阿拉斯加的 AI 基础设施投资 → 适合：知识库
+4. [AI 搜索版权案] 国内首例 AI 搜索平台盗版链接责任终审判决 → 适合：知识库
+5. [AI Workforce 概念] PraisonAI 等平台打造 24/7 自主 AI 员工队伍 → 适合：博客
+6. [Kimi vs Claude] 创业者选择 AI 模型的 7 个残酷真相 → 适合：博客
+7. [Cody 开源] Sourcegraph AI 编程助手全民化，少写代码多写逻辑 → 适合：知识库
+8. [OpenMontage] 全球首个开源 Agent 驱动 AI 视频制作系统 → 适合：知识库
+9. [斯坦福 AI 指数报告] 全球企业 AI 投资 5817 亿美元 → 适合：知识库
+10. [AI 伦理审查办法] 工信部等十部门发布制度化硬约束 → 适合：知识库
 
-🆕 新工具（3个）：
-1. [aci] aipotheosis-labs/aci — ACI.dev 开源工具调用平台，4767 stars
-2. [openagent] the-open-agent/openagent — 下一代个人 AI 助手，4677 stars
-3. [infinity] infiniflow/infinity — AI 原生数据库，4512 stars
+🆕 新工具（3 个，add-new-tools.mjs 自动收录）：
+1. [Nexent] ModelEngine Group - ⭐4451 - 零代码 AI Agent 自动生成平台
+2. [Cody] Sourcegraph - ⭐3793 - AI 代码助手，少写代码多写逻辑
+3. [OpenMontage] calesthio - ⭐3660 - 全球首个开源 AI 视频制作系统
 
-💡 知识缺口（4项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 分析工具（Voker 等平台）
-2. KNOWLEDGE-BASE-PLAN.md 待补：COBOL/大型机 AI 现代化（Hopper 项目）
-3. KNOWLEDGE-BASE-PLAN.md 待补：向量检索局限性及替代方案
-4. KNOWLEDGE-BASE-PLAN.md 待补：AI 时代的交互设计新范式
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 能源基础设施] - $440 亿投资背后的数据中心选址与能源竞争
+2. KNOWLEDGE-BASE-PLAN.md 待补：[中国 AI 伦理治理] - 从原则到制度的演进路径
+3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 搜索版权法律] - 首例判决对行业的深远影响
+4. KNOWLEDGE-BASE-PLAN.md 待补：[AI Agent Workforce] - 从工具到员工的范式转变
