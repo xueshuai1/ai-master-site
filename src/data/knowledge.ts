@@ -326,6 +326,7 @@ import { article as ethics016 } from './articles/ethics-016';
 import { article as ethics017 } from './articles/ethics-017';
 import { article as guardAct001 } from './articles/guard-act-001';
 import { article as practice014 } from './articles/practice-014';
+import { article as aiLaw001 } from './articles/ai-law-001';
 import { article as llm022 } from './articles/llm-022';
 import { article as llm023 } from './articles/llm-023';
 import { article as llm024 } from './articles/llm-024';
@@ -652,6 +653,7 @@ export const articles: Article[] = [
   ethics014,
   guardAct001,
   practice014,
+  aiLaw001,
   llm022,
   llm023,
   llm024,
