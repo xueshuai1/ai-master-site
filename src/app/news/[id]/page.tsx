@@ -47,7 +47,7 @@ function MarkdownContent({ content }: { content: string }) {
         prose-h3:text-lg prose-h3:font-semibold prose-h3:text-white prose-h3:mt-6 prose-h3:mb-3
         prose-p:text-slate-300 prose-p:leading-relaxed prose-p:my-4
         prose-strong:text-white prose-strong:font-semibold
-        prose-a:text-brand-400 prose-a:no-underline hover:prose-a:underline
+        prose-a:text-brand-400 prose-a:no-underline hover:prose-a:underline prose-a:break-all
         prose-code:text-pink-300 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
         prose-pre:bg-slate-800/50 prose-pre:border prose-pre:border-white/10 prose-pre:p-4 prose-pre:max-h-[400px] prose-pre:overflow-auto
         prose-ul:text-slate-300 prose-ol:text-slate-300
