@@ -21138,5 +21138,372 @@ GTC 2026 展示了具身智能从实验室到工厂的完整路径，2026 年被
     source: "知乎 + NVIDIA GTC 2026",
     sourceUrl: "https://zhuanlan.zhihu.com/p/2025194512343942646",
     href: "/news/news-1447",
+  },
+  {
+    id: "news-1448",
+    tag: "安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Google 确认史上首例 AI 参与开发的零日攻击：AI 安全防御进入新阶段",
+    summary: "Google 安全团队确认，他们检测到了历史上第一例由 AI 辅助开发和部署的零日攻击。这标志着 AI 不仅用于防御，也开始被用于攻击。",
+    content: `## AI 双刃剑：首个 AI 参与开发的零日攻击被确认
+
+**2026 年 5 月 12 日**，Google 安全团队正式确认了这一里程碑式事件。
+
+### 事件详情
+- **AI 参与开发**：攻击者使用 AI 工具辅助发现和利用零日漏洞
+- **攻击方式**：AI 帮助加速漏洞扫描、漏洞利用代码生成和攻击自动化
+- **Google 防御**：依靠自身的 AI 安全系统成功检测并阻止了攻击
+
+### 行业影响
+- **攻防对等化**：AI 正在消除攻防之间的技术鸿沟
+- **防御优先**：Google 强调 AI 驱动的防御系统仍然是最好的保护
+- **监管呼吁**：行业呼吁建立 AI 安全使用的国际规范
+
+### 深层含义
+这是 AI 安全领域的分水岭事件——AI 不再只是安全的辅助工具，而是攻防双方的核心武器。
+
+**来源：** Google Security Blog + TechCrunch
+**链接：** https://blog.google/threat-analysis-group/new-zero-day/`,
+    date: "2026-05-13 16:00",
+    source: "Google Security Blog + TechCrunch + 软盟资讯",
+    sourceUrl: "https://blog.google/threat-analysis-group/new-zero-day/",
+    href: "/news/news-1448",
+  },
+  {
+    id: "news-1449",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "帮乔布斯造 iPhone 的公司，成了 AI 基建的「救世主」：175 年老牌巨头吃上 AI 饭",
+    summary: "36 氪深度报道：一家 175 年历史的老牌制造企业，曾参与 iPhone 制造，如今转型成为 AI 基础设施核心供应商，成为 AI 时代的意外赢家。",
+    content: `## 175 年老厂逆袭：从 iPhone 供应商到 AI 基建救世主
+
+**2026 年 5 月**，36 氪发布深度报道。
+
+### 公司背景
+- **175 年历史**：老牌制造企业，曾深度参与 iPhone 制造
+- **转型方向**：从消费电子零部件转向 AI 基础设施核心部件
+- **吃上 AI 饭**：在 AI 算力基建需求暴增中找到了新定位
+
+### 转型路径
+- **AI 服务器零部件**：GPU 散热、高速连接器、精密结构件
+- **定制化方案**：为 NVIDIA、AMD 等 AI 芯片厂商提供定制零部件
+- **产能优势**：175 年积累的精密制造能力在 AI 时代重新发挥价值
+
+### 行业启示
+AI 时代不仅创造了新巨头，也给了老牌制造企业转型的绝佳机会。精密制造、材料科学等传统能力在 AI 基建中依然不可或缺。
+
+**来源：** 36 氪
+**链接：** https://36kr.com/information/AI/`,
+    date: "2026-05-13 16:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/information/AI/",
+    href: "/news/news-1449",
+  },
+  {
+    id: "news-1450",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "斯坦福发布《2026 年人工智能指数报告》：全球企业 AI 投资飙升至 5817 亿美元",
+    summary: "斯坦福大学以人为本人工智能研究所发布年度 AI 指数报告，系统评估全球 AI 发展态势，指出 2025 年 AI 模型性能在多项基准测试中逼近甚至超越人类基线。",
+    content: `## 斯坦福 AI 指数 2026：AI 投资创新高
+
+**2026 年 4 月 13 日**，斯坦福 HAI 发布年度旗舰报告。
+
+### 核心数据
+- **全球企业 AI 投资**：5817 亿美元，创历史新高
+- **模型性能**：在多项基准测试中逼近甚至超越人类基线
+- **论文发表**：AI 相关学术论文数量持续高速增长
+- **人才流动**：AI 领域人才竞争加剧，薪资水平持续攀升
+
+### 关键趋势
+- **投资集中度**：AI 投资越来越集中在头部企业和国家
+- **开源 vs 闭源**：开源 AI 生态持续壮大，但闭源模型在性能上保持领先
+- **治理进展**：全球 AI 治理框架加速建立，但仍滞后于技术发展
+
+### 中国表现
+中国在 AI 论文发表、专利申请和应用落地方面保持领先，但在基础模型创新和高端芯片领域仍有差距。
+
+**来源：** Stanford HAI + 中国人工智能学会
+**链接：** https://www.ciste.org.cn/gjkjwj/zkgd/art/2026/art_e0eace95585647ed8a8c2b395d580f43.html`,
+    date: "2026-05-13 16:00",
+    source: "Stanford HAI + 中国人工智能学会",
+    sourceUrl: "https://www.ciste.org.cn/gjkjwj/zkgd/art/2026/art_e0eace95585647ed8a8c2b395d580f43.html",
+    href: "/news/news-1450",
+  },
+  {
+    id: "news-1451",
+    tag: "政策",
+    tagColor: "bg-pink-500/10 text-pink-300",
+    title: "中国首次为 AI 智能体立规：央行定调 AI 驱动经济，智能体纳入监管框架",
+    summary: "2026 年 5 月 12 日，中国首次明确将 AI 智能体纳入监管框架，央行同时定调 AI 将成为驱动经济增长的核心力量。",
+    content: `## 中国 AI 智能体监管框架正式建立
+
+**2026 年 5 月 12 日**，多项监管政策同时落地。
+
+### 智能体立规
+- **首次明确**：AI 智能体首次被纳入国家监管框架
+- **六大审查维度**：人类福祉、公平公正、数据安全、透明可审计、风险可控、责任追溯
+- **适用范围**：覆盖金融、医疗、教育、政务等关键领域
+
+### 央行定调
+- **AI 驱动经济**：央行明确将 AI 定位为经济增长的核心驱动力
+- **金融科技**：鼓励 AI 在金融风控、智能投顾、反欺诈等领域的创新应用
+- **监管科技**：要求金融机构同步建设 AI 驱动的监管能力
+
+### 行业意义
+这标志着中国 AI 治理从「原则倡导」正式进入「制度化、可操作的硬约束」阶段，为 AI 产业健康发展提供了制度保障。
+
+**来源：** 软盟资讯 + CSDN
+**链接：** https://news.softunis.com/ai`,
+    date: "2026-05-13 16:00",
+    source: "软盟资讯 + CSDN",
+    sourceUrl: "https://news.softunis.com/ai",
+    href: "/news/news-1451",
+  },
+  {
+    id: "news-1452",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "快手可灵分拆进入评估阶段：AI 视频生成业务独立运营，IPO 预期升温",
+    summary: "快手旗下 AI 视频生成产品可灵（Kling）进入分拆评估阶段，可能独立运营并寻求上市，反映 AI 应用业务的价值重估趋势。",
+    content: `## 快手可灵分拆：AI 视频生成业务独立在即
+
+**2026 年 5 月 12 日**，软盟资讯报道。
+
+### 分拆背景
+- **可灵 Kling**：快手推出的 AI 视频生成产品，技术实力全球领先
+- **分拆评估**：正在评估将可灵业务独立运营的可能性
+- **IPO 预期**：分拆后可能独立寻求资本市场认可
+
+### 行业信号
+- **价值重估**：AI 原生业务的价值正在被资本市场重新评估
+- **分拆趋势**：互联网大厂将 AI 业务分拆独立运营成为新趋势
+- **竞争格局**：可灵与 Runway、Pika 等海外产品的竞争将进入新阶段
+
+### 市场前景
+AI 视频生成赛道正在快速成熟，从技术演示走向商业化应用。可灵如果能够独立运营，将获得更大的发展空间和融资灵活性。
+
+**来源：** 软盟资讯
+**链接：** https://news.softunis.com/ai`,
+    date: "2026-05-13 16:00",
+    source: "软盟资讯",
+    sourceUrl: "https://news.softunis.com/ai",
+    href: "/news/news-1452",
+  },
+  {
+    id: "news-1453",
+    tag: "政策",
+    tagColor: "bg-pink-500/10 text-pink-300",
+    title: "2026 年世界数字教育大会召开：人工智能 + 教育重塑全球学习范式",
+    summary: "2026 年世界数字教育大会聚焦人工智能与教育的深度融合，探讨大模型和生成式 AI 如何重塑知识生产与传播方式。",
+    content: `## 世界数字教育大会：AI 重塑教育
+
+**2026 年 5 月**，世界数字教育大会召开。
+
+### 大会主题
+- **人工智能 + 教育**：AI 正以前所未有的广度和深度融入学习、工作与生活
+- **知识生产重塑**：大模型和生成式 AI 正在重塑知识生产与传播方式
+- **底层逻辑变革**：推动教学场景、学习方式和教育体系的全面变革
+
+### 核心议题
+- **个性化学习**：AI 驱动的个性化教学方案
+- **教育公平**：AI 缩小城乡、区域教育资源差距
+- **教师角色**：从知识传授者到学习引导者的角色转变
+- **治理框架**：AI 在教育领域的伦理和治理框架
+
+### 全球意义
+教育是 AI 技术落地最广泛的领域之一。这次大会展示了 AI 如何从技术工具演变为教育变革的核心驱动力。
+
+**来源：** 中华人民共和国教育部
+**链接：** https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt05/`,
+    date: "2026-05-13 16:00",
+    source: "中华人民共和国教育部",
+    sourceUrl: "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/2026/2026_zt05/",
+    href: "/news/news-1453",
+  },
+  {
+    id: "news-1454",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "GitHub AI Agent 开源项目持续爆发：2026 年 5 月最受欢迎的 10 个 Agent 框架",
+    summary: "多个技术博客和 GitHub 趋势榜单显示，2026 年 5 月 AI Agent 开源项目持续爆发，LangGraph、CrewAI、AutoGen 等框架成为开发者首选。",
+    content: `## 2026 年 5 月 AI Agent 开源项目全景
+
+**2026 年 5 月**，多个技术社区发布 AI Agent 框架评测。
+
+### Top 框架排行
+- **LangGraph**：基于图的有状态 Agent 编排，条件边和人机协同
+- **CrewAI**：多 Agent 协作框架，角色分配和任务编排
+- **AutoGen**：微软开源的多 Agent 对话框架
+- **OpenClaw**：个人 AI 助理框架，全平台集成
+- **Hermes Agent**：全球 Token 消耗量登顶的 Agent 平台
+
+### 技术趋势
+- **从单 Agent 到多 Agent**：复杂任务需要多个 Agent 协作完成
+- **状态管理**：Agent 的状态持久化和上下文管理成为核心竞争力
+- **人机协同**：Human-in-the-loop 设计成为 Agent 框架标配
+
+### 生态观察
+开源社区正在主导 AI Agent 工具链的演进，闭源厂商更多聚焦在模型层。Agent 框架的标准化和模块化趋势日益明显。
+
+**来源：** AI Multiple + Flowith + Dev.to + GitHub Trending
+**链接：** https://aimultiple.com/agentic-frameworks`,
+    date: "2026-05-13 16:00",
+    source: "AI Multiple + Flowith + Dev.to + GitHub Trending",
+    sourceUrl: "https://aimultiple.com/agentic-frameworks",
+    href: "/news/news-1454",
+  },
+  {
+    id: "news-1455",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "GPT-5.5 持续优化：API 定价调整与能力增强，OpenAI 巩固领先优势",
+    summary: "tldl.io 持续跟踪显示，GPT-5.5 在 5 月迎来多项更新，包括 API 定价调整、推理能力增强和多模态支持扩展。",
+    content: `## GPT-5.5 更新：OpenAI 的持续迭代
+
+**2026 年 5 月**，tldl.io 跟踪了 GPT-5.5 的最新动态。
+
+### 主要更新
+- **API 定价调整**：针对不同使用层级推出新的定价方案
+- **推理能力增强**：在数学、编程和逻辑推理基准测试中进一步提升
+- **多模态扩展**：增强的视觉理解和图像生成能力
+
+### 竞争格局
+GPT-5.5 与 Claude Opus 4.7 的竞争仍在持续。两家都在快速迭代，但在不同场景下各有优势：
+- **编程场景**：Claude Code 略占优势
+- **通用对话**：GPT-5.5 保持领先
+- **多模态**：双方各有侧重
+
+### 行业影响
+OpenAI 通过持续的模型优化和定价策略调整，正在巩固其在企业和开发者市场的领先地位。
+
+**来源：** tldl.io + OpenAI Blog
+**链接：** https://www.tldl.io/blog/ai-news-updates-2026`,
+    date: "2026-05-13 16:00",
+    source: "tldl.io + OpenAI Blog",
+    sourceUrl: "https://www.tldl.io/blog/ai-news-updates-2026",
+    href: "/news/news-1455",
+  },
+  {
+    id: "news-1456",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "AI 设计工具迎来密集创新期：从 Claude Design 到 Canva AI，创意行业被彻底重塑",
+    summary: "Anthropic Claude Design 推出后，AI 设计工具赛道迎来密集创新，Canva AI、Figma AI 等产品加速追赶，创意行业正在经历从辅助到共生的范式转变。",
+    content: `## AI 设计工具：从辅助到共生的范式转变
+
+**2026 年 5 月**，AI 设计工具赛道迎来密集创新。
+
+### 主要玩家
+- **Claude Design**：Anthropic Labs 推出的视觉设计协作工具，支持设计稿、原型、幻灯片创作
+- **Canva AI**：持续增强 AI 生成能力，从模板驱动向 AI 原生转型
+- **Figma AI**：将 AI 能力深度整合到设计工作流中
+
+### 技术趋势
+- **AI 原生设计**：不再只是「加个 AI 按钮」，而是重新设计整个工作流
+- **多模态协作**：文字描述、草图、语音均可作为设计输入
+- **实时反馈**：AI 在设计过程中实时提供建议和修正
+
+### 行业影响
+AI 设计工具正在降低创意工作的门槛，让更多人能够表达创意想法。同时，专业设计师的角色从「执行者」转向「创意总监」。
+
+**来源：** Anthropic News + Canva Blog + Figma Blog
+**链接：** https://www.anthropic.com/news/claude-design-anthropic-labs`,
+    date: "2026-05-13 16:00",
+    source: "Anthropic News + Canva Blog",
+    sourceUrl: "https://www.anthropic.com/news/claude-design-anthropic-labs",
+    href: "/news/news-1456",
+  },
+  {
+    id: "news-1457",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "AI 编程工具全面升级：Cursor、Claude Code、Codex 三足鼎立，开发者选择困难",
+    summary: "2026 年 5 月，三大 AI 编程工具同时迎来重大更新，Cursor 增强多文件编辑、Claude Code 提升安全审计、Codex 优化自主编程能力。",
+    content: `## AI 编程工具三巨头：谁更适合你？
+
+**2026 年 5 月**，AI 编程工具赛道进入三足鼎立时代。
+
+### 三大工具对比
+- **Cursor**：IDE 级别的多文件编辑能力最强，适合深度开发
+- **Claude Code**：安全审计和代码审查能力突出，适合团队协作
+- **OpenAI Codex**：自主编程范式创新，能够独立完成复杂任务
+
+### 选择建议
+- **独立开发者**：Cursor 的多文件编辑效率最高
+- **企业团队**：Claude Code 的安全能力更匹配企业需求
+- **自动化场景**：Codex 的自主编程能力适合 CI/CD 集成
+
+### 行业趋势
+AI 编程工具正在从「辅助编码」走向「自主开发」，开发者的角色从「写代码」转向「描述需求 + 审查结果」。
+
+**来源：** Hacker News + Dev.to + GitHub Trending
+**链接：** https://news.ycombinator.com/`,
+    date: "2026-05-13 16:00",
+    source: "Hacker News + Dev.to + GitHub Trending",
+    sourceUrl: "https://news.ycombinator.com/",
+    href: "/news/news-1457",
+  },
+  {
+    id: "news-1458",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "AI 芯片竞赛升级：NVIDIA、AMD、Intel、Cerebras 四方混战，新进入者不断涌现",
+    summary: "2026 年 5 月，AI 芯片市场竞争格局持续变化，NVIDIA 保持领先但面临多方挑战，Cerebras 晶圆级芯片和 AMD MI 系列持续追赶。",
+    content: `## AI 芯片四方混战：算力之战
+
+**2026 年 5 月**，AI 芯片市场进入白热化竞争。
+
+### 主要选手
+- **NVIDIA**：H200/B200 系列持续主导训练市场，但在推理市场面临挑战
+- **AMD**：MI 系列在推理和训练市场均取得突破，性价比优势明显
+- **Intel**：Gaudi 系列借助 AI 热潮市值飙升，六周增长 4400 亿美元
+- **Cerebras**：WSE 晶圆级芯片代表差异化技术路线，在特定场景性能卓越
+
+### 市场趋势
+- **推理 vs 训练**：推理市场增速超过训练，成为新增长点
+- **定制化芯片**：Google TPU、AWS Trainium 等定制芯片加速普及
+- **中国芯**：国产 AI 芯片在推理市场表现亮眼，Gartner 预测 2030 年 80% 中国 AI 基础设施将使用本土芯片
+
+### 行业意义
+AI 芯片是 AI 产业的核心基础设施，芯片竞争格局直接影响整个 AI 生态的发展速度和方向。
+
+**来源：** SiliconAngle + 36 氪 + Gartner
+**链接：** https://siliconangle.com/`,
+    date: "2026-05-13 16:00",
+    source: "SiliconAngle + 36 氪 + Gartner",
+    sourceUrl: "https://siliconangle.com/",
+    href: "/news/news-1458",
+  },
+  {
+    id: "news-1459",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "MIT Technology Review 2026 AI 趋势：从实验到生产，企业 AI 部署进入深水区",
+    summary: "MIT Technology Review 最新分析指出，2026 年 AI 行业正在从实验性试点走向深度生产部署，企业 AI 应用面临从 PoC 到规模化的关键挑战。",
+    content: `## MIT Technology Review：AI 进入生产化深水区
+
+**2026 年 5 月**，MIT Technology Review 发布 AI 行业趋势分析。
+
+### 核心判断
+- **从 PoC 到生产**：企业 AI 应用正在从概念验证走向规模化部署
+- **AI 原生架构**：企业开始设计 AI 原生的系统架构，而非在传统系统上加 AI
+- **人才瓶颈**：AI 工程化人才短缺成为制约规模化部署的主要因素
+
+### 关键挑战
+- **数据安全**：生产环境下的数据隐私和合规要求
+- **成本控制**：大规模 AI 推理的算力成本管理
+- **可解释性**：AI 决策的可解释性和审计要求
+- **持续运维**：AI 模型的性能监控和持续优化
+
+### 行业信号
+2026 年可能是 AI 行业从「 hype 周期」走向「生产力周期」的分水岭。那些成功实现规模化部署的企业将获得显著竞争优势。
+
+**来源：** MIT Technology Review
+**链接：** https://www.technologyreview.com/topic/artificial-intelligence/`,
+    date: "2026-05-13 16:00",
+    source: "MIT Technology Review",
+    sourceUrl: "https://www.technologyreview.com/topic/artificial-intelligence/",
+    href: "/news/news-1459",
   }
 ];

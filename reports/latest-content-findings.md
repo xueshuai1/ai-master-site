@@ -1,23 +1,22 @@
-⏰ 写入时间：2026-05-13 12:06 (Asia/Shanghai)
+⏰ 写入时间：2026-05-13 16:00 (Asia/Shanghai)
 ## 本轮发现
-🔥 热点（12 条，已写入 news.ts news-1436~1447）：
-1. [AlphaGRPO] ICML 2026 多模态自我反思生成框架 → 适合：知识库
-2. [Fast-Slow Training] LLM 快速适应与持续学习新范式 → 适合：知识库
-3. [Anthropic × SpaceX] Colossus 算力合作升级 → 适合：博客
-4. [稀疏到稠密奖励] LLM 后训练新方法论 → 适合：知识库
-5. [GitHub AI Agent 生态] 开源项目全面领先 → 适合：博客
-6. [中国 AI 伦理审查办法] 十部门联合发布 → 适合：知识库
-7. [AI 终端智能化分级国标] L1~L4 四等级 → 适合：知识库
-8. [Hermes Agent] 登顶全球 Token 消耗榜 → 适合：博客
-9. [中国 AI 调用量首超美国] 单月占比过半 → 适合：博客
-10. [GPT-5.4] 原生电脑操控能力 → 适合：知识库
-11. [NVIDIA GTC 2026] 机器人军团亮相 → 适合：知识库
-12. [巨头战略合作] AI 生态联盟密集期 → 适合：博客
+🔥 热点（12 条，已写入 news-1448~1459）：
+1. [Google AI 零日攻击] Google 确认史上首例 AI 参与开发的零日攻击 → 适合：博客/知识库
+2. [AI 基建老牌巨头] 175 年 iPhone 供应商转型 AI 基础设施核心供应商 → 适合：博客
+3. [斯坦福 AI 指数] 全球企业 AI 投资 5817 亿美元创新高 → 适合：知识库
+4. [中国 AI 智能体立规] 央行定调 AI 驱动经济 + 智能体纳入监管 → 适合：知识库/博客
+5. [快手可灵分拆] AI 视频生成业务独立运营，IPO 预期升温 → 适合：博客
+6. [世界数字教育大会] AI+教育重塑全球学习范式 → 适合：知识库
+7. [AI Agent 开源框架] 2026 年最受欢迎的 10 个 Agent 框架 → 适合：知识库
+8. [GPT-5.5 持续优化] API 定价调整与能力增强 → 适合：博客
+9. [AI 设计工具] Claude Design 引领创意行业重塑 → 适合：博客
+10. [AI 编程工具三巨头] Cursor/Claude Code/Codex 三足鼎立 → 适合：知识库
+11. [AI 芯片四方混战] NVIDIA/AMD/Intel/Cerebras 竞争升级 → 适合：知识库/博客
+12. [MIT Tech Review] AI 从实验到生产进入深水区 → 适合：博客/知识库
 🆕 新工具（0 个）：
-- discover-topic-projects.mjs 发现 0 个遗漏项目，当前 tools.ts 已覆盖大部分高星项目
-💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[AlphaGRPO/多模态自我反思生成]
-2. KNOWLEDGE-BASE-PLAN.md 待补：[Fast-Slow Training/LLM 持续学习]
-3. KNOWLEDGE-BASE-PLAN.md 待补：[稀疏到稠密奖励/LLM 后训练]
-4. KNOWLEDGE-BASE-PLAN.md 待补：[中国 AI 伦理治理制度化]
-5. KNOWLEDGE-BASE-PLAN.md 待补：[AI 终端智能化分级标准]
+- discover-topic-projects.mjs 运行结果：0 个遗漏项目（tools.ts 已覆盖大部分高星项目）
+💡 知识缺口（4 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 安全攻防（AI 辅助零日攻击与防御）
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI 芯片竞争格局深度分析（Cerebras WSE vs GPU）
+3. KNOWLEDGE-BASE-PLAN.md 待补：中国 AI 监管体系全景（智能体监管+伦理审查）
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI 编程工具对比实战指南
