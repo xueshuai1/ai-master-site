@@ -5583,4 +5583,46 @@ language: "Python",
     createdAt: "2025-04-14",
   },
 
+  // 自动收录（2026-05-13）
+  {
+    id: "aipotheosis_labs_aci",
+    name: "Aci",
+    category: "model",
+    description: "ACI.dev is the open source tool-calling platform that hooks up 600+ tools into a...",
+    url: "https://github.com/aipotheosis-labs/aci",
+    tags: ["agents", "ai", "ai-agents", "api", "developer-tools"],
+    price: "开源",
+    icon: "🔧",
+    githubStars: 4767,
+    createdAt: "2024-09-19",
+  },
+
+  // 自动收录（2026-05-13）
+  {
+    id: "the_open_agent_openagent",
+    name: "Openagent",
+    category: "model",
+    description: "⚡️next-generation personal AI assistant powered by LLM, RAG and agent loops, sup...",
+    url: "https://github.com/the-open-agent/openagent",
+    tags: ["agent", "agentic", "agentic-ai", "agi", "chatbot"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 4677,
+    createdAt: "2020-05-29",
+  },
+
+  // 自动收录（2026-05-13）
+  {
+    id: "infiniflow_infinity",
+    name: "Infinity",
+    category: "model",
+    description: "The AI-native database built for LLM applications, providing incredibly fast hyb...",
+    url: "https://github.com/infiniflow/infinity",
+    tags: ["ai-native", "approximate-nearest-neighbor-search", "bm25", "cpp20", "cpp20-modules"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 4512,
+    createdAt: "2022-07-18",
+  },
+
 ];
