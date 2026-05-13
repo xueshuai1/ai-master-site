@@ -5625,4 +5625,46 @@ language: "Python",
     createdAt: "2022-07-18",
   },
 
+  // 自动收录（2026-05-13）
+  {
+    id: "modelengine_group_nexent",
+    name: "Nexent",
+    category: "model",
+    description: "Nexent is a zero-code platform for auto-generating production-grade AI agents us...",
+    url: "https://github.com/modelengine-group/nexent",
+    tags: ["agent", "agentic-ai", "agentic-framework", "agentic-rag", "agentic-workflow"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 4451,
+    createdAt: "2025-04-28",
+  },
+
+  // 自动收录（2026-05-13）
+  {
+    id: "sourcegraph_cody_public_snapshot",
+    name: "Cody Public Snapshot",
+    category: "mcp",
+    description: "Type less, code more: Cody is an AI code assistant that uses advanced search and...",
+    url: "https://github.com/sourcegraph/cody-public-snapshot",
+    tags: ["ai", "intellij-plugin", "vscode-extension"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 3793,
+    createdAt: "2023-07-10",
+  },
+
+  // 自动收录（2026-05-13）
+  {
+    id: "calesthio_openmontage",
+    name: "OpenMontage",
+    category: "agent",
+    description: "World's first open-source, agentic video production system. 12 pipelines, 52 too...",
+    url: "https://github.com/calesthio/openmontage",
+    tags: ["agent", "agentic-ai", "ai", "claude", "copilot"],
+    price: "开源",
+    icon: "🔧",
+    githubStars: 3660,
+    createdAt: "2026-03-29",
+  },
+
 ];
