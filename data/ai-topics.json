@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-13T16:32:12.106Z",
+  "lastUpdated": "2026-05-13T22:29:28.293Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -35060,6 +35060,18 @@
       "url": "https://github.com/topics/document-retrieval",
       "minStars": 5000,
       "description": "（自动发现）document retrieval"
+    },
+    {
+      "topic": "tensor-database",
+      "url": "https://github.com/topics/tensor-database",
+      "minStars": 5000,
+      "description": "（自动发现）tensor-database"
+    },
+    {
+      "topic": "vectordatabase",
+      "url": "https://github.com/topics/vectordatabase",
+      "minStars": 5000,
+      "description": "（自动发现）vectordatabase"
     }
   ]
 }
