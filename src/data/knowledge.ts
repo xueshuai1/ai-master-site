@@ -367,6 +367,7 @@ import { article as agent052 } from './articles/agent-052';
 import { article as agent053 } from './articles/agent-053';
 import { article as agent054 } from './articles/agent-054';
 import { article as agent055 } from './articles/agent-055';
+import { article as agent056 } from './articles/agent-056';
 import { article as enterprise001 } from './articles/enterprise-001';
 import { article as ethics018 } from './articles/ethics-018';
 import { article as ethics019 } from './articles/ethics-019';
@@ -678,6 +679,7 @@ export const articles: Article[] = [
   agent053,
   agent054,
   agent055,
+  agent056,
   voice007,
   ethics015,
   ethics016,
