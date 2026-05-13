@@ -5667,4 +5667,46 @@ language: "Python",
     createdAt: "2026-03-29",
   },
 
+  // 自动收录（2026-05-13）
+  {
+    id: "codegraphcontext_codegraphcontext",
+    name: "CodeGraphContext",
+    category: "coding",
+    description: "An MCP server plus a CLI tool that indexes local code into a graph database to p...",
+    url: "https://github.com/codegraphcontext/codegraphcontext",
+    tags: ["hacktoberfest2025", "social-winter-of-code"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 3233,
+    createdAt: "2025-08-16",
+  },
+
+  // 自动收录（2026-05-13）
+  {
+    id: "tencent_hunyuan_hunyuanimage_3_0",
+    name: "HunyuanImage 3.0",
+    category: "multimodal",
+    description: "HunyuanImage-3.0: A Powerful Native Multimodal Model for Image Generation",
+    url: "https://github.com/tencent-hunyuan/hunyuanimage-3.0",
+    tags: ["image-generation", "native-multimodal-model"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 3065,
+    createdAt: "2025-09-27",
+  },
+
+  // 自动收录（2026-05-13）
+  {
+    id: "vearch_vearch",
+    name: "Vearch",
+    category: "rag",
+    description: "Distributed vector search for AI-native applications",
+    url: "https://github.com/vearch/vearch",
+    tags: ["ai-native", "ai-native-database", "cloud-native", "document-retrieval", "embeddings"],
+    price: "免费",
+    icon: "🔧",
+    githubStars: 2305,
+    createdAt: "2019-05-13",
+  },
+
 ];
