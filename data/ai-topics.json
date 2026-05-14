@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-14T00:10:45.937Z",
+  "lastUpdated": "2026-05-14T22:17:25.128Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -37064,6 +37064,24 @@
       "url": "https://github.com/topics/deepagents",
       "minStars": 2000,
       "description": "（自动发现）deepagents"
+    },
+    {
+      "topic": "agenticdevelopment",
+      "url": "https://github.com/topics/agenticdevelopment",
+      "minStars": 5000,
+      "description": "（自动发现）agenticdevelopment"
+    },
+    {
+      "topic": "agenticdevelopmentenvironment",
+      "url": "https://github.com/topics/agenticdevelopmentenvironment",
+      "minStars": 5000,
+      "description": "（自动发现）agenticdevelopmentenvironment"
+    },
+    {
+      "topic": "codingagents",
+      "url": "https://github.com/topics/codingagents",
+      "minStars": 5000,
+      "description": "（自动发现）codingagents"
     }
   ]
 }
