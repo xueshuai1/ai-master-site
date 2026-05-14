@@ -1,43 +1,83 @@
 {
-  "reposScanned": 239,
-  "starsUpdated": 193,
-  "forksUpdated": 140,
-  "languageUpdated": 0,
-  "starsChanges": [
+  "reposScanned": 310,
+  "starsUpdated": 268,
+  "updatedAtUpdated": 86,
+  "forksUpdated": 183,
+  "langUpdated": 6,
+  "newTopics": 0,
+  "starChanges": [
     {
-      "repo": "nousresearch/hermes-agent",
-      "old": 140566,
-      "new": 140884,
-      "diff": 318
+      "id": "mattpocock_skills",
+      "old": 78819,
+      "new": 79519,
+      "delta": 700
     },
     {
-      "repo": "forrestchang/andrej-karpathy-skills",
-      "old": 121964,
-      "new": 122223,
-      "diff": 259
+      "id": "hermes-agent",
+      "old": 148554,
+      "new": 148999,
+      "delta": 445
     },
     {
-      "repo": "addyosmani/agent-skills",
-      "old": 37083,
-      "new": 37321,
-      "diff": 238
+      "id": "deepseek-tui",
+      "old": 27692,
+      "new": 28124,
+      "delta": 432
     },
     {
-      "repo": "affaan-m/everything-claude-code",
-      "old": 176479,
-      "new": 176711,
-      "diff": 232
+      "id": "superpowers",
+      "old": 189423,
+      "new": 189849,
+      "delta": 426
     },
     {
-      "repo": "ruvnet/ruflo",
-      "old": 47551,
-      "new": 47744,
-      "diff": 193
+      "id": "andrej-karpathy-skills",
+      "old": 128305,
+      "new": 128657,
+      "delta": 352
+    },
+    {
+      "id": "spec-kit",
+      "old": 98272,
+      "new": 98575,
+      "delta": 303
+    },
+    {
+      "id": "cc-switch",
+      "old": 69750,
+      "new": 70015,
+      "delta": 265
+    },
+    {
+      "id": "nexuio_open_design",
+      "old": 39305,
+      "new": 39527,
+      "delta": 222
+    },
+    {
+      "id": "everything-claude-code",
+      "old": 181332,
+      "new": 181536,
+      "delta": 204
+    },
+    {
+      "id": "ruvnet_ruflo",
+      "old": 50293,
+      "new": 50490,
+      "delta": 197
     }
   ],
-  "oldestRepo": "rwaldron/johnny-five",
-  "oldestDays": 928,
-  "newTopicsCount": 0,
-  "newTopics": [],
-  "totalTopics": 1422
+  "lastUpdatedOldest": {
+    "days": 933,
+    "id": "rwaldron_johnny_five",
+    "date": "2023-10-24"
+  },
+  "errors": [
+    "MiniMax-AI/MMX-CLI: no data",
+    "MiniMax-AI: no data",
+    "microsoft/DeerFlow: no data"
+  ],
+  "newTopicsList": [],
+  "existingTopicsCount": 6177,
+  "hasChanges": true
 }
