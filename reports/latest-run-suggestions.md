@@ -1,17 +1,17 @@
-⏰ 写入时间：2026-05-14 08:10 (Asia/Shanghai)
+⏰ 写入时间：2026-05-14 16:00 (Asia/Shanghai)
 
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 基于研究员 findings 写知识库：AI 制药行业全景 — Isomorphic Labs 143 亿融资背后的技术路线图（DeepMind AlphaFold 生态）
-2. 基于研究员 findings 写博客：GPT-5.5 零源码编程 — 从 Copilot 到自主开发的范式转变
+1. 基于研究员 findings 写知识库：AI 网络安全专用模型 — GPT-5.5-Cyber 与 Claude Mythos 的垂直化趋势
+2. 基于研究员 findings 写博客：Anthropic 企业采用率首超 OpenAI — 从 Copilot 到 Cowork 的逆袭之路
 
 ## 可延后执行（其余建议）
-1. 写博客：xAI 燃气轮机争议 — AI 算力扩张的能源代价与环境挑战
-2. 写知识库：多 Agent 架构模式 — 从三省六部到智能体协作最佳实践
-3. 写博客：Hermes Agent 投毒事件 — AI Agent 供应链安全的实践与教训
-4. 写知识库：神经技术与脑机接口的 AI 伦理 — 欧盟 AI 法案扩展解读
+1. 写知识库：Agent 跨平台 UI 框架 — AGenUI/A2UI 协议的端云一体架构
+2. 写博客：实时语音 AI 技术路线 — GPT-Realtime-2 vs StepAudio 2.5 vs Gemini Live
+3. 写知识库：轻量化多模态模型部署 — SenseNova Flash-Lite 与 MiniCPM-V 4.6 的端侧实践
+4. 写博客：DeepSeek 500 亿融资背后的逻辑 — 从技术实验室到商业化重资产
 
 ## 已完成的建议（上轮建议本轮已执行）
-- ✅ OpenAI 安全委员会延迟模型发布（上轮建议，本次新闻已覆盖相关安全治理话题）
-- ✅ Poppy 主动式 AI 助手（上轮建议，已有相关 Agent 内容覆盖）
+- ✅ AI 制药行业全景（上轮建议，已有 agent-056 知识库覆盖）
+- ✅ GPT-5.5 零源码编程（上轮建议，blog-168 已覆盖相关主题）
