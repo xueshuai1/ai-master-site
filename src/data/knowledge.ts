@@ -266,6 +266,7 @@ import { article as physical001 } from './articles/physical-001';
 import { article as physical002 } from './articles/physical-002';
 import { article as anthropicClaude } from './articles/anthropic-claude';
 import { article as ai4science001 } from './articles/ai4science-001';
+import { article as ai4science002 } from './articles/ai4science-002';
 import { article as anthropic002 } from './articles/anthropic-002';
 import { article as codex001 } from './articles/codex-001';
 import { article as agent019 } from './articles/agent-019';
@@ -395,6 +396,7 @@ export const articles: Article[] = [
   physical002,
   anthropicClaude,
   ai4science001,
+  ai4science002,
   anthropic002,
   infra001,
   multiAgent001,
