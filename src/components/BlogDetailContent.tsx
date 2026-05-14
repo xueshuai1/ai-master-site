@@ -12,6 +12,8 @@ import { BlogPost, ArticleSection } from "@/data/blogs/blog-types";
 import { blogs } from "@/data/blogs";
 import CopyMarkdownButton from "@/components/CopyMarkdownButton";
 import { highlightCode } from "@/lib/highlight";
+import ArticleStats from "@/components/ArticleStats";
+import CardStats from "@/components/CardStats";
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -218,28 +220,28 @@ export default function BlogDetailContent({ post, relatedPosts }: { post: BlogPo
             <span className="text-slate-400 truncate">{post.title}</span>
           </div>
 
-          <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-sm font-medium">
-              {post.tags[0] || "行业洞察"}
-            </span>
-          </div>
-
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-end gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+          <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs bg-brand-500/10 border border-brand-500/20 text-brand-300 font-medium">
+              {post.tags[0] || "行业洞察"}
+            </span>
             <span>✍️ {post.author}</span>
             <span>📅 创建 {post.date}</span>
             {post.updatedAt && (
               <span className="text-amber-400">🔄 更新 {post.updatedAt}</span>
             )}
             <span>📖 {post.readTime} min 阅读</span>
-            <CopyMarkdownButton
-              title={post.title}
-              summary={post.summary}
-              sections={post.content}
-            />
+            <CardStats type="blog" id={post.id} size="md" />
+            <span className="ml-auto hidden sm:inline-flex">
+              <CopyMarkdownButton
+                title={post.title}
+                summary={post.summary}
+                sections={post.content}
+              />
+            </span>
           </div>
         </div>
       </section>
@@ -266,8 +268,10 @@ export default function BlogDetailContent({ post, relatedPosts }: { post: BlogPo
                 ))}
               </article>
 
+              <ArticleStats type="blog" id={post.id} />
+
               {/* Tags */}
-              <div className="mt-12 pt-8 border-t border-white/5">
+              <div className="mt-10 pt-8 border-t border-white/5">
                 <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">标签</h3>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag) => (

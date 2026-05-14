@@ -20,6 +20,9 @@ import JsonLd from "@/components/JsonLd";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToolCard from "@/components/ToolCard";
+import dynamic from "next/dynamic";
+
+const ToolVote = dynamic(() => import("@/components/ToolVote"), { ssr: false });
 
 export const dynamicParams = false;
 
@@ -220,6 +223,10 @@ export default function ToolDetailPage({ params }: { params: { id: string } }) {
                   🌐 官网
                 </a>
               )}
+            </div>
+
+            <div className="pt-5 border-t border-white/5">
+              <ToolVote id={tool.id} />
             </div>
           </header>
 

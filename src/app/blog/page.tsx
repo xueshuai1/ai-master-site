@@ -7,6 +7,9 @@ import { blogs } from "@/data/blogs";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import CategoryFilter from "@/components/CategoryFilter";
+import dynamic from "next/dynamic";
+
+const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 
 const blogPosts = blogs
   .map((b) => ({
@@ -163,10 +166,13 @@ export default function BlogPage() {
                   {post.summary}
                 </p>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">✍️ {post.author}</span>
-                  <div className="flex gap-2 flex-wrap">
-                    {post.tags.map((tag: string) => (
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 shrink-0">
+                    <span className="text-xs text-slate-500">✍️ {post.author || "AI Master"}</span>
+                    <CardStats type="blog" id={post.id} />
+                  </div>
+                  <div className="flex gap-2 flex-wrap justify-end">
+                    {post.tags.slice(0, 3).map((tag: string) => (
                       <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-400">
                         #{tag}
                       </span>

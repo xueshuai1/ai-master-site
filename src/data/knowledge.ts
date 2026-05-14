@@ -337,6 +337,7 @@ import { article as aieng025 } from './articles/aieng-025';
 import { article as aieng026 } from './articles/aieng-026';
 import { article as aieng027 } from './articles/aieng-027';
 import { article as aieng028 } from './articles/aieng-028';
+import { article as aieng029 } from './articles/aieng-029';
 import { article as codingOutput001 } from './articles/coding-output-001';
 import { article as agent040 } from './articles/agent-040';
 import { article as agent041 } from './articles/agent-041';
@@ -669,6 +670,7 @@ export const articles: Article[] = [
   aieng026,
   aieng027,
   aieng028,
+  aieng029,
   codingOutput001,
   agent046,
   agent047,

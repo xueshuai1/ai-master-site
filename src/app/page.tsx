@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import BreathingBadge from "@/components/BreathingBadge";
+
+const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 import { LAST_UPDATE_TIME } from "@/data/update-time";
 import { news } from "@/data/news";
 import { blogs } from "@/data/blogs";
@@ -229,7 +232,10 @@ export default function Home() {
                   {post.title}
                 </h3>
                 <p className="text-slate-400 text-xs leading-relaxed line-clamp-2 mb-2">{post.summary}</p>
-                <span className="text-xs text-slate-500">{post.date} · {post.readTime} min</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">{post.date} · {post.readTime} min</span>
+                  <CardStats type="blog" id={post.id} />
+                </div>
               </Link>
             ))}
           </div>

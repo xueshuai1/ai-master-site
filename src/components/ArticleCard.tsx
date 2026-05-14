@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Article } from "@/data/knowledge";
+import dynamic from "next/dynamic";
+
+const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 
 const levelColors: Record<string, string> = {
   入门: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
@@ -65,7 +68,10 @@ export default function ArticleCard({ article }: { article: Article }) {
       {/* Footer */}
       <div className="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-white/5">
         <span>{article.date}</span>
-        <span>📖 {article.readTime}</span>
+        <div className="flex items-center gap-3">
+          <CardStats type="article" id={article.id} />
+          <span>📖 {article.readTime}</span>
+        </div>
       </div>
     </Link>
   );

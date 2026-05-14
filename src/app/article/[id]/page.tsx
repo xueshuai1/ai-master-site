@@ -18,6 +18,8 @@ import dynamic from "next/dynamic";
 
 const BodyMermaidRenderer = dynamic(() => import("@/components/BodyMermaidRenderer").then(m => ({ default: m.BodyMermaidRenderer })), { ssr: false });
 const CopyMarkdownButton = dynamic(() => import("@/components/CopyMarkdownButton"), { ssr: false });
+const ArticleStats = dynamic(() => import("@/components/ArticleStats"), { ssr: false });
+const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -359,35 +361,35 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
             <span className="text-slate-400 truncate">{article.title}</span>
           </div>
 
-          <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <Link
-              href={`/knowledge?category=${article.category}`}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm border bg-brand-500/15 border-brand-500/40 text-brand-300 shadow-sm shadow-brand-500/10 hover:bg-brand-500/25 transition-all"
-            >
-              <span>{categoryIcon}</span>
-              <span className="font-medium">{categoryName}</span>
-            </Link>
-            <span className={`px-3 py-1.5 rounded-lg text-sm font-medium border ${levelColors[article.level]}`}>
-              {article.level}
-            </span>
-          </div>
-
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-end gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+          <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+            <Link
+              href={`/knowledge?cat=${article.category}`}
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs border bg-brand-500/15 border-brand-500/40 text-brand-300"
+            >
+              <span>{categoryIcon}</span>
+              <span className="font-medium">{categoryName}</span>
+            </Link>
+            <span className={`px-2.5 py-1 rounded-md text-xs font-medium border ${levelColors[article.level]}`}>
+              {article.level}
+            </span>
             <span>✍️ AI Master</span>
             <span>📅 创建 {article.date}</span>
             {article.updatedAt && (
               <span className="text-amber-400">🔄 更新 {article.updatedAt}</span>
             )}
             <span>📖 {article.readTime} 阅读</span>
-            <CopyMarkdownButton
-              title={article.title}
-              summary={article.summary}
-              sections={article.content ?? []}
-            />
+            <CardStats type="article" id={article.id} size="md" />
+            <span className="ml-auto hidden sm:inline-flex">
+              <CopyMarkdownButton
+                title={article.title}
+                summary={article.summary}
+                sections={article.content ?? []}
+              />
+            </span>
           </div>
         </div>
       </section>
@@ -436,7 +438,9 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
               {/* Render mermaid charts embedded in body markdown */}
               <BodyMermaidRenderer />
 
-              <div className="mt-12 pt-8 border-t border-white/5">
+              <ArticleStats type="article" id={article.id} />
+
+              <div className="mt-10 pt-8 border-t border-white/5">
                 <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">标签</h3>
                 <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag) => (
