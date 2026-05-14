@@ -1,34 +1,25 @@
-⏰ 写入时间：2026-05-14 12:11 (Asia/Shanghai)
-
+⏰ 写入时间：2026-05-14 16:00 (Asia/Shanghai)
 ## 本轮发现
+🔥 热点（12 条，已写入 news-1592~news-1603）：
+1. [Anthropic 企业采用率首超 OpenAI] Ramp AI 指数显示 Anthropic 34.4% vs OpenAI 32.3% → 适合：行业分析博客
+2. [OpenAI 向欧盟开放 GPT-5.5-Cyber] 网络安全专用模型限量预览 → 适合：AI 安全治理知识库
+3. [百度发布 DuMate 通用智能体] 李彦宏首提 DAA 为 AI 时代度量衡 → 适合：Agent 生态知识库
+4. [腾讯元宝微信聊天记录总结] AI 解法信息过载痛点 → 适合：AI 应用博客
+5. [腾讯 Q1 财报 Hy3preview 登顶 OpenRouter] WorkBuddy 日活中国第一 → 适合：行业分析博客
+6. [DeepSeek 500 亿融资] 创始人领投 200 亿，V4.1 6 月发布 → 适合：大模型行业知识库
+7. [蚂蚁百灵 Ring-2.6-1T] 万亿级思考模型推理强度可调节 → 适合：推理模型知识库
+8. [商汤 SenseNova 6.7 Flash-Lite] Token 消耗降低 60% → 适合：轻量化模型知识库
+9. [OpenAI 三款实时语音模型] GPT-Realtime-2 具备 GPT-5 级推理 → 适合：多模态知识库
+10. [OpenAI+Anthropic 同日成立合资企业] 115 亿美元进军咨询行业 → 适合：行业变革博客
+11. [3000 元手搓 AI 短片外网刷屏] 《丧尸清道夫》1200 万播放 → 适合：AIGC 创意博客
+12. [高德+千问开源 AGenUI] 三端一套代码 Agent UI → 适合：开源项目知识库
 
-🔥 热点（12条，已选 12 条写入 news-1580~1591）：
-1. [美国 AI 商业化领先] 深度分析美国在 AI 技术 vs 中国在应用层的追赶 → 适合：博客/知识库
-2. [Needle 26M 工具调用模型] Gemini 蒸馏到 2600 万参数，HN 650 分 → 适合：知识库
-3. [Meta Threads AI 屏蔽争议] 不允许用户屏蔽 AI 账号 → 适合：新闻/博客
-4. [BitLocker YellowKey 零日] U 盘文件即可解锁 BitLocker → 适合：知识库
-5. [字节视觉生成新路线] 挑战扩散+自回归，边画边改 → 适合：博客
-6. [OpenAI 强化学习新范式] 翁家翌提出不更新参数的 RL → 适合：知识库
-7. [Claude for Small Business] Anthropic 正式发布中小企业服务 → 适合：新闻
-8. [Ilya 70 亿 OpenAI 股权] 创始人财富细节首次曝光 → 适合：新闻
-9. [Google+SpaceX 太空数据中心] 轨道上的 AI 算力 → 适合：博客
-10. [Gboard Gemini 听写] 独立听写创业公司面临 Google 冲击 → 适合：新闻
-11. [Musk v. OpenAI 庭审] Altman 披露 Musk 子女继任计划 → 适合：新闻
-12. [Claude Design 数据所有权] 取消订阅丢失项目 → 适合：博客
+🆕 新工具（0 个）：
+- add-new-tools 脚本运行结果：当前 tools.ts 已覆盖大部分高星项目，无遗漏项目需要收录
 
-🆕 新工具（0个）：
-- tools.ts 已全面覆盖高星项目，无遗漏项目需要收录
-
-💡 知识缺口（5项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[主动性 AI/Proactive AI] — Anthropic Cat Wu 提出 AI 下一步是主动预测
-2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 世界模型/World Model] — Origin Lab 数据市场+Runway CEO 观点
-3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 能源消耗与可持续发展] — xAI 燃气轮机争议+太空数据中心
-4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 工具数据所有权] — Claude Design 用户丢失项目争议
-5. KNOWLEDGE-BASE-PLAN.md 待补：[视觉生成新范式] — 字节跳动第三种路线+强化学习不更新参数
-
-📝 PM 建议：
-- 博客选题：美国 AI 商业化 vs 中国应用追赶——谁能赢？
-- 博客选题：字节跳动视觉生成第三种路线——边画边改的技术意义
-- 知识库选题：Needle 26M 模型——AI Agent 轻量化的关键一步
-- 知识库选题：AI 工具数据所有权争议——Claude Design 事件启示
-- 知识库选题：太空数据中心——Google+SpaceX 的轨道算力愿景
+💡 知识缺口（5 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络安全专用模型（GPT-5.5-Cyber / Claude Mythos）
+2. KNOWLEDGE-BASE-PLAN.md 待补：Agent 跨平台 UI 框架（AGenUI / A2UI 协议）
+3. KNOWLEDGE-BASE-PLAN.md 待补：实时语音 AI 技术路线（GPT-Realtime / StepAudio）
+4. KNOWLEDGE-BASE-PLAN.md 待补：轻量化多模态模型部署（SenseNova Flash-Lite / MiniCPM-V）
+5. KNOWLEDGE-BASE-PLAN.md 待补：AI 企业采用率指标体系（Ramp AI Index / DAA）

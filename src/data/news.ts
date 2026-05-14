@@ -23037,5 +23037,373 @@ xAI 正在密西西比部署 50 台燃气轮机为地面数据中心供电，而
     source: "Hacker News",
     sourceUrl: "https://news.ycombinator.com/item?id=48128003",
     href: "/news/news-1591",
+  },
+  {
+    id: "news-1592",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Anthropic 企业 AI 采用率首次超越 OpenAI：Ramp AI 指数显示 Anthropic 升至 34.4%",
+    summary: "Ramp AI 指数 2026 年 5 月报告显示，Anthropic 企业采用率环比增长 3.8% 至 34.4%，首次超越 OpenAI（32.3%），但面临三大潜在威胁。",
+    content: `## Anthropic 在企业市场反超 OpenAI
+
+**2026 年 5 月**，Ramp AI 指数最新一期报告显示了一个重要转折点。
+
+### 核心数据
+- **Anthropic**：采用率 34.4%，环比增长 3.8%
+- **OpenAI**：采用率 32.3%，环比下降 2.9%
+- 这是 Anthropic **首次在采用率上超越 OpenAI**
+
+### 超越原因
+1. Claude Code 在企业开发者中广泛部署
+2. Cowork 企业协作工具快速推广
+3. 企业对 AI 安全性的关注度提升，Anthropic 的 Constitutional AI 方法获得信任
+
+### 三大威胁
+VentureBeat 分析指出，Anthropic 的领先地位面临三大威胁：
+1. OpenAI 持续的产品创新和降价策略
+2. Google Gemini 3.1 Ultra 的企业市场渗透
+3. 开源模型（如 DeepSeek V4）对中小企业市场的冲击
+
+**来源：** VentureBeat + Ramp AI Index
+**链接：** https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/`,
+    date: "2026-05-14 16:00",
+    source: "VentureBeat + Ramp AI Index",
+    sourceUrl: "https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/",
+    href: "/news/news-1592",
+  },
+  {
+    id: "news-1593",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 向欧盟开放 GPT-5.5-Cyber 网络安全专用模型，助力关键基础设施防御",
+    summary: "OpenAI 宣布向欧盟提供 GPT-5.5-Cyber 有限预览版，这是 GPT-5.5 的网络安全专用变体，面向经过审查的网络安全团队开放。",
+    content: `## GPT-5.5-Cyber：AI 安全能力的垂直化突破
+
+**2026 年 5 月 11 日**，OpenAI 宣布了一项重要的政企合作举措。
+
+### 核心内容
+- **GPT-5.5-Cyber**：GPT-5.5 的网络安全专用版本
+- **定向训练**：放宽了通用版在处理安全任务时的内置限制，使授权团队更高效执行漏洞识别、补丁验证和恶意软件分析
+- **有限预览**：面向经过审查的网络安全团队开放
+
+### 行业背景
+- Anthropic 一个月前发布了 Claude Mythos 预览版（Project Glasswing 计划），同样仅向特定企业开放
+- 两款专用模型的推出，折射出大模型厂商正从通用能力竞争转向垂直场景的精准适配
+
+### 政府高度关注
+美联储主席鲍威尔、财政部长贝森特近期与主要银行 CEO 讨论 Myhos 模型的潜在影响；副总统万斯与科技巨头举行电话会议。
+
+**来源：** CNBC
+**链接：** https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html`,
+    date: "2026-05-14 16:00",
+    source: "CNBC",
+    sourceUrl: "https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html",
+    href: "/news/news-1593",
+  },
+  {
+    id: "news-1594",
+    tag: "Agent",
+    tagColor: "bg-pink-500/10 text-pink-300",
+    title: "百度发布通用智能体 DuMate（百度搭子），李彦宏首提 DAA 为 AI 时代度量衡",
+    summary: "百度创始人李彦宏在 Create2026 大会上首次提出日活智能体数（DAA）作为 AI 时代核心指标，并发布通用智能体 DuMate 及移动端 App。",
+    content: `## 百度 DuMate：AI 从问答走向执行
+
+**2026 年 5 月 13 日**，百度 AI 开发者大会带来了一系列重磅发布。
+
+### DAA：AI 时代的新度量衡
+- **DAA（Daily Active Agents）**：日活智能体数
+- 李彦宏认为，DAA 比 Token 数更能客观反映 AI 生态的产出价值
+- 预测全球日活智能体数有望突破 100 亿量级
+
+### DuMate（百度搭子）
+- **定位转变**：从获取信息的聊天机器人 → 交付复杂任务的通用智能体
+- 用户不再只是问 AI 问题，而是让 AI 帮自己完成具体事情
+- 同步发布移动端 App
+
+### 配套发布
+- **伐谋**：具备自我演化与自主决策能力的智能体，通过闭环验证实现效率无限进化
+- **数字人**：赋予任务交付情绪价值，对应智能体从纯文本向多模态、具象化发展
+- **AI 时代进化论**：倡导个体向"三位一体"超级个体进化，企业实施"智能体优先策略"
+
+**来源：** 百度 Create2026 + AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-13`,
+    date: "2026-05-14 16:00",
+    source: "百度 Create2026 + AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-13",
+    href: "/news/news-1594",
+  },
+  {
+    id: "news-1595",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "腾讯元宝重大升级：微信聊天记录一键 AI 总结，信息过载痛点有了 AI 解法",
+    summary: "腾讯元宝上线微信聊天记录总结功能，用户可通过'转发到其他应用'将群聊或私聊记录一键同步至元宝 App，AI 自动完成摘要提炼和待办梳理。",
+    content: `## 微信聊天 × AI：终于不用手动翻记录了
+
+**2026 年 5 月 13 日**，腾讯元宝完成重大版本升级。
+
+### 核心功能
+- **一键转发**：群聊或私聊记录通过"转发到其他应用"同步至元宝 App
+- **AI 智能摘要**：自动提炼聊天要点、梳理待办事项、产出执行方案
+- **项目讨论纪要**：基于群聊内容快速生成会议纪要
+
+### 技术意义
+- 标志着腾讯进一步打通大模型与微信生态的底层交互
+- 微信聊天记录是最难被 AI 处理的私域数据之一——敏感、碎片、上下文复杂
+- 腾讯能把这个功能做出来并上线，说明数据隐私和合规问题已有相对成熟的解决方案
+
+### 差异化优势
+此前元宝已具备对微信公众号长文及站内文档的深度解读能力，这次升级补齐了社交信息流处理的关键一环。
+
+**来源：** AITOP100 + 腾讯官方
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-13`,
+    date: "2026-05-14 16:00",
+    source: "AITOP100 + 腾讯官方",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-13",
+    href: "/news/news-1595",
+  },
+  {
+    id: "news-1596",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "腾讯 Q1 财报：混元 Hy3preview 连续三周登顶 OpenRouter，WorkBuddy 日活中国第一",
+    summary: "腾讯控股一季报显示，混元大模型重建后 Hy3preview 连续三周登顶 OpenRouter 周榜，3 月底推出的 WorkBuddy 已成为中国最受欢迎的 AI 智能体。",
+    content: `## 腾讯 AI：调用量说话
+
+**2026 年 5 月 13 日**，腾讯控股发布一季报。
+
+### 核心数据
+- **营收**：1964.6 亿元，同比增长 9%
+- **Non-IFRS 经营利润**：756.3 亿元，同比增长 9%
+- **自由现金流**：567 亿元
+
+### AI 亮点
+- **Hy3preview**：4 月 27 日至 5 月 11 日连续三周登顶 OpenRouter 周榜总榜
+- 工具调用和编程细分场景分列第一、第二
+- **WorkBuddy**：以日活计，已成为中国最受欢迎的 AI 智能体
+- 元宝、ima、QQ 浏览器等产品加速 Agent 能力升级
+
+### 值得关注的细节
+若剔除新 AI 产品影响，Non-IFRS 经营利润同比增长 17% 至 844 亿元——说明新 AI 产品短期内对利润有拖累，但腾讯仍在坚定投入。
+
+**来源：** 腾讯财报 + AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-13`,
+    date: "2026-05-14 16:00",
+    source: "腾讯财报 + AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-13",
+    href: "/news/news-1596",
+  },
+  {
+    id: "news-1597",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "DeepSeek 启动 500 亿元融资，创始人梁文锋领投 200 亿，V4.1 将于 6 月发布",
+    summary: "DeepSeek 启动 500 亿元大规模融资刷新中国 AI 单轮融资纪录，创始人个人最高出资 200 亿元，公司估值升至 500 亿美元。",
+    content: `## DeepSeek：从技术实验室到商业化重资产
+
+**2026 年 5 月 9 日**，DeepSeek 宣布了一项史无前例的融资计划。
+
+### 融资详情
+- **总额**：500 亿元人民币
+- **创始人领投**：梁文锋个人最高出资 200 亿元（占比 40%）
+- **估值**：500 亿美元（约 3500 亿元人民币）
+
+### 技术规划
+- **V4 系列**：已支持 1M 超长上下文，编程基准测试达到顶级水平
+- **V4.1（6 月发布）**：完善行业协议支持，新增图像与音频处理的多模态能力
+
+### 转型意义
+DeepSeek 此前坚持"不融资、不商业化、不路演"，依托量化基金背景深耕技术。随着 AI 竞赛进入深水区，算力需求激增、人才成本上升，推动其向重资产商业化转型。
+
+**来源：** Bloomberg + AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-09`,
+    date: "2026-05-14 16:00",
+    source: "Bloomberg + AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-09",
+    href: "/news/news-1597",
+  },
+  {
+    id: "news-1598",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "蚂蚁百灵发布万亿级思考模型 Ring-2.6-1T，推理强度可灵活调节",
+    summary: "蚂蚁百灵推出万亿级旗舰思考模型 Ring-2.6-1T，提供 high 和 xhigh 两种推理模式，high 模式 PinchBench 得分 87.6，xhigh 模式 AIME26 得分 95.83。",
+    content: `## Ring-2.6-1T：推理效能精细化运营
+
+**2026 年 5 月 9 日**，蚂蚁百灵发布了其最新的万亿级模型。
+
+### 两种推理模式
+- **high 模式**：低 Token 开销、快速多步执行，PinchBench 得分 87.60，超越多款国际主流闭源模型
+- **xhigh 模式**：专注数学竞赛和复杂逻辑推演，AIME26 达 95.83 分，GPQA Diamond 为 88.27 分
+
+### 适用场景
+- Agent 工作流、工程开发、科研分析
+- high 模式适配高频 Agent 协作与多轮交互
+- xhigh 模式适配数学竞赛、复杂逻辑推演
+
+### 行业意义
+标志着大模型竞争从参数比拼转向推理效能精细化运营。模型已上线 OpenRouter 开放一周免费体验，近期计划开源。
+
+**来源：** AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-09`,
+    date: "2026-05-14 16:00",
+    source: "AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-09",
+    href: "/news/news-1598",
+  },
+  {
+    id: "news-1599",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "商汤发布 SenseNova 6.7 Flash-Lite：Token 消耗降低 60%，原生多模态智能体",
+    summary: "商汤科技推出轻量化多模态智能体模型 SenseNova 6.7 Flash-Lite，采用'看、想、做'一体化机制，Token 消耗量较纯文本智能体降低约 60%。",
+    content: `## SenseNova 6.7 Flash-Lite：轻量高效
+
+**2026 年 5 月 8 日**，商汤科技发布了新一代轻量化模型。
+
+### 核心优势
+- **原生多模态架构**：无需"视觉转文本"中间层，直接识读网页布局、文档结构、财务图表
+- **Token 降低 60%**：在信息搜索等高频场景下，Token 消耗量较纯文本智能体降低约 60%
+- **毫秒级响应**：保持较小参数规模的同时，智能体能力达到同级别领先水平
+
+### 生态动作
+- 启动 SenseNova Token Plan 限时免费活动
+- 将核心办公技能封装为 SenseNova-Skills，在 GitHub 开源
+
+### 行业趋势
+AI 领域竞争正从"大参数"向"轻量化与高效率"快速演进。
+
+**来源：** AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-08`,
+    date: "2026-05-14 16:00",
+    source: "AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-08",
+    href: "/news/news-1599",
+  },
+  {
+    id: "news-1600",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 发布三款实时语音模型：GPT-Realtime-2 具备 GPT-5 级推理能力，支持 70 种语言",
+    summary: "OpenAI 发布 GPT-Realtime-2、GPT-Realtime-Translate 和 GPT-Realtime-Whisper 三款实时语音模型，首个具备 GPT-5 级推理能力的语音工具正式落地。",
+    content: `## 语音交互的 GPT-5 时刻
+
+**2026 年 5 月 8 日**，OpenAI 刷新了语音交互的技术边界。
+
+### GPT-Realtime-2
+- **首个 GPT-5 级推理语音模型**：能实时进行复杂逻辑推理、灵活调用外部工具
+- **支持打断和纠正**：精准识别并处理用户的打断或纠正
+- **定价**：音频输入 32 美元/百万 Token，输出 64 美元/百万 Token
+
+### GPT-Realtime-Translate
+- 支持 70 种输入语言与 13 种输出语言的即时转换
+- 翻译速度几乎与说话者同步
+
+### GPT-Realtime-Whisper
+- 极致的流式转录，"音随人动"的低延迟体验
+
+### 行业意义
+AI 语音交互正从"简单响应"向"深度实时理解"跨越。
+
+**来源：** AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-08`,
+    date: "2026-05-14 16:00",
+    source: "AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-08",
+    href: "/news/news-1600",
+  },
+  {
+    id: "news-1601",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "OpenAI 和 Anthropic 同日成立合资企业：115 亿美元联合进军 3750 亿美元咨询行业",
+    summary: "2026 年 5 月 4 日，OpenAI 和 Anthropic 各自成立私募支持的 AI 服务合资企业，总额 115 亿美元，标志着 AI 公司正式进入企业服务领域。",
+    content: `## AI 公司 vs 咨询公司：新战场
+
+**2026 年 5 月 4 日**，AI 行业的两条重磅消息同时发布。
+
+### 核心事件
+- **OpenAI**：成立私募支持的 AI 服务合资企业
+- **Anthropic**：同日宣布成立新的 AI 服务企业
+- **总规模**：115 亿美元
+- **目标行业**：3750 亿美元的企业咨询行业
+
+### 投资方
+Anthropic 的合资企业由 General Atlantic、Leonard Green、Apollo Global Management、GIC 和 Sequoia Capital 等顶级投资机构联合支持。
+
+### 行业意义
+- 标志着 AI 公司从"卖模型"转向"卖服务"
+- 传统咨询行业面临 AI 原生公司的降维打击
+- Anthropic 在企业 AI 采纳方面略有优势，其 Claude Code 和 Cowork 已率先打入企业市场
+
+**来源：** CIO + SiliconANGLE + Gadgets360
+**链接：** https://www.cio.com/article/4167787/openai-anthropic-expand-services-push-signaling-new-phase-in-enterprise-ai-race.html`,
+    date: "2026-05-14 16:00",
+    source: "CIO + SiliconANGLE + Gadgets360",
+    sourceUrl: "https://www.cio.com/article/4167787/openai-anthropic-expand-services-push-signaling-new-phase-in-enterprise-ai-race.html",
+    href: "/news/news-1601",
+  },
+  {
+    id: "news-1602",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "3000 元手搓 AI 短片《丧尸清道夫》外网刷屏，好莱坞大佬全网寻人",
+    summary: "国产 AI 短片《Zombie Scavenger》在海外社交平台 X 上播放量突破 1200 万，好莱坞知名 AI 电影制作人 PJ Ace 发推盛赞并全网寻找导演。",
+    content: `## 3000 元 vs 50 万美元：AI 短片的降维打击
+
+**2026 年 5 月**，一部国产 AI 短片在海外引发轰动。
+
+### 数据亮点
+- **播放量**：突破 1200 万
+- **推文互动**：6700+ 转发、2000+ 评论
+- **成本**：约 3000 元人民币
+- **周期**：10 天，一个人独立完成
+- **好莱坞对比**：同等制作价值在传统模式下需 50 万美元 + 6 个月
+
+### 创作亮点
+- **风格**：原子朋克（复古科幻），灵感来自《机器人总动员》
+- **主角**：机器人牛仔——巧妙绕过了 AI 视频的"恐怖谷效应"
+- **没有用分镜图、没有用首尾帧**，分镜控制只依赖文案
+
+### 后续
+导演 Mx-Shell 在抖音发布创作说明，短片已和影视公司达成合作，大荧幕版本即将面世。
+
+**来源：** AITOP100 + X 平台
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-13`,
+    date: "2026-05-14 16:00",
+    source: "AITOP100 + X 平台",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-13",
+    href: "/news/news-1602",
+  },
+  {
+    id: "news-1603",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "高德联合千问开源 AGenUI：一套代码，Agent UI 同时跑在 iOS、安卓和鸿蒙三端",
+    summary: "高德与阿里千问联合发布 AGenUI——行业首个覆盖三端的端云一体原生 A2UI 开源框架，Agent 输出可直接渲染为可交互的原生卡片。",
+    content: `## AGenUI：Agent UI 的跨平台突破
+
+**2026 年 5 月 13 日**，高德与阿里千问团队联合发布了重要开源项目。
+
+### 核心能力
+- **三端一套代码**：iOS、Android、HarmonyOS 同时运行
+- **基于 Google A2UI 协议**：定义"模型如何描述界面"的标准
+- **端侧原生渲染**：补齐了 A2UI 在手机上"跑起来"的能力
+
+### 技术架构
+- **端云一体**：云侧通过 Agent Skill 生成 AI 原生的 A2UI JSON
+- **流式架构**：组件到达即刻挂载，"边生成边呈现"
+- **内置 22 个基础组件和 45 项 CSS 属性**
+- **Theme 系统**：支持 Design Token，模型输出可直接对齐品牌视觉规范
+
+### 行业意义
+推动 AI 应用从"文本式交互"走向"生成式 UI 交互"——用户不再只看到文字回复，而是获得可点击、可操作的原生界面组件。
+
+**来源：** AITOP100
+**链接：** https://www.aitop100.cn/ai-daily-2026-05-13`,
+    date: "2026-05-14 16:00",
+    source: "AITOP100",
+    sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-13",
+    href: "/news/news-1603",
   }
 ];
