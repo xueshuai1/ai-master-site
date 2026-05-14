@@ -1,5 +1,7 @@
-⏰ 写入时间：2026-05-14 11:00 (Asia/Shanghai)
-🐛 修复：0 个 bug（QA 本轮无需修复）
+⏰ 写入时间：2026-05-14 14:00 (Asia/Shanghai)
+🐛 修复：2 个 bug
+  - b1: ai-proactive-001 未注册到 knowledge.ts
+  - b2: blog-169 未注册到 blogs.ts
 ✨ 新增：0 个功能
 🔧 优化：0 项
-已知问题：P2 /roadmap 404（历史遗留，非本轮引入）
+已知问题：无
