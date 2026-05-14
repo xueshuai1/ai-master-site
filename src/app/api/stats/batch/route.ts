@@ -30,17 +30,17 @@ export async function GET(req: NextRequest) {
   const dislikeKeys = items.map((x) => keys.dislikes(x.type, x.id));
 
   const [viewVals, likeVals, dislikeVals] = await Promise.all([
-    redis.mget<number>(...viewKeys),
-    redis.mget<number>(...likeKeys),
-    redis.mget<number>(...dislikeKeys),
+    redis.mget<(number | null)[]>(...viewKeys),
+    redis.mget<(number | null)[]>(...likeKeys),
+    redis.mget<(number | null)[]>(...dislikeKeys),
   ]);
 
   const result: Record<string, { views: number; likes: number; dislikes: number }> = {};
   items.forEach(({ type, id }, i) => {
     result[`${type}:${id}`] = {
-      views: viewVals[i] ?? 0,
-      likes: likeVals[i] ?? 0,
-      dislikes: dislikeVals[i] ?? 0,
+      views: Number(viewVals[i]) || 0,
+      likes: Number(likeVals[i]) || 0,
+      dislikes: Number(dislikeVals[i]) || 0,
     };
   });
 
