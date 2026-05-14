@@ -170,7 +170,7 @@ export const article: Article = {
     C -.->|拦截| X2["标记高风险"]
     D -.->|拦截| X3["拒绝执行"]
     E -.->|拦截| X4["过滤输出"]
-    style A fill:#92400e,stroke:#f59e0b,color:#fff
+    style A fill:#92400e,stroke:#b45309,color:#fff
     style F fill:#dcfce7,stroke:#22c55e,color:#000
     style B fill:#1e3a5f,stroke:#2563eb,color:#fff
     style C fill:#1e3a5f,stroke:#2563eb,color:#fff
