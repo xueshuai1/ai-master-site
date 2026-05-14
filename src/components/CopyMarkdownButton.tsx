@@ -47,7 +47,7 @@ export default function CopyMarkdownButton({ title, summary, sections }: Props) 
   }, [title, summary, sections]);
 
   const label =
-    state === "copied" ? "✓ 已复制" : state === "error" ? "复制失败" : "复制全文";
+    state === "copied" ? "已复制" : state === "error" ? "复制失败" : "复制全文";
 
   return (
     <button
