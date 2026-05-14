@@ -16,6 +16,7 @@ import { parseMarkdown } from "@/components/MarkdownBody";
 import dynamic from "next/dynamic";
 
 const BodyMermaidRenderer = dynamic(() => import("@/components/BodyMermaidRenderer").then(m => ({ default: m.BodyMermaidRenderer })), { ssr: false });
+const CopyMarkdownButton = dynamic(() => import("@/components/CopyMarkdownButton"), { ssr: false });
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -96,8 +97,17 @@ const categoryIcons: Record<string, string> = {
   dl: "🧠",
   nlp: "💬",
   cv: "👁️",
+  prompt: "✏️",
   llm: "🤖",
   agent: "🦾",
+  rl: "🎮",
+  genai: "🎨",
+  multimodal: "🔗",
+  aieng: "🔧",
+  practice: "🌍",
+  mlops: "🚀",
+  ethics: "⚖️",
+  math: "📐",
 };
 
 const categoryNames: Record<string, string> = {
@@ -105,8 +115,17 @@ const categoryNames: Record<string, string> = {
   dl: "深度学习",
   nlp: "自然语言处理",
   cv: "计算机视觉",
+  prompt: "提示词工程",
   llm: "大语言模型",
   agent: "AI Agent",
+  rl: "强化学习",
+  genai: "生成式 AI",
+  multimodal: "多模态学习",
+  aieng: "AI 工程化",
+  practice: "实践应用",
+  mlops: "MLOps 与部署",
+  ethics: "AI 伦理与安全",
+  math: "数学基础",
 };
 
 function getRelatedArticles(currentId: string, category: string) {
@@ -405,10 +424,14 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
           </div>
 
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-sm font-medium">
-              {categoryIcon} {categoryName}
-            </span>
-            <span className={`px-3 py-1 rounded-full text-sm font-medium border ${levelColors[article.level]}`}>
+            <Link
+              href={`/knowledge?category=${article.category}`}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm border bg-brand-500/15 border-brand-500/40 text-brand-300 shadow-sm shadow-brand-500/10 hover:bg-brand-500/25 transition-all"
+            >
+              <span>{categoryIcon}</span>
+              <span className="font-medium">{categoryName}</span>
+            </Link>
+            <span className={`px-3 py-1.5 rounded-lg text-sm font-medium border ${levelColors[article.level]}`}>
               {article.level}
             </span>
           </div>
@@ -417,13 +440,18 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+          <div className="flex flex-wrap items-center justify-end gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+            <span>✍️ AI Master</span>
             <span>📅 创建 {article.date}</span>
             {article.updatedAt && (
               <span className="text-amber-400">🔄 更新 {article.updatedAt}</span>
             )}
             <span>📖 {article.readTime} 阅读</span>
-            <span>🏷️ {article.tags.map((t) => `#${t}`).join(" ")}</span>
+            <CopyMarkdownButton
+              title={article.title}
+              summary={article.summary}
+              sections={article.content ?? []}
+            />
           </div>
         </div>
       </section>

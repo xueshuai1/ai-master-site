@@ -10,6 +10,7 @@ import CopyButton from "@/components/CopyButton";
 import PythonCodeBlock from "@/components/PythonCodeBlock";
 import { BlogPost, ArticleSection } from "@/data/blogs/blog-types";
 import { blogs } from "@/data/blogs";
+import CopyMarkdownButton from "@/components/CopyMarkdownButton";
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -216,23 +217,28 @@ export default function BlogDetailContent({ post, relatedPosts }: { post: BlogPo
             <span className="text-slate-400 truncate">{post.title}</span>
           </div>
 
-          <div className="flex items-center gap-3 mb-4 flex-wrap justify-center">
+          <div className="flex items-center gap-3 mb-4 flex-wrap">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-500/10 text-brand-300 rounded-full text-sm font-medium">
               {post.tags[0] || "行业洞察"}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
+          <div className="flex flex-wrap items-center justify-end gap-4 text-sm text-slate-400 mb-8 pb-8 border-b border-white/5">
             <span>✍️ {post.author}</span>
             <span>📅 创建 {post.date}</span>
             {post.updatedAt && (
               <span className="text-amber-400">🔄 更新 {post.updatedAt}</span>
             )}
             <span>📖 {post.readTime} min 阅读</span>
+            <CopyMarkdownButton
+              title={post.title}
+              summary={post.summary}
+              sections={post.content}
+            />
           </div>
         </div>
       </section>
