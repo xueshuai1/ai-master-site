@@ -23729,5 +23729,309 @@ Anthropic 的合资企业由 General Atlantic、Leonard Green、Apollo Global Ma
     source: "TechCrunch",
     sourceUrl: "https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/",
     href: "/news/news-1615",
+  },
+{
+    id: "news-1616",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Altman 庭审作证：不是我们'窃取慈善机构'，是马斯克抛弃了 OpenAI",
+    summary: "OpenAI CEO Sam Altman 在'马斯克诉 Altman'案庭审中作证约四小时，核心主张：马斯克 2018 年离开了 OpenAI，而非 OpenAI 背叛了慈善使命。",
+    content: `## Musk v. Altman 庭审：Altman 反击
+
+**2026 年 5 月 14 日**，新浪科技报道。
+
+### 核心证词
+- **马斯克离开**：Altman 作证称马斯克 2018 年主动离开 OpenAI 董事会，而非 OpenAI 背叛
+- **\"被弃之不顾\"**：\"我们当时基本上被弃之不顾\"，Altman 形容马斯克离开后公司的困境
+- **马斯克的预判**：马斯克曾在 2018 年邮件中称 OpenAI \"成功概率为 0%\"，认为\"即使筹集数亿美元也不够\"
+- **控制权之争**：Altman 反驳\"窃取慈善机构\"指控，称马斯克真正在意的是控制权
+
+### 案件背景
+马斯克于 2024 年起诉 OpenAI，指控其违背了保持非营利组织的承诺。庭审围绕 2017-2018 年的一系列争议性谈判展开。
+
+### 行业影响
+这场诉讼不仅是两位 AI 领域关键人物之间的法律纠纷，也关乎 AI 行业早期发展路径的历史叙事。
+
+**来源：** 新浪科技 + The Verge
+**链接：** https://finance.sina.com.cn/tech/2026-05-14/doc-inhxuwsz4229498.shtml`,
+    date: "2026-05-14 20:00",
+    source: "新浪科技 + The Verge",
+    sourceUrl: "https://finance.sina.com.cn/tech/2026-05-14/doc-inhxuwsz4229498.shtml",
+    href: "/news/news-1616",
+  },
+{
+    id: "news-1617",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "千亿美元投资 OpenAI 后，微软为\"后 OpenAI 时代\"寻求收购更多 AI 初创公司",
+    summary: "据新浪科技报道，微软正物色 AI 领域的初创企业收购标的，为可能到来\"后 OpenAI 时代\"的 AI 竞争格局做准备。",
+    content: `## 微软的战略对冲：不把所有鸡蛋放在 OpenAI 篮子里
+
+**2026 年 5 月 14 日**，新浪科技报道。
+
+### 微软的收购动向
+- **背景**：微软已向 OpenAI 投资超千亿美元，是最大战略合作伙伴
+- **战略意图**：在 OpenAI 与微软合作重构（结束独家排他）的背景下，微软需要强化自有 AI 能力
+- **目标领域**：AI 初创公司，可能涵盖 Agent、编码工具、企业 AI 服务等
+
+### 行业解读
+随着 OpenAI 模型登陆 AWS、Azure 独占结束，微软正在加速构建自有 AI 护城河。这一动向反映了 AI 行业合作格局的深层变化——从单一深度合作转向多元化布局。
+
+**来源：** 新浪科技
+**链接：** https://finance.sina.com.cn/tech/2026-05-14/doc-inhxvihs8801065.shtml`,
+    date: "2026-05-14 20:00",
+    source: "新浪科技",
+    sourceUrl: "https://finance.sina.com.cn/tech/2026-05-14/doc-inhxvihs8801065.shtml",
+    href: "/news/news-1617",
+  },
+{
+    id: "news-1618",
+    tag: "AI 安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "The Verge 报道：AI 网络安全更新覆盖 MDASH、Mythos 和 GPT-5.5",
+    summary: "多家 AI 公司发布网络安全能力更新，OpenAI 的 GPT-5.5 Cyber、Anthropic 的 Claude Mythos 以及 MDASH 平台均有新动态。",
+    content: `## AI 网络安全军备竞赛升级
+
+**2026 年 5 月 14 日**，The Verge 综合报道。
+
+### 三大平台更新
+- **GPT-5.5 Cyber**：OpenAI 的网络安全专用模型持续更新，英国 AISI 评估显示其漏洞发现能力与 Claude Mythos 相当
+- **Claude Mythos**：Anthropic 的安全审计模型，此前帮助 Mozilla 修复 Firefox 271 个漏洞
+- **MDASH**：新的 AI 安全评估平台，为行业提供标准化安全测试
+
+### 行业趋势
+AI 网络安全正在成为一个独立赛道。随着 AI 模型自身安全能力的提升，\"AI vs AI\" 的安全攻防正在常态化。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/ai-artificial-intelligence`,
+    date: "2026-05-14 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-1618",
+  },
+{
+    id: "news-1619",
+    tag: "AI 应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "微软 Edge Copilot 更新：AI 可跨标签页提取信息，打造个人软件新体验",
+    summary: "微软 Edge 浏览器 Copilot 迎来重大更新，AI 助手现在能够跨标签页提取和整合信息，被视为'个人软件'时代的重要一步。",
+    content: `## Edge Copilot：浏览器变成 AI 工作台
+
+**2026 年 5 月 14 日**，The Verge 报道。
+
+### 核心功能
+- **跨标签页信息提取**：AI 可以同时读取多个打开的标签页内容并整合
+- **信息聚合**：不再需要手动在多个页面间复制粘贴
+- **个人软件范式**：The Verge 称这代表了\"个人软件\"（Personal Software）时代的到来
+
+### 行业意义
+浏览器正在从\"信息浏览工具\"进化为\"AI 驱动的个人工作台\"。随着 AI 能够跨应用、跨标签页理解和操作信息，传统的\"App 范式\"正在被重塑。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/ai-artificial-intelligence`,
+    date: "2026-05-14 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-1619",
+  },
+{
+    id: "news-1620",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "字节跳动提出视觉生成第三种路线：让模型像人类一样\"边画边改\"",
+    summary: "字节跳动研究团队提出全新视觉生成范式，挑战当前扩散模型和自回归模型的主导地位，让 AI 模型能够在生成过程中动态修改和调整。",
+    content: `## 视觉生成新范式：从\"一次性生成\"到\"迭代式创作\"
+
+**2026 年 5 月 14 日**，量子位报道。
+
+### 技术突破
+- **第三种路线**：不同于当前的扩散模型和自回归模型，新方法允许模型在生成过程中迭代修正
+- **类人创作**：模仿人类画家的\"边画边改\"工作方式
+- **质量提升**：在多个视觉生成基准上展现出更好的细节控制和一致性
+
+### 行业影响
+当前 AI 图像生成主要由扩散模型（如 Stable Diffusion）和自回归模型主导。字节提出的新路线如果验证有效，可能为视觉生成领域开辟新的技术方向。
+
+**来源：** 量子位
+**链接：** https://www.qbitai.com/`,
+    date: "2026-05-14 20:00",
+    source: "量子位",
+    sourceUrl: "https://www.qbitai.com/",
+    href: "/news/news-1620",
+  },
+{
+    id: "news-1621",
+    tag: "Agent",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "量子位热文：\"重生之我在 AI 时代当老板\"——让一群 Agent 互相 PUA",
+    summary: "一篇关于 AI Agent 管理的文章在中文 AI 社区走红，描述了未来管理者如何通过协调多个 AI Agent 完成任务，而非亲自执行。",
+    content: `## AI Agent 管理：未来的\"老板\"长什么样？
+
+**2026 年 5 月 14 日**，量子位报道。
+
+### 核心观点
+- **Agent 协作**：未来的管理者不再是\"自己做\"，而是协调多个 AI Agent 协同工作
+- **互相 PUA**：Agent 之间通过互相反馈、批评和优化来提升输出质量
+- **管理范式转变**：从\"人管人\"到\"人管 Agent\"，再到\"Agent 管 Agent\"
+
+### 行业趋势
+随着 AI Agent 能力快速提升，\"一人公司\"的概念正在从调侃走向现实。一个管理者配合多个专业化 AI Agent，可以完成过去需要整个团队的工作量。
+
+**来源：** 量子位
+**链接：** https://www.qbitai.com/`,
+    date: "2026-05-14 20:00",
+    source: "量子位",
+    sourceUrl: "https://www.qbitai.com/",
+    href: "/news/news-1621",
+  },
+{
+    id: "news-1622",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "MDDC2026：联发科天玑生态从 AI 到游戏全面开花",
+    summary: "联发科在 MDDC2026 大会上展示了天玑芯片在 AI 推理、游戏渲染、边缘计算等多个场景的最新能力，生态布局全面加速。",
+    content: `## 联发科天玑：AI 芯片的全面布局
+
+**2026 年 5 月 14 日**，新浪科技报道。
+
+### 生态展示
+- **AI 推理**：天玑芯片在端侧 AI 推理场景展现出强大的算力
+- **游戏性能**：AI 辅助的游戏渲染和帧率优化
+- **边缘计算**：天玑系列正在向 IoT 和边缘计算场景扩展
+
+### 行业背景
+联发科此前宣布 AI 芯片需求仍在加速增长。在 OpenAI AI 手机项目选择联发科天玑 9600 作为定制芯片的背景下，天玑生态的发展对移动 AI 产业具有重要意义。
+
+**来源：** 新浪科技
+**链接：** https://finance.sina.com.cn/tech/mobile/n/c/2026-05-14/doc-inhxwene0060186.shtml`,
+    date: "2026-05-14 20:00",
+    source: "新浪科技",
+    sourceUrl: "https://finance.sina.com.cn/tech/mobile/n/c/2026-05-14/doc-inhxwene0060186.shtml",
+    href: "/news/news-1622",
+  },
+{
+    id: "news-1623",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Musk 违反法庭命令：与特朗普一起离开美国，无视法官要求出庭",
+    summary: "据 The Verge 报道，马斯克在 Musk v. OpenAI 案庭审期间违反法官命令，与特朗普一起离开美国，引发法律争议。",
+    content: `## Musk 缺席庭审：法律与政治的交织
+
+**2026 5 月 14 日**，The Verge 报道。
+
+### 事件概述
+- **违反命令**：法官要求马斯克在庭审期间留在美国，但他选择与特朗普一起出国
+- **庭审影响**：Musk 的缺席可能影响案件进程和法官的裁决态度
+- **政治因素**：特朗普政府与 Musk 的关系使得此事更加复杂
+
+### 法律背景
+Musk v. OpenAI 案是当前 AI 行业最重要的法律案件之一。Musk 指控 OpenAI 违背了非营利使命，而 Altman 方正在反驳这一说法。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/ai-artificial-intelligence`,
+    date: "2026-05-14 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-1623",
+  },
+{
+    id: "news-1624",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Ilya Sutskever 持有约 70 亿美元 OpenAI 股权，内部人士首次披露",
+    summary: "量子位报道，OpenAI 联合创始人兼前首席科学家 Ilya Sutskever 持有的 OpenAI 股权估值约 70 亿美元，这一数字首次被公开披露。",
+    content: `## Ilya 的 70 亿美元 OpenAI 股权
+
+**2026 年 5 月 14 日**，量子位报道。
+
+### 股权详情
+- **估值**：约 70 亿美元，基于 OpenAI 最新 8500 亿美元估值
+- **持股背景**：Ilya 作为 OpenAI 联合创始人和前首席科学家，在公司早期获得大量股权
+- **离职后**：Ilya 于 2024 年离开 OpenAI，创立了 Safe Superintelligence（SSI）公司
+
+### 行业解读
+这一披露为 Musk v. OpenAI 案提供了新的财务视角。案件庭审中，各方关于 OpenAI 公司架构转变、股权分配和创始团队利益的讨论正在深入。
+
+**来源：** 量子位
+**链接：** https://www.qbitai.com/`,
+    date: "2026-05-14 20:00",
+    source: "量子位",
+    sourceUrl: "https://www.qbitai.com/",
+    href: "/news/news-1624",
+  },
+{
+    id: "news-1625",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "AlexNet 之父 Hinton 最新访谈：AI 正在从\"模式识别\"走向\"因果推理\"",
+    summary: "深度学习教父 Geoffrey Hinton 在最近一次访谈中指出，下一代 AI 系统需要突破当前的模式识别范式，实现真正的因果推理能力。",
+    content: `## Hinton 的最新思考：AI 的下一步是因果推理
+
+**2026 年 5 月 14 日**，综合报道。
+
+### 核心观点
+- **当前局限**：现有大模型主要依赖统计模式识别，缺乏因果理解
+- **未来方向**：需要让 AI 理解\"为什么\"而非仅仅\"是什么\"
+- **技术路径**：结合因果推断理论和大规模语言模型训练
+
+### 行业背景
+Hinton 作为深度学习的奠基人之一，其技术判断一直影响 AI 行业的发展方向。因果推理被认为是 AI 从\"聪明但不理解\"走向\"真正智能\"的关键一步。
+
+**来源：** 综合报道
+**链接：** https://arxiv.org/list/cs.AI/recent`,
+    date: "2026-05-14 20:00",
+    source: "arXiv + 综合报道",
+    sourceUrl: "https://arxiv.org/list/cs.AI/recent",
+    href: "/news/news-1625",
+  },
+{
+    id: "news-1626",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "obra/superpowers 突破 19 万星：Agent 技能框架与方法论的崛起",
+    summary: "GitHub 热门项目 obra/superpowers 已获 190,547 星，这是一个 Agent 技能框架和软件开发方法论项目，代表了 AI Agent 工程化的新范式。",
+    content: `## Superpowers：Agent 时代的\"新方法论\"
+
+**2026 年 5 月 14 日**，GitHub 数据。
+
+### 项目概况
+- **Stars**：190,547（持续增长中）
+- **定位**：Agentic 技能框架 + 软件开发方法论
+- **语言**：Shell 脚本为主，强调可组合性和可复用性
+
+### 为什么火了
+在 AI Agent 快速普及的 2026 年，开发者需要的不仅是\"怎么构建 Agent\"，更是\"怎么用好 Agent\"。Superpowers 提供了一套系统化的 Agent 技能设计和使用方法论，填补了这一空白。
+
+**来源：** GitHub API
+**链接：** https://github.com/obra/superpowers`,
+    date: "2026-05-14 20:00",
+    source: "GitHub API",
+    sourceUrl: "https://github.com/obra/superpowers",
+    href: "/news/news-1626",
+  },
+{
+    id: "news-1627",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "本周 AI 数据中心建设动态：全球 AI 算力基础设施持续加速扩张",
+    summary: "The Verge 报道了本周全球 AI 数据中心建设的最新进展，多家科技巨头持续加大投资，AI 算力基础设施竞赛进入白热化阶段。",
+    content: `## AI 数据中心：永不停止的建设潮
+
+**2026 年 5 月 14 日**，The Verge 报道。
+
+### 本周动态
+- **持续扩张**：全球主要科技公司继续加速 AI 数据中心建设
+- **投资规模**：单周新增投资达数十亿美元级别
+- **地域分布**：北美、欧洲、亚洲多点开花
+
+### 背景数据
+2026 年美国科技巨头 AI 相关支出已突破 7000 亿美元。Anthropic-Google 2000 亿美元算力协议、OpenAI-AWS 合作等大交易进一步推动了基础设施建设。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/ai-artificial-intelligence`,
+    date: "2026-05-14 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
+    href: "/news/news-1627",
   }
 ];

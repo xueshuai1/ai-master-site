@@ -1,28 +1,23 @@
-⏰ 写入时间：2026-05-14 16:06 (Asia/Shanghai)
-
+⏰ 写入时间：2026-05-14 20:00 (Asia/Shanghai)
 ## 本轮发现
-
-🔥 热点（12 条，已选 12 条写入 news-1604~news-1615）：
-1. [Anthropic 企业客户数首超 OpenAI] Ramp 数据显示 Anthropic B2B 客户数超过 OpenAI → 适合：博客/知识库
-2. [Notion 升级为 AI Agent 中枢] 工作空间转型为 Agent 编排中心 → 适合：知识库
-3. [Amazon 搜索内置 Alexa+ AI 助手] 自然语言购物搜索 → 适合：博客
-4. [Anthropic 推出 Claude 小企业版] AI 服务普惠中小企业 → 适合：博客/知识库
-5. [xAI 数据中心环保争议] 50 台燃气轮机未受监管 → 适合：博客
-6. [AutoScientist：AI 自我训练工具] 模型可自动迭代优化 → 适合：知识库
-7. [WhatsApp Meta AI 隐身模式] 隐私保护升级 → 适合：博客
-8. [OpenSpec 规格驱动 AI 编程] ⭐4.7 万 → 适合：知识库
-9. [cc-connect 编程助手消息化] ⭐9100+ → 适合：知识库
-10. [林俊旸新公司估值 20 亿美金] AI Agent 赛道持续升温 → 适合：博客
-11. [九号领投 AI 影像设备] 年增长近 4 倍 → 适合：博客
-12. [Anthropic CPO：预测性 AI] 在用户需求之前主动服务 → 适合：知识库
-
-🆕 新工具（本轮脚本收录 0 个）：
-- 当前 tools.ts 已覆盖 443 个 GitHub 项目，高星遗漏项目已全覆盖
-- OpenSpec（⭐47888）和 cc-connect（⭐9119）作为新闻收录
-
+🔥 热点（12 条，已写入 news-1616~1627）：
+1. [Musk v. OpenAI 庭审] Altman 作证反击马斯克"窃取慈善"指控 → 适合：博客/知识库
+2. [微软战略对冲] 千亿美元投资后寻求收购 AI 初创公司 → 适合：博客
+3. [AI 网络安全] MDASH/Mythos/GPT-5.5 三大平台更新 → 适合：知识库
+4. [Edge Copilot] 跨标签页 AI 信息提取 → 适合：博客
+5. [字节视觉生成] 挑战扩散/自回归的"边画边改"路线 → 适合：知识库
+6. [Agent 管理] "让 Agent 互相 PUA"的未来管理范式 → 适合：博客
+7. [联发科天玑] MDDC2026 生态展示 → 适合：新闻
+8. [Musk 违反法庭命令] 与特朗普离境 → 适合：新闻
+9. [Ilya 股权] 70 亿美元 OpenAI 股权首次披露 → 适合：新闻
+10. [Hinton] AI 从模式识别走向因果推理 → 适合：知识库
+11. [superpowers] 19 万星 Agent 技能框架 → 适合：工具页
+12. [AI 数据中心] 本周全球建设动态 → 适合：新闻
+🆕 新工具（0 个）：
+- add-new-tools.mjs 运行结果：0 个遗漏项目（已全覆盖）
 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络安全专用模型（GPT-5.5-Cyber / Claude Mythos）
-2. KNOWLEDGE-BASE-PLAN.md 待补：Agent 跨平台 UI 框架（AGenUI/A2UI 协议）
-3. KNOWLEDGE-BASE-PLAN.md 待补：轻量化多模态模型端侧部署（SenseNova Flash-Lite / MiniCPM-V）
-4. KNOWLEDGE-BASE-PLAN.md 待补：AI 自我训练/AutoML（AutoScientist 等）
-5. KNOWLEDGE-BASE-PLAN.md 待补：AI 基础设施绿色算力方案（对抗 xAI 燃气轮机争议）
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 因果推理技术路线
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI Agent 管理方法论
+3. KNOWLEDGE-BASE-PLAN.md 待补：视觉生成技术路线对比
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI 数据中心基础设施投资框架
+5. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络安全评估方法论
