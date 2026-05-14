@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import CategoryFilter from "@/components/CategoryFilter";
 import dynamic from "next/dynamic";
+import { useStatsBatch } from "@/hooks/useStatsBatch";
 
 const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 
@@ -45,6 +46,7 @@ const blogCategoryData = ["全部", ...Array.from(new Set(blogs.flatMap((b) => b
 }));
 
 const POSTS_PER_PAGE = 9;
+type SortKey = "date-desc" | "most-viewed" | "most-liked";
 
 export default function BlogPage() {
   const router = useRouter();
@@ -54,6 +56,8 @@ export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState(searchParams.get("cat") || "全部");
   const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1") || 1);
+  const [sortBy, setSortBy] = useState<SortKey>((searchParams.get("sort") as SortKey) || "date-desc");
+  const { statsMap, loading: statsLoading, fetchStats } = useStatsBatch();
 
   const isInitialMount = useRef(true);
 
@@ -67,6 +71,11 @@ export default function BlogPage() {
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }, [activeCategory, searchQuery, currentPage, pathname, router]);
 
+  // Prefetch stats on mount so stats-sort is instant
+  useEffect(() => {
+    fetchStats(blogPosts.map((p) => `blog:${p.id}`));
+  }, [fetchStats]);
+
   const filteredPosts = useMemo(() => {
     let result = activeCategory === "全部" ? blogPosts : blogPosts.filter((p) => p.category === activeCategory);
     if (searchQuery) {
@@ -77,8 +86,22 @@ export default function BlogPage() {
         p.tags.some(t => t.toLowerCase().includes(q))
       );
     }
+    if (sortBy === "most-viewed") {
+      result = [...result].sort((a, b) => {
+        const diff = (statsMap[`blog:${b.id}`]?.views ?? 0) - (statsMap[`blog:${a.id}`]?.views ?? 0);
+        if (diff !== 0) return diff;
+        return b.date > a.date ? 1 : b.date < a.date ? -1 : b.id.localeCompare(a.id);
+      });
+    } else if (sortBy === "most-liked") {
+      result = [...result].sort((a, b) => {
+        const diff = (statsMap[`blog:${b.id}`]?.likes ?? 0) - (statsMap[`blog:${a.id}`]?.likes ?? 0);
+        if (diff !== 0) return diff;
+        return b.date > a.date ? 1 : b.date < a.date ? -1 : b.id.localeCompare(a.id);
+      });
+    }
+    // default: date-desc (blogPosts is already sorted by date)
     return result;
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, sortBy, statsMap]);
 
   const handleCategoryChange = (cat: string) => {
     setActiveCategory(cat);
@@ -129,14 +152,26 @@ export default function BlogPage() {
 
           {/* Filter Bar */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-500 flex items-center gap-2">
               {searchQuery ? "搜索到" : "找到"} <span className="text-brand-400 font-medium">{filteredPosts.length}</span> 篇文章
+              {statsLoading && <span className="text-xs text-slate-500 animate-pulse">加载排行…</span>}
             </p>
-            <CategoryFilter
-              categories={blogCategoryData}
-              activeCategory={activeCategory}
-              onChange={handleCategoryChange}
-            />
+            <div className="flex items-center gap-2">
+              <select
+                value={sortBy}
+                onChange={(e) => { setSortBy(e.target.value as SortKey); setCurrentPage(1); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
+                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
+              >
+                <option value="date-desc">🕐 最新优先</option>
+                <option value="most-viewed">👁 浏览最多</option>
+                <option value="most-liked">👍 点赞最多</option>
+              </select>
+              <CategoryFilter
+                categories={blogCategoryData}
+                activeCategory={activeCategory}
+                onChange={handleCategoryChange}
+              />
+            </div>
           </div>
 
           <div className="space-y-6">

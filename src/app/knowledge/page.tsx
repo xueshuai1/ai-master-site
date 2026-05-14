@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import CategoryFilter from "@/components/CategoryFilter";
 import LearningPathSection from "@/components/LearningPathSection";
+import { useStatsBatch } from "@/hooks/useStatsBatch";
 
 const PAGE_SIZE = 9;
 const levelOrder: Record<string, number> = { 入门: 1, 进阶: 2, 高级: 3 };
@@ -19,14 +20,14 @@ export default function KnowledgePage() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  type SortKey = "default" | "level-asc" | "level-desc" | "date-desc" | "date-asc";
+  type SortKey = "default" | "level-asc" | "level-desc" | "date-desc" | "date-asc" | "most-viewed" | "most-liked";
 
-  // Primary source of truth: sessionStorage (survives browser back/forward)
-  const savedMode = typeof window !== 'undefined' ? sessionStorage.getItem('knowledge-mode') : null;
-  const spMode = (searchParams.get("mode") as "all" | "path") || savedMode || "path";
+  // Use URL param only for SSR-safe initial state (no sessionStorage during render)
+  const spMode = (searchParams.get("mode") as "all" | "path") || "path";
   const spCat = searchParams.get("cat") || "all";
   const spQ = searchParams.get("q") || "";
-  const spSort = (searchParams.get("sort") as SortKey) || "date-desc";
+  const rawSort = searchParams.get("sort");
+  const spSort = (rawSort === "default" || !rawSort ? "date-desc" : rawSort) as SortKey;
   const spPage = parseInt(searchParams.get("page") || "1") || 1;
 
   const [mode, setMode] = useState<"all" | "path">(spMode);
@@ -34,6 +35,16 @@ export default function KnowledgePage() {
   const [searchQuery, setSearchQuery] = useState(spQ);
   const [sortBy, setSortBy] = useState<SortKey>(spSort);
   const [currentPage, setCurrentPage] = useState(spPage);
+  const { statsMap, loading: statsLoading, fetchStats } = useStatsBatch();
+
+  // After hydration, restore mode from sessionStorage if URL has no explicit mode
+  useEffect(() => {
+    if (!searchParams.get("mode")) {
+      const saved = sessionStorage.getItem('knowledge-mode');
+      if (saved) setMode(saved as "all" | "path");
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Sync state whenever searchParams changes
   useEffect(() => {
@@ -99,6 +110,11 @@ export default function KnowledgePage() {
     router.push(url, { scroll: false });
   };
 
+  // Prefetch stats on mount so stats-sort is instant
+  useEffect(() => {
+    fetchStats(articles.map((a) => `article:${a.id}`));
+  }, [fetchStats]);
+
   const filteredArticles = useMemo(() => {
     let result = articles.filter((a) => {
       const matchCategory = activeCategory === "all" || a.category === activeCategory;
@@ -117,19 +133,32 @@ export default function KnowledgePage() {
       result = [...result].sort((a, b) => {
         const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
         if (dateDiff !== 0) return dateDiff;
-        // 同日文章：id 倒序（编号越大越新）
         return b.id.localeCompare(a.id);
       });
     } else if (sortBy === "date-asc") {
       result = [...result].sort((a, b) => {
         const dateDiff = new Date(a.date).getTime() - new Date(b.date).getTime();
         if (dateDiff !== 0) return dateDiff;
-        // 同日文章：id 正序
         return a.id.localeCompare(b.id);
+      });
+    } else if (sortBy === "most-viewed") {
+      result = [...result].sort((a, b) => {
+        const diff = (statsMap[`article:${b.id}`]?.views ?? 0) - (statsMap[`article:${a.id}`]?.views ?? 0);
+        if (diff !== 0) return diff;
+        // 相同时按日期倒序兜底
+        const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+        return dateDiff !== 0 ? dateDiff : b.id.localeCompare(a.id);
+      });
+    } else if (sortBy === "most-liked") {
+      result = [...result].sort((a, b) => {
+        const diff = (statsMap[`article:${b.id}`]?.likes ?? 0) - (statsMap[`article:${a.id}`]?.likes ?? 0);
+        if (diff !== 0) return diff;
+        const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+        return dateDiff !== 0 ? dateDiff : b.id.localeCompare(a.id);
       });
     }
     return result;
-  }, [activeCategory, searchQuery, sortBy]);
+  }, [activeCategory, searchQuery, sortBy, statsMap]);
 
   const handleFilterChange = (setter: (v: string) => void, value: string) => {
     setter(value);
@@ -256,8 +285,9 @@ export default function KnowledgePage() {
         <div className="max-w-5xl mx-auto">
           {/* Filter Bar */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-500 flex items-center gap-2">
               找到 <span className="text-brand-400 font-medium">{filteredArticles.length}</span> 篇文章
+              {statsLoading && <span className="text-xs text-slate-500 animate-pulse">加载排行…</span>}
             </p>
             <div className="flex items-center gap-2">
               <div className="lg:hidden">
@@ -273,11 +303,12 @@ export default function KnowledgePage() {
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                 className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
-                <option value="default">排序</option>
-                <option value="date-desc">时间最新</option>
-                <option value="date-asc">时间最早</option>
-                <option value="level-asc">难度 ↑</option>
-                <option value="level-desc">难度 ↓</option>
+                <option value="date-desc">🕐 最新优先</option>
+                <option value="date-asc">🕙 最早优先</option>
+                <option value="level-asc">📗 由易到难</option>
+                <option value="level-desc">📕 由难到易</option>
+                <option value="most-viewed">👁 浏览最多</option>
+                <option value="most-liked">👍 点赞最多</option>
               </select>
               </div>
               <select
@@ -285,11 +316,12 @@ export default function KnowledgePage() {
                 onChange={(e) => { setSortBy(e.target.value as typeof sortBy); setCurrentPage(1); if (typeof window !== 'undefined') window.scrollTo({ top: 0 }); }}
                 className="lg:hidden px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
-                <option value="default">排序</option>
-                <option value="date-desc">时间最新</option>
-                <option value="date-asc">时间最早</option>
-                <option value="level-asc">难度 ↑</option>
-                <option value="level-desc">难度 ↓</option>
+                <option value="date-desc">🕐 最新优先</option>
+                <option value="date-asc">🕙 最早优先</option>
+                <option value="level-asc">📗 由易到难</option>
+                <option value="level-desc">📕 由难到易</option>
+                <option value="most-viewed">👁 浏览最多</option>
+                <option value="most-liked">👍 点赞最多</option>
               </select>
             </div>
           </div>

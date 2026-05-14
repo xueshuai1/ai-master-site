@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Tool } from "@/data/tools";
 import { formatStars, starsBadgeClass, isNewTool } from "@/lib/tools-helpers";
+import dynamic from "next/dynamic";
+
+const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 
 const priceColors: Record<string, string> = {
   免费: "bg-emerald-500/10 text-emerald-300",
@@ -175,26 +178,16 @@ export default function ToolCard({ tool, forceNew }: ToolCardProps) {
         </>
       )}
 
-      <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/5">
-        {tool.learnMore ? (
-          <a
-            href={tool.learnMore}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="text-xs text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1"
-          >
-            📖 官方文档
-          </a>
-        ) : (
-          <span />
-        )}
+      <div className="flex items-center mt-3 pt-3 border-t border-white/5">
+        <div className="flex-1">
+          <CardStats type="tool" id={tool.id} />
+        </div>
         <a
           href={tool.url}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="text-xs text-slate-500 hover:text-brand-400 transition-colors flex items-center gap-1"
+          className="text-xs text-slate-500 hover:text-brand-400 transition-colors flex items-center gap-1 shrink-0"
         >
           访问工具 →
         </a>

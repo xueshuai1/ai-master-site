@@ -10,11 +10,12 @@ import CategoryFilter from "@/components/CategoryFilter";
 import ToolCard from "@/components/ToolCard";
 import Paginator from "@/components/Paginator";
 import { useDebounced } from "@/lib/use-debounced";
+import { useStatsBatch } from "@/hooks/useStatsBatch";
 
 const TOOLS_PER_PAGE = 21;
 const SEARCH_DEBOUNCE_MS = 200;
 
-type SortKey = "stars" | "newest" | "hottest";
+type SortKey = "stars" | "newest" | "hottest" | "most-liked" | "best-rated";
 
 export default function ToolsListClient() {
   const router = useRouter();
@@ -25,6 +26,7 @@ export default function ToolsListClient() {
   const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1") || 1);
   const [sortBy, setSortBy] = useState<SortKey>((searchParams.get("sort") as SortKey) || "stars");
+  const { statsMap, loading: statsLoading, fetchStats } = useStatsBatch();
 
   // debounce 搜索框，避免每个按键都 router.replace + 全表过滤
   const debouncedSearch = useDebounced(searchQuery, SEARCH_DEBOUNCE_MS);
@@ -63,6 +65,11 @@ export default function ToolsListClient() {
     [activeCategory, debouncedSearch, sortBy, syncUrl],
   );
 
+  // Prefetch stats on mount so stats-sort is instant
+  useEffect(() => {
+    fetchStats(enrichedTools.map((t) => `tool:${t.id}`));
+  }, [fetchStats]);
+
   const filteredTools = useMemo(() => {
     const q = debouncedSearch.toLowerCase().trim();
     let result = enrichedTools.filter((t) => {
@@ -88,9 +95,26 @@ export default function ToolsListClient() {
       });
     } else if (sortBy === "hottest") {
       result = [...result].sort((a, b) => (b.delta ?? 0) - (a.delta ?? 0));
+    } else if (sortBy === "most-liked") {
+      result = [...result].sort((a, b) => {
+        const diff = (statsMap[`tool:${b.id}`]?.likes ?? 0) - (statsMap[`tool:${a.id}`]?.likes ?? 0);
+        if (diff !== 0) return diff;
+        // 相同时按 stars 兜底
+        return (b.githubStars ?? 0) - (a.githubStars ?? 0);
+      });
+    } else if (sortBy === "best-rated") {
+      result = [...result].sort((a, b) => {
+        const sa = statsMap[`tool:${a.id}`];
+        const sb = statsMap[`tool:${b.id}`];
+        const scoreB = (sb?.likes ?? 0) - (sb?.dislikes ?? 0);
+        const scoreA = (sa?.likes ?? 0) - (sa?.dislikes ?? 0);
+        const diff = scoreB - scoreA;
+        if (diff !== 0) return diff;
+        return (b.githubStars ?? 0) - (a.githubStars ?? 0);
+      });
     }
     return result;
-  }, [activeCategory, debouncedSearch, sortBy]);
+  }, [activeCategory, debouncedSearch, sortBy, statsMap]);
 
   const totalPages = Math.max(1, Math.ceil(filteredTools.length / TOOLS_PER_PAGE));
   const safePage = Math.min(currentPage, totalPages);
@@ -185,8 +209,9 @@ export default function ToolsListClient() {
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-6">
-            <p className="hidden lg:block text-sm text-slate-500">
+            <p className="hidden lg:flex items-center gap-2 text-sm text-slate-500">
               收录 <span className="text-brand-400 font-medium">{filteredTools.length}</span> 个开源项目
+              {statsLoading && <span className="text-xs text-slate-500 animate-pulse">加载排行…</span>}
             </p>
             <div className="flex items-center gap-2">
               <div className="lg:hidden flex items-center gap-2">
@@ -196,6 +221,8 @@ export default function ToolsListClient() {
                       ["stars", "⭐ 最多"],
                       ["newest", "🕐 最新"],
                       ["hottest", "🔥 最火"],
+                      ["most-liked", "👍 点赞"],
+                      ["best-rated", "🏆 口碑"],
                     ] as [SortKey, string][]
                   ).map(([key, label]) => (
                     <button
@@ -218,9 +245,11 @@ export default function ToolsListClient() {
               <div className="hidden lg:flex items-center gap-1 bg-white/5 border border-white/10 rounded-lg p-0.5">
                 {(
                   [
-                    ["stars", "⭐ 最多"],
-                    ["newest", "🕐 最新"],
-                    ["hottest", "🔥 最火"],
+                    ["stars", "⭐ Stars 最多"],
+                    ["newest", "🕐 最新上线"],
+                    ["hottest", "🔥 增长最快"],
+                    ["most-liked", "👍 最多点赞"],
+                    ["best-rated", "🏆 口碑最佳"],
                   ] as [SortKey, string][]
                 ).map(([key, label]) => (
                   <button

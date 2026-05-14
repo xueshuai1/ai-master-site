@@ -9,18 +9,23 @@ import ArticleCard from "@/components/ArticleCard";
 const MAX_SHOW = 6;
 
 export default function LearningPathSection() {
-  const savedRoute = typeof window !== "undefined" ? sessionStorage.getItem("lp-route") : null;
   const defaultRoute = learningRoutes[0]?.id || "fast";
-  const initialRoute = savedRoute && learningRoutes.some((r) => r.id === savedRoute) ? savedRoute : defaultRoute;
 
-  const [activeRoute, setActiveRoute] = useState<string>(initialRoute);
+  const [activeRoute, setActiveRoute] = useState<string>(defaultRoute);
   const [expandedPhases, setExpandedPhases] = useState<Set<string>>(new Set());
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Restore from sessionStorage after hydration
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("lp-route", activeRoute);
+    const saved = sessionStorage.getItem("lp-route");
+    if (saved && learningRoutes.some((r) => r.id === saved)) {
+      setActiveRoute(saved);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("lp-route", activeRoute);
   }, [activeRoute]);
 
   const scrollToActive = useCallback(() => {
@@ -31,10 +36,10 @@ export default function LearningPathSection() {
   }, []);
 
   useEffect(() => {
-    if (savedRoute && savedRoute !== defaultRoute) {
+    if (activeRoute !== defaultRoute) {
       requestAnimationFrame(scrollToActive);
     }
-  }, [savedRoute, defaultRoute, scrollToActive]);
+  }, [activeRoute, defaultRoute, scrollToActive]);
 
   const route = learningRoutes.find((r) => r.id === activeRoute) || learningRoutes[0];
 
