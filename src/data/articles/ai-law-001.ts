@@ -209,10 +209,10 @@ graph TB
     E --> E1[律师最终责任]
     E --> E2[职业保险覆盖]
     style A fill:#92400e,color:#fff
-    style B fill:#b45309,color:#fff
-    style C fill:#b45309,color:#fff
-    style D fill:#b45309,color:#fff
-    style E fill:#b45309,color:#fff`,
+    style B fill:#92400e,color:#fff
+    style C fill:#92400e,color:#fff
+    style D fill:#92400e,color:#fff
+    style E fill:#92400e,color:#fff`,
         },
         {
             title: "5. 法律 AI 实战:法律研究工作流",

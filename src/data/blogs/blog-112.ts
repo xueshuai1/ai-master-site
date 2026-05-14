@@ -241,7 +241,7 @@ Replit — 独立平台的坚守者
     E --> K[ChatGPT入口]
     F --> L[Google生态]
     G --> M[拒绝收购]
-    style B fill:#b45309,stroke:#fbbf24,color:#fff
+    style B fill:#92400e,stroke:#fbbf24,color:#fff
     style M fill:#1e3a5f,stroke:#34d399,color:#fff
     style A fill:#1e293b,stroke:#94a3b8,color:#e2e8f0`,
         tip: `开发者选型建议：

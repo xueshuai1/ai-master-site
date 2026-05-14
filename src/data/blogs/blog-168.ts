@@ -73,7 +73,7 @@ const content: ArticleSection[] = [
     C -->|"人类角色\n需求提供者"| C2["AI: 端到端执行"]
     D -->|"人类角色\n需求描述者"| D2["AI: 全流程自主"]
 
-    style A fill:#b45309,stroke:#92400e
+    style A fill:#92400e,stroke:#92400e
     style B fill:#92400e,stroke:#78350f
     style C fill:#78350f,stroke:#451a03
     style D fill:#451a03,stroke:#1c1917`,
@@ -458,7 +458,7 @@ const requirement = "构建一个用户认证系统，支持邮箱注册、JWT t
     C --> E
 
     style A fill:#991b1b,stroke:#7f1d1d
-    style B fill:#c2410c,stroke:#9a3412
+    style B fill:#9a3412,stroke:#9a3412
     style C fill:#92400e,stroke:#78350f
     style D fill:#854d0e,stroke:#713f12
     style E fill:#991b1b,stroke:#7f1d1d`,

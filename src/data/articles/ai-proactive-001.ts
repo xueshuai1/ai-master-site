@@ -49,8 +49,8 @@ export const article: Article = {
     C --> C2["代表：Project Astra\nApple Intelligence"]
     C --> C3["优势：情境感知\n意图预测\n自主行动"]
 
-    style B fill:#b45309,stroke:#92400e
-    style C fill:#15803d,stroke:#166534`,
+    style B fill:#92400e,stroke:#92400e
+    style C fill:#14532d,stroke:#166534`,
       tip: "理解主动性 AI 的关键类比：想象一位**优秀的人类助理**——好的助理不会等你开口才行动，而是**提前预判你的需求**。主动性 AI 就是在 AI 系统中实现这种「**先你一步**」的能力。",
       warning: "重要区分：主动性 AI 不等于**完全自主的 AI**。主动性 AI 仍然在**人类设定的边界和权限范围内**行动，它不是「**替你做决定**」，而是「**提前准备好选项**」并等待你的确认。理解这个边界对于**系统设计**和**用户期望管理**至关重要。"
     },
@@ -213,7 +213,7 @@ function prioritizeActions(
     D --> D1["反馈收集"]
     D --> D2["模型更新"]
 
-    style A fill:#b45309,stroke:#92400e
+    style A fill:#92400e,stroke:#92400e
     style B fill:#92400e,stroke:#78350f
     style C fill:#78350f,stroke:#451a03
     style D fill:#451a03,stroke:#1c1917`,

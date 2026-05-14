@@ -129,7 +129,7 @@ LangChain"]
     style B fill:#1e3a5f,color:#fff
     style C fill:#1d4ed8,color:#fff
     style D fill:#7c3aed,color:#fff
-    style E fill:#b45309,color:#fff`,
+    style E fill:#92400e,color:#fff`,
         },
     ]
 };

@@ -428,10 +428,10 @@ AI Act 将 AI 系统按照风险等级分为四类，具身智能机器人根据
     style B fill:#7c3aed
     style C fill:#4338ca
     style D fill:#1e40af
-    style E fill:#0e7490
-    style F fill:#0e7490
-    style G fill:#0e7490
-    style H fill:#0e7490`,
+    style E fill:#155e75
+    style F fill:#155e75
+    style G fill:#155e75
+    style H fill:#155e75`,
             code: [
                 {
                     lang: "python",

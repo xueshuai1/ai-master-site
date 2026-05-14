@@ -615,9 +615,9 @@ def financial_analysis_workflow(api_key: str):
     style B fill:#1e3a5f,color:#fff
     style C fill:#5b21b6,color:#fff
     style D fill:#065f46,color:#fff
-    style E fill:#b45309,color:#fff
-    style F fill:#b45309,color:#fff
-    style G fill:#b45309,color:#fff`,
+    style E fill:#92400e,color:#fff
+    style F fill:#92400e,color:#fff
+    style G fill:#92400e,color:#fff`,
       tip: "💡 从架构图可以看出，Anthropic 的金融 AI 系统采用了「三层防护」设计：宪法 AI 安全护栏（防止 AI 生成有害内容）、审计日志系统（记录所有决策过程）、数据隔离引擎（保护客户数据隐私）。这种设计确保了 AI Agent 在高度敏感的金融环境中的安全性和可追溯性。",
       warning: "⚠️ 架构图中「人类监督层」是整个系统最关键的部分。即使 AI Agent 的分析结果再准确，最终的交易决策仍然需要人类的审核和批准。这是金融行业的监管要求，也是风险控制的基本逻辑。任何试图绕过人类监督的「全自动交易」方案，在当前监管环境下都是不可行的。"
     },

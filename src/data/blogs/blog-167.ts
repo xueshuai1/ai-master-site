@@ -71,7 +71,7 @@ Agent View 的界面采用了**面板式布局**（Panel Layout）——每个 A
     E --> E2["独立工作空间"]
     C -.->|"完成通知"| D
     style A fill:#92400e,stroke:#78350f
-    style B fill:#b45309,stroke:#78350f`,
+    style B fill:#92400e,stroke:#78350f`,
     tip: "理解 Agent View 的最佳类比是「从单核 CPU 到多核 CPU」——单核 CPU 一次只能执行一个线程，多核 CPU 可以同时执行多个线程。Agent View 就是 AI 编程的「多核化」。",
     warning: "多 Agent 并行并不意味着「越多越好」。每个 Agent 都会消耗 **API 调用配额**和**系统资源**。在实际使用中，建议根据任务复杂度合理控制并行 Agent 数量——简单的代码审查可以 3-5 个并行，复杂的架构重构建议 1-2 个并行。"
   },

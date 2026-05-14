@@ -30,8 +30,8 @@ const content: ArticleSection[] = [
     C --> C3["价值：重构工作流程"]
     C --> C4["代表：Claude Agent"]
     
-    style B fill:#b45309,stroke:#92400e
-    style C fill:#15803d,stroke:#166534`,
+    style B fill:#92400e,stroke:#92400e
+    style C fill:#14532d,stroke:#166534`,
     tip: "理解这一转折的最简框架：**不要问「哪个模型更聪明」，要问「哪个模型更适合企业环境」**。在消费者市场，**模型能力**是首要因素；但在企业市场，**安全性、可解释性、合规性**往往比**原始性能**更重要。",
     warning: "数据解读警告：Ramp 的数据反映的是**企业支出维度**的客户数量，不等于**总用户数**或**API 调用量**。OpenAI 在**消费者市场**和**开发者生态**中仍然占据优势。这个反超是**B2B 领域**的特定现象，**不能简单推导为「Anthropic 全面超越 OpenAI」**。"
   },
@@ -250,8 +250,8 @@ for v in sorted(vendors, key=lambda x: x.enterprise_fit, reverse=True):
     D --> D3["弱点: 品牌聚焦不足"]
     
     style B fill:#1e3a5f,stroke:#991b1b,color:#f1f5f9
-    style C fill:#15803d,stroke:#166534
-    style D fill:#2563eb,stroke:#1e40af`
+    style C fill:#14532d,stroke:#166534
+    style D fill:#1d4ed8,stroke:#1e40af`
       }
     ],
     tip: "选型建议：如果你所在的行业是**金融、医疗或法律**，Anthropic 的**安全合规优势**可能比 OpenAI 的**模型能力优势**更有价值。如果你是**科技创业公司**，OpenAI 的**生态规模**和**开发者体验**可能是更好的选择。如果你已经**深度使用 Google Workspace**，Google 的**原生集成**可能是**最经济**的选项。",

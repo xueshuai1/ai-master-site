@@ -405,8 +405,8 @@ class GuardrailEngine {
     F1 --> E
     
     style A fill:#1e3a5f,stroke:#b91c1c
-    style B fill:#b45309,stroke:#92400e
-    style G fill:#15803d,stroke:#166534
+    style B fill:#92400e,stroke:#92400e
+    style G fill:#14532d,stroke:#166534
     style E fill:#1e3a5f,stroke:#0f172a`
     },
     {
@@ -467,8 +467,8 @@ class GuardrailEngine {
     H --> H2["资源超限告警"]
     H --> H3["安全事件告警"]
     
-    style A fill:#15803d,stroke:#166534
-    style F fill:#b45309,stroke:#92400e
+    style A fill:#14532d,stroke:#166534
+    style F fill:#92400e,stroke:#92400e
     style G fill:#0369a1,stroke:#075985
     style H fill:#1e3a5f,stroke:#b91c1c`,
       tip: "可观测性实施建议：从**最简单的日志记录**开始——只记录**状态转换事件**。然后逐步添加**指标**和**追踪**。不要一开始就追求**全量的可观测性**——这会导致**数据过载**，反而**降低可观测性的价值**。",

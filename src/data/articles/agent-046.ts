@@ -226,7 +226,7 @@ Anthropic 员工手册中强调了三个关键方法论：
     
     style A fill:#1d4ed8,color:#fff
     style B fill:#1e3a5f,color:#fff
-    style C fill:#b45309,color:#fff
+    style C fill:#92400e,color:#fff
     style D fill:#7c3aed,color:#fff
     style E fill:#b91c1c,color:#fff`,
       tip: `实施建议： 不要试图一次性实施所有四层安全措施。从第一层（设计安全）开始，确保每个新 Agent 在开发时就内置安全机制。然后逐步引入运行时监控、审计和治理。每完成一层，评估失控率的下降幅度，再决定是否进入下一层。`,

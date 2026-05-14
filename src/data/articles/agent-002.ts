@@ -30,11 +30,8 @@ export const article: Article = {
 **可扩展性**：当业务增长、任务复杂度增加时，单 Agent 系统往往需要全面重构。Multi-Agent 系统则可以水平扩展——只需添加新的 Agent 角色，而无需修改现有 Agent 的逻辑。`,
         mermaid: `graph LR
     A["复杂任务"] --> B{"单 Agent or Multi-Agent?"}
-    B -->|"领域单一\
-步骤有限"| C["单 Agent"]
-    B -->|"多领域\
-高复杂度\
-需要容错"| D["Multi-Agent"]
+    B -->|"领域单一\n步骤有限"| C["单 Agent"]
+    B -->|"多领域\n高复杂度\n需要容错"| D["Multi-Agent"]
     D --> E["专业化分工"]
     D --> F["交叉验证"]
     D --> G["水平扩展"]
@@ -353,18 +350,12 @@ async def coder_work():
 
 **动态角色分配**：在一些更高级的系统中，角色不是静态分配的，而是根据任务需求动态创建和调整。例如，当任务中出现新的子领域时，系统可以实例化一个新的专家 Agent；当某个角色完成工作后，可以将其资源释放或重新分配。`,
         mermaid: `graph TD
-    A["Multi-Agent 团队"] --> B["Manager\
-任务分解与协调"]
-    A --> C["Researcher\
-信息收集与分析"]
-    A --> D["Coder\
-代码生成与实现"]
-    A --> E["Reviewer\
-质量审查与反馈"]
-    A --> F["Tester\
-测试验证"]
-    A --> G["Writer\
-文档生成"]
+    A["Multi-Agent 团队"] --> B["Manager\n任务分解与协调"]
+    A --> C["Researcher\n信息收集与分析"]
+    A --> D["Coder\n代码生成与实现"]
+    A --> E["Reviewer\n质量审查与反馈"]
+    A --> F["Tester\n测试验证"]
+    A --> G["Writer\n文档生成"]
     
     B -->|"分配任务"| C
     B -->|"分配任务"| D

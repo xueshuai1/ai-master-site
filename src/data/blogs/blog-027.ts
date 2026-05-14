@@ -346,18 +346,13 @@ Revised: [修正后的回答，如无修改则保持原样]"""
     body: "当任务复杂度超过单个 Agent 的能力时，就需要多 Agent 协作——每个 Agent 专注一个领域，像团队一样工作。",
     mermaid: `graph TD
     subgraph "多 Agent 架构"
-        Orchestrator["🎯 编排器\
-(理解任务、分配工作)"]
+        Orchestrator["🎯 编排器\n(理解任务、分配工作)"]
         
         subgraph "Worker Agents"
-            Researcher["🔍 研究员\
-(搜索、分析)"]
-            Coder["💻 程序员\
-(写代码、调试)"]
-            Reviewer["🧪 审核员\
-(测试、审查)"]
-            Writer["✍️ 写作者\
-(文档、报告)"]
+            Researcher["🔍 研究员\n(搜索、分析)"]
+            Coder["💻 程序员\n(写代码、调试)"]
+            Reviewer["🧪 审核员\n(测试、审查)"]
+            Writer["✍️ 写作者\n(文档、报告)"]
         end
         
         Orchestrator --> Researcher

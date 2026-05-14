@@ -420,22 +420,14 @@ class CodeExecutionTool:
             },
             mermaid: `graph TD
     A["ReAct Agent"] --> B["工具注册表"]
-    B --> C["Search\
-搜索引擎"]
-    B --> D["Python REPL\
-代码执行"]
-    B --> E["Calculator\
-计算器"]
-    B --> F["API Client\
-外部服务"]
-    C --> G["DuckDuckGo\
-Bing API"]
-    D --> H["沙箱环境\
-安全隔离"]
-    E --> I["SymPy\
-math 模块"]
-    F --> J["天气/股票\
-翻译服务"]`,
+    B --> C["Search\n搜索引擎"]
+    B --> D["Python REPL\n代码执行"]
+    B --> E["Calculator\n计算器"]
+    B --> F["API Client\n外部服务"]
+    C --> G["DuckDuckGo\nBing API"]
+    D --> H["沙箱环境\n安全隔离"]
+    E --> I["SymPy\nmath 模块"]
+    F --> J["天气/股票\n翻译服务"]`,
             tip: "工具描述的质量直接决定 ReAct Agent 的表现。每个工具的描述应该包含：用途说明、输入格式示例、输出格式说明、以及使用限制。描述越清晰，模型选择工具越准确。",
             warning: "永远不要在没有沙箱的情况下让 Agent 执行代码。即使有安全模式检查，模型也可能生成绕过检查的代码（比如用 __import__ 代替 import）。必须在操作系统级别的沙箱中运行。",
         },

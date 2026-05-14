@@ -162,7 +162,7 @@ graph TD
     G --> C
     style A fill:#92400e,color:#fff
     style C fill:#78350f,color:#fff
-    style F fill:#b45309,color:#fff`,
+    style F fill:#92400e,color:#fff`,
   },
   {
     title: "3.5. 三种技术路线的架构对比",
