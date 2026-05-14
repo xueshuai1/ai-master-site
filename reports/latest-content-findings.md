@@ -1,23 +1,27 @@
-⏰ 写入时间：2026-05-15 04:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-15 04:08 (Asia/Shanghai)
+
 ## 本轮发现
-🔥 热点（12 条，已写入 news-1664~news-1675）：
-1. [宇树 GD01 载人机甲] 全球首款量产载人变形机甲，390 万元起 → 适合：博客
-2. [快手可灵 AI 独立上市] 200 亿美元估值，计划 2027 IPO → 适合：知识库/博客
-3. [网信办短视频标注新规] AI 生成和虚构内容强制标签 → 适合：知识库
-4. [OpenAI 40 亿部署公司] 联合 TPG/高盛/麦肯锡成立 The Deployment Company → 适合：知识库
-5. [Google Gemini Intelligence] Android Show 2026，将 Android 变为 AI Agent 平台 → 适合：博客
-6. [Kimi 200 亿 + DeepSeek 450 亿] 中国大模型融资热战 → 适合：知识库/博客
-7. [Anthropic 300 亿收入 + 3.5GW TPU] Google/Broadcom 算力协议 → 适合：博客
-8. [EY 16 万审计项目部署 Agent AI] 终结人工抽样审计时代 → 适合：知识库
-9. [Claude Code Agent View] 多任务并发编程控制台 → 适合：博客
-10. [Anthropic 企业客户超 OpenAI] Cowork 模式逆袭 → 适合：知识库
-11. [Google-Anthropic 400 亿投资] 估值 3500 亿美元 → 适合：博客
-12. [上海 AI 应用商店开业] 全球首家线下 AI 应用商店 → 适合：博客
+
+🔥 热点（12 条，已选 12 条写入 news.ts，news-1676~news-1687）：
+1. [OpenAI Daybreak] OpenAI 发布网络安全平台 Daybreak，对标 Anthropic Mythos → 适合：博客/知识库
+2. [Anthropic 合资企业] Anthropic 联合高盛、黑石成立 15 亿美元 AI 合资企业 → 适合：博客
+3. [Claude Code 算力扩容] Anthropic 提升 Claude Code 使用限额，SpaceX 合作新增 300+MW 算力 → 适合：知识库
+4. [Claude 法律工具] Anthropic 扩展法律行业 AI 工具套件 → 适合：知识库/博客
+5. [宇树 GD01 机甲] 宇树发布全球首款量产载人变形机甲，390 万元起 → 适合：博客
+6. [网信办短视频标注] 中央网信办部署六类必选标签，AI 生成内容必须标注 → 适合：知识库/博客
+7. [Claude Design] Anthropic Labs 发布 AI 协作视觉设计工具 → 适合：知识库
+8. [可灵 AI 200 亿估值] 快手评估可灵 AI 业务达 200 亿美元 → 适合：博客
+9. [AI 搜索版权案] 国内首起 AI 搜索版权侵权案终审落槌 → 适合：知识库
+10. [Alphabet 1850 亿投资] Alphabet 2026 年 AI 基础设施投资达 1850 亿美元 → 适合：博客
+11. [斯坦福 AI 指数] 2026 年报告：全球企业 AI 投资 5817 亿美元 → 适合：知识库
+12. [GitHub 趋势] agent-skills 霸榜，financial-services 周增 12K 星 → 适合：开源周报
+
 🆕 新工具（0 个）：
-1. 当前 tools.ts 已全覆盖高星遗漏项目
+- add-new-tools 脚本运行结果：0 个遗漏项目（tools.ts 已全覆盖）
+
 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI 企业部署服务（OpenAI Deployment Company + Anthropic JV）
-2. KNOWLEDGE-BASE-PLAN.md 待补：中国大模型融资与估值体系（Kimi/DeepSeek/可灵）
-3. KNOWLEDGE-BASE-PLAN.md 待补：短视频 AI 内容标注与监管政策
-4. KNOWLEDGE-BASE-PLAN.md 待补：Gemini Intelligence 与 Android AI Agent 架构
-5. KNOWLEDGE-BASE-PLAN.md 待补：AI 在专业服务行业落地（EY/Deloitte 等）
+1. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络安全 — OpenAI Daybreak vs Anthropic Mythos 深度对比
+2. KNOWLEDGE-BASE-PLAN.md 待补：AI 法律服务 — Claude 法律工具套件的能力边界
+3. KNOWLEDGE-BASE-PLAN.md 待补：具身智能 — 宇树 GD01 机甲的技术架构与行业影响
+4. KNOWLEDGE-BASE-PLAN.md 待补：AI 内容治理 — 全球 AI 生成内容标注政策对比
+5. KNOWLEDGE-BASE-PLAN.md 待补：AI 基础设施竞赛 — Alphabet/Amazon/Meta 算力投资全景
