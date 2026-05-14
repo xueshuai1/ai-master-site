@@ -377,6 +377,7 @@ import { article as ethics021 } from './articles/ethics-021';
 import { article as aiChipCerebras001 } from './articles/ai-chip-cerebras-001';
 import { article as edgeAi001 } from './articles/edge-ai-001';
 import { article as aiProactive001 } from './articles/ai-proactive-001';
+import { article as selftrain001 } from './articles/selftrain-001';
 export const articles: Article[] = [
   headlessAi001,
   ai000,
@@ -695,4 +696,5 @@ export const articles: Article[] = [
   aiChipCerebras001,
   edgeAi001,
   aiProactive001,
+  selftrain001,
 ];
