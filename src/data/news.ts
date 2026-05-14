@@ -23405,5 +23405,329 @@ Anthropic 的合资企业由 General Atlantic、Leonard Green、Apollo Global Ma
     source: "AITOP100",
     sourceUrl: "https://www.aitop100.cn/ai-daily-2026-05-13",
     href: "/news/news-1603",
+  },
+  {
+    id: "news-1604",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Anthropic 企业客户数首超 OpenAI，Ramp 数据揭示 AI 市场竞争新格局",
+    summary: "根据 Ramp 最新数据，Anthropic 的企业客户数量已首次超过 OpenAI，标志着 AI 市场从'卖模型'转向'卖服务'的竞争进入新阶段。",
+    content: `## Anthropic 反超 OpenAI：企业市场的转折
+
+**2026 年 5 月 13 日**，消费支出管理平台 Ramp 披露的数据显示，Anthropic 的企业客户数已首次超过 OpenAI。
+
+### 关键数据
+- **客户规模**：Anthropic 企业客户数 > OpenAI（Ramp 数据）
+- **趋势**：Anthropic 在 B2B 领域持续增长，Claude Code 和 Cowork 产品打入企业市场
+- **对比**：OpenAI 仍保持消费者端优势，但企业市场面临挑战
+
+### 行业意义
+- AI 公司竞争从'拼参数'转向'拼落地'
+- Claude 在企业场景中的口碑优势开始转化为实际客户
+- 传统企业更看重安全性、可控性和合规性，这正是 Anthropic 的强项
+
+**来源：** TechCrunch + Ramp
+**链接：** https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch + Ramp",
+    sourceUrl: "https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/",
+    href: "/news/news-1604",
+  },
+  {
+    id: "news-1605",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Notion 将工作空间升级为 AI Agent 中枢，一个页面管理多个智能体",
+    summary: "Notion 发布重大更新，将工作空间从文档协作平台转型为 AI Agent 编排中心，用户可在 Notion 内直接部署和管理多个 AI 智能体。",
+    content: `## Notion 转型 AI Agent 平台
+
+**2026 年 5 月 13 日**，Notion 宣布了一项重大产品更新。
+
+### 核心功能
+- **Agent 中枢**：在 Notion 页面内直接部署、配置和管理 AI 智能体
+- **工作空间整合**：文档、数据库、任务管理与 Agent 能力深度融合
+- **编排能力**：一个页面可同时调度多个 Agent 协同工作
+
+### 产品方向
+- 从'文档+协作'升级为'Agent 原生工作空间'
+- 企业可在 Notion 内构建完整的 AI 工作流
+- 降低 Agent 部署门槛，非技术人员也能使用
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/",
+    href: "/news/news-1605",
+  },
+  {
+    id: "news-1606",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Amazon 搜索栏内置 AI 购物助手 Alexa+，电商体验再升级",
+    summary: "Amazon 在搜索栏正式推出 AI 购物助手 Alexa+，用户可通过自然语言搜索商品、比较参数、获取个性化推荐。",
+    content: `## Amazon 搜索全面 AI 化
+
+**2026 年 5 月 13 日**，Amazon 在购物搜索栏中集成了 Alexa+ AI 助手。
+
+### 新能力
+- **自然语言搜索**：用日常语言描述需求，AI 理解后推荐商品
+- **智能比较**：AI 自动对比多款商品的参数、价格、评价
+- **个性化推荐**：基于购物历史和偏好精准推荐
+
+### 影响
+- 电商搜索从'关键词匹配'升级为'意图理解'
+- 减少用户浏览时间，提升转化率
+- 为第三方卖家带来新的流量分发逻辑
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/13/amazon-launches-an-ai-shopping-assistant-for-the-search-bar-powered-by-alexa/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/13/amazon-launches-an-ai-shopping-assistant-for-the-search-bar-powered-by-alexa/",
+    href: "/news/news-1606",
+  },
+  {
+    id: "news-1607",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Anthropic 推出 Claude 小企业版：AI 原生服务首次面向小微企业",
+    summary: "Anthropic 正式发布 Claude for Small Business，将 AI 原生服务扩展到中小企业市场，标志着 AI 公司从'卖模型'到'卖服务'战略的重要一步。",
+    content: `## Claude 走进小企业
+
+**2026 年 5 月 14 日**，Anthropic 发布了 Claude for Small Business 产品。
+
+### 产品定位
+- **目标用户**：1-50 人规模的小微企业
+- **核心场景**：客服、营销、文档处理、数据分析
+- **定价策略**：面向小企业预算优化的套餐
+
+### 战略意义
+- Anthropic 从'大企业客户'下沉到'长尾中小企业'
+- 与 OpenAI 的小企业方案正面竞争
+- AI 服务正在从'高端定制'走向'普惠化'
+
+**来源：** Anthropic Blog + TechCrunch + Hacker News
+**链接：** https://www.anthropic.com/news/claude-for-small-business`,
+    date: "2026-05-14 16:00",
+    source: "Anthropic Blog + TechCrunch + Hacker News",
+    sourceUrl: "https://www.anthropic.com/news/claude-for-small-business",
+    href: "/news/news-1607",
+  },
+  {
+    id: "news-1608",
+    tag: "政策",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Musk 旗下 xAI 在密西西比州运行近 50 台燃气轮机，未受环保监管",
+    summary: "TechCrunch 报道，xAI 在密西西比州数据中心运行近 50 台燃气轮机为算力供电，但尚未受到环保部门的有效监管，引发环境和社区争议。",
+    content: `## xAI 数据中心环保争议
+
+**2026 年 5 月 13 日**，TechCrunch 报道了 xAI 在密西西比州的数据中心环保问题。
+
+### 核心问题
+- **规模**：近 50 台燃气轮机持续运行
+- **监管**：未受到环保部门有效监督
+- **影响**：碳排放和噪音引发当地社区不满
+
+### 行业背景
+- AI 算力需求暴增，数据中心能耗成为焦点
+- 多家 AI 公司面临'算力扩张 vs 环保合规'的矛盾
+- 行业亟需绿色算力解决方案
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/13/musks-xai-is-running-nearly-50-gas-turbines-unchecked-at-its-mississippi-data-center/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/13/musks-xai-is-running-nearly-50-gas-turbines-unchecked-at-its-mississippi-data-center/",
+    href: "/news/news-1608",
+  },
+  {
+    id: "news-1609",
+    tag: "大语言模型",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Adaption 发布 AutoScientist：AI 模型'自我训练'工具引发行业关注",
+    summary: "Adaption 公司发布 AutoScientist，一款让 AI 模型能够自动训练和改进自身的工具，被认为是 AI 自动化的重要里程碑。",
+    content: `## AI 自我训练：AutoScientist
+
+**2026 年 5 月 13 日**，Adaption 公司发布了 AutoScientist 工具。
+
+### 核心能力
+- **自动训练**：AI 模型可自行设计实验、评估结果、迭代优化
+- **减少人工干预**：降低模型微调和数据标注的人力成本
+- **科学方法自动化**：将科研流程中的假设→实验→验证链条自动化
+
+### 行业意义
+- 从'人类训练 AI'向'AI 自我进化'迈出关键一步
+- 可能加速新模型的迭代周期
+- 也引发了关于 AI 自主性的伦理讨论
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves/",
+    href: "/news/news-1609",
+  },
+  {
+    id: "news-1610",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "WhatsApp 为 Meta AI 聊天新增隐身模式，保护用户隐私",
+    summary: "WhatsApp 在 Meta AI 聊天功能中新增隐身模式（Incognito Mode），用户的 AI 对话不会被用于训练或存储，增强隐私保护。",
+    content: `## WhatsApp 推出 AI 隐身模式
+
+**2026 年 5 月 13 日**，WhatsApp 宣布为 Meta AI 聊天功能添加隐身模式。
+
+### 功能细节
+- **隐私保护**：隐身模式下，AI 对话不会被用于模型训练
+- **不存储历史**：对话内容不会永久保存
+- **一键切换**：用户可随时在普通模式和隐身模式间切换
+
+### 行业背景
+- AI 聊天隐私成为用户核心关注点
+- Meta 在隐私保护方面面临持续监管压力
+- 隐身模式可能成为 AI 产品的标配功能
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/",
+    href: "/news/news-1610",
+  },
+  {
+    id: "news-1611",
+    tag: "开源项目",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenSpec：AI 编程助手的'规格驱动开发'框架，⭐4.7 万",
+    summary: "Fission AI 发布 OpenSpec，一个将规格驱动开发（SDD）理念引入 AI 编程助手的开源框架，已获 4.7 万 GitHub Stars。",
+    content: `## OpenSpec：让 AI 按规格写代码
+
+**2026 年 5 月**，OpenSpec 项目快速增长至 4.7 万 Stars。
+
+### 核心理念
+- **规格先行**：先定义清晰的规格（Spec），再让 AI 执行
+- **可验证**：每个 AI 生成的代码都可对照规格自动验证
+- **适配主流工具**：兼容 Claude Code、Cursor、Codex 等 AI 编程助手
+
+### 为什么重要
+- AI 编程的最大痛点是'不知道它做对了没'
+- SDD 为 AI 代码质量提供了系统化保障
+- 适合团队协作和大型项目
+
+**来源：** GitHub
+**链接：** https://github.com/Fission-AI/OpenSpec`,
+    date: "2026-05-14 16:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/Fission-AI/OpenSpec",
+    href: "/news/news-1611",
+  },
+  {
+    id: "news-1612",
+    tag: "开源项目",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "cc-connect：本地 AI 编程助手对接消息平台的桥梁，⭐9100+",
+    summary: "cc-connect 是一个开源桥接工具，可将 Claude Code、Cursor、Gemini CLI 等本地 AI 编程助手接入 WhatsApp、Telegram 等消息平台。",
+    content: `## cc-connect：AI 编程助手的消息化
+
+**2026 年 5 月**，cc-connect 项目增长至 9100+ Stars。
+
+### 功能
+- **多平台支持**：Claude Code、Cursor、Gemini CLI、Codex
+- **消息接入**：WhatsApp、Telegram、Signal、Discord 等
+- **远程协作**：不在电脑前也能通过手机与 AI 编程助手交互
+
+### 应用场景
+- 开发者在移动端随时审查 AI 生成的代码
+- 团队可通过聊天工具分配 AI 编程任务
+- 降低 AI 编程工具的使用门槛
+
+**来源：** GitHub
+**链接：** https://github.com/chenhg5/cc-connect`,
+    date: "2026-05-14 16:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/chenhg5/cc-connect",
+    href: "/news/news-1612",
+  },
+  {
+    id: "news-1613",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "36 氪：林俊旸新公司估值约 20 亿美金，AI 智能体赛道持续升温",
+    summary: "据 36 氪独家报道，AI 创业者林俊旸的新公司估值约 20 亿美金，反映资本市场对 AI 智能体领域的持续看好。",
+    content: `## AI 智能体赛道再获资本青睐
+
+**2026 年 5 月 13 日**，36 氪独家报道了林俊旸新公司的估值情况。
+
+### 关键信息
+- **估值**：约 20 亿美金
+- **方向**：AI 智能体（Agent）领域
+- **背景**：林俊旸此前在 AI 行业有成功创业经验
+
+### 行业趋势
+- AI 智能体赛道成为 2026 年最热门的投资方向之一
+- 资本市场从'看模型'转向'看应用'
+- 创业者在 Agent 编排、垂直场景等领域持续突破
+
+**来源：** 36 氪
+**链接：** https://36kr.com/p/3807382930251523`,
+    date: "2026-05-14 16:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/p/3807382930251523",
+    href: "/news/news-1613",
+  },
+  {
+    id: "news-1614",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "九号公司领投 AI 智能影像设备，在巨头夹缝中年增长近 4 倍",
+    summary: "36 氪报道，九号公司领投了一家 AI 智能影像设备公司，该公司在巨头夹缝中实现年增长近 4 倍的突破。",
+    content: `## AI 智能影像：垂直赛道的突围
+
+**2026 年 5 月 14 日**，36 氪首发报道了 AI 智能影像领域的最新动态。
+
+### 投资亮点
+- **领投方**：九号公司
+- **增长**：被投公司年营收增长近 4 倍
+- **定位**：在 OpenAI、Google、百度等巨头压力下找到差异化赛道
+
+### 行业信号
+- AI 影像从'通用'向'垂直'转型
+- 工业、医疗、零售等垂直场景的 AI 影像需求快速增长
+- 中小公司在垂直领域仍有巨大机会
+
+**来源：** 36 氪
+**链接：** https://36kr.com/p/3807831328300549`,
+    date: "2026-05-14 16:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/p/3807831328300549",
+    href: "/news/news-1614",
+  },
+  {
+    id: "news-1615",
+    tag: "大语言模型",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Anthropic CPO Cat Wu：未来 AI 会在你意识到需求之前就主动服务",
+    summary: "Anthropic 首席产品官 Cat Wu 表示，下一代 AI 产品将具备'预测性'能力——在用户意识到自己的需求之前，AI 已经主动做好准备。",
+    content: `## 预测性 AI：Anthropic 的产品愿景
+
+**2026 年 5 月 13 日**，Anthropic 首席产品官 Cat Wu 分享了对 AI 未来的看法。
+
+### 核心观点
+- **预测性 AI**：AI 不再被动等待指令，而是主动预测用户需求
+- **上下文理解**：基于用户的习惯、场景和历史数据做出预判
+- **产品形态**：从'聊天框'走向'无处不在的智能助手'
+
+### 技术路径
+- 更强的长期记忆和个性化建模
+- 多模态感知（环境、时间、位置等）
+- 低延迟、高可靠的实时推理能力
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/`,
+    date: "2026-05-14 16:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/",
+    href: "/news/news-1615",
   }
 ];
