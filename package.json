@@ -9,7 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:mermaid": "node scripts/check-mermaid-contrast.js"
+    "lint:mermaid": "node scripts/check-mermaid-contrast.js",
+    "lint:md": "node scripts/fix-markdown-syntax.mjs --check",
+    "fix:md": "node scripts/fix-markdown-syntax.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
