@@ -50,16 +50,30 @@ node scripts/check-topic-dup.js "拟写的新文章标题"
 
 ---
 
+## 🔴 内容优先级铁律（2026-05-15 用户指示）
+
+> **用户原话："你的内容研究还是不够广泛，主要扩展国外的权威技术网站。而且这样技术类的网站必须强制进行收录分析，新闻类的可降低优先级。"**
+
+**研究精力分配：**
+- 🔴 **P0 知识库深度分析（60% 精力）** — 技术类权威网站的深度文章、论文、框架、工具，必须强制收录分析
+- 🟠 **P1 技术博客素材（25% 精力）** — 有技术深度的文章，适合生成深度解读博客
+- 🟡 **P2 新闻事件（15% 精力）** — 降低优先级，只关注重大事件，日常新闻不是重点
+
+**技术类内容定义（必须强制收录分析）：**
+- 学术论文（arXiv、OpenReview、顶会论文）
+- 技术框架/工具的深度解析（GitHub 开源项目、新框架发布）
+- 权威技术博客（Karpathy、Ethan Mollick、Chip Huyen 等）
+- 技术公司的技术博客（Google AI Blog、Anthropic Blog、DeepMind Blog、Meta AI Blog、OpenAI Blog、NVIDIA Technical Blog）
+- 技术方案/架构设计文章
+- AI 工程化最佳实践
+
+**新闻类内容定义（降低优先级）：**
+- 融资新闻、政策监管、公司动态（除非有重大技术影响）
+- 一般性 AI 新闻（除非是突破性事件）
+
 ## 🔴 研究范围——必须极其广泛！
 
-### 📰 第一层：AI 新闻与事件（每分钟都在变化）
-- 搜索词示例（但不限于）：
-  "AI news today", "AI breakthrough 2026", "AI funding round", "AI regulation", "AI startup launches"
-  "人工智能最新突破", "AI 大模型更新", "AI 公司融资", "AI 政策监管"
-- 重点来源：TechCrunch AI、The Verge AI、VentureBeat、WIRED、Fortune、Bloomberg Technology
-- 搜索所有 AI 相关类别：NLP、CV、RL、Agent、多模态、AI for Science、AI Safety、AI Ethics
-
-### 📝 第二层：学术论文（arXiv、OpenReview、ACL、NeurIPS、ICML）
+### 📝 第一层：学术论文（arXiv、OpenReview、ACL、NeurIPS、ICML、CVPR、ICLR）【P0 最高优先级】
 - 搜索词示例：
   "arXiv cs.AI latest", "arXiv cs.LG", "arXiv cs.CL", "arXiv cs.MA", "arXiv cs.CV", "arXiv cs.RO"
   "new paper LLM", "new paper diffusion model", "new paper reinforcement learning"
@@ -67,7 +81,7 @@ node scripts/check-topic-dup.js "拟写的新文章标题"
 - 重点关注：LLM 训练/推理优化、Agent 架构、多模态、RLHF/DPO、代码生成、AI 安全
 - 用 summarize 工具总结有价值论文的摘要
 
-### 🔧 第三层：开发工具与框架（GitHub Trending、HuggingFace、ProductHunt）
+### 🔧 第二层：开发工具与框架（GitHub Trending、HuggingFace、ProductHunt）【P0 最高优先级】
 - 搜索词示例：
   "new AI developer tool", "AI coding tool", "AI IDE plugin", "AI framework release"
   "new open source AI", "AI library Python", "AI library JavaScript"
@@ -76,36 +90,40 @@ node scripts/check-topic-dup.js "拟写的新文章标题"
 - 检查 HuggingFace 热门模型（Text、Image、Audio、Video）
 - 检查 ProductHunt AI 类别新品
 
-### 🏗️ 第四层：框架与平台
+### 🏗️ 第三层：框架与平台【P0 最高优先级】
 - 搜索词示例：
   "AI agent framework", "LLM platform", "MCP server", "AI harness", "RAG framework"
   "AI orchestration", "AI deployment platform", "AI inference optimization"
   "AI 代理框架", "大模型部署平台", "RAG 框架"
 
-### 💡 第五层：方法论与最佳实践
+### 📖 第四层：权威技术博客与公司技术博客【P0 最高优先级】
+- **意见领袖**：Ethan Mollick (One Useful Thing), Andrej Karpathy, Andrew Ng, Yann LeCun, Ilya Sutskever, Simon Willison, Lilian Weng (OpenAI Blog), Chip Huyen
+- **深度博客**：Lilian Weng's blog、Jay Alammar 的博客、Sebastian Raschka 的博客、The Gradient、Distill.pub
+- **公司技术博客**：Google AI Blog、Anthropic Blog、DeepMind Blog、Meta AI Blog、OpenAI Blog、NVIDIA Technical Blog、Microsoft Research Blog
+
+### 💡 第五层：方法论与最佳实践【P0 最高优先级】
 - 搜索词示例：
   "AI engineering paradigm", "AI best practice", "AI design pattern"
   "LLM evaluation", "prompt engineering technique", "fine-tuning strategy"
   "AI 工程化", "大模型评估", "微调策略"
 
-### 👥 第六层：意见领袖与深度博客
-- 关注以下人物的最新文章：
-  Ethan Mollick (One Useful Thing), Andrej Karpathy, Andrew Ng, Yann LeCun, Ilya Sutskever
-  Simon Willison, Lilian Weng (OpenAI Blog), Chip Huyen
-- 关注深度博客：Lilian Weng's blog、Jay Alammar 的博客、Sebastian Raschka 的博客
-
-### 📊 第七层：GitHub Trending 深度挖掘
+### 📊 第六层：GitHub Trending 深度挖掘【P0 最高优先级】
 - 不仅看日榜，看周榜和月榜
 - 关注单周增长 >500 stars 的项目
 - 关注所有 AI/ML 相关语言（Python、TypeScript、Rust、Go）
 - 检查 trending 项目的 README，理解其核心价值
 
-### 🏢 第八层：公司大动态
-- OpenAI、Anthropic、Google DeepMind、Meta AI、Microsoft、NVIDIA
-- 中国公司：字节跳动、阿里、腾讯、百度、华为、智谱、MiniMax、月之暗面
-- 搜索词："OpenAI latest", "Anthropic news", "Google DeepMind blog", "NVIDIA AI news"
+### 📰 第七层：AI 新闻与事件【P2 降低优先级】
+- 搜索词示例（仅限于重大事件）：
+  "AI breakthrough 2026", "AI major release", "AI startup launches"
+- 来源：TechCrunch AI、The Verge AI、VentureBeat、WIRED
+- **除非是重大技术突破，否则日常新闻不作为研究重点**
 
-### 🎓 第九层：学习与教育资源
+### 🏢 第八层：公司大动态【P2 降低优先级】
+- OpenAI、Anthropic、Google DeepMind、Meta AI、Microsoft、NVIDIA
+- **优先关注技术博客发布的内容，而非一般公司动态**
+
+### 🎓 第九层：学习与教育资源【P1 中等优先级】
 - 新课程、教程、学习路径
 - 热门 AI 面试题、技术面经
 - AI 认证、bootcamp
@@ -183,17 +201,17 @@ node scripts/check-topic-dup.js "拟写的新文章标题"
 
 ## 🎯 开发建议（给开发 Agent 的具体 Action Items，按优先级排序）
 
-**🔴 最高优先级：知识库体系化（2026-05-09 用户指示）**
+**🔴 P0 最高优先级：知识库体系化 + 技术深度分析（2026-05-15 用户更新）**
 
-> 用户原话："知识库不够系统化，太零碎"、"不要让文章都是零零碎碎，一盘散沙一样"
+> 用户原话："技术类的网站必须强制进行收录分析，新闻类的可降低优先级"
 
-**开发建议必须优先考虑知识库体系化：**
-1. [P0] 补全现有系列 — 检查 reports/knowledge-audit-2026-05-09.md，找出缺失的系列文章
-2. [P0] 新文章归入系列 — 任何新文章必须属于某个系列，禁止写孤立文章
-3. [P0] 补充入门不足 — 入门占比 < 10% 的分类（agent/llm/aieng/ethics），优先写入门文章
-4. [P1] 具体可执行的建议
-5. [P2] 具体可执行的建议
-6. ...（至少 5 条）
+**开发建议必须优先考虑：**
+1. [P0] 知识库技术深度分析 — 强制收录学术论文、技术框架、权威技术博客的深度内容
+2. [P0] 补全现有系列 — 检查 reports/knowledge-audit，找出缺失的系列文章
+3. [P0] 新文章归入系列 — 任何新文章必须属于某个系列，禁止写孤立文章
+4. [P0] 补充入门不足 — 入门占比 < 10% 的分类（agent/llm/aieng/ethics），优先写入门文章
+5. [P1] 具体可执行的建议
+6. [P2] 新闻类内容 — 降低优先级，只关注重大事件
 
 ## ✍️ 博客题材推荐（每次必须推荐 1-2 个）
 

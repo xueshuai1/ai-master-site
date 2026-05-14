@@ -23816,5 +23816,187 @@ SAP 作为全球最大的企业管理软件公司之一，此次合作意味着 
     source: "Washington Post + The New York Times",
     sourceUrl: "https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/05/13/ai-tech-brief-nvidia-ceo-joins-china-trip/",
     href: "/news/news-1651",
+  },
+  {
+    id: "news-1652",
+    tag: "大语言模型",
+    title: "Anthropic 发布 Claude Opus 4.7，软件工程能力显著提升",
+    summary: "Anthropic 最新旗舰模型 Claude Opus 4.7 已正式发布。该模型在 Opus 4.6 基础上针对高级软件工程任务进行了显著改进，尤其在高难度编码任务上表现突出。",
+    content: `**2026 年 5 月**，Anthropic 宣布 Claude Opus 4.7 模型正式全面可用。\n\n### 主要改进
+- **高级软件工程**：在复杂编码任务上相比 Opus 4.6 有显著提升
+- **困难任务表现**：特别针对最复杂的开发场景进行了优化
+- **逐步可用**：模型已开放给所有用户访问\n\n### 行业意义
+Claude Opus 4.7 的发布进一步巩固了 Anthropic 在 AI 编程助手领域的竞争力，与 OpenAI 的 GPT-5 系列形成正面竞争。\n\n**来源：** Anthropic Official\n**链接：** https://www.anthropic.com/news/claude-opus-4-7`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official + Hacker News",
+    sourceUrl: "https://www.anthropic.com/news/claude-opus-4-7",
+    href: "/news/news-1652",
+  },
+  {
+    id: "news-1653",
+    tag: "应用",
+    title: "Anthropic 推出 Claude Design，协作式 AI 视觉设计工具",
+    summary: "Anthropic Labs 推出全新产品 Claude Design，允许用户与 Claude 协作创建精美的视觉内容，包括设计稿、原型、幻灯片等。",
+    content: `**2026 年 5 月**，Anthropic 通过 Claude Design 进军视觉设计领域。\n\n### 产品亮点
+- **协作式设计**：与 Claude 实时协作创建视觉内容
+- **多种产出物**：支持设计稿、原型图、幻灯片、单页文档等
+- **Claude Design**：属于 Anthropic Labs 系列新产品\n\n### 行业意义
+这是 Anthropic 从纯文本/代码助手向多模态创意工具扩展的重要一步，直接挑战 Canva AI 等设计工具。\n\n**来源：** Anthropic Official\n**链接：** https://www.anthropic.com/news/claude-design-anthropic-labs`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official",
+    sourceUrl: "https://www.anthropic.com/news/claude-design-anthropic-labs",
+    href: "/news/news-1653",
+  },
+  {
+    id: "news-1654",
+    tag: "行业",
+    title: "Anthropic 与盖茨基金会达成 2 亿美元 AI 合作伙伴关系",
+    summary: "Anthropic 宣布与比尔及梅琳达·盖茨基金会建立价值 2 亿美元的战略合作，将 AI 技术应用于全球健康与发展领域。",
+    content: `**2026 年 5 月**，Anthropic 与盖茨基金会签署重大合作协议。\n\n### 合作要点
+- **2 亿美元投资**：大规模资金支持 AI 在公益领域的应用
+- **全球健康**：利用 AI 改善全球健康与发展项目
+- **安全优先**：Anthropic 强调其 AI 安全与研究使命\n\n### 行业意义
+这笔合作彰显了企业级 AI 正在从商业场景向全球公共服务延伸，Anthropic 的 AI 安全定位也获得了大型基金会认可。\n\n**来源：** Anthropic Official + Hacker News (36 pts)\n**链接：** https://www.anthropic.com/news/gates-foundation-partnership`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official + Hacker News",
+    sourceUrl: "https://www.anthropic.com/news/gates-foundation-partnership",
+    href: "/news/news-1654",
+  },
+  {
+    id: "news-1655",
+    tag: "应用",
+    title: "Claude for Small Business 上线，中小企业专属 AI 工具包",
+    summary: "Anthropic 推出面向中小企业的 Claude 工具包，包含连接器和即用工作流，将 Claude 集成到小企业日常使用的工具中。",
+    content: `**2026 年 5 月**，Anthropic 正式发布 Claude for Small Business。\n\n### 产品特性
+- **即用工作流**：预置的常见业务场景工作流
+- **连接器集成**：连接中小企业日常使用的各类工具
+- **低门槛**：专为中小企业设计，无需专门技术团队\n\n### 行业意义
+AI 正在从大企业向中小企业下沉，Anthropic 的这一步标志着 AI 助手市场进入大众化阶段。\n\n**来源：** Anthropic Official + Hacker News (449 pts)\n**链接：** https://www.anthropic.com/news/claude-for-small-business`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official + Hacker News",
+    sourceUrl: "https://www.anthropic.com/news/claude-for-small-business",
+    href: "/news/news-1655",
+  },
+  {
+    id: "news-1656",
+    tag: "芯片",
+    title: "Anthropic 提升 Claude 用量上限，与 SpaceX 达成算力合作",
+    summary: "Anthropic 宣布提高 Claude 的使用限制，并与 SpaceX 达成新的算力合作协议，预计将在短期内大幅增加计算能力。",
+    content: `**2026 年 5 月**，Anthropic 双管齐下扩展算力。\n\n### 关键动态
+- **用量上限提升**：Claude 用户使用限制上调
+- **SpaceX 算力合作**：与 SpaceX 签署新的计算资源合作协议
+- **产能扩张**：短期内计算能力将大幅增长\n\n### 行业意义
+SpaceX 作为算力合作伙伴进入 AI 领域，显示了 AI 算力需求的爆发式增长，也说明非传统科技公司正在成为 AI 基础设施的重要参与者。\n\n**来源：** Anthropic Official\n**链接：** https://www.anthropic.com/news/higher-limits-spacex`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official",
+    sourceUrl: "https://www.anthropic.com/news/higher-limits-spacex",
+    href: "/news/news-1656",
+  },
+  {
+    id: "news-1657",
+    tag: "Agent",
+    title: "Anthropic 发布金融服务业 Agent 工具包，10 款新插件上线",
+    summary: "Anthropic 为金融服务和保险行业推出 10 款新的 Cowork 和 Claude Code 插件，新增 Microsoft 365 集成和 MCP 应用。",
+    content: `**2026 年 5 月**，Anthropic 针对金融服务行业推出专项工具。\n\n### 发布内容
+- **10 款新插件**：面向金融和保险领域的 Cowork/Claude Code 插件
+- **Microsoft 365 集成**：新增 Office 套件连接能力
+- **MCP 应用**：专为金融服务业设计的 MCP 应用\n\n### 行业意义
+金融行业对 AI 的需求从通用对话向专业工作流转变，Anthropic 正在加速行业化布局。\n\n**来源：** Anthropic Official\n**链接：** https://www.anthropic.com/news/finance-agents`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official",
+    sourceUrl: "https://www.anthropic.com/news/finance-agents",
+    href: "/news/news-1657",
+  },
+  {
+    id: "news-1658",
+    tag: "应用",
+    title: "Claude AI 帮用户找回 11 年前丢失的 BTC 钱包，内含 40 万美元",
+    summary: "一名交易员使用 Claude AI 成功找回了 11 年前遗失密码的比特币钱包，钱包内持有价值约 40 万美元的 BTC。AI 在尝试 3.5 万亿次密码组合后成功解密。",
+    content: `**2026 年 5 月**，AI 在密码恢复领域展现惊人能力。\n\n### 事件详情
+- **11 年等待**：用户 11 年前丢失钱包密码
+- **3.5 万亿次尝试**：Claude AI 系统性地尝试海量密码组合
+- **40 万美元**：成功解密后找回价值约 40 万美元的 BTC\n\n### 技术启示
+这展示了大语言模型在模式推理和密码恢复方面的潜力，同时也引发了关于 AI 破解安全性的讨论。\n\n**来源：** Tom's Hardware + Hacker News (115 pts)\n**链接：** https://www.tomshardware.com/tech-industry/cryptocurrency/bitcoin-trader-recovers-usd400-000-using-claude-ai`,
+    date: "2026-05-15 00:06",
+    source: "Tom's Hardware + Hacker News",
+    sourceUrl: "https://www.tomshardware.com/tech-industry/cryptocurrency/bitcoin-trader-recovers-usd400-000-using-claude-ai-after-losing-wallet-password-11-years-ago-bot-tried-3-5-trillion-passwords-before-decrypting-an-old-wallet-backup",
+    href: "/news/news-1658",
+  },
+  {
+    id: "news-1659",
+    tag: "行业",
+    title: "Altman 出庭作证：不是 OpenAI 窃取慈善机构，是马斯克先离开",
+    summary: "OpenAI CEO Sam Altman 在庭审中回应指控，称并非 OpenAI 从非营利机构中获利，而是 Elon Musk 先离开了 OpenAI。该案涉及 OpenAI 从非营利向营利转型的核心争议。",
+    content: `**2026 年 5 月 14 日**，OpenAI 转型案庭审持续。\n\n### 庭审要点
+- **Altman 回应**：否认 OpenAI "窃取"非营利慈善机构的指控
+- **马斯克责任**：称 Elon Musk 才是先离开 OpenAI 的一方
+- **转型争议**：核心围绕 OpenAI 从非营利向营利机构的转变\n\n### 行业意义
+此案结果将影响 AI 行业的治理结构和非营利/营利机构的边界定义。\n\n**来源：** 新浪科技 + WSJ + Hacker News (113 pts)\n**链接：** https://finance.sina.com.cn/tech/2026-05-14/doc-inhxuwsz4229498.shtml`,
+    date: "2026-05-15 00:06",
+    source: "新浪科技 + WSJ + Hacker News",
+    sourceUrl: "https://finance.sina.com.cn/tech/2026-05-14/doc-inhxuwsz4229498.shtml",
+    href: "/news/news-1659",
+  },
+  {
+    id: "news-1660",
+    tag: "行业",
+    title: "微软为「后 OpenAI 时代」做准备，寻求收购更多 AI 初创公司",
+    summary: "在投资 OpenAI 超千亿美元后，微软正在为可能的「后 OpenAI 时代」做准备，积极寻求收购更多 AI 初创企业，以强化自身 AI 开发能力。",
+    content: `**2026 年 5 月 14 日**，微软调整 AI 战略。\n\n### 关键动态
+- **千亿美元后**：已投资 OpenAI 超 1000 亿美元
+- **初创收购**：正在物色并洽谈收购更多 AI 初创公司
+- **自研强化**：目标强化微软自身 AI 开发能力\n\n### 行业意义
+如果 OpenAI IPO 或合作关系发生变化，微软需要独立的 AI 能力储备。这一动向预示 AI 行业格局可能面临重大重组。\n\n**来源：** 新浪科技\n**链接：** https://finance.sina.com.cn/tech/mobile/n/c/2026-05-14/doc-inhxwene0060186.shtml`,
+    date: "2026-05-15 00:06",
+    source: "新浪科技 + 新浪财经",
+    sourceUrl: "https://finance.sina.com.cn/jjxw/2026-05-14/doc-inhxvihs8801065.shtml",
+    href: "/news/news-1660",
+  },
+  {
+    id: "news-1661",
+    tag: "开源项目",
+    title: "Google 开源 MCP Toolbox for Databases，AI Agent 数据库交互新标准",
+    summary: "Google 开源 MCP Toolbox for Databases，为 AI Agent 提供标准化的数据库 MCP Server 接口，支持多数据库连接和安全查询。项目上线即获 15K+ stars。",
+    content: `**2026 年 5 月**，Google 发布开源数据库 MCP 工具。\n\n### 项目亮点
+- **15K+ stars**：GitHub 上线即获大量关注
+- **数据库 MCP Server**：专为 AI Agent 与数据库交互设计
+- **安全查询**：内置安全机制防止恶意查询
+- **多数据库支持**：兼容多种主流数据库系统\n\n### 行业意义
+MCP（Model Context Protocol）生态正在快速扩展，Google 的入局将加速数据库与 AI Agent 的标准化集成。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/googleapis/mcp-toolbox`,
+    date: "2026-05-15 00:06",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/googleapis/mcp-toolbox",
+    href: "/news/news-1661",
+  },
+  {
+    id: "news-1662",
+    tag: "开源项目",
+    title: "Emdash：YC W26 开源 Agentic 开发环境，支持多 Agent 并行编程",
+    summary: "YC W26 项目 Emdash 开源了 Agentic 开发环境，支持同时运行多个编程 Agent（Claude Code/Cursor/Copilot），每个 Agent 在独立工作区中协作，避免上下文冲突。",
+    content: `**2026 年 5 月**，YC W26 孵化项目 Emdash 正式开源。\n\n### 核心功能
+- **多 Agent 并行**：同时运行多个编程 Agent
+- **独立工作区**：每个 Agent 在隔离环境中工作
+- **兼容主流**：支持 Claude Code、Cursor、Copilot 等
+- **避免冲突**：解决多 Agent 上下文冲突问题\n\n### 行业意义
+随着多 Agent 编程场景成为趋势，Emdash 提供了一种基础设施级别的解决方案，可能成为团队 AI 开发的标准工具。\n\n**来源：** GitHub Trending\n**链接：** https://github.com/generalaction/emdash`,
+    date: "2026-05-15 00:06",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/generalaction/emdash",
+    href: "/news/news-1662",
+  },
+  {
+    id: "news-1663",
+    tag: "大语言模型",
+    title: "Anthropic 宣布 Claude 将保持无广告，广告激励与 AI 助手不兼容",
+    summary: "Anthropic 明确表示 Claude 将保持无广告模式，认为广告激励与真正有用的 AI 助手存在根本冲突，并计划在不损害用户信任的前提下扩大访问。",
+    content: `**2026 年 5 月**，Anthropic 就 Claude 商业模式发表重要声明。\n\n### 核心立场
+- **无广告承诺**：Claude 将保持无广告模式
+- **激励冲突**：广告激励与真正有帮助的 AI 助手不兼容
+- **信任优先**：在不损害用户信任的前提下扩大用户访问\n\n### 行业意义
+在 AI 行业普遍探索广告变现的背景下，Anthropic 的无广告立场为用户隐私和体验提供了差异化优势。\n\n**来源：** Anthropic Official\n**链接：** https://www.anthropic.com/news/claude-is-a-space-to-think`,
+    date: "2026-05-15 00:06",
+    source: "Anthropic Official",
+    sourceUrl: "https://www.anthropic.com/news/claude-is-a-space-to-think",
+    href: "/news/news-1663",
   }
 ];

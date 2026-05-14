@@ -5808,4 +5808,32 @@ language: "Python",
     createdAt: "2019-05-13",
   },
 
+  // 自动收录（2026-05-15）
+  {
+    id: "googleapis_mcp_toolbox",
+    name: "MCP Toolbox for Databases",
+    category: "mcp",
+    description: "Google 开源的 MCP Server，专为数据库交互设计。支持多数据库连接、安全查询执行，为 AI Agent 提供结构化数据访问能力。",
+    url: "https://github.com/googleapis/mcp-toolbox",
+    tags: ["mcp", "database", "google", "ai-agents", "tool-calling"],
+    price: "开源",
+    icon: "🔧",
+    githubStars: 15214,
+    language: "TypeScript",
+  },
+
+  // 自动收录（2026-05-15）
+  {
+    id: "generalaction_emdash",
+    name: "Emdash",
+    category: "coding",
+    description: "开源 Agentic 开发环境（YC W26），支持并行运行多个编程 Agent（Claude Code/Cursor/Copilot 等），在独立工作区中协作，避免上下文冲突。",
+    url: "https://github.com/generalaction/emdash",
+    tags: ["agentic-development", "multi-agent", "coding-agent", "yc-w26"],
+    price: "开源",
+    icon: "🔧",
+    githubStars: 4413,
+    language: "TypeScript",
+  },
+
 ];
