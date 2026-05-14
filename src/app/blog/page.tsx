@@ -202,17 +202,8 @@ export default function BlogPage() {
                 </p>
 
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3 shrink-0">
-                    <span className="text-xs text-slate-500">✍️ {post.author || "AI Master"}</span>
-                    <CardStats type="blog" id={post.id} />
-                  </div>
-                  <div className="flex gap-2 flex-wrap justify-end">
-                    {post.tags.slice(0, 3).map((tag: string) => (
-                      <span key={tag} className="px-2 py-0.5 bg-white/5 rounded text-xs text-slate-400">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="text-xs text-slate-500 shrink-0">✍️ {post.author || "AI Master"}</span>
+                  <CardStats type="blog" id={post.id} />
                 </div>
               </Link>
             ))}
