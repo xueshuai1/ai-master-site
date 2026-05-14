@@ -1,0 +1,73 @@
+{
+  "totalRepos": 314,
+  "successCount": 310,
+  "errorCount": 4,
+  "starsUpdated": 278,
+  "forksUpdated": 131,
+  "langUpdated": 0,
+  "newTopicsFound": 0,
+  "newTopics": [],
+  "starChanges": [
+    {
+      "tool": "mattpocock_skills",
+      "old": 79519,
+      "new": 80486,
+      "delta": 967
+    },
+    {
+      "tool": "superpowers",
+      "old": 189849,
+      "new": 190412,
+      "delta": 563
+    },
+    {
+      "tool": "hermes-agent",
+      "old": 148999,
+      "new": 149483,
+      "delta": 484
+    },
+    {
+      "tool": "deepseek-tui",
+      "old": 28124,
+      "new": 28585,
+      "delta": 461
+    },
+    {
+      "tool": "andrej-karpathy-skills",
+      "old": 128657,
+      "new": 129108,
+      "delta": 451
+    },
+    {
+      "tool": "cc-switch",
+      "old": 70015,
+      "new": 70404,
+      "delta": 389
+    },
+    {
+      "tool": "spec-kit",
+      "old": 98575,
+      "new": 98885,
+      "delta": 310
+    },
+    {
+      "tool": "everything-claude-code",
+      "old": 181536,
+      "new": 181821,
+      "delta": 285
+    },
+    {
+      "tool": "nexuio_open_design",
+      "old": 39527,
+      "new": 39798,
+      "delta": 271
+    },
+    {
+      "tool": "gstack",
+      "old": 95861,
+      "new": 96099,
+      "delta": 238
+    }
+  ],
+  "filesModified": true
+}
