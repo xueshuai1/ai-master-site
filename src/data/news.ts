@@ -24033,5 +24033,323 @@ Hinton 作为深度学习的奠基人之一，其技术判断一直影响 AI 行
     source: "The Verge",
     sourceUrl: "https://www.theverge.com/ai-artificial-intelligence",
     href: "/news/news-1627",
+  },
+{
+    id: "news-1628",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "strukto-ai/mirage 发布：为 AI Agent 构建的统一虚拟文件系统，⭐2200+",
+    summary: "2026 年 5 月 6 日发布的全新项目，为 AI Agent 提供统一虚拟文件系统抽象层，解决多源文件访问的碎片化问题。",
+    content: `## mirage：AI Agent 的统一虚拟文件系统
+
+**2026 年 5 月 6 日**，strukto-ai 在 GitHub 开源。
+
+### 核心特性
+- **统一抽象层**：为 AI Agent 提供统一的虚拟文件系统接口，屏蔽不同数据源的差异
+- **多源支持**：支持本地文件、云存储、数据库、API 等多种数据源的统一访问
+- **安全沙箱**：Agent 在虚拟文件系统中操作，不会意外修改真实文件系统
+
+### 行业意义
+
+随着 AI Agent 日益成为生产力工具的核心组件，如何安全、高效地访问和管理多源文件数据成为关键挑战。mirage 提供了一种优雅的解决方案，类似 Linux 的 VFS 抽象层。
+
+**来源：** GitHub
+**链接：** https://github.com/strukto-ai/mirage`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/strukto-ai/mirage",
+    href: "/news/news-1628",
+  },
+{
+    id: "news-1629",
+    tag: "安全",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "AiSOC：开源 AI 驱动安全运营中心，实现告警融合与智能紫色团队演练",
+    summary: "2026 年 5 月开源的全新安全运营平台，利用 AI 实现告警自动融合、紫色团队自动演练、Agent 辅助安全分析。",
+    content: `## AiSOC：AI 时代的安全运营新范式
+
+**2026 年 5 月 2 日**，beenuar 在 GitHub 开源。
+
+### 核心功能
+- **告警融合**：自动聚合多源安全告警，降低误报和告警疲劳
+- **紫色团队演练**：AI 驱动的攻防自动演练，持续验证安全控制
+- **Agent 辅助分析**：安全分析师借助 AI Agent 提升调查效率
+- **开源透明**：完全开源，企业可自行部署和定制
+
+### 背景
+
+传统 SOC（安全运营中心）面临告警泛滥、分析人员短缺等挑战。AI 的引入正在改变这一格局，AiSOC 是这一趋势的开源实践。
+
+**来源：** GitHub
+**链接：** https://github.com/beenuar/AiSOC`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/beenuar/AiSOC",
+    href: "/news/news-1629",
+  },
+{
+    id: "news-1630",
+    tag: "Agent",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "AFK-surf/OpenBridge 开源发布：Claude Cowork 和 Codex 的开源替代方案",
+    summary: "2026 年 5 月发布的开源 Agent 项目，旨在提供 Claude Cowork 和 Codex 的免费、安全、开源替代方案。",
+    content: `## OpenBridge：开源 Agent 的"自由桥梁"
+
+**2026 年 5 月 2 日**，AFK-surf 在 GitHub 发布。
+
+### 项目定位
+- **开源替代**：对标 Anthropic 的 Claude Cowork 和 OpenAI 的 Codex
+- **免费安全**：自部署，数据完全自主控制
+- **全能力**：覆盖编程、文档分析、工作流自动化等场景
+
+### 开源意义
+
+商业 AI Agent 平台（Claude Cowork、Codex）功能强大但封闭。OpenBridge 的开源为社区和中小企业提供了自主可控的替代方案，符合 AI 工具民主化的大趋势。
+
+**来源：** GitHub
+**链接：** https://github.com/AFK-surf/OpenBridge`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/AFK-surf/OpenBridge",
+    href: "/news/news-1630",
+  },
+{
+    id: "news-1631",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "IBM Think 2026 发布 AI 运营模式蓝图：智能体编排与混合云管理一体化",
+    summary: "IBM 在 Think 2026 大会上发布全新 AI 运营模式蓝图，涵盖智能体编排开发工具、AI 数据底座和混合云管理，旨在弥合企业 AI 应用鸿沟。",
+    content: `## IBM Think 2026：AI 运营模式的系统性蓝图
+
+**2026 年 5 月 7 日**，IBM 在 Think 2026 大会上发布。
+
+### 三大支柱
+- **智能体编排与开发工具**：为企业提供统一的 AI Agent 规划、构建、部署及治理能力
+- **AI 数据底座**：受治理、互联互通的信息底座，让智能体能够快速响应
+- **AI 驱动混合云管理**：打通混合环境下的基础设施、安全与运维
+
+### 战略意义
+
+IBM 提出的"AI 运营模式"不仅仅是技术工具的堆叠，而是从组织层面重新设计 AI 的运营流程。对于正在探索 AI 转型的中大型企业而言，这是一份可参考的系统性蓝图。
+
+**来源：** IBM China Newsroom
+**链接：** https://china.newsroom.ibm.com/2026-05-07`,
+    date: "2026-05-14 21:00",
+    source: "IBM China Newsroom",
+    sourceUrl: "https://china.newsroom.ibm.com/2026-05-07-Think-2026-IBM-AI,-AI",
+    href: "/news/news-1631",
+  },
+{
+    id: "news-1632",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "DeepSeek V4 Pro 桌面应用发布：1.6T MoE 架构 + 100 万 Token 上下文窗口",
+    summary: "2026 年 5 月 12 日发布的 DeepSeek V4 Pro 桌面应用，搭载 1.6T MoE 架构和百万 Token 超长上下文，为开发者提供本地化 AI 编程体验。",
+    content: `## DeepSeek V4 Pro：百万 Token 的桌面 AI 编程助手
+
+**2026 年 5 月 12 日**，yaassin12 在 GitHub 开源。
+
+### 核心规格
+- **1.6T MoE 架构**：混合专家模型，高效推理
+- **100 万 Token 上下文**：支持超长文档、代码库的全局理解
+- **桌面应用**：本地化部署，降低对云端 API 的依赖
+
+### 行业背景
+
+DeepSeek 系列一直是中国开源 AI 模型的重要力量。V4 Pro 的桌面化部署模式呼应了端侧 AI 的大趋势——将强大的 AI 能力带到用户身边，而非依赖远程服务器。
+
+**来源：** GitHub
+**链接：** https://github.com/yaassin12/DeepSeek-V4-Pro-App`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/yaassin12/DeepSeek-V4-Pro-App",
+    href: "/news/news-1632",
+  },
+{
+    id: "news-1633",
+    tag: "开源项目",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "ComposioHQ/trustclaw：可自托管的个人 AI Agent，向量记忆 + Telegram 集成，⭐585",
+    summary: "trustclaw 是一款可自托管的个人 AI Agent，支持向量记忆、Composio 工具集成和 Telegram 通信，为个人用户提供轻量级 AI 助手方案。",
+    content: `## trustclaw：你的私人 AI 助理
+
+**2026 年 5 月 5 日**，ComposioHQ 在 GitHub 开源。
+
+### 核心特性
+- **向量记忆**：基于向量数据库的长期记忆，Agent 记住你的偏好和历史
+- **Composio 工具集成**：通过 Composio 协议连接各种 SaaS 和 API
+- **Telegram 集成**：通过 Telegram 随时与你的 AI Agent 对话
+- **自托管**：完全自主部署，数据不外流
+
+### 个人 AI 趋势
+
+随着 AI 从"通用对话"走向"个性化服务"，个人 AI Agent 正在成为新的产品形态。trustclaw 代表了"我的 AI、我的数据"这一理念。
+
+**来源：** GitHub
+**链接：** https://github.com/ComposioHQ/trustclaw`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/ComposioHQ/trustclaw",
+    href: "/news/news-1633",
+  },
+{
+    id: "news-1634",
+    tag: "Agent",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "statewright 发布：为 AI Agent 引入状态机护栏，防止 Agent 偏离预期行为",
+    summary: "2026 年 5 月发布的新项目，通过有限状态机（FSM）为 AI Agent 提供行为约束，确保 Agent 执行流程可控、可审计。",
+    content: `## statewright：AI Agent 的状态机护栏
+
+**2026 年 5 月 3 日**，statewright 在 GitHub 开源。
+
+### 核心理念
+- **状态机约束**：用有限状态机定义 Agent 的合法行为路径
+- **防止偏离**：确保 Agent 不会进入未预期的状态或执行越权操作
+- **可审计**：Agent 的每一步状态转换都有记录，可追溯
+
+### 为什么需要状态机护栏
+
+AI Agent 的自主性是双刃剑——越自主，越不可控。在金融、医疗、安全等关键场景中，Agent 的行为必须可预测、可约束。statewright 提供了一种轻量级方案。
+
+**来源：** GitHub
+**链接：** https://github.com/statewright/statewright`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/statewright/statewright",
+    href: "/news/news-1634",
+  },
+{
+    id: "news-1635",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "斯坦福 HAI 发布《2026 年人工智能指数报告》：全球企业 AI 投资飙升至 5817 亿美元",
+    summary: "斯坦福大学以人为本人工智能研究院发布年度报告，系统评估全球 AI 发展态势。报告指出 2025 年全球企业 AI 投资达 5817 亿美元，AI 模型性能在多项基准测试中逼近人类基线。",
+    content: `## 斯坦福 AI Index 2026：数据全景
+
+**2026 年 4 月 13 日**，斯坦福 HAI 发布。
+
+### 关键数据
+- **企业投资**：2025 年全球企业 AI 投资飙升至 **5817 亿美元**
+- **模型性能**：AI 模型在多项基准测试中逼近甚至超越人类基线
+- **报告规模**：423 页、九章，覆盖研发、技术性能、负责任 AI、经济影响、科学研究
+
+### 多维博弈格局
+
+报告指出 AI 正在从"技术竞赛"转向"多维博弈"——不仅是模型性能的竞争，更是生态、治理、伦理、人才的全方位竞争。中国 AI 大模型调用量首次超越美国，成为全球 AI 应用的重要力量。
+
+**来源：** 斯坦福 HAI + 复旦大学数字发展与数字创新研究院
+**链接：** https://fddi.fudan.edu.cn/d9/1b/c18965a776475/page.htm`,
+    date: "2026-05-14 21:00",
+    source: "斯坦福 HAI + 复旦大学 DDI",
+    sourceUrl: "https://fddi.fudan.edu.cn/d9/1b/c18965a776475/page.htm",
+    href: "/news/news-1635",
+  },
+{
+    id: "news-1636",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "中国'六张网'新基建战略全面铺开：算力网与电网、水网并列国家战略地位",
+    summary: "中国从国家层面确立算力网的战略地位，与电网、水网等传统基础设施并列，标志着 AI 算力已成为国家核心基础设施。",
+    content: `## 六张网：算力成为国家基础设施
+
+**2026 年 5 月 12 日**，CSDN 人工智能早间新闻报道。
+
+### 战略意义
+- **算力网定位**：与水网、电网并列，成为国家核心基础设施
+- **全面铺开**：从国家层面确立算力网的战略地位
+- **产业影响**：将为 AI 产业提供稳定、普惠的算力保障
+
+### 全球对比
+
+在全球范围内，将 AI 算力提升到国家战略基础设施层面的做法并不多见。中国的"六张网"战略反映了政府对 AI 基础设施的高度重视，这将对全球 AI 竞争格局产生深远影响。
+
+**来源：** CSDN + 中国政府公开报道
+**链接：** https://blog.csdn.net/fudaihb/article/details/161003308`,
+    date: "2026-05-14 21:00",
+    source: "CSDN",
+    sourceUrl: "https://blog.csdn.net/fudaihb/article/details/161003308",
+    href: "/news/news-1636",
+  },
+{
+    id: "news-1637",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "快手可灵 AI 被曝正寻求独立融资，或从快手主体分拆运作",
+    summary: "2026 年 5 月 11 日市场消息，快手旗下 AI 视频产品可灵 AI 正在资本市场释放融资信号，若估值洽谈顺利，可能从快手主体分拆独立运作。",
+    content: `## 可灵 AI 独立融资：快手 AI 业务的资本化路径
+
+**2026 年 5 月 11 日**，新浪 AI 热点报道。
+
+### 核心信息
+- **融资信号**：可灵 AI 正在资本市场释放融资相关信号
+- **分拆可能**：若估值洽谈顺利，可能从快手主体分拆独立运作
+- **产品定位**：可灵是快手旗下 AI 视频生成产品
+
+### 行业背景
+
+中国 AI 应用层创业正在加速资本化。可灵 AI 的分拆融资如果成功，将为其他大厂内部 AI 业务提供独立运作的先例，也可能催生更多 AI 独角兽。
+
+**来源：** 新浪 AI 热点
+**链接：** https://k.sina.cn/article_7857201856_1d45362c001905d5h2.html`,
+    date: "2026-05-14 21:00",
+    source: "新浪 AI 热点",
+    sourceUrl: "https://k.sina.cn/article_7857201856_1d45362c001905d5h2.html",
+    href: "/news/news-1637",
+  },
+{
+    id: "news-1638",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Microsoft 发布 2026 年七大 AI 趋势：从数字协作者到量子突破与伦理创新",
+    summary: "微软官方博客发布七大 AI 趋势展望，涵盖数字协作者、量子计算突破、道德创新等领域，描绘了 AI 在 2026 年的全景发展方向。",
+    content: `## 微软 2026 AI 七大趋势全景
+
+**2026 年 5 月**，Microsoft Source 发布。
+
+### 七大趋势
+1. **数字协作者**：AI 从工具升级为真正的合作伙伴
+2. **量子突破**：量子计算与 AI 融合，加速科学发现
+3. **伦理创新**：负责任 AI 成为核心竞争力
+4. **行业深度渗透**：AI 从通用能力转向行业专用
+5. **边缘 AI**：端侧 AI 推理能力持续提升
+6. **多模态融合**：文本、图像、音频、视频的统一理解与生成
+7. **AI 治理框架**：全球协同的 AI 治理体系正在形成
+
+### 微软视角
+
+微软对 AI 趋势的解读反映了其在 Azure AI、Copilot 等企业级产品中的实践积累。七大趋势既有技术维度，也有治理维度，为企业 AI 战略提供了参考框架。
+
+**来源：** Microsoft Source
+**链接：** https://news.microsoft.com/source/emea/features/whats-next-in-ai-7-trends-2026/`,
+    date: "2026-05-14 21:00",
+    source: "Microsoft Source",
+    sourceUrl: "https://news.microsoft.com/source/emea/features/whats-next-in-ai-7-trends-2026/",
+    href: "/news/news-1638",
+  },
+{
+    id: "news-1639",
+    tag: "Agent",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "darkrishabh/agent-skills-eval 发布：AI Agent 技能标准化评估框架",
+    summary: "2026 年 5 月 6 日发布的全新测试运行器，为 AI Agent 技能提供标准化的评估框架，类似 agentskills.io 的开源实现。",
+    content: `## agent-skills-eval：AI Agent 技能的标准化度量
+
+**2026 年 5 月 6 日**，darkrishabh 在 GitHub 开源。
+
+### 核心价值
+- **标准化评估**：为 agentskills.io 风格的 AI Agent 技能提供统一测试运行器
+- **可比较基准**：让不同 Agent 框架的能力有可比较的量化指标
+- **开源社区**：推动 Agent 能力评估的透明化和社区共建
+
+### 为什么重要
+
+随着 AI Agent 框架的爆发式增长（Claude Code Skills、OpenClaw superpowers 等），如何标准化地评估 Agent 的能力成为一个关键问题。agent-skills-eval 提供了解决这一问题的基础设施。
+
+**来源：** GitHub
+**链接：** https://github.com/darkrishabh/agent-skills-eval`,
+    date: "2026-05-14 21:00",
+    source: "GitHub",
+    sourceUrl: "https://github.com/darkrishabh/agent-skills-eval",
+    href: "/news/news-1639",
   }
 ];
