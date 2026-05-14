@@ -148,7 +148,7 @@ def distill_train(teacher, student, data, T=3.0, epochs=10):
             optimizer.zero_grad()`
       }
     ],
-    mermaid: `％％{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}％％
+    mermaid: `%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}%%
 graph TD
     A[Gemini 教师模型] -->|生成训练数据| B[合成数据集]
     B -->|阶段1: 工具选择| C[学生模型 26M]
@@ -166,7 +166,7 @@ graph TD
   },
   {
     title: "3.5. 三种技术路线的架构对比",
-    mermaid: `％％{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}％％
+    mermaid: `%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}%%
 graph LR
     A[用户请求] --> B{路由判断}
     B -->|简单工具调用| C[26M Needle]

@@ -180,7 +180,7 @@ class ContractReviewAI:
         return report`
                 }
             ],
-            mermaid: `％％{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}％％
+            mermaid: `%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}%%
 graph LR
     A[原始合同] --> B[文本解析]
     B --> C[条款提取]
@@ -194,7 +194,7 @@ graph LR
         },
         {
             title: "6.5. 法律 AI 与其他行业 AI 的关键差异对比",
-            mermaid: `％％{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}％％
+            mermaid: `%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#78350f', 'primaryTextColor': '#fff', 'primaryBorderColor': '#92400e', 'lineColor': '#b45309', 'secondaryColor': '#451a03', 'tertiaryColor': '#fef3c7'}}}%%
 graph TB
     A[法律 AI] --> B[精确性：零容忍]
     A --> C[时效性：实时更新]

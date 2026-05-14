@@ -82,7 +82,7 @@ function checkMermaidPercent(content, file) {
   for (const block of mermaidBlocks) {
     const lines = block[1].split('\n');
     for (let i = 0; i < lines.length; i++) {
-      if (/(?<!\\)%/.test(lines[i])) {
+      if (/(?<!\\)%/.test(lines[i]) && !/^\s*%%\{init:/.test(lines[i])) {
         results.fail.push(`❌ ${file}: Mermaid 中包含 % 字符 L${i + 1} — mermaid 中 % 是注释标记，会导致解析错误。请改用全角 ％`);
       }
     }

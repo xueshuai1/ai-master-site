@@ -212,8 +212,9 @@ function checkMermaidArrowSyntax(content, filePath) {
         });
       }
       // 匹配 % 注释符（mermaid 中 % 是注释标记，会导致解析错误）
-      const percentComment = line.match(/(?<!(?:\{[^}]*)|\\)(?<!(?:%))(?<!")%+(?!"|})(?!>)/);
-      if (line.includes('%') && !line.includes('％')) {
+      // 但 %%{init:...}%% 是合法的 mermaid 注释配置语法，应该放行
+      const isInitConfig = line.match(/^\s*%%\{init:/);
+      if (line.includes('%') && !line.includes('％') && !isInitConfig) {
         errors.push({
           file: filePath,
           type: 'mermaid_percent_comment',
