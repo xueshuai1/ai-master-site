@@ -5,7 +5,7 @@
  */
 
 import { chromium } from 'playwright';
-import { writeFileSync, mkdirSync, readdirSync, statSync, unlinkSync } from 'fs';
+import { writeFileSync, mkdirSync, readdirSync, statSync, unlinkSync, readdir } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -13,6 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = process.argv[2] || 'https://www.ai-master.cc';
 const REPORTS_DIR = join(__dirname, '..', 'reports');
 const SCREENSHOT_DIR = join(REPORTS_DIR, 'screenshots');
+const DATA_DIR = join(__dirname, '..', 'src', 'data');
 
 const VIEWPORTS = {
   pc: { width: 1440, height: 900 },
@@ -28,6 +29,50 @@ const PAGES = [
   { path: '/about', name: '关于', priority: 'P1' },
 ];
 
+/**
+ * 扫描最近修改的文章文件（按 mtime 排序，取最新的 N 个）
+ * 用于 QA 时额外检查文章详情页
+ */
+async function getRecentArticlePages(maxArticles = 5) {
+  const articles = [];
+  
+  // 扫描知识库文章
+  try {
+    const articleDir = join(DATA_DIR, 'articles');
+    const files = readdirSync(articleDir).filter(f => f.endsWith('.ts'));
+    const withMtime = files.map(f => ({
+      file: f,
+      mtime: statSync(join(articleDir, f)).mtimeMs,
+      type: 'knowledge'
+    }));
+    articles.push(...withMtime);
+  } catch(e) {}
+  
+  // 扫描博客文章
+  try {
+    const blogDir = join(DATA_DIR, 'blogs');
+    const files = readdirSync(blogDir).filter(f => f.endsWith('.ts'));
+    const withMtime = files.map(f => ({
+      file: f,
+      mtime: statSync(join(blogDir, f)).mtimeMs,
+      type: 'blog'
+    }));
+    articles.push(...withMtime);
+  } catch(e) {}
+  
+  // 按修改时间排序，取最新的 N 个
+  articles.sort((a, b) => b.mtime - a.mtime);
+  
+  return articles.slice(0, maxArticles).map(a => {
+    const id = a.file.replace('.ts', '');
+    if (a.type === 'knowledge') {
+      return { path: `/article/${id}`, name: `知识库: ${id}`, priority: 'P0' };
+    } else {
+      return { path: `/blog/${id}`, name: `博客: ${id}`, priority: 'P0' };
+    }
+  });
+}
+
 async function main() {
   console.log(`🔍 QA 测试: ${BASE_URL}`);
   
@@ -42,10 +87,16 @@ async function main() {
     }
   } catch(e) {}
   
+  // 获取最近修改的文章页（额外检查）
+  const recentArticles = await getRecentArticlePages(5);
+  const allPages = [...PAGES, ...recentArticles];
+  
+  console.log(`📄 测试 ${PAGES.length} 个主页面 + ${recentArticles.length} 个文章页`);
+  
   const browser = await chromium.launch({ headless: true });
   const results = { pages: [], issues: [], passed: 0 };
   
-  for (const pg of PAGES) {
+  for (const pg of allPages) {
     console.log(`  ${pg.name}...`);
     const r = await testPage(browser, pg);
     results.pages.push(r);
@@ -57,10 +108,10 @@ async function main() {
   
   await browser.close();
   
-  const report = buildReport(results, PAGES.length);
+  const report = buildReport(results, allPages.length);
   writeFileSync(join(REPORTS_DIR, 'latest-qa-report.md'), report);
   
-  console.log(`✅ 报告: ${results.passed}/${PAGES.length} 通过 | ${results.issues.length} 个问题`);
+  console.log(`✅ 报告: ${results.passed}/${allPages.length} 通过 | ${results.issues.length} 个问题`);
 }
 
 async function testPage(browser, { path, name }) {
