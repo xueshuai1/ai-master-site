@@ -34,7 +34,7 @@ export const article: Article = {
     class E s2
     class D s1
     class A s0
-    classDef s0 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s0 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s1 fill:#047857,stroke:\#059669,color:#fff
     classDef s2 fill:#1d4ed8,stroke:\#2563eb,color:#fff`,
     },
@@ -316,7 +316,7 @@ class EEATEvaluator:
     class B s0
     classDef s0 fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef s1 fill:#047857,stroke:\#059669,color:#fff
-    classDef s2 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s2 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s3 fill:#b91c1c,stroke:\#dc2626,color:#fff
     classDef s4 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9`,
       code: [{

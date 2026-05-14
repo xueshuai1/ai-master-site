@@ -36,7 +36,7 @@ export const article: Article = {
 
     classDef era fill:#0c4a6e
     class A,B,C,D,E,H,I,J era
-    classDef milestone fill:#c2410c,color:#fff
+    classDef milestone fill:#9a3412,color:#fff
     class F,G,K milestone`,
       },
       {

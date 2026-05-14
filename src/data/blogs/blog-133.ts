@@ -58,7 +58,7 @@ export const blog: BlogPost = {
     E1[DeepSeek 训练优化] --> E
     
     style A fill:#1e3a5f,color:#fff
-    style B fill:#2563eb,color:#fff
+    style B fill:#1d4ed8,color:#fff
     style C fill:#1e3a5f,color:#fff
     style D fill:#1e3a5f,color:#fff
     style E fill:#7c3aed,color:#fff
@@ -155,7 +155,7 @@ DeepSeek 的战略逻辑可以从其技术发展轨迹中清晰看到。DeepSeek
     D --> D4["自主性: ★★★"]
     
     style A fill:#1e3a5f,color:#fff
-    style B fill:#2563eb,color:#fff
+    style B fill:#1d4ed8,color:#fff
     style C fill:#1e3a5f,color:#fff
     style D fill:#7c3aed,color:#fff`,
     },

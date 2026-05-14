@@ -220,11 +220,11 @@ echo "✅ 安全审计通过"`
     C --> C3[SCA]
     C --> C4[DAST]
     style A fill:#1e3a5f,color:#fff
-    style B fill:#2563eb,color:#fff
+    style B fill:#1d4ed8,color:#fff
     style C fill:#7c3aed,color:#fff
     style D fill:#1e3a5f,color:#fff
     style E fill:#1e3a5f,color:#fff
-    style F fill:#2563eb,color:#fff
+    style F fill:#1d4ed8,color:#fff
     style G fill:#7c3aed,color:#fff
     style H fill:#1e3a5f,color:#fff`,
         },
@@ -287,7 +287,7 @@ Mythos 的成功因素可以归结为四个关键技术决策：
     D --> D2[修复建议生成]
     D --> D3[SARIF 报告输出]
     style A fill:#1e3a5f,color:#fff
-    style B fill:#2563eb,color:#fff
+    style B fill:#1d4ed8,color:#fff
     style C fill:#7c3aed,color:#fff
     style D fill:#1e3a5f,color:#fff`,
         },

@@ -60,7 +60,7 @@ GPU 空转等待"]
     
     classDef demand fill:#b91c1c,stroke:\#dc2626,color:#fff
     classDef gpu fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    classDef mem fill:#b45309,stroke:\#d97706,color:#fff
+    classDef mem fill:#92400e,stroke:\#d97706,color:#fff
     classDef bottleneck fill:#991b1b,stroke:\#b91c1c,color:#fff
     classDef impact fill:#1f2937,stroke:#1f2937,color:#fff
     classDef result fill:#7c3aed,stroke:#7c3aed,color:#fff
@@ -255,7 +255,7 @@ Cloud Providers"]
     classDef s3 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
     classDef s4 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
     classDef s5 fill:#b91c1c,stroke:\#dc2626,color:#fff
-    classDef s6 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s6 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s7 fill:#047857,stroke:\#059669,color:#fff`,
     },
     {

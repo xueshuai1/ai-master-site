@@ -323,10 +323,10 @@ class DynamicBatchScheduler:
     body: `通过架构图来理解 **Anthropic** × **xAI** 合作在全球 AI 算力生态中的位置和影响力。以下架构图展示了当前（2026 年）全球 AI 算力基础设施的竞争格局和生态关系：`,
     mermaid: `graph TD
     classDef chip fill:#7c3aed,stroke:#6d28d9,color:#ffffff
-    classDef infra fill:#b45309,stroke:#92400e,color:#ffffff
+    classDef infra fill:#92400e,stroke:#92400e,color:#ffffff
     classDef cloud fill:#1e3a5f,stroke:#0f766e,color:#ffffff
     classDef ai fill:#dc2626,stroke:#b91c1c,color:#ffffff
-    classDef new fill:#b45309,stroke:#c2410c,color:#ffffff
+    classDef new fill:#92400e,stroke:#c2410c,color:#ffffff
 
     subgraph "芯片层"
         NVIDIA[NVIDIA GPU<br/>H200/B200]:::chip

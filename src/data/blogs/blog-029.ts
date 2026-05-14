@@ -29,7 +29,7 @@ const content: ArticleSection[] = [
     G --> H
     H --> I["输出: 修改后的海报"]
 
-    classDef user fill:#b45309,stroke:\#d97706,color:#fff
+    classDef user fill:#92400e,stroke:\#d97706,color:#fff
     classDef ai fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef app fill:#047857,stroke:\#059669,color:#fff
     classDef output fill:#6d28d9,stroke:\#7c3aed,color:#fff
@@ -265,7 +265,7 @@ for action in actions:
     class H s2
     class B s1
     class A s0
-    classDef s0 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s0 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s1 fill:#047857,stroke:\#059669,color:#fff
     classDef s2 fill:#1d4ed8,stroke:\#2563eb,color:#fff`,
     list: [
@@ -496,7 +496,7 @@ for i, r in enumerate(results):
     class C s2
     class B s1
     class A s0
-    classDef s0 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s0 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef s2 fill:#047857,stroke:\#059669,color:#fff
     classDef s3 fill:#047857,stroke:\#059669,color:#fff`,
@@ -526,6 +526,7 @@ for i, r in enumerate(results):
 
 export const blog: BlogPost = {
   id: "blog-029",
+  category: "agent",
   title: "Adobe Firefly AI 助手深度解读：从生成工具到自主设计协作者的范式跃迁",
   summary: "2026 年 4 月，Adobe 发布 Firefly AI 助手，能在 Photoshop、Illustrator 等 Creative Cloud 应用中自主执行设计操作。这不仅是「又一个 AI 绘图工具」，而是 AI 从创作工具走向创作助手的标志性事件。本文深度解读其技术架构、与竞品对比、对设计师工作流的影响，以及「AI Agent 垂直化」趋势的深远意义。",
   content,

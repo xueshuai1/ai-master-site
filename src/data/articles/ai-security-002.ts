@@ -540,7 +540,7 @@ AI 供应链安全的特殊挑战：
     class C s0
     classDef s0 fill:#047857,color:#fff
     classDef s1 fill:#1d4ed8,color:#fff
-    classDef s2 fill:#b45309,color:#fff`,
+    classDef s2 fill:#92400e,color:#fff`,
             tip: "2026 年的安全共识：供应链安全不再是安全团队的责任，而是每个开发者的基本素养。就像你不会在生产环境中使用未加密的 HTTP 一样，你也不应该使用未经安全审查的依赖。",
         },
     ],

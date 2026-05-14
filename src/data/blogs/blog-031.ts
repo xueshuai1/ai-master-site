@@ -24,7 +24,7 @@ const content: ArticleSection[] = [
 全流程"]
 
     classDef phase1 fill:#475569,stroke:#64748b,color:#fff
-    classDef phase2 fill:#b45309,stroke:#d97706,color:#fff
+    classDef phase2 fill:#92400e,stroke:#d97706,color:#fff
     classDef phase3 fill:#047857,stroke:#059669,color:#fff
     class A,B phase1
     class C,D phase2
@@ -307,7 +307,7 @@ print(react_code)`,
     E3 --> E4["流程执行"]
     E4 --> F
 
-    classDef user fill:#b45309,stroke:\#d97706,color:#fff
+    classDef user fill:#92400e,stroke:\#d97706,color:#fff
     classDef codex fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef claude fill:#047857,stroke:\#059669,color:#fff
     classDef google fill:#6d28d9,stroke:\#7c3aed,color:#fff

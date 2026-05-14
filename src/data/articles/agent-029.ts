@@ -503,7 +503,7 @@ kg.close()`,
     class A s0
     classDef s0 fill:#1e3a5f
     classDef s1 fill:#581c87
-    classDef s2 fill:#0e7490
+    classDef s2 fill:#155e75
     classDef s3 fill:#14532d
     classDef s4 fill:#7c2d12`,
         },

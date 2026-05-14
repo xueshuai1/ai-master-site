@@ -440,7 +440,7 @@ console.log("24个月后订阅模式总收入:",
     F --> F2[订阅: 专业高价值]
     F --> F3[开源: 隐私安全]
     style A fill:#1e3a5f,color:#fff
-    style B fill:#2563eb,color:#fff
+    style B fill:#1d4ed8,color:#fff
     style C fill:#1e3a5f,color:#fff
     style D fill:#1e3a5f,color:#fff
     style E fill:#7c3aed,color:#fff

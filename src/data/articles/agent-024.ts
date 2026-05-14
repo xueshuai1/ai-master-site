@@ -40,7 +40,7 @@ Self-Evolving AI Agent（自进化智能体）的核心突破在于能力边界�
     class A s0
     classDef s0 fill:#3730a3,color:#f1f5f9
     classDef s1 fill:#047857,color:#fff
-    classDef s2 fill:#b45309,color:#fff
+    classDef s2 fill:#92400e,color:#fff
     classDef s3 fill:#b91c1c,color:#fff`
     },
     {
@@ -195,7 +195,7 @@ GEP 的核心优势是基因组固定长度保证遗传操作安全，表达树�
     class B s1
     class A s0
     classDef s0 fill:#b91c1c,color:#fff
-    classDef s1 fill:#b45309,color:#fff
+    classDef s1 fill:#92400e,color:#fff
     classDef s2 fill:#047857,color:#fff
     classDef s3 fill:#3730a3,color:#f1f5f9`
     },

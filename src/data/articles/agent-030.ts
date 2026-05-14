@@ -568,7 +568,7 @@ Agent 通过工具 A 获取了某些信息，然后使用工具 B 执行操作�
     classDef s1 fill:#047857,color:#fff
     classDef s2 fill:#b91c1c,color:#fff
     classDef s3 fill:#047857,color:#fff
-    classDef s4 fill:#b45309,color:#fff
+    classDef s4 fill:#92400e,color:#fff
     classDef s5 fill:#047857,color:#fff
     classDef s6 fill:#1e40af,color:#fff
     classDef s7 fill:#5b21b6,color:#fff

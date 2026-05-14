@@ -305,7 +305,7 @@ class DesktopAgentExecutor {
     E -->|拒绝| G[终止操作]
     F --> H[结果反馈]
 
-    classDef low fill:#15803d,stroke:#166534,color:#fff;
+    classDef low fill:#14532d,stroke:#166534,color:#fff;
     classDef med fill:#713f12,stroke:#451a03,color:#fff;
     classDef high fill:#b91c1c,stroke:#991b1b,color:#fff;
     class C low;

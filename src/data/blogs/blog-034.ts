@@ -38,7 +38,7 @@ const content: ArticleSection[] = [
     F -->|"直接通信<br/>快且可靠"| H
     class E s1
     class A s0
-    classDef s0 fill:#b45309,stroke:#ec971f,color:#fff
+    classDef s0 fill:#92400e,stroke:#ec971f,color:#fff
     classDef s1 fill:#047857,stroke:#4cae4c,color:#fff`,
   },
   {
@@ -401,7 +401,7 @@ Headless 趋势催生了新的创业方向：
     D -.->|"效率提升<br/>100-1000x"| H
     class E s1
     class A s0
-    classDef s0 fill:#b45309,stroke:#ec971f,color:#fff
+    classDef s0 fill:#92400e,stroke:#ec971f,color:#fff
     classDef s1 fill:#047857,stroke:#4cae4c,color:#fff`,
   },
   {

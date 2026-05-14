@@ -35,7 +35,7 @@ const content: ArticleSection[] = [
     
     K --> L["生产代码"]
     
-    classDef user fill:#b45309,stroke:\#d97706,color:#fff
+    classDef user fill:#92400e,stroke:\#d97706,color:#fff
     classDef ai fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef design fill:#047857,stroke:\#059669,color:#fff
     classDef code fill:#6d28d9,stroke:\#7c3aed,color:#fff
@@ -340,7 +340,7 @@ class CodeHandoffSpec:
     class C s1
     class B s0
     classDef s0 fill:#b91c1c,stroke:\#dc2626,color:#fff
-    classDef s1 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s1 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s2 fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef s3 fill:#047857,stroke:\#059669,color:#fff`,
     warning: "Anthropic 的双轨模型策略引发一个重要思考：当 AI 能力强大到可能危害社会时，AI 公司是否有责任限制其公开可用性？这是一个没有标准答案的伦理问题。Anthropic 选择了保守路线，但这可能为未来的 AI 安全治理树立先例。",
@@ -364,7 +364,7 @@ class CodeHandoffSpec:
     class A s0
     classDef s0 fill:#475569,stroke:\#64748b,color:#fff
     classDef s1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    classDef s2 fill:#b45309,stroke:\#d97706,color:#fff
+    classDef s2 fill:#92400e,stroke:\#d97706,color:#fff
     classDef s3 fill:#b91c1c,stroke:\#dc2626,color:#fff`,
     table: {
       headers: ["公司", "最新年化收入", "增长速度", "IPO 状态", "核心产品"],
@@ -408,7 +408,7 @@ class CodeHandoffSpec:
     class B1 s0
     classDef s0 fill:#475569,stroke:\#64748b,color:#fff
     classDef s1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    classDef s2 fill:#b45309,stroke:\#d97706,color:#fff`,
+    classDef s2 fill:#92400e,stroke:\#d97706,color:#fff`,
   },
 ];
 

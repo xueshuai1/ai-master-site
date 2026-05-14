@@ -726,7 +726,7 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
     class F s0
     classDef s0 fill:#1e3a5f,color:#fff
     classDef s1 fill:#166534,color:#fff
-    classDef s2 fill:#b45309,color:#fff`,
+    classDef s2 fill:#92400e,color:#fff`,
     },
   ],
 };

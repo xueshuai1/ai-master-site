@@ -186,7 +186,7 @@ competitor_skill = Skill(
     classDef s0 fill:#5b21b6,stroke:#7c3aed,color:#f1f5f9
     classDef s1 fill:#1d4ed8,stroke:\#2563eb,color:#fff
     classDef s2 fill:#047857,stroke:\#059669,color:#fff
-    classDef s3 fill:#b45309,stroke:\#d97706,color:#fff`,
+    classDef s3 fill:#92400e,stroke:\#d97706,color:#fff`,
   },
   {
     title: "与主流竞品对比：Chrome AI Skills 的独特优势",

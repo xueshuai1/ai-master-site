@@ -630,7 +630,7 @@ class ToolAuditSystem:
     H["审计系统"] -.收集日志.-> G
     H -.收集日志.-> C
     
-    classDef user fill:#1a56db,stroke:#1A73E8
+    classDef user fill:#1d4ed8,stroke:#1A73E8
     classDef agent fill:#374151,stroke:#5f6368
     classDef security fill:#b91c1c,stroke:#D93025
     

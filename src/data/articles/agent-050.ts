@@ -476,7 +476,7 @@ MASPO 的核心优势在于效率和质量的平衡：
     style C fill:#581c87,color:#fff
     style D fill:#7c3aed,color:#fff
     style E fill:#1e3a5f,color:#fff
-    style F fill:#2563eb,color:#fff
+    style F fill:#1d4ed8,color:#fff
     style G fill:#065f46,color:#fff
     style H fill:#047857,color:#fff`,
       tip: "💡 选择优化方法时，用一个简单的决策树：（1）Agent 间是否有强耦合？如果没有→ 独立优化即可。（2）计算资源是否充足？如果不充足→ MASPO 是最佳选择。（3）是否需要全局最优？如果是且有充足资源→ 强化学习或演化方法。（4）Agent 数量是否很多？如果超过 15 个→ MASPO 分组优化。",

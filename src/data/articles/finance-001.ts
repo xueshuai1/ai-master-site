@@ -97,7 +97,7 @@ export const article: Article = {
     class B1 s0
     classDef s0 fill:#4f46e5,stroke:#4f46e5,color:#fff
     classDef s1 fill:#7c3aed,stroke:#7c3aed,color:#fff
-    classDef s2 fill:#2563eb,stroke:#3b82f6,color:#fff
+    classDef s2 fill:#1d4ed8,stroke:#3b82f6,color:#fff
     classDef s3 fill:#991b1b,stroke:#dc2626,color:#fff
     classDef s4 fill:#047857,stroke:#059669,color:#fff`,
     },
@@ -620,7 +620,7 @@ ai-hedge-fund 模式"]
     class C s0
     classDef s0 fill:#4f46e5,stroke:#4f46e5,color:#fff
     classDef s1 fill:#7c3aed,stroke:#7c3aed,color:#fff
-    classDef s2 fill:#2563eb,stroke:#3b82f6,color:#fff
+    classDef s2 fill:#1d4ed8,stroke:#3b82f6,color:#fff
     classDef s3 fill:#047857,stroke:#059669,color:#fff`,
     },
     {

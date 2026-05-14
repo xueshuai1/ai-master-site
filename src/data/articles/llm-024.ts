@@ -568,7 +568,7 @@ FlashAttention 是注意力算子层面的优化——通过分块计算（Tilin
     end
     style A fill:#581c87,color:#fff
     style C fill:#5b21b6,color:#fff
-    style D fill:#2563eb,color:#fff
+    style D fill:#1d4ed8,color:#fff
     style G fill:#1e3a5f,color:#fff`,
     },
     {

@@ -52,7 +52,7 @@ const content: ArticleSection[] = [
     class A s0
     classDef s0 fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
     classDef s1 fill:#047857,stroke:#34d399,color:#fff
-    classDef s2 fill:#b45309,stroke:#fbbf24,color:#fff
+    classDef s2 fill:#92400e,stroke:#fbbf24,color:#fff
     classDef s3 fill:#b91c1c,stroke:#f87171,color:#fff`,
   },
   {
@@ -321,7 +321,7 @@ GEP（Genome Evolution Protocol）核心流程：
     class D s2
     class C s1
     class A s0
-    classDef s0 fill:#b45309,stroke:#fbbf24,color:#fff
+    classDef s0 fill:#92400e,stroke:#fbbf24,color:#fff
     classDef s1 fill:#b91c1c,stroke:#f87171,color:#fff
     classDef s2 fill:#047857,stroke:#34d399,color:#fff`,
     code: [{ lang: "python", filename: "evolver_gep.py", code: `"""
@@ -626,7 +626,7 @@ if __name__ == "__main__":
     class A s0
     classDef s0 fill:#3730a3,stroke:#4f46e5,color:#f1f5f9
     classDef s1 fill:#047857,stroke:#34d399,color:#fff
-    classDef s2 fill:#b45309,stroke:#fbbf24,color:#fff`,
+    classDef s2 fill:#92400e,stroke:#fbbf24,color:#fff`,
   },
   {
     title: "七、自进化 Agent 的风险与伦理考量",

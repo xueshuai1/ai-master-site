@@ -59,9 +59,9 @@ export const article: Article = {
     D --> D3["深度伪造
 肖像权保护"]
 
-    classDef env fill:#15803d,stroke:\#16a34a,color:#fff
+    classDef env fill:#14532d,stroke:\#16a34a,color:#fff
     classDef product fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    classDef ip fill:#b45309,stroke:\#d97706,color:#fff
+    classDef ip fill:#92400e,stroke:\#d97706,color:#fff
     class B,B1,B2,B3 env
     class C,C1,C2,C3 product
     class D,D1,D2,D3 ip`,
@@ -513,7 +513,7 @@ graph LR
     O --> A
 
     classDef dev fill:#1d4ed8,stroke:\#2563eb,color:#fff
-    classDef test fill:#b45309,stroke:\#d97706,color:#fff
+    classDef test fill:#92400e,stroke:\#d97706,color:#fff
     classDef deploy fill:#047857,stroke:\#059669,color:#fff
     class A,B dev
     class C,D,E,F,G,H,J test
