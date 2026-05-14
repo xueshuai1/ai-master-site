@@ -13,6 +13,7 @@ import JsonLd from "@/components/JsonLd";
 import { articleSchema, breadcrumbSchema, SITE_URL } from "@/lib/structured-data";
 import { marked } from "marked";
 import { parseMarkdown } from "@/components/MarkdownBody";
+import { highlightCode } from "@/lib/highlight";
 import dynamic from "next/dynamic";
 
 const BodyMermaidRenderer = dynamic(() => import("@/components/BodyMermaidRenderer").then(m => ({ default: m.BodyMermaidRenderer })), { ssr: false });
@@ -20,71 +21,6 @@ const CopyMarkdownButton = dynamic(() => import("@/components/CopyMarkdownButton
 
 marked.setOptions({ breaks: true, gfm: true });
 
-// ── Simple syntax highlighting for bash/dockerfile ──
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
-
-function highlightBash(code: string): string {
-  const escaped = escapeHtml(code);
-  // Use 'Z' as delimiter — it IS a word character, so \b keyword boundaries
-  // cannot form at the delimiter boundary. "ZPAR0Z" has no \b inside it.
-  const params: string[] = [];
-  const strings: string[] = [];
-  const comments: string[] = [];
-  let result = escaped
-    .replace(/("[^"]*"|'[^']*')/g, (_m, s) => {
-      strings.push(s); return `ZSTR${strings.length - 1}Z`;
-    })
-    .replace(/(#.*)/g, (_m, c) => {
-      comments.push(c); return `ZCMT${comments.length - 1}Z`;
-    })
-    .replace(/(--?[a-zA-Z][a-zA-Z0-9-]*)/g, (_m, p) => {
-      params.push(p); return `ZPAR${params.length - 1}Z`;
-    })
-    .replace(/\b(git|cd|python|pip|source|docker|npm|npx|curl|wget|apt|brew|echo|mkdir|cp|mv|rm|ls|cat|export|sudo|chmod|chown)\b/g,
-      '<span class="token-function">$1</span>');
-  comments.forEach((c, i) => { result = result.replace(`ZCMT${i}Z`, `<span class='token-comment'>${c}</span>`); });
-  params.forEach((p, i) => { result = result.replace(`ZPAR${i}Z`, `<span class='token-parameter'>${p}</span>`); });
-  strings.forEach((s, i) => { result = result.replace(`ZSTR${i}Z`, `<span class='token-string'>${s}</span>`); });
-  return result;
-}
-
-function highlightDockerfile(code: string): string {
-  const escaped = escapeHtml(code);
-  const strings: string[] = [];
-  const comments: string[] = [];
-  let result = escaped
-    .replace(/("[^"]*"|'[^']*')/g, (_m, s) => {
-      strings.push(s); return `ZSTR${strings.length - 1}Z`;
-    })
-    .replace(/(#.*)/g, (_m, c) => {
-      comments.push(c); return `ZCMT${comments.length - 1}Z`;
-    })
-    .replace(/\b(FROM|WORKDIR|COPY|RUN|EXPOSE|CMD|ENTRYPOINT|ENV|ARG|ADD|USER|VOLUME|LABEL|MAINTAINER|HEALTHCHECK|ONBUILD|STOPSIGNAL|SHELL|AS)\b/g,
-      '<span class="token-function">$1</span>');
-  comments.forEach((c, i) => { result = result.replace(`ZCMT${i}Z`, `<span class='token-comment'>${c}</span>`); });
-  strings.forEach((s, i) => { result = result.replace(`ZSTR${i}Z`, `<span class='token-string'>${s}</span>`); });
-  return result;
-}
-
-function highlightText(code: string): string {
-  return escapeHtml(code);
-}
-
-function getCodeHighlight(code: string, lang: string): string {
-  switch (lang.toLowerCase()) {
-    case "bash":
-    case "sh":
-    case "shell":
-      return highlightBash(code);
-    case "dockerfile":
-    case "docker":
-      return highlightDockerfile(code);
-    default:
-      return highlightText(code);
-  }
-}
 
 const levelColors: Record<string, string> = {
   入门: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
@@ -257,7 +193,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
                   </div>
                 </div>
                 <pre className="p-4 overflow-auto max-h-[400px] text-sm">
-                  <code className="font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: getCodeHighlight(block.code, block.lang) }} />
+                  <code className="font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: highlightCode(block.code, block.lang) }} />
                 </pre>
               </div>
             );

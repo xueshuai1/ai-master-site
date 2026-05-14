@@ -11,6 +11,7 @@ import PythonCodeBlock from "@/components/PythonCodeBlock";
 import { BlogPost, ArticleSection } from "@/data/blogs/blog-types";
 import { blogs } from "@/data/blogs";
 import CopyMarkdownButton from "@/components/CopyMarkdownButton";
+import { highlightCode } from "@/lib/highlight";
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -84,7 +85,7 @@ function ArticleSectionContent({ section, headingId }: { section: ArticleSection
                   </div>
                 </div>
                 <pre className="p-4 overflow-auto max-h-[400px] text-sm">
-                  <code className="text-slate-300 font-mono whitespace-pre">{block.code}</code>
+                  <code className="text-slate-300 font-mono whitespace-pre" dangerouslySetInnerHTML={{ __html: highlightCode(block.code, block.lang) }} />
                 </pre>
               </div>
             );
