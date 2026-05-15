@@ -86,7 +86,13 @@ export default function BlogPage() {
         p.tags.some(t => t.toLowerCase().includes(q))
       );
     }
-    if (sortBy === "most-viewed") {
+    if (sortBy === "date-desc") {
+      result = [...result].sort((a, b) => {
+        const da = a.updatedAt || a.date;
+        const db = b.updatedAt || b.date;
+        return db > da ? 1 : db < da ? -1 : b.id.localeCompare(a.id);
+      });
+    } else if (sortBy === "most-viewed") {
       result = [...result].sort((a, b) => {
         const diff = (statsMap[`blog:${b.id}`]?.views ?? 0) - (statsMap[`blog:${a.id}`]?.views ?? 0);
         if (diff !== 0) return diff;
@@ -188,6 +194,9 @@ export default function BlogPage() {
                     {post.category}
                   </span>
                   <span className="text-xs text-slate-500">{post.date}</span>
+                  {post.updatedAt && (
+                    <span className="text-xs text-amber-400">🔄 {post.updatedAt}</span>
+                  )}
                   <span className="text-xs text-slate-500">📖 {post.readTime}</span>
                 </div>
 

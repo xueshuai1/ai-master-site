@@ -13,14 +13,12 @@ import LearningPathSection from "@/components/LearningPathSection";
 import { useStatsBatch } from "@/hooks/useStatsBatch";
 
 const PAGE_SIZE = 9;
-const levelOrder: Record<string, number> = { 入门: 1, 进阶: 2, 高级: 3 };
-
 export default function KnowledgePage() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  type SortKey = "default" | "level-asc" | "level-desc" | "date-desc" | "date-asc" | "most-viewed" | "most-liked";
+  type SortKey = "default" | "date-desc" | "most-viewed" | "most-liked";
 
   // Use URL param only for SSR-safe initial state (no sessionStorage during render)
   const spMode = (searchParams.get("mode") as "all" | "path") || "path";
@@ -125,25 +123,13 @@ export default function KnowledgePage() {
         a.summary.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchSearch;
     });
-    if (sortBy === "level-asc") {
-      result = [...result].sort((a, b) => levelOrder[a.level] - levelOrder[b.level]);
-    } else if (sortBy === "level-desc") {
-      result = [...result].sort((a, b) => levelOrder[b.level] - levelOrder[a.level]);
-    } else if (sortBy === "date-desc") {
+    if (sortBy === "date-desc") {
       result = [...result].sort((a, b) => {
         const dateA = a.updatedAt || a.date;
         const dateB = b.updatedAt || b.date;
         const dateDiff = new Date(dateB).getTime() - new Date(dateA).getTime();
         if (dateDiff !== 0) return dateDiff;
         return b.id.localeCompare(a.id);
-      });
-    } else if (sortBy === "date-asc") {
-      result = [...result].sort((a, b) => {
-        const dateA = a.updatedAt || a.date;
-        const dateB = b.updatedAt || b.date;
-        const dateDiff = new Date(dateA).getTime() - new Date(dateB).getTime();
-        if (dateDiff !== 0) return dateDiff;
-        return a.id.localeCompare(b.id);
       });
     } else if (sortBy === "most-viewed") {
       result = [...result].sort((a, b) => {
@@ -308,9 +294,6 @@ export default function KnowledgePage() {
                 className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
                 <option value="date-desc">🕐 最新优先</option>
-                <option value="date-asc">🕙 最早优先</option>
-                <option value="level-asc">📗 由易到难</option>
-                <option value="level-desc">📕 由难到易</option>
                 <option value="most-viewed">👁 浏览最多</option>
                 <option value="most-liked">👍 点赞最多</option>
               </select>
@@ -321,9 +304,6 @@ export default function KnowledgePage() {
                 className="lg:hidden px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-400 focus:outline-none focus:border-brand-500/50 appearance-none cursor-pointer"
               >
                 <option value="date-desc">🕐 最新优先</option>
-                <option value="date-asc">🕙 最早优先</option>
-                <option value="level-asc">📗 由易到难</option>
-                <option value="level-desc">📕 由难到易</option>
                 <option value="most-viewed">👁 浏览最多</option>
                 <option value="most-liked">👍 点赞最多</option>
               </select>
