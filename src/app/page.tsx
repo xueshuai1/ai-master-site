@@ -146,7 +146,7 @@ export default function Home() {
             {([
               { display: `${articles.length}+`, label: "篇教程", icon: "📚", trend: "持续更新", href: "/knowledge" },
               { display: `${tools.length}+`, label: "个开源项目", icon: "🛠️", trend: "精选收录", href: "/tools" },
-              { display: `${blogs.length}+`, label: "篇博客", icon: "✍️", trend: "持续更新", href: "/blogs" },
+              { display: `${blogs.length}+`, label: "篇博客", icon: "✍️", trend: "持续更新", href: "/blog" },
               { display: "100%", label: "免费", icon: "❤️", trend: "永远免费", href: "/knowledge" },
             ] as const).map((stat) => (
               <Link
