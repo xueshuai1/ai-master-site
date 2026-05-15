@@ -24860,5 +24860,287 @@ CHAL 代表了从「单一模型推理」向「多智能体集体智慧」的范
     source: "arXiv cs.AI",
     sourceUrl: "https://arxiv.org/list/cs.AI/recent",
     href: "/news/news-1708",
+  },
+{
+    id: "news-1709",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "xAI 发布 Grok Build：进军 AI 编程工具，对标 Anthropic Claude Code",
+    summary: "马斯克旗下 xAI 推出 Grok Build 早期测试版，这是一款基于 Grok 模型的智能编程 CLI 工具，支持 agentic 编码工作流，目前仅面向 SuperGrok Heavy 订阅用户开放。",
+    content: `## xAI 正式入局 AI 编程战场
+
+**2026 年 5 月 14 日**，The Verge 报道。
+
+### Grok Build 要点
+- **Agentic CLI 工具**：支持智能体驱动的编码工作流
+- **首发限制**：仅 SuperGrok Heavy 订阅用户可用
+- **对标竞品**：直接竞争 Anthropic Claude Code、OpenAI Codex
+
+### 行业格局
+
+xAI 的入局标志着 AI 编程工具赛道正式进入「三足鼎立」时代。OpenAI 有 Codex，Anthropic 有 Claude Code，现在 xAI 带着 Grok Build 加入战局。值得注意的是，xAI 选择 CLI 工具形态，与 Claude Code 的策略一致，反映了开发者对终端编程工具的偏好。`,
+    date: "2026-05-14 19:38",
+    source: "The Verge + xAI",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/930802/xai-launches-an-early-beta-of-its-agentic-cli-for-grok",
+    href: "/news/news-1709",
+  },
+{
+    id: "news-1710",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "微软开始大规模取消 Claude Code 授权，开发者转向 GitHub Copilot CLI",
+    summary: "微软正逐步取消数千名开发者的 Claude Code 许可证，要求他们使用 GitHub Copilot CLI 作为替代。这一决策反映了微软在 AI 编程工具领域的内部战略调整。",
+    content: `## 微软「弃用」Claude Code
+
+**2026 年 5 月 14 日**，The Verge 报道。
+
+### 决策细节
+- **影响范围**：数千名微软开发者将受影响
+- **替代方案**：GitHub Copilot CLI
+- **战略信号**：微软减少对竞品 AI 编程工具的依赖
+
+### 解读
+
+微软这一动作传递了明确信号：在 AI 编程工具领域，微软将全面押注自有生态（GitHub Copilot），不再为竞品 Anthropic 的产品付费。考虑到微软同时是 OpenAI 的最大投资者，这一决策也暗示了微软在 AI 编码工具上的「去 Anthropic 化」趋势。`,
+    date: "2026-05-14 19:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+    href: "/news/news-1710",
+  },
+{
+    id: "news-1711",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI Codex 正式登陆 ChatGPT 手机 App，所有用户均可使用",
+    summary: "OpenAI 宣布 Codex 编程助手正式集成到 ChatGPT iOS 和 Android 应用中，用户可以直接在手机上远程给 AI 编程工具下达任务指令，Codex 将在云端环境中执行。",
+    content: `## Codex 移动端来了
+
+**2026 年 5 月 15 日**，机器之心 + The Verge 报道。
+
+### 功能亮点
+- **移动端控制**：手机 App 即可远程指挥 Codex 工作
+- **全用户开放**：不限于特定订阅层级
+- **云端执行**：Codex 在远程环境中完成任务，用户实时查看进度
+
+### 意义
+
+这是 AI 编程工具从桌面走向移动端的关键一步。用户不再需要守在电脑前等代码生成完成，可以在手机上「监工」Codex 的工作进度，大幅降低了 AI 编程的使用门槛。`,
+    date: "2026-05-15 08:13",
+    source: "机器之心 + The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/930763/openai-codex-chatgpt-ios-android-app-preview",
+    href: "/news/news-1711",
+  },
+{
+    id: "news-1712",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "OpenAI 与苹果合作关系出现裂痕，正考虑对苹果采取法律行动",
+    summary: "据 Bloomberg 报道，OpenAI 认为苹果未按预期在 iOS 系统中深度集成 ChatGPT，导致订阅增长不及预期。OpenAI 正在考虑向苹果发出违约通知，双方合作关系面临严峻考验。",
+    content: `## OpenAI-Apple 联盟告急
+
+**2026 年 5 月 14 日**，The Verge + Bloomberg 报道。
+
+### 核心矛盾
+- **预期落差**：OpenAI 期望 ChatGPT 深度嵌入苹果操作系统，带来大量订阅用户
+- **实际效果**：集成深度不及预期，订阅增长未达目标
+- **法律威胁**：考虑发出违约通知，但尚未正式提起诉讼
+
+### 行业影响
+
+如果 OpenAI-Apple 合作破裂，将是 AI 行业最大的商业联盟裂痕之一。苹果可能面临来自其他 AI 公司的竞合机会，而 OpenAI 则需要重新评估其移动端分发策略。`,
+    date: "2026-05-14 17:05",
+    source: "The Verge + Bloomberg",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/930633/openai-could-take-some-kind-of-legal-action-against-apple",
+    href: "/news/news-1712",
+  },
+{
+    id: "news-1713",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "马斯克 xAI 发布首个专业编程智能体，正式对标 Anthropic",
+    summary: "凤凰网报道，马斯克旗下 AI 公司 xAI 发布首个面向专业编程领域的智能体，能够按照用户指令完成复杂的编程任务，标志着 xAI 从通用大模型向垂直工具领域的拓展。",
+    content: `## xAI 编程智能体来了
+
+**2026 年 5 月 15 日**，凤凰网科技报道。
+
+### 能力要点
+- **专业编程**：面向软件开发者的智能编程助手
+- **复杂任务**：能够按照指令完成复杂编程工作
+- **对标 Anthropic**：直接竞争 Claude Code 在编程工具市场的地位
+
+### 战略意图
+
+xAI 的编程智能体发布，配合 Grok Build 的推出，构成了 xAI 在 AI 编程领域的双线进攻。马斯克正在用 xAI 挑战 Anthropic 和 OpenAI 在开发工具市场的地位。`,
+    date: "2026-05-15 06:50",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t8byn2lHA0",
+    href: "/news/news-1713",
+  },
+{
+    id: "news-1714",
+    tag: "Agent",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Figure AI 人形机器人直播分拣快递 33 小时处理超 4 万个包裹",
+    summary: "Figure AI 开启人形机器人直播分拣快递挑战，原计划 8 小时的任务已持续 33 小时，基于 Helix 02 模型的机器人自主分拣超 4 万个包裹，展现出替代人类机械劳动的潜力。",
+    content: `## 人形机器人走进仓库
+
+**2026 年 5 月 15 日**，凤凰网科技 + 36 氪报道。
+
+### 挑战数据
+- **持续时间**：33 小时（原计划 8 小时）
+- **处理量**：超 4 万个包裹
+- **模型**：Helix 02，完全自主运行
+- **性能**：公司称达到人类水平
+
+### 现实局限
+
+直播中观察到机器人偶有失误，会将包裹推到传送带外部导致掉落，且无法自主补救。但从商业模式看，一个分拣站部署多台机器人只需一名真人巡检，即可显著降低人力成本。这预示着一个新的仓储物流模式正在成形。`,
+    date: "2026-05-15 11:04",
+    source: "凤凰网科技 + 36 氪",
+    sourceUrl: "https://tech.ifeng.com/c/8t8wsIdQ3jo",
+    href: "/news/news-1714",
+  },
+{
+    id: "news-1715",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "交易员用 AI 暴力破解 11 年前遗忘密码，成功找回 270 万元比特币",
+    summary: "一位比特币交易员用 Claude AI 在海量数据中找到旧钱包备份、修复破解工具配置错误，数天内完成 3.5 万亿次密码尝试，成功找回 2013 年被锁定的 5 枚比特币。",
+    content: `## AI 破解 11 年密码锁
+
+**2026 年 5 月 15 日**，凤凰网科技报道。
+
+### 事件经过
+- **起因**：2013 年用户 cprkrn 误改钱包密码，5 枚 BTC 被锁定
+- **转折**：发现助记词但仍无法解锁，冒险将电脑文件上传给 Claude AI
+- **突破**：AI 找到 2019 年旧钱包备份，发现 btcrecover 工具配置错误
+- **结果**：修复后数天完成 3.5 万亿次尝试，成功解密
+
+### 启示
+
+AI 在复杂密码破解领域展现出革命性能力——2024 年研究人员耗时半年才破解 160 万美元钱包，而这次 AI 仅用数天。但也提醒我们加密资产安全的脆弱性：2025 年有人因误扔存有 8000 枚 BTC 的笔记本损失 7.8 亿元。`,
+    date: "2026-05-15 10:38",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t8uerPpeCO",
+    href: "/news/news-1715",
+  },
+{
+    id: "news-1716",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Cerebras IPO 首日暴涨 68%，今年最大 AI 芯片公司上市挑战英伟达",
+    summary: "AI 芯片公司 Cerebras 上市首日暴涨 68%，成为 2026 年最大 IPO。市场估值约 3800 亿，这不只是 IPO 故事，而是整个 AI 芯片生态在向英伟达发出挑战信号。",
+    content: `## 英伟达迎来强劲对手
+
+**2026 年 5 月 15 日**，36 氪 + 极客公园报道。
+
+### IPO 数据
+- **首日涨幅**：68%
+- **市场估值**：约 3800 亿元
+- **年度地位**：2026 年最大 IPO
+
+### 行业意义
+
+Cerebras 的上市成功验证了 AI 芯片市场不再只有英伟达一个选项。其晶圆级芯片架构提供了与传统 GPU 不同的算力路径，为面临 GPU 供应瓶颈的 AI 公司提供了替代方案。整个 AI 芯片生态正在向「多极化」发展。`,
+    date: "2026-05-15 08:00",
+    source: "36 氪 + 极客公园",
+    sourceUrl: "https://36kr.com/information/AI/",
+    href: "/news/news-1716",
+  },
+{
+    id: "news-1717",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "2026 上半年最火赛道：具身智能前 4 月融资超 200 笔，总规模超 550 亿元",
+    summary: "具身智能成为 2026 年上半年最热门赛道，行业前 4 月融资超 200 笔，总规模超过 550 亿元。从机器人硬件到 AI 大脑，全产业链均获资本密集布局。",
+    content: `## 具身智能狂飙
+
+**2026 年 5 月 15 日**，36 氪报道。
+
+### 融资数据
+- **融资笔数**：前 4 月超 200 笔
+- **总规模**：超 550 亿元
+- **覆盖范围**：从硬件到 AI 模型全产业链
+
+### 代表企业
+- **维他动力**：创业一年半完成近 5 亿元 Pre-A 轮融资，500 台机器狗已量产交付
+- **自变量**：WALL-B 世界统一模型，计划 35 天后让机器人进入真实家庭
+- **破壳机器人**：许华哲创立，聚焦 C 端通用家庭机器人
+
+具身智能正在从实验室走向消费级市场，「机器人进家」不再是科幻场景。`,
+    date: "2026-05-15 08:00",
+    source: "36 氪",
+    sourceUrl: "https://36kr.com/information/AI/",
+    href: "/news/news-1717",
+  },
+{
+    id: "news-1718",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "纳德拉回忆微软投资 OpenAI：当年\"没人愿意下注\"，累计投入超千亿美元",
+    summary: "在马斯克诉奥尔特曼庭审中，微软确认对 OpenAI 累计投入超 1000 亿美元，纳德拉称微软当年在无人下注时承担了风险。双方已续签非独家协议，将 2030 年累计分成上限设为 380 亿美元。",
+    content: `## 微软的 AI 豪赌
+
+**2026 年 5 月 15 日**，凤凰网科技报道。
+
+### 关键数据
+- **累计投入**：超 1000 亿美元（130 亿原始投资 + 其余 Azure 基础设施成本）
+- **回报**：2023-2025 年合作回报约 300 亿美元
+- **新协议**：2030 年累计分成上限 380 亿美元，较原协议节省约 970 亿美元
+
+### 战略调整
+
+微软并未将未来完全押注 OpenAI，正评估收购 AI 初创公司补强人才，调整 AI 领导层聚焦前沿模型。曾考虑收购 Cursor 但因反垄断担忧作罢，Inception 也在潜在收购名单中。`,
+    date: "2026-05-15 10:29",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t8uk5cIZuu",
+    href: "/news/news-1718",
+  },
+{
+    id: "news-1719",
+    tag: "安全",
+    tagColor: "bg-gray-500/10 text-gray-300",
+    title: "OpenAI 敦促 Mac 用户升级 ChatGPT：TanStack 供应链攻击导致证书泄露",
+    summary: "因开源库 TanStack 5 月 11 日遭遇供应链攻击，OpenAI 撤销现有代码签名证书，要求 Mac 版 ChatGPT 桌面应用在 6 月 12 日前强制更新，用户数据未被访问。",
+    content: `## AI 应用也遭供应链攻击
+
+**2026 年 5 月 15 日**，凤凰网科技报道。
+
+### 事件详情
+- **攻击时间**：2026 年 5 月 11 日
+- **攻击目标**：开源库 TanStack
+- **影响**：两台 OpenAI 员工设备受影响，黑客窃取证书签署凭证
+- **处置**：撤销现有证书，Mac 版需 6 月 12 日前强制更新
+
+### 安全启示
+
+供应链攻击正在从传统软件蔓延到 AI 应用。OpenAI 的应对速度值得肯定——立即启动应急响应、聘请第三方取证、撤销证书。但这也暴露了 AI 公司对第三方开源库依赖的安全风险。`,
+    date: "2026-05-15 07:49",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t8ioDl4JcG",
+    href: "/news/news-1719",
+  },
+{
+    id: "news-1720",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "荣耀官宣全球首款\"机器人手机\"Robot Phone，今年三季度上市",
+    summary: "荣耀李健官宣全球首款机器人手机 Robot Phone 将于今年三季度上市。这款产品将 AI Agent 能力与手机深度融合，标志着 AI 手机进入具身化新阶段。",
+    content: `## 手机进化新物种
+
+**2026 年 5 月 15 日**，凤凰网科技报道。
+
+### 产品信息
+- **发布时间**：2026 年三季度
+- **核心概念**：「机器人手机」— 融合 AI Agent 与智能手机
+- **发布人**：荣耀李健
+
+### 行业意义
+
+「机器人手机」概念首次出现在消费级产品中，反映了 AI Agent 正在从软件走向硬件载体。这与 Figure AI 人形机器人、具身智能赛道的爆发形成呼应——AI 正在获得「物理身体」。`,
+    date: "2026-05-15 09:13",
+    source: "凤凰网科技",
+    sourceUrl: "https://tech.ifeng.com/c/8t8n9Ogpofl",
+    href: "/news/news-1720",
   }
 ];

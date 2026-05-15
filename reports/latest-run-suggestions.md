@@ -1,18 +1,14 @@
-⏰ 写入时间：2026-05-15 09:01 (Asia/Shanghai)
+⏰ 写入时间：2026-05-15 12:00 (Asia/Shanghai)
 
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 基于研究员 findings 写博客：Codex 移动端深度分析 — AI 编程移动化的技术架构与行业影响
-2. 基于研究员 findings 写知识库：AI 视频生成技术全景 — HyperFrames vs 可灵 vs Runway 对比分析
+1. 基于研究员 findings 写博客：Cerebras IPO 深度分析 — AI 芯片第二极的技术架构与商业逻辑
+2. 基于研究员 findings 写知识库：具身智能产业全景 — 维他动力/自变量/破壳机器人在做什么
 
 ## 可延后执行（其余建议）
-1. 知识库：AI 搜索版权法与平台责任 — 国内首例 AI 搜索侵权案的法律分析
-2. 知识库：AI 医疗安全审计体系 — 安大略审计报告暴露的问题与解决方案
-3. 博客：可灵 200 亿估值深度解读 — Agent 驱动视频生成工作流的商业逻辑
-4. 知识库：Agent 安全运行时 — OpenShell vs Docker vs 沙箱对比（研究员知识缺口 #5）
+1. 知识库：OpenAI-Apple 合作破裂分析 — AI 巨头联盟的脆弱性
+2. 博客：xAI Grok Build 深度评测 — 马斯克入局 AI 编程工具战
+3. 知识库：AI 供应链安全 — TanStack 攻击事件与 AI 应用安全体系
+4. 博客：人形机器人进工厂 — Figure AI 分拣挑战的行业意义
 5. 更新已有文章：追加以「更新于 2026-05-15」章节
-
-## 已完成的建议（上轮建议本轮已执行）
-- ✅ 知识库：Agent 集体决策架构（agent-058，CHAL vs TradingAgents vs Swarm）
-- ✅ 博客：Agentic AI 通向 AGI 路径（blog-173，Codex + AI 应用商店 + 可灵 + 安大略审计综合分析）
