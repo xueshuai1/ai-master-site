@@ -2,7 +2,7 @@ import { Article } from '../knowledge';
 
 export const article: Article = {
     id: "nlp-006",
-    title: "机器翻译：从 Seq2Seq 到 Transformer",
+    title: "机器翻译：神经机器翻译与 Transformer 架构",
     category: "nlp",
     tags: ["机器翻译", "Seq2Seq", "Transformer"],
     summary: "从 RNN 编码器解码器到纯注意力机制，梳理机器翻译的技术演进",
