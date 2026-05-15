@@ -459,7 +459,7 @@ export const blog: BlogPost = {
     title: "13 人团队 SSA 架构挑战 Transformer：算力降千倍的深度学习范式革命",
     summary: "一个仅有 13 人的研究团队使用 SSA（状态空间架构）构建了与 Claude 3.5 Opus 性能相近的语言模型，训练算力需求降低约 1000 倍，成本仅为 Opus 的 5%。本文深度解析 SSA 架构的数学原理、与 Transformer 的全方位对比、Scaling Law 的重新定义、实战实现，以及这场架构革命对 AI 行业的深远影响。",
     date: "2026-05-07",
-    author: "奥利奥",
+    author: "AI Master",
     tags: ["SSA", "状态空间架构", "Mamba", "Transformer", "架构革命", "Scaling Law", "AI 民主化", "深度学习", "算力优化"],
     readTime: 25,
     content,

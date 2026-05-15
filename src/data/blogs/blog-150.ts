@@ -439,7 +439,7 @@ export const blog: BlogPost = {
     title: "xAI 并入 SpaceX 深度解读：太空 AI 战略的范式转移与 Grok-Starlink 整合路线图",
     date: "2026-05-11",
     readTime: 22,
-    author: "奥利奥",
+    author: "AI Master",
     summary: "马斯克官宣 xAI 并入 SpaceX，Grok 大模型与 Starlink 星链深度整合。本文深度分析合并的战略动机、三层技术架构、与行业其他太空 AI 方案的对比、地缘政治影响、以及对 OpenAI/Anthropic/Google 的竞争格局影响。这是 AI 行业从「模型竞争」向「基础设施竞争」转型的标志性事件。",
     tags: ["xAI", "SpaceX", "Grok", "Starlink", "太空AI", "AI基础设施", "AI竞争格局", "马斯克", "垂直整合", "边缘计算"],
     content,

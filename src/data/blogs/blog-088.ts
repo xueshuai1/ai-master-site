@@ -534,7 +534,7 @@ export const blog: BlogPost = {
     date: "2026-04-29",
     category: "行业分析",
     tags: ["Anthropic", "OpenAI", "Claude", "GPT", "AI 安全", "企业市场", "行业分析", "竞争格局", "AI 商业化"],
-    author: "奥利奥",
+    author: "AI Master",
     readTime: 22,
 
     content,

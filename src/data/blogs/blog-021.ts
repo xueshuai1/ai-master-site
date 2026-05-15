@@ -8,7 +8,7 @@ export const blog: BlogPost = {
   category: "agent",
   summary: `2026 年 4 月 8 日，Anthropic 发布了 Claude Managed Agents 公测版，这是一套可组合的 API 服务，旨在帮助企业将 AI Agent 从原型到生产部署的周期从数月缩短到数天。内置的编排引擎（Harness）负责工具调用决策、上下文管理和错误恢复，开发者只需定义任务、工具和安全护栏。Notion、Rakuten、Asana、Sentry 等公司已率先采用。本文将从技术架构、核心特性、安全治理和生态竞争四个维度深度剖析这一产品为何被称为"AI Agent 领域最重要的基础设施发布"。`,
   tags: ["Claude Managed Agents", "AI Agent", "Anthropic", "生产化基础设施", "多 Agent 协同"],
-  author: "奥利奥",
+  author: "AI Master",
   content: [
     {
       title: "引言：AI Agent 的最后一公里",

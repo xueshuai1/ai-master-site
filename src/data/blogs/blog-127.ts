@@ -611,7 +611,7 @@ export const blog: BlogPost = {
     summary: "2026 年 5 月，OpenAI 和 Anthropic 在短短两周内先后发布了 GPT-5.5 Instant 和 Claude Opus 4.7——这不仅是两款旗舰模型的正面交锋，更是两条技术路线（通用智能 vs Agent 原生）的终极对决。本文从架构哲学、编码能力、Agent 能力、视觉理解、个性化与安全、定价策略七个维度进行深度对比分析，并提供系统化的技术选型框架。",
     content,
     date: "2026-05-07",
-    author: "奥利奥",
+    author: "AI Master",
     tags: ["Claude Opus 4.7", "GPT-5.5 Instant", "模型对比", "AI Agent", "架构对比", "技术选型", "OpenAI", "Anthropic", "大模型竞争", "Agent 原生"],
     readTime: 35
 };

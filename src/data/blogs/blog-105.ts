@@ -779,7 +779,7 @@ export const blog: BlogPost = {
     id: "blog-105",
     title: "自主编程 Agent 的新战场：Codex CLI /goal、page-agent 与 AI 编程的范式转移",
     category: "agent",
-    author: "奥利奥",
+    author: "AI Master",
     date: "2026-05-02",
     readTime: 32,
     tags: ["AI 编程", "Codex CLI", "page-agent", "自主编程", "Agent", "GitHub Copilot", "Cursor", "GUI Agent", "开发者工具"],

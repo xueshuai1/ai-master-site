@@ -587,6 +587,6 @@ export const blog: BlogPost = {
     tags: ["AI 编码", "代码生成", "开发范式", "Brockman", "AI 编程代理", "Harness Engineering", "代码质量", "开发者未来"],
     summary: "Brockman 透露 AI 生成代码占比已达 80%，标志着 AI 编码从辅助工具进化到自主编程。本文深度分析技术驱动力、质量争议、组织变革，对比三种实施策略，并对 2027 年 AI 编码格局做出预判。",
     readTime: 22,
-    author: "奥利奥",
+    author: "AI Master",
     content: content,
 };

@@ -490,6 +490,6 @@ export const blog: BlogPost = {
   summary: "Anthropic 与 xAI 达成独家算力合作协议，将使用 Colossus 超大规模训练集群。本文从技术、商业、地缘政治三个维度深度解析这笔合作如何重塑全球 AI 算力格局，并预判云计算市场将迎来竞合共享的新纪元。",
   date: "2026-05-09",
   readTime: 35,
-  author: "奥利奥",
+  author: "AI Master",
   content: content,
 };

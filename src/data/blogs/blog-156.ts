@@ -287,7 +287,7 @@ export const post: BlogPost = {
   summary: 'Anthropic 据报同意向 Google 支付 2000 亿美元获取 TPU 和云计算资源——这是 AI 史上最大的算力采购协议。本文深度分析 TPU 架构优势、协议的商业逻辑、对 NVIDIA GPU 垄断格局的冲击，以及这场算力军备竞赛将如何重塑 AI 行业版图。',
   content,
   date: '2026-05-12',
-  author: '奥利奥',
+  author: 'AI Master',
   tags: ['Anthropic', 'Google', 'TPU', '算力协议', 'AI 基础设施', 'GPU vs TPU'],
   readTime: 25,
 };

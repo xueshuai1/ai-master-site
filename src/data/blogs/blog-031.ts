@@ -483,7 +483,7 @@ export const blog: BlogPost = {
   summary: "2026 年 4 月，OpenAI、Anthropic、Google 几乎同时发布自主 AI 产品——Codex 操控 Mac、Claude Design 打通设计到代码、Chrome/Android Skills 实现可复用工作流。这不只是产品更新，而是交互范式的根本转变：从「你说→它答」到「你说→它做」。本文深度解读三条技术路线、框架实现、以及对行业和个人的深远影响。",
   content,
   date: "2026-04-19",
-  author: "AI-Master",
+  author: "AI Master",
   tags: ["AI Agent", "OpenAI Codex", "Claude Design", "自主执行", "Chrome Skills", "Android Skills", "范式转变"],
   readTime: 18,
   category: "agent",

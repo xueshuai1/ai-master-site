@@ -652,6 +652,6 @@ export const blog: BlogPost = {
   date: "2026-05-09",
   readTime: 32,
   tags: ["Mozilla", "Firefox", "Claude Mythos", "AI 安全审计", "漏洞修复", "Anthropic", "代码审计", "DevSecOps", "安全范式转变", "271 漏洞"],
-  author: "奥利奥",
+  author: "AI Master",
   content,
 };

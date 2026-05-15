@@ -532,7 +532,7 @@ export const blog: BlogPost = {
   id: "blog-163",
   title: "GitHub AI Agent 生态深度解析：开源项目为何全面领先商业平台？",
   date: "2026-05-13",
-  author: "奥利奥",
+  author: "AI Master",
   category: "ai-agent",
   tags: ["AI Agent", "开源生态", "GitHub", "Hermes Agent", "GenericAgent", "LangGraph", "OpenClaw", "技术对比", "趋势预判", "企业采用"],
   summary: "2026 年上半年 GitHub AI Agent 开源项目爆发式增长——Hermes Agent 突破 103K stars，GenericAgent 以 1/5 的 token 消耗实现相同能力。本文深度解析开源 AI Agent 的技术架构（ReAct/图式/群体进化），五维度对比开源 vs 商业平台（创新/定制/成本/生态/安全），剖析四大核心开源项目，预判 2026-2027 年五大趋势，并提供企业混合采用策略和开发者参与指南。",

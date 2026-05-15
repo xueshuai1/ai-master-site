@@ -556,6 +556,6 @@ export const blog: BlogPost = {
   readTime: 28,
   category: "安全",
   tags: ["Claude Mythos", "Firefox", "安全审计", "AI 安全", "漏洞发现", "Mozilla", "SAST", "AISI", "网络安全", "范式转变"],
-  author: "奥利奥",
+  author: "AI Master",
   content,
 };

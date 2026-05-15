@@ -559,7 +559,7 @@ export const blog: BlogPost = {
     summary: "Anthropic 的 Claude Dreaming 功能揭示了 AI Agent 自我改进的新范式——Agent 在离线状态下自主审查行为、识别偏差、生成改进计划。本文从技术机制、对比分析、架构设计、AI 对齐、工业应用和未来趋势六个维度进行深度解读，探讨 Dreaming 如何重塑 AI Agent 的进化路线，以及它带来的安全、伦理和监管挑战。",
     date: "2026-05-07",
     readTime: 35,
-    author: "奥利奥",
+    author: "AI Master",
     tags: ["Claude Dreaming", "AI Agent", "自我改进", "AI 对齐", "Constitutional AI", "Agent 安全", "Anthropic", "自主进化"],
     content,
 };

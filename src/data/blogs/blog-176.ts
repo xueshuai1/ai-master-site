@@ -327,7 +327,7 @@ export const blog: BlogPost = {
   summary: "Google Remy 和 Meta Hatch 几乎同时发布，这不仅是产品竞争，更是对 AI 代理时代用户入口的争夺。本文从产品策略、技术架构、生态布局和商业前景四个维度，深度剖析代理人战争的全貌与趋势预判。",
   content,
   date: "2026-05-15",
-  author: "奥利奥",
+  author: "AI Master",
   tags: ["AI Agent", "Google Remy", "Meta Hatch", "代理人战争", "个人代理", "超级应用", "生态竞争"],
   readTime: 35
 };

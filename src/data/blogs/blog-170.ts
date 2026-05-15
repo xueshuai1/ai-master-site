@@ -626,7 +626,7 @@ export const blog: BlogPost = {
   title: "Anthropic 企业客户数首超 OpenAI：从 Copilot 到 Cowork 的 AI 商业范式转变",
   category: "industry",
   date: "2026-05-14",
-  author: "奥利奥",
+  author: "AI Master",
   readTime: 35,
   tags: ["Anthropic", "OpenAI", "企业 AI", "Copilot", "Cowork", "AI Agent", "商业分析", "AI 安全", "Constitutional AI", "行业趋势"],
   summary: "Ramp 数据显示 Anthropic 企业客户数首次超过 OpenAI。本文从数据解构、Copilot 到 Cowork 的范式转变、三大厂商战略对比、安全合规决定性因素、Agent 化战场、行业影响、趋势预判等多个维度，深度解读这一 AI 商业史的转折性事件。核心论点：企业 AI 的需求正从「好玩」转向「好用」，安全性和可信赖正在成为采购的首要标准，Agent 化正在重新定义 AI 产品的价值主张。",

@@ -686,7 +686,7 @@ export const blog: BlogPost = {
   title: "GPT-5.5 Instant 深度解析：轻量化快速响应模型如何重塑 AI 竞争格局",
   summary: "OpenAI 发布 GPT-5.5 Instant（GDPval 84.9%），标志着 AI 行业从「追求更大」转向「追求更优」。本文深度拆解 MoE + 投机解码 + KV 缓存优化的技术组合，对比三大厂商的轻量化路线（OpenAI MoE、Anthropic 蒸馏、Google 动态计算），并提供系统化的模型选型决策框架。",
   date: "2026-05-09",
-  author: "奥利奥",
+  author: "AI Master",
   tags: ["GPT-5.5", "轻量化模型", "MoE", "投机解码", "KV 缓存", "快速响应", "模型对比", "AI 趋势", "2026"],
   readTime: 28,
   content,

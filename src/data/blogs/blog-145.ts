@@ -353,6 +353,6 @@ export const blog: BlogPost = {
   readTime: 28,
   category: "industry",
   tags: ["Meta", "Muse Spark", "Llama", "开源 AI", "闭源模型", "AI 战略", "企业 AI", "大模型竞争"],
-  author: "奥利奥",
+  author: "AI Master",
   content,
 };

@@ -554,7 +554,7 @@ const blog153: BlogPost = {
     tags: ["Claude Code", "AI 编码", "Markdown", "HTML", "输出格式", "AI 工具对比"],
     summary: "Claude Code 社区爆发的 HTML vs Markdown 争论，触及了 AI 编码工具的核心哲学分歧。本文从技术、产品、趋势三个维度深度对比两种方案，并提出面向未来的输出格式设计框架。",
     readTime: 22,
-    author: "奥利奥",
+    author: "AI Master",
     content,
 };
 

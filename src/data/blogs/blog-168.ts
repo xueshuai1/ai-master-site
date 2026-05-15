@@ -537,7 +537,7 @@ export const blog: BlogPost = {
   id: "blog-168",
   title: "GPT-5.5 零源码编程：从 Copilot 到自主开发的范式转移",
   category: "ai-programming",
-  author: "奥利奥",
+  author: "AI Master",
   date: "2026-05-14",
   readTime: 32,
   tags: ["GPT-5.5", "零源码编程", "AI 编程", "Copilot", "Cursor", "Devin", "自主编程", "软件开发", "范式转移", "技术趋势"],

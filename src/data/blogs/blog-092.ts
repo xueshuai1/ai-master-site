@@ -694,7 +694,7 @@ export const blog: BlogPost = {
     category: "趋势分析",
     summary: "Runway CEO 直言「AI 视频只是前传」，世界模型才是下一代方向。本文深度解读世界模型（World Models）的技术原理、行业进展、与 diffusion/generation 的对比分析，以及它如何重塑 AI 视频、游戏、自动驾驶等多个领域。包含完整技术对比、Mermaid 架构图和实战代码。",
     date: "2026-04-30",
-    author: "奥利奥",
+    author: "AI Master",
     tags: ["世界模型", "World Models", "AI视频", "Runway", "生成式AI", "视频生成", "趋势分析", "技术深度"],
     readTime: 35,
     content: content,

@@ -527,7 +527,7 @@ const post: BlogPost = {
   summary: "2026 年，AI 数据中心正在吞噬全球 DRAM 产能——HBM 价格飙升 60%，三大厂商将 60-70% 先进产能转向 AI，智能手机厂商面临 35% 的内存采购成本上涨。本文从供需结构、价格传导、产业格局、地缘政治到应对策略，全方位剖析 AI 如何重塑全球半导体供应链。含 2 个 Mermaid 图、3 个代码示例、6 个对比表格，以及对 2026-2028 年的 6 大趋势预判。",
   date: "2026-05-02",
   updatedAt: undefined,
-  author: "奥利奥",
+  author: "AI Master",
   tags: ["AI 供应链", "DRAM", "HBM", "半导体", "内存涨价", "NVIDIA", "台积电", "SK 海力士", "三星", "地缘政治", "消费电子", "2026 趋势"],
   readTime: 38,
   content,

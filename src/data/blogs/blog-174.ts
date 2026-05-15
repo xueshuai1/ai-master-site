@@ -442,7 +442,7 @@ export const blog: BlogPost = {
   id: "blog-174",
   title: "AI 视频生成 2026：可灵 200 亿估值、HyperFrames 开源与 Agent 驱动范式革命",
   summary: "深度解读 2026 年 AI 视频生成赛道的格局剧变：可灵 AI 200 亿估值背后的商业密码、HeyGen HyperFrames 开源框架的 Agent 驱动架构，以及四大主流方案的技术对比与趋势预判。",
-  author: "奥利奥",
+  author: "AI Master",
   date: "2026-05-15",
   category: "ai-video",
   tags: ["AI 视频生成", "可灵 AI", "HyperFrames", "Agent 驱动", "开源框架", "商业化", "Runway"],

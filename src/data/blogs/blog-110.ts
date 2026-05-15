@@ -572,7 +572,7 @@ const post: BlogPost = {
     id: "blog-110",
     title: "AI 版权风暴全景解读：「This is fine」诉讼案、Oscars AI 禁令与 AI 创作的法律边界",
     category: "AI版权",
-    author: "奥利奥",
+    author: "AI Master",
     date: "2026-05-04",
     readTime: 32,
     tags: ["AI版权", "This is fine", "Oscars禁令", "合理使用", "训练数据", "版权诉讼", "K.C. Green", "EU AI Act", "知识产权", "AI治理", "版权合规", "内容创作"],

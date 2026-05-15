@@ -6,7 +6,7 @@ export const blog: BlogPost = {
   id: "blog-146",
   title: "Anthropic 买古籍扫描后销毁：训练数据获取的伦理边界与未来范式",
   date: "2026-05-10",
-  author: "奥利奥",
+  author: "AI Master",
   readTime: 22,
   tags: ["Anthropic", "训练数据", "版权伦理", "古籍数字化", "公共领域", "AI 数据获取", "知识垄断", "数据伦理"],
   category: "AI 伦理",

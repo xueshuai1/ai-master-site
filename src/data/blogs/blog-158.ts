@@ -7,7 +7,7 @@ const blog: BlogPost = {
   title: "Anthropic 负责任扩展政策 RSP 深度解读：AI 安全护栏如何重塑开发者生态",
   category: "ai-security",
   summary: "Anthropic 更新 RSP 政策，明确 AI 安全护栏的具体要求和扩展路径。本文深度解读 RSP 的技术内涵、行业影响、与竞争对手政策对比，以及对开发者生态的深远影响。",
-  author: "奥利奥",
+  author: "AI Master",
   date: "2026-05-12",
   tags: ["Anthropic", "AI安全", "RSP", "负责任扩展", "开发者生态", "Constitutional AI", "红队测试"],
   readTime: 35,

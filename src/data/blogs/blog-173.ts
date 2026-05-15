@@ -468,7 +468,7 @@ export const post: BlogPost = {
     category: "ai-trends",
     summary: "深度解析 Agentic AI 如何从学术概念走向工业实践，结合 Codex 移动端、AI 应用商店、可灵估值等最新信号，预判通向 AGI 的技术路径",
     date: "2026-05-15",
-    author: "ai-master.cc",
+    author: "AI Master",
     tags: ["Agentic AI", "AGI", "多智能体", "LangGraph", "CrewAI", "AutoGen", "Codex", "AI应用商店"],
     readTime: 25,
     content,

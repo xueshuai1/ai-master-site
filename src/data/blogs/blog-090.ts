@@ -547,6 +547,6 @@ export const blog: BlogPost = {
     readTime: 32,
     category: "行业分析",
     tags: ["AI 基础设施", "推理加速", "向量数据库", "Agent 编排", "AI 创业", "融资分析", "技术趋势", "OpenAI Symphony", "投资逻辑"],
-    author: "奥利奥",
+    author: "AI Master",
     content: content,
 };

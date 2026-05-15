@@ -567,7 +567,7 @@ export const blog107: BlogPost = {
   category: "AI训练",
   summary: "Altman 公布了一项震撼实验：仅用 1900-1999 年的公开数据训练的 AI，在编程能力上达到了现代数据训练模型的 78%。这是否意味着整个 AI 行业都在「过度堆料」？本文深度解读实验设计、冰山模型、三种训练范式对比，并预判 2026-2028 年 AI 训练的三个关键转变。",
   date: "2026-05-02",
-  author: "奥利奥",
+  author: "AI Master",
   tags: ["AI训练", "数据策略", "Altman实验", "编程AI", "逻辑密度", "训练效率", "OpenAI", "大语言模型"],
   readTime: 32,
   content,

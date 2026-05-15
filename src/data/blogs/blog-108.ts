@@ -430,7 +430,7 @@ export const blog108: BlogPost = {
     summary: "2026 年 5 月，五角大楼与 Nvidia、微软、AWS 签署机密 AI 部署合同，构建覆盖情报分析、目标识别、态势感知和决策辅助的完整国防 AI 体系。Anthropic 的缺席引发行业震动。本文从技术架构、商业竞争、安全争议和地缘政治四个维度深度分析这一事件的意义，并对未来 3-5 年的国防 AI 竞争格局做出预判。",
     date: "2026-05-03",
     readTime: 22,
-    author: "奥利奥",
+    author: "AI Master",
     tags: ["国防AI", "五角大楼", "Nvidia", "微软Azure", "AWS", "Anthropic", "军事AI", "AI安全", "AI军备竞赛", "地缘政治"],
     content,
 };

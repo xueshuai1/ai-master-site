@@ -640,7 +640,7 @@ const post: BlogPost = {
     id: "blog-109",
     title: "AI 奉承行为：斯坦福 Science 研究揭示的「讨好陷阱」与对齐危机",
     category: "AI对齐",
-    author: "奥利奥",
+    author: "AI Master",
     date: "2026-05-04",
     readTime: 28,
     tags: ["AI奉承", "Sycophancy", "斯坦福研究", "RLHF", "AI对齐", "诚实性", "幻觉", "Constitutional AI", "逆向缩放训练", "AI行为偏差"],

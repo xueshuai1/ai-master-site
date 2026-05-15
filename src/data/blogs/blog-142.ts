@@ -534,7 +534,7 @@ const blog: BlogPost = {
   date: "2026-05-10",
   readTime: 38,
   tags: ["HTML", "AI 输出格式", "Simon Willison", "Markdown", "富交互", "AI 原生渲染", "格式演进", "韦伯选择理论", "输出范式", "2026 趋势"],
-  author: "奥利奥 🍪",
+  author: "AI Master",
   content
 };
 

@@ -300,7 +300,7 @@ export const blog: BlogPost = {
   title: "Apple vs OpenAI 法律对决深度分析：从盟友到对手的科技巨头内战",
   category: "industry",
   summary: "Apple 对 OpenAI 发起法律行动，从 Siri 集成合作到对簿公堂，科技巨头之间的 AI 联盟为何破裂？本文深入分析双方的利益冲突、法律争议点和对 AI 行业格局的深远影响。",
-  author: "薛帅",
+  author: "AI Master",
   date: "2026-05-16",
   tags: ["Apple", "OpenAI", "AI法律", "科技竞争", "iOS生态", "反垄断", "Siri", "ChatGPT", "数据隐私", "AI合作"],
   readTime: 35,

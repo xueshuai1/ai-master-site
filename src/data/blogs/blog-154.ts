@@ -580,7 +580,7 @@ const blog: BlogPost = {
     title: "OpenAI 部署公司深度解读：当 AI 从「工具」变成「业务主体」—— 企业智能体时代的商业模式重构",
     date: "2026-05-12",
     readTime: 35,
-    author: "奥利奥",
+    author: "AI Master",
     category: "AI 商业",
     tags: ["OpenAI", "AI 部署", "企业 AI", "Agent 商业模式", "业务即服务", "AI 战略", "Agent 架构", "MCP 协议", "AI 可观测性", "AI 原生企业", "Agent 技能市场"],
     summary: "OpenAI 部署公司的推出标志着 AI 商业模式从「模型服务」向「业务服务」的范式转移。本文深度解读 OpenAI 部署公司的战略意图，对比分析三种企业 AI Agent 商业模式（MaaS/AaaS/BaaS），探讨 Agent 业务架构的核心技术挑战，解析真实案例的业务价值，并对未来 3 年行业趋势做出预判。无论你是 CEO、CTO、创业者还是开发者，本文都将为你的 AI Agent 布局提供有价值的参考。",

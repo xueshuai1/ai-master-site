@@ -724,6 +724,6 @@ export const blog: BlogPost = {
     readTime: 32,
     tags: ["Stonebraker", "AI Agent", "数据库", "事务管理", "并发控制", "持久化", "Agent 架构", "数据基础设施", "软件工程"],
     summary: "图灵奖得主 Michael Stonebraker 公开批评当前 AI Agent 架构在状态管理、事务一致性、并发控制和失败恢复方面存在严重缺陷——这些问题正是数据库领域 50 年前就已经解决的。本文深度拆解 Stonebraker 的五大核心论点，对比三大主流 Agent 框架的数据管理缺陷，提供两种实战方案（PostgreSQL 和 Redis + PostgreSQL 冷热分层），对比三种数据管理方案的权衡，并预判 2026-2027 Agent 数据基础设施的三大演进方向。",
-    author: "奥利奥",
+    author: "AI Master",
     content,
 };

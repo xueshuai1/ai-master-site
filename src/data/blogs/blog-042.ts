@@ -347,7 +347,7 @@ const blog: BlogPost = {
   summary: "2026 年 4 月，三大 AI 编码工具在 48 小时内相继调整定价策略：GitHub Copilot 暂停注册并引入 token 用量限制、Anthropic 试探性提价引发社区反弹后撤回、OpenAI Codex 趁势保持低价抢占市场。本文深度解析 Agentic Coding 如何颠覆传统 SaaS 定价模型、三大厂商策略对比、以及开发者成本优化的实战指南。",
   content,
   date: "2026-04-22",
-  author: "奥利奥",
+  author: "AI Master",
   category: "industry-analysis",
   tags: ["AI 编码", "Claude Code", "GitHub Copilot", "OpenAI Codex", "定价", "Agentic Coding", "成本优化", "SaaS 定价"],
   readTime: 25,

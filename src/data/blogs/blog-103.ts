@@ -466,7 +466,7 @@ export const blog: BlogPost = {
     category: "ai-litigation",
     date: "2026-05-02",
     readTime: 28,
-    author: "ai-master.cc",
+    author: "AI Master",
     tags: ["Musk", "Altman", "OpenAI", "xAI", "AI 诉讼", "AI 治理", "非营利组织", "开源争议", "AI 行业分析"],
     summary: "2026 年 5 月，Musk 承认 xAI 使用 OpenAI 模型训练 Grok，将他与 Altman 的诉讼推向新高潮。本文从 2015 年 OpenAI 成立开始，完整梳理这场诉讼的起因、经过和关键节点，深度分析三大核心争议的法律与道德维度，对比 AI 行业其他标志性诉讼，并预判 2026-2027 年的五个关键趋势。",
     content,

@@ -835,6 +835,6 @@ export const blog: BlogPost = {
     tags: ["Codex CLI", "自主编程", "Ralph 循环", "AI Agent", "编程范式", "GOAL 框架", "开发者未来", "软件工程变革"],
     summary: "OpenAI Codex CLI 引入 /goal 自主循环模式，标志着 AI 编程从被动响应进化到自主执行。本文深度剖析 Ralph 循环架构，对比三种自主编程方案，提出 GOAL 目标定义框架和风险控制体系，并对 2027 年自主编程格局做出预判。",
     readTime: 25,
-    author: "奥利奥",
+    author: "AI Master",
     content: content,
 };

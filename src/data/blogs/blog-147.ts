@@ -394,7 +394,7 @@ export const blog: BlogPost = {
   id: "blog-147",
   title: "Anthropic 获得 xAI Colossus 全部算力：AI 基础设施竞争新纪元",
   date: "2026-05-10",
-  author: "奥利奥",
+  author: "AI Master",
   readTime: 28,
   tags: ["Anthropic", "xAI", "Colossus", "算力基础设施", "GPU 集群", "AI 竞争格局", "算力共享", "基础设施军备竞赛", "NVIDIA", "行业趋势", "中美 AI"],
   category: "AI 基础设施",

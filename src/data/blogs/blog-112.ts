@@ -512,7 +512,7 @@ export const blog: BlogPost = {
     title: "AI 编码工具收购战：Cursor 600 亿估值背后的行业洗牌与开发者未来",
     summary: "2026 年 5 月，Cursor 以 600 亿美元估值融资，SpaceX 可能成为领投方，Replit 拒绝收购坚持独立——AI 编码工具市场正经历从产品竞争到生态战争的根本性转变。本文深度解析六大玩家（Cursor、Copilot、Claude Code、Codex、Gemini CLI、Replit）的战略定位、Cursor 估值模型的技术与商业逻辑、收购潮对开发者生态的影响，以及 2027 年 AI 编码工具的五大趋势预判。",
     date: "2026-05-04",
-    author: "奥利奥",
+    author: "AI Master",
     tags: ["Cursor", "AI 编码工具", "600 亿估值", "SpaceX", "Replit", "GitHub Copilot", "Claude Code", "Codex", "Gemini CLI", "Agentic Coding", "行业分析", "生态战争", "开发者未来"],
     readTime: 38,
     content,
