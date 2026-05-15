@@ -19,7 +19,6 @@ import dynamic from "next/dynamic";
 const BodyMermaidRenderer = dynamic(() => import("@/components/BodyMermaidRenderer").then(m => ({ default: m.BodyMermaidRenderer })), { ssr: false });
 const CopyMarkdownButton = dynamic(() => import("@/components/CopyMarkdownButton"), { ssr: false });
 const ArticleStats = dynamic(() => import("@/components/ArticleStats"), { ssr: false });
-const CardStats = dynamic(() => import("@/components/CardStats"), { ssr: false });
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -382,7 +381,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
               <span className="text-amber-400">🔄 更新 {article.updatedAt}</span>
             )}
             <span>📖 {article.readTime} 阅读</span>
-            <CardStats type="article" id={article.id} size="md" />
+            <span id="article-header-stats" />
             <span className="ml-auto hidden sm:inline-flex">
               <CopyMarkdownButton
                 title={article.title}

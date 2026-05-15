@@ -13,7 +13,6 @@ import { blogs } from "@/data/blogs";
 import CopyMarkdownButton from "@/components/CopyMarkdownButton";
 import { highlightCode } from "@/lib/highlight";
 import ArticleStats from "@/components/ArticleStats";
-import CardStats from "@/components/CardStats";
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -234,7 +233,7 @@ export default function BlogDetailContent({ post, relatedPosts }: { post: BlogPo
               <span className="text-amber-400">🔄 更新 {post.updatedAt}</span>
             )}
             <span>📖 {post.readTime} min 阅读</span>
-            <CardStats type="blog" id={post.id} size="md" />
+            <span id="article-header-stats" />
             <span className="ml-auto hidden sm:inline-flex">
               <CopyMarkdownButton
                 title={post.title}
