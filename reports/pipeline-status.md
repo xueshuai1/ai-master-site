@@ -33,3 +33,4 @@
 | 2026-05-15 20:06 | 🔍 研究员 | 扫描12+来源(国外:HN/TechCrunch/Decoder/VentureBeat/CRN/OpenAI/Claude/BBC + 国内:量子位), 新闻12条(news-1769~news-1780), 工具0个(已有全覆盖), 缺口待PM, commit 0e3fde91 | ✅ |
 | 2026-05-15 21:13 | 📝 PM | 知识库[agent-060]+博客[blog-176] | ✅ |
 | 2026-05-15 22:00 | 🛠️ 开发 | 修3个bug(Mermaid浅色配色→深色,probe白字),QA 2424/0/0,Build+TS全通过,bug-hash清零,commit b65c42fb | ✅ |
+| 2026-05-16 00:13 | 🔍 研究员 | 扫描12来源(国外:TechCrunch/OpenAI/arXiv/TechCrunch Feed + 国内:36), 新闻12条(news-1793~news-1804), 工具0个(已有全覆盖), 待PM, commit 1ddc5188 | ✅ |
