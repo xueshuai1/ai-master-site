@@ -25413,5 +25413,314 @@ AI 技术正在从商业场景扩展到社会公益领域。ReUnite 的推出表
     source: "TechCrunch",
     sourceUrl: "https://techcrunch.com/2026/05/14/wirestock-raises-23m-to-supply-multi-modal-data-to-ai-labs/",
     href: "/news/news-1732",
+  },
+{
+    id: "news-1733",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Cerebras 在纳斯达克上市首日暴涨 68%，AI 芯片第二极正式登场",
+    summary: "AI 芯片公司 Cerebras（CBRS）5 月 14 日在纳斯达克正式交易，IPO 发行价 185 美元，首日收盘超 311 美元，涨幅 68%。这是 2026 年最大的科技 IPO，标志着英伟达在 AI 芯片市场首次迎来真正的公开市场挑战者。",
+    content: `## Cerebras IPO：AI 芯片第二极正式登场
+
+**2026 年 5 月 14 日**，Cerebras Systems 在纳斯达克以 CBRS 代码正式上市。
+
+### IPO 详情
+- **发行价**：185 美元，定价区间从 150-160 美元大幅上调
+- **首日表现**：收盘超 311 美元，涨幅 68%
+- **估值**：上市首日市值超 330 亿美元
+- **融资额**：55 亿美元，成为 2026 年最大的科技 IPO
+
+### 核心竞争力
+- **晶圆级芯片**：自研芯片尺寸是英伟达 H100 的 57 倍
+- **推理速度**：推理性能声称比英伟达 GPU 快 20 倍
+- **大客户**：获得 OpenAI 100 亿美元订单、AWS 10 亿美元合作
+
+### 行业意义
+Cerebras 的上市标志着 AI 芯片市场从英伟达垄断走向竞争。投资者对 AI 基础设施公司股票的需求依然强劲，尤其是对能真正挑战英伟达地位的公司。`,
+    date: "2026-05-15 16:00",
+    source: "CNBC + TechCrunch + The Motley Fool",
+    sourceUrl: "https://www.cnbc.com/2026/05/14/cerebras-cbrs-stock-trade-nasdaq-ipo.html",
+    href: "/news/news-1733",
+  },
+{
+    id: "news-1734",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "OpenAI 成立 40 亿美元部署公司，联合作价 115 亿美元冲击咨询行业",
+    summary: "OpenAI 5 月 11 日宣布成立 OpenAI Deployment Company，获得超 40 亿美元初始投资，由 TPG 牵头，高盛、贝恩资本等 19 家机构参与。同时收购伦敦 AI 咨询公司 Tomoro 的 150 名工程师团队，直接向 3750 亿美元的全球咨询行业发起挑战。",
+    content: `## OpenAI Deployment Company：40 亿美元冲击咨询行业
+
+**2026 年 5 月 11 日**，OpenAI 宣布成立独立部署子公司。
+
+### 核心信息
+- **初始资金**：超 40 亿美元
+- **估值**：约 140 亿美元
+- **投资方**：TPG 领投，高盛、贝恩资本、麦肯锡等 19 家
+- **收购**：伦敦 AI 咨询公司 Tomoro（150 名工程师）
+- **回报率**：为投资者提供 17.5% 的保底回报
+
+### 业务模式
+不同于 Anthropic 的少数股权合资模式，DeployCo 是 OpenAI 控股的子公司。它将 AI 工程师嵌入企业客户组织，识别 AI 落地的关键场景并推动规模化部署。
+
+### 行业影响
+OpenAI 和 Anthropic 在 5 月初几乎同步推出企业 AI 服务合资，总规模达 115 亿美元。这标志着 AI 公司从模型供应商向企业集成服务商的战略转型。`,
+    date: "2026-05-15 16:00",
+    source: "Reuters + AI Business + TechCrunch",
+    sourceUrl: "https://www.reuters.com/business/openai-creates-new-unit-with-4-billion-investment-aid-corporate-ai-push-2026-05-11/",
+    href: "/news/news-1734",
+  },
+{
+    id: "news-1735",
+    tag: "Agent",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Google 内部测试个人 AI 代理 Remy，Meta 同步开发 Hatch，巨头全面追赶 OpenClaw",
+    summary: "Google 和 Meta 正在内部测试个人 AI 代理，代号分别为 Remy 和 Hatch。Google 于 5 月 4 日关停浏览器代理项目 Mariner，将团队整合到 Remy。Meta 的 Hatch 基于 Muse Spark 模型，计划在 Q4 2026 前推出 Instagram 购物工具。",
+    content: `## 巨头 AI 代理之战：Google Remy vs Meta Hatch
+
+**2026 年 5 月**，Google 和 Meta 加速布局个人 AI 代理。
+
+### Google Remy
+- **定位**：Gemini 平台内的 24/7 个人代理，为工作、学习和日常生活服务
+- **能力**：主动管理任务、学习用户偏好
+- **背景**：5 月 4 日关停 Mariner 浏览器代理项目，团队并入 Remy
+- **进展**：内部员工已开始测试
+
+### Meta Hatch
+- **定位**：面向消费者的 AI 代理，基于 Muse Spark 模型
+- **功能**：集成 Instagram 购物工具，计划 Q4 2026 前推出
+- **战略**：扎克伯格推动 AI 新产品，兑现 Meta 巨额 AI 投资回报
+
+### 竞争格局
+在 Anthropic 和 OpenAI 已领先的背景下，Google 和 Meta 正奋力追赶。市场正从浏览器代理转向集成在邮件、日历等日常工具中的 AI 助手。`,
+    date: "2026-05-15 16:00",
+    source: "The Decoder + CNBC + The Information",
+    sourceUrl: "https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/",
+    href: "/news/news-1735",
+  },
+{
+    id: "news-1736",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "腾讯宣布小程序与 AI 深度融合，微信 AI 智能体将打通数百万小程序",
+    summary: "腾讯在最新业绩发布会上宣布，将深度融合小程序与人工智能技术，在微信内打造 AI 智能体，打通数百万小程序，用户可用自然语言指令调用第三方服务。该 AI Agent 产品由周颢负责，直接向张小龙汇报。",
+    content: `## 微信小程序与 AI 深度融合
+
+**2026 年 5 月**，腾讯在业绩发布会上公布重大战略方向。
+
+### 核心计划
+- **AI 智能体**：微信内开发高优先级 AI Agent 产品
+- **小程序整合**：打通微信生态内数百万小程序
+- **交互方式**：用户用自然语言指令调用第三方服务
+- **负责人**：技术负责人周颢，直接向张小龙汇报
+
+### 时间表
+- **2026 年中**：灰度测试
+- **2026 年三季度**：逐步放量
+- **激励计划**：提供免费云开发资源、1 亿 Token 混元大模型额度
+
+### 行业意义
+微信 14 亿月活的庞大生态一旦与 AI 智能体打通，将成为全球最大的 AI 应用平台之一。这标志着腾讯在 AI 领域从慢到快的战略转变。`,
+    date: "2026-05-15 16:00",
+    source: "腾讯业绩发布会 + 太平洋科技 + 36 氪",
+    sourceUrl: "https://www.pconline.com.cn/ai/2113/21130052.html",
+    href: "/news/news-1736",
+  },
+{
+    id: "news-1737",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "MiniMax Agent 正式更名为 Mavis，推出多智能体团队协作功能",
+    summary: "MiniMax 于 5 月 13 日宣布将其 Agent 产品全面升级并更名为 Mavis，同时推出核心功能 Agent Teams。该系统支持多 Agent 并行协作处理复杂任务，采用 Worker-Verifier 架构确保任务分解、执行和验证的确定性结果。",
+    content: `## MiniMax Agent → Mavis：多智能体协作新纪元
+
+**2026 年 5 月 13 日**，MiniMax 发布重大产品升级。
+
+### 核心升级
+- **品牌更名**：MiniMax Agent 正式更名为 Mavis
+- **Agent Teams**：多 Agent 并行协作，处理复杂长周期任务
+- **架构设计**：Worker-Verifier 对抗式架构，Owner/Worker/Verifier 角色分工
+- **订阅整合**：TokenPlan 与 Agent Plan 合并，CLI/API/全模型互通
+
+### 技术亮点
+Mavis 采用基于代码的状态机进行协作管理，解决了传统角色扮演 AI 模型中的上下文退化问题。尽管承认多 Agent 协作存在开销，但 MiniMax 强调其在复杂任务中实现确定性结果的价值。`,
+    date: "2026-05-15 16:00",
+    source: "MiniMax 官方 + AIBase + Phemex",
+    sourceUrl: "https://phemex.com/news/article/minimax-rebrands-desktop-agent-to-mavis-launches-multiagent-collaboration-81293",
+    href: "/news/news-1737",
+  },
+{
+    id: "news-1738",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "OpenAI 向欧盟开放 GPT-5.5-Cyber 网络安全模型，Anthropic 暂不向欧洲发布 Mythos",
+    summary: "OpenAI 5 月 11 日宣布向欧洲企业、政府和欧盟机构开放 GPT-5.5-Cyber 网络安全专用模型，德国电信、BBVA 等数十家欧洲公司已获接入。与此同时，Anthropic 的 Claude Mythos 模型仍暂停向欧洲发布，形成鲜明对比。",
+    content: `## OpenAI vs Anthropic：欧洲网络安全模型竞赛
+
+**2026 年 5 月 11 日**，OpenAI 宣布扩大欧洲网络安全合作。
+
+### OpenAI GPT-5.5-Cyber
+- **受众**：欧洲企业、政府、欧盟机构的经审核网络安全团队
+- **合作伙伴**：德国电信、BBVA 等数十家欧洲公司
+- **定位**：GPT-5.5 的网络安全专用变体
+
+### Anthropic 的态度
+- Anthropic 的 Claude Mythos 模型暂未向欧洲发布
+- 与 OpenAI 的积极姿态形成对比
+
+### 政策背景
+欧盟委员会正在与 OpenAI 就前沿 AI 的监管和合规进行对话，探讨对模型的「黑箱」访问权限。这反映了欧洲在 AI 安全与主权方面的审慎态度。`,
+    date: "2026-05-15 16:00",
+    source: "CNBC + Reuters + eWeek",
+    sourceUrl: "https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html",
+    href: "/news/news-1738",
+  },
+{
+    id: "news-1739",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Recursive Superintelligence 以 46.5 亿美元估值融资 6.5 亿美元，打造自我进化 AI",
+    summary: "由 Richard Socher 创办的 Recursive Superintelligence 从隐身模式亮相，以 46.5 亿美元估值融资 6.5 亿美元。投资方包括 GV（谷歌风投）、Greycroft、AMD Ventures 和英伟达。公司目标是构建能自主识别弱点并重新设计的自我改进 AI 系统。",
+    content: `## Recursive Superintelligence：6.5 亿美元押注自我进化 AI
+
+**2026 年 5 月 13 日**，Recursive 从隐身模式正式亮相。
+
+### 融资详情
+- **估值**：46.5 亿美元
+- **融资金额**：6.5 亿美元（超额认购）
+- **领投方**：GV（谷歌风投）+ Greycroft
+- **参投方**：AMD Ventures、英伟达
+
+### 技术愿景
+- **自我改进**：AI 系统能持续生成和优化新能力，无需人类研究者定义改进方向
+- **自动化科学方法**：从 AI 研究本身开始，实现科研全流程自动化
+- **团队**：创始人 Richard Socher，核心成员来自 Meta、Google DeepMind、OpenAI
+
+### 行业意义
+Recursive 代表了 AI 行业的一个新方向——从「人类设计 AI」转向「AI 自我设计」。这是长期存在于 AI 研究领域的终极目标的商业落地尝试。`,
+    date: "2026-05-15 16:00",
+    source: "SiliconANGLE + The Decoder + Unite.AI",
+    sourceUrl: "https://siliconangle.com/2026/05/13/recursive-superintelligence-raises-650m-build-self-improving-ai-models/",
+    href: "/news/news-1739",
+  },
+{
+    id: "news-1740",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Digg 二次重启转型 AI 新闻聚合器，实时追踪 X 平台影响力声音",
+    summary: "经典链接分享网站 Digg 在 2026 年第二次重启，这次定位为 AI 驱动的新闻聚合器。创始人 Kevin Rose 于 5 月 8 日预览新产品，5 月 11 日在 di.gg 开放 alpha 版。此前 3 月 Reddit 风格的改版因无法有效管理机器人流量而关闭。",
+    content: `## Digg 重生：从社交链接到 AI 新闻聚合
+
+**2026 年 5 月 11 日**，Digg 正式以 AI 新闻聚合器身份回归。
+
+### 产品定位
+- **方向**：AI 驱动的实时新闻聚合，目前聚焦 AI 领域
+- **数据源**：实时摄入 X（原 Twitter）内容
+- **排序**：追踪某领域最有影响力的声音，筛选真正值得关注的内容
+- **团队**：创始人 Kevin Rose + 联合创始人 Alexis Ohanian
+
+### 曲折历程
+- **第一次重启**（2026 年初）：Reddit 风格社交链接平台
+- **关闭**（2026 年 3 月）：无法有效管理机器人流量，差异化不足
+- **第二次重启**（2026 年 5 月）：AI 新闻聚合器
+
+### 行业趋势
+AI 正在重塑内容发现和分发方式。Digg 的转型反映了从「人找内容」到「AI 帮你找内容」的范式转变。`,
+    date: "2026-05-15 16:00",
+    source: "TechCrunch + CNET + AIBase",
+    sourceUrl: "https://techcrunch.com/2026/05/11/digg-tries-again-this-time-as-an-ai-news-aggregator/",
+    href: "/news/news-1740",
+  },
+{
+    id: "news-1741",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "江苏省全面实施「人工智能+」行动，加快打造全国 AI 创新发展高地",
+    summary: "江苏省委副书记、省长刘小涛在「开局起步'十五五'」专题发布会上表示，江苏将全面拥抱时代风口，抓住人工智能这个关键变量，全面实施「人工智能+」行动，加快打造全国人工智能创新发展高地。",
+    content: `## 江苏省全面拥抱「人工智能+」
+
+**2026 年 5 月 14 日**，江苏省在专题发布会上公布 AI 发展计划。
+
+### 核心方向
+- **战略定位**：抓住 AI 这个关键变量，全面拥抱时代风口
+- **行动目标**：打造全国人工智能创新发展高地
+- **政策框架**：「人工智能+」行动计划
+
+### 背景
+中国各地政府正在加速推进 AI 产业发展。江苏省作为经济大省，其在 AI 领域的投入和布局将对全国产生示范效应。`,
+    date: "2026-05-15 16:00",
+    source: "中新网",
+    sourceUrl: "https://www.chinanews.com.cn/cj/2026/05-15/10621509.shtml",
+    href: "/news/news-1741",
+  },
+{
+    id: "news-1742",
+    tag: "行业",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "具身智能领衔 AI 人才新高潮，相关岗位量暴增 15 倍",
+    summary: "2026 年 5 月，具身智能（Embodied AI）成为 AI 人才需求增长最快的领域，相关岗位量同比暴增 15 倍。随着人形机器人和物理 AI 进入商业化阶段，从算法工程师到硬件集成的全方位人才需求爆发。",
+    content: `## 具身智能引爆 AI 人才需求
+
+**2026 年 5 月**，具身智能成为 AI 行业最大的人才增长点。
+
+### 数据亮点
+- **岗位增长**：具身智能相关岗位同比增长 15 倍
+- **需求方向**：机器人算法、感知融合、硬件集成、Sim2Real
+- **驱动因素**：人形机器人商业化加速、NVIDIA GTC 机器人军团亮相
+
+### 行业背景
+具身智能被称作 AI 的「最后一公里」，是让大模型走出屏幕、进入物理世界的关键。2025-2026 年，随着 OpenAI 组建人形机器人团队、Figure 等公司融资，具身智能从实验室走向产业化，人才缺口迅速扩大。`,
+    date: "2026-05-15 16:00",
+    source: "aitop100 + 澎湃新闻",
+    sourceUrl: "https://www.thepaper.cn/newsDetail_forward_31891254",
+    href: "/news/news-1742",
+  },
+{
+    id: "news-1743",
+    tag: "开源项目",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Anthropic 将 Claude Code 使用限制翻倍，SpaceX 计算合作带来 300MW 新增算力",
+    summary: "Anthropic 宣布通过 SpaceX 计算合作，大幅提升 Claude Code 的使用限制：Pro、Max、Team 和企业版用户的 5 小时速率限制翻倍，高峰时段限制取消，Claude Opus API 速率限制同步上调。SpaceX 合作将提供超 300 兆瓦新增计算容量。",
+    content: `## Anthropic 大幅提升 Claude Code 使用限制
+
+**2026 年 5 月 6 日**，Anthropic 宣布三项重大变更。
+
+### 使用限制提升
+- **Claude Code**：5 小时速率限制翻倍（Pro/Max/Team/Enterprise）
+- **高峰时段**：取消 Pro 和 Max 账户的高峰时段限速
+- **API**：Claude Opus 模型 API 速率限制大幅上调
+- **额度提升**：Claude Code 周限制提升 50%，持续至 7 月 13 日
+
+### SpaceX 合作
+- **计算容量**：超 300 兆瓦新增算力
+- **战略意义**： Anthropic 此前与 Google 签署 2000 亿美元计算协议，SpaceX 合作进一步扩充算力
+
+### 用户影响
+对于 Claude Code 重度用户（开发者、工程师），使用限制的翻倍意味着更流畅的开发体验，尤其是在高峰时段不再受限。`,
+    date: "2026-05-15 16:00",
+    source: "Anthropic 官方博客 + Ars Technica + 9to5Google",
+    sourceUrl: "https://www.anthropic.com/news/higher-limits-spacex",
+    href: "/news/news-1743",
+  },
+{
+    id: "news-1744",
+    tag: "应用",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "三星在澳大利亚科技峰会展示 AI 驱动电视和 Odyssey 游戏显示器",
+    summary: "三星电子于 5 月 14-15 日在悉尼举办澳大利亚科技峰会 2026，展示了最新 AI 驱动电视和 Odyssey 游戏显示器。2026 款 OLED 电视和 Odyssey G60H 显示器均获得 NVIDIA G-SYNC 兼容认证，G60H 刷新率高达 1040Hz。",
+    content: `## 三星 AI 显示器：从电视到电竞的全面 AI 化
+
+**2026 年 5 月 14-15 日**，三星在悉尼举办科技峰会。
+
+### 产品亮点
+- **2026 OLED TV**：全线获得 NVIDIA G-SYNC 兼容认证，最高 165Hz 刷新率
+- **Odyssey G60H**：1040Hz 超高刷新率，G-SYNC 认证
+- **AI 画质增强**：从高端到中端全线应用 AI 提升画质和观看体验
+
+### AI 集成
+三星在 2026 年产品线上全面推行 AI 集成，包括 AI 画质增强、AI 场景优化、AI 音频增强等功能。AI 正在从旗舰产品下沉到全系标配。`,
+    date: "2026-05-15 16:00",
+    source: "Samsung Newsroom",
+    sourceUrl: "https://news.samsung.com/global/samsung-presents-ai-powered-screen-innovations-at-australian-tech-summit-2026",
+    href: "/news/news-1744",
   }
 ];
