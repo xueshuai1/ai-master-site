@@ -3274,7 +3274,7 @@ language: "Python",
       cons: ["仅支持短视频（3-10 秒）", "长视频能力有限"],
       useCase: "社交媒体内容、动画短片、短视频广告、TikTok/Reels 内容",
       learnMore: "https://pika.art",
-      updatedAt: "2026-05-01",
+      updatedAt: "2026-05-15",
     },
   {
     id: "ragflow",

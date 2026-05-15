@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-15T06:03:44.059Z",
+  "lastUpdated": "2026-05-15T10:22:22.971Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -39218,6 +39218,138 @@
       "url": "https://github.com/topics/deepagents",
       "minStars": 2000,
       "description": "（自动发现）deepagents"
+    },
+    {
+      "topic": "antigravity",
+      "url": "https://github.com/topics/antigravity",
+      "minStars": 2000,
+      "description": "（自动发现）antigravity"
+    },
+    {
+      "topic": "plugins",
+      "url": "https://github.com/topics/plugins",
+      "minStars": 3000,
+      "description": "（自动发现）plugins"
+    },
+    {
+      "topic": "investment",
+      "url": "https://github.com/topics/investment",
+      "minStars": 3000,
+      "description": "（自动发现）investment"
+    },
+    {
+      "topic": "chinese",
+      "url": "https://github.com/topics/chinese",
+      "minStars": 3000,
+      "description": "（自动发现）chinese"
+    },
+    {
+      "topic": "azure",
+      "url": "https://github.com/topics/azure",
+      "minStars": 3000,
+      "description": "（自动发现）azure"
+    },
+    {
+      "topic": "cowork",
+      "url": "https://github.com/topics/cowork",
+      "minStars": 3000,
+      "description": "（自动发现）cowork"
+    },
+    {
+      "topic": "workflows",
+      "url": "https://github.com/topics/workflows",
+      "minStars": 3000,
+      "description": "（自动发现）workflows"
+    },
+    {
+      "topic": "server",
+      "url": "https://github.com/topics/server",
+      "minStars": 3000,
+      "description": "（自动发现）server"
+    },
+    {
+      "topic": "trae",
+      "url": "https://github.com/topics/trae",
+      "minStars": 5000,
+      "description": "（自动发现）trae"
+    },
+    {
+      "topic": "cursor-plugin",
+      "url": "https://github.com/topics/cursor-plugin",
+      "minStars": 5000,
+      "description": "（自动发现）cursor-plugin"
+    },
+    {
+      "topic": "cursor-skills",
+      "url": "https://github.com/topics/cursor-skills",
+      "minStars": 5000,
+      "description": "（自动发现）cursor-skills"
+    },
+    {
+      "topic": "paper",
+      "url": "https://github.com/topics/paper",
+      "minStars": 5000,
+      "description": "（自动发现）paper"
+    },
+    {
+      "topic": "gigapixel",
+      "url": "https://github.com/topics/gigapixel",
+      "minStars": 5000,
+      "description": "（自动发现）gigapixel"
+    },
+    {
+      "topic": "algorithms",
+      "url": "https://github.com/topics/algorithms",
+      "minStars": 5000,
+      "description": "（自动发现）algorithms"
+    },
+    {
+      "topic": "algorithm",
+      "url": "https://github.com/topics/algorithm",
+      "minStars": 5000,
+      "description": "（自动发现）algorithm"
+    },
+    {
+      "topic": "whatsapp",
+      "url": "https://github.com/topics/whatsapp",
+      "minStars": 5000,
+      "description": "（自动发现）whatsapp"
+    },
+    {
+      "topic": "extension",
+      "url": "https://github.com/topics/extension",
+      "minStars": 5000,
+      "description": "（自动发现）extension"
+    },
+    {
+      "topic": "robomow",
+      "url": "https://github.com/topics/robomow",
+      "minStars": 5000,
+      "description": "（自动发现）robomow"
+    },
+    {
+      "topic": "firecrawl",
+      "url": "https://github.com/topics/firecrawl",
+      "minStars": 5000,
+      "description": "（自动发现）firecrawl"
+    },
+    {
+      "topic": "servers",
+      "url": "https://github.com/topics/servers",
+      "minStars": 5000,
+      "description": "（自动发现）servers"
+    },
+    {
+      "topic": "local",
+      "url": "https://github.com/topics/local",
+      "minStars": 5000,
+      "description": "（自动发现）local"
+    },
+    {
+      "topic": "clone",
+      "url": "https://github.com/topics/clone",
+      "minStars": 5000,
+      "description": "（自动发现）clone"
     }
   ]
 }
