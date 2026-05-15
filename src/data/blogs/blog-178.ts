@@ -21,7 +21,6 @@ const content: ArticleSection[] = [
     D --> E["2025-09 OpenAI 回应不充分 闭门谈判破裂"]
     E --> F["2025-12 Apple 聘请顶级反垄断律师 准备诉讼"]
     F --> G["2026-05 Apple 正式起诉 OpenAI 三大指控"]`,
-    mermaidCaption: "Apple vs OpenAI 关键时间线",
     tip: "Apple 选择在 WWDC 2026 前夕起诉 OpenAI 绝非偶然——这既是法律行动，也是**产品战略声明**，向市场传递 Apple 将**摆脱第三方 AI 依赖**的明确信号。",
     warning: "注意：法律纠纷的公开信息有限，部分细节来自行业分析师的推测和匿名消息源。法律判决结果存在高度不确定性，不应将其视为确定性事实。"
   },
