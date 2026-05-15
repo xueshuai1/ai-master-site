@@ -26109,5 +26109,378 @@ AI 在医疗场景的应用正在快速扩展——从急诊诊断（news-753）
     source: "Wall Street Journal",
     sourceUrl: "https://www.wsj.com/education/chatgpt-grade-inflation",
     href: "/news/news-1756",
+  },
+{
+    id: "news-1757",
+    tag: "投融资",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Cerebras 完成 2026 年首场重磅科技 IPO：募资 55 亿美元，首日股价暴涨 108%",
+    summary: "AI 芯片巨头 Cerebras 于 5 月 14 日成功登陆纳斯达克，完成 2026 年首个大型科技 IPO。公司募集 55 亿美元，挂牌首日股价飙升 108%，为科技 IPO 季拉开帷幕。",
+    content: `## Cerebras IPO：AI 芯片股的强势回归
+
+**2026 年 5 月 14 日**，AI 芯片制造商 Cerebras Systems 在纳斯达克挂牌上市，成为 2026 年首场重大科技 IPO。
+
+### 核心数据
+
+- **募资规模**：55 亿美元
+- **首日涨幅**：108%
+- **背景**：一年前上市前景曾备受质疑
+
+### 行业意义
+
+Cerebras 的强劲表现标志着 2026 年科技 IPO 季的正式开启。在 AI 基础设施投资持续飙升的背景下，AI 芯片赛道成为资本市场的焦点。
+
+此前 NVIDIA 发布 Vera Rubin 计算平台（训练性能提升 5 倍），以及 Applied Materials Q1 财报强劲（数据中心需求火热），都为 AI 芯片板块提供了强劲支撑。
+
+**来源：** TechCrunch AI
+**链接：** https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/`,
+    date: "2026-05-15 20:00",
+    source: "TechCrunch AI",
+    sourceUrl: "https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/",
+    href: "/news/news-1757",
+  },
+{
+    id: "news-1758",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "OpenAI 推出 40 亿美元 AI 服务公司，紧随 Anthropic 之后进军企业服务",
+    summary: "OpenAI 于 5 月 11 日正式推出 AI 服务业务，估值 40 亿美元。此举紧随 Anthropic 此前宣布的类似服务计划，标志着 AI 巨头从模型提供商向全栈服务商的转型。",
+    content: `## OpenAI 的服务化转型
+
+**2026 年 5 月 11 日**，OpenAI 宣布推出独立的 AI 服务业务，估值达 40 亿美元。
+
+### 战略背景
+
+- **定位**：从纯模型 API 提供商转向全栈 AI 服务
+- **竞争**：紧随 Anthropic 此前宣布的类似企业服务计划
+- **趋势**：2026 年 5 月标志着 AI 行业从实验性试点转向企业部署的转折点
+
+### 行业分析
+
+OpenAI 和 Anthropic 双双发力企业服务，说明 AI 模型的竞争已进入「最后一公里」——如何让企业真正用起来。这不仅是技术的竞争，更是服务能力和生态建设的比拼。
+
+根据 Ramp AI Index 5 月数据，Anthropic 企业采用率已升至 34.4%，超过 OpenAI 的 32.3%，这或许推动了 OpenAI 加速服务化步伐。
+
+**来源：** CRN / AI Business
+**链接：** https://www.crn.com/news/ai/2026/openai-launches-services-business-on-heels-of-similar-anthropic-announcement`,
+    date: "2026-05-15 20:00",
+    source: "CRN + AI Business",
+    sourceUrl: "https://aibusiness.com/generative-ai/openai-launches-ai-consulting-company-anthropic",
+    href: "/news/news-1758",
+  },
+{
+    id: "news-1759",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "Anthropic 企业采用率首次超过 OpenAI：Ramp 指数显示 AI 市场格局生变",
+    summary: "根据 Ramp AI Index 2026 年 5 月数据，Anthropic 企业采用率升至 34.4%，首次超过 OpenAI 的 32.3%。这是 Anthropic 在企业市场的历史性突破。",
+    content: `## Anthropic 反超 OpenAI
+
+**2026 年 5 月**，Ramp AI Index 发布最新数据显示 AI 企业市场格局出现重大变化。
+
+### 核心数据
+
+- **Anthropic**：34.4%（4 月上升 3.8%）
+- **OpenAI**：32.3%（下降 2.9%）
+- **趋势**：Anthropic 首次在企业采用率上领先
+
+### 背后原因
+
+1. **Claude Code** 在开发者群体中快速渗透
+2. **企业信任**：Anthropic 的安全定位吸引对合规要求高的企业
+3. **服务转型**：Anthropic 此前已宣布企业服务计划
+
+### 三大威胁
+
+VentureBeat 分析指出，Anthropic 的领先面临三大威胁：
+1. OpenAI 的服务化反击
+2. Google 和 Meta 的个人 AI 代理竞争
+3. 开源模型的持续追赶
+
+**来源：** VentureBeat
+**链接：** https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/`,
+    date: "2026-05-15 20:00",
+    source: "VentureBeat",
+    sourceUrl: "https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/",
+    href: "/news/news-1759",
+  },
+{
+    id: "news-1760",
+    tag: "AI 安全",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "OpenAI 向欧盟开放 GPT-5.5-Cyber 网络安模型，Anthropic 仍拒绝共享 Mythos",
+    summary: "OpenAI 宣布向欧盟提供 GPT-5.5-Cyber 模型访问权限，用于网络安全审查。相比之下，Anthropic 仍拒绝共享其内部安全测试模型 Mythos。",
+    content: `## AI 安全模型的监管博弈
+
+**2026 年 5 月 11 日**，CNBC 报道了 OpenAI 与 Anthropic 在 AI 安全模型共享上的不同立场。
+
+### OpenAI 的开放姿态
+
+- **模型**：GPT-5.5-Cyber（GPT-5.5 的网络安全变体）
+- **受众**：经过审查的网络安全研究人员
+- **形式**：有限预览
+
+### Anthropic 的封闭立场
+
+- **模型**：Mythos（内部安全测试模型）
+- **立场**：拒绝与欧盟共享
+- **争议**：此前 Claude Mythos 曾被发现能攻击 Apple 漏洞
+
+### 监管趋势
+
+AI 安全模型的透明度正成为监管焦点。OpenAI 的开放策略可能为行业树立先例，而 Anthropic 的拒绝立场可能面临更大的监管压力。
+
+**来源：** CNBC
+**链接：** https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html`,
+    date: "2026-05-15 20:00",
+    source: "CNBC",
+    sourceUrl: "https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html",
+    href: "/news/news-1760",
+  },
+{
+    id: "news-1761",
+    tag: "Agent",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "Google 和 Meta 竞相开发个人 AI 代理：代号 Remy 和 Hatch，正面挑战 OpenAI 与 Anthropic",
+    summary: "Google 和 Meta 均在内部测试个人 AI 代理，代号分别为 Remy 和 Hatch，旨在处理日常任务。Google 已关闭浏览器代理项目 Mariner，转向集成式助手。",
+    content: `## 个人 AI 代理的新战场
+
+**2026 年 5 月**，The Decoder 报道了 Google 和 Meta 在个人 AI 代理领域的最新进展。
+
+### Google Remy
+
+- **定位**：处理日常任务的个人 AI 代理
+- **策略转变**：关闭浏览器代理项目 Mariner，聚焦集成式助手
+- **集成方向**：邮件、日历等核心应用内
+
+### Meta Hatch
+
+- **定位**：与 Remy 类似的个人 AI 代理
+- **差异化**：可能深度整合 Meta 社交生态
+
+### 市场趋势
+
+市场正在从浏览器代理转向集成式助手——那些住在邮件、日历和消息应用里的 AI。OpenAI 和 Anthropic 在此领域已建立领先优势，Google 和 Meta 正奋力追赶。
+
+**来源：** The Decoder
+**链接：** https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/`,
+    date: "2026-05-15 20:00",
+    source: "The Decoder",
+    sourceUrl: "https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/",
+    href: "/news/news-1761",
+  },
+{
+    id: "news-1762",
+    tag: "产品发布",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 将 Codex 引入 ChatGPT 移动端：iOS 和 Android 用户可随时随地编程",
+    summary: "OpenAI 宣布将 Codex AI 编程工具集成至 ChatGPT 移动应用，支持 iOS 和 Android。此举旨在应对 Anthropic Claude Code 的竞争压力。",
+    content: `## Codex 上手机
+
+**2026 年 5 月 14 日**，OpenAI 宣布 Codex 正式登陆移动端。
+
+### 核心能力
+
+- **平台**：ChatGPT iOS 和 Android 应用
+- **功能**：编写代码、操作应用程序
+- **目标**：随时随地管理和优化工作流程
+
+### 竞争格局
+
+OpenAI 正在精简非核心项目，专注于 AI 编程领域的市场地位提升。Anthropic 的 Claude Code 在开发者中已建立强大用户基础，微软也已开始撤回内部员工的 Claude Code 授权（news-1763），行业正在经历 AI 编程工具的重新洗牌。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/ai-artificial-intelligence/930763/openai-codex-chatgpt-ios-android-app-preview`,
+    date: "2026-05-15 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/930763/openai-codex-chatgpt-ios-android-app-preview",
+    href: "/news/news-1762",
+  },
+{
+    id: "news-1763",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "微软开始撤回 Claude Code 员工授权：AI 跨职能编程实验进入调整期",
+    summary: "微软开始取消内部员工对 Anthropic Claude Code 的使用授权。该项目自去年 12 月启动以来曾向数千名开发者开放，此次撤回标志微软 AI 工具策略的重要转向。",
+    content: `## 微软 Claude Code 实验退潮
+
+**2026 年 5 月 14 日**，The Verge 报道了微软对 Claude Code 策略的转变。
+
+### 项目回顾
+
+- **启动**：2025 年 12 月
+- **覆盖**：数千名开发者、项目经理及设计师
+- **目标**：探索 AI 降低编程门槛的潜力
+
+### 撤回原因分析
+
+1. **成本控制**：大规模授权的持续支出
+2. **内部替代**：可能转向自有 AI 编程工具
+3. **策略调整**：从广泛实验转向聚焦核心场景
+
+### 行业影响
+
+微软是 Anthropic 的重要投资者和合作伙伴，此次授权撤回不代表合作破裂，但标志着 AI 编程工具在企业内部的应用从「全面试用」进入「精细化运营」阶段。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad`,
+    date: "2026-05-15 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+    href: "/news/news-1763",
+  },
+{
+    id: "news-1764",
+    tag: "投融资",
+    tagColor: "bg-yellow-500/10 text-yellow-300",
+    title: "Richard Socher 新创公司获 6.5 亿美元融资：研发具备自我改进能力的 AI 系统",
+    summary: "前 Salesforce AI 负责人 Richard Socher 创办的新公司获得 6.5 亿美元融资，目标是开发能无限期自我研究和改进的 AI 系统。",
+    content: `## 自我改进 AI 的豪赌
+
+**2026 年 5 月 14 日**，TechCrunch 报道了 Richard Socher 的最新创业项目。
+
+### 核心信息
+
+- **融资**：6.5 亿美元
+- **创始人**：Richard Socher（前 Salesforce AI 负责人，Stanford NLP 博士）
+- **目标**：开发能无限期自我研究和改进的 AI
+- **定位**：不仅是理论研究，将交付实际产品
+
+### 行业背景
+
+「自我改进 AI」是 AGI 路径上的关键方向。当前 AI 模型的训练依赖人类工程师手动调参和设计，如果 AI 能自主改进自身架构和训练策略，将加速通往 AGI 的进程。
+
+斯坦福 2026 AI 指数报告指出，顶尖 AI 模型性能差距正在缩小（Anthropic 领先仅 2.7%），自我改进可能是打破这一瓶颈的关键。
+
+**来源：** TechCrunch AI
+**链接：** https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/`,
+    date: "2026-05-15 20:00",
+    source: "TechCrunch AI",
+    sourceUrl: "https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/",
+    href: "/news/news-1764",
+  },
+{
+    id: "news-1765",
+    tag: "行业",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "马斯克诉奥特曼案结案陈词：律师失误频发，庭审戏剧性收尾",
+    summary: "马斯克诉奥特曼案进入结案陈词阶段，马斯克代理律师出现混淆被告姓名等低级失误，赔偿请求前后矛盾，庭审以混乱局面收尾。",
+    content: `## 年度科技诉讼的戏剧性收尾
+
+**2026 年 5 月 14 日**，The Verge 深度报道了马斯克诉奥特曼案的结案陈词现场。
+
+### 庭审乱象
+
+- **律师口误**：马斯克代理律师混淆被告姓名
+- **矛盾言论**：赔偿请求前后不一致
+- **戏剧性插曲**：OpenAI 员工赠送的「蠢蛋奖杯」被呈交法官
+
+### 案件意义
+
+这是 2026 年最重要的科技法庭案件。陪审团的最终裁决将对 AI 行业的公司治理、创始人权力和投资者关系产生深远影响。
+
+尽管庭审过程充满戏剧性，但案件核心议题——OpenAI 从非营利到营利机构的转型是否损害了创始人利益——仍然是科技行业关注的焦点。
+
+**来源：** The Verge
+**链接：** https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis`,
+    date: "2026-05-15 20:00",
+    source: "The Verge",
+    sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis",
+    href: "/news/news-1765",
+  },
+{
+    id: "news-1766",
+    tag: "开源项目",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "Daniel Miessler 发布 Personal AI Infrastructure：放大人类能力的智能体架构",
+    summary: "知名安全研究者 Daniel Miessler 在 GitHub 发布 Personal AI Infrastructure 项目，旨在构建能放大个人能力的智能体 AI 基础设施。",
+    content: `## 个人 AI 基础设施
+
+**2026 年 5 月 15 日**，Daniel Miessler 在 GitHub Trending 上发布了新项目。
+
+### 核心理念
+
+- **定位**：构建「放大人类能力」的智能体架构
+- **方法**：系统化的智能体 AI 基础设施设计
+- **目标用户**：个人用户
+
+### 行业趋势
+
+个人 AI 正在从单一工具向体系化基础设施演进。同一天 GitHub Trending 上还出现了多个相关项目：
+- **OpenHuman**（tinyhumansai）：私人 AI 超级智能
+- **AgentMemory**（rohitg00）：AI 编程智能体持久化内存
+- **Superpowers**（obra）：编程智能体软件开发方法论
+
+这些项目共同指向一个趋势：AI 智能体的个人化和体系化正在加速。
+
+**来源：** GitHub Trending
+**链接：** https://github.com/danielmiessler/Personal_AI_Infrastructure`,
+    date: "2026-05-15 20:00",
+    source: "GitHub Trending",
+    sourceUrl: "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+    href: "/news/news-1766",
+  },
+{
+    id: "news-1767",
+    tag: "开源项目",
+    tagColor: "bg-cyan-500/10 text-cyan-300",
+    title: "IBM 发布 Granite Embedding Multilingual R2：32K 上下文，亚亿参数最强多语言嵌入模型",
+    summary: "IBM 发布开源多语言嵌入模型 Granite Embedding Multilingual R2，支持 32K 长上下文，在参数量低于 1 亿的模型中检索性能最强。",
+    content: `## IBM  Granite Embedding R2
+
+**2026 年 5 月 14 日**，IBM 通过 Hugging Face 发布了新一代嵌入模型。
+
+### 技术亮点
+
+- **协议**：Apache 2.0 开源
+- **上下文**：支持 32K 长上下文
+- **参数量**：低于 1 亿（Sub-100M）
+- **性能**：同类模型中检索质量最强
+- **应用**：多语言信息检索和 RAG
+
+### 开源意义
+
+在 RAG（检索增强生成）成为 AI 应用主流架构的背景下，高效的嵌入模型是关键组件。IBM 的开源贡献降低了开发者构建多语言 RAG 应用的门槛。
+
+**来源：** Hugging Face Blog
+**链接：** https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2`,
+    date: "2026-05-15 20:00",
+    source: "Hugging Face Blog",
+    sourceUrl: "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+    href: "/news/news-1767",
+  },
+{
+    id: "news-1768",
+    tag: "产品发布",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "深圳 2026 全球 AI 终端展开幕：数千款 AI 新物种亮相，重构产业生态",
+    summary: "2026 年 5 月 14 日，全球人工智能终端展在深圳开幕，数千款前沿 AI 终端产品亮相。AI 新物种正在重构产业生态新图景。同时江苏宣布全面实施人工智能+行动。",
+    content: `## AI 终端的春天
+
+**2026 年 5 月 14-15 日**，2026 全球人工智能终端展在深圳盛大开幕。
+
+### 展会亮点
+
+- **规模**：数千款前沿 AI 终端产品
+- **主题**：AI 新物种重构产业生态
+- **地点**：深圳
+
+### 国内 AI 政策同步推进
+
+5 月 15 日，江苏省委副书记、省长刘小涛在"开局起步'十五五'"专题发布会上表示：
+- 全面实施「人工智能+」行动
+- 加快打造全国人工智能创新发展高地
+- 抓住人工智能这个关键变量
+
+### 趋势判断
+
+AI 正在从云端走向终端、从软件走向硬件。深圳作为硬件之都举办全球 AI 终端展，江苏以省级战略推进 AI+ 行动，说明中国 AI 产业正在从「模型竞赛」走向「应用落地」的新阶段。
+
+**来源：** 深圳新闻网 + 中新网
+**链接：** https://www.sznews.com/news/content/2026-05/15/content_32051065.htm`,
+    date: "2026-05-15 20:00",
+    source: "深圳新闻网 + 中新网",
+    sourceUrl: "https://www.sznews.com/news/content/2026-05/15/content_32051065.htm",
+    href: "/news/news-1768",
   }
 ];

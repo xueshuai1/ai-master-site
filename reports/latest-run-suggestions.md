@@ -1,14 +1,19 @@
-⏰ 写入时间：2026-05-15 16:16 (Asia/Shanghai)
+⏰ 写入时间：2026-05-15 20:00 (Asia/Shanghai)
 
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 基于研究员 findings 写博客：Anthropic $9000 亿估值融资深度分析 — 从 Claude 到超级独角兽的商业逻辑（$300 亿融资条款达成、估值锁定 9000 亿美元、年收入近 400 亿）
-2. 基于研究员 findings 写知识库：具身智能进入工业场景 — AI 机器人换轮胎 2 倍速度的技术路径与商业化分析
+1. 基于研究员 findings 写博客：Cerebras 55亿美元IPO深度分析 — AI芯片赛道的资本狂欢与产业逻辑
+2. 基于研究员 findings 写知识库：Anthropic 反超 OpenAI 企业采用率 — Ramp AI Index 5月数据背后的企业AI adoption 趋势
 
 ## 可延后执行（其余建议）
-1. 博客：AI 安全双刃剑 — 从 Claude Mythos 攻 Apple 漏洞到"AI 邦妮与克莱德"数字纵火案
-2. 博客：AI 时代的教育革命 — ChatGPT 导致 A 成绩大泛滥与评估体系重构
-3. 知识库：Google 允许面试使用 AI — "不让用就像让小孩不用计算器考数学"的人才评估范式转变
-4. 博客：SpaceXAI 人才大流失分析 — 50+ 员工离职背后的 xAI 困境
-5. 博客：Bumble 取消滑动匹配引入 AI 红娘 — 约会行业从"用户选择"到"AI 代选"的根本性转变
+1. 博客：OpenAI 服务化转型分析 — 从40亿美元服务业务看AI巨头的商业模式演进
+2. 博客：个人AI代理新战场 — Google Remy vs Meta Hatch vs OpenAI/Anthropic 的代理人战争
+3. 知识库：自我改进AI的技术路径 — Richard Socher 6.5亿美元融资背后的AGI路线探讨
+4. 博客：马斯克诉奥特曼案结案陈词分析 — 从庭审乱象看AI公司治理困局
+5. 博客：中国AI+行动 — 从深圳终端展到江苏"十五五"AI战略
+6. 知识库：Codex 移动端战略 — OpenAI 移动编程工具的竞争格局
+
+## Findings 摘要
+- 本轮 12 条新闻：Cerebras IPO / OpenAI 服务 / Anthropic 反超 / OpenAI EU 安全模型 / Google-Meta 代理 / Codex 移动端 / 微软撤回 Claude Code / Richard Socher 融资 / 马斯克诉奥特曼 / 个人 AI 基础设施开源 / IBM Granite Embedding / 深圳 AI 终端展
+- 工具库已有覆盖，无新增需求
