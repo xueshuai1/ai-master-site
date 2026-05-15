@@ -26706,7 +26706,7 @@ AI 视频生成领域竞争白热化——Runway、Sora、Kling、Vidu 等多方
     tag: "大语言模型",
     tagColor: "bg-blue-500/10 text-blue-300",
     title: "当 AI 开始自我构建：AI 自进化技术从理论走向现实",
-    summary: "TechCrunch 深度报道探讨"当 AI 开始构建自己"这一命题——从自我训练、AutoML 到 AI 自我改进循环，AI 自进化正在从学术概念变为工程实践。",
+    summary: "TechCrunch 深度报道探讨「当 AI 开始构建自己」这一命题——从自我训练、AutoML 到 AI 自我改进循环，AI 自进化正在从学术概念变为工程实践。",
     content: `## 当 AI 开始构建自己
 
 **2026 年 5 月**，TechCrunch 深度报道。
