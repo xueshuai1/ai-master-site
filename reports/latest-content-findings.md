@@ -1,27 +1,32 @@
-⏰ 写入时间：2026-05-15 04:08 (Asia/Shanghai)
+⏰ 写入时间：2026-05-15 08:10 (Asia/Shanghai)
 
-## 本轮发现
+# 本轮发现
 
-🔥 热点（12 条，已选 12 条写入 news.ts，news-1676~news-1687）：
-1. [OpenAI Daybreak] OpenAI 发布网络安全平台 Daybreak，对标 Anthropic Mythos → 适合：博客/知识库
-2. [Anthropic 合资企业] Anthropic 联合高盛、黑石成立 15 亿美元 AI 合资企业 → 适合：博客
-3. [Claude Code 算力扩容] Anthropic 提升 Claude Code 使用限额，SpaceX 合作新增 300+MW 算力 → 适合：知识库
-4. [Claude 法律工具] Anthropic 扩展法律行业 AI 工具套件 → 适合：知识库/博客
-5. [宇树 GD01 机甲] 宇树发布全球首款量产载人变形机甲，390 万元起 → 适合：博客
-6. [网信办短视频标注] 中央网信办部署六类必选标签，AI 生成内容必须标注 → 适合：知识库/博客
-7. [Claude Design] Anthropic Labs 发布 AI 协作视觉设计工具 → 适合：知识库
-8. [可灵 AI 200 亿估值] 快手评估可灵 AI 业务达 200 亿美元 → 适合：博客
-9. [AI 搜索版权案] 国内首起 AI 搜索版权侵权案终审落槌 → 适合：知识库
-10. [Alphabet 1850 亿投资] Alphabet 2026 年 AI 基础设施投资达 1850 亿美元 → 适合：博客
-11. [斯坦福 AI 指数] 2026 年报告：全球企业 AI 投资 5817 亿美元 → 适合：知识库
-12. [GitHub 趋势] agent-skills 霸榜，financial-services 周增 12K 星 → 适合：开源周报
+## 🔥 热点（10 条，已写入 news-1688~1697）：
+1. [OpenAI 起诉苹果] ChatGPT 集成未达预期，OpenAI 正探索法律行动 → 适合：博客/知识库
+2. [SpaceXAI 人才流失] 合并后 50+ 员工离职， burnout 和留存激励失效 → 适合：博客
+3. [Codex 手机版] OpenAI 宣布 Codex 编程助手将登陆手机端 → 适合：知识库
+4. [Richard Socher 自我进化 AI] 6.5 亿美元融资，构建自主研究改进的 AI 系统 → 适合：博客/知识库
+5. [Cerebras IPO] 融资 55 亿，股价暴涨 108%，2026 首个科技重磅上市 → 适合：博客/知识库
+6. [Mozilla × Mythos] 271 个 Firefox 漏洞被 AI 发现，几乎零误报 → 适合：知识库
+7. [苹果 App Store + AI Agent] 探索将 AI 智能体整合至应用商店，WWDC 2026 或发布 → 适合：博客
+8. [OpenAI TanStack 供应链攻击] 未发现用户数据泄露，macOS 用户需 6 月前更新 → 适合：知识库
+9. [可灵 AI 登顶 42 国 App Store] 3.0 棒球特效视频引爆社交 → 适合：博客
+10. [腾讯 AI 一号位/千里智驾 CEO 辟谣] AI 行业高管人事传闻集中爆发 → 适合：知识库
 
-🆕 新工具（0 个）：
-- add-new-tools 脚本运行结果：0 个遗漏项目（tools.ts 已全覆盖）
+## 🆕 新工具（0 个）：
+- 本轮 discover-topic-projects 发现 0 个遗漏项目，tools.ts 已全覆盖高星项目
 
-💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：AI 网络安全 — OpenAI Daybreak vs Anthropic Mythos 深度对比
-2. KNOWLEDGE-BASE-PLAN.md 待补：AI 法律服务 — Claude 法律工具套件的能力边界
-3. KNOWLEDGE-BASE-PLAN.md 待补：具身智能 — 宇树 GD01 机甲的技术架构与行业影响
-4. KNOWLEDGE-BASE-PLAN.md 待补：AI 内容治理 — 全球 AI 生成内容标注政策对比
-5. KNOWLEDGE-BASE-PLAN.md 待补：AI 基础设施竞赛 — Alphabet/Amazon/Meta 算力投资全景
+## 💡 知识缺口（5 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 网络安全] — OpenAI Daybreak vs Anthropic Mythos 深度对比（PM 待处理）
+2. KNOWLEDGE-BASE-PLAN.md 待补：[具身智能] — 宇树 GD01 机甲技术架构（PM 待处理）
+3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 内容治理] — 全球 AI 生成内容标注政策对比（PM 待处理）
+4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 基础设施] — Alphabet/Amazon/Meta 算力投资全景（PM 待处理）
+5. KNOWLEDGE-BASE-PLAN.md 待补：[AI 法律] — 国内首起 AI 搜索版权侵权案法律启示（PM 待处理）
+
+## 📋 本轮新增建议（基于本轮发现）：
+1. 博客：OpenAI vs Apple — AI 巨头合作关系的裂痕与重构
+2. 知识库：AI 自我进化 — Richard Socher 6.5 亿美元项目的技术路径与风险
+3. 博客：Cerebras IPO 深度解读 — 晶圆级引擎技术路线的商业验证
+4. 知识库：Mozilla × Mythos — AI 驱动软件安全的范式转变
+5. 博客：AI 编程移动化 — Codex 手机端发布的行业信号
