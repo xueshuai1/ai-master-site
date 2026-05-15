@@ -163,7 +163,9 @@ import { blog as blog169 } from './blogs/blog-169';
 import { blog as blog170 } from './blogs/blog-170';
 import { blog as blog171 } from './blogs/blog-171';
 import { blog as blog172 } from './blogs/blog-172';
+import blog173 from './blogs/blog-173';
 import { blog as blog174 } from './blogs/blog-174';
+import { blog as blog175 } from './blogs/blog-175';
 
 export const blogs: BlogPost[] = [
   blog059,
@@ -322,4 +324,6 @@ export const blogs: BlogPost[] = [
   blog171,
   blog172,
   blog174,
+  blog173,
+  blog175,
 ];

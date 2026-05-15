@@ -381,6 +381,7 @@ import { article as aiProactive001 } from './articles/ai-proactive-001';
 import { article as selftrain001 } from './articles/selftrain-001';
 import { article as agent057 } from './articles/agent-057';
 import { article as agent059 } from './articles/agent-059';
+import { article as embodiedIndustrial001 } from './articles/embodied-industrial-001';
 export const articles: Article[] = [
   headlessAi001,
   ai000,
@@ -399,6 +400,7 @@ export const articles: Article[] = [
   infer001,
   physical001,
   physical002,
+  embodiedIndustrial001,
   anthropicClaude,
   ai4science001,
   ai4science002,
