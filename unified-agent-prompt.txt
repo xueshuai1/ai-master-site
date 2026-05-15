@@ -487,8 +487,8 @@ node scripts/check-topic-dup.js "拟写的新文章标题"
 
 **博客内容标准：**
 - 博客使用 `ArticleSection[]` 结构化格式（不是 markdown 字符串）
-- 每篇至少 2 个 Mermaid 图（架构图/流程图/对比图/时间线）
-- 每篇至少 2 个 Python 代码块（可运行的示例代码）
+- 每篇至少 2 个 Mermaid 图（架构图/流程图/对比图/时间线，推荐 3-4 个）
+- 代码块为可选项（文章可以没有代码，但不能没有图表）
 - 至少 1 个对比表格
 - 章节按 `title/body/code/mermaid/table/list/tip/warning` 拆分
 - 不能是几句话的摘要，要有深度（3000+ 字）
