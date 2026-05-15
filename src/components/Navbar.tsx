@@ -20,18 +20,10 @@ const navLinks: NavLink[] = [
 export default function Navbar({ activePath }: { activePath?: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [modKey, setModKey] = useState("Ctrl");
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform)) {
-      setModKey("⌘");
-    }
   }, []);
 
   const openSearch = () => {
@@ -93,8 +85,8 @@ export default function Navbar({ activePath }: { activePath?: string }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
               </svg>
               <span>搜索</span>
-              <kbd className="hidden lg:inline-flex items-center rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] font-mono text-slate-400">
-                {modKey} K
+              <kbd suppressHydrationWarning className="hidden lg:inline-flex items-center rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] font-mono text-slate-400">
+                {typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘" : "Ctrl"} K
               </kbd>
             </button>
             <Link
