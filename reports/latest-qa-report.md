@@ -17,3 +17,5 @@ P2（建议）：1 个（/roadmap 404 历史遗留，已记录）
 - Mermaid 配色验证：ethics-020/agent-060 无白色 fill，深色配色正确
 - 10 并发压力测试：10/10 通过，16ms
 - Build 通过，TypeScript 零错误
+
+📦 Commit: f1209874
