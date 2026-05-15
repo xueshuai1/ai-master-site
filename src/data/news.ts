@@ -24331,5 +24331,249 @@ AI Agent 工具链正在从社区实验走向企业级标准化。Anthropic 的 
     source: "ShareUHack + GitHub Trending",
     sourceUrl: "https://www.shareuhack.com/en/posts/github-trending-weekly-2026-05-13",
     href: "/news/news-1687",
+  },
+  {
+    id: "news-1688",
+    tag: "行业",
+    title: "OpenAI 据报正准备对苹果采取法律行动，ChatGPT 集成未达预期引发纠纷",
+    summary: "TechCrunch 报道，OpenAI 对苹果在 ChatGPT 集成中的表现极度不满——苹果未能带来 OpenAI 预期的用户订阅量和产品曝光度。OpenAI 正积极探索对苹果采取法律行动的可能，这已不是苹果在 AI 合作中首次让合作伙伴感到失望。",
+    content: `**2026 年 5 月 14 日**，TechCrunch 报道了一起可能重塑 AI 巨头合作格局的纠纷。
+
+### 纠纷核心
+- **集成效果不佳**：苹果在 iOS 18 中集成 ChatGPT，但未能带来 OpenAI 预期的用户增长和订阅转化
+- **曝光度不足**：ChatGPT 在苹果生态中的曝光远低于 OpenAI 的预期
+- **法律行动酝酿**：OpenAI 正在积极探索对苹果采取法律行动的可能性
+
+### 行业背景
+这已不是苹果在 AI 合作中首次让合作伙伴感到不满。此前多家 AI 公司都曾对苹果的封闭生态和有限的 API 权限表示担忧。OpenAI 与苹果的合作原本被视为 AI 行业与消费电子巨头深度整合的典范，如今却可能走向法律对抗。
+
+### 影响
+这一纠纷可能促使更多 AI 公司重新评估与苹果合作的策略，也可能加速 AI 服务在安卓等开放平台上的布局。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/`,
+    date: "2026-05-15 08:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/",
+    href: "/news/news-1688",
+  },
+  {
+    id: "news-1689",
+    tag: "行业",
+    title: "SpaceXAI 合并后员工流失严重，50 余人已离职引发人才危机担忧",
+    summary: "TechCrunch 报道，Elon Musk 旗下 SpaceX 与 xAI 合并成立 SpaceXAI 后，已有超过 50 名员工离职。离职潮引发关于加班文化、管理层变动和流动性事件后人才留存激励失效的讨论。",
+    content: `**2026 年 5 月 14 日**，TechCrunch 深入报道了 SpaceXAI 的人才流失危机。
+
+### 离职概况
+- **50+ 员工离职**：自 2 月合并以来，已有超过 50 名员工离开 SpaceXAI
+- **多重原因**：加班文化（burnout）、管理层频繁变动、流动性事件（liquidity events）后留存激励失效
+- **人才争夺**：部分离职员工被竞争对手挖走
+
+### 行业影响
+SpaceXAI 合并被视为 AI 行业最引人注目的并购之一，但合并后的文化整合和人才保留成为巨大挑战。在 AI 人才竞争白热化的背景下，核心工程团队的稳定性直接影响产品迭代速度和市场竞争力。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/`,
+    date: "2026-05-15 08:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/",
+    href: "/news/news-1689",
+  },
+  {
+    id: "news-1690",
+    tag: "应用",
+    title: "OpenAI 宣布 Codex 将登陆手机端，AI 编程助手从桌面走向移动",
+    summary: "OpenAI 宣布 Codex 编程助手即将推出手机版，用户将能在手机上管理 AI 编程工作流。这标志着 AI 编码工具正从桌面端向移动端扩展，让开发者随时随地利用 AI 辅助编程。",
+    content: `**2026 年 5 月 14 日**，OpenAI 宣布其 AI 编程助手 Codex 即将推出移动端版本。
+
+### 核心更新
+- **手机端 Codex**：用户将能在手机上使用 Codex 管理编程工作流
+- **增强灵活性**：移动端将提供工作流管理、代码审查和任务调度等功能
+- **AI 编程移动化**：从桌面终端向移动端的延伸，反映 AI 编程工具使用场景的扩展
+
+### 行业趋势
+AI 编程工具正在经历从「桌面专属」到「全平台覆盖」的转变。Codex 的移动端发布，与 Cursor、Claude Code 等工具的持续进化一起，正在重新定义开发者与 AI 协作的方式。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/`,
+    date: "2026-05-15 08:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/",
+    href: "/news/news-1690",
+  },
+  {
+    id: "news-1691",
+    tag: "行业",
+    title: "Richard Socher 创立 6.5 亿美元自我进化 AI 公司：让 AI 自主研究和持续改进",
+    summary: "前 Salesforce AI 负责人 Richard Socher 创办新公司，融资 6.5 亿美元，目标是构建能够自主研究、自我改进的 AI 系统。Socher 坚持认为该项目将实际交付产品，而非停留在概念阶段。",
+    content: `**2026 年 5 月 14 日**，TechCrunch 报道了 AI 领域最雄心勃勃的创业项目之一。
+
+### 项目概况
+- **6.5 亿美元融资**：新公司成立即获得巨额融资
+- **自我进化 AI**：目标是构建能够自主研究和持续改进的 AI 系统
+- **Richard Socher**：前 Salesforce AI 负责人、著名 NLP 学者，斯坦福博士
+
+### 技术愿景
+Socher 的项目代表了 AI 从「被动执行」向「主动进化」的方向性转变。自我改进的 AI 系统意味着模型能够在运行过程中自主发现缺陷、优化策略和提升能力，而无需人类持续干预。
+
+### 争议与期待
+AI 自我进化引发了关于安全性和可控性的讨论。一方面，这可能极大加速 AI 能力进步；另一方面，自主进化也带来不可预测性的风险。Socher 承诺将确保系统的安全性并实际交付产品。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/`,
+    date: "2026-05-15 08:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/",
+    href: "/news/news-1691",
+  },
+  {
+    id: "news-1692",
+    tag: "芯片",
+    title: "Cerebras 完成 55 亿美元 IPO，首日股价暴涨 108%，成为 2026 年首个科技重磅上市",
+    summary: "AI 芯片公司 Cerebras 成功上市，融资 55 亿美元，首日股价飙升 108%。一年前公司还面临生存危机，如今成为 2026 年科技 IPO 季的开门红。Benchmark 等早期投资者获利数十亿美元。",
+    content: `**2026 年 5 月 14 日**，AI 芯片领域的标志性时刻到来。
+
+### IPO 数据
+- **55 亿美元融资**：Cerebras 通过 IPO 筹集巨额资金
+- **股价暴涨 108%**：首日交易即翻倍，市场反应热烈
+- **2026 年首个科技重磅 IPO**：标志着科技 IPO 季的正式开启
+
+### 背景故事
+一年前，Cerebras 还面临生存危机——市场对其晶圆级引擎（WSE）技术的可行性和商业化前景存在严重质疑。如今，作为 OpenAI 的重要算力合作伙伴，Cerebras 的上市成功验证了「超大芯片」路线的商业价值。
+
+### 行业影响
+Cerebras 的上市为 AI 芯片赛道注入了新的活力。在 NVIDIA 主导的市场中，Cerebras 的 WSE 技术提供了一种差异化的架构思路——用单颗超大芯片而非多芯片集群来实现算力。Benchmark 等早期投资者因坚持投资硬件赛道而获利数十亿美元。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/`,
+    date: "2026-05-15 08:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/",
+    href: "/news/news-1692",
+  },
+  {
+    id: "news-1693",
+    tag: "大语言模型",
+    title: "Mozilla 证实 Anthropic Mythos 在 Firefox 中发现 271 个安全漏洞，几乎零误报",
+    summary: "Mozilla 工程师发布详细报告，证实 Anthropic Mythos AI 模型在两个月内为 Firefox 发现了 271 个安全漏洞，且误报率极低。这打破了外界对 AI 漏洞检测"只是炒作"的质疑，标志着 AI 驱动网络安全进入实用阶段。",
+    content: `**2026 年 5 月**，Mozilla 发布了关于 AI 辅助漏洞检测的深度技术报告。
+
+### 核心数据
+- **271 个漏洞**：Mythos 在两个月内为 Firefox 发现的安全漏洞数量
+- **几乎零误报**：Mozilla 工程师确认 Mythos 的报告准确率极高
+- **关键突破**：自定义「harness」工具 + 模型改进 = 实用化 AI 安全检测
+
+### 技术细节
+Mozilla 工程师坦言，早期使用 AI 辅助漏洞检测时充满「不需要的废话」——模型会生成看似合理的漏洞报告，但大部分细节是幻觉。真正的突破来自两方面：一是 Mythos 模型本身的能力提升，二是 Mozilla 开发了自定义的测试 harness 来支持 Mythos 分析 Firefox 源代码。
+
+### 行业影响
+这一结果标志着 AI 驱动的软件安全检测从概念验证走向实际生产力工具。Mozilla CTO 此前宣称"零日漏洞屈指可数"，如今有数据支撑。这也凸显了 Anthropic 在网络安全领域的技术优势——Mythos 作为专用安全模型，已经在实战中证明了价值。
+
+**来源：** Ars Technica + Mozilla Hacks
+**链接：** https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/`,
+    date: "2026-05-15 08:00",
+    source: "Ars Technica + Mozilla Hacks",
+    sourceUrl: "https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/",
+    href: "/news/news-1693",
+  },
+  {
+    id: "news-1694",
+    tag: "应用",
+    title: "苹果探索将 AI 智能体整合至 App Store，WWDC 2026 或推出 AI 原生应用发现",
+    summary: "据报道，苹果正在探索将 AI 智能体整合到 App Store 中，预计将在下月举行的 WWDC 2026 上大力推进 AI 战略。AI 智能体可能改变应用搜索、推荐和分发方式，成为 App Store 十年来的最大变革之一。",
+    content: `**2026 年 5 月 14 日**，界面新闻报道了苹果在 AI 应用生态方面的最新动向。
+
+### 核心信息
+- **AI 智能体 + App Store**：苹果正在探索将 AI 智能体整合到应用商店
+- **WWDC 2026**：预计下月的年度开发者大会将大力推进 AI 战略
+- **应用发现变革**：AI 智能体可能彻底改变用户搜索和发现应用的方式
+
+### 战略意义
+App Store 自 2008 年上线以来，应用发现和推荐机制经历了多次演进，但底层逻辑未变——关键词搜索 + 排行榜 + 编辑推荐。AI 智能体的加入可能带来范式转变：用户不再搜索应用，而是描述需求，AI 智能体自动匹配、组合和执行。
+
+### 竞争格局
+在 OpenAI 与苹果的合作关系出现裂痕的背景下（OpenAI 据报正酝酿对苹果的法律行动），苹果加速自主 AI 战略显得尤为紧迫。WWDC 2026 可能成为苹果展示其 AI 原生应用生态的关键时刻。
+
+**来源：** 界面新闻
+**链接：** https://www.jiemian.com/`,
+    date: "2026-05-15 08:00",
+    source: "界面新闻 + 36 氪",
+    sourceUrl: "https://www.36kr.com/",
+    href: "/news/news-1694",
+  },
+  {
+    id: "news-1695",
+    tag: "行业",
+    title: "OpenAI 回应 TanStack 供应链攻击：未发现用户数据泄露，macOS 用户需在 6 月前更新",
+    summary: "针对针对 TanStack 等热门开源库的\"Mini Shai-Hulud\"供应链攻击，OpenAI 发布声明称内部系统已快速排查，未发现用户数据泄露或非法访问。但为确保本地环境安全，要求所有 macOS 用户在 2026 年 6 月 12 日前完成软件更新。",
+    content: `**2026 年 5 月 14 日**，OpenAI 就供应链安全事件发布正式回应。
+
+### 事件概要
+- **攻击目标**：TanStack 等多款常用 npm 软件包遭到\"Mini Shai-Hulud\"供应链攻击
+- **OpenAI 回应**：安全团队迅速排查内部系统，未发现用户数据泄露或非法访问
+- **更新要求**：所有使用 OpenAI 官方应用的 macOS 用户须在 2026 年 6 月 12 日前完成更新
+
+### 安全影响
+供应链攻击针对的是开发者工具链中的依赖包，一旦被植入恶意代码，可影响所有使用该依赖的项目。OpenAI 虽然核心服务未受直接破坏，但本地环境的安全风险不容忽视。
+
+### 行业警示
+此次事件再次提醒开发者：开源供应链安全是 AI 时代的基础设施问题。随着 AI 工具越来越多地依赖开源组件，供应链攻击的影响面也在急剧扩大。
+
+**来源：** 36 氪 + TechCrunch
+**链接：** https://www.36kr.com/newsflashes/3808728068152832`,
+    date: "2026-05-15 08:00",
+    source: "36 氪 + TechCrunch",
+    sourceUrl: "https://www.36kr.com/newsflashes/3808728068152832",
+    href: "/news/news-1695",
+  },
+  {
+    id: "news-1696",
+    tag: "应用",
+    title: "可灵 AI 登顶 42 国 App Store 总榜，3.0 版本\"棒球现场特效\"视频引爆社交网络",
+    summary: "快手旗下可灵 AI 于 5 月 12 日登顶 42 个国家和地区 App Store 总榜。可灵 AI 3.0 生成的\"棒球现场特效\"视频在国内外社交平台持续刷屏，带动大量用户参与创作，AI 视频生成正从技术产品走向大众消费级应用。",
+    content: `**2026 年 5 月 12 日**，36 氪报道了可灵 AI 的现象级增长。
+
+### 数据亮点
+- **42 国登顶**：可灵 AI 在 42 个国家和地区的 App Store 总榜排名第一
+- **病毒式传播**：可灵 AI 3.0 生成的\"棒球现场特效\"视频在全球社交平台刷屏
+- **用户参与**：大量普通用户参与到 AI 视频创作中
+
+### 产品进化
+可灵 AI 3.0 在视频生成的真实感、一致性和可控性方面实现了显著提升。\"棒球现场特效\"视频的成功，展示了 AI 视频生成从「能做」到「做得好」的跨越。
+
+### 商业价值
+结合快手内部评估的可灵 AI 业务 200 亿美元估值，此次 App Store 登顶进一步验证了 AI 视频生成的商业潜力。可灵 AI 正在从技术产品向全球消费级应用品牌转型。
+
+**来源：** 36 氪
+**链接：** https://www.36kr.com/`,
+    date: "2026-05-15 08:00",
+    source: "36 氪",
+    sourceUrl: "https://www.36kr.com/",
+    href: "/news/news-1696",
+  },
+  {
+    id: "news-1697",
+    tag: "行业",
+    title: "腾讯辟谣\"AI 一号位即将离职\"传闻，千里智驾联席 CEO 陈奇也否认离职投身具身智能",
+    summary: "5 月 14 日，腾讯发布严正声明辟谣\"AI 一号位即将离职\"传闻，称谣言纯属子虚乌有。同日，千里智驾联席 CEO 陈奇也辟谣称\"人在公司，还在为千里智驾打拼\"，否认了将离职投身具身智能创业的报道。",
+    content: `**2026 年 5 月 14 日**，AI 行业高管人事传闻集中爆发又迅速被辟谣。
+
+### 腾讯辟谣
+- **严正声明**：腾讯发布声明称\"AI 一号位即将离职\"的谣言纯属子虚乌有
+- **保留追责权利**：腾讯表示保留对相关恶意造谣者追究法律责任的权利
+
+### 千里智驾辟谣
+- **陈奇回应**：千里智驾联席 CEO 陈奇表示\"人在公司，还在为千里智驾打拼\"
+- **背景**：此前多家媒体报道陈奇将离职并投身具身智能创业
+
+### 行业观察
+AI 行业高管人事变动传闻频发，反映了市场对 AI 战略方向和组织架构的高度关注。在 AI 人才竞争白热化的背景下，核心管理层的稳定性直接影响公司战略执行和市场信心。
+
+**来源：** 财联社 + 第一财经
+**链接：** https://www.36kr.com/`,
+    date: "2026-05-15 08:00",
+    source: "财联社 + 第一财经 + 36 氪",
+    sourceUrl: "https://www.36kr.com/",
+    href: "/news/news-1697",
   }
 ];
