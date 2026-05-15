@@ -294,19 +294,47 @@ Anthropic 定期发布安全研究报告，包括：
     },
     {
         title: "架构图示 1",
-        mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+        mermaid: `graph LR
+    subgraph "安全优先理念"
+        S1["Constitutional AI"] --> S2["RL-CAI 训练"]
+        S2 --> S3["红队测试"]
+        S3 --> S4["安全评估"]
+        S4 --> S5["发布决策"]
+    end
+    
+    subgraph "与 OpenAI 对比"
+        C1["安全优先<br/>透明度高"] --> C2["Claude"]
+        O1["性能优先<br/>迭代快"] --> O2["GPT"]
+    end
+    
+    style S1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style C1 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
     },
     {
         title: "架构图示 2",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "Claude 产品矩阵"
+        P1["Claude Chat<br/>对话界面"]
+        P2["Claude API<br/>开发者接口"]
+        P3["Claude Code<br/>编程 Agent"]
+        P4["Claude Projects<br/>知识库增强"]
+    end
+    
+    subgraph "模型家族"
+        M1["Haiku<br/>轻量快速"]
+        M2["Sonnet<br/>均衡性能"]
+        M3["Opus<br/>最强推理"]
+    end
+    
+    P1 --> M2
+    P2 --> M1
+    P2 --> M2
+    P2 --> M3
+    P3 --> M3
+    P4 --> M2
+    
+    style M3 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style P3 fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
   ],
 };

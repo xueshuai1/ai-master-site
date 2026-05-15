@@ -703,10 +703,25 @@ MCP 不是未来的技术——它就是现在。每个 AI 开发者都应该了
     {
         title: "架构图示",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "MCP 协议架构"
+        C1["Client<br/>AI 应用/Agent"] -->|"MCP Request"| T1["Transport<br/>stdio/HTTP/SSE"]
+        T1 -->|"转发"| S1["Server<br/>工具/数据提供者"]
+        S1 -->|"MCP Response"| T1
+        T1 -->|"返回"| C1
+    end
+    
+    subgraph "三大核心能力"
+        R1["资源读取<br/>Resource Read"]
+        R2["工具调用<br/>Tool Call"]
+        R3["提示词模板<br/>Prompt Template"]
+    end
+    
+    S1 --> R1
+    S1 --> R2
+    S1 --> R3
+    
+    style T1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style R2 fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
   ]
 };

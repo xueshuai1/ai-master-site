@@ -97,10 +97,26 @@ PersonaPlex 的关键创新：
       {
           title: "架构图示",
           mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "PersonaPlex 架构"
+        A1["音频输入<br/>实时麦克风"] --> A2["Moshi 骨干网<br/>流式双向"]
+        A2 --> A3["人格控制模块<br/>Persona Controller"]
+        A3 --> A4["音频输出<br/>实时 TTS"]
+    end
+    
+    subgraph "人格特征维度"
+        P1["语速和节奏"]
+        P2["语调和情感"]
+        P3["用词风格"]
+        P4["个性特征<br/>幽默/严肃/温暖"]
+    end
+    
+    A3 --> P1
+    A3 --> P2
+    A3 --> P3
+    A3 --> P4
+    
+    style A3 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style P4 fill:#b91c1c,stroke:#dc2626,color:#fff`,
       },
     ],
 };

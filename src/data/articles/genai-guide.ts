@@ -38,19 +38,42 @@ ControlNet — 精确控制生成结果`
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["数学基础<br/>概率+线代"] --> B["深度学习<br/>PyTorch"]
+    B --> C["生成模型原理<br/>VAE/GAN/扩散"]
+    C --> D["实战项目<br/>微调+应用"]
+    
+    A --> P1["微积分+概率论"]
+    B --> P2["神经网络基础"]
+    C --> P3["Diffusion 原理"]
+    D --> P4["Stable Diffusion 微调"]
+    
+    style C fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style D fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "生成式 AI 技术路线"
+        G1["文本生成<br/>LLM / GPT"]
+        G2["图像生成<br/>Diffusion / DALL·E"]
+        G3["音频生成<br/>TTS / Suno"]
+        G4["视频生成<br/>Veo / Sora"]
+        G5["代码生成<br/>Code LLM"]
+    end
+    
+    subgraph "核心生成范式"
+        P1["自回归生成<br/>GPT 系列"]
+        P2["扩散模型<br/>Stable Diffusion"]
+        P3["流匹配<br/>Flow Matching"]
+    end
+    
+    G1 --> P1
+    G2 --> P2
+    G4 --> P3
+    
+    style P1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style P2 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ]
 };

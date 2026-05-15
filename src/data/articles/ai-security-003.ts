@@ -325,19 +325,48 @@ while True:
     },
     {
         title: "架构图示 1",
-        mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+        mermaid: `graph LR
+    subgraph "漏洞时间线"
+        T1["T0: 扫描启动"] --> T2["T+2周: 初步发现"]
+        T2 --> T3["T+8周: 271个确认"]
+        T3 --> T4["T+10周: 公开披露"]
+    end
+    
+    subgraph "漏洞分类"
+        C1["XSS 跨站脚本"]
+        C2["UAF 内存安全"]
+        C3["逻辑漏洞"]
+        C4["权限提升"]
+    end
+    
+    T3 --> C1
+    T3 --> C2
+    T3 --> C3
+    T3 --> C4
+    
+    style T3 fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
     {
         title: "架构图示 2",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "漏洞发现到防御流程"
+        D1["AI 自动扫描<br/>Mythos 引擎"] --> D2["漏洞确认<br/>Mozilla 验证"]
+        D2 --> D3["漏洞披露<br/>CVE 编号"]
+        D3 --> D4["防御响应<br/>Project Glasswing"]
+        D4 --> D5["补丁部署<br/>系统加固"]
+    end
+    
+    subgraph "防御联盟"
+        A1["Mozilla"] --> A2["金融系统"]
+        A2 --> A3["安全厂商"]
+        A3 --> A4["开源社区"]
+        A4 -->|"信息共享"| A1
+    end
+    
+    D5 --> A1
+    
+    style D1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style D4 fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
   ]
 };

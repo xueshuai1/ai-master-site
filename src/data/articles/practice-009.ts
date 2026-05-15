@@ -135,10 +135,24 @@ Protenix GitHub 仓库——安装指南、教程和示例；AlphaFold 论文—
       {
           title: "架构图示",
           mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "蛋白质结构预测流程"
+        S1["氨基酸序列<br/>输入"] --> S2["特征提取<br/>MSA+模板"]
+        S2 --> S3["结构预测<br/>Protenix 模型"]
+        S3 --> S4["结构优化<br/>能量最小化"]
+        S4 --> S5["3D 结构输出<br/>PDB 格式"]
+        S5 --> S6["验证评估<br/>RMSD/GDT"]
+    end
+    
+    subgraph "Protenix 技术栈"
+        P1["多序列比对<br/>MSA 搜索"] --> P2["Evoformer<br/>特征融合"]
+        P2 --> P3["结构模块<br/>3D 坐标生成"]
+    end
+    
+    S2 --> P1
+    P3 --> S3
+    
+    style S3 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style P2 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
       },
     ],
 };

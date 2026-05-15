@@ -881,10 +881,31 @@ print(guide.compare_paths([
         {
             title: "架构图示",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "AI 红队测试流程"
+        S1["范围定义<br/>目标+约束"] --> S2["信息收集<br/>模型+工具链"]
+        S2 --> S3["攻击设计<br/>对抗/注入"]
+        S3 --> S4["执行攻击<br/>自动化+手工"]
+        S4 --> S5["结果分析<br/>漏洞评级"]
+        S5 --> S6["修复建议<br/>防御方案"]
+        S6 --> S7["复测验证<br/>确认修复"]
+    end
+    
+    subgraph "主要攻击面"
+        A1["提示注入"]
+        A2["对抗样本"]
+        A3["数据投毒"]
+        A4["供应链攻击"]
+        A5["越权操作"]
+    end
+    
+    S3 --> A1
+    S3 --> A2
+    S3 --> A3
+    S3 --> A4
+    S3 --> A5
+    
+    style S4 fill:#b91c1c,stroke:#dc2626,color:#fff
+    style A1 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
     ],
 };

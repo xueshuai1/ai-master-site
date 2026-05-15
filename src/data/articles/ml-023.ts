@@ -327,10 +327,22 @@ Industry Reports. Demis Hassabis's keynote at NeurIPS 2025 on "The Path to AGI T
         {
             title: "架构图示",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "世界模型架构"
+        E1["编码器<br/>Observation → 潜变量"] --> D1["动力学模型<br/>预测下一状态"]
+        D1 --> R1["奖励模型<br/>预测奖励信号"]
+        D1 --> V1["价值模型<br/>评估状态价值"]
+        V1 --> P1["策略模型<br/>选择最优行动"]
+    end
+    
+    subgraph "持续学习循环"
+        L1["收集经验"] --> L2["更新世界模型"]
+        L2 --> L3["规划行动"]
+        L3 --> L4["执行+观察"]
+        L4 --> L1
+    end
+    
+    style D1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style L2 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
     ],
 };

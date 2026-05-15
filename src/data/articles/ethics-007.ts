@@ -672,10 +672,25 @@ for rec in model.recommendations():
         {
             title: "架构图示",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "AI 治理框架体系"
+        G1["国际层面<br/>UN/OECD/GPAI"] --> G2["区域层面<br/>欧盟 AI Act"]
+        G2 --> G3["国家层面<br/>中/美/英"]
+        G3 --> G4["行业层面<br/>NIST/ISO"]
+        G4 --> G5["企业层面<br/>内部治理"]
+    end
+    
+    subgraph "欧盟 AI Act 风险分级"
+        R1["不可接受风险<br/>禁止"] --> R2["高风险<br/>严格合规"]
+        R2 --> R3["有限风险<br/>透明度要求"]
+        R3 --> R4["低风险<br/>自愿准则"]
+    end
+    
+    G2 --> R1
+    G2 --> R2
+    
+    style R1 fill:#b91c1c,stroke:#dc2626,color:#fff
+    style R2 fill:#b45309,stroke:#d97706,color:#fff
+    style G2 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
     ],
 };

@@ -940,19 +940,40 @@ Letta（原 MemGPT）—— 基于虚拟上下文管理的 Agent 框架，实现
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    subgraph "向量检索"
+        V1["文本嵌入<br/>Embedding"] --> V2["向量索引<br/>HNSW"]
+        V2 --> V3["相似度搜索<br/>余弦"]
+    end
+    
+    subgraph "图检索"
+        K1["实体节点"] --> K2["关系边"]
+        K2 --> K3["图查询<br/>路径推理"]
+    end
+    
+    subgraph "混合检索"
+        H1["向量结果"] --> H2["结果融合"]
+        K3 --> H2
+        H2 --> H3["最终上下文"]
+    end
+    
+    V3 --> H1
+    style V2 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style H2 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "记忆分层架构"
+        M1["工作记忆<br/>RAM/上下文窗口"] -->|"压缩"| M2["短期记忆<br/>向量数据库"]
+        M2 -->|"精炼"| M3["长期记忆<br/>知识图谱"]
+        M3 -->|"归档"| M4["持久记忆<br/>文件系统"]
+        M4 -->|"检索召回"| M1
+    end
+    
+    style M1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style M3 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style M4 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ]
 };

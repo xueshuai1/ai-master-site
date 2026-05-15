@@ -1478,18 +1478,55 @@ Agentic Engineering 的核心不在于使用哪个框架，而在于系统化的
     {
         title: "架构图示 1",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "ReAct 模式"
+        R1["Thought 思考"] --> R2["Act 行动"]
+        R2 --> R3["Observe 观察"]
+        R3 --> R1
+    end
+    
+    subgraph "Plan-and-Solve"
+        P1["Plan 完整规划"] --> P2["Execute 逐步执行"]
+        P2 --> P3["Verify 验证"]
+        P3 --> P4{"通过？"}
+        P4 -->|"否"| P1
+        P4 -->|"是"| P5["输出"]
+    end
+    
+    subgraph "Multi-Agent"
+        M1["分工协作"]
+        M2["审查-修正"]
+        M3["辩论模式"]
+    end
+    
+    style R1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style P1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style M1 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
     },
     {
         title: "架构图示 2",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "Agentic Engineering 架构"
+        A["用户目标"] --> B["任务分解<br/>Planner"]
+        B --> C["工具选择<br/>Tool Selector"]
+        C --> D["执行引擎<br/>Executor"]
+        D --> E["观察反馈<br/>Observer"]
+        E --> F{"目标达成？"}
+        F -->|"否"| B
+        F -->|"是"| G["结果交付"]
+    end
+    
+    subgraph "支撑系统"
+        M["记忆管理"]
+        S["安全约束"]
+        O["可观测性"]
+    end
+    
+    B -.->|"读写"| M
+    C -.->|"检查"| S
+    D -.->|"上报"| O
+    
+    style B fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style F fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
   ],
 };

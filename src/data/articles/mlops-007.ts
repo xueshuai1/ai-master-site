@@ -775,10 +775,23 @@ print(model.report())`
         {
             title: "架构图示",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "ML 可观测性架构"
+        D1["数据层监控<br/>数据漂移"] -->|"告警"| A1["智能告警系统"]
+        M1["模型层监控<br/>性能衰减"] -->|"告警"| A1
+        S1["系统层监控<br/>延迟/吞吐"] -->|"告警"| A1
+        B1["业务层监控<br/>业务指标"] -->|"告警"| A1
+    end
+    
+    subgraph "告警响应流程"
+        A2["告警分类<br/>严重程度"] --> A3["自动响应<br/>回滚/降级"]
+        A3 --> A4["人工介入<br/>根因分析"]
+        A4 --> A5["修复+验证<br/>闭环"]
+    end
+    
+    A1 --> A2
+    
+    style A1 fill:#b91c1c,stroke:#dc2626,color:#fff
+    style D1 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
     ],
 };

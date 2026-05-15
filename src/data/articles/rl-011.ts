@@ -298,10 +298,24 @@ Fine-tuning：调整模型参数以适应特定任务。回答「如何更好地
     {
         title: "架构图示",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "World Model + Model-Based RL"
+        E1["编码器<br/>观察 → 潜状态"] --> M1["世界模型<br/>预测下一状态"]
+        M1 --> P1["策略网络<br/>在模型中规划"]
+        P1 --> V1["价值网络<br/>状态评估"]
+        V1 -->|"反馈"| P1
+        P1 -->|"执行到环境"| E1
+    end
+    
+    subgraph "学习循环"
+        L1["想象环境中规划"] --> L2["选择最优行动"]
+        L2 --> L3["真实环境执行"]
+        L3 --> L4["观察结果"]
+        L4 --> L5["更新世界模型"]
+        L5 --> L1
+    end
+    
+    style M1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style P1 fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
   ],
 };

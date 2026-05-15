@@ -41,19 +41,43 @@ export const article: Article = {
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["基础理论<br/>2-3周"] --> B["CNN 实战<br/>2-3周"]
+    B --> C["Transformer<br/>2-3周"]
+    C --> D["多模态+生成<br/>3-4周"]
+    
+    A --> P1["Python+OpenCV"]
+    B --> P2["PyTorch+ResNet"]
+    C --> P3["ViT+DETR"]
+    D --> P4["CLIP+Diffusion"]
+    
+    style B fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style D fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "CV 技术演进"
+        C1["经典 CV<br/>OpenCV"] --> C2["CNN 时代<br/>ResNet/YOLO"]
+        C2 --> C3["Transformer 时代<br/>ViT/DETR"]
+        C3 --> C4["多模态时代<br/>CLIP/SAM"]
+        C4 --> C5["生成式视觉<br/>Diffusion/FLUX"]
+    end
+    
+    subgraph "核心任务"
+        T1["图像分类"]
+        T2["目标检测"]
+        T3["图像分割"]
+        T4["图像生成"]
+    end
+    
+    C2 --> T1
+    C2 --> T2
+    C3 --> T3
+    C5 --> T4
+    
+    style C3 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style C5 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ]
 };

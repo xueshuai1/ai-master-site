@@ -44,19 +44,41 @@ export const article: Article = {
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["基础理论<br/>2-3周"] --> B["传统 NLP<br/>n-gram+CRF"]
+    B --> C["深度学习<br/>BERT+GPT"]
+    C --> D["大模型时代<br/>指令微调+RAG"]
+    D --> E["实战项目<br/>2-3周"]
+    
+    style C fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style D fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "NLP 技术演进"
+        N1["规则时代<br/>正则/语法树"] --> N2["统计时代<br/>n-gram/CRF"]
+        N2 --> N3["深度学习<br/>Word2Vec/LSTM"]
+        N3 --> N4["Transformer<br/>BERT/GPT"]
+        N4 --> N5["大模型时代<br/>指令微调/Agent"]
+    end
+    
+    subgraph "核心任务"
+        T1["文本分类"]
+        T2["命名实体识别"]
+        T3["机器翻译"]
+        T4["文本生成"]
+        T5["问答系统"]
+    end
+    
+    N2 --> T1
+    N2 --> T2
+    N3 --> T3
+    N4 --> T4
+    N5 --> T5
+    
+    style N4 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style N5 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ]
 };

@@ -409,19 +409,39 @@ asyncio.run(demo())`,
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["Agent A 接收任务"] -->|"请求"| B["Agent B 响应"]
+    B -->|"返回结果"| A
+    A -->|"委托"| C["Agent C 执行"]
+    C -->|"完成"| A
+    A -->|"汇总"| D["最终输出"]
+    
+    A -->|"错误"| E["编排器"]
+    B -->|"状态"| E
+    C -->|"状态"| E
+    E -->|"重新分配"| C
+    
+    style A fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style E fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "Symphony 规范架构"
+        R1["角色层<br/>定义 Agent 身份"] --> P1["协议层<br/>消息格式和类型"]
+        P1 --> E1["编排层<br/>任务分配和管理"]
+        E1 -->|"生命周期"| R1
+    end
+    
+    subgraph "消息格式"
+        M1["消息头<br/>sender/receiver"] --> M2["消息体<br/>payload"]
+        M2 --> M3["元数据<br/>timestamp/trace"]
+    end
+    
+    P1 --> M1
+    
+    style R1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style E1 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ],
 };

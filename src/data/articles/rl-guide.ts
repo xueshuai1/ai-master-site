@@ -40,19 +40,37 @@ DQN（深度 Q 网络）— 经验回放、目标网络`
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["数学基础<br/>概率+优化"] --> B["MDP 理论<br/>马尔可夫决策"]
+    B --> C["Value-Based<br/>Q-Learning+DQN"]
+    C --> D["Policy-Based<br/>PPO"]
+    D --> E["进阶<br/>Model-Based+MARL"]
+    
+    style C fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style D fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "RL 算法家族"
+        V1["Value-Based<br/>Q-Learning/DQN"]
+        P1["Policy-Based<br/>REINFORCE/PPO"]
+        A1["Actor-Critic<br/>A2C/A3C"]
+        M1["Model-Based<br/>World Model/Dreamer"]
+    end
+    
+    V1 --> A1
+    P1 --> A1
+    
+    subgraph "核心概念"
+        S["状态 State"] -->|"选择"| A["行动 Action"]
+        A -->|"获得"| R["奖励 Reward"]
+        S -->|"转移到"| T["下一状态"]
+    end
+    
+    style V1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style A1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style M1 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ]
 };

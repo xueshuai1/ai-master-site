@@ -579,10 +579,28 @@ NAACP v **xAI** 案开启了 AI 环境影响监管的先河：
     {
         title: "架构图示",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "AI 法律合规全景"
+        L1["数据隐私法<br/>GDPR/CCPA"] --> L2["AI 专项法规<br/>EU AI Act"]
+        L2 --> L3["知识产权法<br/>版权/专利"]
+        L3 --> L4["消费者保护法<br/>歧视/偏见"]
+        L4 --> L5["行业特定法规<br/>医疗/金融"]
+    end
+    
+    subgraph "开发者合规清单"
+        C1["数据来源合法"]
+        C2["模型输出审查"]
+        C3["用户隐私保护"]
+        C4["透明度披露"]
+        C5["偏见检测缓解"]
+    end
+    
+    L2 --> C1
+    L1 --> C3
+    L3 --> C4
+    L4 --> C5
+    
+    style L2 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style C1 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
     },
   ],
 };

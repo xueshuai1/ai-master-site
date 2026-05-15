@@ -41,19 +41,37 @@ AI 安全不是"有了再说"的事——它必须是设计时就考虑的。`
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["安全基础<br/>威胁模型"] --> B["对抗安全<br/>攻击与防御"]
+    B --> C["对齐安全<br/>RLHF/红队"]
+    C --> D["隐私安全<br/>差分隐私"]
+    D --> E["实战项目<br/>安全评估"]
+    
+    style B fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style C fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "AI 安全三大维度"
+        S1["对抗安全<br/>对抗样本/防御"]
+        S2["对齐安全<br/>价值观对齐/红队"]
+        S3["隐私安全<br/>数据保护/联邦学习"]
+    end
+    
+    subgraph "工具链"
+        T1["对抗攻击库<br/>ART/Foolbox"]
+        T2["红队框架<br/>Garak/PyRIT"]
+        T3["隐私工具<br/>差分隐私"]
+    end
+    
+    S1 -.-> T1
+    S2 -.-> T2
+    S3 -.-> T3
+    
+    style S1 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style S2 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style S3 fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
     ]
 };

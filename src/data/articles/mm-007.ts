@@ -597,10 +597,27 @@ print(report)`
                 {
                     title: "架构图示",
                     mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "多模态大模型演进"
+        M1["视觉-语言<br/>BLIP/Flamingo"] --> M2["统一视觉语言<br/>LLaVA 系列"]
+        M2 --> M3["多模态融合<br/>Gemini/GPT-4o"]
+        M3 --> M4["全模态<br/>音频+视频+文本"]
+    end
+    
+    subgraph "LLaVA 架构"
+        V1["视觉编码器<br/>CLIP ViT"] --> P1["投影层<br/>Linear/MLP"]
+        P1 --> L1["语言模型<br/>LLaMA/Vicuna"]
+    end
+    
+    subgraph "Gemini 架构创新"
+        G1["原生多模态 Transformer"] --> G2["MoE 混合专家"]
+        G1 --> G3["超长上下文窗口"]
+    end
+    
+    M2 --> V1
+    M3 --> G1
+    
+    style M2 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style M3 fill:#b91c1c,stroke:#dc2626,color:#fff`,
                 },
     ],
 };

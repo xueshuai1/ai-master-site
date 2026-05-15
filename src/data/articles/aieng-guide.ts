@@ -55,19 +55,28 @@ export const article: Article = {
         },
         {
             title: "架构图示 1",
-            mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+            mermaid: `graph LR
+    A["原型阶段<br/>Notebook + 本地模型"] -->|"工程化"| B["API 服务<br/>FastAPI + vLLM"]
+    B -->|"容器化"| C["Docker 部署<br/>可重复的环境"]
+    C -->|"编排"| D["K8s 集群<br/>自动扩缩容"]
+    D -->|"生产化"| E["可观测平台<br/>监控+告警+日志"]
+    
+    style B fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style E fill:#b91c1c,stroke:#dc2626,color:#fff`,
         },
         {
             title: "架构图示 2",
             mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "AI 工程化五大阶段"
+        T1["训练<br/>数据准备+模型训练"] --> T2["优化<br/>量化+剪枝+蒸馏"]
+        T2 --> T3["部署<br/>FastAPI+Docker+K8s"]
+        T3 --> T4["监控<br/>漂移检测+性能告警"]
+        T4 --> T5["迭代<br/>A/B测试+灰度发布"]
+        T5 -->|"反馈数据"| T1
+    end
+    
+    style T3 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style T4 fill:#1e3a5f,stroke:#2563eb,color:#fff`,
         },
     ]
 };

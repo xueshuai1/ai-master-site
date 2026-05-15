@@ -417,10 +417,30 @@ docker run -d --gpus all -p 7860:7860 --name voicebox voicebox`,
     {
         title: "架构图示",
         mermaid: `graph TD
-    A["概述"] --> B["原理"]
-    B --> C["实现"]
-    C --> D["应用"]
-    D --> E["总结"]`,
+    subgraph "VoiceBox 架构"
+        A1["多模态输入<br/>文本/音频/参考"] --> A2["Flow Matching 骨干网<br/>非自回归生成"]
+        A2 --> A3["音频输出<br/>TTS/翻译/编辑"]
+    end
+    
+    subgraph "Flow Matching vs 扩散"
+        F1["扩散模型<br/>多步去噪, 慢"] --> F2["Flow Matching<br/>连续流, 快"]
+        F2 --> F3["VoiceBox 优化<br/>知识蒸馏, 4步"]
+    end
+    
+    subgraph "多模态语音任务"
+        T1["文本→语音 TTS"]
+        T2["语音→语音翻译"]
+        T3["音频编辑<br/>风格迁移"]
+        T4["语音变声"]
+    end
+    
+    A2 --> T1
+    A2 --> T2
+    A2 --> T3
+    A2 --> T4
+    
+    style A2 fill:#1e3a5f,stroke:#2563eb,color:#fff
+    style F3 fill:#b91c1c,stroke:#dc2626,color:#fff`,
     },
   ],
 };
