@@ -1,32 +1,32 @@
-⏰ 写入时间：2026-05-15 08:10 (Asia/Shanghai)
+⏰ 写入时间：2026-05-15 08:11 (Asia/Shanghai)
 
-# 本轮发现
+## 本轮发现
+🔥 热点（11 条，已选写入 news-1698~1708）：
+1. [Codex 移动端] OpenAI Codex 正式进入 ChatGPT 手机应用 → 适合：博客/AI 编程移动化
+2. [AI 搜索版权案] 国内首例 AI 搜索版权侵权案终审 → 适合：知识库/AI 法律
+3. [网信办新规] 短视频 AI 内容标注新规，52 万违规视频被查处 → 适合：知识库/AI 治理
+4. [NVIDIA OpenShell] 开源安全 Agent 运行时，5.9k 星 → 适合：工具页
+5. [Heygen HyperFrames] AI Agent 驱动视频生成框架，18k 星 → 适合：工具页/博客
+6. [Ruflo 51k 星] Claude 多智能体编排领跑者 → 适合：知识库/Agent 编排
+7. [线下 AI 商店] 全球首家线下 AI 应用商店上海开幕 → 适合：博客/AI 零售
+8. [可灵 AI 200 亿估值] 快手 AI 视频生成商业化 → 适合：博客/AI 商业化
+9. [arXiv Agent→AGI] Agentic AI 是可预见的 AGI 路径 → 适合：知识库/AGI 路线
+10. [安大略审计] 医生 AI 记录工具频繁捏造事实 → 适合：博客/AI 医疗安全
+11. [CHAL 框架] 层次化多智能体模拟集体决策 → 适合：知识库/多 Agent 架构
 
-## 🔥 热点（10 条，已写入 news-1688~1697）：
-1. [OpenAI 起诉苹果] ChatGPT 集成未达预期，OpenAI 正探索法律行动 → 适合：博客/知识库
-2. [SpaceXAI 人才流失] 合并后 50+ 员工离职， burnout 和留存激励失效 → 适合：博客
-3. [Codex 手机版] OpenAI 宣布 Codex 编程助手将登陆手机端 → 适合：知识库
-4. [Richard Socher 自我进化 AI] 6.5 亿美元融资，构建自主研究改进的 AI 系统 → 适合：博客/知识库
-5. [Cerebras IPO] 融资 55 亿，股价暴涨 108%，2026 首个科技重磅上市 → 适合：博客/知识库
-6. [Mozilla × Mythos] 271 个 Firefox 漏洞被 AI 发现，几乎零误报 → 适合：知识库
-7. [苹果 App Store + AI Agent] 探索将 AI 智能体整合至应用商店，WWDC 2026 或发布 → 适合：博客
-8. [OpenAI TanStack 供应链攻击] 未发现用户数据泄露，macOS 用户需 6 月前更新 → 适合：知识库
-9. [可灵 AI 登顶 42 国 App Store] 3.0 棒球特效视频引爆社交 → 适合：博客
-10. [腾讯 AI 一号位/千里智驾 CEO 辟谣] AI 行业高管人事传闻集中爆发 → 适合：知识库
+🆕 新工具（本轮 add-new-tools 脚本运行：0 个新增，已全部覆盖）：
+- NVIDIA OpenShell（安全 Agent 运行时）— 已有类似项目覆盖
+- Heygen HyperFrames（视频生成）— 可加入 tools.ts 更新
+- Ruflo（Agent 编排）— 已有编排工具覆盖
 
-## 🆕 新工具（0 个）：
-- 本轮 discover-topic-projects 发现 0 个遗漏项目，tools.ts 已全覆盖高星项目
+💡 知识缺口（5 项）：
+1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 搜索版权法与平台责任] — 国内首例 AI 搜索侵权案
+2. KNOWLEDGE-BASE-PLAN.md 待补：[AI 医疗安全审计体系] — 安大略审计报告暴露问题
+3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 视频生成技术全景] — HyperFrames/可灵/Runway 对比
+4. KNOWLEDGE-BASE-PLAN.md 待补：[Agent 集体决策架构] — CHAL vs TradingAgents vs Swarm
+5. KNOWLEDGE-BASE-PLAN.md 待补：[AI Agent 安全运行时] — OpenShell vs Docker vs 沙箱
 
-## 💡 知识缺口（5 项）：
-1. KNOWLEDGE-BASE-PLAN.md 待补：[AI 网络安全] — OpenAI Daybreak vs Anthropic Mythos 深度对比（PM 待处理）
-2. KNOWLEDGE-BASE-PLAN.md 待补：[具身智能] — 宇树 GD01 机甲技术架构（PM 待处理）
-3. KNOWLEDGE-BASE-PLAN.md 待补：[AI 内容治理] — 全球 AI 生成内容标注政策对比（PM 待处理）
-4. KNOWLEDGE-BASE-PLAN.md 待补：[AI 基础设施] — Alphabet/Amazon/Meta 算力投资全景（PM 待处理）
-5. KNOWLEDGE-BASE-PLAN.md 待补：[AI 法律] — 国内首起 AI 搜索版权侵权案法律启示（PM 待处理）
-
-## 📋 本轮新增建议（基于本轮发现）：
-1. 博客：OpenAI vs Apple — AI 巨头合作关系的裂痕与重构
-2. 知识库：AI 自我进化 — Richard Socher 6.5 亿美元项目的技术路径与风险
-3. 博客：Cerebras IPO 深度解读 — 晶圆级引擎技术路线的商业验证
-4. 知识库：Mozilla × Mythos — AI 驱动软件安全的范式转变
-5. 博客：AI 编程移动化 — Codex 手机端发布的行业信号
+🌐 本轮扫描来源：
+- 国外：GitHub API（5 个查询）、Hacker News、arXiv RSS、The Register（6 个来源）
+- 国内：新浪 AI 热点、AI 日报、AItop100（3 个来源）
+- 合计：9 个来源
