@@ -67,7 +67,14 @@ export default function ArticleCard({ article }: { article: Article }) {
 
       {/* Footer */}
       <div className="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-white/5">
-        <span>{article.date}</span>
+        <span className="flex items-center gap-1.5">
+          <span>{article.date}</span>
+          {article.updatedAt && (
+            <span className="text-amber-400" title={`更新于 ${article.updatedAt}`}>
+              🔄 {article.updatedAt}
+            </span>
+          )}
+        </span>
         <div className="flex items-center gap-3">
           <CardStats type="article" id={article.id} />
           <span>📖 {article.readTime}</span>

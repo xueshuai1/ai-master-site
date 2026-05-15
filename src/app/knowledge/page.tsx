@@ -131,13 +131,17 @@ export default function KnowledgePage() {
       result = [...result].sort((a, b) => levelOrder[b.level] - levelOrder[a.level]);
     } else if (sortBy === "date-desc") {
       result = [...result].sort((a, b) => {
-        const dateDiff = new Date(b.date).getTime() - new Date(a.date).getTime();
+        const dateA = a.updatedAt || a.date;
+        const dateB = b.updatedAt || b.date;
+        const dateDiff = new Date(dateB).getTime() - new Date(dateA).getTime();
         if (dateDiff !== 0) return dateDiff;
         return b.id.localeCompare(a.id);
       });
     } else if (sortBy === "date-asc") {
       result = [...result].sort((a, b) => {
-        const dateDiff = new Date(a.date).getTime() - new Date(b.date).getTime();
+        const dateA = a.updatedAt || a.date;
+        const dateB = b.updatedAt || b.date;
+        const dateDiff = new Date(dateA).getTime() - new Date(dateB).getTime();
         if (dateDiff !== 0) return dateDiff;
         return a.id.localeCompare(b.id);
       });
