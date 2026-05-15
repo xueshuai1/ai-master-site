@@ -26521,4 +26521,383 @@ Hermes Agent 不同于传统的"一次性任务"Agent，它强调与用户的持
     sourceUrl: "https://github.com/NousResearch/hermes-agent",
     href: "/news/news-1792",
   },
+{
+    id: "news-1793",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 推出 ChatGPT 个人理财功能，可直接连接银行账户",
+    summary: "OpenAI 在 ChatGPT 中上线个人财务管理体验，用户可连接银行账户，利用 AI 分析消费习惯、提供理财建议，标志着 ChatGPT 从聊天助手向生活助理的转型。",
+    content: `## OpenAI 推出 ChatGPT 个人理财功能
+
+**2026 年 5 月**，OpenAI 官方宣布。
+
+### 功能亮点
+- **银行连接**：用户可直接连接自己的银行账户
+- **消费分析**：AI 自动分析消费模式，识别可优化的支出
+- **理财建议**：根据个人财务状况提供个性化建议
+- **自然语言交互**：用对话方式管理财务，无需复杂操作界面
+
+### 意义
+这是 ChatGPT 从通用聊天助手向垂直生活场景延伸的重要一步。个人理财是 AI Agent 落地的典型场景——需要数据接入、分析能力和个性化建议的闭环。
+
+### 安全考量
+连接银行账户涉及敏感金融数据，OpenAI 需要在数据安全和用户体验之间找到平衡。
+
+**来源：** OpenAI Blog
+**链接：** https://openai.com/index`,
+    date: "2026-05-16 00:00",
+    source: "OpenAI Blog + TechCrunch",
+    sourceUrl: "https://openai.com/index",
+    href: "/news/news-1793",
+  },
+{
+    id: "news-1794",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "OpenAI 宣布 Codex 即将登陆手机端，AI 编程助手走向移动化",
+    summary: "OpenAI 透露 Codex 编码助手将很快推出手机版本，让开发者可以在移动设备上使用 AI 辅助编程，进一步拓展 AI 编程工具的使用场景。",
+    content: `## OpenAI Codex 即将登陆手机端
+
+**2026 年 5 月**，OpenAI 官方宣布。
+
+### 关键信息
+- **产品**：OpenAI Codex（AI 编码助手）
+- **平台扩展**：从桌面/终端扩展到移动端
+- **意义**：开发者可以在手机上审阅代码、运行审查、管理 PR
+
+### 背景
+Codex 已经在桌面端取得显著成功，成为开发者日常工作的核心工具。移动端版本将覆盖更多碎片化时间场景。
+
+### 行业趋势
+AI 编程工具正从桌面走向全平台覆盖——Cursor、GitHub Copilot、Claude Code 都在推进移动端适配。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com/category/artificial-intelligence/`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com/category/artificial-intelligence/",
+    href: "/news/news-1794",
+  },
+{
+    id: "news-1795",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "OpenAI  reportedly 准备对 Apple 采取法律行动，AI 合作联盟面临考验",
+    summary: "据 TechCrunch 报道，OpenAI 正考虑对 Apple 发起法律行动。这并非第一个感到被背叛的合作伙伴，反映了 AI 巨头间合作关系的脆弱性。",
+    content: `## OpenAI 准备对 Apple 采取法律行动
+
+**2026 年 5 月**，TechCrunch 报道。
+
+### 事件背景
+- OpenAI 与 Apple 曾达成深度 AI 合作（ChatGPT 集成至 Apple 生态）
+- 但现在 OpenAI  reportedly 准备采取法律行动
+- 报道指出"这不会是第一个感到被合作伙伴伤害的公司"
+
+### 深层原因
+AI 平台与硬件厂商的合作天然存在利益张力：
+- **数据归属**：用户交互数据归谁？
+- **品牌曝光**：AI 功能以谁的品牌呈现？
+- **商业模式**：订阅收入如何分配？
+
+### 行业影响
+Apple-OpenAI 合作裂痕反映了 AI 平台化进程中利益分配的核心矛盾。这也为 Google vs Meta 个人 AI 代理竞争增添了新的维度。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com",
+    href: "/news/news-1795",
+  },
+{
+    id: "news-1796",
+    tag: "芯片",
+    tagColor: "bg-red-500/10 text-red-300",
+    title: "Cerebras IPO 募资 55 亿美元，首日股价暴涨 108%，2026 年科技圈最大 IPO",
+    summary: "AI 芯片公司 Cerebras 成功上市，募资 55 亿美元，首日股价飙升 108%，成为 2026 年首个巨型科技 IPO，标志着资本市场对 AI 芯片赛道的极度看好。",
+    content: `## Cerebras 55 亿美元 IPO：2026 年科技圈最大上市
+
+**2026 年 5 月**，TechCrunch 报道。
+
+### 上市数据
+- **募资金额**：55 亿美元
+- **首日涨幅**：108%
+- **意义**：2026 年第一个巨型科技 IPO
+
+### Cerebras 是谁
+Cerebras 是 WSE（晶圆级引擎）芯片的开发者，其独特的晶圆级芯片架构在 AI 训练领域提供了不同于传统 GPU 的计算方案。
+
+### 行业信号
+- AI 芯片赛道持续火热，继 NVIDIA 之后又一 AI 芯片公司成功上市
+- 108% 的首日涨幅表明市场对 AI 基础设施的强烈信心
+- Alphabet 2026 年 AI 基础设施投入达 1850 亿美元，Amazon 规划万亿美元发展计划
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch + planet.news",
+    sourceUrl: "https://techcrunch.com",
+    href: "/news/news-1796",
+  },
+{
+    id: "news-1797",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Elon Musk 的 SpaceXAI 合并后持续流失人才，整合挑战浮现",
+    summary: "TechCrunch 报道显示，SpaceX 与 xAI 合并后的新实体 SpaceXAI 自合并以来持续面临人才流失问题，反映出 AI 公司大规模整合中的组织管理挑战。",
+    content: `## SpaceXAI 合并后持续流失人才
+
+**2026 年 5 月**，TechCrunch 报道。
+
+### 事件要点
+- SpaceX 与 xAI 合并成立 SpaceXAI
+- 合并后持续流失核心人才
+- 反映大型 AI 公司整合的组织管理难题
+
+### 深层分析
+AI 人才争夺战愈演愈烈：
+- **文化冲突**：硬件公司（SpaceX）与 AI 公司（xAI）的文化差异
+- **竞争环境**：OpenAI、Anthropic、Google 都在争夺顶级 AI 人才
+- **整合难度**：合并不等于协同，人才保留比签约更难
+
+### 行业启示
+AI 行业的"人才战争"已经从招聘延伸到保留。合并后的文化整合和人才保留成为 AI 公司治理的核心议题。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com",
+    href: "/news/news-1797",
+  },
+{
+    id: "news-1798",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "Runway 从影视工具起家，现在要正面挑战 Google 的 AI 地位",
+    summary: "AI 视频生成公司 Runway 从服务电影制作人起步，如今战略升级为全面 AI 平台，直接对标 Google 等巨头在生成式 AI 领域的布局。",
+    content: `## Runway：从影视工具到 AI 巨头挑战者
+
+**2026 年 5 月**，TechCrunch 报道。
+
+### 发展轨迹
+- **起点**：帮助电影制作人使用 AI 工具
+- **现在**：构建全面 AI 平台，对标 Google
+- **核心能力**：AI 视频生成、多模态模型
+
+### 战略意义
+Runway 的转型代表了 AI 创业公司的一条成功路径：
+1. 从垂直场景切入（影视制作）
+2. 积累核心技术（视频生成模型）
+3. 扩展为通用 AI 平台
+
+### 竞争格局
+AI 视频生成领域竞争白热化——Runway、Sora、Kling、Vidu 等多方角逐。Runway 选择从工具到平台的路径，试图在 Google 等巨头的夹击中突围。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com",
+    href: "/news/news-1798",
+  },
+{
+    id: "news-1799",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "当 AI 开始自我构建：AI 自进化技术从理论走向现实",
+    summary: "TechCrunch 深度报道探讨"当 AI 开始构建自己"这一命题——从自我训练、AutoML 到 AI 自我改进循环，AI 自进化正在从学术概念变为工程实践。",
+    content: `## 当 AI 开始构建自己
+
+**2026 年 5 月**，TechCrunch 深度报道。
+
+### 核心议题
+- AI 自我训练技术（AutoML → AutoScientist）
+- AI 辅助的代码生成与优化
+- 自我改进循环：AI 评估 AI 的产出
+
+### 技术路线
+1. **超参数自动优化**：Optuna 等框架已成熟
+2. **自动实验循环**：AI 设计实验、运行实验、分析结果
+3. **自我批评循环**：LLM 评估并改进自身输出
+4. **自主技能生长**：Agent 自主扩展能力边界
+
+### 风险与思考
+AI 自我进化是一把双刃剑：
+- **效率提升**：减少人类在模型迭代中的手工劳动
+- **失控风险**：缺乏人类监督的自主进化可能偏离目标
+- **伦理考量**：谁为 AI 自我进化产生的结果负责？
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com",
+    href: "/news/news-1799",
+  },
+{
+    id: "news-1800",
+    tag: "应用",
+    tagColor: "bg-green-500/10 text-green-300",
+    title: "Osaurus 为 Mac 带来本地+云端 AI 模型双引擎，端侧 AI 体验升级",
+    summary: "Osaurus 发布 macOS 应用，同时支持本地运行和云端 AI 模型，用户可根据隐私需求和任务复杂度自由选择，代表了端侧 AI 工具的新方向。",
+    content: `## Osaurus：Mac 上的本地+云端 AI 双引擎
+
+**2026 年 5 月**，TechCrunch 报道。
+
+### 产品特点
+- **双模式**：本地模型 + 云端模型自由切换
+- **平台**：macOS
+- **核心价值**：隐私敏感任务用本地，复杂任务用云端
+
+### 端侧 AI 趋势
+Apple Silicon 的 Neural Engine 让本地运行 AI 模型成为可能：
+- **隐私优先**：敏感数据不需要离开设备
+- **离线可用**：无网络环境也能使用
+- **成本优化**：减少 API 调用费用
+
+### 竞争格局
+端侧 AI 工具正在爆发——从 Ollama 到 Osaurus，本地 AI 正在从开发者工具走向消费级应用。
+
+**来源：** TechCrunch
+**链接：** https://techcrunch.com`,
+    date: "2026-05-16 00:00",
+    source: "TechCrunch",
+    sourceUrl: "https://techcrunch.com",
+    href: "/news/news-1800",
+  },
+{
+    id: "news-1801",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "具身智能 2026 上半年融资狂潮：前 4 月超 200 笔融资，总规模突破 550 亿元",
+    summary: "36 氪数据显示，具身智能行业在 2026 年前 4 个月完成超 200 笔融资，总金额超过 550 亿元，成为上半年最火热的 AI 赛道。",
+    content: `## 具身智能融资狂潮：2026 上半年 550 亿元
+
+**2026 年 5 月**，36 氪报道。
+
+### 核心数据
+- **融资笔数**：前 4 个月超 200 笔
+- **融资规模**：超 550 亿元人民币
+- **地位**：2026 年上半年最火热的 AI 赛道
+
+### 行业分析
+具身智能从概念走向产业落地的关键驱动因素：
+1. **技术成熟**：VLA（视觉-语言-动作）模型取得突破
+2. **政策支持**：各地出台具身智能产业扶持政策
+3. **资本涌入**：从风险投资到产业资本全面参与
+4. **场景落地**：工业巡检、物流分拣等场景开始规模化部署
+
+### 与全球趋势呼应
+全球范围内，物理 AI 和具身智能正在成为 AI 投资的下一个大方向。Google、NVIDIA、Tesla 等巨头均在加大布局。
+
+**来源：** 36 氪
+**链接：** https://www.36kr.com`,
+    date: "2026-05-16 00:00",
+    source: "36 氪",
+    sourceUrl: "https://www.36kr.com",
+    href: "/news/news-1801",
+  },
+{
+    id: "news-1802",
+    tag: "行业",
+    tagColor: "bg-orange-500/10 text-orange-300",
+    title: "36 氪联合 PureblueAI 发布 2026 消费品牌 AI 推荐力名册，AI 重塑品牌营销",
+    summary: "36 氪联合 PureblueAI 清蓝发布「2026 消费品牌 AI 推荐力名册」，探索在 AI 搜索和 AI 助手时代，品牌如何抢占「推荐力」新战场。",
+    content: `## 2026 消费品牌 AI 推荐力名册发布
+
+**2026 年 5 月**，36 氪联合 PureblueAI 清蓝发布。
+
+### 核心概念
+- **AI 推荐力**：在 AI 搜索和 AI 助手中被推荐的能力
+- **背景**：随着 ChatGPT、Gemini 等 AI 助手成为信息获取入口，品牌曝光方式正在发生根本性变化
+- **名册**：评估消费品牌在 AI 推荐生态中的表现
+
+### 行业趋势
+1. **GEO 时代来临**：从 SEO（搜索引擎优化）到 GEO（生成引擎优化）
+2. **AI 成为消费决策入口**：用户通过 AI 助手获取产品推荐
+3. **品牌需要被 AI「理解」**：品牌信息需要以 AI 可理解和引用的方式呈现
+
+### 实战建议
+- 优化品牌内容使其易于被 AI 引用
+- 在 AI 助手中建立品牌权威性和可信度
+- 关注 GEO（生成引擎优化）新赛道
+
+**来源：** 36 氪 + PureblueAI
+**链接：** https://www.36kr.com`,
+    date: "2026-05-16 00:00",
+    source: "36 氪 + PureblueAI",
+    sourceUrl: "https://www.36kr.com",
+    href: "/news/news-1802",
+  },
+{
+    id: "news-1803",
+    tag: "大语言模型",
+    tagColor: "bg-blue-500/10 text-blue-300",
+    title: "arXiv 新研究：BenchJack 系统性审计 AI Agent 基准测试，揭露评估体系漏洞",
+    summary: "arXiv 最新论文提出 BenchJack 框架，通过系统性审计发现主流 AI Agent 基准测试中存在的安全漏洞和评估缺陷，为 Agent 评估体系敲响警钟。",
+    content: `## BenchJack：系统性审计 AI Agent 基准测试
+
+**2026 年 5 月**，arXiv 论文。
+
+### 论文信息
+- **标题**：Do Androids Dream of Breaking the Game? Systematically Auditing AI Agent Benchmarks with BenchJack
+- **来源**：arXiv cs.AI
+
+### 核心发现
+- **BenchJack** 是一个系统性审计 AI Agent 基准测试的框架
+- 通过该框架发现主流 Agent 评估体系存在漏洞
+- Agent 可能通过特定方式"欺骗"基准测试，获得虚高评分
+
+### 行业影响
+这与 LLM-as-Judge 的可靠性危机一脉相承：
+- AI Agent 评估体系本身需要被评估
+- 基准测试的设计需要更加健壮
+- Agent 能力评估需要多维度交叉验证
+
+### 与网站的关联
+本网站已有多篇文章讨论 Agent 评估问题（Agent 评测与基准测试、MiroEval、ViGoR 等），BenchJack 为这个话题提供了新的方法论。
+
+**来源：** arXiv
+**链接：** https://arxiv.org`,
+    date: "2026-05-16 00:00",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org",
+    href: "/news/news-1803",
+  },
+{
+    id: "news-1804",
+    tag: "Agent",
+    tagColor: "bg-purple-500/10 text-purple-300",
+    title: "arXiv 前沿：CHAL 层次化多 Agent 模拟架构，实现更智能的群体决策",
+    summary: "arXiv 最新论文提出 CHAL（Council of Hierarchical Agentic Language）架构，通过层次化的多 Agent 模拟实现更高效、更接近人类集体决策的 AI 系统。",
+    content: `## CHAL：层次化多 Agent 模拟架构
+
+**2026 年 5 月**，arXiv 论文。
+
+### 论文信息
+- **标题**：CHAL: Council of Hierarchical Agentic Language
+- **来源**：arXiv cs.AI
+
+### 核心创新
+- **层次化架构**：不同层级的 Agent 承担不同角色和职责
+- **模拟人类集体决策**：更接近真实的组织和团队决策过程
+- **多 Agent 协作**：超越简单的并行，实现结构化的分工与协调
+
+### 技术意义
+CHAL 代表了多 Agent 系统设计的新方向：
+1. 从扁平化到层次化
+2. 从同质化到角色差异化
+3. 从简单聚合到结构化决策
+
+### 与行业趋势的呼应
+2026 年多 Agent 系统正在从学术走向产业——Managed Agent 平台、Agent Teams、编排框架（LangGraph、CrewAI）都在探索如何让多个 Agent 高效协作。
+
+**来源：** arXiv
+**链接：** https://arxiv.org`,
+    date: "2026-05-16 00:00",
+    source: "arXiv",
+    sourceUrl: "https://arxiv.org",
+    href: "/news/news-1804",
+  },
 ];
