@@ -380,6 +380,7 @@ import { article as edgeAi001 } from './articles/edge-ai-001';
 import { article as aiProactive001 } from './articles/ai-proactive-001';
 import { article as selftrain001 } from './articles/selftrain-001';
 import { article as agent057 } from './articles/agent-057';
+import { article as agent059 } from './articles/agent-059';
 export const articles: Article[] = [
   headlessAi001,
   ai000,
@@ -701,4 +702,5 @@ export const articles: Article[] = [
   aiProactive001,
   selftrain001,
   agent057,
+  agent059,
 ];
