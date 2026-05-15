@@ -31,10 +31,10 @@ export const article: Article = {
     style C fill:#475569,stroke:#94a3b8,color:#fff
     style D fill:#92400e,stroke:#d97706,color:#fff
     style E fill:#047857,stroke:#059669,color:#fff
-    style F fill:#7c3aed,stroke:#8b5cf6,color:#fff
-    style J fill:#b91c1c,stroke:#ef4444,color:#fff
+    style F fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style J fill:#b91c1c,stroke:#dc2626,color:#fff
     
-    classDef probe fill:#fbbf24,stroke:#f59e0b,color:#000
+    classDef probe fill:#78350f,stroke:#92400e,color:#fff
     C -.观测探针.- probe1[规划 Tracing]
     D -.观测探针.- probe2[推理 Tracing]
     E -.观测探针.- probe3[工具 Tracing]
@@ -74,7 +74,7 @@ Span 树分析"]
     B -->|"这步为什么失败？"| C
     C -->|"找到了根因"| D
     
-    style A fill:#b91c1c,stroke:#ef4444,color:#fff
+    style A fill:#b91c1c,stroke:#dc2626,color:#fff
     style B fill:#92400e,stroke:#d97706,color:#fff
     style C fill:#047857,stroke:#059669,color:#fff
     style D fill:#475569,stroke:#94a3b8,color:#fff`,
@@ -219,8 +219,8 @@ Loki/Elastic"]
     style A1 fill:#475569,stroke:#94a3b8,color:#fff
     style A2 fill:#92400e,stroke:#d97706,color:#fff
     style A3 fill:#047857,stroke:#059669,color:#fff
-    style A4 fill:#7c3aed,stroke:#8b5cf6,color:#fff
-    style A5 fill:#b91c1c,stroke:#ef4444,color:#fff`,
+    style A4 fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style A5 fill:#b91c1c,stroke:#dc2626,color:#fff`,
       tip: "架构选型建议：小型项目（月请求 < 10 万）可以用 LangSmith 或 Langfuse 的一体化方案，开箱即用。中型项目（10 万-100 万请求/月）建议采用 Langfuse + Prometheus 的组合。大型项目（100 万+/月）需要自建，使用 OpenTelemetry SDK + Jaeger/Tempo + Prometheus + Loki 的完整技术栈。",
       warning: "架构设计陷阱：不要把 Tracing、Metrics 和 Logging 强行塞进同一个存储系统。虽然一些一体化工具声称支持所有三种数据类型，但在数据量增长后，单一存储系统会成为性能瓶颈。正确的做法是让每种数据类型使用最适合的存储引擎，通过关联键实现跨系统查询。",
     },
@@ -367,7 +367,7 @@ for (const diff of diffs) {
     style D fill:#92400e,stroke:#d97706,color:#fff
     style F fill:#047857,stroke:#059669,color:#fff
     style G fill:#047857,stroke:#059669,color:#fff
-    style H fill:#b91c1c,stroke:#ef4444,color:#fff`,
+    style H fill:#b91c1c,stroke:#dc2626,color:#fff`,
       tip: "调试技巧：建立一个「已知问题库」，将常见的根因类型和修复方案记录下来。当新问题时，先在已知问题库中搜索相似案例——80% 的 Agent 问题属于已知的根因类型，可以直接套用修复方案。",
       warning: "调试陷阱：不要只修复「当前这个请求」的问题。如果一个问题出现了，它很可能以微小变体的形式再次出现。修复时一定要思考「这类问题的通用解法是什么」，而不是「这个特定请求怎么修好」。",
     },
@@ -513,9 +513,9 @@ Agent 自动检测和修复问题"]
     style B fill:#92400e,stroke:#d97706,color:#fff
     style C fill:#92400e,stroke:#d97706,color:#fff
     style D fill:#92400e,stroke:#d97706,color:#fff
-    style E fill:#b91c1c,stroke:#ef4444,color:#fff
-    style F fill:#b91c1c,stroke:#ef4444,color:#fff
-    style G fill:#b91c1c,stroke:#ef4444,color:#fff`,
+    style E fill:#b91c1c,stroke:#dc2626,color:#fff
+    style F fill:#b91c1c,stroke:#dc2626,color:#fff
+    style G fill:#b91c1c,stroke:#dc2626,color:#fff`,
       tip: "学习路径建议：先掌握单 Agent 可观测性（本文内容），再学习 Agent 基准测试和评测方法，最后探索多 Agent 系统的观测方案。不要跳过基础直接学多 Agent——单 Agent 的观测方法论是多 Agent 观测的基石。",
       warning: "领域趋势提醒：Agent 可观测性工具的 API 和数据结构仍在快速演进中。如果你在生产环境中依赖了某个工具的特定数据格式，建议在代码中做**适配层封装**，而不是直接依赖工具的原始 API——这样在工具升级或迁移时，适配成本最低。",
     }

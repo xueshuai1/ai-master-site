@@ -33,7 +33,7 @@ const content: ArticleSection[] = [
     
     style A fill:#475569,stroke:#94a3b8,color:#fff
     style B fill:#047857,stroke:#059669,color:#fff
-    style M fill:#b91c1c,stroke:#ef4444,color:#fff`,
+    style M fill:#b91c1c,stroke:#dc2626,color:#fff`,
     tip: "关键洞察：Google 的最大优势不是技术，而是数据。Remy 能够访问的**个人数据量**是任何其他代理的 10 倍以上。这是 Google 在代理人战争中的**核心护城河**——不是模型能力，而是上下文深度。",
     warning: "风险提醒：Google 的「数据优势」同时也是它的「隐私劣势」。用户对将如此多的个人数据交给一个 AI 代理存在天然的**隐私担忧**。如果 Remy 不能建立强有力的隐私保护机制，数据优势反而会成为用户的**信任障碍**。",
   },
@@ -187,7 +187,7 @@ print(f"发现 {len(candidates)} 个可用代理")`
     
     style A fill:#475569,stroke:#94a3b8,color:#fff
     style B fill:#92400e,stroke:#d97706,color:#fff
-    style C fill:#b91c1c,stroke:#ef4444,color:#fff
+    style C fill:#b91c1c,stroke:#dc2626,color:#fff
     style F fill:#047857,stroke:#059669,color:#fff`,
     tip: "战略判断：代理人战争的胜出者不一定是最先发布的公司。回顾浏览器大战和智能手机大战的历程，**生态繁荣度**和**开发者友好度**往往比**产品先行优势**更重要。Meta 的开源策略虽然起步晚，但可能在长期构建更强大的生态护城河。",
     warning: "行业风险：代理层的竞争可能导致**用户数据垄断**的加剧。如果一家公司同时控制了你的个人数据（通过代理）和你的消费渠道（通过推荐和交易），它就拥有了前所未有的市场支配力。这需要监管层面的关注和回应。",
@@ -292,7 +292,7 @@ async function evaluateServiceMatch(
     D --> D3["Meta 间接收益"]
     
     style A fill:#475569,stroke:#94a3b8,color:#fff
-    style B fill:#b91c1c,stroke:#ef4444,color:#fff
+    style B fill:#b91c1c,stroke:#dc2626,color:#fff
     style C fill:#92400e,stroke:#d97706,color:#fff
     style D fill:#047857,stroke:#059669,color:#fff`,
     table: {
