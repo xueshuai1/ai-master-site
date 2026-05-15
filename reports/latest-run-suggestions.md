@@ -1,17 +1,17 @@
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：OpenAI 服务化转型 2.0 — ChatGPT 个人理财背后的"AI 生活操作系统"商业逻辑
-2. 知识库：Cerebras WSE 芯片技术路线 — 晶圆级计算如何挑战 GPU 霸权
+1. 博客：Anthropic 企业采纳率首超 OpenAI 深度分析 — 从"安全 AI"到"企业 AI 之王"的战略跃迁
+2. 知识库：OpenAI DeployCo 商业模式拆解 — 40 亿美元企业部署公司的战略逻辑与行业影响
 
 ## 可延后执行（其余建议）
-1. 博客：OpenAI vs Apple 法律行动深度分析 — AI 合作联盟的信任危机
-2. 知识库：具身智能融资狂潮解读 — 550 亿背后的产业逻辑与投资机会
-3. 博客：Runway 的 AI 平台化之路 — 从垂直工具到通用平台的跃迁方法论
-4. 知识库：BenchJack 方法论 — AI Agent 基准测试的安全审计框架
-5. 博客：GEO 时代品牌营销变革 — 从 SEO 到生成引擎优化的范式转移
+1. 博客：Claude 恢复 40 万美元比特币钱包 — AI 在个人数据恢复领域的应用边界
+2. 知识库：中国 Agent 行业规范解读 — AI 智能体标准化框架的技术要求与落地路径
+3. 博客：AI 模型架构创新时代 — 从"拼参数"到"拼架构"的行业范式转变
+4. 知识库：AI 基础设施万亿美元投资分析 — Alphabet/Amazon 的算力豪赌与回报风险
+5. 博客：Agent 取代 App — 2026 年 AI 交互范式的终极演进
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（国外 TechCrunch/OpenAI/arXiv + 国内 36 氪），更新新闻 12 条（news-1793~news-1804）
+- 本轮扫描 12+ 来源（国外 9 + 国内 4），更新新闻 12 条（news-1805~news-1816）
 - 工具库全覆盖，无需新增
-- 热点：OpenAI 个人理财/Codex 移动端/OpenAI-Apple 法律纠纷/Cerebras IPO 108%暴涨/SpaceXAI 人才流失/Runway AI 平台化/AI 自进化/Osaurus 端侧 AI/具身智能 550 亿融资/AI 推荐力/BenchAgent 基准审计/CHAL 层次化多 Agent
+- 热点：Claude 恢复 BTC 钱包/OpenAI 40 亿 DeployCo/Anthropic 采纳率首超 OpenAI/中国 Agent 规范/NVIDIA 5.6 万亿/MediaTek 天玑开发者大会/江苏 AI+ 行动/深圳 AI 展/企业部署竞赛/模型架构创新/万亿美元 AI 投资/七大趋势
