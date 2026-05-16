@@ -1,22 +1,20 @@
-# 下次建议（2026-05-17 00:06）
+# 下次建议（2026-05-17 04:00）
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：Google AI Impact Summit 2026 全景解读 — 全球合作伙伴、资金投入与 AI 普惠愿景
-2. 知识库：AI Agent 记忆层全景 — mem0 5.6 万星背后的技术架构与生态趋势
+1. 博客：五角大楼 8 家 AI 协议深度解读 — Anthropic 被排除的安全伦理博弈
+2. 知识库：中国 AI 大模型融资全景 — Kimi 200亿 + DeepSeek 450亿估值背后的资本逻辑
 
 ## 可延后执行（其余建议）
-1. 博客：arXiv 多 Agent 安全研究 —「隐形编排者」的安全隐患深度解读
-2. 知识库：hermes-agent 15 万星背后的技术解析 — 从静态工具到持续进化伙伴
-3. 博客：deer-flow 超级 Agent 框架 — 字节跳动的长期任务编排引擎
-4. 知识库：Firecrawl 12 万星解读 — AI Agent 的数据管道基础设施
-5. 博客：PREPING 论文解读 — 无需任务训练的 Agent 记忆构建新方法
-6. 知识库：Gemma 4 推理加速技术 — 多 Token 预测 Drafters 的实现原理
-7. 博客：LLM 合成数据新方案 — 多阶段飞行中拒绝机制的 Token 效率革命
-8. 知识库：Gemini API 文件搜索多模态升级 — RAG 系统进入多模态时代
+1. 博客：OpenAI 关闭 Sora 全解析 — 从 10 亿迪士尼合作到 IPO 战略转向
+2. 知识库：Meta Autodata 技术架构 — AI Agent 作为自主数据科学家的闭环工作流
+3. 博客：GPT-5.5 vs Claude Opus 4.7 vs Gemini 3.1 Pro — 三旗舰模型对比评测
+4. 知识库：Qwen3.6-27B 架构创新 — 27B 密集模型超越 397B MoE 的技术原理
+5. 博客：腾讯开源机器人互连技术 — 机器人生态的 TCP/IP 时刻
+6. 知识库：OpenClaw 37 万星背后的架构设计 — 跨平台个人 AI 助理的技术实现
+7. 博客：OpenAI + Anthropic 115 亿美元合资企业 — 咨询行业面临 AI 原生颠覆
 
 ## Findings 摘要
-- 本轮扫描 10+ 来源（arXiv cs.AI/cs.LG + GitHub API + Google AI Blog + Simon Willison + MIT Tech Review + 36氪 + Reuters），更新新闻 12 条（news-1937~news-1948）
-- 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具），discover-topic-projects 也无遗漏
-- AI Topic 库已有 7,737 个 topic，无需补充
-- 热点：hermes-agent 15万星/deer-flow 6.8万星/firecrawl 12万星/mem0 5.6万星/nanobot 4.3万星/Gemini 3.1 Flash-Lite GA/Gemini API 多模态文件搜索/Gemma 4 推理加速/AI Impact Summit 2026/多 Agent 安全隐患/LLM 双速学习/合成数据 Token 效率/PREPING 记忆构建
-- PM 缺口：8 项待 PM 阶段选题
+- 本轮扫描 12+ 来源（GitHub API + web_search + TechCrunch + Reuters + 深圳新闻网 + 澎湃新闻 + 36氪 + MarkTechPost），更新新闻 12 条（news-1949~news-1960）
+- 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具），discover-topic-projects 发现 65 个遗漏项目但 stars 均未超已有项目
+- 热点：五角大楼AI协议(Anthropic被排除)/OpenAI+Anthropic合资企业/深圳AI终端展/Kimi 20亿融资/Meta Autodata/GPT-5.5三强对比/Sora关闭/OpenClaw 37万星/Qwen3.6-27B架构创新/DeepSeek 450亿估值/腾讯机器人互连
+- PM 缺口：7 项待 PM 阶段选题

@@ -1,4 +1,5 @@
 ## 2026-05-17
+- [04:00] e314e8e7 — 研究员: 扫描12+来源(GitHub API/web_search/TechCrunch/Reuters/深圳新闻网/澎湃新闻/36氪), 新闻12条(news-1949~1960), 工具0个(已全覆盖), 待PM, 已推送
 - [03:00] 90e717ae — QA 验证(2484/0/0),Build+TS全通过,路由全200,Mermaid配色修复随提交,无新bug
 - [00:06] d67d7ca3 — 研究员: 扫描10+来源(arXiv/GitHub API/Google AI Blog), 新闻12条(news-1937~news-1948), 工具0个(已全覆盖), 待PM, 已推送
 ## 2026-05-16
