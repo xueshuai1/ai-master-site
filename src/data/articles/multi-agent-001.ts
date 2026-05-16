@@ -109,35 +109,10 @@ Agent 之间交叉验证产出"]
 - 设计和调试复杂度最高
 - 需要清晰定义每个节点的状态输入输出`,
     code: [
-      {
-        lang: "text",
-        code: `
-用户输入 → 分析 Agent → 搜索 Agent → 综合 Agent → 审查 Agent → 最终输出`,
-      },
-      {
-        lang: "text",
-        code: `
-用户提出问题 → 所有 Agent 同时收到问题
-→ Agent A 发言 → Agent B 基于 A 的发言补充或反驳
-→ Agent C 综合 A 和 B 的观点 → Manager Agent 判断是否达成共识
-→ 达成共识 → 输出最终答案；未达成共识 → 继续讨论`,
-      },
-      {
-        lang: "text",
-        code: `
-用户提交复杂任务 → Manager Agent 分解为子任务
-→ 分配给 Worker A（子任务 1）和 Worker B（子任务 2）
-→ Worker A 和 Worker B 并行执行
-→ Manager 汇总结果并整合 → 输出`,
-      },
-      {
-        lang: "text",
-        code: `
-[START] → [Router: 判断任务类型]
-  → 代码任务 → [Code Agent] → [Review Agent] → [END]
-  → 写作任务 → [Writer Agent] → [Editor Agent] → [END]
-  → 研究任务 → [Search Agent] → [Synthesis Agent] → [END]`,
-      },
+      // 流程图已移至 body 正文,
+      // 流程图已移至 body 正文,
+      // 流程图已移至 body 正文,
+      // 流程图已移至 body 正文,
     ],
       mermaid: `graph LR
     subgraph "流水线模式"

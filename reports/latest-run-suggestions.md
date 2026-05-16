@@ -1,18 +1,18 @@
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：OpenAI 部署公司深度分析 — 从模型公司到 AI 服务商的战略转型
-2. 知识库：Cerebras 晶圆级芯片架构拆解 — WSE 技术原理与推理加速优势
+1. 博客：阿里 Qoder 1.0 深度评测 — 从需求到交付的 AI 编程全流程实战
+2. 知识库：Hermes 预训练新范式 — 不改模型架构降低 60% 算力成本的技术解析
 
 ## 可延后执行（其余建议）
-1. 博客：AI 驱动黑客攻击工业化 — 网络安全的范式转变与应对策略
-2. 知识库：Google Omni 视频生成系统前瞻 — Gemini 多模态能力扩展
-3. 博客：中美 AI 护栏机制对话 — 全球 AI 治理的新阶段
-4. 知识库：Meta AutoData 框架解析 — AI 训练数据自动化的技术路线
-5. 博客：企业首席 AI 官时代 — AI 从工具到战略的组织变革
-6. 知识库：全球 AI 扩散率趋势分析 — 2026 Q1 数据解读
+1. 博客：Gemini 3.5 Pro「卡布奇诺」前瞻 — Google 24 小时 Agent Spark 的技术路线
+2. 知识库：联发科天玑芯片端侧 AI 架构 — 从 NPU 到 Agent 的全栈设计
+3. 博客：蚂蚁百灵 Ring-2.6-1T 开源解读 — Agent 执行能力增强的技术细节
+4. 知识库：容联云「数字员工」Agent 平台 — 大模型时代联络中心的技术架构
+5. 博客：具身智能的「人类学习」路线 — 从强化学习到认知模仿的范式转变
+6. 知识库：吴恩达反 AI 就业末日论 — AI 时代的技能升级路线图
 
 ## Findings 摘要
-- 本轮扫描 10+ 来源（国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网/Baidu 搜索），更新新闻 12 条（news-1829~news-1840）
+- 本轮扫描 12+ 来源（国外：HN RSS/arXiv + 国内：量子位/36氪），更新新闻 12 条（news-1841~news-1852）
 - 工具库全覆盖，add-new-tools 脚本运行无遗漏
-- 热点：OpenAI部署公司/Anthropic Mythos暴露银行漏洞/AI黑客工业化/Cerebras IPO暴涨89%/Alphabet 4.8万亿市值/Google Omni视频系统/Meta AutoData/全球AI采用率17.8%/中美AI护栏对话/首席AI官趋势/深圳AI终端展/AI芯片需求周期
+- 热点：Gemini 3.5 Pro 曝光/蚂蚁百灵 Ring-2.6-1T 开源/阿里 Qoder 1.0 发布/华为云 Agentic AI/联发科天玑端侧 AI/容联云数字员工平台/具身智能人类学习路线/AI 就业末日论争议/Hermes 预训练降本/AI 购物实测/天津机器人产业/诺和诺德×OpenAI

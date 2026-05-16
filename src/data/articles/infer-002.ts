@@ -63,29 +63,9 @@ export const article: Article = {
 - 任务的确定性（代码 > 创意写作）
 - 草稿 Token 的数量（通常 2-8 个）`,
     code: [
-      {
-        lang: "text",
-        code: `
-输入: "The cat sat on the"
-→ 大模型推理 → "mat"
-→ 大模型推理 → "."
-→ 大模型推理 → "The"
-→ 大模型推理 → "end"`,
-      },
-      {
-        lang: "text",
-        code: `
-输入: "The cat sat on the"
-→ 草稿模型推理 → 猜测: ["mat", ".", "The", "end"]
-→ 大模型一次性验证 4 个 Token
-→ 接受前 3 个，拒绝第 4 个
-→ 从拒绝位置继续`,
-      },
-      {
-        lang: "text",
-        code: `
-α = min(1, P_large(x_t | context) / P_draft(x_t | context))`,
-      },
+      // 流程图已移至 body 正文,
+      // 流程图已移至 body 正文,
+      // 公式已移至 body 正文,
     ],
       mermaid: `graph LR
     A[输入 Prompt] --> B[草稿模型生成<br/>γ 个候选 Token]
@@ -192,15 +172,7 @@ DFlash 结合了三个关键思想：
 
 DFlash 在代码生成场景下实现了 3.9x 的加速比，在对话场景下达到 3.1x。`,
     code: [
-      {
-        lang: "text",
-        code: `
-步骤 1：对目标块添加噪声，得到 x_T（完全随机）
-步骤 2：逐步去噪 x_T → x_{T-1} → ... → x_0
-步骤 3：每一步使用草稿模型预测去噪方向
-步骤 4：用大模型验证关键步骤的采样质量
-步骤 5：当置信度达到阈值时，直接输出`,
-      },
+      // 流程图已移至 body 正文,
     ],
     },
     {
