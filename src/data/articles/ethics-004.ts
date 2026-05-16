@@ -4,10 +4,10 @@ export const article: Article = {
     id: "ethics-004",
     title: "AI 安全：对抗攻击与防御",
     category: "ethics",
-    tags: ["AI安全", "对抗攻击", "鲁棒性"],
+    tags: ["AI安全", "对抗攻击", "鲁棒性", "Agent安全", "提示注入", "工具劫持"],
     summary: "从对抗样本到鲁棒训练，理解 AI 系统的安全挑战",
     date: "2026-04-12",
-    readTime: "18 min",
+    readTime: "22 min",
     level: "高级",
     content: [
         {
@@ -476,6 +476,114 @@ Metrics"]
 定期重评估"]`,
             tip: "在安全审计中使用 AutoAttack 作为默认评估工具。它是多种攻击方法的集成，能自动选择最有效的攻击策略，避免单一攻击方法导致的误判。",
             warning: "ART 的对抗训练会显著增加训练时间（通常是 3-10 倍）。对于大型模型，建议使用部分数据进行对抗训练预评估，确认有效后再全量训练。"
+        },
+        {
+            title: "8. Agent 安全与多智能体系统风险（更新于 2026-05-17）",
+            body: `2026 年，随着 **AI Agent** 从实验室走向**生产环境**，对抗安全的研究范围从传统 ML 模型和 LLM 扩展到了 **Agent 系统本身**。Agent 不同于静态模型——它具有**自主决策**、**工具调用**和**多步执行**能力，这引入了**全新的攻击面和防御挑战**。
+
+**Agent 特有的安全威胁**：
+
+**工具调用劫持**（Tool Call Hijacking）：攻击者通过**提示注入**操控 Agent 调用**恶意工具**或**以错误参数调用合法工具**。例如：一个购物 Agent 本应调用「价格查询 API」，但被注入后调用了「转账 API」。与传统提示注入不同，工具调用劫持的后果更直接——它能**立即执行破坏性操作**（转账、删除数据、发送消息）。
+
+**多 Agent 编排攻击**（Multi-Agent Orchestration Attack）：在**多智能体系统**中，Agent 之间存在**协作和通信**关系。攻击者可以针对系统中的**薄弱环节 Agent**（如安全策略较弱的子 Agent）进行攻击，利用该 Agent 作为**跳板**影响其他 Agent。这种**横向移动**（Lateral Movement）与网络安全中的 APT 攻击有相似之处——不直接攻击目标，而是从防御最弱的节点入手。
+
+**记忆投毒**（Memory Poisoning）：如 agent-062 所述，Agent 的记忆系统是其**核心资产**。攻击者通过多次对话向 Agent 记忆库中注入**错误信息**，使其在后续交互中**持续做出错误决策**。这种攻击的隐蔽性极强——Agent 不会报错，只是基于错误记忆提供「看似合理但完全错误」的建议。
+
+**Agent 权限提升**（Agent Privilege Escalation）：当 Agent 被授予**系统级权限**（如文件读写、API 调用、数据库查询）时，如果被攻击者操控，后果远超传统 LLM 的「输出不当内容」。攻击者可能利用 Agent 的权限**读取敏感文件**、**修改系统配置**或**访问内部网络**。
+
+**防御 Agent 安全威胁的核心原则**：
+
+**最小权限原则**（Principle of Least Privilege）：每个 Agent 只拥有完成其任务所需的**最小权限集**。不要给一个「天气查询 Agent」数据库读写权限。
+
+**工具调用验证层**（Tool Call Validation Layer）：在 Agent 的工具调用请求到达实际工具之前，通过一个**独立的验证 Agent 或规则引擎**进行检查——调用的工具是否在**白名单**中？参数是否**合理**？执行结果是否符合**预期格式**？
+
+**Agent 间通信加密和认证**：多 Agent 系统中，Agent 之间的消息传递应该使用**加密通道**和**身份认证**，防止中间人攻击和消息伪造。
+
+**安全可观测性**（Security Observability）：如 agent-060 所述，Agent 的**可观测性体系**不仅用于**性能监控**，还是**安全检测的关键基础设施**。通过监控 Agent 的**执行路径异常**、**工具调用模式变化**和**记忆写入频率**，可以在攻击发生的第一时间发现并响应。
+
+**行业趋势**：2026 年，**NVIDIA OpenShell** 等**安全 Agent 运行时**项目快速兴起（GitHub 5.9k+ 星），专注于为 Agent 提供**沙箱隔离**、**工具权限管理**和**行为监控**。同时，**多 Agent 安全隐患**研究在 arXiv 上发表了多篇论文，揭示了「隐形编排者」可能通过**协调攻击**绕过单 Agent 安全策略的风险。`,
+            code: [
+                {
+                    lang: "typescript",
+                    code: `// Agent 工具调用验证层示例
+interface ToolCallValidation {
+  toolName: string;
+  args: Record<string, unknown>;
+  allowedTools: string[];
+  argSchema: Record<string, { type: string; max?: number; enum?: string[] }>;
+}
+
+function validateToolCall(validation: ToolCallValidation): { valid: boolean; reason?: string } {
+  // 检查工具是否在白名单中
+  if (!validation.allowedTools.includes(validation.toolName)) {
+    return { valid: false, reason: \`工具 \${validation.toolName} 不在白名单中\` };
+  }
+  
+  // 检查参数类型和范围
+  for (const [argName, argValue] of Object.entries(validation.args)) {
+    const schema = validation.argSchema[argName];
+    if (!schema) continue;
+    
+    if (typeof argValue !== schema.type) {
+      return { valid: false, reason: \`参数 \${argName} 类型错误\` };
+    }
+    if (schema.max !== undefined && (argValue as number) > schema.max) {
+      return { valid: false, reason: \`参数 \${argName} 超出最大值\` };
+    }
+    if (schema.enum && !schema.enum.includes(argValue as string)) {
+      return { valid: false, reason: \`参数 \${argName} 不在允许值范围内\` };
+    }
+  }
+  
+  return { valid: true };
+}
+
+// 使用示例
+const result = validateToolCall({
+  toolName: "transfer_money",
+  args: { amount: 5000, currency: "USD", recipient: "acc_123" },
+  allowedTools: ["query_weather", "query_price"],
+  argSchema: {}
+});
+// 返回: { valid: false, reason: "工具 transfer_money 不在白名单中" }`
+                }
+            ],
+            table: {
+                headers: ["威胁类型", "攻击目标", "影响级别", "防御策略"],
+                rows: [
+                    ["工具调用劫持", "Agent 工具层", "严重", "白名单+验证层"],
+                    ["多 Agent 编排攻击", "Agent 协作层", "高", "通信加密+认证"],
+                    ["记忆投毒", "Agent 记忆层", "中高", "来源可信度+审核"],
+                    ["权限提升", "Agent 运行时", "严重", "最小权限+沙箱"],
+                    ["提示注入", "Agent 输入层", "高", "输入过滤+指令隔离"]
+                ]
+            },
+            mermaid: `graph TD
+    A["Agent 安全防御体系"] --> B["输入层
+提示注入过滤"]
+    A --> C["工具层
+白名单+验证"]
+    A --> D["记忆层
+来源可信度"]
+    A --> E["协作层
+加密+认证"]
+    A --> F["运行时
+最小权限+沙箱"]
+    
+    B --> B1["指令-数据隔离"]
+    C --> C1["参数范围检查"]
+    D --> D1["记忆投毒检测"]
+    E --> E1["中间人防护"]
+    F --> F1["权限边界控制"]
+    
+    style A fill:#b91c1c,stroke:#dc2626,color:#fff
+    style B fill:#92400e,stroke:#d97706,color:#fff
+    style C fill:#047857,stroke:#059669,color:#fff
+    style D fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style E fill:#0369a1,stroke:#0ea5e9,color:#fff
+    style F fill:#dc2626,stroke:#ef4444,color:#fff`,
+            tip: "Agent 安全防御的最小可行方案（MVP）：（1）工具调用白名单；（2）输入过滤层（检测指令性内容）；（3）记忆写入的置信度阈值。这三项在 2 小时内可以实施，覆盖 80% 的 Agent 安全威胁。",
+            warning: "Agent 安全最危险的假设是「Agent 不会故意做坏事」。Agent 不是「有意志」的实体——它只是遵循概率分布生成文本。但攻击者可以利用这种概率行为，以极高的精度操控 Agent 执行恶意操作。永远不要假设 Agent 的行为是「安全的」。"
         },
     ],
 };
