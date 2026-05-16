@@ -447,7 +447,7 @@ export const blog: BlogPost = {
   category: "ethics",
   summary: "2026 年 5 月教皇发布首份 AI 通谕《Fides et Ratio Technologica》，从人类尊严、共同善、透明度、全球公平和生态关怀五大支柱构建 AI 伦理框架。本文深度解读通谕核心内容、科技行业回应、与其他治理框架的对比，以及对 AI 发展的长远影响",
   date: "2026-05-16",
-  author: "奥利奥",
+  author: "AI Master",
   tags: ["AI 伦理", "梵蒂冈", "教皇通谕", "宗教与技术", "AI 治理", "人类尊严"],
   readTime: 22,
   content
