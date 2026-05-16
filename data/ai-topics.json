@@ -1,6 +1,6 @@
 {
   "description": "AI 相关 GitHub Topics 库 — 用于发现优秀 AI 项目",
-  "lastUpdated": "2026-05-16T12:13:18.074Z",
+  "lastUpdated": "2026-05-16T22:18:18.592Z",
   "minStarsThreshold": 5000,
   "topics": [
     {
@@ -46424,6 +46424,66 @@
       "url": "https://github.com/topics/deepagents",
       "minStars": 2000,
       "description": "（自动发现）deepagents"
+    },
+    {
+      "topic": "ai-toolkit",
+      "url": "https://github.com/topics/ai-toolkit",
+      "minStars": 2000,
+      "description": "（自动发现）AI工具链"
+    },
+    {
+      "topic": "cost-reduction",
+      "url": "https://github.com/topics/cost-reduction",
+      "minStars": 2000,
+      "description": "（自动发现）成本优化"
+    },
+    {
+      "topic": "token-optimization",
+      "url": "https://github.com/topics/token-optimization",
+      "minStars": 2000,
+      "description": "（自动发现）Token优化"
+    },
+    {
+      "topic": "swarm-intelligence",
+      "url": "https://github.com/topics/swarm-intelligence",
+      "minStars": 2000,
+      "description": "（自动发现）群体智能"
+    },
+    {
+      "topic": "sentiment-analysis",
+      "url": "https://github.com/topics/sentiment-analysis",
+      "minStars": 2000,
+      "description": "（自动发现）情感分析"
+    },
+    {
+      "topic": "public-opinion-analysis",
+      "url": "https://github.com/topics/public-opinion-analysis",
+      "minStars": 2000,
+      "description": "（自动发现）舆情分析"
+    },
+    {
+      "topic": "semantic-retrieval",
+      "url": "https://github.com/topics/semantic-retrieval",
+      "minStars": 2000,
+      "description": "（自动发现）语义检索"
+    },
+    {
+      "topic": "reasoning",
+      "url": "https://github.com/topics/reasoning",
+      "minStars": 2000,
+      "description": "（自动发现）推理"
+    },
+    {
+      "topic": "offline-ai",
+      "url": "https://github.com/topics/offline-ai",
+      "minStars": 2000,
+      "description": "（自动发现）离线AI"
+    },
+    {
+      "topic": "local-first",
+      "url": "https://github.com/topics/local-first",
+      "minStars": 2000,
+      "description": "（自动发现）本地优先"
     }
   ]
 }
