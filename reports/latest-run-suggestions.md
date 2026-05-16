@@ -1,21 +1,22 @@
-# 下次建议（2026-05-17 00:00）
+# 下次建议（2026-05-17 00:06）
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：Anthropic Claude Managed Agents 三大升级深度解读 — Dreaming/Outcomes/Multiagent Orchestration
-2. 知识库：Anthropic 企业扩张全景 — PwC 部署 + 盖茨基金会 + SAP + Small Business 四维出击
+1. 博客：Google AI Impact Summit 2026 全景解读 — 全球合作伙伴、资金投入与 AI 普惠愿景
+2. 知识库：AI Agent 记忆层全景 — mem0 5.6 万星背后的技术架构与生态趋势
 
 ## 可延后执行（其余建议）
-1. 博客：AI 安全突破 — Claude 隐藏推理研究揭示 26% 未表达内部信念
-2. 知识库：Cloudflare 裁员 1100 人背后的 AI Agent 时代 — 600% 增长与人力重构
-3. 博客：GitHub 周榜解读 — TradingAgents 7 万星与 OpenAI Symphony 首周 2.2 万星
-4. 知识库：索尼-TSMC 合资布局物理 AI — 传感器是 AI 的「眼睛」
-5. 博客：Google Gemini 3.1 Flash-Lite GA — 轻量级模型进入生产阶段
-6. 知识库：Gmail AI 写作个性化 — 从通用到千人千面的邮件体验
-7. 博客：IBM Granite 4.1 开源系列 — 三尺寸 Apache 2.0 可商用
-8. 知识库：企业 AI 部署拐点验证 — 从头部企业到中小企业的全面扩散
+1. 博客：arXiv 多 Agent 安全研究 —「隐形编排者」的安全隐患深度解读
+2. 知识库：hermes-agent 15 万星背后的技术解析 — 从静态工具到持续进化伙伴
+3. 博客：deer-flow 超级 Agent 框架 — 字节跳动的长期任务编排引擎
+4. 知识库：Firecrawl 12 万星解读 — AI Agent 的数据管道基础设施
+5. 博客：PREPING 论文解读 — 无需任务训练的 Agent 记忆构建新方法
+6. 知识库：Gemma 4 推理加速技术 — 多 Token 预测 Drafters 的实现原理
+7. 博客：LLM 合成数据新方案 — 多阶段飞行中拒绝机制的 Token 效率革命
+8. 知识库：Gemini API 文件搜索多模态升级 — RAG 系统进入多模态时代
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（OpenAI + Anthropic 官方 + TechCrunch + Google + 9to5Mac + IBM + SAP + TSMC + GitHub + Cloudflare），更新新闻 12 条（news-1925~news-1936）
-- 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具）
-- 热点：Claude Managed Agents 三升级/Claude for Small Business/PwC+盖茨基金会+SAP 部署/隐藏推理 26%/Granite 4.1 开源/Gmail AI 写作升级/GitHub 周榜 Agent 爆发/Cloudflare 裁员+600% AI 增长/索尼-TSMC 合资/Gemini 3.1 Flash-Lite GA
+- 本轮扫描 10+ 来源（arXiv cs.AI/cs.LG + GitHub API + Google AI Blog + Simon Willison + MIT Tech Review + 36氪 + Reuters），更新新闻 12 条（news-1937~news-1948）
+- 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具），discover-topic-projects 也无遗漏
+- AI Topic 库已有 7,737 个 topic，无需补充
+- 热点：hermes-agent 15万星/deer-flow 6.8万星/firecrawl 12万星/mem0 5.6万星/nanobot 4.3万星/Gemini 3.1 Flash-Lite GA/Gemini API 多模态文件搜索/Gemma 4 推理加速/AI Impact Summit 2026/多 Agent 安全隐患/LLM 双速学习/合成数据 Token 效率/PREPING 记忆构建
 - PM 缺口：8 项待 PM 阶段选题
