@@ -18,6 +18,7 @@ const blogPosts = blogs
     title: b.title,
     summary: b.summary,
     date: b.date,
+    updatedAt: b.updatedAt,
     author: b.author,
     readTime: `${b.readTime} min`,
     category: b.tags.length > 0 ? b.tags[0] : "行业洞察",
