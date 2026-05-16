@@ -3,7 +3,8 @@ import fs from 'fs';
 const TOOLS_PATH = 'src/data/tools.ts';
 let content = fs.readFileSync(TOOLS_PATH, 'utf-8');
 
-// ── Star updates from fresh GitHub API ──
+// ── Star updates ──
+// Map of repo slug -> { githubStars, forks?, language? }
 const STAR_UPDATES = {
   'ollama/ollama': { githubStars: 171542, forks: 16151, language: 'Go' },
   'openclaw/openclaw': { githubStars: 372423, forks: 77170, language: 'TypeScript' },
@@ -24,15 +25,15 @@ const STAR_UPDATES = {
   'langflow-ai/langflow': { githubStars: 148254, forks: 9002 },
   'vllm-project/vllm': { githubStars: 80202, forks: 16857 },
   'BerriAI/litellm': { githubStars: 47225, forks: 8105 },
-  'anthropics/claude-code': { githubStars: 124145, forks: 20450, language: 'Shell' },
+  'anthropics/claude-code': { githubStars: 124145, forks: 20450 },
   'google-gemini/gemini-cli': { githubStars: 104133, forks: 13678 },
-  'openai/codex': { githubStars: 83087, forks: 12044, language: 'Rust' },
+  'openai/codex': { githubStars: 83087, forks: 12044 },
   'ComposioHQ/composio': { githubStars: 28281, forks: 4565 },
   'CopilotKit/CopilotKit': { githubStars: 31460, forks: 4066 },
   'supabase/supabase': { githubStars: 102461, forks: 12421 },
   'farion1231/cc-switch': { githubStars: 72618, forks: 4705 },
-  'open-webui/open-webui': { githubStars: 137350, forks: 19601, language: 'Python' },
-  'affaan-m/everything-claude-code': { githubStars: 184523, forks: 28494, language: 'JavaScript' },
+  'open-webui/open-webui': { githubStars: 137350, forks: 19601 },
+  'affaan-m/everything-claude-code': { githubStars: 184523, forks: 28494 },
   'mintplex-labs/anything-llm': { githubStars: 60130, forks: 6503 },
   'lencx/ChatGPT': { githubStars: 54375, forks: 6172 },
   'upstash/context7': { githubStars: 55446, forks: 2632 },
@@ -41,43 +42,116 @@ const STAR_UPDATES = {
   'danielmiessler/Fabric': { githubStars: 41734, forks: 4140 },
 };
 
-// Helper: find a tool entry by url pattern and update fields
-function updateTool(urlPattern, updates) {
-  const regex = new RegExp(`(url:\\s*['"]https://github\\.com/${urlPattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"][\\s\\S]*?)(?=,\\s*\\{\\s*id:|\\]\\s*;\\s*export|$)`);
-  const match = content.match(regex);
-  if (!match) {
-    console.log(`  ⚠️ Not found: ${urlPattern}`);
-    return;
+// For each repo update, we find the tool block and replace specific field values
+function updateField(block, fieldName, newValue) {
+  // Match existing field: number pattern
+  const regex = new RegExp(`(${fieldName}:\\s*)\\d+`);
+  if (regex.test(block)) {
+    return block.replace(regex, `$1${newValue}`);
   }
-  
-  const block = match[1];
-  let newBlock = block;
+  return null; // field doesn't exist in this block
+}
+
+function addField(block, fieldName, newValue) {
+  // Insert before createdAt if it exists, otherwise before the closing }
+  const createdAtIdx = block.indexOf('createdAt');
+  if (createdAtIdx > 0) {
+    // Insert before the line containing createdAt
+    const lineStart = block.lastIndexOf('\n', createdAtIdx);
+    const insertPoint = lineStart >= 0 ? lineStart + 1 : createdAtIdx;
+    return block.slice(0, insertPoint) + `    ${fieldName}: ${newValue},\n` + block.slice(insertPoint);
+  }
+  // Fallback: insert before last }
+  const lastBrace = block.lastIndexOf('}');
+  return block.slice(0, lastBrace) + `    ${fieldName}: ${newValue},\n` + block.slice(lastBrace);
+}
+
+function processBlock(block, updates) {
+  let result = block;
+  let changed = false;
   
   for (const [field, value] of Object.entries(updates)) {
-    const fieldRegex = new RegExp(`(${field}:\\s*)(\\d+)`);
-    if (fieldRegex.test(newBlock)) {
-      newBlock = newBlock.replace(fieldRegex, `$1${value}`);
-      console.log(`  ✅ ${urlPattern}: ${field} = ${value}`);
+    if (field === 'language') {
+      const newVal = `"${value}"`;
+      const existing = updateField(result, 'language', newVal);
+      if (existing) {
+        result = existing;
+        changed = true;
+      } else {
+        result = addField(result, 'language', newVal);
+        changed = true;
+      }
     } else {
-      // Try to add field before the closing of the object
-      const beforeClose = newBlock.match(/(\s*createdAt[^\n]*)/);
-      if (beforeClose) {
-        newBlock = newBlock.replace(beforeClose[1], `${field}: ${typeof value === 'number' ? value : `'${value}'`},\n${beforeClose[1]}`);
-        console.log(`  ➕ ${urlPattern}: added ${field} = ${value}`);
+      const existing = updateField(result, field, value);
+      if (existing) {
+        result = existing;
+        changed = true;
+      } else {
+        result = addField(result, field, value);
+        changed = true;
       }
     }
   }
   
-  content = content.replace(block, newBlock);
+  return { result, changed };
 }
 
-// Apply updates
-for (const [repo, updates] of Object.entries(STAR_UPDATES)) {
-  updateTool(repo, updates);
+// Extract all tool blocks
+// Match from { id: "..." to },
+const blockRegex = /\{\s*id:\s*"[^"]+"[\s\S]*?\n  \},/g;
+const blocks = content.match(blockRegex);
+
+if (!blocks) {
+  console.error('No tool blocks found!');
+  process.exit(1);
 }
 
-// ── New repos to insert before the last entry ──
-const NEW_ENTRIES = [
+console.log(`Found ${blocks.length} tool blocks`);
+
+// Map each block to its repo URL
+let appliedCount = 0;
+const newBlocks = blocks.map(block => {
+  // Find the URL
+  const urlMatch = block.match(/url:\s*['"](https:\/\/github\.com\/[^'"]+)['"]/);
+  if (!urlMatch) return block;
+  
+  const url = urlMatch[1];
+  // Extract owner/repo from URL
+  const urlPath = url.replace('https://github.com/', '');
+  
+  // Check if we have updates for this repo
+  for (const [repo, updates] of Object.entries(STAR_UPDATES)) {
+    // Case-insensitive match (GitHub URLs may differ in case)
+    if (urlPath.toLowerCase() === repo.toLowerCase()) {
+      const { result, changed } = processBlock(block, updates);
+      if (changed) {
+        appliedCount++;
+        return result;
+      }
+    }
+  }
+  
+  return block;
+});
+
+// Rebuild the tools array content
+const toolsArrayStart = content.indexOf('export const tools: Tool[] = [');
+const toolsArrayEnd = content.lastIndexOf('];');
+
+if (toolsArrayStart === -1 || toolsArrayEnd === -1) {
+  console.error('Could not find tools array boundaries');
+  process.exit(1);
+}
+
+const header = content.slice(0, toolsArrayStart);
+const footer = content.slice(toolsArrayEnd);
+
+const toolsBody = '\n' + newBlocks.join('\n') + '\n';
+
+content = header + toolsBody + footer;
+
+// ── Add new repos ──
+const NEW_REPOS = [
   {
     id: 'pageindex',
     name: 'PageIndex',
@@ -214,7 +288,7 @@ const NEW_ENTRIES = [
 ];
 
 function makeToolEntry(tool) {
-  let fields = [];
+  const fields = [];
   for (const [key, val] of Object.entries(tool)) {
     if (key === 'tags') {
       fields.push(`    tags: [${val.map(t => `"${t}"`).join(', ')}]`);
@@ -228,20 +302,13 @@ function makeToolEntry(tool) {
       fields.push(`    ${key}: "${val}"`);
     }
   }
-  return `  {\n${fields.join(',\n')}\n  },\n`;
+  return `  {\n${fields.join(',\n')}\n  },`;
 }
 
-// Insert new entries before the last tool entry (before the closing ])
+// Insert new entries before ];
+const newEntriesStr = '\n' + NEW_REPOS.map(t => makeToolEntry(t)).join('\n\n') + '\n';
 const insertPos = content.lastIndexOf('];');
-if (insertPos === -1) {
-  console.error('Could not find closing ];');
-  process.exit(1);
-}
-
-const newEntriesStr = NEW_ENTRIES.map(t => makeToolEntry(t)).join('\n');
-content = content.slice(0, insertPos) + newEntriesStr + '\n' + content.slice(insertPos);
+content = content.slice(0, insertPos) + newEntriesStr + content.slice(insertPos);
 
 fs.writeFileSync(TOOLS_PATH, content);
-console.log('\n✅ tools.ts updated successfully');
-console.log(`   - Applied ${Object.keys(STAR_UPDATES).length} star updates`);
-console.log(`   - Added ${NEW_ENTRIES.length} new repos`);
+console.log(`✅ Applied ${appliedCount} star updates, added ${NEW_REPOS.length} new repos`);
