@@ -1,22 +1,21 @@
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：教皇首份 AI 通谕 — 信仰与算法的对话，梵蒂冈如何回应 AI 革命
-2. 知识库：前沿部署工程师崛起 — AI 从实验室到产业的最后一公里
+1. 博客：OpenAI DeployCo 深度解析 — 从模型公司到部署公司的战略转型与行业影响
+2. 知识库：个人 AI 智能体大战 — Google Remy vs Meta Hatch vs Anthropic vs OpenAI 全面对比
 
 ## 可延后执行（其余建议）
-1. 博客：阿里 Qoder 1.0 技术解析 — 全流程 AI 编程工具的架构与市场定位
-2. 知识库：中美 AI 竞争格局 2026 — 特朗普访华言论背后的真实技术差距
-3. 博客：蚂蚁百灵 Ring-2.6-1T 开源 — 万亿参数 Agent 模型的技术突破
-4. 知识库：英国 AI 风险管理指南解读 — 自律标杆如何影响全球监管方向
-5. 博客：Capcom 引入生成式 AI — 游戏行业的技术边界与创意守护
-6. 知识库：华尔街 Q1 AI 投资趋势 — 从押注巨头到基础设施全产业链
-7. 博客：参议院民主党 AI 监管法案 — 安全测试、透明度与政治博弈
-8. 知识库：华为云 Agentic AI 战略 — 从对话式向自主执行式的范式转变
-9. 博客：Accenture × OpenAI 联邦合作 — 政府 AI 落地的合规与规模化
-10. 知识库：加拿大央行 AI 就业报告 — 结构性调整 vs 替代焦虑
+1. 知识库：五角大楼 AI 合作格局 — Anthropic 被排除背后的伦理与政治博弈
+2. 博客：Nvidia 400 亿美元投资版图 — AI 生态帝国的战略图谱
+3. 知识库：消费级人形机器人元年 — 1X NEO 工厂拆解与市场分析
+4. 博客：智谱 GLM-5.1 技术解读 — 8 小时自主执行与编码能力突破
+5. 知识库：Skild AI 收购案 — AI 原生仓储自动化的全栈时代
+6. 博客：Anthropic 超越 OpenAI 企业客户数 — 安全合规如何成为竞争优势
+7. 知识库：IBM AI 运营模式蓝图 — 企业 AI 体系化运营新范式
+8. 博客：AgentMemory 开源项目评测 — 持久化记忆对 AI 编程工具的意义
+9. 知识库：WIRobotics 融资分析 — 日本机器人公司的全球化野心
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（国外：GitHub Trending/arXiv RSS/Reuters/Computerworld/NYPost/Scripps/ExecutiveBiz + 国内：量子位），更新新闻 12 条（news-1865~news-1876）
+- 本轮扫描 14+ 来源（国外：GitHub API/OpenAI/CNBC/CNN/DefenseScoop/Decoder/Airstreet/InforCapital + 国内：智谱 AI/IBM 中国），更新新闻 12 条（news-1877~news-1888）
 - 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具）
-- 热点：英国 AI 风险管理指南/Accenture×OpenAI联邦合作/参议院AI监管法案/教皇首份AI通谕/机构投资者AI基础设施增持/阿里Qoder1.0/蚂蚁百灵Ring开源/华为云AgenticAI布局/加拿大央行AI就业报告/Capcom生成式AI/前沿部署工程师新兴职业/中美AI竞争升温
+- 热点：OpenAI DeployCo 40亿美元融资/Google Remy 24/7智能体/Meta Hatch Instagram助手/五角大楼8份AI合同排除Anthropic/Nvidia 400亿AI投资/1X消费级机器人5天售罄/Skild AI收购Zebra机器人/智谱GLM-5.1 8小时长程执行/IBM AI运营模式蓝图/AgentMemory开源/Anthropic企业客户超OpenAI/WIRobotics 6800万美元B轮
