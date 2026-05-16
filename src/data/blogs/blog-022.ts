@@ -71,7 +71,7 @@ export const blog: BlogPost = {
             code: [
                 {
                     lang: "python",
-                    code: "Loss = L_solution + λ * L_feasibility",
+                    // 公式：Loss = L_solution + λ * L_feasibility（已移至 body 文本）
                 },
             ],
         },

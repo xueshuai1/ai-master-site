@@ -54,13 +54,6 @@ export const article: Article = {
 - 仅适用于 Claude Code 生态
 - 记忆是线性的（操作日志 → 摘要），缺乏结构化关联
 - 无法跨项目共享经验`,
-    code: [
-      {
-        lang: "text",
-        code: `
-任务执行 → 自动捕获轨迹 → AI 压缩为摘要 → 存储 → 下次检索注入`,
-      },
-    ],
       mermaid: `graph LR
     A[Agent 执行任务] --> B[捕获操作轨迹]
     B --> C[AI 压缩为摘要]
@@ -96,13 +89,6 @@ export const article: Article = {
 - 记忆宫殿的配置需要一定学习成本
 - 图结构在大规模记忆下性能可能下降
 - 项目较新，生产环境验证不足`,
-    code: [
-      {
-        lang: "text",
-        code: `
-原始记忆（10,000 tokens）→ 语义聚类 → 关键信息提取 → 压缩摘要（333 tokens）→ 检索时动态扩展`,
-      },
-    ],
       mermaid: `graph TD
     subgraph "记忆宫殿架构"
         A[记忆节点 A] -->|语义关联| B[记忆节点 B]
@@ -249,17 +235,7 @@ def decay_weight(age_days: float, importance: float) -> float:
 
 **Claude**-Mem + RAG 的组合尤其强大：**Claude**-Mem 提供编码经验记忆，RAG 提供文档知识，两者互补。`,
     code: [
-      {
-        lang: "text",
-        code: `
-Fine-tuning（基础领域能力）
-    ↓
-RAG（外部知识检索）
-    ↓
-Agent Memory（个人经验记忆）
-    ↓
-最终输出`,
-      },
+      // 流程图已移至 body 正文,
     ],
       table: {
         headers: ["特性", "RAG", "Fine-tuning", "Agent Memory"],

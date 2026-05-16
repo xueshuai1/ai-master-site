@@ -61,14 +61,6 @@ VoxCPM2 完全跳过了离散 Tokenizer 步骤：
 **类比理解**：
 - 传统 TTS 像是用像素块（离散 Token）拼接一幅画，再试图恢复细节
 - VoxCPM2 像是直接画一幅完整的画，不需要中间的像素化步骤`,
-    code: [
-      {
-        lang: "text",
-        code: `
-传统 TTS：文本 → 离散音频 Token → 声码器 → 连续音频
-VoxCPM2：文本 → 连续语音表征 → 连续音频`,
-      },
-    ],
       mermaid: `graph TD
     A["输入文本"] --> B["文本编码器"]
     B --> C["跨模态对齐"]
@@ -343,11 +335,6 @@ Voice Design（用描述创建新声音）：
 | inference_timesteps | 10 | 5-30 | 越多质量越好，速度越慢 |
 | load_denoiser | False | True/False | True 时增加降噪能力但增加显存 |`,
     code: [
-      {
-        lang: "bash",
-        code: `
-pip install voxcpm`,
-      },
       {
         lang: "python",
         code: `

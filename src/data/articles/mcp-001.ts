@@ -186,14 +186,9 @@ MCP 基于 JSON-RPC 2.0 协议，所有通信通过标准 JSON 格式：
 ### 完整实现
 ### 配置 **Claude** Desktop 使用此 MCP Server
 
-在 **Claude** Desktop 的配置文件中（\`~/Library/Application Support/Claude/claude_desktop_config.json\`）：
+在终端运行 \`pip install mcp\` 安装 MCP SDK，然后在 **Claude** Desktop 的配置文件中（\`~/Library/Application Support/Claude/claude_desktop_config.json\`）：
 重启 Claude Desktop 后，Agent 就能自动发现并使用这些工具了！`,
     code: [
-      {
-        lang: "bash",
-        code: `
-pip install mcp`,
-      },
       {
         lang: "python",
         code: `
