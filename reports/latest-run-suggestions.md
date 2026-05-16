@@ -1,22 +1,22 @@
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：Anthropic 超越 OpenAI 企业客户深度分析 — 34.4% vs 32.3% 背后的技术选型、Claude Code 崛起与行业格局
-2. 知识库：Gemini Spark AI Agent 前瞻 — Google 24 小时智能体的技术路线与 Android 生态整合
+1. 博客：教皇首份 AI 通谕 — 信仰与算法的对话，梵蒂冈如何回应 AI 革命
+2. 知识库：前沿部署工程师崛起 — AI 从实验室到产业的最后一公里
 
 ## 可延后执行（其余建议）
-1. 博客：Hermes Agent 登顶 OpenRouter 技术解析 — 自我改进 Agent 的架构与 NVIDIA RTX/DGX 硬件优化
-2. 知识库：Nvidia 中国芯片迷局 — 出口管制、国产替代与全球 AI 算力格局演变
-3. 博客：Meta AI Incognito Chat 隐私模式解读 — 端到端加密 AI 对话的技术实现与行业意义
-4. 知识库：穿戴设备 AI 健康预测 — Oura Ring、Whoop、Fitbit 的 AI 健康模型与医疗级应用
-5. 博客：AI 新游说集团进军华盛顿 — Salesforce/Box/Twilio 的 AI 政策联盟与美国立法博弈
-6. 知识库：Scale AI × 国防部 — AI 评估技术进入国家安全领域的技术架构与应用场景
-7. 博客：AGIBOT 具身智能部署路线图 — 从能力突破到全球服务网络的商业化路径
-8. 知识库：上海电气汉诺威工博会 AI 方案 — 星云平台智能制造智能体应用全景
-9. 博客：OpenAI Codex 登陆手机端 — AI 编程从桌面到移动的范式转变
-10. 知识库：AI 技术游说与监管 — 谁在塑造 2026 年美国 AI 立法框架
+1. 博客：阿里 Qoder 1.0 技术解析 — 全流程 AI 编程工具的架构与市场定位
+2. 知识库：中美 AI 竞争格局 2026 — 特朗普访华言论背后的真实技术差距
+3. 博客：蚂蚁百灵 Ring-2.6-1T 开源 — 万亿参数 Agent 模型的技术突破
+4. 知识库：英国 AI 风险管理指南解读 — 自律标杆如何影响全球监管方向
+5. 博客：Capcom 引入生成式 AI — 游戏行业的技术边界与创意守护
+6. 知识库：华尔街 Q1 AI 投资趋势 — 从押注巨头到基础设施全产业链
+7. 博客：参议院民主党 AI 监管法案 — 安全测试、透明度与政治博弈
+8. 知识库：华为云 Agentic AI 战略 — 从对话式向自主执行式的范式转变
+9. 博客：Accenture × OpenAI 联邦合作 — 政府 AI 落地的合规与规模化
+10. 知识库：加拿大央行 AI 就业报告 — 结构性调整 vs 替代焦虑
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（国外：TechCrunch/VentureBeat/WaPo/Reuters/Bloomberg/NYT/CNBC/MarkTechPost），更新新闻 12 条（news-1853~news-1864）
+- 本轮扫描 12+ 来源（国外：GitHub Trending/arXiv RSS/Reuters/Computerworld/NYPost/Scripps/ExecutiveBiz + 国内：量子位），更新新闻 12 条（news-1865~news-1876）
 - 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具）
-- 热点：Anthropic 企业客户首超 OpenAI/OpenAI Codex 手机端/Gemini Spark Agent/Google Android Gemini Intelligence/Meta AI 隐私模式/Hermes Agent 登顶 OpenRouter/Nvidia 中国芯片迷局/AI 穿戴设备健康预测/上海电气汉诺威工博会/AGIBOT 具身智能部署/AI 技术游说集团/Scale AI 国防部合作
+- 热点：英国 AI 风险管理指南/Accenture×OpenAI联邦合作/参议院AI监管法案/教皇首份AI通谕/机构投资者AI基础设施增持/阿里Qoder1.0/蚂蚁百灵Ring开源/华为云AgenticAI布局/加拿大央行AI就业报告/Capcom生成式AI/前沿部署工程师新兴职业/中美AI竞争升温
