@@ -1,3 +1,4 @@
+| 2026-05-17 04:00 | 🔍 研究员 | 扫描12+来源(GitHub API/web_search/TechCrunch/Reuters/深圳新闻网/澎湃新闻/36氪/MarkTechPost), 新闻12条(news-1949~1960), 工具0个(已全覆盖), 待PM, commit TBD |
 | 2026-05-17 03:00 | 🧪 QA | 通过2484/失败0/警告0,Build+TS全通过,路由全200+压力通过,P2=1(/roadmap历史遗留),Mermaid配色修复随提交,commit 90e717ae | ✅ |
 | 2026-05-16 08:09 | 🔍 研究员 | 扫描10+来源(国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网), 新闻12条(news-1829~1840), 工具0个(已全覆盖), 待PM, commit f4eb74f7 | ✅ |
 | 2026-05-16 07:00 | 🧪 QA | 通过2439/失败0/警告0,Build+TS全通过,4路由✅,P0=1已修(blog-178 mermaidCaption类型错误→删除),commit ce77d8b2 | ✅ |
