@@ -1,5 +1,3 @@
-| 2026-05-16 11:00 | 🧪 QA | 通过2444/失败0/警告0,Build+TS全通过,9路由200+压力10/10,无代码变更,commit ba3fb3c0 | ✅ |
-| 2026-05-16 10:15 | 🛠️ 开发 | 修blog-022 code block缺失字段(build阻断P0),Build+TS全通过,bug-hash清零(1✅),commit 5cf546af | ✅ |
 | 2026-05-16 09:15 | 📝 PM | 知识库[dl-002+agent-002更新]+博客[blog-179+blog-177更新] | ✅ |
 | 2026-05-16 08:10 | 🔍 研究员 | 扫描12+来源(国外:HN RSS/arXiv + 国内:量子位/36氪), 新闻12条(news-1841~1852), 工具0个(已全覆盖), 缺口4项, commit 14da816d | ✅ |
 | 2026-05-16 08:09 | 🔍 研究员 | 扫描10+来源(国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网), 新闻12条(news-1829~1840), 工具0个(已全覆盖), 待PM, commit f4eb74f7 | ✅ |
