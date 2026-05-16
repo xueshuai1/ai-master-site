@@ -44,7 +44,6 @@ MCP Server 暴露三种能力：Tools（可调用的函数，类似 Function Cal
                 {
                     lang: "json",
                     code: `// MCP 协议交互示例：初始化阶段
-// 1. Host → Server: initialize
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -62,7 +61,6 @@ MCP Server 暴露三种能力：Tools（可调用的函数，类似 Function Cal
   }
 }
 
-// 2. Server → Host: initialize response
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -80,20 +78,17 @@ MCP Server 暴露三种能力：Tools（可调用的函数，类似 Function Cal
   }
 }
 
-// 3. Host → Server: initialized (通知)
 {
   "jsonrpc": "2.0",
   "method": "notifications/initialized"
 }
 
-// 4. Host → Server: 列出可用工具
 {
   "jsonrpc": "2.0",
   "id": 2,
   "method": "tools/list"
 }
 
-// 5. Server → Host: 返回工具列表
 {
   "jsonrpc": "2.0",
   "id": 2,
