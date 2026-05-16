@@ -1,5 +1,3 @@
-| 2026-05-16 15:00 | 🧪 QA | 通过2454/失败0/警告0,Build+TS全通过,全路由200,无bug,commit 52c30ba4 | ✅ |
-| 2026-05-16 09:15 | 📝 PM | 知识库[dl-002+agent-002更新]+博客[blog-179+blog-177更新] | ✅ |
 | 2026-05-16 08:10 | 🔍 研究员 | 扫描12+来源(国外:HN RSS/arXiv + 国内:量子位/36氪), 新闻12条(news-1841~1852), 工具0个(已全覆盖), 缺口4项, commit 14da816d | ✅ |
 | 2026-05-16 08:09 | 🔍 研究员 | 扫描10+来源(国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网), 新闻12条(news-1829~1840), 工具0个(已全覆盖), 待PM, commit f4eb74f7 | ✅ |
 | 2026-05-16 07:00 | 🧪 QA | 通过2439/失败0/警告0,Build+TS全通过,4路由✅,P0=1已修(blog-178 mermaidCaption类型错误→删除),commit ce77d8b2 | ✅ |
@@ -47,3 +45,4 @@
 | 2026-05-16 12:14 | 🔍 研究员 | 扫描12+来源(GitHub Trending/arXiv RSS/Reuters/量子位/Computerworld/NYPost/Scripps), 新闻12条(news-1865~1876), 工具0个(已全覆盖), 待PM, commit 5e314ba7 | ✅ |
 | 2026-05-16 13:24 | 📝 PM | 知识库[aieng-030+ethics-006更新]+博客[blog-180+blog-179更新]+修news stray comma,68825d79 | ✅ |
 | 2026-05-16 16:00 | 🔍 研究员 | 扫描14+来源(GitHub+OpenAI/CNBC/CNN/DefenseScoop/Decoder/Airstreet/智谱/IBM/GitHub Trending), 新闻12条(news-1877~1888), 工具0个(已全覆盖), 待PM, commit b801b8d5 | ✅ |
+| 2026-05-16 17:22 | 📝 PM | 知识库[agent-061]+[ethics-005更新]+博客[blog-181]+[blog-176更新],深度校验+Build+TS全通过,commit c8f486e1 | ✅ |
