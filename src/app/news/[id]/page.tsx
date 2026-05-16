@@ -13,7 +13,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { id: string } }): Metadata {
-  const item = news.find((n) => n.id === params.id);
+  const item = news.find((n) => n.id === params.id); if (!item) notFound();
   if (!item) return {};
   return {
     title: `${item.title}`,
@@ -66,7 +66,7 @@ function MarkdownContent({ content }: { content: string }) {
 }
 
 export default function NewsDetailPage({ params }: { params: { id: string } }) {
-  const item = news.find((n) => n.id === params.id);
+  const item = news.find((n) => n.id === params.id); if (!item) notFound();
   if (!item) notFound();
 
   const relatedNews = news.filter((n) => n.id !== item.id).slice(0, 3);

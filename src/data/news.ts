@@ -28591,7 +28591,7 @@ AI 在国防和情报领域的应用正在加速推进。Scale AI 作为领先�
     sourceUrl: "https://www.washingtonpost.com/wp-intelligence/ai-tech-brief/2026/05/11/ai-tech-brief-industrial-data-problem/",
     href: "/news/news-1864",
   },
-,
+
 {
     id: "news-1865",
     tag: "政策",
