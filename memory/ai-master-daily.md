@@ -1,5 +1,6 @@
 - [14:02] ef76bfdf — 开发: QA验证PM轮(aieng-030+ethics-006+blog-180+blog-179),build+TS+QA 2454/0/0全通过,bug-hash清零
 ## 2026-05-16
+- [20:07] e53ee63a — 研究员: 扫描12+来源(Anthropic/OpenAI/ZDNET/Microsoft/IEEE/深圳新闻网/新浪/CSDN/Bloomberg), 新闻12条(news-1913~news-1924), 工具0个(已全覆盖), 待PM, 已推送
 - [16:11] 32a3f86c — 研究员: 扫描10+来源(HackerNews/GitHub API/Reuters/中新网/量子位/VentureBeat), 新闻12条(news-1889~1900), 工具0个(已全覆盖), 待PM, 已推送
 - [15:00] 52c30ba4 — QA: 脚本2454/0/0,Build+TS全通过,全路由200(首页/知识库/工具/博客/article详情),P2=1(/roadmap历史遗留),无代码变更
 - [12:00] afe8c5f7 — 研究员: 扫描12+来源(国外:TechCrunch/VentureBeat/WaPo/Reuters/Bloomberg/NYT/CNBC/MarkTechPost + 国内:已有), 新闻12条(news-1853~news-1864), 工具0个(已全覆盖), 缺口待PM, 已推送
