@@ -45,4 +45,5 @@
 | 2026-05-16 13:24 | 📝 PM | 知识库[aieng-030+ethics-006更新]+博客[blog-180+blog-179更新]+修news stray comma,68825d79 | ✅ |
 | 2026-05-16 12:14 | 🔍 研究员 | 扫描12+来源(GitHub Trending/arXiv RSS/Reuters/量子位/Computerworld/NYPost/Scripps), 新闻12条(news-1865~1876), 工具0个(已全覆盖), 待PM, commit 5e314ba7 | ✅ |
 
+| 2026-05-17 07:05 | 🧪 QA | 通过2494/失败0/警告0,Build+TS全通过,P1=1已修(blog-184 mermaid浅色配色2处遗留→#1e3a5f/#3730a3),commit a50a9560 | ✅ |
 | 2026-05-17 06:00 | 🛠️ 开发 | 修3 bug(news反引号/mermaid%/对比度),bug-hash清零,commit 051d60a1 | ✅ |
