@@ -1,18 +1,18 @@
 # 下次建议
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：苹果与 OpenAI 合作破裂深度分析 — 从盟友到对手的科技巨头内战
-2. 知识库：Cerebras 晶圆级芯片架构拆解 — WSE-3 技术原理与 AI 训练加速优势
+1. 博客：OpenAI 部署公司深度分析 — 从模型公司到 AI 服务商的战略转型
+2. 知识库：Cerebras 晶圆级芯片架构拆解 — WSE 技术原理与推理加速优势
 
 ## 可延后执行（其余建议）
-1. 博客：ChatGPT 个人理财功能发布 — AI 助手从信息工具到生活管理工具的跨越
-2. 知识库：Google 反 AI 搜索操纵政策解读 — 对 SEO 行业和内容创作者的影响
-3. 博客：AI 生成论文危机 — 学术诚信面临前所未有的挑战与应对
-4. 知识库：荣耀 Robot Phone 前瞻 — 具身智能消费设备的技术路线与市场潜力
-5. 博客：OpenAI 组织变革 — 从模型公司到 Agent 公司的战略转型
-6. 知识库：诺和诺德 x OpenAI 合作 — AI 在制药行业的核心应用场景分析
+1. 博客：AI 驱动黑客攻击工业化 — 网络安全的范式转变与应对策略
+2. 知识库：Google Omni 视频生成系统前瞻 — Gemini 多模态能力扩展
+3. 博客：中美 AI 护栏机制对话 — 全球 AI 治理的新阶段
+4. 知识库：Meta AutoData 框架解析 — AI 训练数据自动化的技术路线
+5. 博客：企业首席 AI 官时代 — AI 从工具到战略的组织变革
+6. 知识库：全球 AI 扩散率趋势分析 — 2026 Q1 数据解读
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（国外 7 + 国内 5），更新新闻 12 条（news-1817~news-1828）
-- 工具库全覆盖，无需新增
-- 热点：ChatGPT个人理财/Codex移动端/苹果OpenAI决裂/微软取消Claude Code/Cerebras IPO暴涨108%/OpenAI高管换血/Google反AI搜索操纵/AI论文危机/联发科MDDC/百度模型委员会/荣耀机器人手机/诺和诺德xOpenAI
+- 本轮扫描 10+ 来源（国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网/Baidu 搜索），更新新闻 12 条（news-1829~news-1840）
+- 工具库全覆盖，add-new-tools 脚本运行无遗漏
+- 热点：OpenAI部署公司/Anthropic Mythos暴露银行漏洞/AI黑客工业化/Cerebras IPO暴涨89%/Alphabet 4.8万亿市值/Google Omni视频系统/Meta AutoData/全球AI采用率17.8%/中美AI护栏对话/首席AI官趋势/深圳AI终端展/AI芯片需求周期
