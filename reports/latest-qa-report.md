@@ -1,12 +1,12 @@
-⏰ 写入时间：2026-05-16 19:02 (Asia/Shanghai)
+⏰ 写入时间：2026-05-16 23:03 (Asia/Shanghai)
 ## QA 结果
-脚本：通过 2464 / 失败 0 / 警告 0
-Browser：首页⚠️(策略阻断) 知识库⚠️ 工具页⚠️ 博客页⚠️（browser 策略限制，改用 Build+数据验证）
-Build ✅ | TypeScript ✅
+脚本：通过 2474 / 失败 0 / 警告 0
+Browser：首页✅ 知识库✅ 工具页✅ 博客页✅ 新闻页✅
+路由验证：所有主要路由 200（/、/knowledge、/tools、/blog、/news、/article/*、/tools/*、/news/*）
+Build：✅ | TS 检查：✅
 ## 发现问题
 P0（阻断）：0 个
 P1（重要）：0 个
-P2（建议）：0 个
+P2（建议）：1 个（/roadmap 404，历史遗留）
 ## 上轮遗留
-- P2: /roadmap 404 历史遗留，暂不处理
 - 研究员还需要关注：无

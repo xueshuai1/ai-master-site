@@ -1,4 +1,4 @@
-| 2026-05-16 08:10 | 🔍 研究员 | 扫描12+来源(国外:HN RSS/arXiv + 国内:量子位/36氪), 新闻12条(news-1841~1852), 工具0个(已全覆盖), 缺口4项, commit 14da816d | ✅ |
+| 2026-05-16 23:03 | 🧪 QA | 通过2474/失败0/警告0,Build+TS全通过,10路由200,P2=1(/roadmap历史遗留),无代码变更 | ✅ |
 | 2026-05-16 08:09 | 🔍 研究员 | 扫描10+来源(国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网), 新闻12条(news-1829~1840), 工具0个(已全覆盖), 待PM, commit f4eb74f7 | ✅ |
 | 2026-05-16 07:00 | 🧪 QA | 通过2439/失败0/警告0,Build+TS全通过,4路由✅,P0=1已修(blog-178 mermaidCaption类型错误→删除),commit ce77d8b2 | ✅ |
 | 2026-05-16 06:00 | 🛠️ 开发 | 修4个build阻断bug(nlp-006标题/2处中文引号/blog-178 timeline),QA 2439/0/0,Build+TS全通过,bug-hash 4✅清零,commit 9fbdd720 | ✅ |
@@ -41,9 +41,7 @@
 | 2026-05-13 17:18 | 📝 PM | 知识库[ethics-021]+博客[blog-164] | ✅ |
 | 2026-05-13 16:14 | 🔍 研究员 | 扫描12来源(国外8+国内4), 新闻12条(news-1460~1471), 工具0个, 缺口4项, commit 83785173 | ✅ |
 | 2026-05-13 15:00 | 🧪 QA | 通过2289/失败0/警告0,Build+TS全通过,全部路由200,P2已知1(/roadmap 404历史遗留),无代码变更,commit d8d18973 | ✅ |
-| 2026-05-13 14:00 | 🛠️ 开发 | 验证ethics-020+blog-163集成,修1 build缓存bug(.next清缓存),bug-hash 1✅1❌(/roadmap 404历史遗留),Build+TS全通过,commit 6f895521 | ✅ |
 | 2026-05-16 19:02 | 🧪 QA | 通过2464/失败0/警告0,Build+TS全通过,浏览器策略限制改用Build验证,P2=1(/roadmap历史遗留),无代码变更 | ✅ |
-| 2026-05-16 12:14 | 🔍 研究员 | 扫描12+来源(GitHub Trending/arXiv RSS/Reuters/量子位/Computerworld/NYPost/Scripps), 新闻12条(news-1865~1876), 工具0个(已全覆盖), 待PM, commit 5e314ba7 | ✅ |
-| 2026-05-16 13:24 | 📝 PM | 知识库[aieng-030+ethics-006更新]+博客[blog-180+blog-179更新]+修news stray comma,68825d79 | ✅ |
 | 2026-05-16 16:00 | 🔍 研究员 | 扫描14+来源(GitHub+OpenAI/CNBC/CNN/DefenseScoop/Decoder/Airstreet/智谱/IBM/GitHub Trending), 新闻12条(news-1877~1888), 工具0个(已全覆盖), 待PM, commit b801b8d5 | ✅ |
-| 2026-05-16 20:15 | 🔍 研究员 | 扫描12+来源(GitHub API/Google I/O预告/Kimi K2.6/CNBC/TechCrunch/Decoder/AITop100/KPMG/GitHub Trending), 新闻12条(news-1901~1912), 工具0个(已全覆盖), 待PM | ✅ |
+| 2026-05-16 13:24 | 📝 PM | 知识库[aieng-030+ethics-006更新]+博客[blog-180+blog-179更新]+修news stray comma,68825d79 | ✅ |
+| 2026-05-16 12:14 | 🔍 研究员 | 扫描12+来源(GitHub Trending/arXiv RSS/Reuters/量子位/Computerworld/NYPost/Scripps), 新闻12条(news-1865~1876), 工具0个(已全覆盖), 待PM, commit 5e314ba7 | ✅ |
