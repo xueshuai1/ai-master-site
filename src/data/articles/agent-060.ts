@@ -543,9 +543,9 @@ Agent 自动检测和修复问题"]
     style A fill:#b91c1c,stroke:#dc2626,color:#fff
     style B fill:#92400e,stroke:#d97706,color:#fff
     style C fill:#047857,stroke:#059669,color:#fff
-    style D fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
     style E fill:#0369a1,stroke:#0ea5e9,color:#fff
-    style F fill:#dc2626,stroke:#ef4444,color:#fff`,
+    style F fill:#dc2626,stroke:#b91c1c,color:#fff`,
       tip: "记忆可观测性的**快速启动**：在现有 Tracing 体系中增加三个**记忆 Span**——memory.extract（提取）、memory.search（检索）、memory.inject（注入）。每个 Span 记录**操作类型**、**结果数量**和**延迟**。这三项指标在 **1 小时内**就可以建立，但能覆盖 **80%** 的记忆可观测需求。",
       warning: "记忆可观测性最容易被忽视的是**静默失败**——记忆检索返回了 0 条结果，但系统不会报错（「没有相关记忆」不是错误状态）。如果没有监控召回数量，你可能在**数周内**都不知道记忆系统已经失效。务必将「召回数量 = 0」纳入**低优先级告警**。",
     }

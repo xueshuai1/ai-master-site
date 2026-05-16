@@ -53,7 +53,7 @@ $3亿 / 100万创业者"]
     style B fill:#047857,stroke:#059669,color:#fff
     style C fill:#0369a1,stroke:#0ea5e9,color:#fff
     style D fill:#92400e,stroke:#d97706,color:#fff
-    style E fill:#7c3aed,stroke:#8b5cf6,color:#fff`,
+    style E fill:#7c3aed,stroke:#6d28d9,color:#fff`,
     tip: "理解 Google AI Impact Summit 的关键不在于**资金投入金额**（虽然 25 亿美元确实创纪录），而在于**四个支柱之间的协同效应**——教育培养 AI 人才、医疗改善人口健康、可持续发展保障环境、经济赋能创造价值。这是一个**闭环的社会价值系统**。",
     warning: "大规模 AI 普惠项目的**最大风险**不是**技术失败**，而是**落地脱节**——在实验室中完美的 AI 模型，可能在**基础设施薄弱、网络不稳定、用户数字素养低**的真实环境中**完全无法使用**。Google 需要证明其方案能在**真实的「最后一公里」**中有效运行。"
   },
@@ -105,7 +105,7 @@ $3亿 / 100万创业者"]
     
     style A fill:#047857,stroke:#059669,color:#fff
     style B fill:#92400e,stroke:#d97706,color:#fff
-    style C fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style C fill:#7c3aed,stroke:#6d28d9,color:#fff
     style D fill:#0369a1,stroke:#0ea5e9,color:#fff
     style E fill:#475569,stroke:#94a3b8,color:#fff`,
     tip: "AI 教育的**关键成功因素**不是「AI 多聪明」，而是「AI 多懂学生」。一个**中等智能但高度个性化**的辅导系统，远胜于一个**超级智能但一刀切**的系统。Google 的多语言和自适应能力正是朝着这个方向迈进。",
@@ -162,7 +162,7 @@ $3亿 / 100万创业者"]
     style A fill:#0369a1,stroke:#0ea5e9,color:#fff
     style B fill:#047857,stroke:#059669,color:#fff
     style C fill:#92400e,stroke:#d97706,color:#fff
-    style D fill:#7c3aed,stroke:#8b5cf6,color:#fff`,
+    style D fill:#7c3aed,stroke:#6d28d9,color:#fff`,
     tip: "医疗 AI 落地的**关键策略**是「**辅助而非替代**」——AI 给出建议，由**本地医疗工作者**做最终判断。这种模式既能提升诊断准确率，又能保留**人类医生的最终决策权**和**患者的知情同意权**。",
     warning: "医疗 AI 的**最大风险**是**误诊**。即使 Med-PaLM 达到 86.5% 的准确率，剩余的 **13.5% 错误**可能意味着**漏诊严重疾病**或**误诊导致不当治疗**。必须设置**安全护栏**：AI 永远给出「建议」而非「诊断」，并明确标注**置信度**和**不确定性**。"
   },
@@ -202,7 +202,7 @@ $3亿 / 100万创业者"]
     style B fill:#b91c1c,stroke:#dc2626,color:#fff
     style C fill:#047857,stroke:#059669,color:#fff
     style D fill:#0369a1,stroke:#0ea5e9,color:#fff
-    style E fill:#7c3aed,stroke:#8b5cf6,color:#fff`,
+    style E fill:#7c3aed,stroke:#6d28d9,color:#fff`,
     tip: "可持续发展 AI 项目的**成功关键**是**本地化适配**——全球统一的气候模型可能在**特定地区**表现不佳。Google 需要与**本地科研机构**和**社区组织**紧密合作，确保 AI 系统理解**本地的气候特征**和**农业实践**。",
     warning: "气候变化 AI 预测的**不确定性**必须被**透明传达**。预测模型给出的不是「确定性结论」，而是**概率分布**。决策者如果**过度依赖**AI 预测（如提前疏散的决策），可能导致**不必要的恐慌**或**资源浪费**。AI 应该作为**决策辅助**，而非**决策替代**。"
   },
@@ -254,7 +254,7 @@ Google 生态"]
     D --> D3["AI 数据分析"]
     D --> D4["AI 多语言翻译"]
     
-    style A fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style A fill:#7c3aed,stroke:#6d28d9,color:#fff
     style B fill:#047857,stroke:#059669,color:#fff
     style C fill:#92400e,stroke:#d97706,color:#fff
     style D fill:#0369a1,stroke:#0ea5e9,color:#fff`,
@@ -303,7 +303,7 @@ UNESCO/WHO/World Bank"]
     
     style A fill:#b91c1c,stroke:#dc2626,color:#fff
     style B fill:#047857,stroke:#059669,color:#fff
-    style C fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style C fill:#7c3aed,stroke:#6d28d9,color:#fff
     style D fill:#92400e,stroke:#d97706,color:#fff
     style E fill:#0369a1,stroke:#0ea5e9,color:#fff`,
     tip: "对于其他想推进 AI 普惠项目的公司，Google 的**合作生态模式**提供了可复制的框架：（1）先找政府打开通道；（2）拉非营利组织定标准；（3）联合学术机构做验证；（4）找本地企业做落地。**四步缺一不可**。",
@@ -338,10 +338,10 @@ Gemini Nano 离线"]
     
     style A fill:#b91c1c,stroke:#dc2626,color:#fff
     style B fill:#047857,stroke:#059669,color:#fff
-    style C fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style C fill:#7c3aed,stroke:#6d28d9,color:#fff
     style D fill:#0369a1,stroke:#0ea5e9,color:#fff
     style E fill:#92400e,stroke:#d97706,color:#fff
-    style F fill:#dc2626,stroke:#ef4444,color:#fff`,
+    style F fill:#dc2626,stroke:#b91c1c,color:#fff`,
     tip: "对于关注 AI 行业的读者，**最重要的观察点**是 Google 在 **2026 年底**发布的第一份 **AI Impact 进展报告**——它将揭示这 25 亿美元投入的**实际落地效果**，以及哪些领域**进展顺利**、哪些领域**遇到瓶颈**。这份报告将成为**整个行业评估 AI 普惠项目可行性**的**关键参考**。",
     warning: "AI 普惠的**长期风险**是「**数字殖民主义**」——科技巨头以「帮助」的名义，将**自己的技术标准和数据模型**强加于**发展中国家**，导致这些国家在**技术路线**和**数据主权**上**失去自主权**。Google 需要在推动 AI 普惠的同时，尊重**本地技术生态**的独立发展和**数据本地化**的需求。"
   }

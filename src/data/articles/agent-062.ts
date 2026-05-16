@@ -64,7 +64,7 @@ export const article: Article = {
     style B fill:#1e293b,stroke:#475569,color:#fff
     style C fill:#475569,stroke:#64748b,color:#fff
     style D fill:#047857,stroke:#059669,color:#fff
-    style E fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style E fill:#7c3aed,stroke:#6d28d9,color:#fff
     style F fill:#b91c1c,stroke:#dc2626,color:#fff
     style G fill:#92400e,stroke:#d97706,color:#fff
     style H fill:#0369a1,stroke:#0ea5e9,color:#fff
@@ -126,7 +126,7 @@ export const article: Article = {
     style A fill:#1e293b,stroke:#475569,color:#fff
     style B fill:#475569,stroke:#64748b,color:#fff
     style C fill:#047857,stroke:#059669,color:#fff
-    style D fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
     style E fill:#b91c1c,stroke:#dc2626,color:#fff`,
       tip: "工作记忆是五层中最容易被忽视但最关键的一层。很多 Agent 框架只有「短期+长期」两层，导致复杂任务执行时**状态混乱**。工作记忆作为「任务暂存区」，能显著提升多步推理的**成功率**和**可解释性**。",
       warning: "注意各层之间的**数据流向**：信息不是单向流动的（短期→长期），而是**双向的**。长期记忆中的信息可能被重新加载到工作记忆中（「回想」机制），工作记忆中的信息也可能被**改写**后存入长期记忆（「整合」机制）。忽视双向流动会导致**记忆孤岛**。"
@@ -249,7 +249,7 @@ all_memories = memory.get_all(user_id="user_123")
     G -->|"关系+图谱"| C
     
     style A fill:#047857,stroke:#059669,color:#fff
-    style B fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style B fill:#7c3aed,stroke:#6d28d9,color:#fff
     style C fill:#b91c1c,stroke:#dc2626,color:#fff
     style E fill:#92400e,stroke:#d97706,color:#fff
     style G fill:#0369a1,stroke:#0ea5e9,color:#fff`,
@@ -302,7 +302,7 @@ ViT-B/32"]
     G --> H
     
     style B fill:#475569,stroke:#64748b,color:#fff
-    style C fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style C fill:#7c3aed,stroke:#6d28d9,color:#fff
     style D fill:#047857,stroke:#059669,color:#fff
     style E fill:#92400e,stroke:#d97706,color:#fff
     style F fill:#b91c1c,stroke:#dc2626,color:#fff

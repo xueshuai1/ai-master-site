@@ -579,9 +579,9 @@ const result = validateToolCall({
     style A fill:#b91c1c,stroke:#dc2626,color:#fff
     style B fill:#92400e,stroke:#d97706,color:#fff
     style C fill:#047857,stroke:#059669,color:#fff
-    style D fill:#7c3aed,stroke:#8b5cf6,color:#fff
+    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
     style E fill:#0369a1,stroke:#0ea5e9,color:#fff
-    style F fill:#dc2626,stroke:#ef4444,color:#fff`,
+    style F fill:#dc2626,stroke:#b91c1c,color:#fff`,
             tip: "Agent 安全防御的最小可行方案（MVP）：（1）工具调用白名单；（2）输入过滤层（检测指令性内容）；（3）记忆写入的置信度阈值。这三项在 2 小时内可以实施，覆盖 80% 的 Agent 安全威胁。",
             warning: "Agent 安全最危险的假设是「Agent 不会故意做坏事」。Agent 不是「有意志」的实体——它只是遵循概率分布生成文本。但攻击者可以利用这种概率行为，以极高的精度操控 Agent 执行恶意操作。永远不要假设 Agent 的行为是「安全的」。"
         },
