@@ -71,7 +71,10 @@ export const blog: BlogPost = {
             code: [
                 {
                     lang: "python",
-                    // 公式：Loss = L_solution + λ * L_feasibility（已移至 body 文本）
+                    code: `# 损失函数：Loss = L_solution + λ * L_feasibility
+# L_solution: 确保模型能生成正确的解
+# L_feasibility: 确保模型能识别可行/不可行
+loss = solution_loss + lambda_ * feasibility_loss`,
                 },
             ],
         },
