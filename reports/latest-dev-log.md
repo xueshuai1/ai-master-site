@@ -1,8 +1,8 @@
-⏰ 写入时间：2026-05-16 22:00 (Asia/Shanghai)
+⏰ 写入时间：2026-05-17 06:00 (Asia/Shanghai)
 🐛 修复：3 个 bug
-  - b1: ai-security-015 使用了无效分类 key "ai-security" → 改为 "practice"
-  - b2: blog-182.ts 代码块中 `${meeting.summary}` 被 TS 模板字符串当作插值解析 → 转义
-  - b3: blog-182.ts mermaid 中包含 4 个 `%` 字符（会解析为注释）→ 替换为全角 `％`
+  - b1: news.ts 内容中的反引号代码块未转义导致 build 失败（news-1953/news-1954）
+  - b2: aieng-031.ts mermaid 中 % 字符导致解析错误（3处→全角％）
+  - b3: blog-184.ts mermaid 中 % 字符 + 对比度不达标（4处→全角％，#0891b2→#1e3a5f）
 ✨ 新增：0 个功能
 🔧 优化：0 项
-已知问题：无
+已知问题：aieng-031.ts mermaid gantt 类型不推荐用于中文（仅警告，非阻断）
