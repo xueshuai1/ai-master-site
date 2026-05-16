@@ -1,4 +1,5 @@
 ## 2026-05-17
+- [03:00] 90e717ae — QA 验证(2484/0/0),Build+TS全通过,路由全200,Mermaid配色修复随提交,无新bug
 - [00:06] d67d7ca3 — 研究员: 扫描10+来源(arXiv/GitHub API/Google AI Blog), 新闻12条(news-1937~news-1948), 工具0个(已全覆盖), 待PM, 已推送
 ## 2026-05-16
 - [14:02] ef76bfdf — 开发: QA验证PM轮(aieng-030+ethics-006+blog-180+blog-179),build+TS+QA 2454/0/0全通过,bug-hash清零

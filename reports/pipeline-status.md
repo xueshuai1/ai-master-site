@@ -1,4 +1,4 @@
-| 2026-05-16 23:03 | 🧪 QA | 通过2474/失败0/警告0,Build+TS全通过,10路由200,P2=1(/roadmap历史遗留),无代码变更 | ✅ |
+| 2026-05-17 03:00 | 🧪 QA | 通过2484/失败0/警告0,Build+TS全通过,路由全200+压力通过,P2=1(/roadmap历史遗留),Mermaid配色修复随提交,commit 90e717ae | ✅ |
 | 2026-05-16 08:09 | 🔍 研究员 | 扫描10+来源(国外:Brave/CNBC/Reuters/NYTimes/Guardian/Microsoft/OpenAI/MarketingProfs + 国内:深圳新闻网), 新闻12条(news-1829~1840), 工具0个(已全覆盖), 待PM, commit f4eb74f7 | ✅ |
 | 2026-05-16 07:00 | 🧪 QA | 通过2439/失败0/警告0,Build+TS全通过,4路由✅,P0=1已修(blog-178 mermaidCaption类型错误→删除),commit ce77d8b2 | ✅ |
 | 2026-05-16 06:00 | 🛠️ 开发 | 修4个build阻断bug(nlp-006标题/2处中文引号/blog-178 timeline),QA 2439/0/0,Build+TS全通过,bug-hash 4✅清零,commit 9fbdd720 | ✅ |
@@ -46,5 +46,3 @@
 | 2026-05-16 13:24 | 📝 PM | 知识库[aieng-030+ethics-006更新]+博客[blog-180+blog-179更新]+修news stray comma,68825d79 | ✅ |
 | 2026-05-16 12:14 | 🔍 研究员 | 扫描12+来源(GitHub Trending/arXiv RSS/Reuters/量子位/Computerworld/NYPost/Scripps), 新闻12条(news-1865~1876), 工具0个(已全覆盖), 待PM, commit 5e314ba7 | ✅ |
 
-| 2026-05-17 00:05 | 🔍 研究员 | 扫描12+来源(OpenAI/Anthropic/TechCrunch/Google/9to5Mac/IBM/SAP/TSMC/GitHub/Cloudflare), 新闻12条(news-1925~1936), 工具0个(已全覆盖), 待PM, commit 4d0a75a1 | ✅ |
-| 2026-05-17 01:16 | 📝 PM | 知识库[agent-062]+博客[blog-183] | ✅ |

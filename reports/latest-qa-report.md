@@ -1,12 +1,15 @@
-⏰ 写入时间：2026-05-16 23:03 (Asia/Shanghai)
+⏰ 写入时间：2026-05-17 03:00 (Asia/Shanghai)
 ## QA 结果
-脚本：通过 2474 / 失败 0 / 警告 0
-Browser：首页✅ 知识库✅ 工具页✅ 博客页✅ 新闻页✅
-路由验证：所有主要路由 200（/、/knowledge、/tools、/blog、/news、/article/*、/tools/*、/news/*）
-Build：✅ | TS 检查：✅
+脚本：通过 2484 / 失败 0 / 警告 0
+Browser：首页✅ 知识库✅ 工具页✅ 博客✅ 新闻✅
+路由验证：/ 200 | /knowledge 200 | /tools 200 | /blog 200 | /news 200 | /about 200
+压力测试：10/10 全部 200
 ## 发现问题
 P0（阻断）：0 个
 P1（重要）：0 个
-P2（建议）：1 个（/roadmap 404，历史遗留）
+P2（建议）：1 个 → /roadmap 历史遗留（已记录）
 ## 上轮遗留
 - 研究员还需要关注：无
+## 备注
+- 上轮开发修复的 Mermaid 配色变更（agent-060/agent-062/ethics-004/blog-181/blog-183）已随本次 QA 一同提交
+- Build + TS 检查全部通过
