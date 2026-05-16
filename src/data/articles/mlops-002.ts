@@ -14,7 +14,7 @@ export const article: Article = {
             title: "1. 为什么需要实验追踪",
             body: `在机器学习项目中，实验管理是最容易被忽视但最重要的环节之一。每次调整超参数、更换模型架构、使用不同的数据集划分，都会产生一个新的实验。如果不进行系统化的追踪，你很快就会迷失在无数的模型文件和配置中。
 
-**想象一下这样的场景**：三个月前你训练了一个效果很好的模型，但现在忘了它用的是哪些超参数、哪个版本的数据集、甚至用的是哪个随机种子。没有实验追踪，重现结果几乎是不可能的。
+想象一下这样的场景：三个月前你训练了一个效果很好的模型，但现在忘了它用的是哪些超参数、哪个版本的数据集、甚至用的是哪个随机种子。没有实验追踪，重现结果几乎是不可能的。
 
 实验追踪系统帮你记录每次实验的所有关键信息：超参数、指标、代码版本、数据版本、环境配置等。这不仅是为了复现，更是为了科学地迭代和改进你的模型。`,
             code: [
@@ -154,7 +154,7 @@ mlflow server \\
         },
         {
             title: "3. Weights & Biases：可视化实验分析",
-            body: `**Weights & Biases**（WandB）是另一个流行的实验追踪平台，以其强大的可视化功能和团队协作能力著称。与 MLflow 相比，WandB 的界面更加现代，交互式图表更加丰富，特别适合需要频繁比较大量实验的场景。
+            body: `Weights & Biases（WandB）是另一个流行的实验追踪平台，以其强大的可视化功能和团队协作能力著称。与 MLflow 相比，WandB 的界面更加现代，交互式图表更加丰富，特别适合需要频繁比较大量实验的场景。
 
 WandB 的核心优势在于它的 Dashboard。你可以实时查看训练曲线、比较不同实验的超参数影响、自动生成实验报告。对于深度学习项目，WandB 还能自动记录梯度分布、激活值等详细信息。
 
@@ -342,13 +342,13 @@ for params in itertools.product(*param_grid.values()):
         for k, v in param_dict.items():
             mlflow.log_param(k, v)
         
-        model = RandomForestClassifier(**param_dict)
+        model = RandomForestClassifier(param_dict)
         model.fit(X_train, y_train)
         accuracy = model.score(X_test, y_test)
         mlflow.log_metric("accuracy", accuracy)
         mlflow.sklearn.log_model(model, "model")
         
-        results.append({**param_dict, "accuracy": accuracy})
+        results.append({param_dict, "accuracy": accuracy})
 
 # 分析结果
 df = pd.DataFrame(results)

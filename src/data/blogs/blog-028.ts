@@ -89,7 +89,7 @@ class Skill:
     author: str = "user"         # "google" = 预设, "user" = 自定义
     version: str = "1.0.0"
     
-    def to_prompt(self, **inputs) -> str:
+    def to_prompt(self, inputs) -> str:
         """将 Skill 编译为实际发送给 AI 的提示词"""
         slot_values = {s.name: inputs.get(s.name, s.default) 
                       for s in self.input_slots}
@@ -124,7 +124,7 @@ competitor_skill = Skill(
   },
   {
     title: "第二层：执行引擎层 —— 跨标签页 AI 推理",
-    body: "**Chrome AI Skills** 最强大的能力在于跨标签页执行。当用户调用一个 Multi-Tab Skill 时，Chrome 的执行引擎会：",
+    body: "Chrome AI Skills 最强大的能力在于跨标签页执行。当用户调用一个 Multi-Tab Skill 时，Chrome 的执行引擎会：",
     list: [
       "1. 上下文收集：从所有目标标签页中提取页面内容（DOM 文本、meta 信息、结构化数据）",
       "2. 信息聚合：将多标签页的内容整合为一个统一的上下文窗口",
@@ -165,11 +165,11 @@ competitor_skill = Skill(
   },
   {
     title: "Chrome AI 三大组件的关系全景",
-    body: "要理解 **Chrome AI Skills** 的定位，需要把它放在 Chrome AI 的整体框架中来看。Chrome AI 目前有三个核心组件：",
+    body: "要理解 Chrome AI Skills 的定位，需要把它放在 Chrome AI 的整体框架中来看。Chrome AI 目前有三个核心组件：",
     list: [
-      "**Chrome AI Mode**：通用 AI 对话界面，可以搜索当前打开的标签页内容，提供上下文感知的回答",
-      "**Chrome AI Skills**：可复用的 AI 工作流模板，一键调用，跨标签页执行",
-      "**Chrome AI Actions**：自动化的浏览器操作（填写表单、点击按钮、导航页面），由 AI 驱动",
+      "Chrome AI Mode：通用 AI 对话界面，可以搜索当前打开的标签页内容，提供上下文感知的回答",
+      "Chrome AI Skills：可复用的 AI 工作流模板，一键调用，跨标签页执行",
+      "Chrome AI Actions：自动化的浏览器操作（填写表单、点击按钮、导航页面），由 AI 驱动",
     ],
     mermaid: `graph LR
     A[Chrome AI<br/>浏览器 AI 框架] --> B[AI Mode<br/>上下文感知对话]
@@ -190,7 +190,7 @@ competitor_skill = Skill(
   },
   {
     title: "与主流竞品对比：Chrome AI Skills 的独特优势",
-    body: "**Chrome AI Skills** 不是孤立的创新。在它之前和之后，多个平台都推出了类似的 AI 工作流能力。但 Chrome 的独特优势在于浏览器原生的跨标签页上下文获取能力——这是任何其他平台无法复制的。",
+    body: "Chrome AI Skills 不是孤立的创新。在它之前和之后，多个平台都推出了类似的 AI 工作流能力。但 Chrome 的独特优势在于浏览器原生的跨标签页上下文获取能力——这是任何其他平台无法复制的。",
     table: {
       headers: ["维度", "Chrome AI Skills", "Claude Projects", "ChatGPT GPTs", "Perplexity Collections", "Notion AI"],
       rows: [
@@ -207,7 +207,7 @@ competitor_skill = Skill(
   },
   {
     title: "Python 实战：构建自己的 Skill 解析器",
-    body: "以下代码演示了如何模拟实现一个 Skill 解析器。这个实现可以作为理解 **Chrome AI Skills** 工作原理的参考，也可以用于开发独立的 AI 工作流工具。",
+    body: "以下代码演示了如何模拟实现一个 Skill 解析器。这个实现可以作为理解 Chrome AI Skills 工作原理的参考，也可以用于开发独立的 AI 工作流工具。",
     code: [{
       lang: "python",
       code: `import json
@@ -294,7 +294,7 @@ class SkillExecutor:
         context = self._aggregate_tabs(tabs, skill.execution_mode)
         
         # 2. 编译提示词
-        prompt = skill.to_prompt(**context.get("inputs", {}))
+        prompt = skill.to_prompt(context.get("inputs", {}))
         
         # 3. 调用 AI 推理（模拟）
         full_prompt = f"{context['combined']}\\n\\n{prompt}"

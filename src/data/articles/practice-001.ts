@@ -334,8 +334,8 @@ class DeepFM(nn.Module):
         # FM 二阶
         embeds = [fm(x[:, i:i+1]) for i, fm in enumerate(self.fm_second)]
         embeds = torch.cat(embeds, dim=1)
-        sum_square = torch.sum(embeds, dim=1) ** 2
-        square_sum = torch.sum(embeds ** 2, dim=1)
+        sum_square = torch.sum(embeds, dim=1)  2
+        square_sum = torch.sum(embeds  2, dim=1)
         fm_second = 0.5 * torch.sum(sum_square - square_sum, dim=1, keepdim=True)
         # DNN
         dnn_out = self.dnn(embeds.view(embeds.size(0), -1))

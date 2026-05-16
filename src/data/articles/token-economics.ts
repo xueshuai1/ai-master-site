@@ -16,7 +16,7 @@ export const article: Article = {
       title: "一、为什么 2026 年你必须关心 Token 经济学",
       body: `2026 年 4 月 20 日，**Anthropic** 发布 **Claude** Opus 4.7，这是 **Claude** 系列首次更换 tokenizer。Simon Willison 第一时间实测发现：
 
-- **纯文本场景**：token 增长 1.46×
+- 纯文本场景：token 增长 1.46×
 - 高分辨率图像（3456×2234）：token 增长 3.01×
 - 30 页 PDF 文档：token 增长 1.08×
 

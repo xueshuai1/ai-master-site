@@ -393,7 +393,7 @@ def ask_about_image(image_path, question):
     inputs = {k: v.to("cuda") for k, v in inputs.items()}
 
     with torch.no_grad():
-        output = model.generate(**inputs, max_new_tokens=100)
+        output = model.generate(inputs, max_new_tokens=100)
     answer = processor.decode(output[0], skip_special_tokens=True)
     return answer.split("ASSISTANT:")[-1].strip()
 
@@ -417,7 +417,7 @@ def generate_image_caption(image_path, style="detailed"):
     prompt = prompts.get(style, prompts["detailed"])
     inputs = processor(text=prompt, images=image, return_tensors="pt")
 
-    output = model.generate(**inputs, max_new_tokens=200,
+    output = model.generate(inputs, max_new_tokens=200,
                             do_sample=True, temperature=0.7)
     return processor.decode(output[0], skip_special_tokens=True)`,
           },
@@ -519,7 +519,7 @@ class VideoUnderstandingPipeline:
                                 return_tensors="pt")
         inputs = {k: v.to("cuda") for k, v in inputs.items()}
 
-        output = self.model.generate(**inputs, max_new_tokens=200)
+        output = self.model.generate(inputs, max_new_tokens=200)
         return self.processor.decode(output[0], skip_special_tokens=True)`,
           },
         ],
@@ -546,7 +546,7 @@ class VideoUnderstandingPipeline:
       },
       {
         title: "7. HuggingFace 实战：使用多模态模型",
-        body: `**HuggingFace** 生态系统为多模态 LLM 的使用提供了完整的工具链。从模型加载、推理到微调和部署，每个环节都有成熟的 API 支持。掌握 **HuggingFace** 的多模态工具，是将理论转化为实践的关键一步。
+        body: `HuggingFace 生态系统为多模态 LLM 的使用提供了完整的工具链。从模型加载、推理到微调和部署，每个环节都有成熟的 API 支持。掌握 HuggingFace 的多模态工具，是将理论转化为实践的关键一步。
 
 HuggingFace 上目前有多种开源多模态模型可供选择：LLaVA-1.5 系列是最流行的开源视觉-语言模型，提供 7B 和 13B 两个版本，在多个视觉问答基准上达到开源 SOTA；Qwen2-VL 是阿里云推出的新一代多模态模型，原生支持图像和视频输入，上下文窗口达 128K，在 OCR 和细粒度理解上表现优异；Phi-3-Vision 是微软的轻量级多模态模型（4.2B 参数），在资源受限的设备上也能运行；InternVL2 是上海人工智能实验室推出的模型，在 ImageNet 等视觉基准上达到了接近闭源模型的水平。
 
@@ -580,7 +580,7 @@ model = LlavaForConditionalGeneration.from_pretrained(
 
 prompt = "USER: <image>\\n描述这张图片\\nASSISTANT:"
 inputs = processor(text=prompt, images=image, return_tensors="pt")
-output = model.generate(**inputs, max_new_tokens=200, do_sample=True)
+output = model.generate(inputs, max_new_tokens=200, do_sample=True)
 print(processor.decode(output[0], skip_special_tokens=True))`,
           },
           {

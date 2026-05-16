@@ -77,11 +77,11 @@ export const article: Article = {
         },
         {
             title: "3. 实验追踪（MLflow/W&B）",
-            body: `机器学习实验的本质是一个高维的搜索过程：你需要尝试不同的超参数组合、模型架构和特征工程策略，然后从中选出最优方案。没有实验追踪工具的情况下，数据科学家通常用电子表格或笔记本来记录每次实验的参数和结果，这种方式在实验次数增多后会迅速失控。MLflow 和 **Weights & Biases**（W&B）是目前最主流的两个实验追踪解决方案。MLflow 是开源且自托管友好的方案，它通过 Tracking Server 记录每次运行的参数、指标、模型文件和代码版本。W&B 则是云端优先的平台，除了基础的实验追踪外，还提供了实时的可视化面板、团队协作功能和自动化的超参数搜索（Sweep）。两者的核心 API 设计都很简洁，只需几行代码就能集成到现有的训练脚本中。实验追踪的关键实践包括：为每次实验记录完整的参数集合、保存关键指标的日志、存储最佳模型的 artifact、以及记录代码的 Git commit hash 以实现完全复现。当团队规模扩大时，实验追踪平台还承担着知识共享的功能，让团队成员可以查看、比较和复用彼此的实验结果。`,
+            body: `机器学习实验的本质是一个高维的搜索过程：你需要尝试不同的超参数组合、模型架构和特征工程策略，然后从中选出最优方案。没有实验追踪工具的情况下，数据科学家通常用电子表格或笔记本来记录每次实验的参数和结果，这种方式在实验次数增多后会迅速失控。MLflow 和 Weights & Biases（W&B）是目前最主流的两个实验追踪解决方案。MLflow 是开源且自托管友好的方案，它通过 Tracking Server 记录每次运行的参数、指标、模型文件和代码版本。W&B 则是云端优先的平台，除了基础的实验追踪外，还提供了实时的可视化面板、团队协作功能和自动化的超参数搜索（Sweep）。两者的核心 API 设计都很简洁，只需几行代码就能集成到现有的训练脚本中。实验追踪的关键实践包括：为每次实验记录完整的参数集合、保存关键指标的日志、存储最佳模型的 artifact、以及记录代码的 Git commit hash 以实现完全复现。当团队规模扩大时，实验追踪平台还承担着知识共享的功能，让团队成员可以查看、比较和复用彼此的实验结果。`,
             code: [
                 {
                     lang: "python",
-                    code: `import mlflow\nimport mlflow.sklearn\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\nmlflow.set_tracking_uri("http://localhost:5000")\nmlflow.set_experiment("customer_churn_prediction")\n\nwith mlflow.start_run(run_name="rf_baseline") as run:\n    # 记录参数\n    params = {"n_estimators": 100, "max_depth": 10, "random_state": 42}\n    mlflow.log_params(params)\n\n    # 训练模型\n    model = RandomForestClassifier(**params)\n    model.fit(X_train, y_train)\n\n    # 记录指标\n    accuracy = accuracy_score(y_test, model.predict(X_test))\n    mlflow.log_metric("accuracy", accuracy)\n    mlflow.log_metric("f1_score", f1_score(y_test, model.predict(X_test), average="weighted"))\n\n    # 保存模型 artifact\n    mlflow.sklearn.log_model(model, "model")\n    print(f"Run ID: {run.info.run_id}")`
+                    code: `import mlflow\nimport mlflow.sklearn\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\nmlflow.set_tracking_uri("http://localhost:5000")\nmlflow.set_experiment("customer_churn_prediction")\n\nwith mlflow.start_run(run_name="rf_baseline") as run:\n    # 记录参数\n    params = {"n_estimators": 100, "max_depth": 10, "random_state": 42}\n    mlflow.log_params(params)\n\n    # 训练模型\n    model = RandomForestClassifier(params)\n    model.fit(X_train, y_train)\n\n    # 记录指标\n    accuracy = accuracy_score(y_test, model.predict(X_test))\n    mlflow.log_metric("accuracy", accuracy)\n    mlflow.log_metric("f1_score", f1_score(y_test, model.predict(X_test), average="weighted"))\n\n    # 保存模型 artifact\n    mlflow.sklearn.log_model(model, "model")\n    print(f"Run ID: {run.info.run_id}")`
                 },
                 {
                     lang: "python",
@@ -222,7 +222,7 @@ export const article: Article = {
         },
         {
             title: "7. Kubeflow Pipelines 实战",
-            body: `Kubeflow Pipelines 是 Google 开源的 ML 工作流编排平台，运行在 Kubernetes 之上，是构建企业级 MLOps 流水线的强大工具。它通过声明式的 YAML 或 Python DSL 来定义流水线，每个步骤作为一个容器化组件运行在 Kubernetes Pod 中。这种架构天然支持弹性伸缩、资源隔离和故障恢复。Kubeflow Pipelines 的核心概念包括：Component（组件）是最小执行单元，通常是一个容器化的 Python 脚本；Pipeline（流水线）是多个组件的有向无环图（DAG），定义了执行顺序和依赖关系；Run（运行）是流水线的一次具体执行，可以追踪每次运行的输入、输出和状态。在实战中，我们通常使用 kfp 的 Python DSL 来编写流水线定义，这样可以利用 Python 的编程能力来动态生成流水线结构。Kubeflow 提供了丰富的内置组件，涵盖了数据下载、模型训练、模型评估和模型部署等常见场景。此外，Kubeflow 还支持条件分支、并行执行和参数化配置等高级特性，使得构建复杂的 ML 流水线变得更加灵活和高效。对于已经有 Kubernetes 基础设施的团队来说，Kubeflow Pipelines 是构建 MLOps **Level 2** 和 **Level 3** 的理想选择。`,
+            body: `Kubeflow Pipelines 是 Google 开源的 ML 工作流编排平台，运行在 Kubernetes 之上，是构建企业级 MLOps 流水线的强大工具。它通过声明式的 YAML 或 Python DSL 来定义流水线，每个步骤作为一个容器化组件运行在 Kubernetes Pod 中。这种架构天然支持弹性伸缩、资源隔离和故障恢复。Kubeflow Pipelines 的核心概念包括：Component（组件）是最小执行单元，通常是一个容器化的 Python 脚本；Pipeline（流水线）是多个组件的有向无环图（DAG），定义了执行顺序和依赖关系；Run（运行）是流水线的一次具体执行，可以追踪每次运行的输入、输出和状态。在实战中，我们通常使用 kfp 的 Python DSL 来编写流水线定义，这样可以利用 Python 的编程能力来动态生成流水线结构。Kubeflow 提供了丰富的内置组件，涵盖了数据下载、模型训练、模型评估和模型部署等常见场景。此外，Kubeflow 还支持条件分支、并行执行和参数化配置等高级特性，使得构建复杂的 ML 流水线变得更加灵活和高效。对于已经有 Kubernetes 基础设施的团队来说，Kubeflow Pipelines 是构建 MLOps Level 2 和 Level 3** 的理想选择。`,
             code: [
                 {
                     lang: "python",

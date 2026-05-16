@@ -571,7 +571,7 @@ class RAGDocumentProcessor:
                 embedding = self.embed_fn(chunk)
                 processed.append(Document(
                     content=chunk,
-                    metadata={**meta, "chunk_id": doc_id, "chunk_index": i},
+                    metadata={meta, "chunk_id": doc_id, "chunk_index": i},
                     embedding=embedding
                 ))
         return processed
@@ -855,7 +855,7 @@ class LLMRouter:
     },
     {
       title: "7. 实战：LangChain 构建完整客服系统",
-      body: `本节使用 **LangChain** 框架构建一个端到端的智能客服系统，整合 **RAG**、Function Calling 和多轮对话管理能力。系统以 **LangChain** 的 ChatPromptTemplate 定义对话模板，使用 RunnableWithMessageHistory 维护多轮对话状态，通过 **RAG** 检索产品知识库增强回复准确性，并利用 Tool 机制实现订单查询等业务操作。完整架构包含四个层次：数据层负责知识库的向量化存储，检索层使用 LangChain 的 Retriever 接口查询相关文档，Agent 层通过 LangChain Agent 编排工具调用和多步推理，交互层处理用户输入和格式化输出。这种分层设计使得每个模块可以独立测试和优化。系统还包含了对话历史管理、异常处理、性能监控等生产级功能。通过 LangChain 的声明式编程范式，我们可以用极少的代码构建出功能完整的客服系统，同时保持良好的可扩展性。`,
+      body: `本节使用 LangChain 框架构建一个端到端的智能客服系统，整合 RAG、Function Calling 和多轮对话管理能力。系统以 LangChain 的 ChatPromptTemplate 定义对话模板，使用 RunnableWithMessageHistory 维护多轮对话状态，通过 RAG** 检索产品知识库增强回复准确性，并利用 Tool 机制实现订单查询等业务操作。完整架构包含四个层次：数据层负责知识库的向量化存储，检索层使用 LangChain 的 Retriever 接口查询相关文档，Agent 层通过 LangChain Agent 编排工具调用和多步推理，交互层处理用户输入和格式化输出。这种分层设计使得每个模块可以独立测试和优化。系统还包含了对话历史管理、异常处理、性能监控等生产级功能。通过 LangChain 的声明式编程范式，我们可以用极少的代码构建出功能完整的客服系统，同时保持良好的可扩展性。`,
       code: [
         {
           lang: "python",

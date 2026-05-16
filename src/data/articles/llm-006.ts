@@ -307,7 +307,7 @@ def cost_efficient_consistency(prompt: str,
             "confidence": all_answers[best] / total,
             "total_calls": max_n,
         }
-    return {**result, "total_calls": initial_n}`
+    return {result, "total_calls": initial_n}`
                 }
             ],
             table: {
@@ -335,7 +335,7 @@ def cost_efficient_consistency(prompt: str,
 
 ReAct 的工作流程可以用一个循环来描述：模型首先产生一段「Thought」（思考），分析当前状态和下一步应该做什么；然后产生一个「Action」（行动），比如调用搜索 API、查询数据库或执行计算；接着系统执行这个行动并返回「Observation」（观察结果）；模型再根据观察结果进行下一轮思考，如此循环直到得出最终答案。
 
-这个框架的强大之处在于它让模型具备了「主动获取信息」的能力，而不只是被动地基于已有知识生成文本。ReAct 是构建 AI Agent 的基石——几乎所有现代 Agent 框架（**LangChain**、AutoGPT、**CrewAI**）的核心循环都源于 ReAct 的思想。`,
+这个框架的强大之处在于它让模型具备了「主动获取信息」的能力，而不只是被动地基于已有知识生成文本。ReAct 是构建 AI Agent 的基石——几乎所有现代 Agent 框架（LangChain、AutoGPT、CrewAI）的核心循环都源于 ReAct 的思想。`,
             code: [
                 {
                     lang: "python",
@@ -443,7 +443,7 @@ def parse_action(output: str) -> tuple:
 
 实现可靠的结构化输出有两个关键策略：第一，在 Prompt 中给出精确的格式模板（最好是包含真实数据的 JSON 示例），让模型模仿这个格式；第二，在代码层面加入输出验证和自动重试机制。因为即使模型理解了格式要求，偶尔也会输出不规范的 JSON（比如缺少引号、多了一个逗号），所以需要有容错机制。
 
-**OpenAI** 在 2023 年底推出了 response_format 参数，允许指定输出必须为 JSON 对象。这是一个重大进步，因为它在模型层面强制了格式约束，而不仅仅依赖 Prompt 中的文字说明。但即便如此，仍然建议在代码层面做二次验证——双重保险总是比单一约束更可靠。`,
+OpenAI 在 2023 年底推出了 response_format 参数，允许指定输出必须为 JSON 对象。这是一个重大进步，因为它在模型层面强制了格式约束，而不仅仅依赖 Prompt 中的文字说明。但即便如此，仍然建议在代码层面做二次验证——双重保险总是比单一约束更可靠。`,
             code: [
                 {
                     lang: "python",
@@ -537,11 +537,11 @@ def structured_extract(review_text: str,
         },
         {
             title: "7. 实战：OpenAI 与 HuggingFace 的 Prompt 工程",
-            body: `理论再好，最终也要落到代码上。本节通过 **OpenAI** API 和 **HuggingFace** **Transformer**s 两个主流平台，展示如何将前面学到的 Prompt 工程技术应用到实际项目中。
+            body: `理论再好，最终也要落到代码上。本节通过 OpenAI API 和 HuggingFace Transformers 两个主流平台，展示如何将前面学到的 Prompt 工程技术应用到实际项目中。
 
-**OpenAI** API 是最容易上手的平台，它提供了完善的 Chat Completions API、JSON 模式、function calling 等功能。关键是要理解 system/assistant/user 三种消息角色的分工：system 消息定义全局行为（角色、规则、输出格式），user 消息提供具体任务，assistant 消息用于少样本示例中的模型响应模拟。
+OpenAI API 是最容易上手的平台，它提供了完善的 Chat Completions API、JSON 模式、function calling 等功能。关键是要理解 system/assistant/user 三种消息角色的分工：system 消息定义全局行为（角色、规则、输出格式），user 消息提供具体任务，assistant 消息用于少样本示例中的模型响应模拟。
 
-**HuggingFace** **Transformer**s 则提供了更大的灵活性——你可以使用任何开源模型（Llama、Mistral、Qwen 等），在本地或自有服务器上运行。但这也意味着你需要自己处理更多的细节：分词、模板构建、温度控制、停止词等。不过，HuggingFace 生态的 prompt_template 工具正在让这个过程越来越简单。
+HuggingFace Transformers 则提供了更大的灵活性——你可以使用任何开源模型（Llama、Mistral、Qwen 等），在本地或自有服务器上运行。但这也意味着你需要自己处理更多的细节：分词、模板构建、温度控制、停止词等。不过，HuggingFace 生态的 prompt_template 工具正在让这个过程越来越简单。
 
 无论选择哪个平台，核心原则是一致的：好的 Prompt 设计比模型选择更重要。一个精心设计的 Prompt 在中等模型上的表现，可能超过随意编写的 Prompt 在最强模型上的表现。`,
             code: [
@@ -622,7 +622,7 @@ def hf_prompt_engineer(question: str) -> str:
 
     inputs = tokenizer(text, return_tensors="pt").to(model.device)
     outputs = model.generate(
-        **inputs,
+        inputs,
         max_new_tokens=512,
         temperature=0.7,
         do_sample=True,

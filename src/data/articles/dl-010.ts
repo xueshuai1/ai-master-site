@@ -14,7 +14,7 @@ export const article: Article = {
             title: "1. 为什么初始化很重要：梯度消失与爆炸",
             body: `神经网络训练的第一步不是前向传播，而是权重初始化。初始化方案直接决定了训练能否顺利启动——糟糕的初始化会导致梯度消失（Gradient Vanishing）或梯度爆炸（Gradient Exploding），使模型在训练初期就「死掉」。
 
-**梯度消失的典型表现是**：深层网络的梯度经过链式法则连乘后指数级衰减，靠近输入层的参数几乎不更新。假设每层的激活值方差为 0.5，经过 10 层后梯度幅度变为 0.5^10 ≈ 0.001，几乎为零。梯度爆炸则相反，当权重过大时，每层的方差不断放大，导致激活值溢出（NaN）或梯度范数超过浮点数表示范围。
+梯度消失的典型表现是：深层网络的梯度经过链式法则连乘后指数级衰减，靠近输入层的参数几乎不更新。假设每层的激活值方差为 0.5，经过 10 层后梯度幅度变为 0.5^10 ≈ 0.001，几乎为零。梯度爆炸则相反，当权重过大时，每层的方差不断放大，导致激活值溢出（NaN）或梯度范数超过浮点数表示范围。
 
 初始化策略的核心目标是：保持前向传播中激活值的方差逐层不变，同时保持反向传播中梯度的方差也逐层不变。这需要精心设计权重的分布（均匀或正态），使其方差与输入/输出维度匹配。不同的激活函数（Sigmoid、Tanh、ReLU）需要不同的初始化方案，因为它们的非线性特性改变了信号的统计行为。`,
             code: [
@@ -174,7 +174,7 @@ def he_normal_manual(tensor, negative_slope=0.0):
     """手动实现 He/Kaiming 正态初始化"""
     fan_in, _ = nn.init._calculate_fan_in_and_fan_out(tensor)
     # gain = sqrt(2 / (1 + negative_slope²))
-    gain = math.sqrt(2.0 / (1.0 + negative_slope ** 2))
+    gain = math.sqrt(2.0 / (1.0 + negative_slope  2))
     std = gain / math.sqrt(fan_in)
     return nn.init.normal_(tensor, mean=0.0, std=std)
 
@@ -258,7 +258,7 @@ class HeInitializedNet(nn.Module):
 
 正交初始化的数学基础来自 QR 分解：对一个随机矩阵做 QR 分解，Q 矩阵就是正交的。PyTorch 的实现方式是：先生成一个正态分布的随机矩阵，然后对其做 QR 分解，取 Q 矩阵作为初始权重。对于非方阵（如卷积核展平后），取 QR 分解的「瘦」版本。
 
-正交初始化在 RNN/LSTM 中尤为重要，因为循环连接相当于同一权重矩阵被反复乘以 n 次。如果权重矩阵的最大奇异值大于 1，连乘后指数爆炸；小于 1，指数消失。正交矩阵的所有奇异值都是 1，完美避免了这个问题。在极深的 CNN 和 **Transformer** 中，正交初始化也能提供比随机初始化更稳定的训练起点。`,
+正交初始化在 RNN/LSTM 中尤为重要，因为循环连接相当于同一权重矩阵被反复乘以 n 次。如果权重矩阵的最大奇异值大于 1，连乘后指数爆炸；小于 1，指数消失。正交矩阵的所有奇异值都是 1，完美避免了这个问题。在极深的 CNN 和 Transformer 中，正交初始化也能提供比随机初始化更稳定的训练起点。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn
@@ -339,7 +339,7 @@ class StableRNN(nn.Module):
 
 这种策略在 ResNet 的变体中被广泛应用。具体来说，对于残差块中的最后一个全连接层或卷积层，将其权重除以一个缩放因子（通常是 sqrt(L)，其中 L 是残差块的总数或当前深度）。这种「渐进缩放」确保即使网络非常深，残差信号的方差也不会无限累积。
 
-Layer-Scaling 与 ResNet 的 Pre-Activation 结构（BN-ReLU-Conv 顺序）配合效果最佳。在 Pre-Activation ResNet 中，信号在进入每个残差块之前已经被归一化，Layer-Scaling 进一步控制了残差分支的幅度，使得即使训练 1000+ 层的网络也不会出现数值不稳定。这种策略也被迁移到 **Transformer** 中，用于初始化 Attention 和 FFN 层。`,
+Layer-Scaling 与 ResNet 的 Pre-Activation 结构（BN-ReLU-Conv 顺序）配合效果最佳。在 Pre-Activation ResNet 中，信号在进入每个残差块之前已经被归一化，Layer-Scaling 进一步控制了残差分支的幅度，使得即使训练 1000+ 层的网络也不会出现数值不稳定。这种策略也被迁移到 Transformer** 中，用于初始化 Attention 和 FFN 层。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn
@@ -543,9 +543,9 @@ print("He 梯度范数:", analyze_gradients(model_h, x, target))` },
             title: "7. PyTorch 实战：不同初始化对比实验",
             body: `理论分析最终要落实到实验验证。本节设计一个控制变量实验，在相同的网络架构和数据集上，仅改变初始化方案，比较它们对收敛速度和最终精度的影响。实验使用 CIFAR-10 数据集和一个中等深度的 VGG-like CNN（8 个卷积层 + 3 个全连接层），确保网络足够深以体现初始化差异。
 
-**实验设计遵循以下原则**：固定所有超参数（学习率 0.01、SGD 动量 0.9、weight decay 5e-4、batch size 128），仅改变初始化方案；每种方案重复 3 次取平均值以减少随机性影响；记录训练 loss 曲线和测试精度，同时监控每层激活值的标准差变化。
+实验设计遵循以下原则：固定所有超参数（学习率 0.01、SGD 动量 0.9、weight decay 5e-4、batch size 128），仅改变初始化方案；每种方案重复 3 次取平均值以减少随机性影响；记录训练 loss 曲线和测试精度，同时监控每层激活值的标准差变化。
 
-**预期结果**：在 ReLU 网络上，He 初始化应该明显优于 Xavier；在包含 Tanh 的网络上，Xavier 应该优于 He；正交初始化在极深网络中表现最佳但计算开销略大。通过实验数据，我们能用具体数字验证前面章节的理论分析。`,
+预期结果：在 ReLU 网络上，He 初始化应该明显优于 Xavier；在包含 Tanh 的网络上，Xavier 应该优于 He；正交初始化在极深网络中表现最佳但计算开销略大。通过实验数据，我们能用具体数字验证前面章节的理论分析。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn

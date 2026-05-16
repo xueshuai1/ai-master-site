@@ -119,7 +119,7 @@ func_args = json.loads(tool_call.function.arguments)
 # → {"city": "北京", "unit": "celsius"}
 
 # 第三阶段：执行工具并将结果注入对话
-weather_result = get_weather_api(**func_args)
+weather_result = get_weather_api(func_args)
 messages = [
     {"role": "user", "content": "北京今天天气怎么样？"},
     response.choices[0].message,  # 模型的tool_call响应
@@ -258,7 +258,7 @@ tool_def = {
             title: "4. 多工具选择与路由：让模型成为聪明的调度员",
             body: `当系统中只有一个工具时，问题很简单——模型只需要决定「调不调用」。但当可用工具从2个增加到10个甚至更多时，模型面临着真正的挑战：从众多工具中选出最合适的一个，并且传入正确的参数。这就是多工具路由问题。
 
-**OpenAI**的模型在设计时就考虑了多工具场景。当你传入多个工具定义时，模型会基于用户输入的语义和工具的描述进行匹配选择。但模型的选择质量高度依赖于工具描述的区分度——如果两个工具的description过于相似，模型可能会混淆它们。比如同时定义了get_weather和get_forecast，如果描述不够清晰地区分「当前天气」和「未来预报」，模型在面对「明天天气」时可能选错工具。
+OpenAI**的模型在设计时就考虑了多工具场景。当你传入多个工具定义时，模型会基于用户输入的语义和工具的描述进行匹配选择。但模型的选择质量高度依赖于工具描述的区分度——如果两个工具的description过于相似，模型可能会混淆它们。比如同时定义了get_weather和get_forecast，如果描述不够清晰地区分「当前天气」和「未来预报」，模型在面对「明天天气」时可能选错工具。
 
 解决多工具路由问题的策略包括：为每个工具提供明确的使用场景说明；在工具description中加入排除说明（「不适用于查询历史天气数据」）；按功能分组管理工具；对于高度相似的工具，考虑合并为一个工具并通过参数区分行为。`,
             code: [
@@ -515,7 +515,7 @@ def safe_tool_executor(func):
                 return {"error": "操作已取消：需要用户确认"}
         
         try:
-            result = func(*args, **kwargs)
+            result = func(*args, kwargs)
             logger.info(f"[SUCCESS] {tool_name}")
             return result
         except Exception as e:
@@ -601,7 +601,7 @@ def sanitize_tool_result(tool_name: str,
             title: "7. 实战：天气查询 + 计算器 + 搜索 Agent",
             body: `现在我们将前面学到的知识整合起来，构建一个完整的多工具Agent。这个Agent具备三种核心能力：实时天气查询（外部API调用）、精确数学计算（避免大模型计算错误）、互联网搜索（获取最新信息）。这三个工具覆盖了Function Calling最常见的应用场景——实时数据获取、精确计算、知识扩展。
 
-我们将使用**OpenAI**的Function Calling API作为核心框架，配合requests库调用外部服务，构建一个端到端的Agent系统。代码结构清晰分层：工具定义层描述每个工具的Schema，工具实现层封装实际的执行逻辑，Agent协调层管理完整的对话循环，包括工具选择、执行、结果注入和最终回答生成。
+我们将使用OpenAI的Function Calling API作为核心框架，配合requests库调用外部服务，构建一个端到端的Agent系统。代码结构清晰分层：工具定义层描述每个工具的Schema，工具实现层封装实际的执行逻辑，Agent协调层管理完整的对话循环，包括工具选择、执行、结果注入和最终回答生成。
 
 这个实战项目的价值在于它是可扩展的——你可以轻松地添加更多工具（数据库查询、邮件发送、文件操作等），而Agent的核心循环代码不需要修改。这正是Function Calling架构的优雅之处：工具即插即用，Agent的核心逻辑保持不变。`,
             code: [
@@ -633,7 +633,7 @@ CALCULATOR_TOOL = {
             "properties": {
                 "expression": {
                     "type": "string", 
-                    "description": "数学表达式，如 '2 + 2'、'3 ** 4'、'sqrt(144)'"
+                    "description": "数学表达式，如 '2 + 2'、'3  4'、'sqrt(144)'"
                 }
             },
             "required": ["expression"]

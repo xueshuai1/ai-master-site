@@ -14,14 +14,14 @@ export const article: Article = {
         title: "1. NER 任务定义与 BIO/BIOES 标注体系",
         body: `命名实体识别（Named Entity Recognition, NER）是 NLP 中最基础的序列标注任务之一。给定一个句子，NER 的目标是识别出其中具有特定意义的实体（人名、地名、组织机构名、时间、金额等），并将其分类到预定义的类别中。
 
-**任务形式化**： 输入序列 X = (x₁, x₂, ..., xₙ)，输出标签序列 Y = (y₁, y₂, ..., yₙ)，其中每个 yᵢ 对应 xᵢ 的实体标签。这是一个典型的 Seq2Seq 任务——输入和输出长度相同，但输出不是自由文本，而是从有限标签集中选取的结构化标签。
+任务形式化： 输入序列 X = (x₁, x₂, ..., xₙ)，输出标签序列 Y = (y₁, y₂, ..., yₙ)，其中每个 yᵢ 对应 xᵢ 的实体标签。这是一个典型的 Seq2Seq 任务——输入和输出长度相同，但输出不是自由文本，而是从有限标签集中选取的结构化标签。
 
 BIO 标注体系是最常用的方案：
 - B-XXX（Begin）： 实体的第一个字/词
 - I-XXX（Inside）： 实体的非首字/词
 - O（Outside）： 非实体部分
 
-**例如**：「张(B-PER) 三(I-PER) 在(O) 北(B-LOC) 京(I-LOC) 工(O) 作(O)」
+例如：「张(B-PER) 三(I-PER) 在(O) 北(B-LOC) 京(I-LOC) 工(O) 作(O)」
 
 BIOES 标注体系在 BIO 基础上增加了两个标签：
 - S-XXX（Single）： 单字实体
@@ -29,7 +29,7 @@ BIOES 标注体系在 BIO 基础上增加了两个标签：
 
 BIOES 的优势在于约束更严格——解码器不能产生 B-XXX 后紧跟另一个 B-XXX 的非法序列，也更容易区分相邻实体。代价是标签空间从 2K+1 膨胀到 4K+1（K 为实体类别数）。
 
-**嵌套实体问题**： 传统 BIO 标注无法处理嵌套。例如「北京市(B-LOC) 大学(I-LOC)」中，「北京」本身也是地名。这需要通过分层 BIO、片段枚举或超图标注来解决。`,
+嵌套实体问题： 传统 BIO 标注无法处理嵌套。例如「北京市(B-LOC) 大学(I-LOC)」中，「北京」本身也是地名。这需要通过分层 BIO、片段枚举或超图标注来解决。`,
         code: [
           {
             lang: "python",
@@ -159,7 +159,7 @@ P(X, Y) = P(y₁) · Πᵢ P(yᵢ|yᵢ₋₁) · Πᵢ P(xᵢ|yᵢ)
 
 HMM 有三个核心参数：初始概率 π（第一个标签的分布）、转移概率 A（标签间的转移）、发射概率 B（标签生成词的概率）。训练用 Baum-Welch（EM 算法），解码用 Viterbi 算法。
 
-**HMM 的根本局限**： 独立性假设太强。它假设 xᵢ 只依赖 yᵢ（观测独立性），但实际中 xᵢ 的特征（如前一个词、后缀、大小写）对预测 yᵢ 非常重要。HMM 无法利用这些丰富的特征函数。
+HMM 的根本局限： 独立性假设太强。它假设 xᵢ 只依赖 yᵢ（观测独立性），但实际中 xᵢ 的特征（如前一个词、后缀、大小写）对预测 yᵢ 非常重要。HMM 无法利用这些丰富的特征函数。
 
 CRF（线性链条件随机场） 解决了这个问题。CRF 是判别式模型，直接建模 P(Y|X)，允许使用任意特征函数：
 P(Y|X) = (1/Z(X)) · exp(Σᵢ Σₖ λₖ fₖ(yᵢ₋₁, yᵢ, X, i))
@@ -361,14 +361,14 @@ print(f"  ... 共 {len(features)} 个特征")`,
         title: "3. BiLSTM-CRF 架构：深度学习时代的 NER 标准",
         body: `BiLSTM-CRF 是 2015-2018 年间 NER 任务的 SOTA 架构，至今仍是理解序列标注的重要基线。它巧妙地将深度表示学习（BiLSTM）和结构化预测（CRF）结合在一起。
 
-**三层架构**：
+三层架构：
 1. 表示层（Embedding）： 将每个词映射为向量。可以是预训练词向量（Word2Vec/GloVe），也可以是字符级 CNN/LSTM 编码（解决 OOV 问题）。
 2. 编码层（BiLSTM）： 双向 LSTM 编码上下文信息。前向 LSTM 从左到右读取，后向 LSTM 从右到左读取，两者的隐状态拼接得到每个位置的上下文感知表示。
 3. 解码层（CRF）： 线性链 CRF 在 BiLSTM 输出上做全局最优解码。CRF 层的发射分数由 BiLSTM 提供（每个位置的每个标签的得分），转移参数由 CRF 层自己学习。
 
 为什么需要 CRF 层？ 如果只用 BiLSTM + Softmax（每个位置独立分类），模型可能输出非法标签序列（如 I-PER 跟在 O 后面）。CRF 层通过学习转移矩阵来禁止这些非法转换，确保输出是合法的标签序列。
 
-**字符级表示**： BiLSTM-CRF 通常配合字符级 LSTM 使用。对每个词的字符序列跑一个 LSTM，取最终隐状态作为该词的字符级表示，再与词向量拼接。这样模型可以学习词缀模式（如「-tion → 名词」），天然解决 OOV 问题。`,
+字符级表示： BiLSTM-CRF 通常配合字符级 LSTM 使用。对每个词的字符序列跑一个 LSTM，取最终隐状态作为该词的字符级表示，再与词向量拼接。这样模型可以学习词缀模式（如「-tion → 名词」），天然解决 OOV 问题。`,
         code: [
           {
             lang: "python",
@@ -565,16 +565,16 @@ for chars in words:
         title: "4. BERT 微调 NER：预训练语言模型的降维打击",
         body: `BERT 的出现彻底改变了 NER 任务范式。不再需要手工设计特征、训练 BiLSTM——只需在预训练 BERT 之上加一个分类头，微调即可达到远超 BiLSTM-CRF 的效果。
 
-**核心原理**： BERT 在大规模无标注语料上通过 MLM（Masked Language Modeling）和 NSP（Next Sentence Prediction）预训练，学到了深层的语言表示。微调 NER 时，我们：
+核心原理： BERT 在大规模无标注语料上通过 MLM（Masked Language Modeling）和 NSP（Next Sentence Prediction）预训练，学到了深层的语言表示。微调 NER 时，我们：
 1. 输入句子通过 BERT 得到每个 token 的上下文表示 H = (h₁, h₂, ..., hₙ)，其中 hᵢ ∈ R⁷⁶⁸（BERT-base）
 2. 对每个位置加一个线性分类层：yᵢ = softmax(W · hᵢ + b)，W ∈ R^(K×768)
 3. 用交叉熵损失微调 BERT 和分类层：L = -Σᵢ log P(yᵢ|hᵢ)
 
 WordPiece 分词问题： BERT 使用 WordPiece 分词器，会将未登录词切分为子词。例如「unhappiness」→「un + ##happy + ##ness」。这对 NER 带来挑战：一个实体可能跨越多个子词。
 
-**解决方案**：
+解决方案：
 1. 首子词策略（First Subword）： 只对每个词的第一个子词做预测，忽略后续子词。这是最常用也最简单的方法。
-2. **全子词策略**： 对所有子词做预测，然后通过投票或取平均得到词级标签。
+2. 全子词策略： 对所有子词做预测，然后通过投票或取平均得到词级标签。
 3. 跨度预测（Span-based）： 不预测每个 token 的标签，而是直接预测实体跨度（start, end, type）。
 
 BERT-CRF： 在 BERT 输出上叠加 CRF 层，结合 BERT 的强大表示和 CRF 的结构化约束。这通常是单句 NER 的最强架构。`,
@@ -721,20 +721,20 @@ print(f"\\n  词数: {total_words} → Token数: {total_tokens} (膨胀率: {tot
         title: "5. 嵌套实体与跨句实体识别",
         body: `现实世界中的 NER 远比 CoNLL-2003 这样的基准数据集复杂。嵌套实体（Nested Entities）和跨句实体（Cross-sentence Entities）是两个最常见的挑战。
 
-**嵌套实体**： 一个实体的文本是另一个实体的一部分。例如：
+嵌套实体： 一个实体的文本是另一个实体的一部分。例如：
 - 「[北京大学]」→ ORG，但其中嵌套了「[北京]」→ LOC
 - 「[美国[总统]特朗普]」→ 整体是 PERSON，「总统」是 TITLE，「美国」是 LOC
 - 「[新冠[病毒]]」→ 整体是 DISEASE，嵌套「病毒」是 BIO_ENTITY
 
 传统 BIO 标注无法处理嵌套，因为每个 token 只能有一个标签。解决方案包括：
-1. **分层标注**： 对每层嵌套实体独立做 BIO 标注，多层叠加。
+1. 分层标注： 对每层嵌套实体独立做 BIO 标注，多层叠加。
 2. 片段枚举（Span-based）： 枚举所有可能的 (start, end) 片段，对每个片段做分类。
 3. 超图标注（Hypergraph）： 将 NER 建模为超图上的路径搜索问题。
 4. 指针网络（Pointer Network）： 用两个指针分别指向实体的起点和终点。
 
-**跨句实体**： 实体信息跨越句子边界。例如：「张三是一位著名科学家。他发现了 XYZ 蛋白质。」其中「他」指代「张三」，需要结合上下文才能识别。这本质上是一个共指消解（Coreference Resolution）+ NER 的联合任务。
+跨句实体： 实体信息跨越句子边界。例如：「张三是一位著名科学家。他发现了 XYZ 蛋白质。」其中「他」指代「张三」，需要结合上下文才能识别。这本质上是一个共指消解（Coreference Resolution）+ NER 的联合任务。
 
-**解决方案**： 使用文档级别的上下文编码（如 DocBERT），将多个句子一起输入模型，在跨句边界上做实体预测。或者先做单句 NER，再用共指消解合并跨句实体提及。`,
+解决方案： 使用文档级别的上下文编码（如 DocBERT），将多个句子一起输入模型，在跨句边界上做实体预测。或者先做单句 NER，再用共指消解合并跨句实体提及。`,
         code: [
           {
             lang: "python",
@@ -761,7 +761,7 @@ def classify_span(tokens, start, end, model=None):
     
     # 实际中这里用 BERT 编码 span 并分类
     # 模拟: 用长度启发式
-    np.random.seed(hash(span_text) % (2**32))
+    np.random.seed(hash(span_text) % (232))
     probs = np.random.dirichlet([1, 1, 1, 1, 3])  # 偏向 NEG
     
     best_idx = np.argmax(probs)
@@ -921,16 +921,16 @@ print("  '该校'(句子 2) 指代 '北京大学' → 需要共指消解")`,
 实体级别评估（Entity-level Evaluation）：
 - 精确率（Precision）： 模型预测为实体的片段中，有多少是真正正确的实体。P = TP / (TP + FP)
 - 召回率（Recall）： 真实存在的实体中，有多少被模型正确识别。R = TP / (TP + FN)
-- **F1 值**： P 和 R 的调和平均。F1 = 2 × P × R / (P + R)
+- F1 值： P 和 R 的调和平均。F1 = 2 × P × R / (P + R)
 
 严格匹配（Exact Match）vs 宽松匹配（Partial Match）：
 - 严格匹配要求实体的类型和边界完全正确。
 - 宽松匹配允许部分重叠（如预测「北京」而真实是「北京市」，算部分正确）。
 - 实际研究中通常报告严格匹配的 F1，但宽松匹配有助于诊断边界错误。
 
-**混淆矩阵分析**： 除了总体 F1，还应分析各类别的 F1 和类别间的混淆情况。例如，模型可能将「苹果」误分类为 ORG（苹果公司）而非 FRUIT，这反映了上下文歧义的处理能力。
+混淆矩阵分析： 除了总体 F1，还应分析各类别的 F1 和类别间的混淆情况。例如，模型可能将「苹果」误分类为 ORG（苹果公司）而非 FRUIT，这反映了上下文歧义的处理能力。
 
-**交叉验证**： 小数据集上，使用 K 折交叉验证获得更可靠的性能估计。NER 数据集通常存在领域偏差，交叉验证可以评估模型的泛化能力。`,
+交叉验证**： 小数据集上，使用 K 折交叉验证获得更可靠的性能估计。NER 数据集通常存在领域偏差，交叉验证可以评估模型的泛化能力。`,
         code: [
           {
             lang: "python",
@@ -1123,17 +1123,17 @@ print("  结论: 必须看严格匹配的 F1!")`,
         title: "7. spaCy 与 HuggingFace 实战：从零构建 NER Pipeline",
         body: `理论学完后，让我们用两个最主流的工具构建完整的 NER 系统：spaCy（工业级 NLP 库）和 **HuggingFace** **Transformer**s（预训练模型生态）。
 
-**spaCy 方案**： 适合快速部署和生产环境。spaCy 内置了统计 NER 模型（基于 CNN + 残差连接），训练速度快，API 简洁。自定义 NER 只需提供标注数据，spaCy 自动处理训练循环、早停和模型序列化。
+spaCy 方案： 适合快速部署和生产环境。spaCy 内置了统计 NER 模型（基于 CNN + 残差连接），训练速度快，API 简洁。自定义 NER 只需提供标注数据，spaCy 自动处理训练循环、早停和模型序列化。
 
 **HuggingFace** 方案： 适合追求最高精度。使用预训练 **Transformer** 模型（BERT、RoBERTa、DeBERTa 等），在特定领域数据上微调。 Transformers 提供了 Trainer API，一行代码启动分布式训练。
 
-**方案选择**：
+方案选择：
 - 快速原型/生产部署 → spaCy
 - 最高精度/学术研究 → HuggingFace
 - 资源受限（CPU 推理） → spaCy 小模型
 - 多语言支持 → HuggingFace XLM-RoBERTa
 
-**生产部署要点**： 无论用哪种方案，都需要考虑：批量推理（batching）、模型缓存、热更新、A/B 测试、监控和回滚。spaCy 的 package 和 HuggingFace 的 ONNX 导出都支持高效部署。`,
+生产部署要点： 无论用哪种方案，都需要考虑：批量推理（batching）、模型缓存、热更新、A/B 测试、监控和回滚。spaCy 的 package 和 HuggingFace 的 ONNX 导出都支持高效部署。`,
         code: [
           {
             lang: "python",

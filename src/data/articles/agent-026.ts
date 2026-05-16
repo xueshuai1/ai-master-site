@@ -18,9 +18,9 @@ export const article: Article = {
 
 但大多数教程只停留在「概念介绍」层面：讲 ReAct、讲 Tool Calling、讲 Memory，却从不给出可以运行的完整代码。
 
-**本文的不同之处在于**：你会从头构建一个真正能工作的 AI Agent。不是伪代码，不是框架调用，而是完整的 Python 实现——包括工具定义、记忆存储、推理循环、错误恢复，全部手写。
+本文的不同之处在于：你会从头构建一个真正能工作的 AI Agent。不是伪代码，不是框架调用，而是完整的 Python 实现——包括工具定义、记忆存储、推理循环、错误恢复，全部手写。
 
-**通过本文，你将理解**：
+通过本文，你将理解：
 - Hermes Agent、GenericAgent 等热门项目的底层架构模式
 - 如何设计一个可扩展的工具系统
 - 如何给 Agent 装上「记忆」（短期 + 长期）
@@ -136,7 +136,7 @@ Tool Dispatcher"]
 
 工具是 Agent 的「手脚」。每个工具必须定义清晰的接口，这样 LLM 才知道何时调用、如何调用。
 
-**设计要点**：
+设计要点：
 - 工具名称要语义化，LLM 才能准确选择
 - 参数描述要详细，包含类型、约束和示例
 - 返回值要有明确格式约定`,
@@ -453,7 +453,7 @@ class AgentMemory:
         if os.path.exists(path):
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-            self.long_term = [MemoryEntry(**item) for item in data]`,
+            self.long_term = [MemoryEntry(item) for item in data]`,
           filename: "agent_memory.py",
         },
       ],
@@ -466,16 +466,16 @@ class AgentMemory:
 
 ReAct（Reasoning + Acting）的核心思想是：LLM 不应该一次性生成答案，而是交替进行「思考」和「行动」。
 
-**每一步循环**：
+每一步循环：
 1. Thought（思考）：LLM 分析当前状态，决定下一步
 2. Action（行动）：调用一个工具
 3. Observation（观察）：查看工具返回的结果
 4. 回到步骤 1，直到得出最终答案
 
-**这个模式的好处是**：
-- **可控**：每步行动都可以被审计
-- **可调试**：出问题时可以看到哪一步出错
-- **可终止**：设置最大步数防止无限循环
+这个模式的好处是：
+- 可控：每步行动都可以被审计
+- 可调试：出问题时可以看到哪一步出错
+- 可终止**：设置最大步数防止无限循环
 
 ### 5.2 完整实现`,
       code: [
@@ -750,7 +750,7 @@ if __name__ == "__main__":
     """增强版 Agent——带错误恢复机制"""
 
     def __init__(self, *args, retry_count: int = 2, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, kwargs)
         self.retry_count = retry_count
         self.error_history: list[str] = []  # 记录遇到的错误
 
@@ -759,7 +759,7 @@ if __name__ == "__main__":
         for attempt in range(1, self.retry_count + 1):
             try:
                 tool = self.tools[name]
-                result = tool.fn(**input_dict)
+                result = tool.fn(input_dict)
 
                 # 检查结果是否合理
                 if self._is_error_result(str(result)):
@@ -930,10 +930,10 @@ if __name__ == "__main__":
 尝试以下练习来巩固所学：
 
 1. 接入真实 API：将 _mock_llm_call 替换为 **OpenAI** 或 **Anthropic** 的真实 API 调用
-2. **添加新工具**：实现一个「网页抓取」工具（用 requests + BeautifulSoup）
-3. **实现向量记忆**：用 ChromaDB 替换关键词匹配的记忆检索
-4. **添加计划模式**：在执行任务前，先让 LLM 生成一个执行计划（Plan-and-Execute 模式）
-5. **实现并发执行**：让 Agent 可以同时调用多个独立工具（asyncio + 工具并行）
+2. 添加新工具：实现一个「网页抓取」工具（用 requests + BeautifulSoup）
+3. 实现向量记忆：用 ChromaDB 替换关键词匹配的记忆检索
+4. 添加计划模式：在执行任务前，先让 LLM 生成一个执行计划（Plan-and-Execute 模式）
+5. 实现并发执行：让 Agent 可以同时调用多个独立工具（asyncio + 工具并行）
 
 完成这些练习后，你就拥有了一个生产级 Agent 的基础框架——这正是 Hermes Agent、GenericAgent 等热门项目的核心架构。`,
       tip: "下一步学习建议：掌握本文内容后，建议阅读 Claude Code 的架构文档、Hermes Agent 的源码（GitHub: NousResearch/hermes-agent），以及 GenericAgent 的技能树实现（GitHub: lsdefine/GenericAgent），理解工业级 Agent 如何在此基础之上做增强。",

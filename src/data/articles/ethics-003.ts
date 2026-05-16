@@ -395,7 +395,7 @@ import numpy as np
 
 class AdditiveSecretSharing:
     """基于模运算的加法秘密分享（2-out-of-2 方案）"""
-    def __init__(self, prime=2**32 - 5):
+    def __init__(self, prime=232 - 5):
         self.prime = prime  # 大素数
 
     def share(self, value, n_parties=2):
@@ -478,7 +478,7 @@ print("CrypTen 支持在加密状态下执行完整的神经网络推理")`
         },
         {
             title: "6. 同态加密",
-            body: `同态加密（Homomorphic Encryption, HE）允许在加密数据上直接进行计算，解密后的结果与在明文上计算的结果一致。根据支持的运算类型，同态加密分为三类：部分同态加密（PHE，仅支持单一运算如 RSA 的乘法同态）、某些同态加密（SHE，支持有限次数的加法和乘法）和全同态加密（FHE，支持任意次数的加法和乘法）。Gentry 于 2009 年构造了第一个 FHE 方案，基于理想格理论。现代 FHE 库如 **Microsoft** SEAL、TFHE 和 OpenFHE 已实现实用的性能。在机器学习中，HE 可用于隐私保护的推理场景：服务器在不解密用户输入的情况下完成模型推理，返回加密结果由用户自行解密。HE 的主要限制是无法高效执行非线性操作（如 ReLU、Softmax），通常需要使用多项式近似替代。`,
+            body: `同态加密（Homomorphic Encryption, HE）允许在加密数据上直接进行计算，解密后的结果与在明文上计算的结果一致。根据支持的运算类型，同态加密分为三类：部分同态加密（PHE，仅支持单一运算如 RSA 的乘法同态）、某些同态加密（SHE，支持有限次数的加法和乘法）和全同态加密（FHE，支持任意次数的加法和乘法）。Gentry 于 2009 年构造了第一个 FHE 方案，基于理想格理论。现代 FHE 库如 Microsoft SEAL、TFHE 和 OpenFHE 已实现实用的性能。在机器学习中，HE 可用于隐私保护的推理场景：服务器在不解密用户输入的情况下完成模型推理，返回加密结果由用户自行解密。HE 的主要限制是无法高效执行非线性操作（如 ReLU、Softmax），通常需要使用多项式近似替代。`,
             code: [
                 {
                     lang: "python",
@@ -487,7 +487,7 @@ from Pyfhel import Pyfhel
 
 # 初始化同态加密上下文
 he = Pyfhel()
-he.contextGen(p=65537, m=2**15, sec=128)  # 参数设置
+he.contextGen(p=65537, m=215, sec=128)  # 参数设置
 he.keyGen()  # 密钥生成
 he.relinKeyGen()  # 重线性化密钥（用于乘法）
 

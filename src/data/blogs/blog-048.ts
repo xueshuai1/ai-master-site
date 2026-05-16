@@ -12,17 +12,17 @@ const content: ArticleSection[] = [
 - zilliztech claude-context（8.2K+ stars）：代码库 MCP 搜索引擎
 - Tracer-Cloud opensre（2.6K+ stars）：AI SRE 代理的知识工具链
 
-**这些项目的共同点是**：它们都在解决同一个问题——如何让 AI Agent 高效地获取、存储、检索和使用知识。
+这些项目的共同点是：它们都在解决同一个问题——如何让 AI Agent 高效地获取、存储、检索和使用知识。
 
-**> 本文核心问题**： 2026 年，为 AI Agent 构建知识管理系统，应该选择 RAG、向量数据库直连、还是 MCP 工具生态？三种方案各有什么优劣？如何根据场景做最优选择？
+> 本文核心问题： 2026 年，为 AI Agent 构建知识管理系统，应该选择 RAG、向量数据库直连、还是 MCP 工具生态？三种方案各有什么优劣？如何根据场景做最优选择？
 
 本文将通过完整的架构对比、可运行代码和真实案例，帮你做出正确的技术选型。
 
-**> 本文核心贡献**：
+> 本文核心贡献：
 > 1. **RAG** / 向量数据库直连 / MCP 三种知识管理架构的深度对比
 > 2. 三种架构的完整可运行 Python 实现代码
 > 3. 实际性能基准测试数据（响应延迟、准确率、成本）
-**> 4. 选型决策树**：什么场景用什么方案
+> 4. 选型决策树：什么场景用什么方案
 > 5. 2026 年最新 MCP 工具生态全景图`,
     tip: `快速结论：
 - RAG 适合「非结构化文档问答」场景，开发成本最低
@@ -205,7 +205,7 @@ class RAGPipeline:
                 id=f"{doc.id}_chunk_{i}",
                 content=chunk,
                 source=doc.source,
-                metadata={**doc.metadata, "chunk_index": i, "total_chunks": len(chunks)}
+                metadata={doc.metadata, "chunk_index": i, "total_chunks": len(chunks)}
             )
             self.retriever.add(chunk_doc)
         print(f"  ✓ 索引完成: {len(chunks)} 个分块")
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     title: "四、方案二：向量数据库直连——Agent 自主决策的知识检索",
     body: `向量数据库直连方案的核心区别在于：检索策略不再固定，而是由 Agent 自主决定。
 
-在 **RAG** 中，检索是硬编码的流程：用户问题 → 向量化 → 相似度搜索 → 拼接上下文。而在向量数据库直连方案中，Agent 可以：
+在 RAG** 中，检索是硬编码的流程：用户问题 → 向量化 → 相似度搜索 → 拼接上下文。而在向量数据库直连方案中，Agent 可以：
 - 决定使用什么查询策略（语义搜索、过滤、混合搜索）
 - 决定检索多少条结果
 - 决定如何组合多条检索结果
@@ -451,7 +451,7 @@ if __name__ == "__main__":
         seed = int(hashlib.md5(text.encode()).hexdigest()[:8], 16)
         rng = np.random.RandomState(seed)
         vec = rng.randn(384).tolist()
-        norm = sum(v*v for v in vec) ** 0.5
+        norm = sum(v*v for v in vec)  0.5
         return [v / norm for v in vec]
 
     # 插入测试数据
@@ -556,7 +556,7 @@ class MCPServer:
                 is_error=True
             )
         try:
-            result = self.tools[name].handler(**args)
+            result = self.tools[name].handler(args)
             return MCPToolResult(
                 content=[{"type": "text", "text": str(result)}]
             )
@@ -607,7 +607,7 @@ def create_knowledge_mcp_servers() -> List[MCPServer]:
         "decorator_pattern": '''def timer(func):
     def wrapper(*args, **kwargs):
         start = time.time()
-        result = func(*args, **kwargs)
+        result = func(*args, kwargs)
         print(f"{func.__name__}: {time.time()-start:.3f}s")
         return result
     return wrapper''',
@@ -684,7 +684,7 @@ class MCPRouter:
         tools = []
         for server in self.servers:
             for tool in server.list_tools():
-                tools.append({**tool, "server": server.name})
+                tools.append({tool, "server": server.name})
         return tools
 
     def route_and_execute(self, tool_calls: List[MCPToolCall]) -> List[MCPToolResult]:
@@ -789,7 +789,7 @@ if __name__ == "__main__":
     title: "七、混合架构：2026 年最佳实践",
     body: `单一方案往往不够用。2026 年的最佳实践是混合架构：用 MCP 做路由层，向量数据库做存储层，**RAG** 做检索策略之一。
 
-**这种架构的核心思路是**：
+这种架构的核心思路是：
 1. MCP Router 负责理解用户意图，选择最合适的工具
 2. 向量数据库 作为统一的知识存储后端
 3. **RAG** 作为其中一种检索策略（用于非结构化文档）
@@ -979,12 +979,12 @@ if __name__ == "__main__":
     title: "九、总结与展望",
     body: `2026 年，AI Agent 的知识管理已经从「能不能做」进入到了「怎么做得好」的阶段。
 
-**核心结论**：
+核心结论：
 
-1. **RAG 不会死**：对于文档问答，RAG 仍然是成本最低、开发最快的方案。但它不再是唯一选项。
+1. RAG 不会死：对于文档问答，RAG 仍然是成本最低、开发最快的方案。但它不再是唯一选项。
 2. 向量数据库直连是 Agent 的「记忆器官」：让 Agent 自主决定如何检索知识，比硬编码的 **RAG** 管道灵活得多。
 3. MCP 是 2026 年的大赢家：标准化接口让知识管理从「手工集成」变为「即插即用」。claude-context、opensre 等项目已经证明了 MCP 的价值。
-4. **混合架构是终局**：用 MCP 做路由，向量数据库做存储，RAG 做检索策略之一——这就是 2026 年知识管理的最佳实践。
+4. 混合架构是终局：用 MCP 做路由，向量数据库做存储，RAG 做检索策略之一——这就是 2026 年知识管理的最佳实践。
 
 2026 年下半年值得关注的趋势：
 
@@ -993,7 +993,7 @@ if __name__ == "__main__":
 - 多 Agent 协作场景将推动「共享知识层」的出现
 - 端侧向量数据库（如 SQLite-vec）将让离线知识管理成为可能
 
-**行动建议**：
+行动建议：
 - 如果你还没开始做知识管理：从 **RAG** 开始，一周内就能看到效果
 - 如果你已经有 RAG：尝试引入 MCP 工具，扩展知识源
 - 如果你在构建 Agent 平台：优先支持 MCP 协议，这是未来的标准`,

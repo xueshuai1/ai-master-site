@@ -27,7 +27,7 @@ def visualize_loss_landscape():
         return (w - 3) ** 2 + 2
 
     def rosenbrock(x, y):
-        return (1 - x)  2 + 100 * (y - x  2) ** 2
+        return (1 - x)  2 + 100 * (y - x  2)  2
 
     # 单变量损失函数（如 MSE 在单层线性模型中）
     w_range = np.linspace(-5, 10, 100)
@@ -110,7 +110,7 @@ Huber Loss和Smooth L1是 MSE 和 MAE 的折中方案。它们在误差小时使
 
 def mse_loss(y_true, y_pred):
     """均方误差：对大误差敏感"""
-    return np.mean((y_true - y_pred) ** 2)
+    return np.mean((y_true - y_pred)  2)
 
 def mae_loss(y_true, y_pred):
     """平均绝对误差：对异常值鲁棒"""
@@ -417,8 +417,8 @@ def contrastive_loss(d, y, margin=1.0):
 
 def triplet_loss(anchor, positive, negative, margin=1.0):
     """Triplet Loss：三元组样本"""
-    d_pos = np.sqrt(np.sum((anchor - positive) ** 2, axis=1))
-    d_neg = np.sqrt(np.sum((anchor - negative) ** 2, axis=1))
+    d_pos = np.sqrt(np.sum((anchor - positive)  2, axis=1))
+    d_neg = np.sqrt(np.sum((anchor - negative)  2, axis=1))
 
     # 损失 = max(0, d_pos - d_neg + margin)
     basic_loss = d_pos - d_neg + margin
@@ -465,8 +465,8 @@ print(f"Triplet Loss: {loss:.4f}")
 # Hard Triplet Mining（关键策略）
 def hard_triplet_mining(anchor, positive, negative, margin=1.0):
     """半困难三元组挖掘"""
-    d_pos = torch.sum((anchor - positive) ** 2, dim=1)
-    d_neg = torch.sum((anchor - negative) ** 2, dim=1)
+    d_pos = torch.sum((anchor - positive)  2, dim=1)
+    d_neg = torch.sum((anchor - negative)  2, dim=1)
     loss = torch.clamp(d_pos - d_neg + margin, min=0.0)
     return loss.mean()` },
             ],
@@ -619,9 +619,9 @@ print(f"Composite Loss: {loss:.4f}")` },
             title: "7. PyTorch 实战：损失函数选择与调优",
             body: `理论最终要落地到实践。本节通过完整的 PyTorch 训练流程，展示如何在真实项目中选择和调优损失函数。关键原则是：从简单开始，逐步复杂化。
 
-**第一阶段**：基线模型。使用标准损失函数（回归用 MSE，分类用 CrossEntropyLoss），不添加任何自定义组件。目标是确认模型架构正确、数据管道通畅、模型能够正常学习。如果基线都无法收敛，说明问题不在损失函数，而在模型或数据。
+第一阶段：基线模型。使用标准损失函数（回归用 MSE，分类用 CrossEntropyLoss），不添加任何自定义组件。目标是确认模型架构正确、数据管道通畅、模型能够正常学习。如果基线都无法收敛，说明问题不在损失函数，而在模型或数据。
 
-**第二阶段**：诊断与改进。分析训练曲线——如果训练损失下降但验证损失上升，可能是过拟合，考虑添加正则化项；如果训练和验证损失都下降缓慢，可能是学习率或损失函数不合适；如果损失震荡，可能是学习率过大或存在梯度爆炸。根据诊断结果，选择合适的改进策略：回归中的异常值 → 改用 Huber/Smooth L1；类别不平衡 → 使用 Focal Loss 或类别权重；需要好的特征表示 → 引入对比损失。`,
+第二阶段：诊断与改进。分析训练曲线——如果训练损失下降但验证损失上升，可能是过拟合，考虑添加正则化项；如果训练和验证损失都下降缓慢，可能是学习率或损失函数不合适；如果损失震荡，可能是学习率过大或存在梯度爆炸。根据诊断结果，选择合适的改进策略：回归中的异常值 → 改用 Huber/Smooth L1；类别不平衡 → 使用 Focal Loss 或类别权重；需要好的特征表示 → 引入对比损失。`,
             code: [
                 { lang: "python", code: `import torch
 import torch.nn as nn

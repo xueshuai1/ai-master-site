@@ -14,7 +14,7 @@ export const article: Article = {
         title: "1. 过拟合与正则化的直觉",
         body: `过拟合（Overfitting）是机器学习中最常见也最危险的问题。模型在训练集上表现完美，但在新数据上一塌糊涂。本质原因是模型"记住"了训练数据的噪声和特例，而不是学习到普遍规律。
 
-**想象一个学生准备考试**：如果他只是死记硬背历年真题的答案（过拟合），遇到新题目就会失败；如果他理解了解题的通用方法（泛化），无论题目怎么变都能应对。正则化就是强制模型选择"更简单、更通用"的解的机制。
+想象一个学生准备考试：如果他只是死记硬背历年真题的答案（过拟合），遇到新题目就会失败；如果他理解了解题的通用方法（泛化），无论题目怎么变都能应对。正则化就是强制模型选择"更简单、更通用"的解的机制。
 
 从偏差-方差权衡（Bias-Variance Tradeoff）的角度看，过拟合对应低偏差、高方差——模型对训练数据的微小变化极其敏感。正则化通过引入额外的约束或噪声，在偏差和方差之间寻找更优的平衡点。
 
@@ -69,8 +69,8 @@ def bias_variance_decomposition(n_models=100, n_train=20, degree=10):
     predictions = np.array(predictions)
     mean_pred = predictions.mean(axis=0)
     
-    bias = np.mean((mean_pred - y_true) ** 2)
-    variance = np.mean((predictions - mean_pred) ** 2)
+    bias = np.mean((mean_pred - y_true)  2)
+    variance = np.mean((predictions - mean_pred)  2)
     noise = 0.3 ** 2
     
     print(f"Bias² = {bias:.4f}")
@@ -250,7 +250,7 @@ for drop_rate in [0.0, 0.3, 0.5]:
 
 BN 的核心操作非常简单：对一个 mini-batch 的数据，先减去均值、除以标准差进行标准化，然后通过学习到的缩放参数 γ 和偏移参数 β 进行线性变换。公式为：y = γ · (x - μ_B) / √(σ²_B + ε) + β。
 
-**BN 的关键洞察是**：内部协变量偏移（Internal Covariate Shift）——网络每层的输入分布随着训练不断变化，迫使后续层不断适应新的分布，导致训练缓慢。BN 强制每层的输出保持稳定的均值和方差，解决了这个问题。
+BN 的关键洞察是：内部协变量偏移（Internal Covariate Shift）——网络每层的输入分布随着训练不断变化，迫使后续层不断适应新的分布，导致训练缓慢。BN 强制每层的输出保持稳定的均值和方差，解决了这个问题。
 
 但 BN 有一个重大陷阱：训练和推理模式的行为完全不同。训练时用当前 mini-batch 的均值和方差；推理时用整个训练集上的移动平均（Running Mean/Var）。如果混淆了这两种模式，推理结果会完全错误。`,
         code: [
@@ -350,7 +350,7 @@ def train_with_and_without_bn():
             # 最后一层
             W, b = layers[-1]
             logits = z @ W + b
-            loss = np.mean((logits.flatten() - y) ** 2)
+            loss = np.mean((logits.flatten() - y)  2)
             losses.append(loss)
         
         speed = f"快 {speedup:.1f}x" if (speedup := (100-losses[-1])/(100-losses[-1]+1e-8)) else "基准"
@@ -386,9 +386,9 @@ train_with_and_without_bn()`,
         title: "4. LayerNorm vs BatchNorm：归一化的路线之争",
         body: `Layer Normalization（LN）由 Ba 等人在 2016 年提出，最初是为了解决 RNN 中 BatchNorm 不适用的问题。两者的根本区别在于统计量的计算维度不同：BN 在 batch 维度上统计（对同一个特征，跨样本计算均值和方差）；LN 在特征维度上统计（对同一个样本，跨特征计算均值和方差）。
 
-这个看似微小的差异带来了深远的影响。BN 的性能依赖于 batch size——batch 越大，统计量越准确；LN 完全不受 batch size 影响，因为它对每个样本单独归一化。这就是为什么 LN 成为了 **Transformer** 的标准配置：**Transformer** 训练时 batch size 经常变化，而且推理时 batch size = 1 也很常见。
+这个看似微小的差异带来了深远的影响。BN 的性能依赖于 batch size——batch 越大，统计量越准确；LN 完全不受 batch size 影响，因为它对每个样本单独归一化。这就是为什么 LN 成为了 Transformer 的标准配置：Transformer 训练时 batch size 经常变化，而且推理时 batch size = 1 也很常见。
 
-**另一个关键差异**：BN 有移动平均机制（训练和推理行为不同），LN 没有（训练和推理行为完全一致）。这使得 LN 的实现更简单，也不容易出现训练/推理不一致的 bug。
+另一个关键差异**：BN 有移动平均机制（训练和推理行为不同），LN 没有（训练和推理行为完全一致）。这使得 LN 的实现更简单，也不容易出现训练/推理不一致的 bug。
 
 在实践中，卷积网络首选 BN，Transformer/RNN 首选 LN，这是一个已经被广泛验证的经验法则。`,
         code: [
@@ -644,7 +644,7 @@ print("  - Mask R-CNN + GN 比 + BN 在 COCO 上 mAP 高 2-3%")`,
 
 从数学上看，L2 正则化等价于给权重施加了一个以零为中心的高斯先验分布。权重越大，先验概率越低。这种先验偏好使得模型倾向于使用多个小权重而非少数大权重来表示同样的函数，提高了泛化能力。
 
-**一个重要的工程细节**：Weight Decay 和 L2 正则化在 SGD 优化器中是等价的，但在 Adam 等自适应优化器中是不同的。AdamW（Adam with decoupled Weight Decay）由 Loshchilov 和 Hutter 在 2019 年提出，将权重衰减与梯度更新解耦，是 Adam 的正确正则化方式。实验表明，AdamW 比 Adam + L2 的泛化性能更好。
+一个重要的工程细节：Weight Decay 和 L2 正则化在 SGD 优化器中是等价的，但在 Adam 等自适应优化器中是不同的。AdamW（Adam with decoupled Weight Decay）由 Loshchilov 和 Hutter 在 2019 年提出，将权重衰减与梯度更新解耦，是 Adam 的正确正则化方式。实验表明，AdamW 比 Adam + L2 的泛化性能更好。
 
 在实际训练中，通常会对不同的参数组使用不同的 weight decay：对权重使用标准 decay，对偏置（bias）和归一化层的 γ/β 不使用 decay（因为它们不应该被收缩到零）。`,
         code: [
@@ -709,8 +709,8 @@ class AdamW:
         for i, (param, grad) in enumerate(self.params):
             # 1. 先做梯度更新（与标准 Adam 相同）
             self.m[i] = self.betas[0] * self.m[i] + (1 - self.betas[0]) * grad
-            self.v[i] = self.betas[1] * self.v[i] + (1 - self.betas[1]) * grad**2
-            m_hat = self.m[i] / (1 - self.betas[0]**self.t)
+            self.v[i] = self.betas[1] * self.v[i] + (1 - self.betas[1]) * grad2
+            m_hat = self.m[i] / (1 - self.betas[0]self.t)
             v_hat = self.v[i] / (1 - self.betas[1]**self.t)
             
             # 2. 参数更新（Adam 部分）

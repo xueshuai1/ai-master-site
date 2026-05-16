@@ -345,21 +345,21 @@ class SymmetricTreeDemo:
         """对称树：每层同一分裂规则"""
         print("对称树结构（Oblivious Tree）:")
         for level in range(self.depth):
-            n_nodes = 2 ** level
+            n_nodes = 2  level
             # 该层所有节点使用相同特征和阈值
             feature = f"f_{level % 5}"
             threshold = round(np.random.uniform(-1, 1), 2)
             print(f"  Level {level}: {n_nodes} 个节点, "
                   f"分裂: {feature} <= {threshold}")
         print(f"  总分裂规则数: {self.depth}")
-        print(f"  叶子节点数: {2 ** self.depth}")
+        print(f"  叶子节点数: {2  self.depth}")
 
     def show_asymmetric_structure(self):
         """非对称树：每个节点独立分裂"""
         print("\\n非对称树结构（XGBoost/LightGBM）:")
         total_splits = 0
         for level in range(self.depth):
-            n_nodes = 2 ** level
+            n_nodes = 2  level
             for node in range(n_nodes):
                 feature = f"f_{np.random.randint(0, 10)}"
                 threshold = round(np.random.uniform(-1, 1), 2)
@@ -576,11 +576,11 @@ plt.show()`
             title: "6. 超参数调优指南",
             body: `CatBoost 的超参数数量较多，但大部分有合理的默认值。掌握核心参数的调优策略，比盲目网格搜索更高效。
 
-**第一梯队（必须调）**：iterations（树数量）和 learning_rate（学习率）是最关键的参数对。两者的关系是：learning_rate 越小，需要的 iterations 越多，但模型更精确。经典策略是使用 early_stopping_rounds 自动确定最优 iterations。depth（树深度）控制模型复杂度，对称树模式下 4-10 是合理范围。
+第一梯队（必须调）：iterations（树数量）和 learning_rate（学习率）是最关键的参数对。两者的关系是：learning_rate 越小，需要的 iterations 越多，但模型更精确。经典策略是使用 early_stopping_rounds 自动确定最优 iterations。depth（树深度）控制模型复杂度，对称树模式下 4-10 是合理范围。
 
 第二梯队（强烈建议调）：l2_leaf_reg 控制 L2 正则化强度，值越大模型越简单；random_strength 控制分裂时随机性，增加它可以降低过拟合；bagging_temperature 控制采样温度，影响每棵树的训练数据多样性。
 
-**第三梯队（按需调）**：one_hot_max_size 决定低于多少基数的类别使用 One-Hot 编码（默认 2）；max_ctr_complexity 控制特征组合的最大复杂度；min_data_in_leaf 控制叶子最小样本数。
+第三梯队（按需调）**：one_hot_max_size 决定低于多少基数的类别使用 One-Hot 编码（默认 2）；max_ctr_complexity 控制特征组合的最大复杂度；min_data_in_leaf 控制叶子最小样本数。
 
 CatBoost 的内置交叉验证和 early stopping 功能非常实用，推荐使用 CatBoost 原生的 CV 工具而非 sklearn 的 cross_val_score，因为前者可以利用 GPU 加速且与 CatBoost 的评估指标无缝集成。`,
             code: [

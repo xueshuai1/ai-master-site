@@ -304,9 +304,9 @@ def clip_gradient_norm(grads, max_norm=1.0):
 
 # 模拟梯度爆炸场景
 explosive_grads = [np.random.randn(100) * 50 for _ in range(5)]
-original_norm = np.sqrt(sum(np.sum(g ** 2) for g in explosive_grads))
+original_norm = np.sqrt(sum(np.sum(g  2) for g in explosive_grads))
 clipped = clip_gradient_norm(explosive_grads, max_norm=5.0)
-clipped_norm = np.sqrt(sum(np.sum(g ** 2) for g in clipped))
+clipped_norm = np.sqrt(sum(np.sum(g  2) for g in clipped))
 print(f"原始范数: {original_norm:.1f}, 裁剪后: {clipped_norm:.1f}")`
           }
         ],

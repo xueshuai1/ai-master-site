@@ -522,7 +522,7 @@ model = Blip2ForConditionalGeneration.from_pretrained(
 
 image = Image.open("scene.jpg")
 inputs = processor(images=image, return_tensors="pt").to("cuda", torch.float16)
-generated_ids = model.generate(**inputs, max_new_tokens=50)
+generated_ids = model.generate(inputs, max_new_tokens=50)
 caption = processor.batch_decode(generated_ids, skip_special_tokens=True)
 print(f"Generated: {caption[0].strip()}")
 
@@ -531,7 +531,7 @@ question = "What color is the sky?"
 inputs_qa = processor(
     images=image, text=question, return_tensors="pt"
 ).to("cuda", torch.float16)
-out = model.generate(**inputs_qa, max_new_tokens=20)
+out = model.generate(inputs_qa, max_new_tokens=20)
 answer = processor.batch_decode(out, skip_special_tokens=True)
 print(f"Q: {question}  A: {answer[0].strip()}")`
                 },

@@ -25,15 +25,15 @@ const content: ArticleSection[] = [
 
 TPU 与 GPU 的根本差异 在于 设计哲学：GPU 是 通用并行处理器，最初为图形渲染设计，后来被适配到 AI 计算；而 TPU 是 专用 AI 处理器，从晶体管级别就开始为 矩阵乘法 和 张量运算 优化。
 
-**计算架构**：NVIDIA H200 GPU 使用 通用 GPU（CUDA 核心），而 Google TPU v5p 使用 专用 TPU（矩阵乘法单元 MXU）。这意味着 TPU 的每个晶体管都为 AI 计算 服务，而 GPU 的晶体管需要兼顾 图形渲染、通用计算和 AI 推理。
+计算架构：NVIDIA H200 GPU 使用 通用 GPU（CUDA 核心），而 Google TPU v5p 使用 专用 TPU（矩阵乘法单元 MXU）。这意味着 TPU 的每个晶体管都为 AI 计算 服务，而 GPU 的晶体管需要兼顾 图形渲染、通用计算和 AI 推理。
 
-**显存配置**：H200 搭载 HBM3e 显存（141 GB），带宽达到 4.8 TB/s；TPU v5p 使用 HBM2e 显存（95 GB），带宽 2.8 TB/s。从参数上看 GPU 占优，但 TPU 的 内存访问模式 经过专门优化，在实际训练场景中 有效带宽利用率更高。
+显存配置：H200 搭载 HBM3e 显存（141 GB），带宽达到 4.8 TB/s；TPU v5p 使用 HBM2e 显存（95 GB），带宽 2.8 TB/s。从参数上看 GPU 占优，但 TPU 的 内存访问模式 经过专门优化，在实际训练场景中 有效带宽利用率更高。
 
-**互联能力**：NVIDIA 的 NVLink 单节点带宽达 900 GB/s，跨节点需要 InfiniBand 网络；TPU 通过 ICI（Inter-Chip Interconnect） 实现芯片间直连，单 Pod 可容纳 8,960 颗 TPU 无缝互联。这种 大规模集群能力 是 TPU 的核心竞争力。
+互联能力：NVIDIA 的 NVLink 单节点带宽达 900 GB/s，跨节点需要 InfiniBand 网络；TPU 通过 ICI（Inter-Chip Interconnect） 实现芯片间直连，单 Pod 可容纳 8,960 颗 TPU 无缝互联。这种 大规模集群能力 是 TPU 的核心竞争力。
 
-**软件生态**：CUDA 经过 15 年发展 形成了 完整的开发者生态，而 TPU 主要依赖 JAX + XLA，社区活跃度约为 CUDA 的 十分之一。这是 TPU 最大的短板。但值得注意的是，JAX 的开发者社区 正在以 每年 40% 的速度增长，远超 CUDA 社区的 5% 年增长率。
+软件生态：CUDA 经过 15 年发展 形成了 完整的开发者生态，而 TPU 主要依赖 JAX + XLA，社区活跃度约为 CUDA 的 十分之一。这是 TPU 最大的短板。但值得注意的是，JAX 的开发者社区 正在以 每年 40% 的速度增长，远超 CUDA 社区的 5% 年增长率。
 
-**单位算力成本**：由于 Google 自主设计、自主生产（台积电代工），TPU 没有 NVIDIA 的品牌溢价。据行业估算，TPU v5p 的 每 TFLOPS 成本 比 H200 低约 30-40%。对于需要 十万颗级别芯片 的公司，这个差价意味着 数百亿美元的总成本节省。
+单位算力成本：由于 Google 自主设计、自主生产（台积电代工），TPU 没有 NVIDIA 的品牌溢价。据行业估算，TPU v5p 的 每 TFLOPS 成本 比 H200 低约 30-40%。对于需要 十万颗级别芯片 的公司，这个差价意味着 数百亿美元的总成本节省。
 
 TPU 的架构演进 也值得深入分析：从 TPU v1（仅支持推理）到 TPU v2/v3（支持训练）再到 TPU v4/v5p（支持大规模分布式训练），Google 的 TPU 迭代节奏 大约为 每 18-24 个月一代。相比之下，**NVIDIA** 的 GPU 迭代节奏为 每 12-18 个月一代，但每一代的 性能提升幅度 正在缩小——从 H100 到 H200 的提升仅为约 40%（主要在显存容量和带宽），而非架构级别的革新。`,
     mermaid: `graph TD
@@ -56,13 +56,13 @@ TPU 的架构演进 也值得深入分析：从 TPU v1（仅支持推理）到 T
     title: "三、2000 亿美元协议的商业逻辑剖析",
     body: `2000 亿美元 不是一笔简单的采购费。根据行业分析师的推测，这笔协议可能包含 四层结构。
 
-**第一层**：算力租赁费（约 60%，1200 亿美元）。这是 Anthropic 向 Google Cloud 支付的核心费用，用于获取 TPU 算力时长。按照 TPU v5p 的公开定价（约 5美元/小时），1200 亿美元可以购买约 240 亿小时 的 TPU 算力，分布在 5 年合约期内，相当于同时运行约 54 万颗 TPU v5p。这个数字与 Anthropic 的 Claude 4 和 Claude 5 训练计划 的算力需求相符。
+第一层：算力租赁费（约 60%，1200 亿美元）。这是 Anthropic 向 Google Cloud 支付的核心费用，用于获取 TPU 算力时长。按照 TPU v5p 的公开定价（约 5美元/小时），1200 亿美元可以购买约 240 亿小时 的 TPU 算力，分布在 5 年合约期内，相当于同时运行约 54 万颗 TPU v5p。这个数字与 Anthropic 的 Claude 4 和 Claude 5 训练计划 的算力需求相符。
 
-**第二层**：数据中心的共建投资（约 20%，400 亿美元）。Anthropic 可能参与 Google 新建 AI 专用数据中心 的部分投资。这些数据中心将配备 专用的 TPU Pod 集群、高速网络基础设施 和 液冷散热系统。
+第二层：数据中心的共建投资（约 20%，400 亿美元）。Anthropic 可能参与 Google 新建 AI 专用数据中心 的部分投资。这些数据中心将配备 专用的 TPU Pod 集群、高速网络基础设施 和 液冷散热系统。
 
-**第三层**：技术合作与知识产权（约 10%，200 亿美元）。包括 TPU 架构联合优化（针对 Claude 模型的特殊需求定制 TPU 配置）、软件工具联合开发（优化 JAX 在 Anthropic 工作流中的表现）以及 潜在的技术授权费用。
+第三层：技术合作与知识产权（约 10%，200 亿美元）。包括 TPU 架构联合优化（针对 Claude 模型的特殊需求定制 TPU 配置）、软件工具联合开发（优化 JAX 在 Anthropic 工作流中的表现）以及 潜在的技术授权费用。
 
-**第四层**：战略合作保证金（约 10%，200 亿美元）。确保 Anthropic 在合约期内 优先使用 Google Cloud，而非转向 AWS 或 Azure。这是一种 排他性安排，类似于 Apple 与 Google 的搜索协议——用资金换取排他性。
+第四层：战略合作保证金（约 10%，200 亿美元）。确保 Anthropic 在合约期内 优先使用 Google Cloud，而非转向 AWS 或 Azure。这是一种 排他性安排，类似于 Apple 与 Google 的搜索协议——用资金换取排他性。
 
 对 **Anthropic** 的三大战略价值：供应链安全保障（在 GPU 供不应求的背景下获得确定性算力保障）、成本控制（长期 TCO 比 GPU 方案低 25-35%）、技术协同效应（与 Google 在 AI 安全、模型对齐、多模态方面的深度合作）。
 
@@ -89,11 +89,11 @@ TPU 的架构演进 也值得深入分析：从 TPU v1（仅支持推理）到 T
 
 NVIDIA 的市场地位量化分析：
 
-**AI 训练芯片市占率**：2024 年约 90%，2025 年预估 85%，2026 年趋势指向 75%。三年下降 15 个百分点，这意味着 数百亿美元的市场份额 正在流向竞争者。
+AI 训练芯片市占率：2024 年约 90%，2025 年预估 85%，2026 年趋势指向 75%。三年下降 15 个百分点，这意味着 数百亿美元的市场份额 正在流向竞争者。
 
-**GPU 平均售价涨幅**：2024 年 +120%（供不应求），2025 年 +40%（供需趋衡），2026 年预计 -15%（竞争加剧）。价格从上涨转为下降，这是 市场竞争回归正常 的信号。
+GPU 平均售价涨幅：2024 年 +120%（供不应求），2025 年 +40%（供需趋衡），2026 年预计 -15%（竞争加剧）。价格从上涨转为下降，这是 市场竞争回归正常 的信号。
 
-**数据中心营收增速**：从 2024 年的 +217% 到 2025 年的 +85%，再到 2026 年的 +35%。增速放缓并非 NVIDIA 表现不佳，而是 市场基数扩大 和 竞争加剧 的共同结果。
+数据中心营收增速：从 2024 年的 +217% 到 2025 年的 +85%，再到 2026 年的 +35%。增速放缓并非 NVIDIA 表现不佳，而是 市场基数扩大 和 竞争加剧 的共同结果。
 
 TPU 份额上升的三个驱动因素：
 
@@ -107,9 +107,9 @@ NVIDIA 的应对策略预测：
 
 短期（6-12 个月）：调整定价策略，对顶级 AI 公司提供 折扣和长期合约优惠，同时加速 Blackwell Ultra 芯片量产。预计 NVIDIA 将针对 年采购额超过 10 亿美元 的大客户提供 15-25% 的折扣。
 
-**中期（1-2 年）**：加速 软件生态护城河建设——通过 NIM 微服务、TensorRT-LLM 和 CUDA-X AI 库，增加客户从 GPU 迁移的 技术成本。
+中期（1-2 年）：加速 软件生态护城河建设——通过 NIM 微服务、TensorRT-LLM 和 CUDA-X AI 库，增加客户从 GPU 迁移的 技术成本。
 
-**长期（2-5 年）**：必须面对 多元化算力竞争 的现实。GPU 市场份额将从 垄断（90%） 转向 主导（50-60%）。即便如此，50-60% 的市占率 对应的市场规模仍然在 持续增长（因为 AI 算力总需求在膨胀）。
+长期（2-5 年）：必须面对 多元化算力竞争 的现实。GPU 市场份额将从 垄断（90%） 转向 主导（50-60%）。即便如此，50-60% 的市占率 对应的市场规模仍然在 持续增长（因为 AI 算力总需求在膨胀）。
 
 对 AI 行业的整体影响 同样深远：算力竞争的加剧将推动 整体算力成本下降，中小 AI 公司将受益于 更低的训练和推理成本，降低进入门槛。更多的算力供应意味着 AI 公司可以 更频繁地训练模型，加速 模型能力的提升周期——从当前的大约 6-12 个月一代，可能缩短到 3-6 个月一代。`,
     code: [{ lang: "python", code: "# NVIDIA GPU 市占率变化趋势分析\nimport matplotlib.pyplot as plt\n\nyears = ['2024', '2025E', '2026E']\ntraining_share = [90, 85, 75]\ninference_share = [80, 78, 70]\nprice_change = [120, 40, -15]\n\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))\nax1.plot(years, training_share, 'o-', label='Training')\nax1.plot(years, inference_share, 's-', label='Inference')\nax1.set_ylabel('Market Share (%)')\nax1.set_title('NVIDIA AI Chip Market Share')\nax1.legend()\nax2.bar(years, price_change, color=['red', 'orange', 'green'])\nax2.set_ylabel('Price Change (%)')\nax2.set_title('GPU Average Price Change')\nplt.tight_layout()\nplt.savefig('nvidia-trend.png')" }],
@@ -130,23 +130,23 @@ NVIDIA 的应对策略预测：
     title: "五、对比分析：三大 AI 算力路线的战略选择",
     body: `当前主流 AI 公司在 算力路线选择 上呈现出 三种不同策略，代表了三种不同的 战略哲学。
 
-**策略一**：单一深度绑定（Anthropic x Google TPU）
+策略一：单一深度绑定（Anthropic x Google TPU）
 
-**核心逻辑**：将算力需求集中到 单一供应商，换取 最优价格 和 深度技术协同。
+核心逻辑：将算力需求集中到 单一供应商，换取 最优价格 和 深度技术协同。
 
-**优势**：成本最低（规模效应最大化）、技术协同最深（与供应商共同优化硬件和软件栈）、供应链最稳定（长期合约确保算力供应确定性）。
+优势：成本最低（规模效应最大化）、技术协同最深（与供应商共同优化硬件和软件栈）、供应链最稳定（长期合约确保算力供应确定性）。
 
-**劣势**：锁定风险最高（退出成本极大，几乎不可逆）、技术路线单一（如果 TPU 无法满足未来需求，无备选方案）、供应商依赖（Google 既是投资方又是供应商，利益冲突风险）。
+劣势：锁定风险最高（退出成本极大，几乎不可逆）、技术路线单一（如果 TPU 无法满足未来需求，无备选方案）、供应商依赖（Google 既是投资方又是供应商，利益冲突风险）。
 
-**策略二**：多元分散采购（OpenAI x Microsoft + NVIDIA + 其他）
+策略二：多元分散采购（OpenAI x Microsoft + NVIDIA + 其他）
 
-**核心逻辑**：通过 多云多供应商 策略分散风险，保持 最大灵活性。
+核心逻辑：通过 多云多供应商 策略分散风险，保持 最大灵活性。
 
-**优势**：灵活性最高（可以根据需求变化灵活调整算力组合）、谈判筹码最多（多家供应商竞争，议价能力更强）、技术路线最广（可以同时利用 GPU、TPU、自研芯片的优势）。
+优势：灵活性最高（可以根据需求变化灵活调整算力组合）、谈判筹码最多（多家供应商竞争，议价能力更强）、技术路线最广（可以同时利用 GPU、TPU、自研芯片的优势）。
 
-**劣势**：成本较高（无法享受单一供应商的规模折扣）、运维复杂度最高（需要维护多套技术栈和工具链）、技术协同最浅（与任何供应商的合作深度都不如单一绑定模式）。
+劣势：成本较高（无法享受单一供应商的规模折扣）、运维复杂度最高（需要维护多套技术栈和工具链）、技术协同最浅（与任何供应商的合作深度都不如单一绑定模式）。
 
-**策略三**：自建算力（xAI x Colossus 自建集群）
+策略三：自建算力（xAI x Colossus 自建集群）
 
 核心逻辑：自建数据中心和算力集群，完全掌控硬件和软件栈。
 
@@ -154,7 +154,7 @@ NVIDIA 的应对策略预测：
 
 劣势：初始投资巨大（Colossus 集群投资超过 100 亿美元）、运营复杂度极高（需要自建运维团队）、技术风险集中（硬件选型错误的影响无法分散）。
 
-**趋势预判**：2026-2027 年，我们将看到 算力路线的分化加剧。中型 AI 公司倾向于 单一深度绑定（成本优先），大型 AI 平台倾向于 多元分散（灵活性优先），而 科技巨头 则加速 自建算力（自主权优先）。`,
+趋势预判：2026-2027 年，我们将看到 算力路线的分化加剧。中型 AI 公司倾向于 单一深度绑定（成本优先），大型 AI 平台倾向于 多元分散（灵活性优先），而 科技巨头 则加速 自建算力（自主权优先）。`,
     table: {
       headers: ["维度", "单一绑定", "多元分散", "自建算力"],
       rows: [
@@ -173,50 +173,50 @@ NVIDIA 的应对策略预测：
     title: "六、TPU 生态的技术挑战与突破路径",
     body: `尽管 TPU 在 硬件层面 具备成本优势，但要真正 替代 GPU 的主流地位，还需要克服 软件生态 的巨大挑战。
 
-**挑战一**：CUDA 护城河
+挑战一：CUDA 护城河
 
 CUDA 生态 是 **NVIDIA** 最深的护城河。经过 15 年的发展，CUDA 已经积累了：100 万+ 开发者 使用 CUDA 编程、10,000+ 优化算子 覆盖 AI 全场景、完整的工具链（Nsight 性能分析、cuDNN 深度优化、TensorRT 推理部署）、框架深度集成（PyTorch、TensorFlow、JAX 都原生支持 CUDA）。
 
 相比之下，TPU 的软件生态差距明显：开发者数量 约 10 万级（主要是 Google 内部和学术圈）、优化算子 数量约为 CUDA 的十分之一、工具链 主要集中在 JAX 框架，对 PyTorch 的支持有限。
 
-**挑战二**：迁移成本
+挑战二：迁移成本
 
 将现有的 GPU 训练代码 迁移到 TPU 平台，涉及 数据管道重构（TPU 对数据加载的格式和并行策略有不同要求）、模型架构调整（某些在 GPU 上高效的模型结构在 TPU 上可能效率低下）、训练超参数调优（batch size、learning rate 等参数需要重新调整）、调试工具更换（从 **NVIDIA** Nsight 切换到 Google 的 TensorBoard 插件）。
 
 对于一个 中等规模的 AI 团队（10-20 人），迁移预计需要 2-4 个月。对于 大规模预训练（如 **Claude** 4 级别），可能需要 6 个月以上。
 
-**挑战三**：推理部署
+挑战三：推理部署
 
 TPU 在 推理场景 的劣势是 结构性的：延迟敏感场景 表现不佳（TPU 的批量处理特性）、动态形状支持 不如 GPU 灵活、边缘部署 方案缺乏。
 
-**突破路径**：Anthropic 的投入可能成为 TPU 生态的转折点。当一家顶级 AI 公司将 大量工程资源 投入到 TPU 优化中时，会产生 溢出效应——优化的代码和工具将 回馈社区，推动整个 TPU 生态的成熟。
+突破路径：Anthropic 的投入可能成为 TPU 生态的转折点。当一家顶级 AI 公司将 大量工程资源 投入到 TPU 优化中时，会产生 溢出效应——优化的代码和工具将 回馈社区，推动整个 TPU 生态的成熟。
 
 TPU v6e 的最新进展显示，Google 正在 强化推理能力——这是 TPU 相对于 GPU 的传统弱项。如果 TPU v6e 能在 低延迟推理 场景达到 GPU 80% 以上的性能，同时保持 30% 以上的成本优势，TPU 将从 训练专用芯片 进化为 训练推理通用芯片，这将彻底改变竞争格局。`,
-    code: [{ lang: "python", code: "# GPU (PyTorch) 训练代码\nimport torch\nmodel = MyModel().cuda()\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-4)\nfor batch in dataloader:\n    inputs, targets = batch\n    outputs = model(inputs.cuda())\n    loss = criterion(outputs, targets.cuda())\n    loss.backward()\n    optimizer.step()\n\n# TPU (JAX) 等效代码\nimport jax\nimport jax.numpy as jnp\nfrom flax.training import train_state\n\n@jax.jit\ndef train_step(state, batch):\n    def loss_fn(params):\n        logits = state.apply_fn(\n            {'params': params}, batch['inputs']\n        )\n        return jnp.mean(\n            (logits - batch['targets']) ** 2\n        )\n    grad_fn = jax.value_and_grad(loss_fn)\n    loss, grads = grad_fn(state.params)\n    return state.apply_gradients(grads=grads), loss" }],
+    code: [{ lang: "python", code: "# GPU (PyTorch) 训练代码\nimport torch\nmodel = MyModel().cuda()\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-4)\nfor batch in dataloader:\n    inputs, targets = batch\n    outputs = model(inputs.cuda())\n    loss = criterion(outputs, targets.cuda())\n    loss.backward()\n    optimizer.step()\n\n# TPU (JAX) 等效代码\nimport jax\nimport jax.numpy as jnp\nfrom flax.training import train_state\n\n@jax.jit\ndef train_step(state, batch):\n    def loss_fn(params):\n        logits = state.apply_fn(\n            {'params': params}, batch['inputs']\n        )\n        return jnp.mean(\n            (logits - batch['targets'])  2\n        )\n    grad_fn = jax.value_and_grad(loss_fn)\n    loss, grads = grad_fn(state.params)\n    return state.apply_gradients(grads=grads), loss" }],
     tip: "如果你的团队考虑从 GPU 迁移到 TPU，建议先从验证性实验开始——选一个中等规模的模型，在 TPU 上跑通训练流程，评估性能提升和迁移成本的性价比。不要一开始就迁移核心生产模型。",
     warning: "TPU 的编程范式（JAX + 函数式风格）与主流的 PyTorch 有本质差异。团队的技能储备是迁移成功的关键因素。如果团队没有 JAX 经验，建议先投入时间培训，而非直接迁移生产代码。",
   },
   {
     title: "七、行业连锁反应：其他 AI 巨头的算力布局",
-    body: `**Anthropic**-Google 协议只是 2026 年 AI 算力军备竞赛 的一个缩影。其他 AI 巨头也在加速自己的 算力布局，形成了 多维度竞争格局。
+    body: `Anthropic-Google 协议只是 2026 年 AI 算力军备竞赛 的一个缩影。其他 AI 巨头也在加速自己的 算力布局，形成了 多维度竞争格局。
 
-**OpenAI** 的算力策略：微软深度绑定 + 多元化探索
+OpenAI 的算力策略：微软深度绑定 + 多元化探索
 
-**OpenAI** 与 **Microsoft** 的合作关系是其算力策略的 核心支柱。**Microsoft** 为 OpenAI 提供 **Azure** 云服务 和 专属 **NVIDIA** GPU 集群。但 2026 年 5 月的最新进展是双方 结束独家协议，进入 多云时代。OpenAI 还在探索 自研 AI 推理芯片 和评估 **AWS** 与 Google Cloud 的备选方案。
+OpenAI 与 Microsoft 的合作关系是其算力策略的 核心支柱。Microsoft 为 OpenAI 提供 Azure 云服务 和 专属 NVIDIA GPU 集群。但 2026 年 5 月的最新进展是双方 结束独家协议，进入 多云时代。OpenAI 还在探索 自研 AI 推理芯片 和评估 AWS 与 Google Cloud 的备选方案。
 
-**Google DeepMind** 的算力策略：TPU 自研自用
+Google DeepMind 的算力策略：TPU 自研自用
 
-**Google DeepMind** 作为 Google 的 AI 研究部门，天然使用 TPU 算力。所有新模型优先在 TPU 上训练，针对 **Gemini** 模型的特殊需求定制 TPU 配置。Google 拥有全球最大的 TPU 集群（超过 10 万颗 TPU）。
+Google DeepMind 作为 Google 的 AI 研究部门，天然使用 TPU 算力。所有新模型优先在 TPU 上训练，针对 Gemini 模型的特殊需求定制 TPU 配置。Google 拥有全球最大的 TPU 集群（超过 10 万颗 TPU）。
 
-**Meta 的算力策略**：GPU 为主 + 自研 MTIA
+Meta 的算力策略：GPU 为主 + 自研 MTIA
 
-Meta 的算力策略最为 多元化：**NVIDIA** GPU 集群用于核心模型（Llama 系列）训练，MTIA 自研芯片 用于推荐系统和广告的推理加速，同时通过 PyTorch 项目推动 GPU 和 TPU 的 统一编程接口。
+Meta 的算力策略最为 多元化：NVIDIA GPU 集群用于核心模型（Llama 系列）训练，MTIA 自研芯片 用于推荐系统和广告的推理加速，同时通过 PyTorch 项目推动 GPU 和 TPU 的 统一编程接口。
 
-Amazon **AWS** 的算力策略：Trainium + Inferentia 自研芯片
+Amazon AWS 的算力策略：Trainium + Inferentia 自研芯片
 
 AWS 正在大力推广 自研 AI 芯片：Trainium2 面向训练场景，对标 NVIDIA H200；Inferentia3 面向推理场景，主打成本效率。通过 AWS 云服务将客户绑定到自研芯片生态。
 
-**竞争格局总结**：算力市场的 多元化趋势 正在加速。NVIDIA 的 垄断地位 正在被 TPU 和 自研芯片 双重侵蚀。虽然 GPU 在 2026 年仍然主导（约 75% 市占率），但这个比例在 2024 年还是 90%——下降速度超出预期。`,
+竞争格局总结：算力市场的 多元化趋势 正在加速。NVIDIA 的 垄断地位 正在被 TPU 和 自研芯片 双重侵蚀。虽然 GPU 在 2026 年仍然主导（约 75% 市占率），但这个比例在 2024 年还是 90%——下降速度超出预期。`,
     mermaid: `graph TD
     A[AI 算力市场 2026] --> B[GPU 主导阵营]
     A --> C[TPU 崛起阵营]
@@ -234,29 +234,29 @@ AWS 正在大力推广 自研 AI 芯片：Trainium2 面向训练场景，对标 
   },
   {
     title: "八、趋势预判：2026-2028 年 AI 算力格局的五个关键变化",
-    body: `基于 **Anthropic**-Google 协议的技术和商业分析，我们对未来 2-3 年的 AI 算力格局做出以下 趋势预判：
+    body: `基于 Anthropic-Google 协议的技术和商业分析，我们对未来 2-3 年的 AI 算力格局做出以下 趋势预判：
 
-**预判一**：TPU 市场份额将从约 10% 增长到 20-25%
+预判一：TPU 市场份额将从约 10% 增长到 20-25%
 
-**Anthropic** 的 2000 亿美元协议将成为 TPU 生态的催化剂。Google 将持续推出 新一代 TPU（TPU v6、TPU v7），Anthropic 的工程投入将推动 JAX 生态 成熟。更多的 中型 AI 公司 将选择 TPU 方案（成本驱动）。
+Anthropic 的 2000 亿美元协议将成为 TPU 生态的催化剂。Google 将持续推出 新一代 TPU（TPU v6、TPU v7），Anthropic 的工程投入将推动 JAX 生态 成熟。更多的 中型 AI 公司 将选择 TPU 方案（成本驱动）。
 
-**预判二**：NVIDIA GPU 价格将下降 30-40%
+预判二：NVIDIA GPU 价格将下降 30-40%
 
-随着 TPU 和自研芯片的竞争加剧，**NVIDIA** GPU 的 定价权 将显著削弱。预计到 2028 年，H200 级别 GPU 的价格将从当前的 3-4 万美元/颗 下降到 1.8-2.5 万美元/颗。**NVIDIA** 的毛利率将从约 75% 下降到约 55-60%。
+随着 TPU 和自研芯片的竞争加剧，NVIDIA GPU 的 定价权 将显著削弱。预计到 2028 年，H200 级别 GPU 的价格将从当前的 3-4 万美元/颗 下降到 1.8-2.5 万美元/颗。NVIDIA 的毛利率将从约 75% 下降到约 55-60%。
 
-**预判三**：多云算力将成为主流 AI 公司的标配
+预判三：多云算力将成为主流 AI 公司的标配
 
-2026 年的 **Microsoft**-**OpenAI** 合作重构（结束独家协议）标志着 多云 AI 时代 的开启。到 2028 年，80% 以上的主流 AI 公司 将采用 多云算力策略，同时使用 2-3 家云服务商的算力资源。
+2026 年的 Microsoft**-**OpenAI 合作重构（结束独家协议）标志着 多云 AI 时代 的开启。到 2028 年，80% 以上的主流 AI 公司 将采用 多云算力策略，同时使用 2-3 家云服务商的算力资源。
 
-**预判四**：边缘 AI 算力将成为新的增长极
+预判四：边缘 AI 算力将成为新的增长极
 
 当前的算力竞争集中在 云端训练，但 边缘推理 将是下一个增长点。随着 AI Agent 在终端设备（手机、PC、IoT）上的普及，边缘 AI 芯片 的需求将爆发式增长。关键玩家包括 Apple（M 系列 Neural Engine）、Qualcomm（Snapdragon X Elite）、Intel（Core Ultra）和 NVIDIA（Jetson 系列）。
 
-**预判五**：开源算力生态将加速挑战闭源生态
+预判五：开源算力生态将加速挑战闭源生态
 
-RISC-V 架构的 AI 加速器、开源 JAX 生态 和 开源推理框架（**vLLM**、TensorRT-LLM 的开源版本）将加速发展。到 2028 年，开源算力方案 在中小 AI 公司中的采用率将从当前的约 15% 增长到 35-40%。
+RISC-V 架构的 AI 加速器、开源 JAX 生态 和 开源推理框架（vLLM、TensorRT-LLM 的开源版本）将加速发展。到 2028 年，开源算力方案 在中小 AI 公司中的采用率将从当前的约 15% 增长到 35-40%。
 
-**总结展望**：AI 算力市场正在经历从 垄断到竞争、从 单一到多元、从 闭源到开源 的三重转变。Anthropic-Google 2000 亿美元协议是这一转变的 标志性事件——它不仅是 AI 史上最大的算力采购协议，更是 算力格局重构的催化剂。
+总结展望**：AI 算力市场正在经历从 垄断到竞争、从 单一到多元、从 闭源到开源 的三重转变。Anthropic-Google 2000 亿美元协议是这一转变的 标志性事件——它不仅是 AI 史上最大的算力采购协议，更是 算力格局重构的催化剂。
 
 对 AI 行业的影响 将远超算力本身：更低的算力成本将 加速模型迭代，更多元的算力选择将 降低行业进入门槛，更开放的算力生态将 推动 AI 技术的普及。2026 年 5 月，我们可能正在见证 AI 行业的 第二个拐点——从谁能获得算力的竞争，转向谁能最高效利用算力的竞争。这场算力军备竞赛没有输家，因为 算力的普及 最终将推动 整个人工智能行业 向前发展，让 技术创新的红利 惠及更广泛的 开发者和用户群体。
 

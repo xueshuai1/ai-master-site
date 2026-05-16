@@ -26,7 +26,7 @@ content: [
 
 OpenAI 官方对 GPT-5.5 的定性：「Treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4.」
 
-**> 核心建议**： 不要直接沿用为 GPT-5.2/5.4 优化的 prompt，而是从最小化 prompt 开始重新调优。
+> 核心建议： 不要直接沿用为 GPT-5.2/5.4 优化的 prompt，而是从最小化 prompt 开始重新调优。
 
 ### 定价策略：加量不加价
 
@@ -74,10 +74,10 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
 
 这是 **GPT-5**.5 最大的改进方向。相比 GPT-5.4，GPT-5.5 在以下方面显著提升：
 
-- **更长的规划链路**：能够规划更复杂的多步骤编程任务，减少中途偏离目标的情况
-- **大代码库理解能力**：对大型代码仓库的上下文理解更加准确，减少因信息缺失导致的错误
-- **工具调用精度**：文件读写、代码执行、测试验证等工具调用的成功率更高
-- **自我修正能力**：在发现错误后，能够更准确地定位问题并修复，而非简单重试
+- 更长的规划链路：能够规划更复杂的多步骤编程任务，减少中途偏离目标的情况
+- 大代码库理解能力：对大型代码仓库的上下文理解更加准确，减少因信息缺失导致的错误
+- 工具调用精度：文件读写、代码执行、测试验证等工具调用的成功率更高
+- 自我修正能力：在发现错误后，能够更准确地定位问题并修复，而非简单重试
 
 ### 2. 推理 Token 效率改进
 
@@ -87,17 +87,17 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
 
 - 更精准的推理路径选择：减少不必要的推理分支探索
 - 中间状态的压缩与复用：对于重复出现的推理模式，直接复用已压缩的中间状态
-- **提前终止机制**：当推理达到足够的确定性时，提前结束 thinking 阶段
+- 提前终止机制：当推理达到足够的确定性时，提前结束 thinking 阶段
 
-**实际影响**： 对于相同任务，GPT-5.5 的总 token 消耗可能比 GPT-5.4 降低 20-40%，部分抵消了单价上涨的影响。
+实际影响： 对于相同任务，GPT-5.5 的总 token 消耗可能比 GPT-5.4 降低 20-40%，部分抵消了单价上涨的影响。
 
 ### 3. 多模态融合深化
 
 GPT-5.5 在图片和文档理解方面有显著改进：
 
-- **图片理解精度提升**：对复杂图表、代码截图、架构图的理解更准确
-- **文档结构解析**：能够更好地理解 PDF、Markdown 等文档的层级结构
-- **多模态推理**：结合图片和文本信息进行联合推理的能力增强
+- 图片理解精度提升：对复杂图表、代码截图、架构图的理解更准确
+- 文档结构解析：能够更好地理解 PDF、Markdown 等文档的层级结构
+- 多模态推理：结合图片和文本信息进行联合推理的能力增强
 
 ### 4. 新参数：verbosity 和 image_detail
 
@@ -140,12 +140,12 @@ GPT-5.5 引入了两个新的 API 参数：
 
 > "Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack. Start with the smallest prompt that preserves the product contract, then tune reasoning effort, verbosity, tool descriptions, and output format against representative examples."
 
-**具体步骤**：
+具体步骤：
 
-1. **最小化启动**：从仅包含产品契约（核心任务定义）的最小 prompt 开始
-2. **逐步增加**：根据输出质量，逐步添加推理指令、格式约束等
-3. **代表性测试**：用一组代表性示例验证每个调优步骤的效果
-4. **避免过度约束**：GPT-5.5 的理解能力更强，过度约束反而会限制其能力
+1. 最小化启动：从仅包含产品契约（核心任务定义）的最小 prompt 开始
+2. 逐步增加：根据输出质量，逐步添加推理指令、格式约束等
+3. 代表性测试：用一组代表性示例验证每个调优步骤的效果
+4. 避免过度约束：GPT-5.5 的理解能力更强，过度约束反而会限制其能力
 
 ### 2. 多步骤任务的渐进式反馈
 
@@ -163,15 +163,15 @@ OpenAI 推荐了一个非常实用的 UX 模式：
 | medium | 一般对话、文档生成 | 默认行为 |
 | high | 教学解释、详细分析 | 增加 30-50% token |
 
-**反模式**： 在需要精确输出的场景（如 JSON 解析、代码生成）使用 high verbosity 会导致输出中包含不必要的解释，增加解析难度和成本。
+反模式： 在需要精确输出的场景（如 JSON 解析、代码生成）使用 high verbosity 会导致输出中包含不必要的解释，增加解析难度和成本。
 
 ### 4. Tool Description 的调优
 
 GPT-5.5 对 tool description 的理解更加敏感。建议：
 
-- **具体而非抽象**：明确描述工具做什么、接受什么参数、返回什么
-- **包含示例**：在 description 中包含一个调用示例
-- **避免模糊描述**：如"这个工具很有用"——GPT-5.5 需要精确的语义而非鼓励性语言`,
+- 具体而非抽象：明确描述工具做什么、接受什么参数、返回什么
+- 包含示例：在 description 中包含一个调用示例
+- 避免模糊描述：如"这个工具很有用"——GPT-5.5 需要精确的语义而非鼓励性语言`,
       code: [
         {
           lang: "python",
@@ -352,7 +352,7 @@ def agentic_coding_workflow(task: CodeTask) -> CodeResult:
     实际使用时，替换 gpt55_call 为真实的 OpenAI API 调用。
     """
     
-    def gpt55_call(messages: list[dict], **kwargs) -> str:
+    def gpt55_call(messages: list[dict], kwargs) -> str:
         """模拟 GPT-5.5 API 调用"""
         # 实际代码：
         # from openai import OpenAI
@@ -360,7 +360,7 @@ def agentic_coding_workflow(task: CodeTask) -> CodeResult:
         # resp = client.chat.completions.create(
         #     model="gpt-5.5",
         #     messages=messages,
-        #     **kwargs
+        #     kwargs
         # )
         # return resp.choices[0].message.content
         return ""  # placeholder
@@ -458,19 +458,19 @@ print(result["code"])`,
 
 ### 3. 常见迁移问题
 
-**问题一**：原有 prompt 输出质量下降
+问题一：原有 prompt 输出质量下降
 
-**原因**：GPT-5.5 的理解方式与 GPT-5.4 不同，某些为 GPT-5.4 优化的 prompt 可能在 GPT-5.5 上产生次优结果。
+原因：GPT-5.5 的理解方式与 GPT-5.4 不同，某些为 GPT-5.4 优化的 prompt 可能在 GPT-5.5 上产生次优结果。
 
-**解决**：按照最小化迁移流程重新调优。
+解决：按照最小化迁移流程重新调优。
 
-**问题二**：输出格式不一致
+问题二：输出格式不一致
 
-**原因**：GPT-5.5 可能需要更明确的输出格式约束。
+原因：GPT-5.5 可能需要更明确的输出格式约束。
 
-**解决**：在 prompt 中添加明确的输出格式说明，或使用 \`response_format\` 参数。
+解决：在 prompt 中添加明确的输出格式说明，或使用 \`response_format\` 参数。
 
-**问题三**：成本超出预期
+问题三：成本超出预期
 
 原因：GPT-5.5 的单价比 GPT-5.4 高，但 token 效率提升可能抵消这一点。
 
@@ -700,7 +700,7 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
 - Agentic Coding 是核心战场：OpenAI 正在将 Codex 打造成最佳的 AI 编程平台
 - 模型效率比规模更重要：用更少的 token 达到更好的效果是趋势
 - 渐进式升级是主流策略：5.5 → 5.6 → ... 的小步迭代取代了大版本跳跃
-- **多模态是必争之地**：图片、文档、代码的联合理解能力将成为标配
+- 多模态是必争之地：图片、文档、代码的联合理解能力将成为标配
 
 对于开发者和企业来说，2026 年下半年的 AI 模型选择将更加注重性价比和场景匹配度，而非单纯追求"最强模型"。`,
       mermaid: `graph TD

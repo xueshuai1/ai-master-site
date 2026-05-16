@@ -18,7 +18,7 @@ export const article: Article = {
         },
         {
             title: "1. 学习全景图",
-            body: `**深度学习分为四个方向**：
+            body: `深度学习分为四个方向：
 
 神经网络基础— 感知机、多层网络、反向传播、激活函数、优化器
 
@@ -30,11 +30,11 @@ RNN / 序列模型— RNN、LSTM、注意力机制
         },
         {
             title: "2. 学习建议",
-            body: `**重点投入时间**：
+            body: `重点投入时间：
 - 神经网络基础（反向传播是核心）
 - **Transformer** 架构（LLM 的基石）
 
-**可以略过的**：
+可以略过的：
 - CNN 的具体架构细节（知道思想就行）
 - RNN 的数学推导（知道 LSTM 解决什么问题就行）
 
@@ -45,25 +45,25 @@ RNN / 序列模型— RNN、LSTM、注意力机制
             title: "3. 📍 推荐学习路径",
             body: `本分类共 21 篇文章，以下是我们推荐的系统性学习路径：
 
-**第一阶段**：神经网络基础（5 篇）
+第一阶段：神经网络基础（5 篇）
 
-1. **[神经网络基础**：从感知机到多层网络](/article/dl-001)（dl-001）→ 理解神经网络的基本结构
-2. **[神经网络基础**：前向传播、反向传播与激活函数](/article/dl-019)（dl-019）→ 掌握核心机制
-3. **[反向传播**：神经网络如何学习](/article/dl-002)（dl-002）→ 深度理解梯度传播
+1. [神经网络基础：从感知机到多层网络](/article/dl-001)（dl-001）→ 理解神经网络的基本结构
+2. [神经网络基础：前向传播、反向传播与激活函数](/article/dl-019)（dl-019）→ 掌握核心机制
+3. [反向传播：神经网络如何学习](/article/dl-002)（dl-002）→ 深度理解梯度传播
 4. [CNN：卷积神经网络架构详解](/article/dl-006)（dl-006）→ 了解卷积思想
 5. [CNN 卷积神经网络：从 LeNet 到 ResNet](/article/dl-020)（dl-020）→ CNN 架构演进
 
-**第二阶段**：核心进阶（选读 8 篇）
+第二阶段：核心进阶（选读 8 篇）
 
-- **🔥 核心必读**：[注意力机制与 Transformer 架构](/article/dl-004)（dl-004）、[优化器：SGD, Momentum, Adam, AdamW](/article/dl-007)（dl-007）、[正则化：BatchNorm, LayerNorm, Dropout](/article/dl-009)（dl-009）
-- **深入理解**：[损失函数大全](/article/dl-008)（dl-008）、[初始化策略](/article/dl-010)（dl-010）、[迁移学习：预训练 + 微调范式](/article/dl-015)（dl-015）
-- **拓展阅读**：[RNN 与 LSTM](/article/dl-003)（dl-003）、[GAN 生成对抗网络](/article/dl-005)（dl-005）
+- 🔥 核心必读：[注意力机制与 Transformer 架构](/article/dl-004)（dl-004）、[优化器：SGD, Momentum, Adam, AdamW](/article/dl-007)（dl-007）、[正则化：BatchNorm, LayerNorm, Dropout](/article/dl-009)（dl-009）
+- 深入理解：[损失函数大全](/article/dl-008)（dl-008）、[初始化策略](/article/dl-010)（dl-010）、[迁移学习：预训练 + 微调范式](/article/dl-015)（dl-015）
+- 拓展阅读：[RNN 与 LSTM](/article/dl-003)（dl-003）、[GAN 生成对抗网络](/article/dl-005)（dl-005）
 
-**第三阶段**：高级专题（按需选读）
+第三阶段：高级专题（按需选读）
 
 - [Mixture of Experts MoE](/article/dl-017)（dl-017）、[分布式训练](/article/dl-016)（dl-016）、[图神经网络 GNN](/article/dl-013)（dl-013）、[神经架构搜索 NAS](/article/dl-014)（dl-014）
 
-**> ⚡ 速成建议**： 第一阶段 + 第二阶段的核心必读 = 深度学习的核心知识。其余可以在实践中按需补学。`,
+> ⚡ 速成建议： 第一阶段 + 第二阶段的核心必读 = 深度学习的核心知识。其余可以在实践中按需补学。`,
             table: {
                 headers: ["阶段", "文章数", "预计时间", "目标"],
                 rows: [

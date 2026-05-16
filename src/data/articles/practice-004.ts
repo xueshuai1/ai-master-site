@@ -74,11 +74,11 @@ class PromptTemplate:
     def __init__(self, template: str):
         self.template = Template(template)
 
-    def render(self, **kwargs: Any) -> str:
-        return self.template.safe_substitute(**kwargs)
+    def render(self, kwargs: Any) -> str:
+        return self.template.safe_substitute(kwargs)
 
-    def render_json(self, **kwargs: Any) -> str:
-        data = self.render(**kwargs)
+    def render_json(self, kwargs: Any) -> str:
+        data = self.render(kwargs)
         return json.dumps({"prompt": data}, ensure_ascii=False)
 
 # 预定义模板库

@@ -487,8 +487,8 @@ def estimate_similarity_transform(src_pts: np.ndarray, dst_pts: np.ndarray = ARC
     dst_centered = dst3 - dst_mean
 
     # 计算尺度
-    src_scale = np.sqrt(np.sum(src_centered ** 2))
-    dst_scale = np.sqrt(np.sum(dst_centered ** 2))
+    src_scale = np.sqrt(np.sum(src_centered  2))
+    dst_scale = np.sqrt(np.sum(dst_centered  2))
 
     # 归一化
     src_norm = src_centered / src_scale

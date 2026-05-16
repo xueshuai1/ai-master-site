@@ -697,8 +697,8 @@ Respond with ONLY a number from 1 to 10."""
         return {
             "individual_scores": scores,
             "mean_score": sum(scores.values()) / len(scores),
-            "std_score": (sum((s - sum(scores.values())/len(scores))**2
-                          for s in scores.values()) / len(scores)) ** 0.5,
+            "std_score": (sum((s - sum(scores.values())/len(scores))2
+                          for s in scores.values()) / len(scores))  0.5,
             "consensus": all(abs(s - sum(scores.values())/len(scores)) < 2
                            for s in scores.values()),
         }

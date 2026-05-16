@@ -810,12 +810,12 @@ class CustomImageGenerator:
     def generate_batch(
         self,
         prompts: list[str],
-        **kwargs,
+        kwargs,
     ) -> list[list[Image.Image]]:
         """批量生成多张图像"""
         all_images = []
         for prompt in prompts:
-            images = self.generate(prompt=prompt, **kwargs)
+            images = self.generate(prompt=prompt, kwargs)
             all_images.append(images)
         return all_images
 

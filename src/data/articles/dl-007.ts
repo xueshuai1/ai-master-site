@@ -322,10 +322,10 @@ def adam(grads, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-8):
 
     for t, g in enumerate(grads, 1):
         m = beta1 * m + (1 - beta1) * g
-        v = beta2 * v + (1 - beta2) * g ** 2
+        v = beta2 * v + (1 - beta2) * g  2
 
         # 偏差校正（关键！）
-        m_hat = m / (1 - beta1 ** t)
+        m_hat = m / (1 - beta1  t)
         v_hat = v / (1 - beta2 ** t)
 
         # 参数更新
@@ -333,14 +333,14 @@ def adam(grads, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-8):
         theta = theta - update
 
         if t in [1, 2, 10, 100]:
-            correction = 1 / (1 - beta1 ** t)
-            print(f"t={t}: β₁ᵗ={beta1**t:.6f}, 校正因子={correction:.6f}")
+            correction = 1 / (1 - beta1  t)
+            print(f"t={t}: β₁ᵗ={beta1t:.6f}, 校正因子={correction:.6f}")
 
     return theta
 
 # 验证偏差校正：t=1 时校正因子 = 1/(1-0.9) = 10
-print(f"t=1: 校正因子 = {1/(1-0.9**1):.2f}")  # 10.00
-print(f"t=10: 校正因子 = {1/(1-0.9**10):.4f}")  # 1.5377
+print(f"t=1: 校正因子 = {1/(1-0.91):.2f}")  # 10.00
+print(f"t=10: 校正因子 = {1/(1-0.910):.4f}")  # 1.5377
 print(f"t=100: 校正因子 = {1/(1-0.9**100):.6f}")  # 1.0000` },
                 { lang: "python", code: `import torch
 import torch.nn as nn
@@ -410,8 +410,8 @@ def adam_with_weight_decay(grads, theta_init, lr=0.001,
     for t, g in enumerate(grads, 1):
         g_reg = g + weight_decay * theta  # weight_decay 混入梯度
         m = beta1 * m + (1 - beta1) * g_reg
-        v = beta2 * v + (1 - beta2) * g_reg ** 2
-        m_hat = m / (1 - beta1 ** t)
+        v = beta2 * v + (1 - beta2) * g_reg  2
+        m_hat = m / (1 - beta1  t)
         v_hat = v / (1 - beta2 ** t)
         theta = theta - lr * m_hat / (np.sqrt(v_hat) + eps)
     return theta
@@ -424,8 +424,8 @@ def adamw(grads, theta_init, lr=0.001,
 
     for t, g in enumerate(grads, 1):
         m = beta1 * m + (1 - beta1) * g  # 注意：g 不加 weight_decay
-        v = beta2 * v + (1 - beta2) * g ** 2
-        m_hat = m / (1 - beta1 ** t)
+        v = beta2 * v + (1 - beta2) * g  2
+        m_hat = m / (1 - beta1  t)
         v_hat = v / (1 - beta2 ** t)
         # 解耦的权重衰减
         theta = theta - lr * m_hat / (np.sqrt(v_hat) + eps) - lr * weight_decay * theta

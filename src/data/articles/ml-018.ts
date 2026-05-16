@@ -49,16 +49,16 @@ for i in range(n_experiments):
 
 # 误差分解
 avg_pred = predictions.mean(axis=0)
-bias = np.mean((avg_pred - y_true) ** 2)
+bias = np.mean((avg_pred - y_true)  2)
 variance = np.mean(np.var(predictions, axis=0))
-noise = noise_level ** 2
+noise = noise_level  2
 total_error = bias + variance + noise
 
 print(f"偏差 (Bias):       {bias:.4f}")
 print(f"方差 (Variance):   {variance:.4f}")
 print(f"噪声 (Noise):      {noise:.4f}")
 print(f"总误差 (分解):     {total_error:.4f}")
-print(f"总误差 (直接计算): {np.mean((y_noisy - avg_pred) ** 2):.4f}")`,
+print(f"总误差 (直接计算): {np.mean((y_noisy - avg_pred)  2):.4f}")`,
                 },
                 {
                     lang: "python",
@@ -81,7 +81,7 @@ ideal_preds = np.random.normal(loc=(5.0, 5.0), scale=0.3, size=(20, 2))
 
 def calc_bias_variance(preds, target):
     mean_pred = preds.mean(axis=0)
-    bias_sq = np.sum((mean_pred - target) ** 2)
+    bias_sq = np.sum((mean_pred - target)  2)
     variance = np.mean(np.sum((preds - mean_pred) ** 2, axis=1))
     return bias_sq, variance
 
@@ -353,9 +353,9 @@ for k in k_values:
             title: "4. 诊断方法：学习曲线与验证曲线",
             body: `知道了偏差和方差的概念还不够，你需要具体的工具来诊断模型到底处于什么状态。学习曲线和验证曲线是 scikit-learn 提供的两大诊断利器，它们能帮你精准定位问题所在。
 
-**学习曲线回答的问题是**：增加训练数据能否改善模型表现？它将训练样本数量作为横轴，同时画出训练集得分和验证集得分。如果两条曲线都偏低且最终靠拢，说明增加数据无济于事——这是欠拟合的信号，需要更强大的模型或更好的特征。如果训练集得分很高但验证集得分偏低，且两者之间存在较大间隙，增加数据可能有所帮助——这是过拟合的信号。
+学习曲线回答的问题是：增加训练数据能否改善模型表现？它将训练样本数量作为横轴，同时画出训练集得分和验证集得分。如果两条曲线都偏低且最终靠拢，说明增加数据无济于事——这是欠拟合的信号，需要更强大的模型或更好的特征。如果训练集得分很高但验证集得分偏低，且两者之间存在较大间隙，增加数据可能有所帮助——这是过拟合的信号。
 
-**验证曲线回答的问题是**：某个超参数取什么值最合适？它固定其他所有条件不变，只改变一个超参数，同时绘制训练集和验证集上的得分。通过观察两条曲线的交叉和分离，你可以精确定位欠拟合和过拟合的边界。
+验证曲线回答的问题是：某个超参数取什么值最合适？它固定其他所有条件不变，只改变一个超参数，同时绘制训练集和验证集上的得分。通过观察两条曲线的交叉和分离，你可以精确定位欠拟合和过拟合的边界。
 
 这两个工具的最大价值在于：它们把"我觉得模型可能过拟合了"这种模糊的直觉，变成了"验证曲线显示当 max_depth 超过 8 时测试误差开始上升"这样精确的判断。`,
             code: [

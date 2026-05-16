@@ -700,9 +700,9 @@ class ToolOrchestrator:
         for attempt in range(schema.retry_count + 1):
             try:
                 if asyncio.iscoroutinefunction(impl):
-                    result = await impl(**params)
+                    result = await impl(params)
                 else:
-                    result = impl(**params)
+                    result = impl(params)
                 
                 execution_time = time.time() - start_time
                 return ToolResult(

@@ -340,7 +340,7 @@ def sample_vae(model, n_samples, latent_dim, device):
             title: "5. 对抗自编码器 AAE",
             body: `对抗自编码器（Adversarial Autoencoder, AAE）由 Makhzani 等人于 2015 年提出，它将 GAN 的对抗训练思想引入自编码器框架，用于规范化潜空间分布。与 VAE 通过 KL 散度显式约束不同，AAE 使用判别器来隐式地迫使聚合后验分布 q(z) 匹配先验分布 p(z)。
 
-**AAE 包含三个阶段**：重建阶段优化编码器使重建误差最小；正则化阶段让判别器区分真实先验样本和编码产生的潜向量；对抗阶段更新编码器使判别器无法区分两者。这种分离式训练使得 AAE 可以匹配任意形式的先验分布，而不仅限于高斯分布，这比 VAE 更加灵活。
+AAE 包含三个阶段：重建阶段优化编码器使重建误差最小；正则化阶段让判别器区分真实先验样本和编码产生的潜向量；对抗阶段更新编码器使判别器无法区分两者。这种分离式训练使得 AAE 可以匹配任意形式的先验分布，而不仅限于高斯分布，这比 VAE 更加灵活。
 
 AAE 的优势在于潜空间可以更精确地匹配目标分布，且没有 VAE 的模糊问题。但它也引入了 GAN 训练的不稳定性，需要仔细平衡重建损失和对抗损失。实践中常使用 Wasserstein 距离或梯度惩罚来稳定训练。`,
             code: [
@@ -432,7 +432,7 @@ def train_aae_step(aae, x, optimizer_ae, optimizer_d, device):
             title: "6. 应用：异常检测与图像生成",
             body: `自编码器在异常检测（Anomaly Detection）中有着天然优势。核心直觉是：自编码器在训练数据上学习到了正常样本的重建模式，当输入异常样本时，重建误差会显著增大。这是因为异常样本偏离了数据流形，编码器无法将其映射到训练时学习到的潜空间区域，导致解码器重建失败。
 
-**具体流程**：训练阶段仅使用正常样本训练自编码器，使其在正常数据上达到低重建误差；推理阶段计算每个样本的重建误差，超过阈值的判定为异常。这种方法无需异常样本标签，属于无监督异常检测，在工业质检、网络安全、金融欺诈等场景广泛应用。
+具体流程：训练阶段仅使用正常样本训练自编码器，使其在正常数据上达到低重建误差；推理阶段计算每个样本的重建误差，超过阈值的判定为异常。这种方法无需异常样本标签，属于无监督异常检测，在工业质检、网络安全、金融欺诈等场景广泛应用。
 
 在图像生成方面，VAE 和 AAE 都可以从潜空间采样生成新图像。通过操控潜向量可以实现属性编辑（如改变人脸表情、调整图像风格），这是因为连续平滑的潜空间使得语义操作成为可能。结合条件编码（CVAE）还能实现条件生成，即指定类别或属性后生成对应图像。`,
             code: [
@@ -453,7 +453,7 @@ def train_aae_step(aae, x, optimizer_ae, optimizer_d, device):
             for batch in dataloader:
                 x = batch.view(batch.size(0), -1)
                 x_recon, _ = self.ae(x)
-                error = torch.mean((x - x_recon) ** 2, dim=1)
+                error = torch.mean((x - x_recon)  2, dim=1)
                 errors.extend(error.cpu().numpy())
         # 使用百分位数作为阈值
         self.threshold = np.percentile(errors, self.threshold_percentile)
@@ -463,7 +463,7 @@ def train_aae_step(aae, x, optimizer_ae, optimizer_d, device):
         self.ae.eval()
         with torch.no_grad():
             x_recon, _ = self.ae(x)
-            error = torch.mean((x - x_recon) ** 2, dim=1)
+            error = torch.mean((x - x_recon)  2, dim=1)
             return (error > self.threshold).int()`
                 },
                 {

@@ -293,7 +293,7 @@ class PlanAndExecuteAgent:
     """带自我纠错能力的 Agent"""
     
     def __init__(self, *args, max_reflections: int = 3, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, kwargs)
         self.max_reflections = max_reflections
     
     def reflect(self, draft: str, task: str) -> tuple[str, bool]:
@@ -541,7 +541,7 @@ print(team.get_summary())`,
   },
   {
     title: "实战案例：用多 Agent 构建知识图谱",
-    body: "**任务**： 从一篇技术文章中提取实体关系，构建知识图谱。",
+    body: "任务**： 从一篇技术文章中提取实体关系，构建知识图谱。",
     mermaid: `sequenceDiagram
     participant User as 用户
     participant Orch as 编排器

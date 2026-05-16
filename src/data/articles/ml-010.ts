@@ -211,7 +211,7 @@ def reconstruction_error(W, X):
     """计算投影到 W 子空间后的重构误差"""
     # W 已正交归一化 (d×k)
     X_proj = X @ W @ W.T  # 投影
-    return np.sum((X - X_proj) ** 2)
+    return np.sum((X - X_proj)  2)
 
 # 用 eigh 的前 k 个特征向量
 k = 2
@@ -271,7 +271,7 @@ cov = X.T @ X / (X.shape[0] - 1)
 eigenvalues, eigenvectors = np.linalg.eigh(cov)
 
 # 特征值 = σ² / (n-1)
-svd_eigenvalues = S**2 / (X.shape[0] - 1)
+svd_eigenvalues = S2 / (X.shape[0] - 1)
 print(f"\\nSVD 推导特征值: {svd_eigenvalues[::-1]}")
 print(f"eigh 计算特征值: {eigenvalues[::-1]}")
 print(f"两者一致: {np.allclose(svd_eigenvalues[::-1], eigenvalues[::-1])}")

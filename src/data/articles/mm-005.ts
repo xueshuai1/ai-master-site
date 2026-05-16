@@ -41,7 +41,7 @@ def euclidean_distance(a: np.ndarray, b: np.ndarray) -> float:
     对归一化向量，欧氏距离和余弦相似度等价
     d = sqrt(2 * (1 - cos))
     """
-    return float(np.sqrt(np.sum((a - b) ** 2)))
+    return float(np.sqrt(np.sum((a - b)  2)))
 
 # 多模态相似度计算示例
 # image_embed: [512] 从 CLIP 图像编码器获得
@@ -85,7 +85,7 @@ class BruteForceSearcher:
         else:
             # 欧氏距离
             diff = self.vectors - query  # [N, D]
-            scores = -np.sum(diff ** 2, axis=1).reshape(1, -1)
+            scores = -np.sum(diff  2, axis=1).reshape(1, -1)
 
         # Top-K
         indices = np.argpartition(scores[0], -top_k)[-top_k:]
@@ -151,7 +151,7 @@ class ProductQuantizer:
         self.dim = dim
         self.M = M
         self.nbits = nbits
-        self.K = 2 ** nbits  # 每个子空间的聚类数
+        self.K = 2  nbits  # 每个子空间的聚类数
         self.sub_dim = dim // M
         self.codebooks = np.zeros((M, self.K, self.sub_dim))
 
@@ -174,7 +174,7 @@ class ProductQuantizer:
             # 计算到所有聚类中心的距离
             sub_vectors = vectors[:, m, :]  # [N, sub_dim]
             dists = np.sum(
-                (sub_vectors[:, np.newaxis, :] - self.codebooks[m][np.newaxis, :, :]) ** 2,
+                (sub_vectors[:, np.newaxis, :] - self.codebooks[m][np.newaxis, :, :])  2,
                 axis=2
             )  # [N, K]
             codes[:, m] = np.argmin(dists, axis=1)
@@ -539,13 +539,13 @@ class TwoStageRetrieval:
         """
         # 阶段 1: CLIP 快速召回
         text_input = self.clip_processor(text=query_text, return_tensors="pt")
-        text_feat = self.clip_model.get_text_features(**text_input)
+        text_feat = self.clip_model.get_text_features(text_input)
         text_feat = F.normalize(text_feat, dim=-1)
 
         image_feats = []
         for img in image_database:
             img_input = self.clip_processor(images=img, return_tensors="pt")
-            img_feat = self.clip_model.get_image_features(**img_input)
+            img_feat = self.clip_model.get_image_features(img_input)
             img_feat = F.normalize(img_feat, dim=-1)
             image_feats.append(img_feat)
 
@@ -939,7 +939,7 @@ Top-N 推荐"]
         title: "7. 实战：构建图文检索系统",
         body: `本节通过一个完整的实战项目，将前面介绍的所有技术串联起来，构建一个端到端的图文检索系统。该系统支持用户上传图像库、构建向量索引、然后通过自然语言查询来检索相关图像。
 
-**系统架构分为四个模块**：数据预处理模块负责加载和编码图像文本对，索引构建模块使用 FAISS 建立高效检索索引，查询服务模块处理用户的自然语言查询并返回结果，评估模块用于测试系统的检索精度。
+系统架构分为四个模块：数据预处理模块负责加载和编码图像文本对，索引构建模块使用 FAISS 建立高效检索索引，查询服务模块处理用户的自然语言查询并返回结果，评估模块用于测试系统的检索精度。
 
 整个系统的设计遵循模块化原则，每个模块都可以独立替换和升级。例如，图像编码器可以从 CLIP 替换为 OpenCLIP 以获得更好的效果，索引引擎可以从 FAISS 替换为 Milvus 以支持分布式部署。
 
@@ -993,7 +993,7 @@ async def build_index(files: list[UploadFile] = File(...)):
         image = Image.open(io.BytesIO(content))
         inputs = processor(images=image, return_tensors="pt")
         with torch.no_grad():
-            feat = model.get_image_features(**inputs)
+            feat = model.get_image_features(inputs)
             feat = F.normalize(feat, dim=-1)
         vectors.append(feat.numpy())
         image_store[f"img_{idx}"] = image
@@ -1012,7 +1012,7 @@ async def search(query: str, top_k: int = 10):
 
     inputs = processor(text=query, return_tensors="pt", padding=True)
     with torch.no_grad():
-        text_feat = model.get_text_features(**inputs)
+        text_feat = model.get_text_features(inputs)
         text_feat = F.normalize(text_feat, dim=-1).numpy()
 
     scores, indices = faiss_index.search(text_feat, top_k)
@@ -1065,7 +1065,7 @@ class RetrievalEvaluator:
         for i in tqdm(range(0, len(self.images), batch_size)):
             batch = self.images[i:i+batch_size]
             inputs = self.processor(images=batch, return_tensors="pt")
-            feat = self.model.get_image_features(**inputs)
+            feat = self.model.get_image_features(inputs)
             image_features.append(F.normalize(feat, dim=-1))
         image_features = torch.cat(image_features, dim=0)  # [N, D]
 
@@ -1074,7 +1074,7 @@ class RetrievalEvaluator:
         for i in tqdm(range(0, len(self.captions), batch_size)):
             batch = self.captions[i:i+batch_size]
             inputs = self.processor(text=batch, return_tensors="pt", padding=True)
-            feat = self.model.get_text_features(**inputs)
+            feat = self.model.get_text_features(inputs)
             text_features.append(F.normalize(feat, dim=-1))
         text_features = torch.cat(text_features, dim=0)  # [N, D]
 

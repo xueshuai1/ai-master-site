@@ -542,7 +542,7 @@ def compute_f_divergence_loss(p_expert, p_learner, f_type="kl_forward"):
         return 0.5 * np.sum(p_e * np.log(p_e / m)) + \
                0.5 * np.sum(p_l * np.log(p_l / m))
     elif f_type == "hellinger":
-        return np.sum((np.sqrt(p_e) - np.sqrt(p_l)) ** 2)
+        return np.sum((np.sqrt(p_e) - np.sqrt(p_l))  2)
 
 # 专家有两种行为模式（双峰分布）
 expert_dist = np.array([0.45, 0.05, 0.0, 0.45, 0.05])
@@ -579,7 +579,7 @@ for f_type in ["kl_forward", "kl_reverse", "js", "hellinger"]:
 
 在自动驾驶领域，Waymo 和 Tesla 都大量使用人类驾驶数据。Waymo 的方案是：先用行为克隆训练初始驾驶策略，然后在封闭测试场地中通过人类安全驾驶员的干预数据（相当于 DAgger 中的专家标注）来校正策略。Tesla 的 FSD 系统则从数百万车辆的驾驶数据中学习，通过影子模式（shadow mode）——模型在后台运行但不实际控制车辆，将其决策与实际驾驶员的操作对比，持续改进。
 
-在机器人操作中，Google 的 RT-1 和 RT-2 模型使用人类遥操作数据训练通用的机器人控制策略。这些系统收集人类通过 VR 设备远程控制机器人的数据，然后训练 **Transformer** 模型将图像和语言指令映射到机器人动作。这种方法的关键挑战是数据规模——需要数万到数十万条高质量的遥操作数据。
+在机器人操作中，Google 的 RT-1 和 RT-2 模型使用人类遥操作数据训练通用的机器人控制策略。这些系统收集人类通过 VR 设备远程控制机器人的数据，然后训练 Transformer** 模型将图像和语言指令映射到机器人动作。这种方法的关键挑战是数据规模——需要数万到数十万条高质量的遥操作数据。
 
 在游戏 AI 中，DeepMind 的 AlphaStar 使用人类玩家的录像数据（replay data）训练星际争霸 AI。由于游戏中的奖励信号稀疏且延迟，纯 RL 训练极其困难，而模仿学习提供了一个强大的起点。AlphaStar 先用行为克隆学习人类基础策略，然后用自我对战的强化学习进一步提升。
 

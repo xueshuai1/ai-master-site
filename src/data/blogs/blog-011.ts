@@ -43,7 +43,7 @@ def polar_quantize(kv_vector, bits=3):
     dim = kv_vector.shape[-1]
     R = scipy.linalg.hadamard(dim) / np.sqrt(dim)
     rotated = kv_vector @ R
-    levels = 2 ** bits
+    levels = 2  bits
     scale = (rotated.max() - rotated.min()) / (levels - 1)
     return np.round((rotated - rotated.min()) / scale).astype(np.int8), scale`,
       }],
@@ -87,17 +87,17 @@ def polar_quantize(kv_vector, bits=3):
           ["GPTQ / AWQ", "4-bit", "低", "❌", "❌"],
           ["KVQuant", "4-bit", "低", "❌", "❌"],
           ["SpinQuant", "4-bit", "中", "❌", "❌"],
-          ["**TurboQuant**", "**3-bit**", "零", "❌", "✅ JL 引理"],
+          ["TurboQuant", "3-bit", "零", "❌", "✅ JL 引理"],
         ],
       },
     },
     {
       title: "产业影响：从数据中心到边缘设备",
-      body: `**数据中心端**：Arista Networks 已将 2026 年营收预期上调至 112.5 亿美元，部分原因正是企业正在大规模部署高密度 AI 集群——TurboQuant 使得在相同硬件上可以运行更大模型或处理更长上下文。
+      body: `数据中心端：Arista Networks 已将 2026 年营收预期上调至 112.5 亿美元，部分原因正是企业正在大规模部署高密度 AI 集群——TurboQuant 使得在相同硬件上可以运行更大模型或处理更长上下文。
 
-**边缘计算端**：3-bit KV Cache 量化意味着更多大模型可以部署在消费级硬件上。一个 70B 模型的 KV Cache 在 128K 上下文下原本需要约 16GB 显存，量化后仅需约 2.7GB——这已经可以在高端消费级 GPU（如 RTX 4090 的 24GB 显存）上运行。
+边缘计算端：3-bit KV Cache 量化意味着更多大模型可以部署在消费级硬件上。一个 70B 模型的 KV Cache 在 128K 上下文下原本需要约 16GB 显存，量化后仅需约 2.7GB——这已经可以在高端消费级 GPU（如 RTX 4090 的 24GB 显存）上运行。
 
-**端侧 AI**：TurboQuant 与模型权重量化（如 INT4）结合，使得在手机、笔记本上本地运行 30B 级别模型成为现实。`,
+端侧 AI**：TurboQuant 与模型权重量化（如 INT4）结合，使得在手机、笔记本上本地运行 30B 级别模型成为现实。`,
     },
     {
       title: "局限性与未来方向",

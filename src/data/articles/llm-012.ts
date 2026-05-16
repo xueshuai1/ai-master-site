@@ -342,7 +342,7 @@ async def chat(
     if key not in API_KEYS:
         raise HTTPException(status_code=401, detail="Invalid API key")
     check_rate_limit(key)
-    return await client.chat.completions.create(**body)`
+    return await client.chat.completions.create(body)`
         }
       ],
       table: {
@@ -373,7 +373,7 @@ async def chat(
     },
     {
       title: "6. 性能基准测试：数据驱动选择推理引擎",
-      body: `选择推理框架不能仅凭直觉，必须通过基准测试获得量化数据。常用的评测维度包括：首 token 延迟（TTFT, Time To First Token）、端到端延迟、吞吐（tokens/s）、显存占用和并发能力。业界标准的基准测试工具包括 **vLLM** 自带的 benchmark_serving.py、locust 分布式压力测试以及自定义的压测脚本。测试时应模拟真实负载特征——真实的请求并非均匀到达，而是遵循泊松分布的突发模式。同时，输入长度分布（短指令 vs 长文档）和输出长度（短回复 vs 长文章生成）都会显著影响性能表现，务必在你的典型场景下测量。`,
+      body: `选择推理框架不能仅凭直觉，必须通过基准测试获得量化数据。常用的评测维度包括：首 token 延迟（TTFT, Time To First Token）、端到端延迟、吞吐（tokens/s）、显存占用和并发能力。业界标准的基准测试工具包括 vLLM** 自带的 benchmark_serving.py、locust 分布式压力测试以及自定义的压测脚本。测试时应模拟真实负载特征——真实的请求并非均匀到达，而是遵循泊松分布的突发模式。同时，输入长度分布（短指令 vs 长文档）和输出长度（短回复 vs 长文章生成）都会显著影响性能表现，务必在你的典型场景下测量。`,
       code: [
         {
           lang: "bash",

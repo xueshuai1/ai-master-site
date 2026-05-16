@@ -557,7 +557,7 @@ for name, playbook in PLAYBOOKS.items():
         },
         {
             title: "6. 可观测性工具链实战",
-            body: `ML 可观测性不是单一工具可以解决的问题，而是需要多个工具协同工作。Prometheus + Grafana 是基础设施和服务层监控的事实标准，负责收集和可视化系统指标。MLflow 和 **Weights & Biases** 提供模型实验追踪和性能对比。Evidently AI 和 WhyLabs 专注于 ML 特定的数据漂移和模型质量监控。OpenTelemetry 提供统一的链路追踪标准。
+            body: `ML 可观测性不是单一工具可以解决的问题，而是需要多个工具协同工作。Prometheus + Grafana 是基础设施和服务层监控的事实标准，负责收集和可视化系统指标。MLflow 和 Weights & Biases 提供模型实验追踪和性能对比。Evidently AI 和 WhyLabs 专注于 ML 特定的数据漂移和模型质量监控。OpenTelemetry 提供统一的链路追踪标准。
 
 工具链设计的关键原则是：统一的数据模型、灵活的告警路由、以及开放的集成接口。所有监控工具产生的数据应该有一个统一的查询层，让工程师可以用一个界面查看从基础设施到模型性能的全栈指标。告警路由应该支持灵活的规则配置，根据不同的告警类型、严重程度、影响范围路由到不同的响应人和渠道。集成接口应该支持 webhook、API 和消息队列，方便与现有的运维工具链（如 Jira、PagerDuty、Slack）集成。
 

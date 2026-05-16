@@ -96,7 +96,7 @@ class RelativeAttention(torch.nn.Module):
 
 具体来说，RoPE 将 d 维向量划分为 d/2 对二维子空间，在每个子空间中应用旋转操作。对于位置 m 和 n 的 token，其 query 和 key 经过旋转后，内积结果仅依赖于差值 m-n：(R_q * x_m)^T (R_k * x_n) = g(x_m, x_n, m-n)。这正是相对位置编码的理想性质。旋转角度的选择也至关重要——RoPE 使用几何级数 θ_i = base^(-2(i-1)/d)，其中 base 默认为 10000。这种设计使得不同维度捕获不同尺度的位置关系，低频维度关注远距离依赖，高频维度关注局部关系。
 
-**RoPE 的优势在于**：它不增加额外的参数，推理时只需在每层的 attention 前对 Q 和 K 应用旋转矩阵即可；同时它天然支持流式推理（streaming inference），因为新 token 只需要根据自身位置旋转，无需重新计算全局位置。这使得 RoPE 成为 LLaMA、PaLM 等主流模型的首选方案。`,
+RoPE 的优势在于：它不增加额外的参数，推理时只需在每层的 attention 前对 Q 和 K 应用旋转矩阵即可；同时它天然支持流式推理（streaming inference），因为新 token 只需要根据自身位置旋转，无需重新计算全局位置。这使得 RoPE 成为 LLaMA、PaLM 等主流模型的首选方案。`,
             code: [
                 {
                     lang: "python",
@@ -119,7 +119,7 @@ def apply_rotary_emb(
 # 预计算旋转频率
 def precompute_freqs_cis(dim: int, end: int,
                          base: float = 10000.0):
-    freqs = 1.0 / (base ** (
+    freqs = 1.0 / (base  (
         torch.arange(0, dim, 2)[: (dim // 2)].float() / dim))
     t = torch.arange(end, dtype=freqs.dtype)
     freqs = torch.outer(t, freqs).float()
@@ -151,7 +151,7 @@ class RotaryAttention(torch.nn.Module):
         k = apply_rotary_emb(k, self.freqs_cis[positions])
         # 标准缩放点积注意力
         scores = (q @ k.transpose(-2, -1)) / (
-            self.head_dim ** 0.5)
+            self.head_dim  0.5)
         weights = torch.softmax(scores, dim=-1)
         out = (weights @ v).view(bsz, seq_len, -1)
         return self.o_proj(out)`
@@ -198,12 +198,12 @@ def get_alibi_slopes(n_heads: int) -> torch.Tensor:
         start = 2  (-(2  -(
             torch.log2(torch.tensor(n)) - 3)))
         ratio = start
-        return start * ratio ** torch.arange(n)
+        return start * ratio  torch.arange(n)
 
     if torch.log2(torch.tensor(n_heads)).is_integer():
         return get_slopes_power_of_2(n_heads)
     # 非 2 的幂时，从最近的 2 的幂中选取
-    closest = 2 ** int(torch.log2(
+    closest = 2  int(torch.log2(
         torch.tensor(n_heads)).floor())
     extra = n_heads - closest
     slopes = get_slopes_power_of_2(2 * closest)
@@ -402,9 +402,9 @@ def get_ntk_aware_freqs_cis(
     """NTK-aware 缩放的频率计算"""
     # 动态调整 base 参数
     # s_base = base * scale^(dim/(dim-2))
-    adjusted_base = base * (scale_factor ** (dim / (dim - 2)))
+    adjusted_base = base * (scale_factor  (dim / (dim - 2)))
 
-    freqs = 1.0 / (adjusted_base ** (
+    freqs = 1.0 / (adjusted_base  (
         torch.arange(0, dim, 2)[: (dim // 2)].float() / dim))
 
     # 位置索引也被缩放
@@ -417,7 +417,7 @@ def get_ntk_aware_freqs_cis(
 scale = 4.0  # 4x 扩展
 new_freqs = get_ntk_aware_freqs_cis(
     dim=128, end=8192, base=10000.0, scale_factor=scale)
-print(f"原始 base=10000, 调整后 base={10000.0 * 4**(128/126):.0f}")`
+print(f"原始 base=10000, 调整后 base={10000.0 * 4(128/126):.0f}")`
                 },
                 {
                     lang: "python",
@@ -521,7 +521,7 @@ def get_yarn_freqs_cis(
 ) -> torch.Tensor:
     """YaRN: Yet another RoPE extensioN"""
     # 计算每个维度的频率
-    pos_freqs = base ** (
+    pos_freqs = base  (
         torch.arange(0, dim, 2).float() / dim)
 
     # 维度感知的动态缩放

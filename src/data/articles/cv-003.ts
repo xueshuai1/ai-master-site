@@ -491,8 +491,8 @@ def compound_scaling(phi, alpha=1.2, beta=1.1, gamma=1.15):
     复合缩放: d = alpha^phi, w = beta^phi, r = gamma^phi
     alpha, beta, gamma 由 NAS 搜索得到，满足 alpha*beta^2*gamma^2 ≈ 2
     """
-    depth = alpha ** phi
-    width = beta ** phi
+    depth = alpha  phi
+    width = beta  phi
     resolution = gamma ** phi
     return depth, width, resolution
 
