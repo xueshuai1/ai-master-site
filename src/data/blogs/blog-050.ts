@@ -164,7 +164,7 @@ print(result)`
     },
     {
       title: "四、GPT-5.5 的 Agentic 编码实战",
-      body: `GPT-5.5 的核心亮点在于 Agentic 编码能力——不仅仅是补全代码，而是能够自主规划、执行和验证复杂的多步编码任务。
+      body: `GPT-5.5 的核心亮点在于 **Agentic 编码能力**——不仅仅是补全代码，而是能够**自主规划、执行和验证复杂的多步编码任务**。
 
 ### 完整实战案例：构建一个数据分析 Pipeline
 
@@ -310,13 +310,13 @@ print(f"\\n🎉 Pipeline 完成，共 {len(results)} 个输出")`
     },
     {
       title: "五、GPT-5.5 的行业影响与竞争格局",
-      body: `GPT-5.5 的发布正值 AI 编码工具市场动荡期——就在同一天，Anthropic 试探性提高 Claude Code 定价后又迅速撤回，GitHub 宣布收紧 Copilot 个人版用量限制。
+      body: `GPT-5.5 的发布正值 **AI 编码工具市场动荡期**——就在同一天，Anthropic 试探性提高 Claude Code 定价后又迅速撤回，GitHub 宣布收紧 Copilot 个人版用量限制。
 
 ### 市场信号
 
-1. OpenAI 趁势进攻：在 Anthropic 定价风波期间，OpenAI 工程师公开承诺 Codex 将继续在 FREE 和 PLUS（$20）计划中可用，直接向 Anthropic 的用户群发起进攻
+1. **OpenAI 趁势进攻**：在 Anthropic 定价风波期间，OpenAI 工程师公开承诺 Codex 将继续在 FREE 和 PLUS（$20）计划中可用，直接向 Anthropic 的用户群发起进攻
 2. Agent 算力成本焦虑：无论是 Claude Code 还是 GitHub Copilot，都在承认 Agent 工作流的算力消耗远超预期
-3. 开源模型的压力：Qwen3.6-27B 以 27B 参数在编程基准上超越 397B MoE 旗舰，对闭源模型形成了实质性竞争
+3. **开源模型的压力**：Qwen3.6-27B 以 27B 参数在编程基准上超越 397B MoE 旗舰，对闭源模型形成了实质性竞争
 
 ### GPT-5.5 面临的挑战`,
       mermaid: `mindmap
@@ -353,9 +353,9 @@ print(f"\\n🎉 Pipeline 完成，共 {len(results)} 个输出")`
     },
     {
       title: "总结",
-      body: `GPT-5.5 是 OpenAI 在 2026 年 AI 编码工具竞争中的关键落子。它代表了闭源模型在特定任务上的极致优化，但也面临着开源模型效率革命和定价压力的双重挑战。
+      body: `GPT-5.5 是 OpenAI 在 2026 年 AI 编码工具竞争中的**关键落子**。它代表了闭源模型在特定任务上的极致优化，但也面临着开源模型效率革命和定价压力的双重挑战。
 
-对于开发者来说，多模型策略正在成为标配——在需要最强效果时使用 GPT-5.5，在日常开发和成本敏感场景中使用开源模型。这种混合使用模式，恰好也是多 Agent 编排框架（如 OpenAI Agents Python）天然支持的。`
+对于开发者来说，**多模型策略正在成为标配**——在需要最强效果时使用 GPT-5.5，在日常开发和成本敏感场景中使用开源模型。这种混合使用模式，恰好也是多 Agent 编排框架（如 OpenAI Agents Python）天然支持的。`
     },
   ],
   date: "2026-04-24",

@@ -3,11 +3,11 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：显存墙，AI 训练的最大瓶颈",
-    body: "大语言模型的训练一直受到 GPU 显存的严格限制。训练一个 100B+ 参数的模型，传统上需要数十甚至数百张 GPU 卡进行分布式训练。这不仅成本高昂，而且通信开销巨大，训练效率低下。\n\n2026 年 4 月，一篇来自 arXiv 的最新论文 MegaTrain（arXiv:2604.05091）提出了一种全新的训练范式：单 GPU 训练 120B 参数模型。这不是简单的量化或蒸馏，而是一个系统级的架构创新。",
+    body: "**大语言模型的训练一直受到 GPU 显存的严格限制**。训练一个 100B+ 参数的模型，传统上需要数十甚至数百张 GPU 卡进行分布式训练。这不仅成本高昂，而且通信开销巨大，训练效率低下。\n\n2026 年 4 月，一篇来自 arXiv 的最新论文 MegaTrain（arXiv:2604.05091）**提出了一种全新的训练范式：单 GPU 训练 120B 参数模型**。这不是简单的量化或蒸馏，而是一个系统级的架构创新。",
   },
   {
     title: "MegaTrain 的核心思想：内存中心架构",
-    body: "MegaTrain 的核心思路非常大胆——将主机 CPU 内存作为参数的权威存储，GPU 只作为瞬态计算引擎。\n\n### 传统分布式训练的困境\n\n传统方案（如 ZeRO-3 Offload）面临的问题：",
+    body: "MegaTrain 的核心思路非常大胆——**将主机 CPU 内存作为参数的权威存储，GPU 只作为瞬态计算引擎**。\n\n### 传统分布式训练的困境\n\n传统方案（如 ZeRO-3 Offload）面临的问题：",
     list: [
       "参数在 GPU 和 CPU 之间频繁传输，通信开销巨大",
       "流水线气泡严重，GPU 利用率低",
@@ -23,7 +23,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "MegaTrain 的突破：双缓冲流水线",
-    body: "MegaTrain 采用了双缓冲流水线执行引擎，巧妙地重叠了三个关键操作：",
+    body: "**MegaTrain 采用了双缓冲流水线执行引擎**，巧妙地重叠了三个关键操作：",
     list: [
       "参数预取：提前从主机内存加载下一层所需参数",
       "GPU 计算：在当前层上进行前向和反向传播",
@@ -33,7 +33,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "性能数据：碾压式领先",
-    body: "MegaTrain 的性能表现令人震惊：",
+    body: "**MegaTrain 的性能表现令人震惊**：",
     table: {
       headers: ["模型规模", "MegaTrain 吞吐量", "ZeRO-3 Offload", "提升倍数"],
       rows: [
@@ -50,7 +50,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "技术深度：为什么 MegaTrain 能成功",
-    body: "### 1. 参数预取的智能调度\n\nMegaTrain 不是简单地按需加载参数，而是预测性地预取：分析模型的层间依赖关系，根据计算图拓扑确定最优预取顺序，利用 PCIe 带宽空闲期进行后台传输。\n\n### 2. 细粒度的内存管理\n\n与传统 Offload 方案不同，MegaTrain 实现了张量级别的精细管理：每个张量有明确的生命周期标记，使用后立即释放，不占用 GPU 显存，梯度累积在主机内存，避免显存压力。\n\n### 3. 计算-通信的完美重叠\n\n这是 MegaTrain 最精妙的设计——三个操作完全并行，GPU 始终在计算，PCIe 始终在传输。",
+    body: "### 1. 参数预取的智能调度\n\nMegaTrain 不是简单地按需加载参数，而是预测性地预取：分析模型的层间依赖关系，根据计算图拓扑确定最优预取顺序，利用 PCIe 带宽空闲期进行后台传输。\n\n### 2. 细粒度的内存管理\n\n与传统 Offload 方案不同，MegaTrain 实现了张量级别的精细管理：每个张量有明确的生命周期标记，使用后立即释放，不占用 GPU 显存，梯度累积在主机内存，避免显存压力。\n\n### 3. 计算-通信的完美重叠\n\n这是 MegaTrain 最精妙的设计——**三个操作完全并行，GPU 始终在计算，PCIe 始终在传输**。",
     code: [{
       lang: "python",
       code: `# MegaTrain 双缓冲流水线伪代码
@@ -65,7 +65,7 @@ class MegaTrainPipeline:
   },
   {
     title: "行业意义",
-    body: "MegaTrain 的出现可能改变 AI 训练的格局：",
+    body: "**MegaTrain 的出现可能改变 AI 训练的格局**：",
     list: [
       "对研究机构：不再需要昂贵的 GPU 集群，单张 H200（约 3-4 万美元）即可训练超大模型，大幅降低 AI 研究的准入门槛。",
       "对开源社区：更多团队可以参与大模型训练，加速模型创新和实验迭代，可能催生更多 specialized 的大模型。",
@@ -84,7 +84,7 @@ class MegaTrainPipeline:
   },
   {
     title: "总结",
-    body: "MegaTrain 代表了 2026 年 AI 基础设施领域最重要的创新之一。它不是靠更大的模型或更多的 GPU 来解决问题，而是通过重新思考计算架构，在单张 GPU 上实现了之前需要整个集群才能完成的任务。\n\n这种以小搏大的思路，或许正是开源 AI 对抗科技巨头算力优势的关键路径。",
+    body: "MegaTrain 代表了 2026 年 AI 基础设施领域最重要的创新之一。**它不是靠更大的模型或更多的 GPU 来解决问题，而是通过重新思考计算架构，在单张 GPU 上实现了之前需要整个集群才能完成的任务**。\n\n**这种以小搏大的思路，或许正是开源 AI 对抗科技巨头算力优势的关键路径**。",
   },
   {
       title: "架构图示",
@@ -103,6 +103,7 @@ export const blog: BlogPost = {
     date: "2026-04-13",
     author: "AI Master",
     tags: ["MegaTrain", "分布式训练", "GPU 优化", "arXiv", "大模型"],
+    category: "AI基础设施",
     readTime: 14,
     content,
 };

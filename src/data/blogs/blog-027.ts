@@ -3,7 +3,7 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：为什么需要关注 Agent 架构？",
-    body: "2025 年初，大多数人还在用 ChatGPT 做问答。到了 2026 年，AI Agent 已经能自主完成复杂任务链——写代码、调试、部署、监控。\n\n但 Agent 不是魔法。它的核心是一个架构模式，决定了：",
+    body: "2025 年初，大多数人还在用 ChatGPT 做问答。到了 2026 年，AI Agent 已经能自主完成复杂任务链——写代码、调试、部署、监控。\n\n但 Agent 不是魔法。**它的核心是一个架构模式**，决定了：",
     list: [
       "Agent 能做什么（工具、知识、记忆）",
       "Agent 怎么思考（推理、规划、反思）",
@@ -13,7 +13,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "第一阶段：ReAct — Agent 的起点",
-    body: "ReAct（Reasoning + Acting）是最基础的 Agent 模式，核心思想很简单：\n\n> 让模型在\"思考\"和\"行动\"之间交替，每思考一步，可能执行一个动作，观察结果后继续思考。",
+    body: "ReAct（Reasoning + Acting）是最基础的 Agent 模式，核心思想很简单：\n\n> **让模型在\"思考\"和\"行动\"之间交替**，每思考一步，可能执行一个动作，观察结果后继续思考。",
     mermaid: `sequenceDiagram
     participant User as 用户
     participant Agent as Agent (LLM)
@@ -134,7 +134,7 @@ print(result)
   },
   {
     title: "第二阶段：Plan-and-Execute — 学会规划",
-    body: "ReAct 是\"边想边做\"，Plan-and-Execute 是先想清楚整个计划，再一步步执行：",
+    body: "**ReAct 是\"边想边做\"，Plan-and-Execute 是先想清楚整个计划，再一步步执行**：",
     mermaid: `graph TD
     A[用户请求] --> B[Planner: 生成执行计划]
     B --> C{计划是否完整?}
@@ -253,7 +253,7 @@ class PlanAndExecuteAgent:
   },
   {
     title: "第三阶段：Reflection — 自我纠错",
-    body: "LLM 会犯错（幻觉、逻辑错误、代码 bug）。Reflection 模式让 Agent 检查自己的工作，发现并修正错误。",
+    body: "**LLM 会犯错（幻觉、逻辑错误、代码 bug）**。Reflection 模式让 Agent 检查自己的工作，发现并修正错误。",
     mermaid: `graph LR
     A[生成初稿] --> B[审查]
     B --> C{发现问题?}
@@ -343,7 +343,7 @@ Revised: [修正后的回答，如无修改则保持原样]"""
   },
   {
     title: "第四阶段：多 Agent 协作 — 团队作战",
-    body: "当任务复杂度超过单个 Agent 的能力时，就需要多 Agent 协作——每个 Agent 专注一个领域，像团队一样工作。",
+    body: "**当任务复杂度超过单个 Agent 的能力时，就需要多 Agent 协作**——每个 Agent 专注一个领域，像团队一样工作。",
     mermaid: `graph TD
     subgraph "多 Agent 架构"
         Orchestrator["🎯 编排器\n(理解任务、分配工作)"]
@@ -516,7 +516,7 @@ print(team.get_summary())`,
   },
   {
     title: "架构选择决策树",
-    body: "当你需要构建一个 Agent 应用时，该选哪种架构？",
+    body: "**当你需要构建一个 Agent 应用时，该选哪种架构？**",
     mermaid: `graph TD
     A[用户需求] --> B{任务是否多步骤?}
     B -->|否| C[直接 LLM 回答]
@@ -541,7 +541,7 @@ print(team.get_summary())`,
   },
   {
     title: "实战案例：用多 Agent 构建知识图谱",
-    body: "任务**： 从一篇技术文章中提取实体关系，构建知识图谱。",
+    body: "**任务**：从一篇技术文章中提取实体关系，构建知识图谱。",
     mermaid: `sequenceDiagram
     participant User as 用户
     participant Orch as 编排器

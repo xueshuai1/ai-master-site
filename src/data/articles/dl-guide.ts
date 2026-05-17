@@ -12,9 +12,9 @@ export const article: Article = {
     content: [
         {
             title: "0. 什么是深度学习？",
-            body: `机器学习靠"特征工程"（人工提取特征），深度学习靠"端到端学习"（从原始数据直接学）。
+            body: `机器学习靠"特征工程"（人工提取特征），**深度学习靠"端到端学习"（从原始数据直接学）**。
 
-2012 年 AlexNet 在图像识别比赛中大获全胜，深度学习从此崛起。今天，几乎所有 AI 突破都来自深度学习。`
+2012 年 AlexNet 在图像识别比赛中大获全胜，深度学习从此崛起。**今天，几乎所有 AI 突破都来自深度学习**。`
         },
         {
             title: "1. 学习全景图",
@@ -26,19 +26,19 @@ CNN（计算机视觉）— 卷积、池化、ResNet
 
 RNN / 序列模型— RNN、LSTM、注意力机制
 
-Transformer — Self-Attention、编码器（LLM 的基石）`
+Transformer — Self-Attention、编码器（**LLM 的基石**）`
         },
         {
             title: "2. 学习建议",
             body: `重点投入时间：
-- 神经网络基础（反向传播是核心）
+- 神经网络基础（**反向传播是核心**）
 - Transformer 架构（LLM 的基石）
 
 可以略过的：
 - CNN 的具体架构细节（知道思想就行）
 - RNN 的数学推导（知道 LSTM 解决什么问题就行）
 
-> 2026 年最重要的部分：Transformer。 它是 GPT、Claude、Gemini 的共同基础。`,
+> **2026 年最重要的部分：Transformer**。 它是 GPT、Claude、Gemini 的共同基础。`,
             tip: "💡 用 PyTorch 搭建一个简单的神经网络，亲手跑一次训练流程，比看十篇教程都管用。"
         },
         {
@@ -63,7 +63,7 @@ Transformer — Self-Attention、编码器（LLM 的基石）`
 
 - [Mixture of Experts MoE](/article/dl-017)（dl-017）、[分布式训练](/article/dl-016)（dl-016）、[图神经网络 GNN](/article/dl-013)（dl-013）、[神经架构搜索 NAS](/article/dl-014)（dl-014）
 
-> ⚡ 速成建议： 第一阶段 + 第二阶段的核心必读 = 深度学习的核心知识。其余可以在实践中按需补学。`,
+> ⚡ **速成建议：第一阶段 + 第二阶段的核心必读 = 深度学习的核心知识**。其余可以在实践中按需补学。`,
             table: {
                 headers: ["阶段", "文章数", "预计时间", "目标"],
                 rows: [

@@ -16,7 +16,7 @@ export const article: Article = {
 
 要理解 Harness，先看一个类比：马的力量再大，没有缰绳和 harness（马具）也拉不了车。同样的道理，一个强大的 LLM 如果没有 harness 系统，也只能被动地"你问我答"。
 
-Harness 的定义：一个让 AI 能够使用工具、采取行动、自主完成多步任务的系统框架。它是模型与现实世界之间的"控制层"。
+**Harness 的定义：一个让 AI 能够使用工具、采取行动、自主完成多步任务的系统框架，是模型与现实世界之间的"控制层"**。
 
 宾夕法尼亚大学沃顿商学院教授 Ethan Mollick 在 2026 年 2 月发表的文章中明确指出：
 > "Until recently, you didn't have to know this. The model was the product, the app was the website, and the harness was minimal. Now the same model can behave very differently depending on what harness it's operating in."
@@ -28,7 +28,7 @@ Harness 的三层架构：
 - Harness 层：工具调用、上下文管理、任务规划、错误恢复 —— 这是本文的核心
 - 应用层：面向用户的产品界面（网站、IDE、桌面应用等）
 
-2026 年行业共识：模型能力已经趋同，真正的差异化在于 Harness 层。`,
+**2026 年行业共识：模型能力已经趋同，真正的差异化在于 Harness 层**。`,
         mermaid: `graph TD
     A["用户目标"] --> B["应用层\n产品界面"]
     B --> C["Harness 层\n工具调用 / 任务规划 / 上下文管理"]
@@ -43,12 +43,12 @@ Harness 的三层架构：
         title: "2. 为什么 2026 年是 Harness 之年？",
         body: `Harness Engineering 在 2026 年爆发，有三个深层原因：
 
-第一，模型趋同。2026 年的前沿模型（Claude Opus 4.6、GPT-5.2、Gemini 3 Pro）在基础能力上已经非常接近。Hacker News 上一个被广泛引用的帖子指出：
+**第一，模型趋同**。2026 年的前沿模型（Claude Opus 4.6、GPT-5.2、Gemini 3 Pro）在基础能力上已经非常接近。Hacker News 上一个被广泛引用的帖子指出：
 > "AI 应该被视为 LLM 与其 Harness 组成的完整反馈控制系统 —— Harness 的改进与模型本身的提升同等重要。"
 
 当模型选择不再是瓶颈时，竞争焦点自然转移到了"如何用好模型"这个层面。
 
-第二，Agent 从原型到生产。企业不再满足于"能聊天的 AI"，而是需要"能干活的 AI"。McKinsey 的研究显示，80% 的 Agent 实施时间消耗在数据工程、利益相关者对齐和治理上，而不是框架配置或模型选择。
+**第二，Agent 从原型到生产**。企业不再满足于"能聊天的 AI"，而是需要"能干活的 AI"。**McKinsey 的研究显示，80% 的 Agent 实施时间消耗在数据工程、利益相关者对齐和治理上，而不是框架配置或模型选择**。
 
 第三，开源生态成熟。2026 年初，主流 Harness 框架都达到了生产级成熟度：
 - LangGraph：24,000+ GitHub stars，对比基准测试中任务成功率 87%
@@ -73,7 +73,7 @@ Harness.io 公司（AI Software Delivery Platform）甚至入选了 Fortune 2026
         body: `2026 年 4 月 Atlan 发布了对 11 个主流 AI Agent Harness 工具的横评。以下是最关键的 6 个框架对比：
 
 LangGraph（Orchestration/全栈）
-基于图的多 Agent 编排框架，通过条件边、检查点和流式处理实现对 Agent 状态的精细控制。在 2026 年对比基准测试中达到 87% 任务成功率，是该列表中最高的。适合需要精确状态控制的生产级多 Agent 流水线。集成 LangSmith 提供内置可观测性。缺点是学习曲线陡峭，图配置冗长。
+基于图的多 Agent 编排框架，通过条件边、检查点和流式处理实现对 Agent 状态的精细控制。**在 2026 年对比基准测试中达到 87% 任务成功率，是该列表中最高的**。适合需要精确状态控制的生产级多 Agent 流水线。集成 LangSmith 提供内置可观测性。缺点是学习曲线陡峭，图配置冗长。
 
 CrewAI（基于角色的多 Agent）
 最快的多 Agent 原型框架。通过角色定义（如"研究员"、"写作者"、"审稿人"）让多个 Agent 协作完成任务。45,900+ GitHub stars，是角色编排框架中采用率最高的。任务成功率 82%。优点是上手快、API 直观；缺点是对复杂状态流控制不如 LangGraph 精细。
@@ -106,7 +106,7 @@ Microsoft Semantic Kernel（企业编排）
         title: "4. Harness 的缺失层：数据治理",
         body: `Atlan 的对比文章指出了一个所有框架共同忽视的问题：数据质量层。
 
-所有 11 个 Harness 框架都做了一个基础假设：喂给 Agent 的上下文是可信的。但没有一个框架验证这一点。
+**所有 11 个 Harness 框架都做了一个基础假设：喂给 Agent 的上下文是可信的——但没有一个框架验证这一点**。
 
 McKinsey 的数据很残酷：
 - 80% 的 Agent 实施时间消耗在数据工程和治理上
@@ -120,7 +120,7 @@ McKinsey 的数据很残酷：
 3. Harness 层：工具调用、任务编排、上下文管理
 4. 应用层：面向用户的产品
 
-如果只关注 Harness 而忽视数据治理，Agent 在生产环境中会遇到大量"幻觉"问题 —— 但其实那不是模型的问题，是数据的问题。`,
+**如果只关注 Harness 而忽视数据治理，Agent 在生产环境中会遇到大量"幻觉"问题——但其实那不是模型的问题，是数据的问题**。`,
         mermaid: `graph TD
     A["应用层\n用户界面"] --> B["Harness 层\nLangGraph / CrewAI / AutoGen"]
     B --> C["数据治理层\n验证 / 认证 / 血缘追踪"]
@@ -133,7 +133,7 @@ McKinsey 的数据很残酷：
       },
       {
         title: "5. 如何选择适合你的 Harness 框架？",
-        body: `选择 Harness 框架不是选"最好的"，而是选"最适合你的"。以下决策指南：
+        body: `**选择 Harness 框架不是选"最好的"，而是选"最适合你的"**。以下决策指南：
 
 场景 1：快速原型验证
 → CrewAI。角色定义直观，几分钟就能搭建一个多 Agent 协作流程。适合概念验证和快速迭代。
@@ -176,7 +176,7 @@ McKinsey 的数据很残酷：
 安装 LangGraph 和相关依赖。推荐使用 Python 虚拟环境。
 
 第二步：定义工具
-Harness 的核心价值在于让 Agent 使用工具。你需要定义清晰的工具函数，包括名称、描述、参数和执行逻辑。工具描述越清晰，Agent 的调用决策越准确。
+**Harness 的核心价值在于让 Agent 使用工具**。你需要定义清晰的工具函数，包括名称、描述、参数和执行逻辑。工具描述越清晰，Agent 的调用决策越准确。
 
 第三步：构建图（Graph）
 在 LangGraph 中，Agent 的工作流被建模为一个有向图。节点是状态转换步骤，边是条件路由。通过图的结构，你可以精确控制 Agent 的行为流程。
@@ -254,11 +254,11 @@ result = app.invoke({
 
 趋势 3：安全原生化。OWASP Agentic Top 10 的发布只是开始。未来的 Harness 将内置安全护栏：权限边界、输出过滤、人工审核触发器、异常行为检测。
 
-趋势 4：多模型路由。Harness 将能够根据任务类型自动选择最优模型 —— 简单任务用便宜快速的小模型，复杂任务用强大的大模型。这与 OpenClaw 的多模型路由理念一致。
+趋势 4：多模型路由。**Harness 将能够根据任务类型自动选择最优模型——简单任务用便宜快速的小模型，复杂任务用强大的大模型**。这与 OpenClaw 的多模型路由理念一致。
 
 趋势 5：标准化基准测试。目前各框架的任务成功率（LangGraph 87%、CrewAI 82%）来自独立基准。行业正在推动统一的 Agent 能力评测标准，让框架对比更加客观。
 
-Harness Engineering 不是短期热点，而是 AI 工程化的长期方向。正如 DevOps 在 2010 年代重塑了软件开发流程，Harness Engineering 正在重塑 AI 应用的构建方式。`,
+**Harness Engineering 不是短期热点，而是 AI 工程化的长期方向**。正如 DevOps 在 2010 年代重塑了软件开发流程，Harness Engineering 正在重塑 AI 应用的构建方式。`,
         list: [
           "2026 Q2：预计会出现首个被广泛采用的 Harness 互操作标准",
           "2026 Q3：主流框架将集成数据治理层，解决 80% 的实施时间消耗问题",

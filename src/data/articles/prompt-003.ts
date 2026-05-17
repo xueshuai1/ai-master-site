@@ -14,13 +14,13 @@ export const article: Article = {
   content: [
     {
       title: "一、2026 年 Prompt Engineering 的范式转变",
-      body: `如果你还在用 2024 年的 prompt 技巧来驱动 2026 年的 LLM，你正在浪费大量性能。
+      body: `**如果你还在用 2024 年的 prompt 技巧来驱动 2026 年的 LLM，你正在浪费大量性能**。
 
 GPT-5.5 发布时，OpenAI 明确警告：
 
 > "To get the most out of GPT-5.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4. Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack."
 
-这段话揭示了一个关键认知：2026 年的 LLM 已经不是简单的「更大的模型」，它们对提示词的响应机制发生了本质变化。
+这段话揭示了一个关键认知：**2026 年的 LLM 已经不是简单的「更大的模型」，它们对提示词的响应机制发生了本质变化**。
 
 ### 四大范式转变
 
@@ -56,7 +56,7 @@ OpenAI 在 GPT-5.5 提示词指南中给出了几个重要建议：
     },
     {
       title: "二、GPT-5.5 新参数实战：verbosity 与 reasoning_effort",
-      body: `GPT-5.5 引入了两个关键参数，它们直接影响模型的行为和输出质量。
+      body: `GPT-5.5 引入了两个关键参数，**它们直接影响模型的行为和输出质量**。
 
 ### 2.1 verbosity 参数：控制输出详细程度
 
@@ -68,7 +68,7 @@ OpenAI 在 GPT-5.5 提示词指南中给出了几个重要建议：
 | \`medium\` | 平衡详细度和简洁性 | 通用对话、文档生成 |
 | \`high\` | 详细解释，多角度展开 | 教学、分析、创意写作 |
 
-为什么这很重要？ 在 2024 年，你需要在 prompt 里写 "请简短回答" 或 "请详细解释"。现在你可以用参数精确控制，而且模型对参数的遵循度远高于文本指令。`,
+为什么这很重要？ 在 2024 年，你需要在 prompt 里写 "请简短回答" 或 "请详细解释"。现在你可以用参数精确控制，而且**模型对参数的遵循度远高于文本指令**。`,
       code: [{
         lang: "python",
         title: "使用 verbosity 参数控制输出",
@@ -132,7 +132,7 @@ print(f"详细模式输出长度: {len(explanation)} 字符")
     },
     {
       title: "三、多模态提示工程：image_detail 与文档理解",
-      body: `2026 年的 LLM 普遍支持原生多模态，但如何有效利用是另一个问题。
+      body: `**2026 年的 LLM 普遍支持原生多模态**，但如何有效利用是另一个问题。
 
 ### 3.1 image_detail 参数
 
@@ -227,7 +227,7 @@ for detail in ["low", "high", "auto", "original"]:
 
 > "Before any tool calls for a multi-step task, send a short user-visible update that acknowledges the request and states the first step."
 
-这解决了长时间推理任务中用户感知为「卡死」的问题。
+**这解决了长时间推理任务中用户感知为「卡死」的问题**。
 
 ### 4.1 实现模式`,
       code: [{
@@ -322,7 +322,7 @@ asyncio.run(demo())`
     },
     {
       title: "五、跨模型 Prompt 迁移指南",
-      body: `这是 2026 年 Prompt 工程师最头疼的问题之一：如何把为 GPT-4 优化的 prompt 迁移到 GPT-5.5、Claude Opus 4.7 和 DeepSeek V4？
+      body: `这是 2026 年 Prompt 工程师最头疼的问题之一：**如何把为 GPT-4 优化的 prompt 迁移到 GPT-5.5、Claude Opus 4.7 和 DeepSeek V4**？
 
 ### 5.1 三大模型的 Prompt 敏感度对比
 
@@ -475,7 +475,7 @@ print(f"Claude 系统提示长度: {len(claude_prompt['messages'][0]['content'])
     },
     {
       title: "六、Prompt 评估实验：同一任务不同 prompt 的效果对比",
-      body: `理论再好，也需要实验验证。我们用一个统一的代码审查任务，测试不同 prompt 策略在三个模型上的表现。
+      body: `**理论再好，也需要实验验证**。我们用一个统一的代码审查任务，测试不同 prompt 策略在三个模型上的表现。
 
 ### 6.1 实验设计
 
@@ -486,7 +486,7 @@ print(f"Claude 系统提示长度: {len(claude_prompt['messages'][0]['content'])
 3. 结构化策略：带明确 JSON Schema 和 Few-shot 示例
 4. 混合策略：根据目标模型自适应的 prompt（使用上面的 PromptAdapter）
 
-评测指标**：代码问题检出率、输出准确性、token 消耗、延迟。`,
+**评测指标**：代码问题检出率、输出准确性、token 消耗、延迟。`,
       code: [{
         lang: "python",
         title: "Prompt 策略对比实验框架",
@@ -660,7 +660,7 @@ print(json.dumps(results, indent=2, ensure_ascii=False))`
     },
     {
       title: "七、实用 Prompt 模板库",
-      body: `基于以上实验结论，以下是 2026 年针对三大模型优化的 Prompt 模板。
+      body: `基于以上实验结论，**以下是 2026 年针对三大模型优化的 Prompt 模板**。
 
 ### 7.1 代码审查模板
 
@@ -721,13 +721,13 @@ DEEPSEEK_CODE_REVIEW = {
     },
     {
       title: "八、总结与最佳实践",
-      body: `2026 年的 Prompt Engineering 不再是「越长的 prompt 越好」。以下是基于实测的核心结论：
+      body: `**2026 年的 Prompt Engineering 不再是「越长的 prompt 越好」**。以下是基于实测的核心结论：
 
 ### 核心结论
 
-1. 最小有效提示原则：用最短的 prompt 达到目标，然后逐步调优。长 prompt 不是优势，而是负担。
+1. 最小有效提示原则：用最短的 prompt 达到目标，然后逐步调优。**长 prompt 不是优势，而是负担**。
 2. 参数胜过文字：GPT-5.5 的 \`verbosity\` 和 \`image_detail\` 比在 prompt 里写 "请简短/详细" 更有效。
-3. 每个模型单独调优：不要假设一套 prompt 能在所有模型上工作良好。
+3. 每个模型单独调优：**不要假设一套 prompt 能在所有模型上工作良好**。
 4. 结构化输出提升可靠性：JSON Schema 或明确的格式要求，能显著提高输出的可用性和可解析性。
 5. 预更新模式改善 UX：对 Agent 类应用，在执行前先发送确认信息，大幅提升用户体验。
 

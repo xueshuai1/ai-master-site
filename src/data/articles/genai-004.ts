@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "1. 变量变换公式与流模型核心思想",
-            body: "Normalizing Flow 的核心建立在概率论中的变量变换公式（Change of Variables Formula）之上。假设我们有一个简单的基础分布（通常是标准正态分布），以及一系列可逆变换 z_0 到 z_1 到 z_2 直到 z_K = x。通过链式法则，目标变量 x 的概率密度可以精确计算为：p(x) = p(z_0) 乘以 |det(dz_0/dx)|。其中雅可比行列式的绝对值衡量了变换前后体积的变化。与 VAE 和 GAN 不同，Flow 模型提供精确的似然估计，既不像 VAE 那样只优化变分下界，也不像 GAN 那样无法计算似然。Flow 模型的关键挑战在于设计可逆变换，使得雅可比行列式的计算高效可行。如果雅可比矩阵是稠密的，其行列式计算复杂度为 O(D^3)，在高维空间中不可接受。因此，Flow 模型的设计精髓在于构造雅可比矩阵具有特殊结构（如三角阵或低秩更新）的变换，将行列式计算降至 O(D)。",
+            body: "Normalizing Flow 的核心建立在概率论中的变量变换公式（Change of Variables Formula）之上。假设我们有一个简单的基础分布（通常是标准正态分布），以及一系列可逆变换 z_0 到 z_1 到 z_2 直到 z_K = x。通过链式法则，目标变量 x 的概率密度可以精确计算为：p(x) = p(z_0) 乘以 |det(dz_0/dx)|。其中雅可比行列式的绝对值衡量了变换前后体积的变化。**与 VAE 和 GAN 不同，Flow 模型提供精确的似然估计**，既不像 VAE 那样只优化变分下界，也不像 GAN 那样无法计算似然。Flow 模型的关键挑战在于设计可逆变换，使得雅可比行列式的计算高效可行。如果雅可比矩阵是稠密的，其行列式计算复杂度为 O(D^3)，在高维空间中不可接受。因此，**Flow 模型的设计精髓在于构造雅可比矩阵具有特殊结构（如三角阵或低秩更新）的变换，将行列式计算降至 O(D)**。",
             code: [
                 {
                     lang: "python",
@@ -49,7 +49,7 @@ export const article: Article = {
         },
         {
             title: "2. 可逆神经网络设计",
-            body: "构造可逆神经网络是 Flow 模型设计的核心问题。普通神经网络（如全连接层、卷积层）通常不可逆，因为维度缩减、池化等操作会丢失信息。可逆网络设计需要满足两个条件：前向变换可逆（给定输出能唯一还原输入），以及雅可比行列式可高效计算。Planar Flow 提出了最简单的方案：f(z) = z + u * h(w^T z + b)，其中 h 是逐元素的非线性激活函数（如 tanh）。利用矩阵行列式引理（Matrix Determinant Lemma），其雅可比行列式可以在 O(D) 时间内计算。Radial Flow 则使用径向变换：f(z) = z + beta * h(alpha, r) * (z - z_ref)，从参考点 z_ref 沿径向扩展或压缩空间。这两种 Flow 都是残差式变换，即输出等于输入加上一个小扰动，天然保证可逆性（当扰动足够小时）。然而，单个 Planar 或 Radial Flow 的表达能力有限，实践中需要堆叠多个 Flow 层来逼近复杂的数据分布。",
+            body: "构造可逆神经网络是 Flow 模型设计的核心问题。普通神经网络（如全连接层、卷积层）通常不可逆，因为维度缩减、池化等操作会丢失信息。**可逆网络设计需要满足两个条件：前向变换可逆，以及雅可比行列式可高效计算**。Planar Flow 提出了最简单的方案：f(z) = z + u * h(w^T z + b)，其中 h 是逐元素的非线性激活函数（如 tanh）。利用矩阵行列式引理（Matrix Determinant Lemma），其雅可比行列式可以在 O(D) 时间内计算。Radial Flow 则使用径向变换：f(z) = z + beta * h(alpha, r) * (z - z_ref)，从参考点 z_ref 沿径向扩展或压缩空间。这两种 Flow 都是残差式变换，即输出等于输入加上一个小扰动，天然保证可逆性（当扰动足够小时）。然而，单个 Planar 或 Radial Flow 的表达能力有限，**实践中需要堆叠多个 Flow 层来逼近复杂的数据分布**。",
             code: [
                 {
                     lang: "python",
@@ -86,7 +86,7 @@ export const article: Article = {
         },
         {
             title: "3. Planar 与 Radial Flow 深入分析",
-            body: "虽然 Planar Flow 和 Radial Flow 结构简单，但它们揭示了 Flow 模型设计的几个重要原理。首先，可逆性并不等于表达能力。一个变换可以是完美可逆的，但如果其变换能力受限（如只能沿一个方向扰动），则无法逼近复杂的数据流形。其次，Flow 的表达能力与堆叠深度成正比。Rezende 和 Mohamed（2015）的原始论文证明，通过堆叠足够多的 Planar Flow，可以逼近任意光滑的密度变换。然而，深层 Flow 面临梯度消失和模式崩塌的风险：如果某一层的雅可比行列式接近零，信号在反向传播时会衰减；如果行列式过大，则可能导致数值不稳定。为此，后续工作提出了多种改进方案：Glow 使用可逆 1x1 卷积增加变换灵活性，RealNVP 使用仿射耦合层在高维空间中实现强大表达。理解 Planar 和 Radial Flow 的局限性，是理解后续更高级 Flow 模型的基础。",
+            body: "虽然 Planar Flow 和 Radial Flow 结构简单，但它们揭示了 Flow 模型设计的几个重要原理。**首先，可逆性并不等于表达能力**。一个变换可以是完美可逆的，但如果其变换能力受限（如只能沿一个方向扰动），则无法逼近复杂的数据流形。其次，Flow 的表达能力与堆叠深度成正比。Rezende 和 Mohamed（2015）的原始论文证明，通过堆叠足够多的 Planar Flow，可以逼近任意光滑的密度变换。然而，**深层 Flow 面临梯度消失和模式崩塌的风险**：如果某一层的雅可比行列式接近零，信号在反向传播时会衰减；如果行列式过大，则可能导致数值不稳定。为此，后续工作提出了多种改进方案：Glow 使用可逆 1x1 卷积增加变换灵活性，RealNVP 使用仿射耦合层在高维空间中实现强大表达。理解 Planar 和 Radial Flow 的局限性，是理解后续更高级 Flow 模型的基础。",
             code: [
                 {
                     lang: "python",
@@ -121,7 +121,7 @@ export const article: Article = {
         },
         {
             title: "4. RealNVP 与耦合层架构",
-            body: "RealNVP（Real-valued Non-Volume Preserving transformations）是 Flow 模型发展史上的里程碑。它提出了仿射耦合层（Affine Coupling Layer）的概念：将输入 z 分成两部分 (z_a, z_b)，保持 z_a 不变，用 z_a 通过神经网络预测 z_b 的缩放和平移参数。具体地，z_a' = z_a，z_b' = z_b 乘以 exp(s(z_a)) + t(z_a)，其中 s 和 t 是缩放和平移网络。这种设计的巧妙之处在于：前向变换是直接的，逆变换同样直接（z_b = (z_b' - t(z_a')) 乘以 exp(-s(z_a'))），无需数值迭代。更重要的是，雅可比矩阵是三角矩阵（因为 z_a' 不依赖 z_b），行列式等于对角线元素的乘积，即 exp(sum(s(z_a)))，log|det| = sum(s(z_a))，计算复杂度 O(D)。RealNVP 还引入了交替掩码策略（checkerboard 和 channel-wise masking），确保每个维度都能被变换。配合多尺度架构（multi-scale architecture），RealNVP 在 ImageNet 上取得了当时最好的似然结果。",
+            body: "RealNVP（Real-valued Non-Volume Preserving transformations）是 Flow 模型发展史上的里程碑。它提出了仿射耦合层（Affine Coupling Layer）的概念：将输入 z 分成两部分 (z_a, z_b)，保持 z_a 不变，用 z_a 通过神经网络预测 z_b 的缩放和平移参数。具体地，z_a' = z_a，z_b' = z_b 乘以 exp(s(z_a)) + t(z_a)，其中 s 和 t 是缩放和平移网络。**这种设计的巧妙之处在于：前向变换是直接的，逆变换同样直接**（z_b = (z_b' - t(z_a')) 乘以 exp(-s(z_a'))），无需数值迭代。更重要的是，**雅可比矩阵是三角矩阵，行列式等于对角线元素的乘积**（因为 z_a' 不依赖 z_b），即 exp(sum(s(z_a)))，log|det| = sum(s(z_a))，计算复杂度 O(D)。RealNVP 还引入了交替掩码策略（checkerboard 和 channel-wise masking），确保每个维度都能被变换。配合多尺度架构（multi-scale architecture），RealNVP 在 ImageNet 上取得了当时最好的似然结果。",
             code: [
                 {
                     lang: "python",
@@ -161,7 +161,7 @@ export const article: Article = {
         },
         {
             title: "5. Glow 与可逆 1x1 卷积",
-            body: "Glow（Generative flow with invertible 1x1 convolutions）在 RealNVP 的基础上做出了两个关键改进。第一，用可逆 1x1 卷积替代固定的交替掩码排列。在 RealNVP 中，维度的重排列是预先固定的（如翻转），缺乏灵活性。Glow 将排列推广为一个可学习的可逆线性变换 W，其中 W 是一个 D 乘以 D 的可逆矩阵。为了保证行列式计算高效，Glow 使用 LU 分解：W = P L U，其中 P 是排列矩阵，L 是单位下三角矩阵，U 是上三角矩阵。行列式为对角线元素的乘积，复杂度 O(D^2)。第二，Glow 引入了可逆批量归一化（ActNorm），在每一层之前对激活值进行可逆的仿射变换，并使用数据驱动的初始化使其输出在训练初期具有零均值和单位方差。这两个改进使得 Glow 能够生成高质量的图像，甚至可以在隐空间中进行有意义的语义编辑（如微笑、发色变化），这在之前的 Flow 模型中是难以实现的。",
+            body: "Glow（Generative flow with invertible 1x1 convolutions）在 RealNVP 的基础上做出了两个关键改进。第一，用可逆 1x1 卷积替代固定的交替掩码排列。在 RealNVP 中，维度的重排列是预先固定的（如翻转），缺乏灵活性。**Glow 将排列推广为一个可学习的可逆线性变换 W**，其中 W 是一个 D 乘以 D 的可逆矩阵。为了保证行列式计算高效，Glow 使用 LU 分解：W = P L U，其中 P 是排列矩阵，L 是单位下三角矩阵，U 是上三角矩阵。行列式为对角线元素的乘积，复杂度 O(D^2)。第二，Glow 引入了可逆批量归一化（ActNorm），在每一层之前对激活值进行可逆的仿射变换，并使用数据驱动的初始化使其输出在训练初期具有零均值和单位方差。这两个改进使得 **Glow 能够生成高质量的图像，甚至可以在隐空间中进行有意义的语义编辑**（如微笑、发色变化），这在之前的 Flow 模型中是难以实现的。",
             code: [
                 {
                     lang: "python",
@@ -202,7 +202,7 @@ export const article: Article = {
         },
         {
             title: "6. 自回归流 MAF 与 IAF",
-            body: "自回归流（Autoregressive Flows）是 Flow 模型中表达能力最强的一类。其核心思想是利用链式法则将联合分布分解为条件分布的乘积：p(x) = 连乘 p(x_i | x_{<i})。MAF（Masked Autoregressive Flow）和 IAF（Inverse Autoregressive Flow）是两种互补的自回归 Flow。MAF 的前向变换是自回归的：每个维度 x_i 的变换参数（均值和方差）只依赖前面已计算的维度 x_{<i}。这使得 MAF 的密度估计高效（可并行计算所有条件参数），但采样需要串行（从 x_1 到 x_D 逐个生成）。IAF 则恰恰相反：采样时所有维度可以并行计算，但密度估计需要串行。这种互补性催生了自回归流的一个经典模式：用 MAF 做密度估计训练，用 IAF 做采样生成。MADE（Masked Autoencoder for Distribution Estimation）是实现自回归约束的关键技术，通过对网络权重施加掩码，确保每个输出只依赖输入的前面维度。自回归流在密度估计任务上通常优于 RealNVP 和 Glow，但采样效率是其主要瓶颈。",
+            body: "自回归流（Autoregressive Flows）是 Flow 模型中表达能力最强的一类。其核心思想是利用链式法则将联合分布分解为条件分布的乘积：p(x) = 连乘 p(x_i | x_{<i})。MAF（Masked Autoregressive Flow）和 IAF（Inverse Autoregressive Flow）是两种互补的自回归 Flow。MAF 的前向变换是自回归的：每个维度 x_i 的变换参数（均值和方差）只依赖前面已计算的维度 x_{<i}。这使得 **MAF 的密度估计高效但采样需要串行**（从 x_1 到 x_D 逐个生成），**IAF 则恰恰相反：采样可并行但密度估计需串行**。这种互补性催生了自回归流的一个经典模式：用 MAF 做密度估计训练，用 IAF 做采样生成。MADE（Masked Autoencoder for Distribution Estimation）是实现自回归约束的关键技术，通过对网络权重施加掩码，确保每个输出只依赖输入的前面维度。**自回归流在密度估计任务上通常优于 RealNVP 和 Glow，但采样效率是其主要瓶颈**。",
             code: [
                 {
                     lang: "python",
@@ -240,7 +240,7 @@ export const article: Article = {
         },
         {
             title: "7. PyTorch 实战：训练 Flow 生成模型",
-            body: "本节从零搭建一个完整的 Normalizing Flow 训练流程，在双螺旋（two-moons）数据集上演示 Flow 模型如何学习复杂的二维流形。我们使用 RealNVP 风格的耦合层，配合简单的 MLP 作为缩放和平移网络。二维数据的好处是我们可以可视化每一步变换，直观理解 Flow 如何将简单的高斯分布扭曲成复杂的目标分布。训练使用负对数似然（NLL）作为损失函数，通过 Adam 优化器最小化。关键技巧包括：使用梯度裁剪防止数值爆炸、监控雅可比行列式的分布确保变换不会退化、以及定期可视化生成的样本。这个 2D 实验虽然简单，但完整展示了 Flow 模型的训练管线：数据加载 到 密度估计 到 损失计算 到 梯度更新 到 样本生成。掌握这个流程后，可以轻松扩展到更高维的数据（如 MNIST 手写数字）和更复杂的 Flow 架构。",
+            body: "本节从零搭建一个完整的 Normalizing Flow 训练流程，在双螺旋（two-moons）数据集上演示 Flow 模型如何学习复杂的二维流形。我们使用 RealNVP 风格的耦合层，配合简单的 MLP 作为缩放和平移网络。**二维数据的好处是我们可以可视化每一步变换，直观理解 Flow 如何将简单的高斯分布扭曲成复杂的目标分布**。训练使用负对数似然（NLL）作为损失函数，通过 Adam 优化器最小化。关键技巧包括：使用梯度裁剪防止数值爆炸、监控雅可比行列式的分布确保变换不会退化、以及定期可视化生成的样本。这个 2D 实验虽然简单，但完整展示了 Flow 模型的训练管线：数据加载 到 密度估计 到 损失计算 到 梯度更新 到 样本生成。掌握这个流程后，可以轻松扩展到更高维的数据（如 MNIST 手写数字）和更复杂的 Flow 架构。",
             code: [
                 {
                     lang: "python",

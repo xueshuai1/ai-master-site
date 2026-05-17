@@ -21,7 +21,7 @@ export const article: Article = {
 场景 1：复杂数学推理
 > 一个水箱有 3 根进水管，分别以每分钟 2L、3L、5L 的速度进水，同时有 1 根排水管以每分钟 4L 的速度排水。水箱初始有 20L 水，容量为 100L。问多少分钟后水箱满？
 
-基础 Prompt 往往让模型「心算」给出答案，错误率极高。而 Chain-of-Thought 能让模型一步步推理，准确率提升 3-5 倍。
+基础 Prompt 往往让模型「心算」给出答案，错误率极高。而 **Chain-of-Thought 能让模型一步步推理，准确率提升 3-5 倍**。
 
 场景 2：专业领域问答
 > 给定一段法律文本，判断某个行为是否违法。
@@ -34,7 +34,7 @@ export const article: Article = {
 这需要模型具备任务分解、多步推理和自我修正的能力。
 
 高级 Prompt 技术的核心价值：
-- 将模型的「直觉式回答」转变为「系统性推理」
+- **将模型的「直觉式回答」转变为「系统性推理」**
 - 将回答准确率从 60-70% 提升到 90%+
 - 让模型在数学、逻辑、编程等推理密集型任务中接近人类专家水平
 - 建立可复用、可测试、可迭代的 Prompt 工程体系`,
@@ -43,11 +43,11 @@ export const article: Article = {
       title: "二、Chain-of-Thought（思维链）：让模型「想清楚再说」",
       body: `Chain-of-Thought（CoT）是 Wei et al. (2022) 在论文「Chain-of-Thought Prompting Elicits Reasoning in Large Language Models」中提出的核心技术。
 
-核心思想：在 Prompt 中引导模型展示推理过程，而不是直接给出最终答案。
+核心思想：**在 Prompt 中引导模型展示推理过程，而不是直接给出最终答案**。
 
 原理图解：
 
-模型在处理复杂问题时，内部其实经过了多层注意力计算。但直接输出答案时，中间推理步骤被「压缩」了，导致错误累积。CoT 通过强制模型输出中间步骤，相当于给推理过程一个「外部工作记忆」，显著减少错误。`,
+模型在处理复杂问题时，内部其实经过了多层注意力计算。但直接输出答案时，中间推理步骤被「压缩」了，导致错误累积。**CoT 通过强制模型输出中间步骤，相当于给推理过程一个「外部工作记忆」**，显著减少错误。`,
       mermaid: `graph TD
     A[输入问题] --> B{使用 CoT?}
     B -->|否| C[直接生成答案]
@@ -70,7 +70,7 @@ export const article: Article = {
 
 "Let's think step by step"（让我们一步步思考）
 
-就这么简单，但效果显著。在 GSM8K 数学数据集上，仅加这一句话就能让 GPT-3 的准确率从 18% 提升到 40% 以上。`,
+就这么简单，但效果显著。**在 GSM8K 数学数据集上，仅加这一句话就能让 GPT-3 的准确率从 18% 提升到 40% 以上**。`,
       code: [{ lang: "python", code: `import openai
 
 def zero_shot_cot(question: str, model: str = "gpt-4") -> str:
@@ -108,7 +108,7 @@ print(result)`, filename: "zero_shot_cot.py" }],
     },
     {
       title: "2.2 Few-Shot CoT：用示例教模型推理",
-      body: `Few-Shot CoT 在 Zero-Shot 的基础上更进一步：给模型几个「问题 → 推理过程 → 答案」的完整示例，让模型学习推理的模式。
+      body: `Few-Shot CoT 在 Zero-Shot 的基础上更进一步：**给模型几个「问题 → 推理过程 → 答案」的完整示例，让模型学习推理的模式**。
 
 关键区别：
 
@@ -210,10 +210,10 @@ print(f"答案：{result['answer']}")`, filename: "few_shot_cot.py" }],
       body: `Self-Consistency 是 Wang et al. (2022) 提出的增强 CoT 的方法。
 
 核心思想：
-不要只让模型推理一次。让模型从同一条 Prompt 出发，用不同的随机种子推理 N 次（通常 N=5-40），然后对最终答案进行投票，选出现次数最多的那个。
+不要只让模型推理一次。**让模型从同一条 Prompt 出发，用不同的随机种子推理 N 次（通常 N=5-40），然后对最终答案进行投票**，选出现次数最多的那个。
 
 为什么有效？
-模型的推理过程有随机性。单次推理可能「走错路」，但多次推理中，正确的推理路径会收敛到相同的答案。投票机制过滤掉了偶然的错误。
+模型的推理过程有随机性。单次推理可能「走错路」，但多次推理中，**正确的推理路径会收敛到相同的答案**。投票机制过滤掉了偶然的错误。
 
 效果对比：
 
@@ -224,7 +224,7 @@ print(f"答案：{result['answer']}")`, filename: "few_shot_cot.py" }],
 | Self-Consistency (k=5) | 59.8% | 78.2% | 5x |
 | Self-Consistency (k=40) | 66.9% | 83.0% | 40x |
 
-从数据可以看到，Self-Consistency 在 k=5 时就能带来 ~20 个百分点的提升，性价比最高。`,
+从数据可以看到，**Self-Consistency 在 k=5 时就能带来 ~20 个百分点的提升，性价比最高**。`,
     },
     {
       title: "3.1 Self-Consistency 实战代码",
@@ -351,7 +351,7 @@ print(result['best_reasoning'])`, filename: "self_consistency_cot.py" }],
 3. Observation（观察）：获取行动的结果
 4. 回到 Thought，重复直到得出结论
 
-这个模式本质上就是 Agent 的工作方式！OpenClaw、AutoGPT、LangChain Agent 等系统都在使用 ReAct 模式。`,
+**这个模式本质上就是 Agent 的工作方式**。OpenClaw、AutoGPT、LangChain Agent 等系统都在使用 ReAct 模式。`,
       mermaid: `sequenceDiagram
     participant U as User
     participant A as AI Agent
@@ -482,7 +482,7 @@ print(f"\\nFinal Answer: {result}")`, filename: "react_agent.py" }],
       body: `Tree of Thoughts（ToT）是 Yao et al. (2023) 提出的更高级的推理框架。
 
 核心思想：
-不是只沿着一条推理路径走到底，而是生成多个可能的推理步骤，评估每个步骤的质量，选择最有希望的路径继续深入。
+**不是只沿着一条推理路径走到底，而是生成多个可能的推理步骤，评估每个步骤的质量，选择最有希望的路径继续深入**。
 
 这就像下棋：高手不会只考虑一步棋，而是同时推演多条可能的走法，然后选择最优的那条。
 
@@ -544,7 +544,7 @@ ToT 的三个关键操作：
     },
     {
       title: "六、高级 Prompt 策略组合：生产级 Prompt 系统",
-      body: `在实际生产环境中，单一技术往往不够。我们需要根据任务类型组合不同的策略。
+      body: `**在实际生产环境中，单一技术往往不够**。我们需要根据任务类型组合不同的策略。
 
 策略选择决策树：
 
@@ -773,7 +773,7 @@ print(f"\\n提取结果：{r2.answer}")`, filename: "prompt_router.py" }],
     },
     {
       title: "七、2026 年 Prompt 工程最佳实践总结",
-      body: `经过几年的发展，Prompt Engineering 已经从「艺术」逐渐走向「工程」。以下是 2026 年业界总结的最佳实践：
+      body: `经过几年的发展，**Prompt Engineering 已经从「艺术」逐渐走向「工程」**。以下是 2026 年业界总结的最佳实践：
 
 1. 推理任务必用 CoT
 任何涉及数学、逻辑、推理的问题，都应该使用 Chain-of-Thought。Zero-Shot CoT（加一句"让我们一步步思考"）是最低成本高回报的优化。
@@ -791,7 +791,7 @@ print(f"\\n提取结果：{r2.answer}")`, filename: "prompt_router.py" }],
 数据提取、API 响应、格式转换等场景，强制 JSON Schema 约束。
 
 6. Prompt 需要版本管理和 A/B 测试
-把 Prompt 当代码管理：版本控制、测试用例、性能监控。
+**把 Prompt 当代码管理：版本控制、测试用例、性能监控**。
 
 7. 持续评估和优化
 建立评估集（Evaluation Suite），每次 Prompt 变更后自动回归测试。`,
@@ -823,8 +823,8 @@ print(f"\\n提取结果：{r2.answer}")`, filename: "prompt_router.py" }],
 4. 对于需要外部信息的场景，实现一个简单的 ReAct Agent
 
 ⚠️ 常见误区：
-- 过度追求复杂技术：简单的 Zero-Shot CoT 往往就能解决 80% 的问题
-- 忽略评估**：没有测试的 Prompt 优化是盲目的
+- **过度追求复杂技术：简单的 Zero-Shot CoT 往往就能解决 80% 的问题**
+- 忽略评估：**没有测试的 Prompt 优化是盲目的**
 - 忽视 Token 成本：Self-Consistency 和 ToT 的成本可能很高，需要权衡`,
     }
   ]
