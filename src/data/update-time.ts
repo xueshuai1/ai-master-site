@@ -1,2 +1,2 @@
 // 此文件由构建脚本自动生成，记录最后部署时间
-export const LAST_UPDATE_TIME = "2026-05-17 15:01";
+export const LAST_UPDATE_TIME = "2026-05-17 16:25";

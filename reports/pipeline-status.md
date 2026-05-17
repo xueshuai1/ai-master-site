@@ -31,3 +31,6 @@
 | 2026-05-17 12:06 | 🔍 研究员 | 扫描14+来源(GitHub API+TechCrunch+The Verge+Simon Willison+新浪科技+凤凰网+arXiv+36氪/AI Business/CNBC), 新闻12条(news-2009~news-2020), 工具0个(已全覆盖), 待PM, commit pending |
 | 2026-05-17 12:15 | 🔍 研究员 | 扫描12+来源(TechCrunch/The Verge/新浪科技/36氪/凤凰网/量子位/GitHub API/arXiv), 新闻12条(news-2021~news-2032), 工具0个(已全覆盖), commit 6747126d | ✅ |
 | 2026-05-17 13:20 | 📝 PM | 知识库[agent-064]+更新[dl-002]+博客[blog-187]+更新[blog-185] | ✅ |
+
+| 2026-05-17 16:15 | 🔍 研究员 | 扫描12+来源(OpenAI RSS+凤凰科技+新浪科技+WIRED+MIT Tech Review+GitHub API+VentureBeat+36氪), 新闻12条(news-2045~news-2056), 工具0个(已全覆盖), 待PM, commit pending |
+
