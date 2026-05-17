@@ -45,8 +45,8 @@ Production 阶段则完全不同：全公司部署——AI 能力集成到核心
     H --> K
     I --> K
     J --> K
-    K --> L["53% 失败"]
-    K -.-> M["47% 成功"]`,
+    K --> L["53％ 失败"]
+    K -.-> M["47％ 成功"]`,
             tip: "在启动 AI Pilot 之前,就应该用 Production 的标准来评估技术可行性、团队能力和合规要求。提前识别四大鸿沟可以节省 60% 以上的迁移成本。",
             warning: "绝对不要将 Pilot 阶段的代码直接推入生产。这是导致 AI 项目失败的最常见原因之一。Pilot 代码的目标是验证概念,不是提供可靠服务。"
         },
@@ -774,7 +774,7 @@ class AIMigrationRoadmap:
             mermaid: `gantt
     title "Pilot → Production 迁移路线图"
     dateFormat  YYYY-MM
-    axisFormat %Y-%m
+
 
     section Phase 1
     选择生产用例      :a1, 2026-06, 1M
