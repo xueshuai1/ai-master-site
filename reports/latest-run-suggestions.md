@@ -1,22 +1,22 @@
-# 下次建议（2026-05-17 08:11）
+# 下次建议（2026-05-17 12:05）
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：OpenAI 大规模重组 — Brockman 夺权背后的治理危机与 GPT-6 路线
-2. 知识库：世界模型全景 — 从 SANA-WM 到物理 AI 的认知基础设施
+1. 博客：Anthropic 企业采用率首超 OpenAI — Ramp 指数历史性逆转的深度解读
+2. 知识库：AI Agent 取代 App — Agentic Orchestration 技术架构全景
 
 ## 可延后执行（其余建议）
-1. 博客：DeepSeek-V4-Flash 与 LLM Steering 技术 — 模型行为控制的新范式
-2. 知识库：蚂蚁 Ring-2.6-1T 开源模型解析 — 万亿参数多级推理强度设计
-3. 博客：Cerebras IPO 4000 亿市值 — WSE 晶圆级芯片能否撼动英伟达
-4. 知识库：AI Agent 记忆层 — δ-mem 高效在线记忆机制深度解读
-5. 博客：ChatGPT 接入银行 — AI Agent 金融服务的边界与风险
-6. 博客：Anthropic CEO 万字深谈 — AI 海啸的社会冲击与治理紧迫性
-7. 博客：Frontier AI 攻破 CTF 评估 — AI 安全基准测试的范式转变
-8. 知识库：具身智能消费市场 — 从日本机器狼到消费级机器人商业化
-9. 博客：Anthropic-NEC 日本 AI 人才计划 — 差异化市场进入策略
-10. 博客：知乎 CEO 谈 AI 时代新知 — AI 内容泛滥下的知识质量危机
+1. 博客：OpenAI 40 亿美元 AI 服务合资公司 — 模型厂商进军咨询业的战略意义
+2. 博客：Meta Muse Spark 发布 — 从开源到专有的战略转变
+3. 博客：Anthropic 9000 亿美元估值融资 — AI 估值泡沫还是真实价值
+4. 知识库：AI 终端产业全景 — 从深圳 AI 终端展看端侧 AI 的爆发态势
+5. 博客：AI 巨头基础设施投资潮 — Alphabet 1850 亿 + 亚马逊万亿的算力竞赛
+6. 博客：斯坦福 AI 指数 2026 深度解读 — 5817 亿美元投资背后的行业拐点
+7. 博客：月之暗面 20 亿美元融资 — 中国 AI 大模型的资本新贵
+8. 知识库：AI 新闻聚合新范式 — Digg 转型 AI 策展的技术与市场
+9. 博客：微软 2026 AI 七大趋势 — 数字协作到量子突破
+10. 博客：OpenAI GPT-5.5-Cyber + Anthropic Mythos — AI 网络安全双刃剑
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（GitHub API+Hacker News+Anthropic Blog+凤凰网科技+新浪科技+36氪+量子位+arXiv+MIT Tech Review），更新新闻 12 条（news-1985~news-1996）
+- 本轮扫描 12+ 来源（VentureBeat/CNBC/AI Business/Planet.news/Microsoft/斯坦福HAI/第一财经/AITop100/TechCrunch/AIToolsRecap），更新新闻 12 条（news-1997~news-2008）
 - 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具）
-- 热点：DeepSeek-V4-Flash steering/NVIDIA SANA-WM 世界模型/OpenAI 重组/蚂蚁 Ring-2.6-1T/Cerebras IPO/ChatGPT 银行接入/δ-mem 记忆系统/Anthropic CEO 深谈/CTF 评估失效/日本机器狼
+- 热点：Anthropic 首超 OpenAI/OpenAI 合资公司/Anthropic 估值/Meta Muse Spark/深圳AI展/斯坦福AI指数/月之暗面融资/Digg转型/AI投资潮/Agent取代App/微软七大趋势
