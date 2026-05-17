@@ -935,7 +935,7 @@ class ModelRouter:
 
 必备学习资源：
 - 论文阅读：每月精读 10-20 篇 arXiv 论文，重点关注模型架构创新类论文
-- 动手实践：在 **HuggingFace** 上下载最新开源模型，尝试在本地部署和优化
+- 动手实践：在 HuggingFace 上下载最新开源模型，尝试在本地部署和优化
 - 社区参与：参与 vLLM、TensorRT-LLM、Ollama 等开源项目，贡献代码或文档
 - 认证考试：考取 Kubernetes（CKA）、AWS ML Specialty、GCP ML Engineer 等认证
 

@@ -92,7 +92,7 @@ Agent 可观测性需要从三个层面构建完整的可见性管线：
 
 ### 实现 Agent 可观测性的技术栈
 
-主流的可观测性方案包括 LangSmith（**LangChain** 生态）、Phoenix（Arize AI）、Langfuse（开源方案）以及基于 OpenTelemetry 的自建方案。选择方案时需要考虑三个关键因素：是否支持 Agent 特定的追踪语义、是否提供决策可视化工具、是否支持行为审计的实时告警。`,
+主流的可观测性方案包括 LangSmith（LangChain 生态）、Phoenix（Arize AI）、Langfuse（开源方案）以及基于 OpenTelemetry 的自建方案。选择方案时需要考虑三个关键因素：是否支持 Agent 特定的追踪语义、是否提供决策可视化工具、是否支持行为审计的实时告警。`,
             code: [
                 {
                     lang: "python",

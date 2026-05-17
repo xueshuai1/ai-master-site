@@ -5,7 +5,7 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "一、历史性时刻——教皇发布首份 AI 通谕",
-    body: `2026 年 5 月，教皇在梵蒂冈正式发布了天主教会的首份人工智能通谕，这份被命名为《**Fides et Ratio Technologica**》（信仰与理性：技术时代的人类尊严）的文件，标志着全球最大宗教组织对 AI 革命的正式立场声明。
+    body: `2026 年 5 月，教皇在梵蒂冈正式发布了天主教会的首份人工智能通谕，这份被命名为《Fides et Ratio Technologica》（信仰与理性：技术时代的人类尊严）的文件，标志着全球最大宗教组织对 AI 革命的正式立场声明。
 
 为什么这份通谕如此重要？ 通谕（Encyclical）是天主教会的最高级别教义文件，通常由教皇亲自撰写，面向全球 13 亿天主教徒以及全人类。历史上，通谕只在最重大的社会、道德和哲学议题上发布——从劳工权利到环境保护，从战争伦理到生命尊严。AI 技术是首个被列入通谕讨论的技术议题。
 
@@ -19,7 +19,7 @@ const content: ArticleSection[] = [
 - 政治界：欧盟委员会主席表示通谕与欧盟 AI Act的精神高度一致
 - 争议声音：部分世俗批评者认为宗教机构不应干预技术伦理，认为通谕的立场缺乏技术深度
 
-值得注意的历史对比：1991 年教皇若望保禄二世发布的《**Centesimus Annus**》通谕对市场经济和全球化的立场声明，直接影响了后来数十年的天主教社会教义。今天这份 AI 通谕，预计将在未来数十年内塑造全球 AI 伦理讨论的宗教维度。`,
+值得注意的历史对比：1991 年教皇若望保禄二世发布的《Centesimus Annus》通谕对市场经济和全球化的立场声明，直接影响了后来数十年的天主教社会教义。今天这份 AI 通谕，预计将在未来数十年内塑造全球 AI 伦理讨论的宗教维度。`,
     mermaid: `graph TD
     A["2026 年 5 月"] --> B["教皇发布首份 AI 通谕"]
     B --> C["Fides et Ratio Technologica"]
@@ -149,9 +149,9 @@ Google 的回应相对克制。Google 发言人表示「尊重宗教机构对技
 Meta 的回应最为冷淡。Meta 仅在官网发布了一份简短声明：「我们注意到了这份文件，并将持续关注我们产品的伦理影响。」没有提及通谕内容本身，也没有做出任何承诺。这可能与 Meta 在内容审核、数据隐私、深度伪造等问题上的争议历史有关。
 
 其他重要回应：
-- **Microsoft**：CEO Satya Nadella 发表长文，称通谕「提出了所有技术公司都应认真思考的问题」，并宣布将把通谕的五大支柱纳入 Microsoft 的 AI 伦理审查框架
-- **Anthropic**：CEO Dario Amodei 表示通谕与 Anthropic 的宪法 AI（Constitutional AI）理念高度契合
-- **DeepMind**：CEO Demis Hassabis 称通谕是「人类对 AI 最深刻的哲学反思之一」
+- Microsoft：CEO Satya Nadella 发表长文，称通谕「提出了所有技术公司都应认真思考的问题」，并宣布将把通谕的五大支柱纳入 Microsoft 的 AI 伦理审查框架
+- Anthropic：CEO Dario Amodei 表示通谕与 Anthropic 的宪法 AI（Constitutional AI）理念高度契合
+- DeepMind：CEO Demis Hassabis 称通谕是「人类对 AI 最深刻的哲学反思之一」
 
 中国科技公司的反应值得关注——百度、阿里、腾讯均未公开发表评论。这反映了宗教文件在中国科技行业中的敏感度。但也有分析认为，通谕中关于「全球 AI 治理公平性」的观点，与中国在全球 AI 治理中的立场存在共鸣空间。`,
     mermaid: `graph TD

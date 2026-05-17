@@ -38,7 +38,7 @@ Karpathy 在 Twitter/X 上多次表达过类似的观点：
 autoresearch 的核心思想极简却革命性：
 
 - 研究者写一个 \`program.md\` 描述研究方向和约束
-- AI Agent（如 **Claude** Code）读取 \`program.md\`
+- AI Agent（如 Claude Code）读取 \`program.md\`
 - Agent 自主修改代码、启动训练、评估结果、决定下一步
 - 整个过程完全自动化，研究者只需在早上查看结果
 
@@ -250,7 +250,7 @@ program.md 不是传统的实验计划书，而是一种人机协作协议。它
       title: "四、nanochat 框架：autoresearch 的训练引擎",
       body: `## 为什么选择 nanochat？
 
-Karpathy 选择 nanochat 而非 PyTorch Lightning 或 **HuggingFace** **Transformer**s，原因很明确：
+Karpathy 选择 nanochat 而非 PyTorch Lightning 或 HuggingFace Transformers，原因很明确：
 
 1. 代码量极小：约 300 行 Python 代码，Agent 可以完全理解每一行
 2. 无隐藏魔法：所有逻辑都是显式的，没有抽象层掩盖细节
@@ -267,7 +267,7 @@ graph LR
     end
     
     subgraph "模型层"
-        C[NanoGPT **Transformer**]
+        C[NanoGPT Transformer]
         D[Embedding]
         E[Multi-Head Attention]
         F[Feed Forward]

@@ -351,7 +351,7 @@ print(result['best_reasoning'])`, filename: "self_consistency_cot.py" }],
 3. Observation（观察）：获取行动的结果
 4. 回到 Thought，重复直到得出结论
 
-这个模式本质上就是 Agent 的工作方式！OpenClaw、AutoGPT、**LangChain** Agent 等系统都在使用 ReAct 模式。`,
+这个模式本质上就是 Agent 的工作方式！OpenClaw、AutoGPT、LangChain Agent 等系统都在使用 ReAct 模式。`,
       mermaid: `sequenceDiagram
     participant U as User
     participant A as AI Agent

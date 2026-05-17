@@ -564,7 +564,7 @@ for ref, hyp, desc in test_cases:
 
 数学定义：Perplexity = exp(-(1/N) * Σ log P(w_i | context))，等价于 2 的交叉熵次方。可以理解为等效的随机选择数量——PP = 100 意味着模型在每个位置上相当于从 100 个词中等概率随机选择。
 
-典型 Perplexity 值：在 Penn Treebank 上，n-gram 模型 PP 约 100-200，RNN 约 50-100，**Transformer** 约 10-30，**GPT-4** 等超大模型可降至 5 以下。PP 越低越好，但不同测试集上的 PP 不可比较。`,
+典型 Perplexity 值：在 Penn Treebank 上，n-gram 模型 PP 约 100-200，RNN 约 50-100，Transformer 约 10-30，GPT-4 等超大模型可降至 5 以下。PP 越低越好，但不同测试集上的 PP 不可比较。`,
         code: [
           {
             lang: "python",

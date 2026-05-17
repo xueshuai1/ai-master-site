@@ -245,7 +245,7 @@ curl -X POST http://localhost:8000/predict \\
             title: "4. Docker 容器化部署",
             body: `Docker 容器化是 ML 服务从开发环境走向生产环境的关键一步。它解决了在我机器上能跑这个经典问题，确保开发、测试和生产环境的一致性。
 
-ML 服务的 Docker 镜像有几个特殊考量：基础镜像的选择、GPU 驱动的支持、模型文件的打包策略。**NVIDIA** 提供的 CUDA 基础镜像是 GPU 推理的首选，它预装了 CUDA Toolkit 和 cuDNN，省去了大量环境配置工作。对于 CPU 推理，使用 slim 版本的 Python 镜像可以显著减小镜像体积。
+ML 服务的 Docker 镜像有几个特殊考量：基础镜像的选择、GPU 驱动的支持、模型文件的打包策略。NVIDIA 提供的 CUDA 基础镜像是 GPU 推理的首选，它预装了 CUDA Toolkit 和 cuDNN，省去了大量环境配置工作。对于 CPU 推理，使用 slim 版本的 Python 镜像可以显著减小镜像体积。
 
 模型文件通常很大，不应该直接打包进镜像。更优雅的方案是在容器启动时从对象存储（S3、OSS）下载模型，或者挂载外部存储卷。这样更新模型时只需要替换文件而不用重新构建镜像。`,
             code: [
@@ -327,7 +327,7 @@ docker logs -f inference-gpu`
 
 在 K8s 上部署 ML 服务有几个关键资源对象需要理解：Deployment 管理 Pod 的生命周期和副本数，Service 提供稳定的网络入口和负载均衡，ConfigMap 和 Secret 管理配置和敏感信息，HorizontalPodAutoscaler 实现自动扩缩容。
 
-GPU 节点的管理是 K8s ML 部署中最复杂的部分。需要配置 **NVIDIA** Device Plugin 让 K8s 能够感知和调度 GPU 资源，通过 resource requests 和 limits 精确控制每个 Pod 的 GPU 分配。对于多 GPU 服务器，还可以使用 MIG 技术将一张物理 GPU 切分为多个逻辑实例。`,
+GPU 节点的管理是 K8s ML 部署中最复杂的部分。需要配置 NVIDIA Device Plugin 让 K8s 能够感知和调度 GPU 资源，通过 resource requests 和 limits 精确控制每个 Pod 的 GPU 分配。对于多 GPU 服务器，还可以使用 MIG 技术将一张物理 GPU 切分为多个逻辑实例。`,
             code: [
                 {
                     lang: "yaml",

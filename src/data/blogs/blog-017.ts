@@ -12,7 +12,7 @@ export const blog: BlogPost = {
     content: [
         {
             title: "引言：我们正站在 AI 编程的转折点上",
-            body: "2026 年 4 月，JetBrains 发布了一份关于开发者 AI 工具使用情况的调研报告，揭示了一个关键趋势：开发者正在从使用单一工具转向多工具组合工作流。这不是简单的工具偏好变化，而是 AI 编程工具正在经历从辅助到自主的范式转移。\n\n本文将对 2026 年主流 AI 编程工具进行深度横评，涵盖 Cursor、**Claude** Code、GitHub Copilot、JetBrains Air、Windsurf 和 Aider 六大工具。",
+            body: "2026 年 4 月，JetBrains 发布了一份关于开发者 AI 工具使用情况的调研报告，揭示了一个关键趋势：开发者正在从使用单一工具转向多工具组合工作流。这不是简单的工具偏好变化，而是 AI 编程工具正在经历从辅助到自主的范式转移。\n\n本文将对 2026 年主流 AI 编程工具进行深度横评，涵盖 Cursor、Claude Code、GitHub Copilot、JetBrains Air、Windsurf 和 Aider 六大工具。",
         },
         {
             title: "评测维度",
@@ -102,7 +102,7 @@ export const blog: BlogPost = {
 JetBrains Air 的发布标志着多 Agent 编排从概念走向实践。预计年底前，主流编程工具都将支持多 Agent 协作。
 
 2. 终端 Agent 崛起
-**Claude** Code 和 Aider 的成功证明，终端是 AI Agent 更自然的交互界面。越来越多的开发者选择在终端中与 AI 协作。
+Claude Code 和 Aider 的成功证明，终端是 AI Agent 更自然的交互界面。越来越多的开发者选择在终端中与 AI 协作。
 
 3. AI 代码安全审查
 随着 84% 的开发者使用 AI 编程工具但仅 29% 信任其输出，AI 生成代码的安全审查将成为独立工具类别。

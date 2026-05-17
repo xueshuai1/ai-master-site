@@ -5,7 +5,7 @@ import type { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
     {
         title: "1. 引言：当 AI 不再等你下指令",
-        body: `2026 年 5 月，**OpenAI** 为 Codex CLI 引入了一个看似微小但意义深远的功能——/goal 命令。
+        body: `2026 年 5 月，OpenAI 为 Codex CLI 引入了一个看似微小但意义深远的功能——/goal 命令。
 
 表面上看，它只是一个新的 CLI 命令。但实际上，它标志着 AI 编程工具从「被动响应」正式进化到「自主循环」。
 
@@ -43,7 +43,7 @@ const content: ArticleSection[] = [
 
 ### 2.1 什么是 Ralph 循环？
 
-Ralph 循环是一个自主编程 Agent 的核心控制循环。它的名字来自 **OpenAI** 的内部项目代号，但这个概念已经被整个行业广泛采纳。
+Ralph 循环是一个自主编程 Agent 的核心控制循环。它的名字来自 OpenAI 的内部项目代号，但这个概念已经被整个行业广泛采纳。
 
 Ralph 循环的基本流程：
 

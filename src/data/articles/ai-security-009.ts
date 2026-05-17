@@ -17,7 +17,7 @@ export const article: Article = {
       title: "一、Firefox 150 事件：AI 安全审计的里程碑",
       body: `2026 年 4 月 22 日，Mozilla 发布 Firefox 150，同时公布了一个令人震惊的消息：
 
-> 作为与 **Anthropic** 持续合作的一部分，Mozilla 将 **Claude** Mythos Preview 的早期版本应用于 Firefox 的安全评估。Firefox 150 包含了此次评估中发现并修复的 271 个漏洞。
+> 作为与 Anthropic 持续合作的一部分，Mozilla 将 Claude Mythos Preview 的早期版本应用于 Firefox 的安全评估。Firefox 150 包含了此次评估中发现并修复的 271 个漏洞。
 
 Mozilla CTO Bobby Holley 评价道：
 
@@ -78,7 +78,7 @@ Mozilla 的安全公告（MFSA2026-30）覆盖了：
 
 AI 方法的优势：
 
-**Claude** Mythos 代表的是基于大语言模型的语义分析路径。其核心能力包括：
+Claude Mythos 代表的是基于大语言模型的语义分析路径。其核心能力包括：
 
 1. 语义理解：能够理解代码的意图和上下文，而非仅匹配模式
 2. 跨模块推理：可以同时追踪数据流跨越多层抽象，发现跨模块的漏洞组合
@@ -563,7 +563,7 @@ if __name__ == "__main__":
     },
     {
       title: "三、AI 漏洞发现的核心技术架构",
-      body: `**Claude** Mythos 能够实现 Firefox 150 的审计成果，依赖于一套多层级的分析架构。虽然 **Anthropic** 没有公开完整的技术细节，但根据 Mozilla 的安全公告和社区分析，我们可以推断出以下架构：
+      body: `Claude Mythos 能够实现 Firefox 150 的审计成果，依赖于一套多层级的分析架构。虽然 Anthropic 没有公开完整的技术细节，但根据 Mozilla 的安全公告和社区分析，我们可以推断出以下架构：
 
 Layer 1: 代码理解层
 - 将完整代码库解析为 AST（抽象语法树）和 CFG（控制流图）
@@ -620,7 +620,7 @@ Firefox 150 的 271 个漏洞分布大致如下：
     },
     {
       title: "四、构建你自己的 AI 安全审计流水线",
-      body: `虽然我们没有 **Claude** Mythos 级别的模型，但完全可以利用现有的 AI 工具构建一个有效的安全审计流水线。以下是一个实用的方案：
+      body: `虽然我们没有 Claude Mythos 级别的模型，但完全可以利用现有的 AI 工具构建一个有效的安全审计流水线。以下是一个实用的方案：
 
 方案架构：
 1. 使用 CodeQL 进行基础静态分析（快速、低成本）

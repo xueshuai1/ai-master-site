@@ -119,7 +119,7 @@ export const article: Article = {
 
 | 模型 | 维度 | 语言 | 特点 |
 |------|------|------|------|
-| text-embedding-3-large | 3072 | 多语言 | **OpenAI** 最强嵌入模型 |
+| text-embedding-3-large | 3072 | 多语言 | OpenAI 最强嵌入模型 |
 | text-embedding-3-small | 1536 | 多语言 | 性价比最优 |
 | bge-m3 | 1024 | 多语言 | 开源最强，支持 100+ 语言 |
 | jina-embeddings-v3 | 1024 | 多语言 | 支持任务特定微调 |
@@ -740,7 +740,7 @@ print(f"记忆库状态: {stats}")`
 
 记忆接口层（Memory API）：统一的记忆读写接口，屏蔽底层存储细节。Agent 通过这个接口添加、查询、更新、删除记忆。
 
-路由层（Routing Layer）：根据查询类型决定走哪个检索引擎。精确查询走知识图谱，语义查询走向量数据库，复杂查询走 Graph**RAG**。
+路由层（Routing Layer）：根据查询类型决定走哪个检索引擎。精确查询走知识图谱，语义查询走向量数据库，复杂查询走 GraphRAG。
 
 存储层（Storage Layer）：包含向量数据库（Qdrant/Milvus）、图数据库（Neo4j/NetworkX）、关系数据库（PostgreSQL）、缓存（Redis）。
 
@@ -912,7 +912,7 @@ class AgentMemorySystem {
 
 「MemGPT: Towards LLMs as Operating Systems」（Packer et al., 2023）—— 提出了虚拟上下文管理的概念，将 LLM 的有限上下文窗口扩展为类似操作系统的虚拟内存机制。
 
-「Graph**RAG**: Unlocking LLM Discovery on Narrative Private Data」（**Microsoft**, 2024）—— 提出了基于知识图谱增强 **RAG** 的方法，显著提升了复杂问答的准确率。
+「GraphRAG: Unlocking LLM Discovery on Narrative Private Data」（Microsoft, 2024）—— 提出了基于知识图谱增强 RAG 的方法，显著提升了复杂问答的准确率。
 
 「Agent Memory: A Survey of Memory Mechanisms for LLM-based Agents」（2024）—— 系统综述了 Agent 记忆的各种机制和评估方法。
 
@@ -924,7 +924,7 @@ Zep（getzep.com）—— 生产级记忆存储，支持向量搜索、图谱存
 
 Letta（原 MemGPT）—— 基于虚拟上下文管理的 Agent 框架，实现了记忆的分层管理和自动压缩。
 
-**LangGraph** Memory—— **LangChain** 生态中的记忆模块，支持短期记忆、长期记忆、知识图谱集成。
+LangGraph Memory—— LangChain 生态中的记忆模块，支持短期记忆、长期记忆、知识图谱集成。
 
 ### 实践建议
 

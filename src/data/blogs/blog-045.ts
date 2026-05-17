@@ -7,7 +7,7 @@ const content: ArticleSection[] = [
 
 但真正让这件事成为 AI 安全领域里程碑的，是这些漏洞的发现方式：
 
-> Mozilla 与 **Anthropic** 合作，使用 **Claude** Mythos Preview（早期预览版）对 Firefox 进行了首次 AI 辅助安全评估，单次评估就发现了 271 个漏洞。
+> Mozilla 与 Anthropic 合作，使用 Claude Mythos Preview（早期预览版）对 Firefox 进行了首次 AI 辅助安全评估，单次评估就发现了 271 个漏洞。
 
 Firefox CTO Bobby Holley 在官方博客中写道：
 
@@ -24,7 +24,7 @@ Firefox CTO Bobby Holley 在官方博客中写道：
   },
   {
     title: "一、什么是 Claude Mythos？AI 安全评估的新范式",
-    body: `**Claude** Mythos 是 **Anthropic** 开发的 AI 安全评估系统，专门用于对大型代码库进行深度的安全审计。虽然 **Anthropic** 尚未公开 Mythos 的全部技术细节，但从 Firefox 评估结果和业界信息中，我们可以还原其核心架构。
+    body: `Claude Mythos 是 Anthropic 开发的 AI 安全评估系统，专门用于对大型代码库进行深度的安全审计。虽然 Anthropic 尚未公开 Mythos 的全部技术细节，但从 Firefox 评估结果和业界信息中，我们可以还原其核心架构。
 
 与传统安全工具的本质区别：
 
@@ -42,7 +42,7 @@ Firefox CTO Bobby Holley 在官方博客中写道：
 - 需要大量的运行时间和计算资源
 - 无法理解"什么是有意义的测试输入"
 
-**Claude** Mythos（AI 安全评估）：
+Claude Mythos（AI 安全评估）：
 - 基于 LLM 的代码理解能力，可以理解整个代码库的架构和数据流
 - 能够发现"未知的未知"——从未见过的新类型漏洞
 - 结合静态分析和语义推理，能够追踪跨模块的复杂数据流
@@ -67,12 +67,12 @@ Firefox CTO Bobby Holley 在官方博客中写道：
 
 按严重程度分布：
 
-Firefox 安全公告将漏洞分为三个级别：High（高危）、Moderate（中危）、Low（低危）。其中 **Claude** Mythos 团队（Evyatar Ben Asher, Keane Lucas, Nicholas Carlini 等 7 人）报告的 CVE 涵盖了多种高危类型。
+Firefox 安全公告将漏洞分为三个级别：High（高危）、Moderate（中危）、Low（低危）。其中 Claude Mythos 团队（Evyatar Ben Asher, Keane Lucas, Nicholas Carlini 等 7 人）报告的 CVE 涵盖了多种高危类型。
 
 按漏洞类型分类：
 
 1. Use-After-Free（释放后使用）— CVE-2026-6746, CVE-2026-6754, CVE-2026-6758
-   这是最危险的内存安全漏洞类型之一。在 C/C++ 代码中，当对象被释放后，如果仍有指针引用该对象，攻击者就可以利用这个指针执行任意代码。**Claude** Mythos 在 DOM、JavaScript Engine 和 WebAssembly 组件中均发现了此类漏洞。
+   这是最危险的内存安全漏洞类型之一。在 C/C++ 代码中，当对象被释放后，如果仍有指针引用该对象，攻击者就可以利用这个指针执行任意代码。Claude Mythos 在 DOM、JavaScript Engine 和 WebAssembly 组件中均发现了此类漏洞。
 
 2. Uninitialized Memory（未初始化内存）— CVE-2026-6748, CVE-2026-6749, CVE-2026-6751
    使用未初始化的内存会泄露敏感信息，攻击者可能借此获取栈上的密码、加密密钥或其他敏感数据。
@@ -96,11 +96,11 @@ Firefox 安全公告将漏洞分为三个级别：High（高危）、Moderate（
   },
   {
     title: "三、AI 安全评估的技术原理：Claude Mythos 如何工作？",
-    body: `虽然 **Anthropic** 尚未完全公开 Mythos 的技术细节，但结合 Bobby Holley 的描述和业界对 AI 代码审计的理解，我们可以推测其核心工作原理。
+    body: `虽然 Anthropic 尚未完全公开 Mythos 的技术细节，但结合 Bobby Holley 的描述和业界对 AI 代码审计的理解，我们可以推测其核心工作原理。
 
 AI 安全评估的多阶段架构：
 
-**Claude** Mythos 的安全评估不太可能是"把代码丢给 LLM 然后问有没有 bug"。更合理的架构是一个多阶段的 pipeline：
+Claude Mythos 的安全评估不太可能是"把代码丢给 LLM 然后问有没有 bug"。更合理的架构是一个多阶段的 pipeline：
 
 阶段 1：代码理解与知识图谱构建
 Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/JavaScript 代码）。这包括：
@@ -164,13 +164,13 @@ Mythos 首先需要理解整个 Firefox 代码库（约 1500 万行 C++/Rust/Jav
   },
   {
     title: "四、实战：构建你的 AI 辅助安全审计工具",
-    body: `虽然我们没有 **Claude** Mythos 的源码，但我们可以基于开源工具构建一个简易版的 AI 辅助安全审计系统。以下方案结合了静态分析和LLM 代码推理，适用于中小型项目的安全审计。
+    body: `虽然我们没有 Claude Mythos 的源码，但我们可以基于开源工具构建一个简易版的 AI 辅助安全审计系统。以下方案结合了静态分析和LLM 代码推理，适用于中小型项目的安全审计。
 
 整体方案：
 
 1. 使用 tree-sitter 解析代码为 AST（抽象语法树）
 2. 使用 CodeQL 进行基础静态分析
-3. 使用 LLM API（**Claude**/**OpenAI**）进行深度语义分析
+3. 使用 LLM API（Claude/OpenAI）进行深度语义分析
 4. 将分析结果聚合为审计报告
 
 步骤 1：环境准备
@@ -431,7 +431,7 @@ if __name__ == "__main__":
 
 发现效率对比：
 
-| 指标 | 传统人工审计 | **Claude** Mythos |
+| 指标 | 传统人工审计 | Claude Mythos |
 |------|------------|--------------|
 | Firefox 单版本漏洞发现数 | ~30-80 个 | 271 个 |
 | 评估时间 | 3-6 个月 | 数周（含修复） |
@@ -440,7 +440,7 @@ if __name__ == "__main__":
 | 发现新类型漏洞 | 偶发 | 系统性发现 |
 | 跨模块漏洞发现 | 有限 | 较强 |
 
-**Claude** Mythos 发现的漏洞类型分析：
+Claude Mythos 发现的漏洞类型分析：
 
 从已公开的 CVE 来看，Claude Mythos 团队发现的漏洞有几个显著特点：
 
@@ -482,7 +482,7 @@ Claude Mythos 在 Firefox 上的成功意味着：
   },
   {
     title: "六、开发者行动指南：如何应对 AI 安全时代",
-    body: `**Claude** Mythos 在 Firefox 上的成功是一个信号：AI 安全评估正在成为软件开发的标配。作为开发者，我们需要做好准备。
+    body: `Claude Mythos 在 Firefox 上的成功是一个信号：AI 安全评估正在成为软件开发的标配。作为开发者，我们需要做好准备。
 
 对于开源项目维护者：
 
@@ -498,7 +498,7 @@ Claude Mythos 在 Firefox 上的成功意味着：
 
 对于 AI 开发者：
 
-1. 安全是 AI 的核心能力：**Claude** Mythos 的成功证明了 AI 在安全领域的巨大潜力
+1. 安全是 AI 的核心能力：Claude Mythos 的成功证明了 AI 在安全领域的巨大潜力
 2. 关注可解释性：AI 发现的漏洞需要能够被人类理解和验证
 3. 持续改进：AI 安全工具本身也需要持续迭代和优化
 

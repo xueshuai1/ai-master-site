@@ -356,7 +356,7 @@ class BottomUpTopDown(nn.Module):
         },
         {
             title: "4. Transformer-based VQA",
-            body: `**Transformer** 架构凭借自注意力机制的强大表达能力，在 NLP 和 CV 领域都取得了突破性进展。在 VQA 领域，**Transformer** 的引入带来了两个维度的革新：一是用 Transformer 替代 LSTM 作为文本编码器，二是用 Vision Transformer（ViT）或 DETR 替代 CNN 作为视觉编码器。
+            body: `Transformer 架构凭借自注意力机制的强大表达能力，在 NLP 和 CV 领域都取得了突破性进展。在 VQA 领域，Transformer 的引入带来了两个维度的革新：一是用 Transformer 替代 LSTM 作为文本编码器，二是用 Vision Transformer（ViT）或 DETR 替代 CNN 作为视觉编码器。
 
 ViLT（Vision-and-Language Transformer） 是这一方向的代表性工作。它的核心思想极其简洁：将图像分割为固定大小的 patch，每个 patch 线性投影后加上位置嵌入，与文本 token 的嵌入拼接，然后直接送入标准的 Transformer 编码器。整个过程不需要 CNN 提取特征，也不需要目标检测器提取区域——是一种真正的端到端方案。
 
@@ -495,7 +495,7 @@ print(f"跨模态输出形状: {output.shape}")`
             title: "5. 多模态预训练：ViLBERT 与 LXMERT",
             body: `多模态预训练（Multimodal Pretraining）通过在海量的图文对数据上学习通用的跨模态表示，然后迁移到下游 VQA 等任务上微调，大幅提升了 VQA 模型的性能上限。这一范式类似于 BERT 在 NLP 领域的成功——先在大语料上预训练，再在下游任务上微调。
 
-ViLBERT（Vision-and-Language BERT） 采用双流架构：一个视觉 **Transformer** 处理图像区域特征，一个语言 **Transformer** 处理文本 token，两者通过 co-attentional transformer layer 定期交换信息。这种设计允许每个模态在独立的 Transformer 中充分建模自身特征，同时通过交叉注意力层实现模态间交互。
+ViLBERT（Vision-and-Language BERT） 采用双流架构：一个视觉 Transformer 处理图像区域特征，一个语言 Transformer 处理文本 token，两者通过 co-attentional transformer layer 定期交换信息。这种设计允许每个模态在独立的 Transformer 中充分建模自身特征，同时通过交叉注意力层实现模态间交互。
 
 LXMERT（Cross-modal Encoder with Vision and Language） 在 ViLBERT 基础上引入了三路架构：视觉编码器、语言编码器，以及专门的跨模态编码器。跨模态编码器将两个模态的特征同时输入，用全自注意力建模跨模态交互。LXMERT 的预训练目标包括掩码语言建模（MLM）、掩码区域建模（MRM）、视觉-语言匹配（VLM）等多任务学习。
 
@@ -711,11 +711,11 @@ class VQAEvaluator:
         },
         {
             title: "7. Transformers 实战：VQA 推理 Pipeline",
-            body: `本节通过 **HuggingFace** **Transformer**s 库构建一个完整的 VQA 推理 Pipeline。我们将使用 OFA（One For All）模型——一个统一的生成式多模态模型，能够处理 VQA、图像描述、视觉 grounding 等多种任务。OFA 的核心设计是将所有任务统一为序列到序列（Seq2Seq）的生成格式，使用 BART 架构同时处理视觉和文本输入。
+            body: `本节通过 HuggingFace Transformers 库构建一个完整的 VQA 推理 Pipeline。我们将使用 OFA（One For All）模型——一个统一的生成式多模态模型，能够处理 VQA、图像描述、视觉 grounding 等多种任务。OFA 的核心设计是将所有任务统一为序列到序列（Seq2Seq）的生成格式，使用 BART 架构同时处理视觉和文本输入。
 
 推理流程包含四个步骤：加载预训练模型和处理器、准备图像和问题输入、模型前向传播生成答案、后处理得到最终结果。整个过程只需要不到 20 行代码，但背后依赖的是在数亿图文对上预训练学到的跨模态理解能力。
 
-除了 OFA，我们还可以使用 BLIP-2 进行 VQA 推理。BLIP-2 的创新在于 Q-Former（Querying **Transformer**），它是一个轻量级的 Transformer 模块，负责从冻结的视觉编码器中提取与文本相关的特征，然后送入冻结的 LLM 生成答案。这种设计使得训练成本大幅降低，同时保留了 LLM 的强大生成能力。
+除了 OFA，我们还可以使用 BLIP-2 进行 VQA 推理。BLIP-2 的创新在于 Q-Former（Querying Transformer），它是一个轻量级的 Transformer 模块，负责从冻结的视觉编码器中提取与文本相关的特征，然后送入冻结的 LLM 生成答案。这种设计使得训练成本大幅降低，同时保留了 LLM 的强大生成能力。
 
 实际部署时，需要考虑模型大小与推理延迟的平衡：OFA-large 有 6.5 亿参数，在单张 V100 上推理耗时约 100ms/样本；而 BLIP-2 使用 OPT-2.7B 作为 LLM，参数量更大但可以通过量化和 distillation 压缩到可部署的规模。`,
             code: [

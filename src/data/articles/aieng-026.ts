@@ -25,7 +25,7 @@ export const article: Article = {
 当前市场格局可以按自主性程度分为两大类：
 
 - 辅助型工具（Copilot、Cursor 的编辑器模式）：AI 作为开发者的助手，提供代码建议和补全，开发者保留完全的控制权
-- Agentic 型工具（**Claude** Code、Codex CLI、**Grok** Build）：AI 作为独立的编码 Agent，能够自主完成完整任务，开发者充当审查者和指导者
+- Agentic 型工具（Claude Code、Codex CLI、Grok Build）：AI 作为独立的编码 Agent，能够自主完成完整任务，开发者充当审查者和指导者
 
 关键洞察：AI 编码工具正在从"让开发者写代码更快"转向"让 AI 代替开发者写代码"。这个范式转变正在深刻影响开发者的角色定义和软件工程的工作流程。`,
       tip: `学习建议： 理解 AI 编码工具的三个阶段，可以帮助你准确评估每个工具的定位。如果一个工具声称"强大"但只能做代码补全，那它仍处于第一阶段。评估工具时，要看它的自主编码能力——能否独立完成一个包含需求理解、代码编写、测试运行、Bug 修复的完整任务。`,
@@ -35,15 +35,15 @@ export const article: Article = {
       title: "二、架构原理：五大工具的技术路线对比",
       body: `五大主流 AI 编码工具的架构设计反映了各自实验室对"AI 如何最佳地辅助编程"这一核心问题的不同理解。
 
-**Claude** Code（**Anthropic**）：采用Agentic Loop架构，核心是推理-行动-观察（ReAct）的循环。**Claude** Code 运行在终端环境中，拥有对文件系统、Shell 命令和Git 仓库的完整访问权限。它的独特之处在于分层上下文管理——将项目代码分为当前关注区域、相关模块和全局架构三个层次，在保持高推理质量的同时处理大型代码库。Claude Code 使用Claude Sonnet 4作为默认模型，强调代码安全性和指令遵循的可靠性。
+Claude Code（Anthropic）：采用Agentic Loop架构，核心是推理-行动-观察（ReAct）的循环。Claude Code 运行在终端环境中，拥有对文件系统、Shell 命令和Git 仓库的完整访问权限。它的独特之处在于分层上下文管理——将项目代码分为当前关注区域、相关模块和全局架构三个层次，在保持高推理质量的同时处理大型代码库。Claude Code 使用Claude Sonnet 4作为默认模型，强调代码安全性和指令遵循的可靠性。
 
-**OpenAI** Codex CLI（**OpenAI**）：采用多 Agent 协作架构，由规划 Agent、编码 Agent和验证 Agent组成。规划 Agent 负责任务分解和执行策略制定，编码 Agent 负责具体代码实现，验证 Agent 负责运行测试和质量检查。Codex CLI 的浏览器扩展版本还增加了Web 环境交互能力，可以在已登录的网站中执行自动化任务。Codex 使用**GPT-5**.5 Instant模型，强调速度和推理深度的平衡。
+OpenAI Codex CLI（OpenAI）：采用多 Agent 协作架构，由规划 Agent、编码 Agent和验证 Agent组成。规划 Agent 负责任务分解和执行策略制定，编码 Agent 负责具体代码实现，验证 Agent 负责运行测试和质量检查。Codex CLI 的浏览器扩展版本还增加了Web 环境交互能力，可以在已登录的网站中执行自动化任务。Codex 使用GPT-5.5 Instant模型，强调速度和推理深度的平衡。
 
-GitHub Copilot（**Microsoft**/GitHub）：采用IDE 原生集成架构，作为编辑器插件直接嵌入 VS Code、JetBrains IDE 等开发环境。Copilot 的核心优势是深度的 IDE 集成——它能感知光标位置、当前打开的文件、项目符号、Git 状态等编辑器上下文。Copilot 使用**GPT-4**o作为底层模型，并针对代码补全场景做了专门优化。Copilot Workspace 版本开始向Agentic 模式演进，但仍以辅助模式为主。
+GitHub Copilot（Microsoft/GitHub）：采用IDE 原生集成架构，作为编辑器插件直接嵌入 VS Code、JetBrains IDE 等开发环境。Copilot 的核心优势是深度的 IDE 集成——它能感知光标位置、当前打开的文件、项目符号、Git 状态等编辑器上下文。Copilot 使用GPT-4o作为底层模型，并针对代码补全场景做了专门优化。Copilot Workspace 版本开始向Agentic 模式演进，但仍以辅助模式为主。
 
 Cursor（Anysphere）：采用AI 原生编辑器架构，不是一个插件，而是一个完整的代码编辑器。Cursor 的核心创新是代码库级索引（codebase indexing），它会对整个项目进行语义索引，使 AI 能够在任何代码位置快速检索相关上下文。Cursor 支持多模型切换（Claude、GPT、自研模型），并提供Agent 模式让 AI 自主执行多文件编辑。Cursor 的独特价值在于将AI 深度集成到编辑器的每一个交互中。
 
-**Grok** Build（**xAI**/**SpaceX**）：采用全自主编程 Agent架构（基于泄露信息）。**Grok** Build 的设计理念是最大化自主性——开发者只需描述需求，AI 负责从需求分析到代码部署的全流程。Grok Build 使用Grok 4模型，强调大规模代码生成能力和复杂系统架构理解能力。据泄露信息显示，Grok Build 在大型项目重构场景下表现突出，能够自主理解遗留代码并生成重构方案。
+Grok Build（xAI/SpaceX）：采用全自主编程 Agent架构（基于泄露信息）。Grok Build 的设计理念是最大化自主性——开发者只需描述需求，AI 负责从需求分析到代码部署的全流程。Grok Build 使用Grok 4模型，强调大规模代码生成能力和复杂系统架构理解能力。据泄露信息显示，Grok Build 在大型项目重构场景下表现突出，能够自主理解遗留代码并生成重构方案。
 
 架构对比的核心维度：
 
@@ -61,11 +61,11 @@ SWE-bench Verified 表现：
 
 这是目前最权威的真实 GitHub Issue 解决率基准测试。SWE-bench Verified 包含500+ 个真实开源项目的 Issue，要求 AI 工具自主读取代码、定位 Bug、编写修复代码、运行测试，完全模拟真实开发场景。
 
-- **Claude** Code：解决率约 71.7%，在Python 项目和TypeScript 项目上表现最佳。**Claude** Code 的优势在于代码理解深度——它能准确理解复杂架构模式和框架约定，减少误改无关代码的情况。
-- Codex CLI：解决率约 75.8%（基于 **GPT-5**.5 Instant），在大规模代码库上的表现优于 Claude Code。多 Agent 架构使其在需要并行处理多个文件的任务中具有显著优势。
+- Claude Code：解决率约 71.7%，在Python 项目和TypeScript 项目上表现最佳。Claude Code 的优势在于代码理解深度——它能准确理解复杂架构模式和框架约定，减少误改无关代码的情况。
+- Codex CLI：解决率约 75.8%（基于 GPT-5.5 Instant），在大规模代码库上的表现优于 Claude Code。多 Agent 架构使其在需要并行处理多个文件的任务中具有显著优势。
 - Cursor（Agent 模式）：解决率约 65-68%，在小型到中型项目上表现优秀，但在大型项目上的表现受限于索引质量和上下文窗口。
 - GitHub Copilot（Workspace 模式）：解决率约 55-60%，在代码补全和函数生成场景下表现最佳，但在跨文件复杂任务上的能力有限。
-- **Grok** Build：尚无公开 SWE-bench 数据（基于泄露信息推测约 65-70%），但在大型项目重构和遗留代码现代化场景下可能具有独特优势。
+- Grok Build：尚无公开 SWE-bench 数据（基于泄露信息推测约 65-70%），但在大型项目重构和遗留代码现代化场景下可能具有独特优势。
 
 代码质量评估：
 
@@ -106,15 +106,15 @@ IDE 集成深度：
 
 - GitHub Copilot：作为IDE 插件，Copilot 支持VS Code、JetBrains IDE（IntelliJ、PyCharm 等）、Vim/Neovim、Visual Studio、Xcode等几乎所有主流开发环境。它的集成深度是行业标杆——能在代码补全、内联对话、PR 描述生成等多个场景中提供无缝体验。Copilot 还支持GitHub Actions 集成，可以在 CI/CD 流水线中自动生成和审查代码。
 - Cursor：作为AI 原生编辑器，Cursor 基于 VS Code 构建，拥有原生级别的 AI 集成。Cursor 支持VS Code 插件生态，这意味着大部分 VS Code 扩展可以在 Cursor 中运行。Cursor 的独特优势是编辑器级别的 AI 功能——AI 可以直接操作编辑器状态、管理多个文件、执行终端命令，这些是插件架构无法实现的。
-- **Claude** Code：目前主要运行在终端环境中，通过命令行界面与开发者交互。虽然缺乏 GUI，但终端模式有其独特优势——轻量、可脚本化、易于集成到 CI/CD 流水线。**Anthropic** 正在开发IDE 插件版本，预计未来将支持VS Code 和 JetBrains IDE。
-- Codex CLI：同样运行在终端环境中，但 **OpenAI** 近期推出了Chrome 浏览器扩展，使其能够在Web 应用中执行任务。这一扩展使 Codex 成为目前唯一支持Web 环境自主操作的编码工具。
-- **Grok** Build：基于泄露信息，**Grok** Build 定位为独立的编程 Agent 平台，可能拥有独立的 Web 界面和API 接口。具体集成细节尚不明确。
+- Claude Code：目前主要运行在终端环境中，通过命令行界面与开发者交互。虽然缺乏 GUI，但终端模式有其独特优势——轻量、可脚本化、易于集成到 CI/CD 流水线。Anthropic 正在开发IDE 插件版本，预计未来将支持VS Code 和 JetBrains IDE。
+- Codex CLI：同样运行在终端环境中，但 OpenAI 近期推出了Chrome 浏览器扩展，使其能够在Web 应用中执行任务。这一扩展使 Codex 成为目前唯一支持Web 环境自主操作的编码工具。
+- Grok Build：基于泄露信息，Grok Build 定位为独立的编程 Agent 平台，可能拥有独立的 Web 界面和API 接口。具体集成细节尚不明确。
 
 插件与扩展生态：
 
 - Copilot：拥有最丰富的插件生态，支持自定义 Prompt 模板、团队代码风格配置、领域特定语言支持等。企业可以定义组织级别的编码规范，Copilot 会自动遵循这些规范。
 - Cursor：支持自定义规则文件（.cursorrules），开发者可以为每个项目定义AI 行为规则。社区正在形成规则模板共享生态。
-- **Claude** Code：支持CLAUDE.md配置文件，开发者可以在项目根目录放置该文件，定义项目特定的编码规范和AI 行为指南。
+- Claude Code：支持CLAUDE.md配置文件，开发者可以在项目根目录放置该文件，定义项目特定的编码规范和AI 行为指南。
 - Codex CLI：支持自定义 Agent 配置，开发者可以定义规划 Agent、编码 Agent和验证 Agent的行为策略。
 - Grok Build：生态信息有限，可能支持自定义指令和项目配置。
 
@@ -143,9 +143,9 @@ AI 生成的代码可能包含多种安全风险：
 Agentic 编码工具可以自主执行操作，这带来了新的安全维度：
 
 - 文件系统安全：工具是否会意外删除文件、修改不应修改的代码、覆盖重要配置。Claude Code 在每次破坏性操作前都需要用户确认，这是其安全性领先的关键设计。
-- Shell 命令安全：工具是否会执行危险命令（如 \`rm -rf\`、格式化磁盘等）。**Claude** Code 和 Codex CLI 都维护了一个危险命令黑名单，执行这些命令需要额外的用户授权。
+- Shell 命令安全：工具是否会执行危险命令（如 \`rm -rf\`、格式化磁盘等）。Claude Code 和 Codex CLI 都维护了一个危险命令黑名单，执行这些命令需要额外的用户授权。
 - 网络请求安全：工具是否会发送敏感数据到外部服务。Claude Code 默认禁止网络请求，除非开发者明确允许。Codex CLI 的浏览器扩展需要显式授权才能访问网站。
-- Git 操作安全：工具是否会提交包含敏感信息的代码、强制推送覆盖远程分支。**Claude** Code 在提交前会进行敏感信息扫描，检测API Key、密码等敏感内容。
+- Git 操作安全：工具是否会提交包含敏感信息的代码、强制推送覆盖远程分支。Claude Code 在提交前会进行敏感信息扫描，检测API Key、密码等敏感内容。
 
 可控性设计对比：
 
@@ -153,7 +153,7 @@ Agentic 编码工具可以自主执行操作，这带来了新的安全维度：
 - Codex CLI：采用角色分离模型——规划 Agent 制定方案，编码 Agent 执行，验证 Agent 检查，三者的权限相互隔离。任何 Agent 都无法越权操作。
 - Cursor：采用用户监督模型——AI 的操作实时可见，开发者可以随时中断或回滚AI 的操作。
 - Copilot：采用建议模式——AI 只提供建议，所有代码变更都需要开发者手动接受。
-- **Grok** Build：基于泄露信息，采用全自主模式，但具体安全机制尚不明确。`,
+- Grok Build：基于泄露信息，采用全自主模式，但具体安全机制尚不明确。`,
     },
     {
       title: "五、代码示例：AI 编码工具配置与实战",
@@ -161,7 +161,7 @@ Agentic 编码工具可以自主执行操作，这带来了新的安全维度：
 
 示例一：Claude Code 的 CLAUDE.md 项目配置
 
-CLAUDE.md 是 **Claude** Code 的项目级配置文件，放在项目根目录下，用于定义AI 在该项目中的行为规则：
+CLAUDE.md 是 Claude Code 的项目级配置文件，放在项目根目录下，用于定义AI 在该项目中的行为规则：
 
 \`\`\`markdown
 # CLAUDE.md — 项目 AI 编码规范
@@ -365,15 +365,15 @@ validator:
 
 - GitHub Copilot：$10/月（个人版），$19/月（Pro 版，包含更多模型和更高使用量）。Copilot 的优势在于性价比高——作为 GitHub 生态系统的一部分，它可以直接使用你的GitHub 账号，无需额外注册。
 - Cursor：$20/月（Pro 版），提供无限次 AI 补全和每月 500 次高级模型请求。Cursor 的定价策略聚焦于重度 AI 用户——如果你每天大量使用 AI 辅助编码，$20/月的成本是合理的投资。
-- **Claude** Code：按API 调用量计费，使用 **Claude** Sonnet 4模型的编码场景。**Anthropic** 提供免费额度（每月一定数量的请求），超出部分按token 用量计费。预估月使用量约 $10-30/月（中等使用强度）。
-- Codex CLI：免费（**OpenAI** 提供），但需要API 访问权限。使用 **GPT-5**.5 Instant 模型的费用取决于token 用量。**OpenAI** 可能在未来推出付费订阅版。
-- **Grok** Build：定价信息尚未公开，可能作为 **xAI** 生态系统的一部分提供。
+- Claude Code：按API 调用量计费，使用 Claude Sonnet 4模型的编码场景。Anthropic 提供免费额度（每月一定数量的请求），超出部分按token 用量计费。预估月使用量约 $10-30/月（中等使用强度）。
+- Codex CLI：免费（OpenAI 提供），但需要API 访问权限。使用 GPT-5.5 Instant 模型的费用取决于token 用量。OpenAI 可能在未来推出付费订阅版。
+- Grok Build：定价信息尚未公开，可能作为 xAI 生态系统的一部分提供。
 
 企业定价：
 
 - GitHub Copilot Business：$39/用户/月，提供企业级安全、策略管理、使用量分析和优先支持。Copilot Enterprise 版本还包括代码库级别的自定义训练。
 - Cursor Business：$40/用户/月，提供SSO/SAML、审计日志、私有化部署选项和团队管理控制台。
-- Claude Code Enterprise：定价基于使用量和企业级别的服务协议。**Anthropic** 提供定制化的企业方案，包括私有化部署和专属支持。
+- Claude Code Enterprise：定价基于使用量和企业级别的服务协议。Anthropic 提供定制化的企业方案，包括私有化部署和专属支持。
 - Codex Enterprise：OpenAI 的企业 API 定价，按token 用量计费，提供SLA 保障和专属支持。
 
 免费方案：
@@ -382,7 +382,7 @@ validator:
 - Cursor：提供基础免费版（有限的高级模型请求次数）。
 - Claude Code：提供免费 API 额度，适合轻度使用和评估测试。
 - Codex CLI：目前完全免费。
-- **Grok** Build：未知。
+- Grok Build：未知。
 
 性价比分析：
 
@@ -396,7 +396,7 @@ validator:
 
 按团队规模选择：
 
-- 个人开发者（1 人）：推荐 Cursor 或 **Claude** Code。Cursor 提供最佳开发体验——AI 原生编辑器让你可以无缝切换手动编码和 AI 辅助编码。**Claude** Code 适合终端偏好者和安全敏感项目。
+- 个人开发者（1 人）：推荐 Cursor 或 Claude Code。Cursor 提供最佳开发体验——AI 原生编辑器让你可以无缝切换手动编码和 AI 辅助编码。Claude Code 适合终端偏好者和安全敏感项目。
 - 小型团队（2-10 人）：推荐 GitHub Copilot Business 或 Cursor Business。Copilot 的团队管理功能和统一的编码规范配置使其在团队协作场景下具有优势。Cursor Business 则提供更好的 AI 编码能力。
 - 中型企业（10-100 人）：推荐 GitHub Copilot Enterprise + Claude Code的混合方案。Copilot 用于日常编码辅助，Claude Code 用于复杂任务和代码审查。
 - 大型企业（100+ 人）：推荐 GitHub Copilot Enterprise作为基础平台，配合Claude Code用于安全敏感项目，以及 Codex CLI用于自动化任务。

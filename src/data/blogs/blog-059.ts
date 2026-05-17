@@ -12,7 +12,7 @@ const blog: BlogPost = {
   content: [
   {
     title: "引言：OpenAI 首次发布模型级 Prompting Guide",
-    body: `2026 年 4 月 23 日，**OpenAI** 在发布 **GPT-5**.5 的同时，同步推出了一份前所未有的文档——**GPT-5**.5 Prompting Guide。这是 **OpenAI** 历史上首次为单个模型发布如此系统、深入的调优指南。
+    body: `2026 年 4 月 23 日，OpenAI 在发布 GPT-5.5 的同时，同步推出了一份前所未有的文档——GPT-5.5 Prompting Guide。这是 OpenAI 历史上首次为单个模型发布如此系统、深入的调优指南。
 
 这份指南开篇就定下基调：
 
@@ -119,7 +119,7 @@ print(result.choices[0].message.content[:500])`
   },
   {
     title: "二、verbosity 参数：精确控制输出详细度",
-    body: `**GPT-5**.5 引入了一个全新的参数：verbosity（详细度），用于精确控制模型输出的详细程度。这是 **OpenAI** 对开发者长期反馈的回应——很多时候我们不需要模型输出大量冗余的解释文字。
+    body: `GPT-5.5 引入了一个全新的参数：verbosity（详细度），用于精确控制模型输出的详细程度。这是 OpenAI 对开发者长期反馈的回应——很多时候我们不需要模型输出大量冗余的解释文字。
 
 verbosity 有三个可选值：
 - low：简洁输出，直奔主题，适合 API 调用和程序化处理
@@ -198,7 +198,7 @@ for r in results:
   },
   {
     title: "三、多步任务 UX 优化：工具调用前的可见更新",
-    body: `**GPT-5**.5 在 Codex 等需要多步推理的应用中表现更强，但也意味着用户等待时间更长。官方指南提出了一个简单但实用的 UX 改进建议：
+    body: `GPT-5.5 在 Codex 等需要多步推理的应用中表现更强，但也意味着用户等待时间更长。官方指南提出了一个简单但实用的 UX 改进建议：
 
 > "Before any tool calls for a multi-step task, send a short user-visible update that acknowledges the request and states the first step. Keep it to one or two sentences."
 
@@ -293,7 +293,7 @@ asyncio.run(main())`
   },
   {
     title: "四、image_detail 参数：控制图像输入精度",
-    body: `**GPT-5**.4 和 **GPT-5**.5 进一步扩展了 \`image_detail\` 参数，新增了 "original" 选项。这个参数控制图像输入的处理精度，直接影响 token 消耗和处理速度。
+    body: `GPT-5.4 和 GPT-5.5 进一步扩展了 \`image_detail\` 参数，新增了 "original" 选项。这个参数控制图像输入的处理精度，直接影响 token 消耗和处理速度。
 
 可选值：
 - low：低精度，快速处理，适合简单图像识别
@@ -380,7 +380,7 @@ for detail, r in results.items():
   },
   {
     title: "五、系统提示词精简原则",
-    body: `**GPT-5**.5 对系统提示词的处理方式有一个重要变化：它更偏好简洁、精准的系统提示词，对冗长复杂的系统指令反而会产生反效果。
+    body: `GPT-5.5 对系统提示词的处理方式有一个重要变化：它更偏好简洁、精准的系统提示词，对冗长复杂的系统指令反而会产生反效果。
 
 官方指南明确指出：GPT-5.5 在理解简短系统提示词时表现更好，过长的系统提示词可能会导致模型注意力分散，忽略关键指令。
 
@@ -472,7 +472,7 @@ print(f"预览: {concise_result['content'][:200]}...")`
   },
   {
     title: "六、工具描述优化：精确结构化定义",
-    body: `**GPT-5**.5 在工具使用能力上更强，但同时也要求更精确的工具描述。官方指南强调：
+    body: `GPT-5.5 在工具使用能力上更强，但同时也要求更精确的工具描述。官方指南强调：
 
 工具描述需要：
 - 精确描述每个工具的功能和适用场景
@@ -480,7 +480,7 @@ print(f"预览: {concise_result['content'][:200]}...")`
 - 提供清晰的示例说明何时使用该工具
 - 避免模糊的、开放式的描述
 
-模糊的工具描述会导致 **GPT-5**.5 在工具选择上出现不确定性，而精确的结构化描述能显著提升工具调用的准确率。`,
+模糊的工具描述会导致 GPT-5.5 在工具选择上出现不确定性，而精确的结构化描述能显著提升工具调用的准确率。`,
     table: {
       headers: ["要素", "模糊描述（❌）", "精确描述（✅）"],
       rows: [
@@ -585,7 +585,7 @@ if response.choices[0].message.tool_calls:
   },
   {
     title: "七、自动化迁移检查脚本",
-    body: `为了帮助开发者高效完成从 **GPT-5**.x 到 **GPT-5**.5 的迁移，我编写了一个完整的自动化迁移检查脚本。这个脚本会：
+    body: `为了帮助开发者高效完成从 GPT-5.x 到 GPT-5.5 的迁移，我编写了一个完整的自动化迁移检查脚本。这个脚本会：
 
 1. 扫描现有 prompt：分析当前使用的 prompt 是否符合 GPT-5.5 的最佳实践
 2. 检测冗余指令：找出可能过时或冗余的系统提示词内容
@@ -783,7 +783,7 @@ if __name__ == "__main__":
   },
   {
     title: "总结：GPT-5.5 Prompt 调优核心要点",
-    body: `**GPT-5**.5 的官方 Prompting Guide 标志着大模型调优进入了一个新阶段——从通用模板到专用调优。
+    body: `GPT-5.5 的官方 Prompting Guide 标志着大模型调优进入了一个新阶段——从通用模板到专用调优。
 
 六条核心原则回顾：
 
@@ -802,7 +802,7 @@ if __name__ == "__main__":
 - [ ] 在代表性数据集上验证迁移效果
 - [ ] 监控 token 消耗变化
 
-**GPT-5**.5 不是 GPT-5.4 的简单升级版，而是一个需要重新调优的模型家族。投入时间做好迁移工作，你将在输出质量、速度和成本上获得显著回报。`,
+GPT-5.5 不是 GPT-5.4 的简单升级版，而是一个需要重新调优的模型家族。投入时间做好迁移工作，你将在输出质量、速度和成本上获得显著回报。`,
     tip: `延伸阅读：
 - [OpenAI GPT-5.5 官方 Prompting Guide](https://developers.openai.com/api/docs/guides/prompt-guidance?model=gpt-5.5)
 - [Simon Willison 博客解读](https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/)

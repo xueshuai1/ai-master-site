@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "1. 为什么 AI Agent 的调试如此困难？",
-      body: `2026 年，AI Agent 已经从实验性原型走向生产环境。**Claude** Code、**OpenAI** Codex、n8n Agent 等工具每天都在处理真实业务。但 Agent 的调试难度远超传统软件——这不是夸大，而是由 Agent 的本质特性决定的：
+      body: `2026 年，AI Agent 已经从实验性原型走向生产环境。Claude Code、OpenAI Codex、n8n Agent 等工具每天都在处理真实业务。但 Agent 的调试难度远超传统软件——这不是夸大，而是由 Agent 的本质特性决定的：
 
 非确定性（Non-determinism）：相同的输入可能产生不同的输出，因为 LLM 的采样机制引入了随机性。一个 Bug 可能只在特定随机种子下复现，这让传统「复现→定位→修复」的调试流程完全失效。
 
@@ -128,17 +128,17 @@ Agent 评估需要解决三个核心问题：
       table: {
         headers: ["框架", "核心定位", "适合场景", "价格"],
         rows: [
-          ["**LangSmith**", "LangChain 生态的官方观测平台", "使用 LangChain/LangGraph 的项目", "免费 50K traces/月，付费 $39+/月"],
-          ["**Arize Phoenix**", "开源 LLM 评估和追踪", "需要自定义评估 Pipeline 的团队", "完全免费开源"],
-          ["**Helicone**", "LLM API 代理层观测", "多模型切换、成本控制", "免费 10K requests/月"],
-          ["**MLflow**", "传统 ML 可观测性扩展", "已有 MLflow 基础设施的团队", "完全免费开源"],
-          ["**Langfuse**", "开源替代 LangSmith", "自托管需求、数据隐私要求高", "完全免费开源"],
+          ["LangSmith", "LangChain 生态的官方观测平台", "使用 LangChain/LangGraph 的项目", "免费 50K traces/月，付费 $39+/月"],
+          ["Arize Phoenix", "开源 LLM 评估和追踪", "需要自定义评估 Pipeline 的团队", "完全免费开源"],
+          ["Helicone", "LLM API 代理层观测", "多模型切换、成本控制", "免费 10K requests/月"],
+          ["MLflow", "传统 ML 可观测性扩展", "已有 MLflow 基础设施的团队", "完全免费开源"],
+          ["Langfuse", "开源替代 LangSmith", "自托管需求、数据隐私要求高", "完全免费开源"],
         ],
       },
     },
     {
       title: "4. 实战：用 LangSmith 实现生产级 Agent 追踪",
-      body: `LangSmith 是目前最成熟的 Agent 可观测性方案，与 **LangChain**/**LangGraph** 深度集成。以下是一个完整的生产级 Agent 追踪示例：`,
+      body: `LangSmith 是目前最成熟的 Agent 可观测性方案，与 LangChain/LangGraph 深度集成。以下是一个完整的生产级 Agent 追踪示例：`,
       code: [
         {
           lang: "python",

@@ -14,7 +14,7 @@ export const article: Article = {
         title: "1. Agent 框架生态概览：为什么需要框架？",
         body: `大语言模型本身只提供"文本补全"能力，要构建一个能自主完成任务的智能体，需要围绕 LLM 搭建完整的系统：状态管理、工具调用、记忆、多步规划、错误处理、多 Agent 协作。手写这些基础设施极其耗时，因此 Agent 框架应运而生。
 
-2024 到 2026 年，Agent 框架经历了爆发式增长。主流框架可以分为三大流派：**LangChain** 生态派（**LangChain** + **LangGraph**）强调"从链到图"的渐进升级；多 Agent 协作派（**CrewAI**、**AutoGen**）专注于让多个智能体协同工作；以及轻量极简派（如 SmolAgent、**LlamaIndex** Agent）追求最小抽象、最大控制力。
+2024 到 2026 年，Agent 框架经历了爆发式增长。主流框架可以分为三大流派：LangChain 生态派（LangChain + LangGraph）强调"从链到图"的渐进升级；多 Agent 协作派（CrewAI、AutoGen）专注于让多个智能体协同工作；以及轻量极简派（如 SmolAgent、LlamaIndex Agent）追求最小抽象、最大控制力。
 
 选择框架时需要考虑：你的任务是线性流程还是复杂图结构？需要几个 Agent？对调试可观测性的要求有多高？社区支持和文档质量如何？本文将从架构原理、代码风格、扩展能力和生产成熟度四个维度，深入对比 LangGraph、CrewAI 和 AutoGen 三大框架。`,
         code: [

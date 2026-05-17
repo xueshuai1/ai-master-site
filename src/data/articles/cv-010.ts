@@ -320,11 +320,11 @@ print(f"Flow shape: {flow_stacked.shape}")  # (20, 224, 224)`,
     },
     {
       title: "4. 时序建模：TCN 与 Video Transformer",
-      body: `3D CNN 和 Two-Stream 虽然有效，但它们本质上是隐式地处理时序信息。随着 NLP 领域 **Transformer** 的成功，研究者开始探索更直接的时序建模方法。
+      body: `3D CNN 和 Two-Stream 虽然有效，但它们本质上是隐式地处理时序信息。随着 NLP 领域 Transformer 的成功，研究者开始探索更直接的时序建模方法。
 
 时间卷积网络（Temporal Convolutional Network, TCN） 使用 1D 因果卷积在时间维度上建模。它的优势是并行计算能力强于 RNN，且通过膨胀卷积可以捕获长程依赖。在视频理解中，TCN 通常接在每帧的空间特征提取器之后，对帧级特征序列进行时序建模。
 
-Video **Transformer** 将 Transformer 架构引入视频理解。核心思路是将视频分割为时空 Patch（spatiotemporal patches），然后通过自注意力机制建模全局的时空依赖。TimeSformer 提出了一种高效方案：先在空间维度做自注意力，再在时间维度做自注意力，将计算复杂度从 O((T×S)²) 降低到 O(T² + S²)，其中 T 是帧数、S 是每帧的 patch 数。Video Swin Transformer 则进一步引入了层次化特征和移位窗口机制，在多个视频理解基准上取得了 SOTA 结果。`,
+Video Transformer 将 Transformer 架构引入视频理解。核心思路是将视频分割为时空 Patch（spatiotemporal patches），然后通过自注意力机制建模全局的时空依赖。TimeSformer 提出了一种高效方案：先在空间维度做自注意力，再在时间维度做自注意力，将计算复杂度从 O((T×S)²) 降低到 O(T² + S²)，其中 T 是帧数、S 是每帧的 patch 数。Video Swin Transformer 则进一步引入了层次化特征和移位窗口机制，在多个视频理解基准上取得了 SOTA 结果。`,
       code: [
         {
           lang: "python",
@@ -452,7 +452,7 @@ class TimeSformerAttention(nn.Module):
 
 UCF101 是最经典的视频动作识别数据集之一，包含 101 个动作类别、13,320 个视频片段，来自 YouTube 用户上传的真实视频。每个视频约 5-10 秒，动作类别涵盖体育运动、日常活动、乐器演奏等。UCF101 的优点是规模适中、标注质量高，常用于算法快速验证和论文对比。但它的缺点是类别偏少、场景较为单一，训练出的模型泛化能力有限。
 
-Kinetics 是 DeepMind 推出的大规模视频数据集，目前有 Kinetics-400/600/700 等多个版本。Kinetics-400 包含约 24 万个训练视频和 2 万个验证视频，覆盖 400 个动作类别。每个视频约 10 秒，来自 YouTube 搜索。Kinetics 的规模使得训练大规模模型（如 I3D、Video **Transformer**）成为可能，预训练后的 Kinetics 权重已经成为视频理解领域的标准初始化方式，相当于 ImageNet 在图像分类中的地位。
+Kinetics 是 DeepMind 推出的大规模视频数据集，目前有 Kinetics-400/600/700 等多个版本。Kinetics-400 包含约 24 万个训练视频和 2 万个验证视频，覆盖 400 个动作类别。每个视频约 10 秒，来自 YouTube 搜索。Kinetics 的规模使得训练大规模模型（如 I3D、Video Transformer）成为可能，预训练后的 Kinetics 权重已经成为视频理解领域的标准初始化方式，相当于 ImageNet 在图像分类中的地位。
 
 除了这两个主流数据集，还有 ActivityNet（时序动作定位）、HMDB51（51 类，6,766 个视频）等辅助基准。`,
       code: [

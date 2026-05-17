@@ -43,7 +43,7 @@ content: [
 
 三个技术条件同时成熟：
 
-1. Agent SDK 的标准化：**OpenAI** Agents Python、MCP 协议等提供了标准化的 Agent 构建框架，降低了进化引擎的集成门槛
+1. Agent SDK 的标准化：OpenAI Agents Python、MCP 协议等提供了标准化的 Agent 构建框架，降低了进化引擎的集成门槛
 2. 上下文压缩与检索的成熟：claude-mem（65,855⭐）等项目证明了 AI 驱动的上下文压缩和注入是可行的
 3. 计算成本的下降：进化算法需要大量的评估循环，随着推理成本降低，这在经济上变得可行
 

@@ -20,7 +20,7 @@ AI Agent = LLM + 自主规划 + 工具调用 + 记忆
 - LLM 是一个聪明的顾问（给你建议）
 - Agent 是一个能干的员工（帮你干活）
 
-2026 年，AI Agent 已经成为最热门的开发方向。**Claude Code**、Cursor、Devin、Manus……这些都是 Agent 产品。它们之所以强大，不是因为模型本身多聪明，而是因为Agent 架构让 LLM 具备了自主行动的能力。
+2026 年，AI Agent 已经成为最热门的开发方向。Claude Code、Cursor、Devin、Manus……这些都是 Agent 产品。它们之所以强大，不是因为模型本身多聪明，而是因为Agent 架构让 LLM 具备了自主行动的能力。
 
 ### 传统应用 vs Agent 应用
 
@@ -71,7 +71,7 @@ Agent 需要保持上下文，否则每次交互都是"失忆"状态。记忆分
 ### 1.4 工具执行模块（Tool Execution）
 
 Agent 通过工具调用来改变外部世界。核心能力包括：
-- **Function Calling**：LLM 输出结构化函数调用
+- Function Calling：LLM 输出结构化函数调用
 - MCP 协议：Model Context Protocol，标准化的工具接入方式
 - 代码执行：在沙箱中运行 Python/Node.js 代码`,
             mermaid: `graph TD
@@ -103,7 +103,7 @@ Agent 通过工具调用来改变外部世界。核心能力包括：
 
 ### 第一阶段：Function Calling（基础）
 
-**Function Calling** 是让 LLM 输出结构化 JSON 描述「我要调用哪个函数、传什么参数」。这是最基础的工具调用方式。
+Function Calling 是让 LLM 输出结构化 JSON 描述「我要调用哪个函数、传什么参数」。这是最基础的工具调用方式。
 
 关键要点：
 - 工具描述要精准：LLM 靠工具的名称和描述决定调用哪个
@@ -112,7 +112,7 @@ Agent 通过工具调用来改变外部世界。核心能力包括：
 
 ### 第二阶段：MCP 协议（进阶）
 
-**Model Context Protocol**（模型上下文协议）是 Anthropic 提出的标准化工具接入协议。它解决了 Function Calling 的核心痛点：每个应用都要重新定义工具接口。
+Model Context Protocol（模型上下文协议）是 Anthropic 提出的标准化工具接入协议。它解决了 Function Calling 的核心痛点：每个应用都要重新定义工具接口。
 
 MCP 的核心优势：
 - 统一接口：一次实现，多个 LLM 都能用

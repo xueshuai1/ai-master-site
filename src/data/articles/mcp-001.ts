@@ -52,7 +52,7 @@ MCP 的目标很简单但影响深远：
 ### 三层职责
 
 1. Host（宿主应用）
-- 运行 LLM 的应用程序（**Claude** Desktop、Cursor、VS Code 等）
+- 运行 LLM 的应用程序（Claude Desktop、Cursor、VS Code 等）
 - 负责管理多个 MCP Client
 - 处理用户界面和交互流程
 
@@ -184,9 +184,9 @@ MCP 基于 JSON-RPC 2.0 协议，所有通信通过标准 JSON 格式：
 
 ### 安装依赖
 ### 完整实现
-### 配置 **Claude** Desktop 使用此 MCP Server
+### 配置 Claude Desktop 使用此 MCP Server
 
-在终端运行 \`pip install mcp\` 安装 MCP SDK，然后在 **Claude** Desktop 的配置文件中（\`~/Library/Application Support/Claude/claude_desktop_config.json\`）：
+在终端运行 \`pip install mcp\` 安装 MCP SDK，然后在 Claude Desktop 的配置文件中（\`~/Library/Application Support/Claude/claude_desktop_config.json\`）：
 重启 Claude Desktop 后，Agent 就能自动发现并使用这些工具了！`,
     code: [
       {
@@ -401,19 +401,19 @@ if __name__ == "__main__":
     },
     {
       title: "MCP 在 2026 的生态现状",
-      body: `MCP 自 2024 年底由 **Anthropic** 提出以来，已经形成了庞大的生态系统：
+      body: `MCP 自 2024 年底由 Anthropic 提出以来，已经形成了庞大的生态系统：
 
 ### 主要参与者
 
 | 类别 | 项目 | 描述 | Stars |
 |------|------|------|-------|
-| 协议标准 | MCP Specification | **Anthropic** 官方协议规范 | 25K+ |
+| 协议标准 | MCP Specification | Anthropic 官方协议规范 | 25K+ |
 | Python SDK | mcp (Python) | 官方 Python SDK | 15K+ |
 | TypeScript SDK | @modelcontextprotocol/sdk | 官方 TS SDK | 20K+ |
-| **Claude** Desktop | **Claude** Desktop MCP | Claude 原生 MCP 支持 | 内置 |
+| Claude Desktop | Claude Desktop MCP | Claude 原生 MCP 支持 | 内置 |
 | Cursor | Cursor MCP | Cursor IDE 集成 | 内置 |
 | n8n | n8n MCP | 工作流自动化 MCP | 184K |
-| **LangChain** | **LangChain** MCP | 框架级 MCP 支持 | 90K+ |
+| LangChain | LangChain MCP | 框架级 MCP 支持 | 90K+ |
 | 社区 Server | various | 数据库、Git、Slack 等 | 快速增长 |
 
 ### 热门 MCP Server 类型
@@ -651,10 +651,10 @@ if __name__ == "__main__":
     },
     {
       title: "MCP vs 其他 Agent 工具方案的全面对比",
-      body: `| 维度 | MCP | **LangChain** Tools | **OpenAI** Function Calling | AutoGPT Tools |
+      body: `| 维度 | MCP | LangChain Tools | OpenAI Function Calling | AutoGPT Tools |
 |------|-----|-----------------|------------------------|---------------|
-| 标准化程度 | ⭐⭐⭐⭐⭐ 协议标准 | ⭐⭐⭐ 框架内标准 | ⭐⭐⭐⭐ **OpenAI** 生态 | ⭐⭐ 自定义格式 |
-| 跨框架兼容 | ✅ 所有 MCP 客户端 | ❌ 仅 **LangChain** | ❌ 仅 OpenAI 模型 | ❌ 仅 AutoGPT |
+| 标准化程度 | ⭐⭐⭐⭐⭐ 协议标准 | ⭐⭐⭐ 框架内标准 | ⭐⭐⭐⭐ OpenAI 生态 | ⭐⭐ 自定义格式 |
+| 跨框架兼容 | ✅ 所有 MCP 客户端 | ❌ 仅 LangChain | ❌ 仅 OpenAI 模型 | ❌ 仅 AutoGPT |
 | 安全模型 | ✅ 协议层安全 | ⚠️ 依赖框架实现 | ⚠️ 模型层有限控制 | ❌ 基本无安全层 |
 | 能力发现 | ✅ 自动 Discovery | ⚠️ 手动注册 | ✅ 自动发现 | ⚠️ 部分自动 |
 | 远程部署 | ✅ SSE/WebSocket | ⚠️ 需要额外配置 | ❌ 仅本地 | ❌ 仅本地 |

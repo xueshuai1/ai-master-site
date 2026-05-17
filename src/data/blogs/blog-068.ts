@@ -14,7 +14,7 @@ export const blog: BlogPost = {
 content: [
     {
       title: "一、Claude Code：2026 年 AI 编程的「基础设施」",
-      body: `**Claude** Code 是 **Anthropic** 推出的终端 AI 编程助手，它让开发者可以通过自然语言指令在终端中完成代码编写、修改、调试和重构。到 2026 年 4 月，**Claude** Code 已经从「实验性工具」成长为全球开发者的日常编程基础设施。
+      body: `Claude Code 是 Anthropic 推出的终端 AI 编程助手，它让开发者可以通过自然语言指令在终端中完成代码编写、修改、调试和重构。到 2026 年 4 月，Claude Code 已经从「实验性工具」成长为全球开发者的日常编程基础设施。
 
 它的核心价值在于：
 
@@ -58,20 +58,20 @@ content: [
     },
     {
       title: "二、Harness vs Model：Claude Code 问题的本质",
-      body: `要理解 **Claude** Code 的生态系统，必须先理解一个核心概念区分：Harness（编排层）与 Model（模型层）。
+      body: `要理解 Claude Code 的生态系统，必须先理解一个核心概念区分：Harness（编排层）与 Model（模型层）。
 
 什么是 Harness？
 
-**Claude** Code 不是一个单纯的「模型调用」。它是一个完整的编排系统，包含：
+Claude Code 不是一个单纯的「模型调用」。它是一个完整的编排系统，包含：
 - 会话状态管理（维护对话历史、文件上下文）
 - 工具调用编排（决定何时读取文件、写文件、运行命令）
 - 上下文窗口管理（哪些信息放入 prompt，哪些截断）
 - 安全策略（确认机制、敏感操作拦截）
 - 记忆管理（跨会话持久化、经验积累）
 
-2026 年 4 月 **Anthropic** Postmortem 的核心发现：问题在 Harness，不在 Model。
+2026 年 4 月 Anthropic Postmortem 的核心发现：问题在 Harness，不在 Model。
 
-**Anthropic** 在其 [April 23 Postmortem](https://www.anthropic.com/engineering/april-23-postmortem) 中明确指出，用户对 Claude Code 质量下降的投诉源于三个 Harness 层 bug：
+Anthropic 在其 [April 23 Postmortem](https://www.anthropic.com/engineering/april-23-postmortem) 中明确指出，用户对 Claude Code 质量下降的投诉源于三个 Harness 层 bug：
 
 | Bug | 影响 | 根因 |
 |-----|------|------|
@@ -85,9 +85,9 @@ content: [
     },
     {
       title: "三、记忆系统生态：给 Claude Code 装上「持久记忆」",
-      body: `**Claude** Code 原生设计的对话是「无状态」的——每次会话结束后，之前的交互内容不会自动保留。这在简单任务中不是问题，但在长期项目开发中，缺乏记忆会严重影响效率。
+      body: `Claude Code 原生设计的对话是「无状态」的——每次会话结束后，之前的交互内容不会自动保留。这在简单任务中不是问题，但在长期项目开发中，缺乏记忆会严重影响效率。
 
-2026 年，围绕 **Claude** Code 的记忆系统形成了一个快速发展的生态。
+2026 年，围绕 Claude Code 的记忆系统形成了一个快速发展的生态。
 
 3.1 claude-mem：自动记忆引擎（67K+ stars）
 
@@ -387,7 +387,7 @@ print(manager.get_context_summary())`
     },
     {
       title: "四、上下文管理生态：让 Claude Code 看得更全、想得更准",
-      body: `**Claude** Code 的核心能力之一是理解整个代码库，但上下文窗口有限。如何在有限的 token 预算下，让 **Claude** 看到最相关的代码，是上下文管理的核心挑战。
+      body: `Claude Code 的核心能力之一是理解整个代码库，但上下文窗口有限。如何在有限的 token 预算下，让 Claude 看到最相关的代码，是上下文管理的核心挑战。
 
 4.1 claude-context：代码搜索 MCP 服务（9K+ stars）
 
@@ -429,7 +429,7 @@ CLAUDE.md 是 Claude Code 特有的项目配置文件，放在项目根目录。
     },
     {
       title: "五、Claude Code 质量保障：从 Postmortem 到生产级实践",
-      body: `**Anthropic** 的 April 23 Postmortem 揭示了 **Claude** Code 质量问题的深层原因。基于这份报告和社区经验，我们总结了 **Claude** Code 质量保障的核心策略。
+      body: `Anthropic 的 April 23 Postmortem 揭示了 Claude Code 质量问题的深层原因。基于这份报告和社区经验，我们总结了 Claude Code 质量保障的核心策略。
 
 5.1 Harness 层质量保障
 
@@ -594,7 +594,7 @@ else:
     },
     {
       title: "六、Claude Code 生态项目全景对比",
-      body: `2026 年围绕 **Claude** Code 形成了多个热门项目，它们各自解决不同的问题。以下是对生态中主要项目的系统对比。`,
+      body: `2026 年围绕 Claude Code 形成了多个热门项目，它们各自解决不同的问题。以下是对生态中主要项目的系统对比。`,
       table: {
         headers: ["项目", "类型", "Stars", "核心价值", "适用场景"],
         rows: [
@@ -609,7 +609,7 @@ else:
     },
     {
       title: "七、最佳实战：Claude Code 高效工作流",
-      body: `基于生态项目的能力和社区经验，以下是 2026 年推荐的 **Claude** Code 高效工作流。
+      body: `基于生态项目的能力和社区经验，以下是 2026 年推荐的 Claude Code 高效工作流。
 
 工作流一：长期项目开发（使用记忆系统）
 
@@ -666,17 +666,17 @@ else:
     },
     {
       title: "八、总结与展望",
-      body: `2026 年 4 月，**Claude** Code 已经从一个「好用的编码工具」发展为一个完整的开发生态系统。这个生态系统的核心特征是：
+      body: `2026 年 4 月，Claude Code 已经从一个「好用的编码工具」发展为一个完整的开发生态系统。这个生态系统的核心特征是：
 
 1. 记忆即基础设施：claude-mem 等项目证明，持久记忆是 AI 编码工具的下一个必争之地
 2. 上下文是瓶颈：context-mode 和 claude-context 都在解决同一个问题——如何在有限窗口下提供最大价值
-3. 质量在 Harness：**Anthropic** 的 Postmortem 确认了 Harness 层质量对用户体验的决定性影响
+3. 质量在 Harness：Anthropic 的 Postmortem 确认了 Harness 层质量对用户体验的决定性影响
 4. 社区驱动创新：从 karpathy-skills 到各种 MCP 插件，社区在快速填补核心能力的空白
 
 未来趋势预测：
 - 记忆系统将从「自动捕获」进化到「主动推理」——不只是记录，而是理解项目意图并主动提供建议
 - 上下文管理将从「窗口优化」进化到「智能分层」——热/温/冷记忆自动切换
-- 质量保障将从「事后检查」进化到「实时守护」——在 **Claude** 操作过程中即时拦截错误
+- 质量保障将从「事后检查」进化到「实时守护」——在 Claude 操作过程中即时拦截错误
 
 Claude Code 的生态系统是 2026 年 AI 编程工具最活跃的创新领域之一。无论你是日常使用 Claude Code 的开发者，还是在构建自己的 AI 编码工具，理解这个生态的架构和趋势都至关重要。`,
     },

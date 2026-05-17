@@ -17,7 +17,7 @@ export const article: Article = {
 LLM 不只是聊天工具— 它是 AI 应用的核心引擎。掌握 LLM 原理，你才能：
 - 理解模型的「能力边界」（能做什么，不能做什么）
 - 高效微调模型适配你的业务场景
-- 搭建 **RAG** 系统让模型使用私有知识
+- 搭建 RAG 系统让模型使用私有知识
 - 开发 AI Agent 让模型自主行动
 
 前提： 建议先学完深度学习基础（神经网络、Transformer）。`
@@ -26,10 +26,10 @@ LLM 不只是聊天工具— 它是 AI 应用的核心引擎。掌握 LLM 原理
             title: "1. 学习全景图",
             body: `LLM 学习分为四个层次：
 
-基础原理 → **Transformer** 架构、Attention 机制、位置编码
+基础原理 → Transformer 架构、Attention 机制、位置编码
 预训练 → 数据准备、分布式训练、训练稳定性
-对齐与微调 → **SFT**、**RLHF**、LoRA、QLoRA
-应用与部署 → **RAG**、Agent、量化部署、推理优化
+对齐与微调 → SFT、RLHF、LoRA、QLoRA
+应用与部署 → RAG、Agent、量化部署、推理优化
 
 我们按「先懂原理 → 再会微调 → 最后能部署」的顺序展开。`
         },
@@ -42,16 +42,16 @@ LLM 不只是聊天工具— 它是 AI 应用的核心引擎。掌握 LLM 原理
 → 学习数据管线怎么构建、分布式训练怎么跑、训练崩溃了怎么救
 
 第三阶段：微调与对齐
-→ 掌握 LoRA/QLoRA 高效微调、**RLHF** 对齐技术、**DPO** 直接偏好优化
+→ 掌握 LoRA/QLoRA 高效微调、RLHF 对齐技术、DPO 直接偏好优化
 
 第四阶段：应用与部署
-→ 学习 **RAG** 检索增强、推理加速、量化部署`
+→ 学习 RAG 检索增强、推理加速、量化部署`
         },
         {
             title: "3. 前置知识",
             body: `必须掌握：
 - 神经网络基础（前向传播、反向传播）
-- **Transformer** 架构（Self-Attention、Multi-Head Attention）
+- Transformer 架构（Self-Attention、Multi-Head Attention）
 - Python 编程
 
 有帮助但非必须：
@@ -60,11 +60,11 @@ LLM 不只是聊天工具— 它是 AI 应用的核心引擎。掌握 LLM 原理
         },
         {
             title: "4. 学习建议",
-            body: `不要一上来就搞预训练— 先理解 **Transformer** 架构，再学微调技术，最后才碰预训练。
+            body: `不要一上来就搞预训练— 先理解 Transformer 架构，再学微调技术，最后才碰预训练。
 
-动手优先— 用 **HuggingFace** **Transformer**s 跑通一个微调 demo，比读十篇论文有用。
+动手优先— 用 HuggingFace Transformers 跑通一个微调 demo，比读十篇论文有用。
 
-关注开源生态— **vLLM**、llama.cpp、Axolotl 等工具让 LLM 开发门槛大幅降低。`,
+关注开源生态— vLLM、llama.cpp、Axolotl 等工具让 LLM 开发门槛大幅降低。`,
             mermaid: `sequenceDiagram
     participant D as 数据准备
     participant T as 预训练

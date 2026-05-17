@@ -21,7 +21,7 @@ export const article: Article = {
   content: [
     {
       title: "为什么 LLM 推理加速如此重要？",
-      body: `大语言模型的推理成本正在成为 AI 商业化的核心瓶颈。以 **GPT-4** 级别模型为例，每次对话的推理成本可能高达数美分，当用户量达到百万级时，推理成本将吞噬大部分利润。
+      body: `大语言模型的推理成本正在成为 AI 商业化的核心瓶颈。以 GPT-4 级别模型为例，每次对话的推理成本可能高达数美分，当用户量达到百万级时，推理成本将吞噬大部分利润。
 
 推理成本的三大构成：
 
@@ -31,8 +31,8 @@ export const article: Article = {
 
 2026 年的关键转折点：
 
-- AI 安全模型（如 **Anthropic** Mythos）的 Token 经济学揭示：安全验证需要投入大量 Token 计算
-- 全双工语音 AI（如 PersonaPlex、Moshi**RAG**）要求极低延迟（<100ms），传统推理方式无法满足
+- AI 安全模型（如 Anthropic Mythos）的 Token 经济学揭示：安全验证需要投入大量 Token 计算
+- 全双工语音 AI（如 PersonaPlex、MoshiRAG）要求极低延迟（<100ms），传统推理方式无法满足
 - 端侧部署需求增长（手机、IoT 设备），必须在有限资源下运行大模型
 
 推理加速不再只是「锦上添花」，而是 AI 能否大规模商用的生死线。`,
@@ -194,7 +194,7 @@ KV Cache 大小估算：
 - H2O：Heavy-Hitter Oracle，保留注意力分数高的 token
 - SnapKV：基于查询感知的 KV 压缩
 
-### 3. PagedAttention（**vLLM** 的核心创新）
+### 3. PagedAttention（vLLM 的核心创新）
 - 将 KV Cache 分页管理，类似操作系统的虚拟内存
 - 解决内存碎片化问题
 - 支持高效的批处理
@@ -252,7 +252,7 @@ KV Cache 大小估算：
 
 核心洞察：
 
-推理部署消耗大量算力的根本问题是：标准 **Transformer** 的参数越多，推理时的内存占用越大。Parcae 的思路是让模型更紧凑，但在推理时执行更多计算。
+推理部署消耗大量算力的根本问题是：标准 Transformer 的参数越多，推理时的内存占用越大。Parcae 的思路是让模型更紧凑，但在推理时执行更多计算。
 
 ### Parcae 的三层架构
 
@@ -264,7 +264,7 @@ KV Cache 大小估算：
 
 关键创新：控制论视角的稳定性保证
 
-此前的循环 **Transformer** 主要问题是残差状态爆炸和训练不稳定。Parcae 将循环前向传播重新建模为非线性时变动力系统：
+此前的循环 Transformer 主要问题是残差状态爆炸和训练不稳定。Parcae 将循环前向传播重新建模为非线性时变动力系统：
 
 动力学公式：h_{t+1} = Ā · h_t + B̄ · e + R̄(h_t, e)（通过约束矩阵 A 为负对角矩阵确保稳定性）
 
@@ -301,7 +301,7 @@ KV Cache 大小估算：
 部署流程：模型选择 → 量化压缩 → 推理引擎 → 硬件加速
 
 模型选择：
-- Phi-3/4 Mini（3-4B 参数）：**Microsoft** 的端侧模型
+- Phi-3/4 Mini（3-4B 参数）：Microsoft 的端侧模型
 - Qwen2.5-3B：阿里的端侧模型
 - Gemma-2B：Google 的端侧模型
 
@@ -313,7 +313,7 @@ KV Cache 大小估算：
 
 量化格式：
 - GGUF：llama.cpp 原生格式，支持 Q4_K_M、Q5_K_M 等
-- AWQ：**NVIDIA** 优化的 4-bit 量化
+- AWQ：NVIDIA 优化的 4-bit 量化
 - GPTQ：通用 4-bit 量化
 
 ### 实际部署示例
@@ -387,9 +387,9 @@ KV Cache 大小估算：
 - 无需草稿模型的自推测（self-speculative decoding）
 
 ### 2. 架构创新的加速
-- 循环 **Transformer**（如 Parcae）可能在端侧场景成为主流
+- 循环 Transformer（如 Parcae）可能在端侧场景成为主流
 - State Space Models（Mamba、RWKV）的推理效率优势
-- 混合架构（**Transformer** + SSM）的推理优化
+- 混合架构（Transformer + SSM）的推理优化
 
 ### 3. 硬件-算法协同设计
 - 专为推理加速设计的 NPU 指令集

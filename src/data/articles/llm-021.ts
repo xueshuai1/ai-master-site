@@ -21,11 +21,11 @@ export const article: Article = {
   content: [
     {
       title: "一、FP8 为什么成为 2026 年推理的事实标准？",
-      body: `2026 年是 FP8（8-bit 浮点数）推理的转折之年。从 **NVIDIA** 的路线图到各大大模型的部署策略，FP8 已经从「可选优化」变成了「默认配置」。
+      body: `2026 年是 FP8（8-bit 浮点数）推理的转折之年。从 NVIDIA 的路线图到各大大模型的部署策略，FP8 已经从「可选优化」变成了「默认配置」。
 
 ### FP8 的数学本质
 
-FP8 不是一个新的概念——IEEE 754 标准早在 2008 年就定义了 8-bit 浮点格式。但直到 2022 年 **NVIDIA** Hopper 架构（H100）引入 FP8 Tensor Core，FP8 才真正具备了实用价值。
+FP8 不是一个新的概念——IEEE 754 标准早在 2008 年就定义了 8-bit 浮点格式。但直到 2022 年 NVIDIA Hopper 架构（H100）引入 FP8 Tensor Core，FP8 才真正具备了实用价值。
 
 FP8 有两种主流格式：
 
@@ -61,7 +61,7 @@ E5M2 适合梯度——它有更大的动态范围，可以容纳更大范围的
     },
     {
       title: "二、DeepGEMM 源码级解析：FP8 GEMM 的核心技术",
-      body: `GEMM（General Matrix Multiplication）是深度学习中最核心的计算操作。LLM 的每一层 **Transformer** 都在大量执行矩阵乘法：Q·K^T、注意力输出投影、FFN 层的两个线性变换。可以说，优化了 GEMM 就优化了 LLM 推理的 80%。
+      body: `GEMM（General Matrix Multiplication）是深度学习中最核心的计算操作。LLM 的每一层 Transformer 都在大量执行矩阵乘法：Q·K^T、注意力输出投影、FFN 层的两个线性变换。可以说，优化了 GEMM 就优化了 LLM 推理的 80%。
 
 DeepSeek 的 DeepGEMM 正是瞄准了这个核心痛点——提供一个专为 FP8 优化的高性能 GEMM 内核库。
 
@@ -80,7 +80,7 @@ FP8 GEMM: C = (A_fp8 × S_A) × (B_fp8 × S_B)
 
 ### 与 cuBLAS/cuBLASLt 的对比
 
-**NVIDIA** 的 cuBLAS 库也支持 FP8 GEMM，但 DeepGEMM 在以下方面做了针对性优化：
+NVIDIA 的 cuBLAS 库也支持 FP8 GEMM，但 DeepGEMM 在以下方面做了针对性优化：
 
 1. 缩放因子融合：将 per-token/per-channel 缩放操作融合到 GEMM 内核中，避免额外的 CUDA kernel 启动开销
 2. Tile 策略优化：针对 LLM 推理中常见的矩阵形状（如 batch×seq×hidden）优化了 block tiling 策略
@@ -177,7 +177,7 @@ benchmark_gemm(8192, 22016, 8192)`
       title: "三、FP8 推理的硬件支持全景",
       body: `FP8 推理的普及离不开硬件层面的支持。以下是 2026 年主流 GPU 的 FP8 支持情况：
 
-### **NVIDIA** 阵营
+### NVIDIA 阵营
 
 | GPU | 架构 | FP8 Tensor Core | FP8 GEMM 吞吐量 | 备注 |
 |-----|------|----------------|---------------|------|
@@ -235,9 +235,9 @@ FP8 相比 FP16，显存需求减半，所需 GPU 数量减半——这直接转
       title: "四、主流推理框架的 FP8 支持对比",
       body: `2026 年，主流 LLM 推理框架都已支持或正在积极支持 FP8。以下是各框架的 FP8 支持状态：
 
-### **vLLM**
+### vLLM
 
-**vLLM** 是最受欢迎的开源 LLM 推理框架，FP8 支持成熟度最高：
+vLLM 是最受欢迎的开源 LLM 推理框架，FP8 支持成熟度最高：
 
 - FP8 量化：支持 E4M3 格式的 per-tensor FP8 量化
 - FP8 Attention：FlashAttention 的 FP8 变体

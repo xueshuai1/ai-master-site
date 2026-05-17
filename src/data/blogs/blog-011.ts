@@ -13,11 +13,11 @@ export const blog: BlogPost = {
   content: [
     {
       title: "引言：大模型推理的显存墙",
-      body: `2026 年 4 月，随着 **Claude** Mythos 5（10 万亿参数）和 **GPT-5**.4 Thinking 等前沿模型的发布，大模型推理的显存瓶颈达到了前所未有的严重程度。一个 80B 参数模型需要约 160GB 显存来存储权重，再加上长上下文场景下的 KV Cache，单张 H100（80GB）甚至无法运行一次完整的推理请求。
+      body: `2026 年 4 月，随着 Claude Mythos 5（10 万亿参数）和 GPT-5.4 Thinking 等前沿模型的发布，大模型推理的显存瓶颈达到了前所未有的严重程度。一个 80B 参数模型需要约 160GB 显存来存储权重，再加上长上下文场景下的 KV Cache，单张 H100（80GB）甚至无法运行一次完整的推理请求。
 
 KV Cache 之所以成为瓶颈，是因为在自回归生成过程中，每个新生成的 token 都需要将其 Key 和 Value 向量缓存下来，供后续所有注意力计算使用。当上下文长度达到 128K 甚至更长时，KV Cache 的显存占用甚至会超过模型权重本身。这就是所谓的"显存墙"问题——不是算力不够，而是显存放不下。
 
-**Google DeepMind** 在 ICLR 2026 上提出的 TurboQuant 算法，正是为了彻底打破这堵墙。`,
+Google DeepMind 在 ICLR 2026 上提出的 TurboQuant 算法，正是为了彻底打破这堵墙。`,
     },
     {
       title: "TurboQuant 的两步量化策略",

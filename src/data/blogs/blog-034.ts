@@ -79,7 +79,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "四、MCP：Headless 服务的关键协议",
-    body: `Model Context Protocol (MCP) 是 **Anthropic** 提出的开放标准，用于让 AI 模型连接到外部工具和数据源。在 headless 服务的语境下，MCP 扮演了至关重要的角色。
+    body: `Model Context Protocol (MCP) 是 Anthropic 提出的开放标准，用于让 AI 模型连接到外部工具和数据源。在 headless 服务的语境下，MCP 扮演了至关重要的角色。
 
 MCP 为什么重要？
 
@@ -282,7 +282,7 @@ if __name__ == "__main__":
   },
   {
     title: "六、AI Agent 如何消费 Headless 服务",
-    body: `Headless 服务构建完成后，AI Agent 可以通过多种方式消费它。以下是 **Claude** Code 通过 MCP 调用 headless 服务的完整示例：`,
+    body: `Headless 服务构建完成后，AI Agent 可以通过多种方式消费它。以下是 Claude Code 通过 MCP 调用 headless 服务的完整示例：`,
     code: [{
       lang: "python",
       filename: "agent_consuming_headless.py",

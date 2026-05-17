@@ -18,9 +18,9 @@ export const article: Article = {
 
 半双工 vs 全双工的本质区别：
 
-半双工语音系统（如早期的 Siri、Alexa、甚至 **GPT-4**o 的语音模式初版）的工作方式是：用户说话 → 系统检测语音结束（VAD）→ 语音转文字（ASR）→ LLM 生成回复 → 文字转语音（TTS）→ 播放。整个过程是串行的，用户说话时 AI 不能响应，AI 说话时用户也无法打断。
+半双工语音系统（如早期的 Siri、Alexa、甚至 GPT-4o 的语音模式初版）的工作方式是：用户说话 → 系统检测语音结束（VAD）→ 语音转文字（ASR）→ LLM 生成回复 → 文字转语音（TTS）→ 播放。整个过程是串行的，用户说话时 AI 不能响应，AI 说话时用户也无法打断。
 
-全双工语音系统（Moshi、PersonaPlex、**OpenAI** Realtime API）则完全不同：AI 和用户可以在同一时间说话，AI 能理解用户的中断信号并即时调整回应，对话中有自然的停顿、重叠、语气词——就像真实的人际对话。
+全双工语音系统（Moshi、PersonaPlex、OpenAI Realtime API）则完全不同：AI 和用户可以在同一时间说话，AI 能理解用户的中断信号并即时调整回应，对话中有自然的停顿、重叠、语气词——就像真实的人际对话。
 
 全双工语音 AI 的关键能力：
 - 同时收发（Simultaneous Send/Receive）：AI 边听用户说话边生成回复
@@ -67,7 +67,7 @@ Moshi 的底层基础是 Mimi（Mimi Is Mimi），一个革命性的流式神经
 
 Mimi 相比前代编解码器的关键改进：
 
-- **Transformer** 编码器 + 解码器：在编码器和解码器中都引入 **Transformer**，而传统编解码器（SoundStream、EnCodec）只用 CNN
+- Transformer 编码器 + 解码器：在编码器和解码器中都引入 Transformer，而传统编解码器（SoundStream、EnCodec）只用 CNN
 - 12.5 Hz 帧率：通过自适应 Stride 设计，将音频帧率从传统编解码器的 50 Hz 降低到 12.5 Hz，更接近文本 Token 的生成频率（约 3-4 Hz）
 - 蒸馏损失（Distillation Loss）：强制第一个码本的 Token 匹配 WavLM 的自监督表示，同时建模语义和声学信息
 - 纯对抗训练：只用对抗损失 + 特征匹配，不用传统编解码器中的重建损失
@@ -156,7 +156,7 @@ python -m moshi_mlx.server
     },
     {
       title: "PersonaPlex：在 Moshi 之上实现人格控制",
-      body: `2026 年 2 月，**NVIDIA** 在 Moshi 的基础上发布了 PersonaPlex，将全双工语音 AI 从"一个声音"升级为"千变万化的角色"。
+      body: `2026 年 2 月，NVIDIA 在 Moshi 的基础上发布了 PersonaPlex，将全双工语音 AI 从"一个声音"升级为"千变万化的角色"。
 
 PersonaPlex 的核心创新：混合系统提示（Hybrid System Prompts）
 
@@ -301,19 +301,19 @@ Several ship systems are failing. You urgently ask for help."""`,
 
 1. Moshi（Kyutai）：全双工语音对话的开山之作，7B 参数，基于 Mimi 编解码器。理论延迟 160ms，支持 MLX（Mac/iPhone）和 Rust（生产环境）部署。GitHub 星标超过 30K，是最大的开源全双工语音项目。
 
-2. PersonaPlex（**NVIDIA**）：基于 Moshi 微调，增加了角色和声音控制能力。面向客服、教育、娱乐等多角色场景。**HuggingFace** 模型为 nvidia/personaplex-7b-v1。
+2. PersonaPlex（NVIDIA）：基于 Moshi 微调，增加了角色和声音控制能力。面向客服、教育、娱乐等多角色场景。HuggingFace 模型为 nvidia/personaplex-7b-v1。
 
 3. Hibiki（Kyutai）：Kyutai 推出的同步语音翻译模型，基于 Moshi 架构，支持低延迟的跨语言语音翻译。
 
-4. Moshi**RAG**：社区项目，将 Moshi 与 **RAG**（检索增强生成）结合，实现全双工语音对话中的实时知识检索。解决了 Moshi 知识截止日期的限制。
+4. MoshiRAG：社区项目，将 Moshi 与 RAG（检索增强生成）结合，实现全双工语音对话中的实时知识检索。解决了 Moshi 知识截止日期的限制。
 
-5. Audio Flamingo Next（**NVIDIA**）：最强开源音频语言模型，使用 AF-Whisper 编码器，支持音频理解、音乐分析、语音情感识别等多模态任务。
+5. Audio Flamingo Next（NVIDIA）：最强开源音频语言模型，使用 AF-Whisper 编码器，支持音频理解、音乐分析、语音情感识别等多模态任务。
 
 商业方案：
 
-1. **OpenAI** Realtime API：**OpenAI** 的 **GPT-4**o 实时语音 API，基于 WebRTC 传输，支持全双工对话。延迟约 320ms，集成度最高但仅限云端使用。
+1. OpenAI Realtime API：OpenAI 的 GPT-4o 实时语音 API，基于 WebRTC 传输，支持全双工对话。延迟约 320ms，集成度最高但仅限云端使用。
 
-2. Google **Gemini** Live：Google 的全双工语音对话方案，集成 **Gemini** 多模态模型，支持图像理解和语音对话的混合交互。
+2. Google Gemini Live：Google 的全双工语音对话方案，集成 Gemini 多模态模型，支持图像理解和语音对话的混合交互。
 
 3. 科大讯飞星火语音：国内领先的全双工语音方案，支持中文场景下的低延迟对话，在客服和智能家居领域有广泛部署。
 
@@ -356,9 +356,9 @@ Mimi 的编码器将 24kHz 音频信号压缩为低帧率的 Token 序列：
 - 码本数量：8 个残差向量量化（RVQ）码本
 - 带宽：1.1 kbps（极低）
 
-编码器的核心是带 **Transformer** 的 CNN 堆叠：
+编码器的核心是带 Transformer 的 CNN 堆叠：
 - 使用自适应 Stride 的卷积层逐步降低时间分辨率
-- 在中间层引入 **Transformer** 模块，捕获长程依赖
+- 在中间层引入 Transformer 模块，捕获长程依赖
 - 最后的 RVQ 层将连续表征离散化为 Token
 
 2. 解码器结构
@@ -521,7 +521,7 @@ PersonaPlex 的多角色客服能力已经展示了商业价值：
 
 场景二：GPU 服务器部署（推荐）
 
-使用 **NVIDIA** GPU 获得最佳性能：
+使用 NVIDIA GPU 获得最佳性能：
 
 场景三：生产环境部署（Rust 后端）
 

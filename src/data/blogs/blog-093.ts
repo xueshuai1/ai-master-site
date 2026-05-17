@@ -5,9 +5,9 @@ import type { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
     {
         title: "1. 引言：当 AI 融资规模超越国家 GDP",
-        body: `2026 年 4 月，**Anthropic** 宣布完成 500 亿美元融资，估值飙升至 9000 亿美元。这个数字意味着什么？全球 150 多个国家的 GDP 都低于这个数字。一家成立不到 4 年的 AI 公司，其估值已经超过了 瑞典、瑞士、土耳其 等发达经济体的年度经济总量。
+        body: `2026 年 4 月，Anthropic 宣布完成 500 亿美元融资，估值飙升至 9000 亿美元。这个数字意味着什么？全球 150 多个国家的 GDP 都低于这个数字。一家成立不到 4 年的 AI 公司，其估值已经超过了 瑞典、瑞士、土耳其 等发达经济体的年度经济总量。
 
-这不仅仅是 **Anthropic** 一家公司的故事。**OpenAI** 的估值已经突破 3000 亿美元，**Google DeepMind** 每年获得的内部投资超过 500 亿美元，**xAI** 在马斯克的推动下融资超过 200 亿美元。与此同时，软银 宣布成立 1000 亿美元的 AI 基金，红杉资本 预测 AI 基础设施投资将在 2026 年突破 5000 亿美元。
+这不仅仅是 Anthropic 一家公司的故事。OpenAI 的估值已经突破 3000 亿美元，Google DeepMind 每年获得的内部投资超过 500 亿美元，xAI 在马斯克的推动下融资超过 200 亿美元。与此同时，软银 宣布成立 1000 亿美元的 AI 基金，红杉资本 预测 AI 基础设施投资将在 2026 年突破 5000 亿美元。
 
 我们正在见证人类历史上最大规模的资本集中——集中到一个单一的技术方向上。
 
@@ -25,7 +25,7 @@ const content: ArticleSection[] = [
     },
     {
         title: "2. Anthropic 500 亿融资拆解：钱从哪里来，要到哪里去",
-        body: `要理解这场竞赛，首先要拆解 **Anthropic** 本轮融资的结构和用途。
+        body: `要理解这场竞赛，首先要拆解 Anthropic 本轮融资的结构和用途。
 
 ### 2.1 融资结构分析
 
@@ -39,7 +39,7 @@ const content: ArticleSection[] = [
 
 ### 2.2 资金用途拆解
 
-这 500 亿美元将如何分配？根据行业分析和 **Anthropic** 公开信息，大致用途如下：
+这 500 亿美元将如何分配？根据行业分析和 Anthropic 公开信息，大致用途如下：
 
 500 亿美元资金分配预估：
 ├── 算力基础设施（GPU/TPU 采购）     200 亿（40%）
@@ -59,7 +59,7 @@ const content: ArticleSection[] = [
 | 收入倍数法 | 2028 年预期收入 500 亿 × 10x 倍数 | 5000 亿 |
 | 算力价值法 | 30 万 GPU × 5 万美元/GPU × 2x 溢价 | 3000 亿 |
 | 用户价值法 | 2028 年 5 亿用户 × 200 美元 ARPU × 5x | 5000 亿 |
-| 战略溢价法 | 对标 **OpenAI** 3000 亿 + 安全溢价 | 9000 亿+ |
+| 战略溢价法 | 对标 OpenAI 3000 亿 + 安全溢价 | 9000 亿+ |
 
 结论：从传统财务角度看，9000 亿估值严重高估。但从战略博弈角度看，这个估值反映了市场对 「AI 基础设施将成为下一代云计算」 的预期。投资者不是在买一家软件公司，而是在买下一代计算平台的基础设施。
 
@@ -78,8 +78,8 @@ AI 算力竞赛的资金来源呈现多层次结构：
 第一层：科技巨头（自有资金）
 
 - Google：每年投入 500 亿+ 美元用于 AI 基础设施（包含 TPU 研发、数据中心、人才）
-- **Microsoft**：通过 **Azure** 和 **OpenAI** 合作，投入超过 300 亿美元
-- Amazon：通过 **AWS** 和 **Anthropic** 合作，投入超过 200 亿美元
+- Microsoft：通过 Azure 和 OpenAI 合作，投入超过 300 亿美元
+- Amazon：通过 AWS 和 Anthropic 合作，投入超过 200 亿美元
 - Meta：投入超过 200 亿美元用于开源 AI 和 Llama 生态
 
 这些巨头的逻辑是：AI 是下一代计算平台，不投入就等于放弃未来。
@@ -106,14 +106,14 @@ AI 算力竞赛的资金来源呈现多层次结构：
 
 最大赢家：芯片制造商
 
-- **NVIDIA**：2025 财年营收 1300 亿美元，利润率超过 70%。GPU 是算力竞赛的核心商品
-- AMD：MI300X 系列 GPU 正在追赶，但市场份额仍远低于 **NVIDIA**
+- NVIDIA：2025 财年营收 1300 亿美元，利润率超过 70%。GPU 是算力竞赛的核心商品
+- AMD：MI300X 系列 GPU 正在追赶，但市场份额仍远低于 NVIDIA
 - 定制化芯片：Google TPU、Amazon Trainium、Microsoft Maia——巨头正在自研芯片以降低对 NVIDIA 的依赖
 
 第二赢家：云服务商
 
-- **AWS**：AI 工作负载占云收入的 35%+
-- **Azure**：**OpenAI** 集成带来巨大的增量收入
+- AWS：AI 工作负载占云收入的 35%+
+- Azure：OpenAI 集成带来巨大的增量收入
 - Google Cloud：AI 收入达到 200 亿美元，但算力受限成为增长瓶颈
 
 第三赢家：数据中心与能源
@@ -195,7 +195,7 @@ AI 算力供应链的每个环节都存在瓶颈：
 
 - Google TPU：已经迭代到 v6 代，性能对标 H200
 - Amazon Trainium：专为推理优化的自研芯片
-- **Microsoft** Maia：与 AMD 合作开发的 AI 芯片
+- Microsoft Maia：与 AMD 合作开发的 AI 芯片
 
 优势：摆脱 NVIDIA 依赖，降低成本（自研芯片成本可能只有 GPU 的 1/3）。劣势：研发周期长（2-3 年），生态不成熟（CUDA 生态的迁移成本极高）。
 
@@ -238,9 +238,9 @@ AI 算力供应链的每个环节都存在瓶颈：
 
 让我们拆解这 2000 万用户的构成：
 
-- **Microsoft** 365 Copilot（办公套件集成）：约 1200 万用户
+- Microsoft 365 Copilot（办公套件集成）：约 1200 万用户
 - GitHub Copilot（开发者工具）：约 500 万用户
-- **Azure** AI / Dynamics 365 Copilot（企业应用）：约 300 万用户
+- Azure AI / Dynamics 365 Copilot（企业应用）：约 300 万用户
 
 关键数据：
 
@@ -255,7 +255,7 @@ Copilot 的成功不是偶然的，它依赖于三个核心优势：
 
 优势一：分发渠道的垄断地位
 
-**Microsoft** 365 拥有 4 亿+ 企业用户。Copilot 不是从零开始获客，而是在现有用户基础上做增量转化。这是任何其他 AI 应用公司都无法复制的优势。
+Microsoft 365 拥有 4 亿+ 企业用户。Copilot 不是从零开始获客，而是在现有用户基础上做增量转化。这是任何其他 AI 应用公司都无法复制的优势。
 
 优势二：工作流集成的天然优势
 
@@ -267,7 +267,7 @@ Copilot 能访问用户的邮件、文档、日历、聊天记录——这些企
 
 ### 5.3 对标分析：Copilot vs 其他 AI 应用
 
-| 维度 | Microsoft Copilot | **Anthropic** **Claude** | **OpenAI** ChatGPT | Google **Gemini** |
+| 维度 | Microsoft Copilot | Anthropic Claude | OpenAI ChatGPT | Google Gemini |
 |------|------------------|-----------------|---------------|--------------|
 | 付费用户 | 2000 万 | 约 500 万 | 约 1500 万 | 约 300 万 |
 | ARPU | $30/月 | $20/月 | $20/月 | 免费为主 |
@@ -287,7 +287,7 @@ Copilot 能访问用户的邮件、文档、日历、聊天记录——这些企
 
 趋势预判：到 2027 年底，AI 应用市场将形成「1+2+N」格局——Microsoft（集成优势）、OpenAI + Anthropic（模型优势）占据头部，数百个垂直 AI 应用占据长尾。
 
-对 **Anthropic** 的启示：Anthropic 没有 Microsoft 的分发渠道，必须通过API 生态和企业直签来变现。这也是为什么 Anthropic 需要与 Amazon 深度合作——利用 **AWS** 的分发能力弥补自身短板。`,
+对 Anthropic 的启示：Anthropic 没有 Microsoft 的分发渠道，必须通过API 生态和企业直签来变现。这也是为什么 Anthropic 需要与 Amazon 深度合作——利用 AWS 的分发能力弥补自身短板。`,
         code: [
             {
                 lang: "python",
@@ -387,7 +387,7 @@ NVIDIA 的全模态大模型对行业格局产生了双重影响：
 
 3-5 家公司控制 AI 基础设施的大部分市场：
 
-- Microsoft** + **OpenAI：控制企业 AI 市场
+- Microsoft + OpenAI：控制企业 AI 市场
 - Google DeepMind：控制搜索和消费者 AI 市场
 - Amazon + Anthropic：控制云 AI 市场
 - NVIDIA：控制算力和模型平台

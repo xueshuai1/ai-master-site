@@ -18,7 +18,7 @@ export const blog: BlogPost = {
 
 这次发布为什么引发全球关注？因为 V4 系列做到了一个看似不可能的组合：
 
-- V4-Pro：性能逼近 **GPT-5**.5，但 API 价格仅为后者的 1/10
+- V4-Pro：性能逼近 GPT-5.5，但 API 价格仅为后者的 1/10
 - V4-Flash：推理速度提升 3 倍，价格低至每百万 token 不到 0.1 美元
 
 Simon Willison 在第一时间发文评测，结论是「几乎达到前沿水平，价格却是一小部分」。
@@ -73,7 +73,7 @@ V4 相对于 V3 的架构改进：
     },
     {
       title: "二、训练策略：如何在有限算力下训练 27T tokens",
-      body: `DeepSeek V4 的训练数据量达到 27T tokens，接近 **GPT-4** 训练数据量的 2 倍。但 DeepSeek 的算力资源远不及 **OpenAI**，他们是如何做到的？
+      body: `DeepSeek V4 的训练数据量达到 27T tokens，接近 GPT-4 训练数据量的 2 倍。但 DeepSeek 的算力资源远不及 OpenAI，他们是如何做到的？
 
 ### 1. 数据质量 > 数据数量
 
@@ -251,9 +251,9 @@ for r in results:
 
 ### 综合基准测试对比
 
-| 基准测试 | DeepSeek V4-Pro | **GPT-5**.5 | **Claude** Sonnet 4 | 差距 |
+| 基准测试 | DeepSeek V4-Pro | GPT-5.5 | Claude Sonnet 4 | 差距 |
 |---------|:---------------:|:-------:|:---------------:|:----:|
-| **MMLU** (知识) | 87.6% | 89.2% | 86.1% | -1.6% |
+| MMLU (知识) | 87.6% | 89.2% | 86.1% | -1.6% |
 | HumanEval (代码) | 92.1% | 94.5% | 89.8% | -2.4% |
 | GSM8K (数学) | 95.3% | 96.1% | 93.7% | -0.8% |
 | MATH (高等数学) | 78.4% | 81.2% | 75.6% | -2.8% |
@@ -262,7 +262,7 @@ for r in results:
 
 关键发现：
 
-1. V4-Pro 在大多数基准上达到 **GPT-5**.5 的 96-98%，差距在统计误差范围内
+1. V4-Pro 在大多数基准上达到 GPT-5.5 的 96-98%，差距在统计误差范围内
 2. 数学和推理能力是 DeepSeek 的相对强项——GSM8K 差距仅 0.8%
 3. 代码能力接近——HumanEval 差距 2.4%，但在实际项目中差异更小
 4. 多语言能力突出——中文理解能力明显优于 GPT-5.5
@@ -310,7 +310,7 @@ V4-Flash 采用了以下优化策略：
 | 指标 | V4-Pro | V4-Flash | 变化 |
 |------|:------:|:--------:|:----:|
 | 推理速度 | 基线 | 3x 更快 | 🚀 |
-| **MMLU** | 87.6% | 82.3% | -5.3% |
+| MMLU | 87.6% | 82.3% | -5.3% |
 | HumanEval | 92.1% | 85.4% | -6.7% |
 | 每百万 token 成本 | $0.28 | $0.07 | -75% |
 | 适用场景 | 高质量输出 | 快速响应/批量处理 | — |
@@ -545,7 +545,7 @@ if __name__ == "__main__":
 
 DeepSeek 的成功证明了中国 AI 实验室可以在没有美国级别算力的情况下，通过算法创新和工程优化达到世界前沿水平。这为其他中国 AI 团队提供了可复制的路径。
 
-### 对 **OpenAI**/**Anthropic** 的挑战
+### 对 OpenAI/Anthropic 的挑战
 
 | 维度 | 以前 | DeepSeek V4 出现后 |
 |------|------|-------------------|
@@ -594,7 +594,7 @@ DeepSeek 提供了两种接入方式：
 如果你有 GPU 资源，可以自部署 V4-Flash：
 
 \`\`\`bash
-# 使用 **vLLM** 部署 DeepSeek V4-Flash
+# 使用 vLLM 部署 DeepSeek V4-Flash
 pip install vllm
 
 # 启动 API 服务
@@ -604,7 +604,7 @@ python -m vllm.entrypoints.openai.api_server \\
     --gpu-memory-utilization 0.9 \\
     --max-model-len 256000
 
-# 服务启动后，用 **OpenAI** 兼容的客户端调用
+# 服务启动后，用 OpenAI 兼容的客户端调用
 # curl http://localhost:8000/v1/chat/completions \\
 #   -H "Content-Type: application/json" \\
 #   -d '{"model": "deepseek-ai/DeepSeek-V4-Flash", "messages": [{"role": "user", "content": "Hello!"}]}'
@@ -625,7 +625,7 @@ python -m vllm.entrypoints.openai.api_server \\
       body: `DeepSeek V4 的发布是 2026 年 AI 领域最重要的事件之一。它证明了：
 
 1. 高性能不等于高成本——通过架构创新和训练优化，可以在有限资源下达到前沿水平
-2. 开源模型正在追赶闭源——V4-Pro 在大多数基准上已达到 **GPT-5**.5 的 96-98%
+2. 开源模型正在追赶闭源——V4-Pro 在大多数基准上已达到 GPT-5.5 的 96-98%
 3. AI 民主化正在加速——1/10 的价格让个人开发者和小团队也能使用前沿模型
 
 对于开发者来说，现在是拥抱 DeepSeek V4 的最佳时机：低成本试错、高质量输出、开源自由。对于整个 AI 行业来说，竞争加剧意味着更好的模型、更低的价格、更多的选择。

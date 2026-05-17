@@ -12,7 +12,7 @@ export const blog: BlogPost = {
     content: [
         {
             title: "引言：RLVR 的天花板在哪里？",
-            body: `2025 年以来，RLVR（Reinforcement Learning with Verifiable Rewards）成为了提升 LLM 推理能力的主流范式。从 DeepSeek-R1 的 GRPO 到 **OpenAI** 的 o1 系列，核心思路是一致的：用可验证的奖励信号，通过强化学习优化模型的推理过程。
+            body: `2025 年以来，RLVR（Reinforcement Learning with Verifiable Rewards）成为了提升 LLM 推理能力的主流范式。从 DeepSeek-R1 的 GRPO 到 OpenAI 的 o1 系列，核心思路是一致的：用可验证的奖励信号，通过强化学习优化模型的推理过程。
 
 但 RLVR 有一个根本性的瓶颈。
 
@@ -307,7 +307,7 @@ class NSRTrainer:
                     ["RLVR (GRPO)", "P(y|x)", "正样本强化", "受限于预训练分布"],
                     ["DPO", "P(y|x)", "偏好优化", "需要偏好数据"],
                     ["NSR-PreRL", "P(y)", "负样本剪枝", "需要高质量负样本"],
-                    ["**DSRL**", "P(y) + P(y|x)", "先剪枝后优化", "计算成本较高"],
+                    ["DSRL", "P(y) + P(y|x)", "先剪枝后优化", "计算成本较高"],
                 ],
             },
         },

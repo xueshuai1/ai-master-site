@@ -20,7 +20,7 @@ export const article: Article = {
 
 AI 计算的「内存墙」问题：
 
-在 AI 训练中，GPU 的计算能力早已不是瓶颈。**NVIDIA** H100 的 FP8 算力达到 3,958 TFLOPS，B200 更是高达 4,500 TFLOPS。但真正的瓶颈是内存带宽——数据从内存到 GPU 的传输速度。
+在 AI 训练中，GPU 的计算能力早已不是瓶颈。NVIDIA H100 的 FP8 算力达到 3,958 TFLOPS，B200 更是高达 4,500 TFLOPS。但真正的瓶颈是内存带宽——数据从内存到 GPU 的传输速度。
 
 这就像修建了一条 16 车道的高速公路（GPU 算力），但入口只有一条乡间小路（内存带宽）。车再多也开不快。
 
@@ -99,7 +99,7 @@ HBM 代际演进：`,
     },
     {
       title: "HBM3E：当前 AI 算力的命脉",
-      body: `HBM3E 是 2024-2026 年 AI 算力的核心内存标准。目前 **NVIDIA** B200、AMD MI300X 等主流 AI GPU 全部采用 HBM3E。
+      body: `HBM3E 是 2024-2026 年 AI 算力的核心内存标准。目前 NVIDIA B200、AMD MI300X 等主流 AI GPU 全部采用 HBM3E。
 
 HBM3E 的关键技术指标：
 
@@ -110,7 +110,7 @@ HBM3E 的关键技术指标：
 
 为什么 HBM3E 如此重要？
 
-以 **NVIDIA** B200 为例，它配备了 8 栈 HBM3E，总容量 384GB，总带宽 9.6 TB/s。这意味着：
+以 NVIDIA B200 为例，它配备了 8 栈 HBM3E，总容量 384GB，总带宽 9.6 TB/s。这意味着：
 
 - 70B 参数模型（FP16 需要 140GB）可以完整加载到单卡
 - 推理时吞吐量比 H100 提升 2-3 倍
@@ -213,13 +213,13 @@ for gpu in [h100, b200]:
 
 市场份额与技术路线对比：
 
-SK 海力士是 HBM 领域的绝对领导者，率先量产 HBM3 和 HBM3E，是 **NVIDIA** 的核心供应商。三星虽然产能巨大，但在 HBM 良率和性能上长期落后，直到 2024 年才开始批量供货 HBM3E。美光起步最晚，但凭借 MR-MUF（批量回流模制底部填充）封装技术在功耗和散热上取得优势。
+SK 海力士是 HBM 领域的绝对领导者，率先量产 HBM3 和 HBM3E，是 NVIDIA 的核心供应商。三星虽然产能巨大，但在 HBM 良率和性能上长期落后，直到 2024 年才开始批量供货 HBM3E。美光起步最晚，但凭借 MR-MUF（批量回流模制底部填充）封装技术在功耗和散热上取得优势。
 
 产能瓶颈在哪里？
 
 HBM 的产能瓶颈不在 DRAM 晶圆制造，而在先进封装：
 
-- CoWoS（Chip-on-Wafer-on-Substrate）：**NVIDIA** GPU 和 HBM 需要台积电的 CoWoS 封装技术将两者集成在同一基板上
+- CoWoS（Chip-on-Wafer-on-Substrate）：NVIDIA GPU 和 HBM 需要台积电的 CoWoS 封装技术将两者集成在同一基板上
 - TSV（硅通孔）良率：3D 堆叠中任何一层芯片的缺陷都会导致整个 HBM 栈报废
 - 散热挑战：多层堆叠导致散热困难，需要精密的热管理设计
 - 测试复杂度：HBM 的测试时间是传统 DRAM 的 3-5 倍
@@ -361,7 +361,7 @@ for line in [sk_hynix_2026, samsung_2026]:
 
 对 AI 公司的影响：
 
-大型云厂商（**AWS**、**Azure**、**GCP**）正在通过长期合同锁定 HBM 供应，中小 AI 公司面临「无芯可用」的困境。这导致：
+大型云厂商（AWS、Azure、GCP）正在通过长期合同锁定 HBM 供应，中小 AI 公司面临「无芯可用」的困境。这导致：
 
 - 算力鸿沟扩大：有资金实力的公司可以拿到足够的 GPU 训练大模型，初创公司被甩开
 - 模型设计妥协：为了适应有限的显存，模型架构被迫修改（更小的参数量、更多的量化）
@@ -397,10 +397,10 @@ HBM 已经成为战略资源。美国对中国的 AI 芯片出口管制，本质
 
 GPU 互连技术的演进：
 
-- NVLink（**NVIDIA** 专有）：GPU 间高速互连，H100 的 NVLink 4.0 带宽 900 GB/s，B200 的 NVLink 5.0 达到 1.8 TB/s
-- InfiniBand（IB）：节点间高速网络，**NVIDIA** Quantum-2 支持 400 Gbps/端口
+- NVLink（NVIDIA 专有）：GPU 间高速互连，H100 的 NVLink 4.0 带宽 900 GB/s，B200 的 NVLink 5.0 达到 1.8 TB/s
+- InfiniBand（IB）：节点间高速网络，NVIDIA Quantum-2 支持 400 Gbps/端口
 - RoCE（RDMA over Converged Ethernet）：基于以太网的 RDMA 方案，成本低于 IB
-- Ultra Ethernet Consortium：由 AMD、Intel、Meta、**Microsoft** 等发起的开放以太网标准，挑战 InfiniBand
+- Ultra Ethernet Consortium：由 AMD、Intel、Meta、Microsoft 等发起的开放以太网标准，挑战 InfiniBand
 
 万卡集群的网络拓扑：
 

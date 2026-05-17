@@ -3,7 +3,7 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：Tokenizer 革命 —— 为什么 2026 年你必须关心分词器",
-    body: `2026 年 4 月 20 日，**Anthropic** 发布 **Claude** Opus 4.7，这不仅仅是一次模型能力升级，更是一个分水岭事件：**Claude** 系列首次更换了 tokenizer。
+    body: `2026 年 4 月 20 日，Anthropic 发布 Claude Opus 4.7，这不仅仅是一次模型能力升级，更是一个分水岭事件：Claude 系列首次更换了 tokenizer。
 
 Simon Willison 第一时间实测发现，Opus 4.7 的 token 计数相比 4.6 出现了系统性膨胀：
 
@@ -40,7 +40,7 @@ LLM 不直接处理文字，而是将文本切分为 token（词元），每个 
 
 ### 1.2 BPE（Byte-Pair Encoding）分词器的工作原理
 
-主流 LLM（包括 **Claude** 系列）使用 BPE 分词算法。其核心思想是：从字符级别开始，迭代合并最高频的相邻符号对。
+主流 LLM（包括 Claude 系列）使用 BPE 分词算法。其核心思想是：从字符级别开始，迭代合并最高频的相邻符号对。
 
 以下是 BPE 分词器的 Python 实现：`,
     code: [
@@ -140,7 +140,7 @@ print(f"Vocabulary size: {len(vocab)}")`,
     title: "二、Claude Opus 4.7 Tokenizer 变化实测",
     body: `### 2.1 变化幅度实测数据
 
-Simon Willison 用他的 [**Claude** Token Counter 工具](https://tools.simonwillison.net/claude-token-counter) 进行了多场景实测：
+Simon Willison 用他的 [Claude Token Counter 工具](https://tools.simonwillison.net/claude-token-counter) 进行了多场景实测：
 
 | 测试场景 | Opus 4.6 Token 数 | Opus 4.7 Token 数 | 增长倍数 |
 |---------|:---:|:---:|:---:|
@@ -185,11 +185,11 @@ Simon Willison 用他的 [**Claude** Token Counter 工具](https://tools.simonwi
   },
   {
     title: "三、构建多模型 Token 计数器（Python 实战）",
-    body: `要做出明智的模型选择，你需要在自己的业务场景下实测 token 消耗。**Anthropic** 提供了官方的 token counting API，我们可以用它构建一个多模型对比工具。
+    body: `要做出明智的模型选择，你需要在自己的业务场景下实测 token 消耗。Anthropic 提供了官方的 token counting API，我们可以用它构建一个多模型对比工具。
 
-### 3.1 使用 **Anthropic** Token Counting API
+### 3.1 使用 Anthropic Token Counting API
 
-以下是完整的 Python 实现，支持同时对比多个 **Claude** 模型的 token 消耗：`,
+以下是完整的 Python 实现，支持同时对比多个 Claude 模型的 token 消耗：`,
     code: [
       {
         lang: "python",
@@ -409,7 +409,7 @@ if __name__ == "__main__":
 
 ### 4.1 全面对比表
 
-| 维度 | **Claude** Opus 4.7 | **Claude** Opus 4.6 | Claude Sonnet 4.6 | Claude Haiku 4.5 | **GPT-4**o | o3-mini |
+| 维度 | Claude Opus 4.7 | Claude Opus 4.6 | Claude Sonnet 4.6 | Claude Haiku 4.5 | GPT-4o | o3-mini |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|
 | 输入价格 ($/M) | $5.00 | $5.00 | $3.00 | $0.25 | $2.50 | $1.10 |
 | 输出价格 ($/M) | $25.00 | $25.00 | $15.00 | $1.25 | $10.00 | $4.40 |
@@ -703,7 +703,7 @@ if __name__ == "__main__":
   },
   {
     title: "六、Kimi 2.6 与多模型竞争格局",
-    body: `除了 **Claude** 系列的 tokenizer 变革，2026 年 Q2 的多模型竞争格局也在快速演变。
+    body: `除了 Claude 系列的 tokenizer 变革，2026 年 Q2 的多模型竞争格局也在快速演变。
 
 ### 6.1 Kimi 2.6 值得关注的能力
 
@@ -851,7 +851,7 @@ code_generation_chain = FallbackChain(
   },
   {
     title: "总结与展望",
-    body: `**Claude** Opus 4.7 的 tokenizer 变化是 2026 年 LLM 领域最值得关注的技术变革之一。它提醒我们：
+    body: `Claude Opus 4.7 的 tokenizer 变化是 2026 年 LLM 领域最值得关注的技术变革之一。它提醒我们：
 
 1. 模型升级 ≠ 成本不变：即使标价相同，tokenizer 变化可能导致实际成本上升 40%+。
 2. 实测是关键：不同场景下的 token 膨胀率差异巨大（1.01× ~ 3.01×），必须在自己的业务场景下实测。

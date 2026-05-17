@@ -14,9 +14,9 @@ export const article: Article = {
   content: [
     {
       title: "1. 事件背景：Claude Opus 4.7 发布与 Tokenizer 变更",
-      body: `2026 年 4 月，**Anthropic** 正式发布 **Claude** Opus 4.7。这次更新中，最值得关注但也最容易被忽视的变化是：Opus 4.7 使用了全新的 Tokenizer。
+      body: `2026 年 4 月，Anthropic 正式发布 Claude Opus 4.7。这次更新中，最值得关注但也最容易被忽视的变化是：Opus 4.7 使用了全新的 Tokenizer。
 
-**Anthropic** 在官方公告中明确写道：
+Anthropic 在官方公告中明确写道：
 
 > "Opus 4.7 uses an updated tokenizer that improves how the model processes text. The tradeoff is that the same input can map to more tokens—roughly 1.0–1.35× depending on the content type."
 
@@ -35,7 +35,7 @@ Tokenizer 是什么？
 
 大语言模型无法直接理解原始文本，需要将文本转换为模型能处理的离散单元——Token。Tokenizer 就是负责这个转换的组件。常见的 Tokenizer 算法包括 BPE（Byte-Pair Encoding）、WordPiece 和 Unigram。
 
-**Claude** 系列一直使用 BPE 算法。Opus 4.7 的新 Tokenizer 在以下几个方面做了改进：
+Claude 系列一直使用 BPE 算法。Opus 4.7 的新 Tokenizer 在以下几个方面做了改进：
 
 改进 1：更细粒度的词汇切分
 
@@ -101,7 +101,7 @@ Baseline"]
 
 ### 不同内容类型的膨胀系数
 
-**Anthropic** 给出的范围是 1.0-1.35 倍，但实际测试显示：
+Anthropic 给出的范围是 1.0-1.35 倍，但实际测试显示：
 
 | 内容类型 | 膨胀系数 | 说明 |
 |----------|----------|------|
@@ -423,7 +423,7 @@ if __name__ == "__main__":
 
 ### 策略二：使用缓存减少重复计算
 
-对于重复的系统提示词和常见输入，使用缓存可以避免重复的 Token 消耗。**Anthropic** 的 Prompt Caching 可以将缓存命中部分的成本降低 90%。
+对于重复的系统提示词和常见输入，使用缓存可以避免重复的 Token 消耗。Anthropic 的 Prompt Caching 可以将缓存命中部分的成本降低 90%。
 
 ### 策略三：分级使用模型
 
@@ -478,7 +478,7 @@ def monitor_daily_usage(api_client, threshold_usd=1000):
     },
     {
       title: "7. 总结与展望",
-      body: `**Claude** Opus 4.7 的 Tokenizer 变更是一个典型的「权衡」案例：
+      body: `Claude Opus 4.7 的 Tokenizer 变更是一个典型的「权衡」案例：
 
 付出的代价：
 - 文本 Token 增加 1.0-1.46 倍，系统提示词最严重
@@ -501,7 +501,7 @@ def monitor_daily_usage(api_client, threshold_usd=1000):
 
 2026 年的 AI 生态正在快速演进，Tokenizer 的变革只是冰山一角。掌握 Token 计数的能力、理解模型定价的数学模型、建立成本监控体系——这些将成为每个 AI 开发者的基本功。
 
-**Anthropic** 通过公开系统提示词和 Token 计数 API，展示了透明化运营的典范。在 AI 工具链日益复杂的今天，能精确计算和控制成本的开发者和团队，将在竞争中占据显著优势。`
+Anthropic 通过公开系统提示词和 Token 计数 API，展示了透明化运营的典范。在 AI 工具链日益复杂的今天，能精确计算和控制成本的开发者和团队，将在竞争中占据显著优势。`
     }
   ]
 };

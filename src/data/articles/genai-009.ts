@@ -69,9 +69,9 @@ Flow Matching 的核心优势：
 - 数学上更优雅，训练更稳定
 - Flux 等新一代模型已全面采用 Flow Matching
 
-2.3 Diffusion **Transformer**（DiT）—— 架构革命
+2.3 Diffusion Transformer（DiT）—— 架构革命
 
-传统的扩散模型使用 U-Net 作为骨干网络，而 DiT 用 **Transformer** 替换了 U-Net。这一架构变革带来了质的飞跃：
+传统的扩散模型使用 U-Net 作为骨干网络，而 DiT 用 Transformer 替换了 U-Net。这一架构变革带来了质的飞跃：
 
 - 可扩展性：Transformer 的 scaling law 同样适用于生成模型
 - 全局理解力：Self-attention 机制让模型能理解整个图像的语义关系
@@ -133,8 +133,8 @@ Flow Matching 的核心优势：
 
 4.2 主流视频生成模型
 
-Sora 2（**OpenAI**）：
-- 基于 Diffusion **Transformer** 架构
+Sora 2（OpenAI）：
+- 基于 Diffusion Transformer 架构
 - 支持最长 60 秒视频生成
 - 物理模拟能力显著提升（流体、光影、碰撞）
 - 支持文生视频和图生视频
@@ -197,14 +197,14 @@ ComfyUI 是目前最流行的开源图像生成工具，采用节点式编程：
 - 支持 ControlNet、IP-Adapter、LoRA 等插件
 - 社区共享工作流市场
 
-5.2 Diffusers —— **HuggingFace** 官方 Python 库
+5.2 Diffusers —— HuggingFace 官方 Python 库
 
-Diffusers 是 **HuggingFace** 提供的官方扩散模型库：
+Diffusers 是 HuggingFace 提供的官方扩散模型库：
 
 - 统一的 API 接口，支持多种模型
 - 内置调度器（DDIM、DPM++、Euler 等）
 - 支持流水线（Pipeline）组合
-- 与 **Transformer**s 库深度集成
+- 与 Transformers 库深度集成
 - 是研究和开发的首选框架
 
 5.3 FLUX 开源生态
@@ -219,7 +219,7 @@ Flux 模型开源后，迅速形成了丰富的生态：
     },
     {
       title: "六、Python 实战：用 Diffusers 生成高质量图像",
-      body: `下面我们用 **HuggingFace** Diffusers 库来实现一个完整的图像生成 Pipeline，支持 Flux 模型、提示词优化和批量生成。`,
+      body: `下面我们用 HuggingFace Diffusers 库来实现一个完整的图像生成 Pipeline，支持 Flux 模型、提示词优化和批量生成。`,
       code: [
         {
           lang: "python",

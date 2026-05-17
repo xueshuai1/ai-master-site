@@ -20,7 +20,7 @@ export const article: Article = {
 
 理论分析困难也是扩散模型的短板。虽然扩散模型的经验效果出色，但其训练动力学的理论分析相对薄弱。我们很难精确理解模型在训练过程中学到了什么，也很难从理论上保证训练收敛到最优解。
 
-Flow Matching 正是在这些背景下诞生的。它将生成过程建模为常微分方程（ODE）的学习，直接学习从噪声分布到数据分布的变换速度场。这种方法在训练效率、采样速度和理论可分析性方面都有显著优势。2025 年，Stability AI 在 Stable Diffusion 3 中采用了 Rectified Flow（整流模型），Black Forest Labs 的 FLUX 系列也基于 Flow Matching 架构，而 **OpenAI** 的 Sora 视频生成系统同样使用了类似的连续变换方法。`,
+Flow Matching 正是在这些背景下诞生的。它将生成过程建模为常微分方程（ODE）的学习，直接学习从噪声分布到数据分布的变换速度场。这种方法在训练效率、采样速度和理论可分析性方面都有显著优势。2025 年，Stability AI 在 Stable Diffusion 3 中采用了 Rectified Flow（整流模型），Black Forest Labs 的 FLUX 系列也基于 Flow Matching 架构，而 OpenAI 的 Sora 视频生成系统同样使用了类似的连续变换方法。`,
             table: {
                 headers: ["维度", "Diffusion", "Flow Matching", "提升"],
                 rows: [
@@ -422,11 +422,11 @@ class SiTFlowMatcher:
             title: "5. 工业级实现：SD3、FLUX 与 Sora 的 Flow Matching 架构",
             body: `Flow Matching 从理论到工业应用的转化速度惊人。让我们深入看看三个代表性的工业级系统是如何应用 Flow Matching 的。
 
-Stable Diffusion 3（Stability AI, 2025） 是第一个大规模采用 Flow Matching 的主流图像生成模型。SD3 的核心架构是 Multimodal Diffusion **Transformer**（MM-DiT），它用 **Transformer** 替代了 U-Net 作为去噪/速度预测网络。关键变化在于：训练目标从噪声预测改为了速度场预测（Flow Matching 目标），采样过程从随机去噪变为了确定性 ODE 积分。SD3 使用 Rectified Flow 的 2 轮迭代整流，使得 25 步 ODE 积分的生成质量堪比前代 50 步 DDIM 的结果。配合 256 通道 latent space 和双文本编码器（CLIP + T5），SD3 在生成质量和文本对齐度上都超越了 SDXL。
+Stable Diffusion 3（Stability AI, 2025） 是第一个大规模采用 Flow Matching 的主流图像生成模型。SD3 的核心架构是 Multimodal Diffusion Transformer（MM-DiT），它用 Transformer 替代了 U-Net 作为去噪/速度预测网络。关键变化在于：训练目标从噪声预测改为了速度场预测（Flow Matching 目标），采样过程从随机去噪变为了确定性 ODE 积分。SD3 使用 Rectified Flow 的 2 轮迭代整流，使得 25 步 ODE 积分的生成质量堪比前代 50 步 DDIM 的结果。配合 256 通道 latent space 和双文本编码器（CLIP + T5），SD3 在生成质量和文本对齐度上都超越了 SDXL。
 
 FLUX（Black Forest Labs, 2025） 是 SD3 团队的后续作品，将 Flow Matching 推向了新的高度。FLUX 采用了一个纯 Transformer 架构（没有卷积层），使用 Flow Matching 作为训练目标，并引入了 Flow Rectification 技术。FLUX 的最大特点是流匹配 + 注意力机制的深度整合：在 Transformer 的每一层中，注意力模块处理全局信息，MLP 模块同时作为速度场预测器。这种设计使得 FLUX 在图像细节和结构一致性上达到了新的高度。FLUX.1 系列包含三个版本：FLUX.1 [pro]（闭源旗舰）、FLUX.1 [dev]（开源、非商用）和 FLUX.1 [schnell]（开源、快速，仅需 4 步采样）。
 
-Sora（**OpenAI**, 2024-2025） 虽然 **OpenAI** 没有完全公开技术细节，但根据论文 "Video Generation Models as World Simulators" 中的描述，Sora 的核心是时空 Patch 的连续变换。它将视频分解为时空 Patch（同时包含空间和时间维度），然后在 Patch 空间上学习一个 Flow Matching 模型。与图像生成不同，视频生成需要建模时间维度上的动态变化。Flow Matching 的 ODE 框架天然适合这种任务——ODE 的时间变量 t 可以同时编码生成进度和视频帧的时间位置。Sora 能够生成长达 60 秒的高清视频，这在之前的扩散模型框架下是极其困难的。`,
+Sora（OpenAI, 2024-2025） 虽然 OpenAI 没有完全公开技术细节，但根据论文 "Video Generation Models as World Simulators" 中的描述，Sora 的核心是时空 Patch 的连续变换。它将视频分解为时空 Patch（同时包含空间和时间维度），然后在 Patch 空间上学习一个 Flow Matching 模型。与图像生成不同，视频生成需要建模时间维度上的动态变化。Flow Matching 的 ODE 框架天然适合这种任务——ODE 的时间变量 t 可以同时编码生成进度和视频帧的时间位置。Sora 能够生成长达 60 秒的高清视频，这在之前的扩散模型框架下是极其困难的。`,
             code: [
                 {
                     lang: "python",

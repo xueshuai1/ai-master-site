@@ -29,7 +29,7 @@ export const article: Article = {
 
 2026 年的关键转折：
 
-2026 年 4 月，**Google DeepMind** 发布 **Gemini** Robotics-ER 1.6，这是物理 AI 领域的一个重要里程碑。它不再是"能走路的机器人"或"能抓取的机械臂"，而是能理解物理状态并做出推理的智能体：
+2026 年 4 月，Google DeepMind 发布 Gemini Robotics-ER 1.6，这是物理 AI 领域的一个重要里程碑。它不再是"能走路的机器人"或"能抓取的机械臂"，而是能理解物理状态并做出推理的智能体：
 
 - 仪器读取：能读懂压力表、液位计、温度计的读数
 - 空间推理：能精准指向目标物体、计数物品、判断距离
@@ -38,7 +38,7 @@ export const article: Article = {
 
 双模型架构的突破：
 
-**Gemini** Robotics-ER 1.6 采用了双模型架构：
+Gemini Robotics-ER 1.6 采用了双模型架构：
 - ER 1.6（Embodied Reasoning）：负责高层推理——理解任务、规划路径、判断状态
 - Robotics 1.5：负责底层执行——电机控制、平衡维持、精细操作
 
@@ -104,7 +104,7 @@ IMU/编码器"]
 
 物理 AI 解决方案：
 
-以 Boston Dynamics Spot + **Gemini** Robotics-ER 1.6 为例：
+以 Boston Dynamics Spot + Gemini Robotics-ER 1.6 为例：
 
 Spot 机器人在工厂中自主导航，搭载多种传感器：
 - 高清摄像头：拍摄仪表读数、管道状态、阀门位置
@@ -112,7 +112,7 @@ Spot 机器人在工厂中自主导航，搭载多种传感器：
 - 气体传感器：检测可燃气体、有毒气体泄漏
 - 声学传感器：通过声音判断设备运行状态（如轴承磨损）
 
-**Gemini** ER 1.6 的仪器读取能力是关键突破——它能像人类巡检员一样"读懂"压力表、液位计、温度计的读数，而不仅仅是拍一张照片。
+Gemini ER 1.6 的仪器读取能力是关键突破——它能像人类巡检员一样"读懂"压力表、液位计、温度计的读数，而不仅仅是拍一张照片。
 
 实际效果：
 - 巡检覆盖率从人工的 60-70% 提升到 95%+
@@ -158,7 +158,7 @@ Spot 机器人在数据中心巡检中的优势：
     },
     {
       title: "物理 AI 的核心技术：空间推理与仪器读取",
-      body: `**Gemini** Robotics-ER 1.6 的两个关键能力——空间推理和仪器读取——代表了物理 AI 从"能看"到"能理解"的跨越。
+      body: `Gemini Robotics-ER 1.6 的两个关键能力——空间推理和仪器读取——代表了物理 AI 从"能看"到"能理解"的跨越。
 
 ### 空间推理（Spatial Reasoning）
 
@@ -207,7 +207,7 @@ Spot 机器人在数据中心巡检中的优势：
    - 指针式：检测指针角度 + 刻度识别，计算读数
 5. 数值输出：将提取的信息转换为标准数值（考虑量程、单位）
 
-**Gemini** ER 1.6 的突破：
+Gemini ER 1.6 的突破：
 
 Gemini ER 1.6 的优势在于它不是用传统的 CV pipeline 来做仪器读取，而是基于大模型的多模态理解：
 
@@ -259,7 +259,7 @@ Hough变换/CNN"]
 
 2026 年，仿真技术已经能相当真实地模拟物理世界：
 
-**NVIDIA** Isaac Sim 是当前最强大的机器人仿真平台：
+NVIDIA Isaac Sim 是当前最强大的机器人仿真平台：
 - 基于 Omniverse，提供物理精确的刚体、柔性体、流体仿真
 - 支持 PhotoRealistic 渲染，生成接近真实世界的图像
 - 支持传感器仿真（摄像头、LiDAR、深度相机、IMU）
@@ -398,7 +398,7 @@ class SimToRealTraining:
 - 成本节省：每年节省巡检成本约 2 亿元人民币
 
 技术要点：
-- 使用 YOLOv10 + Vision **Transformer** 进行缺陷检测
+- 使用 YOLOv10 + Vision Transformer 进行缺陷检测
 - 边缘计算：无人机上直接运行轻量模型，实时告警
 - 云端训练：收集的所有巡检数据用于持续优化模型
 
@@ -555,7 +555,7 @@ Gemini ER"]
 
 ### 1. 具身大模型（Embodied Foundation Models）
 
-当前物理 AI 系统的"大脑"（如 **Gemini** ER 1.6）仍然是针对特定任务微调的。未来趋势是构建具身大模型——一个能处理多种物理任务的通用基础模型。
+当前物理 AI 系统的"大脑"（如 Gemini ER 1.6）仍然是针对特定任务微调的。未来趋势是构建具身大模型——一个能处理多种物理任务的通用基础模型。
 
 关键特征：
 - 多模态输入：视觉、触觉、力觉、语言
@@ -563,8 +563,8 @@ Gemini ER"]
 - 零样本/少样本泛化：在新环境中无需重新训练
 
 代表项目：
-- Google RT-2（Robotics **Transformer** 2）
-- **NVIDIA** VIMA（Visual Motor **Transformer**）
+- Google RT-2（Robotics Transformer 2）
+- NVIDIA VIMA（Visual Motor Transformer）
 - Physical Intelligence 的 π 系列模型
 
 ### 2. 人形机器人的工业应用
@@ -619,7 +619,7 @@ Tesla Optimus 开启了人形机器人在工业场景的应用探索。2026-2027
 
 物理 AI 正在从实验室演示走向工业落地。2026 年，我们看到了几个关键信号：
 
-- **Gemini** ER 1.6 的仪器读取和空间推理能力，让物理 AI 真正能"理解"物理世界
+- Gemini ER 1.6 的仪器读取和空间推理能力，让物理 AI 真正能"理解"物理世界
 - Boston Dynamics Spot 在工业巡检中的实际部署，证明了物理 AI 的商业价值
 - Tesla Optimus 在工厂中的应用，开启了人形机器人的工业时代
 

@@ -7,12 +7,12 @@ const content: ArticleSection[] = [
 
 短短几周内，两个记忆相关项目引爆 GitHub：
 
-- **Claude**-Mem（thedotmack）：单周暴涨 14,556 星，突破 63K+ 星，成为增长最快的 Agent 记忆工具
+- Claude-Mem（thedotmack）：单周暴涨 14,556 星，突破 63K+ 星，成为增长最快的 Agent 记忆工具
 - MemPalace（MemPalace/mempalace）：发布后 48 小时获得 22K 星，在 LongMemEval 基准测试中准确率达 96.6%
 
 为什么记忆系统突然成为刚需？因为开发者们发现了一个残酷的现实：没有记忆的 Agent，永远只是一个工具；有了记忆的 Agent，才能成为真正的伙伴。
 
-无论你用多少次 **Claude** Code，每次新会话都会丢失之前的上下文。无论你让 Agent 执行多复杂的任务，它都记不住上次犯的错。这就是记忆系统要解决的核心问题。
+无论你用多少次 Claude Code，每次新会话都会丢失之前的上下文。无论你让 Agent 执行多复杂的任务，它都记不住上次犯的错。这就是记忆系统要解决的核心问题。
 
 本文将深度解析 AI Agent 记忆系统的技术原理、主流方案对比，以及如何在你的 Agent 工作流中集成记忆能力。`,
     tip: `阅读收获：
@@ -25,7 +25,7 @@ const content: ArticleSection[] = [
     title: "一、为什么 AI Agent 需要记忆？——上下文窗口的本质困境",
     body: `所有大语言模型都面临同一个物理限制：上下文窗口有限。
 
-**Claude** Opus 4.7 支持 200K token 上下文，**GPT-4**o 支持 128K token，但这对于长期运行的 Agent 来说远远不够。一个典型的 AI 编程会话可能产生：
+Claude Opus 4.7 支持 200K token 上下文，GPT-4o 支持 128K token，但这对于长期运行的 Agent 来说远远不够。一个典型的 AI 编程会话可能产生：
 
 - 数百个文件修改操作
 - 数千行代码的 diff
@@ -41,7 +41,7 @@ const content: ArticleSection[] = [
 3. 历史决策过程被完整保留（而不是提炼）
 4. 成功/失败经验没有结构化存储
 
-这就是为什么 **Claude**-Mem 的 slogan 是 "Never lose context again"——它解决的不是"窗口太小"的问题，而是"窗口利用率太低"的问题。`,
+这就是为什么 Claude-Mem 的 slogan 是 "Never lose context again"——它解决的不是"窗口太小"的问题，而是"窗口利用率太低"的问题。`,
     mermaid: `graph LR
     A[Agent 会话开始] --> B{上下文窗口}
     B --> C[系统提示 5-15K]
@@ -59,13 +59,13 @@ const content: ArticleSection[] = [
   },
   {
     title: "二、Claude-Mem 深度解析：自动捕获 + AI 压缩",
-    body: `**Claude**-Mem 的核心思路非常直接：既然人类不擅长记住所有细节，那就让 AI 帮 AI 记住。
+    body: `Claude-Mem 的核心思路非常直接：既然人类不擅长记住所有细节，那就让 AI 帮 AI 记住。
 
 它的技术架构分为三个核心模块：
 
 ### 1. 自动捕获层
 
-**Claude**-Mem 作为 Claude Code 的插件，自动捕获编码会话中的所有操作：
+Claude-Mem 作为 Claude Code 的插件，自动捕获编码会话中的所有操作：
 
 - 文件读取和修改
 - 终端命令执行

@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "1. 什么是 Agent 运行时治理——为什么它如此重要",
-            body: `AI Agent 运行时治理（Agent Runtime Governance）是指在 AI Agent 执行任务的过程中，对其行为进行持续监控、约束、干预和审计的系统性方法。它不同于传统的 AI 治理（ethics-007 中讨论的 **EU AI Act**、**NIST AI RMF** 等政策框架），也不同于 Agent 权限管理（agent-030 中讨论的访问控制），而是专注于 Agent 正在做什么、如何做、以及是否在预期轨道上运行这一动态过程。
+            body: `AI Agent 运行时治理（Agent Runtime Governance）是指在 AI Agent 执行任务的过程中，对其行为进行持续监控、约束、干预和审计的系统性方法。它不同于传统的 AI 治理（ethics-007 中讨论的 EU AI Act、NIST AI RMF 等政策框架），也不同于 Agent 权限管理（agent-030 中讨论的访问控制），而是专注于 Agent 正在做什么、如何做、以及是否在预期轨道上运行这一动态过程。
 
 ### Agent 运行时治理的独特挑战
 
@@ -358,7 +358,7 @@ print(f"纠正回复: {r2['sycophancy_score']} ({r2['verdict']})")`
 
 Langfuse 提供 LLM 追踪、延迟监控和成本分析功能，适用于调用层和推理层可观测性，优势是开源、可自部署、社区活跃。
 
-LangSmith 提供 LLM 应用开发的全流程追踪，适用于推理链分析、测试和调试，优势是与 **LangChain** 生态深度集成。
+LangSmith 提供 LLM 应用开发的全流程追踪，适用于推理链分析、测试和调试，优势是与 LangChain 生态深度集成。
 
 Arize Phoenix 提供 LLM 评估、追踪和可观测性，适用于质量维度和数据维度监控，优势是开源且支持本地部署。
 
@@ -368,7 +368,7 @@ OpenLIT 提供 OpenTelemetry 标准的 LLM 可观测性，适用于与现有 APM
 
 AgentGuard 是一个研究原型的 Agent 行为约束和运行时监控框架，适用于多层约束引擎和紧急制动，目前处于学术研究阶段尚未生产就绪。
 
-Constitutional AI Runtime 是基于宪法的运行时约束框架，适用于将 AI 安全原则编码为运行时规则，是 **Anthropic** 研究框架的延伸实现。
+Constitutional AI Runtime 是基于宪法的运行时约束框架，适用于将 AI 安全原则编码为运行时规则，是 Anthropic 研究框架的延伸实现。
 
 ### 选择建议
 
@@ -390,7 +390,7 @@ NIST AI Risk Management Framework 1.0 美国国家标准与技术研究院的 AI
 
 OECD AI Principles 经合组织 AI 原则，包含治理和问责章节。
 
-**EU AI Act** 欧盟 AI 法案，对高风险 AI 系统有明确要求。
+EU AI Act 欧盟 AI 法案，对高风险 AI 系统有明确要求。
 
 ### 相关课程
 

@@ -16,7 +16,7 @@ export const article: Article = {
 
 这意味着评测需要考虑：Agent 是否能正确规划任务分解？是否能在多轮交互中保持目标一致性？是否能正确选择和使用工具？遇到错误时能否自我修正？在多模态场景下，能否同时理解视觉和语言信息？
 
-2026 年 4 月，**HuggingFace** 每日论文中涌现了大量 Agent 评测相关研究：MiroEval 专注于多模态深度研究 Agent 的过程与结果评估，ViGoR-Bench 测试视觉生成模型的零样本视觉推理能力，Act Wisely 探讨多模态 Agent 的元认知工具使用。这些研究共同指向一个核心问题：我们如何可靠地衡量 Agent 的真实能力，而不是过拟合某个特定基准？`,
+2026 年 4 月，HuggingFace 每日论文中涌现了大量 Agent 评测相关研究：MiroEval 专注于多模态深度研究 Agent 的过程与结果评估，ViGoR-Bench 测试视觉生成模型的零样本视觉推理能力，Act Wisely 探讨多模态 Agent 的元认知工具使用。这些研究共同指向一个核心问题：我们如何可靠地衡量 Agent 的真实能力，而不是过拟合某个特定基准？`,
             code: [
                 {
                     lang: "python",

@@ -152,7 +152,7 @@ export const article: Article = {
         },
         {
             title: "5. TensorRT 推理优化",
-            body: `TensorRT 是 **NVIDIA** 开发的高性能深度学习推理 SDK，专为 **NVIDIA** GPU（包括 Jetson 系列边缘设备）优化。它的核心价值在于通过一系列编译期优化技术，将训练好的模型转换为高度优化的推理引擎。TensorRT 的优化策略包括：层融合（将 Conv + BN + ReLU 融合为单个内核）、内核自动调优（为特定 GPU 选择最优的 CUDA 内核实现）、精度校准（支持 FP16 和 INT8 推理）以及动态 Tensor 内存管理。TensorRT 的工作流程分为两个阶段：构建阶段和推理阶段。在构建阶段，TensorRT 解析模型（支持 ONNX、PyTorch、TensorFlow），应用图优化和内核选择，然后序列化生成一个 .engine 文件。这个 engine 文件是平台和 GPU 特定的，需要针对每种目标 GPU 单独构建。在推理阶段，加载 engine 文件并执行推理，此时的延迟和吞吐量都经过了极致优化。对于边缘场景，NVIDIA Jetson 系列（Orin Nano、AGX Orin 等）是部署 TensorRT 的理想硬件平台，它们将 GPU、CPU 和内存集成在单一模块中，功耗从 7W 到 60W 不等。在 Jetson 上部署 TensorRT 时，需要注意 CUDA 版本和 TensorRT 版本的兼容性，建议使用 NVIDIA 提供的 JetPack SDK 来管理整个软件栈。`,
+            body: `TensorRT 是 NVIDIA 开发的高性能深度学习推理 SDK，专为 NVIDIA GPU（包括 Jetson 系列边缘设备）优化。它的核心价值在于通过一系列编译期优化技术，将训练好的模型转换为高度优化的推理引擎。TensorRT 的优化策略包括：层融合（将 Conv + BN + ReLU 融合为单个内核）、内核自动调优（为特定 GPU 选择最优的 CUDA 内核实现）、精度校准（支持 FP16 和 INT8 推理）以及动态 Tensor 内存管理。TensorRT 的工作流程分为两个阶段：构建阶段和推理阶段。在构建阶段，TensorRT 解析模型（支持 ONNX、PyTorch、TensorFlow），应用图优化和内核选择，然后序列化生成一个 .engine 文件。这个 engine 文件是平台和 GPU 特定的，需要针对每种目标 GPU 单独构建。在推理阶段，加载 engine 文件并执行推理，此时的延迟和吞吐量都经过了极致优化。对于边缘场景，NVIDIA Jetson 系列（Orin Nano、AGX Orin 等）是部署 TensorRT 的理想硬件平台，它们将 GPU、CPU 和内存集成在单一模块中，功耗从 7W 到 60W 不等。在 Jetson 上部署 TensorRT 时，需要注意 CUDA 版本和 TensorRT 版本的兼容性，建议使用 NVIDIA 提供的 JetPack SDK 来管理整个软件栈。`,
             code: [
                 {
                     lang: "python",

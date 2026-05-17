@@ -27,7 +27,7 @@ export const article: Article = {
 
 听起来简单？但正是这个看似朴素的目标函数，让模型学会了语法、语义、常识推理、甚至部分数学能力。Scaling Laws 告诉我们：在足够大的数据规模和参数量下，next token prediction 会涌现出远超语言建模本身的能力。
 
-预训练与后续阶段的关系：预训练是 LLM 生命周期的地基。后续的所有优化——指令微调（**SFT**）、人类偏好对齐（**RLHF**/**DPO**）、领域适配（Domain Adaptation）——都建立在预训练获得的通用语言能力之上。如果预训练的质量不够，后续的所有努力都会受到上限约束。
+预训练与后续阶段的关系：预训练是 LLM 生命周期的地基。后续的所有优化——指令微调（SFT）、人类偏好对齐（RLHF/DPO）、领域适配（Domain Adaptation）——都建立在预训练获得的通用语言能力之上。如果预训练的质量不够，后续的所有努力都会受到上限约束。
 
 预训练的核心挑战可以归结为三个维度：
 
@@ -137,7 +137,7 @@ WordPiece：由 BERT 使用，与 BPE 非常相似，但合并策略基于似然
 
 Unigram：由 SentencePiece 实现，采用自顶向下的策略——从一个大词表开始，迭代地移除对似然度影响最小的 token。这种方法能产生更均衡的词表分布。
 
-Tiktoken：由 **OpenAI** 开发，基于 BPE 但针对代码和混合语言进行了优化。**GPT-4** 使用的 cl100k_base 词表包含 100,256 个 token，对代码 token 的覆盖特别充分。
+Tiktoken：由 OpenAI 开发，基于 BPE 但针对代码和混合语言进行了优化。GPT-4 使用的 cl100k_base 词表包含 100,256 个 token，对代码 token 的覆盖特别充分。
 
 ### 3.2 词表大小的权衡
 
@@ -240,7 +240,7 @@ DDP 的工作流程：
 
 ### 5.3 流水线并行（Pipeline Parallelism）
 
-流水线并行将模型的不同层分配到不同 GPU上。例如，一个 100 层的 **Transformer**，可以将前 25 层放在 GPU0，26-50 层放在 GPU1，以此类推。数据像流水线一样，依次经过各个 GPU。
+流水线并行将模型的不同层分配到不同 GPU上。例如，一个 100 层的 Transformer，可以将前 25 层放在 GPU0，26-50 层放在 GPU1，以此类推。数据像流水线一样，依次经过各个 GPU。
 
 优点：显存和计算都分布在多张 GPU上，适合训练极大规模的模型。
 
@@ -809,13 +809,13 @@ torchrun \\
 前沿方向四：合成数据预训练。随着高质量人类文本数据的逐渐耗尽，研究者开始探索使用其他模型生成的合成数据来训练新模型。这被称为模型自吃（Model Self-Consumption）或合成数据预训练。关键问题是：合成数据的质量如何保证？多轮合成数据训练是否会导致模型崩溃（Model Collapse）？
 
 推荐阅读：
-- Raffel et al. (2020) - "Exploring the Limits of Transfer Learning with a Unified Text-to-Text **Transformer**"（C4 数据集）
+- Raffel et al. (2020) - "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"（C4 数据集）
 - Gao et al. (2020) - "The Pile: An 800GB Dataset of Diverse Text for Language Modeling"
 - Kaplan et al. (2020) - "Scaling Laws for Neural Language Models"
 - Hoffmann et al. (2022) - "Training Compute-Optimal Large Language Models"（Chinchilla 论文）
 - Li et al. (2023) - "DoReMi: Optimizing Data Mixtures for Language Model Pre-training"
 - Gunasekar et al. (2023) - "Textbooks Are All You Need"（高质量数据的重要性）
-- Touvron et al. (2023) - "**LLaMA**: Open and Efficient Foundation Language Models"（技术报告）`,
+- Touvron et al. (2023) - "LLaMA: Open and Efficient Foundation Language Models"（技术报告）`,
             tip: `学习路径：
 如果你想深入理解 LLM 预训练，建议按以下顺序学习：1) 先跑通一个小规模的预训练实验（使用 NanoGPT 或 lit-gpt 等开源项目）；2) 阅读 Chinchilla 论文理解计算最优的缩放法则；3) 研究 LLaMA 技术报告了解工业级的实践细节；4) 尝试自己构建数据管线并做数据质量分析。`,
             warning: `研究局限性：

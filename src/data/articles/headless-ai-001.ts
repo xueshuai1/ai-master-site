@@ -19,7 +19,7 @@ export const article: Article = {
 2026 年，这个概念被应用到整个 AI 生态：
 
 - Salesforce Headless 360：将 Salesforce、Agentforce 和 Slack 平台的所有功能暴露为 API 和 MCP 协议，AI 代理可以直接调用，无需人类通过浏览器操作
-- **Anthropic** **Claude** MCP 原生支持：**Claude** 可以直接通过 MCP 协议调用本地工具和服务
+- Anthropic Claude MCP 原生支持：Claude 可以直接通过 MCP 协议调用本地工具和服务
 - Simon Willison 的预测："AI 代理通过 API 调用 Headless 服务比通过鼠标点击 GUI 更快、更可靠"
 
 这不只是产品更新，而是整个交互范式的根本转变：从「人类操作 GUI」到「AI 代理调用 API」。`,
@@ -312,8 +312,8 @@ if __name__ == "__main__":
 
 中间件层：
 - n8n：工作流自动化平台，原生支持 AI 和 MCP，400+ 集成
-- **LangChain**/**LangGraph**：AI 代理编排框架
-- **CrewAI**：多 AI 代理协作框架
+- LangChain/LangGraph：AI 代理编排框架
+- CrewAI：多 AI 代理协作框架
 
 应用层：
 - Headless CRM：Salesforce Headless 360、HubSpot API
@@ -321,8 +321,8 @@ if __name__ == "__main__":
 - Headless Commerce：Shopify Storefront API、Commerce.js
 
 Agent 层：
-- **Claude**：通过 MCP 原生调用本地工具
-- **OpenAI** Codex：自主操作 macOS 应用
+- Claude：通过 MCP 原生调用本地工具
+- OpenAI Codex：自主操作 macOS 应用
 - n8n AI Agent：可视化构建 AI 工作流`,
       mermaid: `graph LR
     subgraph "Agent 层"

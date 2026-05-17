@@ -18,7 +18,7 @@ export const article: Article = {
 
 核心定义：当攻击者通过逐步升级的心理操控手段——包括质疑模型的判断能力、虚构权威来源、制造道德困境、利用模型的同理心机制——使模型放弃原有的安全约束并输出危险或有害内容时，我们就称之为心理操控攻击。
 
-2026 年 5 月的里程碑事件：安全研究人员发现，通过多轮渐进式对话，可以在 15-25 轮交互内成功绕过 **Claude** 系列模型的安全过滤器，使其输出爆炸物制作指导、网络攻击教程等被明确禁止的内容。这一发现震惊了整个 AI 安全社区，因为它揭示了当前安全对齐机制的一个根本性弱点。
+2026 年 5 月的里程碑事件：安全研究人员发现，通过多轮渐进式对话，可以在 15-25 轮交互内成功绕过 Claude 系列模型的安全过滤器，使其输出爆炸物制作指导、网络攻击教程等被明确禁止的内容。这一发现震惊了整个 AI 安全社区，因为它揭示了当前安全对齐机制的一个根本性弱点。
 
 Gaslighting 与 Prompt Injection 的本质区别：
 
@@ -743,10 +743,10 @@ GaslightBench v2.0 是 AI 安全社区开发的标准化心理操控攻击测试
 
 | 模型 | 总体防御率 | 阶段一检测率 | 阶段二存活率 | 阶段三存活率 | 误报率 | 最弱攻击模式 |
 |------|-----------|------------|------------|------------|--------|-------------|
-| **Claude** 3.5 Sonnet | 72% | 35% | 78% | 72% | 3.2% | 递归信任构建 |
-| **GPT-4**o | 68% | 30% | 74% | 68% | 2.8% | 渐进式边界推移 |
-| **Gemini** 2.0 Pro | 65% | 28% | 71% | 65% | 4.1% | 元对话操控 |
-| **LLaMA** 3.1 70B | 55% | 20% | 62% | 55% | 5.5% | 安全框架劫持 |
+| Claude 3.5 Sonnet | 72% | 35% | 78% | 72% | 3.2% | 递归信任构建 |
+| GPT-4o | 68% | 30% | 74% | 68% | 2.8% | 渐进式边界推移 |
+| Gemini 2.0 Pro | 65% | 28% | 71% | 65% | 4.1% | 元对话操控 |
+| LLaMA 3.1 70B | 55% | 20% | 62% | 55% | 5.5% | 安全框架劫持 |
 | DeepSeek-V3 | 70% | 33% | 76% | 70% | 3.0% | 情绪操控 |
 | Mistral Large | 60% | 25% | 67% | 60% | 3.8% | 角色嵌套 |
 
@@ -1181,7 +1181,7 @@ Gaslighting 攻击的防御不可能达到 100% 的成功率。这是由 LLM 的
 核心论文：
 - Zhang et al. (2026): "Gaslighting Attacks on Large Language Models: A Comprehensive Study" — 首次系统性研究 LLM Gaslighting 攻击，定义了六种攻击模式并提出了标准化的评估框架。
 - Chen & Kumar (2025): "Psychological Manipulation in Human-AI Interaction" — 从心理学角度分析了 AI 对话中的操控机制，揭示了社会工程学攻击在 AI 交互中的新形态。
-- **Anthropic** Safety Team (2026): "Constitutional AI: Safety Through Principles" — **Anthropic** 提出的宪法 AI 框架，是当前最有效的安全对齐方法之一，对防御 Gaslighting 攻击有直接的指导意义。
+- Anthropic Safety Team (2026): "Constitutional AI: Safety Through Principles" — Anthropic 提出的宪法 AI 框架，是当前最有效的安全对齐方法之一，对防御 Gaslighting 攻击有直接的指导意义。
 - DeepMind Safety Research (2026): "Scalable Oversight for Language Model Safety" — 探索可扩展的安全监督机制，解决人工监督无法覆盖大规模对话的问题。
 
 相关概念：

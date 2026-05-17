@@ -15,13 +15,13 @@ export const article: Article = {
       body: `2026 年 4 月 20-22 日，AI 编程助手领域在短短 48 小时内发生了三起重磅事件，彻底改变了开发者对 AI 编程工具成本的认知：
 
 事件 1：Claude Code 定价风波（4月21-22日）
-**Anthropic** 在 claude.com/pricing 页面悄悄将 **Claude** Code 从 $20/月的 Pro 计划移至 $100/月的 Max 计划专属。这一改动引发 Reddit、Hacker News 和 Twitter 的强烈反弹。**OpenAI** Codex 工程师直接表态 Codex 将继续提供免费和 Plus 版本。数小时后 **Anthropic** 恢复原页面，称只是「约 2% 新用户的小型测试」。
+Anthropic 在 claude.com/pricing 页面悄悄将 Claude Code 从 $20/月的 Pro 计划移至 $100/月的 Max 计划专属。这一改动引发 Reddit、Hacker News 和 Twitter 的强烈反弹。OpenAI Codex 工程师直接表态 Codex 将继续提供免费和 Plus 版本。数小时后 Anthropic 恢复原页面，称只是「约 2% 新用户的小型测试」。
 
 事件 2：GitHub Copilot Individual 重大调整（4月20日）
 GitHub 宣布：暂停 Pro/Pro+/Student 新用户注册；引入基于 token 消耗和模型乘数的用量限制；Pro 计划不再提供 Opus 模型（仅限 $39/月的 Pro+）；5月20日前取消可获全额退款。
 
 事件 3：OpenAI Codex 宣布永久免费（4月22日）
-在 **Claude** Code 定价风波的第二天，**OpenAI** Codex 团队明确宣布：Codex 将继续对免费用户和 ChatGPT Plus 用户开放，不会效仿 Anthropic 的涨价策略。
+在 Claude Code 定价风波的第二天，OpenAI Codex 团队明确宣布：Codex 将继续对免费用户和 ChatGPT Plus 用户开放，不会效仿 Anthropic 的涨价策略。
 
 这三件事揭示了一个核心趋势：AI Agent 工作流的算力需求正在指数级增长，商业公司正在重新评估定价模型以应对成本压力。`,
       mermaid: `graph TD
@@ -74,9 +74,9 @@ Copilot 之前采用「按请求收费」模式，即无论单次请求消耗多
       title: "三、真实 Token 成本核算",
       body: `要理解为什么 AI 编程助手会面临成本压力，我们需要从 token 级别进行核算。
 
-**Claude** Opus 4.7 Token 膨胀效应
+Claude Opus 4.7 Token 膨胀效应
 
-**Anthropic** 在 Opus 4.7 中引入了更新的 tokenizer，导致相同输入的 token 数增加约 1.0-1.35×。这意味着：
+Anthropic 在 Opus 4.7 中引入了更新的 tokenizer，导致相同输入的 token 数增加约 1.0-1.35×。这意味着：
 - Opus 4.7 虽然定价与 Opus 4.6 相同（$5/百万 input tokens, $25/百万 output tokens）
 - 但实际 token 膨胀使得有效成本增加了约 40%
 - 对于 30 页文本密集型 PDF，Opus 4.7 报告 60,934 tokens 而 4.6 报告 56,482 tokens（1.08×）
@@ -354,7 +354,7 @@ Aider（CLI 工具）
 自部署方案
 
 如果你有足够的 GPU 资源，可以考虑完全自部署：
-- 使用 **Ollama** 或 **vLLM** 部署开源模型（如 Llama 4、Qwen 等）
+- 使用 Ollama 或 vLLM 部署开源模型（如 Llama 4、Qwen 等）
 - 结合 Continue.dev 或 Aider 作为前端
 - 边际成本接近于零（仅需电费）`,
       table: {

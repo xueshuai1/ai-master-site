@@ -41,7 +41,7 @@ Qwen3.6-27B 选择回归 Dense 架构，是一次深思熟虑的战略转向。D
 
 Qwen3.6-27B 的关键架构特性：
 
-- Dense **Transformer** 架构：27B 参数全部激活，无 MoE 路由开销
+- Dense Transformer 架构：27B 参数全部激活，无 MoE 路由开销
 - RoPE 位置编码：支持超长上下文（65K+ tokens）
 - SwiGLU 激活函数：相比传统 GeLU 有更好的梯度流
 - GQA（Grouped Query Attention）：在保持模型能力的同时降低 KV Cache 内存
@@ -103,7 +103,7 @@ Qwen3.6-27B 的关键架构特性：
 
 Qwen3.6-27B 在多个编程基准上表现优异，以下是与竞品的对比数据（数据来源：官方报告 + 社区复现）：
 
-| 基准 | Qwen3.6-27B | Qwen3.5-397B-A17B | Llama-3.3-70B | DeepSeek-V3 | **Claude** Sonnet 4.6 |
+| 基准 | Qwen3.6-27B | Qwen3.5-397B-A17B | Llama-3.3-70B | DeepSeek-V3 | Claude Sonnet 4.6 |
 |------|------------|-------------------|---------------|-------------|-------------------|
 | HumanEval | 92.1 | 88.7 | 87.3 | 89.5 | 93.2 |
 | MBPP | 89.5 | 85.2 | 82.1 | 86.8 | 90.1 |
@@ -432,7 +432,7 @@ Simon 用 Qwen3.6-27B 完成了两个著名的「鹈鹕骑自行车」测试：
 在 SWE-bench Verified 基准上，Qwen3.6-27B 达到 52.3%。这意味着：
 - 在 500 个真实 GitHub Issue 修复任务中，它能成功解决约 261 个
 - 这个成绩超过了 Llama-3.3-70B（45.7%）和 DeepSeek-V3（50.2%）
-- 与 **Claude** Sonnet 4.6（58.4%）差距仅 6.1%，但成本接近零`,
+- 与 Claude Sonnet 4.6（58.4%）差距仅 6.1%，但成本接近零`,
     mermaid: `graph LR
     A[用户提示<br/>复杂编程任务] --> B{Qwen3.6-27B<br/>任务分解}
     B --> C[子任务 1<br/>代码生成]
@@ -489,13 +489,13 @@ Simon 用 Qwen3.6-27B 完成了两个著名的「鹈鹕骑自行车」测试：
 
 方案 1：OpenAI 兼容 API 集成
 
-llama-server 提供了完整的 **OpenAI** 兼容 API，这意味着任何支持 **OpenAI** SDK 的工具都可以无缝切换到 Qwen3.6-27B。
+llama-server 提供了完整的 OpenAI 兼容 API，这意味着任何支持 OpenAI SDK 的工具都可以无缝切换到 Qwen3.6-27B。
 
 方案 2：LiteLLM 代理层
 
 使用 LiteLLM 作为代理层，可以在多个模型之间路由请求：
 - 简单任务 → Qwen3.6-27B（本地，免费）
-- 复杂任务 → **Claude** Opus 4.7（API，高质量）
+- 复杂任务 → Claude Opus 4.7（API，高质量）
 - 搜索任务 → 专用工具
 
 方案 3：多模型协作架构
@@ -766,17 +766,17 @@ if __name__ == "__main__":
 1. 参数效率比参数数量更重要：27B Dense > 397B MoE，说明训练质量和数据筛选比单纯的参数堆砌更有价值
 2. 本地部署不再是奢望：16.8GB 的模型文件让消费级硬件也能运行旗舰级模型
 3. Agentic Coding 正在普及：不再是商用模型的专属，开源模型也能胜任复杂的编程任务
-4. 开源生态持续繁荣：从 llama.cpp 的量化支持到 **HuggingFace** 的模型托管，开源基础设施越来越完善
+4. 开源生态持续繁荣：从 llama.cpp 的量化支持到 HuggingFace 的模型托管，开源基础设施越来越完善
 
 对开发者的建议：
 
 | 场景 | 推荐方案 |
 |------|---------|
 | 个人开发辅助 | Qwen3.6-27B 本地部署（零成本，隐私安全） |
-| 企业代码生成 | Qwen3.6-27B + **Claude** Opus 4.7 混合架构 |
+| 企业代码生成 | Qwen3.6-27B + Claude Opus 4.7 混合架构 |
 | AI Agent 推理引擎 | Qwen3.6-27B 本地部署（低延迟，无速率限制） |
 | 边缘设备部署 | Qwen3.6-27B Q2 量化版（约 8GB） |
-| 极致性能需求 | **Claude** Opus 4.7 API + Qwen3.6-27B 降级方案 |
+| 极致性能需求 | Claude Opus 4.7 API + Qwen3.6-27B 降级方案 |
 
 未来展望：
 

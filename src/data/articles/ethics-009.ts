@@ -18,7 +18,7 @@ export const article: Article = {
 
 事件一：NAACP 起诉 xAI 阻止 Colossus 2 数据中心
 
-2026 年 4 月 15 日，美国全国有色人种协进会（NAACP）对 **xAI** 提起联邦诉讼，指控 Colossus 2 项目在未取得空气许可的情况下运行 27 台燃气轮机，违反《清洁空气法》，对黑人社区造成污染。
+2026 年 4 月 15 日，美国全国有色人种协进会（NAACP）对 xAI 提起联邦诉讼，指控 Colossus 2 项目在未取得空气许可的情况下运行 27 台燃气轮机，违反《清洁空气法》，对黑人社区造成污染。
 
 这起诉讼的意义远超单一案件：
 - 首次将 AI 基础设施的环境影响纳入法律监管
@@ -28,7 +28,7 @@ export const article: Article = {
 
 事件二：EU AI Act 正式生效执行
 
-欧盟人工智能法案（**EU AI Act**）于 2026 年开始分阶段执行，高风险 AI 系统面临严格合规要求，违者最高可处全球营业额 7% 的罚款。
+欧盟人工智能法案（EU AI Act）于 2026 年开始分阶段执行，高风险 AI 系统面临严格合规要求，违者最高可处全球营业额 7% 的罚款。
 
 事件三：Getty Images 诉 Stability AI 达成和解
 
@@ -72,7 +72,7 @@ export const article: Article = {
 
 1. 欧盟：风险分级强制监管（Risk-Based Approach）
 
-**EU AI Act** 是全球首部综合性 AI 法律，采用风险分级框架：
+EU AI Act 是全球首部综合性 AI 法律，采用风险分级框架：
 
 | 风险等级 | 定义 | 合规要求 | 违规罚款 |
 |---------|------|---------|---------|
@@ -164,12 +164,12 @@ export const article: Article = {
 \`mermaid
 timeline
     title AI 版权诉讼时间线
-    2023 Q1 : Getty v Stability AI\nNYT v **OpenAI**
-    2023 Q3 : Silverman v **OpenAI**
+    2023 Q1 : Getty v Stability AI\nNYT v OpenAI
+    2023 Q3 : Silverman v OpenAI
     2024 Q1 : 法院驳回\nStability AI 合理使用抗辩
     2024 Q4 : 多起案件\n进入证据开示
     2025 Q2 : Getty v Stability\n和解谈判
-    2026 Q1 : Getty 和解落地\nNAACP v **xAI** 立案
+    2026 Q1 : Getty 和解落地\nNAACP v xAI 立案
     2026 Q2 : NYT v OpenAI\n预计判决`,
     },
     {
@@ -217,7 +217,7 @@ AI 生成内容可能涉及的法律风险：
 
 6. 文档记录
 
-**EU AI Act** 要求高风险 AI 系统保留：
+EU AI Act 要求高风险 AI 系统保留：
 - 技术文档（系统设计、训练方法、性能指标）
 - 风险评估报告
 - 测试和验证记录
@@ -474,7 +474,7 @@ if __name__ == "__main__":
 | 工具 | 类型 | 核心功能 | 适用场景 |
 |------|------|---------|---------|
 | Garak | 开源 | LLM 漏洞扫描、提示注入检测 | 模型部署前安全测试 |
-| PyRIT (**Microsoft**) | 开源 | 红队测试自动化、多轮攻击模拟 | 企业级 AI 安全评估 |
+| PyRIT (Microsoft) | 开源 | 红队测试自动化、多轮攻击模拟 | 企业级 AI 安全评估 |
 | Lakera Guard | 商业 | 实时输入/输出过滤、PII 检测 | 生产环境内容安全 |
 | Mindgard | 商业 | AI 安全态势管理、持续监控 | 企业 AI 安全运营 |
 | Patronus AI | 商业 | AI 模型评估、幻觉检测 | 模型质量与安全性评估 |
@@ -483,7 +483,7 @@ if __name__ == "__main__":
 
 | 工具 | 类型 | 核心功能 | 适用场景 |
 |------|------|---------|---------|
-| OneTrust | 商业 | 数据隐私管理、**GDPR** 合规 | 企业数据合规 |
+| OneTrust | 商业 | 数据隐私管理、GDPR 合规 | 企业数据合规 |
 | BigID | 商业 | 数据发现、PII 检测 | 训练数据合规检查 |
 | Immuta | 商业 | 数据治理、访问控制 | 数据使用合规 |
 
@@ -526,7 +526,7 @@ graph LR
 1. 从「事后监管」到「事前审批」
 
 当前大多数 AI 监管是事后的（出问题后追责），但趋势正在转向事前审批：
-- **EU AI Act** 要求高风险 AI 系统在上市前通过合格评定
+- EU AI Act 要求高风险 AI 系统在上市前通过合格评定
 - 中国要求生成式 AI 服务上线前完成算法备案和安全评估
 - 美国部分州开始要求 AI 系统注册
 
@@ -558,7 +558,7 @@ graph LR
 
 5. AI 环境影响纳入监管
 
-NAACP v **xAI** 案开启了 AI 环境影响监管的先河：
+NAACP v xAI 案开启了 AI 环境影响监管的先河：
 - 数据中心碳排放将需要披露
 - AI 训练和推理的能源使用将受到限制
 - 「绿色 AI」将成为合规要求

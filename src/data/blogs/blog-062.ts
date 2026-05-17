@@ -16,7 +16,7 @@ content: [
       title: "1. 引言：LLM 编码的黄金时代与陷阱",
       body: `2026 年 4 月，GitHub Trending 上出现了一个引人注目的项目：andrej-karpathy-skills，短短一周内暴涨 29,917 星，总星数达到 88,943，稳居周榜第二。
 
-这个项目的核心内容非常简单——一个 CLAUDE.md 文件，却能让 **Claude** Code 的编码质量显著提升。它的灵感来源于 AI 领域泰斗 Andrej Karpathy 在 X（原 Twitter）上发表的一篇深度观察，直指 LLM 编码的四大核心陷阱。
+这个项目的核心内容非常简单——一个 CLAUDE.md 文件，却能让 Claude Code 的编码质量显著提升。它的灵感来源于 AI 领域泰斗 Andrej Karpathy 在 X（原 Twitter）上发表的一篇深度观察，直指 LLM 编码的四大核心陷阱。
 
 Karpathy 的原话振聋发聩：
 
@@ -26,7 +26,7 @@ Karpathy 的原话振聋发聩：
 
 > "它们有时会修改或删除它们没有充分理解的注释和代码，即使这些代码与任务无关。"
 
-这些观察精准命中了每个使用 LLM 编码工具（**Claude** Code、Cursor、Codex、GitHub Copilot）的开发者都会遇到的痛点。而 andrej-karpathy-skills 项目将这些观察提炼为四大可执行原则，并通过一个简单的 CLAUDE.md 文件让所有 Claude Code 用户受益。
+这些观察精准命中了每个使用 LLM 编码工具（Claude Code、Cursor、Codex、GitHub Copilot）的开发者都会遇到的痛点。而 andrej-karpathy-skills 项目将这些观察提炼为四大可执行原则，并通过一个简单的 CLAUDE.md 文件让所有 Claude Code 用户受益。
 
 本文从原理到实践，全面解析这四大原则，并提供可直接运行的 Python 代码实现。`,
       mermaid: `graph TD
@@ -605,7 +605,7 @@ if __name__ == "__main__":
       title: "8. 如何将四大原则应用到你的工作流",
       body: `方法一：CLAUDE.md（推荐）
 
-在 **Claude** Code 项目中添加 CLAUDE.md 文件：
+在 Claude Code 项目中添加 CLAUDE.md 文件：
 
 \`\`\`bash
 # 新项目
@@ -649,7 +649,7 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 |---|---|---|---|
 | Karpathy 四大原则 | 极低（一个文件） | 显著提升 | 所有 LLM 编码工具 |
 | 自定义系统提示词 | 中 | 中等 | 仅 API 调用 |
-| **RAG** + 代码库索引 | 高 | 显著 | 需要基础设施 |
+| RAG + 代码库索引 | 高 | 显著 | 需要基础设施 |
 | Fine-tuning | 极高 | 显著 | 成本高、维护难 |
 
 关键 takeaway： 改善 LLM 编码质量不一定需要复杂的工具链或昂贵的微调。有时候，正确的思维框架比任何技术方案都有效。四大原则本质上是一套"思维习惯"——它们不改变 LLM 的能力，而是改变 LLM 使用能力的方式。

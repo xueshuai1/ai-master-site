@@ -14,9 +14,9 @@ export const article: Article = {
   content: [
     {
       title: "一、问题：AI Coding Agent 的上下文瓶颈",
-      body: `2026 年 4 月，AI Coding Agent 领域迎来爆发式增长：**Claude** Code 日均活跃用户突破百万，**OpenAI** Codex 支持自主执行模式，Cursor 占据开发者工具市场半壁江山。但这些工具面临同一个根本性瓶颈：上下文窗口有限，无法一次性理解整个代码库。
+      body: `2026 年 4 月，AI Coding Agent 领域迎来爆发式增长：Claude Code 日均活跃用户突破百万，OpenAI Codex 支持自主执行模式，Cursor 占据开发者工具市场半壁江山。但这些工具面临同一个根本性瓶颈：上下文窗口有限，无法一次性理解整个代码库。
 
-一个中型项目的代码量通常在 10 万行到 100 万行之间，而即使是最强的 LLM 上下文窗口（如 **Claude** 200K tokens）也只能容纳约 15 万行代码。当 Agent 需要修复一个跨多个文件的 bug 时，它不知道哪些文件相关、哪些函数被调用、哪些类型需要修改。
+一个中型项目的代码量通常在 10 万行到 100 万行之间，而即使是最强的 LLM 上下文窗口（如 Claude 200K tokens）也只能容纳约 15 万行代码。当 Agent 需要修复一个跨多个文件的 bug 时，它不知道哪些文件相关、哪些函数被调用、哪些类型需要修改。
 
 解决方案：MCP 代码搜索。通过将整个代码库索引为向量数据库，Agent 可以通过自然语言查询找到相关代码片段，按需加载上下文。这不是普通的全文搜索——而是基于语义理解的代码检索。`,
     },
@@ -329,7 +329,7 @@ if __name__ == "__main__":
     },
     {
       title: "七、MCP Server 实现：将代码搜索暴露给 AI Agent",
-      body: `有了搜索引擎后，下一步是将其封装为 MCP Server，让 **Claude** Code、Codex 等 Agent 能够调用。以下是 MCP Python SDK 的完整实现。
+      body: `有了搜索引擎后，下一步是将其封装为 MCP Server，让 Claude Code、Codex 等 Agent 能够调用。以下是 MCP Python SDK 的完整实现。
 
 MCP 代码搜索工具的工作流程：`,
       mermaid: `graph TD
@@ -352,7 +352,7 @@ MCP 代码搜索工具的工作流程：`,
     },
     {
       title: "八、Python 实战：构建 MCP 代码搜索引擎（3/3）—— MCP Server 实现",
-      body: `使用 MCP Python SDK 实现一个完整的代码搜索 MCP Server。这个 Server 可以被 **Claude** Code 或任何 MCP Client 调用。`,
+      body: `使用 MCP Python SDK 实现一个完整的代码搜索 MCP Server。这个 Server 可以被 Claude Code 或任何 MCP Client 调用。`,
       code: [
         {
           lang: "python",

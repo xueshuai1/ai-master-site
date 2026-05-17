@@ -14,7 +14,7 @@ export const article: Article = {
     content: [
         {
             title: "1. 引言：当 AI 的安全能力超过人类理解",
-            body: `2026 年 4 月，**Anthropic** 在内部安全评估中发现了一个令人不安的事实：**Claude** Mythos 模型在 OpenBSD 中发现了潜伏 27 年的远程崩溃漏洞，在 FFmpeg 中找到了扛过 500 万次自动化测试的 16 年历史缺陷。
+            body: `2026 年 4 月，Anthropic 在内部安全评估中发现了一个令人不安的事实：Claude Mythos 模型在 OpenBSD 中发现了潜伏 27 年的远程崩溃漏洞，在 FFmpeg 中找到了扛过 500 万次自动化测试的 16 年历史缺陷。
 
 更关键的是，英国 AI 安全研究所（AISI） 的独立评估表明，Mythos 模型的网络安全能力已经与专业安全研究人员相当——这意味着 AI 不再仅仅是辅助工具，而是具备了独立发现和利用漏洞的能力。
 
@@ -57,13 +57,13 @@ AISI 的评估方法：
 3. 能力基准测试——使用标准化基准（如 CEB、SWE-bench）量化模型能力
 4. 行为分析——分析模型在压力场景下的决策模式
 
-2026 年 4 月的 **Anthropic** Mythos 评估是 AISI 最具影响力的工作之一——评估报告直接影响了英国政府对前沿 AI 模型的监管政策。
+2026 年 4 月的 Anthropic Mythos 评估是 AISI 最具影响力的工作之一——评估报告直接影响了英国政府对前沿 AI 模型的监管政策。
 
 ### 2.2 美国 NIST AI 风险管理框架
 
 美国国家标准与技术研究院（NIST） 发布了 AI 风险管理框架（AI RMF 1.0），这是美国官方认可的 AI 安全评估标准。
 
-**NIST AI RMF** 的四个核心功能：
+NIST AI RMF 的四个核心功能：
 1. 治理（Govern）——建立组织级的 AI 风险管理策略和责任框架
 2. 映射（Map）——识别 AI 系统的上下文、风险和利益相关者
 3. 测量（Measure）——使用定量和定性方法评估 AI 风险
@@ -93,8 +93,8 @@ NIST 框架的特点：它不是技术性的评估工具，而是管理框架—
 
 - MLCommons——发布 AI 安全基准测试（如 MLCommons Safety Working Group）
 - Partnership on AI——跨行业的 AI 伦理和安全协作组织
-- **OpenAI** 安全团队——内部的红队测试和安全研究
-- **Anthropic** 安全团队——Project Glasswing 等内部安全评估项目
+- OpenAI 安全团队——内部的红队测试和安全研究
+- Anthropic 安全团队——Project Glasswing 等内部安全评估项目
 
 这些组织的评估工作通常比政府机构更快速和灵活，因为它们不需要经过立法程序。`,
             mermaid: `graph TD
@@ -377,7 +377,7 @@ CEB（Capability Evaluations for Frontier Models Benchmark）
 - 开发方：英国 AISI
 - 评估维度：网络安全、化学/生物武器、说服/欺骗、自主代理
 - 特点：专门针对前沿模型（参数量 > 10^13）设计的高风险能力评估
-- 2026 年 4 月，AISI 使用 CEB 评估了 **Claude** Mythos，发现其网络安全能力与中级安全研究员相当
+- 2026 年 4 月，AISI 使用 CEB 评估了 Claude Mythos，发现其网络安全能力与中级安全研究员相当
 
 SWE-bench（Software Engineering Benchmark）
 - 开发方：普林斯顿大学 + IBM Research
@@ -385,13 +385,13 @@ SWE-bench（Software Engineering Benchmark）
 - 特点：使用真实软件项目中的真实 bug 作为测试用例
 - 2026 年，多个模型的 SWE-bench 分数超过 60%，意味着它们可以自主修复超过一半的常见 bug
 
-**HELM**（Holistic Evaluation of Language Models）
+HELM（Holistic Evaluation of Language Models）
 - 开发方：Stanford CRFM
 - 评估维度：15 个维度的全面评估，包括安全性、公平性、毒性、隐私
 - 特点：最全面的语言模型评估基准之一
 - 局限性：评估成本高，单次完整评估需要数周时间
 
-**TruthfulQA**
+TruthfulQA
 - 开发方：牛津大学
 - 评估维度：模型的诚实度和事实准确性
 - 特点：检测模型是否会生成看起来可信但实际上错误的答案
@@ -463,7 +463,7 @@ SWE-bench（Software Engineering Benchmark）
 - 建立基线行为模型
 
 阶段 2：自动化测试执行
-- 运行基准测试（CEB、**TruthfulQA** 等）
+- 运行基准测试（CEB、TruthfulQA 等）
 - 运行自动化红队测试
 - 运行对抗鲁棒性测试
 
@@ -697,7 +697,7 @@ class SecurityEvaluationPipeline {
 
 未来的趋势是「内建安全（Safety by Design）」——在训练过程中就内置安全评估：
 - 训练中红队测试——在模型训练期间持续进行红队测试，发现安全问题即时修复
-- 安全对齐训练——使用**RLHF**（基于人类反馈的强化学习）在训练阶段就优化安全行为
+- 安全对齐训练——使用RLHF（基于人类反馈的强化学习）在训练阶段就优化安全行为
 - 自动化安全验证——在训练的每个 checkpoint 自动运行安全评估，选择最安全的模型版本
 
 ### 8.2 趋势二：从「单一模型评估」到「系统级评估」
@@ -737,10 +737,10 @@ class SecurityEvaluationPipeline {
 
 ### 9.1 必读论文
 
-- "Red Teaming Language Models to Reduce Harms" (**Anthropic**, 2026) — **Anthropic** 的红队测试方法论
+- "Red Teaming Language Models to Reduce Harms" (Anthropic, 2026) — Anthropic 的红队测试方法论
 - "Frontier Model Safety Evaluations" (UK AISI, 2026) — 英国 AI 安全研究所的评估报告
 - "AI Risk Management Framework" (NIST, 2024) — NIST 的 AI 风险管理框架
-- "Sparks of Artificial General Intelligence" (**Microsoft** Research, 2023) — 关于 AI 能力涌现的经典分析
+- "Sparks of Artificial General Intelligence" (Microsoft Research, 2023) — 关于 AI 能力涌现的经典分析
 
 ### 9.2 实用工具
 
@@ -753,7 +753,7 @@ class SecurityEvaluationPipeline {
 
 入门阶段：
 1. 了解 AI 安全的基本概念（对抗攻击、模型对齐、红队测试）
-2. 学习 **NIST AI RMF** 的四个核心功能
+2. 学习 NIST AI RMF 的四个核心功能
 3. 尝试 Garak 工具，对自己的模型进行安全扫描
 
 进阶阶段：

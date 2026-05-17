@@ -26,19 +26,19 @@ CNN（计算机视觉）— 卷积、池化、ResNet
 
 RNN / 序列模型— RNN、LSTM、注意力机制
 
-**Transformer** — Self-Attention、编码器（LLM 的基石）`
+Transformer — Self-Attention、编码器（LLM 的基石）`
         },
         {
             title: "2. 学习建议",
             body: `重点投入时间：
 - 神经网络基础（反向传播是核心）
-- **Transformer** 架构（LLM 的基石）
+- Transformer 架构（LLM 的基石）
 
 可以略过的：
 - CNN 的具体架构细节（知道思想就行）
 - RNN 的数学推导（知道 LSTM 解决什么问题就行）
 
-> 2026 年最重要的部分：**Transformer**。 它是 GPT、**Claude**、**Gemini** 的共同基础。`,
+> 2026 年最重要的部分：Transformer。 它是 GPT、Claude、Gemini 的共同基础。`,
             tip: "💡 用 PyTorch 搭建一个简单的神经网络，亲手跑一次训练流程，比看十篇教程都管用。"
         },
         {

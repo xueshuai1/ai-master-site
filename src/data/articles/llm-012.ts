@@ -62,7 +62,7 @@ serving:
     },
     {
       title: "2. vLLM 与 PagedAttention：打破显存碎片化",
-      body: `**vLLM** 是由 UC Berkeley 团队开源的高性能推理引擎，其核心技术 PagedAttention 借鉴了操作系统的虚拟内存思想，将 KV Cache 切分为固定大小的「块」（block），通过页表映射实现非连续的显存分配。这一设计彻底消除了传统推理引擎中的显存碎片问题，使显存利用率从 20-30% 提升至 80-90%。**vLLM** 还内置了持续批处理（Continuous Batching）机制，允许不同请求在同一批次中动态进出，而非等待整批请求全部完成才释放资源。这意味着短请求不会被长请求阻塞，系统整体吞吐量可提升 2-4 倍。配合张量并行（Tensor Parallelism），vLLM 可以在多 GPU 环境下线性扩展。`,
+      body: `vLLM 是由 UC Berkeley 团队开源的高性能推理引擎，其核心技术 PagedAttention 借鉴了操作系统的虚拟内存思想，将 KV Cache 切分为固定大小的「块」（block），通过页表映射实现非连续的显存分配。这一设计彻底消除了传统推理引擎中的显存碎片问题，使显存利用率从 20-30% 提升至 80-90%。vLLM 还内置了持续批处理（Continuous Batching）机制，允许不同请求在同一批次中动态进出，而非等待整批请求全部完成才释放资源。这意味着短请求不会被长请求阻塞，系统整体吞吐量可提升 2-4 倍。配合张量并行（Tensor Parallelism），vLLM 可以在多 GPU 环境下线性扩展。`,
       code: [
         {
           lang: "bash",
@@ -127,7 +127,7 @@ for o in outputs:
     },
     {
       title: "3. Text Generation Inference (TGI)：Hugging Face 的生产级方案",
-      body: `TGI（Text Generation Inference）是 Hugging Face 官方推出的推理框架，用 Rust 和 Python 混合编写，专为生产环境设计。它的核心优势在于与 Hugging Face 生态的无缝集成——支持所有 Hub 上的模型，内置 FlashAttention-2 加速，原生支持 Speculative Decoding（投机解码）和 Token Streaming。TGI 通过 gRPC 协议提供高性能的客户端通信，同时暴露兼容 **OpenAI** 的 REST API 端点。相比 **vLLM**，TGI 在量化支持上更为灵活（支持 GPTQ、AWQ、EETQ 等多种格式），并且提供完善的 Prometheus 指标暴露，方便接入企业级监控系统。Docker 一键部署使其成为团队快速搭建推理服务的理想选择。`,
+      body: `TGI（Text Generation Inference）是 Hugging Face 官方推出的推理框架，用 Rust 和 Python 混合编写，专为生产环境设计。它的核心优势在于与 Hugging Face 生态的无缝集成——支持所有 Hub 上的模型，内置 FlashAttention-2 加速，原生支持 Speculative Decoding（投机解码）和 Token Streaming。TGI 通过 gRPC 协议提供高性能的客户端通信，同时暴露兼容 OpenAI 的 REST API 端点。相比 vLLM，TGI 在量化支持上更为灵活（支持 GPTQ、AWQ、EETQ 等多种格式），并且提供完善的 Prometheus 指标暴露，方便接入企业级监控系统。Docker 一键部署使其成为团队快速搭建推理服务的理想选择。`,
       code: [
         {
           lang: "bash",
@@ -199,7 +199,7 @@ for chunk in response:
     },
     {
       title: "4. Ollama 本地部署：让大模型跑在你的笔记本上",
-      body: `**Ollama** 是目前最流行的本地 LLM 运行方案，主打「零配置」体验。它内置了模型下载、量化、服务和 API 暴露的全流程，用户只需一行命令即可启动。**Ollama** 底层使用 llama.cpp 作为推理引擎，默认采用 GGUF 格式的 INT4 量化，这意味着 7B 模型仅需约 4GB 显存（或内存），Mac 用户甚至可以利用统一内存架构在 Apple Silicon 上流畅运行 70B 模型。Ollama 提供了 Modelfile 机制，允许用户自定义系统提示词、温度参数和上下文窗口，非常适合个人开发者和小型团队快速搭建私有 AI 能力。它还支持多模型并发，可以同时加载不同用途的模型。`,
+      body: `Ollama 是目前最流行的本地 LLM 运行方案，主打「零配置」体验。它内置了模型下载、量化、服务和 API 暴露的全流程，用户只需一行命令即可启动。Ollama 底层使用 llama.cpp 作为推理引擎，默认采用 GGUF 格式的 INT4 量化，这意味着 7B 模型仅需约 4GB 显存（或内存），Mac 用户甚至可以利用统一内存架构在 Apple Silicon 上流畅运行 70B 模型。Ollama 提供了 Modelfile 机制，允许用户自定义系统提示词、温度参数和上下文窗口，非常适合个人开发者和小型团队快速搭建私有 AI 能力。它还支持多模型并发，可以同时加载不同用途的模型。`,
       code: [
         {
           lang: "bash",
@@ -276,7 +276,7 @@ for chunk in chat(
     },
     {
       title: "5. API 服务设计：从推理引擎到生产接口",
-      body: `将推理引擎暴露为生产级 API 服务需要考虑多个维度：接口规范、鉴权机制、限流策略、错误处理和可观测性。**OpenAI** 兼容格式已成为事实标准，**vLLM**、TGI 和 **Ollama** 都支持该协议，这意味着客户端代码可以无缝切换底层引擎。但生产环境远不止 "能跑就行"——你需要实现 API Key 鉴权防止滥用，配置速率限制保护服务不被突发流量打垮，设计优雅的重试机制处理临时故障，以及接入日志和指标系统用于故障排查。推荐使用 Nginx 或 Envoy 作为反向代理，配合 LiteLLM 作为统一网关，实现多模型路由、fallback 和负载均衡。`,
+      body: `将推理引擎暴露为生产级 API 服务需要考虑多个维度：接口规范、鉴权机制、限流策略、错误处理和可观测性。OpenAI 兼容格式已成为事实标准，vLLM、TGI 和 Ollama 都支持该协议，这意味着客户端代码可以无缝切换底层引擎。但生产环境远不止 "能跑就行"——你需要实现 API Key 鉴权防止滥用，配置速率限制保护服务不被突发流量打垮，设计优雅的重试机制处理临时故障，以及接入日志和指标系统用于故障排查。推荐使用 Nginx 或 Envoy 作为反向代理，配合 LiteLLM 作为统一网关，实现多模型路由、fallback 和负载均衡。`,
       code: [
         {
           lang: "bash",

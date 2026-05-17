@@ -14,11 +14,11 @@ export const blog: BlogPost = {
 content: [
     {
       title: "一、GPT-5.5 发布背景与核心定位",
-      body: `2026 年 4 月 23 日，**OpenAI** 正式在 Codex 平台推出 **GPT-5**.5 模型，并逐步向付费 ChatGPT 订阅用户开放。这是自 **GPT-5** 系列发布以来最重要的模型更新。
+      body: `2026 年 4 月 23 日，OpenAI 正式在 Codex 平台推出 GPT-5.5 模型，并逐步向付费 ChatGPT 订阅用户开放。这是自 GPT-5 系列发布以来最重要的模型更新。
 
 ### 为什么是 GPT-5.5 而不是 GPT-6？
 
-**OpenAI** 采用了渐进式版本策略，而非跳跃式发布。GPT-5.5 的定位是：
+OpenAI 采用了渐进式版本策略，而非跳跃式发布。GPT-5.5 的定位是：
 
 - 不是全新架构，而是 GPT-5 系列的深度优化版
 - 核心改进集中在 Agentic Coding 和长链路推理
@@ -35,7 +35,7 @@ OpenAI 官方对 GPT-5.5 的定性：「Treat it as a new model family to tune f
 | GPT-5.5 | $5.00 | $30.00 |
 | GPT-5.4 | $2.50 | $15.00 |
 | GPT-5.2 | $2.50 | $15.00 |
-| **Claude** Opus 4.7 | $5.00 | $30.00 |
+| Claude Opus 4.7 | $5.00 | $30.00 |
 | DeepSeek V4-Pro | $1.74 | $3.48 |
 
 GPT-5.5 的定价比 GPT-5.4 翻倍，但官方声称推理 token 效率提升使得实际运行成本持平或略低。这是因为 GPT-5.5 用更少的 thinking tokens 就能达到相同甚至更好的推理质量。
@@ -47,7 +47,7 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
 - GPT-5.5 在 Agentic Coding（多步骤编程任务）上保持领先
 - DeepSeek V4-Pro 以 1/14 的价格提供了接近的性能
 - Qwen3.6-27B 以 27B 参数量逼近了 MoE 大模型的表现
-- **Claude** Opus 4.7 在创意写作和文本生成方面仍然具有竞争力`,
+- Claude Opus 4.7 在创意写作和文本生成方面仍然具有竞争力`,
       mermaid: `graph TD
     A[OpenAI GPT-5 系列] --> B[GPT-5.2]
     A --> C[GPT-5.4]
@@ -68,11 +68,11 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
     },
     {
       title: "二、GPT-5.5 架构核心变化深度解析",
-      body: `虽然 **OpenAI** 没有公开 **GPT-5**.5 的详细架构信息，但通过官方文档、开发者实践和 Simon Willison 的评测，我们可以推断出以下关键变化：
+      body: `虽然 OpenAI 没有公开 GPT-5.5 的详细架构信息，但通过官方文档、开发者实践和 Simon Willison 的评测，我们可以推断出以下关键变化：
 
 ### 1. Agentic Coding 专项优化
 
-这是 **GPT-5**.5 最大的改进方向。相比 GPT-5.4，GPT-5.5 在以下方面显著提升：
+这是 GPT-5.5 最大的改进方向。相比 GPT-5.4，GPT-5.5 在以下方面显著提升：
 
 - 更长的规划链路：能够规划更复杂的多步骤编程任务，减少中途偏离目标的情况
 - 大代码库理解能力：对大型代码仓库的上下文理解更加准确，减少因信息缺失导致的错误
@@ -81,7 +81,7 @@ Simon Willison 在评测中称 GPT-5.5「快速、有效且高度胜任」。在
 
 ### 2. 推理 Token 效率改进
 
-**OpenAI** 引入了一项重要变化：更少的 thinking tokens 达到相同质量。
+OpenAI 引入了一项重要变化：更少的 thinking tokens 达到相同质量。
 
 在 GPT-5.4 中，复杂推理任务可能需要数千个 thinking tokens。GPT-5.5 通过以下优化降低了 thinking token 消耗：
 
@@ -132,11 +132,11 @@ GPT-5.5 引入了两个新的 API 参数：
     },
     {
       title: "三、GPT-5.5 Prompt 工程最佳实践",
-      body: `**OpenAI** 专门为 **GPT-5**.5 发布了 Prompt 指南。以下是经过验证的最佳实践：
+      body: `OpenAI 专门为 GPT-5.5 发布了 Prompt 指南。以下是经过验证的最佳实践：
 
 ### 1. 从零开始重新调优（最重要的建议）
 
-**OpenAI** 明确建议：不要直接复用 **GPT-5**.2/5.4 的 prompt 栈。
+OpenAI 明确建议：不要直接复用 GPT-5.2/5.4 的 prompt 栈。
 
 > "Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack. Start with the smallest prompt that preserves the product contract, then tune reasoning effort, verbosity, tool descriptions, and output format against representative examples."
 
@@ -267,17 +267,17 @@ asyncio.run(main())`,
     },
     {
       title: "四、Codex 平台实战：用 GPT-5.5 进行 Agentic Coding",
-      body: `**GPT-5**.5 的首发平台是 Codex——**OpenAI** 的 Agentic Coding 产品。以下是实战指南：
+      body: `GPT-5.5 的首发平台是 Codex——OpenAI 的 Agentic Coding 产品。以下是实战指南：
 
 ### 1. Codex 快速上手
 
-Codex 是一个命令行工具，可以直接与 **GPT-5**.5 交互进行编程任务：
+Codex 是一个命令行工具，可以直接与 GPT-5.5 交互进行编程任务：
 
 \`\`\`bash
 # 安装 Codex CLI
 npm install -g @openai/codex
 
-# 初始化（需要 **OpenAI** API Key）
+# 初始化（需要 OpenAI API Key）
 codex init
 
 # 运行编程任务
@@ -433,11 +433,11 @@ print(result["code"])`,
     },
     {
       title: "五、API 迁移指南：从 GPT-5.4 到 GPT-5.5",
-      body: `如果你正在使用 **GPT-5**.4 并希望迁移到 **GPT-5**.5，以下是具体的迁移步骤：
+      body: `如果你正在使用 GPT-5.4 并希望迁移到 GPT-5.5，以下是具体的迁移步骤：
 
 ### 1. 最小化迁移（推荐方式）
 
-按照 **OpenAI** 的建议，从最小化 prompt 开始：
+按照 OpenAI 的建议，从最小化 prompt 开始：
 
 | 步骤 | 操作 |
 |------|------|
@@ -543,11 +543,11 @@ for old, new in zip(gpt54_results, gpt55_results):
     },
     {
       title: "六、GPT-5.5 与竞品的全面对比",
-      body: `在 2026 年 4 月的 AI 模型格局中，**GPT-5**.5 面临多个强劲竞争对手：
+      body: `在 2026 年 4 月的 AI 模型格局中，GPT-5.5 面临多个强劲竞争对手：
 
 ### 综合能力对比
 
-| 维度 | **GPT-5**.5 | **Claude** Opus 4.7 | DeepSeek V4-Pro | Qwen3.6-27B |
+| 维度 | GPT-5.5 | Claude Opus 4.7 | DeepSeek V4-Pro | Qwen3.6-27B |
 |------|---------|-----------------|-----------------|-------------|
 | 参数量 | ~2T+ | ~2T+ | 1.6T MoE | 27B Dense |
 | 定价 (输入) | $5.00 | $5.00 | $1.74 | ~$0.10 |
@@ -672,11 +672,11 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
     },
     {
       title: "七、总结与展望",
-      body: `**GPT-5**.5 的发布标志着 **OpenAI** 在 Agentic Coding 领域的又一次重要升级。以下是本次更新的核心要点：
+      body: `GPT-5.5 的发布标志着 OpenAI 在 Agentic Coding 领域的又一次重要升级。以下是本次更新的核心要点：
 
 ### 关键结论
 
-1. **GPT-5**.5 是当前最强的 Agentic Coding 模型，在复杂编程任务上保持领先
+1. GPT-5.5 是当前最强的 Agentic Coding 模型，在复杂编程任务上保持领先
 2. 推理 Token 效率提升部分抵消了价格上涨，实际成本可能持平
 3. 必须从零开始调优 Prompt——不要直接复用 GPT-5.4 的配置
 4. 新参数（verbosity、image_detail）让开发者能够更精细地控制输出和成本
@@ -695,7 +695,7 @@ print(f"选择模型: {chosen_model.name}，输入成本: \${chosen_model.cost_p
 
 ### 未来展望
 
-从 GPT-5.5 的更新方向可以看出 **OpenAI** 的战略重点：
+从 GPT-5.5 的更新方向可以看出 OpenAI 的战略重点：
 
 - Agentic Coding 是核心战场：OpenAI 正在将 Codex 打造成最佳的 AI 编程平台
 - 模型效率比规模更重要：用更少的 token 达到更好的效果是趋势

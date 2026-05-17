@@ -16,9 +16,9 @@ export const article: Article = {
       title: "1. 为什么「记忆」是 AI Agent 最紧缺的基础设施？",
       body: `2026 年 4 月，AI Agent 领域发生了一个看似矛盾的现象：Agent 的执行能力越来越强，但记忆能力却远远跟不上。
 
-**Claude** Code 可以自主修复复杂的 Bug、重构整个模块、甚至跨多个文件协调修改——但一旦你关闭终端，它就「忘记」了一切。下次打开终端，它又要从头理解项目结构。
+Claude Code 可以自主修复复杂的 Bug、重构整个模块、甚至跨多个文件协调修改——但一旦你关闭终端，它就「忘记」了一切。下次打开终端，它又要从头理解项目结构。
 
-这正是 **Claude**-Mem 单周暴涨 14,556 stars（总计 63K+） 的根本原因。它解决的痛点极其简单但极其深刻：
+这正是 Claude-Mem 单周暴涨 14,556 stars（总计 63K+） 的根本原因。它解决的痛点极其简单但极其深刻：
 
 > 没有记忆的 Agent 就像没有经验的员工，每次都要从零开始。
 
@@ -37,9 +37,9 @@ export const article: Article = {
       title: "2. Agent 记忆的三种架构路线",
       body: `Agent 记忆不是单一技术，而是一个分层的架构体系。根据记忆的来源、存储方式和检索策略，可以划分为三种核心路线。
 
-### 2.1 路线一：会话级经验记忆（**Claude**-Mem 模式）
+### 2.1 路线一：会话级经验记忆（Claude-Mem 模式）
 
-**Claude**-Mem 的架构极其简洁但高效：
+Claude-Mem 的架构极其简洁但高效：
 核心流程：
 1. 捕获（Capture）：记录 Agent 在编码会话中的每一个操作——文件读写、命令执行、错误信息和修复方案
 2. 压缩（Compress）：使用 Claude Agent SDK 将海量操作日志压缩为结构化的知识摘要（"上次修复了 XX 模块的 XX 问题，原因是 XX"）
@@ -117,9 +117,9 @@ export const article: Article = {
 - 上下文恢复：新 Agent 可以加载已有上下文快照，从断点继续执行
 - 上下文共享：多个 Agent 可以共享同一个上下文空间，实现协作
 
-与 **Claude**-Mem 的本质区别：
+与 Claude-Mem 的本质区别：
 
-| 维度 | **Claude**-Mem | OpenViking |
+| 维度 | Claude-Mem | OpenViking |
 |------|-----------|-----------|
 | 记忆对象 | 历史经验（发生了什么） | 当前状态（正在做什么） |
 | 检索方式 | 语义相似性检索 | 精确状态恢复 |
@@ -164,7 +164,7 @@ Step 4：170 token 启动检索
 
 | 策略 | 压缩率 | 信息保留度 | 适用场景 |
 |------|--------|-----------|---------|
-| 简单摘要（**Claude**-Mem） | 10-20x | 高（保留关键操作和结论） | 编码经验记忆 |
+| 简单摘要（Claude-Mem） | 10-20x | 高（保留关键操作和结论） | 编码经验记忆 |
 | AAAK 压缩（MemPalace） | 30x | 中高（保留结构化关联） | 知识图谱记忆 |
 | 上下文快照（OpenViking） | 1-3x | 最高（完整状态保留） | 任务中断恢复 |`,
     code: [
@@ -216,7 +216,7 @@ def decay_weight(age_days: float, importance: float) -> float:
 
 ### 5.1 对比分析
 
-| 维度 | **RAG**（检索增强生成） | Fine-tuning（微调） | Agent 记忆系统 |
+| 维度 | RAG（检索增强生成） | Fine-tuning（微调） | Agent 记忆系统 |
 |------|-------------------|-------------------|--------------|
 | 知识来源 | 外部文档/知识库 | 训练数据集 | Agent 自身运行经验 |
 | 更新频率 | 随时更新文档即可 | 需要重新训练 | 实时自动更新 |
@@ -230,10 +230,10 @@ def decay_weight(age_days: float, importance: float) -> float:
 
 最佳实践是将三者组合使用：
 1. Fine-tuning 提供基础领域知识（如"如何编写安全的认证代码"）
-2. **RAG** 补充最新的外部信息（如"最新的 JWT 安全最佳实践"）
+2. RAG 补充最新的外部信息（如"最新的 JWT 安全最佳实践"）
 3. Agent Memory 注入个人经验（如"上次在这个项目中遇到的认证 bug 是什么"）
 
-**Claude**-Mem + RAG 的组合尤其强大：**Claude**-Mem 提供编码经验记忆，RAG 提供文档知识，两者互补。`,
+Claude-Mem + RAG 的组合尤其强大：Claude-Mem 提供编码经验记忆，RAG 提供文档知识，两者互补。`,
     code: [
       // 流程图已移至 body 正文,
     ],
@@ -255,13 +255,13 @@ def decay_weight(age_days: float, importance: float) -> float:
 ### 6.1 短期趋势（2026 下半年）
 
 1. 记忆成为 Agent 标配
-正如 **Claude**-Mem 的爆发式增长所示，记忆不再是"锦上添花"的功能，而是 Agent 的基础设施。没有记忆的 Agent 将在开发者选择中被淘汰。
+正如 Claude-Mem 的爆发式增长所示，记忆不再是"锦上添花"的功能，而是 Agent 的基础设施。没有记忆的 Agent 将在开发者选择中被淘汰。
 
 2. MCP 记忆协议标准化
 MemPalace 已经支持 MCP 协议集成，这意味着记忆能力可以作为标准化工具被任意 Agent 调用。未来会出现标准化的"记忆 MCP Server"。
 
 3. 混合记忆架构兴起
-**Claude**-Mem 的经验记忆 + MemPalace 的知识图谱记忆 + OpenViking 的上下文持久化，三者融合将是最佳方案。
+Claude-Mem 的经验记忆 + MemPalace 的知识图谱记忆 + OpenViking 的上下文持久化，三者融合将是最佳方案。
 
 ### 6.2 中期趋势（2027）
 
@@ -304,10 +304,10 @@ Agent 记忆系统也带来了新的安全风险：
     },
     {
       title: "7. 总结：记忆是 Agent 从「工具」走向「伙伴」的关键一步",
-      body: `2026 年 4 月，**Claude**-Mem 的 63K stars、MemPalace 的 22K stars、以及 OpenViking 的 22K stars，共同验证了一个判断：Agent 记忆系统正在从「实验性功能」变为「开发者刚需」。
+      body: `2026 年 4 月，Claude-Mem 的 63K stars、MemPalace 的 22K stars、以及 OpenViking 的 22K stars，共同验证了一个判断：Agent 记忆系统正在从「实验性功能」变为「开发者刚需」。
 
 三种技术路线各有优势：
-- **Claude**-Mem 模式：零配置、全自动、与编码工作流深度集成，适合个人开发者
+- Claude-Mem 模式：零配置、全自动、与编码工作流深度集成，适合个人开发者
 - MemPalace 模式：结构化、可查询、30x 压缩，适合长期知识管理
 - OpenViking 模式：上下文持久化、多 Agent 共享，适合团队协作
 

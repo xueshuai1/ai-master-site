@@ -48,7 +48,7 @@ export const article: Article = {
 | API 服务 | FastAPI | Python 最流行的 API 框架 |
 | 容器化 | Docker | 打包和部署的标准方式 |
 | 编排 | Kubernetes | 大规模部署的管理平台 |
-| 推理引擎 | **vLLM** | 高性能 LLM 推理 |
+| 推理引擎 | vLLM | 高性能 LLM 推理 |
 | 实验管理 | MLflow / W&B | 追踪训练实验 |
 | 监控 | 自定义 | 数据漂移、性能监控 |`,
             tip: "💡 初学者从 FastAPI + Docker 开始就够了，不需要一上来就学 Kubernetes。"

@@ -40,15 +40,15 @@ export const article: Article = {
     },
     {
       title: "为什么 Chrome AI Skills 是范式转变",
-      body: `要理解 **Chrome AI Skills** 的重要性，需要先回顾浏览器 AI 的演进路径。
+      body: `要理解 Chrome AI Skills 的重要性，需要先回顾浏览器 AI 的演进路径。
 
 第一阶段：浏览器插件 AI（2023-2024）
-- 用户安装 ChatGPT、**Claude** 等浏览器扩展
+- 用户安装 ChatGPT、Claude 等浏览器扩展
 - 需要手动选中文本、右键调用 AI
 - AI 与浏览器是「外挂」关系，体验割裂
 
 第二阶段：侧边栏 AI 助手（2024-2025）
-- Chrome 推出 **Gemini** 侧边栏，Edge 推出 Copilot 侧边栏
+- Chrome 推出 Gemini 侧边栏，Edge 推出 Copilot 侧边栏
 - AI 直接嵌入浏览器界面
 - 但仍是一次性对话，每次需要重新输入需求
 
@@ -67,7 +67,7 @@ export const article: Article = {
 | 分享 | 复制提示词文本 | 分享 Skill 定义 |
 | 学习成本 | 需要记住提示词 | 无需记忆，面板选择 |
 
-**Chrome AI Skills** 的本质是将 AI 提示词工程从「手艺活」变成「标准化工作流」。`,
+Chrome AI Skills 的本质是将 AI 提示词工程从「手艺活」变成「标准化工作流」。`,
     },
     {
       title: "50+ 预设 Skills 全景分析",
@@ -116,7 +116,7 @@ export const article: Article = {
     },
     {
       title: "技术架构深度解读",
-      body: `**Chrome AI Skills** 的技术架构可以分为四层：
+      body: `Chrome AI Skills 的技术架构可以分为四层：
 
 第一层：浏览器上下文捕获层
 - 通过 Chrome 的页面 DOM 访问能力，读取当前标签页的文本、图片、视频元数据
@@ -124,7 +124,7 @@ export const article: Article = {
 - 安全机制：用户授权后才能访问页面内容，敏感页面（银行、支付）自动排除
 
 第二层：Gemini 大模型推理层
-- 调用 Google **Gemini** 模型执行 Skill 定义的 AI 任务
+- 调用 Google Gemini 模型执行 Skill 定义的 AI 任务
 - Skill 本质上是结构化的 Prompt Template + 上下文变量
 - 支持多步骤推理：读取 → 理解 → 分析 → 生成
 
@@ -134,7 +134,7 @@ export const article: Article = {
 - 支持条件分支：根据不同页面类型执行不同逻辑
 
 第四层：用户交互与输出层
-- 结果展示在 **Gemini** 侧边栏
+- 结果展示在 Gemini 侧边栏
 - 支持流式输出，用户可实时看到生成进度
 - 输出可复制、可保存、可分享`,
       mermaid: `graph LR
@@ -176,13 +176,13 @@ export const article: Article = {
     },
     {
       title: "自定义 Skill 创建指南",
-      body: `除了使用预设 Skills，**Chrome AI Skills** 最强大的能力是让用户创建自定义 Skill。
+      body: `除了使用预设 Skills，Chrome AI Skills 最强大的能力是让用户创建自定义 Skill。
 
 创建自定义 Skill 的步骤：
 
-1. 打开 Chrome 右上角的「Ask **Gemini**」侧边栏
+1. 打开 Chrome 右上角的「Ask Gemini」侧边栏
 2. 输入你想让 AI 完成的任务（例如「从这个网页中提取所有价格信息并做成表格」）
-3. **Gemini** 执行后，点击「保存为 Skill」
+3. Gemini 执行后，点击「保存为 Skill」
 4. 为 Skill 命名（例如「价格提取器」）
 5. 设置快捷键（例如「/price」）
 6. 保存后即可通过快捷键一键调用
@@ -226,7 +226,7 @@ Prompt 模板：
     },
     {
       title: "竞品对比：Chrome Skills vs 其他浏览器 AI",
-      body: `**Chrome AI Skills** 不是唯一尝试将 AI 集成到浏览器的产品，但它的「可复用工作流」理念是独特的。
+      body: `Chrome AI Skills 不是唯一尝试将 AI 集成到浏览器的产品，但它的「可复用工作流」理念是独特的。
 
 与 Edge Copilot 对比：
 - Edge Copilot：侧重一次对话，类似聊天机器人
@@ -259,12 +259,12 @@ Prompt 模板：
     },
     {
       title: "隐私与安全考量",
-      body: `**Chrome AI Skills** 的核心能力是读取用户浏览的页面内容，这带来了显著的隐私挑战。
+      body: `Chrome AI Skills 的核心能力是读取用户浏览的页面内容，这带来了显著的隐私挑战。
 
 数据流向：
 1. 用户打开网页 → Chrome 捕获页面内容
-2. 页面内容发送到 Google **Gemini** 服务端
-3. **Gemini** 处理后返回结果到侧边栏
+2. 页面内容发送到 Google Gemini 服务端
+3. Gemini 处理后返回结果到侧边栏
 
 隐私风险：
 - 页面内容外泄：用户浏览的页面内容会被发送到 Google 服务器
@@ -286,7 +286,7 @@ Google 的隐私保护措施：
     },
     {
       title: "「浏览器即 AI 平台」的未来趋势",
-      body: `**Chrome AI Skills** 的意义远不止一个功能更新——它预示着一个更大的趋势：浏览器正在从「内容消费工具」演变为「AI 操作系统」。
+      body: `Chrome AI Skills 的意义远不止一个功能更新——它预示着一个更大的趋势：浏览器正在从「内容消费工具」演变为「AI 操作系统」。
 
 趋势一：浏览器成为 AI 应用的运行平台
 - 未来的 AI 应用不需要独立 App，而是以 Skill 的形式运行在浏览器中
@@ -323,7 +323,7 @@ Google 的隐私保护措施：
     },
     {
       title: "实战：用 Chrome AI Skills 提升 10 倍效率",
-      body: `以下是 5 个真实场景，展示 **Chrome AI Skills** 如何将日常工作效率提升 10 倍。
+      body: `以下是 5 个真实场景，展示 Chrome AI Skills 如何将日常工作效率提升 10 倍。
 
 场景一：市场调研（节省 80% 时间）
 - 传统方式：逐个打开竞品网站 → 手动记录信息 → 整理成表格（2 小时）
@@ -357,7 +357,7 @@ Google 的隐私保护措施：
     },
     {
       title: "总结与展望",
-      body: `**Chrome AI Skills** 是 2026 年浏览器 AI 领域最重要的更新之一。它不仅仅是一个功能，更是 AI 与浏览器融合的新范式。
+      body: `Chrome AI Skills 是 2026 年浏览器 AI 领域最重要的更新之一。它不仅仅是一个功能，更是 AI 与浏览器融合的新范式。
 
 核心价值：
 1. 可复用性：将一次性提示词变为可反复调用的工作流
@@ -371,7 +371,7 @@ Google 的隐私保护措施：
 - 理解浏览器 AI 的技术架构，为下一代应用做准备
 
 对普通用户的建议：
-- 开始尝试 **Chrome AI Skills**，从预设 Skills 入手
+- 开始尝试 Chrome AI Skills，从预设 Skills 入手
 - 逐步建立自己的 Skill 库，将重复性任务自动化
 - 注意隐私保护，在敏感页面上谨慎使用
 

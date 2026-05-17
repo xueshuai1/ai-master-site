@@ -28,7 +28,7 @@ export const article: Article = {
 产业里程碑：
 - Figure 02：Figure AI 的人形机器人已进入 BMW 汽车工厂执行真实装配任务，支持开放词汇的自然语言指令，能理解「把那把螺丝刀递给我」这样的日常语言
 - Tesla Optimus Gen 3：开始在 Tesla 仓库执行分拣、搬运任务，成本目标降至 2 万美元以下
-- Google **Gemini** Robotics-ER 1.6 + Boston Dynamics Spot：工业巡检场景落地，能读取压力表、液位计等仪器数据
+- Google Gemini Robotics-ER 1.6 + Boston Dynamics Spot：工业巡检场景落地，能读取压力表、液位计等仪器数据
 - Agility Robotics Digit：在 Amazon 仓库部署，执行包裹分拣和搬运
 
 技术突破：
@@ -38,7 +38,7 @@ export const article: Article = {
 - 大模型赋能机器人：LLM 提供高级任务分解和推理，底层策略模型负责精确控制
 
 资本投入：
-- Figure AI 估值 26 亿美元，投资方包括 **OpenAI**、**NVIDIA**、**Microsoft**
+- Figure AI 估值 26 亿美元，投资方包括 OpenAI、NVIDIA、Microsoft
 - Boston Dynamics 被 Hyundai 收购后加速商业化
 - Tesla Optimus 被 Elon Musk 定位为 Tesla 未来最大的价值来源
 
@@ -86,7 +86,7 @@ Franka / UR"]`,
 视觉是具身智能最重要的感知模态：
 
 - RGB 摄像头：提供颜色和纹理信息，成本低但深度信息缺失
-- 深度相机（RGB-D）：Intel RealSense、**Azure** Kinect 等，直接获取深度信息
+- 深度相机（RGB-D）：Intel RealSense、Azure Kinect 等，直接获取深度信息
 - LiDAR：激光雷达，精确的 3D 点云，但成本高、体积大
 - 事件相机（Event Camera）：只在像素亮度变化时输出信号，极低延迟、高动态范围
 
@@ -212,7 +212,7 @@ class MultimodalPerception(nn.Module):
 给定当前状态和动作，预测下一时刻的状态：
 
 - RNN/LSTM 建模：经典的时间序列预测方法
-- **Transformer** 建模：用注意力机制捕获长程依赖
+- Transformer 建模：用注意力机制捕获长程依赖
 - 扩散模型建模：2026 年新趋势，用扩散模型生成可能的未来状态分布
 
 3. 奖励/价值预测
@@ -222,9 +222,9 @@ class MultimodalPerception(nn.Module):
 - 学习到的价值函数可以替代手工设计的奖励函数
 - 支持「零样本」任务执行：只需语言描述目标，模型自动评估动作价值
 
-Google **Gemini** Robotics-ER 1.6 的世界模型：
+Google Gemini Robotics-ER 1.6 的世界模型：
 
-2026 年 4 月发布的 **Gemini** Robotics-ER 1.6 代表了世界模型的最新水平：
+2026 年 4 月发布的 Gemini Robotics-ER 1.6 代表了世界模型的最新水平：
 
 - 双模型架构：ER 1.6 负责高层推理（环境理解、任务分解），Robotics 1.5 负责底层执行（关节控制、步态生成）
 - 仪器读取能力：能理解压力表、液位计等工业仪器的物理状态，这是传统机器人做不到的
@@ -362,9 +362,9 @@ VLA 的架构演进：
 
 1. RT-2（Google, 2023）—— VLA 的开山之作
 
-RT-2（Robotic **Transformer** 2）首次证明了预训练 VLM（视觉-语言模型）可以直接输出机器人动作：
+RT-2（Robotic Transformer 2）首次证明了预训练 VLM（视觉-语言模型）可以直接输出机器人动作：
 
-- 基于 **PaLM**-E 架构，将机器人动作表示为文本 token
+- 基于 PaLM-E 架构，将机器人动作表示为文本 token
 - 训练数据：互联网规模的图像-文本数据 + 机器人演示数据
 - 关键发现：VLM 的泛化能力可以迁移到机器人控制
 - 局限：动作粒度不够精细，对力觉敏感任务表现差
@@ -520,7 +520,7 @@ Reality Gap 的来源：
 2026 年的新进展：
 
 - Genesis 仿真平台（MIT + 多机构）：新一代机器人仿真器，支持可微物理、GPU 加速、大规模并行
-- Isaac Gym / Isaac Lab（**NVIDIA**）：GPU 加速的物理仿真，支持数千个仿真环境并行训练
+- Isaac Gym / Isaac Lab（NVIDIA）：GPU 加速的物理仿真，支持数千个仿真环境并行训练
 - 强化学习 + 世界模型：先在仿真中学习世界模型，再用世界模型在真实环境中做规划
 
 Sim-to-Real 成功的关键原则：
@@ -760,7 +760,7 @@ def train_robot_arm():
 | 平台 | 开发者 | 物理引擎 | GPU 加速 | 特点 |
 |------|--------|---------|---------|------|
 | MuJoCo | Google | 自研 | 部分 | 精确物理模拟，机器人研究标准 |
-| Isaac Lab | **NVIDIA** | PhysX | ✅ 全面 | 大规模并行，数千环境同时训练 |
+| Isaac Lab | NVIDIA | PhysX | ✅ 全面 | 大规模并行，数千环境同时训练 |
 | Genesis | MIT 等 | 自研可微 | ✅ 全面 | 可微物理，支持优化 |
 | Habitat | Meta | Bullet | ✅ | 室内场景仿真，导航任务 |
 | SAPIEN | UCSD | PhysX | ✅ | 强调交互和可操作性 |
@@ -772,7 +772,7 @@ def train_robot_arm():
 | RLlib | 强化学习 | 大规模分布式 RL 训练 |
 | Stable Baselines3 | 强化学习 | 简单易用，适合入门 |
 | OpenVLA | VLA 模型 | 开源 VLA，7B 参数 |
-| LeRobot | **HuggingFace** | 机器人学习的数据集和模型 |
+| LeRobot | HuggingFace | 机器人学习的数据集和模型 |
 | Robomimic | 模仿学习 | 从人类演示中学习策略 |
 
 数据集：

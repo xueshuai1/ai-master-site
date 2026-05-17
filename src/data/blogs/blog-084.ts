@@ -3,7 +3,7 @@ import type { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
     {
         title: "1. 引言：3 万亿 IT 外包帝国的裂缝",
-        body: `2026 年初，一组数据在技术圈引发震动：全球 IT 外包市场规模已突破 3 万亿美元，但这个行业正面临有史以来最深刻的重构。AI 编程助手——**Claude** Code、Cursor、GitHub Copilot、Devin——正在以惊人的速度侵蚀传统外包的核心价值链条。
+        body: `2026 年初，一组数据在技术圈引发震动：全球 IT 外包市场规模已突破 3 万亿美元，但这个行业正面临有史以来最深刻的重构。AI 编程助手——Claude Code、Cursor、GitHub Copilot、Devin——正在以惊人的速度侵蚀传统外包的核心价值链条。
 
 这不仅仅是「AI 替代程序员」这种老生常谈。这是一个价值 3 万亿美元的行业，雇佣了全球数千万开发者，服务着数十万家企业，它的商业模型正在被从底层瓦解。
 
@@ -39,7 +39,7 @@ const content: ArticleSection[] = [
 
 GitHub 2025 年开发者调查报告显示：使用 Copilot 的开发者平均编码速度提升 55%，代码接受率（Acceptance Rate）达到 46%。这意味着 AI 写的代码中，接近一半被开发者直接接受，无需修改。
 
-**Anthropic** 的内部数据显示：**Claude** Code 用户在复杂任务（如重构大型代码库、编写完整的 API 服务）上的完成时间比传统方式缩短 70%。
+Anthropic 的内部数据显示：Claude Code 用户在复杂任务（如重构大型代码库、编写完整的 API 服务）上的完成时间比传统方式缩短 70%。
 
 麦肯锡 2026 年 AI 影响报告估计：全球软件开发行业中，30-45% 的开发工作可以被现有 AI 工具自动化。这不是「未来」，是「现在」。
 

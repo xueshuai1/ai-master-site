@@ -18,7 +18,7 @@ export const article: Article = {
 
 模仿学习有两大分支。行为克隆（Behavioral Cloning）直接将状态到动作的映射视为监督学习问题——给定专家的状态-动作对 (s, a)，学习策略 π(a|s)。逆强化学习（Inverse Reinforcement Learning, IRL）更进一步——从专家行为中反推出奖励函数 R(s, a)，然后使用该奖励函数训练策略。IRL 的优势在于学到的奖励函数可以泛化到训练分布之外的场景，而行为克隆只能在专家见过的状态范围内有效。
 
-模仿学习在自动驾驶、机器人操作、游戏 AI 等领域已经取得了显著成功。Waymo 和 Tesla 的自动驾驶系统大量使用人类驾驶数据训练初始策略，DeepMind 的 AlphaStar 从人类星际争霸回放中学习基础策略，**OpenAI** 的 Dota 2 AI 也使用了人类专家的示范数据。`,
+模仿学习在自动驾驶、机器人操作、游戏 AI 等领域已经取得了显著成功。Waymo 和 Tesla 的自动驾驶系统大量使用人类驾驶数据训练初始策略，DeepMind 的 AlphaStar 从人类星际争霸回放中学习基础策略，OpenAI 的 Dota 2 AI 也使用了人类专家的示范数据。`,
             mermaid: `graph TD
     A["任务需求"] --> B{"有奖励函数?"}
     B -->|"是"| C["强化学习 RL"]

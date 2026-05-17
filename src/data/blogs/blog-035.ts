@@ -18,7 +18,7 @@ const content: ArticleSection[] = [
   },
   {
     title: "一、为什么 AI Agent 需要自我进化？",
-    body: `传统 AI Agent 的核心局限在于能力边界固定。无论是 **LangChain** 的 ReAct Agent、AutoGPT 的任务规划器，还是 **Claude** 的 Computer Use，它们的能力都受限于预定义的工具集和提示词模板。
+    body: `传统 AI Agent 的核心局限在于能力边界固定。无论是 LangChain 的 ReAct Agent、AutoGPT 的任务规划器，还是 Claude 的 Computer Use，它们的能力都受限于预定义的工具集和提示词模板。
 
 当遇到超出预设范围的任务时，传统 Agent 只能失败或求助人类。而自我进化 Agent 的核心思想是：Agent 应该能够像生物一样，通过与环境交互不断学习新技能、优化已有能力、适应新的任务域。
 

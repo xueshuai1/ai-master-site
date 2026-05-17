@@ -1121,11 +1121,11 @@ print("  结论: 必须看严格匹配的 F1!")`,
       },
       {
         title: "7. spaCy 与 HuggingFace 实战：从零构建 NER Pipeline",
-        body: `理论学完后，让我们用两个最主流的工具构建完整的 NER 系统：spaCy（工业级 NLP 库）和 **HuggingFace** **Transformer**s（预训练模型生态）。
+        body: `理论学完后，让我们用两个最主流的工具构建完整的 NER 系统：spaCy（工业级 NLP 库）和 HuggingFace Transformers（预训练模型生态）。
 
 spaCy 方案： 适合快速部署和生产环境。spaCy 内置了统计 NER 模型（基于 CNN + 残差连接），训练速度快，API 简洁。自定义 NER 只需提供标注数据，spaCy 自动处理训练循环、早停和模型序列化。
 
-**HuggingFace** 方案： 适合追求最高精度。使用预训练 **Transformer** 模型（BERT、RoBERTa、DeBERTa 等），在特定领域数据上微调。 Transformers 提供了 Trainer API，一行代码启动分布式训练。
+HuggingFace 方案： 适合追求最高精度。使用预训练 Transformer 模型（BERT、RoBERTa、DeBERTa 等），在特定领域数据上微调。 Transformers 提供了 Trainer API，一行代码启动分布式训练。
 
 方案选择：
 - 快速原型/生产部署 → spaCy

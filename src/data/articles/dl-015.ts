@@ -145,7 +145,7 @@ export const article: Article = {
         },
         {
             title: "5. 预训练模型选择",
-            body: `选择正确的预训练模型是迁移学习成功的前提。当前可用的预训练模型生态极其丰富，从经典的 ResNet、VGG 到现代的 Vision **Transformer**（ViT）、Swin **Transformer**，再到多模态的 CLIP 模型。选择时需要综合考虑多个维度：首先是任务类型，分类任务首选 ResNet/EfficientNet，检测任务选 FPN/DETR 架构，分割任务选 DeepLab/SAM 架构。其次是模型容量，小数据集用较小模型（ResNet-18/34）避免过拟合，大数据集用较大模型（ResNet-101/ViT-L）获取更好性能。第三是计算资源约束，移动端部署必须考虑模型大小和推理延迟。第四是预训练数据的质量和相关性，通用 ImageNet 预训练是安全基线，但如果有领域特定的预训练模型（如 BioMedCLIP 用于医学影像），优先使用领域模型。最后是许可证和商业使用限制，部分预训练权重有非商用条款。`,
+            body: `选择正确的预训练模型是迁移学习成功的前提。当前可用的预训练模型生态极其丰富，从经典的 ResNet、VGG 到现代的 Vision Transformer（ViT）、Swin Transformer，再到多模态的 CLIP 模型。选择时需要综合考虑多个维度：首先是任务类型，分类任务首选 ResNet/EfficientNet，检测任务选 FPN/DETR 架构，分割任务选 DeepLab/SAM 架构。其次是模型容量，小数据集用较小模型（ResNet-18/34）避免过拟合，大数据集用较大模型（ResNet-101/ViT-L）获取更好性能。第三是计算资源约束，移动端部署必须考虑模型大小和推理延迟。第四是预训练数据的质量和相关性，通用 ImageNet 预训练是安全基线，但如果有领域特定的预训练模型（如 BioMedCLIP 用于医学影像），优先使用领域模型。最后是许可证和商业使用限制，部分预训练权重有非商用条款。`,
             code: [
                 {
                     lang: "python",

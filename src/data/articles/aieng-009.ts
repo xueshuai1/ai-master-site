@@ -93,7 +93,7 @@ AI 绑定资源包括：LLM API（OpenAI、Anthropic、Google 等）、向量数
 
 连接管理 方面，Agent 应该使用 连接池 和 重试机制。对于 LLM 调用，设置最大连接数、重试次数（如 3 次）、指数退避策略（1 秒、2 秒、4 秒、8 秒）和重试状态码（429、500、503）。
 
-本地开发 和 生产环境 应该使用 相同类型的服务，只是配置不同。例如，开发环境使用 本地 **Ollama**，生产环境使用 **OpenAI** API，但通过同一个 LLMProvider 接口 调用。这种设计确保了代码在不同环境中的 行为一致性。`,
+本地开发 和 生产环境 应该使用 相同类型的服务，只是配置不同。例如，开发环境使用 本地 Ollama，生产环境使用 OpenAI API，但通过同一个 LLMProvider 接口 调用。这种设计确保了代码在不同环境中的 行为一致性。`,
       code: [{ lang: "typescript", code: "interface LLMProvider {\n  generate(prompt: string): Promise<string>;\n  embed(text: string): Promise<number[]>;\n}\nclass OpenAIProvider implements LLMProvider { }\nclass AnthropicProvider implements LLMProvider { }\nconst agent = new Agent({ llm: new OpenAIProvider() });" }],
       tip: "为每个后端服务实现一个 mock 版本，用于单元测试。Agent 的测试比传统应用更依赖 mock，因为真实 LLM 调用既慢又贵。",
       warning: "不要将 Agent 与特定 LLM 提供商深度耦合。如果代码中到处是 openai.chat.completions.create() 调用，更换提供商将变成噩梦。使用抽象层隔离。",
@@ -282,7 +282,7 @@ Factor 12：管理进程作为一次性任务
 AI Agent 框架对比：
 - Mastra AI（23,784 星）：Gatsby 团队打造的企业级 Agent 框架，内置 12-Factor 原则支持
 - ElizaOS（18,346 星）：面向所有人的自主 Agent 框架，强调可访问性
-- **LangGraph**：**LangChain** 生态的 Agent 编排层，适合复杂工作流
+- LangGraph：LangChain 生态的 Agent 编排层，适合复杂工作流
 
 相关知识库文章：
 - [aieng-001] 模型训练基础设施

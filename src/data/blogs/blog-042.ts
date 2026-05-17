@@ -5,9 +5,9 @@ const content: ArticleSection[] = [
     title: "引言：AI 编码工具正在集体涨价",
     body: `2026 年 4 月，AI 编码工具领域经历了有史以来最密集的一轮定价变动。短短两周内，三大巨头相继调整了定价策略：
 
-- **Anthropic** 静默测试将 **Claude** Code 从 Pro 计划（$20/月）移除，改为仅 Max 计划（$100/月）可用，引发社区强烈反弹后数小时内撤回
+- Anthropic 静默测试将 Claude Code 从 Pro 计划（$20/月）移除，改为仅 Max 计划（$100/月）可用，引发社区强烈反弹后数小时内撤回
 - GitHub 正式宣布 Copilot Individual 计划变更：暂停新注册、收紧使用限制、Pro 计划移除 Opus 模型、推出 Pro+ 计划（$39/月）
-- **OpenAI** 趁势宣布 Codex 将保持在 FREE 和 PLUS（$20）计划中可用，直接抢占市场份额
+- OpenAI 趁势宣布 Codex 将保持在 FREE 和 PLUS（$20）计划中可用，直接抢占市场份额
 
 这不仅仅是一次「调价」，而是整个 AI 编码工具商业模式的重新洗牌。
 
@@ -37,21 +37,21 @@ GitHub 的原话值得反复品味：
 
 翻译： Agent 让算力消耗失控了。一次 agentic session 可以消耗过去一个月的 token 量。
 
-### 4 月 22 日：**Anthropic** 试探性提价
+### 4 月 22 日：Anthropic 试探性提价
 
-**Anthropic** 静默更新了 claude.com/pricing 页面：
-- **Claude** Code 从 Pro（$20）移至 Max（$100-200/月）专属
+Anthropic 静默更新了 claude.com/pricing 页面：
+- Claude Code 从 Pro（$20）移至 Max（$100-200/月）专属
 - 无公告、无邮件通知
 - 仅影响约 2% 的新 Prosumer 用户
 
 社区反应：
 - Simon Willison 花了一小时调查并撰写长文分析
 - Reddit、HN、Twitter 全面「起火」
-- **OpenAI** Codex 工程师 直接表态：「Codex 将继续在 FREE 和 PLUS（$20）计划中可用。我们有足够的算力和高效模型来支持。」
+- OpenAI Codex 工程师 直接表态：「Codex 将继续在 FREE 和 PLUS（$20）计划中可用。我们有足够的算力和高效模型来支持。」
 
 数小时后，Anthropic 恢复原定价页面。
 
-### **OpenAI** 的趁势反击
+### OpenAI 的趁势反击
 
 OpenAI 借机抢占市场，明确 Codex 的低价策略：
 - Codex 保持 FREE 和 PLUS（$20）可用
@@ -80,7 +80,7 @@ Codex 保持低价"]
 - 日均请求：100-500 次
 - 日均 token 消耗：~50K-250K
 
-Agentic Coding（**Claude** Code / Codex）：
+Agentic Coding（Claude Code / Codex）：
 - 每次请求：10K-100K+ token 输入（整个代码库上下文）
 - 单次 agentic session：可能产生 50-200 次子请求
 - 日均 token 消耗：5M-50M+（增长 100-1000 倍）`,
@@ -139,12 +139,12 @@ Weekly 限制：
 乘数机制是关键创新：
 这意味着：选择更强模型 = 更快触及用量上限。
 
-### 3.2 **Anthropic** **Claude**：试探性提价，信任危机
+### 3.2 Anthropic Claude：试探性提价，信任危机
 
-**Anthropic** 的策略暴露了两个问题：
+Anthropic 的策略暴露了两个问题：
 
 问题一：算力成本不可控
-- **Claude** Code 的 agentic 工作流消耗大量 Opus 调用
+- Claude Code 的 agentic 工作流消耗大量 Opus 调用
 - 每用户月成本可能超过 $100（订阅费本身）
 - 被迫考虑提价或限制
 
@@ -153,9 +153,9 @@ Weekly 限制：
 - Simon Willison："我不打算向数据新闻记者教授依赖 $100/月订阅的课程"
 - 透明定价是 Anthropic 的重要资产，此次事件损害了这一形象
 
-### 3.3 **OpenAI** Codex：低价策略抢占市场
+### 3.3 OpenAI Codex：低价策略抢占市场
 
-**OpenAI** 的策略很明确：
+OpenAI 的策略很明确：
 - 保持低价：Codex 在 FREE 和 PLUS（$20）计划中可用
 - 算力自信："我们有足够的算力和高效模型来支持"
 - 市场信号：利用竞争对手的混乱期抢夺用户
@@ -186,10 +186,10 @@ Weekly 限制：
 |-----------|---------|---------|------|
 | 轻度使用者 | Copilot Individual | ★★★ | 日均 token 消耗低，不太可能触及新限制 |
 | 重度使用者 | Copilot Pro | ★★★★★ | 频繁使用 agentic 功能，很可能触及限制 |
-| **Claude** Code 用户 | **Anthropic** Pro | ★★★★ | 如果 **Anthropic** 再次尝试提价，成本将翻 5 倍 |
+| Claude Code 用户 | Anthropic Pro | ★★★★ | 如果 Anthropic 再次尝试提价，成本将翻 5 倍 |
 | 学生开发者 | Copilot Student | ★★★★ | 新注册暂停，现有用户用量受限 |
 | 企业用户 | Copilot Business | ★★ | 企业版不受此次 Individual 计划变更影响 |
-| **OpenAI** Codex 用户 | Codex Plus | ★ | 暂时不受影响，可能成为最大受益者 |
+| OpenAI Codex 用户 | Codex Plus | ★ | 暂时不受影响，可能成为最大受益者 |
 
 ### 4.2 成本优化策略
 
@@ -260,8 +260,8 @@ AI Agent SaaS 的定价逻辑：
 
 定价上涨将推动开源方案的发展：
 
-- **Ollama** + 本地模型：完全免费，但需要硬件投入
-- **Claude** Code 开源替代：Aider、Continue 等项目将持续受益
+- Ollama + 本地模型：完全免费，但需要硬件投入
+- Claude Code 开源替代：Aider、Continue 等项目将持续受益
 - Self-hosted Agent：在企业环境中，自托管 AI Agent 将更具吸引力`,
     code: [
       {
@@ -314,11 +314,11 @@ ollama pull codellama:70b
 
 开发者可以接受涨价，但不能接受被欺骗。
 
-**Anthropic** 的失败不在于「试图提价」，而在于「静默提价」。GitHub 虽然做了同样的事（收紧限制），但他们发布了详细的官方博客，解释了原因、给出了迁移方案、提供了退款选项。
+Anthropic 的失败不在于「试图提价」，而在于「静默提价」。GitHub 虽然做了同样的事（收紧限制），但他们发布了详细的官方博客，解释了原因、给出了迁移方案、提供了退款选项。
 
 透明沟通 vs 静默变更：
 
-| 维度 | GitHub（正面案例） | **Anthropic**（负面案例） |
+| 维度 | GitHub（正面案例） | Anthropic（负面案例） |
 |------|-------------------|---------------------|
 | 公告方式 | 官方博客 + 详细解释 | 静默更新定价页面 |
 | 原因说明 | 详细解释算力消耗变化 | 无解释 |

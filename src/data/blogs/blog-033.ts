@@ -3,7 +3,7 @@ import { BlogPost, ArticleSection } from './blog-types';
 const content: ArticleSection[] = [
   {
     title: "引言：Opus 4.7 为什么重要",
-    body: `**Anthropic** 于 2026 年 4 月发布了 **Claude** Opus 4.7，这是 **Claude** Opus 系列的重大版本更新。与常规的迭代不同，Opus 4.7 带来了三个层面的实质性变化：全新的 tokenizer 架构、显著提升的多模态视觉能力，以及推理模式的进一步增强。
+    body: `Anthropic 于 2026 年 4 月发布了 Claude Opus 4.7，这是 Claude Opus 系列的重大版本更新。与常规的迭代不同，Opus 4.7 带来了三个层面的实质性变化：全新的 tokenizer 架构、显著提升的多模态视觉能力，以及推理模式的进一步增强。
 
 Simon Willison 等资深开发者通过实测发现，Opus 4.7 的 tokenizer 在处理相同文本时会产生比 4.6 多 35% 的 token——这意味着实际使用成本可能增加 40% 左右。同时，图片处理能力的大幅提升和 thinking_effort 新增的 xhigh 级别，让 Opus 4.7 在复杂推理和视觉理解场景中的表现远超历代。
 
@@ -12,7 +12,7 @@ Simon Willison 等资深开发者通过实测发现，Opus 4.7 的 tokenizer 在
   },
   {
     title: "一、Tokenizer 革命：为什么同一个文本用了更多 token",
-    body: `Opus 4.7 最大的变化是采用了全新的 tokenizer。**Anthropic** 在发布公告中明确指出："Opus 4.7 uses an updated tokenizer that improves how the model processes text. The tradeoff is that the same input can map to more tokens—roughly 1.0–1.35× depending on the content type."
+    body: `Opus 4.7 最大的变化是采用了全新的 tokenizer。Anthropic 在发布公告中明确指出："Opus 4.7 uses an updated tokenizer that improves how the model processes text. The tradeoff is that the same input can map to more tokens—roughly 1.0–1.35× depending on the content type."
 
 这意味着什么？让我们通过实际数据来理解。`,
     table: {
@@ -137,7 +137,7 @@ for name, text in test_texts.items():
   },
   {
     title: "四、视觉能力跃升：从 800px 到 2576px",
-    body: `Opus 4.7 在多模态视觉能力上实现了重大突破。之前 **Claude** 模型的图片输入限制为约 800px 的长边，而 Opus 4.7 将这一限制提升到了 2576px（约 375 万像素），是之前的 3 倍以上。
+    body: `Opus 4.7 在多模态视觉能力上实现了重大突破。之前 Claude 模型的图片输入限制为约 800px 的长边，而 Opus 4.7 将这一限制提升到了 2576px（约 375 万像素），是之前的 3 倍以上。
 
 这意味着什么？让我们量化分析：`,
     table: {
@@ -415,11 +415,11 @@ result3 = smart_chat(
   },
   {
     title: "八、总结与展望",
-    body: `**Claude** Opus 4.7 代表了 **Anthropic** 在大型语言模型方向的又一次重要进步。三个核心变化各有侧重：
+    body: `Claude Opus 4.7 代表了 Anthropic 在大型语言模型方向的又一次重要进步。三个核心变化各有侧重：
 
 Tokenizer 的变更虽然带来了成本上升的挑战，但从长远看，更细粒度的分词策略有助于模型更精确地理解语言结构。随着开发者逐渐适应新的 token 计费模式，通过 prompt 优化和缓存策略可以有效控制成本增长。
 
-视觉能力的跃升是 Opus 4.7 最实用的改进。2576px 的图片支持让 **Claude** 能够处理更高分辨率的截图、设计稿和技术图表，这对于需要视觉理解的工作场景（如 UI 审查、架构图分析、医学影像解读等）具有重大意义。
+视觉能力的跃升是 Opus 4.7 最实用的改进。2576px 的图片支持让 Claude 能够处理更高分辨率的截图、设计稿和技术图表，这对于需要视觉理解的工作场景（如 UI 审查、架构图分析、医学影像解读等）具有重大意义。
 
 Thinking 增强则进一步强化了 Opus 系列在复杂推理任务中的优势。xhigh 级别的引入让 Claude 在科研分析、代码审查和数学证明等需要极高准确度的场景中有了更可靠的工具。
 

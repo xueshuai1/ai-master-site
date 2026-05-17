@@ -34,10 +34,10 @@ export const article: Article = {
         },
         {
             title: "2. LangGraph：状态机驱动的多智能体编排",
-            body: `**LangGraph** 是 **LangChain** 团队推出的有状态多智能体编排框架，2026 年 GitHub 星标数已突破 122k。
+            body: `LangGraph 是 LangChain 团队推出的有状态多智能体编排框架，2026 年 GitHub 星标数已突破 122k。
 
 核心设计理念：
-**LangGraph** 将多智能体协作建模为有向图（Directed Graph），每个节点是一个 Agent 或工具，边定义了执行流。支持循环图，这意味着 Agent 可以迭代式地改进输出。
+LangGraph 将多智能体协作建模为有向图（Directed Graph），每个节点是一个 Agent 或工具，边定义了执行流。支持循环图，这意味着 Agent 可以迭代式地改进输出。
 
 关键特性：
 - 持久化（Checkpointing）： 支持中断和恢复，适合人机协作场景。Agent 可以在关键步骤暂停，等待人类审查后继续
@@ -49,10 +49,10 @@ export const article: Article = {
         },
         {
             title: "3. CrewAI：角色驱动的智能体团队",
-            body: `**CrewAI** 采用了一种更直觉化的方式——你为每个 Agent 定义角色（Role）、目标（Goal）和背景（Backstory），然后将它们组织成一个 Crew。
+            body: `CrewAI 采用了一种更直觉化的方式——你为每个 Agent 定义角色（Role）、目标（Goal）和背景（Backstory），然后将它们组织成一个 Crew。
 
 核心设计理念：
-**CrewAI** 模拟真实的人类团队协作。每个 Agent 像一个团队成员，有自己的专业领域和工作风格。CrewAI 支持顺序（Sequential）和层级（Hierarchical）两种协作模式。
+CrewAI 模拟真实的人类团队协作。每个 Agent 像一个团队成员，有自己的专业领域和工作风格。CrewAI 支持顺序（Sequential）和层级（Hierarchical）两种协作模式。
 
 关键特性：
 - 角色定义： 每个 Agent 有明确的角色、目标和背景故事
@@ -65,16 +65,16 @@ export const article: Article = {
         },
         {
             title: "4. OpenAI Agent Teams 与 Anthropic Agent Teams",
-            body: `2026 年，**OpenAI** 和 **Anthropic** 都推出了自己的多 Agent 协作方案。
+            body: `2026 年，OpenAI 和 Anthropic 都推出了自己的多 Agent 协作方案。
 
-**OpenAI** Agent Teams：
+OpenAI Agent Teams：
 - 原生支持 GPT 系列模型的多 Agent 编排
 - 内置 Guardrails 安全护栏，防止 Agent 执行危险操作
 - Handoffs 机制允许 Agent 之间传递控制权
 - 与 OpenAI API 生态深度集成
 
-**Anthropic** Agent Teams（**Claude** Code）：
-- **Claude** Code 2026 年支持多 Agent 并行协作
+Anthropic Agent Teams（Claude Code）：
+- Claude Code 2026 年支持多 Agent 并行协作
 - 利用 Claude 系列模型的强推理能力进行任务分解
 - 内置安全对齐机制，Agent 行为更可控
 - 终端优先的设计哲学
@@ -94,7 +94,7 @@ ADK 采用 YAML 配置 + 可视化编排的方式定义多 Agent 系统，降低
 关键特性：
 - YAML 配置定义 Agent 角色、工具和协作关系
 - 可视化编排界面，支持拖拽式工作流设计
-- 与 Google 生态（**Gemini** API、Vertex AI）深度集成
+- 与 Google 生态（Gemini API、Vertex AI）深度集成
 - 支持生产级部署和监控
 
 适用场景： 需要快速原型开发和可视化调试的多 Agent 应用。`,

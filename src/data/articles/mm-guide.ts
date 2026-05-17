@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "0. 什么是多模态？",
-            body: `GPT 只能处理文字。CLIP 能同时理解文字和图片。**GPT-4**V 能看图说话。**Gemini** 能理解文本、图像、音频、视频。
+            body: `GPT 只能处理文字。CLIP 能同时理解文字和图片。GPT-4V 能看图说话。Gemini 能理解文本、图像、音频、视频。
 
 多模态 = AI 的"五感"。 单一的文本理解只是视觉的一个角落。`
         },

@@ -150,7 +150,7 @@ for name, props in model_comparison.items():
         },
         {
             title: "2. StyleGAN 架构详解：Style Space 与 AdaIN",
-            body: `StyleGAN（Style-based Generative Adversarial Network，2018）是 **NVIDIA** 提出的一种革命性 GAN 架构，它彻底重构了传统 GAN 的生成器设计。传统 GAN 将潜在向量 z 直接输入全连接层生成图像，导致潜在空间高度纠缠——改变一个维度可能同时影响多个视觉属性。StyleGAN 的核心创新有三点：第一，引入映射网络（Mapping Network），将输入的潜在向量 z 通过 8 层全连接网络映射到中间潜在空间 W，解耦了不同语义属性；第二，采用自适应实例归一化（AdaIN），将 W 空间中的风格向量注入到生成器的每一层，实现了对不同尺度视觉特征的精细控制——浅层控制 coarse 属性（姿势、性别），中层控制 mid 属性（发型、面部特征），深层控制 fine 属性（颜色、微观纹理）；第三，引入噪声注入（Noise Injection），在每一层添加独立的随机噪声图，控制随机细节（毛孔位置、头发丝、雀斑），使生成图像更加真实自然。StyleGAN2（2020）进一步改进了架构，移除了权重解调中的 artifacts（水滴状伪影），用权重归一化替代 AdaIN 中的实例归一化步骤，生成质量再次提升。StyleGAN3（2021）解决了纹理粘连问题（aliasing），通过等变信号处理实现了真正的平移等变性。`,
+            body: `StyleGAN（Style-based Generative Adversarial Network，2018）是 NVIDIA 提出的一种革命性 GAN 架构，它彻底重构了传统 GAN 的生成器设计。传统 GAN 将潜在向量 z 直接输入全连接层生成图像，导致潜在空间高度纠缠——改变一个维度可能同时影响多个视觉属性。StyleGAN 的核心创新有三点：第一，引入映射网络（Mapping Network），将输入的潜在向量 z 通过 8 层全连接网络映射到中间潜在空间 W，解耦了不同语义属性；第二，采用自适应实例归一化（AdaIN），将 W 空间中的风格向量注入到生成器的每一层，实现了对不同尺度视觉特征的精细控制——浅层控制 coarse 属性（姿势、性别），中层控制 mid 属性（发型、面部特征），深层控制 fine 属性（颜色、微观纹理）；第三，引入噪声注入（Noise Injection），在每一层添加独立的随机噪声图，控制随机细节（毛孔位置、头发丝、雀斑），使生成图像更加真实自然。StyleGAN2（2020）进一步改进了架构，移除了权重解调中的 artifacts（水滴状伪影），用权重归一化替代 AdaIN 中的实例归一化步骤，生成质量再次提升。StyleGAN3（2021）解决了纹理粘连问题（aliasing），通过等变信号处理实现了真正的平移等变性。`,
             code: [
                 {
                     lang: "python",

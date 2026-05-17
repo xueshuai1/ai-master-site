@@ -14,9 +14,9 @@ export const article: Article = {
         title: "1. 为什么需要 RAG？大语言模型的三大局限",
         body: `大语言模型虽然强大，但存在三个天然局限：知识截止（训练数据有固定截止日期，无法了解最新信息）、幻觉倾向（对不知道的内容倾向于编造而非承认）、私有数据盲区（训练数据不包含企业内部文档和数据库）。
 
-**RAG**（Retrieval-Augmented Generation，检索增强生成）是解决这些问题最优雅的架构方案。它的核心思想很简单：在模型生成回答之前，先从外部知识库中检索相关信息，然后将检索结果和问题一起输入模型。这样模型就不需要"记住"所有知识，只需要"读懂"给它的参考资料并作答。
+RAG（Retrieval-Augmented Generation，检索增强生成）是解决这些问题最优雅的架构方案。它的核心思想很简单：在模型生成回答之前，先从外部知识库中检索相关信息，然后将检索结果和问题一起输入模型。这样模型就不需要"记住"所有知识，只需要"读懂"给它的参考资料并作答。
 
-这就像开卷考试——你不需要背下整本教科书，只需要知道如何快速查找相关信息并理解它。**RAG** 让 LLM 从"闭卷答题"变成"开卷答题"，准确率大幅提升，幻觉显著减少。`,
+这就像开卷考试——你不需要背下整本教科书，只需要知道如何快速查找相关信息并理解它。RAG 让 LLM 从"闭卷答题"变成"开卷答题"，准确率大幅提升，幻觉显著减少。`,
         mermaid: `graph LR
     A["用户问题"] --> B["向量检索"]
     C["知识库文档"] --> D["分块+向量化"]
@@ -31,7 +31,7 @@ export const article: Article = {
       },
       {
         title: "2. RAG 架构全景：从数据到答案的完整流程",
-        body: `一个完整的 **RAG** 系统包含两个阶段：索引阶段（Indexing）和查询阶段（Querying）。
+        body: `一个完整的 RAG 系统包含两个阶段：索引阶段（Indexing）和查询阶段（Querying）。
 
 索引阶段（离线执行，一次性或定期更新）：
 1. 文档采集：从各种数据源（PDF、网页、数据库、API）获取原始文档
@@ -140,13 +140,13 @@ documents = [
       },
       {
         title: "3. Chunking 策略：RAG 成败的关键",
-        body: `文本分块（Chunking）是 **RAG** 系统中最影响效果的环节之一。分块策略直接决定了检索的精度和上下文的质量。
+        body: `文本分块（Chunking）是 RAG 系统中最影响效果的环节之一。分块策略直接决定了检索的精度和上下文的质量。
 
 固定大小分块（Fixed-Size Chunking）：最简单的方法。按字符数或 Token 数等长切分，块之间有少量重叠。优点是简单高效，缺点是可能在不恰当的位置切断句子或段落。
 
 语义分块（Semantic Chunking）：利用文本的语义结构来切分。先按段落、章节、列表等自然边界分割，再对过长的段落进行二次切分。优点是保留了语义完整性，缺点是实现更复杂。
 
-递归字符分块（Recursive Character Splitting）：**LangChain** 等框架使用的策略。先用大分隔符（如双换行）分割，如果块仍然太大，再用小分隔符（如单换行、句号、空格）递归分割。这在简单性和效果之间取得了很好的平衡。
+递归字符分块（Recursive Character Splitting）：LangChain 等框架使用的策略。先用大分隔符（如双换行）分割，如果块仍然太大，再用小分隔符（如单换行、句号、空格）递归分割。这在简单性和效果之间取得了很好的平衡。
 
 关键参数选择：Chunk Size 取决于 Embedding 模型的上下文窗口和目标任务的性质。对于问答任务，300-500 Token 通常足够；对于需要长篇上下文的摘要任务，可能需要 1000-2000 Token。Overlap 一般设置为 Chunk Size 的 10%-20%。`,
         code: [
@@ -231,7 +231,7 @@ for i, chunk in enumerate(chunks):
       },
       {
         title: "4. 向量检索与 Embedding 模型选择",
-        body: `Embedding 模型将文本映射为高维向量，使得语义相似的文本在向量空间中的距离也更近。选择合适的 Embedding 模型是 **RAG** 系统的核心决策。
+        body: `Embedding 模型将文本映射为高维向量，使得语义相似的文本在向量空间中的距离也更近。选择合适的 Embedding 模型是 RAG 系统的核心决策。
 
 评估 Embedding 模型的关键指标：
 1. MTEB 分数（Massive Text Embedding Benchmark）：权威的 Embedding 模型评测榜单，涵盖分类、聚类、配对、重排序、检索、STS 等任务
@@ -240,7 +240,7 @@ for i, chunk in enumerate(chunks):
 4. 推理速度：影响 RAG 系统的延迟表现
 5. 向量维度：维度越高表达能力越强，但存储和计算成本也越高
 
-主流 Embedding 模型对比：**OpenAI** 的 text-embedding-3-large 性能最强但需要付费；开源模型如 BGE（BAAI General Embedding）在中文场景下表现优异，且可以本地部署；Cohere 的 Embedding 模型在多语言支持上有优势。`,
+主流 Embedding 模型对比：OpenAI 的 text-embedding-3-large 性能最强但需要付费；开源模型如 BGE（BAAI General Embedding）在中文场景下表现优异，且可以本地部署；Cohere 的 Embedding 模型在多语言支持上有优势。`,
         mermaid: `graph TD
     A["用户查询"] --> B["向量化 Query"]
     C["向量数据库"] --> D["相似度计算"]
@@ -265,7 +265,7 @@ for i, chunk in enumerate(chunks):
       },
       {
         title: "5. 完整的 RAG 查询 pipeline 实现",
-        body: `查询阶段是 **RAG** 系统与用户直接交互的环节，决定了用户的实际体验。一个生产级的查询 pipeline 需要考虑多个方面：查询理解、多路检索、结果融合、答案生成、引用标注。
+        body: `查询阶段是 RAG 系统与用户直接交互的环节，决定了用户的实际体验。一个生产级的查询 pipeline 需要考虑多个方面：查询理解、多路检索、结果融合、答案生成、引用标注。
 
 查询理解（Query Understanding）：用户的原始提问可能不够精确。通过查询改写（Query Rewriting）、查询扩展（Query Expansion）和意图识别，可以大幅提升检索质量。例如，用户问"年假怎么算"，系统可以改写为"员工带薪年假计算规则"进行检索。
 

@@ -672,7 +672,7 @@ class SecurityGuard {
 
 对比总结：
 
-| 维度 | Playwright MCP | Codex Chrome 扩展 | Computer Use | **Chrome AI Skills** |
+| 维度 | Playwright MCP | Codex Chrome 扩展 | Computer Use | Chrome AI Skills |
 |------|---------------|-------------------|-------------|-----------------|
 | 操控精度 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
 | 操作速度 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
@@ -686,7 +686,7 @@ class SecurityGuard {
 - 如果你的场景是精确的 Web 自动化（测试、采集），选 Playwright MCP
 - 如果你的场景是浏览器内日常自动化，选 Codex Chrome 扩展
 - 如果你的场景需要跨应用操控，选 Computer Use
-- 如果你的场景是简单的重复任务，选 **Chrome AI Skills**`,
+- 如果你的场景是简单的重复任务，选 Chrome AI Skills`,
       tip: `选型框架：不要用「哪个方案最好」来思考，而要用「哪个方案最适合我的场景」来思考。评估四个维度：操控精度（需要多精确？）、操作速度（能接受多慢？）、通用性（需要跨应用吗？）、安全性（涉及敏感数据吗？）。根据这四个维度的优先级，选择最匹配的方案。`,
       warning: `避免陷阱：不要同时使用多个方案来「互补」——这会增加系统复杂度和维护成本。选择一个最核心的方案，在它的能力范围内最大化利用。如果确实需要跨方案能力，通过统一的抽象层来封装，而不是直接调用不同方案的原生 API。`
     },
@@ -732,11 +732,11 @@ Agent 可能在长时间运行的任务中使用已过期的 Cookie 或会话 To
 
 方向一：MCP（Model Context Protocol）
 
-MCP 是由 **Anthropic** 提出的开放协议，用于连接 AI 模型与外部工具和数据源。通过 MCP，AI 模型可以标准化地访问浏览器操作能力，而无需针对每个工具编写特定的集成代码。MCP 正在成为 AI Agent 工具调用的标准协议。
+MCP 是由 Anthropic 提出的开放协议，用于连接 AI 模型与外部工具和数据源。通过 MCP，AI 模型可以标准化地访问浏览器操作能力，而无需针对每个工具编写特定的集成代码。MCP 正在成为 AI Agent 工具调用的标准协议。
 
 方向二：浏览器原生 AI
 
-Chrome 和 Edge 正在将 AI 能力直接嵌入浏览器引擎——Chrome 的 **Gemini** Nano 模型可以在浏览器内运行，无需云服务。这意味着未来的 Agent 浏览器操作可以在完全离线的环境下完成，大幅提升隐私性和响应速度。
+Chrome 和 Edge 正在将 AI 能力直接嵌入浏览器引擎——Chrome 的 Gemini Nano 模型可以在浏览器内运行，无需云服务。这意味着未来的 Agent 浏览器操作可以在完全离线的环境下完成，大幅提升隐私性和响应速度。
 
 方向三：Agent 编排框架
 
@@ -748,7 +748,7 @@ Chrome 和 Edge 正在将 AI 能力直接嵌入浏览器引擎——Chrome 的 *
 
 推荐学习资源：
 - Playwright 官方文档：https://playwright.dev — 浏览器自动化的最佳学习资源
-- **Anthropic** Computer Use 文档：https://docs.anthropic.com — 视觉操控的权威指南
+- Anthropic Computer Use 文档：https://docs.anthropic.com — 视觉操控的权威指南
 - MCP 规范：https://modelcontextprotocol.io — AI 工具调用的标准协议
 - WebArena 评测基准：https://webarena.dev — Agent 浏览器能力的标准化测试
 

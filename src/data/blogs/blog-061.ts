@@ -170,9 +170,9 @@ Compiler 会做以下优化：
       title: "三、DSPy vs 传统框架：范式对比",
       body: `理解 DSPy 价值的最佳方式是和现有方案对比。我们选取三个主流方案进行对比：
 
-### DSPy vs **LangChain**
+### DSPy vs LangChain
 
-| 维度 | **LangChain** | DSPy |
+| 维度 | LangChain | DSPy |
 |------|-----------|------|
 | 编程范式 | 命令式（组装 chain） | 声明式（定义 module） |
 | Prompt 管理 | 手动编写模板字符串 | 由 Compiler 自动生成 |
@@ -192,11 +192,11 @@ Compiler 会做以下优化：
 | 跨模型兼容 | 差 | 好 |
 | 团队协 | 困难 | 好的代码结构 |
 
-### DSPy vs **OpenAI** API 直接调用
+### DSPy vs OpenAI API 直接调用
 
 直接调用 API 是最底层的方式，适合简单场景，但构建复杂应用时代码量会爆炸。DSPy 在保持灵活性的同时提供了工程化结构。
 
-> 何时选择 DSPy： 当你的 LLM 应用涉及多步骤推理、**RAG**、或需要持续优化时，DSPy 的优势最为明显。对于简单的问答场景，直接调用 API 可能更简单。`,
+> 何时选择 DSPy： 当你的 LLM 应用涉及多步骤推理、RAG、或需要持续优化时，DSPy 的优势最为明显。对于简单的问答场景，直接调用 API 可能更简单。`,
       code: [
         {
           lang: "python",
@@ -317,7 +317,7 @@ def is_correct(example, prediction, trace=None):
     return prediction.answer.strip().lower() in example.answer.strip().lower()
 
 # 编译优化
-rag = **RAG**System(num_docs=3)
+rag = RAGSystem(num_docs=3)
 optimizer = dspy.BootstrapFewShot(
     metric=is_correct,
     max_bootstrapped_demos=4,
@@ -414,7 +414,7 @@ DSPy 不是一个孤立的框架，而是一个正在快速成长的生态系统
 | DSPy Core | 核心框架 | 活跃开发，v3.x |
 | DSPy 文档 | 官方教程和 API 文档 | 持续更新 |
 | 社区贡献 | 第三方 Module 和示例 | 快速增长 |
-| 集成工具 | 与 **LangChain**、**LlamaIndex** 集成 | 实验中 |
+| 集成工具 | 与 LangChain、LlamaIndex 集成 | 实验中 |
 | DSPy 可视化 | Prompt 和 Pipeline 可视化 | 规划中 |
 
 ### DSPy 的局限性与适用边界
@@ -426,7 +426,7 @@ DSPy 不适合的场景：
 
 DSPy 最适合的场景：
 - 多步骤推理 Pipeline
-- **RAG**（检索增强生成）应用
+- RAG（检索增强生成）应用
 - 需要持续优化的生产环境
 - 团队多人协作的 LLM 项目
 - 需要在多个模型间切换的场景
@@ -436,7 +436,7 @@ DSPy 最适合的场景：
 DSPy 代表了 AI 工程化的一个重要趋势：从 Prompt Engineering 走向 LM Programming。与之类似的方向还有：
 
 - Instructor（Jason Liu）：结构化输出的声明式框架
-- Guidance（**Microsoft**）：可控生成的模板语言
+- Guidance（Microsoft）：可控生成的模板语言
 - Outlines：确定性 LLM 输出的结构化框架
 
 但 DSPy 的独特之处在于其 Compiler 驱动的自优化能力，这是其他框架尚未具备的核心优势。

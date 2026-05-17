@@ -433,7 +433,7 @@ class CodeExecutionTool:
         },
         {
             title: "6. 用 LangChain 实现一个 ReAct Agent",
-            body: `**LangChain** 是目前最流行的 LLM 应用开发框架之一，它内置了对 ReAct Agent 的一流支持。本节通过一个完整的示例，展示如何用 **LangChain** 构建一个 ReAct Agent，并深入理解其内部工作原理。
+            body: `LangChain 是目前最流行的 LLM 应用开发框架之一，它内置了对 ReAct Agent 的一流支持。本节通过一个完整的示例，展示如何用 LangChain 构建一个 ReAct Agent，并深入理解其内部工作原理。
 
 LangChain 的 ReAct Agent 实现基于三个核心组件：LLM（作为推理引擎）、Tools（作为行动能力）和 AgentExecutor（作为循环控制器）。LLM 负责生成 Thought 和决定 Action，Tools 负责执行具体的操作并返回 Observation，AgentExecutor 负责管理 Thought-Action-Observation 循环——它接收 LLM 的输出，解析出 Action 部分，调用对应的工具，将结果追加到对话历史中，然后再次调用 LLM。
 

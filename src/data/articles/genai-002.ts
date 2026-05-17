@@ -97,7 +97,7 @@ export const article: Article = {
         },
         {
             title: "3. CLIP 文本编码器",
-            body: `CLIP（Contrastive Language-Image Pre-training）是 **OpenAI** 提出的图文对比学习模型，它为 Stable Diffusion 提供了理解自然语言的能力。CLIP 使用双塔架构：一个视觉编码器（ViT 或 ResNet）和一个文本编码器（**Transformer**），通过对比学习在大规模图文对上联合训练。在 Stable Diffusion 中，我们使用的是 CLIP 的文本编码器部分，具体为 ViT-L/14 架构，隐藏层维度 768，上下文长度 77 个 token。文本编码器将用户输入的提示词转换为 77x768 的序列嵌入，然后经过线性投影变为 77x1024，作为 U-Net 中 Cross-Attention 层的条件输入。CLIP 的强大之处在于它学习到了文本与图像之间的语义对齐，使得 "a red car" 的文本嵌入与红色汽车图像的视觉嵌入在共享空间中距离很近。这也是 Stable Diffusion 能够理解复杂文本描述的关键。需要注意的是，CLIP 对提示词的格式和顺序非常敏感，精心设计的提示词工程可以显著提升生成质量。`,
+            body: `CLIP（Contrastive Language-Image Pre-training）是 OpenAI 提出的图文对比学习模型，它为 Stable Diffusion 提供了理解自然语言的能力。CLIP 使用双塔架构：一个视觉编码器（ViT 或 ResNet）和一个文本编码器（Transformer），通过对比学习在大规模图文对上联合训练。在 Stable Diffusion 中，我们使用的是 CLIP 的文本编码器部分，具体为 ViT-L/14 架构，隐藏层维度 768，上下文长度 77 个 token。文本编码器将用户输入的提示词转换为 77x768 的序列嵌入，然后经过线性投影变为 77x1024，作为 U-Net 中 Cross-Attention 层的条件输入。CLIP 的强大之处在于它学习到了文本与图像之间的语义对齐，使得 "a red car" 的文本嵌入与红色汽车图像的视觉嵌入在共享空间中距离很近。这也是 Stable Diffusion 能够理解复杂文本描述的关键。需要注意的是，CLIP 对提示词的格式和顺序非常敏感，精心设计的提示词工程可以显著提升生成质量。`,
             code: [
                 {
                     lang: "python",

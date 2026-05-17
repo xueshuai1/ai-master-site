@@ -8,10 +8,10 @@ const content = [
 查看 GitHub 本周 AI Trending，一个清晰的信号正在浮现：
 
 - NousResearch Hermes Agent：112,920 stars（周增 22K），自进化 Agent 的代表
-- thedotmack claude-mem：66,381 stars（周增 8.7K），**Claude** Code 智能记忆插件
-- openai openai-agents-python：24,839 stars（周增 3.8K），**OpenAI** 官方多 Agent 框架
+- thedotmack claude-mem：66,381 stars（周增 8.7K），Claude Code 智能记忆插件
+- openai openai-agents-python：24,839 stars（周增 3.8K），OpenAI 官方多 Agent 框架
 - mksglu context-mode：9,327 stars（周增 1.7K），上下文窗口优化工具
-- zilliztech claude-context：8,323 stars，**Claude** Code 代码搜索 MCP
+- zilliztech claude-context：8,323 stars，Claude Code 代码搜索 MCP
 - multica-ai multica：20,101 stars（周增 6K），管理型 Agent 平台
 - jamiepine voicebox：22,754 stars（周增 4.5K），开源 AI 语音工作室
 
@@ -52,7 +52,7 @@ const content = [
   },
   {
     title: "二、OpenAI Agents Python：官方多 Agent 框架深度解析",
-    body: `**OpenAI** 于 2026 年 3 月开源了 openai-agents-python 框架（24.8K stars），标志着 **OpenAI** 正式将多 Agent 工作流纳入其生态系统。
+    body: `OpenAI 于 2026 年 3 月开源了 openai-agents-python 框架（24.8K stars），标志着 OpenAI 正式将多 Agent 工作流纳入其生态系统。
 
 ### 核心设计理念
 
@@ -142,7 +142,7 @@ input_guardrail = InputGuardrail(guardrail_function=check_sensitive_content)
 
 ### claude-mem：自动记忆压缩与注入
 
-thedotmack 开发的 claude-mem（66K+ stars）是一个 **Claude** Code 插件，它的核心能力是：
+thedotmack 开发的 claude-mem（66K+ stars）是一个 Claude Code 插件，它的核心能力是：
 
 1. 自动捕获：在编码会话过程中自动记录所有操作
 2. AI 压缩：使用 Claude 的 agent-sdk 将操作日志压缩为结构化记忆
@@ -543,8 +543,8 @@ if __name__ == "__main__":
 \`\`\`mermaid
 graph TD
     A[需要多 Agent 系统？] --> B{任务类型}
-    B -->|研究/分析| C[**OpenAI** Agents Python]
-    B -->|编码/开发| D[**Claude** Code + claude-mem]
+    B -->|研究/分析| C[OpenAI Agents Python]
+    B -->|编码/开发| D[Claude Code + claude-mem]
     B -->|团队管理| E[multica]
     B -->|自进化需求| F[Hermes Agent]
     

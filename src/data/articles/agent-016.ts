@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "为什么 Agent 评估如此困难？",
-      body: `评估一个大语言模型（LLM）相对简单：给它一组选择题，看它答对多少。**MMLU**、GSM8K、HumanEval 等基准已经非常成熟。
+      body: `评估一个大语言模型（LLM）相对简单：给它一组选择题，看它答对多少。MMLU、GSM8K、HumanEval 等基准已经非常成熟。
 
 但评估一个 AI Agent 完全不是一个量级的问题。
 
@@ -116,8 +116,8 @@ SWE-bench Verified（2025 年升级版）：
 SWE-bench 社区推出了 SWE-bench Multimodal，将评估范围从纯代码扩展到包含图像、图表的多模态编程任务。
 
 代表性成绩（2026 年 4 月）：
-- **Claude** Opus 4.7：78.3% 解决率
-- **GPT-4**o：62.1% 解决率
+- Claude Opus 4.7：78.3% 解决率
+- GPT-4o：62.1% 解决率
 - OpenHands Agent：55.7% 解决率
 
 ### 2. WebArena：网页交互能力基准

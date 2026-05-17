@@ -417,7 +417,7 @@ class AttentionDecoderRNN(nn.Module):
       },
       {
         title: "4. Transformer 架构：纯注意力机制革命",
-        body: `**Transformer** 由 Vaswani 等人在 2017 年提出，彻底摒弃了 RNN 的循环结构，完全基于注意力机制构建。这不仅是机器翻译的突破，更是整个 NLP 领域的范式转变——BERT、GPT、T5 等大语言模型都建立在 **Transformer** 之上。
+        body: `Transformer 由 Vaswani 等人在 2017 年提出，彻底摒弃了 RNN 的循环结构，完全基于注意力机制构建。这不仅是机器翻译的突破，更是整个 NLP 领域的范式转变——BERT、GPT、T5 等大语言模型都建立在 Transformer 之上。
 
 核心设计思想： RNN 的串行计算限制了训练速度，且长距离依赖建模困难。Transformer 用自注意力（Self-Attention）替代循环，使序列中任意两个位置的交互都只需一步计算，路径长度为 O(1) 而非 RNN 的 O(N)。
 
@@ -577,7 +577,7 @@ class TransformerBlock(nn.Module):
         title: "5. 多语言翻译：mBART 与 NLLB",
         body: `单语言对翻译模型（如英-中、英-法）在资源充足的语言对上表现优异，但全球有 7000+ 种语言，不可能为每对语言训练一个独立模型。多语言翻译（Multilingual MT）的目标是用一个模型支持多种语言间的翻译，实现语言间的知识迁移（Transfer Learning）。
 
-mBART（Multilingual BART） 由 Facebook AI 在 2020 年提出，是一个基于 **Transformer** 的多语言预训练模型。它在 25 种语言的维基百科语料上训练了两种任务：(1) 去噪自动编码——随机遮盖部分输入词，让模型重建；(2) 文档翻译——输入一种语言的句子，输出另一种语言的翻译。mBART 预训练后，可以通过微调适配新的语言对，即使某些语言在预训练时没有出现。
+mBART（Multilingual BART） 由 Facebook AI 在 2020 年提出，是一个基于 Transformer 的多语言预训练模型。它在 25 种语言的维基百科语料上训练了两种任务：(1) 去噪自动编码——随机遮盖部分输入词，让模型重建；(2) 文档翻译——输入一种语言的句子，输出另一种语言的翻译。mBART 预训练后，可以通过微调适配新的语言对，即使某些语言在预训练时没有出现。
 
 NLLB（No Language Left Behind） 是 Meta 在 2022 年发布的里程碑式项目，目标是让 AI 翻译覆盖所有语言，包括大量低资源语言。NLLB-200 支持 200 种语言间的互译，使用 MoE（Mixture of Experts）架构：模型包含多个「专家」子网络，每个输入路由到最合适的几个专家，既扩大了模型容量（54B 参数），又保持了推理效率（实际使用 3-6 个专家）。
 
@@ -834,9 +834,9 @@ for name, count in strategies.items():
       },
       {
         title: "7. HuggingFace 实战：训练翻译模型",
-        body: `**HuggingFace** 的 **Transformer**s 库和 Trainer API 让训练机器翻译模型变得异常简单。本节从零开始，使用 MarianMT（Helsinki-NLP 在 Marian 框架上训练的大量双语翻译模型）作为基座，演示完整的翻译模型训练流程。
+        body: `HuggingFace 的 Transformers 库和 Trainer API 让训练机器翻译模型变得异常简单。本节从零开始，使用 MarianMT（Helsinki-NLP 在 Marian 框架上训练的大量双语翻译模型）作为基座，演示完整的翻译模型训练流程。
 
-MarianMT 是 **HuggingFace** 上最受欢迎的开源翻译模型之一，覆盖了 2000+ 语言对。它本质上是一个 **Transformer** 编码器-解码器模型，在大规模平行语料上预训练。对于没有预训练模型的语言对，我们可以用 Marian 框架从头训练；对于有预训练模型但质量不够的语言对，我们可以用 Trainer API 进行微调。
+MarianMT 是 HuggingFace 上最受欢迎的开源翻译模型之一，覆盖了 2000+ 语言对。它本质上是一个 Transformer 编码器-解码器模型，在大规模平行语料上预训练。对于没有预训练模型的语言对，我们可以用 Marian 框架从头训练；对于有预训练模型但质量不够的语言对，我们可以用 Trainer API 进行微调。
 
 训练流程： (1) 加载数据集——使用 HuggingFace Datasets 库加载平行语料（如 TED Talks、WMT）；(2) 预处理——分词（tokenization）、创建 attention mask、构建 label（带 -100 填充以忽略 pad token 的损失）；(3) 配置训练参数——学习率、batch size、梯度累积、早停；(4) 训练与评估——使用 seq2seq_trainer 和 compute_metrics 回调函数实时计算 BLEU 分数；(5) 模型导出——保存为 ONNX 格式或部署到 HuggingFace Hub。
 

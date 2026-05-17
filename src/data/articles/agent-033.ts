@@ -935,7 +935,7 @@ Agent 安全综述：2024-2026 年间，arXiv 上发表了大量关于 AI Agent 
 
 OWASP Top 10 for LLM：OWASP（开放 Web 应用安全项目）发布了专门针对大语言模型的安全风险 Top 10。这是理解 LLM 和 Agent 安全威胁的最佳起点。
 
-**NIST AI RMF**：美国国家标准与技术研究院发布的 AI 风险管理框架。虽然不是专门针对 Agent，但提供了系统性的 AI 安全风险管理方法论。
+NIST AI RMF：美国国家标准与技术研究院发布的 AI 风险管理框架。虽然不是专门针对 Agent，但提供了系统性的 AI 安全风险管理方法论。
 
 ### 开源工具
 
@@ -943,7 +943,7 @@ Garak：LLM 安全测试框架。可以自动检测 LLM 的脆弱性，包括 Pr
 
 Promptfoo：Prompt 安全和质量测试工具。支持多种 LLM 的自动化安全评估。
 
-LangSmith（**LangChain**）：Agent 可观测性和调试平台。提供 Agent 执行轨迹的可视化、性能分析、和安全审计。
+LangSmith（LangChain）：Agent 可观测性和调试平台。提供 Agent 执行轨迹的可视化、性能分析、和安全审计。
 
 ### 实践建议
 

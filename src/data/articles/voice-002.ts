@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "VoxCPM2 是什么",
-      body: `2026 年 4 月，清华大学 OpenBMB 团队发布 VoxCPM2，一周内 GitHub 增长超过 6,300 stars，总 stars 突破 14,000，**HuggingFace** Trending 登顶。
+      body: `2026 年 4 月，清华大学 OpenBMB 团队发布 VoxCPM2，一周内 GitHub 增长超过 6,300 stars，总 stars 突破 14,000，HuggingFace Trending 登顶。
 
 核心数据：
 - 模型规模：2B 参数，基于 MiniCPM-4 基座
@@ -203,8 +203,8 @@ VoxCPM2 能够自动从文本内容推断合适的韵律和表达方式：
 
 基准性能（RTX 4090）：
 - 标准推理：RTF（实时因子）≈ 0.3，即生成 1 秒音频约需 0.3 秒
-- Nano-**vLLM** 加速：RTF ≈ 0.13，生成 1 秒音频仅需 0.13 秒
-- **vLLM**-Omni 加速：同样达到 RTF ≈ 0.13
+- Nano-vLLM 加速：RTF ≈ 0.13，生成 1 秒音频仅需 0.13 秒
+- vLLM-Omni 加速：同样达到 RTF ≈ 0.13
 
 RTF < 1 意味着模型可以实时生成语音，这对语音助手、实时翻译等场景至关重要。
 
@@ -215,16 +215,16 @@ VoxCPM2 支持两种官方推理加速后端：
 1. Nano-vLLM
 - 专为 VoxCPM2 优化的推理引擎
 - 使用 PagedAttention 技术优化 KV Cache 管理
-- 兼容 **OpenAI** API 格式
+- 兼容 OpenAI API 格式
 
 2. vLLM-Omni
 - vLLM 官方的多模态推理服务
 - 支持 PagedAttention 和连续批处理
-- 提供 **OpenAI** 兼容 API
+- 提供 OpenAI 兼容 API
 
 部署方式：
 硬件要求：
-- GPU：推荐 **NVIDIA** GPU，CUDA ≥ 12.0
+- GPU：推荐 NVIDIA GPU，CUDA ≥ 12.0
 - 显存：2B 模型约需 8GB+ 显存
 - CPU Offload 支持：显存不足时可卸载部分计算到 CPU
 - Python ≥ 3.10，PyTorch ≥ 2.5.0`,
@@ -295,9 +295,9 @@ VoxCPM2 并非要取代所有传统 TTS 场景。在以下场景中，传统 TTS
 
 | 时间 | 版本 | 关键特性 | 里程碑 |
 |------|------|---------|--------|
-| 2025.09 | VoxCPM 0.5B | 首个开源版本 | **HuggingFace** Trending #1 |
+| 2025.09 | VoxCPM 0.5B | 首个开源版本 | HuggingFace Trending #1 |
 | 2025.09 | 技术报告发布 | 架构论文公开 | 学术论文发表 |
-| 2025.12 | VoxCPM 1.5 | **SFT** & LoRA 微调支持 | GitHub Trending #1 |
+| 2025.12 | VoxCPM 1.5 | SFT & LoRA 微调支持 | GitHub Trending #1 |
 | 2026.04 | VoxCPM2 | 2B 参数、30 语言、Voice Design、48kHz | 当前推荐版本 |
 
 从 0.5B 到 2B 的跨越式发展：
@@ -310,7 +310,7 @@ VoxCPM2 并非要取代所有传统 TTS 场景。在以下场景中，传统 TTS
 
 社区生态：
 
-- **HuggingFace** Spaces：在线 Demo 可直接体验
+- HuggingFace Spaces：在线 Demo 可直接体验
 - ModelScope：国内镜像下载
 - 飞书/Discord 社区：活跃的技术讨论和技术支持
 - 文档：ReadTheDocs 完整文档

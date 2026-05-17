@@ -301,7 +301,7 @@ def generator_loss(critic, fake_data):
         },
         {
             title: "5. StyleGAN 系列：风格迁移与人脸合成",
-            body: `StyleGAN（Karras et al., 2019）是 **NVIDIA** 提出的划时代生成模型，彻底改变了高质量人脸合成的格局。
+            body: `StyleGAN（Karras et al., 2019）是 NVIDIA 提出的划时代生成模型，彻底改变了高质量人脸合成的格局。
 
 核心创新：StyleGAN 将生成过程分解为多个层次，每层控制不同"风格"的特征：
 - 粗粒度风格（低层）：控制整体姿态、发型、脸型

@@ -122,11 +122,11 @@ class EmbodiedAIStack:
 
 ROS（Robot Operating System） 是机器人领域事实上的标准中间件。它提供了消息传递基础设施（Topics、Services、Actions）、工具链（RViz 可视化、Gazebo 仿真、rosbag 数据记录）和庞大的软件包生态（导航、感知、控制、规划）。ROS 2 相比 ROS 1 的重大改进包括去中心化的 DDS 通信（消除了 ROS 1 中 ROS Master 的单点故障）、更好的实时性支持和跨平台兼容性。然而，ROS 的设计哲学是模块化组合——开发者需要自行组装感知、规划、控制等组件，这对新手来说学习曲线陡峭。
 
-Isaac Sim / Isaac Lab 是 **NVIDIA** 推出的机器人仿真平台，基于 USD（Universal Scene Description） 格式构建高保真物理仿真环境。它的核心优势是物理仿真精度（基于 PhysX 5 的刚体/柔体/流体仿真）、GPU 加速的大规模并行训练（可以同时运行数百个仿真环境）和与 PyTorch 的深度集成（Isaac Lab 直接支持强化学习训练流程）。对于需要大量训练数据的具身智能任务，Isaac Sim 提供了从环境建模到策略训练到数据合成的完整流水线。
+Isaac Sim / Isaac Lab 是 NVIDIA 推出的机器人仿真平台，基于 USD（Universal Scene Description） 格式构建高保真物理仿真环境。它的核心优势是物理仿真精度（基于 PhysX 5 的刚体/柔体/流体仿真）、GPU 加速的大规模并行训练（可以同时运行数百个仿真环境）和与 PyTorch 的深度集成（Isaac Lab 直接支持强化学习训练流程）。对于需要大量训练数据的具身智能任务，Isaac Sim 提供了从环境建模到策略训练到数据合成的完整流水线。
 
 ManiSkill / SAPIEN 是学术界广泛使用的机器人操作仿真基准。ManiSkill 3 支持GPU 并行渲染，可以在单卡上同时运行数千个仿真环境，极大地加速了强化学习训练。SAPIEN 则提供了更精细的部件级物理仿真（比如门的铰链运动、抽屉的滑动约束），适合需要精确物理交互的任务。
 
-具身大模型（Embodied Foundation Models） 是 2024-2026 年最热门的技术方向。RT-2（Robotics **Transformer** 2） 由 **Google DeepMind** 提出，将视觉-语言模型直接输出机器人动作，实现了语义理解到物理行动的端到端映射。RT-2 的关键创新是将机器人动作编码为离散 token，与文本 token 使用相同的 **Transformer** 架构处理，从而让模型能够利用互联网规模的语言和视觉数据来提升机器人能力。
+具身大模型（Embodied Foundation Models） 是 2024-2026 年最热门的技术方向。RT-2（Robotics Transformer 2） 由 Google DeepMind 提出，将视觉-语言模型直接输出机器人动作，实现了语义理解到物理行动的端到端映射。RT-2 的关键创新是将机器人动作编码为离散 token，与文本 token 使用相同的 Transformer 架构处理，从而让模型能够利用互联网规模的语言和视觉数据来提升机器人能力。
 
 OpenVLA 是一个开源的视觉-语言-动作模型，基于 7B 参数的视觉-语言模型微调而来，支持多种机器人平台的零样本操作任务。VoxPoser 则利用大语言模型和视觉-语言模型的组合，通过价值图合成来规划机器人操作，无需训练即可处理新任务。
 

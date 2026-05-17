@@ -624,13 +624,13 @@ print("5. 推理时: 对 C(n, m) 个候选组合打分，选最高分的")`,
         title: "5. BART/T5 生成式摘要",
         body: `BART（2019）和 T5（2019）是预训练 Seq2Seq 模型的两大里程碑，将生成式摘要推向了新的高度。
 
-BART（Bidirectional and Auto-Regressive **Transformer**s） 由 Facebook AI 提出，结合了 BERT 的双向编码能力和 GPT 的自回归解码能力。BART 的预训练采用「去噪自编码器」范式：对输入文本施加各种噪声（token 删除、句子打乱、文本填充等），然后训练模型恢复原文。这种预训练方式使 BART 天然擅长文本生成任务。
+BART（Bidirectional and Auto-Regressive Transformers） 由 Facebook AI 提出，结合了 BERT 的双向编码能力和 GPT 的自回归解码能力。BART 的预训练采用「去噪自编码器」范式：对输入文本施加各种噪声（token 删除、句子打乱、文本填充等），然后训练模型恢复原文。这种预训练方式使 BART 天然擅长文本生成任务。
 
 预训练噪声策略：（1）Token 删除：随机删除部分 token，模型需预测被删除的内容；（2）句子打乱：将文章句子随机排列，模型需恢复正确顺序；（3）文本填充：用 [MASK] 替换连续 span，模型需生成被替换的文本。
 
 BART 在摘要任务上的微调方式极其简单：将源文档作为编码器输入，参考摘要作为解码器目标，直接最大化条件似然 P(y|x)。由于预训练已经学会了「从损坏文本恢复信息」的能力，微调只需少量数据即可适应摘要任务。
 
-T5（Text-To-Text Transfer **Transformer**） 由 Google 提出，将所有 NLP 任务统一为文本到文本的格式。对于摘要任务，输入是「summarize: {source text}」，输出是摘要文本。T5 使用 Span Corruption 预训练：随机选择连续的 token span 替换为单个 [MASK] token，模型需预测被替换的 span 内容。
+T5（Text-To-Text Transfer Transformer） 由 Google 提出，将所有 NLP 任务统一为文本到文本的格式。对于摘要任务，输入是「summarize: {source text}」，输出是摘要文本。T5 使用 Span Corruption 预训练：随机选择连续的 token span 替换为单个 [MASK] token，模型需预测被替换的 span 内容。
 
 T5 的规模从 T5-small（60M 参数）到 T5-11B（110 亿参数），模型规模与摘要质量正相关。T5 的多任务预训练使其具有强大的零样本和少样本摘要能力。`,
         code: [
@@ -802,7 +802,7 @@ print("  no_repeat_ngram_size=3: 禁止 3-gram 重复（减少复读）")`,
 主流解决方案：
 - 分段-合并（Map-Reduce）：将长文档分为多个段，分别摘要后合并。代表方法：MapReduce Summarization。
 - 稀疏注意力（Sparse Attention）：只计算部分 token 对的注意力，降低复杂度到 O(n√n) 或 O(n log n)。代表模型：Longformer、BigBird、Reformer。
-- 层次编码（Hierarchical Encoding）：先在句子级别编码，再在段落级别聚合，最后在文档级别摘要。代表模型：Hierarchical **Transformer**。
+- 层次编码（Hierarchical Encoding）：先在句子级别编码，再在段落级别聚合，最后在文档级别摘要。代表模型：Hierarchical Transformer。
 - 滑动窗口摘要：用滚动窗口逐步处理长文档，维护上下文状态。代表方法：LED（Longformer-Encoder-Decoder）。`,
         code: [
           {
@@ -935,7 +935,7 @@ for n in seq_lens:
       },
       {
         title: "7. HuggingFace 实战：端到端摘要流水线",
-        body: `**HuggingFace** 的 transformers 库提供了最易用的摘要工具链，从开箱即用的 pipeline 到可定制的训练循环，覆盖了从快速原型到生产部署的全流程。
+        body: `HuggingFace 的 transformers 库提供了最易用的摘要工具链，从开箱即用的 pipeline 到可定制的训练循环，覆盖了从快速原型到生产部署的全流程。
 
 Pipeline 模式 一行代码实现摘要：pipeline("summarization", model="facebook/bart-large-cnn") 会自动加载分词器、模型和后处理逻辑。适合快速验证想法或处理少量文档。
 

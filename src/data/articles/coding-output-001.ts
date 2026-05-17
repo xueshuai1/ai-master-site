@@ -14,7 +14,7 @@ export const article: Article = {
   content: [
     {
       title: "1. 什么是 AI 编码输出格式：概念与历史演进",
-      body: `AI 编码输出格式（AI Coding Output Format）是指 AI 编码助手（如 **Claude** Code、GitHub Copilot、Cursor、Codex）向用户呈现代码、解释、文档和交互内容时所采用的结构化标记语言格式。
+      body: `AI 编码输出格式（AI Coding Output Format）是指 AI 编码助手（如 Claude Code、GitHub Copilot、Cursor、Codex）向用户呈现代码、解释、文档和交互内容时所采用的结构化标记语言格式。
 
 这个问题之所以重要，是因为输出格式直接决定了 AI 生成内容的可读性、可渲染性、可交互性以及下游工具的处理能力。选择一个不合适的输出格式，会导致信息丢失、渲染错误、用户体验下降，甚至安全隐患。
 
@@ -44,7 +44,7 @@ Markdown 的核心优势：
 
 第三阶段（2025-2026）：HTML 复兴与富媒体探索期。
 
-2026 年初，**Anthropic** 的工程师发表了一篇引发广泛讨论的技术文章，论证 HTML 相比 Markdown 在 AI 编码输出场景中的「不合理有效性」。
+2026 年初，Anthropic 的工程师发表了一篇引发广泛讨论的技术文章，论证 HTML 相比 Markdown 在 AI 编码输出场景中的「不合理有效性」。
 
 「不合理有效性」这个表述借用了尤金·维格纳描述数学在自然科学中作用时的著名短语——意思是：HTML 本不该在 AI 编码输出场景中表现如此出色，但事实恰恰相反。
 
@@ -266,7 +266,7 @@ console.log(html);`
     },
     {
       title: "3. HTML 格式：「不合理有效性」的技术根源",
-      body: `2026 年，**Anthropic** 的工程师发表了一篇引发广泛讨论的技术文章，标题核心论点是：HTML 作为 AI 编码输出格式，具有一种「不合理的有效性」（Unreasonable Effectiveness）。
+      body: `2026 年，Anthropic 的工程师发表了一篇引发广泛讨论的技术文章，标题核心论点是：HTML 作为 AI 编码输出格式，具有一种「不合理的有效性」（Unreasonable Effectiveness）。
 
 这个论断之所以「不合理」，是因为 HTML 已经有 30 多年历史，其设计初衷是静态网页标记，而非 AI 生成内容的载体。但正是这些「古老」的特性，在 AI 编码场景中展现出了意想不到的优势。
 
@@ -926,7 +926,7 @@ DOMPurify：HTML 安全清洗的行业标准工具
 
 「The Unreasonable Effectiveness of Mathematics in the Natural Sciences」（Eugene Wigner, 1960）——「不合理有效性」概念的原始出处
 
-**Anthropic** 工程师技术博客（2026）：论证 HTML 在 AI 编码输出中的不合理有效性
+Anthropic 工程师技术博客（2026）：论证 HTML 在 AI 编码输出中的不合理有效性
 
 Simon Willison 技术博客：持续跟踪 AI 工具输出格式的最佳实践和前沿探索
 

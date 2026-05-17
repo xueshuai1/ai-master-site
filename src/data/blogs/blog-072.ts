@@ -20,7 +20,7 @@ content: [
 
 2026 年 4 月，Screen AI 迎来爆发式增长：
 
-- **Anthropic** Computer Use：**Claude** 模型获得直接操控计算机的能力
+- Anthropic Computer Use：Claude 模型获得直接操控计算机的能力
 - Omi（BasedHardware/omi）：12K+ stars 的开源项目，「AI that sees your screen, listens to your conversations」
 - Desktop Control 工具链：OpenClaw、Playwright Agent 等项目将 Screen AI 推向桌面
 - GitHub Trending：多个 Screen AI 相关项目进入周榜
@@ -71,7 +71,7 @@ Screen AI 的第一步是获取屏幕信息。常见方式包括：
 
 ### 3.2 状态理解：从像素到语义
 
-视觉模型（如 **Claude** Vision API、**GPT-4**V、Qwen-VL）将截图转换为结构化理解：
+视觉模型（如 Claude Vision API、GPT-4V、Qwen-VL）将截图转换为结构化理解：
 
 ### 3.3 动作规划：从语义到操作指令
 
@@ -412,9 +412,9 @@ print(json.dumps(agent.get_failure_report(), indent=2))`
 | 项目 | Stars | 定位 | 核心特点 |
 |------|-------|------|----------|
 | Omi | 12K+ | 屏幕+语音 AI 助手 | 看到屏幕、听到对话、给出建议 |
-| **Anthropic** Computer Use | 内置功能 | **Claude** 操控计算机 | 官方支持、可靠性高 |
+| Anthropic Computer Use | 内置功能 | Claude 操控计算机 | 官方支持、可靠性高 |
 | OpenClaw Desktop Control | 社区项目 | 桌面自动化 | 集成 OpenClaw Agent |
-| **Claude**-Mem | 66K+ | 记忆管理（配合 Screen AI） | 记住屏幕操作历史 |
+| Claude-Mem | 66K+ | 记忆管理（配合 Screen AI） | 记住屏幕操作历史 |
 | Playwright Agent | 社区项目 | 浏览器自动化 | 精准 DOM 操作 + 视觉验证 |
 
 其中 Omi 是本周 GitHub Trending 的新星，它结合了屏幕视觉和语音对话两种输入方式，代表了 Screen AI 向「多模态感知」演进的方向。`

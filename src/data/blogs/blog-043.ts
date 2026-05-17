@@ -7,9 +7,9 @@ const content: ArticleSection[] = [
 
 过去六个月，AI 编码工具领域经历了爆炸式增长，形成了三足鼎立的格局：
 
-- **Claude** Code（**Anthropic**）：凭借 **Claude** Sonnet/Opus 4 的超强编码能力，迅速占领开发者心智
-- **OpenAI** Codex（**OpenAI**）：2025 年 4 月开源后快速崛起，Rust 构建、沙箱安全、模型选择丰富
-- GitHub Copilot（**Microsoft**/GitHub）：依托 IDE 集成优势和庞大用户基数，依然是最大玩家
+- Claude Code（Anthropic）：凭借 Claude Sonnet/Opus 4 的超强编码能力，迅速占领开发者心智
+- OpenAI Codex（OpenAI）：2025 年 4 月开源后快速崛起，Rust 构建、沙箱安全、模型选择丰富
+- GitHub Copilot（Microsoft/GitHub）：依托 IDE 集成优势和庞大用户基数，依然是最大玩家
 
 三者的选择不再是「谁更好用」那么简单——在 2026 年 4 月的定价大地震之后，「谁更划算」成为了决定性的因素。
 
@@ -24,10 +24,10 @@ const content: ArticleSection[] = [
     title: "一、三大工具全景对比",
     body: `在深入细节之前，让我们先用一张表格看清全貌：
 
-| 维度 | **OpenAI** Codex | **Claude** Code | GitHub Copilot |
+| 维度 | OpenAI Codex | Claude Code | GitHub Copilot |
 |------|-------------|-------------|----------------|
-| 开发商 | **OpenAI** | **Anthropic** | **Microsoft**/GitHub |
-| 核心模型 | **GPT-4**o / o3 / o4-mini | **Claude** Sonnet 4 / Opus 4.7 | **GPT-4**o / Claude 系列 / Opus |
+| 开发商 | OpenAI | Anthropic | Microsoft/GitHub |
+| 核心模型 | GPT-4o / o3 / o4-mini | Claude Sonnet 4 / Opus 4.7 | GPT-4o / Claude 系列 / Opus |
 | 实现语言 | Rust | TypeScript/Shell | TypeScript |
 | 运行方式 | 终端 CLI | 终端 CLI | IDE 插件 + CLI + Web |
 | 开源 | ✅ 完全开源 | ❌ 闭源 | ❌ 闭源（服务端） |
@@ -79,20 +79,20 @@ const content: ArticleSection[] = [
   },
   {
     title: "二、架构深度对比：三种不同的 AI 编码哲学",
-    body: `### 2.1 **OpenAI** Codex：安全优先的轻量级 Agent
+    body: `### 2.1 OpenAI Codex：安全优先的轻量级 Agent
 
-**OpenAI** Codex 采用 Rust 构建，核心理念是「轻量 + 安全」。它的架构特点：
+OpenAI Codex 采用 Rust 构建，核心理念是「轻量 + 安全」。它的架构特点：
 
 - 沙箱隔离：代码在沙箱中执行，不会直接影响宿主机文件系统
 - 多模型策略：用户可根据任务复杂度选择模型——简单重构用 o4-mini（便宜快速），复杂架构设计用 o3 或 GPT-4o
 - 会话式工作流：像和一位资深工程师对话一样，可以追问、修正、迭代
-### 2.2 **Claude** Code：能力优先的终端智能体
+### 2.2 Claude Code：能力优先的终端智能体
 
-**Claude** Code 的核心理念是「最强编码能力」。它直接利用 Claude 模型在代码理解和生成方面的领先优势：
+Claude Code 的核心理念是「最强编码能力」。它直接利用 Claude 模型在代码理解和生成方面的领先优势：
 
 - 直接执行：不经过沙箱，直接在项目环境中运行命令（强大的同时需要信任）
 - 深度项目理解：自动扫描整个项目结构，建立上下文索引
-- Opus 4.7 加持：**Anthropic** 最强模型在编码任务上的表现被广泛认可为行业第一
+- Opus 4.7 加持：Anthropic 最强模型在编码任务上的表现被广泛认可为行业第一
 ### 2.3 GitHub Copilot：集成优先的平台级方案
 
 GitHub Copilot 走的是一条完全不同的路——深度集成到开发工具链中：
@@ -174,18 +174,18 @@ $ gh copilot explain "这段代码做了什么"
     title: "三、2026 年 4 月定价对比：你的钱包会怎样？",
     body: `这是本周最关键的维度。4 月 20 日前后，三大厂商的定价策略发生了剧烈变化。
 
-### 3.1 **OpenAI** Codex 定价
+### 3.1 OpenAI Codex 定价
 
 | 计划 | 价格 | 包含内容 |
 |------|------|----------|
 | FREE | $0 | Codex CLI 基础功能，有限用量 |
 | ChatGPT Plus | $20/月 | 完整 Codex 功能，o4-mini 为主 |
-| ChatGPT Pro | $200/月 | 优先访问 o3/**GPT-4**o，更高用量 |
+| ChatGPT Pro | $200/月 | 优先访问 o3/GPT-4o，更高用量 |
 | API 按量 | 按 token 计费 | 灵活但需自行管理 |
 
 优势：FREE 计划即可使用，Plus 计划（$20）已包含完整功能，是性价比最高的选择。
 
-### 3.2 **Claude** Code 定价
+### 3.2 Claude Code 定价
 
 | 计划 | 价格 | Codex Code 可用性 |
 |------|------|-------------------|
@@ -212,8 +212,8 @@ $ gh copilot explain "这段代码做了什么"
 
 | 工具 | 月度基础费 | 超额费用 | 总计 |
 |------|-----------|---------|------|
-| **OpenAI** Codex Plus | $20 | $0 | $20 |
-| **Claude** Code Pro | $20 | $0 | $20 |
+| OpenAI Codex Plus | $20 | $0 | $20 |
+| Claude Code Pro | $20 | $0 | $20 |
 | GitHub Copilot Pro | $10 | $82.50 | $92.50 |
 | GitHub Copilot Pro+ | $39 | $0 | $39 |
 
@@ -340,7 +340,7 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 
 根据 SWE-bench Verified（2026 年 3 月数据）和社区实际反馈：
 
-| 能力维度 | **Claude** Opus 4.7 | **GPT-4**o (Codex) | o4-mini (Codex) |
+| 能力维度 | Claude Opus 4.7 | GPT-4o (Codex) | o4-mini (Codex) |
 |---------|----------------|----------------|-----------------|
 | 复杂重构 | ★★★★★ | ★★★★☆ | ★★★☆☆ |
 | Bug 修复 | ★★★★★ | ★★★★☆ | ★★★★☆ |
@@ -353,7 +353,7 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 
 ### 5.2 Agent 自主执行能力
 
-| 能力 | Codex | **Claude** Code | Copilot |
+| 能力 | Codex | Claude Code | Copilot |
 |------|-------|-------------|---------|
 | 多步骤任务分解 | ✅ | ✅ | ⚠️ |
 | 自动运行测试 | ✅ | ✅ | ⚠️ |
@@ -418,7 +418,7 @@ print("4. 如果只用 Opus 模型：只有 Copilot Pro+ 可选 ($39/月)")`,
 
 3. 本地部署成为趋势：随着端侧模型能力提升，部分开发者会转向本地部署的开源编码模型（如 Qwen-Coder、DeepSeek-Coder），完全绕过云端定价。
 
-4. Agent 能力分化：**Claude** Code 和 Codex 都在向更自主的 Agent 方向演进——不仅仅是「写代码」，而是「操作整个开发环境」。2026 年底，我们可能会看到 AI 编码工具能独立完成从需求分析到上线部署的全流程。
+4. Agent 能力分化：Claude Code 和 Codex 都在向更自主的 Agent 方向演进——不仅仅是「写代码」，而是「操作整个开发环境」。2026 年底，我们可能会看到 AI 编码工具能独立完成从需求分析到上线部署的全流程。
 
 5. 监管介入：AI 编码工具的定价和透明度问题可能引起监管关注，特别是当它们成为开发者的「必需工具」后。`,
   },

@@ -16,9 +16,9 @@ export const article: Article = {
       title: "一、2026 年 Prompt Engineering 的范式转变",
       body: `如果你还在用 2024 年的 prompt 技巧来驱动 2026 年的 LLM，你正在浪费大量性能。
 
-**GPT-5**.5 发布时，**OpenAI** 明确警告：
+GPT-5.5 发布时，OpenAI 明确警告：
 
-> "To get the most out of **GPT-5**.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4. Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack."
+> "To get the most out of GPT-5.5, treat it as a new model family to tune for, not a drop-in replacement for gpt-5.2 or gpt-5.4. Begin migration with a fresh baseline instead of carrying over every instruction from an older prompt stack."
 
 这段话揭示了一个关键认知：2026 年的 LLM 已经不是简单的「更大的模型」，它们对提示词的响应机制发生了本质变化。
 
@@ -56,7 +56,7 @@ OpenAI 在 GPT-5.5 提示词指南中给出了几个重要建议：
     },
     {
       title: "二、GPT-5.5 新参数实战：verbosity 与 reasoning_effort",
-      body: `**GPT-5**.5 引入了两个关键参数，它们直接影响模型的行为和输出质量。
+      body: `GPT-5.5 引入了两个关键参数，它们直接影响模型的行为和输出质量。
 
 ### 2.1 verbosity 参数：控制输出详细程度
 
@@ -136,7 +136,7 @@ print(f"详细模式输出长度: {len(explanation)} 字符")
 
 ### 3.1 image_detail 参数
 
-**GPT-5**.4 和 5.5 支持 \`image_detail\` 参数，控制模型对图像的分析深度：
+GPT-5.4 和 5.5 支持 \`image_detail\` 参数，控制模型对图像的分析深度：
 
 | 值 | 行为 | token 消耗 | 适用场景 |
 |---|------|-----------|---------|
@@ -145,7 +145,7 @@ print(f"详细模式输出长度: {len(explanation)} 字符")
 | \`auto\` | 模型自行决定 | 中 | 通用场景 |
 | \`original\` | 保留原始分辨率信息 | 最高 | 需要像素级精确的任务 |
 
-DeepSeek V4 和 **Claude** Opus 4.7 虽然不使用相同参数名，但它们对图片提示的敏感度不同：`,
+DeepSeek V4 和 Claude Opus 4.7 虽然不使用相同参数名，但它们对图片提示的敏感度不同：`,
       code: [{
         lang: "python",
         title: "多模态提示词实验：不同 image_detail 的效果对比",
@@ -223,7 +223,7 @@ for detail in ["low", "high", "auto", "original"]:
     },
     {
       title: "四、Agent 任务的预更新模式",
-      body: `**OpenAI** 在 **GPT-5**.5 指南中推荐了一个非常实用的 UX 技巧：
+      body: `OpenAI 在 GPT-5.5 指南中推荐了一个非常实用的 UX 技巧：
 
 > "Before any tool calls for a multi-step task, send a short user-visible update that acknowledges the request and states the first step."
 
@@ -322,11 +322,11 @@ asyncio.run(demo())`
     },
     {
       title: "五、跨模型 Prompt 迁移指南",
-      body: `这是 2026 年 Prompt 工程师最头疼的问题之一：如何把为 **GPT-4** 优化的 prompt 迁移到 **GPT-5**.5、**Claude** Opus 4.7 和 DeepSeek V4？
+      body: `这是 2026 年 Prompt 工程师最头疼的问题之一：如何把为 GPT-4 优化的 prompt 迁移到 GPT-5.5、Claude Opus 4.7 和 DeepSeek V4？
 
 ### 5.1 三大模型的 Prompt 敏感度对比
 
-| 特性 | **GPT-5**.5 | **Claude** Opus 4.7 | DeepSeek V4-Pro |
+| 特性 | GPT-5.5 | Claude Opus 4.7 | DeepSeek V4-Pro |
 |------|---------|-----------------|-----------------|
 | 长 prompt 容忍度 | 低（建议 100 字以内） | 高（可以处理 1000+ 字） | 中（300-500 字最优） |
 | 结构化输出 | 需要明确格式指令 | 原生支持，稳定 | 需要少量示例 |
@@ -664,7 +664,7 @@ print(json.dumps(results, indent=2, ensure_ascii=False))`
 
 ### 7.1 代码审查模板
 
-**GPT-5**.5 优化版（最小 + 结构化）：`,
+GPT-5.5 优化版（最小 + 结构化）：`,
       code: [{
         lang: "python",
         title: "2026 年代码审查 Prompt 模板",

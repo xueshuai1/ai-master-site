@@ -14,7 +14,7 @@ export const article: Article = {
             title: "1. TRPO 的局限：为什么需要 PPO",
             body: `TRPO（Trust Region Policy Optimization）在 2015 年提出，通过 KL 散度约束确保策略更新不会偏离旧策略太远。它使用共轭梯度法求解大规模二阶优化问题，理论上保证了单调改进。然而，TRPO 的实际应用面临三大难题：实现复杂度极高，需要手动实现共轭梯度法和线搜索；计算开销大，Fisher 信息矩阵的逆运算在高维参数空间中代价昂贵；与网络结构兼容性差，难以与 LayerNorm、Dropout 等现代神经网络技术结合。
 
-PPO（Proximal Policy Optimization）由 **OpenAI** 在 2017 年提出，核心思想是用一阶优化方法近似 TRPO 的约束效果。通过裁剪目标函数或自适应惩罚项，PPO 在保持策略更新稳定性的同时，大幅降低了实现难度和计算成本。实验表明，PPO 在多数连续控制和离散控制任务上能达到与 TRPO 相当甚至更好的性能，成为此后几年强化学习的事实标准。`,
+PPO（Proximal Policy Optimization）由 OpenAI 在 2017 年提出，核心思想是用一阶优化方法近似 TRPO 的约束效果。通过裁剪目标函数或自适应惩罚项，PPO 在保持策略更新稳定性的同时，大幅降低了实现难度和计算成本。实验表明，PPO 在多数连续控制和离散控制任务上能达到与 TRPO 相当甚至更好的性能，成为此后几年强化学习的事实标准。`,
             code: [
                 {
                     lang: "python",
@@ -176,7 +176,7 @@ def compute_ppo_loss(log_probs, old_log_probs, advantages, clip_eps=0.2):
             title: "3. PPO-Clip vs PPO-Penalty：两种变体",
             body: `PPO 原始论文提出了两种实现信任区域约束的方式：PPO-Clip（裁剪法）和 PPO-Penalty（惩罚法）。PPO-Clip 通过在目标函数中直接裁剪概率比率来限制更新幅度，实现简单且无需额外超参数调优。PPO-Penalty 则在目标函数中添加 KL 散度惩罚项：L^KLPEN = E[r_t * A_t - beta * KL(pi_old, pi_new)]，其中 beta 是自适应调整的惩罚系数。
 
-PPO-Penalty 的优势在于能更精确地控制策略更新幅度。当 KL 散度超过目标值 KL_target 时，自动增大 beta；当 KL 过小时，减小 beta。但这也引入了额外的超参数（KL_target 和 beta 的调整速率），增加了调参难度。实践中，PPO-Clip 因其简单性和鲁棒性成为主流选择，**OpenAI** Baselines 和 Stable-Baselines3 等库默认使用 PPO-Clip。PPO-Penalty 更适合对策略稳定性有极高要求的场景，如机器人控制或金融交易。`,
+PPO-Penalty 的优势在于能更精确地控制策略更新幅度。当 KL 散度超过目标值 KL_target 时，自动增大 beta；当 KL 过小时，减小 beta。但这也引入了额外的超参数（KL_target 和 beta 的调整速率），增加了调参难度。实践中，PPO-Clip 因其简单性和鲁棒性成为主流选择，OpenAI Baselines 和 Stable-Baselines3 等库默认使用 PPO-Clip。PPO-Penalty 更适合对策略稳定性有极高要求的场景，如机器人控制或金融交易。`,
             code: [
                 {
                     lang: "python",

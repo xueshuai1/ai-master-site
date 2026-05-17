@@ -12,7 +12,7 @@ export const article: Article = {
     content: [
         {
             title: "1. 为什么需要分布式训练",
-            body: `随着模型规模从几百万参数膨胀到万亿级别（如 **GPT-4**、**PaLM**），单张 GPU 的显存和算力已经无法支撑训练。当模型参数量超过 GPU 显存容量时，即使 batch_size 设为 1 也无法放下完整的前向传播计算图，这就出现了 OOM（Out of Memory）错误。
+            body: `随着模型规模从几百万参数膨胀到万亿级别（如 GPT-4、PaLM），单张 GPU 的显存和算力已经无法支撑训练。当模型参数量超过 GPU 显存容量时，即使 batch_size 设为 1 也无法放下完整的前向传播计算图，这就出现了 OOM（Out of Memory）错误。
 
 分布式训练的核心思路是将计算任务拆分到多个设备（GPU/TPU）上并行执行。主要有两种拆分维度：数据并行（Data Parallel）将同一个模型复制多份，每份处理不同的数据子集；模型并行（Model Parallel）将模型本身拆分到不同设备上，每个设备只持有模型的一部分。
 
@@ -332,7 +332,7 @@ for batch in dataloader:
 
 张量并行将单个矩阵运算拆分到多张 GPU 上。以线性层 Y = XW + b 为例，如果将权重矩阵 W 按列切分为 [W₁, W₂]，则 Y = [XW₁, XW₂]，各 GPU 独立计算各自的矩阵乘法，最后通过 AllGather 拼接结果。Megatron-LM 提出的列并行（Column Parallel）和行并行（Row Parallel）交替排列，使得相邻层的 AllReduce/AllGather 可以相互抵消，将通信开销降到最低。
 
-流水线并行将模型按层切分到不同 GPU。GPU 0 负责 Embedding + 前几层 **Transformer**，GPU 1 负责中间几层，GPU 2 负责最后几层 + Head。数据像流水线一样经过各 GPU：GPU 0 处理完 batch 后传给 GPU 1，GPU 1 处理完传给 GPU 2。但简单的流水线并行会导致 GPU 空闲（bubble），因此需要微批次（Micro-batch）划分来填满空闲时间，即 GPipe 和 PipeDream 等调度算法。`,
+流水线并行将模型按层切分到不同 GPU。GPU 0 负责 Embedding + 前几层 Transformer，GPU 1 负责中间几层，GPU 2 负责最后几层 + Head。数据像流水线一样经过各 GPU：GPU 0 处理完 batch 后传给 GPU 1，GPU 1 处理完传给 GPU 2。但简单的流水线并行会导致 GPU 空闲（bubble），因此需要微批次（Micro-batch）划分来填满空闲时间，即 GPipe 和 PipeDream 等调度算法。`,
             code: [
                 {
                     lang: "python",

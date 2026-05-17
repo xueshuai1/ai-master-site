@@ -23,15 +23,15 @@ export const article: Article = {
 
 ### 碎片化生态的痛点
 
-截至 2026 年，市面上的 Agent 框架已经超过 20 种——**LangGraph**、**CrewAI**、**AutoGen**、Haystack、Dify、FastGPT……每个框架都有自己的角色定义方式、通信协议和工具调用接口。这就好比每家公司都用不同的编程语言写服务，却指望它们能互相调用。
+截至 2026 年，市面上的 Agent 框架已经超过 20 种——LangGraph、CrewAI、AutoGen、Haystack、Dify、FastGPT……每个框架都有自己的角色定义方式、通信协议和工具调用接口。这就好比每家公司都用不同的编程语言写服务，却指望它们能互相调用。
 
 核心矛盾在于：当一个企业同时使用 LangGraph 构建规划 Agent、用 CrewAI 管理执行 Agent 团队、用 AutoGen 处理多轮对话时，这些 Agent 之间的互操作性几乎为零。
 
 ### Symphony 的愿景
 
-**OpenAI** Symphony 的核心理念很简洁：定义一套开放的、框架无关的多 Agent 协作规范。就像 HTTP 协议统一了 Web 通信、REST API 统一了服务交互一样，Symphony 要统一的是 Agent 之间的交互语言。
+OpenAI Symphony 的核心理念很简洁：定义一套开放的、框架无关的多 Agent 协作规范。就像 HTTP 协议统一了 Web 通信、REST API 统一了服务交互一样，Symphony 要统一的是 Agent 之间的交互语言。
 
-这不是要取代现有的框架，而是提供一层互操作标准，让 **LangGraph** 的 Agent 能和 **CrewAI** 的 Agent 无缝协作，让不同公司开发的 Agent 能在同一个编排平面上协同工作。
+这不是要取代现有的框架，而是提供一层互操作标准，让 LangGraph 的 Agent 能和 CrewAI 的 Agent 无缝协作，让不同公司开发的 Agent 能在同一个编排平面上协同工作。
 
 ### 编排 vs 协作：概念辨析
 
@@ -333,7 +333,7 @@ asyncio.run(demo())`,
 
 ### 6.1 框架定位对比
 
-| 维度 | Symphony | **LangGraph** | **CrewAI** | **AutoGen** |
+| 维度 | Symphony | LangGraph | CrewAI | AutoGen |
 |------|----------|-----------|--------|---------|
 | 本质 | 开放规范 | Python 框架 | Python 框架 | Python 框架 |
 | 语言绑定 | 框架无关 | Python/JS | Python | Python |
@@ -386,7 +386,7 @@ asyncio.run(demo())`,
 
 ### 8.1 相关标准与规范
 
-- MCP（Model Context Protocol）：**Anthropic** 提出的模型上下文协议，定义了 AI 模型与外部工具和数据的交互标准。MCP 聚焦于单个模型的工具调用，Symphony 聚焦于多 Agent 协作编排，两者互补。
+- MCP（Model Context Protocol）：Anthropic 提出的模型上下文协议，定义了 AI 模型与外部工具和数据的交互标准。MCP 聚焦于单个模型的工具调用，Symphony 聚焦于多 Agent 协作编排，两者互补。
 - A2A（Agent-to-Agent）协议：Google 提出的 Agent 间通信协议，定义了 Agent 之间的能力发现和任务委托机制。A2A 和 Symphony 在角色注册和能力匹配方面有重叠，但设计哲学不同。
 - OpenAPI Specification：REST API 的事实标准。虽然不专门针对 Agent，但很多 Agent 框架的工具调用接口兼容 OpenAPI 规范。
 
@@ -400,9 +400,9 @@ asyncio.run(demo())`,
 
 ### 8.3 推荐学习资源
 
-- **OpenAI** Symphony 官方文档：https://github.com/openai/symphony-spec — 规范的完整定义和参考实现
-- **LangGraph** 官方教程：https://langchain-ai.github.io/langgraph/ — 学习基于图的 Agent 编排
-- **CrewAI** 文档：https://docs.crewai.com/ — 轻量级多 Agent 任务编排
+- OpenAI Symphony 官方文档：https://github.com/openai/symphony-spec — 规范的完整定义和参考实现
+- LangGraph 官方教程：https://langchain-ai.github.io/langgraph/ — 学习基于图的 Agent 编排
+- CrewAI 文档：https://docs.crewai.com/ — 轻量级多 Agent 任务编排
 - 《多智能体系统》教材（Stanford CS224T）— 系统学习多 Agent 协作的理论基础`,
             tip: "如果你想深入理解 Agent 编排的理论背景，推荐阅读分布式系统和工作流引擎领域的经典论文。BPMN（业务流程建模符号）、Apache Airflow 的 DAG 设计、Kubernetes 的调度器架构——这些非 AI 领域的知识，对理解 Agent 编排同样有重要参考价值。",
             warning: "Agent 编排标准领域变化非常快。今天学的 API 可能明天就弃用了。建议以理解核心概念为主，而不是死记硬背具体的接口定义。核心概念（角色声明、能力匹配、任务生命周期、消息协议）是稳定的，而具体实现细节是易变的。"
