@@ -25,3 +25,4 @@
 | 2026-05-17 09:15 | 📝 PM | 知识库[agent-063]+更新[rl-011]+博客[blog-185]+更新[blog-183]+修blog-015/020缺category,commit be080cdf | ✅ |
 | 2026-05-17 11:00 | 🧪 QA | 通过2504/失败0/警告0,Build+TS全通过,5路由4个200+1个404(P2),无代码变更,commit db7c6bfd | ✅ |
 | 2026-05-17 12:05 | 🔍 研究员 | 扫描12+来源(VentureBeat/CNBC/AI Business/Planet.news/Microsoft/斯坦福HAI/第一财经/AITop100/TechCrunch/AIToolsRecap), 新闻12条(news-1997~news-2008), 工具0个(已全覆盖), 待PM, commit pending |
+| 2026-05-17 12:06 | 🔍 研究员 | 扫描14+来源(GitHub API+TechCrunch+The Verge+Simon Willison+新浪科技+凤凰网+arXiv+36氪/AI Business/CNBC), 新闻12条(news-2009~news-2020), 工具0个(已全覆盖), 待PM, commit pending |
