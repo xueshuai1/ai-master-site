@@ -1,24 +1,24 @@
-# 下次建议（2026-05-17 16:15）
+# 下次建议（2026-05-17 16:30）
 
 ## 优先执行（1-2 条，最重要）
-1. 博客：Greg Brockman 接管 OpenAI 产品 —— 从研究驱动到产品驱动的战略转向
-2. 知识库：AI 隐私安全新挑战 —— 从聊天机器人泄露电话号码看大模型数据治理
+1. 博客：Greg Brockman 接管 OpenAI 产品 —— 从研究驱动到产品驱动的战略转向深度解读
+2. 知识库：ChatGPT 个人理财功能 —— AI 助手进入金融服务的安全与伦理分析
 
 ## 可延后执行（其余建议）
-1. 博客：OpenAI 马耳他全国协议解读 —— AI 从消费品到公共基础设施的范式跃迁
-2. 博客：贝佐斯 380 亿物理 AI 投资 —— 具身智能与数字 AI 的双轨竞争
-3. 博客：Databricks × GPT-5.5 —— 企业 Agent 落地的开源 + 闭源融合方案
-4. 博客：理想李想 AI 观点引发的专业 vs 民主化辩论
-5. 博客：Anthropic 中国 AI 威胁论 —— 安全公司的地缘政治参与
-6. 知识库：Claude Code 论文流水线的学术伦理问题
-7. 博客：html-anything 开源爆发 —— 前端开发自动化加速到来
-8. 博客：联发科天玑 AI 生态 440% 增长 —— 端侧 AI 芯片的新战场
-9. 博客：亚马逊 3 万亿市值背后的 AI 基础设施战略
-10. 知识库：ChatGPT 个人理财功能的安全架构分析
+1. 博客：Musk v. Altman 审判第三周 —— AI 行业治理的世纪之战
+2. 博客：arXiv 禁止 AI 代写论文 —— 学术伦理与开源工具的未来
+3. 博客：Mira Murati 的 AI 哲学 —— 人类在循环中的设计原则
+4. 博客：3 人带 100 个 AI 程序员 —— 小团队 × 大 AI 的创业新范式
+5. 知识库：AI 能源危机 —— 数据中心耗电与可持续发展
+6. 博客：Runway 对标 Google —— AI 视频生成的护城河之战
+7. 博客：NousResearch hermes-agent 15 万星 —— 个人智能体框架拆解
+8. 博客：Meta AI 转型阵痛期 —— 利润新高 vs 员工低谷的矛盾
+9. 知识库：中国短剧 × AI 内容工厂 —— 批量生成叙事的伦理边界
+10. 博客：AI 黄金时代的贫富差距 —— TechCrunch 深度报道解读
 
 ## Findings 摘要
-- 本轮扫描 12+ 来源（OpenAI RSS + 凤凰科技 + 新浪科技 + WIRED + MIT Tech Review + GitHub API + VentureBeat + Simon Willison），更新新闻 12 条（news-2045~news-2056）
+- 本轮扫描 12+ 来源（TechCrunch RSS、WIRED AI、MIT Tech Review、36 氪 RSS、GitHub API），更新新闻 12 条（news-2057~news-2068）
 - 工具库全覆盖，add-new-tools 脚本运行无遗漏（0 个新工具）
-- 热点：Brockman接管OpenAI产品/马耳他全民ChatGPT/Databricks×GPT-5.5/ChatGPT理财/联发科AI套件440%/亚马逊3万亿市值/html-anything开源2591星/李想AI民科论/Anthropic中国威胁论/6400星论文流水线/AI泄露隐私/贝佐斯物理AI
-- 国外来源：OpenAI RSS (7条)、WIRED (4条)、MIT Tech Review (2条)、VentureBeat (2条)、Simon Willison、GitHub API (15条)
-- 国内来源：凤凰科技 (5条)、新浪科技 (3条)、IT之家
+- 热点：Brockman接管OpenAI/Musk-v-Altman审判/ChatGPT理财/arXiv禁AI代写/Runway对标Google/硅谷能源危机/MiraMurati人类循环/Meta利润vs士气/hermes-agent15万星/3人+100AI程序员/中国短剧AI工厂
+- 国外来源：TechCrunch RSS (10条)、WIRED AI (6条)、MIT Tech Review RSS (10条)、GitHub API (30条)
+- 国内来源：36 氪 RSS (2条 AI 相关)

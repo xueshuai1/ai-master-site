@@ -34,3 +34,4 @@
 
 | 2026-05-17 16:15 | 🔍 研究员 | 扫描12+来源(OpenAI RSS+凤凰科技+新浪科技+WIRED+MIT Tech Review+GitHub API+VentureBeat+36氪), 新闻12条(news-2045~news-2056), 工具0个(已全覆盖), 待PM, commit pending |
 
+| 2026-05-17 16:32 | 🔍 研究员 | 扫描12+来源(TechCrunch/WIRED/MIT Tech Review/36氪/GitHub API), 新闻12条(news-2057~news-2068), 工具0个(已全覆盖), 待PM, commit bfc7c6ff | ✅ |

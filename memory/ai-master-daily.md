@@ -1,4 +1,5 @@
 ## 2026-05-17
+- [16:30] bfc7c6ff — 研究员: 扫描12+来源(TechCrunch/WIRED/MIT Tech Review/36氪/GitHub API), 新闻12条(news-2057~news-2068), 工具0个(已全覆盖), 待PM, 已推送
 - [08:00] 6b7f050c — 研究员: 扫描12+来源(TechCrunch/VentureBeat/The Decoder/CNBC/新浪科技/arXiv API/GitHub API), 新闻12条(news-1973~news-1984), 工具0个(已全覆盖), 待PM, 已推送
 - [07:05] a50a9560 — QA: 脚本2494/0/0,修P1 blog-184 mermaid浅色配色2处遗留(#6366f1→#1e3a5f,#4f46e5→#3730a3),Build+TS全通过
 - [04:00] e314e8e7 — 研究员: 扫描12+来源(GitHub API/web_search/TechCrunch/Reuters/深圳新闻网/澎湃新闻/36氪), 新闻12条(news-1949~1960), 工具0个(已全覆盖), 待PM, 已推送
