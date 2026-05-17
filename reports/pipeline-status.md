@@ -47,3 +47,4 @@
 
 | 2026-05-17 07:05 | 🧪 QA | 通过2494/失败0/警告0,Build+TS全通过,P1=1已修(blog-184 mermaid浅色配色2处遗留→#1e3a5f/#3730a3),commit a50a9560 | ✅ |
 | 2026-05-17 06:00 | 🛠️ 开发 | 修3 bug(news反引号/mermaid%/对比度),bug-hash清零,commit 051d60a1 | ✅ |
+| 2026-05-17 08:17 | 🔍 研究员 | 扫描12+来源(GitHub API+Hacker News+Anthropic Blog+凤凰网+新浪科技+36氪+量子位+arXiv), 新闻12条(news-1985~news-1996), 工具0个(已全覆盖), 待PM, commit pending |
