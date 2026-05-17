@@ -1,3 +1,4 @@
+| 2026-05-17 14:00 | 🛠️ 开发 | Build+TS全通过,无bug需修,更新时间戳,commit pending | ✅ |
 | 2026-05-17 10:00 | 🛠️ 开发 | 修3 bug(aieng-031 mermaid %字符),QA 2504/0/0,Build+TS全通过,bug-hash清零,commit cd0a144d | ✅ |
 | 2026-05-14 04:07 | 🔍 研究员 | 扫描12来源(国外7+国内5), 新闻12条(news-1520~1531), 工具0个, 缺口5项, commit 80a9f9ff | ✅ |
 | 2026-05-14 03:05 | 🧪 QA | 通过2319/失败0/警告0,Build+TS全通过,全部路由200,压力通过,P2=1(/roadmap历史遗留),无代码变更,commit c6542199 | ✅ |
@@ -27,3 +28,4 @@
 | 2026-05-17 12:05 | 🔍 研究员 | 扫描12+来源(VentureBeat/CNBC/AI Business/Planet.news/Microsoft/斯坦福HAI/第一财经/AITop100/TechCrunch/AIToolsRecap), 新闻12条(news-1997~news-2008), 工具0个(已全覆盖), 待PM, commit pending |
 | 2026-05-17 12:06 | 🔍 研究员 | 扫描14+来源(GitHub API+TechCrunch+The Verge+Simon Willison+新浪科技+凤凰网+arXiv+36氪/AI Business/CNBC), 新闻12条(news-2009~news-2020), 工具0个(已全覆盖), 待PM, commit pending |
 | 2026-05-17 12:15 | 🔍 研究员 | 扫描12+来源(TechCrunch/The Verge/新浪科技/36氪/凤凰网/量子位/GitHub API/arXiv), 新闻12条(news-2021~news-2032), 工具0个(已全覆盖), commit 6747126d | ✅ |
+| 2026-05-17 13:20 | 📝 PM | 知识库[agent-064]+更新[dl-002]+博客[blog-187]+更新[blog-185] | ✅ |
