@@ -1,3 +1,4 @@
+| 2026-05-17 16:00 | 🔍 研究员 | 扫描12+来源(GitHub API+AITop100+知乎专栏+IBM+Sina+AI Business+TechCrunch), 新闻12条(news-2033~news-2044), 工具0个(已全覆盖), 待PM, commit 0d1ef65d | ✅ |
 | 2026-05-17 15:00 | 🧪 QA | 通过2514/失败0/P0已修(serena重复ID),Build+TS全通过,路由200,commit d33236e0 | ✅ |
 | 2026-05-17 14:00 | 🛠️ 开发 | Build+TS全通过,无bug需修,更新时间戳,commit pending | ✅ |
 | 2026-05-17 10:00 | 🛠️ 开发 | 修3 bug(aieng-031 mermaid %字符),QA 2504/0/0,Build+TS全通过,bug-hash清零,commit cd0a144d | ✅ |
